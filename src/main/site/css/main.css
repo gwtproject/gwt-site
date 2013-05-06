@@ -1,0 +1,600 @@
+/* base css start dankurka*/
+body {
+  background-color: white;
+  color: black;
+  font-family: Arial, sans-serif;
+  font-size: small;
+  margin: 8px;
+  margin-top: 3px;
+}
+
+img {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0;
+  vertical-align: top;
+  text-align: left;
+}
+
+a:link {
+  color: #0000cc;
+}
+
+a:active {
+  color: #cc0000;
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+h1 {
+  font-size: x-large;
+  margin-top: 0px;
+}
+
+h2 {
+  font-size: large;
+}
+
+h3 {
+  font-size: medium;
+}
+
+h4 {
+  font-size: small;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.25em;
+}
+
+pre, code {
+  color: #007000;
+  font-family: "bogus font here", monospace;
+  font-size: 100%;
+}
+
+pre {
+  border: 1px solid silver;
+  background-color: #f5f5f5;
+  padding: 0.5em;
+  overflow: auto;
+  margin: 2em;
+}
+
+pre ins {
+  color: #cc0000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.newmark {
+  color: red;
+  font-size: 80%;
+  vertical-align: top;
+}
+
+/* "Selected" links */
+
+a.selected, .selected a, .selected {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a.selected:visited, .selected a:visited {
+  color: black;
+}
+
+
+/* Header */
+
+#gaia {
+  text-align: right;
+}
+
+#header {
+  height: 50px;
+  margin-bottom: 11px;
+  position: relative;
+}
+
+#logo {
+  padding-right: 18px;
+  position: absolute;
+  left: 0;
+  top: -5px;
+}
+
+#logo img {
+  width: 153px;
+  height: 55px;
+}
+
+#title {
+  border-top: 1px solid #3366cc;
+  background-color: #e5ecf9;
+  font-size: large;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-top: 5px;
+}
+
+#title, #breadcrumbs {
+  margin-left: 174px;
+  padding-left: 3px;
+}
+
+#breadcrumbs {
+  margin-top: 3px;
+}
+
+
+/* Side panel section */
+
+#side {
+  width: 167px;
+  margin-bottom: 3em;
+  float: left;
+}
+
+
+/* Menu */
+
+#menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-bottom: 1em;
+}
+
+#menu ul ul {
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+#menu li {
+  margin-top: 4px;
+}
+
+#menu h4 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1em;
+}
+
+
+/* Search box */
+
+#search {
+  margin-top: 2em;
+}
+
+#search .header {
+  font-weight: bold;
+  font-size: 90%;
+  margin-bottom: 1px;
+}
+
+#search .button {
+  margin-top: 1px;
+}
+
+#search .input input {
+  width: 125px;
+}
+
+
+/* Body */
+
+#body {
+  border-left: 1px dotted silver;
+  margin-left: 169px;
+  margin-right: 25px;
+  padding-left: 18px;
+  padding-bottom: 25px;
+}
+
+
+/* Footer */
+
+#footer {
+  clear: both;
+  text-align: center;
+  margin-top: 3.5em;
+  margin-bottom: 1em;
+  background-image: url("http://www.google.com/images/art.gif");
+  height: 53px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+#footer .text {
+  padding-top: 20px;
+}
+
+
+/* Download links */
+
+div.download {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+div.download a {
+  border: 1px solid #3366cc;
+  background-color: #e5ecf9;
+  padding: 0.5em;
+  position: relative;
+  font-weight: bold;
+}
+
+
+/* Terms of Service form */
+
+.termsagree {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background-color: #e5ecf9;
+  padding: 0.5em;
+}
+
+.termsagree .button {
+  padding-top: 0.5em;
+}
+
+.termsagree .text {
+  font-weight: bold;
+}
+
+.termsagree .text .printable {
+  font-weight: normal;
+}
+
+.termsagree .text, .termsagree .button {
+  padding-left: 5px;
+}
+
+
+/* Print styles */
+
+@media print {
+  .noprint {
+    display: none;
+  }
+
+  #header, #side, #gaia {
+    display: none;
+  }
+
+  #body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+  }
+}
+
+/* base css end */
+
+/* Use these styles only for old GWT files that use <h1> for main section headings that need a blue background */
+
+/* NOTE: THESE STYLES ARE NOT SEEN BY MOST FILES THAT ARE MISSING LATEST BOILERPLATE */
+/* This is a temporary old GWT h1 style with blue background and top border */
+/* Eventually remove this and replace all h1 with h2, which have this style in new EZT boilerplate */
+#gc-pagecontent h1 {
+  background-color:#E5ECF9;
+  border-top:1px solid #3366CC;
+  font-size:130%;
+  font-weight:bold;
+  margin:2em 0 0 -10px;
+  padding:1px 3px;
+  position:relative;
+}
+
+/* This is a temporary old GWT h2 style with NO blue background or top border */
+/* Eventually remove this and replace all h2 with h3 */
+#gc-pagecontent h2 {
+  background-color: #FFF;
+  border-top: 1px none;
+  font-size:130%;
+  font-weight:bold;
+  margin:1.5em 0 0;
+  padding: 0;
+}
+
+/* This is a temporary old GWT h3 style with smaller font */
+/* Eventually remove this and replace all h3 with h4 */
+#gc-pagecontent h3 {
+  font-size:110%;
+  margin:0.7em 0 0;
+  position:relative;
+  top:0.4em;
+}
+
+
+/* Mostly used for adding borders to images */
+.border {
+  border: 1px solid;
+}
+
+.indent {
+  margin-left: 40px;
+}
+
+.imagegap {
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+.author {
+  background-color: yellow;
+}
+
+/* TODO: Need to update all pages with latest boilerplate: link local_extensions.css */
+pre {
+  overflow: visible;
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  -moz-background-clip: -moz-initial;
+  -moz-background-origin: -moz-initial;
+  -moz-background-inline-policy: -moz-initial;
+}
+
+table, tr, td {
+  border: 1px none #FFF;
+}
+
+#gc-toc li li li li a {
+  font-size: 90%;
+}
+
+/* Used in the left nav for "PDF" */
+sup {
+  font-size: 50%;
+  color: blue;
+}
+
+/* A heading between <h1> and <h2>, for grouping <h2> sections. Use: <h2 class="h2-group"> */
+.h2-group {
+  line-height: 130%;
+  font-size: 170% !important;
+  font-weight: bold;
+  margin: 2em 0 0 -10px;
+  padding: 0;
+  border: none;
+  border-top: 1px solid #36C;
+  border-bottom: 1px solid #36C;
+  background-color: #E5ECF9;
+}
+
+/* For red superscript version number to use in <sup>. Used in left nav to mark GA, next and future releases */
+.version-sup {
+  color: red;
+  text-decoration: none;
+}
+
+/* DECIDED NOT TO USE FOR NOW -- INSTEAD, HARD-CODE SUPERSCRIPT VERSION NUMBERS IN TEXT */
+/* For red superscript version number to use in <sup>. Used in left nav */
+/* .next-sup:before {
+ *   content: "Next";
+ *   color: red;
+ *   text-decoration: none;
+ * }
+ * .future-sup:before {
+ *   content: "Future";
+ *   color: red;
+ *   text-decoration: none;
+ * }
+ */
+
+/* For use, see internal-only page http://code.google.com/webtoolkit/DOC_PRODUCTION/version-markup.html */
+.next, .future {
+  background-color: #ffffde;
+  padding: 5px;
+  margin-top: 1em;
+}
+.next:before {
+  content: "In the next version (2.4)";
+  color: red;
+  font-weight: bold;
+}
+.future:before {
+  content: "Coming in a future version (post-2.4)";
+  color: red;
+  font-weight: bold;
+}
+.next2, .future2 {
+  background-color: #ffffde;
+  padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+/* Version menu style sheet */
+
+hr {
+    color: #999;
+    margin: 4px 0;
+    size: 1px;
+    border-style: solid;
+    border-collapse: collapse;
+    border-top-width: 1px;
+    border-bottom-width: 0px;
+}
+
+/* The memberbar styles are for navigation bar pull-down menus for members */
+.memberbar {
+    margin: 1px 0 0 0;
+    padding: 0;
+    border-collapse: collapse !important;
+}
+
+.memberbar tr {
+    border: none;
+}
+
+.memberbar td {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.memberbar .menutrigger {
+    padding: 2px 3px 1px 3px;
+}
+
+.memberbar .menutrigger a {
+/*  font-weight: bold;  NOT WANTED FOR GWT */
+    font-size: 100%;
+    padding: 0px;
+/* DELETE NEXT THREE LINES WHEN href="" onclick="return false;" IS ADDED TO 2nd ROW OF MENU BAR */
+    cursor: pointer;
+    color: #00D;
+}
+
+.memberbar .menu a {
+    display: block;
+    margin: 0;
+/* Right padding is room for vertical scroll bar */
+    padding: 1px 25px 1px 2px;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 100%;
+}
+
+.memberbar .menu {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    background: #FFF;
+    border: 1px solid #333;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 20;
+}
+
+.memberbar .menu .member,
+.memberbar .menu .inherited {
+    padding-left: 10px;
+}
+
+.memberbar .menu .inherited {
+    font-size: 95%;
+}
+
+.memberbar .menu .summary {
+    margin-left: 0px;
+    padding-left: 3px;
+}
+
+.memberbar .menu a[href]:hover {
+    background: #EEF;
+    text-decoration: underline;
+}
+
+.memberbar a.dim {
+    color: #777;
+    text-decoration: none;
+    cursor: default;
+}
+
+
+
+/* Used in webtoolkit/versions.ezt */
+ 
+.release {
+  margin-bottom: 2em;
+}
+
+.release .version {
+  margin-bottom: 0;
+}
+
+.release .date {
+  margin-top: 0;
+  margin-bottom: 1em;
+  color: gray;
+}
+
+.release .date a:link {
+  color: #7777cc;
+}
+
+.release .downloads {
+  border-collapse: separate;
+}
+
+.release .downloads th {
+  text-align: left;
+  background-color: #ccccff;
+  padding: 3px;
+}
+
+.release .downloads td {
+  background-color: #f4f4f4;
+  padding: 3px;
+  text-align: left;
+}
+
+.release .downloads tr.even td {
+  background-color: #eeeeee;
+}
+
+span.new {
+  vertical-align: super;
+  color: #cc0000;
+  font-size: 70%;
+}
+
+.toc {
+  float: left;
+  width: 300px;
+  margin-right: 10px;
+}
+
+.toc ul {
+  padding: 10px;
+}
+
+.content {
+  float: left;
+  width: 700px;
+}
+
+#wrapper {
+  width: 1010px;
+}
+
+.license {
+  clear: both;
+  border-top: 1px dashed black;
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+  padding: 5px;
+}
