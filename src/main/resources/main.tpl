@@ -20,15 +20,39 @@
     </script>
 	</head>
 	<body>
-	  <div>GWT - documentation</div>
-		 <div id="wrapper">
-  		<div class='toc'>
-  			$toc
-  		</div>
-  		<div class='content'>
-  			$content
-  		</div>
-  	 </div>
-		<div class="license">Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>.</div>
+	
+	
+	
+<div id="gwt-wrap">
+  <div id="gwt-header1">
+    <div class="first"></div>
+    <div class="second"></div>
+    <div class="third"></div>
+  </div>
+  <div id="gwt-header2">
+    <div class="first"></div>
+    <div class="second"><h1>GWT</h1></div>
+    <div class="third"></div>
+  </div>
+  <div id="gwt-header3">
+    <div class="first"></div>
+    <div class="second"><h2>TABLE OF CONTENTS</h2></div>
+    <div class="third"></div>
+  </div>
+  <div>
+    
+  </div>
+  <div id="gwt-toc">
+    $toc
+  </div>
+  <div id="gwt-content">
+    $content
+  </div>
+  <div id="gwt-footer">
+    <div class="gwt-license">Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>.</div>
+  </div>
+</div>
+	
+	
 	</body>
 </html>

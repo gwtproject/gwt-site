@@ -1,7 +1,16 @@
 
 
 <p><a href="terms.html">Terms of Service</a> | <b>Privacy Notice</b> </p>
-<p>Last modified: December 8th, 2009</p>
+<p>Last modified: December 6th, 2013</p>
+
+<h1>Privacy Policy</h1>
+  
+  <div>
+    Google is a member of the GWT Open Source Project and operates this GWT website as a contribution to GWT. The <a href="http://www.google.com/intl/en/policies/privacy/">Google Privacy Policy</a> applies to Google's operation of this website.
+  
+  </div>
+
+
 <p>The <a href="http://www.google.com/privacy.html">Google Privacy Policy</a>
 describes how we treat personal information when you use Google services,
 including information provided when you use GWT. In addition,

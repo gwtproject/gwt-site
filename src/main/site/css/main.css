@@ -1,11 +1,194 @@
+/* new stuff start */
+html {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  background: #606060;
+}
+
+#gwt-wrap {
+  width: 1000px;
+  background: white;
+}
+
+#gwt-header1 .first {
+  float: left;
+  width: 75px;
+  height: 10px;
+  background-color: #606060;
+}
+
+#gwt-header1 .second {
+  float: left;
+  width: 300px;
+  height: 10px;
+  background-color: #505050;
+}
+
+#gwt-header1 .third {
+  float: left;
+  width: 625px;
+  height: 10px;
+  background-color: #606060;
+}
+
+#gwt-header2 .first {
+  float: left;
+  background-color: #f55837;
+  width: 75px;
+  height: 100px;
+}
+
+#gwt-header2 .second {
+  background-color: #e54827;
+  width: 300px;
+  height: 100px;
+  float: left;
+  background-position: 30px 10px;
+  background-image: url(../images/logo-wire.png);
+  background-repeat: no-repeat;
+}
+
+#gwt-header2 .second h1 {
+  margin-left: 130px;
+  margin-top: 30px;
+  font-size: 40px;
+  color: white;
+}
+
+#gwt-header2 .third {
+  background-color: #f55837;
+  float: left;
+  width: 625px;
+  height: 100px;
+}
+
+#gwt-header3 .first {
+  width: 75px;
+  height: 30px;
+  background-color: #ceedf4;
+  float: left;
+}
+
+#gwt-header3 .second {
+  background-color: white;
+  width: 300px;
+  height: 30px;
+  float: left;
+}
+
+#gwt-header3 .second h2{
+  margin: 0;
+  margin-top: 7px;
+  margin-left: 30px;
+  color: #f55837;
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+#gwt-header3 .third {
+  background-color: #ceedf4;
+  width: 625px;
+  height: 30px;
+  float: left;
+}
+
+
+#gwt-toc {
+  float: left;
+  width: 280px;
+  padding: 10px;
+  overflow: hidden;
+  margin-left: 75px;
+  background: #efefef;
+  margin-left: 75px;
+}
+
+#gwt-toc ul {
+  margin-left: 15px;
+  padding: 10px;
+  
+  
+}
+#gwt-toc a, #gwt-toc a:VISITED{
+  color: #837b7a;
+  text-decoration: none;
+}
+
+#gwt-toc a:HOVER{
+  color: #0aa7c8;
+  text-decoration: none;
+}
+
+
+
+
+#gwt-content {
+  float: right;
+  width: 585px;
+  padding: 10px;
+  color: #564b49;
+}
+
+#gwt-content a{
+  color: #0aa7c8;
+}
+
+#gwt-footer {
+  clear: both;
+  margin-top: 10px;
+  background-color: #d5f0f6;
+  height: 30px;
+}
+
+.gwt-license {
+  clear: both;
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: center;
+  padding: 5px;
+  color: #9eb4b9;
+ 
+}
+
+.gwt-license a {
+  color: #1ab7d8;
+  text-decoration: none;
+}
+
+
+
+
+/* .toc { */
+
+/*   background-color: #efefef; */
+/*   width: 300px; */
+/*   float: left; */
+/*   margin-left: 75px; */
+
+/* } */
+
+/* .toc ul { */
+/*   padding: 10px; */
+/* } */
+
+/* .content { */
+/*   position:relative; */
+/*   padding: 10px; */
+
+/* } */
+body {
+  background-color: #606060;
+  margin: 0;
+}
+
+/* new stuff end */
+
 /* base css start dankurka*/
 body {
-  background-color: white;
   color: black;
   font-family: Arial, sans-serif;
   font-size: small;
-  margin: 8px;
-  margin-top: 3px;
 }
 
 img {
@@ -16,7 +199,7 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
+th,td {
   padding: 0;
   vertical-align: top;
   text-align: left;
@@ -60,7 +243,7 @@ li {
   margin-bottom: 0.25em;
 }
 
-pre, code {
+pre,code {
   color: #007000;
   font-family: "bogus font here", monospace;
   font-size: 100%;
@@ -87,20 +270,17 @@ pre ins {
 }
 
 /* "Selected" links */
-
-a.selected, .selected a, .selected {
+a.selected,.selected a,.selected {
   color: black;
   font-weight: bold;
   text-decoration: none;
 }
 
-a.selected:visited, .selected a:visited {
+a.selected:visited,.selected a:visited {
   color: black;
 }
 
-
 /* Header */
-
 #gaia {
   text-align: right;
 }
@@ -135,7 +315,7 @@ a.selected:visited, .selected a:visited {
   margin-top: 5px;
 }
 
-#title, #breadcrumbs {
+#title,#breadcrumbs {
   margin-left: 174px;
   padding-left: 3px;
 }
@@ -144,18 +324,14 @@ a.selected:visited, .selected a:visited {
   margin-top: 3px;
 }
 
-
 /* Side panel section */
-
 #side {
   width: 167px;
   margin-bottom: 3em;
   float: left;
 }
 
-
 /* Menu */
-
 #menu ul {
   margin: 0;
   padding: 0;
@@ -178,9 +354,7 @@ a.selected:visited, .selected a:visited {
   margin-bottom: 1em;
 }
 
-
 /* Search box */
-
 #search {
   margin-top: 2em;
 }
@@ -199,9 +373,7 @@ a.selected:visited, .selected a:visited {
   width: 125px;
 }
 
-
 /* Body */
-
 #body {
   border-left: 1px dotted silver;
   margin-left: 169px;
@@ -210,9 +382,7 @@ a.selected:visited, .selected a:visited {
   padding-bottom: 25px;
 }
 
-
 /* Footer */
-
 #footer {
   clear: both;
   text-align: center;
@@ -228,9 +398,7 @@ a.selected:visited, .selected a:visited {
   padding-top: 20px;
 }
 
-
 /* Download links */
-
 div.download {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -244,9 +412,7 @@ div.download a {
   font-weight: bold;
 }
 
-
 /* Terms of Service form */
-
 .termsagree {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -266,22 +432,18 @@ div.download a {
   font-weight: normal;
 }
 
-.termsagree .text, .termsagree .button {
+.termsagree .text,.termsagree .button {
   padding-left: 5px;
 }
 
-
 /* Print styles */
-
 @media print {
   .noprint {
     display: none;
   }
-
-  #header, #side, #gaia {
+  #header,#side,#gaia {
     display: none;
   }
-
   #body {
     margin: 0;
     border: 0;
@@ -297,13 +459,13 @@ div.download a {
 /* This is a temporary old GWT h1 style with blue background and top border */
 /* Eventually remove this and replace all h1 with h2, which have this style in new EZT boilerplate */
 #gc-pagecontent h1 {
-  background-color:#E5ECF9;
-  border-top:1px solid #3366CC;
-  font-size:130%;
-  font-weight:bold;
-  margin:2em 0 0 -10px;
-  padding:1px 3px;
-  position:relative;
+  background-color: #E5ECF9;
+  border-top: 1px solid #3366CC;
+  font-size: 130%;
+  font-weight: bold;
+  margin: 2em 0 0 -10px;
+  padding: 1px 3px;
+  position: relative;
 }
 
 /* This is a temporary old GWT h2 style with NO blue background or top border */
@@ -311,21 +473,20 @@ div.download a {
 #gc-pagecontent h2 {
   background-color: #FFF;
   border-top: 1px none;
-  font-size:130%;
-  font-weight:bold;
-  margin:1.5em 0 0;
+  font-size: 130%;
+  font-weight: bold;
+  margin: 1.5em 0 0;
   padding: 0;
 }
 
 /* This is a temporary old GWT h3 style with smaller font */
 /* Eventually remove this and replace all h3 with h4 */
 #gc-pagecontent h3 {
-  font-size:110%;
-  margin:0.7em 0 0;
-  position:relative;
-  top:0.4em;
+  font-size: 110%;
+  margin: 0.7em 0 0;
+  position: relative;
+  top: 0.4em;
 }
-
 
 /* Mostly used for adding borders to images */
 .border {
@@ -348,17 +509,17 @@ div.download a {
 /* TODO: Need to update all pages with latest boilerplate: link local_extensions.css */
 pre {
   overflow: visible;
-  white-space: pre-wrap;       /* css-3 */
-  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-  white-space: -pre-wrap;      /* Opera 4-6 */
-  white-space: -o-pre-wrap;    /* Opera 7 */
-  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
   -moz-background-clip: -moz-initial;
   -moz-background-origin: -moz-initial;
   -moz-background-inline-policy: -moz-initial;
 }
 
-table, tr, td {
+table,tr,td {
   border: 1px none #FFF;
 }
 
@@ -406,127 +567,116 @@ sup {
  */
 
 /* For use, see internal-only page http://code.google.com/webtoolkit/DOC_PRODUCTION/version-markup.html */
-.next, .future {
+.next,.future {
   background-color: #ffffde;
   padding: 5px;
   margin-top: 1em;
 }
+
 .next:before {
   content: "In the next version (2.4)";
   color: red;
   font-weight: bold;
 }
+
 .future:before {
   content: "Coming in a future version (post-2.4)";
   color: red;
   font-weight: bold;
 }
-.next2, .future2 {
+
+.next2,.future2 {
   background-color: #ffffde;
   padding: 5px;
 }
 
-
-
-
-
-
-
-
-
 /* Version menu style sheet */
-
 hr {
-    color: #999;
-    margin: 4px 0;
-    size: 1px;
-    border-style: solid;
-    border-collapse: collapse;
-    border-top-width: 1px;
-    border-bottom-width: 0px;
+  color: #999;
+  margin: 4px 0;
+  size: 1px;
+  border-style: solid;
+  border-collapse: collapse;
+  border-top-width: 1px;
+  border-bottom-width: 0px;
 }
 
 /* The memberbar styles are for navigation bar pull-down menus for members */
 .memberbar {
-    margin: 1px 0 0 0;
-    padding: 0;
-    border-collapse: collapse !important;
+  margin: 1px 0 0 0;
+  padding: 0;
+  border-collapse: collapse !important;
 }
 
 .memberbar tr {
-    border: none;
+  border: none;
 }
 
 .memberbar td {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .memberbar .menutrigger {
-    padding: 2px 3px 1px 3px;
+  padding: 2px 3px 1px 3px;
 }
 
-.memberbar .menutrigger a {
-/*  font-weight: bold;  NOT WANTED FOR GWT */
-    font-size: 100%;
-    padding: 0px;
-/* DELETE NEXT THREE LINES WHEN href="" onclick="return false;" IS ADDED TO 2nd ROW OF MENU BAR */
-    cursor: pointer;
-    color: #00D;
+.memberbar .menutrigger a { /*  font-weight: bold;  NOT WANTED FOR GWT */
+  font-size: 100%;
+  padding: 0px;
+  /* DELETE NEXT THREE LINES WHEN href="" onclick="return false;" IS ADDED TO 2nd ROW OF MENU BAR */
+  cursor: pointer;
+  color: #00D;
 }
 
 .memberbar .menu a {
-    display: block;
-    margin: 0;
-/* Right padding is room for vertical scroll bar */
-    padding: 1px 25px 1px 2px;
-    text-decoration: none;
-    color: #000;
-    cursor: pointer;
-    white-space: nowrap;
-    font-size: 100%;
+  display: block;
+  margin: 0;
+  /* Right padding is room for vertical scroll bar */
+  padding: 1px 25px 1px 2px;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 100%;
 }
 
 .memberbar .menu {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    background: #FFF;
-    border: 1px solid #333;
-    overflow-x: hidden;
-    overflow-y: auto;
-    z-index: 20;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  background: #FFF;
+  border: 1px solid #333;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 20;
 }
 
-.memberbar .menu .member,
-.memberbar .menu .inherited {
-    padding-left: 10px;
+.memberbar .menu .member,.memberbar .menu .inherited {
+  padding-left: 10px;
 }
 
 .memberbar .menu .inherited {
-    font-size: 95%;
+  font-size: 95%;
 }
 
 .memberbar .menu .summary {
-    margin-left: 0px;
-    padding-left: 3px;
+  margin-left: 0px;
+  padding-left: 3px;
 }
 
 .memberbar .menu a[href]:hover {
-    background: #EEF;
-    text-decoration: underline;
+  background: #EEF;
+  text-decoration: underline;
 }
 
 .memberbar a.dim {
-    color: #777;
-    text-decoration: none;
-    cursor: default;
+  color: #777;
+  text-decoration: none;
+  cursor: default;
 }
 
-
-
 /* Used in webtoolkit/versions.ezt */
- 
 .release {
   margin-bottom: 2em;
 }
@@ -569,32 +719,4 @@ span.new {
   vertical-align: super;
   color: #cc0000;
   font-size: 70%;
-}
-
-.toc {
-  float: left;
-  width: 300px;
-  margin-right: 10px;
-}
-
-.toc ul {
-  padding: 10px;
-}
-
-.content {
-  float: left;
-  width: 700px;
-}
-
-#wrapper {
-  width: 1010px;
-}
-
-.license {
-  clear: both;
-  border-top: 1px dashed black;
-  margin-top: 10px;
-  font-size: 12px;
-  text-align: center;
-  padding: 5px;
 }
