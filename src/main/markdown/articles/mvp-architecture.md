@@ -146,7 +146,7 @@ history management and is discussed in greater length below.</p>
 </p>
 
 <div class="screenshot">
-  <img src="/web-toolkit/images/contacts-project-hierarchy.png"
+  <img src="../images/contacts-project-hierarchy.png"
   style="width: 335px; height: 544px;" alt="screenshot"/>
 </div>
 
@@ -181,7 +181,7 @@ defined within the presenter. Take for example the
 ContactsView:</p>
 
 <div class="screenshot">
-  <img src="images/contact-list-view.png"
+  <img src="../images/contact-list-view.png"
   style="width: 224px; height: 165px;" alt="screenshot"/>
 </div>
 
@@ -633,7 +633,7 @@ tests, rather than those based on GWTTestCase, we've added the following tests
 to our Contacts app.</p>
 
 <div class="screenshot">
-  <img src="images/contacts-project-hierarchy-testing.png"
+  <img src="../images/contacts-project-hierarchy-testing.png"
   style="width: 340px; height: 104px;" alt="screenshot"/>
 </div>
 

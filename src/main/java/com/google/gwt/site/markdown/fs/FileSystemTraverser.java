@@ -13,6 +13,8 @@
  */
 package com.google.gwt.site.markdown.fs;
 
+import com.google.gwt.site.markdown.TranslaterException;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -30,12 +32,86 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class FileSystemTraverser {
 
-  public static final String ORDER_XML = "order.xml";
+  public static final String CONFIG_XML = "config.xml";
 
-  public MDParent traverse(File file) {
+  private static class FolderConfig {
+    private List<String> sortingStructure;
+    private String folderDisplayName;
+    private String folderHref;
+    private List<String> excludeList;
+
+    public FolderConfig(
+        String folderDisplayName, String folderHref, List<String> sortingStructure, List<String> excludeList) {
+      this.folderDisplayName = folderDisplayName;
+      this.folderHref = folderHref;
+      this.sortingStructure = sortingStructure;
+      this.excludeList = excludeList;
+      
+
+    }
+
+    public List<String> getSortingStructure() {
+      return sortingStructure;
+    }
+
+    public String getFolderDisplayName() {
+      return folderDisplayName;
+    }
+
+    public String getFolderHref() {
+      return folderHref;
+    }
+    
+   
+    public List<String> getExcludeList() {
+      return excludeList;
+    }
+  }
+
+  public MDParent traverse(File file) throws TranslaterException {
     MDParent mdParent = traverse(null, file, 0, "");
     removeEmptyDirs(mdParent);
+
+    readConfig(mdParent);
+
     return mdParent;
+  }
+
+  private void readConfig(MDParent current) throws TranslaterException {
+
+    if (current.getConfigFile() != null) {
+      FolderConfig config = parseConfig(current.getConfigFile());
+
+      current.setSortingStructure(config.getSortingStructure());
+      if (config.getFolderDisplayName() != null
+          && !config.getFolderDisplayName().trim().equals("")) {
+        current.setDisplayName(config.getFolderDisplayName());
+      }
+
+      if (config.getFolderHref() != null && !config.getFolderHref().trim().equals("")) {
+        current.setHref(config.getFolderHref());
+      }
+      
+      if(config.getExcludeList() != null) {
+        for(String exclude : config.getExcludeList()) {
+          String fileName = exclude + ".md";
+          for(MDNode node: current.getChildren()) {
+            if(fileName.equals(node.getName())) {
+              node.setExcludeFromToc(true);
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    for (MDNode mdNode : current.getChildren()) {
+      if (mdNode instanceof MDParent) {
+        MDParent mdParent = (MDParent) mdNode;
+        readConfig(mdParent);
+      }
+    }
+
   }
 
   private void removeEmptyDirs(MDParent current) {
@@ -47,15 +123,14 @@ public class FileSystemTraverser {
 
     }
 
-    if(current.getChildren().size() == 0) {
+    if (current.getChildren().size() == 0) {
       current.getParent().getChildren().remove(current);
     }
-      
-     
 
   }
 
-  private MDParent traverse(MDParent parent, File file, int depth, String path) {
+  private MDParent traverse(MDParent parent, File file, int depth, String path)
+      throws TranslaterException {
 
     if (ignoreFile(file)) {
       return null;
@@ -81,9 +156,9 @@ public class FileSystemTraverser {
       return mdParent;
 
     } else if (file.isFile()) {
-      if (file.getName().equals(ORDER_XML)) {
-        List<String> sortingStructure = parseSortingStructure(file);
-        parent.setSortingStructure(sortingStructure);
+      if (file.getName().equals(CONFIG_XML)) {
+
+        parent.setConfigFile(file);
 
       } else {
         MDNode mdNode = new MDNode(parent, file.getName(), file.getAbsolutePath(), depth,
@@ -92,6 +167,7 @@ public class FileSystemTraverser {
       }
 
     } else {
+      //TODO 
       System.out.println("how did we get here?");
     }
 
@@ -99,14 +175,32 @@ public class FileSystemTraverser {
 
   }
 
-  private List<String> parseSortingStructure(File file) {
+  private FolderConfig parseConfig(File file) throws TranslaterException {
     DocumentBuilder builder;
-    List<String> list = new LinkedList<String>();
+    List<String> sortingList = null;
+    List<String> excludeList = new LinkedList<String>();
+
+    String href = null;
+    String name = null;
+
     try {
       builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 
       Document document = builder.parse(file);
       Element documentElement = document.getDocumentElement();
+
+      if (!"folder".equalsIgnoreCase(documentElement.getTagName())) {
+        throw new TranslaterException(
+            "the file '" + file.getAbsolutePath() + "' does not contain a folder tag");
+      }
+
+      if (documentElement.hasAttribute("name")) {
+        name = documentElement.getAttribute("name");
+      }
+
+      if (documentElement.hasAttribute("href")) {
+        href = documentElement.getAttribute("href");
+      }
 
       NodeList childNodes = documentElement.getChildNodes();
       for (int i = 0; i < childNodes.getLength(); i++) {
@@ -117,10 +211,26 @@ public class FileSystemTraverser {
         }
         Element entryNode = (Element) node;
 
-        if (entryNode.getChildNodes().getLength() != 1) {
-          // TODO error
+        if ("sorting".equalsIgnoreCase(entryNode.getTagName())) {
+          sortingList = parseSortingStructure(entryNode);
         }
-        list.add(entryNode.getChildNodes().item(0).getNodeValue());
+        
+        if ("toc".equalsIgnoreCase(entryNode.getTagName())) {
+          NodeList tocChildren = entryNode.getChildNodes();
+          for (int j = 0; j < tocChildren.getLength(); j++) {
+
+            Node tocNodes = tocChildren.item(i);
+            if (tocNodes.getNodeType() != Node.ELEMENT_NODE) {
+              continue;
+            }
+            Element tocElement = (Element) tocNodes;
+            if ("excludes".equalsIgnoreCase(tocElement.getTagName())) {
+              excludeList = parseExcludes(tocElement);
+            }
+          }
+          
+        }
+
       }
 
     } catch (ParserConfigurationException e) {
@@ -134,6 +244,50 @@ public class FileSystemTraverser {
       e.printStackTrace();
     }
 
+    return new FolderConfig(name, href, sortingList, excludeList);
+  }
+
+  /**
+   * @param entryNode
+   * @return
+   */
+  private List<String> parseExcludes(Element excludesNode) {
+    List<String> list = new LinkedList<String>();
+
+    NodeList childNodes = excludesNode.getChildNodes();
+    for (int i = 0; i < childNodes.getLength(); i++) {
+
+      Node node = childNodes.item(i);
+      if (node.getNodeType() != Node.ELEMENT_NODE) {
+        continue;
+      }
+      Element entryNode = (Element) node;
+
+      if (entryNode.getChildNodes().getLength() != 1) {
+        // TODO error
+      }
+      list.add(entryNode.getChildNodes().item(0).getNodeValue());
+    }
+    return list;
+  }
+
+  private List<String> parseSortingStructure(Element sortingNode) {
+    List<String> list = new LinkedList<String>();
+
+    NodeList childNodes = sortingNode.getChildNodes();
+    for (int i = 0; i < childNodes.getLength(); i++) {
+
+      Node node = childNodes.item(i);
+      if (node.getNodeType() != Node.ELEMENT_NODE) {
+        continue;
+      }
+      Element entryNode = (Element) node;
+
+      if (entryNode.getChildNodes().getLength() != 1) {
+        // TODO error
+      }
+      list.add(entryNode.getChildNodes().item(0).getNodeValue());
+    }
     return list;
   }
 
@@ -144,7 +298,7 @@ public class FileSystemTraverser {
   private boolean ignoreFile(File file) {
     // ignore all files that do not end with .md
     return !file.isDirectory() && !file.getName().endsWith(".md")
-        && !file.getName().equals(ORDER_XML);
+        && !file.getName().equals(CONFIG_XML);
   }
 
 }

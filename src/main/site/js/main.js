@@ -1,2 +1,2 @@
 
-document.write("<div>hallo div</div>");
+//document.write("<div>hallo div</div>");

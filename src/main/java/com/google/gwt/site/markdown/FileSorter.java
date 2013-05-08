@@ -72,13 +72,13 @@ public class FileSorter {
     diffNodeSet.removeAll(sortingStructureSet);
     if (diffNodeSet.size() > 0) {
       throw new SortingException(
-          "elements in " + FileSystemTraverser.ORDER_XML + " missing", diffNodeSet);
+          "elements in " + FileSystemTraverser.CONFIG_XML + " missing", diffNodeSet);
     }
 
     diffStructureSet.removeAll(nodeSet);
     if (diffStructureSet.size() > 0) {
       throw new SortingException(
-          "too many elements in " + FileSystemTraverser.ORDER_XML, diffStructureSet);
+          "too many elements in " + FileSystemTraverser.CONFIG_XML, diffStructureSet);
     }
   }
 

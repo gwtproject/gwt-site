@@ -55,7 +55,7 @@ public class MDTranslater {
 			}
 
 		} else {
-		  System.out.println(node.getPath());
+		  //System.out.println(node.getPath());
 			String markDown = getNodeContent(node.getPath());
 
 			// parse description for TOC

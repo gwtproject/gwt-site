@@ -4,7 +4,7 @@
 div.demo {
   padding: 3px;
   padding-left: 20px;
-  background-image: url("/webtoolkit/images/newwindow.gif");
+  background-image: url("images/newwindow.gif");
   background-repeat: no-repeat;
   background-position: left center;
 }
@@ -15,7 +15,7 @@ ul.demo {
 }
 
 ul.demo li {
-  list-style-image: url("/webtoolkit/images/newwindow.gif");
+  list-style-image: url("images/newwindow.gif");
   list-style-type: disc;
 }
 </style>

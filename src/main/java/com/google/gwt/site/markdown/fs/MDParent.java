@@ -13,6 +13,7 @@
  */
 package com.google.gwt.site.markdown.fs;
 
+import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,6 +25,8 @@ public class MDParent extends MDNode {
 
   private List<MDNode> children = new LinkedList<MDNode>();
   private List<String> sortingStructure;
+  private String href;
+  private File configFile;
 
   @Override
   public String toString() {
@@ -64,6 +67,24 @@ public class MDParent extends MDNode {
     if (displayName == null)
       return getName();
     return displayName;
+  }
+
+  public void setHref(String href) {
+    this.href = href;
+
+  }
+
+  public String getHref() {
+    return href;
+  }
+
+  public void setConfigFile(File file) {
+    this.configFile = file;
+
+  }
+
+  public File getConfigFile() {
+    return configFile;
   }
 
 }

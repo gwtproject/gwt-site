@@ -55,7 +55,7 @@
     </tr>
     <tr>
       <td>
-        <a href="latest/DevGuide.html">
+        <a href="doc/latest/DevGuide.html">
           <img src="images/docs.gif" style="float: left; margin-left: 50px;
           border: 0;" height="48" width="48" />
         </a>
