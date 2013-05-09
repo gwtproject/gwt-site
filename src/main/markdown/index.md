@@ -1,5 +1,8 @@
-<img src="images/gwt-logo.png" style="float: left; width: 100px;" height="100" width="100" />
-<div style="margin-left: 112px; margin-top: 10px;">
+GWT
+===
+GWT (pronounced 'gwit') is the official open source project for GWT releases 2.5 and onwards. This site houses links to the documentation, source code repository, issues list and information related to GWT roadmap and release. It is intended for developers interested in contributing to GWT, and for keeping people informed on new and upcoming changes to GWT, GWT related events and other news.
+
+
   <div style="font-size: 140%; font-weight: bold">Productivity for developers, performance for users</div>
   <div style="padding-top: 12px; line-height: 125%;">
     GWT is a development toolkit for building and
@@ -8,7 +11,7 @@
     It's open source, completely free, and used by thousands of developers
     around the world.
   </div>
-</div>
+
 <br /><br />
 <table class="columns" style="clear: left;">
   <tbody>

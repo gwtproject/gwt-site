@@ -31,8 +31,14 @@
   </div>
   <div id="gwt-header2">
     <div class="first"></div>
-    <div class="second"><h1>GWT</h1></div>
-    <div class="third"></div>
+	<a href="/"><div class="second"><h1>GWT</h1></div></a>
+    <div class="third">
+    	<ul class="nav">
+    		<li><a href="/">Home</a></li>
+    		<li><a href="/download.html">Download</a></li>
+    		<li><a href="/doc/latest/DevGuide.html">Docs</a></li>
+    	</ul>
+    </div>
   </div>
   <div id="gwt-header3">
     <div class="first"></div>

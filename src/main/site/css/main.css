@@ -63,6 +63,38 @@ html {
   height: 100px;
 }
 
+.nav {
+	list-style-type: none;
+	
+	height: 100px;
+	width: 625px;
+	margin: auto;
+}
+
+.nav li {
+	float: left;
+	margin-top: 18px;
+}
+
+.nav a, .nav a:VISITED,.nav a:LINK  {
+	background-image: url(navi_bg_divider.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	padding-right: 32px;
+	padding-left: 32px;
+	display: block;
+	line-height: 80px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #972108;
+}
+
+.nav a:HOVER {
+	
+	background-color: #e54827;
+	color: white;
+}
+
 #gwt-header3 .first {
   width: 75px;
   height: 30px;
