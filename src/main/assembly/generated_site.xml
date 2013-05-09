@@ -1,12 +1,12 @@
 <assembly>
-  <id>generated_docs</id>
+  <id>generated_site</id>
   <includeBaseDirectory>false</includeBaseDirectory>
   <formats>
     <format>zip</format>
   </formats>
   <fileSets>
   	<fileSet>
-  		<directory>target/generated_docs</directory>
+  		<directory>target/generated_site</directory>
   		<includes>
  			<include>**/*.html</include>
  			<include>**/*.css</include>
