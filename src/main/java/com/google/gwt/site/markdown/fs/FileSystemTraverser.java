@@ -32,273 +32,273 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class FileSystemTraverser {
 
-  public static final String CONFIG_XML = "config.xml";
+	public static final String CONFIG_XML = "config.xml";
 
-  private static class FolderConfig {
-    private List<String> sortingStructure;
-    private String folderDisplayName;
-    private String folderHref;
-    private List<String> excludeList;
+	private static class FolderConfig {
+		private List<String> sortingStructure;
+		private String folderDisplayName;
+		private String folderHref;
+		private List<String> excludeList;
 
-    public FolderConfig(
-        String folderDisplayName, String folderHref, List<String> sortingStructure, List<String> excludeList) {
-      this.folderDisplayName = folderDisplayName;
-      this.folderHref = folderHref;
-      this.sortingStructure = sortingStructure;
-      this.excludeList = excludeList;
-      
+		public FolderConfig(String folderDisplayName, String folderHref,
+				List<String> sortingStructure, List<String> excludeList) {
+			this.folderDisplayName = folderDisplayName;
+			this.folderHref = folderHref;
+			this.sortingStructure = sortingStructure;
+			this.excludeList = excludeList;
 
-    }
+		}
 
-    public List<String> getSortingStructure() {
-      return sortingStructure;
-    }
+		public List<String> getSortingStructure() {
+			return sortingStructure;
+		}
 
-    public String getFolderDisplayName() {
-      return folderDisplayName;
-    }
+		public String getFolderDisplayName() {
+			return folderDisplayName;
+		}
 
-    public String getFolderHref() {
-      return folderHref;
-    }
-    
-   
-    public List<String> getExcludeList() {
-      return excludeList;
-    }
-  }
+		public String getFolderHref() {
+			return folderHref;
+		}
 
-  public MDParent traverse(File file) throws TranslaterException {
-    MDParent mdParent = traverse(null, file, 0, "");
-    removeEmptyDirs(mdParent);
+		public List<String> getExcludeList() {
+			return excludeList;
+		}
+	}
 
-    readConfig(mdParent);
+	public MDParent traverse(File file) throws TranslaterException {
+		MDParent mdParent = traverse(null, file, 0, "");
+		removeEmptyDirs(mdParent);
 
-    return mdParent;
-  }
+		readConfig(mdParent);
 
-  private void readConfig(MDParent current) throws TranslaterException {
+		return mdParent;
+	}
 
-    if (current.getConfigFile() != null) {
-      FolderConfig config = parseConfig(current.getConfigFile());
+	private void readConfig(MDParent current) throws TranslaterException {
 
-      current.setSortingStructure(config.getSortingStructure());
-      if (config.getFolderDisplayName() != null
-          && !config.getFolderDisplayName().trim().equals("")) {
-        current.setDisplayName(config.getFolderDisplayName());
-      }
+		if (current.getConfigFile() != null) {
+			FolderConfig config = parseConfig(current.getConfigFile());
 
-      if (config.getFolderHref() != null && !config.getFolderHref().trim().equals("")) {
-        current.setHref(config.getFolderHref());
-      }
-      
-      if(config.getExcludeList() != null) {
-        for(String exclude : config.getExcludeList()) {
-          String fileName = exclude + ".md";
-          for(MDNode node: current.getChildren()) {
-            if(fileName.equals(node.getName())) {
-              node.setExcludeFromToc(true);
-              break;
-            }
-          }
-        }
-      }
-    }
+			current.setSortingStructure(config.getSortingStructure());
+			if (config.getFolderDisplayName() != null
+					&& !config.getFolderDisplayName().trim().equals("")) {
+				current.setDisplayName(config.getFolderDisplayName());
+			}
 
-    for (MDNode mdNode : current.getChildren()) {
-      if (mdNode instanceof MDParent) {
-        MDParent mdParent = (MDParent) mdNode;
-        readConfig(mdParent);
-      }
-    }
+			if (config.getFolderHref() != null
+					&& !config.getFolderHref().trim().equals("")) {
+				current.setHref(config.getFolderHref());
+			}
 
-  }
+			if (config.getExcludeList() != null) {
+				for (String exclude : config.getExcludeList()) {
+					String fileName = exclude + ".md";
+					for (MDNode node : current.getChildren()) {
+						if (fileName.equals(node.getName())) {
+							node.setExcludeFromToc(true);
+							break;
+						}
+					}
+				}
+			}
+		}
 
-  private void removeEmptyDirs(MDParent current) {
-    for (MDNode mdNode : current.getChildren()) {
-      if (mdNode instanceof MDParent) {
-        MDParent mdParent = (MDParent) mdNode;
-        removeEmptyDirs(mdParent);
-      }
+		for (MDNode mdNode : current.getChildren()) {
+			if (mdNode instanceof MDParent) {
+				MDParent mdParent = (MDParent) mdNode;
+				readConfig(mdParent);
+			}
+		}
 
-    }
+	}
 
-    if (current.getChildren().size() == 0) {
-      current.getParent().getChildren().remove(current);
-    }
+	private void removeEmptyDirs(MDParent current) {
+		for (MDNode mdNode : current.getChildren()) {
+			if (mdNode instanceof MDParent) {
+				MDParent mdParent = (MDParent) mdNode;
+				removeEmptyDirs(mdParent);
+			}
 
-  }
+		}
 
-  private MDParent traverse(MDParent parent, File file, int depth, String path)
-      throws TranslaterException {
+		if (current.getChildren().size() == 0) {
+			current.getParent().getChildren().remove(current);
+		}
 
-    if (ignoreFile(file)) {
-      return null;
-    }
+	}
 
-    if (file.isDirectory()) {
-      MDParent mdParent;
+	private MDParent traverse(MDParent parent, File file, int depth, String path)
+			throws TranslaterException {
 
-      if (parent == null) {
-        mdParent = new MDParent(null, "ROOT", null, depth, "");
-      } else {
-        mdParent = new MDParent(
-            parent, file.getName(), file.getAbsolutePath(), depth, path + file.getName() + "/");
-        parent.addChild(mdParent);
+		if (ignoreFile(file)) {
+			return null;
+		}
 
-      }
+		if (file.isDirectory()) {
+			MDParent mdParent;
 
-      File[] listFiles = file.listFiles();
-      for (File newFile : listFiles) {
-        traverse(mdParent, newFile, depth + 1, mdParent.getRelativePath());
-      }
+			if (parent == null) {
+				mdParent = new MDParent(null, "ROOT", null, depth, "");
+			} else {
+				mdParent = new MDParent(parent, file.getName(),
+						file.getAbsolutePath(), depth, path + file.getName()
+								+ "/");
+				parent.addChild(mdParent);
 
-      return mdParent;
+			}
 
-    } else if (file.isFile()) {
-      if (file.getName().equals(CONFIG_XML)) {
+			File[] listFiles = file.listFiles();
+			for (File newFile : listFiles) {
+				traverse(mdParent, newFile, depth + 1,
+						mdParent.getRelativePath());
+			}
 
-        parent.setConfigFile(file);
+			return mdParent;
 
-      } else {
-        MDNode mdNode = new MDNode(parent, file.getName(), file.getAbsolutePath(), depth,
-            path + changeExtension(file.getName()));
-        parent.addChild(mdNode);
-      }
+		} else if (file.isFile()) {
+			if (file.getName().equals(CONFIG_XML)) {
 
-    } else {
-      //TODO 
-      System.out.println("how did we get here?");
-    }
+				parent.setConfigFile(file);
 
-    return null;
+			} else {
+				MDNode mdNode = new MDNode(parent, file.getName(),
+						file.getAbsolutePath(), depth, path
+								+ changeExtension(file.getName()));
+				parent.addChild(mdNode);
+			}
+			return null;
 
-  }
+		} else {
+			throw new RuntimeException("how did we get here?");
+		}
 
-  private FolderConfig parseConfig(File file) throws TranslaterException {
-    DocumentBuilder builder;
-    List<String> sortingList = null;
-    List<String> excludeList = new LinkedList<String>();
+	}
 
-    String href = null;
-    String name = null;
+	private FolderConfig parseConfig(File file) throws TranslaterException {
+		DocumentBuilder builder;
+		List<String> sortingList = null;
+		List<String> excludeList = new LinkedList<String>();
 
-    try {
-      builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+		String href = null;
+		String name = null;
 
-      Document document = builder.parse(file);
-      Element documentElement = document.getDocumentElement();
+		try {
+			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 
-      if (!"folder".equalsIgnoreCase(documentElement.getTagName())) {
-        throw new TranslaterException(
-            "the file '" + file.getAbsolutePath() + "' does not contain a folder tag");
-      }
+			Document document = builder.parse(file);
+			Element documentElement = document.getDocumentElement();
 
-      if (documentElement.hasAttribute("name")) {
-        name = documentElement.getAttribute("name");
-      }
+			if (!"folder".equalsIgnoreCase(documentElement.getTagName())) {
+				throw new TranslaterException("the file '"
+						+ file.getAbsolutePath()
+						+ "' does not contain a folder tag");
+			}
 
-      if (documentElement.hasAttribute("href")) {
-        href = documentElement.getAttribute("href");
-      }
+			if (documentElement.hasAttribute("name")) {
+				name = documentElement.getAttribute("name");
+			}
 
-      NodeList childNodes = documentElement.getChildNodes();
-      for (int i = 0; i < childNodes.getLength(); i++) {
+			if (documentElement.hasAttribute("href")) {
+				href = documentElement.getAttribute("href");
+			}
 
-        Node node = childNodes.item(i);
-        if (node.getNodeType() != Node.ELEMENT_NODE) {
-          continue;
-        }
-        Element entryNode = (Element) node;
+			NodeList childNodes = documentElement.getChildNodes();
+			for (int i = 0; i < childNodes.getLength(); i++) {
 
-        if ("sorting".equalsIgnoreCase(entryNode.getTagName())) {
-          sortingList = parseSortingStructure(entryNode);
-        }
-        
-        if ("toc".equalsIgnoreCase(entryNode.getTagName())) {
-          NodeList tocChildren = entryNode.getChildNodes();
-          for (int j = 0; j < tocChildren.getLength(); j++) {
+				Node node = childNodes.item(i);
+				if (node.getNodeType() != Node.ELEMENT_NODE) {
+					continue;
+				}
+				Element entryNode = (Element) node;
 
-            Node tocNodes = tocChildren.item(i);
-            if (tocNodes.getNodeType() != Node.ELEMENT_NODE) {
-              continue;
-            }
-            Element tocElement = (Element) tocNodes;
-            if ("excludes".equalsIgnoreCase(tocElement.getTagName())) {
-              excludeList = parseExcludes(tocElement);
-            }
-          }
-          
-        }
+				if ("sorting".equalsIgnoreCase(entryNode.getTagName())) {
+					sortingList = parseSortingStructure(entryNode);
+				}
 
-      }
+				if ("toc".equalsIgnoreCase(entryNode.getTagName())) {
+					NodeList tocChildren = entryNode.getChildNodes();
+					for (int j = 0; j < tocChildren.getLength(); j++) {
 
-    } catch (ParserConfigurationException e) {
+						Node tocNodes = tocChildren.item(i);
+						if (tocNodes.getNodeType() != Node.ELEMENT_NODE) {
+							continue;
+						}
+						Element tocElement = (Element) tocNodes;
+						if ("excludes"
+								.equalsIgnoreCase(tocElement.getTagName())) {
+							excludeList = parseExcludes(tocElement);
+						}
+					}
 
-      e.printStackTrace();
-    } catch (SAXException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    } catch (IOException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    }
+				}
 
-    return new FolderConfig(name, href, sortingList, excludeList);
-  }
+			}
 
-  /**
-   * @param entryNode
-   * @return
-   */
-  private List<String> parseExcludes(Element excludesNode) {
-    List<String> list = new LinkedList<String>();
+		} catch (ParserConfigurationException e) {
+			throw new TranslaterException("can not construct xml parser", e);
+		} catch (SAXException e) {
+			throw new TranslaterException("error while parsing xml", e);
+		} catch (IOException e) {
+			throw new TranslaterException("can not read file", e);
+		}
 
-    NodeList childNodes = excludesNode.getChildNodes();
-    for (int i = 0; i < childNodes.getLength(); i++) {
+		return new FolderConfig(name, href, sortingList, excludeList);
+	}
 
-      Node node = childNodes.item(i);
-      if (node.getNodeType() != Node.ELEMENT_NODE) {
-        continue;
-      }
-      Element entryNode = (Element) node;
+	/**
+	 * @param entryNode
+	 * @return
+	 */
+	private List<String> parseExcludes(Element excludesNode) {
+		List<String> list = new LinkedList<String>();
 
-      if (entryNode.getChildNodes().getLength() != 1) {
-        // TODO error
-      }
-      list.add(entryNode.getChildNodes().item(0).getNodeValue());
-    }
-    return list;
-  }
+		NodeList childNodes = excludesNode.getChildNodes();
+		for (int i = 0; i < childNodes.getLength(); i++) {
 
-  private List<String> parseSortingStructure(Element sortingNode) {
-    List<String> list = new LinkedList<String>();
+			Node node = childNodes.item(i);
+			if (node.getNodeType() != Node.ELEMENT_NODE) {
+				continue;
+			}
+			Element entryNode = (Element) node;
 
-    NodeList childNodes = sortingNode.getChildNodes();
-    for (int i = 0; i < childNodes.getLength(); i++) {
+			if (entryNode.getChildNodes().getLength() != 1) {
+				// TODO error
+			}
+			list.add(entryNode.getChildNodes().item(0).getNodeValue());
+		}
+		return list;
+	}
 
-      Node node = childNodes.item(i);
-      if (node.getNodeType() != Node.ELEMENT_NODE) {
-        continue;
-      }
-      Element entryNode = (Element) node;
+	private List<String> parseSortingStructure(Element sortingNode) {
+		List<String> list = new LinkedList<String>();
 
-      if (entryNode.getChildNodes().getLength() != 1) {
-        // TODO error
-      }
-      list.add(entryNode.getChildNodes().item(0).getNodeValue());
-    }
-    return list;
-  }
+		NodeList childNodes = sortingNode.getChildNodes();
+		for (int i = 0; i < childNodes.getLength(); i++) {
 
-  private String changeExtension(String fileName) {
-    return fileName.substring(0, fileName.length() - ".md".length()) + ".html";
-  }
+			Node node = childNodes.item(i);
+			if (node.getNodeType() != Node.ELEMENT_NODE) {
+				continue;
+			}
+			Element entryNode = (Element) node;
 
-  private boolean ignoreFile(File file) {
-    // ignore all files that do not end with .md
-    return !file.isDirectory() && !file.getName().endsWith(".md")
-        && !file.getName().equals(CONFIG_XML);
-  }
+			if (entryNode.getChildNodes().getLength() != 1) {
+				// TODO error
+			}
+			list.add(entryNode.getChildNodes().item(0).getNodeValue());
+		}
+		return list;
+	}
+
+	private String changeExtension(String fileName) {
+		return fileName.substring(0, fileName.length() - ".md".length())
+				+ ".html";
+	}
+
+	private boolean ignoreFile(File file) {
+		// ignore all files that do not end with .md
+		return !file.isDirectory() && !file.getName().endsWith(".md")
+				&& !file.getName().equals(CONFIG_XML);
+	}
 
 }
