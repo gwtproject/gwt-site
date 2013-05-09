@@ -27,13 +27,7 @@ public class Util {
       fileInputStream = new FileInputStream(file);
       return IOUtils.toString(fileInputStream, "UTF-8");
     } finally {
-      if (fileInputStream != null) {
-        try {
-          fileInputStream.close();
-        } catch (IOException ignored) {
-
-        }
-      }
+      IOUtils.closeQuietly(fileInputStream);
     }
   }
 
@@ -43,14 +37,7 @@ public class Util {
       fileOutputStream = new FileOutputStream(file);
       IOUtils.write(content, fileOutputStream);
     } finally {
-      if (fileOutputStream != null) {
-        try {
-          fileOutputStream.close();
-        } catch (IOException ignored) {
-
-        }
-
-      }
+    	IOUtils.closeQuietly(fileOutputStream);
     }
   }
 }
