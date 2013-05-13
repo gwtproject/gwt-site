@@ -264,11 +264,12 @@ public class FileSystemTraverser {
 					NodeList tocChildren = entryNode.getChildNodes();
 					for (int j = 0; j < tocChildren.getLength(); j++) {
 
-						Node tocNodes = tocChildren.item(i);
+						Node tocNodes = tocChildren.item(j);
 						if (tocNodes.getNodeType() != Node.ELEMENT_NODE) {
 							continue;
 						}
 						Element tocElement = (Element) tocNodes;
+						
 						if ("excludes"
 								.equalsIgnoreCase(tocElement.getTagName())) {
 							excludeList = parseExcludes(tocElement);
