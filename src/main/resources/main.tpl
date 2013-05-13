@@ -18,6 +18,7 @@
       })();
 
     </script>
+    <script type="text/javascript" src="/gwtproject/gwtproject.nocache.js"></script>
 	</head>
 	<body>
 	
@@ -52,7 +53,9 @@
     $toc
   </div>
   <div id="gwt-content">
+    <div>
     $content
+    </div>
   </div>
   <div id="gwt-footer">
     <div class="gwt-license">Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>.</div>
