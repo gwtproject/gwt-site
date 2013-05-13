@@ -32,6 +32,7 @@ public class MDNode {
     this.path = path;
     this.depth = depth;
     this.relativePath = relativePath;
+    this.description = "";
   }
 
   public String getName() {

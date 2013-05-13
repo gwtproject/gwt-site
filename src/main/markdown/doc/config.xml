@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<folder name="Documentation" href="latest/DevGuide.html">
+<folder href="latest/DevGuide.html">
   <toc>
+  	<entries>
+  		<entry name="latest/" displayName="Latest" description="Latest GWT documentation"></entry>
+  	</entries>
     <excludes>
       <exclude>index</exclude>
     </excludes>

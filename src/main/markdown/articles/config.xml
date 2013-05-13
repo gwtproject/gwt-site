@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<folder name="Articles" href="articles.html">
-<!--   <sorting> -->
-<!--     <entry>index</entry> -->
-<!--     <entry>articles</entry> -->
-<!--     <entry>download</entry> -->
-<!--     <entry>getstarted</entry> -->
-<!--     <entry>overview</entry> -->
-<!--     <entry>latest/</entry> -->
-<!--   </sorting> -->
+<folder href="articles.html">
+	
+		<toc>
+		<entries>
+			
+			<entry name="articles" displayName="Overview" description="A summary of all articles"></entry>
+			<entry name="dom_events_memory_leaks_and_you" displayName="DOM Memory Leaks" description="How GWT tackles memory leaks"></entry>
+			<entry name="dynamic_host_page" displayName="Dynamic Host Page" description="Running GWT in dynamic host pages"></entry>
+			<entry name="elemental" displayName="Elemental" description="Elemental"></entry>
+			<entry name="fragment_merging" displayName="Fragment Merging" description="Fragment Merging"></entry>
+			<entry name="gwt-iphone" displayName="GWT iPhone" description="GWT iPhone"></entry>
+			<entry name="mvp-architecture" displayName="MVP Part1" description="MVP Part1"></entry>
+			<entry name="mvp-architecture-2" displayName="MVP Part2" description="MVP Part2"></entry>
+			<entry name="put_your_gwt_app_on_facebook" displayName="GWT on Facebook" description="GWT on Facebook"></entry>
+			<entry name="security_for_gwt_applications" displayName="Security" description="Security for GWT applications"></entry>
+			<entry name="superdevmode" displayName="Super Dev Mode" description="Super Dev Mode"></entry>
+			<entry name="testing_methodologies_using_gwt" displayName="Testing" description="Best practices on Testing GWT applications"></entry>
+			<entry name="using_gwt_for_json_mashups" displayName="JSON &amp; Mashups" description="Using GWT for JSON Mashups"></entry>
+			<entry name="using_gwt_with_hibernate" displayName="GWT &amp; Hibernate" description="GWT &amp; Hibernate"></entry>
+			
+		</entries>
+
+	</toc>
 
   
 

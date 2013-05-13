@@ -50,7 +50,7 @@ public class TocCreator {
           }
           url.append(node.getRelativePath());
 
-          buffer.append("<a href='" + url.toString() + mdParent.getHref() + "'>");
+          buffer.append("<a href='" + url.toString() + mdParent.getHref() + "' title='" + node.getDescription() + "'>");
         }
         buffer.append(node.getDisplayName());
         if (mdParent.getHref() != null) {
@@ -85,7 +85,7 @@ public class TocCreator {
 
       buffer.append("<li class='file'>");
       // TODO escape HTML
-      buffer.append("<a href='" + url.toString() + "'>" + node.getDisplayName() + "</a>");
+      buffer.append("<a href='" + url.toString() + "' title='" + node.getDescription() +  "'>" + node.getDisplayName() + "</a>");
       buffer.append("</li>");
     }
 

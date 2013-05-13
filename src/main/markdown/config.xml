@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<folder name="" href="index">
-<!--   <sorting> -->
-<!--     <entry>index</entry> -->
-<!--     <entry>articles</entry> -->
-<!--     <entry>download</entry> -->
-<!--     <entry>getstarted</entry> -->
-<!--     <entry>overview</entry> -->
-<!--     <entry>latest/</entry> -->
-<!--   </sorting> -->
+<folder href="index">
+	<toc>
+		<entries>
+			
+			<entry name="index" displayName="Home" description="Home"></entry>
+			<entry name="articles/" displayName="Articles" description="Articles"></entry>
+			<entry name="doc/" displayName="Documentation" description="Documentation"></entry>
+			<entry name="books" displayName="Books" description="GWT Books"></entry>
+			<entry name="casestudies" displayName="Case Studies" description="Case Studies for using GWT"></entry>
+			<entry name="community" displayName="Community" description="Community"></entry>
+			<entry name="community-group-charter" displayName="Community Group" description="Community Group Charter"></entry>
+			<entry name="developer_spotlight" displayName="Developer Spotlight" description="Developer Spotlight"></entry>
+			<entry name="download" displayName="Download" description="Download GWT"></entry>
+			<entry name="examples" displayName="Examples" description="Examples"></entry>
+			<entry name="gettingstarted" displayName="Getting Started" description="Getting Started with GWT"></entry>
+			<entry name="googleapilibraries" displayName="Google API Libs" description="GWT Google APIs"></entry>
+			<entry name="learnmore-sdk" displayName="SDK Learn More" description="Learn more about the GWT SDK"></entry>
+			<entry name="lifeofanissue" displayName="Life of an Issue" description="Learn about GWT and the issue tracker"></entry>
+			<entry name="makinggwtbetter" displayName="Making GWT Better" description="Learn how to contribute to GWT"></entry>
+			<entry name="overview" displayName="Overview" description="Overview"></entry>
+			<entry name="presentations" displayName="Presentations" description="Different Presentations on GWT"></entry>
+			<entry name="privacy" displayName="Privacy" description="Privacy"></entry>
+			<entry name="release-notes" displayName="Release Notes" description="Release Notes"></entry>
+			<entry name="resources" displayName="Resources" description="Resources"></entry>
+			<entry name="terms" displayName="Terms" description="Terms"></entry>
+			<entry name="usingeclipse" displayName="Using Eclipse" description="Using Eclipse"></entry>
+			<entry name="versions" displayName="Versions" description="Versions"></entry>
+			<entry name="whos_using_gwt" displayName="Who is using GWT?" description="Who is using GWT"></entry>
+		</entries>
+
+	</toc>
+
 </folder>
 
 
