@@ -138,8 +138,6 @@ html {
   padding: 0;
   margin-left: 22px;
   list-style-type: none;
-  
-  
 }
 
 #gwt-toc li {
@@ -152,10 +150,19 @@ html {
 	background-position: 0 1px;
 }
 
+#gwt-toc li.folder > ul {
+    display: none;
+}
+
+#gwt-toc li.folder.open {
+    background-image: url("../images/arrow-open.png");
+    background-repeat: no-repeat;
+    background-position: 0 1px;
+}
+
 #gwt-toc li.folder a{
 	margin-left: 12px; 
 }
-
 
 #gwt-toc a, #gwt-toc a:VISITED{
   color: #837b7a;
@@ -166,9 +173,6 @@ html {
   color: #0aa7c8;
   text-decoration: none;
 }
-
-
-
 
 #gwt-content {
   float: right;
