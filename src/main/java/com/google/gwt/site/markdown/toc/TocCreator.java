@@ -74,14 +74,22 @@ public class TocCreator {
 
     } else {
 
-      StringBuffer url = new StringBuffer();
-      url.append("/");
+      StringBuffer relativeUrl = new StringBuffer();
+      if (tocNode.getDepth() > 0) {
+        for (int i = 1; i < tocNode.getDepth(); i++) {
+          relativeUrl.append("../");
+        }
+      }
+      
+      StringBuffer absoluteUrl = new StringBuffer();
+      absoluteUrl.append("/");
+      absoluteUrl.append(node.getRelativePath());
 
-      url.append(node.getRelativePath());
+      relativeUrl.append(node.getRelativePath());
 
       buffer.append("<li class='file'>");
       // TODO escape HTML
-      buffer.append("<a href='" + url.toString() + "' title='" + node.getDescription() +  "'>" + node.getDisplayName() + "</a>");
+      buffer.append("<a href='" + relativeUrl.toString() + "' ahref='" + absoluteUrl.toString() + "' title='" + node.getDescription() +  "'>" + node.getDisplayName() + "</a>");
       buffer.append("</li>");
     }
 
