@@ -26,19 +26,19 @@ composites, your application will work on the most recent versions of Chrome, Fi
 <a name="widgets"></a>
 <h1>1. Selecting GWT widgets to implement the UI elements</h1>
 <p>
-First, look at the <a href="/web-toolkit/doc/latest/RefWidgetGallery">Widget Gallery</a> and select the GWT widget for each UI element.
+First, look at the <a href="../RefWidgetGallery.html">Widget Gallery</a> and select the GWT widget for each UI element.
 </p>
 <p>
 In the Widget Gallery the widgets have a default style and so they
 don't look exactly as they will in the final implementation of
 StockWatcher. Don't worry about that now. First you'll focus on
 getting the widgets working. Later, you will change their appearance
-with CSS in the <a href="/web-toolkit/doc/latest/tutorial/style">Applying Syles</a> section.
+with CSS in the <a href="style.html">Applying Syles</a> section.
 </p>
 
 <h2>Stock Data Table</h2>
 <p>
-GWT provides a special table widget called a <a href="/web-toolkit/doc/{{ release_path }}/RefWidgetGallery#flextable">FlexTable</a>. The FlexTable widget creates cells on demand. This is just what you need for the table containing the stock data because you don't know how many stocks the user will add. A table implemented with the FlexTable widget will expand or collapse as the user adds or removes stocks.
+GWT provides a special table widget called a <a href="RefWidgetGallery.html#flextable">FlexTable</a>. The FlexTable widget creates cells on demand. This is just what you need for the table containing the stock data because you don't know how many stocks the user will add. A table implemented with the FlexTable widget will expand or collapse as the user adds or removes stocks.
 </p>
 <h2>Buttons</h2>
 <p>
@@ -57,7 +57,7 @@ GWT provides several widgets to create fields that users can type in:
 </ul>
 <p>
 StockWatcher users will type in a stock code which is single line of text; therefore,
-implement a <a href="/web-toolkit/doc/{{ release_path }}/RefWidgetGallery#textbox">TextBox</a> widget.
+implement a <a href="../RefWidgetGallery.html#textbox">TextBox</a> widget.
 </p>
 <h2>Label</h2>
 <p>
@@ -78,19 +78,19 @@ If you're interested in taking a peek at the API reference for the GWT widgets y
     </tr>
     <tr>
         <td>a table to hold the stock data</td>
-        <td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/user/client/ui/FlexTable.html">FlexTable</a> widget</td>
+        <td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/FlexTable.html">FlexTable</a> widget</td>
     </tr>
     <tr>
         <td>two buttons, one to add stocks and one to remove them</td>
-        <td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/user/client/ui/Button.html">Button</a> widget</td>
+        <td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> widget</td>
     </tr>
     <tr>
         <td>an input box to enter the stock code</td>
-        <td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/user/client/ui/TextBox.html">TextBox</a> widget</td>
+        <td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html">TextBox</a> widget</td>
     </tr>
     <tr>
         <td>a timestamp to show the time and date of the last refresh</td>
-        <td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/user/client/ui/Label.html">Label</a> widget</td>
+        <td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Label.html">Label</a> widget</td>
     </tr>
     <tr>
         <td>a logo</td>
@@ -105,7 +105,7 @@ If you're interested in taking a peek at the API reference for the GWT widgets y
         <td>dynamic CSS</td>
     </tr>
 </table>
-<p class="note"><b>In Depth:</b> If you don't find a widget that meets the functional requirements of your application, you can create your own. For details on creating composite widgets or widgets from scratch using Java or JavaScript, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideUiCustomWidgets">Creating Custom Widgets</a>.
+<p class="note"><b>In Depth:</b> If you don't find a widget that meets the functional requirements of your application, you can create your own. For details on creating composite widgets or widgets from scratch using Java or JavaScript, see the Developer's Guide, <a href="../DevGuideUiCustomWidgets.html">Creating Custom Widgets</a>.
 </p>
 
 <a name="panels"></a>
@@ -113,11 +113,11 @@ If you're interested in taking a peek at the API reference for the GWT widgets y
 <p>
 Now that you know what widgets you'll use, you'll decide how to lay them out using GWT panels. GWT provides several types of panels to manage the layout. Panels can be nested within other panels. This is analogous to laying out your web page in HTML using nested div elements or tables. For StockWatcher, you'll use a horizontal panel nested within a vertical panel.
 </p>
-<img src="/web-toolkit/doc/latest/tutorial/images/StockWatcherUIpanel4.jpg" alt="screenshot: StockWatcher UI" />
+<img src="images/StockWatcherUIpanel4.jpg" alt="screenshot: StockWatcher UI" />
 
 <h2>Horizontal Panel</h2>
 <p>
-The two elements used to add a stock&mdash;the input box for typing in a new stock symbol and the Add button&mdash;are closely related functionally and you want keep them together visually. To lay them out side-by-side, you'll put the TextBox widget and a Button widget in a horizontal panel. In the Java code, you'll create a new instance of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/user/client/ui/HorizontalPanel.html">HorizontalPanel</a> and name it addPanel. <!-- newSymbolTextBox and addStockButton -->
+The two elements used to add a stock&mdash;the input box for typing in a new stock symbol and the Add button&mdash;are closely related functionally and you want keep them together visually. To lay them out side-by-side, you'll put the TextBox widget and a Button widget in a horizontal panel. In the Java code, you'll create a new instance of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HorizontalPanel.html">HorizontalPanel</a> and name it addPanel. <!-- newSymbolTextBox and addStockButton -->
 </p>
 
 <h2>Vertical Panel</h2>
@@ -130,7 +130,7 @@ You want to lay out the remaining elements vertically:
     <li>the Label widget for the timestamp</li>
 </ul>
 <p>
-You'll do this with a vertical panel. In the Java code, you'll create a new instance of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/user/client/ui/VerticalPanel.html">VerticalPanel</a> and name it mainPanel.
+You'll do this with a vertical panel. In the Java code, you'll create a new instance of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/VerticalPanel.html">VerticalPanel</a> and name it mainPanel.
 </p>
 <h2>Root Panel</h2>
 <p>
@@ -229,7 +229,7 @@ You can follow this section of the tutorial step-by-step, or you can cut and pas
     <li>
     <div class="header">Instantiate each widget and panel using class field initializers.</div>
     <div class="details">Open <b>StockWatcher/src/com/google/gwt/sample/stockwatcher/client/StockWatcher.java</b>.</div>
-    <div class="details">In StockWatcher.java, replace <em>all</em> the existing code for the <a href="/web-toolkit/doc/latest/tutorial/create#starter">starter application</a> (from the imports down to the handler) with the following code.</div>
+    <div class="details">In StockWatcher.java, replace <em>all</em> the existing code for the <a href="create.html#starter">starter application</a> (from the imports down to the handler) with the following code.</div>
     <div class="details">
 <pre class="code">
 <span class="highlight">package com.google.gwt.sample.stockwatcher.client;
@@ -615,7 +615,7 @@ One benefit of using GWT in your AJAX application development is that you can se
     </li>
     <li>
     <div class="header">The browser displays your first iteration of the StockWatcher application.  The button will not work until we later implement it.</div>
-    <div class="details"><img class="screenshot" src="/web-toolkit/doc/latest/tutorial/images/BuildUI.png" alt="StockWatcher: Building the UI Elements" /></div>
+    <div class="details"><img class="screenshot" src="images/BuildUI.png" alt="StockWatcher: Building the UI Elements" /></div>
     <div class="details">StockWatcher displays the header of the flex
     table, the input box, and the Add button. You haven't yet set the text for the Label, so it isn't displayed. You'll do that after you've implemented the stock refresh mechanism.</div>
     </li>
@@ -642,7 +642,7 @@ At this point you've built the basic UI components of StockWatcher by implementi
 Now you're ready to code event handling on the client. You'll wire up the widgets to listen for events and write the code that responds to those events.
 </p>
 <p>
-<a href="/web-toolkit/doc/latest/tutorial/manageevents">Step 4: Managing Events on the Client</a>
+<a href="manageevents.html">Step 4: Managing Events on the Client</a>
 </p>
 
 

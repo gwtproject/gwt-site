@@ -20,10 +20,8 @@ In this tutorial, you'll learn how to prepare an application to support other la
 </ol>
 
 <p class="note" style="margin-left: 1.2em; margin-right: 1.5em;">
-<b>Note:</b> For a broader guide to internationalizing a GWT application, see <a href="/web-toolkit/doc/latest/DevGuideI18n">Internationalization</a>.
+<b>Note:</b> For a broader guide to internationalizing a GWT application, see <a href="../DevGuideI18n.html">Internationalization</a>.
 </p>
-
-{% include "web-toolkit/doc/latest/tutorial/_beforeyoubegin.html" %}
 
 <a name="design"></a>
 <h2>1. Design</h2>
@@ -33,7 +31,7 @@ In this tutorial, you'll learn how to prepare an application to support other la
 If you look at the current English-language interface for StockWatcher, you will see that there are two types of text that can be localized: constants and messages.
 </p>
 
-<img src="/web-toolkit/doc/latest/tutorial/images/i18nEnglish.png" alt="screenshot: StockWatcher English UI" />
+<img src="images/i18nEnglish.png" alt="screenshot: StockWatcher English UI" />
 
 <h3>Selecting an internationalization technique</h3>
 <p>
@@ -41,19 +39,19 @@ When internationalizing a GWT application, you have several techniques to choose
 Because StockWatcher has only a few constants and parameterized messages in its user interface, you'll use Static String Internationalization.
 </p>
 <p>
-<a href="/web-toolkit/doc/{{ release_path }}/DevGuideI18n#DevGuideStaticStringInternationalization">Static String Internationalization</a><br />
+<a href="../DevGuideI18n.html#DevGuideStaticStringInternationalization">Static String Internationalization</a><br />
 Static string initialization requires very little overhead at runtime and therefore is a very efficient technique for translating both constant and parameterized strings.
 It is also the simplest technique to implement.
 Static string internationalization uses standard Java properties files to store translated strings and parameterized messages, then implements strongly-typed Java interfaces to retrieve their values.
 </p>
 <p>
-<a href="/web-toolkit/doc/{{ release_path }}/DevGuideI18n#DevGuideDynamicStringInternationalization">Dynamic String Internationalization</a><br />
+<a href="../DevGuideI18n.html#DevGuideDynamicStringInternationalization">Dynamic String Internationalization</a><br />
 Dynamic string internationalization is slower than static string internationalization, but is very flexible.
 Applications using this technique look up localized strings in the module's host page; therefore, they do not need to be recompiled when you add a new locale.
 If you need to integrate a GWT application with an existing server-side localization system, dynamic string internationalization is the option to consider.
 </p>
 <p>
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/i18n/client/Localizable.html">Localizable Interface</a><br />
+<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Localizable.html">Localizable Interface</a><br />
 The most powerful technique is to implement the Localizable interface. Implementing Localizable allows you to go beyond simple string substitution and create localized versions of custom types. It's an advanced internationalization technique that you probably won't have to use very often.
 </p>
 
@@ -86,7 +84,7 @@ The process you'll follow for Static String Internationalization is straightforw
 </ol>
 </p>
 <p class="note">
-<b>Tip:</b> GWT provides a command-line tool, <a href="/web-toolkit/doc/{{ release_path }}/RefCommandLineTools#i18nCreator">i18nCreator</a>,  that automates the creation of Java interfaces to access strings in properties files. This tool comes in handy, especially if you have existing localized properties files you'd like to reuse.
+<b>Tip:</b> GWT provides a command-line tool, <a href="../RefCommandLineTools.html#i18nCreator">i18nCreator</a>,  that automates the creation of Java interfaces to access strings in properties files. This tool comes in handy, especially if you have existing localized properties files you'd like to reuse.
 </p>
 
 <h3>Implement the Constants Interface</h3>
@@ -146,7 +144,7 @@ public interface StockWatcherConstants extends Constants {
     </li>
 </ol>
 <p class="note">
-<b>Implementation Note:</b> GWT provides another interface (<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/i18n/client/ConstantsWithLookup.html">ConstantsWithLookup</a>) which is similar to Constants except that it also contains methods for looking up a localized string dynamically by name at runtime.
+<b>Implementation Note:</b> GWT provides another interface (<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/ConstantsWithLookup.html">ConstantsWithLookup</a>) which is similar to Constants except that it also contains methods for looking up a localized string dynamically by name at runtime.
 </p>
 
 <h3>Create the German translation of constants</h3>
@@ -208,7 +206,7 @@ In GWT, properties files indicate the locale with a language code suffix (just l
 <p>
 First create the Java interface (StockWatcherMessages).
 It accesses the properties files which hold the translations of each parameterized message.
-This interface implements the GWT <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/i18n/client/Messages.html">Messages</a> interface.
+This interface implements the GWT <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Messages.html">Messages</a> interface.
 Unlike the StockWatcherConstants interface, the methods in this interface contain parameters.
 When you call these methods, the arguments you pass will replace the placeholders you left in the strings in the properties files.
 This interface is bound automatically to any StockWatcherMessages*.properties files you create because of its name.
@@ -440,7 +438,7 @@ http://localhost:8888/StockWatcher.html?gwt.codesvr=127.0.0.1:9997<span class="h
         <div class="details">The error message should display in German.</div>
         <div class="details">Notice, too, that the date and currency formats are localized.</div>
         <div class="details">
-        <img src="/web-toolkit/doc/latest/tutorial/images/i18nGerman.png" alt="screenshot: StockWatcher German UI" />
+        <img src="images/i18nGerman.png" alt="screenshot: StockWatcher German UI" />
         </div>
     </li>
    <li>
@@ -493,6 +491,6 @@ Thus, if you want to preserve the user-specified locale, you'll either need to p
 At this point you've used Static String Internationalization to generate a German-language permutation of your GWT application. You've implemented localization so that the appropriate permutation loads based on the user's locale.
 </p>
 <p>
-To learn more about all three internationalization techniques, the GWT I18N module, or how to use GWT i18nCreator to reuse existing localized properties files, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideI18n">Internationalization</a>.
+To learn more about all three internationalization techniques, the GWT I18N module, or how to use GWT i18nCreator to reuse existing localized properties files, see the Developer's Guide, <a href="../DevGuideI18n.html">Internationalization</a>.
 </p>
 

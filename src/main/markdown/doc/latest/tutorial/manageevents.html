@@ -43,7 +43,7 @@ Let's review the StockWatcher requirements to see what events occur.
     </tr>
 </table>
 <p>
-GWT provides a number of different event handler interfaces. To handle click events on the Add and Remove buttons, you'll use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/event/dom/client/ClickHandler.html">ClickHandler</a> interface. To handle keyboard events in the input box, you'll use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/event/dom/client/KeyPressHandler.html">KeyPressHandler</a> interface.
+GWT provides a number of different event handler interfaces. To handle click events on the Add and Remove buttons, you'll use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html">ClickHandler</a> interface. To handle keyboard events in the input box, you'll use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/event/dom/client/KeyPressHandler.html">KeyPressHandler</a> interface.
 </p>
 
 <p class="note">
@@ -226,7 +226,7 @@ In StockWatcher, users will enter the stock codes of the stocks they want to mon
     <li>Add a button for removing the stock from the list.</li>
 </ol>
 <p>
-In this section, you'll code the first response, validating the input, just to see if the event handler interfaces are working. In the next section, <a href="/web-toolkit/doc/latest/tutorial/codeclient">Coding Functionality on the Client</a>, you'll code the rest of the steps to add the stock.
+In this section, you'll code the first response, validating the input, just to see if the event handler interfaces are working. In the next section, <a href="codeclient.html">Coding Functionality on the Client</a>, you'll code the rest of the steps to add the stock.
 </p>
 <p>
 You'll implement this functionality in the addStock method.
@@ -307,14 +307,14 @@ At this point you should be able to enter text in the input box. If you use an i
     </li>
 </ol>
 <p>
-<img src="/web-toolkit/doc/latest/tutorial/images/ManageEvents.png" alt="Validation Error Message" />
+<img src="images/ManageEvents.png" alt="Validation Error Message" />
 </p>
 
 <p class="note">
 <b>Tip:</b> Changes made to your Java code are immediately shown in the browser after pressing refresh. If development mode is already running, you don't need to restart it. Just click the Refresh button in your browser to reload your updated GWT code.
 </p>
 <p>
-Although you have not compiled StockWatcher yet, you can test it in production mode here: <a href="/web-toolkit/doc/latest/tutorial/manageevents/StockWatcher">Run StockWatcher</a>
+Although you have not compiled StockWatcher yet, you can test it in production mode here: <a href="manageevents/StockWatcher">Run StockWatcher</a>
 </p>
 
 
@@ -326,6 +326,6 @@ At this point you've implemented event handler interfaces for mouse and keyboard
 Now you're ready to implement the code on the client that adds the stock to the table and provide a button to remove it. You will also display the stock prices and display data and a timestamp showing when the data was last updated.
 </p>
 <p>
-<a href="/web-toolkit/doc/latest/tutorial/codeclient">Step 5: Coding Functionality on the Client</a>
+<a href="codeclient.html">Step 5: Coding Functionality on the Client</a>
 </p>
 

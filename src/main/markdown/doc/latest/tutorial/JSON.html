@@ -26,10 +26,8 @@ Additional information follows:
 </ol>
 
 <p class="note" style="margin-left: 1.2em; margin-right: 1.5em;">
-<b>Note:</b> For a broader guide to client-server communication in a GWT application, see <a href="/web-toolkit/doc/latest/DevGuideServerCommunication">Communicate with a Server</a>.
+<b>Note:</b> For a broader guide to client-server communication in a GWT application, see <a href="../DevGuideServerCommunication.html">Communicate with a Server</a>.
 </p>
-
-{% include "web-toolkit/doc/latest/tutorial/_beforeyoubegin.html" %}
 
 <h3>What is JSON?</h3>
 <p>
@@ -99,7 +97,7 @@ In this tutorial, you'll create a servlet to generate the stock data in JSON for
 To serve up hypothetical stock quotes in JSON format, you'll create a servlet. To use the embedded servlet container (Jetty) to serve the data, add the JsonStockData class to the server directory of your StockWatcher project and reference the servlet in the web application deployment descriptor (web.xml).
 </p>
 <p>
-<b>Note</b>: If you have a web server (Apache, IIS, etc) installed locally and PHP installed, you could instead <a href="/web-toolkit/doc/latest/tutorial/JSONphp">write a PHP script to generate the stock data</a> and make the call to your local server. What's important for this example is that the stock data is JSON-encoded and that the server is local.
+<b>Note</b>: If you have a web server (Apache, IIS, etc) installed locally and PHP installed, you could instead <a href="JSONphp.html">write a PHP script to generate the stock data</a> and make the call to your local server. What's important for this example is that the stock data is JSON-encoded and that the server is local.
 </p>
 <ol class="instructions">
     <li>
@@ -230,7 +228,7 @@ Because you've mapped the StockPriceService to "stockPrices" and the module rena
     </li>
     <li>
         <div class="header">The servlet generates an array of simulated stock data encoded in JSON format.</div>
-        <div class="details"><img src="/web-toolkit/doc/latest/tutorial/images/JSONdata.png" alt="JSON formatted stock data" /></div>
+        <div class="details"><img src="images/JSONdata.png" alt="JSON formatted stock data" /></div>
     </li>
 </ol>
 
@@ -287,7 +285,7 @@ JSNI methods are called just like any normal Java method.
 They can be static or instance methods.
 </p>
 <p class="note">
-<b>In Depth:</b> For tips, tricks, and caveats about mixing handwritten JavaScript into your Java source code, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideCodingBasics#DevGuideJavaScriptNativeInterface">JavaScript Native Interface (JSNI)</a>.
+<b>In Depth:</b> For tips, tricks, and caveats about mixing handwritten JavaScript into your Java source code, see the Developer's Guide, <a href="../DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface">JavaScript Native Interface (JSNI)</a>.
 </p>
 
 <h3>Converting JSON into JavaScript objects</h3>
@@ -332,7 +330,7 @@ As in JavaScript, an object is actually just an unordered set of name/value pair
 In JSON objects, however, the values can only be other JSON types (never functions containing executable JavaScript code).
 </p>
 <p class="note">
-Another technique for a converting a JSON string into something you can work with is to use the static <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/json/client/JSONParser.html">JSONParser.parse(String)</a> method. GWT contains a full set of JSON types for manipulating JSON data in the com.google.gwt.json.client package. If you prefer to parse the JSON data, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideCodingBasics#DevGuideJSON">Working with JSON</a>. Ultimately both techniques rely on the JavaScript eval() function; so you are still responsible for ensuring that you are using a trusted source of JSON data.
+Another technique for a converting a JSON string into something you can work with is to use the static <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/json/client/JSONParser.html">JSONParser.parse(String)</a> method. GWT contains a full set of JSON types for manipulating JSON data in the com.google.gwt.json.client package. If you prefer to parse the JSON data, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideCodingBasics#DevGuideJSON">Working with JSON</a>. Ultimately both techniques rely on the JavaScript eval() function; so you are still responsible for ensuring that you are using a trusted source of JSON data.
 </p>
 
 <h3>Creating an overlay type</h3>
@@ -711,7 +709,7 @@ Change: <code>private static final String JSON_URL = GWT.getModuleBaseURL()
     <li>
         <div class="header">Enter a stock code.</div>
         <div class="details">StockWatcher displays a red error message. Valid stock code data stops being refreshed.</div>
-        <div class="details"><img src="/web-toolkit/doc/latest/tutorial/images/JSONerrormessage.png" alt="screenshot: JSON error message" /></div>
+        <div class="details"><img src="images/JSONerrormessage.png" alt="screenshot: JSON error message" /></div>
     </li>
     <li>
         <div class="header">In StockWatcher,java, correct the URL.</div>
@@ -731,12 +729,12 @@ At this point you've retrieved JSON-encoded stock data from a local server and u
 To learn more about client-server communication, see the Developer's Guide, Communicating with the Server. <br />Topics include:
 </p>
 <ul>
-    <li><a href="/web-toolkit/doc/{{ release_path }}/DevGuideServerCommunication#DevGuideHttpRequests">Making HTTP Requests</a></li>
-    <li><a href="/web-toolkit/doc/{{ release_path }}/DevGuideCodingBasics#DevGuideJSON">Working with JSON</a></li>
+    <li><a href="../DevGuideServerCommunication.html#DevGuideHttpRequests">Making HTTP Requests</a></li>
+    <li><a href="../DevGuideCodingBasics.html#DevGuideJSON">Working with JSON</a></li>
 </ul>
 
 <p>
-To learn more about JSNI, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideCodingBasics#DevGuideJavaScriptNativeInterface">JavaScript Native Interface (JSNI)</a>. <br />Topics include:
+To learn more about JSNI, see the Developer's Guide, <a href="../DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface">JavaScript Native Interface (JSNI)</a>. <br />Topics include:
 </p>
 <ul>
     <li>Writing Native JavaScript Method</li>

@@ -21,7 +21,7 @@ At this point, you've created the initial implementation of the StockWatcher app
 </p>
 
 <p class="note" style="margin-left: 1.2em; margin-right: 1.5em;">
-<b>Note:</b> For a broader guide to client-server communication in a GWT application, see <a href="/web-toolkit/doc/latest/DevGuideServerCommunication">Communicate with a Server</a>.
+<b>Note:</b> For a broader guide to client-server communication in a GWT application, see <a href="../DevGuideServerCommunication.html">Communicate with a Server</a>.
 </p>
 
 <h2>Choosing an Implementation Strategy</h2>
@@ -37,7 +37,7 @@ GWT RPC is a mechanism for passing Java objects to and from a server over standa
 You can use the GWT RPC framework to transparently make calls to Java servlets and let GWT take care of low-level details like object serialization.
 </p>
 <p>
-To try this out, see the tutorial, <a href="/web-toolkit/doc/latest/tutorial/RPC">Making Remote Procedure Calls</a>.
+To try this out, see the tutorial, <a href="RPC.html">Making Remote Procedure Calls</a>.
 </p>
 
 <h3>Retrieving JSON Data via HTTP</h3>
@@ -45,7 +45,7 @@ To try this out, see the tutorial, <a href="/web-toolkit/doc/latest/tutorial/RPC
 If your application talks to a server that cannot host Java servlets, or one that already uses another data format like JSON or XML, you can make HTTP requests to retrieve the data. GWT provides generic HTTP classes that you can use to build the request, and JSON and XML client classes that you can use to process the response. You can also use overlay types to convert JavaScript objects into Java objects that you can interact with in your IDE while developing.
 </p>
 <p>
-To try this out, see the tutorial, <a href="/web-toolkit/doc/latest/tutorial/JSON">Retrieving JSON Data</a>. Although this tutorial covers making HTTP requests only for JSON data, the code can be adapted to work with XML data instead.
+To try this out, see the tutorial, <a href="JSON.html">Retrieving JSON Data</a>. Although this tutorial covers making HTTP requests only for JSON data, the code can be adapted to work with XML data instead.
 </p>
 
 
@@ -56,10 +56,10 @@ To try this out, see the tutorial, <a href="/web-toolkit/doc/latest/tutorial/JSO
 If you're creating a mashup application that needs to use data from one or more remote web servers, you will have to work around SOP (Same Origin Policy) access restrictions. In this tutorial, you'll use JavaScript Native Interface (JSNI) to write a &lt;script&gt; tag that retrieves JSON with padding (JSONP).
 </p>
 <p>
-To try this out, see the tutorial, <a href="/web-toolkit/doc/latest/tutorial/Xsite">Making Cross-Site Requests</a>.
+To try this out, see the tutorial, <a href="Xsite.html">Making Cross-Site Requests</a>.
 </p>
 <p class="note">
-Note: There is a variety of public sources of JSON-formatted data you can practice with, including <a href="/gdata/">Google Data APIs</a> and <a href="http://developer.yahoo.com/">Yahoo! Web Services</a>.
+Note: There is a variety of public sources of JSON-formatted data you can practice with, including <a href="//developers.google.com/gdata/">Google Data APIs</a> and <a href="http://developer.yahoo.com/">Yahoo! Web Services</a>.
 </p>
 
 <h2>Making Asynchronous Calls</h2>
@@ -83,7 +83,7 @@ If you are new to AJAX development, the hardest thing to get used to about async
 </p>
 
 <p class="note">
-For more information on making asynchronous calls, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideServerCommunication#DevGuideGettingUsedToAsyncCalls">Getting Used to Asynchronous Calls</a>
+For more information on making asynchronous calls, see the Developer's Guide, <a href="../DevGuideServerCommunication.html#DevGuideGettingUsedToAsyncCalls">Getting Used to Asynchronous Calls</a>
 </p>
 
 

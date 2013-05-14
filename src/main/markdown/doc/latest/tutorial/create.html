@@ -31,7 +31,7 @@ One of the benefits of using GWT is that you can leverage the tools, such as ref
 <p>
 The Google Plugin for Eclipse contains a wizard for creating GWT applications.  Here are steps for creating a starter application.
 <ol>
-  <li>In the toolbar, click the New Web Application Project button <img src="/web-toolkit/doc/latest/tutorial/images/NewWebApplicationProject.png" alt="icon"/>.</li>
+  <li>In the toolbar, click the New Web Application Project button <img src="images/NewWebApplicationProject.png" alt="icon"/>.</li>
   <li>Fill out the project details:
     <ol>
       <li>Enter the project name "StockWatcher".</li>
@@ -168,9 +168,9 @@ Created file StockWatcher/war/WEB-INF/lib/gwt-servlet.jar
 </ul>
 <p class="note">
 To see the complete list of options for webAppCreator, see Command-line Tools,
-<a href="/web-toolkit/doc/{{ release_path }}/RefCommandLineTools#webAppCreator">webAppCreator</a>.
+<a href="../RefCommandLineTools.html#webAppCreator">webAppCreator</a>.
 <br />
-For more information on project structure, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideOrganizingProjects#DevGuideDirectoriesPackageConventions">Directory/Package Conventions</a>.
+For more information on project structure, see the Developer's Guide, <a href="../DevGuideOrganizingProjects.html#DevGuideDirectoriesPackageConventions">Directory/Package Conventions</a>.
 </p>
 
 <a name="test"></a>
@@ -191,7 +191,7 @@ To check that all the project components were created, run the starter applicati
     </li>
     <li>
         <div class="header">When the development mode tab opens, right-click on the URL to copy it.</div>
-        <p><img src="/web-toolkit/doc/latest/tutorial/images/DevModeTab.png" /></p>
+        <p><img src="images/DevModeTab.png" /></p>
     </li>
     <li>
         <div class="header">Paste the URL into your browser of choice.</div>
@@ -220,7 +220,7 @@ button to launch StockWatcher in development mode using your default browser. Or
 paste it into the browser of your choice.
 </p>
 <p>
-<img src="/web-toolkit/doc/latest/tutorial/images/DevModeNoEclipse.png" />
+<img src="images/DevModeNoEclipse.png" />
 </p>
 
 <h3>Connecting to the development mode code server (with and without Eclipse)</h3>
@@ -232,7 +232,7 @@ install the Google Web Toolkit Developer Plugin. Follow the instructions on the 
 and return to the same URL.
 </p>
 <p>
-<img src="/web-toolkit/doc/latest/tutorial/images/MissingPlugin.png" />
+<img src="images/MissingPlugin.png" />
 </p>
 
 <a name="starter"></a>
@@ -241,7 +241,7 @@ and return to the same URL.
 When you create a new web application with GWT, by default it creates a simple, starter application as shown below.  This application helps you test that all the components are installed and configured before you start development. When you start writing the StockWatcher application, you'll replace this starter application code with your own.
 </p>
 <p>
-<img src="/web-toolkit/doc/latest/tutorial/images/CreateStarterApplication.png" />
+<img src="images/CreateStarterApplication.png" />
 </p>
 
 <a name="components"></a>
@@ -308,7 +308,7 @@ To provide better cross-browser compatibility, GWT sets the doctype declaration 
 GWT provides a mechanism for helping your application meet users' expectations of a web page, specifically in their ability to use the browser's back button in such situations as a multi-page wizard or a shopping cart/checkout scenario. The host page contains the iframe tag necessary for incorporating history support in your GWT application.
 </p>
 <p class="note">
-To learn more about managing browser history in a GWT application, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideCodingBasics#DevGuideHistory">History</a>.
+To learn more about managing browser history in a GWT application, see the Developer's Guide, <a href="../DevGuideCodingBasics.html#DevGuideHistory">History</a>.
 </p>
 
 <h3>The Application Style Sheet</h3>
@@ -316,7 +316,7 @@ To learn more about managing browser history in a GWT application, see the Devel
 Open the application style sheet, StockWatcher/war/StockWatcher.css.
 </p>
 <p>
-A style sheet is associated with each project. By default, the application style sheet, StockWatcher.css, contains style rules for the starter application. In the <a href="/web-toolkit/doc/latest/tutorial/style">Applying Style</a> section of this tutorial, you'll replace the style rules for the starter application, with the style rules for the StockWatcher application.
+A style sheet is associated with each project. By default, the application style sheet, StockWatcher.css, contains style rules for the starter application. In the <a href="style.html">Applying Style</a> section of this tutorial, you'll replace the style rules for the starter application, with the style rules for the StockWatcher application.
 </p>
 <p>
 Just as for any web page, you can specify multiple style sheets. List multiple style sheets in their order of inheritance; that is, with the most specific style rules in the last style sheet listed.
@@ -329,7 +329,7 @@ Open the source for the StockWatcher entry point class, StockWatcher/src/com/goo
 <p>Currently, StockWatcher.java contains the Java source for the starter application. In this tutorial, you'll replace this code with the client-side code for StockWatcher.
 </p>
 <p>
-The StockWatcher class implements the GWT interface <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/core/client/EntryPoint.html">EntryPoint</a>. It contains the method onModuleLoad. Because the StockWatcher class is specified as the entry point class in StockWatcher's module definition, when you launch StockWatcher the onModuleLoad method is called.
+The StockWatcher class implements the GWT interface <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/EntryPoint.html">EntryPoint</a>. It contains the method onModuleLoad. Because the StockWatcher class is specified as the entry point class in StockWatcher's module definition, when you launch StockWatcher the onModuleLoad method is called.
 </p>
 <p>
 The StockWatcher class inherits functionality via other GWT modules you included in StockWatcher's module definition (StockWatcher.gwt.xml). For example, when building the user interface, you'll be able to include types and resources from the package com.google.gwt.user.client.ui because it is part of the GWT core functionality included in the GWT module com.google.gwt.user.User.
@@ -343,7 +343,7 @@ At this point you've created the stub files for the StockWatcher application and
 Now you're ready to design the StockWatcher application.
 </p>
 <p>
-<a href="/web-toolkit/doc/latest/tutorial/design">Step 2: Designing the Application</a>
+<a href="design.html">Step 2: Designing the Application</a>
 </p>
 
 

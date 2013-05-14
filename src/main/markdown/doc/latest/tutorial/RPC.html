@@ -21,7 +21,7 @@ In this section, you'll make a GWT remote procedure call to a server-side method
 </ol>
 
 <p class="note" style="margin-left: 1.2em; margin-right: 1.5em;">
-<b>Note:</b> For a broader guide to RPC communication in a GWT application, see <a href="/web-toolkit/doc/latest/DevGuideServerCommunication#DevGuideRemoteProcedureCalls">Communicate with a Server - Remote Procedure Calls</a>.
+<b>Note:</b> For a broader guide to RPC communication in a GWT application, see <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">Communicate with a Server - Remote Procedure Calls</a>.
 </p>
 
 {% include "web-toolkit/doc/latest/tutorial/_beforeyoubegin.html" %}
@@ -48,7 +48,7 @@ When setting up GWT RPC, you will focus on these three elements involved in call
     <li>the Java data objects that pass between the client and server<br />Both the server and the client have the ability to serialize and deserialize data so the data objects can be passed between them as ordinary text.</li>
 </ul>
 
-<img src="/web-toolkit/doc/latest/tutorial/images/AnatomyOfServices.png" alt="GWT RPC Plumbing" />
+<img src="images/AnatomyOfServices.png" alt="GWT RPC Plumbing" />
 <p>
 In order to define your RPC interface, you need to write three components:
 </p>
@@ -104,7 +104,7 @@ To create the service, you will:
 
 <h3>Defining the service: the StockPriceService interface</h3>
 <p>
-In GWT, an RPC service is defined by an interface that extends the GWT <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/user/client/rpc/RemoteService.html">RemoteService</a>  interface. For the StockPriceService interface, you need to define only one method: a method that will accept an array of stock symbols and return the data associated with each stock as an array of StockPrice objects.
+In GWT, an RPC service is defined by an interface that extends the GWT <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/RemoteService.html">RemoteService</a>  interface. For the StockPriceService interface, you need to define only one method: a method that will accept an array of stock symbols and return the data associated with each stock as an array of StockPrice objects.
 </p>
 
 <ol class="instructions">
@@ -145,7 +145,7 @@ public interface StockPriceService extends RemoteService {
 Now create the class (StockPriceServiceImpl) that lives on the server. As defined in the interface, StockPriceServiceImpl will contain only one method, the method that returns the stock price data.
 </p>
 <p>
-To do this, implement the service interface by creating a class that also extends the GWT <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> class. RemoteServiceServlet does the work of deserializing incoming requests from the client and serializing outgoing responses.
+To do this, implement the service interface by creating a class that also extends the GWT <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> class. RemoteServiceServlet does the work of deserializing incoming requests from the client and serializing outgoing responses.
 </p>
 
 <h4>Packaging server-side code</h4>
@@ -379,7 +379,7 @@ and choose the "Create asynchronous RemoteService interface" option to automatic
 <p>
 When you call a remote procedure, you specify a callback method which executes when the call completes.
 
-You specify the callback method by passing an <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/user/client/rpc/AsyncCallback.html">AsyncCallback</a> object to the service proxy class.
+You specify the callback method by passing an <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html">AsyncCallback</a> object to the service proxy class.
 
 The AsyncCallback object contains two methods, one of which is called depending on whether the call failed or succeeded: onFailure(Throwable) and onSuccess(T).
 </p>
@@ -484,7 +484,7 @@ GWT honors the <i>transient</i> keyword, so values in those fields are not seria
 <b>Note:</b> GWT serialization is not the same as serialization based on the Java Serializable interface.<br />
 
 
-For more information on what is and is not serializable in GWT, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideServerCommunication#DevGuideSerializableTypes">Serializable Types</a>.
+For more information on what is and is not serializable in GWT, see the Developer's Guide, <a href="../DevGuideServerCommunication.html#DevGuideSerializableTypes">Serializable Types</a>.
 </p>
 
 <h4>Serializing StockPrice</h4>
@@ -774,7 +774,7 @@ At this point, you've created and checked for an exception&mdash;the delisted st
     </li>
     <li>
         <div class="header">StockWatcher displays a red error message. Valid stock code data stops being refreshed.</div>
-        <div class="details"><img src="/web-toolkit/doc/latest/tutorial/images/RPCerrormessage.png" alt="screenshot: RPC error message" /></div>
+        <div class="details"><img src="images/RPCerrormessage.png" alt="screenshot: RPC error message" /></div>
 
     </li>
     <li>
@@ -791,7 +791,7 @@ At this point, you've created and checked for an exception&mdash;the delisted st
 At this point, you've made remote procedure calls to get stock data from the server.
 </p>
 <p>
-For more information about GWT RPC, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideServerCommunication#DevGuideRemoteProcedureCalls">Remote Procedure Calls</a>.
+For more information about GWT RPC, see the Developer's Guide, <a href="../DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">Remote Procedure Calls</a>.
 </p>
 <a name="deploy"></a>
 <h3>Deploying services into production</h3>
@@ -800,4 +800,4 @@ During testing, you can use development mode's built-in servlet container to tes
 </p>
 
 <p class="note">
-To learn how to deploy GWT RPC servlets to a production server, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideServerCommunication#DevGuideRPCDeployment">Deploying RPC</a></p>
+To learn how to deploy GWT RPC servlets to a production server, see the Developer's Guide, <a href="../DevGuideServerCommunication.html#DevGuideRPCDeployment">Deploying RPC</a></p>

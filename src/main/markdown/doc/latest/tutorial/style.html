@@ -11,7 +11,7 @@ code, .code {font-size: 9pt; font-family: Courier, Courier New, monospace; color
 At this point, StockWatcher is functional. Now you want to give it some visual style.
 </p>
 <p>
-<img src="/web-toolkit/doc/latest/tutorial/images/StyleBefore.png" alt="StockWatcher before applying styles" />
+<img src="images/StyleBefore.png" alt="StockWatcher before applying styles" />
 </p>
 <p>
 In this section, you'll:
@@ -220,7 +220,7 @@ In GWT, each class of widget has an associated style name (like gwt-Button) that
     </tr>
 </table>
 <p class="note">
-<b>Tip:</b> You can look up the name of the style rule (the CSS selector) for each widget by accessing the GWT API Reference via the <a href="/web-toolkit/doc/{{ release_path }}/RefWidgetGallery">Widget Gallery</a>.
+<b>Tip:</b> You can look up the name of the style rule (the CSS selector) for each widget by accessing the GWT API Reference via the <a href="../RefWidgetGallery.html">Widget Gallery</a>.
 </p>
 <p>
 GWT takes advantage of the fact that you can associate multiple classes with an HTML element so that you can specify a style for a specific GWT-generated element and not affect others of the same type. In this section, you'll learn how to set the secondary class on a GWT-generated HTML element.
@@ -478,7 +478,7 @@ You've formatted the header row of the flex table, which is displayed when Stock
 <p>
 Here the summary of the changes we've done so far.
 </p>
-<img src="/web-toolkit/doc/latest/tutorial/images/StyleSecondary.png" alt="StockWatcher Summary" />
+<img src="images/StyleSecondary.png" alt="StockWatcher Summary" />
 
 <h5>Changes to StockWatcher.css</h5>
 <pre class="code">
@@ -725,7 +725,7 @@ In GWT, depending on the HTML element, you can set some attributes in the Java c
 <p>
 Your application's HTML host page can include whatever additional static HTML elements you require. For example, in StockWatcher, you'll add the Google Code logo. To include images, put them in the project's public directory. The GWT compiler will copy all the necessary files to the output directory for deployment.
 </p>
-<p><img src="/web-toolkit/doc/latest/tutorial/images/GoogleCode.png" alt="Google Code logo" />
+<p><img src="images/GoogleCode.png" alt="Google Code logo" />
 </p>
 <p>
 To include static images in the application.
@@ -777,7 +777,7 @@ StockWatcher/war/images</pre></div>
     </li>
 </ol>
 
-<p class="note"><b>In Depth:</b> For more information on including style sheets, JavaScript files, and other GWT modules, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideOrganizingProjects#DevGuideAutomaticResourceInclusion">Automatic Resource Inclusion</a>.</p>
+<p class="note"><b>In Depth:</b> For more information on including style sheets, JavaScript files, and other GWT modules, see the Developer's Guide, <a href="../DevGuideOrganizingProjects.html#DevGuideAutomaticResourceInclusion">Automatic Resource Inclusion</a>.</p>
 
 
 
@@ -785,19 +785,19 @@ StockWatcher/war/images</pre></div>
 <p>
 At this point you've finished with the initial implementation of StockWatcher. The client-side functionality is working and the user interface has a new visual design.
 </p>
-<img src="/web-toolkit/doc/latest/tutorial/images/StyleAfter.png" alt="StockWatcher after applying styles" />
+<img src="images/StyleAfter.png" alt="StockWatcher after applying styles" />
 <p class="note">
   <b>Note:</b> For the sake of simplicity, we created the user interface for this tutorial programmatically using widgets.  This works
   fine for StockWatcher because the UI is fairly simple.  However, GWT has a powerful tool called
-  <a href="/web-toolkit/doc/{{ release_path }}/DevGuideUiBinder">UiBinder</a> that allows you to create complex interfaces using declarative XML
+  <a href="../DevGuideUiBinder.html">UiBinder</a> that allows you to create complex interfaces using declarative XML
   files, which can reduce code size and complexity.  Check out Developer's Guide sections on
-  <a href="/web-toolkit/doc/{{ release_path }}/DevGuideUiBinder">Declarative Layout with UiBinder</a> and
-  <a href="/web-toolkit/doc/{{ release_path }}/DevGuideUi">Build User Interfaces</a> for more info about UiBinder and UI design in general. 
+  <a href="../DevGuideUiBinder.html">Declarative Layout with UiBinder</a> and
+  <a href="../DevGuideUi.html">Build User Interfaces</a> for more info about UiBinder and UI design in general. 
 </p>
 <p>
 Now you're ready to compile StockWatcher. You'll compile your Java code into JavaScript and check that StockWatcher runs the same way in production mode as it has in development mode.
 </p>
 <p>
-<a href="/web-toolkit/doc/latest/tutorial/compile">Step 8: Compiling a GWT Application</a>
+<a href="compile.html">Step 8: Compiling a GWT Application</a>
 </p>
 
