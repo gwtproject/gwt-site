@@ -11,8 +11,6 @@
   }
 </style>
 
-<p>February 23, 2007</p>
-
 <p>The GWT software and sample code developed by Google
 is licensed under the Apache License, v. 2.0.  Other software included
 in this distribution is provided under other licenses, as listed in the
@@ -27,9 +25,6 @@ project or as otherwise indicated at the bottom of this page.
 distributed by Google will communicate with Google's servers to check
 for available updates.  If updates are available, you will receive the
 option to install them.
-</p>
-
-<p><a name="branding"></a>For third party tools, we have provided <a href="http://www.google.com/permissions/guidelines.html">guidelines</a> on the proper usage of Google branding and attribution.
 </p>
 
 <h2>Apache License, Version 2.0</h2>

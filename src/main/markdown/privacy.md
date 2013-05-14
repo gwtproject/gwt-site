@@ -1,7 +1,7 @@
 
 
 <p><a href="terms.html">Terms of Service</a> | <b>Privacy Notice</b> </p>
-<p>Last modified: December 6th, 2013</p>
+<p>Last modified: May 11th, 2013</p>
 
 <h1>Privacy Policy</h1>
   

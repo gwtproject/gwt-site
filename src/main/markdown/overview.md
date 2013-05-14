@@ -60,7 +60,7 @@ div.diagram img {
 
 <table width="100%" class="columns">
   <tr>
-    <td width="25%">
+    <td width="50%">
       <a href="learnmore-sdk.html">
         <img src="images/sdk-sm.png" style="float: right; width: 80px; height: 80px; border: 0px none;"/>
       </a>
@@ -76,21 +76,7 @@ div.diagram img {
         </ul>
       </div>
     </td>
-    <td width="25%">
-      <a href="speedtracer.html">
-        <img src="images/speedtracer-large.png" style="float: right; width: 80px;
-      height: 80px; border: 0px none;"/>
-      </a>
-      <div class="gwt-tools" style="margin-left: 10px;">
-        <div class="gwt-tools-head"><a href="speedtracer/index.html">Speed Tracer</a></div>
-        Speed Tracer is a Chrome Extension that allows you to pinpoint performance
-        problems in your web applications. 
-      </div>
-        <ul style="font-size: 90%;">
-          <li><a href="speedtracer/get-started.html">Get Started</a></li>
-        </ul>
-    </td>
-    <td width="25%">
+    <td width="50%">
       <a href="https://developers.google.com/eclipse/index">
       <img src="https://developers.google.com/eclipse/images/google-plugin.png" style="float: right; width:
       80px; height: 80px; border: 0px none;">
@@ -101,20 +87,6 @@ div.diagram img {
         App Engine web projects. 
         <ul style="font-size: 90%;">
           <li><a href="usingeclipse.html">Get Started</a></li>
-        </ul>
-      </div>
-    </td>
-    <td width="25%">
-      <a href="tools/gwtdesigner/index.html">
-      <img src="images/gwtdesigner.png" style="float: right; width:
-      80px; height: 80px; border: 0px none;">
-      </a>
-      <div class="gwt-tools" style="margin-left: 10px;">
-        <div class="gwt-tools-head"><a href="tools/gwtdesigner/index.html">GWT Designer</a></div>
-        GWT Designer lets you create user interfaces in minutes with tools for
-        intelligent layout assist, drag-and-drop, and automatic code generation.
-        <ul style="font-size: 90%;">
-          <li><a href="tools/gwtdesigner/quick_start.html">Quick Start</a></li>
         </ul>
       </div>
     </td>

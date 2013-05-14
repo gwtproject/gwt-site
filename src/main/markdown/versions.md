@@ -1,11 +1,11 @@
-<p>GWT is licensed under the <a href="/web-toolkit/terms">Apache 2.0 open source license</a> (since version 1.3).</p>
+<p>GWT is licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0 open source license</a> (since version 1.3).</p>
 
 <div class="release">
 
   <h3 class="version">Version 2.5.1</h3>
 
   <p>Build 2.5.1 - Mar 11, 2013 - <a href="release-notes.html#Release_Notes_2_5_1">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -23,7 +23,7 @@
   <h3 class="version">Version 2.5.0</h3>
 
   <p>Build 2.5.0 - Oct 24, 2012 - <a href="/release-notes.html#Release_Notes_2_5_0">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -41,7 +41,7 @@
   <h3 class="version">Version 2.4.0</h3>
 
   <p>Build 2.4.0 - September 7, 2011 - <a href="release-notes.html#Release_Notes_2_4_0">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -60,7 +60,7 @@
   <h3 class="version">Version 2.3.0</h3>
 
   <p>Build 2.3.0 - May 2, 2011 - <a href="release-notes.html#Release_Notes_2_3_0">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -78,7 +78,7 @@
   <h3 class="version">Version 2.2.0</h3>
 
   <p>Build 2.2.0 - February 11, 2011 - <a href="release-notes.html#Release_Notes_2_2_0">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -96,7 +96,7 @@
   <h3 class="version">Version 2.1.1</h3>
 
   <p>Build 2.1.1 - December 16, 2010 - <a href="release-notes.html#Release_Notes_2_1_1">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -114,7 +114,7 @@
   <h3 class="version">Version 2.1.0</h3>
 
   <p>Build 2.1.0 - October 19, 2010 - <a href="release-notes.html#Release_Notes_2_1_0">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -132,7 +132,7 @@
   <h3 class="version">Version 2.0.4</h3>
 
   <p>Build 2.0.4 - July 2, 2010 - <a href="release-notes.html#Release_Notes_2_0_4">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -150,7 +150,7 @@
   <h3 class="version">Version 2.0.3</h3>
 
   <p>Build 2.0.3 - February 19, 2010 - <a href="release-notes.html#Release_Notes_2_0_3">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -168,7 +168,7 @@
   <h3 class="version">Version 2.0.2</h3>
 
   <p>Build 2.0.2 - February 12, 2010 - <a href="release-notes.html#Release_Notes_2_0_3">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -186,7 +186,7 @@
   <h3 class="version">Version 2.0.1</h3>
 
   <p>Build 2.0.1 - February 2, 2010 - <a href="release-notes.html#Release_Notes_2.0.1">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -205,7 +205,7 @@
 
   <p>Build 2.0.0 - December 8, 2009 - <a href="release-notes.html#Release_Notes_2_0_0">Release notes</a></p>
   <p>There is now a single GWT distribution for Windows, Mac OS X, and Linux.</p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -223,7 +223,7 @@
   <h3 class="version">Version 1.7.1</h3>
 
   <p>Build 1.7.1 - September 22, 2009 - <a href="release-notes.html#Release_Notes_1_7_1">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -253,7 +253,7 @@
   <h3 class="version">Version 1.7.0</h3>
 
   <p>Build 1.7.0 - June 13, 2009 - <a href="release-notes.html#Release_Notes_1_7_0">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -283,7 +283,7 @@
   <h3 class="version">Version 1.6</h3>
 
   <p>Build 1.6.4 - April 7, 2009 - <a href="release-notes.html#Release_Notes_1_6_4">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -313,7 +313,7 @@
 
   <h3 class="version">Version 1.5</h3>
   <p>Build 1.5.3 - October 17, 2008 - <a href="release-notes.html#Release_Notes_1_5_3">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -341,7 +341,7 @@
   </tbody></table>
 
   <p>Build 1.5.2 - August 27, 2008 - <a href="release-notes.html#Release_Notes_1_5_2">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -372,7 +372,7 @@
 <div class="release">
   <h3 class="version">Version 1.5 RC 2</h3>
   <p>Build 1.5.1 - August 11, 2008 - <a href="release-notes.html#Release_Notes_1_5_1">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -403,7 +403,7 @@
 <div class="release">
   <h3 class="version">Version 1.5 RC 1</h3>
   <p>Build 1.5.0 - May 27, 2008 - <a href="release-notes.html#Release_Notes_1_5_0">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -434,7 +434,7 @@
 <div class="release">
   <h3 class="version">Version 1.4</h3>
   <p>Build 1.4.62 - March 17, 2008 - <a href="release-notes.html#Release_Notes_1_4_62">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -463,7 +463,7 @@
   <div style="padding-top: 4px; margin-bottom: 1em;"><a href="/support/bin/answer.py?answer=81865&topic=13006">Using GWT 1.4 on Mac OS X 10.5 (Leopard)</a></div>
 
   <p>Build 1.4.61 - November 29, 2007 - <a href="release-notes.html#Release_Notes_1_4_61">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -490,7 +490,7 @@
     </tr>
   </tbody></table>
   <p>Build 1.4.60 - August 28, 2007 - <a href="release-notes.html#Release_Notes_1_4_60">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -522,7 +522,7 @@
 <div class="release">
   <h3 class="version">Version 1.4 RC 2</h3>
   <p>Build 1.4.59 - August 20, 2007 - <a href="release-notes.html#Release_Notes_1_4_59">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
       <th>Package</th>
@@ -554,7 +554,7 @@
 <div class="release">
   <h3 class="version">Version 1.4 RC 1 </h3>
   <p>Build 1.4.10 - May 29, 2007 - <a href="release-notes.html#Release_Notes_1_4_10">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tbody>
     <tr>
       <th>Platform</th>
@@ -590,7 +590,7 @@ href="http://google-web-toolkit.googlecode.com/files/gwt-linux-1.4.10.tar.bz2">g
   <h3 class="version">Version 1.3</h3>
   <p>Build 1.3.3 - January 18, 2007 - <a href="release-notes.html#Release_Notes_1_3_3">Release notes</a></p>
 
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tr>
       <th>Platform</th>
       <th>Package</th>
@@ -621,7 +621,7 @@ href="http://google-web-toolkit.googlecode.com/files/gwt-linux-1.4.10.tar.bz2">g
 <div class="release">
   <h3 class="version">Version 1.3 RC 1 </h3>
   <p>Build 1.3.1 - December 12, 2006 - <a href="release-notes.html#Release_Notes_1_3_1">Release notes</a></p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tr>
       <th>Platform</th>
       <th>Package</th>
@@ -658,7 +658,7 @@ href="http://google-web-toolkit.googlecode.com/files/gwt-linux-1.4.10.tar.bz2">g
   <h3 class="version">Version 1.2 </h3>
   <p>Build 1.2.22 - November 15, 2006 - <a href="release-notes.html#Release_Notes_1_2_22">Release notes</a></p>
 
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tr>
       <th>Platform</th>
       <th>Package</th>
@@ -690,7 +690,7 @@ href="http://google-web-toolkit.googlecode.com/files/gwt-linux-1.4.10.tar.bz2">g
   <h3 class="version">Version 1.2 RC 1</h3>
   <p>Build 1.2.11 - October 31, 2006 - <a href="release-notes.html#Release_Notes_1_2_11">Release notes</a></p>
 
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tr>
       <th>Platform</th>
       <th>Package</th>
@@ -722,7 +722,7 @@ href="http://google-web-toolkit.googlecode.com/files/gwt-linux-1.4.10.tar.bz2">g
   <h3 class="version">Version 1.1</h3>
   <p>Build 1.1.10 - August 23, 2006 - <a href="release-notes.html#Release_Notes_1_1_10">Release notes</a></p>
 
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tr>
       <th>Platform</th>
       <th>Package</th>
@@ -747,7 +747,7 @@ href="http://google-web-toolkit.googlecode.com/files/gwt-linux-1.4.10.tar.bz2">g
 <div class="release">
   <h3 class="version">Version 1.1 RC 1</h3>
   <p> Build 1.1.0 - August 9, 2006</p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tr>
       <th>Platform</th>
       <th>Package</th>
@@ -772,7 +772,7 @@ href="http://google-web-toolkit.googlecode.com/files/gwt-linux-1.4.10.tar.bz2">g
 <div class="release">
   <h3 class="version">Version 1.0</h3>
   <p>Build 1.0.21 - May 25, 2006</p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tr>
       <th>Platform</th>
       <th>Package</th>
@@ -797,7 +797,7 @@ href="http://google-web-toolkit.googlecode.com/files/gwt-linux-1.4.10.tar.bz2">g
 <div class="release">
   <h3 class="version">Version 1.0 RC 1</h3>
   <p>Build 1.0.20 - May 16, 2006</p>
-  <table class="downloads" style="width:750px">
+  <table class="downloads" style="width:500px">
     <tr>
       <th>Platform</th>
       <th>Package</th>

@@ -42,7 +42,7 @@ apps. The engineering team is active on this group.
      <a href="http://groups.google.com/group/Google-Web-Toolkit-Contributors">GWT Open Source Contributor Forum</a>
      <br>
      This forum is intended for engineering conversations that relate specifically to <a 
-href="/web-toolkit/makinggwtbetter">Making GWT Better</a>. 
+href="makinggwtbetter.html">Making GWT Better</a>. 
      </li>
      <br>
      <li>
@@ -53,8 +53,5 @@ href="http://www.mozilla.org/projects/rt-messaging/chatzilla/">ChatZilla</a>.
      </li>
 </ul>
 
-<p>If you believe that a resource should be added or removed, please <a href="mailto:gwt-third-party@google.com">let us 
-know</a>. If you are developing new resources related to GWT, please review our <a 
-href="http://www.google.com/permissions/guidelines.html">branding guidelines</a>.</p>
 
 
