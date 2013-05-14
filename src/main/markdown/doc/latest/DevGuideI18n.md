@@ -74,7 +74,7 @@ flexibility, and interoperability in whichever combinations are most useful.</p>
 
 <ul>
 <li><strong><a href="DevGuideI18n.html#DevGuideStaticStringInternationalization">Static string internationalization</a></strong><br/>
-A family of efficient and type-safe techniques that rely on strongly-typed Java interfaces, <a href="/web-toolkit/doc/latest/DevGuideI18n#DevGuidePropertiesFiles">properties files</a>, and
+A family of efficient and type-safe techniques that rely on strongly-typed Java interfaces, <a href="DevGuideI18n#DevGuidePropertiesFiles.html">properties files</a>, and
 code generation to provide locale-aware messages and configuration settings.
 These techniques depend on the interfaces <a
 href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Constants.html">Constants</a>,
@@ -83,7 +83,7 @@ and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/goo
 </ul>
 
 <ul>
-<li><strong><a href="/web-toolkit/doc/latest/DevGuideI18n#DevGuideDynamicStringInternationalization">Dynamic string internationalization</a></strong><br/>
+<li><strong><a href="DevGuideI18n.html#DevGuideDynamicStringInternationalization">Dynamic string internationalization</a></strong><br/>
 A simple and flexible technique for looking up localized values defined in a module's <a href="DevGuideOrganizingProjects.html#DevGuideHostPage">host page</a> without needing to recompile
 your application. This technique is supported by the class <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Dictionary.html">Dictionary</a>.</li>
 </ul>

@@ -69,7 +69,7 @@ as the GWT and App Engine SDKs. Choosing the SDK options will install a GWT
 and/or App Engine SDK within your Eclipse plugin directory as a convinience.
 </p>
 
-<p class="note" style="margin-top: 0.7em;">GWT release candidates are not bundled with The Google Plugin For Eclipse. If you're interested in using a GWT RC SDK, download and add it to your workspace as described <a href="/eclipse/docs/using_sdks">here</a>.
+<p class="note" style="margin-top: 0.7em;">GWT release candidates are not bundled with The Google Plugin For Eclipse. If you're interested in using a GWT RC SDK, download and add it to your workspace as described <a href="https://developers.google.com/eclipse/docs/using_sdks">here</a>.
 </p>
 
 <div class="screenshot">

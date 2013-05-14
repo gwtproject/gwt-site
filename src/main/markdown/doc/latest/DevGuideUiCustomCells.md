@@ -219,7 +219,7 @@ The code example below extends ColorCell to add support for handling <code>click
 show an alert box that tells us which color we selected.
 
 <p>
-<blockquote><img style="border:1px solid #555;margin-left:10px;" src="/web-toolkit/doc/{{ release_path }}/images/CustomCells-HandlingEvents.png"/></blockquote>
+<blockquote><img style="border:1px solid #555;margin-left:10px;" src="images/CustomCells-HandlingEvents.png"/></blockquote>
 </p>
 
 The process for adding event support is as follows:

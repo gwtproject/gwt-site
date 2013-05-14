@@ -86,13 +86,13 @@
       <h3 style="margin-top: 0em;">Plugin for Eclipse <span style="font-weight: normal; font-size: 95%;"> (incl. SDKs)</span></h3>
       <p>
       The Google Plugin for Eclipse provides IDE support for the GWT and App Engine web projects,
-      and includes a <a href="latest/ReleaseNotes.html#GWTDesigner">lightweight</a> version of GWT Designer.
+      and includes a lightweight version of GWT Designer.
       </p>
       <p style="font-size: 90%;">
       <b style="color: #444;">Note</b> - This download includes Eclipse tools as well as the option to install
       the GWT SDK and <a href="https://developer.google.com/appengine/docs/whatisgoogleappengine">App Engine SDK</a>.
       </p>
-      <p class="note" style="margin-top: 0.7em;">GWT release candidates are not bundled with The Google Plugin For Eclipse. Download the the SDK and add it to your workspace as described <a href="/eclipse/docs/using_sdks">here</a>.
+      <p class="note" style="margin-top: 0.7em;">GWT release candidates are not bundled with The Google Plugin For Eclipse. Download the the SDK and add it to your workspace as described <a href="https://developers.google.com/eclipse/docs/using_sdks">here</a>.
       </p>
     </td>
     <td class="moreinfo" style="vertical-align:top; text-align:center">
@@ -108,54 +108,11 @@
 
   <tr><td>&nbsp;</td></tr> <!-- spacer -->
 
-  <tr id="speedtracer">
-    <td>
-      <img src="images/speedtracer-large.png" style="float: left; width:
-      80px; height: 80px;" />
-    </td>
-    <td>
-      <h3 style="margin-top: 0em;">Speed Tracer</h3>
-      <br/>
-      Speed Tracer is a Chrome Extension that allows you to pinpoint performance problems in your web applications.
-    </td>
-    <td class="moreinfo" style="vertical-align:top">
-      <div class="g-button" style="margin-top: 1em; margin-left: 2em; width: 18em; padding: 10px;">
-        <div><span><span>
-          <a href="speedtracer/get-started.html#downloading" style="font-size: 80%;">Download Speed Tracer</a>
-        </span></span></div>
-      </div>
-      <p style="margin-left: 2.5em; font-size: 90%;">Next: Go to <a href="speedtracer/get-started.html#quick-tour">Quick tour of Speed Tracer</a></p>
-    </td>
-  </tr>
+  
 
-  <tr><td>&nbsp;</td></tr> <!-- spacer -->
+  
 
-  <tr id="gwtdesigner" style="margin-top: 1em;">
-    <td>
-      <img src="images/gwtdesigner.png" style="float: left; width:
-      80px; height: 80px" />
-    </td>
-    <td>
-      <h3 style="margin-top: 0em;">GWT Designer</h3>
-      <p>
-      GWT Designer is a powerful and easy-to-use bi-directional Java GUI designer that lets you create user interfaces
-      in minutes with tools for intelligent layout assist, drag-and-drop, and automatic code generation.
-      </p>
-      <p style="font-size: 90%;">
-      <b style="color: #444;">Note</b> - This is the standalone,
-      <a href="latest/ReleaseNotes.html#GWTDesigner">full version</a> of GWT Designer.
-      Download this version for its extra features, or if you use GXT, GWT-Ext or SmartGWT.
-      </p>
-    </td>
-    <td class="moreinfo" style="vertical-align:top">
-      <div class="g-button" style="margin-top: 1em; margin-left: 2em; width: 18em; padding: 10px;">
-        <div><span><span>
-          <a href="tools/download-gwtdesigner.html" style="font-size: 80%;">Download GWT Designer</a>
-        </span></span></div>
-      </div>
-      <p style="margin-left: 2.5em; font-size: 90%;">Next: Go to <a href="tools/gwtdesigner/quick_start.html">GWT Designer Quick Start</a></p>
-    </td>
-  </tr>
+ 
 
   <tr><td>&nbsp;</td></tr> <!-- spacer -->
 
@@ -180,10 +137,7 @@
         <div><span><span>
           <a href="https://google-web-toolkit.googlecode.com/files/gwt-2.5.1.zip" style="font-size: 80%;">Download GWT SDK</a>
         </span></span></div>
-        <p class='sdkTerms' style="margin-top: 4px; padding-top: 0px;">
-          By downloading, you agree to the<br>
-          <a href="/web-toolkit/terms">Terms &amp; Conditions</a>
-        </p>
+       
       </div>
       <p style="margin-left: 2.5em; font-size: 90%;">Next: Go to <a href="gettingstarted.html">Getting Started with the GWT SDK</a></p>
     </td>

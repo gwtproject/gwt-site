@@ -310,5 +310,5 @@ create a <code>ConstantsWithLookup</code> class, pass the <code>-createConstants
 <h3>See Also</h3>
 
 <ul>
-<li><a href="/web-toolkit/doc/latest/DevGuideI18n#DevGuideStaticStringInternationalization">Static String Internationalization</a></li>
+<li><a href="DevGuideI18n.html#DevGuideStaticStringInternationalization">Static String Internationalization</a></li>
 </ul>

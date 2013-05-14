@@ -6,11 +6,11 @@ People on the group are friendly and often surprisingly helpful.
 </p>
 
 <ol class="toc">
-  <li><a href="/web-toolkit/doc/latest/FAQ_GettingStarted">Getting Started</a></li>
-  <li><a href="/web-toolkit/doc/latest/FAQ_DebuggingAndCompiling">Debug and Compile</a></li>
-  <li><a href="/web-toolkit/doc/latest/FAQ_UI">Building the User Interface</a></li>
-  <li><a href="/web-toolkit/doc/latest/FAQ_Client">Developing Client-side Code</a></li>
-  <li><a href="/web-toolkit/doc/latest/FAQ_Server">Communicating with a Server</a></li>
-  <li><a href="/web-toolkit/doc/latest/FAQ_Troubleshooting">Troubleshooting</a></li>
+  <li><a href="FAQ_GettingStarted.html">Getting Started</a></li>
+  <li><a href="FAQ_DebuggingAndCompiling.html">Debug and Compile</a></li>
+  <li><a href="FAQ_UI.html">Building the User Interface</a></li>
+  <li><a href="FAQ_Client.html">Developing Client-side Code</a></li>
+  <li><a href="FAQ_Server.html">Communicating with a Server</a></li>
+  <li><a href="FAQ_Troubleshooting.html">Troubleshooting</a></li>
 </ol>
 

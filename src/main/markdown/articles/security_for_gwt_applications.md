@@ -2,7 +2,7 @@
 <br>
 <i>Updated January 2009</i>
 
-<p>It is a sad truth that JavaScript applications are easily left vulnerable to several types of security exploits, if developers are unwary. Because the <a href="/web-toolkit/">GWT</a> (GWT) produces JavaScript code, we GWT developers are no less vulnerable to JavaScript attacks than anyone else. However, because the goal of GWT is to allow developers to focus on their users' needs instead of JavaScript and browser quirks, it's easy to let our guards down. To make sure that GWT developers have a strong appreciation of the risks, we've put together this article.</p>
+<p>It is a sad truth that JavaScript applications are easily left vulnerable to several types of security exploits, if developers are unwary. Because the GWT produces JavaScript code, we GWT developers are no less vulnerable to JavaScript attacks than anyone else. However, because the goal of GWT is to allow developers to focus on their users' needs instead of JavaScript and browser quirks, it's easy to let our guards down. To make sure that GWT developers have a strong appreciation of the risks, we've put together this article.</p>
 
 <p>GWT's mission is to provide developers with the tools they need to build AJAX apps that make the web a better place for end users. However, the apps we build have to be <i>secure</i> as well as functional, or else our community isn't doing a very good job at our mission.</p>
 

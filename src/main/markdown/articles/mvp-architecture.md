@@ -25,7 +25,7 @@ div.screenshot img {
 <br>
 <i>Updated March 2010</i>
 
-<p><b>Also see <a href="articles/mvp-architecture-2">Part II</a> of this article.</b></p>
+<p><b>Also see <a href="mvp-architecture-2.html">Part II</a> of this article.</b></p>
 
 <p>Building any large scale application has its hurdles, and GWT apps are no
 exception. Multiple developers working simultaneously on the same code base, while
@@ -459,7 +459,7 @@ public class EditContactPresenter {
 <h2 id="history">History and view transitions</h2>
 
 <p>One of the more integral parts of any web app is the handling of
-<a href="doc/latest/DevGuideCodingBasics.html#DevGuideHistory">history</a>
+<a href="../doc/latest/DevGuideCodingBasics.html#DevGuideHistory">history</a>
 events. History events are token strings that represent some new state within your application.
 Think of them as "markers" for where you are in the application. Take, for
 example, a user navigating from the "Contact List" view to the "Add Contact" view

@@ -118,7 +118,7 @@ public class Account implements Serializable {
 
 <p>Now that we've created our persistent classes, let's create a bare bones UI that will allow us to enter new accounts and records, as well as the GWT RPC services that will persist them on the server-side. Let's start with the RPC services.</p>
 
-<p>We won't go into the specifics of the role each RPC component plays here, but if you're unfamiliar with the GWT RPC subsystem, check out the <a href="/web-toolkit/doc/1.6/DevGuideServerCommunication#DevGuideRemoteProcedureCalls">GWT RPC docs</a> to get up to speed.</p>
+<p>We won't go into the specifics of the role each RPC component plays here, but if you're unfamiliar with the GWT RPC subsystem, check out the <a href="../doc/latest/DevGuideServerCommunication#DevGuideRemoteProcedureCalls">GWT RPC docs</a> to get up to speed.</p>
 
 <p>First, we create the client-side service interfaces. If you'd like to avoid the large number of interface methods listed below, consider using the Command pattern, as described <a href="http://www.youtube.com/watch?v=PDuhR18-EdM">here</a>:</p>
 
