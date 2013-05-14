@@ -183,6 +183,6 @@ div.diagram img {
   <a href="gettingstarted.html">Download the SDK</a> and get a simple web
   application up and running. From there, work through the
   fundamentals of GWT development with the in-depth 
-  <a href="latest/tutorial.html">tutorials</a>.</p>
+  <a href="doc/latest/tutorial.html">tutorials</a>.</p>
 
 

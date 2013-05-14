@@ -63,7 +63,7 @@ GWT (pronounced 'gwit') is the official open source project for GWT releases 2.5
           border: 0;" height="48" width="48" />
         </a>
         <div style="margin-left: 112px;">
-          <div style="font-size: 120%; font-weight: bold;"><a href="latest/DevGuide.html">Read the Docs</a></div>
+          <div style="font-size: 120%; font-weight: bold;"><a href="doc/latest/DevGuide.html">Read the Docs</a></div>
           <div style="padding-top: 5px; line-height: 125%;">
             Everything you need to know about how to use GWT.<br /><br />
           </div>

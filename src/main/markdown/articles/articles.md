@@ -94,7 +94,7 @@ JSON services across the web.</p>
 <ul class="toolsList">
   <li>
     <a href="//code.google.com/p/gwtchismes/wiki/Tutorial_ExportingGwtLibrariesToJavascript_en">Exporting Libraries Developed in GWT to JavaScript</a> - <i>Contributed by Manuel Carrasco Moñino</i>
-    <p class="toolsDescription">This article describes how you can export GWT defined methods to the outside JavaScript world, allowing your GWT application to provide an API for external consumption. It covers both a manual technique which uses only the GWT core library, as well as an even easier technique which uses of the <a href="/p/gwt-exporter">GWT-Exporter library</a>.</p>
+    <p class="toolsDescription">This article describes how you can export GWT defined methods to the outside JavaScript world, allowing your GWT application to provide an API for external consumption. It covers both a manual technique which uses only the GWT core library, as well as an even easier technique which uses of the <a href="//code.google.com/p/gwt-exporter">GWT-Exporter library</a>.</p>
 
 <p>If you believe that any resource should be added or removed from the list above, please <a href="mailto:Google-Web-Toolkit+owner@googlegroups.com">let us
 know</a>.</p>

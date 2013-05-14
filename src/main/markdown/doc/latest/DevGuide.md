@@ -5,7 +5,7 @@ The topics in this guide span project organization, coding, debugging, testing, 
 </p>
 
 <p class="note">
-<b>Note</b> - If you're new to GWT and eager to start playing immediately, you might want to try the <a href="/web-toolkit/gettingstarted">Quick Start</a>. For specific technical details, see the <a href="/web-toolkit/doc/latest/RefGuide">Reference</a> guide and <a href="/web-toolkit/articles">Articles</a>.
+<b>Note</b> - If you're new to GWT and eager to start playing immediately, you might want to try the <a href="../../gettingstarted.html">Quick Start</a>. For specific technical details, see the <a href="RefGuide.html">Reference</a> guide and <a href="../../articles/articles.html">Articles</a>.
 </p>
 
 <style type="text/css">
