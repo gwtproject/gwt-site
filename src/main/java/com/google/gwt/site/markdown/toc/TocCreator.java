@@ -75,11 +75,7 @@ public class TocCreator {
     } else {
 
       StringBuffer url = new StringBuffer();
-      if (tocNode.getDepth() > 0) {
-        for (int i = 1; i < tocNode.getDepth(); i++) {
-          url.append("../");
-        }
-      }
+      url.append("/");
 
       url.append(node.getRelativePath());
 

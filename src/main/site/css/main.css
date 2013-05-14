@@ -150,9 +150,7 @@ html {
 	background-position: 0 1px;
 }
 
-#gwt-toc li.folder > ul {
-    display: none;
-}
+
 
 #gwt-toc li.folder.open {
     background-image: url("../images/arrow-open.png");
