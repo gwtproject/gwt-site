@@ -38,7 +38,7 @@
     		<li><a href="/doc/latest/DevGuide.html">Docs</a></li>
     		
     	</ul>
-    	<div style="float:right; font-size: 50%; margin-top: 8px; color: red">This is a <b>beta version</b>. If you find errors, please <a href="https://code.google.com/p/google-web-toolkit/issues/entry">report them</a> or <a href="/makinggwtbetter.html#webpage">contribute!</a></div>
+    	<div style="float:right; font-size: 50%; margin-top: 8px; color: red">This is a <b>beta version</b>. If you find errors, please <a href="https://code.google.com/p/google-web-toolkit/issues/entry">report them</a> or <a href="/makinggwtbetter.html#webpage">change them</a>!</div>
     </div>
   </div>
 </div>
