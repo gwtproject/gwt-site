@@ -266,26 +266,19 @@ up. Your participation itself is a valuable contribution.</p>
 <p>If you want to get your hands dirty with the code inside GWT,
 this is the section for you.</p>
 
-<h3 id="checkingout">Checking Out the Source from Subversion</h3>
+<h3 id="checkingout">Checking Out the Source</h3>
 <p>Checking out the GWT source is most useful if you plan to compile
 GWT yourself. The pre-built GWT distribution already contains all the
 Java source, so you don't actually need to check it out from the
 repository just to debug through it. Just tweak your IDE to read source
 from the GWT jars.</p>
 
-<p>GWT is hosted on <a href="http://code.google.com/hosting/">Google
-Code project hosting</a>, so you check out the source for GWT using a <a
-  href="http://subversion.tigris.org/">Subversion</a> client as you
-would for any other project hosted on Google Code:</p>
+<p>GWT is hosted at <a href="https://gwt.googlesource.com/"
+  >gwt.googlesource.com</a>, so you check out the source for GWT using a
+  <a href="http://git-scm.com/">Git</a> client as you
+would for any other Git project:</p>
 
-<pre>svn checkout http://google-web-toolkit.googlecode.com/svn/trunk/ trunk</pre>
-
-<p>The <a href="http://code.google.com/p/google-web-toolkit/source">
-project source code access page</a> has additional instructions for <a
-  href="http://google-web-toolkit.googlecode.com/svn/trunk/">browsing
-the source online</a> or <a
-  href="http://subversion.tigris.org/links.html#clients">getting a
-Subversion client</a> if you don't already have one.</p>
+<pre>git clone https://gwt.googlesource.com/gwt trunk</pre>
 
 <h3 id="compiling">Compiling from Source</h3>
 <p>Other than a few native libs, everything is Java source that can
@@ -294,7 +287,7 @@ be built on any supported platform with the included GWT <a
 can only build the native code binaries on Linux, and even then with a
 bit of effort that is currently beyond the scope of this document. To
 keep things simple, we've checked in pre-built native binaries. (Yes, we
-know that's unusual. But the source and makefiles are all there...it's
+know that's unusual. But the source and makefiles are all there... it's
 just a pain to doc all that and make it build in a cross-platform way.)</p>
 
 <ol>
@@ -304,7 +297,7 @@ just a pain to doc all that and make it build in a cross-platform way.)</p>
   <li>Check out the GWT prerequisite tools and third-party
   libraries: <pre>
 ~/gwt$ svn checkout http://google-web-toolkit.googlecode.com/svn/tools/ tools</pre></li>
-  <li>Check out the GWT source: <pre>~/gwt$ svn checkout http://google-web-toolkit.googlecode.com/svn/trunk/ trunk</pre>
+  <li>Check out the GWT source: <pre>~/gwt$ git clone https://gwt.googlesource.com/gwt trunk</pre>
   </li>
   <li>Optionally, set an environment variable that contains the
   full path to the directory into which you just checked out the tools.
@@ -363,7 +356,7 @@ the GWT build; style issues that can't be caught by the build system should be
 addressed during code review.</p>
 
 <p>To make it easier to format your GWT code correctly, use the
-<a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/eclipse/settings/code-style/gwt-format.xml">GWT style formatter</a>
+<a href="https://gwt.googlesource.com/gwt/+/master/eclipse/settings/code-style/gwt-format.xml">GWT style formatter</a>
 for Eclipse (Preferences | Java &gt; Code Style &gt; Formatter | Import...).
 
 <p>In general, the GWT style is based on <a
@@ -691,20 +684,14 @@ href="#antjunit">workaround</a> is described above.</p>
 
   <li>Ensure that there are unit tests for your code.</li>
 
-  <li>Sign a <a href="#clas">Contributor License Agreement</a>.</li>
+  <li>Sign in to <a href="https://gwt-review.googlesource.com">GWT's
+  Gerrit service</a> and sign the <a
+    href="https://gwt-review.googlesource.com/#/settings/agreements">Contributor
+  License Agreement</a>.</li>
 
-  <li>Remember to svn add any new files, and create a patch
-  file via svn diff. 
-
-  <li>Upload the patch to
-  the <a href="http://code.google.com/p/rietveld/">Rietveld</a>
-  instance at <a href="http://gwt-code-reviews.appspot.com/">
-  http://gwt-code-reviews.appspot.com/</a>, being sure to cc
-  Google-Web-Toolkit-Contributors@googlegroups.com.  Include the
-  relevant issue tracker number in your Rietveld description.
-
-  <li>Add your new http://gwt-code-reviews.appspot.com/ url to 
-    the issue tracker entry.
+  <li>Follow Gerrit's <a
+    href="https://gerrit-review.googlesource.com/Documentation/user-upload.html">Uploading
+  Changes</a> documentation to create a change and upload it for review.</li>
 </ol>
 
 <h3 id="committers">GWT Committers</h3>
@@ -731,7 +718,6 @@ Contributor License Agreement (CLA). The CLA protects you and us.</p>
   CLA</a>.</li>
 </ul>
 
-<p>Follow either of the two links above to access the appropriate
-CLA and instructions for how to sign and return it.</p>
-
-
+<p>You can sign either CLA through <a
+  href="https://gwt-review.googlesource.com/#/settings/agreements">GWT's
+Gerrit service</a>.</p>
