@@ -695,10 +695,33 @@ href="#antjunit">workaround</a> is described above.</p>
     href="https://gwt-review.googlesource.com/#/settings/agreements">Contributor
   License Agreement</a>.</li>
 
-  <li>Follow Gerrit's <a
-    href="https://gerrit-review.googlesource.com/Documentation/user-upload.html">Uploading
-  Changes</a> documentation to create a change and upload it for review.</li>
+  <li>Push your changes to Gerrit for review. The first time you will need to do 
+  some <a href="#gerritsetup">initial setup</a>. Follow Gerrit's documentation to create a change and upload it for review.</li>
+  
+  <li>Push your changes to Gerrit for review. The first time you will need to do 
+  some initial setup. Follow Gerrit's documentation to create a change and upload it for review.</li>
+  
+  <li>After setting up gerrit on your system, you can push your changes for review using:
+  	<pre>git push origin HEAD:refs/for/master</pre>
+  </li>
 </ol>
+
+<h3 id="gerritsetup">Gerrit setup</h3>
+Finally, to actually create an issue is slightly more involved, but most of the steps only need to be done once:
+
+1. Setup your HTTP Password: 
+   Go to Settings in Gerrit. Under Settings you will find "HTTP Password" and click "Obtain Password"
+   and follow the steps to get your HTTP Password and/or to setup your .netrc file.
+2. Setup your Gerrit commit-msg hook (optional, but recommended): 
+   Gerrit provides a commit hook at <pre>https://gwt-review.googlesource.com/tools/hooks/commit-msg</pre> 
+   to automatically add Change-Id lines to your commits.  
+   Download this and add it to your checkout’s .git/hooks directory: 
+   <pre>curl -o .git/hooks/commit-msg https://gwt-review.googlesource.com/tools/hooks/commit-msg && chmod +x .git/hooks/commit-msg</pre>
+3. Make a change and commit it locally using git (e.g., edit a file foo and then run “git commit -m ‘my first change’ foo”).
+   Push the commit to Gerrit for review: <pre>git push origin HEAD:refs/for/master</pre>.
+
+If you have any problems you might want to consult the gerrit documentation on 
+<a href="https://gerrit-review.googlesource.com/Documentation/user-upload.html">Uploading Changes</a> 
 
 <h3 id="committers">GWT Committers</h3>
 <p>The current members of the GWT engineering team are the only
