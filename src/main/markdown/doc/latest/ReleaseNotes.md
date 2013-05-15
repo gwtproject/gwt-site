@@ -1,6 +1,6 @@
 <p>
 The latest release of GWT, version 2.5, includes the new features and
-functionality listed below. See the 2.5 <a href="/web-toolkit/release-notes#Release_Notes_2_5_0">Release Notes</a> for bug fixes and other changes.</p>
+functionality listed below. See the 2.5 <a href="../../release-notes.html#Release_Notes_2_5_0">Release Notes</a> for bug fixes and other changes.</p>
 
 <table class="columns">
   <tr>
@@ -49,7 +49,7 @@ to the list of compiler flags to enable optimization.</li>
   <li>Large projects that use <a href="DevGuideCodeSplitting">Code Splitting</a> and have many
 split points can take advantage of <i>Fragment Merging</i>. The GWT compiler can automatically
 merge fragments to reduce the size of the "leftover" fragment. For more, please see the article,
-<a href="/web-toolkit/articles/fragment_merging">Fragment Merging in the GWT Compiler</a>.</li>
+<a href="../../articles/fragment_merging.html">Fragment Merging in the GWT Compiler</a>.</li>
 </ul>
 
 <h3 id="aria">Updated ARIA support</h3>

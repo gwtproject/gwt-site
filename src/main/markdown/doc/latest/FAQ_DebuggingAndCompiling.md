@@ -228,7 +228,7 @@ module that specifies exact values for client properties that you want to nail d
 
 <p>You can do the same thing for <tt>locale</tt> or any other client property. The subsystem that generates all those permutations is completely extensible, so this technique is a general one.</p>
 
-<p>To avoid keeping many nearly duplicate module files, the <i><a href="/web-toolkit/doc/{{ release_path }}/DevGuideOrganizingProjects#DevGuideModuleXml">rename-to</a></i> attribute on the
+<p>To avoid keeping many nearly duplicate module files, the <i><a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">rename-to</a></i> attribute on the
 <tt>&lt;module&gt;</tt> tag to create a working copy of the GWT application that is specific to the single-browser single-locale development mode. You can keep two module XML
 files in parallel, one for solid development to be tested on all browsers, and another working copy with most permutations suppressed for draft code.</p>
 
@@ -238,7 +238,7 @@ exactly you're trying to build. You can have as many modules as you want for dif
 
 <h2 id="Is_the_war_directory_used_by_GWT_compiler_for_both_input_and_output">Is the war directory used by the GWT compiler as both an input and output directory to the compiler process?</h2>
 
-<p>Starting with GWT 1.6, the compiler generates output in a directory structure following the Web Application Archive (WAR) standard layout. This <a href="/web-toolkit/doc/1.6/ReleaseNotes_1_6#NewFeatures">feature</a> makes it easier to deploy your application on any servlet container, like Jetty, Tomcat, or the Google App Engine Java runtime. See <a href="http://jcp.org/aboutJava/communityprocess/mrel/jsr154/index2.html">Chapter 9 of the Servlet 2.5 API specification</a> for more details on the WAR standard layout.</p>
+<p>Starting with GWT 1.6, the compiler generates output in a directory structure following the Web Application Archive (WAR) standard layout. This feature makes it easier to deploy your application on any servlet container, like Jetty, Tomcat, or the Google App Engine Java runtime. See <a href="http://jcp.org/aboutJava/communityprocess/mrel/jsr154/index2.html">Chapter 9 of the Servlet 2.5 API specification</a> for more details on the WAR standard layout.</p>
 
 <p>Following the convention, developers may place their static resources, including their host HTML page, in the war/&lt;appname&gt; directory, where &lt;appname&gt; is the name you specify in your module XML file via the rename-to attribute (i.e. &lt;module rename-to="myapp"&gt;). The question has come up as to whether the GWT compiler requires this resources to be present in the same war directory structure that will be used for output, or if it is possible to specify a separate input source that could be used to read in required resources. The answer: it is indeed possible to use a totally independent input source and only use the WAR directory uniquely for the compiler's generated output. Since the GWT build process now uses the <a href="http://ant.apache.org/">Apache Ant build tool</a>, all you would need to do is add a copy target in your project build script (build.xml) that will copy and place the required static resources in the final war output directory.</p>
 

@@ -34,7 +34,7 @@ you want the natural HTML flow to determine the layout of child widgets.</p>
 
 <p>This panel provides a simple way to define an HTML structure, within which
 widgets will be embedded at defined points. While you may use it directly, it
-is most commonly used in <a href="/web-toolkit/doc/latest/DevGuideUiBinder">UiBinder templates</a>.</p>
+is most commonly used in <a href="DevGuideUiBinder.html">UiBinder templates</a>.</p>
 
 <h3><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/FormPanel.html">FormPanel</a></h3>
 

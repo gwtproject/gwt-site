@@ -37,11 +37,11 @@ The GWT Editor framework allows data stored in an object graph to be mapped onto
 <ul>
   <li>Decrease the amount of glue code necessary to move data from an object graph into a UI and back.</li>
   <li>Be compatible with any object that looks like a bean, regardless of its implementation mechanism
-      (POJO, JSO, RPC, <a href="/web-toolkit/doc/latest/DevGuideRequestFactory">RequestFactory</a>).</li>
+      (POJO, JSO, RPC, <a href="DevGuideRequestFactory.html">RequestFactory</a>).</li>
   <li>Support arbitrary composition of Editors.</li>
   <li>For post-GWT 2.1 release, establish the following trajectories:</li>
   <ul>
-    <li>Create an API that can be used by <a href="/web-toolkit/doc/latest/DevGuideUiBinder">UiBinder</a></li>
+    <li>Create an API that can be used by <a href="DevGuideUiBinder.html">UiBinder</a></li>
     <li>Support client-side JSR 303 Validation when it's available</li>
   </ul>
 </ul>

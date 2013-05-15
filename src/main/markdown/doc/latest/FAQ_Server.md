@@ -143,9 +143,9 @@ You should definitely use <code>RequestBuilder</code> instead.
 <p/>
 
 <ul>
-<li>To learn more about alternatives to GWT RPC, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideServerCommunication#DevGuideHttpRequests">Making HTTP Requests</a>.</li>
+<li>To learn more about alternatives to GWT RPC, see the Developer's Guide, <a href="DevGuideServerCommunication.html#DevGuideHttpRequests">Making HTTP Requests</a>.</li>
 
-<li>For a working example of making HTTP requests to retrieve JSON-formatted data, see the Tutorial, <a href="/web-toolkit/doc/{{ release_path }}/tutorial/JSON">Get JSON via HTTP</a>.</li>
+<li>For a working example of making HTTP requests to retrieve JSON-formatted data, see the Tutorial, <a href="tutorial/JSON.html">Get JSON via HTTP</a>.</li>
 
 <li>For documentation of the classes and methods you can use to build HTTP requests, see the API Reference, the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/package-summary.html">com.google.gwt.http.client</a> package.</li>
 </ul>
@@ -269,5 +269,3 @@ are no longer used once you have the result.</p>
 <p>GWT 1.5 introduced <a href="DevGuideCodingBasics.html#DevGuideOverlayTypes">Overlay Types</a> for interoperating directly with native JavaScriptObjects without the need for any wrapper objects.</p>
 
 <h3 id="GWT_1.4_and_older">GWT 1.4 and older</h3>
-
-<p>Please see <a href="/web-toolkit/previousdocs">older documentation's</a> FAQ.</p>

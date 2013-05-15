@@ -12,7 +12,7 @@ div.screenshot img {
 
 <h2>Introduction</h2>
 
-<p>What's the fun of a web application if you're stuck on your own server? It's much more fun to get out and meet new code, which is where web mashups come in. Mashups let you build powerful applications surprisingly quickly, if you have the right tools. Recently I've been working on a mashup project using the <a href="/web-toolkit/">GWT</a> (GWT). One of the goals of my project was to let applications written using GWT integrate with other web applications that expose data in JavaScript Object Notation (JSON) format.</p>
+<p>What's the fun of a web application if you're stuck on your own server? It's much more fun to get out and meet new code, which is where web mashups come in. Mashups let you build powerful applications surprisingly quickly, if you have the right tools. Recently I've been working on a mashup project using the GWT. One of the goals of my project was to let applications written using GWT integrate with other web applications that expose data in JavaScript Object Notation (JSON) format.</p>
 
 <p>Sounds straightforward, right? Well, it was--almost--read on to learn why! This article is a case study of how to incorporate mashup-style JSON data into a GWT application. This will be relevant to you if you're a GWT user, but even general Ajax developers may find it interesting.</p>
 
@@ -56,7 +56,7 @@ div.screenshot img {
 
 <p>Since GWT applications are written in Java, there is a compilation phase that compiles the Java source to JavaScript. The compiler also optimizes the generated code, and one of the optimizations it performs is code obfuscation, which makes the output smaller and thus faster to load. A downside of this, though, is that the function names in the output JavaScript code are unpredictable. This makes it difficult to specify a callback function name to a JSONP service.</p>
 
-<p>There is an effective technique for cases like this that we sometimes refer to as a &quot;function bridge.&quot; We've <a href="/web-toolkit/doc/1.6/DevGuideCodingBasics#DevGuideJavaScriptNativeInterface">documented it</a> in our GWT FAQs, but in a nutshell, the technique involves creating a handle for the obfuscated function and copying it to a well-known variable name in the JavaScript namespace. When outside JavaScript code (such as a Google Data server response) invokes the function under its well-known name, it actually invokes the real function via the copied handle. (Check out the link earlier in this paragraph to see a basic example.)</p>
+<p>There is an effective technique for cases like this that we sometimes refer to as a &quot;function bridge.&quot; We've <a href="../doc/latest/DevGuideCodingBasics#DevGuideJavaScriptNativeInterface">documented it</a> in our GWT FAQs, but in a nutshell, the technique involves creating a handle for the obfuscated function and copying it to a well-known variable name in the JavaScript namespace. When outside JavaScript code (such as a Google Data server response) invokes the function under its well-known name, it actually invokes the real function via the copied handle. (Check out the link earlier in this paragraph to see a basic example.)</p>
 
 <p>However, my project made a lot of those Google Data requests. That could conceivably leave quite a few of these function handles lying around, so there was some bookkeeping that needed to be managed.</p>
 

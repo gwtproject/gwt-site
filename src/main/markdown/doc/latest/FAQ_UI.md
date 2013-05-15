@@ -114,7 +114,7 @@ change the code, hit <i>Refresh</i> in the browser window:</p>
     dockPanel.setCellHorizontalAlignment(rightButton, HasHorizontalAlignment.ALIGN_RIGHT);
 </pre>
 
-<blockquote><img src="/web-toolkit/doc/{{ release_path }}/images/FAQ_UILayout4.png"/></blockquote>
+<blockquote><img src="images/FAQ_UILayout4.png"/></blockquote>
 
 <p>(Don't forget to turn off these styles when you are finished!)</p>
 
@@ -124,7 +124,7 @@ change the code, hit <i>Refresh</i> in the browser window:</p>
 fills the page vertically when the browser window resizes?</h2>
 
 <p>
-As of GWT 2.0, creating an application that fills the browser is easy using <a href="/web-toolkit/doc/latest/DevGuideUiPanels#LayoutPanels">Layout Panels</a>.  LayoutPanels
+As of GWT 2.0, creating an application that fills the browser is easy using <a href="DevGuideUiPanels.html#LayoutPanels">Layout Panels</a>.  LayoutPanels
 such as <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a> and
 <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html">SplitLayoutPanel</a> automatically resize to the size of the window when 
 the browser resizes.

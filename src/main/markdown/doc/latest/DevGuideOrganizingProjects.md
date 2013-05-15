@@ -361,7 +361,7 @@ called.</p>
 <h3>Source Path</h3>
 
 <p>Modules can specify which subpackages contain translatable <i>source</i>, causing the named package and its subpackages to be added to the <i>source path</i>. Only files found
-on the source path are candidates to be translated into JavaScript, making it possible to mix <a href="DevGuideCodingBasics.html#DevGuideClientSide">client-side</a> and <a href="/web-toolkit/doc/latest/DevGuideServerCommunication.html#DevGuideServerSide">server-side</a> code together in the same classpath without conflict. When module inherit other modules, their source paths are
+on the source path are candidates to be translated into JavaScript, making it possible to mix <a href="DevGuideCodingBasics.html#DevGuideClientSide">client-side</a> and <a href="DevGuideServerCommunication.html#DevGuideServerSide">server-side</a> code together in the same classpath without conflict. When module inherit other modules, their source paths are
 combined so that each module will have access to the translatable source it requires.</p>
 
 <p>The default source path is the <i>client</i> subpackage underneath where the <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">Module XML File</a> is stored.</p>

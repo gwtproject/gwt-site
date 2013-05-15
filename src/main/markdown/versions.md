@@ -651,8 +651,6 @@ href="http://google-web-toolkit.googlecode.com/files/gwt-linux-1.4.10.tar.bz2">g
 
 <hr size = "1" width="100%"/>
 
-<p>All versions below are licensed as per their respective <a href="/web-toolkit/terms-1.2.22">Terms & Conditions</a>. </p>
-
 
 <div class="release">
   <h3 class="version">Version 1.2 </h3>

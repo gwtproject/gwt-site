@@ -89,7 +89,7 @@ so you may want to avoid calculations in client-side code that require a guarant
 <p>GWT supports only a small subset of the classes available in the Java 2 Standard and Enterprise Edition libraries, as these libraries are quite large and rely on functionality
 that is unavailable within web browsers. To find out exactly which classes and methods are supported for core Java runtime packages, see the GWT <a href="RefJreEmulation.html">JRE Emulation Reference</a>.</p>
 
-<blockquote><i>Tip: You will save yourself a lot of frustration if you make sure that you use only <a href="DevGuideCompilingAndDebugging.html#DevGuideJavaToJavaScriptCompiler">translatable</a> classes in your <a href="/web-toolkit/doc/latest/DevGuideCodingBasics#DevGuideClientSide">client-side code</a> from the
+<blockquote><i>Tip: You will save yourself a lot of frustration if you make sure that you use only <a href="DevGuideCompilingAndDebugging.html#DevGuideJavaToJavaScriptCompiler">translatable</a> classes in your <a href="DevGuideCodingBasics.html#DevGuideClientSide">client-side code</a> from the
 very beginning. To help you identify problems early, your code is checked
 against the JRE emulation library whenever you run in <a
 href="DevGuideCompilingAndDebugging.html#DevGuideDevMode">development mode</a>. As a result, most uses of unsupported libraries will be caught the first time you attempt to run your
@@ -121,9 +121,9 @@ Reference</a>.</i></blockquote>
 used routines that provide a subset of the native JRE functionality:</p>
 
 <ul>
-<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.html">com.google.gwt.i18n.client.DateTimeFormat</a> : Supports a subset of <tt>java.util.DateTimeFormat</tt>. See examples in the <a href="/web-toolkit/doc/latest/DevGuideCodingBasics#DevGuideDateAndNumberFormat">date and number formatting</a> section.</li>
+<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.html">com.google.gwt.i18n.client.DateTimeFormat</a> : Supports a subset of <tt>java.util.DateTimeFormat</tt>. See examples in the <a href="DevGuideCodingBasics.html#DevGuideDateAndNumberFormat">date and number formatting</a> section.</li>
 
-<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html">com.google.gwt.i18n.client.NumberFormat</a> : Supports a subset of <tt>java.util.NumberFormat</tt>. See examples in the <a href="/web-toolkit/doc/latest/DevGuideCodingBasics#DevGuideDateAndNumberFormat">date and number format</a> section.</li>
+<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html">com.google.gwt.i18n.client.NumberFormat</a> : Supports a subset of <tt>java.util.NumberFormat</tt>. See examples in the <a href="DevGuideCodingBasics.html#DevGuideDateAndNumberFormat">date and number format</a> section.</li>
 
 <li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/IsSerializable.html">com.google.gwt.user.client.rpc</a>
 : A marker class used similarly to <tt>java.io.Serializable</tt> for GWT RPC.</li>

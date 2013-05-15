@@ -1,5 +1,5 @@
 <p>Many AJAX application developers have adopted <a href="http://www.json.org/">JSON</a> as the data format of choice for server communication. It is a relatively
-simple format based on the object-literal notation of JavaScript. If you choose to use JSON-encoded data within your application, you can use GWT classes to parse and manipulate JSON objects, as well as the very useful and elegant concept of <a href="/web-toolkit/doc/latest/DevGuideCodingBasicsOverlay">JavaScript Overlay Types</a>.</p>
+simple format based on the object-literal notation of JavaScript. If you choose to use JSON-encoded data within your application, you can use GWT classes to parse and manipulate JSON objects, as well as the very useful and elegant concept of <a href="DevGuideCodingBasicsOverlay.html">JavaScript Overlay Types</a>.</p>
 
 <p>The JSON format is based on the syntax and data types of the JavaScript language. It supports strings, numbers, booleans, and null values. You can also combine multiple values
 into arrays and objects. JSON objects are simply unordered sets of name/value pairs, where the name is always a string and the value is any other valid JSON type (even another

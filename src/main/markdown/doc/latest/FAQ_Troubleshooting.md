@@ -367,7 +367,7 @@ Failure to load module 'com.google.gwt.sample.stockwatcher.StockWatcher'
 
 <p>This problem is most often seen when creating a launch configuration manually.  The <a href="/eclipse">Google Plugin for Eclipse</a> handles adding source roots to the classpath automatically.</p>
 
-<p>One of the most common problems when creating launch configurations manually in GWT is to omit the application source code path from the Java classpath. The <a href="DevGuideCompilingAndDebugging.html#DevGuideJavaToJavaScriptCompiler">GWT compiler</a> and <a href="/web-toolkit/doc/latest/DevGuideCompilingAndDebugging#DevGuideDevMode">development mode</a> shell rely on the module
+<p>One of the most common problems when creating launch configurations manually in GWT is to omit the application source code path from the Java classpath. The <a href="DevGuideCompilingAndDebugging.html#DevGuideJavaToJavaScriptCompiler">GWT compiler</a> and <a href="DevGuideCompilingAndDebugging.html#DevGuideDevMode">development mode</a> shell rely on the module
 source code to build your application, and both use the Java classpath to find the .java source files.</p>
 
 <h4>Workaround</h4>
@@ -378,7 +378,7 @@ source code to build your application, and both use the Java classpath to find t
 
 <h3 id="Invalid_memory_access_of_location">Invalid memory access of location 00000000 rip=01160767, or similar</h3>
 
-<p>If you're using a version of GWT prior to 2.0 on the Mac platform along with Java 6, you're likely seeing this error message when you try running hosted mode. This problem no longer exists in GWT 2.0's <a href="/web-toolkit/doc/latest/DevGuideCompilingAndDebugging#DevGuideDevMode">Development Mode</a>.</p>
+<p>If you're using a version of GWT prior to 2.0 on the Mac platform along with Java 6, you're likely seeing this error message when you try running hosted mode. This problem no longer exists in GWT 2.0's <a href="DevGuideCompilingAndDebugging.html#DevGuideDevMode">Development Mode</a>.</p>
 
 <p>The reason why this is occurring is because hosted mode uses 32-bit SWT bindings, which are tightly coupled with Carbon on the Mac platform.. Unfortunately, Java 6 on the Mac uses a 64-bit JVM, and  64-bit support for Carbon is currently unavailable. This means that in order to use GWT hosted mode on the Mac, you'll need to stick to Java 5 for 32-bit JVM support.</p>
 

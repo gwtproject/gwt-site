@@ -725,7 +725,7 @@ handle. See this article on how to use an external server in development mode.</
 <h2 id="DevGuideHttpRequests">Making HTTP requests</h2>
 
 <p>
-If your GWT application needs to communicate with a server, but you can't use <a href="http://java.sun.com/products/servlet/">Java servlets</a> on the backend &mdash; or if you simply prefer not to use <a href="/web-toolkit/doc/latest/DevGuideServerCommunication#DevGuideRemoteProcedureCalls">RPC</a> &mdash; you can still perform HTTP requests manually.
+If your GWT application needs to communicate with a server, but you can't use <a href="http://java.sun.com/products/servlet/">Java servlets</a> on the backend &mdash; or if you simply prefer not to use <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">RPC</a> &mdash; you can still perform HTTP requests manually.
 GWT contains a number of HTTP client classes that simplify making custom HTTP requests to your server and optionally processing a <a href="http://www.json.org/">JSON</a>- or <a href="http://www.w3.org/XML/">XML</a>-formatted response.</p>
 
 <p>GWT contains a set of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/package-summary.html">HTTP client classes</a>
@@ -796,7 +796,7 @@ try {
 
 <h3>Processing the response</h3>
 
-<p>Once you receive the response from the server using <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Response.html#getText()">Response.getText()</a>, it's up to you to process it. If your response is encoded in XML or JSON, you can use the <a href="/web-toolkit/doc/{{ release_path }}/DevGuideCodingBasics#DevGuideXML">XML library</a> and the <a href="/web-toolkit/doc/{{ release_path }}/DevGuideCodingBasics#DevGuideJSON">JSON library</a> or <a href="/web-toolkit/doc/{{ release_path }}/DevGuideCodingBasics#DevGuideOverlayTypes">overlay types</a>, respectively, to process it.</p>
+<p>Once you receive the response from the server using <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Response.html#getText()">Response.getText()</a>, it's up to you to process it. If your response is encoded in XML or JSON, you can use the <a href="DevGuideCodingBasics.html#DevGuideXML">XML library</a> and the <a href="doc/latest/DevGuideCodingBasics.html#DevGuideJSON">JSON library</a> or <a href="/web-toolkit/doc/{{ release_path }}/DevGuideCodingBasics#DevGuideOverlayTypes">overlay types</a>, respectively, to process it.</p>
 
 
 <h2 id="DevGuideGettingUsedToAsyncCalls">Getting Used to Asynchronous Calls</h2>

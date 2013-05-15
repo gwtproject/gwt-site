@@ -30,7 +30,7 @@ application to support this use case.  GWT's history mechanism makes history sup
 
 <h2 id="DevGuideJSON">Working with JSON</h2>
 
-<p>Many AJAX application developers have adopted JSON as the data format of choice for server communication. It is a relatively simple format that is based on the object-literal notation of JavaScript. <a href="/web-toolkit/doc/latest/DevGuideCodingBasicsJSON">Working with JSON</a> explains how you can use JSON-encoded data within your application, GWT contains classes you can use to parse and manipulate JSON objects, as well as the very useful and elegant concept of JavaScript Overlay Types.</p>
+<p>Many AJAX application developers have adopted JSON as the data format of choice for server communication. It is a relatively simple format that is based on the object-literal notation of JavaScript. <a href="DevGuideCodingBasicsJSON.html">Working with JSON</a> explains how you can use JSON-encoded data within your application, GWT contains classes you can use to parse and manipulate JSON objects, as well as the very useful and elegant concept of JavaScript Overlay Types.</p>
 
 
 <h2 id="DevGuideXML">Working with XML</h2>
@@ -41,7 +41,7 @@ data and is encoded as plain text, making it both flexible and easy to work with
 
 <h2 id="DevGuideJavaScriptNativeInterface">JavaScript Native Interface (JSNI)</h2>
 
-<p>Often, you will need to integrate GWT with existing handwritten JavaScript or with a third-party JavaScript library. Occasionally you may need to access low-level browser functionality not exposed by the GWT class API's. The <a href="/web-toolkit/doc/latest/DevGuideCodingBasicsJSNI">JavaScript Native Interface</a> (JSNI) feature of GWT can solve both of these problems by allowing you to integrate JavaScript directly into your application's Java source code.</p>
+<p>Often, you will need to integrate GWT with existing handwritten JavaScript or with a third-party JavaScript library. Occasionally you may need to access low-level browser functionality not exposed by the GWT class API's. The <a href="DevGuideCodingBasicsJSNI.html">JavaScript Native Interface</a> (JSNI) feature of GWT can solve both of these problems by allowing you to integrate JavaScript directly into your application's Java source code.</p>
 
 
 <h2 id="DevGuideOverlayTypes">JavaScript Overlay Types</h2>

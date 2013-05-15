@@ -138,7 +138,7 @@ scope.</p>
 <h3 id="How_do_I_pass_a_Java_method_as_a_callback_function?">How do I pass a Java method as a callback
 function?</h3>
 
-<p>It is quite common for a JavaScript api to return a value asynchronously through a callback function. You can refer to Java functions as first-class objects with <a href="/web-toolkit/doc/latest/DevGuideCodingBasics#DevGuideJavaScriptNativeInterface">JSNI</a> syntax. Assuming a JavaScript function <tt>externalJsFunction</tt> that takes a data value and a callback
+<p>It is quite common for a JavaScript api to return a value asynchronously through a callback function. You can refer to Java functions as first-class objects with <a href="DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface">JSNI</a> syntax. Assuming a JavaScript function <tt>externalJsFunction</tt> that takes a data value and a callback
 function, here is an example of how to code this:</p>
 
 <pre class="prettyprint">

@@ -100,7 +100,7 @@ Does it work for my language?</h3>
 <h3 id="Will_I_have_to_upgrade_my_application_when_a_new_version_of_GWT">Will I have to upgrade my
 application when a new version of GWT is released?</h3>
 
-<p>We'll release new versions of GWT on the <a href="/web-toolkit/">GWT web site</a>. Barring any unforeseen circumstances, we expect to keep
+<p>We'll release new versions of GWT on the <a href="/">GWT web site</a>. Barring any unforeseen circumstances, we expect to keep
 all previous versions of GWT available on the web site as well. As releases become outdated, we'll no longer actively support them on the <a href="http://groups.google.com/group/Google-Web-Toolkit">GWT discussion group</a>, but we'll do our best to keep old releases and documentation around as long as
 possible.</p>
 
@@ -131,7 +131,7 @@ commercial/enterprise applications?</h3>
 <h3 id="Can_I_redistribute_the_GWT_binaries_with_my_product?">Can I redistribute the GWT binaries with my
 product?</h3>
 
-<p>GWT has been released under the Apache 2.0 license, so you're allowed to distribute binaries as per the <a href="../../terms.html">Apache 2.0 terms</a>. Please note that some libraries used in the GWT are under other licenses as referenced <a href="/web-toolkit/terms#licenses">here</a>, so you must comply with their terms as well.</p>
+<p>GWT has been released under the Apache 2.0 license, so you're allowed to distribute binaries as per the <a href="../../terms.html">Apache 2.0 terms</a>. Please note that some libraries used in the GWT are under other licenses as referenced <a href="../../terms.html#licenses">here</a>, so you must comply with their terms as well.</p>
 
 <h2 id="Support">Support</h2>
 

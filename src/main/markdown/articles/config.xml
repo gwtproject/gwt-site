@@ -14,7 +14,6 @@
 			<entry name="gwt-iphone" displayName="GWT iPhone" description="GWT iPhone"></entry>
 			<entry name="mvp-architecture" displayName="MVP Part1" description="MVP Part1"></entry>
 			<entry name="mvp-architecture-2" displayName="MVP Part2" description="MVP Part2"></entry>
-			<entry name="put_your_gwt_app_on_facebook" displayName="GWT on Facebook" description="GWT on Facebook"></entry>
 			<entry name="security_for_gwt_applications" displayName="Security" description="Security for GWT applications"></entry>
 			<entry name="superdevmode" displayName="Super Dev Mode" description="Super Dev Mode"></entry>
 			<entry name="testing_methodologies_using_gwt" displayName="Testing" description="Best practices on Testing GWT applications"></entry>

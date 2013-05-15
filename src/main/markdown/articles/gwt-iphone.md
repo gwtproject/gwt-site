@@ -200,7 +200,7 @@ two HTTP round-trips.
 <p>
 The Feed Reader needs to get its feed data from somewhere.&nbsp; Enough
 of the
-<a href="/feed/">Google
+<a href="//developers.google.com/feed/">Google
 AJAX Feed API</a> was imported with Java bindings using the
 <a href="http://code.google.com/p/gwt-api-interop">GWT
 JavaScript Interop</a> project.&nbsp; This eliminated the need to hand-write

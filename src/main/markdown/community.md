@@ -62,12 +62,12 @@
 <p>There are several ways to contribute back to the GWT community.</p>  
 <ul>
   <li>Getting involved with discussions in the general <a href="http://groups.google.com/group/google-web-toolkit">GWT group</a> is a great way of educating others that are in need of assistance or are just getting started with GWT.</li>
-  <li>Contributing source code patches and updates to the project itself is a way to share new features and functionality that you benefited from with the rest of the community. If code contribution is something you are interested in, be sure to check out <a href="/web-toolkit/makinggwtbetter">Making GWT Better</a> and discussions that are taking place over at the <a href="http://groups.google.com/group/google-web-toolkit-contributors">GWT Contributors group</a>.</li>
+  <li>Contributing source code patches and updates to the project itself is a way to share new features and functionality that you benefited from with the rest of the community. If code contribution is something you are interested in, be sure to check out <a href="makinggwtbetter.html">Making GWT Better</a> and discussions that are taking place over at the <a href="http://groups.google.com/group/google-web-toolkit-contributors">GWT Contributors group</a>.</li>
 </ul>
 
 <h2>Other developers and projects</h2>
 
-<p>To see how other developers used GWT to build real-world applications, be sure to checkout our <a href="/web-toolkit/developer_spotlight">Developer Spotlight</a> section. Here developers from several third-party companies talk about specific features that they used to build their applications, what they like and would like to see from GWT, as well as tips and learnings from developing with GWT.</p>
+<p>To see how other developers used GWT to build real-world applications, be sure to checkout our <a href="developer_spotlight.html">Developer Spotlight</a> section. Here developers from several third-party companies talk about specific features that they used to build their applications, what they like and would like to see from GWT, as well as tips and learnings from developing with GWT.</p>
 
 <p>If you'd like to see who else is using GWT, check out the <a href="http://gwtgallery.appspot.com">GWT Gallery</a>. You'll be able to find other applications and libraries built with GWT, comment on them, rate them, and search for them by tag or by name. You can also <a href="http://gwtgallery.appspot.com/submit">submit your own entry</a> if you have a project that  you want to share.</p>
 <p>You can also find a wide variety of open source <a href="http://code.google.com/hosting/search?q=GWT&btn=Search+Projects"> projects related to GWT</a> hosted on Google Code.</p>
