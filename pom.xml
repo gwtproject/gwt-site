@@ -41,7 +41,7 @@
 							<mainClass>com.google.gwt.site.markdown.MarkDown</mainClass>
 							<arguments>
 								<argument>${basedir}/src/main/markdown/</argument>
-								<argument>${basedir}/target/generated_site</argument>
+								<argument>${basedir}/target/generated-site</argument>
 								<argument>${basedir}/src/main/resources/main.tpl</argument>
 							</arguments>
 						</configuration>
@@ -61,7 +61,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/generated_site</outputDirectory>
+							<outputDirectory>${basedir}/target/generated-site</outputDirectory>
 							<resources>
 								<resource>
 									                                   

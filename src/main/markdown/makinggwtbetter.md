@@ -35,6 +35,12 @@ modifications to the project, then this document is for you.</p>
     <li><a href="#committers">GWT Committers</a></li>
   </ol>
   </li>
+  
+  <li><a href="#webpage">Contributing to Webpage &amp; Documentation</a>
+  
+  </li>
+  
+  
 </ol>
 
 <h2 id="introduction">Introduction</h2>
@@ -721,3 +727,34 @@ Contributor License Agreement (CLA). The CLA protects you and us.</p>
 <p>You can sign either CLA through <a
   href="https://gwt-review.googlesource.com/#/settings/agreements">GWT's
 Gerrit service</a>.</p>
+
+
+<h3 id="webpage">Contributing to webpage and Documentation</h3>
+This webpage and the documentation hosted on it are completly written in markdown.
+If you find an error, want to make an improvement, write an article or do something to 
+the webpage feel free to do so.
+
+Here is how it works:
+
+All the code is stored inside a git repository. You can clone it like this:
+
+<pre>git clone https://gwt.googlesource.com/gwt-site</pre>
+
+The source code for this webpage will be found in *src/main/markdown*.
+You can edit existing files and add new ones. If you want to see your changes
+you will need to run:
+
+<pre>mvn clean install</pre>
+
+After that you can go to *target/generated-site* and see the generated site.
+
+If you think your change is ready to be publish on gwtproject.org you can send us
+your changes for review by using gerrit. Note: you need to have signed a <a href="#clas">CLA Agreement</a>.
+
+This works the same way you would submit a code change to GWT. More information can be found 
+<a href="#submittingpatches">here</a>.
+
+
+
+
+
