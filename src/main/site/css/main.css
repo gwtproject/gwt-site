@@ -5,6 +5,10 @@ html {
   color: #000;
 }
 
+body {
+	margin: 0;
+}
+
 .gwt-wrap {
   width: 1062px;
   margin: 0 auto 0 auto;
