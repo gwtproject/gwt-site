@@ -28,7 +28,7 @@ Here are some important GWT resources:
 <ul>
   <li><a title="The GWT Home Page" href="http://www.gwtproject.org">The GWT Home Page</a> </li>
   <li>The GWT Developer Documentation, including the
-     <a title="Overview" href="docs/latest/">Overview</a>, the
+     <a title="Overview" href="docs/latest/DevGuide.html">Overview</a>, the
      <a title="Tutorials" href="doc/latest/tutorial/index.html">Tutorials</a>, and the
      <a title="API Reference" href="doc/latest/RefGWTClassAPI.html">API Reference</a> </li>
   <li><a title="Discussion Group Archives" href="http://groups.google.com/group/Google-Web-Toolkit/topics">The Discussion Group Archives</a> </li>
