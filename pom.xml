@@ -92,7 +92,7 @@
 				</executions>
 				<configuration>
 					<descriptors>
-						<descriptor>src/main/assembly/generated_site.xml</descriptor>
+						<descriptor>src/main/assembly/generated-site.xml</descriptor>
 					</descriptors>
 				</configuration>
 			</plugin>
