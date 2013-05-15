@@ -76,6 +76,9 @@
   		<entry name="ReleaseNotes" displayName="Release Notes" description="Release Notes"></entry>
   		
   	</entries>
-    
+  	
+  	<excludes>
+		<exclude>tutorial/</exclude>
+	</excludes>    
   </toc>
 </folder>
