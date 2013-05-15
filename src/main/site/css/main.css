@@ -3,45 +3,32 @@ html {
   margin: 0;
   padding: 0;
   color: #000;
-  background: #606060;
 }
 
-#gwt-wrap {
-  width: 1000px;
-  background: white;
+.gwt-wrap {
+  width: 1062px;
+  margin: 0 auto 0 auto;
+}
+
+#gwt-header1 {
+  background: #606060;
+  
 }
 
 #gwt-header1 .first {
-  float: left;
-  width: 75px;
-  height: 10px;
-  background-color: #606060;
-}
-
-#gwt-header1 .second {
-  float: left;
-  width: 300px;
+  width: 290px;
   height: 10px;
   background-color: #505050;
 }
 
-#gwt-header1 .third {
-  float: left;
-  width: 625px;
-  height: 10px;
-  background-color: #606060;
+
+#gwt-header2 {
+  background: #f55837;
 }
 
 #gwt-header2 .first {
-  float: left;
-  background-color: #f55837;
-  width: 75px;
-  height: 100px;
-}
-
-#gwt-header2 .second {
   background-color: #e54827;
-  width: 300px;
+  width: 290px;
   height: 100px;
   float: left;
   background-position: 30px 10px;
@@ -49,25 +36,21 @@ html {
   background-repeat: no-repeat;
 }
 
-#gwt-header2 .second h1 {
+#gwt-header2 .first h1 {
   margin-left: 130px;
   margin-top: 30px;
   font-size: 40px;
   color: white;
 }
 
-#gwt-header2 .third {
+#gwt-header2 .second {
   background-color: #f55837;
-  float: left;
-  width: 625px;
   height: 100px;
 }
 
 .nav {
 	list-style-type: none;
-	
 	height: 100px;
-	width: 625px;
 	margin: auto;
 }
 
@@ -92,45 +75,31 @@ html {
 	color: white;
 }
 
-#gwt-header3 .first {
-  width: 75px;
-  height: 30px;
+#gwt-header3 {
   background-color: #ceedf4;
-  float: left;
 }
 
-#gwt-header3 .second {
+
+#gwt-header3 .first {
   background-color: white;
-  width: 300px;
+  width: 290px;
   height: 30px;
-  float: left;
 }
 
-#gwt-header3 .second h2{
+#gwt-header3 .first h2{
   margin: 0;
-  margin-top: 7px;
-  margin-left: 30px;
+  padding: 9px 40px;
   color: #f55837;
   font-size: 12px;
   font-weight: lighter;
 }
 
-#gwt-header3 .third {
-  background-color: #ceedf4;
-  width: 625px;
-  height: 30px;
-  float: left;
-}
-
-
 #gwt-toc {
   float: left;
-  width: 280px;
+  width: 270px;
   padding: 10px;
   overflow: hidden;
-  margin-left: 75px;
   background: #efefef;
-  margin-left: 75px;
 }
 
 #gwt-toc ul {
@@ -173,9 +142,9 @@ html {
 }
 
 #gwt-content {
-  float: right;
-  width: 585px;
-  padding: 10px;
+  float: left;
+  width: 672px;
+  padding: 50px;
   color: #564b49;
 }
 
@@ -227,7 +196,7 @@ html {
 
 /* } */
 body {
-  background-color: #606060;
+  background-color: #fff;
   margin: 0;
 }
 

@@ -22,18 +22,16 @@
 	</head>
 	<body>
 	
-	
-	
-<div id="gwt-wrap">
-  <div id="gwt-header1">
+<div id="gwt-header1">
+  <div class="gwt-wrap">
     <div class="first"></div>
-    <div class="second"></div>
-    <div class="third"></div>
   </div>
-  <div id="gwt-header2">
-    <div class="first"></div>
-	<a href="/"><div class="second"><h1>GWT</h1></div></a>
-    <div class="third">
+</div>
+
+<div id="gwt-header2">
+  <div class="gwt-wrap">
+    <a href="/"><div class="first"><h1>GWT</h1></div></a>
+    <div class="second">
     	<ul class="nav">
     		<li><a href="/">Home</a></li>
     		<li><a href="/download.html">Download</a></li>
@@ -41,14 +39,15 @@
     	</ul>
     </div>
   </div>
-  <div id="gwt-header3">
-    <div class="first"></div>
-    <div class="second"><h2>TABLE OF CONTENTS</h2></div>
-    <div class="third"></div>
+</div>
+
+<div id="gwt-header3">
+  <div class="gwt-wrap">
+    <div class="first"><h2>TABLE OF CONTENTS</h2></div>
   </div>
-  <div>
-    
-  </div>
+</div>
+
+<div class="gwt-wrap">
   <div id="gwt-toc">
     $toc
   </div>
@@ -57,7 +56,10 @@
     $content
     </div>
   </div>
-  <div id="gwt-footer">
+</div>
+
+<div id="gwt-footer">
+  <div class="gwt-wrap">
     <div class="gwt-license">Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>.</div>
   </div>
 </div>
