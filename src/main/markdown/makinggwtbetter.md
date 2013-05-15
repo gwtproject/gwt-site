@@ -560,7 +560,7 @@ long. Use linefeed characters to break lines (Unix-style). There are
 some exceptions:</p>
 
 <ul>
-  <li>Java identifiers referenced from within <a
+  <li>Java identifiers referenced from within
   <a href="latest/DevGuideCodingBasicsJSNI.html#methods-fields">JSNI
   methods</a> can get quite long and cannot be parsed if split across lines.</li>
 
