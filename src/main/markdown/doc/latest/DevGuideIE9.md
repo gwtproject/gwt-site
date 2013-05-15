@@ -84,9 +84,6 @@ sites in Compatibility View". Internet sites, except those added to the
 non-compatibility view.
 </p>
 
-<p>
-More information can be found here: <a href="http://support.microsoft.com/kb/956197">http://support.microsoft.com/kb/956197</a>
-</p>
 
 <h3>New User Agent</h3>
 
@@ -132,7 +129,6 @@ References:
 <br/>
 <a href="http://msdn.microsoft.com/en-us/library/cc288325%28v=vs.85%29.aspx">http://msdn.microsoft.com/en-us/library/cc288325%28v=vs.85%29.aspx</a>
 <br/>
-<a href="http://support.microsoft.com/kb/956197">http://support.microsoft.com/kb/956197</a>
 <br/>
 <a href="http://support.microsoft.com/kb/2398082">http://support.microsoft.com/kb/2398082</a>
 <br/>

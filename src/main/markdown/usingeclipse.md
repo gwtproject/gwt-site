@@ -60,8 +60,7 @@ site:
 If you are using an earlier version of Eclipse, replace the 3.7 version number
 with your version (3.6 or 3.5). For detailed instructions on installing plugins
 in Eclipse, see instructions for <a href="//developers.google.com/eclipse/docs/install-eclipse-3.7">Eclipse 3.7</a>,
-<a href="https://developers.google.com/eclipse/docs/install-eclipse-3.6">Eclipse 3.6</a>,
-or <a href="https://developers.google.com/eclipse/docs/install-eclipse-3.5">Eclipse 3.5</a>,
+<a href="https://developers.google.com/eclipse/docs/install-eclipse-3.6">Eclipse 3.6</a>
 </p>
 
 <p>In the Install dialog, you will see an option to install the Plugin as well

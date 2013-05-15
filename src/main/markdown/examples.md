@@ -187,22 +187,7 @@ developing with GWT.</div>
   </div>
 </div>
 
-<div class="project">
-  <div class="screenshot">
-    <a href="http://blueprint.lombardi.com/index.html" target="_blank"><img src="images/lombardi_blueprint.jpg" alt="Lombardi Blueprint"/></a>
-  </div>
-  <div class="info">
-    <div class="name"><a href="http://blueprint.lombardi.com/index.html" target="_blank">Lombardi Blueprint</a></div>
-    <div class="snippet">Lombardi Blueprint is a business process mapping tool. Visit our <a href="developer_spotlight.html">Developer Spotlight</a> to see Alex Moffat,
-chief engineer for Lombardi Blueprint, share how they used GWT to build
-Blueprint, what he likes and would like to see from GWT, and his tips and
-learnings from developing with GWT.</div>
-    <!--
-    <br/>
-    <div><a href="http://www.youtube.com/watch?v=7J2u6QZIXsA">GWT Developers - Lombardi Blueprint</a></div>
-    -->
-  </div>
-</div>
+
 
 <div class="project">
   <div class="screenshot">

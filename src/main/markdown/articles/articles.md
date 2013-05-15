@@ -75,10 +75,6 @@ them by following secure coding practices.</p>
 isn't trivial to deal with, and has security implications. This articles describes the different techniques you can use to build GWT mashups from
 JSON services across the web.</p>
   </li>
-  <li>
-    <a href="put_your_gwt_app_on_facebook.html">Put your GWT Application on Facebook</a> - <i>January 2009</i>
-    <p class="toolsDescription">Facebook has become a popular platform for hosting Facebook applications where users can interact with other friends. If you're looking to socialize your application on Facebook, this article shows you how to do it in a few easy steps.</p>
-  </li>
  <li>
     <a href="gwt-iphone.html">Building iOS Applications with GWT</a> - <i>July 2007</i>
     <p class="toolsDescription">This article explains how to optimize GWT applications for the iPhone.

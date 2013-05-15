@@ -9,7 +9,7 @@ videos (where available).
   <br><br>
   </li>
   <li>
-     <a href="articles/">Articles and Tutorials</a>
+     <a href="articles/articles.html">Articles and Tutorials</a>
      <br>
      This is a sampling of many articles, tutorials, and detailed blogs have been published discussing GWT.
   <br><br>

@@ -76,27 +76,7 @@
       </ul>
     </td>
   </tr>
-  <tr class="video">
-    <td class="screenshot">
-      <img src="images/dev_gal_blueprint.jpg"/>
-    </td>
-    <td class="description">
-      <div class="title"><a href="http://blueprint.lombardi.com">Lombardi
-            Blueprint</a></div>
-      Lombardi Blueprint is a business process mapping tool. Alex Moffat,
-      chief engineer for Lombardi Blueprint, shares how they used GWT to build
-      Blueprint, what he likes and would like to see from GWT, and his tips and
-      learnings from developing with GWT.
-      <ul>
-        <li><a href="http://www.youtube.com/watch?v=7J2u6QZIXsA">GWT Developers
-          - Lombardi Blueprint</a> (1:17)</li>
-        <li><a href="http://www.youtube.com/watch?v=NzxPeAmHJbg">GWT Developer
-          Soapbox</a> (0:27)</li>
-        <li><a href="http://www.youtube.com/watch?v=nxVOvcM6LS8">GWT Developer
-          Tips</a> (0:31)</li>
-      </ul>
-    </td>
-  </tr>
+ 
   <tr class="video">
     <td class="screenshot">
       <img src="images/dev_gal_scenechronize.jpg"/>
