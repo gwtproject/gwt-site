@@ -36,7 +36,9 @@
     		<li><a href="/">Home</a></li>
     		<li><a href="/download.html">Download</a></li>
     		<li><a href="/doc/latest/DevGuide.html">Docs</a></li>
+    		
     	</ul>
+    	<div style="float:right; font-size: 50%; margin-top: 8px; color: red">This is a <b>beta version</b>. If you find errors, please <a href="https://code.google.com/p/google-web-toolkit/issues/entry">report them</a> or <a href="/makinggwtbetter.html#webpage">contribute!</a></div>
     </div>
   </div>
 </div>
@@ -44,6 +46,7 @@
 <div id="gwt-header3">
   <div class="gwt-wrap">
     <div class="first"><h2>TABLE OF CONTENTS</h2></div>
+    
   </div>
 </div>
 
