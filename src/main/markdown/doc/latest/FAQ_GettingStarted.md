@@ -81,7 +81,7 @@ Does it work for my language?</h3>
 
 <h3 id="Does_GWT_cost_anything?">Does GWT cost anything?</h3>
 
-<p>No, GWT is completely free. In fact, all of <a href="http://code.google.com/p/google-web-toolkit/">GWT's source code</a> is available under the <a href="/../../terms.html">Apache 2.0 open source license</a>.</p>
+<p>No, GWT is completely free. In fact, all of <a href="http://code.google.com/p/google-web-toolkit/">GWT's source code</a> is available under the <a href="../../terms.html">Apache 2.0 open source license</a>.</p>
 
 <p/>
 
@@ -124,7 +124,7 @@ If you're still having problems, though, we definitely want to hear about it!</p
 <h3 id="Can_I_use_GWT_to_develop_commercial/enterprise_applications?">Can I use GWT to develop
 commercial/enterprise applications?</h3>
 
-<p>Yes and yes! GWT is available for non-commercial, commercial, and enterprise applications. All of GWT's code is available under the <a href="../../terms">Apache 2.0 open source license</a>.</p>
+<p>Yes and yes! GWT is available for non-commercial, commercial, and enterprise applications. All of GWT's code is available under the <a href="../../terms.html">Apache 2.0 open source license</a>.</p>
 
 <p/>
 

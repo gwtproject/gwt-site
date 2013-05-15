@@ -301,7 +301,7 @@ The User API offers an easy way to generate the login URL. Simply calling the Us
 <h3>Define the Login RPC service</h3>
 
 <p>
-To make this more concrete, let's create a login RPC service for the StockWatcher application. If you're not familiar with GWT RPC, see the previous <a href="/web-toolkit/doc/latest/tutorial/RPC">tutorial</a>.
+To make this more concrete, let's create a login RPC service for the StockWatcher application. If you're not familiar with GWT RPC, see the previous <a href="RPC.html">tutorial</a>.
 </p>
 
 <p>

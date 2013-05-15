@@ -71,7 +71,7 @@ $JDK_HOME environment variable with export JDK_HOME="/Library/Java/Home"</p>
         applications.
       </p>
       <p>
-        See <a href="latest/FAQ_GettingStarted.html">FAQ</a>
+        See <a href="doc/latest/FAQ_GettingStarted.html">FAQ</a>
         for system and browser requirements.
       </p>
     </td>
@@ -98,7 +98,7 @@ run and use the SDK are located in the extracted directory.
 
 <h2 id="create">Create your first web application </h2>
 
-<p>GWT ships with a command line utility called <code><a href="latest/RefCommandLineTools.html#webAppCreator">webAppCreator</a></code> that automatically generates all the files you'll need in order to start a GWT project.  It also generates <a href="http://www.eclipse.org/" rel="nofollow">Eclipse</a> project files and launch config files for easy debugging in GWT's development mode.</p>
+<p>GWT ships with a command line utility called <code><a href="doc/latest/RefCommandLineTools.html#webAppCreator">webAppCreator</a></code> that automatically generates all the files you'll need in order to start a GWT project.  It also generates <a href="http://www.eclipse.org/" rel="nofollow">Eclipse</a> project files and launch config files for easy debugging in GWT's development mode.</p>
 
 <p>You can create a new demo application in a new MyWebApp directory by running <code>webAppCreator</code>:
 </p>
@@ -213,9 +213,8 @@ set up Eclipse to use the GWT SDK:
 <p><a href="usingeclipse.html">Set up Eclipse</a></p>
 
 <p>
-If you are going to stick with the command line, check out
-<a href="speedtracer/get-started.html">Speed Tracer</a> and then
-head over to <a href="latest/tutorial/gettingstarted.html">Build a Sample GWT App</a>.
+If you are going to stick with the command line, check out Speed Tracer	 and then
+head over to <a href="doc/latest/tutorial/gettingstarted.html">Build a Sample GWT App</a>.
 </p>
 
 

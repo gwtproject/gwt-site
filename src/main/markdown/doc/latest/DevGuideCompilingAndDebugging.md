@@ -438,7 +438,7 @@ browser you plan to support.</dd>
 
 <p>The heart of GWT is a compiler that converts Java source into JavaScript, transforming your working Java application into an equivalent JavaScript application.</p> 
 
-<p>The GWT compiler supports the vast majority of the Java language. The <a href="DevGuideCodingBasics#DevGuideJavaCompatibility.html">GWT runtime library</a> emulates a relevant
+<p>The GWT compiler supports the vast majority of the Java language. The <a href="DevGuideCodingBasics.html#DevGuideJavaCompatibility">GWT runtime library</a> emulates a relevant
 subset of the Java runtime library. If a JRE class or method is not supported, the compiler will emit an error.</p>
 
 <p>You can run the compiler with the name of the module you want to compile in one of the following manners:</p>

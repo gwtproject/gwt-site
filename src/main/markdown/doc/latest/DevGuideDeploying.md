@@ -86,6 +86,6 @@ ant build
 &lt;appengine_home_dir&gt;/appcfg.sh update war
 </pre>
 
-<p>You will need to have your appengine-web.xml properly configured beforehand, as well as ensure that you have created a Google App Engine account and an application space for your GWT application. You can read the <a href="/appengine/docs/java/gettingstarted/">App Engine docs</a> for more information.</p>
+<p>You will need to have your appengine-web.xml properly configured beforehand, as well as ensure that you have created a Google App Engine account and an application space for your GWT application. You can read the <a href="//developers.google.com/appengine/docs/java/gettingstarted/">App Engine docs</a> for more information.</p>
 
 

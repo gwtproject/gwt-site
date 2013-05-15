@@ -122,7 +122,7 @@ Client-side RPC interfaces can be marked as XSRF protected using one of the foll
   </pre>
   </li>
   <li>by explicitly annotating interface or methods with <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/XsrfProtect.html"><code>@XsrfProtect</code></a> annotation. 
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/NoXsrfProtect.html].html">
+<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/NoXsrfProtect.html">
 <code>@NoXsrfProtect</code></a> annotation can be used to disable XSRF
 protection on a method or service to disable XSRF protection:
   <pre class="prettyprint">

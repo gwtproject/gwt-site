@@ -38,7 +38,7 @@ easily imagine how this causes problems.</p>
 
 <h3>ARIA</h3>
 
-<p><a href="http://www.w3.org/WAI/intro/aria">ARIA</a> is a W3C specification for making rich Internet applications accessible via a standard set of DOM properties. It is still new but there exist helpful resources on the web. More information can be found at <a href="http://www.google.com/accessibility/">Google accessibility site</a>, <a href="http://code.google.com/p/google-axs-chrome/">Chrome accessibility extensions page</a>, and <a href="http://wiki.codetalks.org/wiki/index.php/Main_Page">codetalks.org</a>.</p>
+<p><a href="http://www.w3.org/WAI/intro/aria">ARIA</a> is a W3C specification for making rich Internet applications accessible via a standard set of DOM properties. It is still new but there exist helpful resources on the web. More information can be found at <a href="http://www.google.com/accessibility/">Google accessibility site</a>, <a href="http://code.google.com/p/google-axs-chrome/">Chrome accessibility extensions page</a>, and codetalks.org.</p>
 
 <p>Adding accessibility support to GWT widgets involves adding the relevant properties to DOM elements that can be used by browsers to raise events during user interaction. Screen readers can react to these events to represent the function of GWT widgets. The DOM properties specified by ARIA are classified into Roles with their Properties and States.</p>
 
@@ -62,9 +62,9 @@ for each role in the <a href="http://google-web-toolkit.googlecode.com/svn/javad
 for getting, setting and removing states and properties, or an extra attribute like <tt>tabindex</tt>.  </p>
 <p>The ARIA standard specifies the HTML attribute type for the state and property
 values. These attribute types are supported in the new library with compile-time checks. Enumerations have been added for
-HTML attributes of type token like <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/DropeffectValues.html">'aria-dropeffect' property type</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/DropeffectValues.html/CheckedValues.html">'aria-checked' type</a> etc. There is a common type added for
-IDREF(S) in the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/DropeffectValues.html/IdReference.html">class</a>. All the states and properties are defined in the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/State.html">State</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/Property.html">Property</a> classes. The
-<tt>tabIndex</tt> attribute has also been added as an extra attribute in the ARIA standard and we have <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/ExtraAttribute.java">added it to the library</a>. We encourage users to get access to states and
+HTML attributes of type token like <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/DropeffectValue.html">'aria-dropeffect' property type</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/DropeffectValues.html#CheckedValues.html">'aria-checked' type</a> etc. There is a common type added for
+IDREF(S) in the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/DropeffectValues.html#IdReference.html">class</a>. All the states and properties are defined in the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/State.html">State</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/Property.html">Property</a> classes. The
+<tt>tabIndex</tt> attribute has also been added as an extra attribute in the ARIA standard and we have <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/ExtraAttribute.html">added it to the library</a>. We encourage users to get access to states and
 properties through the role by getting it from the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/Roles.html">Roles factory</a> because
 the factory checks that the state or property is supported for the role.</p>
 
@@ -219,7 +219,7 @@ tab index attribute is reset to -1.</p>
 <p>Some widgets, such as GWT's <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a> widgets,
 consist of a container with a set of items. The container has a naturally focusable DOM element, but the items
 themselves do not. The focusable element receives all keyboard input, and causes visual changes in the contained items
-to indicate a change in item selection. For example, GWT's Tree widget contains <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/ui/TreeItem.html">TreeItems</a>; both of these elements are made up of <tt>div</tt> elements. However, the Tree also
+to indicate a change in item selection. For example, GWT's Tree widget contains <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TreeItem.html">TreeItems</a>; both of these elements are made up of <tt>div</tt> elements. However, the Tree also
 has a naturally focusable hidden element which receives keyboard events. Whenever the user hits the arrow keys, this
 element handles the event and causes the appropriate TreeItem to be highlighted.</p>
 

@@ -170,7 +170,7 @@ http://site.domain.tld/path?name=Dan%3Cscript%20%3Ealert%28%22Hi%22%29%3B%3C/scr
 <p>So what does this mean? How is writing a server-side service that exposes data via these methods vulnerable? Well, other people have explained this a lot better than we can cover it here. Here are some good treatments:</p>
 
 <ul>
-  <li><a href="http://directwebremoting.org/blog/joe/2007/03/05/json_is_not_as_safe_as_people_think_it_is.html">JSON is not as safe as people think it is</a></li>
+  <li><a href="http://incompleteness.me/blog/2007/03/05/json-is-not-as-safe-as-people-think-it-is/">JSON is not as safe as people think it is</a></li>
   <li><a href="http://robubu.com/?p=24">Safe JSON</a></li>
 </ul>
 
@@ -267,7 +267,7 @@ http://site.domain.tld/path?name=Dan%3Cscript%20%3Ealert%28%22Hi%22%29%3B%3C/scr
 
 <h3 id="xsrf">XSRF and GWT</h3>
 <p class="note">
-  Also see <a href="doc/latest/DevGuideSecurityRpcXsrf.html">GWT RPC XSRF protection</a> &ndash; Explains how to protect GWT RPCs against XSRF attacks using RPC tokens introduced in GWT 2.3.
+  Also see <a href="../doc/latest/DevGuideSecurityRpcXsrf.html">GWT RPC XSRF protection</a> &ndash; Explains how to protect GWT RPCs against XSRF attacks using RPC tokens introduced in GWT 2.3.
 </p>
 <p>You can take steps to make your GWT application less vulnerable to XSRF attacks. The same techniques that you might use to protect other AJAX code will also work to protect your GWT application.</p>
 

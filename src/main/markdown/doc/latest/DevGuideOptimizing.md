@@ -1,6 +1,6 @@
 <p>Once you have your application basically working, it's time to
 improve its performance.  You can
-use <a href="../../speedtracer/get-started.html">Speed Tracer</a> to
+use Speed Tracer to
 find out how your application is performing, and you can use a number
 of tools to address the specific performance problems that you
 find.</p>

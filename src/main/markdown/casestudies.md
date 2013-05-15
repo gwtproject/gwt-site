@@ -9,7 +9,7 @@
 <p class="toolsDescription">Learn how GBST, a global financial company, uses GWT to improve productivity and create a rich user experience.</p>
 
 <h2>DayZipping</h2>
-<p><a href="http://dayzipping.com">DayZipping</a> uses GWT to improve site performance and developer productivity. <em>June 2011</em></p><br/>
+<p>DayZipping uses GWT to improve site performance and developer productivity. <em>June 2011</em></p><br/>
 <iframe width="320" height="182" src="https://www.youtube.com/embed/6GhH5LGCsms" frameborder="0" allowfullscreen></iframe>
 
 <h2>Eureka Streams</h2>

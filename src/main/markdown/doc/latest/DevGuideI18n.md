@@ -57,7 +57,7 @@ The i18nCreator tool can automatically generate interfaces that extend either <a
 <li><strong>Are you adding GWT functionality to an existing web application that already has a localization process defined?</strong><br/>
 <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Dictionary.html">Dictionary</a> will help you interoperate with
 existing pages without requiring you to use <a
-href="DevGuideI18nLocale#LocaleSpecifying.html">GWT's concept of
+href="DevGuideI18nLocale.html#LocaleSpecifying">GWT's concept of
 locale</a>.</li>
 </ul>
 
@@ -74,7 +74,7 @@ flexibility, and interoperability in whichever combinations are most useful.</p>
 
 <ul>
 <li><strong><a href="DevGuideI18n.html#DevGuideStaticStringInternationalization">Static string internationalization</a></strong><br/>
-A family of efficient and type-safe techniques that rely on strongly-typed Java interfaces, <a href="DevGuideI18n#DevGuidePropertiesFiles.html">properties files</a>, and
+A family of efficient and type-safe techniques that rely on strongly-typed Java interfaces, <a href="DevGuideI18n.html#DevGuidePropertiesFiles">properties files</a>, and
 code generation to provide locale-aware messages and configuration settings.
 These techniques depend on the interfaces <a
 href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Constants.html">Constants</a>,
@@ -240,7 +240,7 @@ and <tt>MessageFormat</tt> rolled into a single mechanism.</li>
 <p>All of the types above use properties files based on the traditional <a
 href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)">Java
 properties file format</a>, although GWT uses <a
-href="DevGuideI18n#DevGuidePropertiesFiles.html">an enhanced properties file
+href="DevGuideI18n.html#DevGuidePropertiesFiles">an enhanced properties file
 format</a> that allows for UTF-8 and therefore allows properties files to
 contain Unicode characters directly.</p>
 

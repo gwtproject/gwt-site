@@ -9,14 +9,7 @@ videos (where available).
   <br><br>
   </li>
   <li>
-     <a href="tools.html">Developer Tools and Libraries</a>
-     <br>
-     When building applications with GWT, it is sometimes appropriate to use third-party
-development tools or other open source libraries.
-  <br><br>
-  </li>
-  <li>
-     <a href="articles.html">Articles and Tutorials</a>
+     <a href="articles/">Articles and Tutorials</a>
      <br>
      This is a sampling of many articles, tutorials, and detailed blogs have been published discussing GWT.
   <br><br>

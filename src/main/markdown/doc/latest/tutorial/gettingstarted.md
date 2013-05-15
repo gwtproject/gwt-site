@@ -28,7 +28,7 @@ In the process of building StockWatcher, you'll learn how GWT provides the tools
 
 <h4>AJAX application development process using GWT</h4>
 <p>
-This Build a Sample GWT Application tutorial is divided into 8 sections following a typical application development cycle. Each section builds on the previous sections. In this basic implementation of StockWatcher, all functionality is coded on the client-side. Server-side coding and client/server communications are covered in <a href="/web-toolkit/doc/latest/tutorial/index">other tutorials</a>.
+This Build a Sample GWT Application tutorial is divided into 8 sections following a typical application development cycle. Each section builds on the previous sections. In this basic implementation of StockWatcher, all functionality is coded on the client-side. Server-side coding and client/server communications are covered in <a href="index.html">other tutorials</a>.
 </p>
 
 <table>

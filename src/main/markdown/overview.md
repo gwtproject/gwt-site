@@ -52,7 +52,7 @@ div.diagram img {
   </div>
   <br/>
   <div>
-    <a href="latest/ReleaseNotes.html">What's New in GWT 2.5.1</a>
+    <a href="doc/latest/ReleaseNotes.html">What's New in GWT 2.5.1</a>
   </div>
 </div>
 
@@ -71,8 +71,8 @@ div.diagram img {
         them as JavaScript.
         <ul style="font-size: 90%; margin-bottom: -1em;">
           <li><a href="gettingstarted.html">Get Started</a></li>
-          <li><a href="latest/tutorial/index.html">Tutorials</a></li>
-          <li><a href="latest/DevGuide.html">Developer Guide</a></li>
+          <li><a href="doc/latest/tutorial/index.html">Tutorials</a></li>
+          <li><a href="doc/latest/DevGuide.html">Developer Guide</a></li>
         </ul>
       </div>
     </td>
@@ -183,6 +183,6 @@ div.diagram img {
   <a href="gettingstarted.html">Download the SDK</a> and get a simple web
   application up and running. From there, work through the
   fundamentals of GWT development with the in-depth 
-  <a href="doc/latest/tutorial.html">tutorials</a>.</p>
+  <a href="doc/latest/tutorial/index.html">tutorials</a>.</p>
 
 

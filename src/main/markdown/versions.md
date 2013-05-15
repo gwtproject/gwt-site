@@ -460,7 +460,7 @@
       <td>665402fbdbf04b7d0461b31477c04b4edb604d56</td>
     </tr>
   </tbody></table>
-  <div style="padding-top: 4px; margin-bottom: 1em;"><a href="/support/bin/answer.py?answer=81865&topic=13006">Using GWT 1.4 on Mac OS X 10.5 (Leopard)</a></div>
+  <div style="padding-top: 4px; margin-bottom: 1em;">Using GWT 1.4 on Mac OS X 10.5 (Leopard)</div>
 
   <p>Build 1.4.61 - November 29, 2007 - <a href="release-notes.html#Release_Notes_1_4_61">Release notes</a></p>
   <table class="downloads" style="width:500px">

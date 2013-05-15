@@ -142,7 +142,7 @@ The simplest item you can configure is the Level of the Root Logger.  You can do
 </p>
 
 <pre class="prettyprint">
-# <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/logexample/src/com/google/gwt/sample/logexample/LogExample.gwt.xml&q=LogExample.gwt.xml&sa=N&cd=1&ct=rc">LogExample.gwt.xml</a>
+# LogExample.gwt.xml
 
     &lt;set-property name="gwt.logging.logLevel" value="SEVERE"/&gt;          # To change the default logLevel
     &lt;set-property name="gwt.logging.enabled" value="FALSE"/&gt;            # To disable logging
@@ -196,7 +196,7 @@ a Panel somewhere in your app. GWT logging is set up to make this
 easy, and you can see an example of this
 in <code>CustomLogArea.java</code>.  In this case, we have created
 a <code>VerticalPanel</code> (although any widget which extends
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/user/client/ui/HasWidgets.html">HasWidgets</a>
+<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HasWidgets.html">HasWidgets</a>
 and supports multiple <code>add()</code> calls can be used).
 Once we have one of these widgets, we simply pass it into the constructor
 of a <code>HasWidgetsLogHandler</code> and add that Handler to a logger.

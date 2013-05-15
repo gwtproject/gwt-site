@@ -46,7 +46,7 @@ motion, statement fusing, name shadowing and many more. However, this makes the 
 compiler slower, so it's not enabled by default. Simply add the -XenableClosureCompiler
 to the list of compiler flags to enable optimization.</li>
 
-  <li>Large projects that use <a href="DevGuideCodeSplitting">Code Splitting</a> and have many
+  <li>Large projects that use <a href="DevGuideCodeSplitting.html">Code Splitting</a> and have many
 split points can take advantage of <i>Fragment Merging</i>. The GWT compiler can automatically
 merge fragments to reduce the size of the "leftover" fragment. For more, please see the article,
 <a href="../../articles/fragment_merging.html">Fragment Merging in the GWT Compiler</a>.</li>

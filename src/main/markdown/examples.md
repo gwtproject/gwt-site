@@ -71,7 +71,7 @@ ul.demo li {
 If you're like us, the first thing you want to do is see examples of what you can do with GWT.
 
 <ul>
-  <li><a href="#samples">Samples</a> are included in the SDK for you to play around with and build off of. A few are below. Some are from the <a href="/appengine/">App Engine SDK</a> that use GWT for their front end.</li>
+  <li><a href="#samples">Samples</a> are included in the SDK for you to play around with and build off of. A few are below. Some are from the <a href="//developers.google.com/appengine/">App Engine SDK</a> that use GWT for their front end.</li>
   <li><a href="#real-world-projects">Real world projects</a> let you see the real power of GWT, with complex applications that developers are building.</li>
 </ul>
 
@@ -124,7 +124,7 @@ If you're like us, the first thing you want to do is see examples of what you ca
         <div class="apis">
           <div class="head">GWT features used:</div>
           <div class="item"><a href="doc/latest/DevGuideUiWidgets.html">UI widgets</a></div>
-          <div class="item"><a href="doc/latest/DevGuideServerCommunication#DevGuideRemoteProcedureCalls.html">Polymorphic RPC</a></div>
+          <div class="item"><a href="doc/latest/DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">Polymorphic RPC</a></div>
         </div>
       </div>
     </div>
@@ -136,7 +136,7 @@ If you're like us, the first thing you want to do is see examples of what you ca
       <div class="info">
         <div class="name"><a href="http://sticky.appspot.com" target="_blank">Sticky</a></div>
         <div class="snippet">A sticky note application built using GWT and Google App Engine. The source for this sample is included
-          with the <a href="/appengine/">App Engine SDK</a>. </div>
+          with the <a href="//developers.google.com/appengine/">App Engine SDK</a>. </div>
         <div class="apis">
           <div class="head">GWT features used:</div>
           <div class="item"><a href="doc/latest/DevGuideUiWidgets.html">UI widgets</a></div>
@@ -189,10 +189,10 @@ developing with GWT.</div>
 
 <div class="project">
   <div class="screenshot">
-    <a href="https://blueprint.lombardi.com/index.html" target="_blank"><img src="images/lombardi_blueprint.jpg" alt="Lombardi Blueprint"/></a>
+    <a href="http://blueprint.lombardi.com/index.html" target="_blank"><img src="images/lombardi_blueprint.jpg" alt="Lombardi Blueprint"/></a>
   </div>
   <div class="info">
-    <div class="name"><a href="https://blueprint.lombardi.com/index.html" target="_blank">Lombardi Blueprint</a></div>
+    <div class="name"><a href="http://blueprint.lombardi.com/index.html" target="_blank">Lombardi Blueprint</a></div>
     <div class="snippet">Lombardi Blueprint is a business process mapping tool. Visit our <a href="developer_spotlight.html">Developer Spotlight</a> to see Alex Moffat,
 chief engineer for Lombardi Blueprint, share how they used GWT to build
 Blueprint, what he likes and would like to see from GWT, and his tips and

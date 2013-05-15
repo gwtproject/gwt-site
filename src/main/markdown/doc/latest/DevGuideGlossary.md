@@ -83,10 +83,10 @@ Development mode runs your application directly in Java so that you can use
 a Java IDE debugger to help test and debug your application.</dd>
 
 <dt>ImageResource</dt>
-<dd><a href="DevGuideClientBundle#ImageResource.html">ImageResource</a> allows you to use ClientBundle to include images in compiled output.</dd>
+<dd><a href="DevGuideClientBundle.html#ImageResource">ImageResource</a> allows you to use ClientBundle to include images in compiled output.</dd>
 
 <dt>layout panels</dt>
-<dd>A <a href="DevGuideUiPanels#LayoutPanels.html">set of widgets</a> introduced in GWT 2.0 that can be used to layout your application predictably and efficiently.</dd>
+<dd>A <a href="DevGuideUiPanels.html#LayoutPanels">set of widgets</a> introduced in GWT 2.0 that can be used to layout your application predictably and efficiently.</dd>
 
 <dt>module XML file</dt>
 <dd>A file that contains settings the GWT compiler and development mode use to
@@ -127,7 +127,7 @@ with your client code. Service proxy interface names always have the same name a
 translate at compile time. If no source path is specified in the <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">module XML file</a>, the default source path is <code>&lt;module-name&gt;/client</code>.</dd>
 
 <dt>speed tracer</dt>
-<dd><a href="../../speedtracer.html">Speed Tracer</a> is a Google Chrome extension that helps you identify and fix performance problems in your web applications.</dd>
+<dd>Speed Tracer is a Google Chrome extension that helps you identify and fix performance problems in your web applications.</dd>
 
 <dt>static string internationalization</dt>
 <dd>A technique of defining language specific strings in <code>.properties</code> files that GWT compiles into different

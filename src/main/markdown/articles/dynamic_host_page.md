@@ -59,7 +59,7 @@ logged in.</p>
 For example, using Google App Engine, you can define a security
 constraint that restricts access to all pages (including the static GWT host page)
 to logged-in Google Accounts users (see
-<a href="https:developers.google.com/appengine/docs/java/config/webxml#Security_and_Authentication">Security and Authentication</a>). If the user is not logged in, App Engine redirects the user
+<a href="https://developers.google.com/appengine/docs/java/config/webxml#Security_and_Authentication">Security and Authentication</a>). If the user is not logged in, App Engine redirects the user
 to the Google Accounts login page.</p>
 
 <h2 id="servlet">Servlet as host page</h2>

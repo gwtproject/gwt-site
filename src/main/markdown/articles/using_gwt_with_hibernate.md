@@ -18,7 +18,7 @@ July 2009
 
 <h2 id="TheBasics">The Basics</h2>
 
-<p>For the purposes of this article, we're going to assume that the reader is already familiar with Hibernate configuration and usage on the server-side. If you'd like to know more about Hibernate and how it works, the <a href="http://docs.jboss.org/hibernate/stable/core/reference/en/html/tutorial.html">getting started tutorial</a> posted on the Hibernate homepage is strongly recommended.</p>
+<p>For the purposes of this article, we're going to assume that the reader is already familiar with Hibernate configuration and usage on the server-side. If you'd like to know more about Hibernate and how it works, the getting started tutorial posted on the Hibernate homepage is strongly recommended.</p>
 
 <p>Also, to get up and running with persistence for our Hibernate objects, we'll be using <a href="http://hsqldb.org/">HSQLDB</a> which provides an in-memory Hibernate SQL database. You can download this <a href="http://sourceforge.net/project/showfiles.php?group_id=23316">here</a>. Again, we won't talk too much about how HSQLDB works, but we will cover just enough to get it running for the examples we'll see here.</p>
 
@@ -118,7 +118,7 @@ public class Account implements Serializable {
 
 <p>Now that we've created our persistent classes, let's create a bare bones UI that will allow us to enter new accounts and records, as well as the GWT RPC services that will persist them on the server-side. Let's start with the RPC services.</p>
 
-<p>We won't go into the specifics of the role each RPC component plays here, but if you're unfamiliar with the GWT RPC subsystem, check out the <a href="../doc/latest/DevGuideServerCommunication#DevGuideRemoteProcedureCalls">GWT RPC docs</a> to get up to speed.</p>
+<p>We won't go into the specifics of the role each RPC component plays here, but if you're unfamiliar with the GWT RPC subsystem, check out the <a href="../doc/latest/DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">GWT RPC docs</a> to get up to speed.</p>
 
 <p>First, we create the client-side service interfaces. If you'd like to avoid the large number of interface methods listed below, consider using the Command pattern, as described <a href="http://www.youtube.com/watch?v=PDuhR18-EdM">here</a>:</p>
 
@@ -213,7 +213,7 @@ MusicStoreService {
 }
 </pre>
 
-<p>You may have noticed some <code>HibernateUtil</code> calls in the <code>MusicStoreServiceImpl</code>  method implementations in the code snippet above. This is actually a custom class that was created as a helper utility to retrieve and use the Hibernate session factory, exactly as is done in the <a href="http://docs.jboss.org/hibernate/stable/core/reference/en/html/tutorial.html">Hibernate tutorial</a> mentioned earlier. For convenience, here is the <code>HibernateUtil</code> code pasted below so you can follow along. If you want to learn more details about what the <code>HibernateUtil</code> class is doing, I strongly advise checking out the tutorial for a full explanation.</p>
+<p>You may have noticed some <code>HibernateUtil</code> calls in the <code>MusicStoreServiceImpl</code>  method implementations in the code snippet above. This is actually a custom class that was created as a helper utility to retrieve and use the Hibernate session factory, exactly as is done in the Hibernate tutorial mentioned earlier. For convenience, here is the <code>HibernateUtil</code> code pasted below so you can follow along. If you want to learn more details about what the <code>HibernateUtil</code> class is doing, I strongly advise checking out the tutorial for a full explanation.</p>
 
 <pre class="code">
 public class HibernateUtil {

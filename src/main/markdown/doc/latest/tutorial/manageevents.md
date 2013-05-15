@@ -43,7 +43,7 @@ Let's review the StockWatcher requirements to see what events occur.
     </tr>
 </table>
 <p>
-GWT provides a number of different event handler interfaces. To handle click events on the Add and Remove buttons, you'll use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html">ClickHandler</a> interface. To handle keyboard events in the input box, you'll use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/event/dom/client/KeyPressHandler.html">KeyPressHandler</a> interface.
+GWT provides a number of different event handler interfaces. To handle click events on the Add and Remove buttons, you'll use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html">ClickHandler</a> interface. To handle keyboard events in the input box, you'll use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/event/dom/client/KeyPressHandler.html">KeyPressHandler</a> interface.
 </p>
 
 <p class="note">
@@ -150,7 +150,7 @@ public class StockWatcher implements EntryPoint {
     </li>
 </ol>
 <p class="note">
-<b>Implementation Note:</b>  For smaller applications, such as StockWatcher, that handle relatively few events, using anonymous inner classes gets the job done with minimal coding. However, if you have large number of event handlers subscribing to events, this approach can be inefficient because it could result in the creation of many separate event handler objects. In that case, it's better to have a class implement the event handler interface and handle events coming from multiple event publishers.  You can distinguish the source of the event by calling its getSource() method.  This makes better use of memory but requires slightly more code. For a code example, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideUiHandlers">Event Handlers</a>.
+<b>Implementation Note:</b>  For smaller applications, such as StockWatcher, that handle relatively few events, using anonymous inner classes gets the job done with minimal coding. However, if you have large number of event handlers subscribing to events, this approach can be inefficient because it could result in the creation of many separate event handler objects. In that case, it's better to have a class implement the event handler interface and handle events coming from multiple event publishers.  You can distinguish the source of the event by calling its getSource() method.  This makes better use of memory but requires slightly more code. For a code example, see the Developer's Guide, <a href="../DevGuideUiHandlers.html">Event Handlers</a>.
 </p>
 
 
@@ -314,7 +314,7 @@ At this point you should be able to enter text in the input box. If you use an i
 <b>Tip:</b> Changes made to your Java code are immediately shown in the browser after pressing refresh. If development mode is already running, you don't need to restart it. Just click the Refresh button in your browser to reload your updated GWT code.
 </p>
 <p>
-Although you have not compiled StockWatcher yet, you can test it in production mode here: <a href="manageevents/StockWatcher">Run StockWatcher</a>
+Although you have not compiled StockWatcher yet, you can test it in production mode here:
 </p>
 
 

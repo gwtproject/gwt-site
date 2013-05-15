@@ -253,7 +253,7 @@ libraries and is licensed under the Apache License, Version 2.0 above.)
   <tr class="even">
     <td class="package">Browser Detect v2.1.6</td>
     <td class="license"><a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Attribution 1.0</a></td>
-    <td class="location"><a href="http://google-web-toolkit.googlecode.com/svn/trunk/tools/benchmark-viewer/src/com/google/gwt/junit/viewer/client/BrowserInfo.java">google-web-toolkit.googlecode.com</a>; transliterated into Java source</td>
+    <td class="location">google-web-toolkit.googlecode.com; transliterated into Java source</td>
   </tr>
   <tr>
     <td class="package">Eclipse Java Development Tools (JDT)</td>
@@ -264,9 +264,6 @@ libraries and is licensed under the Apache License, Version 2.0 above.)
     <td class="package">Eclipse Standard Widget Toolkit (SWT)</td>
     <td class="license"><a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License v. 1.0</a></td>
     <td class="location">
-    <a href="http://download.eclipse.org/eclipse/downloads/drops/R-3.2.1-200609210945/download.php?dropFile=swt-3.2.1-gtk-linux-x86.zip">Linux</a>,
-    <a href="http://download.eclipse.org/eclipse/downloads/drops/R-3.2.1-200609210945/download.php?dropFile=swt-3.2.1-win32-win32-x86.zip">Windows</a>, and
-    <a href="http://download.eclipse.org/eclipse/downloads/drops/R-3.2.1-200609210945/download.php?dropFile=swt-3.2.1-carbon-macosx.zip">Mac</a>;
     modifications are at org/eclipse/swt within gwt-dev.jar
     </td>
   </tr>

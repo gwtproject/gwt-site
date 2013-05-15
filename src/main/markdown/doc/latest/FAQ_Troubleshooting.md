@@ -365,7 +365,7 @@ Finding entry point classes
 Failure to load module 'com.google.gwt.sample.stockwatcher.StockWatcher'   
 </pre>
 
-<p>This problem is most often seen when creating a launch configuration manually.  The <a href="/eclipse">Google Plugin for Eclipse</a> handles adding source roots to the classpath automatically.</p>
+<p>This problem is most often seen when creating a launch configuration manually.  The <a href="//developers.google.com/eclipse">Google Plugin for Eclipse</a> handles adding source roots to the classpath automatically.</p>
 
 <p>One of the most common problems when creating launch configurations manually in GWT is to omit the application source code path from the Java classpath. The <a href="DevGuideCompilingAndDebugging.html#DevGuideJavaToJavaScriptCompiler">GWT compiler</a> and <a href="DevGuideCompilingAndDebugging.html#DevGuideDevMode">development mode</a> shell rely on the module
 source code to build your application, and both use the Java classpath to find the .java source files.</p>
@@ -408,7 +408,7 @@ java.security.AccessControlException: access denied
        at com.google.appengine.tools.development.DevAppServerFactory
 </pre>
 
-<p>The problem occurs if you mistakenly enabled the <a href="https://developers.google.com/appengine">Google App Engine</a> feature for your project when you created the project, or at a later time during development, and have server-side libraries or classes packaged with your GWT application war folder that violate the <a href="/appengine/docs/whatisgoogleappengine">Java App Engine sandbox</a>.</p>
+<p>The problem occurs if you mistakenly enabled the <a href="https://developers.google.com/appengine">Google App Engine</a> feature for your project when you created the project, or at a later time during development, and have server-side libraries or classes packaged with your GWT application war folder that violate the <a href="//developers.google.com/appengine/docs/whatisgoogleappengine">Java App Engine sandbox</a>.</p>
 
 <h4>Workaround</h4>
 
@@ -420,7 +420,7 @@ java.security.AccessControlException: access denied
   <li>Click <b>OK</b>.</li>
 </ol>
 
-<p>If you intend to use Google App Engine, you will need to remove any use of server-side libraries that are violating the security constraints of the App Engine sandbox from your project. For more information on the support available in the App Engine sandbox, check out the <a href="/appengine/docs">App Engine documentation.</a></p>
+<p>If you intend to use Google App Engine, you will need to remove any use of server-side libraries that are violating the security constraints of the App Engine sandbox from your project. For more information on the support available in the App Engine sandbox, check out the <a href="//developers.google.com/appengine/docs">App Engine documentation.</a></p>
 
 <h2 id="Image_Bundles">Image Bundles</h2>
 

@@ -22,7 +22,7 @@ In this session, you'll make a call to a remote server instead. To do so you wil
 </ol>
 
 <p class="note" style="margin-left: 1.2em; margin-right: 1.5em;">
-<b>Note:</b> For a broader guide to client-server communication in a GWT application, see <a href="DevGuideServerCommunication.html">Communicate with a Server</a>.
+<b>Note:</b> For a broader guide to client-server communication in a GWT application, see <a href="../DevGuideServerCommunication.html">Communicate with a Server</a>.
 </p>
 
 <h2>Before you begin</h2>
@@ -722,7 +722,7 @@ Whether you chose to serve the JSON-formatted stock data from a different domain
 
 <h3>Security and Cross-Site Requests</h3>
 <p>
-Before you implement mashups of your own, remember that downloading cross-site JSON is powerful, but can also be a security risk. Make sure the servers you interact with are <strong>absolutely trustworthy</strong>, because they will have the ability to execute arbitrary JavaScript code within your application. Take a minute to read <a href="/web-toolkit/articles/security_for_gwt_applications">Security for GWT Applications</a>, which describes the potential threats to GWT applications and how you can combat them.
+Before you implement mashups of your own, remember that downloading cross-site JSON is powerful, but can also be a security risk. Make sure the servers you interact with are <strong>absolutely trustworthy</strong>, because they will have the ability to execute arbitrary JavaScript code within your application. Take a minute to read <a href="../../../articles/security_for_gwt_applications.html">Security for GWT Applications</a>, which describes the potential threats to GWT applications and how you can combat them.
 </p>
 
 

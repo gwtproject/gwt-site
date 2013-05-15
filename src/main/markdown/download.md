@@ -102,7 +102,7 @@
         </span></span></div>
       </div>
       <p font-size: 90%;>Next: Go to <a href="usingeclipse.html">Set up Eclipse</a>, then
-      <a href="latest/tutorial/gettingstarted.html">Build a Sample App</a></p>
+      <a href="doc/latest/tutorial/gettingstarted.html">Build a Sample App</a></p>
     </td>
   </tr>
 

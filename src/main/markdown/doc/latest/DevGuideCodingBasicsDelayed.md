@@ -57,7 +57,7 @@ the future.</p>
 <li>Always set the instance variable to null when the command completes or the timer expires.</li>
 </ul>
 
-<p>Below is a an example of using a timeout with a <a href="DevGuideServerCommunication#DevGuideRemoteProcedureCalls.html">Remote Procedure Call</a> (RPC).</p>
+<p>Below is a an example of using a timeout with a <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">Remote Procedure Call</a> (RPC).</p>
 
 <pre class="prettyprint">
 import com.google.gwt.user.client.Timer;

@@ -217,7 +217,7 @@ Resources.INSTANCE.asynchronous().getText(new ResourceCallback&lt;TextResource&g
 <h3 id="ImageResourceOverview">Overview</h3>
 
 <ol>
-  <li>Define a <a href="/p/google-web-toolkit/wiki/ClientBundle">ClientBundle</a> with one or more <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/ImageResource.html">ImageResource</a> accessors.
+  <li>Define a ClientBundle with one or more <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/ImageResource.html">ImageResource</a> accessors.
 For each accessor method, add an @Source annotation with the path of the new image you want to add to your program.
 The ClientBundle generator combines all of the images defined in your interface into a single, optimized image.
 
@@ -395,7 +395,7 @@ ReturnType obj = GWT.&lt;ReturnType&gt; create(SomeClass.class);
 <ul>
   <li>Server-side manipulation
     <ul>
-      <li>All features in <a href="/p/google-web-toolkit/wiki/CssResource">CssResource</a> must be implemented with compile-time and runtime code only.  No features may depend on runtime support from server-side code. </li>
+      <li>All features in CssResource must be implemented with compile-time and runtime code only.  No features may depend on runtime support from server-side code. </li>
     </ul>
   </li>
 </ul>
@@ -405,8 +405,8 @@ ReturnType obj = GWT.&lt;ReturnType&gt; create(SomeClass.class);
 
 <ol>
   <li>Write a CSS file, with or without GWT-specific extensions </li>
-  <li>If GWT-specific extensions are used, define a custom subtype of <a href="/p/google-web-toolkit/wiki/CssResource">CssResource</a> </li>
-  <li>Declare a method that returns <a href="/p/google-web-toolkit/wiki/CssResource">CssResource</a> or a subtype in an <a href="/p/google-web-toolkit/wiki/ClientBundle">ClientBundle</a> </li>
+  <li>If GWT-specific extensions are used, define a custom subtype of CssResource </li>
+  <li>Declare a method that returns CssResource or a subtype in an ClientBundle </li>
   <li>When the bundle type is generated with <tt>GWT.create()</tt> a Java expression that evaluates to the contents of the stylesheets will be created
     <ul>
       <li>Except in the simplest case where the Java expression is a string literal, it is generally not the case that a CSS file could be generated into the module output </li>
@@ -434,7 +434,7 @@ border: small solid black;</pre>
   <li>Redefining built-in sizes allows users to write plain CSS to draft a style and then tweak it. </li>
   <li>Suggest that users use upper-case names, similar to static final members. </li>
   <li>Any legal property value or expression may be used with <tt>@def</tt> </li>
-  <li><tt>@def</tt> rules that define a single numeric value may be accessed in a manner similar to obfuscated class names by defining an accessor method on the <a href="/p/google-web-toolkit/wiki/CssResource">CssResource</a> type that returns a primitive numeric value. </li>
+  <li><tt>@def</tt> rules that define a single numeric value may be accessed in a manner similar to obfuscated class names by defining an accessor method on the CssResource type that returns a primitive numeric value. </li>
 
 <pre class="prettyprint">interface MyResources extends CssResource {
   int small();
@@ -487,7 +487,7 @@ div {
   <li>Provides runtime support for evaluating static methods when the stylesheet is injected.  Triggered / dynamic updates could be added in the future if we allow programmatic manipulation of the style elements. </li>
 
 <ul>
-  <li>If the user-defined function can be statically evaluated by the compiler, then the implementation of the specific <a href="/p/google-web-toolkit/wiki/CssResource">CssResource</a> should collapse to just a string literal. </li></ul>
+  <li>If the user-defined function can be statically evaluated by the compiler, then the implementation of the specific CssResource should collapse to just a string literal. </li></ul>
 
 
   <li>This allows easy support for non-structural skinning changes. </li></ul>
@@ -609,7 +609,7 @@ class MyResources extends ClientBundle {
 <h4 id="RTL_support">RTL support</h4>
 
 <ul>
-  <li><a href="http://code.google.com/p/google-web-toolkit/wiki/CssResource">CssResource</a> supports automatic transformations of CSS code into a right-to-left variant at compile time. </li>
+  <li>CssResource supports automatic transformations of CSS code into a right-to-left variant at compile time. </li>
   <li>The use of the RTL variant is keyed by <tt>com.google.gwt.i18n.client.LocaleInfo.getCurrentLocale().isRTL()</tt> </li>
   <li>Transformations applied: </li>
 

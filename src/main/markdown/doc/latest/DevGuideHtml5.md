@@ -10,9 +10,9 @@
 
 <ol class="toc" id="pageToc">
   <li><a href="DevGuideHtml5Storage.html">Client-side Storage</a> &ndash; Use LocalStorage, SessionStorage, and monitor StorageEvents</li>
-  <li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ gwt_version }}/index.html?com/google/gwt/canvas/dom/client/package-summary.html">Canvas</a> &ndash; Add visualizations using Canvas (Javadoc)</li>
-  <li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ gwt_version }}/com/google/gwt/media/client/Audio.html">Audio</a> &ndash; Use Audio widgets (Javadoc) </li>
-  <li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ gwt_version }}/com/google/gwt/media/client/Video.html">Video</a> &ndash; Use Video widgets (Javadoc)</li>
+  <li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/canvas/dom/client/package-summary.html">Canvas</a> &ndash; Add visualizations using Canvas (Javadoc)</li>
+  <li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/media/client/Audio.html">Audio</a> &ndash; Use Audio widgets (Javadoc) </li>
+  <li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/media/client/Video.html">Video</a> &ndash; Use Video widgets (Javadoc)</li>
 </ol>
 
 

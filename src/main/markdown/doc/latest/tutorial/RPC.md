@@ -21,10 +21,8 @@ In this section, you'll make a GWT remote procedure call to a server-side method
 </ol>
 
 <p class="note" style="margin-left: 1.2em; margin-right: 1.5em;">
-<b>Note:</b> For a broader guide to RPC communication in a GWT application, see <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">Communicate with a Server - Remote Procedure Calls</a>.
+<b>Note:</b> For a broader guide to RPC communication in a GWT application, see <a href="../DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">Communicate with a Server - Remote Procedure Calls</a>.
 </p>
-
-{% include "web-toolkit/doc/latest/tutorial/_beforeyoubegin.html" %}
 
 <h3>What is GWT RPC?</h3>
 <p>
@@ -35,7 +33,7 @@ Within the client code, you'll use an automatically-generated proxy class to mak
 GWT will handle serialization of the Java objects passing back and forth&mdash;the arguments in the method calls and the return value.
 </p>
 <p class="note">
-<b>Important:</b> GWT RPC services are not the same as web services based on <a href="http://www.w3schools.com/soap/soap_intro.asp">SOAP</a> or <a href="http://java.sun.com/developer/technicalArticles/WebServices/restful/">REST</a>. They are simply as a lightweight method for transferring data between your server and the GWT application on the client. To compare single and multi-tier deployment options for integrating GWT RPC services into your application, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideServerCommunication#DevGuideArchitecturalPerspectives">Architectural Perspectives</a>.
+<b>Important:</b> GWT RPC services are not the same as web services based on SOAP or <a href="http://java.sun.com/developer/technicalArticles/WebServices/restful/">REST</a>. They are simply as a lightweight method for transferring data between your server and the GWT application on the client. To compare single and multi-tier deployment options for integrating GWT RPC services into your application, see the Developer's Guide, <a href="../DevGuideServerCommunication.html#DevGuideArchitecturalPerspectives">Architectural Perspectives</a>.
 </p>
 <h3>Java components of the GWT RPC Mechanism</h3>
 
@@ -470,7 +468,7 @@ A type is serializable and can be used in a service interface if one of the foll
     <li>An array of serializable types is serializable by extension. </li>
     <li>A class is serializable if it meets these three requirements:
         <ul>
-            <li>It implements either Java <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html">Serializable</a> or GWT <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/{{ javadoc_path }}/com/google/gwt/user/client/rpc/IsSerializable.html">IsSerializable</a> interface, either directly, or because it derives from a superclass that does.</li>
+            <li>It implements either Java <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html">Serializable</a> or GWT <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/IsSerializable.html">IsSerializable</a> interface, either directly, or because it derives from a superclass that does.</li>
             <li>Its non-final, non-transient instance fields are themselves serializable, and</li>
             <li>It has a default (zero argument) constructor with any access modifier (e.g. private Foo(){} will work)</li>
         </ul>

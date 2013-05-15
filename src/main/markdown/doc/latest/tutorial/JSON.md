@@ -330,7 +330,7 @@ As in JavaScript, an object is actually just an unordered set of name/value pair
 In JSON objects, however, the values can only be other JSON types (never functions containing executable JavaScript code).
 </p>
 <p class="note">
-Another technique for a converting a JSON string into something you can work with is to use the static <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/json/client/JSONParser.html">JSONParser.parse(String)</a> method. GWT contains a full set of JSON types for manipulating JSON data in the com.google.gwt.json.client package. If you prefer to parse the JSON data, see the Developer's Guide, <a href="/web-toolkit/doc/{{ release_path }}/DevGuideCodingBasics#DevGuideJSON">Working with JSON</a>. Ultimately both techniques rely on the JavaScript eval() function; so you are still responsible for ensuring that you are using a trusted source of JSON data.
+Another technique for a converting a JSON string into something you can work with is to use the static <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/json/client/JSONParser.html">JSONParser.parse(String)</a> method. GWT contains a full set of JSON types for manipulating JSON data in the com.google.gwt.json.client package. If you prefer to parse the JSON data, see the Developer's Guide, <a href="../DevGuideCodingBasics.html#DevGuideJSON">Working with JSON</a>. Ultimately both techniques rely on the JavaScript eval() function; so you are still responsible for ensuring that you are using a trusted source of JSON data.
 </p>
 
 <h3>Creating an overlay type</h3>
@@ -723,7 +723,7 @@ Change: <code>private static final String JSON_URL = GWT.getModuleBaseURL()
 
 <h2 id="more">More about JSON, JSNI, Overlay types, and HTTP</h2>
 <p>
-At this point you've retrieved JSON-encoded stock data from a local server and used it to update the Price and Change fields for the stocks in your watch list. If you'd like to see how to retrieve JSON from web server on another domain, see <a href="/web-toolkit/doc/latest/tutorial/Xsite">Making cross-site requests</a>.
+At this point you've retrieved JSON-encoded stock data from a local server and used it to update the Price and Change fields for the stocks in your watch list. If you'd like to see how to retrieve JSON from web server on another domain, see <a href="Xsite.html">Making cross-site requests</a>.
 </p>
 <p>
 To learn more about client-server communication, see the Developer's Guide, Communicating with the Server. <br />Topics include:

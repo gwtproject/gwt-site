@@ -503,7 +503,7 @@ import java.util.Date;</span>
     </li>
 </ol>
 <p class="note">
-<b>Implementation Note:</b> You may have noticed that the classes DateTimeFormat and NumberFormat live in a subpackage of com.google.gwt.i18n, which suggest that they deal with internationalization in some way. And indeed they do: both classes will automatically use your application's locale setting when formatting numbers and dates. You'll learn more about localizing and translating your GWT application into other languages in the tutorial <a href="/web-toolkit/doc/latest/tutorial/i18n">Internationalizing a GWT Application</a>.
+<b>Implementation Note:</b> You may have noticed that the classes DateTimeFormat and NumberFormat live in a subpackage of com.google.gwt.i18n, which suggest that they deal with internationalization in some way. And indeed they do: both classes will automatically use your application's locale setting when formatting numbers and dates. You'll learn more about localizing and translating your GWT application into other languages in the tutorial <a href="i18n.html">Internationalizing a GWT Application</a>.
 </p>
 
 <h2>What's Next</h2>
@@ -511,7 +511,7 @@ import java.util.Date;</span>
 At this point you've built the interface components and coded all the underlying client-side functionality for the StockWatcher application. The user can add and remove stocks. The Price and Change fields update every 5 seconds. A timestamp shows when the last refresh occurred.</p>
 <img src="images/CodeClientBug.png" alt="screenshot StockWatcher Bug" />
 <p>
-Although you have not compiled StockWatcher yet, you can test it in production mode here: <a href="codeclient/StockWatcher">Run StockWatcher</a>
+Although you have not compiled StockWatcher yet, you can test it in production mode here: Run StockWatcher
 </p>
 <h3>A Bug</h3>
 <p>
