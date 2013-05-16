@@ -77,8 +77,6 @@
   		
   	</entries>
   	
-  	<excludes>
-		<exclude>tutorial/</exclude>
-	</excludes>    
+  	
   </toc>
 </folder>

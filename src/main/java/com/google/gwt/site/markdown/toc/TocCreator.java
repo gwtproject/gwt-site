@@ -20,80 +20,86 @@ import java.util.List;
 
 public class TocCreator {
 
-  public String createTocForNode(MDParent root, MDNode node) {
+	public String createTocForNode(MDParent root, MDNode node) {
 
-    StringBuffer buffer = new StringBuffer();
-    buffer.append("<ul>");
-    render(root, buffer, node);
-    buffer.append("</ul>");
+		StringBuffer buffer = new StringBuffer();
+		buffer.append("<ul>");
+		render(root, buffer, node);
+		buffer.append("</ul>");
 
-    return buffer.toString();
-  }
+		return buffer.toString();
+	}
 
-  private void render(MDNode node, StringBuffer buffer, MDNode tocNode) {
-    
-    if(node.isExcludeFromToc())
-      return;
+	private void render(MDNode node, StringBuffer buffer, MDNode tocNode) {
 
-    if (node.isFolder()) {
-      MDParent mdParent = node.asFolder();
+		MDNode tmpNode = tocNode;
+		while (tmpNode.getParent() != null) {
+			if (tmpNode.isExcludeFromToc())
+				return;
+			tmpNode = tmpNode.getParent();
 
-      if (node.getDepth() != 0) {
-        buffer.append("<li class='folder'>");
+		}
 
-        if (mdParent.getHref() != null) {
-          StringBuffer url = new StringBuffer();
-          if (tocNode.getDepth() > 0) {
-            for (int i = 1; i < tocNode.getDepth(); i++) {
-              url.append("../");
-            }
-          }
-          url.append(node.getRelativePath());
+		tmpNode = node;
+		while (tmpNode.getParent() != null) {
+			if (tmpNode.isExcludeFromToc())
+				return;
+			tmpNode = tmpNode.getParent();
 
-          buffer.append("<a href='#'>");
-          
-        }
-        buffer.append(node.getDisplayName());
-        if (mdParent.getHref() != null) {
-          buffer.append("</a>");
-        }
-        buffer.append("<ul>");
+		}
 
-      }
+		if (node.isFolder()) {
+			MDParent mdParent = node.asFolder();
 
-      List<MDNode> children = mdParent.getChildren();
-      for (MDNode child : children) {
-        render(child, buffer, tocNode);
-      }
+			if (node.getDepth() != 0) {
+				buffer.append("<li class='folder'>");
 
-      if (node.getDepth() != 0) {
+				buffer.append("<a href='#'>");
 
-        buffer.append("</li>");
-        buffer.append("</ul>");
+				buffer.append(node.getDisplayName());
 
-      }
+				buffer.append("</a>");
 
-    } else {
+				buffer.append("<ul>");
 
-      StringBuffer relativeUrl = new StringBuffer();
-      if (tocNode.getDepth() > 0) {
-        for (int i = 1; i < tocNode.getDepth(); i++) {
-          relativeUrl.append("../");
-        }
-      }
-      
-      StringBuffer absoluteUrl = new StringBuffer();
-      absoluteUrl.append("/");
-      absoluteUrl.append(node.getRelativePath());
+			}
 
-      relativeUrl.append(node.getRelativePath());
+			List<MDNode> children = mdParent.getChildren();
+			for (MDNode child : children) {
+				render(child, buffer, tocNode);
+			}
 
-      buffer.append("<li class='file'>");
-      // TODO escape HTML
-      buffer.append("<a href='" + relativeUrl.toString() + "' ahref='" + absoluteUrl.toString() + "' title='" + node.getDescription() +  "'>" + node.getDisplayName() + "</a>");
-      buffer.append("</li>");
-    }
+			if (node.getDepth() != 0) {
 
-  }
+				buffer.append("</li>");
+				buffer.append("</ul>");
+
+			}
+
+		} else {
+
+			StringBuffer relativeUrl = new StringBuffer();
+			if (tocNode.getDepth() > 0) {
+				for (int i = 1; i < tocNode.getDepth(); i++) {
+					relativeUrl.append("../");
+				}
+			}
+
+			StringBuffer absoluteUrl = new StringBuffer();
+			absoluteUrl.append("/");
+			absoluteUrl.append(node.getRelativePath());
+
+			relativeUrl.append(node.getRelativePath());
+
+			buffer.append("<li class='file'>");
+			// TODO escape HTML
+			buffer.append("<a href='" + relativeUrl.toString() + "' ahref='"
+					+ absoluteUrl.toString() + "' title='"
+					+ node.getDescription() + "'>" + node.getDisplayName()
+					+ "</a>");
+			buffer.append("</li>");
+		}
+
+	}
 
 }
