@@ -50,12 +50,12 @@ public class TocCreator {
           }
           url.append(node.getRelativePath());
 
-          buffer.append("<span style='cursor:pointer'>");
+          buffer.append("<a href='#'>");
           
         }
         buffer.append(node.getDisplayName());
         if (mdParent.getHref() != null) {
-          buffer.append("</span>");
+          buffer.append("</a>");
         }
         buffer.append("<ul>");
 
