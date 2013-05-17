@@ -173,7 +173,7 @@ The basic <code>Editor</code> type is simply a parameterized marker interface th
 }</pre>
   </li>
 
-  <li>The <code>@Ignored</code> annotation may be used on a field or accessor method to make the Editor framework ignore something that otherwise appears to be a sub-Editor.</li>
+  <li>The <code>@Ignore</code> annotation may be used on a field or accessor method to make the Editor framework ignore something that otherwise appears to be a sub-Editor.</li>
 
   <li>Sub-Editors may be null. In this case, the Editor framework will ignore these sub-editors.</li>
 </ul>
