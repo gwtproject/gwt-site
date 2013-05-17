@@ -57,6 +57,10 @@
 <li>Read the <a href="http://groups.google.com/group/google-web-toolkit/web/gwt-discussion-group-charter">GWT discussion group charter</a> which highlights the community guidelines.</li>
 </ol>
 
+<h2>Other communities</h2>
+<p>There is a <a href="https://plus.google.com/u/0/communities/116543000751323604177">GWT community over at Google+</a>. There's also the IRC channel #gwt on the Freenode network.</p>
+
+
 <h2>Contribute</h2>
 
 <p>There are several ways to contribute back to the GWT community.</p>  
