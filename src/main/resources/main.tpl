@@ -19,6 +19,7 @@
 
     </script>
     <script type="text/javascript" src="/gwtproject/gwtproject.nocache.js"></script>
+    <title>GWT Project</title>
 	</head>
 	<body>
 	
