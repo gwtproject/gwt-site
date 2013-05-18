@@ -3,9 +3,9 @@ The GWT Steering Committee
 
 The GWT Steering committee was founded in 2012 to help the GWT project become an even bigger success as an open source project.
 
-The intention of the steering committee is to ensure that no particual individual, group or organisation can gain control over the project.
+The intention of the steering committee is to ensure that no particular individual, group or organisation can gain control over the project.
 
-The committee will lead the GWT project in major decisions by consensus and ensures that GWT can meet its goals as a truely open source project.
+The committee will lead the GWT project in major decisions by consensus and ensures that GWT can meet its goals as a truly open source project.
 
 
 The steering committee consists of the following members (no particular order):
