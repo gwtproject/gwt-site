@@ -1,24 +1,21 @@
-    <style type="text/css">
-    
-    <style>
-div.demo {
-  padding: 3px;
-  padding-left: 20px;
-  background-image: url("images/newwindow.gif");
-  background-repeat: no-repeat;
-  background-position: left center;
-}
+<style>
+    div.demo {
+      padding: 3px;
+      padding-left: 20px;
+      background-image: url("images/newwindow.gif");
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
 
-ul.demo {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
+    ul.demo {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
 
-ul.demo li {
-  list-style-image: url("images/newwindow.gif");
-  list-style-type: disc;
-}
-</style>
+    ul.demo li {
+      list-style-image: url("images/newwindow.gif");
+      list-style-type: disc;
+    }
 
     .project {
       position: relative;
@@ -60,12 +57,12 @@ ul.demo li {
     .project .info .apis .item {
       margin-left: 10px;
     }
-    
+
     .example {
       margin-top: 1em;
     }
-    
-    </style>
+
+</style>
 
 <p>
 If you're like us, the first thing you want to do is see examples of what you can do with GWT.
