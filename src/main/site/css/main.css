@@ -126,22 +126,15 @@ body {
 	line-height: 24px;
 }
 
-#gwt-toc li.folder {
-	background-image: url("../images/arrow-closed.png");
-	background-repeat: no-repeat;
-	background-position: 0 6px;
+#gwt-toc li.folder > a {
+  background-image: url("../images/arrow-closed.png");
+  background-repeat: no-repeat;
+  background-position: 0 2px;
+  padding-left: 15px;
 }
 
-
-
-#gwt-toc li.folder.open {
-    background-image: url("../images/arrow-open.png");
-    background-repeat: no-repeat;
-    background-position: 0 6px;
-}
-
-#gwt-toc li.folder a{
-	margin-left: 16px; 
+#gwt-toc li.folder.open > a {
+  background-image: url("../images/arrow-open.png");
 }
 
 #gwt-toc a, #gwt-toc a:VISITED{
