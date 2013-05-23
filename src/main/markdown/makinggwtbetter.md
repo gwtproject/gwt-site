@@ -698,9 +698,6 @@ href="#antjunit">workaround</a> is described above.</p>
   <li>Push your changes to Gerrit for review. The first time you will need to do 
   some <a href="#gerritsetup">initial setup</a>. Follow Gerrit's documentation to create a change and upload it for review.</li>
   
-  <li>Push your changes to Gerrit for review. The first time you will need to do 
-  some initial setup. Follow Gerrit's documentation to create a change and upload it for review.</li>
-  
   <li>After setting up gerrit on your system, you can push your changes for review using:
   	<pre>git push origin HEAD:refs/for/master</pre>
   </li>
@@ -771,7 +768,7 @@ you will need to run:
 
 After that you can go to *target/generated-site* and see the generated site.
 
-If you think your change is ready to be publish on gwtproject.org you can send us
+If you think your change is ready to be published on gwtproject.org you can send us
 your changes for review by using gerrit. Note: you need to have signed a <a href="#clas">CLA Agreement</a>.
 
 This works the same way you would submit a code change to GWT. More information can be found 
