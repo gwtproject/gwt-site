@@ -161,10 +161,14 @@ In addition to using the Add button, StockWatcher users can enter a stock code w
 <p>
 To subscribe to keyboard events, you can call the addKeyPressHandler(KeyPressHandler) method and pass it a KeyPressHandler.
 </p>
+<p class="note">
+For the enter key, you however have to use either KeyDownHandler or KeyUpHandler as Firefox won't correctly populate the KeyPressEvent; see <a href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5003">issue 5003</a>.
+</p>
+
 
 <ol class="instructions">
     <li>
-        <div class="header">Hook up the keypress event handler for the input box, newSymbolTextBox.</div>
+        <div class="header">Hook up the keydown event handler for the input box, newSymbolTextBox.</div>
         <div class="details">In the onModuleLoad method, cut and paste the code commented "Listen for keyboard events in the input box." that is highlighted below.</div>
         <div class="details"><pre class="code">
     // Listen for mouse events on the Add button.
@@ -175,9 +179,9 @@ To subscribe to keyboard events, you can call the addKeyPressHandler(KeyPressHan
     });
 
 <span class="highlight">    // Listen for keyboard events in the input box.
-    newSymbolTextBox.addKeyPressHandler(new KeyPressHandler() {
-      public void onKeyPress(KeyPressEvent event) {
-        if (event.getCharCode() == KeyCodes.KEY_ENTER) {
+    newSymbolTextBox.addKeyDownHandler(new KeyDownHandler() {
+      public void onKeyDown(KeyDownEvent event) {
+        if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
           addStock();
         }
       }
@@ -195,13 +199,13 @@ To subscribe to keyboard events, you can call the addKeyPressHandler(KeyPressHan
   }
 
 }</pre></div>
-        <div class="details">Eclipse flags KeyPressHandler and suggests you include the import declaration.</div>
+        <div class="details">Eclipse flags KeyDownHandler and suggests you include the import declaration.</div>
     </li>
     <li>
         <div class="header">Include the import declarations.</div>
         <div class="details"><pre class="code"><span class="highlight">import com.google.gwt.event.dom.client.KeyCodes;
-import com.google.gwt.event.dom.client.KeyPressEvent;
-import com.google.gwt.event.dom.client.KeyPressHandler;</span></pre></div>
+import com.google.gwt.event.dom.client.KeyDownEvent;
+import com.google.gwt.event.dom.client.KeyDownHandler;</span></pre></div>
     </li>
 </ol>
 
@@ -240,7 +244,7 @@ You want verify that the stock code entered is valid. Rather than verify whether
 First, extract the stock code. To retrieve the text in the TextBox widget use its getText method.
 </p>
 <p>
-Next, ensure that the charcters are not within the set of illegal characters you specify. After you've converted the user input to a standard form, use a regular expression to check its format. Remember to use regular expressions that have the same meaning in both Java and JavaScript.
+Next, ensure that the characters are not within the set of illegal characters you specify. After you've converted the user input to a standard form, use a regular expression to check its format. Remember to use regular expressions that have the same meaning in both Java and JavaScript.
 </p>
 <p>
 If the input is valid, clear the text box so the user can add another stock code.
