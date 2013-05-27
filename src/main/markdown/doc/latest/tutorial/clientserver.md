@@ -53,7 +53,7 @@ To try this out, see the tutorial, <a href="JSON.html">Retrieving JSON Data</a>.
 
 <h3>Making Cross-Site Requests for JSONP</h3>
 <p>
-If you're creating a mashup application that needs to use data from one or more remote web servers, you will have to work around SOP (Same Origin Policy) access restrictions. In this tutorial, you'll use JavaScript Native Interface (JSNI) to write a &lt;script&gt; tag that retrieves JSON with padding (JSONP).
+If you're creating a mashup application that needs to use data from one or more remote web servers, you will have to work around SOP (Same Origin Policy) access restrictions. In this tutorial, you'll use JsonpRequestBuilder to retrieve JSON with padding (JSONP).
 </p>
 <p>
 To try this out, see the tutorial, <a href="Xsite.html">Making Cross-Site Requests</a>.

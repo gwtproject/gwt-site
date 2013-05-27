@@ -151,16 +151,16 @@ Now that you understand the SOP issues surrounding cross-site requests, compare 
     <tr>
         <td>Making the call</td>
         <td>HTTP with Request Builder</td>
-        <td>Embed a script whose src attribute is the URL of the JSON data with the name of the callback function appended.</td>
+        <td>JSON-P with Jsonp Request Builder.</td>
     </tr>
     <tr>
         <td>Server-side code</td>
         <td>Returns JSON string</td>
-        <td>Returns a Javascript callback function with the JSON string</td>
+        <td>Returns a JavaScript callback function with the JSON string</td>
     </tr>
     <tr>
         <td>Handling the response</td>
-        <td>Use JavaScript eval() function to turn JSON string into JavaScript object</td>
+        <td>Use <code>JsonUtils.safeEval()</code> to turn JSON string into JavaScript object</td>
         <td>Already a JavaScript object; cast it as a StockData array</td>
     </tr>
     <tr>
@@ -360,17 +360,9 @@ bhs.serve_forever()
 <p>
 Now that you've verified that the server is returning stock data either as a JSON string or as JSONP, you can update StockWatcher to request and then handle the JSONP.
 
-The RequestBuilder code is replaced by a call to the getJson method. The first parameter is an ID number that uniquely identifies each HTTP request.
+The RequestBuilder code is replaced by a call to JsonpRequestBuilder.
 </p>
 
-<h3>Specifying the URL</h3>
-<p>
-Update the query URL so that it includes both the stock codes your are querying and the name of the callback function. Each callback function will have a unique ID number.
-</p>
-<h4>Update JSON_URL</h4>
-<p>
-This is the only difference that results in the implementation depending on whether the data is being served from a different domain or a different port.
-</p>
 <ol class="instructions">
     <li>
         <div class="header">In the StockWatcher class, change the JSON_URL constant as follows:
@@ -383,12 +375,6 @@ This is the only difference that results in the implementation depending on whet
         <div class="details">If your stock data is being served from a different domain (the PHP script), specify the domain and full path to the stockPrices.php script: <pre class="code">
   private static final String JSON_URL = "http://<i>www.myStockServerDomain.com</i>/stockPrices.php?q=";</pre></div>
     </li>
-    <li>
-        <div class="header">Create a variable to hold the value of the callback ID.</div>
-        <div class="details"><pre class="code">
-  private Label errorMsgLabel = new Label();
-<span class="highlight">  private int jsonRequestId = 0;</span></pre></div>
-    </li>
      <li>
         <div class="header">Try to retrieve plain JSON data from the remote server.</div>
         <div class="details">Debug StockWatcher in development mode.</div>
@@ -396,23 +382,12 @@ This is the only difference that results in the implementation depending on whet
     </li>
      <li>
         <div class="header">StockWatcher displays the error message: Couldn't retrieve JSON.</div>
-        <div class="details">To fix the SOP error, in the next step you'll pad the JSON with the callback function.</div>
+        <div class="details">To fix the SOP error, in the next step you'll use JsonpRequestBuilder.</div>
     </li>
 
 </ol>
 
-<h3>Creating the callback method</h3>
-<p>
-In the same-site implementation, the JSON URL was appended with the stock codes and then a HTTP GET request sent to the server. RequestBuilder was used to construct the HTTP request.
-</p>
-<p>
-In the cross-site implementation, the JSON URL is wrapped in the callback method. The RequestBuilder code is replaced by a JSNI function, getJSON(int, String, StockWatcher). The first parameter is an ID number that uniquely identifies each HTTP request.
-</p>
-<p>
-The getJSON function creates a JavaScript script which makes the call to the server.
-</p>
-
-<h4>Update the refreshWatchList method</h4>
+<h3>Update the refreshWatchList method</h3>
 <ol class="instructions">
     <li>
         <div class="header"></div>
@@ -437,21 +412,24 @@ The getJSON function creates a JavaScript script which makes the call to the ser
         }
     }
 
-<span class="highlight">    // Append the name of the callback function to the JSON URL.
-    url = URL.encode(url) + "&amp;callback=";
+    url = URL.encode(url);
 
-    // Send request to server by replacing RequestBuilder code with a call to a JSNI method.
-    getJson(jsonRequestId++, url, this);</span>
+<span class="highlight">    JsonpRequestBuilder builder = new JsonpRequestBuilder();
+    builder.requestObject(url, new AsyncCallback&lt;JsArray&lt;StockData>>() {
+      public void onFailure(Throwable caught) {
+        displayError("Couldn't retrieve JSON");
+      }
+      
+      public void onSuccess(JsArray&lt;StockData> data) {
+        // TODO handle JSON response
+      }
+    });
   }
 </pre></div>
 </li>
     <li>
-        <div class="header">Eclipse flags getJson.</div>
-        <div class="details">Ignore the compile error; you'll write that method in a minute.</div>
-    </li>
-    <li>
         <div class="header">If you haven't already, delete the RequestBuilder code.</div>
-        <div class="details">The RequestBuilder code is replaced by a call to the getJson method. So you no longer need the following code in the refreshWatchList method: </div>
+        <div class="details">The RequestBuilder code is replaced by a call to JsonpRequestBuilder. So you no longer need the following code in the refreshWatchList method: </div>
         <div class="details"><pre class="code">
     // Send request to server and catch any errors.
     RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
@@ -464,7 +442,7 @@ The getJSON function creates a JavaScript script which makes the call to the ser
 
         public void onResponseReceived(Request request, Response response) {
           if (200 == response.getStatusCode()) {
-            updateTable(asArrayOfStockData(response.getText()));
+            updateTable(JsonUtils.safeEval(response.getText()));
           } else {
             displayError("Couldn't retrieve JSON (" + response.getStatusText()
                 + ")");
@@ -479,129 +457,9 @@ The getJSON function creates a JavaScript script which makes the call to the ser
 
 </ol>
 
-<h3>Making the call to the remote server</h3>
+<h4>Implement the onSuccess method</h4>
 <p>
-What follows is the most important change in this implementation. This is where you work around the SOP restrictions by using the src attribute of the &lt;script&gt; tag to make the call to the remote server.
-</p>
-<p>
-This JSNI method (getJSON) creates a dynamically-loaded &lt;script&gt; element. The src attribute is the URL of the JSON data with the name of a callback function appended. When the script executes, it fetches the padded JSON; the JSON data is passed as an argument of the callback function. When the callback function executes, it calls the Java handleJsonResponse method and passes it the JSON data as a JavaScript object.
-</p>
-<p>
-Not only does this implementation include some embedded handwritten JavaScript (JSNI) but it uses a bridge method, a technique for calling back into the Java source code during development. (Remember, when you compile StockWatcher, all the client-side Java code is compiled into JavaScript.)
-</p>
-<h4>Implement the getJSON method</h4>
-<ol class="instructions">
-    <li>
-        <div class="header">Add the getJson method to the StockWatcher class.</div>
-        <div class="details"><pre class="code">
-  /**
-   * Make call to remote server.
-   */
-  public native static void getJson(int requestId, String url,
-      StockWatcher handler) /*-{
-   var callback = "callback" + requestId;
-
-   // [1] Create a script element.
-   var script = document.createElement("script");
-   script.setAttribute("src", url+callback);
-   script.setAttribute("type", "text/javascript");
-
-   // [2] Define the callback function on the window object.
-   window[callback] = function(jsonObj) {
-   // [3]
-     handler.@com.google.gwt.sample.stockwatcher.client.StockWatcher::handleJsonResponse(Lcom/google/gwt/core/client/JavaScriptObject;)(jsonObj);
-     window[callback + "done"] = true;
-   }
-
-   // [4] JSON download has 1-second timeout.
-   setTimeout(function() {
-     if (!window[callback + "done"]) {
-       handler.@com.google.gwt.sample.stockwatcher.client.StockWatcher::handleJsonResponse(Lcom/google/gwt/core/client/JavaScriptObject;)(null);
-     }
-
-     // [5] Cleanup. Remove script and callback elements.
-     document.body.removeChild(script);
-     delete window[callback];
-     delete window[callback + "done"];
-   }, 1000);
-
-   // [6] Attach the script element to the document body.
-   document.body.appendChild(script);
-  }-*/;</pre></div>
-    </li>
-</ol>
-<h4>Implementation Notes</h4>
-<ul>
-    <li>[1] The script starts by setting up a &lt;script&gt; element. The src attribute points to the URL that will retrieve the JSON data wrapped in a callback function.</li>
-    <li>[2] The callback function is defined on the browser's window object. It receives as an argument a JavaScript object which is the JSON data returned by the server.</li>
-    <li>[3] The callback function passes the JSON data as a JavaScript object to the Java method, handleJsonResponse.</li>
-    <li>[4] A timeout function is defined to check for an unresponsive server or network problem; it checks a flag to see if the JSON callback was ever called.</li>
-    <li>[5] Before the timeout function completes, it removes the new &lt;script&gt; element and the callback function from window.</li>
-    <li>[6] Finally call appendChild() to attach the dynamically-loaded &lt;script&gt; element to the HTML document body. This causes the web browser to download the JavaScript referenced by the src attribute.</li>
-</ul>
-<h5>Handling multiple pending requests</h5>
-<p>
-This implementation generates callback function names sequentially in case of multiple pending requests. In particular, notice the syntax used to call the handleJsonResponse(JavaScriptObject) method:
-</p>
-<pre class="code">
-handler.@com.google.gwt.sample.stockwatcher.client.StockWatcher::handleJsonResponse(Lcom/google/gwt/core/client/JavaScriptObject;)(jsonObj);
-</pre>
-<p>
-You can see that once the JSON object is downloaded, the callback in the JSNI method is really just delegating to the Java method handleJsonResponse.
-</p>
-
-<h4>More about bridge methods</h4>
-<p>
-Calling Java methods from JavaScript is somewhat similar to calling Java methods from C code in JNI. In particular, JSNI borrows the JNI mangled method signature approach to distinguish among overloaded methods. JavaScript calls into Java methods are of the following form:
-</p>
-<pre class="code">
-[instance-expr.]@class-name::method-name(param-signature)(arguments)
-</pre>
-<table>
-    <tr>
-        <th>Component</th>
-        <th>Description</th>
-        <th>Example</th>
-    </tr>
-    <tr>
-        <td>[instance-expr.]</td>
-        <td>Must be present when calling an instance method and must be absent when calling a static method</td>
-        <td>handler.<br />(StockWatcher object instance)</td>
-    </tr>
-    <tr>
-        <td>@class-name</td>
-        <td>The fully-qualified name of the StockWatcher class</td>
-        <td>@com.google.gwt.sample.stockwatcher.client.StockWatcher</td>
-    </tr>
-    <tr>
-        <td>::method-name</td>
-        <td>The name of the method we're calling</td>
-        <td>::handleJsonResponse</td>
-    </tr>
-    <tr>
-        <td>(param-signature)</td>
-        <td>The handleJsonResponse method signature, defined with the JNI syntax</td>
-        <td>(Lcom/google/gwt/core/client/JavaScriptObject;)</td>
-    </tr>
-    <tr>
-        <td>(arguments)</td>
-        <td>The jsonObj containing the JSON data</td>
-        <td>(jsonObj)</td>
-    </tr>
-</table>
-<p class="note">
-For more information on manipulating Java objects from within the JavaScript implementation of a JSNI method, see the Developer's Guide, <a href="../DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface">Accessing Java Methods and Fields from JavaScript</a>.
-</p>
-
-<a name="response"></a>
-<h2>4. Handling the response</h2>
-<p>
-At this point most of your work is done. The one difference is that the return value is already a JavaScript object, not a JSON string. Thus, in the asArrayOfStockData method you no longer  have to use the JavaScript eval() function to convert it.
-</p>
-
-<h4>Implement the handleJsonResponse method</h4>
-<p>
-If you receive a response from the server, then call the updateTable method to populate the Price and Change fields. You will still use the overlay type (StockData)  and the JsArray (asArrayOfStockData) that you wrote in the same-site implementation.
+If you receive a response from the server, then call the updateTable method to populate the Price and Change fields. You will still use the overlay type (StockData)  and the JsArray that you wrote in the same-site implementation.
 </p>
 <p>
 If a response does not come back from the server, you display a message. You can use the same displayError method and Label widget you created in the same-site implementation.
@@ -609,57 +467,14 @@ If a response does not come back from the server, you display a message. You can
 
 <ol class="instructions">
     <li>
-        <div class="header">To the StockWatcher class, add the handleJsonResponse method.</div>
-        <div class="details"></div>
+        <div class="header">To the onSuccess method, replace the TODO comments with the following code.</div>
         <div class="details"><pre class="code">
-  /**
-   * Handle the response to the request for stock data from a remote server.
-   */
-  public void handleJsonResponse(JavaScriptObject jso) {
-    if (jso == null) {
+    if (data == null) {
       displayError("Couldn't retrieve JSON");
       return;
     }
 
-    updateTable(asArrayOfStockData (jso));
-
-  }
-</pre></div>
-        <div class="details">Eclipse flags JavaScriptObject.</div>
-    </li>
-    <li>
-        <div class="header">Include the import declaration.</div>
-        <div class="details"><pre class="code">
-import com.google.gwt.core.client.JavaScriptObject;</pre></div>
-        <div class="details">Eclipse flags asArrayOfStockData.</div>
-        <div class="details">The asArrayOfStockData is expecting a String not a JavaScriptObject.</div>
-    </li>
-</ol>
-
-<p>
-<h4>Modify the arrayOfStockData method</h4>
-<p>
-In this implementation the response is a JavaScript object, not a string. Your next step is to modify the asArrayOfStockData method. Rather than convert the JSON string into a JavaScript array, it needs to cast the JavaScript object returned from the JSNI method as an array of StockData.
-</p>
-<ol class="instructions">
-    <li>
-        <div class="header">Modify the asArrayOfStockData method as follows:</div>
-        <div class="details">Change:<pre class="code">
-  /**
-   * Convert the string of JSON into JavaScript object.
-   */
-  private final native JsArray&lt;StockData&gt; asArrayOfStockData(String json) /*-{
-    return eval(json);
-  }-*/;
-</pre></div>
-
-        <div class="details">To:<pre class="code">
-  /**
-   * Cast JavaScriptObject as JsArray of StockData.
-   */
-  private final native JsArray&lt;StockData&gt; asArrayOfStockData(JavaScriptObject jso) /*-{
-    return jso;
-  }-*/;
+    updateTable(data);
 </pre></div>
     </li>
 </ol>

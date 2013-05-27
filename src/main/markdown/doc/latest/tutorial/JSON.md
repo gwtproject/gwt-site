@@ -255,14 +255,7 @@ This is the JSON data coming back from the server.
 ]</pre>
 
 <p>
-First, you'll use a JavaScript eval() function to convert the JSON string into JavaScript objects.
-</p>
-<pre class="code">
-  private final native JsArray&lt;StockData&gt; asArrayOfStockData(String json) /*-{
-    return eval(json);
-  }-*/;</pre>
-<p>
-Then, you'll be able to write methods to access those objects.
+First, you'll use <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsonUtils.html">JsonUtils.safeEval()</a> to convert the JSON string into JavaScript objects. Then, you'll be able to write methods to access those objects.
 </p>
 <pre class="code">
   // JSNI methods to get stock data.
@@ -271,7 +264,7 @@ Then, you'll be able to write methods to access those objects.
   public final native double getChange() /*-{ return this.change; }-*/;
 </pre>
 <p>
-In both cases, you'll use JSNI. When the client-side code is compiled to JavaScript, the Java methods are replaced with the JavaScript exactly as you write it inside the tokens.
+For the latter, you'll use JSNI. When the client-side code is compiled to JavaScript, the Java methods are replaced with the JavaScript exactly as you write it inside the tokens.
 </p>
 
 <h4>Coding with JSNI</h4>
@@ -290,37 +283,8 @@ They can be static or instance methods.
 
 <h3>Converting JSON into JavaScript objects</h3>
 <p>
-First you need to convert the JSON text from the server into JavaScript objects.
-The simplest and fastest way to do this is by using JavaScript's built-in eval() function, which can correctly parse valid JSON text and produce a corresponding object.
+First you need to convert the JSON text from the server into JavaScript objects. This can be easily done using the static JsonUtils.safeEval() method. We'll see later how to use it.
 </p>
-<p>
-However, because eval() can execute any JavaScript code (not just JSON data) this approach has some serious security implications.
-Make sure the servers you interact with are <strong>absolutely trustworthy</strong>, because they will have the ability to execute arbitrary JavaScript code within your application. In this example, since you are using the servlet container to access data on your own machine, this is not an issue.
-</p>
-<ol class="instructions">
-    <li>
-        <div class="header">Convert the string into a JavaScript array.</div>
-        <div class="details">In the StockWatcher class, add the following method.</div>
-        <div class="details"><pre class="code">
-<span class="highlight">  /**
-   * Convert the string of JSON into JavaScript object.
-   */
-  private final native JsArray&lt;StockData&gt; asArrayOfStockData(String json) /*-{
-    return eval(json);
-  }-*/;</span>
-</pre></div>
-        <div class="details">Eclipse flags JsArray and StockData. StockData is the overlay type you will use to replace the StockPrice class.</div>
-    </li>
-    <li>
-        <div class="header">Declare the import.</div>
-        <div class="details"><pre class="code">
-<span class="highlight">import com.google.gwt.core.client.JsArray;</span></pre></div>
-    </li>
-    <li>
-        <div class="header">Create a stub for the StockData class in the client package.</div>
-        <div class="details">Ignore any remaining compile errors in the StockWatcher class; these will be resolved after you code the StockData class.
-    </li>
-</ol>
 
 <h4>JSON data types</h4>
 <p>
@@ -330,22 +294,22 @@ As in JavaScript, an object is actually just an unordered set of name/value pair
 In JSON objects, however, the values can only be other JSON types (never functions containing executable JavaScript code).
 </p>
 <p class="note">
-Another technique for a converting a JSON string into something you can work with is to use the static <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/json/client/JSONParser.html">JSONParser.parse(String)</a> method. GWT contains a full set of JSON types for manipulating JSON data in the com.google.gwt.json.client package. If you prefer to parse the JSON data, see the Developer's Guide, <a href="../DevGuideCodingBasics.html#DevGuideJSON">Working with JSON</a>. Ultimately both techniques rely on the JavaScript eval() function; so you are still responsible for ensuring that you are using a trusted source of JSON data.
+Another technique for a converting a JSON string into something you can work with is to use the static <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/json/client/JSONParser.html">JSONParser.parse(String)</a> method. GWT contains a full set of JSON types for manipulating JSON data in the com.google.gwt.json.client package. If you prefer to parse the JSON data, see the Developer's Guide, <a href="../DevGuideCodingBasics.html#DevGuideJSON">Working with JSON</a>.
 </p>
 
 <h3>Creating an overlay type</h3>
 <p>
-Your next task is to replace the existing StockPrice type with the StockData type.
+Your next task is to replace the existing StockPrice type with a StockData type.
 </p>
 <p>
-Not only do you want to be access the array of JSON objects, but you want to be able to work with them as if they were Java objects while you're coding. GWT <i>overlay types</i> let you do this.
+Not only do you want to access the array of JSON objects, but you want to be able to work with them as if they were Java objects while you're coding. GWT <i>overlay types</i> let you do this.
 </p>
 <p>
-The new StockData class will be an overlay type which overlays the existing JavaScript array.
+The new StockData class will be an overlay type which overlays the existing JavaScript object.
 </p>
 <ol class="instructions">
     <li>
-        <div class="header">Replace the stub with the following code.</div>
+        <div class="header">Create the StockData class.</div>
         <p class="note"><b>Note:</b> The commented numbers refer to the implementation notes below. You can delete them.</p>
         <div class="details"><pre class="code">
 package com.google.gwt.sample.stockwatcher.client;
@@ -401,6 +365,7 @@ In this example, you can access directly the JSON fields you know exist: this.Pr
 <p>
 Because the methods on overlay types can be statically resolved by the GWT compiler, they are candidates for automatic inlining. Inlined code runs significantly faster. This makes it possible for the GWT compiler to create highly-optimized JavaScript for your application's client-side code.
 </p>
+
 
 <a name="http"></a>
 <h2>3. Making HTTP requests to retrieve data from the server</h2>
@@ -527,7 +492,7 @@ The RequestCallback interface is analogous to the AsyncCallback interface in GWT
 
         public void onResponseReceived(Request request, Response response) {
           if (200 == response.getStatusCode()) {
-            updateTable(asArrayOfStockData(response.getText()));
+            updateTable(JsonUtils.safeEval(response.getText()));
           } else {
             displayError("Couldn't retrieve JSON (" + response.getStatusText()
                 + ")");
@@ -537,6 +502,7 @@ The RequestCallback interface is analogous to the AsyncCallback interface in GWT
     } catch (RequestException e) {
       displayError("Couldn't retrieve JSON");
     }</pre></div>
+      <div class="details">This is where we use JsonUtils.safeEval() to convert the JSON string into JavaScript objects.</div>
     </li>
     <li>
      <div class="header">You receive two compile errors which you will resolve in a minute.</div>
@@ -574,6 +540,13 @@ To fix the compile errors, modify the updateTable method.
     lastUpdatedLabel.setText("Last update : "
         + DateTimeFormat.getMediumDateTimeFormat().format(new Date()));
   }</pre></div>
+        <div class="details">Eclipse flags JsArray.</div>
+    </li>
+    <li>
+        <div class="header">Declare the import.</div>
+        <div class="details"><pre class="code">
+<span class="highlight">import com.google.gwt.core.client.JsArray;</span></pre></div>
+    </li>
     </li>
     <li>
         <div class="header">Make a corresponding change in the updateTable(StockPrice price) method.</div>
@@ -621,8 +594,8 @@ If something breaks along the way (for example, if the server is offline, or the
         <div class="details">In the updateTable(JsArray&lt;StockData&gt; prices) method, clear any error messages.</div>
         <div class="details"><pre class="code">
   private void updateTable(JsArray&lt;StockData&gt; prices) {
-    for (int i=0; i &lt; prices.length; i++) {
-      updateTable(prices[i]);
+    for (int i=0; i &lt; prices.length(); i++) {
+      updateTable(prices.get(i));
     }
 
     // Display timestamp showing last refresh.

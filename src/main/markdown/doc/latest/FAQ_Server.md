@@ -4,7 +4,6 @@
   <li><a href="#How_do_I_make_a_call_to_the_server_if_I_am_not_using_GWT_RPC?">How do I make a call to the server if I am not using GWT RPC?</a></li>
   <li><a href="#Does_the_GWT_RPC_system_support_the_use_of_java.io.Serializable">Does GWT RPC support java.io.Serializable?</a></li>
   <li><a href="#How_can_I_dynamically_fetch_JSON_feeds_from_other_web_domains?">How can I dynamically fetch JSON feeds from other web domains?</a></li>
-  <li><a href="#How_can_I_easily_work_with_JSON_JavaScriptObjects_in_GWT_Java?">How can I easily work with JSON JavaScriptObjects in GWT Java?</a></li>
 </ol>
 
 <h2 id="Why_doesn't_GWT_provide_a_synchronous_server_connection_opt">Why doesn't GWT provide a synchronous
@@ -52,12 +51,14 @@ included in the main host HTML page is shown below:</p>
 <p>However, many organizations setup their deployment platform in such a way that their main host HTML page is served up from <a href="http://mydomain.com/">http://mydomain.com/</a>, but any other resources such as images and JavaScript files are served up from a separate static server under
 <tt>http://static.mydomain.com/</tt>. In older versions of GWT, this configuration would not be possible as the SOP prevented the GWT bootstrap process from allowing script from
 files that were added from a different server to access the iframe in the main host HTML page. As of GWT 1.5, the bootstrap model now provides support for this kind of server
-configuration via the cross-site linker (xs-linker).</p>
+configuration via the cross-site linker (xs-linker). As of
+GWT 2.1, you should however rather use the cross-site iframe linker (xsiframe-linker) which
+sandboxes the GWT code inside an iframe, like the standard linker but contrary to the cross-site linker.</p>
 
-<p>When using the cross-site linker the compiler will still generate a
+<p>When using the cross-site linker or cross-site iframe linker, the compiler will still generate a
 &lt;module>.nocache.js that you will want to reference within your index.html. The
 difference though, is that the &lt;module>.nocache.js produced by the cross-site
-linker will link in a cache.js file for each of your permutations rather than
+linkers will link in a cache.js file for each of your permutations rather than
 a cache.html file.</p>
 
 <p>To enable the cross-site linking simply add the following to your
@@ -65,7 +66,7 @@ a cache.html file.</p>
 index.html as you normally would.</p>
 
 <pre class="prettyprint">
-&lt;add-linker name="xs"/&gt;
+&lt;add-linker name="xsiframe"/&gt;
 </pre>
 
 <p>For more details on the GWT bootstrap process, see &quot;What's with all the cache/nocache stuff and weird filenames?&quot;</p>
@@ -85,13 +86,11 @@ server as the GWT application, or implement a more sophisticated solution such a
 
 <h3 id="SOP_and_GWT_Hosted_Mode">SOP and GWT Development Mode</h3>
 
-<p>The SOP applies to all GWT applications, whether running in web (compiled) mode on a web server, or in development mode. For example, it is perfectly possible to launch a GWT
-application from a <tt>file://</tt> URL pointing to a file on your local computer. Though GWT will run in this case, it will be unable to access any resources from a web server
-because it will be constrained to the &quot;site&quot; from which it was loaded--your computer's filesystem.</p>
+<p>The SOP applies to all GWT applications, whether running in web (compiled) mode on a web server, or in development mode.</p>
 
 <p>This can cause problems if you are attempting to develop a GWT application that uses server-side technologies not supported by the GWT development mode, such as EJBs or Python code.
-In such cases, you can use the <tt>-noserver</tt> argument for development mode to launch your GWT application from the server technology of your choice. For more information, see &quot;How
-do I use my own server in development mode instead of GWT's built-in Jetty instance?&quot; Even if you choose to use this feature, however, remember that the SOP still applies.</p>
+In such cases, you can use the <tt>-noserver</tt> argument for development mode to launch your GWT application from the server technology of your choice. For more information, see <a href="DevGuideCompilingAndDebugging.html#How_do_I_use_my_own_server_in_development_mode_instead_of_GWT's">How
+do I use my own server in development mode instead of GWT's built-in Jetty instance?</a> Even if you choose to use this feature, however, remember that the SOP still applies.</p>
 
 <p/>
 
@@ -197,75 +196,8 @@ is an important point to keep in mind if your application uses GWT RPC.</p>
 feeds from other web domains?</h2>
 
 <p>Like all AJAX tools, GWT's HTTP client and RPC libraries are restricted to only accessing data from the same site where your application was loaded, due to the browser Same
-Origin Policy. If you are using JSON, you can work around this limitation using a</p>
+Origin Policy. If you are using JSON, you can work around this limitation using a
+<code>&lt;script&gt;</code> tag (aka JSON-P).</a>
 
-<pre>
-<span class="error">&lt;script&gt;</span>
-</pre>
-
-tag. To accomplish this, though, you must resort to using DOM manipulation methods to inject the tag into your host page dynamically. 
-
-<p>First, you need an external JSON service which can invoke user defined callback functions with the JSON data as argument. An example of such a service is <a href="https://developers.google.com/gdata/docs/json">GData's &quot;alt=json-in-script&amp;callback=myCallback&quot; support</a>. Then, you can generate a bridge method, which will be used to invoke a GWT JSON callback handler.</p>
-
-<p>Here is an example:</p>
-
-
-<pre class="prettyprint">
-package mypackage;
-public class MyJSONUtility
-{
-   interface JSONHandler
-   {
-      public void handleJSON(JavaScriptObject obj);
-   }
-
-   public static native void makeJSONRequest(String url, JSONHandler handler) /*-{
-       $wnd.jsonCallback = function(jsonObj) {
-         @mypackage.MyJSONUtility::dispatchJSON(Lcom/google/gwt/core/client/JavaScriptObject;Lcom/google/gwt/sample/client/JsonTestApp$JSONHandler;)(jsonObj, handler);
-       }
-      
-       // create SCRIPT tag, and set SRC attribute equal to JSON feed URL + callback function name
-       var script = $wnd.document.createElement(&quot;script&quot;);
-       script.setAttribute(&quot;src&quot;, url+&quot;jsonCallback&quot;);
-       script.setAttribute(&quot;type&quot;, &quot;text/javascript&quot;);
-       
-       $wnd.document.getElementsByTagName(&quot;head&quot;)[0].appendChild(script);
-   
-   }-*/;
-
-   public static void dispatchJSON(JavaScriptObject jsonObj, JSONHandler handler)
-   {
-      handler.handleJSON(jsonObj);
-   }
-}
-</pre>
-
-
-<p>You can then implement the JSONHandler interface as you choose, and call</p>
-
-<pre class="prettyprint">
-   MyJSONUtility.makeJSONRequest(
-       &quot;http://www.google.com/calendar/feeds/developer-calendar@google.com/public/full?alt=json-in-script&amp;callback=&quot;,
-       myHandlerInstance);
-</pre>
-
-<p>Of course, the above example doesn't handle multiple concurrent requests. For that, you need an array of bridge methods; you would access them during callbacks using syntax
-similar to</p>
-
-
-<pre class="prettyprint">
-jsonCallbacks[requestNumber].
-</pre>
-
-
-<p>If the external feed doesn't support callback function names using array syntax, you can generate uniquely named bridge methods like jsonCallback1, jsonCallback2, etc. Also,
-don't forget to cleanup in the bridge function after it's been called, such as removing the SCRIPT node that's been added to the DOM, and deleting the bridge method, since they
-are no longer used once you have the result.</p>
-
-<h2 id="How_can_I_easily_work_with_JSON_JavaScriptObjects_in_GWT_Java?">How can I easily work with JSON JavaScriptObjects in GWT Java?</h2>
-
-<h3 id="GWT_1.5_and_later">GWT 1.5 and later</h3>
-
-<p>GWT 1.5 introduced <a href="DevGuideCodingBasics.html#DevGuideOverlayTypes">Overlay Types</a> for interoperating directly with native JavaScriptObjects without the need for any wrapper objects.</p>
-
-<h3 id="GWT_1.4_and_older">GWT 1.4 and older</h3>
+<p>First, you need an external JSON service which can invoke user defined callback functions with the JSON data as argument. An example of such a service is <a href="https://developers.google.com/gdata/docs/json">GData's &quot;alt=json-in-script&amp;callback=myCallback&quot; support</a>. Then, you can use <a
+href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/jsonp/client/JsonpRequestBuilder.html">JsonpRequestBuilder</a> to make your call, ini a way similar to a <code>RequestBuilder</a> when you're not making a cross-site request.</p>
