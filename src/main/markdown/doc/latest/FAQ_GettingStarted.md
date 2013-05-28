@@ -185,15 +185,15 @@ contributing a patch, please visit the <a href="../../makinggwtbetter.html">Maki
 <p>GWT supports the following browsers:</p>
 
 <ul>
-<li>Firefox 1.0, 1.5, 2.0, 3.0, and 3.5</li>
+<li>Firefox</li>
 
-<li>Internet Explorer 6, 7, and 8</li>
+<li>Internet Explorer 6, 7, 8, 9</li>
 
-<li>Safari 2, 3, and 4</li>
+<li>Safari 5, 6</li>
 
 <li>Chromium and Google Chrome</li>
 
-<li>Opera 9.0</li>
+<li>Opera latest version</li>
 </ul>
 
 <p/>
