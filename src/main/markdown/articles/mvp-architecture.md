@@ -74,6 +74,8 @@ contacts that are stored on the server.</p>
 <p>The sample project, referenced throughout this tutorial, can be found at
 <a href="http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-Contacts.zip">Tutorial-Contacts.zip</a>.</p>
 
+<img src="../images/mvp_diagram.png" alt="diagram"/>
+
 <h2 id="model">Model</h2>
 
 <p>A model encompasses business objects, and in the case of our Contacts
