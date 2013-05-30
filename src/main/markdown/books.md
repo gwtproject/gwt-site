@@ -280,7 +280,7 @@ http://www.packtpub.com/learning-vaadin-7-second-edition/book
 	<tr>
       <td>
         <a href="http://www.apress.com/9781430219408">
-          <img src="images/books/Developing_with_Ext_GWT_Enterprise RIA_Development.png" style="float: left; margin-left: 0px; border: 0;" width="150" />
+          <img src="images/books/Developing_with_Ext_GWT_Enterprise_RIA_Development.png" style="float: left; margin-left: 0px; border: 0;" width="150" />
         </a>
         <div style="margin-left: 155px; margin-bottom: 10px;">
           <div style="font-size: 120%; font-weight: bold;"><a href="http://www.apress.com/9781430219408">Developing with Ext GWT Enterprise RIA Development (May 2009)</a></div>
