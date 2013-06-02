@@ -621,6 +621,13 @@ public interface Resources extends ClientBundle {
   }
 }</pre>
 
+<pre class="prettyprint">// Within the owner class for the UiBinder template
+@UiField Resources res;
+
+...
+
+res.style().ensureInjected();</pre>
+
 <p>The "<tt>with</tt>" element declares a field holding a resource
 object whose methods can be called to fill in attribute values.  In
 this case it will be instantiated via a call
