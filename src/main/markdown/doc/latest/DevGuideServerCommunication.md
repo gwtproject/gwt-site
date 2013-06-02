@@ -353,9 +353,9 @@ For some background, see the FAQ topic <a href="FAQ_Server.html#Does_the_GWT_RPC
 <p>
 The class <code>java.lang.Object</code> is not serializable, therefore you cannot expect that a collection of Object types will be
 serialized across the wire. As of GWT 1.5, most use cases can utilize Java
-generics to replace the use of Object instances. <span class="future">This is strongly encouraged,
+generics to replace the use of Object instances. This is strongly encouraged,
 both to reduce client code size and to provide security against certain denial
-of service attacks.</span>
+of service attacks.
 </p>
 
 <h3>Serializable User-defined Classes</h3>
@@ -380,10 +380,9 @@ RPCs, so they should generally be marked <tt>transient</tt> as well.</p>
 <p>GWT RPC supports polymorphic parameters and return types. To make the best use of polymorphism, however, you should still try to be as specific as your design allows when
 defining service interfaces. Increased specificity allows the <a href="DevGuideCompilingAndDebugging.html#DevGuideJavaToJavaScriptCompiler">compiler</a> to do a better job of removing
 unnecessary code when it optimizes your application for size reduction.
-<span class="future">
 Furthermore, server-side deserialization uses generic type information extracted
 from method signatures to verify that the values it is deserializing are of the
-correct type (to prevent some security attacks).</span></p>
+correct type (to prevent some security attacks).</p>
 
 <h3>Raw Types</h3>
 
@@ -393,7 +392,7 @@ correct type (to prevent some security attacks).</span></p>
 specify the particular type of objects they are expected to contain through
 normal type parameters (for example, <tt>Map&lt;Foo,Bar&gt;</tt> rather than
 just <tt>Map</tt>).  If you use raw collections or maps you will get bloated
-code<span class="future"> and be vulnerable to denial of service attacks</span>.</p>
+code and be vulnerable to denial of service attacks.</p>
 
 <h3>Serializing Enhanced Classes</h3>
 
@@ -466,16 +465,16 @@ methods if it cannot use default instantiation (for example, it does not have a
 default constructor) or wants custom instantiation (for example, to instantiate
 an immutable object). See the built-in custom serializers for examples of these methods.</p>
 
-<h4 class="future">Type Checked Custom Serialization</h4>
+<h4>Type Checked Custom Serialization</h4>
 
-<p class="future">Some Denial of Service attacks exploit the fact that method parameters in
+<p>Some Denial of Service attacks exploit the fact that method parameters in
 an RPC message must be deserialized before the method is invoked, and hence
 before an exception can be thrown by the method for invalid parameters. As of
 GWT version 2.4, support is provided for server-side type checking of method
 parameters as they are deserialized. The correct use of type checking can
 protect against parameter substitution attacks.</p>
 
-<p class="future">To support type checking, server-specific versions of custom field serializers
+<p>To support type checking, server-specific versions of custom field serializers
 must be provided. The custom serializer class must be in a server package with
 the same qualified name as the client serializer, with &quot;client&quot;
 replaced by &quot;server&quot;. The actual serializer class for <code>Foo</code>
@@ -486,7 +485,7 @@ As an example, the client serializer for the method
 and the server type-checked version is
 <code>test.com.google.gwt.user.server.rpc.TypeCheckedGenericClass_ServerCustomFieldSerializer</code>.</p>
 
-<p class="future">Server custom field serializers should extend the 
+<p>Server custom field serializers should extend the 
 <code><a
 href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html">
 ServerCustomFieldSerializer&lt;T&gt;</a></code> class, with the class that is being
@@ -496,7 +495,7 @@ serialized as the type parameter. For example:</p>
 public final class HashMap_ServerCustomFieldSerializer extends ServerCustomFieldSerializer&lt;HashMap&gt;
 </pre>
 
-<p class="future">All server custom field serializer classes must implement the
+<p>All server custom field serializer classes must implement the
 client side
 <code><a
 href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html">
@@ -509,7 +508,7 @@ href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt
 java.lang.reflect.Type[], com.google.gwt.user.server.rpc.impl.DequeMap)">instantiateInstance</a></code>
 method when the client code overrides it.</p>
 
-<p class="future">See the existing serializers, such as <code>HashMap_ServerCustomFieldSerializer</code>, for examples of type checking.</p>
+<p>See the existing serializers, such as <code>HashMap_ServerCustomFieldSerializer</code>, for examples of type checking.</p>
 
 <h2 id="DevGuideHandlingExceptions">Handling Exceptions</h2>
 

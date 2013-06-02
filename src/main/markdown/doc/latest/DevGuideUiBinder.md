@@ -636,7 +636,6 @@ of having it created for you.)
 
 <p>Note that there is no requirement that a <tt>ui:with</tt> resource implement the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a> interface; this is just an example. </p>
 
-<div class="future">
 <p>If you need more flexibility with a resource, you can set
 parameters on it with a <code>&lt;ui:attributes></code> element. Any
 setters or constructor arguments can be called on the resource object
@@ -662,8 +661,6 @@ Resource declared in the previous example.
 <pre class="prettyprint">&lt;ui:with field='fancyRes' type='com.my.app.widgets.logoname.FancyResources'>
   &lt;ui:attributes style="MOBILE" baseResources="{res}"/>
 &lt;/ui:with></pre>
-
-</div>
 
 <h2 id="Share_resource_instances">Share resource instances</h2>
 
@@ -750,7 +747,6 @@ will become part of the template itself through the magic of inlining
 
 <h2 id="Hello_Html_Resources">Hello Html Resources</h2>
 
-<div class="future">
 <p>Relying only on text as we did in the previous example is pretty
 limiting. Sometimes you have a fancy bit of markup to re-use, and it
 just doesn't need the full widget treatment. In such a case
@@ -819,7 +815,6 @@ time thanks to inlining). Thus, if you access one through
 a <code>@UiField</code> in your java code, it won't have any handle to
 the DOM structure it created.
 </p>
-</div>
 
 <h2 id="Apply_different_xml">Apply different XML templates to the same widget</h2>
 
@@ -875,7 +870,6 @@ public class FooPickerDisplay extends Composite
 
 <h2 id="Lazy">LazyPanel and LazyDomElement</h2>
 
-<div class="future">
 <p>You're trying to squeeze the last ounce of performance out of your
 application. Some of the widgets in your tab panel take a while to
 fire up, and they're not even visible to your user right away. You
@@ -930,7 +924,6 @@ they ever are.
 
   public void setName(String name) { nameSpan.get().setInnerText(name); }
 }</pre>
-</div>
 
 <h2 id="Rendering_HTML_for_Cells">Rendering HTML for Cells</h2>
 

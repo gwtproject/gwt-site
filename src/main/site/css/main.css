@@ -567,13 +567,13 @@ sup {
 }
 
 .next:before {
-  content: "In the next version (2.4)";
+  content: "In the next version (2.6)";
   color: red;
   font-weight: bold;
 }
 
 .future:before {
-  content: "Coming in a future version (post-2.4)";
+  content: "Coming in a future version (post-2.6)";
   color: red;
   font-weight: bold;
 }
