@@ -14,7 +14,7 @@ At this point, you've created the initial implementation of the StockWatcher app
 On this page, you'll make a call to your local server to retrieve JSON-formatted stock data instead:</p>
 <ol>
     <li><a href="#server">Creating a source of JSON data on your local server</a></li>
-    <li><a href="#client">Manipulating JSON data int he client-side code</a></li>
+    <li><a href="#client">Manipulating JSON data in the client-side code</a></li>
     <li><a href="#http">Making HTTP requests to retrieve data from the server</a></li>
     <li><a href="#errors">Handling GET errors</a></li>
 </ol>
