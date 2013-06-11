@@ -392,7 +392,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>parse(String), getName(), intValue(), toString()</dd>
 
   <dt><a href="http://java.sun.com/javase/6/docs/api/java/util/logging/LogManager.html">LogManager</a></dt>
-  <dd>getLogManager(), addLogger(Logger), getLogger(String)</dd>
+  <dd>getLogManager(), addLogger(Logger), getLogger(String), getLoggerNames()</dd>
 
   <dt><a href="http://java.sun.com/javase/6/docs/api/java/util/logging/LogRecord.html">LogRecord</a></dt>
   <dd>LogRecord(Level, String), getLevel(), getLoggerName(), getMessage(), getMillis(), getThrown(), setLevel(Level), setLoggerName(String), setMessage(String), setMillis(long), setThrown(Throwable)</dd>
