@@ -61,7 +61,6 @@
     .example {
       margin-top: 1em;
     }
-
 </style>
 
 <p>
