@@ -23,7 +23,7 @@
       margin-bottom: 1.25em;
     }
 
-    .project .screenshot,logo {
+    .project .screenshot, logo {
       position: absolute;
       top: 0;
       left: 0;
@@ -31,8 +31,6 @@
 
     .project .name {
       font-size: medium;
-      padding: 3px;
-      padding-left: 20px;
       background-image: url("/webtoolkit/images/newwindow.gif");
       background-repeat: no-repeat;
       background-position: left center;
@@ -54,12 +52,25 @@
       margin-top: 0.5em;
     }
 
+    .project .head {
+      font-size: .8em;
+    }
+
     .project .info .apis .item {
       margin-left: 10px;
+      font-size: .8em;
     }
 
     .example {
       margin-top: 1em;
+    }
+
+    .project .snippet {
+      font-size: .8em;
+    }
+
+    .project .snippet a {
+      font-size: .8em;
     }
 </style>
 
@@ -86,7 +97,7 @@ If you're like us, the first thing you want to do is see examples of what you ca
       </div>
       <div class="info">
         <div class="name"><a href="http://gwt.google.com/samples/Showcase/Showcase.html" target="_blank">GWT Showcase</a></div>
-        <div class="snippet">A showcase of GWT features with accompanying source code and CSS styles</div>
+        <div class="snippet">A showcase of GWT features with accompanying source code and CSS styles.</div>
         <div class="apis">
           <div class="head">GWT features used:</div>
           <div class="item"><a href="doc/latest/DevGuideUiWidgets.html">UI widgets</a></div>
@@ -191,7 +202,7 @@ developing with GWT.</div>
   </div>
   <div class="info">
     <div class="name"><a href="https://www.scenechronize.com" target="_blank">Scenechronize</a></div>
-    <div class="snippet">scenechronize is a production management web application for film,
+    <div class="snippet">Scenechronize is a production management web application for film,
 television and commercials. Visit our <a href="developer_spotlight.html">Developer Spotlight</a> to see Rob Powers, director of engineering, share
 how they used GWT to build scenechronize, what he likes and would like to
 see from GWT, and his tips and learnings from developing with GWT.</div>
