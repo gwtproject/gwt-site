@@ -712,9 +712,9 @@ Finally, to actually create an issue is slightly more involved, but most of the 
 2. Setup your Gerrit commit-msg hook (optional, but recommended): 
    Gerrit provides a commit hook at <pre>https://gwt-review.googlesource.com/tools/hooks/commit-msg</pre> 
    to automatically add Change-Id lines to your commits.  
-   Download this and add it to your checkout’s .git/hooks directory: 
+   Download this and add it to your checkout's .git/hooks directory: 
    <pre>curl -o .git/hooks/commit-msg https://gwt-review.googlesource.com/tools/hooks/commit-msg && chmod +x .git/hooks/commit-msg</pre>
-3. Make a change and commit it locally using git (e.g., edit a file foo and then run “git commit -m ‘my first change’ foo”).
+3. Make a change and commit it locally using git (e.g., edit a file foo and then run `git commit -m "my first change" foofile`).
    Push the commit to Gerrit for review: <pre>git push origin HEAD:refs/for/master</pre>.
 
 If you have any problems you might want to consult the gerrit documentation on 
