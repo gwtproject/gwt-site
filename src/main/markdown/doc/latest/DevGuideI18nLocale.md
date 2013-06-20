@@ -63,7 +63,7 @@ example, the following module adds multiple locale values:</p>
 <h2 id="LocaleDefault">The Default Locale</h2>
 
 <p>The <tt>com.google.gwt.i18n.I18N</tt> module defines only one locale by default, called <tt>default</tt>. This default locale is used when the <tt>locale</tt> client property
-goes unspecified in deployment. The default locale is used internally as a last-resort match between a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Localizable.html">Localizable</a> interface and a localized resource or
+goes unspecified in deployment. The default locale is used internally as a last-resort match between a <a href="/javadoc/latest/com/google/gwt/i18n/client/Localizable.html">Localizable</a> interface and a localized resource or
 class.</p>
 
 <p>In general, you should avoid running the app in the <tt>default</tt> locale
@@ -170,7 +170,7 @@ in action, see the files <a href="http://code.google.com/p/google-web-toolkit/so
 
 <p>To get information about the current locale or the available set of
 locales, see the <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/LocaleInfo.html">LocaleInfo</a>
+href="/javadoc/latest/com/google/gwt/i18n/client/LocaleInfo.html">LocaleInfo</a>
 class.  For example:</p>
 
 <ul>
@@ -199,7 +199,7 @@ and locale inheritance.</p>
 
 <ul>
 <li><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/shared/GwtLocale.html">GwtLocale</a>
+href="/javadoc/latest/com/google/gwt/i18n/shared/GwtLocale.html">GwtLocale</a>
 represents a GWT locale, and supports converting to canonical form, producing
 search lists for locale inheritance and aliases, and provides accessors to
 the components of a locale.</li>
@@ -207,7 +207,7 @@ the components of a locale.</li>
 
 <ul>
 <li><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/shared/GwtLocaleFactory.html">GwtLocaleFactory</a>
+href="/javadoc/latest/com/google/gwt/i18n/shared/GwtLocaleFactory.html">GwtLocaleFactory</a>
 provides a way of creating new <tt>GwtLocale</tt> objects from locale names
 or their components (useful for converting from a <tt>java.util.Locale</tt>
 object).</li>
@@ -215,7 +215,7 @@ object).</li>
 
 <ul>
 <li><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/rebind/LocaleUtils.html">LocaleUtils</a>
+href="/javadoc/latest/com/google/gwt/i18n/rebind/LocaleUtils.html">LocaleUtils</a>
 provides easy access to GWT's locale infrastructure for a generator.
 <ul>
 <li>Get a GwtLocaleFactory instance:
@@ -232,6 +232,6 @@ Set&lt;GwtLocale&gt; locales = localeUtils.getAllLocales();
 
 <ul>
 <li><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/server/GwtLocaleFactoryImpl.html">GwtLocaleFactoryImpl</a>
+href="/javadoc/latest/com/google/gwt/i18n/server/GwtLocaleFactoryImpl.html">GwtLocaleFactoryImpl</a>
 provides a way to create GwtLocale instances on the server.</li>
 </ul>

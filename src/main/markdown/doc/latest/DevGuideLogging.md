@@ -196,7 +196,7 @@ a Panel somewhere in your app. GWT logging is set up to make this
 easy, and you can see an example of this
 in <code>CustomLogArea.java</code>.  In this case, we have created
 a <code>VerticalPanel</code> (although any widget which extends
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HasWidgets.html">HasWidgets</a>
+<a href="/javadoc/latest/com/google/gwt/user/client/ui/HasWidgets.html">HasWidgets</a>
 and supports multiple <code>add()</code> calls can be used).
 Once we have one of these widgets, we simply pass it into the constructor
 of a <code>HasWidgetsLogHandler</code> and add that Handler to a logger.

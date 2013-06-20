@@ -49,14 +49,14 @@ limitations of the device.
 The iPhone has three primary UI gestures: tapping (or pointing),
 swiping, and double-taps.&nbsp; Tapping is the primary command gesture,
 analogous to a mouse click, and can be handled with standard
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/1.5/com/google/gwt/user/client/ui/ClickListener.html">ClickListener.onClick()</a>
+<a href="/javadoc/latest/com/google/gwt/user/client/ui/ClickListener.html">ClickListener.onClick()</a>
 events.&nbsp; Swiping, in both vertical and horizontal directions, is used to
 pan the viewport over the (sometimes larger) virtual page.
 </p>
 
 <p>
 When the UI can be designed as a vertically strip, a properly-sized
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/1.5/com/google/gwt/user/client/ui/Panel.html">Panel</a>,
+<a href="/javadoc/latest/com/google/gwt/user/client/ui/Panel.html">Panel</a>,
 combined with the viewport meta tag, can be easily adapted to provide a
 "<a href="http://gwt-feed-reader.googlecode.com/svn/trunk/src/com/google/gwt/sample/feedreader/client/WallToWallPanel.java">wall-to-wall</a>"
 layout that eliminates horizontal scrolling.&nbsp; Applications that are
@@ -136,8 +136,8 @@ elements adds to the perception of responsiveness.&nbsp;
 Applications typically "feel faster" and annoy the user less when something happens
 immediately in response to a user's event, even if it is to simply displaying a
 "Loading..." message. &nbsp; Using
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/1.5/com/google/gwt/user/client/DeferredCommand.html">DeferredCommand.addCommand()</a> with an
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/1.5/com/google/gwt/user/client/IncrementalCommand.html">IncrementalCommand</a>
+<a href="/javadoc/latest/com/google/gwt/user/client/DeferredCommand.html">DeferredCommand.addCommand()</a> with an
+<a href="/javadoc/latest/com/google/gwt/user/client/IncrementalCommand.html">IncrementalCommand</a>
 allows you to implement a "deferred Iterator".&nbsp; This will avoid blocking
 the UI event loop while you create UI elements from a list of data
 objects:
@@ -157,7 +157,7 @@ objects:
 
 <p>
 Robust use of GWT's
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/1.5/com/google/gwt/user/client/History.html">History
+<a href="/javadoc/latest/com/google/gwt/user/client/History.html">History
 support</a> adds to the usability of the application.&nbsp; The browser's back
 and forward buttons are always on-screen, so you may as well take advantage of
 them in your application.&nbsp; Most of the state changes within the GWT Feed
@@ -213,7 +213,7 @@ package.
 <p>
 Because this is a ultimately a demonstration app that needs to be able to
 run without server support (e.g. from a local filesystem), we use GWT's
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/1.5/com/google/gwt/user/client/Cookies.html">support
+<a href="/javadoc/latest/com/google/gwt/user/client/Cookies.html">support
 for manipulating browser cookies</a> to store configuration and last-read
 information.&nbsp; The data is stored as a JSON-encoded string in the cookie and
 accessed through the

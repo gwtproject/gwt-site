@@ -355,7 +355,7 @@ recommended that they appear in the root package of a <a href="DevGuideOrganizin
 
 <h3>Entry-Point Classes</h3>
 
-<p>A module entry-point is any class that is assignable to <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/EntryPoint.html">EntryPoint</a> and that can be constructed without parameters. When a module is loaded, every entry point class is instantiated and its <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad()">EntryPoint.onModuleLoad()</a> method gets
+<p>A module entry-point is any class that is assignable to <a href="/javadoc/latest/com/google/gwt/core/client/EntryPoint.html">EntryPoint</a> and that can be constructed without parameters. When a module is loaded, every entry point class is instantiated and its <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad()">EntryPoint.onModuleLoad()</a> method gets
 called.</p>
 
 <h3>Source Path</h3>
@@ -547,7 +547,7 @@ were copied verbatim. Any number of modules can be inherited in this manner. See
 </ul>
 
 <ul>
-<li><tt>&lt;</tt>entry-point class=&quot;<i>classname</i>&quot; /<tt>&gt;</tt> : Specifies an <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/EntryPoint.html">entry point</a> class. Any number of entry-point classes
+<li><tt>&lt;</tt>entry-point class=&quot;<i>classname</i>&quot; /<tt>&gt;</tt> : Specifies an <a href="/javadoc/latest/com/google/gwt/core/client/EntryPoint.html">entry point</a> class. Any number of entry-point classes
 can be added, including those from inherited modules. Entry points are all compiled into a single codebase. They are called sequentially in the order in which they appear in the
 module file. So when the <tt>onModuleLoad()</tt> of your first entry point finishes, the next entry point is called immediately.</li>
 </ul>
@@ -573,7 +573,7 @@ path=&quot;public&quot;&gt;</tt> had been found in the XML. This default helps k
 <ul>
 <li><tt>&lt;</tt>servlet path=&quot;<i>url-path</i>&quot; class=&quot;<i>classname</i>&quot; /<tt>&gt;</tt> : For RPC, this element loads a servlet class mounted at the specified URL path. The URL
 path should be absolute and have the form of a directory (for example, <tt>/calendar</tt>). Your client code then specifies this URL mapping by annotating the service interface
-with the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/RemoteServiceRelativePath.html">@RemoteServiceRelativePath</a> attribute. Any number of servlets may be loaded in this manner, including those from inherited modules.</li>
+with the <a href="/javadoc/latest/com/google/gwt/user/client/rpc/RemoteServiceRelativePath.html">@RemoteServiceRelativePath</a> attribute. Any number of servlets may be loaded in this manner, including those from inherited modules.</li>
 </ul>
 
 <blockquote>The <tt>&lt;servlet&gt;</tt> element applies only to GWT's embedded server server-side debugging feature.</blockquote>
@@ -609,7 +609,7 @@ projects.</p>
 <p/>
 
 <ul>
-<li><tt>&lt;</tt>generate-with class=&quot;<i>generator_class_name</i>&quot;<tt>&gt;</tt> : A directive to use deferred binding using a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/ext/Generator.html">Generator</a></li>
+<li><tt>&lt;</tt>generate-with class=&quot;<i>generator_class_name</i>&quot;<tt>&gt;</tt> : A directive to use deferred binding using a <a href="/javadoc/latest/com/google/gwt/core/ext/Generator.html">Generator</a></li>
 </ul>
 
 
@@ -819,7 +819,7 @@ loaded into the <a href="DevGuideOrganizingProjects.html#DevGuideHostPage">host 
 </pre>
 
 <p>The script is loaded into the namespace of the <a href="DevGuideOrganizingProjects.html#DevGuideHostPage">host page</a> as if you had included it explicitly using the HTML
-<tt>&lt;script&gt;</tt> element. The script will be loaded before your <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad()">onModuleLoad()</a> is called.</p>
+<tt>&lt;script&gt;</tt> element. The script will be loaded before your <a href="/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad()">onModuleLoad()</a> is called.</p>
 
 <blockquote><i>Versions of GWT prior to 1.4 required a script-ready function to determine when an included script was loaded. This is no longer required; all included scripts will
 be loaded when your application starts, in the order in which they are declared.</i></blockquote>

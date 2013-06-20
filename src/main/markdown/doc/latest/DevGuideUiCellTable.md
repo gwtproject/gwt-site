@@ -30,17 +30,17 @@ before continuing.
 
 <p>
 CellTable has built-in support for column sorting. Use
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/cellview/client/Column.html#setSortable(boolean)">Column.setSortable(boolean)</a>
+<a href="/javadoc/latest/com/google/gwt/user/cellview/client/Column.html#setSortable(boolean)">Column.setSortable(boolean)</a>
 to make a column sortable. Users will then be able to click on the column header and trigger a
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.html">ColumnSortEvent</a>.
+<a href="/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.html">ColumnSortEvent</a>.
 How you handle the event depends on how you push data into your CellTable.
 
 <h3>ColumnSorting with ListDataProvider</h3>
 
 <p>
 GWT provides a default implementation of 
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.Handler.html">ColumnSortEvent.Handler</a>
-called <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.ListHandler.html">ColumnSortEvent.ListHandler</a>
+<a href="/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.Handler.html">ColumnSortEvent.Handler</a>
+called <a href="/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.ListHandler.html">ColumnSortEvent.ListHandler</a>
 that is designed to perform local sorting of a java.util.List.
 </p>
 
@@ -143,10 +143,10 @@ public class CellTableExample implements EntryPoint {
 
 <p>
 GWT provides a default implementation of 
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.Handler.html">ColumnSortEvent.Handler</a>
-called <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.AsyncHandler.html">ColumnSortEvent.AsyncHandler</a>
+<a href="/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.Handler.html">ColumnSortEvent.Handler</a>
+called <a href="/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.AsyncHandler.html">ColumnSortEvent.AsyncHandler</a>
 that helps with asynchronous (server-side) column sorting. When the user sorts a Column, AsyncHandler calls
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/view/client/HasData.html#setVisibleRangeAndClearData(Range, boolean)">HasData.setVisibleRangeAndClearData(Range, boolean)</a>,
+<a href="/javadoc/latest/com/google/gwt/view/client/HasData.html#setVisibleRangeAndClearData(Range, boolean)">HasData.setVisibleRangeAndClearData(Range, boolean)</a>,
 which triggers a RangeChangeEvent to the AsyncDataProvider.
 </p>
 
@@ -281,7 +281,7 @@ provides an API that gives you fine grain control of how the available width is 
 
 <p>
 In order to gain fine-grain control over the width of columns, you must set the table layout to "fixed" by passing <code>true</code> into
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/cellview/client/CellTable.html#setWidth(java.lang.String, boolean)">CellTable.setWidth(String, boolean)</a>.
+<a href="/javadoc/latest/com/google/gwt/user/cellview/client/CellTable.html#setWidth(java.lang.String, boolean)">CellTable.setWidth(String, boolean)</a>.
 Once in fixed-width mode, tables behave differently than they normally would. The following sections describe
 recipes for achieving various effects.
 </p>

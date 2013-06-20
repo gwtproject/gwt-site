@@ -40,12 +40,12 @@ public class MyMessages extends Messages {
 </pre></p>
 <p>Note that the parameter which controls which plural form is used is marked
 with the <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Messages.PluralCount.html"><tt>@PluralCount</tt></a>
+href="/javadoc/latest/com/google/gwt/i18n/client/Messages.PluralCount.html"><tt>@PluralCount</tt></a>
 annotation, and that the plural forms for the default language (<tt>en</tt>
 unless specified with <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.DefaultLocale.html"><tt>@DefaultLocale</tt></a>
+href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.DefaultLocale.html"><tt>@DefaultLocale</tt></a>
 are defined in the <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Messages.AlternateMessage.html"><tt>@AlternateMessage</tt></a>
+href="/javadoc/latest/com/google/gwt/i18n/client/Messages.AlternateMessage.html"><tt>@AlternateMessage</tt></a>
 annotation.  If your default language is not English, you may have a different
 set of plural forms here.</p>
 

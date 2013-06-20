@@ -1,7 +1,7 @@
 <p>Events in GWT use the <i>handler</i> model similar to other user interface frameworks. A handler interface defines one or more methods that the widget calls to announce an
 event. A class wishing to receive events of a particular type implements the associated handler interface and then passes a reference to itself to the widget to <i>subscribe</i>
-to a set of events. The <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> class, for example,
-publishes click events. The associated handler interface is <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html">ClickHandler</a>.</p>
+to a set of events. The <a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> class, for example,
+publishes click events. The associated handler interface is <a href="/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html">ClickHandler</a>.</p>
 
 <p>The following example demonstrates how to add a custom ClickHandler subclass to an instance of a Button:</p>
 

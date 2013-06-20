@@ -36,7 +36,7 @@ before continuing.
 
 <p>
 The core method that all Cells must implement is the
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/cell/client/Cell.html#render(com.google.gwt.cell.client.Cell.Context, C, com.google.gwt.safehtml.shared.SafeHtmlBuilder)">
+<a href="/javadoc/latest/com/google/gwt/cell/client/Cell.html#render(com.google.gwt.cell.client.Cell.Context, C, com.google.gwt.safehtml.shared.SafeHtmlBuilder)">
 Cell#render(Context, C value, SafeHtmlBuilder)</a>
 method, which renders the parameterized <code>value</code> into the <code>SafeHtmlBuilder</code>.  In some cases, you will only need to render
 simple HTML, such as a single <code>div</code> with some content.  In other cases, you might need to render a complex HTML structure, such as the one
@@ -63,7 +63,7 @@ the string "red" colored red, the second is "green" colored green, and so forth,
 When implementing a render method, you should follow these steps:
 <ol>
   <li>Create a subclass of
-      <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html">AbstractCell</a>,
+      <a href="/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html">AbstractCell</a>,
       parameterized with the type of value you want to render.
       <p class="warning">
         <b>WARNING:</b> Implement the Cell interface directly at your own risk. The Cell interface may change in subtle but breaking ways as we
@@ -77,10 +77,10 @@ When implementing a render method, you should follow these steps:
   </li>
   <li>
     If the value comes from user data, make sure that you escape it using
-    <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html">SafeHtmlUtils</a> or
+    <a href="/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html">SafeHtmlUtils</a> or
     one of the other escaping libraries. The rendered cell will be added to the document without additional escaping, so if your Cell renders
     malicious javascript code, it will be included in the document.
-    <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlBuilder.html">SafeHtmlBuilder</a>
+    <a href="/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlBuilder.html">SafeHtmlBuilder</a>
     tries to enforce this.
   </li>
   <li>
@@ -176,7 +176,7 @@ public class CellExample implements EntryPoint {
 
 <p>
 The other core method to implement (if you want to handle events in the Cell) is
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent(com.google.gwt.cell.client.Cell.Context, com.google.gwt.dom.client.Element, C, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater)">
+<a href="/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent(com.google.gwt.cell.client.Cell.Context, com.google.gwt.dom.client.Element, C, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater)">
 Cell#onBrowserEvent(Context, Element, C value, NativeEvent, ValueUpdater)</a>.  <code>onBrowserEvent</code> is called when an event occurs on any DOM instance created with the
 HTML output of this Cell.  Since Cells are flyweights that handle events from multiple instances, contextual information about the instance is passed into the method.
 For example, the Context tells you where the Cell is located (row and column indexes) in its containing CellTable.
@@ -194,15 +194,15 @@ are not required to have only one outer most element.  For example TextCell does
 <p>
 Cells must declare which event types they want to handle, and the Cell Widget that contains the Cell is responsible for ensuring that only those events are passed to the Cell.
 In order to specify which events your cell will handle, you pass the event types into the
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html#AbstractCell(java.lang.String...)">AbstractCell(String...)</a>
+<a href="/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html#AbstractCell(java.lang.String...)">AbstractCell(String...)</a>
 constructor. AbstractCell will return the events to the Cell Widget when
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/cell/client/Cell.html#getConsumedEvents()">Cell#getConsumedEvents()</a>
+<a href="/javadoc/latest/com/google/gwt/cell/client/Cell.html#getConsumedEvents()">Cell#getConsumedEvents()</a>
 is called.
 </p>
 
 <p>
 Alternatively, you can override 
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/cell/client/Cell.html#getConsumedEvents()">Cell#getConsumedEvents()</a>
+<a href="/javadoc/latest/com/google/gwt/cell/client/Cell.html#getConsumedEvents()">Cell#getConsumedEvents()</a>
 directly. For example, if you are extending an existing Cell that does not expose the event type constructor, you can override <code>getConsumedEvents()</code> to return the
 events that your subclass uses.
 </p>
@@ -226,12 +226,12 @@ The process for adding event support is as follows:
 <ol>
   <li>
     Specify the events that you want to handle by passing them into the
-    <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html#AbstractCell(java.lang.String...)">AbstractCell(String...)</a>
+    <a href="/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html#AbstractCell(java.lang.String...)">AbstractCell(String...)</a>
     constructor. See the note about the <code>keydown</code> event below.
   </li>
   <li>
     Override the
-    <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent(com.google.gwt.cell.client.Cell.Context, com.google.gwt.dom.client.Element, C, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater)">
+    <a href="/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent(com.google.gwt.cell.client.Cell.Context, com.google.gwt.dom.client.Element, C, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater)">
     Cell#onBrowserEvent()</a> method to handle the event. For some events, you may want to look at the event target before deciding how to handle the event.
     In the example below, we only respond to click events that actually occur on the rendered div.
   </li>
@@ -244,7 +244,7 @@ The process for adding event support is as follows:
   </li>
   <li>
     Optionally call 
-    <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/cell/client/ValueUpdater.html#update(C)">ValueUpdater#update(C)</a>
+    <a href="/javadoc/latest/com/google/gwt/cell/client/ValueUpdater.html#update(C)">ValueUpdater#update(C)</a>
     to indicate that the value of the cell has been modified. For example, you might call the <code>update()</code> method if the user types a new value in a text
     box, or if the user clicks on a button.
   </li>

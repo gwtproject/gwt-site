@@ -78,19 +78,19 @@ If you're interested in taking a peek at the API reference for the GWT widgets y
     </tr>
     <tr>
         <td>a table to hold the stock data</td>
-        <td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/FlexTable.html">FlexTable</a> widget</td>
+        <td><a href="/javadoc/latest/com/google/gwt/user/client/ui/FlexTable.html">FlexTable</a> widget</td>
     </tr>
     <tr>
         <td>two buttons, one to add stocks and one to remove them</td>
-        <td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> widget</td>
+        <td><a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> widget</td>
     </tr>
     <tr>
         <td>an input box to enter the stock code</td>
-        <td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html">TextBox</a> widget</td>
+        <td><a href="/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html">TextBox</a> widget</td>
     </tr>
     <tr>
         <td>a timestamp to show the time and date of the last refresh</td>
-        <td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Label.html">Label</a> widget</td>
+        <td><a href="/javadoc/latest/com/google/gwt/user/client/ui/Label.html">Label</a> widget</td>
     </tr>
     <tr>
         <td>a logo</td>
@@ -117,7 +117,7 @@ Now that you know what widgets you'll use, you'll decide how to lay them out usi
 
 <h2>Horizontal Panel</h2>
 <p>
-The two elements used to add a stock&mdash;the input box for typing in a new stock symbol and the Add button&mdash;are closely related functionally and you want keep them together visually. To lay them out side-by-side, you'll put the TextBox widget and a Button widget in a horizontal panel. In the Java code, you'll create a new instance of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HorizontalPanel.html">HorizontalPanel</a> and name it addPanel. <!-- newSymbolTextBox and addStockButton -->
+The two elements used to add a stock&mdash;the input box for typing in a new stock symbol and the Add button&mdash;are closely related functionally and you want keep them together visually. To lay them out side-by-side, you'll put the TextBox widget and a Button widget in a horizontal panel. In the Java code, you'll create a new instance of <a href="/javadoc/latest/com/google/gwt/user/client/ui/HorizontalPanel.html">HorizontalPanel</a> and name it addPanel. <!-- newSymbolTextBox and addStockButton -->
 </p>
 
 <h2>Vertical Panel</h2>
@@ -130,7 +130,7 @@ You want to lay out the remaining elements vertically:
     <li>the Label widget for the timestamp</li>
 </ul>
 <p>
-You'll do this with a vertical panel. In the Java code, you'll create a new instance of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/VerticalPanel.html">VerticalPanel</a> and name it mainPanel.
+You'll do this with a vertical panel. In the Java code, you'll create a new instance of <a href="/javadoc/latest/com/google/gwt/user/client/ui/VerticalPanel.html">VerticalPanel</a> and name it mainPanel.
 </p>
 <h2>Root Panel</h2>
 <p>

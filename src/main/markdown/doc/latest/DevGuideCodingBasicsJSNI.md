@@ -298,7 +298,7 @@ These rules must be followed whether the values enter and leave through normal J
 </tr>
 
 <tr>
-<td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> </td>
+<td><a href="/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> </td>
 <td><code>JavaScriptObject</code> that must have originated from JavaScript code, typically as the return value of some other JSNI method
 (see notes)</td>
 </tr>
@@ -345,7 +345,7 @@ These rules must be followed whether the values enter and leave through normal J
 </tr>
 
 <tr>
-<td><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> </td>
+<td><a href="/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> </td>
 <td>native JavaScript object, as in <code>return document.createElement(&quot;div&quot;)</code> (see notes)</td>
 </tr>
 
@@ -391,14 +391,14 @@ href="DevGuideCompilingAndDebugging.html#DevGuideProdMode">production mode</a>.<
 </ul>
 
 <ul>
-<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> gets special treatment
+<li><a href="/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> gets special treatment
 from the GWT compiler and development mode. Its purpose is to provide an opaque representation of native JavaScript objects to Java code.</li>
 </ul>
 
 <p/>
 
 <ul>
-<li>Although Java arrays are not directly usable in JavaScript, there are some helper classes that efficiently achieve a similar effect: <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsArray.html">JsArray</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsArrayBoolean.html">JsArrayBoolean</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsArrayInteger.html">JsArrayInteger</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsArrayNumber.html">JsArrayNumber</a>, and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsArrayString.html">JsArrayString</a>. These classes are wrappers around a native JavaScript array.</li>
+<li>Although Java arrays are not directly usable in JavaScript, there are some helper classes that efficiently achieve a similar effect: <a href="/javadoc/latest/com/google/gwt/core/client/JsArray.html">JsArray</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsArrayBoolean.html">JsArrayBoolean</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsArrayInteger.html">JsArrayInteger</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsArrayNumber.html">JsArrayNumber</a>, and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsArrayString.html">JsArrayString</a>. These classes are wrappers around a native JavaScript array.</li>
 </ul>
 
 
@@ -412,7 +412,7 @@ is <tt>false</tt>). In previous versions of GWT, <tt>undefined</tt> was not a le
 <h2 id="exceptions">Exceptions and JSNI</h2>
 
 <p>An exception can be thrown during the execution of either normal Java code or the JavaScript code within a JSNI method. When an exception generated within a JSNI method
-propagates up the call stack and is caught by a Java catch block, the thrown JavaScript exception is wrapped as a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JavaScriptException.html">JavaScriptException</a> object at the time it is
+propagates up the call stack and is caught by a Java catch block, the thrown JavaScript exception is wrapped as a <a href="/javadoc/latest/com/google/gwt/core/client/JavaScriptException.html">JavaScriptException</a> object at the time it is
 caught. This wrapper object contains only the class name and description of the JavaScript exception that occurred. The recommended practice is to handle JavaScript exceptions in
 JavaScript code and Java exceptions in Java code.</p>
 

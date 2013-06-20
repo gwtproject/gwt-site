@@ -9,7 +9,7 @@ is important to use only <a href="DevGuideCodingBasics.html#DevGuideJavaCompatib
 
 <h2 id="creating">Creating an EntryPoint Class</h2>
 
-<p>To begin writing a GWT module, subclass the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/EntryPoint.html">EntryPoint</a> class.</p>
+<p>To begin writing a GWT module, subclass the <a href="/javadoc/latest/com/google/gwt/core/client/EntryPoint.html">EntryPoint</a> class.</p>
 
 <p><strong>Tip:</strong> GWT applicationCreator creates a starter application for you with a sample EntryPoint subclass defined.</p>
 
@@ -99,7 +99,7 @@ public class Hello implements EntryPoint {
 
 <li>the handler pops up an Alert dialog</li>
 
-<li>the button is added to the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html">Root panel</a></li>
+<li>the button is added to the <a href="/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html">Root panel</a></li>
 </ul>
 
 

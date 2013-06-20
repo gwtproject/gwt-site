@@ -25,7 +25,7 @@
 
 <h2 id="timer">Scheduling work: the Timer class</h2>
 
-<p>Use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/Timer.html">Timer</a> class to schedule work to be done in
+<p>Use the <a href="/javadoc/latest/com/google/gwt/user/client/Timer.html">Timer</a> class to schedule work to be done in
 the future.</p>
 
 <p>To create a timer, create a new instance of the Timer class and then override the run() method entry point.</p>
@@ -130,7 +130,7 @@ public class Foo {
 
 <p>In order to keep a user interface up to date, you sometimes want to perform an update periodically. You might want to run a poll to the server to check for new data, or update
 some sort of animation on the screen. In this case, use the Timer class
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/Timer.html#scheduleRepeating(int)">scheduleRepeating()</a> method:</p>
+<a href="/javadoc/latest/com/google/gwt/user/client/Timer.html#scheduleRepeating(int)">scheduleRepeating()</a> method:</p>
 
 <pre class="prettyprint">
 public class Foo {
@@ -174,10 +174,10 @@ public class Foo {
 
 <p>Sometimes you want to break up your logic loop so that the JavaScript event
 loop gets a chance to run between two pieces of code. The <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/Scheduler.html">Scheduler</a> class will allow you to do that.
+href="/javadoc/latest/com/google/gwt/core/client/Scheduler.html">Scheduler</a> class will allow you to do that.
 The logic that you pass to <code>Scheduler</code> will run at some point in the future, after control has been returned to the JavaScript event loop. This little delay may give the
-interface a chance to process some user events or initialize other code. To use the <code>Scheduler</code> class in its simplest form, you create a subclass of the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/Command.html">Command</a> class, overriding the execute() method and pass
-it to <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/Scheduler.html#scheduleDeferred(Command)">Scheduler.scheduleDeferred</a></p>
+interface a chance to process some user events or initialize other code. To use the <code>Scheduler</code> class in its simplest form, you create a subclass of the <a href="/javadoc/latest/com/google/gwt/user/client/Command.html">Command</a> class, overriding the execute() method and pass
+it to <a href="/javadoc/latest/com/google/gwt/core/client/Scheduler.html#scheduleDeferred(Command)">Scheduler.scheduleDeferred</a></p>
 
 <pre class="prettyprint">
 
@@ -207,7 +207,7 @@ mechanism, the <i>unresponsive script warning</i>.</p>
 user. The dialog is there because a poorly written script might have an infinite loop or some other bug that is keeping the browser from responding. But in AJAX applications, the
 script may be doing legitimate work.</p>
 
-<p>GWT provides an <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/IncrementalCommand.html">IncrementalCommand</a>
+<p>GWT provides an <a href="/javadoc/latest/com/google/gwt/user/client/IncrementalCommand.html">IncrementalCommand</a>
 class that helps perform long running calculations. It works by repeatedly calling an 'execute()' entry point until the computation is complete.</p>
 
 <p>The following example is an outline of how to use the IncrementalCommand class to do some computation in a way that allows the browser's user interface to be responsive:</p>

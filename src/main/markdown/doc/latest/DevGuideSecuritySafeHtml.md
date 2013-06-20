@@ -194,7 +194,7 @@ have confidence that it is free of XSS.
 </p>
 <p>
 The package provides an interface, <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtml.html"><code>SafeHtml</code></a>,
+href="/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtml.html"><code>SafeHtml</code></a>,
 to represent the subset of
 strings that are safe to use in an HTML context, in the sense that evaluating
 the string as HTML in a browser will not result in script execution. More
@@ -211,10 +211,10 @@ With the introduction of the <code>com.google.gwt.safehtml</code> package, all
 of the core GWT library's widgets that take <code>String</code> arguments that
 are interpreted as HTML have been augmented with corresponding methods that take
 a <code>SafeHtml</code>-typed value. In particular, all widgets that implement
-the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HasHTML.html"><code>HasHTML</code></a> (or <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HasDirectionalHtml.html"><code>HasDirectionalHtml</code></a>) interface also
-implement the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/client/HasSafeHtml.html"><code>HasSafeHtml</code></a> (or <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HasDirectionalSafeHtml.html"><code>HasDirectionalSafeHtml</code></a>, respectively)
+the <a href="/javadoc/latest/com/google/gwt/user/client/ui/HasHTML.html"><code>HasHTML</code></a> (or <a
+href="/javadoc/latest/com/google/gwt/user/client/ui/HasDirectionalHtml.html"><code>HasDirectionalHtml</code></a>) interface also
+implement the <a href="/javadoc/latest/com/google/gwt/safehtml/client/HasSafeHtml.html"><code>HasSafeHtml</code></a> (or <a
+href="/javadoc/latest/com/google/gwt/user/client/ui/HasDirectionalSafeHtml.html"><code>HasDirectionalSafeHtml</code></a>, respectively)
 interface.  These interfaces define:
 </p>
 <pre class="prettyprint">
@@ -227,7 +227,7 @@ as safe alternatives to <code>setHTML(String)</code> and
 </p>
 
 <p>
-For example, the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HTML.html"><code>HTML</code></a> widget has been
+For example, the <a href="/javadoc/latest/com/google/gwt/user/client/ui/HTML.html"><code>HTML</code></a> widget has been
 augmented with the following constructors and methods:
 </p>
 <pre class="prettyprint">
@@ -287,7 +287,7 @@ concatenated partially from <i>trusted</i> strings (for example, snippets of HTM
 markup defined within the application's source) and <i>untrusted</i> strings
 that may be under the control of a potential attacker. The
 <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlBuilder.html"><code>SafeHtmlBuilder</code></a> class provides a builder interface that supports
+href="/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlBuilder.html"><code>SafeHtmlBuilder</code></a> class provides a builder interface that supports
 this use-case while ensuring that the untrusted parts of the string are
 appropriately escaped.
 </p>
@@ -387,7 +387,7 @@ public class MyWidget ... {
 </pre>
 <p>
 Instantiating a <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/client/SafeHtmlTemplates.html"><code>SafeHtmlTemplates</code></a> interface with
+href="/javadoc/latest/com/google/gwt/safehtml/client/SafeHtmlTemplates.html"><code>SafeHtmlTemplates</code></a> interface with
 <code>GWT.create()</code> returns an instance of an implementation that is
 generated at compile time. The code generator parses the value of each template
 method's <code>@Template</code> annotation as an (X)HTML template, with template
@@ -510,7 +510,7 @@ but not <code>{3}</code> in the example, are treated specially:
 Before HTML escaping, the parameter's value is sanitized to ensure it is safe to
 use as the value of a URI-valued HTML attribute. This sanitization is performed
 as follows (see <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/shared/UriUtils.html#sanitizeUri(java.lang.String)"><code>UriUtils.sanitizeUri(String)</code></a>):
+href="/javadoc/latest/com/google/gwt/safehtml/shared/UriUtils.html#sanitizeUri(java.lang.String)"><code>UriUtils.sanitizeUri(String)</code></a>):
 <ul>
 <li>
 URIs that don't have a scheme are considered safe and are used as is.
@@ -536,20 +536,20 @@ containing a substring of the form <code>{0}</code>.
 <h4 id="Convenience_Methods">Convenience Methods</h4>
 
 <p>
-The <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html"><code>SafeHtmlUtils</code></a> class provides a
+The <a href="/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html"><code>SafeHtmlUtils</code></a> class provides a
 number of convenience methods to create <code>SafeHtml</code> values from
 strings:
 
 <ul>
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromString(java.lang.String)">SafeHtmlUtils.fromString(String
+href="/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromString(java.lang.String)">SafeHtmlUtils.fromString(String
 s)</a></tt></strong><br/>
 HTML-escapes its argument and returns the result wrapped as a
 <code>SafeHtml</code>.
 </li>
 
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromSafeConstant(java.lang.String)">SafeHtmlUtils.fromSafeConstant(String
+href="/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromSafeConstant(java.lang.String)">SafeHtmlUtils.fromSafeConstant(String
 s)</a></tt></strong><br/>
 Returns a compile-time constant string wrapped as a <code>SafeHtml</code>,
 without escaping the value.  
@@ -577,7 +577,7 @@ SafeHtml safeHtml = SafeHtmlUtils.fromSafeConstant("&lt;a href='");
 </li>
 
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromTrustedString(java.lang.String)">SafeHtmlUtils.fromTrustedString(String
+href="/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromTrustedString(java.lang.String)">SafeHtmlUtils.fromTrustedString(String
 s)</a></tt></strong><br/>
 Returns its argument as a <code>SafeHtml</code>, without performing any form of
 validation or escaping.  It is the developer's responsibility to ensure that
@@ -597,7 +597,7 @@ to itself produce <code>SafeHtml</code>-typed values.
 <h4 id="SimpleHtmlSanitizer">SimpleHtmlSanitizer</h4>
 <p>
 <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/shared/SimpleHtmlSanitizer.html"><code>SimpleHtmlSanitizer</code></a> produces instances of <code>SafeHtml</code>
+href="/javadoc/latest/com/google/gwt/safehtml/shared/SimpleHtmlSanitizer.html"><code>SimpleHtmlSanitizer</code></a> produces instances of <code>SafeHtml</code>
 from input strings by applying a simple sanitization algorithm at run-time.
 </p>
 <p>

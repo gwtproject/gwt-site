@@ -1136,17 +1136,17 @@ in this release.
 		official doc is still in progress, but for an overview please see <a
 		href="http://code.google.com/p/google-web-toolkit/wiki/LayoutDesign">Layout
 			Design</a> on the wiki. The new set of panels includes <a
-		href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/user/client/ui/RootLayoutPanel.html">RootLayoutPanel</a>,
+		href="/javadoc/latest/com/google/gwt/user/client/ui/RootLayoutPanel.html">RootLayoutPanel</a>,
 		<a
-		href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/user/client/ui/LayoutPanel.html">LayoutPanel</a>,
+		href="/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html">LayoutPanel</a>,
 		<a
-		href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a>,
+		href="/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a>,
 		<a
-		href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/user/client/ui/SplitLayoutPanel.html">SplitLayoutPanel</a>,
+		href="/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html">SplitLayoutPanel</a>,
 		<a
-		href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/user/client/ui/StackLayoutPanel.html">StackLayoutPanel</a>,
+		href="/javadoc/latest/com/google/gwt/user/client/ui/StackLayoutPanel.html">StackLayoutPanel</a>,
 		and <a
-		href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/user/client/ui/TabLayoutPanel.html">TabLayoutPanel</a>.
+		href="/javadoc/latest/com/google/gwt/user/client/ui/TabLayoutPanel.html">TabLayoutPanel</a>.
 	</li>
 	<li>UiBinder now directly supports <code>LayoutPanel</code>. For
 		example:<pre style="margin-left: 2em;">
@@ -1157,7 +1157,7 @@ in this release.
 &lt;/g:LayoutPanel&gt;</pre>
 	</li>
 	<li><a
-		href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/user/client/Window.Navigator.html">Window.Navigator</a>
+		href="/javadoc/latest/com/google/gwt/user/client/Window.Navigator.html">Window.Navigator</a>
 		now provides access to the native browser's navigator object.</li>
 </ul>
 
@@ -1269,7 +1269,7 @@ in this release.
 		directly from Safari, Firefox, Internet Explorer, and Chrome.
 	</li>
 	<li>Code Splitting: Developer-guided code splitting with <a
-		href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/core/client/GWT.html#runAsync(com.google.gwt.core.client.RunAsyncCallback)">GWT.runAsync()</a>
+		href="/javadoc/latest/com/google/gwt/core/client/GWT.html#runAsync(com.google.gwt.core.client.RunAsyncCallback)">GWT.runAsync()</a>
 		allows you to chunk your GWT code into multiple fragments for faster
 		startup. Imagine having to download a whole movie before being able to
 		watch it. Well, that's what you have to do with most Ajax apps these
@@ -1279,7 +1279,7 @@ in this release.
 		app is downloaded as needed.
 	</li>
 	<li>Declarative User Interface: GWT's <a
-		href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/uibinder/client/UiBinder.html">UiBinder</a>
+		href="/javadoc/latest/com/google/gwt/uibinder/client/UiBinder.html">UiBinder</a>
 		now allows you to create user interfaces mostly declaratively.
 		Previously, widgets had to be created and assembled programmatically,
 		requiring lots of code. Now, you can use XML to declare your UI,
@@ -1288,9 +1288,9 @@ in this release.
 		of using UiBinder.
 	</li>
 	<li>Bundling of resources via <a
-		href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a>.
+		href="/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a>.
 		GWT introduced <a
-		href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/user/client/ui/ImageBundle.html">ImageBundle</a>
+		href="/javadoc/latest/com/google/gwt/user/client/ui/ImageBundle.html">ImageBundle</a>
 		in 1.4 to provide automatic spriting of images. ClientBundle
 		generalizes this technique, bringing the power of combining and
 		optimizing resources into one download to things like text files, CSS,
@@ -1298,7 +1298,7 @@ in this release.
 		decrease application latency -- especially on mobile applications.
 	</li>
 	<li>Using HtmlUnit for running test cases based on <a
-		href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a>:
+		href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a>:
 		Prior to 2.0, <code>GWTTestCase</code> relied on SWT and native code
 		versions of actual browsers to run unit tests. As a result, running
 		unit tests required starting an actual browser. As of 2.0, <code>GWTTestCase</code>

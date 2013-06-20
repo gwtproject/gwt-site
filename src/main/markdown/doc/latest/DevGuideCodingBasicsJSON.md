@@ -33,7 +33,7 @@ object). Here's an example of encoding product data in JSON:</p>
 
 <h2 id="parsing">Parsing JSON</h2>
 
-<p>You can parse JSON Strings and convert them to a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> in GWT with a simple one liner JSNI method. However, you need to be careful since eval() in JavaScript can actually run code, so you need to absolutely trust the JSON String that you evaluate.</p>
+<p>You can parse JSON Strings and convert them to a <a href="/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> in GWT with a simple one liner JSNI method. However, you need to be careful since eval() in JavaScript can actually run code, so you need to absolutely trust the JSON String that you evaluate.</p>
 
 <pre class="prettyprint">
 /*
@@ -47,9 +47,9 @@ public static native JavaScriptObject parseJson(String jsonStr) /*-{
 </pre>
 
 <p>Typically, you will receive JSON data as the response text of an <a href="DevGuideServerCommunication.html#DevGuideHttpRequests">HTTP request</a>. Thus, you'll first have to convert
-that <tt>String</tt> into a Object that you can work with using a method like the one shown above. The recommended way for interacting with <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObjects</a> is to use <a href="DevGuideCodingBasicsOverlay.html">JavaScript Overlay Types</a>.
+that <tt>String</tt> into a Object that you can work with using a method like the one shown above. The recommended way for interacting with <a href="/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObjects</a> is to use <a href="DevGuideCodingBasicsOverlay.html">JavaScript Overlay Types</a>.
 
 <h2 id="mashups">Mashups with JSON and JSNI</h2>
 
-<p>If you're loading JSON-encoded data from your own server, you'll typically use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a> and related classes to <a href="DevGuideServerCommunication.html#DevGuideHttpRequests">make HTTP requests</a>. However, you can also retrieve JSON from remote servers in true mashup fashion using GWT's <a href="DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface">JavaScript Native Interface (JSNI)</a> functionality. The techniques for cross-site JSON is explained more fully in the getting started tutorial. To see a working example, check out the <a href="tutorial/Xsite.html">Cross-site Client-Server Communication section</a> of the <a href="tutorial/gettingstarted.html">Getting Started guide</a>.</p>
+<p>If you're loading JSON-encoded data from your own server, you'll typically use the <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a> and related classes to <a href="DevGuideServerCommunication.html#DevGuideHttpRequests">make HTTP requests</a>. However, you can also retrieve JSON from remote servers in true mashup fashion using GWT's <a href="DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface">JavaScript Native Interface (JSNI)</a> functionality. The techniques for cross-site JSON is explained more fully in the getting started tutorial. To see a working example, check out the <a href="tutorial/Xsite.html">Cross-site Client-Server Communication section</a> of the <a href="tutorial/gettingstarted.html">Getting Started guide</a>.</p>
 

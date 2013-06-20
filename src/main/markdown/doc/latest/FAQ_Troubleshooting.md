@@ -75,8 +75,8 @@ again from the subclass constructor). Thus the message generally reveals an actu
 
 <p>Rather than write a new widget from scratch, here's a shortcut for constructing a widget from an existing DOM element.</p>
 
-<p>First subclass <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html">AbsolutePanel</a>. Then use
-the protected <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html#AbsolutePanel(com.google.gwt.user.client.Element)">AbsolutePanel(Element)</a> constructor to change the underlying element.</p>
+<p>First subclass <a href="/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html">AbsolutePanel</a>. Then use
+the protected <a href="/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html#AbsolutePanel(com.google.gwt.user.client.Element)">AbsolutePanel(Element)</a> constructor to change the underlying element.</p>
 
 <h3 id="The_import_cannot_be_resolved">The import cannot be resolved</h3>
 
@@ -440,7 +440,7 @@ constraint.</p>
 
 <h5>Workaround</h5>
 
-<p>You can read more details about this security issue and how to work around it in the API Reference, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/ImageBundle.html">Image Bundles and the HTTPS Protocol</a>.</p>
+<p>You can read more details about this security issue and how to work around it in the API Reference, <a href="/javadoc/latest/com/google/gwt/user/client/ui/ImageBundle.html">Image Bundles and the HTTPS Protocol</a>.</p>
 
 <h4 id="Size">Size</h4>
 

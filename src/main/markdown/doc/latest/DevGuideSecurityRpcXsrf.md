@@ -23,9 +23,9 @@ attacking using GWT's builtin XSRF protection introduced in GWT 2.3
 
 <h2 id="Overview">Overview</h2>
 <p>
-RPC XSRF protection is built using <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/RpcToken.html"><code>RpcToken</code></a>
+RPC XSRF protection is built using <a href="/javadoc/latest/com/google/gwt/user/client/rpc/RpcToken.html"><code>RpcToken</code></a>
 feature, which lets a developer set a token on a RPC endpoint using <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/HasRpcToken.html">
+href="/javadoc/latest/com/google/gwt/user/client/rpc/HasRpcToken.html">
 <code>HasRpcToken</code></a> interface and have that token included with each
 RPC call made via that endpoint.
 </p>
@@ -41,7 +41,7 @@ session cookie and thus is unable to generate valid XSRF token.
 <h3>Configure <code>XsrfTokenServiceServlet</code></h3>
 <p>
 Client-side code will obtain XSRF tokens by calling
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/XsrfTokenService.html">
+<a href="/javadoc/latest/com/google/gwt/user/client/rpc/XsrfTokenService.html">
 <code>XsrfTokenService.getNewXsrfToken()</code></a> server-side implementation
 configured in <code>web.xml</code>:
 </p>
@@ -81,7 +81,7 @@ session cookie to each servlet individually.
 
 <h3>Make RPC servlets XSRF protected</h3>
 <p>
-All server-side implementations of RPC services must extend <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/XsrfProtectedServiceServlet.html"><code>XsrfProtectedServiceServlet</code></a>:
+All server-side implementations of RPC services must extend <a href="/javadoc/latest/com/google/gwt/user/server/rpc/XsrfProtectedServiceServlet.html"><code>XsrfProtectedServiceServlet</code></a>:
 </p>
 
 <pre class="prettyprint">
@@ -108,7 +108,7 @@ Client-side RPC interfaces can be marked as XSRF protected using one of the foll
 </p>
 <ul>
   <li>by extending <a
-  href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/XsrfProtectedService.html">
+  href="/javadoc/latest/com/google/gwt/user/client/rpc/XsrfProtectedService.html">
   <code>XsrfProtectedService</code></a>, in which case all methods calls will
   require <code>XsrfToken</code>:
   <pre class="prettyprint">
@@ -121,8 +121,8 @@ Client-side RPC interfaces can be marked as XSRF protected using one of the foll
   }
   </pre>
   </li>
-  <li>by explicitly annotating interface or methods with <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/XsrfProtect.html"><code>@XsrfProtect</code></a> annotation. 
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/NoXsrfProtect.html">
+  <li>by explicitly annotating interface or methods with <a href="/javadoc/latest/com/google/gwt/user/server/rpc/XsrfProtect.html"><code>@XsrfProtect</code></a> annotation. 
+<a href="/javadoc/latest/com/google/gwt/user/server/rpc/NoXsrfProtect.html">
 <code>@NoXsrfProtect</code></a> annotation can be used to disable XSRF
 protection on a method or service to disable XSRF protection:
   <pre class="prettyprint">
@@ -138,21 +138,21 @@ protection on a method or service to disable XSRF protection:
   </pre>
   Method level annotations override RPC interface level annoatations. If no
   annotations are present and the RPC interface contains a method that returns
-  <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/RpcToken.html">
+  <a href="/javadoc/latest/com/google/gwt/user/client/rpc/RpcToken.html">
   <code>RpcToken</code></a> or its implementation, then XSRF token validation is
   performed on all methods of that interface except for the method returning
   RpcToken.
   </li>
 </ul>
 <p class="note">
-<strong>Tip:</strong> To specify which <code>RpcToken</code> implementation GWT should generate serializers for use <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/RpcToken.RpcTokenImplementation.html"><code>@RpcTokenImplementation</code></a> annotation.
+<strong>Tip:</strong> To specify which <code>RpcToken</code> implementation GWT should generate serializers for use <a href="/javadoc/latest/com/google/gwt/user/client/rpc/RpcToken.RpcTokenImplementation.html"><code>@RpcTokenImplementation</code></a> annotation.
 </p>
 
 <h3>Include <code>XsrfToken</code> with RPC calls</h3>
 <p>
 To make a call to an XSRF protected service client must obtain a valid
 <code>XsrfToken</code> and set it on the service endpoint by casting the 
-service's asynchronous interface to <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/HasRpcToken.html"><code>HasRpcToken</code></a> and calling <code>setRpcToken()</code> method:
+service's asynchronous interface to <a href="/javadoc/latest/com/google/gwt/user/client/rpc/HasRpcToken.html"><code>HasRpcToken</code></a> and calling <code>setRpcToken()</code> method:
 </p>
 
 <pre class="prettyprint">
@@ -187,5 +187,5 @@ xsrf.getNewXsrfToken(new AsyncCallback&lt;XsrfToken&gt;() {
 
 <p class="note">
 <strong>Tip:</strong> If you would like to register a special handler for exceptions generated during
-<code>XsrfToken</code> validation use <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/HasRpcToken.html#setRpcTokenExceptionHandler(com.google.gwt.user.client.rpc.RpcTokenExceptionHandler)"><code>HasRpcToken.setRpcTokenExceptionHandler()</code></a>
+<code>XsrfToken</code> validation use <a href="/javadoc/latest/com/google/gwt/user/client/rpc/HasRpcToken.html#setRpcTokenExceptionHandler(com.google.gwt.user.client.rpc.RpcTokenExceptionHandler)"><code>HasRpcToken.setRpcTokenExceptionHandler()</code></a>
 </p>

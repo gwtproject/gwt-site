@@ -102,7 +102,7 @@ To create the service, you will:
 
 <h3>Defining the service: the StockPriceService interface</h3>
 <p>
-In GWT, an RPC service is defined by an interface that extends the GWT <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/RemoteService.html">RemoteService</a>  interface. For the StockPriceService interface, you need to define only one method: a method that will accept an array of stock symbols and return the data associated with each stock as an array of StockPrice objects.
+In GWT, an RPC service is defined by an interface that extends the GWT <a href="/javadoc/latest/com/google/gwt/user/client/rpc/RemoteService.html">RemoteService</a>  interface. For the StockPriceService interface, you need to define only one method: a method that will accept an array of stock symbols and return the data associated with each stock as an array of StockPrice objects.
 </p>
 
 <ol class="instructions">
@@ -143,7 +143,7 @@ public interface StockPriceService extends RemoteService {
 Now create the class (StockPriceServiceImpl) that lives on the server. As defined in the interface, StockPriceServiceImpl will contain only one method, the method that returns the stock price data.
 </p>
 <p>
-To do this, implement the service interface by creating a class that also extends the GWT <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> class. RemoteServiceServlet does the work of deserializing incoming requests from the client and serializing outgoing responses.
+To do this, implement the service interface by creating a class that also extends the GWT <a href="/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> class. RemoteServiceServlet does the work of deserializing incoming requests from the client and serializing outgoing responses.
 </p>
 
 <h4>Packaging server-side code</h4>
@@ -377,7 +377,7 @@ and choose the "Create asynchronous RemoteService interface" option to automatic
 <p>
 When you call a remote procedure, you specify a callback method which executes when the call completes.
 
-You specify the callback method by passing an <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html">AsyncCallback</a> object to the service proxy class.
+You specify the callback method by passing an <a href="/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html">AsyncCallback</a> object to the service proxy class.
 
 The AsyncCallback object contains two methods, one of which is called depending on whether the call failed or succeeded: onFailure(Throwable) and onSuccess(T).
 </p>
@@ -468,7 +468,7 @@ A type is serializable and can be used in a service interface if one of the foll
     <li>An array of serializable types is serializable by extension. </li>
     <li>A class is serializable if it meets these three requirements:
         <ul>
-            <li>It implements either Java <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html">Serializable</a> or GWT <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/IsSerializable.html">IsSerializable</a> interface, either directly, or because it derives from a superclass that does.</li>
+            <li>It implements either Java <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html">Serializable</a> or GWT <a href="/javadoc/latest/com/google/gwt/user/client/rpc/IsSerializable.html">IsSerializable</a> interface, either directly, or because it derives from a superclass that does.</li>
             <li>Its non-final, non-transient instance fields are themselves serializable, and</li>
             <li>It has a default (zero argument) constructor with any access modifier (e.g. private Foo(){} will work)</li>
         </ul>

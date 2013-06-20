@@ -275,7 +275,7 @@ http://site.domain.tld/path?name=Dan%3Cscript%20%3Ealert%28%22Hi%22%29%3B%3C/scr
 
 <h4>Protecting Your Application</h4>
 
-<p>If you are using the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/1.5/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/1.5/com/google/gwt/http/client/RequestCallback.html">RequestCallback</a> classes in GWT, you can implement XSRF protection by setting a custom header to contain the value of your cookie. Here is some sample code:</p>
+<p>If you are using the <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestCallback.html">RequestCallback</a> classes in GWT, you can implement XSRF protection by setting a custom header to contain the value of your cookie. Here is some sample code:</p>
 
 <pre>
 RequestBuilder rb = new RequestBuilder(RequestBuilder.POST, url);
@@ -283,7 +283,7 @@ rb.setHeader("X-XSRF-Cookie", Cookies.getCookie("myCookieKey"));
 rb.sendRequest(null, myCallback);
 </pre>
 
-<p>If you are using GWT's RPC mechanism, the solution is unfortunately not quite as clean. However, there are still several ways you can accomplish it. For instance, you can add an argument to each method in your <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/1.5/com/google/gwt/user/client/rpc/RemoteService.html">RemoteService</a> interface that contains a String. That is, if you wanted this interface:</p>
+<p>If you are using GWT's RPC mechanism, the solution is unfortunately not quite as clean. However, there are still several ways you can accomplish it. For instance, you can add an argument to each method in your <a href="/javadoc/latest/com/google/gwt/user/client/rpc/RemoteService.html">RemoteService</a> interface that contains a String. That is, if you wanted this interface:</p>
 
 <pre>
 public interface MyInterface extends RemoteService {

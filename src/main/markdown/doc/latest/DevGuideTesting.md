@@ -51,8 +51,8 @@ the same vein.
 
 <h3>The GWTTestCase Class</h3>
 
-<p>GWT includes a special <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a> base class
-that provides <a href="http://www.junit.org">JUnit</a> integration. Running a compiled <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a> subclass under JUnit launches the <a href="DevGuideTestingHtmlUnit.html">HtmlUnit browser</a> which serves to emulate your application behavior during test execution.</p>
+<p>GWT includes a special <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a> base class
+that provides <a href="http://www.junit.org">JUnit</a> integration. Running a compiled <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a> subclass under JUnit launches the <a href="DevGuideTestingHtmlUnit.html">HtmlUnit browser</a> which serves to emulate your application behavior during test execution.</p>
 
 <p>GWTTestCase is derived from JUnit's <a href="http://junit.sourceforge.net/junit3.8.1/javadoc/junit/framework/TestCase.html">TestCase</a>. The typical way to setup a JUnit
 test case class is to have it extend <tt>TestCase</tt>, and then run the it with the JUnit <a href="http://junit.sourceforge.net/junit3.8.1/javadoc/junit/awtui/TestRunner.html">TestRunner</a>. <tt>TestCase</tt> uses reflection to discover the test methods defined in your derived class. It is convention to begin the name of all test methods
@@ -114,13 +114,13 @@ tests.
 <p/>
 
 <ol>
-<li><strong>Define a class that extends <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a>.</strong> Make sure your test class is on the module source path (e.g. in the <tt>client</tt> subpackage of your module.) You can add new source
+<li><strong>Define a class that extends <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a>.</strong> Make sure your test class is on the module source path (e.g. in the <tt>client</tt> subpackage of your module.) You can add new source
 paths by editing the <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">module XML file</a> and adding a <tt>&lt;source&gt;</tt> element.</li>
 
 <li><strong>If you do not have a GWT module yet, create a <a href="DevGuideOrganizingProjects.html#DevGuideModules">module</a> that causes the source for your test case to be
 included.</strong> If you are adding a test case to an existing GWT app, you can just use the existing module.</li>
 
-<li><strong>Implement the method <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#getModuleName()">GWTTestCase.getModuleName()</a> to return the fully-qualified name of the module.</strong> This is the glue that tells the JUnit test case which module to
+<li><strong>Implement the method <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#getModuleName()">GWTTestCase.getModuleName()</a> to return the fully-qualified name of the module.</strong> This is the glue that tells the JUnit test case which module to
 instantiate.</li>
 
 <li><strong>Compile your test case class to bytecode.</strong> You can use the Java compiler directly using <a href="http://java.sun.com/j2se/1.5.0/docs/tooldocs/windows/javac.html">javac</a> or a Java IDE such as <a href="http://eclipse.org">Eclipse</a>.</li>
@@ -279,8 +279,8 @@ your application's server side code. That said, you may want both GWTTestCase an
 
 <p>GWT's <a href="http://www.junit.org">JUnit</a> integration provides special support for testing functionality that cannot be executed in straight-line code. For
 example, you might want to make an <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">RPC</a> call to a server and then validate the response. However, in a normal
-JUnit test run, the test stops as soon as the test method returns control to the caller, and GWT does not support multiple threads or blocking. To support this use case, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a> has extended the <tt>TestCase</tt> API.
-The two key methods are <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#delayTestFinish(int)">GWTTestCase.delayTestFinish(int)</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#finishTest()">GWTTestCase.finishTest()</a>. Calling
+JUnit test run, the test stops as soon as the test method returns control to the caller, and GWT does not support multiple threads or blocking. To support this use case, <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a> has extended the <tt>TestCase</tt> API.
+The two key methods are <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#delayTestFinish(int)">GWTTestCase.delayTestFinish(int)</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#finishTest()">GWTTestCase.finishTest()</a>. Calling
 <tt>delayTestFinish()</tt> during a test method's execution puts that test in asynchronous mode, which means the test will not finish when the test method returns control to the
 caller. Instead, a <i>delay period</i> begins, which lasts the amount of time specified in the call to <tt>delayTestFinish()</tt>. During the delay period, the test system will
 wait for one of three things to happen:</p>
@@ -290,7 +290,7 @@ wait for one of three things to happen:</p>
 
 <li>If any exception escapes from an event handler during the delay period, the test will error with the thrown exception.</li>
 
-<li>If the delay period expires and neither of the above has happened, the test will error with a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/TimeoutException.html">TimeoutException</a>.</li>
+<li>If the delay period expires and neither of the above has happened, the test will error with a <a href="/javadoc/latest/com/google/gwt/junit/client/TimeoutException.html">TimeoutException</a>.</li>
 </ol>
 
 
@@ -334,7 +334,7 @@ trigger the next event. When the last event fires, call <tt>finishTest()</tt> as
 
 <h2 id="DevGuideJUnitSuites">Combining TestCase classes into a TestSuite</h2>
 
-<p>The <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/tools/GWTTestSuite.html">GWTTestSuite</a>
+<p>The <a href="/javadoc/latest/com/google/gwt/junit/tools/GWTTestSuite.html">GWTTestSuite</a>
 mechanism has the overhead of having to start a development mode shell
 and servlet or compile your code. There is also overhead for each test
 module within a suite.
@@ -343,12 +343,12 @@ module within a suite.
 practical, and should avoid having tests in a particular module run by
 more than one suite. (Tests are in the same module if they return
 return the same value
-from <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#getModuleName()">getModuleName()</a>.)
+from <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#getModuleName()">getModuleName()</a>.)
 
 <p>GWTTestSuite class re-orders the test cases so that all cases that
 share a module are run back to back.</p>
 
-<p>Creating a suite is simple if you have already defined individual JUnit <a href="http://junit.sourceforge.net/junit3.8.1/javadoc/junit/framework/TestCase.html">TestCases</a> or <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCases</a>.
+<p>Creating a suite is simple if you have already defined individual JUnit <a href="http://junit.sourceforge.net/junit3.8.1/javadoc/junit/framework/TestCase.html">TestCases</a> or <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCases</a>.
 Here is an example:</p>
 
 <pre class="prettyprint">
@@ -378,14 +378,14 @@ leaves a reference to will remain active. This could interfere with future test 
 after each test method.</p>
 
 <ul>
-<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtSetUp()" >gwtSetUp()</a> runs before each test
+<li><a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtSetUp()" >gwtSetUp()</a> runs before each test
 method in a test case.</li>
 
-<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtTearDown()">gwtTearDown()</a> runs after each
+<li><a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtTearDown()">gwtTearDown()</a> runs after each
 test method in a test case.</li>
 </ul>
 
-<p>The following example shows how to defensively cleanup the DOM before the next test run using <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtSetUp()">gwtSetUp()</a>. It skips over <tt>&lt;iframe&gt;</tt> and <tt>&lt;script&gt;</tt> tags so that the GWT test infrastructure is not accidentally removed.</p>
+<p>The following example shows how to defensively cleanup the DOM before the next test run using <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtSetUp()">gwtSetUp()</a>. It skips over <tt>&lt;iframe&gt;</tt> and <tt>&lt;script&gt;</tt> tags so that the GWT test infrastructure is not accidentally removed.</p>
 
 <pre class="prettyprint">
   import com.google.gwt.junit.client.GWTTestCase;

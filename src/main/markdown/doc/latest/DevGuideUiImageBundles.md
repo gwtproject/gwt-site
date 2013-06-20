@@ -37,7 +37,7 @@ browsers put a standard placeholder for each image in the UI. The placeholder is
 fully downloaded from the server. The result is a 'bouncy' effect, where images 'pop' into the UI once they are downloaded. With image bundles, the size of each individual image
 within the bundle is discovered when the bundle is created, so the size of the image can be explicitly set whenever images from a bundle are used in an application.</p>
 
-<p>See the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/ImageBundle.html">ImageBundle
+<p>See the <a href="/javadoc/latest/com/google/gwt/user/client/ui/ImageBundle.html">ImageBundle
 API documentation</a> for important information regarding:</p>
 
 <ul>

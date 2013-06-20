@@ -11,9 +11,9 @@
 <h2 id="DevGuideDeployingWebServer">Deploying on a web server</h2>
 
 <p>Deploying a GWT application to a web server is straightforward. All you need to do is copy the <a href="DevGuideCompilingAndDebugging.html#DevGuideJavaToJavaScriptCompiler">generated GWT application files</a> after compilation and host them on your web server. You will also need to setup your server-side code, of course, and this setup can take on a number of different forms: communicating through <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/jsonp/client/JsonpRequestBuilder.html">JSONP</a>
+href="/javadoc/latest/com/google/gwt/jsonp/client/JsonpRequestBuilder.html">JSONP</a>
 and <a
-href="DevGuideCodingBasics.html#DevGuideJSON">working with JSON data</a>, server-side scripts that receive and parse HTTP requests sent through the GWT <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a>, or GWT RPC (see <a href="#DevGuideDeployingServletContainerUsingRPC">&quot;Deploying on a servlet container using RPC&quot;</a> section below).
+href="DevGuideCodingBasics.html#DevGuideJSON">working with JSON data</a>, server-side scripts that receive and parse HTTP requests sent through the GWT <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a>, or GWT RPC (see <a href="#DevGuideDeployingServletContainerUsingRPC">&quot;Deploying on a servlet container using RPC&quot;</a> section below).
 
 <p>For an example of deploying GWT application files to a web server, suppose you want to deploy the <a href="http://gwt.google.com/samples/DynaTable/DynaTable.html">DynaTable</a> application on a web server, serving files from <code>/web/apps/dynatable_app/</code>. Once you've run the GWT compiler and generated the output in the <code>war/dynatable</code> directory, all you need to do is copy the host HTML page and stylesheet over to <code>web/apps/dynatable_app/</code> and copy the contents of the <code>war/dynatable</code> subdirectory to <code>/web/apps/dynatable_app/dynatable/</code>. At this point, the application is deployed. However, there are a few important points to keep in mind to make sure your application is properly deployed:</p>
 

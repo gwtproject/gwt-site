@@ -39,7 +39,7 @@ its benefits, we have found that a Model-view-presenter (MVP) architecture
 works best when developing GWT apps for two main reasons. First the MVP
 model, much like other design patterns, decouples development in a way that
 allows multiple developers to work simultaneously. Secondly, this model
-allows us to minimize our use of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a>, which relies on the presence of a browser,
+allows us to minimize our use of <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a>, which relies on the presence of a browser,
 and, for the bulk of our code, write lightweight (and fast) JRE tests
 (which don't require a browser).</p>
 
@@ -334,7 +334,7 @@ instance into a panel.</p>
 <p>Once you have <a href="#presenter">presenters</a> sinking events that are
 sourced by widgets within <a href="#view">views</a>, you'll want to take some
 action on these events. To do so, you'll want to rely on an Event Bus that is
-built on top of GWT's <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/event/shared/HandlerManager.html">HandlerManager</a>.
+built on top of GWT's <a href="/javadoc/latest/com/google/gwt/event/shared/HandlerManager.html">HandlerManager</a>.
 The Event Bus is a mechanism for a) passing events and b) registering to be
 notified of some subset of these events.</p>
 
@@ -376,8 +376,8 @@ each of our events.</p>
 
 <p>To demonstrate how these pieces fit together let's look at what takes
 place when a user chooses to edit a contact. First we'll need the AppController
-to register for the EditContactEvent. To do so, we call <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/event/shared/HandlerManager.html#addHandler(com.google.gwt.event.shared.GwtEvent.Type,%20H)">HandlerManager.addHandler()</a>
-and pass in the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/event/shared/GwtEvent.Type.html">GwtEvent.Type</a>
+to register for the EditContactEvent. To do so, we call <a href="/javadoc/latest/com/google/gwt/event/shared/HandlerManager.html#addHandler(com.google.gwt.event.shared.GwtEvent.Type,%20H)">HandlerManager.addHandler()</a>
+and pass in the <a href="/javadoc/latest/com/google/gwt/event/shared/GwtEvent.Type.html">GwtEvent.Type</a>
 as well as the handler that should be called when the event is fired. The code below
 shows how the AppController registers to receive EditContactEvents.</p>
 
@@ -393,12 +393,12 @@ public class AppController implements ValueChangeHandler {
   ...
 }</pre>
 
-<p>Here the AppController has an instance of the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/event/shared/HandlerManager.html">HandlerManager</a>,
+<p>Here the AppController has an instance of the <a href="/javadoc/latest/com/google/gwt/event/shared/HandlerManager.html">HandlerManager</a>,
 called eventBus, and is registering a new EditContactEventHandler. This handler will
 grab the id of the contact to be edited, and pass it to the
 doEditContact() method whenever an event of EditContactEvent.getAssociatedType()
 is fired. Multiple components can be listening for a single event, so when an
-event is fired using the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/event/shared/HandlerManager.html#fireEvent(com.google.gwt.event.shared.GwtEvent)">HandlerManager.fireEvent()</a>, the HandlerManager
+event is fired using the <a href="/javadoc/latest/com/google/gwt/event/shared/HandlerManager.html#fireEvent(com.google.gwt.event.shared.GwtEvent)">HandlerManager.fireEvent()</a>, the HandlerManager
 looks for any component that has added a handler for event.getAssociatedType().
 For each component that has a handler, the HandlerManager calls event.dispatch()
 with that component's EventHandler interface.</p>
@@ -476,8 +476,8 @@ will be popped off of the stack and the current history token will be the
 Given that history is not specific to a particular view, it
 makes sense to to add it to the AppController class.</p>
 
-<p>To start with, we'll need to have the AppController implement <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/event/logical/shared/ValueChangeHandler.html">ValueChangeHandler</a>
-and declare its own <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/event/logical/shared/ValueChangeHandler.html#onValueChange(com.google.gwt.event.logical.shared.ValueChangeEvent)">onValueChange()</a>
+<p>To start with, we'll need to have the AppController implement <a href="/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeHandler.html">ValueChangeHandler</a>
+and declare its own <a href="/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeHandler.html#onValueChange(com.google.gwt.event.logical.shared.ValueChangeEvent)">onValueChange()</a>
 method. The interface and parameter are of type String because the History
 events are simply the tokens that are pushed onto the stack.</p>
 
@@ -618,7 +618,7 @@ require test cases that test components that rely on a DOM being present, a
 Javascript engine, etc... Essentially these test cases need to run in a
 browser.</p>
 
-<p>GWT's <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a>
+<p>GWT's <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a>
 makes this possible, as it will launch a "headless" browser to run each of the
 tests. The launching of the browser coupled with the actual execution of the
 test case is why these tests typically take longer than standard JRE tests.

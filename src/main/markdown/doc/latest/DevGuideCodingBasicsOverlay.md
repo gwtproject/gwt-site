@@ -79,7 +79,7 @@ class MyModuleEntryPoint implements EntryPoint {
 
 <p>Let's clarify what we've done here. We've taken a plain-old-JSON-object (POJSONO, anyone? no?) and created a normal-looking Java type that can be used to interact with it
 within your GWT code. You get code completion, refactoring, and compile-time checking as you would with any Java code. Yet, you have the flexibility of interacting with arbitrary
-JavaScript objects, which makes things like accessing JSON services via <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/package-summary.html">RequestBuilder</a> a breeze.</p>
+JavaScript objects, which makes things like accessing JSON services via <a href="/javadoc/latest/com/google/gwt/http/client/package-summary.html">RequestBuilder</a> a breeze.</p>
 
 <p>A quick digression for compiler geeks. Another neat thing about overlay types is that you can augment the Java type without disturbing the underlying JavaScript object. In the
 example above, notice that we added the <tt>getFullName()</tt> method. It's purely Java code &mdash; it doesn't exist on the underlying JavaScript object &mdash; and yet the method is
@@ -214,7 +214,7 @@ can't optimize it as much, which makes us sad.</p>
 <p>Overlay types are a key feature, made available in GWT 1.6. At its simplest, the technique makes direct interop with JavaScript libraries much easier. Hopefully after this post you could
 imagine how to almost directly port any JavaScript library into GWT as a set of Java types, thus allowing the use of a Java IDE for productive development and debugging without
 impacting size or speed due to any sort of GWT overhead. At the same time, overlay types serve as a powerful abstraction tool for delivering more elegant low-level APIs such as
-the the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/dom/client/package-tree.html">new GWT DOM package</a>.</p>
+the the <a href="/javadoc/latest/com/google/gwt/dom/client/package-tree.html">new GWT DOM package</a>.</p>
 
 <p>For more information...</p>
 

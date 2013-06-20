@@ -96,7 +96,7 @@ public class StockWatcherTest <span class="highlight">extends GWTTestCase</span>
 </ol>
 <h4>Notes</h4>
 <p>
-(1) Like all GWT JUnit test cases, the StockWatcherTest class extends the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a> class in the com.google.gwt.junit.client package.
+(1) Like all GWT JUnit test cases, the StockWatcherTest class extends the <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a> class in the com.google.gwt.junit.client package.
 You can create additional test cases by extending this class. 
 </p>
 <p>

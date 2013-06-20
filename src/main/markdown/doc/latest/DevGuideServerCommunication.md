@@ -1,6 +1,6 @@
 <p>At some point, most GWT applications will need to interact with a backend server. GWT provides a couple of different ways to communicate with a server via HTTP. You can use the
 <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">GWT RPC</a> framework to transparently make calls to Java servlets and let GWT take care of low-level details like
-object serialization. Alternatively, you can use GWT's <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/package-summary.html">HTTP client classes</a> to build and send custom HTTP requests.</p>
+object serialization. Alternatively, you can use GWT's <a href="/javadoc/latest/com/google/gwt/http/client/package-summary.html">HTTP client classes</a> to build and send custom HTTP requests.</p>
 
 <p class="note" style="margin-left: 1.5em; margin-right: 1.5em;">
 <b>Note:</b> To run through the steps to communicate with a server in a sample GWT application, see the tutorial <a href="tutorial/clientserver.html">Communicating with the server</a>.
@@ -41,7 +41,7 @@ binding</a>.</p>
 Server-side code doesn't need to be translatable, so you're free to use any Java library you find useful.</p>
 
 <p>GWT does not limit you to this one RPC mechanism or server side development environment. You are free to integrate with other RPC mechanisms, such as JSON using the GWT
-supplied <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a> class, <a href="DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface">JSNI</a> methods or a third party library.</p>
+supplied <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a> class, <a href="DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface">JSNI</a> methods or a third party library.</p>
 
 
 <h2 id="DevGuideRemoteProcedureCalls">Remote Procedure Calls</h2>
@@ -71,9 +71,9 @@ with traditional remote procedure call (RPC) mechanisms, you will recognize most
 <p>In order to define your RPC interface, you need to:</p>
 
 <ol>
-<li>Define an interface for your service that extends <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/RemoteService.html">RemoteService</a> and lists all your RPC methods.</li>
+<li>Define an interface for your service that extends <a href="/javadoc/latest/com/google/gwt/user/client/rpc/RemoteService.html">RemoteService</a> and lists all your RPC methods.</li>
 
-<li>Define a class to implement the server-side code that extends <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> and implements the
+<li>Define a class to implement the server-side code that extends <a href="/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> and implements the
 interface you created above.</li>
 
 <li>Define an asynchronous interface to your service to be called from the client-side code.</li>
@@ -81,7 +81,7 @@ interface you created above.</li>
 
 <h3>Synchronous Interface</h3>
 
-<p>To begin developing a new service interface, create a <a href="DevGuideCodingBasics.html#DevGuideClientSide">client-side</a> Java interface that extends the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/RemoteService.html">RemoteService</a> tag interface.</p>
+<p>To begin developing a new service interface, create a <a href="DevGuideCodingBasics.html#DevGuideClientSide">client-side</a> Java interface that extends the <a href="/javadoc/latest/com/google/gwt/user/client/rpc/RemoteService.html">RemoteService</a> tag interface.</p>
 
 <pre class="prettyprint">
 package com.example.foo.client;
@@ -93,7 +93,7 @@ public interface MyService extends RemoteService {
 }
 </pre>
 
-<p>This synchronous interface is the definitive version of your service's specification. Any implementation of this service on the <a href="DevGuideServerCommunication.html#DevGuideServerSide">server-side</a> must extend <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> and implement this
+<p>This synchronous interface is the definitive version of your service's specification. Any implementation of this service on the <a href="DevGuideServerCommunication.html#DevGuideServerSide">server-side</a> must extend <a href="/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> and implement this
 service interface.</p>
 
 <pre class="prettyprint">
@@ -131,7 +131,7 @@ interface MyServiceAsync {
 
 <p>The nature of asynchronous method calls requires the caller to pass in a callback object that can be notified when an asynchronous call completes, since by definition the
 caller cannot be blocked until the call completes. For the same reason, asynchronous methods do not have return types; they generally return void. Should you wish to have more
-control over the state of a pending request, return <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Request.html">Request</a> instead. After an asynchronous call is made, all communication back to the caller is via the passed-in callback object.</p>
+control over the state of a pending request, return <a href="/javadoc/latest/com/google/gwt/http/client/Request.html">Request</a> instead. After an asynchronous call is made, all communication back to the caller is via the passed-in callback object.</p>
 
 <h3>Naming Standards</h3>
 
@@ -142,11 +142,11 @@ asynchronous counterpart must follow certain naming standards. The GWT compiler 
 <li>A service interface must have a corresponding asynchronous interface with the same package and name with the Async suffix appended. For example, if a service interface is
 named <tt>com.example.cal.client.SpellingService</tt>, then the asynchronous interface must be called <tt>com.example.cal.client.SpellingServiceAsync</tt>.</li>
 
-<li>Each method in the synchronous service interface must have a coresponding method in the asynchronous service interface with an extra <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html">AsyncCallback</a> parameter as the last
+<li>Each method in the synchronous service interface must have a coresponding method in the asynchronous service interface with an extra <a href="/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html">AsyncCallback</a> parameter as the last
 argument.</li>
 </ul>
 
-<p>See <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html">AsyncCallback</a> for additional details
+<p>See <a href="/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html">AsyncCallback</a> for additional details
 on how to implement an asynchronous callback.</p>
 
 
@@ -154,10 +154,10 @@ on how to implement an asynchronous callback.</p>
 
 <p>Every service ultimately needs to perform some processing to order to respond to client requests. Such <a href="DevGuideServerCommunication.html#DevGuideServerSide">server-side</a>
 processing occurs in the <i>service implementation</i>, which is based on the well-known <a href="http://java.sun.com/products/servlet/">servlet</a> architecture. A
-service implementation must extend <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> and must implement the associated service interface. Note that the service implementation does <i>not</i> implement the asynchronous
+service implementation must extend <a href="/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> and must implement the associated service interface. Note that the service implementation does <i>not</i> implement the asynchronous
 version of the service interface.</p>
 
-<p>Every service implementation is ultimately a servlet, but rather than extending <a href="http://java.sun.com/j2ee/sdk_1.3/techdocs/api/javax/servlet/http/HttpServlet.html">HttpServlet</a>, it extends <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> instead. <tt>RemoteServiceServlet</tt> automatically handles serialization of the data being passed between the client and the server and
+<p>Every service implementation is ultimately a servlet, but rather than extending <a href="http://java.sun.com/j2ee/sdk_1.3/techdocs/api/javax/servlet/http/HttpServlet.html">HttpServlet</a>, it extends <a href="/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> instead. <tt>RemoteServiceServlet</tt> automatically handles serialization of the data being passed between the client and the server and
 invoking the intended method in your service implementation.</p>
 
 <h3>Testing Services During Development</h3>
@@ -186,7 +186,7 @@ client-side code when your run your application in development mode using a Java
 
 <p>Take a look at the value in <tt>url-pattern</tt>. The first part must match the name of your GWT module. If your module has a <tt>rename-to</tt> attribute, you would use the
 renamed value instead; either way it must match the actual subdirectory within your war directory where your GWT module lives (the module base URL). The second part must match the
-value you specified in the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/RemoteServiceRelativePath.html">RemoteServiceRelativePath</a> annotation you annotated <tt>com.example.foo.client.MyService</tt> with.</p>
+value you specified in the <a href="/javadoc/latest/com/google/gwt/user/client/rpc/RemoteServiceRelativePath.html">RemoteServiceRelativePath</a> annotation you annotated <tt>com.example.foo.client.MyService</tt> with.</p>
 
 <p>When testing out both the client and server side code in development mode, make sure to place a copy of the <tt>gwt-servlet.jar</tt> into your <tt>war/WEB-INF/lib</tt> directory,
 and make sure your Java output directory is set to <tt>war/WEB-INF/classes</tt>. Otherwise the embedded Jetty server will not be able to load your servlet properly.</p>
@@ -206,9 +206,9 @@ should do this for you automatically. Later on, if you need additional server-si
 also.</li>
 
 <li>When running your RPC call, development mode displays an excaption <tt>NoServiceEntryPointSpecifiedException: Service implementation URL not specified</tt>. This error means that
-you did not specify a <tt>@RemoteServiceRelativePath</tt> in your service interface, and you also did not manually set target path by calling <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/ServiceDefTarget.html#setServiceEntryPoint(java.lang.String)">ServiceDefTarget.setServiceEntryPoint()</a>.</li>
+you did not specify a <tt>@RemoteServiceRelativePath</tt> in your service interface, and you also did not manually set target path by calling <a href="/javadoc/latest/com/google/gwt/user/client/rpc/ServiceDefTarget.html#setServiceEntryPoint(java.lang.String)">ServiceDefTarget.setServiceEntryPoint()</a>.</li>
 
-<li>If invoking your RPC call fails with a 404 <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/StatusCodeException.html">StatusCodeException</a>, your web.xml may be misconfigured. Make sure you specified a <tt>@RemoteServiceRelativePath</tt> and that the <tt>&lt;url-pattern&gt;</tt>
+<li>If invoking your RPC call fails with a 404 <a href="/javadoc/latest/com/google/gwt/user/client/rpc/StatusCodeException.html">StatusCodeException</a>, your web.xml may be misconfigured. Make sure you specified a <tt>@RemoteServiceRelativePath</tt> and that the <tt>&lt;url-pattern&gt;</tt>
 specified in your <tt>web.xml</tt> matches this value, prepended with the location of your GWT output directory within the war directory.</li>
 </ul>
 
@@ -228,7 +228,7 @@ container.</p>
 <p>The process of making an RPC from the client always involves the same steps:</p>
 
 <ol>
-<li>Instantiate the service interface using <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a>.</li>
+<li>Instantiate the service interface using <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a>.</li>
 
 <li>Create an asynchronous callback object to be notified when the RPC has completed.</li>
 
@@ -363,7 +363,7 @@ of service attacks.
 <p>A user-defined class is serializable if all of the following apply:</p>
 
 <ol>
-<li>It is assignable to <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/IsSerializable.html">IsSerializable</a> or
+<li>It is assignable to <a href="/javadoc/latest/com/google/gwt/user/client/rpc/IsSerializable.html">IsSerializable</a> or
 <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html">Serializable</a>, either because it directly implements one of these interfaces or
 because it derives from a superclass that does</li>
 
@@ -442,7 +442,7 @@ For example, the custom field serializer for <code>java.util.HashMap</code> is
 
 <p>Custom field serializers should extend the 
 <code><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html">
+href="/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html">
 CustomFieldSerializer&lt;T&gt;</a></code> class, with the class that is being
 serialized as the type parameter. For example:</p>
 
@@ -452,15 +452,15 @@ public final class HashMap_CustomFieldSerializer extends CustomFieldSerializer&l
 
 <p>All custom field serializer classes must implement the 
 <code><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#serializeInstance(com.google.gwt.user.client.rpc.SerializationStreamWriter, T)">serializeInstance</a></code> and
+href="/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#serializeInstance(com.google.gwt.user.client.rpc.SerializationStreamWriter, T)">serializeInstance</a></code> and
 <code><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#deserializeInstance(com.google.gwt.user.client.rpc.SerializationStreamReader, T)">deserializeInstance</a></code>
+href="/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#deserializeInstance(com.google.gwt.user.client.rpc.SerializationStreamReader, T)">deserializeInstance</a></code>
 methods. Optionally, a class may override the default
 <code><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#instantiateInstance(com.google.gwt.user.client.rpc.SerializationStreamReader)">instantiateInstance</a></code>
+href="/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#instantiateInstance(com.google.gwt.user.client.rpc.SerializationStreamReader)">instantiateInstance</a></code>
 and
 <code><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#hasCustomInstantiateInstance()">hasCustomInstantiateInstance</a></code>
+href="/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#hasCustomInstantiateInstance()">hasCustomInstantiateInstance</a></code>
 methods if it cannot use default instantiation (for example, it does not have a
 default constructor) or wants custom instantiation (for example, to instantiate
 an immutable object). See the built-in custom serializers for examples of these methods.</p>
@@ -487,7 +487,7 @@ and the server type-checked version is
 
 <p>Server custom field serializers should extend the 
 <code><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html">
+href="/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html">
 ServerCustomFieldSerializer&lt;T&gt;</a></code> class, with the class that is being
 serialized as the type parameter. For example:</p>
 
@@ -498,13 +498,13 @@ public final class HashMap_ServerCustomFieldSerializer extends ServerCustomField
 <p>All server custom field serializer classes must implement the
 client side
 <code><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html">
+href="/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html">
 CustomFieldSerializer&lt;T&gt;</a></code> methods, the additional
 <code><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html#deserializeInstance(com.google.gwt.user.server.rpc.impl.ServerSerializationStreamReader,
+href="/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html#deserializeInstance(com.google.gwt.user.server.rpc.impl.ServerSerializationStreamReader,
 T, java.lang.reflect.Type[], com.google.gwt.user.server.rpc.impl.DequeMap)">deserializeInstance</a></code> method. Furthermore, a class must override the default
 <code><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html#instantiateInstance(com.google.gwt.user.server.rpc.impl.ServerSerializationStreamReader,
+href="/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html#instantiateInstance(com.google.gwt.user.server.rpc.impl.ServerSerializationStreamReader,
 java.lang.reflect.Type[], com.google.gwt.user.server.rpc.impl.DequeMap)">instantiateInstance</a></code>
 method when the client code overrides it.</p>
 
@@ -520,27 +520,27 @@ conditions in terms of Java exceptions. RPC-related exceptions fall into two cat
 <h3>Checked Exceptions</h3>
 
 <p><a href="DevGuideServerCommunication.html#DevGuideCreatingServices">Service interface</a> methods support <tt>throws</tt> declarations to indicate which exceptions may be thrown back to
-the client from a service implementation. Callers should implement <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html#onFailure(java.lang.Throwable)">AsyncCallback.onFailure(Throwable)</a> to check for any exceptions specified in the service interface.</p>
+the client from a service implementation. Callers should implement <a href="/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html#onFailure(java.lang.Throwable)">AsyncCallback.onFailure(Throwable)</a> to check for any exceptions specified in the service interface.</p>
 
 <h3>Unexpected Exceptions</h3>
 
 <h4>InvocationException</h4>
 
 <p>An RPC may not reach the <a href="DevGuideServerCommunication.html#DevGuideImplementingServices">service implementation</a> at all. This can happen for many reasons: the network may be
-disconnected, a DNS server might not be available, the HTTP server might not be listening, and so on. In this case, an <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/InvocationException.html">InvocationException</a> is passed to your
-implementation of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html#onFailure(java.lang.Throwable)">AsyncCallback.onFailure(Throwable)</a>. The class is called <tt>InvocationException</tt> because the problem was with the invocation attempt itself rather than with
+disconnected, a DNS server might not be available, the HTTP server might not be listening, and so on. In this case, an <a href="/javadoc/latest/com/google/gwt/user/client/rpc/InvocationException.html">InvocationException</a> is passed to your
+implementation of <a href="/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html#onFailure(java.lang.Throwable)">AsyncCallback.onFailure(Throwable)</a>. The class is called <tt>InvocationException</tt> because the problem was with the invocation attempt itself rather than with
 the service implementation.</p>
 
 <p>An RPC can also fail with an invocation exception if the call does reach the server, but an undeclared exception occurs during normal processing of the call. There are many
 reasons such a situation could arise: a necessary server resource, such as a database, might be unavailable, a <tt>NullPointerException</tt> could be thrown due to a bug in the
-service implementation, and so on. In these cases, a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/InvocationException.html">InvocationException</a> is thrown in application code.</p>
+service implementation, and so on. In these cases, a <a href="/javadoc/latest/com/google/gwt/user/client/rpc/InvocationException.html">InvocationException</a> is thrown in application code.</p>
 
 <h4>IncompatibleRemoteServiceException</h4>
 
 <p>Another type of failure can be caused by an incompatibility between the client and the server. This most commonly occurs when a change to a <a href="DevGuideServerCommunication.html#DevGuideImplementingServices">service implementation</a> is deployed to a server but out-of-date clients are still active. For more details please
-see <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/IncompatibleRemoteServiceException.html">IncompatibleRemoteServiceException</a>.</p>
+see <a href="/javadoc/latest/com/google/gwt/user/client/rpc/IncompatibleRemoteServiceException.html">IncompatibleRemoteServiceException</a>.</p>
 
-<p>When the client code receives an <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/IncompatibleRemoteServiceException.html">IncompatibleRemoteServiceException</a>, it should ultimately attempt to refresh the browser in order to pick up the latest client.</p>
+<p>When the client code receives an <a href="/javadoc/latest/com/google/gwt/user/client/rpc/IncompatibleRemoteServiceException.html">IncompatibleRemoteServiceException</a>, it should ultimately attempt to refresh the browser in order to pick up the latest client.</p>
 
 
 <h2 id="DevGuideArchitecturalPerspectives">Architectural Perspectives</h2>
@@ -727,7 +727,7 @@ handle. See this article on how to use an external server in development mode.</
 If your GWT application needs to communicate with a server, but you can't use <a href="http://java.sun.com/products/servlet/">Java servlets</a> on the backend &mdash; or if you simply prefer not to use <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">RPC</a> &mdash; you can still perform HTTP requests manually.
 GWT contains a number of HTTP client classes that simplify making custom HTTP requests to your server and optionally processing a <a href="http://www.json.org/">JSON</a>- or <a href="http://www.w3.org/XML/">XML</a>-formatted response.</p>
 
-<p>GWT contains a set of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/package-summary.html">HTTP client classes</a>
+<p>GWT contains a set of <a href="/javadoc/latest/com/google/gwt/http/client/package-summary.html">HTTP client classes</a>
 that allow your application to make generic HTTP requests.</p>
 
 <h3>Using HTTP in GWT</h3>
@@ -745,25 +745,25 @@ websites. In particular, SOP makes it difficult (although not impossible) to sen
 
 <h3>HTTP client types</h3>
 
-<p>To use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/package-summary.html">HTTP types</a> in your application,
+<p>To use the <a href="/javadoc/latest/com/google/gwt/http/client/package-summary.html">HTTP types</a> in your application,
 you'll need to first inherit the GWT HTTP module by adding the following <tt>&lt;inherits&gt;</tt> tag to your <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">module XML file</a>:</p>
 
 <pre>
 &lt;inherits name=&quot;com.google.gwt.http.HTTP&quot; /&gt;
 </pre>
 
-<p><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a> is the core class you'll
-need for constructing and sending HTTP requests. Its <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#RequestBuilder(com.google.gwt.http.client.RequestBuilder.Method,%20java.lang.String)">constructor</a> has parameters for specifying the HTTP method of the request (GET, POST, etc.) and the URL (the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/URL.html">URL</a> utility class is handy for escaping invalid characters).
-Once you have a RequestBuilder object, you can use its methods to set the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setUser(java.lang.String)">username</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setPassword(java.lang.String)">password</a>, and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setTimeoutMillis(int)">timeout interval</a>. You can
-also set any number of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setHeader(java.lang.String,%20java.lang.String)">headers</a> in the HTTP request.</p>
+<p><a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a> is the core class you'll
+need for constructing and sending HTTP requests. Its <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#RequestBuilder(com.google.gwt.http.client.RequestBuilder.Method,%20java.lang.String)">constructor</a> has parameters for specifying the HTTP method of the request (GET, POST, etc.) and the URL (the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/URL.html">URL</a> utility class is handy for escaping invalid characters).
+Once you have a RequestBuilder object, you can use its methods to set the <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setUser(java.lang.String)">username</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setPassword(java.lang.String)">password</a>, and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setTimeoutMillis(int)">timeout interval</a>. You can
+also set any number of <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setHeader(java.lang.String,%20java.lang.String)">headers</a> in the HTTP request.</p>
 
-<p>Once the HTTP request is ready, call the server using the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#sendRequest(java.lang.String,%20com.google.gwt.http.client.RequestCallback)">sendRequest(String, RequestCallback)</a> method. The <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestCallback.html">RequestCallback</a> argument you pass will handle
-the response or the error that results. When a request completes normally, your <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestCallback.html#onResponseReceived(com.google.gwt.http.client.Request,%20com.google.gwt.http.client.Response)">onResponseReceived(Request, Response)</a> method is invoked. Details of the response (for example, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Response.html#getStatusCode()">status code</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Response.html#getHeaders()">HTTP headers</a>, and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Response.html#getText()">response text</a>) can be retrieved from the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Response.html">Response</a> argument. Note that the
-onResponseReceived(Request, Response) method is called even if the HTTP status code is something other than 200 (success). If the call <i>does not</i> complete normally, the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestCallback.html#onError(com.google.gwt.http.client.Request,%20java.lang.Throwable)">onError(Request, Throwable)</a> method gets called, with the second parameter describing the type error that occurred.</p>
+<p>Once the HTTP request is ready, call the server using the <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#sendRequest(java.lang.String,%20com.google.gwt.http.client.RequestCallback)">sendRequest(String, RequestCallback)</a> method. The <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestCallback.html">RequestCallback</a> argument you pass will handle
+the response or the error that results. When a request completes normally, your <a href="/javadoc/latest/com/google/gwt/http/client/RequestCallback.html#onResponseReceived(com.google.gwt.http.client.Request,%20com.google.gwt.http.client.Response)">onResponseReceived(Request, Response)</a> method is invoked. Details of the response (for example, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Response.html#getStatusCode()">status code</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Response.html#getHeaders()">HTTP headers</a>, and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Response.html#getText()">response text</a>) can be retrieved from the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Response.html">Response</a> argument. Note that the
+onResponseReceived(Request, Response) method is called even if the HTTP status code is something other than 200 (success). If the call <i>does not</i> complete normally, the <a href="/javadoc/latest/com/google/gwt/http/client/RequestCallback.html#onError(com.google.gwt.http.client.Request,%20java.lang.Throwable)">onError(Request, Throwable)</a> method gets called, with the second parameter describing the type error that occurred.</p>
 
-<p>As noted before, all HTTP calls in GWT are asynchronous, so the code following the call to <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#sendRequest(java.lang.String,%20com.google.gwt.http.client.RequestCallback)">sendRequest(String, RequestCallback)</a> will be executed immediately, <i>not</i> after the server responds to the HTTP request. You can use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Request.html">Request</a> object that is returned from sendRequest(String,
-RequestCallback) to <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Request.html#isPending()">monitor the status</a> of
-the call, and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Request.html#cancel()">cancel it</a> if necessary.</p>
+<p>As noted before, all HTTP calls in GWT are asynchronous, so the code following the call to <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#sendRequest(java.lang.String,%20com.google.gwt.http.client.RequestCallback)">sendRequest(String, RequestCallback)</a> will be executed immediately, <i>not</i> after the server responds to the HTTP request. You can use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Request.html">Request</a> object that is returned from sendRequest(String,
+RequestCallback) to <a href="/javadoc/latest/com/google/gwt/http/client/Request.html#isPending()">monitor the status</a> of
+the call, and <a href="/javadoc/latest/com/google/gwt/http/client/Request.html#cancel()">cancel it</a> if necessary.</p>
 
 <p>Here's a brief example of making an HTTP request to a server:</p>
 
@@ -795,12 +795,12 @@ try {
 
 <h3>Processing the response</h3>
 
-<p>Once you receive the response from the server using <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/Response.html#getText()">Response.getText()</a>, it's up to you to process it. If your response is encoded in XML or JSON, you can use the <a href="DevGuideCodingBasics.html#DevGuideXML">XML library</a> and the <a href="DevGuideCodingBasics.html#DevGuideJSON">JSON library</a> or <a href="DevGuideCodingBasics.html#DevGuideOverlayTypes">overlay types</a>, respectively, to process it.</p>
+<p>Once you receive the response from the server using <a href="/javadoc/latest/com/google/gwt/http/client/Response.html#getText()">Response.getText()</a>, it's up to you to process it. If your response is encoded in XML or JSON, you can use the <a href="DevGuideCodingBasics.html#DevGuideXML">XML library</a> and the <a href="DevGuideCodingBasics.html#DevGuideJSON">JSON library</a> or <a href="DevGuideCodingBasics.html#DevGuideOverlayTypes">overlay types</a>, respectively, to process it.</p>
 
 
 <h2 id="DevGuideGettingUsedToAsyncCalls">Getting Used to Asynchronous Calls</h2>
 
-<p>Using the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html">AsyncCallback</a> interface is new
+<p>Using the <a href="/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html">AsyncCallback</a> interface is new
 to many developers. Code is not necessarily executed sequentially, and it forces developers to handle situations where a server call is in progress but has not completed. Despite
 these seeming drawbacks, the designers of GWT felt it was an essential part of creating usable interfaces in AJAX for several reasons:</p>
 
@@ -824,7 +824,7 @@ indefinitely.</li>
 </ul>
 
 <p>Browser mechanics aside, asynchronous RPC gives your application the ability to achieve true parallelism in your application, even without multi-threading. For example, suppose
-your application displays a large <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HTMLTable.html">table</a>
+your application displays a large <a href="/javadoc/latest/com/google/gwt/user/client/ui/HTMLTable.html">table</a>
 containing many widgets. Constructing and laying out all those widgets can be time consuming. At the same time, you need to fetch data from the server to display inside the table.
 This is a perfect reason to use asynchronous calls. Initiate an asynchronous call to request the data immediately before you begin constructing your table and its widgets. While
 the server is fetching the required data, the browser is executing your user interface code. When the client finally receives the data from the server, the table has been
@@ -844,7 +844,7 @@ simultaneous RPCs.</p>
 
 <p>The hardest thing to get used to about asynchronous calls is that the calls are non-blocking, however, Java inner classes go a long way toward making this manageable. Consider
 the following implementation of an asynchronous call adapted from the Dynamic Table sample
-application. It uses a slightly different syntax to define the required interface for the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html">AsyncCallback</a> object that is the last
+application. It uses a slightly different syntax to define the required interface for the <a href="/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html">AsyncCallback</a> object that is the last
 parameter to the <tt>getPeople</tt> RPC call:</p>
 
 

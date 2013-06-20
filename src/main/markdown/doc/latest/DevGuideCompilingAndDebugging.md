@@ -154,7 +154,7 @@ Development Mode. This is useful when you have made configuration or code
 changes to your server side code. All server side classes will be reloaded
 from scratch with fresh code for your <tt>war/WEB-INF/classes</tt> and
 <tt>war/WEB-INF/lib</tt> folders. If you are getting an <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/IncompatibleRemoteServiceException.html">IncompatibleRemoteServiceException</a>
+href="/javadoc/latest/com/google/gwt/user/client/rpc/IncompatibleRemoteServiceException.html">IncompatibleRemoteServiceException</a>
 in development mode while using RPC, try restarting the server and refreshing
 the client.</p>
 
@@ -163,11 +163,11 @@ the client.</p>
 <p>Debugging messages are displayed within the Development Mode log window.
 Some of these messages are from GWT. However, you can generate your own debug
 messages by using calls to <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#log(java.lang.String,%20java.lang.Throwable)">GWT.log()</a>.</p>
+href="/javadoc/latest/com/google/gwt/core/client/GWT.html#log(java.lang.String,%20java.lang.Throwable)">GWT.log()</a>.</p>
 
 <p>For example, modifying the standard project to emit a debug message inside
 the <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html">ClickHandler</a>
+href="/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html">ClickHandler</a>
 results in a debug message displaying on the log window whenever the user
 clicks the button.</p>
 
@@ -544,7 +544,7 @@ You could also load the script from anywhere else in a website, but the default 
 
 <p>The <code>&lt;md5&gt;.cache.html</code> files generated in the <code>war/&lt;app_name&gt;</code> directory, along with the bootstrap script, are the most important part of the generated fileset. They represent one version of your application tailored to a specific browser (or locale). These are the application files that the bootstrap script selects after it determines which browser it's running on.</p>
 
-<p>Another generated application file that isn't strictly necessary to deploy your GWT application, but required if you're using GWT RPC and the support for the Serializable interface for types transferred through RPC, is the <code>&lt;md5&gt;.gwt.rpc</code> file. The serialization policy file must be accessible by your RPC <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> via the <a href="http://java.sun.com/products/servlet/2.3/javadoc/javax/servlet/ServletContext.html#getResource(java.lang.String)">ServletContext.getResource()</a> call.</p>
+<p>Another generated application file that isn't strictly necessary to deploy your GWT application, but required if you're using GWT RPC and the support for the Serializable interface for types transferred through RPC, is the <code>&lt;md5&gt;.gwt.rpc</code> file. The serialization policy file must be accessible by your RPC <a href="/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> via the <a href="http://java.sun.com/products/servlet/2.3/javadoc/javax/servlet/ServletContext.html#getResource(java.lang.String)">ServletContext.getResource()</a> call.</p>
 
 <h3 id="public_resources">Public Resources</h3>
 

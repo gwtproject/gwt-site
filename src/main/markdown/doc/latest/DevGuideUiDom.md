@@ -19,13 +19,13 @@ want to:</p>
 
 
 
-<p>GWT provides the classes in the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/dom/client/package-summary.html">DOM</a>
+<p>GWT provides the classes in the <a href="/javadoc/latest/com/google/gwt/dom/client/package-summary.html">DOM</a>
 package for interacting with the DOM directly. These classes provide statically-typed interfaces for interacting with DOM objects, as well as a degree of
 cross-browser abstraction.</p>
 
 <h2>Using the DOM to manipulate a widget</h2>
 
-<p>Each widget and panel has an underlying DOM element that you can access with the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#getElement()">getElement()</a> method. You can use the
+<p>Each widget and panel has an underlying DOM element that you can access with the <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#getElement()">getElement()</a> method. You can use the
 getElement() method to get the underlying element from the DOM.</p>
 
 <p>The following example shows how to set a style attribute to change a widget's background color.</p>
@@ -39,11 +39,11 @@ private HTML htmlWidget;
 htmlWidget.getElement().getStyle().setBackgroundColor("#ffee80");
 </pre>
 
-<p>Here, the getElement() method derived from the <tt>Widget</tt> superclass returns a DOM <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/dom/client/Element.html">Element</a> object representing a node in the DOM tree
+<p>Here, the getElement() method derived from the <tt>Widget</tt> superclass returns a DOM <a href="/javadoc/latest/com/google/gwt/dom/client/Element.html">Element</a> object representing a node in the DOM tree
 structure and adds a style attribute to it.</p>
 
 <p>This is an example where using the DOM isn't absolutely necessary. An alternative approach is to use <a href="DevGuideUiCss.html">style sheets</a> and
-associate different style classes to the widget using the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(java.lang.String)">setStylePrimaryName()</a> or <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName()</a> method
+associate different style classes to the widget using the <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(java.lang.String)">setStylePrimaryName()</a> or <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName()</a> method
 instead.</p>
 
 <h2>Finding an element in the DOM</h2>
@@ -104,12 +104,12 @@ private void rewriteLink(Element element, sitename) {
 }
 </pre>
 
-<p>The JSNI method sets an ID on each element which we then used as an argument to <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/dom/client/Document.html#getElementById(java.lang.String)">Document.getElementById(id)</a> to
+<p>The JSNI method sets an ID on each element which we then used as an argument to <a href="/javadoc/latest/com/google/gwt/dom/client/Document.html#getElementById(java.lang.String)">Document.getElementById(id)</a> to
 fetch the <tt>Element</tt> in Java.</p>
 
 <h2>Using the DOM to capture a browser event</h2>
 
-<p>GWT contains an <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/dom/client/NativeEvent.html">Event</a> class as a typed interface to the
+<p>GWT contains an <a href="/javadoc/latest/com/google/gwt/dom/client/NativeEvent.html">Event</a> class as a typed interface to the
 native DOM Event.</p>
 
 <p>This example shows how to use the DOM methods to catch a keyboard event for particular elements and handle them before the <a href="DevGuideUiHandlers.html">event</a> gets dispatched:</p>

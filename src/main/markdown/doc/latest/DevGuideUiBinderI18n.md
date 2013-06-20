@@ -1,4 +1,4 @@
-This document explores the internationalization features of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/uibinder/client/UiBinder.html">UiBinder</a>
+This document explores the internationalization features of <a href="/javadoc/latest/com/google/gwt/uibinder/client/UiBinder.html">UiBinder</a>
 templates. More general information about UiBinder can be found in <a href="DevGuideUiBinder.html">Declarative Layout with UiBinder</a>. 
 
 <ol class="toc">
@@ -23,7 +23,7 @@ As in the main <a href="DevGuideUiBinder.html">UiBinder
 page</a>, the rest of this page explains how to make your UI templates
 localizable through a series of typical use cases.
 
-<p class="note"><strong>Note</strong> You will see a lot of parallels to working with the <a href="DevGuideI18nMessages.html">Messages</a> system, and with good reason: UiBinder's I18n features are implemented by generating a hidden <code><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Messages.html">com.google.gwt.i18n.client.Messages</a></code> interface for each template. Except for plural forms, anything you can do via Messages you should also be able to do in a template.</p> 
+<p class="note"><strong>Note</strong> You will see a lot of parallels to working with the <a href="DevGuideI18nMessages.html">Messages</a> system, and with good reason: UiBinder's I18n features are implemented by generating a hidden <code><a href="/javadoc/latest/com/google/gwt/i18n/client/Messages.html">com.google.gwt.i18n.client.Messages</a></code> interface for each template. Except for plural forms, anything you can do via Messages you should also be able to do in a template.</p> 
 
 <h2 id="Bonjour">Bonjour, Tout Le Monde</h2>
 
@@ -60,7 +60,7 @@ Now that we have something that needs to be translated, we set our
 configuration to say how it should be done via attributes on the
 root <tt>&lt;ui:UiBinder></tt> element. These <tt>ui:generate*</tt>
 attributes correspond to the arguments of LocalizableResource's
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Generate.html">@Generate</a>
+<a href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Generate.html">@Generate</a>
 annotation. Here's what they mean.
 
 <dl>
@@ -133,17 +133,17 @@ default values.
 
 <dl>
   <dt><tt>ui:defaultLocale</tt>
-  <dd>See <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.DefaultLocale.html"
+  <dd>See <a href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.DefaultLocale.html"
     >@DefaultLocale</a> for details
   <dt><tt>ui:generateFilename</tt>
-  <dd>See <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Generate.html#fileName"
+  <dd>See <a href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Generate.html#fileName"
     >@Generate</a>(fileName = "...") for details
 </dl>
 <dl>
   <dt><tt>ui:baseMessagesInterface</tt>
   <dd>Sets the base interface to use for generated messages.  The value must
   be the fully-qualified class name of an interface that extends <code><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Messages.html">Messages</a></code>.
+href="/javadoc/latest/com/google/gwt/i18n/client/Messages.html">Messages</a></code>.
   You can then put whatever annotations you want there, making it easy to have
   company or project-wide settings that can be changed in just one place.  You
   can still use the other attributes to override defaults inherited from that
@@ -251,7 +251,7 @@ the translator a more useful explanation of what your placeholders are for.
 <h2 id="Messages_containing_widgets">Message Containing Widgets (HTMLPanel Only)</h2>
 
 When working
-with <tt>&lt;g:<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HTMLPanel.html">HTMLPanel</a>></tt>
+with <tt>&lt;g:<a href="/javadoc/latest/com/google/gwt/user/client/ui/HTMLPanel.html">HTMLPanel</a>></tt>
 elements, you may find yourself placing widgets inside your
 messages. No problem!
 
@@ -290,8 +290,8 @@ then widget is put in place. Your user won't see it.</p>
 
 Things get even more interesting when you put a widget with text
 body inside a message in an HTMLPanel. (That is, a widget that
-implements <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HasText.html">HasText</a>
-or <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HasHTML.html">HasHTML</a>.)
+implements <a href="/javadoc/latest/com/google/gwt/user/client/ui/HasText.html">HasText</a>
+or <a href="/javadoc/latest/com/google/gwt/user/client/ui/HasHTML.html">HasHTML</a>.)
 
 <strong>Original</strong>
 

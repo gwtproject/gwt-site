@@ -329,7 +329,7 @@ Open the source for the StockWatcher entry point class, StockWatcher/src/com/goo
 <p>Currently, StockWatcher.java contains the Java source for the starter application. In this tutorial, you'll replace this code with the client-side code for StockWatcher.
 </p>
 <p>
-The StockWatcher class implements the GWT interface <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/EntryPoint.html">EntryPoint</a>. It contains the method onModuleLoad. Because the StockWatcher class is specified as the entry point class in StockWatcher's module definition, when you launch StockWatcher the onModuleLoad method is called.
+The StockWatcher class implements the GWT interface <a href="/javadoc/latest/com/google/gwt/core/client/EntryPoint.html">EntryPoint</a>. It contains the method onModuleLoad. Because the StockWatcher class is specified as the entry point class in StockWatcher's module definition, when you launch StockWatcher the onModuleLoad method is called.
 </p>
 <p>
 The StockWatcher class inherits functionality via other GWT modules you included in StockWatcher's module definition (StockWatcher.gwt.xml). For example, when building the user interface, you'll be able to include types and resources from the package com.google.gwt.user.client.ui because it is part of the GWT core functionality included in the GWT module com.google.gwt.user.User.

@@ -151,7 +151,7 @@ Java code, a field with the same name is marked with
 the <code>@UiField</code>
 annotation. When <code>uiBinder.createAndBindUi(this)</code> is run,
 the field is filled with the appropriate instance
-of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/dom/client/SpanElement.html">SpanElement</a>.
+of <a href="/javadoc/latest/com/google/gwt/dom/client/SpanElement.html">SpanElement</a>.
 
 <p>
 Our HelloWorld object is nothing special, it has no superclass.  But
@@ -214,24 +214,24 @@ name matching its Java class name, like <code>&lt;g:ListBox></code>.
 <p>
 See how the <tt>g:ListBox</tt> element has
 a <code>visibleItemCount='1'</code> attribute? That becomes a call
-to <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/ListBox.html#setVisibleItemCount(int)">ListBox#setVisibleItemCount(int)</a>. Every
+to <a href="/javadoc/latest/com/google/gwt/user/client/ui/ListBox.html#setVisibleItemCount(int)">ListBox#setVisibleItemCount(int)</a>. Every
 one of the widget's methods that follow JavaBean-style conventions for
 setting a property can be used this way.
 </p>
 
 <p>
 Pay particular attention to the use of
-an <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HTMLPanel.html">HTMLPanel</a>
+an <a href="/javadoc/latest/com/google/gwt/user/client/ui/HTMLPanel.html">HTMLPanel</a>
 instance. HTMLPanel excels at mingling arbitrary HTML and widgets, and
 UiBinder works very well with HTMLPanel. In general, any time you want
 to use HTML markup inside of a widget hierarchy, you'll need an
 instance of HTMLPanel
-or the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HTML.html">HTML Widget</a>.
+or the <a href="/javadoc/latest/com/google/gwt/user/client/ui/HTML.html">HTML Widget</a>.
 </p>
 
 <h2 id="Panels">Using Panels</h2>
 
-Any panel (in theory, anything that implements the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HasWidgets.html">HasWidgets</a> interface) can be used
+Any panel (in theory, anything that implements the <a href="/javadoc/latest/com/google/gwt/user/client/ui/HasWidgets.html">HasWidgets</a> interface) can be used
 in a template file, and can have other panels inside of it.
 
 <pre class="prettyprint">&lt;ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
@@ -245,7 +245,7 @@ in a template file, and can have other panels inside of it.
 &lt;/ui:UiBinder></pre>
 
 Some stock GWT widgets require special markup, which you'll find described in
-their javadoc. Here's how  <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a> works:
+their javadoc. Here's how  <a href="/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a> works:
 
 <pre class="prettyprint">&lt;g:DockLayoutPanel unit='EM'>
   &lt;g:north size='5'>
@@ -278,9 +278,9 @@ same convention.
 
 Another thing to notice is that we can't put HTML directly in
 most panels, but only in widgets that know what to do with HTML,
-specifically, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HTMLPanel.html">HTMLPanel</a>,
+specifically, <a href="/javadoc/latest/com/google/gwt/user/client/ui/HTMLPanel.html">HTMLPanel</a>,
 and widgets that
-implement the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HasHTML.html">HasHTML</a> interface (such as
+implement the <a href="/javadoc/latest/com/google/gwt/user/client/ui/HasHTML.html">HasHTML</a> interface (such as
 the sidebar under <tt>&lt;g:west></tt>). Future releases of GWT will probably drop this restriction, but in the meantime it's up to you to place your HTML into HTML-savvy widgets.
 
 <h2 id="HTML_entities">HTML entities</h2>
@@ -341,7 +341,7 @@ elements. That is, <tt>&lt;g:Button></tt>, not <tt>&lt;button></tt>.
 <h2 id="Using_a_widget">Using a widget that requires constructor args</h2>
 
 Every widget that is declared in a template is created by a call
-to <tt><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#create%28java.lang.Class%29">GWT.create</a>()</tt>. In
+to <tt><a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create%28java.lang.Class%29">GWT.create</a>()</tt>. In
 most cases this means that they must be default instantiable; that is,
 they must provide a zero-argument constructor. However, there are a few ways to
 get around that. In addition to the <tt>@UiFactory</tt> and
@@ -468,7 +468,7 @@ So you either make the @UiFactory method...
 
 &lt;/ui:UiBinder></pre>
 
-<p>A <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/resources/client/CssResource.html">CssResource</a> interface is generated for you, along with a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a>. This means that the compiler will warn you if you misspell the class name when you try to use it (e.g. <tt>{style.prettty}</tt>). Also, your CSS class name will be obfuscated, thus protecting it from collision with like class names in other CSS blocks&mdash;no more global CSS namespace!  </p>
+<p>A <a href="/javadoc/latest/com/google/gwt/resources/client/CssResource.html">CssResource</a> interface is generated for you, along with a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a>. This means that the compiler will warn you if you misspell the class name when you try to use it (e.g. <tt>{style.prettty}</tt>). Also, your CSS class name will be obfuscated, thus protecting it from collision with like class names in other CSS blocks&mdash;no more global CSS namespace!  </p>
 
 <p>In fact, you can take advantage of this within a single template: </p>
 
@@ -501,7 +501,7 @@ Finally, you don't have to have your CSS inside your <tt>ui.xml</tt> file. Most 
 
 And you can set style on a widget, not just HTML.  Use the
 <code>styleName</code> attribute to override whatever CSS styling the widget
-defaults to (just like calling <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName()</a> in code).  Or, to add class names without
+defaults to (just like calling <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName()</a> in code).  Or, to add class names without
 clobbering the widget's baked in style settings, use the special
 <code>addStyleNames</code> attribute:
 
@@ -631,10 +631,10 @@ res.style().ensureInjected();</pre>
 <p>The "<tt>with</tt>" element declares a field holding a resource
 object whose methods can be called to fill in attribute values.  In
 this case it will be instantiated via a call
-to <tt><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#create%28java.lang.Class%29">GWT.create</a>(Resources.class)</tt>. (Read on to see how pass an instance in instead
+to <tt><a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create%28java.lang.Class%29">GWT.create</a>(Resources.class)</tt>. (Read on to see how pass an instance in instead
 of having it created for you.)
 
-<p>Note that there is no requirement that a <tt>ui:with</tt> resource implement the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a> interface; this is just an example. </p>
+<p>Note that there is no requirement that a <tt>ui:with</tt> resource implement the <a href="/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a> interface; this is just an example. </p>
 
 <p>If you need more flexibility with a resource, you can set
 parameters on it with a <code>&lt;ui:attributes></code> element. Any
@@ -769,7 +769,7 @@ used directly, much the same as a widget.</p>
 
 <p> You might implement such a renderer this way. (Note the only
 slightly contrived use here of
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/client/SafeHtmlTemplates.html">SafeHtmlTemplates</a>
+<a href="/javadoc/latest/com/google/gwt/safehtml/client/SafeHtmlTemplates.html">SafeHtmlTemplates</a>
 to guard against XSS attacks.)</p>
 
 <pre class="prettyprint">public class FancyUserNameRenderer implements SafeHtml, HasText {
@@ -809,7 +809,7 @@ to guard against XSS attacks.)</p>
 
 <p>While this is a great technique, it's limited. Objects used this
 way are kind of a
-one-way-ticket. Their <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtml.html#asString%28%29">SafeHtml.asString()</a>
+one-way-ticket. Their <a href="/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtml.html#asString%28%29">SafeHtml.asString()</a>
 methods are called at render time (actually in most cases, at compile
 time thanks to inlining). Thus, if you access one through
 a <code>@UiField</code> in your java code, it won't have any handle to
@@ -874,7 +874,7 @@ public class FooPickerDisplay extends Composite
 application. Some of the widgets in your tab panel take a while to
 fire up, and they're not even visible to your user right away. You
 want to take advantage of
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/LazyPanel.html">LazyPanel</a>. But
+<a href="/javadoc/latest/com/google/gwt/user/client/ui/LazyPanel.html">LazyPanel</a>. But
 you're feeling lazy yourself: it's abstract, and you really don't want
 to deal with extending.</p>
 
@@ -906,7 +906,7 @@ to deal with extending.</p>
 fields. You know that when your ui is built, a
 <code>getElementById()</code> call is made for each and every one of
 them. In a large page, that can add up. By using
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/uibinder/client/LazyDomElement.html">LazyDomElement</a>
+<a href="/javadoc/latest/com/google/gwt/uibinder/client/LazyDomElement.html">LazyDomElement</a>
 you can defer those calls until they're actually needed &mdash; if
 they ever are.
 </p>
@@ -952,7 +952,7 @@ template. These templates can only contain HTML elements, no widgets or panels.
 <p>
 Now, define a <code>HelloWorldCell</code> widget. Add an interface that extends
 the
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/uibinder/client/UiRenderer.html">UiRenderer</a>
+<a href="/javadoc/latest/com/google/gwt/uibinder/client/UiRenderer.html">UiRenderer</a>
 interface (instead of <code>UiBinder</code>).
 </p>
 
@@ -1013,7 +1013,7 @@ from <code>onBrowserEvent</code> to methods in a Cell Widget object.
 }</pre>
 
 <p>
-Let the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html">AbstractCell</a> know that you will handle <code>click</code> events.
+Let the <a href="/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html">AbstractCell</a> know that you will handle <code>click</code> events.
 </p>
 
 <pre class="prettyprint">public HelloWorldCell() {
@@ -1034,7 +1034,7 @@ public void onBrowserEvent(Context context, Element parent, String value,
 <p>
 Finally, add the handler method to <code>HelloWorldCell</code>, and tag it
 with <code>@UiHandler({"nameSpan"})</code>. The type of the first parameter,
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/event/dom/client/ClickEvent.html">ClickEvent</a>,
+<a href="/javadoc/latest/com/google/gwt/event/dom/client/ClickEvent.html">ClickEvent</a>,
 will determine the type of event handled.
 </p>
 

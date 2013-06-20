@@ -119,7 +119,7 @@ data.</p>
 <h3 id="The_com.google.gwt.http.client.html_package">The com.google.gwt.http.client.html package</h3>
 
 <p>GWT provides a library to largely (though not completely) automate the steps necessary to communicate with the server via HTTP requests. GWT application developers should use
-the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a> class and other classes in
+the <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a> class and other classes in
 the <tt>com.google.gwt.http.client.html</tt> package, which contains a clean asynchronous server request callback implementation.</p>
 
 <p class="caution">
@@ -146,7 +146,7 @@ You should definitely use <code>RequestBuilder</code> instead.
 
 <li>For a working example of making HTTP requests to retrieve JSON-formatted data, see the Tutorial, <a href="tutorial/JSON.html">Get JSON via HTTP</a>.</li>
 
-<li>For documentation of the classes and methods you can use to build HTTP requests, see the API Reference, the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/package-summary.html">com.google.gwt.http.client</a> package.</li>
+<li>For documentation of the classes and methods you can use to build HTTP requests, see the API Reference, the <a href="/javadoc/latest/com/google/gwt/http/client/package-summary.html">com.google.gwt.http.client</a> package.</li>
 </ul>
 
 <p/>
@@ -200,4 +200,4 @@ Origin Policy. If you are using JSON, you can work around this limitation using 
 <code>&lt;script&gt;</code> tag (aka JSON-P).</a>
 
 <p>First, you need an external JSON service which can invoke user defined callback functions with the JSON data as argument. An example of such a service is <a href="https://developers.google.com/gdata/docs/json">GData's &quot;alt=json-in-script&amp;callback=myCallback&quot; support</a>. Then, you can use <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/jsonp/client/JsonpRequestBuilder.html">JsonpRequestBuilder</a> to make your call, ini a way similar to a <code>RequestBuilder</a> when you're not making a cross-site request.</p>
+href="/javadoc/latest/com/google/gwt/jsonp/client/JsonpRequestBuilder.html">JsonpRequestBuilder</a> to make your call, ini a way similar to a <code>RequestBuilder</a> when you're not making a cross-site request.</p>

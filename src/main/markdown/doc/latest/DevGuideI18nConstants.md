@@ -45,7 +45,7 @@ public interface MyConstants extends Constants {
 maintain the <tt>.properties</tt> files. It also works for <tt>ConstantsWithLookup</tt> and <tt>Messages</tt> classes.</p>
 
 <p>Note that <tt>MyConstants</tt> is declared as an interface, so you cannot instantiate it directly with <tt>new</tt>. To use the internationalized constants, you create a Java
-instance of <tt>MyConstants</tt> using the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create(Class)</a> facility:</p>
+instance of <tt>MyConstants</tt> using the <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create(Class)</a> facility:</p>
 
 <pre class="prettyprint">
 public void useMyConstants() {
@@ -59,7 +59,7 @@ compiler to take care of automatically generating the Java code necessary to imp
 
 <h2 id="ConstantsWithLookup">ConstantsWithLookup</h2>
 
-<p>The <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/ConstantsWithLookup.html">ConstantsWithLookup</a> interface is
+<p>The <a href="/javadoc/latest/com/google/gwt/i18n/client/ConstantsWithLookup.html">ConstantsWithLookup</a> interface is
 identical to <tt>Constants</tt> except that the interface also includes a method to look up strings by property name, which facilitates dynamic binding to constants by name at
 runtime. <tt>ConstantsWithLookup</tt> can sometimes be useful in highly data-driven applications. One caveat: <tt>ConstantsWithLookup</tt> is less efficient than
 <tt>Constants</tt> because the compiler cannot discard unused constant methods,
@@ -79,29 +79,29 @@ way to reference constants, and can include Java compile-time constant
 references.
 <ul>
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultBooleanValue.html">@DefaultBooleanValue(boolean val)</a></tt></strong><br/>
+href="/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultBooleanValue.html">@DefaultBooleanValue(boolean val)</a></tt></strong><br/>
 Sets the default value for a method which returns a <tt>boolean</tt>.</li>
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultDoubleValue.html">@DefaultDoubleValue(double val)</a></tt></strong><br/>
+href="/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultDoubleValue.html">@DefaultDoubleValue(double val)</a></tt></strong><br/>
 Sets the default value for a method which returns a <tt>double</tt>.</li>
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultFloatValue.html">@DefaultFloatValue(float val)</a></tt></strong><br/>
+href="/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultFloatValue.html">@DefaultFloatValue(float val)</a></tt></strong><br/>
 Sets the default value for a method which returns a <tt>float</tt>.</li>
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultIntValue.html">@DefaultIntValue(int val)</a></tt></strong><br/>
+href="/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultIntValue.html">@DefaultIntValue(int val)</a></tt></strong><br/>
 Sets the default value for a method which returns a <tt>int</tt>.</li>
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultStringArrayValue.html">@DefaultStringArrayValue({String str, ...})</a></tt></strong><br/>
+href="/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultStringArrayValue.html">@DefaultStringArrayValue({String str, ...})</a></tt></strong><br/>
 Sets the default value for a method which returns a <tt>String</tt> array.</li>
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultStringMapValue.html">@DefaultStringMapValue({String key, String value,
+href="/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultStringMapValue.html">@DefaultStringMapValue({String key, String value,
 ...})</a></tt></strong><br/>
 Sets the default value for a method which returns a
 <tt>Map&lt;String,String&gt;</tt> or a raw map (which will still be a
 <tt>String=&gt;String</tt> map).  The number of supplied values must be even,
 and the first entry of each pair is the key and the second is the value.</li>
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultStringValue.html">@DefaultStringValue(String str)</a></tt></strong><br/>
+href="/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultStringValue.html">@DefaultStringValue(String str)</a></tt></strong><br/>
 Sets the default value for a method which returns a <tt>String</tt>.</li>
 </ul>
 

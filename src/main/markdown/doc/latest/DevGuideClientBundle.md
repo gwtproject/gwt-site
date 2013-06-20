@@ -1,5 +1,5 @@
 <p>
-The resources in a deployed GWT application can be roughly categorized into resources to never cache (<tt>.nocache.js</tt>), to cache forever (<tt>.cache.html</tt>), and everything else (<tt>myapp.css</tt>).  The <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a> interface moves entries from the everything-else category into the cache-forever category.
+The resources in a deployed GWT application can be roughly categorized into resources to never cache (<tt>.nocache.js</tt>), to cache forever (<tt>.cache.html</tt>), and everything else (<tt>myapp.css</tt>).  The <a href="/javadoc/latest/index.html?com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a> interface moves entries from the everything-else category into the cache-forever category.
 </p>
 
 <ol class="toc" id="pageToc">
@@ -49,7 +49,7 @@ The resources in a deployed GWT application can be roughly categorized into reso
 
 <h3 id="ClientBundleExamples">Examples</h3>
 
-<p>To use <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a>, add an <tt>inherits</tt> tag to your <tt>gwt.xml</tt> file: </p>
+<p>To use <a href="/javadoc/latest/index.html?com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a>, add an <tt>inherits</tt> tag to your <tt>gwt.xml</tt> file: </p>
 
 <pre class="prettyprint">&lt;inherits name=&quot;com.google.gwt.resources.Resources&quot; /&gt;</pre>
 
@@ -102,19 +102,19 @@ public TextResource defaultText();</pre>
 
 
 
-<p>Each subtype of <tt><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/ResourcePrototype.html">ResourcePrototype</a></tt> must define a <tt><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGeneratorType.html">@ResourceGeneratorType</a></tt> annotation whose value is a concrete Java class that extends <tt><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGenerator.html">ResourceGenerator</a></tt>.  The instance of the <tt>ResourceGenerator</tt> is responsible for accumulation (or bundling) of incoming resource data as well as a small degree of code generation to assemble the concrete implementation of the <tt>ClientBundle</tt> class.  Implementors of <tt>ResourceGenerator</tt> subclasses can expect that only one <tt>ResourceGenerator</tt> will be created for a given type of resource within a <tt>ClientBundle</tt> interface. </p>
+<p>Each subtype of <tt><a href="/javadoc/latest/index.html?com/google/gwt/resources/client/ResourcePrototype.html">ResourcePrototype</a></tt> must define a <tt><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGeneratorType.html">@ResourceGeneratorType</a></tt> annotation whose value is a concrete Java class that extends <tt><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGenerator.html">ResourceGenerator</a></tt>.  The instance of the <tt>ResourceGenerator</tt> is responsible for accumulation (or bundling) of incoming resource data as well as a small degree of code generation to assemble the concrete implementation of the <tt>ClientBundle</tt> class.  Implementors of <tt>ResourceGenerator</tt> subclasses can expect that only one <tt>ResourceGenerator</tt> will be created for a given type of resource within a <tt>ClientBundle</tt> interface. </p>
 
 <p>The methods on a <tt>ResourceGenerator</tt> are called in the following order
 
 <ol>
-  <li><tt>init</tt> to provide the <tt>ResourceGenerator</tt> with a <tt><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceContext.html">ResourceContext</a></tt> </li>
+  <li><tt>init</tt> to provide the <tt>ResourceGenerator</tt> with a <tt><a href="/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceContext.html">ResourceContext</a></tt> </li>
   <li><tt>prepare</tt> is called for each <tt>JMethod</tt> the <tt>ResourceGenerator</tt> is expected to handle </li>
   <li><tt>createFields</tt> allows the <tt>ResourceGenerator</tt> to add code at the class level </li>
   <li><tt>createAssignment</tt> is called for each <tt>JMethod</tt>.  The generated code should be suitable for use as the right-hand side of an assignment expression. </li>
   <li><tt>finish</tt> is called after all assignments should have been written. </li>
 </ol>
 
-<p><tt>ResourceGenerators</tt> are expected to make use of the <tt><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGeneratorUtil.html">ResourceGeneratorUtil</a></tt> class. </p>
+<p><tt>ResourceGenerators</tt> are expected to make use of the <tt><a href="/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGeneratorUtil.html">ResourceGeneratorUtil</a></tt> class. </p>
 
 
 <h3 id="Levers_and_knobs">Levers and knobs</h3>
@@ -141,7 +141,7 @@ public TextResource defaultText();</pre>
 </ul>
 
 <h2 id="DataResource">DataResource</h2>
-<p>A <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/DataResource.html">DataResource</a> is the simplest of the resource types, offering a URL by which the contents of a file can be retrieved at runtime.  The main optimization offered is to automatically rename files based on their contents in order to make the resulting URL strongly-cacheable by the browser.  Very small files may be converted into <tt>data:</tt> URLs on those browsers that support them.</p>
+<p>A <a href="/javadoc/latest/index.html?com/google/gwt/resources/client/DataResource.html">DataResource</a> is the simplest of the resource types, offering a URL by which the contents of a file can be retrieved at runtime.  The main optimization offered is to automatically rename files based on their contents in order to make the resulting URL strongly-cacheable by the browser.  Very small files may be converted into <tt>data:</tt> URLs on those browsers that support them.</p>
 
 <pre class="prettyprint">interface Resources extends ClientBundle {
   Resources INSTANCE = GWT.create(Resources.class);
@@ -158,7 +158,7 @@ someDiv.getStyle().setProperty("cursor", "url(" + Resources.INSTANCE.customCurso
 
 <h2 id="TextResource">TextResource and ExternalTextResource</h2>
 
-<p>The related resource types <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/TextResource.html">TextResource</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/ExternalTextResource.html">ExternalTextResource</a> provide access to static text content.  The main difference between these two types is that the former interns the text into the compiled JavaScript, while the latter bundles related text resources into a single file, which is accessed asynchronously.</p>
+<p>The related resource types <a href="/javadoc/latest/index.html?com/google/gwt/resources/client/TextResource.html">TextResource</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/ExternalTextResource.html">ExternalTextResource</a> provide access to static text content.  The main difference between these two types is that the former interns the text into the compiled JavaScript, while the latter bundles related text resources into a single file, which is accessed asynchronously.</p>
 
 <pre class="prettyprint">interface Resources extends ClientBundle {
   Resources INSTANCE = GWT.create(Resources.class);
@@ -184,7 +184,7 @@ Resources.INSTANCE.asynchronous().getText(new ResourceCallback&lt;TextResource&g
 
 <h2 id="ImageResource">ImageResource</h2>
 
-<p>This section describes how <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/ImageResource.html">ImageResource</a> can tune the compile-time processing of image data and provide efficient access to image data at runtime. </p>
+<p>This section describes how <a href="/javadoc/latest/index.html?com/google/gwt/resources/client/ImageResource.html">ImageResource</a> can tune the compile-time processing of image data and provide efficient access to image data at runtime. </p>
 
 <ol class="toc">
   <ul>
@@ -217,7 +217,7 @@ Resources.INSTANCE.asynchronous().getText(new ResourceCallback&lt;TextResource&g
 <h3 id="ImageResourceOverview">Overview</h3>
 
 <ol>
-  <li>Define a ClientBundle with one or more <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/ImageResource.html">ImageResource</a> accessors.
+  <li>Define a ClientBundle with one or more <a href="/javadoc/latest/index.html?com/google/gwt/resources/client/ImageResource.html">ImageResource</a> accessors.
 For each accessor method, add an @Source annotation with the path of the new image you want to add to your program.
 The ClientBundle generator combines all of the images defined in your interface into a single, optimized image.
 
@@ -277,7 +277,7 @@ causes GWT to load the composite image generated for Resources and then creates 
 
 <h2 id="GwtCreateResource">GwtCreateResource</h2>
 
-<p>The <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/GwtCreateResource.html">GwtCreateResource</a> is a bridge type between <tt>ClientBundle</tt> and any other (resource) type that is default-instantiable. The instance of the <tt>GwtCreateResource</tt> acts as a factory for some other type.</p>
+<p>The <a href="/javadoc/latest/index.html?com/google/gwt/resources/client/GwtCreateResource.html">GwtCreateResource</a> is a bridge type between <tt>ClientBundle</tt> and any other (resource) type that is default-instantiable. The instance of the <tt>GwtCreateResource</tt> acts as a factory for some other type.</p>
 
 <pre class="prettyprint">interface Resources extends ClientBundle {
   Resources INSTANCE = GWT.create(Resources.class);
@@ -298,7 +298,7 @@ ReturnType obj = GWT.&lt;ReturnType&gt; create(SomeClass.class);
 
 <h2 id="CssResource">CssResource</h2>
 
-<p>This section describes <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/CssResource.html">CssResource</a> and the compile-time processing of CSS. </p>
+<p>This section describes <a href="/javadoc/latest/index.html?com/google/gwt/resources/client/CssResource.html">CssResource</a> and the compile-time processing of CSS. </p>
 
 <ol class="toc">
   <li><a href="#CssResource_Goals">Goals</a></li>
@@ -337,7 +337,7 @@ ReturnType obj = GWT.&lt;ReturnType&gt; create(SomeClass.class);
 </ol>
 
 
-<p>See also the <a href="#CssResourceCookbook">CssResourceCookbook</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/dom/client/StyleInjector.html">StyleInjector</a>. </p>
+<p>See also the <a href="#CssResourceCookbook">CssResourceCookbook</a> and <a href="/javadoc/latest/index.html?com/google/gwt/dom/client/StyleInjector.html">StyleInjector</a>. </p>
 
 
 <h3 id="CssResource_Goals">Goals</h3>
@@ -580,7 +580,7 @@ class MyResources extends ClientBundle {
 }</pre>
 
 <ul>
-  <li>@sprite is sensitive to the FooBundle in which the CSSResource is declared; a sibling <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/ImageResource.html">ImageResource</a> method named in the @sprite declaration will be used to compose the background sprite. </li>
+  <li>@sprite is sensitive to the FooBundle in which the CSSResource is declared; a sibling <a href="/javadoc/latest/index.html?com/google/gwt/resources/client/ImageResource.html">ImageResource</a> method named in the @sprite declaration will be used to compose the background sprite. </li>
   <li>@sprite entries will be expanded to static CSS rules, possibly with data: urls. </li>
   <li>The expansion is sensitive to any RepeatStyle value defined on the <tt>ImageResource</tt> accessor function.  The appropriate <tt>repeat-x</tt> or <tt>repeat-y</tt> properties will be added to the @sprite selector. </li>
   <li>Any CSS selector can be specified for @sprite. </li>

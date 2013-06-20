@@ -20,7 +20,7 @@ full list of browsers supported by GWT.</dd>
 
 <dt>deferred binding</dt>
 <dd>A technique used by the GWT compiler to create or select a specific implementation of a class based on a set of environment parameters. The
-method <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> triggers
+method <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> triggers
 deferred binding, allowing Java code to work with a declared Java interface. Some GWT features that use <a href="DevGuideCodingBasics.html#DevGuideDeferredBinding">deferred
 binding</a> include <a href="DevGuideI18n.html#DevGuideStaticStringInternationalization">static string internationalization</a>, ImageBundle localization as well as <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">GWT-RPC</a>. For more details on deferred binding, check out the <a href="DevGuideCodingBasics.html#DevGuideDeferredBinding">deferred binding</a> chapter in the development guide.</dd>
 
@@ -119,7 +119,7 @@ file</a>, the default public path is <code>&lt;module-name&gt;/public</code>.</d
 GWT has specific rules for <a href="DevGuideServerCommunication.html#DevGuideSerializableTypes">serializable types</a> which must be used for RPC method parameters and return values.</dd>
 
 <dt>service proxy</dt>
-<dd>An implementation of an asynchronous interface in client-side code that links the GWT RPC <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> implementation
+<dd>An implementation of an asynchronous interface in client-side code that links the GWT RPC <a href="/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> implementation
 with your client code. Service proxy interface names always have the same name as the server-side synchronous class and end with the suffix <code>Async</code>.</dd>
 
 <dt>source path</dt>
@@ -131,7 +131,7 @@ translate at compile time. If no source path is specified in the <a href="DevGui
 
 <dt>static string internationalization</dt>
 <dd>A technique of defining language specific strings in <code>.properties</code> files that GWT compiles into different
-implementations of your <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Localizable.html">Localizable</a> subclasses.
+implementations of your <a href="/javadoc/latest/com/google/gwt/i18n/client/Localizable.html">Localizable</a> subclasses.
 Using deferred binding, the language strings will map to the correct locale at runtime.</dd>
 
 <dt>translatable</dt>

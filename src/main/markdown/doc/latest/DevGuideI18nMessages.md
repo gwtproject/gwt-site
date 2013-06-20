@@ -11,7 +11,7 @@
 <h2 id="MessagesOverview">Overview</h2>
 
 <p>The <a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Messages.html">Messages</a>
+href="/javadoc/latest/com/google/gwt/i18n/client/Messages.html">Messages</a>
 interface allows you to substitute parameters into messages and even to
 re-order those parameters for different locales as needed. The format of the
 messages in the properties files follows the specification in Java <a
@@ -143,7 +143,7 @@ for each locale.
 
 <dt><tt>{0,localdatetime,predef:PREDEF_NAME}</tt>
 <dd>Use a locale-specific predefined format -- see <tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html">DateTimeFormat.PredefinedFormat</a></tt>
+href="/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html">DateTimeFormat.PredefinedFormat</a></tt>
 for possible values, example: <tt>{0,localdatetime,predef:DATE_SHORT}</tt>.
 
 <dt>extra formatter arguments
@@ -179,7 +179,7 @@ page</a>.</p>
 <p>The following annotations apply to methods in a <tt>Messages</tt> subtype:
 <ul>
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Messages.DefaultMessage.html">@DefaultMessage(String
+href="/javadoc/latest/com/google/gwt/i18n/client/Messages.DefaultMessage.html">@DefaultMessage(String
 message)</a></tt></strong><br/>
 Specifies the message string to be used for the default locale for this
 method, with all of the options above.  If an <tt>@AlternateMessage</tt>
@@ -188,7 +188,7 @@ do not apply &mdash; for count messages in English, this would be the plural
 form instead of the singular form.
 </li>
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Messages.AlternateMessage.html">@AlternateMessage({String
+href="/javadoc/latest/com/google/gwt/i18n/client/Messages.AlternateMessage.html">@AlternateMessage({String
 form, String message, ...})</a></tt></strong><br/>
 Specifies the text for alternate forms of the message.  The supplied array of
 strings must be in pairs, with the first entry the name of an alternate form
@@ -204,7 +204,7 @@ Forms</a> examples below.
 <tt>Messages</tt> subtype:
 <ul>
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Messages.Example.html">@Example(String
+href="/javadoc/latest/com/google/gwt/i18n/client/Messages.Example.html">@Example(String
 example)</a></tt></strong><br/>
 An example for this variable. Many translation tools will show this to the
 translator instead of the placeholder &mdash; i.e., <tt>Hello {0}</tt> with
@@ -212,14 +212,14 @@ translator instead of the placeholder &mdash; i.e., <tt>Hello {0}</tt> with
 highlighted to indicate it should not be translated.
 </li>
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Messages.Optional.html">@Optional
+href="/javadoc/latest/com/google/gwt/i18n/client/Messages.Optional.html">@Optional
 </a></tt></strong><br/>
 Indicates that this parameter need not be present in all translations. If this
 annotation is not supplied, it is a compile-time error if the translated string
 being compiled does not include the parameter.
 </li>
 <li><strong><tt><a
-href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Messages.PluralCount.html">@PluralCount</a></tt></strong>
+href="/javadoc/latest/com/google/gwt/i18n/client/Messages.PluralCount.html">@PluralCount</a></tt></strong>
 <br/>
 Indicates that this parameter is used to select which form of text to use (ie,
 1 widget vs. 2 widgets).<p/>

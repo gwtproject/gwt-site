@@ -105,7 +105,7 @@
 <li>StorageMap (exposes the Storage object as a standard Map)</li>
 </ul>
 
-<p>Syntactic details for these can be found in the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/storage/client/package-summary.html">Storage feature javadoc</a>.</p>
+<p>Syntactic details for these can be found in the <a href="/javadoc/latest/com/google/gwt/storage/client/package-summary.html">Storage feature javadoc</a>.</p>
 
 <h2 id='UsingStorage'>How to Use  HTML5 Storage in Your Web Application</h2>
 <p>

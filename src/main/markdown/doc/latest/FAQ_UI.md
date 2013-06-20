@@ -106,7 +106,7 @@ change the code, hit <i>Refresh</i> in the browser window:</p>
 
 <blockquote><img src="images/FAQ_UILayout3.png"/></blockquote>
 
-<p>This is closer to what we want, but it still isn't right. Now we need to change the cell alignment in the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/DockPanel.html">DockPanel</a> instance:</p>
+<p>This is closer to what we want, but it still isn't right. Now we need to change the cell alignment in the <a href="/javadoc/latest/com/google/gwt/user/client/ui/DockPanel.html">DockPanel</a> instance:</p>
 
 <pre class="prettyprint">
     Button rightButton = new Button(&quot;rightButton&quot;);
@@ -125,8 +125,8 @@ fills the page vertically when the browser window resizes?</h2>
 
 <p>
 As of GWT 2.0, creating an application that fills the browser is easy using <a href="DevGuideUiPanels.html#LayoutPanels">Layout Panels</a>.  LayoutPanels
-such as <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a> and
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html">SplitLayoutPanel</a> automatically resize to the size of the window when 
+such as <a href="/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a> and
+<a href="/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html">SplitLayoutPanel</a> automatically resize to the size of the window when 
 the browser resizes.
 </p>
 
@@ -217,7 +217,7 @@ PreloadedTable classes</h3>
 
 <p>A <a href="http://code.google.com/p/google-web-toolkit-incubator/wiki/BulkTableRenderers">BulkTableRenderer</a> will render all rows in a table at once.
 BulkTableRenderer has derived types for different purposes. As long as your table contents are not widgets, you provide a table model and the BulkRenderer creates the entire table
-rendered as a single HTML string and set with <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/dom/client/Element.html#setInnerHTML(java.lang.String)">setInnerHtml()</a> which can
+rendered as a single HTML string and set with <a href="/javadoc/latest/com/google/gwt/dom/client/Element.html#setInnerHTML(java.lang.String)">setInnerHtml()</a> which can
 be 2-10x faster.</p>
 
 <p>Note that after being loaded, widgets, cell spans, row spans etc. may be added to the table, but there will be no speed advantage for them.</p>
@@ -232,7 +232,7 @@ impressions are important, you may want to try this trick.</p>
 
 <p>The underlying issue is that the images needed for the background, border, or animation are fetched from the server on demand. A solution is to pre-fetch the images so that
 they are sitting in the browser cache by the time the animation is actually invoked. Go through your CSS files for the images used in your styling that are running slowly, and use
-the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Image.html#prefetch(java.lang.String)">Image.prefetch()</a>
+the <a href="/javadoc/latest/com/google/gwt/user/client/ui/Image.html#prefetch(java.lang.String)">Image.prefetch()</a>
 method.</p>
 
 <pre class="prettyprint">
@@ -321,6 +321,6 @@ but can lead to slow performance when many handlers are added to the system.</p>
 <p>If you are building a widget, you may want to consider handling events in a different way, called Event Bubbling. Essentially, this technique means you have one handler for the
 entire widget, and you have one handler callback that executes on behalf of all interior widgets.</p>
 
-<p>See the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">implementation of the Tree</a> class
+<p>See the <a href="/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">implementation of the Tree</a> class
 for an example of using Event Bubbling in GWT.</p>
 <p/>

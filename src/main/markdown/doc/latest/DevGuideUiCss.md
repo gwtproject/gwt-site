@@ -12,7 +12,7 @@ Like most web applications, GWT applications use cascading style sheets (CSS) fo
 <p>GWT widgets rely on cascading style sheets (CSS) for visual styling.</p>
 
 <p>In GWT, each class of widget has an associated style name that binds it to a CSS rule. Furthermore, you can assign an id to a particular component to create a CSS rule that
-applies just to that one component. By default, the class name for each component is <tt>gwt-&lt;classname&gt;</tt>. For example, the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button widget</a> has a default style of
+applies just to that one component. By default, the class name for each component is <tt>gwt-&lt;classname&gt;</tt>. For example, the <a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button widget</a> has a default style of
 <tt>gwt-Button</tt>.</p>
 
 <p>In order to give all buttons a larger font, you could put the following rule in your application's CSS file:</p>
@@ -21,7 +21,7 @@ applies just to that one component. By default, the class name for each componen
   .gwt-Button { font-size: 150%; }
 </pre>
 
-<p>All of the widgets created with the GWT toolkit will have a default class name, but a widget's style name can be set using <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName()</a>.
+<p>All of the widgets created with the GWT toolkit will have a default class name, but a widget's style name can be set using <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName()</a>.
 Static elements can have their class set in the HTML source code for your application.</p>
 
 <p>Another way to use style sheets is to refer to a single widget. For that, you would need to know the value of the <tt>id</tt> attribute for the widget or DOM element.</p>
@@ -48,7 +48,7 @@ this manner, and you must insure that each &quot;id&quot; value is unique. A com
 
 <h2 id="complex">Complex Styles</h2>
 
-<p>Some widgets have multiple styles associated with them. <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a>, for example, has the following styles:</p>
+<p>Some widgets have multiple styles associated with them. <a href="/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a>, for example, has the following styles:</p>
 
 <pre>
    .gwt-MenuBar { 
@@ -64,8 +64,8 @@ this manner, and you must insure that each &quot;id&quot; value is unique. A com
 
 <p>In the above style sheet code, there are two style rules that apply to menu items. The first applies to all menu items (both selected and unselected), while the second (with
 the -selected suffix) applies only to selected menu items. A selected menu item's style name will be set to <tt>&quot;gwt-MenuItem gwt-MenuItem-selected&quot;</tt>, specifying that both
-style rules will be applied. The most common way of doing this is to use <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName</a> to set
-the base style name, then <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#addStyleName(java.lang.String)">addStyleName()</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#removeStyleName(java.lang.String)">removeStyleName()</a>
+style rules will be applied. The most common way of doing this is to use <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName</a> to set
+the base style name, then <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#addStyleName(java.lang.String)">addStyleName()</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#removeStyleName(java.lang.String)">removeStyleName()</a>
 to add and remove the second style name.</p>
 
 <h2 id="cssfiles">Associating CSS Files</h2>
@@ -151,4 +151,4 @@ sheet, but you can still reference the files associate with the standard visual 
 
 <h2 id="documentation">Documentation</h2>
 
-<p>It is standard practice to document the relevant CSS style names for each widget class as part of its documentation comment. For a simple example, see <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a>. For a more complex example, see <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a>.</p>
+<p>It is standard practice to document the relevant CSS style names for each widget class as part of its documentation comment. For a simple example, see <a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a>. For a more complex example, see <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a>.</p>

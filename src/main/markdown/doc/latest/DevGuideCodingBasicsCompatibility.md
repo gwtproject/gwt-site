@@ -121,14 +121,14 @@ Reference</a>.</i></blockquote>
 used routines that provide a subset of the native JRE functionality:</p>
 
 <ul>
-<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.html">com.google.gwt.i18n.client.DateTimeFormat</a> : Supports a subset of <tt>java.util.DateTimeFormat</tt>. See examples in the <a href="DevGuideCodingBasics.html#DevGuideDateAndNumberFormat">date and number formatting</a> section.</li>
+<li><a href="/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.html">com.google.gwt.i18n.client.DateTimeFormat</a> : Supports a subset of <tt>java.util.DateTimeFormat</tt>. See examples in the <a href="DevGuideCodingBasics.html#DevGuideDateAndNumberFormat">date and number formatting</a> section.</li>
 
-<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html">com.google.gwt.i18n.client.NumberFormat</a> : Supports a subset of <tt>java.util.NumberFormat</tt>. See examples in the <a href="DevGuideCodingBasics.html#DevGuideDateAndNumberFormat">date and number format</a> section.</li>
+<li><a href="/javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html">com.google.gwt.i18n.client.NumberFormat</a> : Supports a subset of <tt>java.util.NumberFormat</tt>. See examples in the <a href="DevGuideCodingBasics.html#DevGuideDateAndNumberFormat">date and number format</a> section.</li>
 
-<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/rpc/IsSerializable.html">com.google.gwt.user.client.rpc</a>
+<li><a href="/javadoc/latest/com/google/gwt/user/client/rpc/IsSerializable.html">com.google.gwt.user.client.rpc</a>
 : A marker class used similarly to <tt>java.io.Serializable</tt> for GWT RPC.</li>
 
-<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/Timer.html" >com.google.gwt.user.client.Timer</a> : A
+<li><a href="/javadoc/latest/com/google/gwt/user/client/Timer.html" >com.google.gwt.user.client.Timer</a> : A
 simplified, browser-safe timer class. This class serves the same purpose as <tt>java.util.Timer</tt>, but is simplified because of the single-threaded environment.</li>
 </ul>
 

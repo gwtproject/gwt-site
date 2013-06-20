@@ -1,5 +1,5 @@
-<p>You construct user interfaces in GWT applications using <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Widget.html">widgets</a> that
-are contained within <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Panel.html">panels</a>. Widgets allow you to interact with the user. Panels
+<p>You construct user interfaces in GWT applications using <a href="/javadoc/latest/com/google/gwt/user/client/ui/Widget.html">widgets</a> that
+are contained within <a href="/javadoc/latest/com/google/gwt/user/client/ui/Panel.html">panels</a>. Widgets allow you to interact with the user. Panels
 control the placement of user interface elements on the page. Widgets and panels work the same way
 on all browsers; by using them, you eliminate the need to write specialized code for each browser.</p>
 
@@ -8,27 +8,27 @@ on all browsers; by using them, you eliminate the need to write specialized code
 <p>Widgets define your applications input and output with the user. Examples of widgets include the following:</p>
 
 <ul>
-<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> A user clicks the mouse button to
+<li><a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> A user clicks the mouse button to
 activate the button.</li>
 
 <li style="list-style: none">
 <blockquote><img src="images/Button.png"/></blockquote>
 </li>
 
-<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html">TextBox</a> The application can display text and
+<li><a href="/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html">TextBox</a> The application can display text and
 the user can type in the text box.</li>
 
 <li style="list-style: none">
 <blockquote><img src="images/TextBox.png"/></blockquote>
 </li>
 
-<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a> A collapsible hierarchy of widgets.</li>
+<li><a href="/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a> A collapsible hierarchy of widgets.</li>
 
 <li style="list-style: none">
 <blockquote><img src="images/Tree.png"/></blockquote>
 </li>
 
-<li><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/RichTextArea.html">RichTextArea</a> A text editor that allows
+<li><a href="/javadoc/latest/com/google/gwt/user/client/ui/RichTextArea.html">RichTextArea</a> A text editor that allows
 users to apply rich formatting of the text.</li>
 
 <li style="list-style: none">
@@ -44,7 +44,7 @@ For the complete list of GWT UI elements, see <a href="RefWidgetGallery.html">Wi
 widgets</a>:</p>
 
 <ul>
-<li>You can bundle together existing widgets and create a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Composite.html">Composite</a> widget.</li>
+<li>You can bundle together existing widgets and create a <a href="/javadoc/latest/com/google/gwt/user/client/ui/Composite.html">Composite</a> widget.</li>
 
 <li>You can write GWT bindings to an existing JavaScript widget.</li>
 

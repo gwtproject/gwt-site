@@ -34,8 +34,8 @@ functions.</li>
 </ul>
 
 <p>Some parts of the toolkit make implicit use of deferred binding, that is, they use the technique as a part of their implementation, but it is not visible to the user of the
-API. For example, many <a href="DevGuideUiWidgets.html">widgets and <a href="DevGuideUiPanels.html">panels</a> as well as the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/DOM.html">DOM</a> class use this technique to implement browser specific
-logic. Other GWT features require the API user to explicity invoke deferred binding by designing classes that follow specific rules and instantiating instances of the classes with <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create(Class)</a>, including <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">GWT RPC</a> and <a href="DevGuideI18n.html">I18N</a>.</p>
+API. For example, many <a href="DevGuideUiWidgets.html">widgets and <a href="DevGuideUiPanels.html">panels</a> as well as the <a href="/javadoc/latest/com/google/gwt/user/client/DOM.html">DOM</a> class use this technique to implement browser specific
+logic. Other GWT features require the API user to explicity invoke deferred binding by designing classes that follow specific rules and instantiating instances of the classes with <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create(Class)</a>, including <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">GWT RPC</a> and <a href="DevGuideI18n.html">I18N</a>.</p>
 
 <p>As a user of the GWT, you may never need to create a new interface that uses deferred binding. If you follow the instructions in the guide for creating
 internationalized applications or GWT RPC calls you will be using deferred binding, but you will not have to actually write any browser dependent or locale dependent code.</p>
@@ -59,7 +59,7 @@ cross-browser dependent code, the next sections should be of interest.</p>
 <tt>&lt;replace-with&gt;</tt> and <tt>&lt;generate-with&gt;</tt> elements in the <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">module XML files</a>. The deferred binding
 rules are pulled into the module build through <tt>&lt;inherits&gt;</tt> elements.</p>
 
-<p>For example, the following configuration invokes deferred binding for the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> widget:</p>
+<p>For example, the following configuration invokes deferred binding for the <a href="/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> widget:</p>
 
 <ul>
 <li>Top level <i>&lt;module&gt;</i>.gwt.xml <i><strong>inherits</strong></i> <a href="http://google-web-toolkit.googlecode.com/svn/releases/2.5/user/src/com/google/gwt/user/User.gwt.xml">com.google.gwt.user.User</a></li>
@@ -68,10 +68,10 @@ rules are pulled into the module build through <tt>&lt;inherits&gt;</tt> element
 <i><strong>inherits</strong></i> <a href="http://google-web-toolkit.googlecode.com/svn/releases/2.5/user/src/com/google/gwt/user/Popup.gwt.xml">com.google.gwt.user.Popup</a></li>
 
 <li><a href="http://google-web-toolkit.googlecode.com/svn/releases/2.5/user/src/com/google/gwt/user/Popup.gwt.xml">com/google/gwt/user/Popup.gwt.xml</a>
-<i><strong>contains</strong></i> <tt>&lt;replace-with&gt;</tt> elements to define deferred binding rules for the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> class.</li>
+<i><strong>contains</strong></i> <tt>&lt;replace-with&gt;</tt> elements to define deferred binding rules for the <a href="/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> class.</li>
 </ul>
 
-<p>Inside the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> module XML file, there
+<p>Inside the <a href="/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> module XML file, there
 happens to be some rules defined for deferred binding. In this case, we're using a replacement rule.</p>
 
 
@@ -80,7 +80,7 @@ happens to be some rules defined for deferred binding. In this case, we're using
 <p>
 The first type of deferred binding uses <i>replacement</i>.
 Replacement means overriding the implementation of one java class with another that is determined at compile time.
-For example, this technique is used to conditionalize the implementation of some widgets, such as the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a>.
+For example, this technique is used to conditionalize the implementation of some widgets, such as the <a href="/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a>.
 The use of <tt>&lt;inherits&gt;</tt> for the <tt>PopupPanel</tt> class is shown in the previous section describing the deferred binding rules.
 The actual replacement rules are specified in <tt>Popup.gwt.xml</tt>, as shown below:
 </p>
@@ -115,13 +115,13 @@ The actual replacement rules are specified in <tt>Popup.gwt.xml</tt>, as shown b
 <p>These directives tell the GWT compiler to swap out the <tt>PoupImpl</tt> class code with different class implementations according to the the <tt>user.agent</tt> property. The
 <tt>Popup.gwt.xml</tt> file specifies a default implementation for the <tt>PopupImpl</tt> class, an overide for the Mozilla browser (<tt>PopupImplMozilla</tt> is substituted for
 <tt>PopupImpl</tt>), and an override for Internet Explorer version 6 (<tt>PopupImplIE6</tt> is substituted for <tt>PopupImpl</tt>). Note that <tt>PopupImpl</tt> class or its
-derived classes cannot be instantiated directly. Instead, the <tt>PopupPanel</tt> class is used and the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create(Class)</a> technique is used
+derived classes cannot be instantiated directly. Instead, the <tt>PopupPanel</tt> class is used and the <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create(Class)</a> technique is used
 under the hood to instruct the compiler to use deferred binding.</p>
 
 <h2 id="example">Example Class Hierarchy using Replacement</h2>
 
 <p>To see how this is used when designing a widget, we will examine the case of the <tt>PopupPanel</tt> widget further. The <tt>PopupPanel</tt> class implements the user visible
-API and contains logic that is common to all browsers. It also instantiates the proper implementation specific logic using the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create(Class)</a> as follows:</p>
+API and contains logic that is common to all browsers. It also instantiates the proper implementation specific logic using the <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create(Class)</a> as follows:</p>
 
 <pre class="prettyprint">
   private static final PopupImpl impl = GWT.create(PopupImpl.class);
@@ -193,8 +193,8 @@ to deferred binding:</p>
 &lt;/module&gt;
 </pre>
 
-<p>These directives instruct the GWT compiler to invoke methods in a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/ext/Generator.html">Generator</a> subclass (<tt>ServiceInterfaceProxyGenerator</tt>) in order to generate special code when the deferred binding mechanism <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> is encountered while
-compiling. In this case, if the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> call references an instance of <tt>RemoteService</tt> or one of its subclasses, the <tt>ServiceInterfaceProxyGenerator</tt>'s generate()` method
+<p>These directives instruct the GWT compiler to invoke methods in a <a href="/javadoc/latest/com/google/gwt/core/ext/Generator.html">Generator</a> subclass (<tt>ServiceInterfaceProxyGenerator</tt>) in order to generate special code when the deferred binding mechanism <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> is encountered while
+compiling. In this case, if the <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> call references an instance of <tt>RemoteService</tt> or one of its subclasses, the <tt>ServiceInterfaceProxyGenerator</tt>'s generate()` method
 will be invoked.</p>
 
 <h2 id="generator-implementation">Generator Implementation</h2>

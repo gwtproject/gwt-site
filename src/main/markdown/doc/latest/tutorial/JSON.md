@@ -255,7 +255,7 @@ This is the JSON data coming back from the server.
 ]</pre>
 
 <p>
-First, you'll use <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsonUtils.html">JsonUtils.safeEval()</a> to convert the JSON string into JavaScript objects. Then, you'll be able to write methods to access those objects.
+First, you'll use <a href="/javadoc/latest/com/google/gwt/core/client/JsonUtils.html">JsonUtils.safeEval()</a> to convert the JSON string into JavaScript objects. Then, you'll be able to write methods to access those objects.
 </p>
 <pre class="code">
   // JSNI methods to get stock data.
@@ -294,7 +294,7 @@ As in JavaScript, an object is actually just an unordered set of name/value pair
 In JSON objects, however, the values can only be other JSON types (never functions containing executable JavaScript code).
 </p>
 <p class="note">
-Another technique for a converting a JSON string into something you can work with is to use the static <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/json/client/JSONParser.html">JSONParser.parse(String)</a> method. GWT contains a full set of JSON types for manipulating JSON data in the com.google.gwt.json.client package. If you prefer to parse the JSON data, see the Developer's Guide, <a href="../DevGuideCodingBasics.html#DevGuideJSON">Working with JSON</a>.
+Another technique for a converting a JSON string into something you can work with is to use the static <a href="/javadoc/latest/com/google/gwt/json/client/JSONParser.html">JSONParser.parse(String)</a> method. GWT contains a full set of JSON types for manipulating JSON data in the com.google.gwt.json.client package. If you prefer to parse the JSON data, see the Developer's Guide, <a href="../DevGuideCodingBasics.html#DevGuideJSON">Working with JSON</a>.
 </p>
 
 <h3>Creating an overlay type</h3>

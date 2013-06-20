@@ -55,23 +55,23 @@ easily imagine how this causes problems.</p>
 <p>Once ARIA roles, properties and states are added to the DOM of a GWT widget, browsers will raise the appropriate
 events to the screen reader. As ARIA is still a work in progress, browsers may not raise an event for every ARIA
 property, and screen readers may not recognize all of the events being raised.</p>
-<p>Recently, we upgraded the accessibility support in GWT and deprecated the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Accessibility.html">Accessibility</a> class which contained a subset of the ARIA roles and states. We added a GWT
+<p>Recently, we upgraded the accessibility support in GWT and deprecated the <a href="/javadoc/latest/com/google/gwt/user/client/ui/Accessibility.html">Accessibility</a> class which contained a subset of the ARIA roles and states. We added a GWT
 ARIA library that contains all the roles, states and properties defined in the ARIA standard. The roles are organized in
 a hierarchy of interfaces. For each role there is a set of states and properties that are supported. There is a getter
-for each role in the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/Roles.html">Roles factory</a>. For each role there exist accessors
+for each role in the <a href="/javadoc/latest/com/google/gwt/aria/client/Roles.html">Roles factory</a>. For each role there exist accessors
 for getting, setting and removing states and properties, or an extra attribute like <tt>tabindex</tt>.  </p>
 <p>The ARIA standard specifies the HTML attribute type for the state and property
 values. These attribute types are supported in the new library with compile-time checks. Enumerations have been added for
 HTML attributes of type token like 'aria-dropeffect' property type, 'aria-checked' type etc. There is a common type added for
-IDREF(S) in the class. All the states and properties are defined in the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/State.html">State</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/Property.html">Property</a> classes. The
-<tt>tabIndex</tt> attribute has also been added as an extra attribute in the ARIA standard and we have <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/ExtraAttribute.html">added it to the library</a>. We encourage users to get access to states and
-properties through the role by getting it from the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/Roles.html">Roles factory</a> because
+IDREF(S) in the class. All the states and properties are defined in the <a href="/javadoc/latest/com/google/gwt/aria/client/State.html">State</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/Property.html">Property</a> classes. The
+<tt>tabIndex</tt> attribute has also been added as an extra attribute in the ARIA standard and we have <a href="/javadoc/latest/com/google/gwt/aria/client/ExtraAttribute.html">added it to the library</a>. We encourage users to get access to states and
+properties through the role by getting it from the <a href="/javadoc/latest/com/google/gwt/aria/client/Roles.html">Roles factory</a> because
 the factory checks that the state or property is supported for the role.</p>
 
-<p>Many GWT widgets now have keyboard accessibility and ARIA properties. These include <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.html">CustomButton</a>,
- <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TreeItem.html">TreeItem</a>,
- <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/MenuItem.html">MenuItem</a>,
- <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TabBar.html">TabBar</a>, and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TabPanel.html">TabPanel</a>.
+<p>Many GWT widgets now have keyboard accessibility and ARIA properties. These include <a href="/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.html">CustomButton</a>,
+ <a href="/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TreeItem.html">TreeItem</a>,
+ <a href="/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/MenuItem.html">MenuItem</a>,
+ <a href="/javadoc/latest/com/google/gwt/user/client/ui/TabBar.html">TabBar</a>, and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TabPanel.html">TabPanel</a>.
  Also, all widgets that inherit from FocusWidget now have a tabindex by default, allowing for better keyboard navigation.</p>
 
 
@@ -85,12 +85,12 @@ techniques are discussed; there is not yet a standard and generally-applicable a
 <p>The ARIA attribute <tt>role</tt> is an indication of the widget type; it describes the way the widget should behave. Roles are static and should not change during the lifetime of a widget. Widget authors should:</p>
 
 <ul>
-<li>Pick the right role for the widget from the  <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/Roles.html">Roles factory</a> class.</li>
+<li>Pick the right role for the widget from the  <a href="/javadoc/latest/com/google/gwt/aria/client/Roles.html">Roles factory</a> class.</li>
 
 <li>Set this attribute at construction time.</li>
 </ul>
 
-<p>The following is an example taken from the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.html">CustomButton</a> widget.
+<p>The following is an example taken from the <a href="/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.html">CustomButton</a> widget.
 Adding the <tt>button</tt> role indicates to an assistive technology that the widget will behave like a
 button.</p>
 
@@ -141,9 +141,9 @@ button.</p>
 
 <h4>Updating States During User Interaction</h4>
 
-<p>The <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.html">CustomButton</a> widget has support for multiple button faces, giving developers more stylistic control. Also, unlike the
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> widget, a CustomButton can be toggleable, as is
-the case with the CustomButton subclass <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/ToggleButton.html">ToggleButton</a>. Event handlers attached
+<p>The <a href="/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.html">CustomButton</a> widget has support for multiple button faces, giving developers more stylistic control. Also, unlike the
+<a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> widget, a CustomButton can be toggleable, as is
+the case with the CustomButton subclass <a href="/javadoc/latest/com/google/gwt/user/client/ui/ToggleButton.html">ToggleButton</a>. Event handlers attached
 to the underlying DOM element update the button faces when the button is pressed. We need to toggle the ARIA state <tt>aria-pressed</tt> as shown below.</p>
 
 <pre class="prettyprint">
@@ -200,15 +200,15 @@ clickable heading). </p>
   Roles.getHeadingRole().setTabindexExtraAttribute(heading.getElement(), 0);
 </pre>
 
-<p>In GWT, any widget that extends the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html">FocusWidget</a> abstract class will be keyboard focusable by default. The FocusWidget abstract class includes a
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html#setFocus(boolean)">setFocus(boolean)</a> method that
+<p>In GWT, any widget that extends the <a href="/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html">FocusWidget</a> abstract class will be keyboard focusable by default. The FocusWidget abstract class includes a
+<a href="/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html#setFocus(boolean)">setFocus(boolean)</a> method that
 can be used to programmatically set the focus or remove focus on the widget. FocusWidget also includes a
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html##setTabIndex(int)">setTabIndex(int)</a> method that allows the user to set the DOM property
+<a href="/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html##setTabIndex(int)">setTabIndex(int)</a> method that allows the user to set the DOM property
 <tt>tabIndex</tt> for the widget.</p>
 
 <p>Keep in mind that extending FocusWidget does not guarantee focusability for your widget. The base element of the the FocusWidget (passed to the superclass constructor) must be a naturally focusable HTML element.</p>
 
-<p>For widgets that don't extend the FocusWidget abstract class, ensuring keyboard accessibility can be more difficult. Different browsers set focus in different ways, and focus on arbitrary elements is not supported everywhere. You can use <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/FocusPanel.html">FocusPanel</a> to enclose elements that need to receive keyboard focus; just be sure to test your widget on different browsers.</p>
+<p>For widgets that don't extend the FocusWidget abstract class, ensuring keyboard accessibility can be more difficult. Different browsers set focus in different ways, and focus on arbitrary elements is not supported everywhere. You can use <a href="/javadoc/latest/com/google/gwt/user/client/ui/FocusPanel.html">FocusPanel</a> to enclose elements that need to receive keyboard focus; just be sure to test your widget on different browsers.</p>
 
 <p>For an example of using the <tt>tabIndex</tt> property, see the MenuBar widget. The root menu is the only one that should be in the tab sequence; its sub-menus are not. To
 achieve this, the tab index is set to 0 in the MenuBar's constructor, and as new MenuBars are added as sub-menus, their
@@ -216,10 +216,10 @@ tab index attribute is reset to -1.</p>
 
 <h2 id="selectionChanges">Indicating Selection Changes</h2>
 
-<p>Some widgets, such as GWT's <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a> widgets,
+<p>Some widgets, such as GWT's <a href="/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a> widgets,
 consist of a container with a set of items. The container has a naturally focusable DOM element, but the items
 themselves do not. The focusable element receives all keyboard input, and causes visual changes in the contained items
-to indicate a change in item selection. For example, GWT's Tree widget contains <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TreeItem.html">TreeItems</a>; both of these elements are made up of <tt>div</tt> elements. However, the Tree also
+to indicate a change in item selection. For example, GWT's Tree widget contains <a href="/javadoc/latest/com/google/gwt/user/client/ui/TreeItem.html">TreeItems</a>; both of these elements are made up of <tt>div</tt> elements. However, the Tree also
 has a naturally focusable hidden element which receives keyboard events. Whenever the user hits the arrow keys, this
 element handles the event and causes the appropriate TreeItem to be highlighted.</p>
 
@@ -288,7 +288,7 @@ widgets.</p>
 </pre>
 
 <p>Though it is not shown in this code snippet, when TreeItems are created, they are constructed out of several divs, only one of which contains the content that we wish to be
-interpreted by the screen reader. This div is assigned a unique DOM id (which is generated using the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/DOM.html#createUniqueId()">DOM.createUniqueId()</a> method), and a role of <tt>treeitem</tt>. These attributes are not set on the root TreeItem div because it contains a child image, which we do not want to be read.</p>
+interpreted by the screen reader. This div is assigned a unique DOM id (which is generated using the <a href="/javadoc/latest/com/google/gwt/user/client/DOM.html#createUniqueId()">DOM.createUniqueId()</a> method), and a role of <tt>treeitem</tt>. These attributes are not set on the root TreeItem div because it contains a child image, which we do not want to be read.</p>
 
 <h4>Caveats with this Approach</h4>
 
@@ -301,8 +301,8 @@ element that received keyboard focus. However, not all screen readers do this ye
 
 <h2 id="labels">Associating Meaningful Labels</h2>
 
-<p>A web page will often include human-readable descriptive elements (such as <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Label.html">Label</a> and
-<a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/HTML.html">HTML</a> widgets) that explain the purpose of a particular widget. However, the association
+<p>A web page will often include human-readable descriptive elements (such as <a href="/javadoc/latest/com/google/gwt/user/client/ui/Label.html">Label</a> and
+<a href="/javadoc/latest/com/google/gwt/user/client/ui/HTML.html">HTML</a> widgets) that explain the purpose of a particular widget. However, the association
 between a widget and its description may not be obvious to a browser or a screen reader. ARIA defines the <tt>aria-labelledby</tt> property which can be used to explicitly associate a widget with one or more descriptive elements.</p>
 
 <p>In order to associate a label with a widget, ensure that descriptive elements all have a unique id. The assigned id can later be used with to set the <tt>aria-labelledby</tt> state of a widget to refer to the id values of any descriptive elements, thereby associating those descriptive elements with the widget.</p>
