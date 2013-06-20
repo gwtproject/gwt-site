@@ -47,7 +47,7 @@ public void onModuleLoad() {
 <p>That's up to <b>four</b> server requests (depending on what is cached)
 just to send your user to the login page. And step 3 consists of
 downloading your entire GWT app, just to send your user away. Even if
-you take advantage of <a href="http://www.google.com/url?q=http%3A%2F%2Fcode.google.com%2Fwebtoolkit%2Fdoc%2Flatest%2FDevGuideCodeSplitting.html">code-splitting</a>,
+you take advantage of <a href="../doc/latest/DevGuideCodeSplitting.html">code-splitting</a>,
 at least some of your code has to be downloaded in order to check if the user is logged in.</p>
 
 <p>The ideal solution would be to only serve your GWT code if the
@@ -162,7 +162,7 @@ public native String getEmail() /*-{
 </pre>
 
 <p>Alternatively, you can take advantage of GWT's
-<a href="http://www.google.com/url?q=http%3A%2F%2Fgoogle-web-toolkit.googlecode.com%2Fsvn%2Fjavadoc%2F2.0%2Fcom%2Fgoogle%2Fgwt%2Fi18n%2Fclient%2FDictionary.html">Dictionary</a> class:</p>
+<a href="/javadoc/latest/com/google/gwt/i18n/client/Dictionary.html">Dictionary</a> class:</p>
 
 <pre class="prettyprint">
 public void onModuleLoad() {

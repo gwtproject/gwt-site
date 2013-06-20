@@ -71,7 +71,7 @@ The entry point for the app is <a href="http://code.google.com/p/google-web-tool
 </p>
 
 <p>
- When you log a message to a logger, if the Level of the message is high enough, it will pass the message on to its parent, which will pass it on to its parent, and so on, until the Root Logger is reached.  Along the way, any given logger (including the Root Logger) will also pass the message to any of its Handlers, and if the Level of the message is high enough, those handlers will output the message in some way (to a popup, to stderr, etc.). For a much more detailed explanation of this, see <a href="http://www.google.com/url?&amp;q=http%3A%2F%2Fjava.sun.com%2Fj2se%2F1.4.2%2Fdocs%2Fguide%2Futil%2Flogging%2Foverview.html" target="_top">http://java.sun.com/j2se/1.4.2/docs/guide/util/logging/overview.html</a>.
+ When you log a message to a logger, if the Level of the message is high enough, it will pass the message on to its parent, which will pass it on to its parent, and so on, until the Root Logger is reached.  Along the way, any given logger (including the Root Logger) will also pass the message to any of its Handlers, and if the Level of the message is high enough, those handlers will output the message in some way (to a popup, to stderr, etc.). For a much more detailed explanation of this, see <a href="http://java.sun.com/j2se/1.4.2/docs/guide/util/logging/overview.html" target="_top">http://java.sun.com/j2se/1.4.2/docs/guide/util/logging/overview.html</a>.
 </p>
 
 <p>
