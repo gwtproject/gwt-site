@@ -6,7 +6,7 @@
   	
   	
   	<excludes>
-		<exclude>index</exclude>
+		<exclude>roo-sts</exclude>
 	</excludes>    
   </toc>
 </folder>
