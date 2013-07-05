@@ -405,9 +405,7 @@ public class FileSystemTraverser {
 			sortChildrenAlphaBetically(list);
 			
 			for (MDNode mdNode : list) {
-				if(!mdNode.isExcludeFromToc()) {
 					sortedChildren.add(mdNode);
-				}
 			}
 			
 		}
