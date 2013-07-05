@@ -6,8 +6,5 @@
   	<entries>
   		<entry name="latest/" displayName="Latest" description="Latest GWT documentation"></entry>
   	</entries>
-    <excludes>
-      <exclude>index</exclude>
-    </excludes>
   </toc>
 </folder>
