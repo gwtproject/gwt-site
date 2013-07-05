@@ -92,7 +92,7 @@
       <b style="color: #444;">Note</b> - This download includes Eclipse tools as well as the option to install
       the GWT SDK and <a href="https://developer.google.com/appengine/docs/whatisgoogleappengine">App Engine SDK</a>.
       </p>
-      <p class="note" style="margin-top: 0.7em;">GWT release candidates are not bundled with The Google Plugin For Eclipse. Download the the SDK and add it to your workspace as described <a href="https://developers.google.com/eclipse/docs/using_sdks">here</a>.
+      <p class="note" style="margin-top: 0.7em;">GWT release candidates are not bundled with The Google Plugin For Eclipse. Download the SDK and add it to your workspace as described <a href="https://developers.google.com/eclipse/docs/using_sdks">here</a>.
       </p>
     </td>
     <td class="moreinfo" style="vertical-align:top; text-align:center">
