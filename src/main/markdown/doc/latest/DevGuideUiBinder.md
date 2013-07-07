@@ -641,7 +641,7 @@ parameters on it with a <code>&lt;ui:attributes></code> element. Any
 setters or constructor arguments can be called on the resource object
 this way, just as for any other object in the template. In the example
 below, note how the FancyResources object accepts a reference to the
-Resource declared in the previous example.
+Resource declared in the previous example.</p>
 
 <pre class="prettyprint">public class FancyResources {
   enum Style {
