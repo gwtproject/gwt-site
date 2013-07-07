@@ -140,11 +140,17 @@ public class JsonStockData extends HttpServlet {
     PrintWriter out = resp.getWriter();
     out.println('[');
     String[] stockSymbols = req.getParameter("q").split(" ");
+    boolean firstSymbol = true;
     for (String stockSymbol : stockSymbols) {
 
       double price = rnd.nextDouble() * MAX_PRICE;
       double change = price * MAX_PRICE_CHANGE * (rnd.nextDouble() * 2f - 1f);
 
+      if (firstSymbol) {
+        firstSymbol = false;
+      } else {
+        out.println("  ,");
+      }
       out.println("  {");
       out.print("    \"symbol\": \"");
       out.print(stockSymbol);
@@ -154,7 +160,7 @@ public class JsonStockData extends HttpServlet {
       out.println(',');
       out.print("    \"change\": ");
       out.println(change);
-      out.println("  },");
+      out.println("  }");
     }
     out.println(']');
     out.flush();
