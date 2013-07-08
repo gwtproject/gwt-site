@@ -33,7 +33,31 @@ In this section, you'll add a JUnit unit test to the StockWatcher project.
 <b>Note:</b> For a broader guide to JUnit testing, see <a href="../DevGuideTesting.html">JUnit Testing</a>.
 </p>
 
-{% include "web-toolkit/doc/latest/tutorial/_beforeyoubegin.html" %}
+<h2>Before you begin</h2>
+<h3>The StockWatcher project</h3>
+<p>
+This tutorial builds on the GWT concepts and the StockWatcher application created in the <a href="gettingstarted.html">Build a Sample GWT Application</a> tutorial. If you have not completed the Build a Sample GWT Application tutorial and are familiar with basic GWT concepts, you can import the StockWatcher project as coded to this point.
+</p>
+<ol class="instructions">
+    <li>
+        <div class="header">Download the <a href="http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-GettingStarted-2.1.zip">StockWatcher project</a>.</div>
+    </li>
+    <li>
+        <div class="header">Unzip the file.</div>
+    </li>
+    <li>
+        <div class="header">Import the project into Eclipse</div>
+        <ol>
+            <li>From the <code>File</code> menu, select the  <code>Import...</code> menu option.</li>
+            <li>Select the import source General &gt; Existing Projects into Workspace. Click the <code>Next</code> button.</li>
+            <li>For the root directory, browse to and select the StockWatcher directory (from the unzipped file). Click the <code>Finish</code> button.</li>
+        </ol>
+    </li>
+</ol>
+<p>
+If you are using ant, edit the <code>gwt.sdk</code> property in StockWatcher/build.xml to point to where you unzipped GWT.
+</p>
+
 If you are using ant, replace all references to <code>path_to_the_junit_jar</code> to point to the location of junit on your system.
 
 <p class="note">
