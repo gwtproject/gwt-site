@@ -342,7 +342,7 @@ module within a suite.
 <p>Ideally you should group your tests into as few modules as is
 practical, and should avoid having tests in a particular module run by
 more than one suite. (Tests are in the same module if they return
-return the same value
+the same value
 from <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#getModuleName()">getModuleName()</a>.)
 
 <p>GWTTestSuite class re-orders the test cases so that all cases that
