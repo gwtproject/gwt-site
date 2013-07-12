@@ -90,8 +90,9 @@ Currently it contains a single, simple test: the method testSimple.
 <ol class="instructions">
     <li>
         <div class="header">Open the StockWatcherTest.java file.</div>
+		<div class="details">
 
-        <div class="details"><pre class="code">
+<pre class="code">
 package com.google.gwt.sample.stockwatcher.client;
 
 import com.google.gwt.junit.client.GWTTestCase;
@@ -115,8 +116,10 @@ public class StockWatcherTest <span class="highlight">extends GWTTestCase</span>
     <span class="highlight">assertTrue(true);</span>
   }
 
-}</pre>
-    </li>
+}
+
+</pre>
+</li>
 </ol>
 <h4>Notes</h4>
 <p>
