@@ -774,7 +774,13 @@ your changes for review by using gerrit. Note: you need to have signed a <a href
 This works the same way you would submit a code change to GWT. More information can be found 
 <a href="#submittingpatches">here</a>.
 
+<h3 id="global_gitignore">Global .gitignore</h3>
 
+Since our .gitignore files don't contain IDE or OS specific .gitignore entries
+you should setup your global .gitignore.
 
-
+[This](https://help.github.com/articles/ignoring-files) is how you setup a
+global .gitingore.
+[Here](https://github.com/github/gitignore/tree/master/Global) you find a list
+of IDE specific global .gitignore files.
 
