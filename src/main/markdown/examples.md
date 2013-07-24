@@ -187,10 +187,7 @@ unique multi-server control panel. Visit our <a href="developer_spotlight.html">
 developer on GoGrid, share how they used GWT to build GoGrid, what he
 likes and would like to see from GWT, and his tips and learnings from
 developing with GWT.</div>
-    <!--
-    <br/>
-    <div><a href="http://www.youtube.com/watch?v=3dMrILwtiMI">GWT Developers - GoGrid</a></div>
-    -->
+
   </div>
 </div>
 
@@ -206,10 +203,7 @@ developing with GWT.</div>
 television and commercials. Visit our <a href="developer_spotlight.html">Developer Spotlight</a> to see Rob Powers, director of engineering, share
 how they used GWT to build scenechronize, what he likes and would like to
 see from GWT, and his tips and learnings from developing with GWT.</div>
-    <!--
-    <br/>
-    <div><a href="http://www.youtube.com/watch?v=2gqDsi8zRt4">GWT Developers - Scenechronize</a></div>
-    -->
+
   </div>
 </div>
 
@@ -224,10 +218,7 @@ is a social virtual world website which includes multi-player games.
 Visit our <a href="developer_spotlight.html">Developer Spotlight</a> to see Michael Bayne, CTO of Three Rings and lead engineer on Whirled, share
 how they used GWT to build Whirled, what he likes and would like to see
 from GWT, and his tips and learnings from developing with GWT.</div>
-    <!--
-    <br/>
-    <div><a href="http://www.youtube.com/watch?v=2gqDsi8zRt4">GWT Developers - Scenechronize</a></div>
-    -->
+
   </div>
 </div>
 
