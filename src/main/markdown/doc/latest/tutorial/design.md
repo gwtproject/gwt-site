@@ -7,16 +7,16 @@ code, .code {font-size: 9pt; font-family: Courier, Courier New, monospace; color
 .details {margin-top: 1ex;}
 </style>
 
-    <p>
-    At this point, you've created the stub files you need to start coding StockWatcher.
-    </p>
-    <p>
-    In this section, you'll review the functional requirements and design the user interface.
-    </p>
-    <ol>
-        <li><a href="#requirements">Examine the functional requirements.</a></li>
-        <li><a href="#elements">Identify the elements of the UI design.</a></li>
-    </ol>
+<p>
+At this point, you've created the stub files you need to start coding StockWatcher.
+</p>
+<p>
+In this section, you'll review the functional requirements and design the user interface.
+</p>
+<ol>
+    <li><a href="#requirements">Examine the functional requirements.</a></li>
+    <li><a href="#elements">Identify the elements of the UI design.</a></li>
+</ol>
 
 <a name="requirements"></a>
 <h2>1. Examining the functional requirements</h2>
