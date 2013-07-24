@@ -104,14 +104,20 @@ programmatic access to the UI constructs declared in the template. An
 owner class for the above template might look like this:
 </p>
 
-<pre class="prettyprint">public class HelloWorld extends UIObject {
+<pre class="prettyprint">public class HelloWorld {
   interface MyUiBinder extends UiBinder&lt;DivElement, HelloWorld> {}
   private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   @UiField SpanElement nameSpan;
 
+  private DivElement root;
+
   public HelloWorld() {
-    setElement(uiBinder.createAndBindUi(this));
+    root = uiBinder.createAndBindUi(this);
+  }
+
+  public Element getElement() {
+    return root;
   }
 
   public void setName(String name) { nameSpan.setInnerText(name); }
