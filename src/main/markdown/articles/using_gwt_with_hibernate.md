@@ -361,7 +361,7 @@ public class RecordDTO implements Serializable {
 
 <p><b>Account.java</b></p>
 
-<pre class"code">
+<pre class="code">
 public Account(AccountDTO accountDTO) {
   id = accountDTO.getId();
   name = accountDTO.getName();
