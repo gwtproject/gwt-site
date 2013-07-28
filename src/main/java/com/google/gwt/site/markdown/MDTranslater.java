@@ -25,7 +25,7 @@ import java.util.List;
 
 public class MDTranslater {
 
-	private PegDownProcessor pegDownProcessor = new PegDownProcessor();
+	private PegDownProcessor pegDownProcessor = new PegDownProcessor(Long.MAX_VALUE);
 
 	private final TocCreator tocCreator;
 
