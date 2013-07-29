@@ -223,7 +223,7 @@ The development shell servlet received a request for 'rpcs/myService' in module 
 <h4>Troubleshooting checklist</h4>
 
 <ul>
-<li>Is the server side code defined and in the appropriate directory?</li>
+<li>Is the server-side code defined and in the appropriate directory?</li>
 </ul>
 
 <blockquote>By convention, services are located in the <i>server</i> directory in the <a href="DevGuideOrganizingProjects.html#DevGuideDirectoriesPackageConventions">standard project
@@ -241,7 +241,7 @@ structure.</a></blockquote>
 </ul>
 
 <ul>
-<li>Have you complied the server side code?</li>
+<li>Have you compiled the server-side code?</li>
 </ul>
 
 <blockquote>

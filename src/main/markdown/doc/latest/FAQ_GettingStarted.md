@@ -93,7 +93,7 @@ Does it work for my language?</h3>
 
 <p>We won't log cookies or personal information about you, and we will only use any data we log in the aggregate to operate and improve GWT. We use this information internally to determine usage volume of the development mode server and compiler in the aggregate.</p>
 
-<p>You may choose to not use the development mode server and uninstall the the browser plugin at any time. You may use just the GWT compiler with the flag "-XdisableUpdateCheck" to compile your code directly to JavaScript. This does not send a request for the most recent version of GWT.</p>
+<p>You may choose to not use the development mode server and uninstall the browser plugin at any time. You may use just the GWT compiler with the flag "-XdisableUpdateCheck" to compile your code directly to JavaScript. This does not send a request for the most recent version of GWT.</p>
 
 <p/>
 

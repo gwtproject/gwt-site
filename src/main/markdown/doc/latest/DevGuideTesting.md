@@ -270,10 +270,10 @@ http://172.29.212.75:58339/com.google.gwt.user.User.JUnit/junit.html?gwt.codesvr
 
 <h3>Server side testing</h3>
 
-<p>The tests described above are intended to assist with testing client side code. The test case wrapper <tt>GWTTestCase</tt> will launch either a development mode session or a web
-browser to test the generated JavaScript. On the other hand, server side code runs as native Java in a JVM without being translated to JavaScript, so it is not necessary to run
-tests of server side code using <tt>GWTTestCase</tt> as the base class for your tests. Instead, use JUnit's <tt>TestCase</tt> and other related classes directly when writing tests for
-your application's server side code. That said, you may want both GWTTestCase and TestCase coverage of code that will be used on both the client and the server. </p>
+<p>The tests described above are intended to assist with testing client-side code. The test case wrapper <tt>GWTTestCase</tt> will launch either a development mode session or a web
+browser to test the generated JavaScript. On the other hand, server-side code runs as native Java in a JVM without being translated to JavaScript, so it is not necessary to run
+tests of server-side code using <tt>GWTTestCase</tt> as the base class for your tests. Instead, use JUnit's <tt>TestCase</tt> and other related classes directly when writing tests for
+your application's server-side code. That said, you may want both GWTTestCase and TestCase coverage of code that will be used on both the client and the server. </p>
 
 <h2 id="DevGuideAsynchronousTesting">Asynchronous Testing</h2>
 

@@ -40,10 +40,10 @@ the following describes privacy practices specific to GWT.</p>
 <h2>Your Choices</h2>
 
 <p>You may choose to not use the development mode server and uninstall the
-  the browser plugin at any time. You may use just the  GWT compiler with the 
-  flag "-XdisableUpdateCheck" to compile 
-  your code directly to JavaScript. This does not send a request for the most 
-  recent version of GWT.</p> 
+  browser plugin at any time. You may use just the GWT compiler with the
+  flag "-XdisableUpdateCheck" to compile
+  your code directly to JavaScript. This does not send a request for the most
+  recent version of GWT.</p>
 
 
 <h2>More Information</h2>

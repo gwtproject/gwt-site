@@ -22,7 +22,7 @@ The following sections walk through a logging example application and introduce 
 <h2 id="Overview_of_the_Logging_Framework"> Overview of the Logging Framework </h2>
 
 <p>
-The logging framework emulates java.util.logging, so it uses the same syntax and has the same behavior as server side logging code.  This allows you to share logging code between the client and server side code.  A good overview of java logging is here: <a href="http://download.oracle.com/javase/6/docs/technotes/guides/logging/overview.html">http://download.oracle.com/javase/6/docs/technotes/guides/logging/overview.html</a>; you should familiarize yourself with java.util.logging to get a good feel for how to use GWT logging.
+The logging framework emulates java.util.logging, so it uses the same syntax and has the same behavior as server-side logging code.  This allows you to share logging code between the client-side and server-side code.  A good overview of java logging is here: <a href="http://download.oracle.com/javase/6/docs/technotes/guides/logging/overview.html">http://download.oracle.com/javase/6/docs/technotes/guides/logging/overview.html</a>; you should familiarize yourself with java.util.logging to get a good feel for how to use GWT logging.
 </p>
 
 <p>
@@ -231,7 +231,7 @@ To make this clear, the client-side GWT code has a Root Logger (and logger hiera
 <h2 id="Remote_Logging"> Remote Logging </h2>
 
 <p>
- In order for events that are logged by client side code to be stored on the server side, you need to use a <code>RemoteLogHandler</code>.  This handler will send log messages to the server, where they will be logged using the server side logging mechanism. GWT currently contains a <code>SimpleRemoteLogHandler</code> which will do this in the simplest possible way (using GWT-RPC) and no intelligent batching, exponential backoffs in case of failure, and so forth.  This logger is disabled by default, but you can enable it in the .gwt.xml file (see the section on Handlers above for more details on configuring the default Handlers).
+ In order for events that are logged by client-side code to be stored on the server side, you need to use a <code>RemoteLogHandler</code>.  This handler will send log messages to the server, where they will be logged using the server-side logging mechanism. GWT currently contains a <code>SimpleRemoteLogHandler</code> which will do this in the simplest possible way (using GWT-RPC) and no intelligent batching, exponential backoffs in case of failure, and so forth.  This logger is disabled by default, but you can enable it in the .gwt.xml file (see the section on Handlers above for more details on configuring the default Handlers).
 </p>
 
 <pre class="prettyprint">

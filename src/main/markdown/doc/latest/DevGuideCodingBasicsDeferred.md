@@ -112,7 +112,7 @@ The actual replacement rules are specified in <tt>Popup.gwt.xml</tt>, as shown b
 &lt;/module&gt;
 </pre>
 
-<p>These directives tell the GWT compiler to swap out the <tt>PoupImpl</tt> class code with different class implementations according to the the <tt>user.agent</tt> property. The
+<p>These directives tell the GWT compiler to swap out the <tt>PoupImpl</tt> class code with different class implementations according to the <tt>user.agent</tt> property. The
 <tt>Popup.gwt.xml</tt> file specifies a default implementation for the <tt>PopupImpl</tt> class, an overide for the Mozilla browser (<tt>PopupImplMozilla</tt> is substituted for
 <tt>PopupImpl</tt>), and an override for Internet Explorer version 6 (<tt>PopupImplIE6</tt> is substituted for <tt>PopupImpl</tt>). Note that <tt>PopupImpl</tt> class or its
 derived classes cannot be instantiated directly. Instead, the <tt>PopupPanel</tt> class is used and the <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create(Class)</a> technique is used

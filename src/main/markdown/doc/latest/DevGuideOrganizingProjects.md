@@ -278,7 +278,7 @@ page.</td>
 <tr>
 <td><nobr><tt>DynaTable/war/WEB-INF/classes</tt></nobr></td>
 <td/>
-<td>Java compiled class files live here to implement server side functionality. If you're using an IDE set the output directory to
+<td>Java compiled class files live here to implement server-side functionality. If you're using an IDE set the output directory to
 this folder.</td>
 </tr>
 

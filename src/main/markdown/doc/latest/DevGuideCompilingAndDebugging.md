@@ -124,7 +124,7 @@ the URL as necessary).</p>
 <p><a href="images/HostedMode1.png"><img src="images/HostedMode1.png" width="50%"/></a></p>
 
 <p>When a module is loaded in a browser, you will see a new tab which contains
-the the logs for one URL in a particular browser.  If there are multiple
+the logs for one URL in a particular browser.  If there are multiple
 modules on one page, there will be a drop-down box to select which module's
 logs are shown.  When you refresh a page, there is a session drop-down box
 which lets you select which session's logs to show.</p>
@@ -151,7 +151,7 @@ making changes.</p>
 <p>Similarly, the <i>Restart Server</i> button in the Jetty tab allows you to
 restart the embedded Jetty server without having to close and restart
 Development Mode. This is useful when you have made configuration or code
-changes to your server side code. All server side classes will be reloaded
+changes to your server-side code. All server-side classes will be reloaded
 from scratch with fresh code for your <tt>war/WEB-INF/classes</tt> and
 <tt>war/WEB-INF/lib</tt> folders. If you are getting an <a
 href="/javadoc/latest/com/google/gwt/user/client/rpc/IncompatibleRemoteServiceException.html">IncompatibleRemoteServiceException</a>
@@ -337,7 +337,7 @@ the same debugger instance you use to debug development mode. However, if the se
 </li>
 
 <li>Compile your application once using the ant build target.  Ideally, you can use GWT's -war option to generate output files directly into your
-external server's static content folder.  Otherwise, you'll need to copy the the GWT output folder from <tt>war/&lt;moduleName&gt;</tt> to your external server's
+external server's static content folder.  Otherwise, you'll need to copy the GWT output folder from <tt>war/&lt;moduleName&gt;</tt> to your external server's
 static content.</li>
 
 </ol>

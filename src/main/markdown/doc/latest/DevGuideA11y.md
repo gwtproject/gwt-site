@@ -206,7 +206,7 @@ can be used to programmatically set the focus or remove focus on the widget. Foc
 <a href="/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html##setTabIndex(int)">setTabIndex(int)</a> method that allows the user to set the DOM property
 <tt>tabIndex</tt> for the widget.</p>
 
-<p>Keep in mind that extending FocusWidget does not guarantee focusability for your widget. The base element of the the FocusWidget (passed to the superclass constructor) must be a naturally focusable HTML element.</p>
+<p>Keep in mind that extending FocusWidget does not guarantee focusability for your widget. The base element of the FocusWidget (passed to the superclass constructor) must be a naturally focusable HTML element.</p>
 
 <p>For widgets that don't extend the FocusWidget abstract class, ensuring keyboard accessibility can be more difficult. Different browsers set focus in different ways, and focus on arbitrary elements is not supported everywhere. You can use <a href="/javadoc/latest/com/google/gwt/user/client/ui/FocusPanel.html">FocusPanel</a> to enclose elements that need to receive keyboard focus; just be sure to test your widget on different browsers.</p>
 

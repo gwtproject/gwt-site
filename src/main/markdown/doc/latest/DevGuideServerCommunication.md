@@ -33,14 +33,14 @@ documentation.</p>
 server (for example, to load or save data), it makes an HTTP request across the network using a <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">remote procedure
 call (RPC)</a>. While processing an RPC, your server is executing server-side code.</p>
 
-<p>GWT provides an RPC mechanism based on Java Servlets to provide access to server side resources. This mechanism includes generation of efficent client and server side code to
+<p>GWT provides an RPC mechanism based on Java Servlets to provide access to server-side resources. This mechanism includes generation of efficent client-side and server-side code to
 <a href="DevGuideServerCommunication.html#DevGuideSerializableTypes">serialize</a> objects across the network using <a href="DevGuideCodingBasics.html#DevGuideDeferredBinding">deferred
 binding</a>.</p>
 
 <p class="note"><strong>Tip:</strong> Although GWT translates Java into JavaScript for client-side code, GWT does not meddle with your ability to run Java bytecode on your server whatsoever.
 Server-side code doesn't need to be translatable, so you're free to use any Java library you find useful.</p>
 
-<p>GWT does not limit you to this one RPC mechanism or server side development environment. You are free to integrate with other RPC mechanisms, such as JSON using the GWT
+<p>GWT does not limit you to this one RPC mechanism or server-side development environment. You are free to integrate with other RPC mechanisms, such as JSON using the GWT
 supplied <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a> class, <a href="DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface">JSNI</a> methods or a third party library.</p>
 
 
@@ -188,7 +188,7 @@ client-side code when your run your application in development mode using a Java
 renamed value instead; either way it must match the actual subdirectory within your war directory where your GWT module lives (the module base URL). The second part must match the
 value you specified in the <a href="/javadoc/latest/com/google/gwt/user/client/rpc/RemoteServiceRelativePath.html">RemoteServiceRelativePath</a> annotation you annotated <tt>com.example.foo.client.MyService</tt> with.</p>
 
-<p>When testing out both the client and server side code in development mode, make sure to place a copy of the <tt>gwt-servlet.jar</tt> into your <tt>war/WEB-INF/lib</tt> directory,
+<p>When testing out both the client-side and server-side code in development mode, make sure to place a copy of the <tt>gwt-servlet.jar</tt> into your <tt>war/WEB-INF/lib</tt> directory,
 and make sure your Java output directory is set to <tt>war/WEB-INF/classes</tt>. Otherwise the embedded Jetty server will not be able to load your servlet properly.</p>
 
 <h3>Common Pitfalls</h3>
@@ -496,7 +496,7 @@ public final class HashMap_ServerCustomFieldSerializer extends ServerCustomField
 </pre>
 
 <p>All server custom field serializer classes must implement the
-client side
+client-side
 <code><a
 href="/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html">
 CustomFieldSerializer&lt;T&gt;</a></code> methods, the additional
@@ -625,7 +625,7 @@ can simply run <tt>ant war</tt> in your project directory. The Ant <tt>build.xml
 <p>If you encounter any problems, take look in the Tomcat log file, which can be found in the <tt>logs</tt> directory of your Tomcat installation. If your web pages display but
 the RPC calls don't seem to be going through, try turning on access logging on Tomcat. You may find that the URL used by the client side has not been registered by Tomcat, or that
 there is a misconfiguration between the URL path set in the <tt>setServiceEntryPoint(URL)</tt> call when declaring your RPC service and the <tt>&lt;url-pattern&gt;</tt> URL
-mapping the the <tt>web.xml</tt> file.</p>
+mapping the <tt>web.xml</tt> file.</p>
 
 <h3>Using Tomcat with Apache HTTPD and a proxy</h3>
 
