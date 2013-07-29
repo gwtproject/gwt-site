@@ -188,7 +188,7 @@ it to <a href="/javadoc/latest/com/google/gwt/core/client/Scheduler.html#schedul
     public void execute () {
       dataEntry.setFocus();
     }
-  }
+  });
 
   dataEntry = new TextBox();
 </pre>
