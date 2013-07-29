@@ -214,7 +214,7 @@ can't optimize it as much, which makes us sad.</p>
 <p>Overlay types are a key feature, made available in GWT 1.6. At its simplest, the technique makes direct interop with JavaScript libraries much easier. Hopefully after this post you could
 imagine how to almost directly port any JavaScript library into GWT as a set of Java types, thus allowing the use of a Java IDE for productive development and debugging without
 impacting size or speed due to any sort of GWT overhead. At the same time, overlay types serve as a powerful abstraction tool for delivering more elegant low-level APIs such as
-the the <a href="/javadoc/latest/com/google/gwt/dom/client/package-tree.html">new GWT DOM package</a>.</p>
+the <a href="/javadoc/latest/com/google/gwt/dom/client/package-tree.html">new GWT DOM package</a>.</p>
 
 <p>For more information...</p>
 

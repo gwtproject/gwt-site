@@ -128,7 +128,7 @@ At this point when you enter a stock code, StockWatcher should add it to the sto
      <li>
         <div class="header">Verify that you can't add duplicate stocks to the table.</div>
         <div class="details">Add a stock code that already exist in the table.</div>
-        <div class="details">StockWatcher should clear the input box but not add the the same stock code again.</div>
+        <div class="details">StockWatcher should clear the input box but not add the same stock code again.</div>
     </li>
     <li>
         <div class="header">Delete a stock.</div>
