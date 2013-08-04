@@ -4,7 +4,6 @@
   <li><a href="#ConfiguringYourPath">Configuring Your Path</a></li>
   <li><a href="#webAppCreator">webAppCreator</a></li>
   <li><a href="#i18nCreator">i18nCreator</a></li>
-{#<li><a href="#benchmarkViewer">benchmarkViewer</a></li> COMMENTED OUT-- SEE benchmarkViewer NOTE BELOW#}
 </ol>
 
 
