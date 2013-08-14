@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Google Web Toolkit Developer Plugin Not Installed</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.yellowPane {
+  padding: 5px 10px 20px;
+  background-color: #ff8;
+  border-bottom: 2px solid #dd9;
+  font-family: Verdana;
+  font-size: 9pt;
+}
+
+h1, p {
+  margin: 0px;
+  padding-top: 10px;
+}
+
+h1 {
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+.smallDescr {
+  margin-top: 2px;
+  margin-right: 8px;
+  text-align: right;
+  font-size: 80%;
+  display: block;
+  color: black;
+}
+
+.buttonGroup {
+  display: table;
+  margin: 10px 0 0 30px;
+}
+
+.details {
+  font-size: 80%;
+  font-style: italic;
+}
+
+.button {
+  display: table;
+  margin-top: 8px;
+  padding: 9px;
+  background-color: #789efa;
+  border: 2px solid #5e7aab;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 3px;
+}
+
+.buttonText {
+  display: table-cell;
+  padding-left: 8px;
+  padding-right: 12px;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: white;
+  text-align: right;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.buttonIconHolder {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.downloadIcon {
+  height: 32px;
+  width: 32px;
+  overflow: hidden;
+  background: url("download.gif");
+}
+
+.unsupportedIcon {
+  height: 42px;
+  width: 42px;
+  overflow: hidden;
+  background: url("unsupported.gif");
+}
+
+*[hidden] {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+  <noscript>&lt;div style="width: 22em; position: absolute; left:
+  50%; margin-left: -11em; color: red; background-color: white;
+  border: 1px solid red; padding: 4px; font-family: sans-serif"&gt;
+  The Google Web Toolkit Developer Plugin does not appear to be
+  installed. Also, you also don't seem to have a browser that is
+  willing to run JavaScript. Please enable JavaScript or switch to
+  a browser that supports JavaScript and try again.
+  &lt;/div&gt;</noscript>
+
+  <div class="yellowPane">
+    <h1>
+      Development Mode requires the Google Web Toolkit Developer Plugin
+    </h1>
+
+    <p>
+      By downloading, you agree to the <a
+      href="http://code.google.com/webtoolkit/terms.html">Terms &amp;
+      Conditions</a> and <a href="http://code.google.com/webtoolkit/privacy.html"
+      >Privacy Policy</a>.
+    </p>
+
+    <div id="bestButton" class="buttonGroup">
+      <div id="bestButtonHolder"></div>
+
+      <a href="javascript:showBest(false)" class="smallDescr">plugins for other systems</a>
+    </div>
+
+    <div id="allButtons" class="buttonGroup" hidden>
+      <div id="allButtonsHolder"></div>
+
+      <a href="javascript:showBest(true)" class="smallDescr">suggested download only</a>
+    </div>
+
+    <p>
+      For help or troubleshooting, ask questions in the <a
+      href="http://groups.google.com/group/google-web-toolkit">discussion
+      group</a>.
+    </p>
+  </div>
+
+<script>
+var allDownloads = {
+  "unknown": {
+    "caption": "Regrettably, this browser is currently unsupported :-(",
+  },
+
+  "firefox-old": {
+    "caption": "Sorry, the GWT Developer Plugin only supports Firefox 3.0 - 23.0 at present",
+  },
+
+  "opera": {
+    "caption": "Sorry, there is currently no GWT Developer Plugin for Opera",
+  },
+
+  "safari-iphone": {
+    "caption": "Sorry, there is currently no GWT Developer Plugin for mobile Safari",
+  },
+
+  "webkit-android": {
+    "caption": "Sorry, there is currently no GWT Developer Plugin for mobile WebKit",
+  },
+
+  "chrome": {
+    "caption": "Download the GWT Developer Plugin<br>For Chrome",
+    "url": "https://chrome.google.com/webstore/detail/gwt-developer-plugin/jpjpnpmbddbjkfaccnmhnkdgjideieim",
+    "platforms": "Win x86, Linux x86/x86_64, Mac x86",
+  },
+
+  "safari-win": {
+    "caption": "Sorry, there is currently no GWT Developer Plugin for Safari on Windows",
+  },
+
+  "firefox": {
+    "caption": "Download the GWT Developer Plugin<br>For Firefox",
+    "url": "https://dl-ssl.google.com/gwt/plugins/firefox/gwt-dev-plugin.xpi",
+    "platforms": "Win x86, Linux x86/x86_64, Mac x86/x86_64",
+  },
+
+  "ie": {
+    "caption": "Download the GWT Developer Plugin<br>For Internet Explorer",
+    "url": "https://dl-ssl.google.com/tag/s/appguid%3D%7B9a5e649a-ec63-4c7d-99bf-75adb345e7e5%7D%26lang%3Den%26appname%3DGWT%2520Developer%2520Plugin%2520for%2520IE%2520%2528x86%2529%26needsadmin%3Dfalse/gwt/plugins/ie/GwtDevPluginSetup.exe",
+    "platforms": "Win x86",
+  },
+
+  "ie-x64": {
+    "caption": "Download the GWT Developer Plugin<br>For Internet Explorer (64-bit)",
+    "url": "https://dl-ssl.google.com/tag/s/appguid%3D%7B53dae7d2-8c28-440f-920b-b2d665ce73b2%7D%26lang%3Den%26appname%3DGWT%2520Developer%2520Plugin%2520for%2520IE%2520%2528x64%2529%26needsadmin%3Dfalse/gwt/plugins/ie/GwtDevPluginSetup.exe",
+    "platforms": "Win x64",
+  },
+
+  "safari-mac": {
+    "caption": "Download the GWT Developer Plugin<br>For Safari",
+    "url": "https://dl-ssl.google.com/gwt/plugins/safari/gwt-dev-plugin.dmg",
+    "platforms": "Mac x86/x86_64/PPC",
+  },
+
+  "safari-mac-late": {
+    "caption": "Sorry, there is currently no GWT Developer Plugin for Safari 5.1<br>" + "or later, due to major changes in the Safari plugin API. <br><br>" + "In the meantime, <a href='http://www.omnigroup.com/products/omniweb/'>OmniWeb 5.11<\/a> is similar to Safari 5.0 and <br>" + "known to work.",
+  }
+};
+
+function leadingDigits(s) {
+  var suffix = s.search(/[^\d]/g);
+  if (suffix != -1) {
+    s = s.substring(0, suffix);
+  }
+  return s;
+}
+
+function isSafariLate(ua) {
+  // Distinguish Safari from something "like Safari", e.g. OmniWeb
+  // "Version/" comes after "like"
+  var versionAndBeyond = ua.substring(ua.indexOf("version/"));
+  if (versionAndBeyond.indexOf("safari/") == -1) {
+    return false;
+  }
+
+  var componentsAfterVersion =
+    ua.substring(ua.indexOf("version/") + "version/".length).split(" ");
+  var version = componentsAfterVersion[0].split(".");
+
+  var major = Number(version[0]);
+  // Sometimes minor has a suffix like "dp1"
+  var minor = Number(leadingDigits(version[1]));
+
+  return major > 5 || major == 5 && minor > 0;
+}
+
+var ua = navigator.userAgent.toLowerCase();
+var id = 'unknown';
+if (ua.indexOf("webkit") != -1) {
+  if ((ua.indexOf("iphone") != -1) || (ua.indexOf("ipod") != -1)) {
+    id = 'safari-iphone';
+  } else if (ua.indexOf("android") != -1) {
+    id = 'webkit-android';
+  } else if (ua.indexOf("chrome") != -1) {
+    id = 'chrome';
+  } else if (ua.indexOf("macintosh") != -1) {
+    if (isSafariLate(ua)) {
+      id = 'safari-mac-late';
+    } else {
+      id = 'safari-mac';
+    }
+  } else if (ua.indexOf("windows") != -1) {
+    id = 'safari-win';
+  }
+} else if (ua.indexOf("msie") != -1) {
+  id = (ua.indexOf("win64") == -1) ? 'ie' : 'ie-x64';
+} else if (ua.indexOf("opera") != -1) {
+  id = 'opera';
+} else if (ua.indexOf("gecko") != -1) {
+  // Note: Gecko version != Firefox version before 5.0.
+  // See: https://developer.mozilla.org/en-US/docs/Gecko_user_agent_string_reference
+  var gecko_versions = ["1.9", "2.0", "5.0", "6.0", "7.0", "8.0", "9.0", "10.0", "11.0", "12.0", "13.0", "14.0", "15.0", "16.0", "17.0", "18.0", "19.0", "20.0", "21.0", "22.0", "23.0"];
+  id = 'firefox-old';
+  for (var i = 0; i < gecko_versions.length; i++) {
+    if (ua.indexOf("rv:" + gecko_versions[i]) != -1) {
+      id = 'firefox';
+      break;
+    }
+  }
+}
+
+var bestButtonHolder = document.getElementById('bestButtonHolder');
+var allButtonsHolder = document.getElementById('allButtonsHolder');
+
+var val = allDownloads[id];
+bestButtonHolder.appendChild(
+  makeButton(val.caption, "", val.url));
+
+for (var key in allDownloads) {
+  var val = allDownloads[key];
+  if (!val.url) {
+    continue;
+  }
+
+  allButtonsHolder.appendChild(
+    makeButton(val.caption, val.platforms, val.url));
+}
+
+function makeButton(descr, plats, url) {
+  var supported = true;
+  if (!url) {
+    url = "http://groups.google.com/group/google-web-toolkit";
+    supported = false;
+  }
+
+  function anchor(url) {
+    var n = document.createElement('a');
+    n.setAttribute('href', url);
+    for (var i = 1; i < arguments.length; i++)
+      n.appendChild(arguments[i]);
+    return n;
+  }
+
+  function div(klass) {
+    var n = document.createElement('div');
+    n.setAttribute('class', klass);
+    for (var i = 1; i < arguments.length; i++)
+      n.appendChild(arguments[i]);
+    return n;
+  }
+
+  function text(body) {
+    return document.createTextNode(body);
+  }
+
+  function html(body) {
+    var n = document.createElement('div');
+    n.innerHTML = body;
+    return n;
+  }
+
+  return anchor(url,
+    div('button',
+      div('buttonText',
+        html(descr),
+        div('details',
+          text(plats))),
+      div('buttonIconHolder',
+        div(supported ? 'downloadIcon' : 'unsupportedIcon'))));
+}
+
+function showBest(x) {
+  function show(e) { e.removeAttribute('hidden'); }
+  function hide(e) { e.setAttribute('hidden', 'hidden'); }
+
+  if (x) {
+    show(bestButton);
+    hide(allButtons);
+  } else {
+    show(allButtons);
+    hide(bestButton);
+  }
+}
+</script>
+</body>
+</html>
