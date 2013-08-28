@@ -53,7 +53,7 @@ the user uses the back button, a call will be made to any object that was added 
 <pre class="prettyprint">
   &lt;iframe src=&quot;javascript:''&quot;
           id=&quot;__gwt_historyFrame&quot;
-          style=&quot;width:0;height:0;border:0&quot;&gt;&lt;/iframe&gt;
+          style=&quot;position:absolute;width:0;height:0;border:0&quot;&gt;&lt;/iframe&gt;
 </pre>
 
 <p>Then, in your GWT application, perform the following steps:</p>
