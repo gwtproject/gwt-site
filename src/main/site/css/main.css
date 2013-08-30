@@ -85,6 +85,20 @@ body {
 	color: white;
 }
 
+#gwt-header2 .gwt-wrap {
+  position: relative;
+}
+
+#gwt-header2 .gwtcreate {
+  position: absolute;
+  top: 5px;
+  right: -20px;
+}
+
+#gwt-header2 .gwtcreate img {
+  width: 474px;
+}
+
 #gwt-header3 {
   background-color: #ceedf4;
 }
