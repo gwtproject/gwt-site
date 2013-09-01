@@ -153,11 +153,11 @@ referencing the <tt>&lt;</tt>module<tt>&gt;</tt>.nocache.js file to include the 
 <h4 id="Additional_considerations">Additional considerations</h4>
 
 <p>Usually applications will need additional content, such as images and CSS files, and of course dynamic resources such as RPC or JSON URLs. The techniques described above will
-change not only the path used to fetch GWT's application files, but also the value returned by the GWT.getModuleBaseURL() method. If your application uses that method to construct
+change not only the path used to fetch GWT's application files, but also the value returned by the GWT.getModuleBaseURL() and GWT.getModuleBaseForStaticFiles() methods. If your application uses that method to construct
 URLs to additional resources, be sure that the resources are located in the appropriate directory. For example, if you remap your GWT files to '/gwt-files/', but your host page is
-<tt>/index.html</tt>, then the code <tt>GWT.getModuleBaseURL() + &quot;myImage.png&quot;</tt> will result in the URL <tt>/gwt-files/myImage.png</tt>.</p>
+<tt>/index.html</tt>, then the code <tt>GWT.getModuleBaseForStaticFiles() + &quot;myImage.png&quot;</tt> will result in the URL <tt>/gwt-files/myImage.png</tt>.</p>
 
-<p>It's important to take care if your code refers to resources using GWT.getModuleBaseURL(). This is an especially common concern for those using Java Servlets, because the
+<p>It's important to take care if your code refers to resources using GWT.getModuleBaseURL() or GWT.getModuleBaseForStaticFiles(). This is an especially common concern for those using Java Servlets, because the
 Servlet mapping must be set appropriately in the module XML file (.gwt.xml).</p>
 
 <p/>

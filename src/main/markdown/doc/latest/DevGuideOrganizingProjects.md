@@ -166,17 +166,17 @@ is not).</li>
 </tr>
 
 <tr>
-<td><tt>com.google.gwt.sample.dynatable</tt> </td>
+<td><tt>com.google.gwt.sample.dynatable.public</tt> </td>
 <td/>
 <td>Static resources that are loaded programmatically by GWT code. Files in the public directory are copied into the same directory
 as the GWT compiler output.</td>
 </tr>
 
 <tr>
-<td><tt>com.google.gwt.sample.dynatable</tt> </td>
+<td><tt>com.google.gwt.sample.dynatable.public</tt> </td>
 <td><tt>logo.gif</tt> </td>
 <td>An image file available to the application code. You might load this file programmatically using this URL:
-<tt>GWT.getModuleBaseURL() + &quot;logo.gif&quot;</tt>.</td>
+<tt>GWT.getModuleBaseForStaticFiles() + &quot;logo.gif&quot;</tt>.</td>
 </tr>
 
 <tr>
@@ -371,8 +371,8 @@ combined so that each module will have access to the translatable source it requ
 <p>Modules can specify which subpackages are <i>public</i>, causing the named package and its subpackages to be added to the <i>public path</i>. The public path is the place in
 your project where static resources referenced by your GWT module, such as CSS or images, are stored. When you compile your application into JavaScript, all the files that can be
 found on your public path are copied to the module's output directory. When referencing public resources in client code (for example, setting the URL of an <tt>Image</tt> widget,
-you should construct the URL like this: <tt>GWT.getModuleBaseURL() + &quot;resourceName.png&quot;</tt>. When referencing public resources from a <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">Module XML File</a>, just use the relative path within the public folder, the module's base URL will be prepended automatically.
-When amodule inherits other modules, their public paths are combined so that each module will have access to the static resources it expects.</p>
+you should construct the URL like this: <tt>GWT.getModuleBaseForStaticFiles() + &quot;resourceName.png&quot;</tt>. When referencing public resources from a <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">Module XML File</a>, just use the relative path within the public folder, the module's base URL will be prepended automatically.
+When a module inherits other modules, their public paths are combined so that each module will have access to the static resources it expects.</p>
 
 <p>The default public path is the <i>public</i> subdirectory underneath where the <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">Module XML File</a> is stored.</p>
 
@@ -838,7 +838,7 @@ attached to the <a href="DevGuideOrganizingProjects.html#DevGuideHostPage">host 
 <h3>Relative vs. Absolute URL</h3>
 
 <p>If an absolute URL is specified in the <tt>src</tt> attribute, that URL will be used verbatim. However, if a non-absolute URL is used (for example, &quot;foo.css&quot;), the module's
-base URL is prepended to the resource name. This is identical to constructing an absolute URL using <tt>GWT.getModuleBaseURL() + &quot;foo.css&quot;</tt> in client code. This is useful when
+base URL is prepended to the resource name. This is identical to constructing an absolute URL using <tt>GWT.getModuleBaseForStaticFiles() + &quot;foo.css&quot;</tt> in client code. This is useful when
 the target resource is from the module's public path.</p>
 
 <h3>Inclusion and Module Inheritance</h3>
