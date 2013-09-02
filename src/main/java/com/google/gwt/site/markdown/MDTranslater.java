@@ -91,10 +91,6 @@ public class MDTranslater {
 		headBuffer.append(baseUrl);
 		headBuffer.append("css/main.css' rel='stylesheet' type='text/css'>");
 
-		headBuffer.append("<script src='");
-		headBuffer.append(baseUrl);
-		headBuffer.append("js/main.js'></script>");
-
 		return headBuffer.toString();
 	}
 
