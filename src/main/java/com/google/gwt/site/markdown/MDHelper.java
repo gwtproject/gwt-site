@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Daniel Kurka
+ * Copyright 2013 Google Inc.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -21,97 +21,101 @@ import com.google.gwt.site.markdown.fs.MDParent;
 import com.google.gwt.site.markdown.toc.TocCreator;
 
 public class MDHelper {
-	private String sourceDirectory;
-	private String outputDirectory;
+  private String sourceDirectory;
+  private String outputDirectory;
 
-	private String templateFile;
+  private String templateFile;
 
-	private boolean created = false;
-	private File sourceDirectoryFile;
-	private File outputDirectoryFile;
-	private String template;
+  private boolean created = false;
+  private File sourceDirectoryFile;
+  private File outputDirectoryFile;
+  private String template;
 
-	public MDHelper setSourceDirectory(String sourceDirectory) {
-		this.sourceDirectory = sourceDirectory;
-		return this;
-	}
+  public MDHelper setSourceDirectory(String sourceDirectory) {
+    this.sourceDirectory = sourceDirectory;
+    return this;
+  }
 
-	public MDHelper setOutputDirectory(String outputDirectory) {
-		this.outputDirectory = outputDirectory;
-		return this;
-	}
+  public MDHelper setOutputDirectory(String outputDirectory) {
+    this.outputDirectory = outputDirectory;
+    return this;
+  }
 
-	public MDHelper setTemplateFile(String templateFile) {
-		this.templateFile = templateFile;
-		return this;
-	}
+  public MDHelper setTemplateFile(String templateFile) {
+    this.templateFile = templateFile;
+    return this;
+  }
 
-	public MDHelper create() throws MDHelperException {
-		// Source dir
-		if (sourceDirectory == null) {
-			throw new MDHelperException("no sourceDirectory set");
-		}
-		sourceDirectoryFile = new File(sourceDirectory);
+  public MDHelper create() throws MDHelperException {
+    // Source dir
+    if (sourceDirectory == null) {
+      throw new MDHelperException("no sourceDirectory set");
+    }
+    sourceDirectoryFile = new File(sourceDirectory);
 
-		if (!sourceDirectoryFile.exists()) {
-			throw new MDHelperException("sourceDirectory ('" + sourceDirectory + "') does not exist");
-		}
+    if (!sourceDirectoryFile.exists()) {
+      throw new MDHelperException("sourceDirectory ('" + sourceDirectory + "') does not exist");
+    }
 
-		if (!sourceDirectoryFile.isDirectory()) {
-			throw new MDHelperException("sourceDirectory ('" + sourceDirectory + "') is no directory");
-		}
+    if (!sourceDirectoryFile.isDirectory()) {
+      throw new MDHelperException("sourceDirectory ('" + sourceDirectory + "') is no directory");
+    }
 
-		if (!sourceDirectoryFile.canRead()) {
-			throw new MDHelperException("sourceDirectory ('" + sourceDirectory + "') can not read source directory");
-		}
+    if (!sourceDirectoryFile.canRead()) {
+      throw new MDHelperException(
+          "sourceDirectory ('" + sourceDirectory + "') can not read source directory");
+    }
 
-		// output dir
-		if (outputDirectory == null) {
-			throw new MDHelperException("no outputDirectory set");
-		}
-		outputDirectoryFile = new File(outputDirectory);
-		if (!outputDirectoryFile.exists()) {
-			if (!outputDirectoryFile.mkdirs()) {
-				throw new MDHelperException("outputDirectory ('" + outputDirectoryFile + "') can not be created");
-			}
+    // output dir
+    if (outputDirectory == null) {
+      throw new MDHelperException("no outputDirectory set");
+    }
+    outputDirectoryFile = new File(outputDirectory);
+    if (!outputDirectoryFile.exists()) {
+      if (!outputDirectoryFile.mkdirs()) {
+        throw new MDHelperException(
+            "outputDirectory ('" + outputDirectoryFile + "') can not be created");
+      }
 
-		}
+    }
 
-		if (!outputDirectoryFile.isDirectory()) {
-			throw new MDHelperException("outputDirectory ('" + outputDirectoryFile + "') is no directory");
-		}
+    if (!outputDirectoryFile.isDirectory()) {
+      throw new MDHelperException(
+          "outputDirectory ('" + outputDirectoryFile + "') is no directory");
+    }
 
-		if (!outputDirectoryFile.canWrite()) {
-			throw new MDHelperException("outputDirectory ('" + outputDirectoryFile + "') can not write to output directory");
-		}
+    if (!outputDirectoryFile.canWrite()) {
+      throw new MDHelperException(
+          "outputDirectory ('" + outputDirectoryFile + "') can not write to output directory");
+    }
 
-		// read template
-		if (templateFile == null) {
-			throw new MDHelperException("no templateFile set");
-		}
-		File file = new File(templateFile);
+    // read template
+    if (templateFile == null) {
+      throw new MDHelperException("no templateFile set");
+    }
+    File file = new File(templateFile);
 
-		try {
-			template = Util.getStringFromFile(file);
-		} catch (IOException e) {
-			throw new MDHelperException("can not read template file", e);
-		}
+    try {
+      template = Util.getStringFromFile(file);
+    } catch (IOException e) {
+      throw new MDHelperException("can not read template file", e);
+    }
 
-		created = true;
-		return this;
-	}
+    created = true;
+    return this;
+  }
 
-	public void translate() throws TranslaterException {
+  public void translate() throws TranslaterException {
 
-		if (!created) {
-			throw new IllegalStateException();
-		}
+    if (!created) {
+      throw new IllegalStateException();
+    }
 
-		FileSystemTraverser traverser = new FileSystemTraverser();
-		MDParent mdRoot = traverser.traverse(sourceDirectoryFile);
+    FileSystemTraverser traverser = new FileSystemTraverser();
+    MDParent mdRoot = traverser.traverse(sourceDirectoryFile);
 
-
-		new MDTranslater(new TocCreator(), new MarkupWriter(outputDirectoryFile), template).render(mdRoot);
-	}
+    new MDTranslater(new TocCreator(), new MarkupWriter(outputDirectoryFile), template).render(
+        mdRoot);
+  }
 
 }

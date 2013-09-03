@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Daniel Kurka
+ * Copyright 2013 Google Inc.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -40,12 +40,10 @@ public class MDParent extends MDNode {
     children.add(node);
   }
 
-
   public List<MDNode> getChildren() {
     return children;
   }
 
- 
   @Override
   public boolean isFolder() {
     return true;
@@ -75,5 +73,4 @@ public class MDParent extends MDNode {
   public File getConfigFile() {
     return configFile;
   }
-
 }
