@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Daniel Kurka
+ * Copyright 2013 Google Inc.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -82,10 +82,8 @@ public class TocCreator {
 
       buffer.append("<li class='file'>");
       // TODO escape HTML
-      buffer.append("<a href='" + relativeUrl.toString() + "' ahref='"
-          + absoluteUrl.toString() + "' title='"
-          + node.getDescription() + "'>" + node.getDisplayName()
-          + "</a>");
+      buffer.append("<a href='" + relativeUrl.toString() + "' ahref='" + absoluteUrl.toString()
+          + "' title='" + node.getDescription() + "'>" + node.getDisplayName() + "</a>");
       buffer.append("</li>");
     }
   }
