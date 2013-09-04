@@ -7,17 +7,14 @@ code, .code {font-size: 9pt; font-family: Courier, Courier New, monospace; color
 .details {margin-top: 1ex;}
 </style>
 
-    <p>
-    At this point, you've created the components of the StockWatcher project and reviewed its functional requirements and UI design. In this section, you'll build the user interface out of GWT widgets and panels.
-    </p>
-    <ol>
-        <li><a href="#widgets">Select the GWT widgets needed to implement the UI elements.</a></li>
-        <li><a href="#panels">Select the GWT panels needed to lay out the UI elements.</a></li>
-        <li><a href="#hostpage">Embed the application in the host page, StockWatcher.html.</a></li>
-        <li><a href="#implement">Implement the widgets and panels in StockWatcher.java.</a></li>
-        <li><a href="#test">Test the layout in development mode.</a></li>
-
-    </ol>
+<p>At this point, you've created the components of the StockWatcher project and reviewed its functional requirements and UI design. In this section, you'll build the user interface out of GWT widgets and panels.</p>
+<ol>
+  <li><a href="#widgets">Select the GWT widgets needed to implement the UI elements.</a></li>
+  <li><a href="#panels">Select the GWT panels needed to lay out the UI elements.</a></li>
+  <li><a href="#hostpage">Embed the application in the host page, StockWatcher.html.</a></li>
+  <li><a href="#implement">Implement the widgets and panels in StockWatcher.java.</a></li>
+  <li><a href="#test">Test the layout in development mode.</a></li>
+</ol>
 <p>
 GWT shields you from worrying too much about cross-browser
 incompatibilities. If you construct the interface with GWT widgets and
