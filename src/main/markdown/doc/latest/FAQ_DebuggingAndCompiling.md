@@ -194,7 +194,7 @@ module that specifies exact values for client properties that you want to nail d
 
 <li>Use <tt>&lt;set-property&gt;</tt> in the <tt>HelloFirefox</tt> module that explicitly sets a value for the <tt>user.agent</tt> client property. (See <tt>&lt;define-property&gt;</tt> in <tt>UserAgent.gwt.xml</tt> for the possible values.)
 
-<li>Update your host html to refer to the <tt>HelloFirefox</tt> module rather than the <tt>Hello</tt> module.</li>
+<li>Use <tt>rename-to</tt> in the <tt>HelloFirefox</tt> with the same value as in the <tt>Firefox</tt> module so the generated <tt>.nocache.js</tt> file will have the same name (see <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">Renaming modules</a>.)</li>
 
 <li>Compile the <tt>HelloFirefox</tt> module instead of the <tt>Hello</tt> module.</li>
 
@@ -202,34 +202,7 @@ module that specifies exact values for client properties that you want to nail d
 
 </ol>
 
-
-<p>This example uses &quot;gecko&quot;, which I tested on my older Firefox 1.0.7. First, the GWT module file:</p>
-
-<pre class="prettyprint">
-&lt;module&gt;
-    &lt;inherits name=&quot;com.google.gwt.sample.hello.Hello&quot;/&gt;
-    &lt;set-property name=&quot;user.agent&quot; value=&quot;gecko&quot;/&gt;
-&lt;/module&gt;
-</pre>
-
-<p>Next, the host HTML file:</p>
-
-<pre class="prettyprint">
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-    &lt;title&gt;Hello&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body bgcolor=&quot;white&quot;&gt; 
-    &lt;script type=&quot;text/javascript&quot; language=&quot;javascript&quot; src=&quot;com.google.gwt.sample.hello.HelloFirefox.nocache.js&quot;&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</pre>
-
-<p>You can do the same thing for <tt>locale</tt> or any other client property. The subsystem that generates all those permutations is completely extensible, so this technique is a general one.</p>
-
-<p>To avoid keeping many nearly duplicate module files, the <i><a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">rename-to</a></i> attribute on the
-<tt>&lt;module&gt;</tt> tag to create a working copy of the GWT application that is specific to the single-browser single-locale development mode. You can keep two module XML
+<p>You can do the same thing for <tt>locale</tt> or any other client property. The subsystem that generates all those permutations is completely extensible, so this technique is a general one. You can thus keep two module XML
 files in parallel, one for solid development to be tested on all browsers, and another working copy with most permutations suppressed for draft code.</p>
 
 <p>Hopefully this example also starts to show that the idea of a module isn't as trivial as it might seem at first. Modules play an important role letting you determine what
