@@ -272,6 +272,10 @@ for (var key in allDownloads) {
     makeButton(val.caption, val.platforms, val.url));
 }
 
+function startsWith(haystack, needle) {
+  return haystack.substring(0, needle.length) == needle;
+}
+
 function makeButton(descr, plats, url) {
   var supported = true;
   if (!url) {
@@ -282,6 +286,12 @@ function makeButton(descr, plats, url) {
   function anchor(url) {
     var n = document.createElement('a');
     n.setAttribute('href', url);
+
+    // For indirect downloads, open the link in a new window/tab otherwise
+    // clickjacking-prevention mechanisms may block the page.  See issue 8342.
+    if (!startsWith(url, "https://dl-ssl.google.com/"))
+      n.setAttribute('target', '_blank');
+
     for (var i = 1; i < arguments.length; i++)
       n.appendChild(arguments[i]);
     return n;
