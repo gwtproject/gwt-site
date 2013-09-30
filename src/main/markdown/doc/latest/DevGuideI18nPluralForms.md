@@ -32,9 +32,9 @@ something at runtime, using the <a
 <p>First, an example <tt>Messages</tt> interface:
 <pre class="prettyprint">
 @DefaultLocale("en") // not required since this is the default
-public class MyMessages extends Messages {
+public interface MyMessages extends Messages {
   @DefaultMessage("There are {0,number} items in your cart.")
-  @AlternateMessage({"one", "There is 1 item in your cart.")
+  @AlternateMessage({"one", "There is 1 item in your cart."})
   String cartItems(@PluralCount int itemCount);
 }
 </pre></p>
@@ -102,12 +102,12 @@ messages"</tt>.  You can specify that using a plural form <tt>"=N"</tt>, such
 as:
 
 <pre class="prettyprint">
-public class MyMessages extends Messages {
+public interface MyMessages extends Messages {
   @DefaultMessage("There are {0,number} items in your cart.")
   @AlternateMessage({
       "one", "There is 1 item in your cart.",
-      "=0", "Your cart is empty.",
-  )
+      "=0", "Your cart is empty."
+  })
   String cartItems(@PluralCount int itemCount);
 }
 </pre></p>
@@ -136,14 +136,14 @@ all the different messages together.  You can do it like this:
 
 
 <pre class="prettyprint">
-public class MyMessages extends Messages {
+public interface MyMessages extends Messages {
   @DefaultMessage("{1}, {2} and {0} others are here.")
   @AlternateMessage({
       "=0", "Nobody is here.",
       "=1", "{1} is  here.",
       "=2", "{1} and {2} are here.",
-      "one", "{1}, {2}, and one other are here.",
-  )
+      "one", "{1}, {2}, and one other are here."
+  })
   String peopleHere(@PluralCount @Offset(2) String[] names, String name1,
       String name2);
 }
@@ -175,7 +175,7 @@ from the placeholders, where you could simply call <tt>peopleHere(names)</tt>.
 formatting lists, using the locale-appropriate separators.  For example:
 
 <pre class="prettyprint">
-public class MyMessages extends Messages {
+public interface MyMessages extends Messages {
   @DefaultMessage("Orders {0,list,number} are ready for pickup.")
   @AlternateMessage({
       "=0", "No orders are ready for pickup.",

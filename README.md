@@ -9,7 +9,7 @@ Building the documentation
 simply run:
   mvn clean install
 
-after that you will find the generated documentation in *target/generated_docs/*.
+after that you will find the generated documentation in *target/generated-site/*.
 
 Adding content
 ==============
