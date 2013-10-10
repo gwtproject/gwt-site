@@ -768,7 +768,7 @@ css:
 
 <ul>
   <li>The configuration property <tt>CssResource.style</tt> may be set to <tt>pretty</tt> which will disable class-name obfuscation as well as pretty-print the CSS content.  Combine this with a <tt>ClientBundle.enableInlining</tt> value of <tt>false</tt> to produce a CSS expression which is amenable to client-side editing. </li>
-  <li>The configuration property <tt>CssResoure.mergeEnabled</tt> can be set to <tt>false</tt> to disable modifications that re-order rules.  This should be considered a temporary measure until the merge logic has been fully vetted. </li>
+  <li>The configuration property <tt>CssResource.mergeEnabled</tt> can be set to <tt>false</tt> to disable modifications that re-order rules.  This should be considered a temporary measure until the merge logic has been fully vetted. </li>
   <li>To allow for client-side tweaking of the effective (i.e. permutation-specific) style rules, you can store the value of <tt>CssResource</tt>.getText() into a TextArea.  Wire some UI action to pass the contents of the TextArea into <tt>StyleInjector.setContents()</tt> to overwrite the original, injected stylesheet. </li></ul>
 
 <h3 id="Selector_obfuscation_details">Selector obfuscation details</h3>
