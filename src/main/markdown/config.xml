@@ -30,6 +30,7 @@
 			<entry name="usingeclipse" displayName="Using Eclipse" description="Using Eclipse"></entry>
 			<entry name="versions" displayName="Versions" description="Versions"></entry>
 			<entry name="whos_using_gwt" displayName="Who is using GWT?" description="Who is using GWT"></entry>
+			<entry name="gwt_surveys" displayName="GWT surveys" description="GWT surveys"></entry>
 		</entries>
 
 	</toc>

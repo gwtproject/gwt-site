@@ -1,3 +1,11 @@
+<div style="background: #feffab;border: 1px solid #ccc;margin-bottom: 25px;">
+  <p style="margin: 16px 20px">
+    <strong>Affect GWTs future roadmap:</strong><br />
+    Answer the ongoing <a href="https://docs.google.com/a/vaadin.com/forms/d/1KDhaWL8DOtcU8DY_x1htfRFNrNsl-WbPPFRTYHD3KiE/viewform">Future of GWT survey</a> now.
+  </p>
+</div>
+
+
 GWT
 ===
 GWT (pronounced 'gwit') is the official open source project for GWT releases 2.5 and onwards. This site houses links to the documentation, source code repository, issues list and information related to GWT roadmap and release. It is intended for developers interested in contributing to GWT, and for keeping people informed on new and upcoming changes to GWT, GWT related events and other news.
