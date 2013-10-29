@@ -315,9 +315,7 @@ public interface MyInterface extends RemoteService {
 
 <p>Attacks against JSON and JSONP are pretty fundamental. Once the browser is running the code, there's nothing you can do to stop it. The best way to protect your server against JSON data theft is to avoid sending JSON data to an attacker in the first place.</p>
 
-<p>That said, some people advise JSON developers to employ an extra precaution besides the cookie duplication XSRF countermeasure. In this model, your server code would wrap any JSON response strings within JavaScript block comments. For example, instead of returning
-
-<pre> <code>['foo', 'bar']</code> you would instead return <code>/*['foo', 'bar']*/</code>. </pre>
+<p>That said, some people advise JSON developers to employ an extra precaution besides the cookie duplication XSRF countermeasure. In this model, your server code would wrap any JSON response strings within JavaScript block comments. For example, instead of returning <code>['foo', 'bar']</code> you would instead return <code>/*['foo', 'bar']*/</code>.
 
 The client code is then expected to strip the comment characters prior to passing the string to the eval function.</p>
 
