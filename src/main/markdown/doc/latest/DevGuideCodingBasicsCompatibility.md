@@ -101,7 +101,7 @@ application. So,</i> run early and often<i>.</i></blockquote>
 
 <ul>
 <li><strong>Regular Expressions</strong>: The syntax of <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html">Java regular expressions</a>
-is similar, but not identical, to <a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Guide:Regular_Expressions">JavaScript regular expressions</a>.
+is similar, but not identical, to <a href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">JavaScript regular expressions</a>.
 For example, the <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html#replaceAll(java.lang.String,%20java.lang.String)">replaceAll</a> and <a href="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html#split(java.lang.String)">split</a> methods use regular expressions. So, you will probably want
 to be careful to only use Java regular expressions that have the same meaning in JavaScript.</li>
 </ul>
