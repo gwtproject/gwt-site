@@ -50,7 +50,7 @@ cross-browser dependent code, the next sections should be of interest.</p>
 
 <ul>
 <li>Replacement: A type is replaced with another depending on a set of configurable rules.</li>
-<li>Code generation: A type is substituted by the result of invoking a code genreator at compile time.</li>
+<li>Code generation: A type is substituted by the result of invoking a code generator at compile time.</li>
 </ul>
 
 <h2 id="directives">Directives in Module XML files</h2>
@@ -112,7 +112,7 @@ The actual replacement rules are specified in <tt>Popup.gwt.xml</tt>, as shown b
 &lt;/module&gt;
 </pre>
 
-<p>These directives tell the GWT compiler to swap out the <tt>PoupImpl</tt> class code with different class implementations according to the <tt>user.agent</tt> property. The
+<p>These directives tell the GWT compiler to swap out the <tt>PopupImpl</tt> class code with different class implementations according to the <tt>user.agent</tt> property. The
 <tt>Popup.gwt.xml</tt> file specifies a default implementation for the <tt>PopupImpl</tt> class, an overide for the Mozilla browser (<tt>PopupImplMozilla</tt> is substituted for
 <tt>PopupImpl</tt>), and an override for Internet Explorer version 6 (<tt>PopupImplIE6</tt> is substituted for <tt>PopupImpl</tt>). Note that <tt>PopupImpl</tt> class or its
 derived classes cannot be instantiated directly. Instead, the <tt>PopupPanel</tt> class is used and the <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create(Class)</a> technique is used
@@ -194,7 +194,7 @@ to deferred binding:</p>
 </pre>
 
 <p>These directives instruct the GWT compiler to invoke methods in a <a href="/javadoc/latest/com/google/gwt/core/ext/Generator.html">Generator</a> subclass (<tt>ServiceInterfaceProxyGenerator</tt>) in order to generate special code when the deferred binding mechanism <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> is encountered while
-compiling. In this case, if the <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> call references an instance of <tt>RemoteService</tt> or one of its subclasses, the <tt>ServiceInterfaceProxyGenerator</tt>'s generate()` method
+compiling. In this case, if the <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> call references an instance of <tt>RemoteService</tt> or one of its subclasses, the <tt>ServiceInterfaceProxyGenerator</tt>'s generate() method
 will be invoked.</p>
 
 <h2 id="generator-implementation">Generator Implementation</h2>
