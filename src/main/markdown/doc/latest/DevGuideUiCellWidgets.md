@@ -885,7 +885,7 @@ public class RangeChangeHandlerExample implements EntryPoint {
   @Override
   public void onModuleLoad() {
     // Create a CellList.
-    final CellList<String> cellList = new CellList<String>(new TextCell());
+    CellList<String> cellList = new CellList<String>(new TextCell());
 
     // Add a range change handler.
     cellList.addRangeChangeHandler(new RangeChangeEvent.Handler() {
@@ -903,7 +903,7 @@ public class RangeChangeHandlerExample implements EntryPoint {
         }
 
         // Push the data into the list.
-        cellList.setRowData(start, data);
+        updateRowData(start, data);
       }
     });
 
