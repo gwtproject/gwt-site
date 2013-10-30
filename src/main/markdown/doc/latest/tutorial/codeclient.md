@@ -19,7 +19,7 @@ In this section, you'll finish implementing all of StockWatcher's client-side fu
     <li><a href="#timestamp">Implement the timestamp showing the time of last update.</a></li>
 </ol>
 <p>
-Your initial implementation of StockWatcher is simple enough that your can code all its functionality on the client side. Later you'll add calls to the server to retrieve the stock data.
+Your initial implementation of StockWatcher is simple enough that you can code all its functionality on the client side. Later you'll add calls to the server to retrieve the stock data.
 </p>
 
 <a name="addStock"></a>
