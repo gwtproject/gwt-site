@@ -1,6 +1,7 @@
 The GWT Release Notes
 =====================
 
+* <a href="#Release_Notes_2_6_0_RC1">2.6.0 (RC1)</a>
 * <a href="#Release_Notes_2_5_1">2.5.1</a>
 * <a href="#Release_Notes_2_5_1_RC1">2.5.1 (RC1)</a>
 * <a href="#Release_Notes_2_5_0">2.5.0</a>
@@ -50,6 +51,255 @@ The GWT Release Notes
 <hr />
 
 <a name="Release_Notes_Current"></a>
+<h2 id="Release_Notes_2_6_0_RC1">Release Notes for 2.6.0 (RC1)</h2>
+
+<h3>Changes since 2.5.1</h3>
+
+<h4>Highlights</h4>
+
+- Java 7 is supported and is now the default. (This can be overridden using <br>`-sourceLevel 6`)
+- GWT Development Mode will [no longer be available for Chrome](http://blog.chromium.org/2013/09/saying-goodbye-to-our-old-friend-npapi.html) sometime in 2014, so we improved alternate ways of debugging. There are improvements to Super Dev Mode, asserts, console logging, and error messages.
+- Internet Explorer cleanup: IE6/7 support is disabled by default in 2.6 and will be gone in the next major release.
+Support for newer versions is improved, including a separate IE10 permutation.
+
+<h4>Compiler changes</h4>
+
+- A `@GwtIncompatible` annotation may be used to mark classes, methods, and fields
+that the GWT compiler should ignore. (Any annotation with this name can be used,
+regardless of package.)
+
+<h4>Compiler option cleanup</h4>
+
+Flags have been cleaned up for consistency, but the old flags are still supported for backward
+compatibility.
+
+- Arguments may be specified multiple times on the command line and the last one wins.
+- Boolean flags can consistently be disabled using '-no'.
+- Experimental flags consistently start with '-X' or '-Xno' to disable.
+- The deprecated `-out` flags were removed
+- Added flags for turning specific optimizations on and off. 
+- The `-saveSource` and `-saveSourceOutput *dest*` options may be used to write source files used
+by the GWT app to an output directory. (Combined with the `includeSourceMapUrl` config property,
+it is possible to set up source-level debugging outside Super Dev Mode.)
+
+<h4>Changes to generated JavaScript</h4>
+
+- Catching and rethrowing a JavaScript exception no longer wraps it in a Java exception
+   (so the console will print it correctly, etc.)
+- Failed assertions stop in the browser's debugger (if open)
+- Various code size improvements.
+
+<h4>Compiler Fixes</h4>
+
+- Fixed errors due to stale persistentUnitCache [issue 7794](https://code.google.com/p/google-web-toolkit/issues/detail?id=7794)
+- Fixed to static evaluation of JavaScript [issue 4830](https://code.google.com/p/google-web-toolkit/issues/detail?id=4830), [7088](https://code.google.com/p/google-web-toolkit/issues/detail?id=7088)
+- Nested try blocks fix. [issue 7253](https://code.google.com/p/google-web-toolkit/issues/detail?id=7253)
+- Compiler threw NumberFormatException when generating a hashcode function [issue 8304](https://code.google.com/p/google-web-toolkit/issues/detail?id=8304) 
+- Fixed array copy bug [issue 6638](https://code.google.com/p/google-web-toolkit/issues/detail?id=6638)
+
+<h4>Code Splitting</h4>
+
+- Fragment merging is more reliable, works with soyc reports
+- GWT.runAsync: passing the same class is allowed, puts the code in the same fragment
+- GWT.runAsync always runs asynchronously; before it would sometimes be synchronous.
+(This behavior can be reverted by inheriting SynchronousFragmentLoadCallback.gwt.xml)
+- The `compiler.splitpoint.leftovermerge.size` configuration property sets a minimum size
+for fragments
+- AsyncProxy: deprecated
+- Bugfixes [issue 8336](https://code.google.com/p/google-web-toolkit/issues/detail?id=8336) 
+
+<h4>JavaScript Interoperability</h4>
+
+- JavaScriptObject: added createArray(size)
+- JsMixedArray: getString() fixed for nulls
+- JSNI: Allow line breaks (and other whitespace) within JSNI method references
+- JSNI: Don't discard unary '+' when it's used to cast to a double [issue 6373](https://code.google.com/p/google-web-toolkit/issues/detail?id=6373), [3942](https://code.google.com/p/google-web-toolkit/issues/detail?id=3942)
+
+<h4>Generator API</h4>
+
+- PropertyOracle: removed deprecated methods
+- JRawType.getImplementedMethods: fixed type parameters for inherited methods
+
+<h4>JDK Emulation</h4>
+
+- java.lang.Class: added getSimpleName()
+- ArrayList.removeRange(): fixed
+- StringBuilder: added appendCodePointInt()
+- StringBuffer/Builder: added reverse()
+- Number subclasses:
+    - integer parsing accepts initial '+' (for Java 7 compatibility)
+    - add compare methods (for Java 7)
+    - fixed isFinite/isInfinite [issue 8073](https://code.google.com/p/google-web-toolkit/issues/detail?id=8073)
+- java.lang.reflect.Type: added
+- java.util.Objects: added (Java 7)
+- java.sql.Timestamp: fixed NullPointerException in equals() [issue 6992](https://code.google.com/p/google-web-toolkit/issues/detail?id=6992)
+
+<h4>Core library fixes</h4>
+
+- GWT.debugger() emits a JavaScript `debugger` statement
+- GWT.maybeReportUncaughtException() sends an exception to the
+uncaught exception handler (if any)
+- About: cleaned up
+- ConsoleLogHandler: fixed for IE and Firefox [issue 6916](https://code.google.com/p/google-web-toolkit/issues/detail?id=6916), [issue 8040](https://code.google.com/p/google-web-toolkit/issues/detail?id=8040)
+- Stack traces fixed on iOS.
+- Timer: cancel() fixed for IE6-8 [issue 8101](https://code.google.com/p/google-web-toolkit/issues/detail?id=8101)
+
+<h4>Browser permutation changes</h4>
+
+- The `ie6` permutation (which also handles IE 7) is now disabled by default.
+Support for IE6 and IE7 will be removed in the next major GWT release.
+
+- Added the `ie10` permutation. There's no fallback value, so deferred bindings
+and conditional CSS that explicitly checks `user.agent` may need to be updated. (However, note
+that workarounds needed for previous versions of IE may no longer be
+necessary.)
+
+- UserAgent: new class to access `user.agent`
+
+<h4>Browser API changes</h4>
+
+- Element methods that return sizes in pixels automatically convert subpixel
+values to int (for backward compatibility).
+
+- All API's that used to take `com.google.gwt.user.client.Element` (which
+has long been deprecated) now take a `com.google.gwt.dom.client.Element` instead.
+
+- DOM methods that take a URL now accept a SafeUri object as well.
+
+- Node: added removeAllChildren()
+- Element: added toggleClassName()
+- Element.hasTagName() is now case-insensitive
+- Element subclasses: added is() methods, for example DivElement.is(elem)
+- user.client.DOM: deprecate old methods
+- KeyCodes: many more key codes, added isArrowKey()
+- HandlerRegistrations: added compose() method
+- Canvas: added drawImage() overloads, wrap() method
+- Animation: added isRunning()
+
+- DOM events not known to GWT can handled using Widget.addBitlessDomHandler().
+This allows third-party libraries to handle events that GWT itself doesn't know
+about (such as MsPointerEvents). [issue 8379](https://code.google.com/p/google-web-toolkit/issues/detail?id=8379)
+
+<h4>HTML generation changes</h4>
+
+- HtmlElementBuilder: supports the &lt;col&gt; tag
+- HtmlBuilderFactory: return types are more specific
+- Builder methods that take a URL now accept SafeUri as well
+
+<h4>CSS changes</h4>
+
+- @url now supports ImageResource
+- user.agent values have changed (see Browser permutation changes)
+
+<h4>UiBinder changes</h4>
+
+- @UiHandler works with parameterized types [issue 6091](https://code.google.com/p/google-web-toolkit/issues/detail?id=6091)
+- @UiHandler works with bindery.event.shared.HandlerRegistration [issue 7079](https://code.google.com/p/google-web-toolkit/issues/detail?id=7079)
+
+<h4>Widget changes</h4>
+
+- CellView: focus fix [issue 8359](https://code.google.com/p/google-web-toolkit/issues/detail?id=8359)
+- DataGrid fixes: style name, scroll bars [issue 8309](https://code.google.com/p/google-web-toolkit/issues/detail?id=8309)
+- DatePicker: lots of improvements.
+- DialogBox: fix auto-hide memory leak
+- FileUpload: fixed wrap() method [issue 5055](https://code.google.com/p/google-web-toolkit/issues/detail?id=5055)
+- HtmlTable,FlexTable,Grid: fixed memory leak in IE9/IE10 [issue 6938](https://code.google.com/p/google-web-toolkit/issues/detail?id=6938)
+- ListBox.setMultipleSelect undeprecated
+- MenuBar: focus fix [issue 3884](https://code.google.com/p/google-web-toolkit/issues/detail?id=3884)
+- RootPanel: added clear()
+- SimpleCheckBox: implement HasValue
+- SimplePager: added constructor to hide "first page" button
+- SingleSelectionModel: fixed getSelectedSet
+- SplitLayoutPanel: resizing fix [issue 4755](https://code.google.com/p/google-web-toolkit/issues/detail?id=4755)
+- SuggestBox:
+    - changed to avoid firing events twice [issue 3533](https://code.google.com/p/google-web-toolkit/issues/detail?id=3533)
+    - after selecting, move focus to the next field [issue 8051](https://code.google.com/p/google-web-toolkit/issues/detail?id=8051)
+- Tree/TreeItem: deprecated methods removed
+- ValueListBox: implement Focusable
+- ValuePicker: fixed setValue() to not fire events [issue 7330](https://code.google.com/p/google-web-toolkit/issues/detail?id=7330)
+
+<h4>Accessibility</h4>
+
+- UiObject.setVisible() only adds aria-hidden for hidden objects
+
+<h4>Internationalization</h4>
+
+- Document.{get,set}ScrollLeft(): fixed RTL for Safari and IE9
+- Plural rules updated for some Slavic languages
+- Fixed currency formatting when the currency symbol comes last
+  (the symbol was added twice)
+- Number format constants upgraded to CLDR 21
+
+<h4>Editor framework</h4>
+
+- CompositeEditor and subclasses take `Editor<? super C>`
+
+<h4>GWT-RPC</h4>
+
+- Added a custom serializer for LinkedHashSet for compatibility with LegacySerializatonPolicy
+
+<h4>RequestFactory</h4>
+
+- Added support for Maps [issue 5524](https://code.google.com/p/google-web-toolkit/issues/detail?id=5524)
+- Added support for enums as type parameters in requests
+- Added support for EntityProxyId as a request parameter
+- Fixed a NullPointerException when server returns null [issue 8104](https://code.google.com/p/google-web-toolkit/issues/detail?id=8104)
+
+<h4>Server-side classes</h4>
+
+- StackTraceDeobfuscator cleaned up and moved to gwt.core.server
+
+<h4>Developer Mode</h4>
+
+- Starts the user's preferred browser on Linux
+- Fixed primitive class references in JSNI code (e.g. @int::class)
+- Reduced memory leakage
+
+<h4>Super Dev Mode</h4>
+
+- Security: with 2.6 we believe it's safe to turn on the Super Dev Mode
+hook and leave it on in production. As an extra precaution, we recommend
+setting the devModeUrlWhitelistRegexp configuration property to ensure that
+it can only load JavaScript from localhost and your developers' machines in
+your own domain.
+
+- Security: automatically disable Super Dev Mode on https pages (Another
+precaution, and it doesn't work anyway due to mixed-content restrictions.)
+
+- WebAppCreator now creates Ant projects with a "superdevmode" target and
+Super Dev Mode enabled.
+- Most sample apps have a "superdevmode" target
+- GWT.log() works and prints basic stack traces
+- sourceUrl comment fixed so that in a JavaScript debugger, the JavaScript source shows
+up as '{module}-0.js' instead of just '0.js'.
+- Grey out unused Java in source code listings on the code server.
+- RemoteServiceServlet: the gwt.codeserver.port parameter may be used to
+download serialization policies from a Super Dev Mode code server's
+/policies/ directory. This can be used to avoid some server recompiles when
+working on GWT-RPC code.
+
+<h4>Testing</h4>
+
+- Benchmarking and Profile support removed
+- GWTTestCase reports better error messages in many cases
+- GWTTestCase: always use an UTF-8 HTML page
+- GWTTestCase: removed supportsAsync, addCheckpoint, clearCheckpoint, getCheckpoints
+- GWTTestCase now uses its own uncaught exception handler to avoid
+conflicts when testing code that calls GWT.setUncaughtExceptionHandler.
+
+<h4>Upgraded dependencies<h4>
+
+- HtmlUnit 2.13
+- Jetty 8.1
+- Guava 15.0
+- Protobuf 2.5.0
+- ASM 4.1
+- JDT 3.8.3
+- Closure compiler 20131014
+
+For even more detail, see [Changelists up to 2.6.0-rc1](https://gwt.googlesource.com/gwt/+log/2.5.1..2.6.0-rc1)
+and the [issue tracker](https://code.google.com/p/google-web-toolkit/issues/list?q=Milestone%3D2_6).
+
 <h2 id="Release_Notes_2_5_1">Release Notes for 2.5.1</h2>
 <p>
 	This release includes an update to the sample application's Maven POM
