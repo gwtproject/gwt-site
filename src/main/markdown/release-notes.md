@@ -53,22 +53,22 @@ The GWT Release Notes
 <a name="Release_Notes_Current"></a>
 <h2 id="Release_Notes_2_6_0_RC1">Release Notes for 2.6.0 (RC1)</h2>
 
-<h3>Changes since 2.5.1</h3>
-
-<h4>Highlights</h4>
+<h3>Highlights</h3>
 
 - Java 7 is supported and is now the default. (This can be overridden using <br>`-sourceLevel 6`)
-- GWT Development Mode will [no longer be available for Chrome](http://blog.chromium.org/2013/09/saying-goodbye-to-our-old-friend-npapi.html) sometime in 2014, so we improved alternate ways of debugging. There are improvements to Super Dev Mode, asserts, console logging, and error messages.
-- Internet Explorer cleanup: IE6/7 support is disabled by default in 2.6 and will be gone in the next major release.
-Support for newer versions is improved, including a separate IE10 permutation.
+- GWT Development Mode will [no longer be available for Chrome](http://blog.chromium.org/2013/09/saying-goodbye-to-our-old-friend-npapi.html)
+sometime in 2014, so we improved alternate ways of debugging. There are improvements to Super Dev Mode, asserts,
+console logging, and error messages.
+- Internet Explorer cleanup: IE6/7 support is disabled by default in this release and will be gone in the next
+major release. IE10 is now a separate permutation.
 
-<h4>Compiler changes</h4>
+<h3>Compiler changes</h3>
 
 - A `@GwtIncompatible` annotation may be used to mark classes, methods, and fields
 that the GWT compiler should ignore. (Any annotation with this name can be used,
 regardless of package.)
 
-<h4>Compiler option cleanup</h4>
+<h4>Flag cleanup</h4>
 
 Flags have been cleaned up for consistency, but the old flags are still supported for backward
 compatibility.
@@ -89,14 +89,6 @@ it is possible to set up source-level debugging outside Super Dev Mode.)
 - Failed assertions stop in the browser's debugger (if open)
 - Various code size improvements.
 
-<h4>Compiler Fixes</h4>
-
-- Fixed errors due to stale persistentUnitCache [issue 7794](https://code.google.com/p/google-web-toolkit/issues/detail?id=7794)
-- Fixed to static evaluation of JavaScript [issue 4830](https://code.google.com/p/google-web-toolkit/issues/detail?id=4830), [7088](https://code.google.com/p/google-web-toolkit/issues/detail?id=7088)
-- Nested try blocks fix. [issue 7253](https://code.google.com/p/google-web-toolkit/issues/detail?id=7253)
-- Compiler threw NumberFormatException when generating a hashcode function [issue 8304](https://code.google.com/p/google-web-toolkit/issues/detail?id=8304) 
-- Fixed array copy bug [issue 6638](https://code.google.com/p/google-web-toolkit/issues/detail?id=6638)
-
 <h4>Code Splitting</h4>
 
 - Fragment merging is more reliable, works with soyc reports
@@ -105,20 +97,28 @@ it is possible to set up source-level debugging outside Super Dev Mode.)
 (This behavior can be reverted by inheriting SynchronousFragmentLoadCallback.gwt.xml)
 - The `compiler.splitpoint.leftovermerge.size` configuration property sets a minimum size
 for fragments
-- AsyncProxy: deprecated
-- Bugfixes [issue 8336](https://code.google.com/p/google-web-toolkit/issues/detail?id=8336) 
+- AsyncProxy is deprecated
+- Various bugfixes
 
 <h4>JavaScript Interoperability</h4>
 
 - JavaScriptObject: added createArray(size)
 - JsMixedArray: getString() fixed for nulls
 - JSNI: Allow line breaks (and other whitespace) within JSNI method references
-- JSNI: Don't discard unary '+' when it's used to cast to a double [issue 6373](https://code.google.com/p/google-web-toolkit/issues/detail?id=6373), [3942](https://code.google.com/p/google-web-toolkit/issues/detail?id=3942)
+- JSNI: Don't discard unary '+' when it's used to cast to a double [issue 6373](https://code.google.com/p/google-web-toolkit/issues/detail?id=6373),
+[3942](https://code.google.com/p/google-web-toolkit/issues/detail?id=3942)
 
 <h4>Generator API</h4>
 
 - PropertyOracle: removed deprecated methods
 - JRawType.getImplementedMethods: fixed type parameters for inherited methods
+
+<h4>Bugfixes</h4>
+
+- Fixed the stale persistentUnitCache bug [issue 7794](https://code.google.com/p/google-web-toolkit/issues/detail?id=7794)
+- Various fixes to code generation [4830](https://code.google.com/p/google-web-toolkit/issues/detail?id=4830), [7088](https://code.google.com/p/google-web-toolkit/issues/detail?id=7088), [7253](https://code.google.com/p/google-web-toolkit/issues/detail?id=7253), [8304](https://code.google.com/p/google-web-toolkit/issues/detail?id=8304), [6638](https://code.google.com/p/google-web-toolkit/issues/detail?id=6638)
+
+<h3>Libraries</h3>
 
 <h4>JDK Emulation</h4>
 
@@ -249,6 +249,8 @@ about (such as MsPointerEvents). [issue 8379](https://code.google.com/p/google-w
 
 - StackTraceDeobfuscator cleaned up and moved to gwt.core.server
 
+<h3>Developer Tools</h3>
+
 <h4>Developer Mode</h4>
 
 - Starts the user's preferred browser on Linux
@@ -287,7 +289,7 @@ working on GWT-RPC code.
 - GWTTestCase now uses its own uncaught exception handler to avoid
 conflicts when testing code that calls GWT.setUncaughtExceptionHandler.
 
-<h4>Upgraded dependencies<h4>
+<h3>Upgraded dependencies</h3>
 
 - HtmlUnit 2.13
 - Jetty 8.1
