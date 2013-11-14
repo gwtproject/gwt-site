@@ -1,10 +1,3 @@
-<div style="background: #feffab;border: 1px solid #ccc;margin-bottom: 25px;">
-  <p style="margin: 16px 20px">
-    <strong>Affect GWTs future roadmap:</strong><br />
-    Answer the ongoing <a href="https://docs.google.com/a/vaadin.com/forms/d/1KDhaWL8DOtcU8DY_x1htfRFNrNsl-WbPPFRTYHD3KiE/viewform">Future of GWT survey</a> now.
-  </p>
-</div>
-
 
 GWT
 ===

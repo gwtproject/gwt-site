@@ -234,10 +234,6 @@ about (such as MsPointerEvents). [issue 8379](https://code.google.com/p/google-w
 
 - CompositeEditor and subclasses take `Editor<? super C>`
 
-<h4>GWT-RPC</h4>
-
-- Added a custom serializer for LinkedHashSet for compatibility with LegacySerializatonPolicy
-
 <h4>RequestFactory</h4>
 
 - Added support for Maps [issue 5524](https://code.google.com/p/google-web-toolkit/issues/detail?id=5524)
@@ -293,6 +289,7 @@ conflicts when testing code that calls GWT.setUncaughtExceptionHandler.
 
 - HtmlUnit 2.13
 - Jetty 8.1
+- Servlet 3.0
 - Guava 15.0
 - Protobuf 2.5.0
 - ASM 4.1

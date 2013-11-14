@@ -77,44 +77,6 @@
 
 <table class="columns">
   <tbody>
-  <tr id="gpe" style="margin-top: 1em;">
-    <td>
-      <img src="https://developer.google.com/eclipse/images/google-plugin.png" style="float: left; width:
-      80px; height: 80px" />
-    </td>
-    <td>
-      <h3 style="margin-top: 0em;">Plugin for Eclipse <span style="font-weight: normal; font-size: 95%;"> (incl. SDKs)</span></h3>
-      <p>
-      The Google Plugin for Eclipse provides IDE support for the GWT and App Engine web projects,
-      and includes a lightweight version of GWT Designer.
-      </p>
-      <p style="font-size: 90%;">
-      <b style="color: #444;">Note</b> - This download includes Eclipse tools as well as the option to install
-      the GWT SDK and <a href="https://developer.google.com/appengine/docs/whatisgoogleappengine">App Engine SDK</a>.
-      </p>
-      <p class="note" style="margin-top: 0.7em;">GWT release candidates are not bundled with The Google Plugin For Eclipse. Download the SDK and add it to your workspace as described <a href="https://developers.google.com/eclipse/docs/using_sdks">here</a>.
-      </p>
-    </td>
-    <td class="moreinfo" style="vertical-align:top; text-align:center">
-      <div class="g-button" style="margin-top: 1em;">
-        <div><span><span>
-          <a href="https://developer.google.com/eclipse/docs/download">Download Plugin &amp; SDKs</a>
-        </span></span></div>
-      </div>
-      <p font-size: 90%;>Next: Go to <a href="usingeclipse.html">Set up Eclipse</a>, then
-      <a href="doc/latest/tutorial/gettingstarted.html">Build a Sample App</a></p>
-    </td>
-  </tr>
-
-  <tr><td>&nbsp;</td></tr> <!-- spacer -->
-
-  
-
-  
-
- 
-
-  <tr><td>&nbsp;</td></tr> <!-- spacer -->
 
   <tr id="sdk" style="margin-top: 1em;">
     <td>
@@ -140,6 +102,40 @@
        
       </div>
       <p style="margin-left: 2.5em; font-size: 90%;">Next: Go to <a href="gettingstarted.html">Getting Started with the GWT SDK</a></p>
+
+    </td>
+  </tr>
+
+  <tr><td>&nbsp;</td></tr> <!-- spacer -->
+
+  <tr><td>&nbsp;</td></tr> <!-- spacer -->
+
+   <tr id="gpe" style="margin-top: 1em;">
+    <td>
+      <img src="https://developer.google.com/eclipse/images/google-plugin.png" style="float: left; width:
+      80px; height: 80px" />
+    </td>
+    <td>
+      <h3 style="margin-top: 0em;">Plugin for Eclipse <span style="font-weight: normal; font-size: 95%;"> (incl. SDKs)</span></h3>
+      <p>
+      The Google Plugin for Eclipse provides IDE support for the GWT and App Engine web projects,
+      and includes a lightweight version of GWT Designer.
+      </p>
+      <p style="font-size: 90%;">
+      <b style="color: #444;">Note</b> - This download includes Eclipse tools as well as the option to install
+      the GWT SDK and <a href="https://developer.google.com/appengine/docs/whatisgoogleappengine">App Engine SDK</a>.
+      </p>
+      <p class="note" style="margin-top: 0.7em;">GWT release candidates are not bundled with The Google Plugin For Eclipse. Download the SDK and add it to your workspace as described <a href="https://developers.google.com/eclipse/docs/using_sdks">here</a>.
+      </p>
+    </td>
+    <td class="moreinfo" style="vertical-align:top; text-align:center">
+      <div class="g-button" style="margin-top: 1em;">
+        <div><span><span>
+          <a href="https://developer.google.com/eclipse/docs/download">Download Plugin &amp; SDKs</a>
+        </span></span></div>
+      </div>
+      <p font-size: 90%;>Next: Go to <a href="usingeclipse.html">Set up Eclipse</a>, then
+      <a href="doc/latest/tutorial/gettingstarted.html">Build a Sample App</a></p>
     </td>
   </tr>
 
