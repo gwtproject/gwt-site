@@ -143,5 +143,5 @@
 
 <p class="note" style="margin-top: 2em; margin-left: 2em;">
 Didn't find the version of GWT you were looking for?
-You can download <a href="versions.html">older versions of the GWT SDK</a>.
+You can download <a href="versions.html">newer and older versions of the GWT SDK</a>.
 </p>
