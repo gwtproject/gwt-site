@@ -10,13 +10,13 @@ The committee will lead the GWT project in major decisions by consensus and ensu
 
 The steering committee consists of the following members (no particular order):
 
-* Ray Cromwell, Google
+* Ray Cromwell, [Google](https://www.google.com/about/)
 * Artur Signell, [Vaadin](http://www.vaadin.com)
 * Colin Alworth, [Sencha](http://www.sencha.com)
 * Christian Sadilek, [RedHat](http://www.redhat.com)
 * Thomas Broyer
 * Stephen Haberman, [Bizo](http://www.bizo.com)
-* Daniel Kurka, Google
+* Daniel Kurka, [Google](https://www.google.com/about/)
 * Christian Goudreau, [Arcbees](http://www.arcbees.com)
 * Konstantin Solomatov, [Jetbrains](http://www.jetbrains.com)
 
