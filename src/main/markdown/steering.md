@@ -13,7 +13,7 @@ The steering committee consists of the following members (no particular order):
 * Ray Cromwell, Google
 * Artur Signell, [Vaadin](http://www.vaadin.com)
 * Colin Alworth, [Sencha](http://www.sencha.com)
-* Mike Brock, [RedHat](http://www.redhat.com)
+* Christian Sadilek, [RedHat](http://www.redhat.com)
 * Thomas Broyer
 * Stephen Haberman, [Bizo](http://www.bizo.com)
 * Daniel Kurka, Google
