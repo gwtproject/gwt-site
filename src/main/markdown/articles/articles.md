@@ -89,7 +89,7 @@ JSON services across the web.</p>
 
 <ul class="toolsList">
   <li>
-    <a href="https://sites.google.com/site/gwt2tutorial">GWT Tutorial</a> - <i>contributed by Maithilish - July 2013</i>
+    <a href="http://codedrops.in/gwt-tutorial/">GWT Tutorial</a> - <i>contributed by Maithilish - July 2013</i>
     <p class="toolsDescription"><b>GWT Tutorial</b> is a step-by-step guide to a complete GWT project. It walks through a project to explain the essentials as well as some of the advanced concepts of GWT 2. Level - Beginner and Intermediate. </p>
   <li>
     <a href="//code.google.com/p/gwtchismes/wiki/Tutorial_ExportingGwtLibrariesToJavascript_en">Exporting Libraries Developed in GWT to JavaScript</a> - <i>Contributed by Manuel Carrasco Moñino</i>
