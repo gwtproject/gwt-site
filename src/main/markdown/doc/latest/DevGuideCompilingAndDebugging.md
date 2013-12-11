@@ -353,10 +353,10 @@ you may need to replace the <tt>.gwt.rpc</tt> file if your application uses GWT 
 
 
 <pre>
-$ java -cp gwt-dev.jar com.google.gwt.dev.HostedMode
+$ java -cp gwt-dev.jar com.google.gwt.dev.DevMode
 Missing required argument 'module[s]'
-<b>GWT 2.3.0</b>
-DevMode [-noserver] [-port port-number | "auto"] [-whitelist whitelist-string] [-blacklist blacklist-string] [-logdir directory] [-logLevel level] [-gen dir] [-bindAddress host-name-or-address] [-codeServerPort port-number | "auto"] [-server servletContainerLauncher[:args]] [-startupUrl url] [-war dir] [-deploy dir] [-extra dir] [-workDir dir] module[s] 
+<b>Google Web Toolkit 2.5.1</b>
+DevMode [-noserver] [-port port-number | "auto"] [-whitelist whitelist-string] [-blacklist blacklist-string] [-logdir directory] [-logLevel level] [-gen dir] [-bindAddress host-name-or-address] [-codeServerPort port-number | "auto"] [-server servletContainerLauncher[:args]] [-startupUrl url] [-war dir] [-deploy dir] [-extra dir] [-workDir dir] module[s]
 
 where 
   -noserver        Prevents the embedded web server from running
@@ -583,28 +583,31 @@ your application, the generated bundles are placed in the
 <pre>
 java -cp gwt-dev.jar com.google.gwt.dev.Compiler
 Missing required argument 'module[s]'
-<b>GWT 2.3.0</b>
-Compiler [-logLevel level] [-workDir dir] [-gen dir] [-style style] [-ea] [-XdisableClassMetadata] [-XdisableCastChecking] [-validateOnly] [-draftCompile] [-optimize level] [-compileReport] [-strict] [-localWorkers count] [-war dir] [-deploy dir] [-extra dir] module[s] 
+<b>Google Web Toolkit 2.5.1</b>
+Compiler [-logLevel level] [-workDir dir] [-gen dir] [-style style] [-ea] [-XdisableClassMetadata] [-XdisableCastChecking] [-validateOnly] [-draftCompile] [-optimize level] [-compileReport] [-strict] [-XenableClosureCompiler] [-XfragmentMerge numFragments] [-XfragmentCount numFragments] [-localWorkers count] [-war dir] [-deploy dir] [-extra dir] module[s]
 
 where 
-  -logLevel               The level of logging detail: ERROR, WARN, INFO, TRACE, DEBUG, SPAM, or ALL
-  -workDir                The compiler's working directory for internal use (must be writeable; defaults to a system temp dir)
-  -gen                    Debugging: causes normally-transient generated types to be saved in the specified directory
-  -style                  Script output style: OBF[USCATED], PRETTY, or DETAILED (defaults to OBF)
-  -ea                     Debugging: causes the compiled output to check assert statements
-  -XdisableClassMetadata  EXPERIMENTAL: Disables some java.lang.Class methods (e.g. getName())
-  -XdisableCastChecking   EXPERIMENTAL: Disables run-time checking of cast operations
-  -validateOnly           Validate all source code, but do not compile
-  -draftCompile           Enable faster, but less-optimized, compilations
-  -optimize               Sets the optimization level used by the compiler.  0=none 9=maximum.
-  -compileReport          Create a compile report that tells the Story of Your Compile
-  -strict                 Only succeed if no input files have errors
-  -localWorkers           The number of local workers to use when compiling permutations
-  -war                    The directory into which deployable output files will be written (defaults to 'war')
-  -deploy                 The directory into which deployable but not servable output files will be written (defaults to 'WEB-INF/deploy' under the -war directory/jar, and may be the same as the -extra directory/jar)
-  -extra                  The directory into which extra files, not intended for deployment, will be written
+  -logLevel                The level of logging detail: ERROR, WARN, INFO, TRACE, DEBUG, SPAM, or ALL
+  -workDir                 The compiler's working directory for internal use (must be writeable; defaults to a system temp dir)
+  -gen                     Debugging: causes normally-transient generated types to be saved in the specified directory
+  -style                   Script output style: OBF[USCATED], PRETTY, or DETAILED (defaults to OBF)
+  -ea                      Debugging: causes the compiled output to check assert statements
+  -XdisableClassMetadata   EXPERIMENTAL: Disables some java.lang.Class methods (e.g. getName())
+  -XdisableCastChecking    EXPERIMENTAL: Disables run-time checking of cast operations
+  -validateOnly            Validate all source code, but do not compile
+  -draftCompile            Enable faster, but less-optimized, compilations
+  -optimize                Sets the optimization level used by the compiler.  0=none 9=maximum.
+  -compileReport           Create a compile report that tells the Story of Your Compile
+  -strict                  Only succeed if no input files have errors
+  -XenableClosureCompiler  EXPERIMENTAL: Enables Closure Compiler optimizations
+  -XfragmentMerge          DEPRECATED (use -XfragmentCount instead): Enables Fragment merging code splitter.
+  -XfragmentCount          EXPERIMENTAL: Limits of number of fragments using a code splitter that merges split points.
+  -localWorkers            The number of local workers to use when compiling permutations
+  -war                     The directory into which deployable output files will be written (defaults to 'war')
+  -deploy                  The directory into which deployable but not servable output files will be written (defaults to 'WEB-INF/deploy' under the -war directory/jar, and may be the same as the -extra directory/jar)
+  -extra                   The directory into which extra files, not intended for deployment, will be written
 and 
-  module[s]               Specifies the name(s) of the module(s) to compile
+  module[s]                Specifies the name(s) of the module(s) to compile
 </pre>
 
 
