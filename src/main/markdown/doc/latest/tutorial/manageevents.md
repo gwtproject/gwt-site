@@ -1,5 +1,6 @@
 
 
+
 <style>
 code, .code {font-size: 9pt; font-family: Courier, Courier New, monospace; color:#007000;}
 .highlight {background-color: #ffc;}
@@ -238,7 +239,7 @@ You'll implement this functionality in the addStock method.
 
 <h3>Validating input in a text box</h3>
 <p>
-You want verify that the stock code entered is valid. Rather than verify whether the user input matches an actual stock code, for the purposes of this tutorial, you'll just perform a simple character validity check.
+You want to verify that the stock code entered is valid. Rather than verify whether the user input matches an actual stock code, for the purposes of this tutorial, you'll just perform a simple character validity check.
 </p>
 <p>
 First, extract the stock code. To retrieve the text in the TextBox widget use its getText method.
