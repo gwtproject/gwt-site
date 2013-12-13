@@ -9,7 +9,7 @@ GWT (pronounced 'gwit') is the official open source project for GWT releases 2.5
     GWT is a development toolkit for building and
     optimizing complex browser-based applications.
     GWT is used by many products at Google, including <a href="http://google.com/adwords">Google AdWords</a> and <a href="http://wallet.google.com">Google Wallet</a>.
-    It's open source, completely free, and used by thousands of developers
+    It's open source, completely free, and used by thousands of enthusiastic developers
     around the world.
   </div>
 
