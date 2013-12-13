@@ -33,8 +33,8 @@ techniques.</li>
 </ul>
 
 <ul>
-<li><strong>Do you want to want to store non-String localized
-values?</strong><br/>
+<li><strong>Do you want to store non-String localized values
+?</strong><br/>
 Use the <a
 href="/javadoc/latest/com/google/gwt/i18n/client/Constants.html">Constants</a>
 or <a
