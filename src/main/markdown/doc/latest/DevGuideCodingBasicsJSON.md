@@ -33,17 +33,18 @@ object). Here's an example of encoding product data in JSON:</p>
 
 <h2 id="parsing">Parsing JSON</h2>
 
-<p>You can parse JSON Strings and convert them to a <a href="/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> in GWT with a simple one liner JSNI method. However, you need to be careful since eval() in JavaScript can actually run code, so you need to absolutely trust the JSON String that you evaluate.</p>
+<p>You can parse JSON Strings and convert them to a <a href="/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> using <a href="http://www.gwtproject.org/javadoc/latest/com/google/gwt/core/client/JsonUtils.html">JsonUtils</a>.
 
 <pre class="prettyprint">
 /*
- * Takes in a trusted JSON String and evals it.
+ * Takes in a JSON String and evals it.
  * @param JSON String that you trust
  * @return JavaScriptObject that you can cast to an Overlay Type
  */
-public static native JavaScriptObject parseJson(String jsonStr) /*-{
-  return eval(jsonStr);
-}-*/;
+public static &lt;T extends JavaScriptObject&gt T parseJson(String jsonStr)
+{
+  return JsonUtils.safeEval(jsonStr);
+}
 </pre>
 
 <p>Typically, you will receive JSON data as the response text of an <a href="DevGuideServerCommunication.html#DevGuideHttpRequests">HTTP request</a>. Thus, you'll first have to convert
