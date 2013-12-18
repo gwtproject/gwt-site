@@ -501,7 +501,7 @@ and the [issue tracker](https://code.google.com/p/google-web-toolkit/issues/list
 		is improved, documented, and no longer considered experimental.
 	</li>
 	<li>Other fixes; see the <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?q=FixedIn2_5RC2">issue
+		href="https://code.google.com/p/google-web-toolkit/issues/list?q=FixedIn2_5RC2">issue
 			tracker</a> for more.
 	</li>
 </ul>
@@ -636,7 +636,7 @@ and the [issue tracker](https://code.google.com/p/google-web-toolkit/issues/list
 
 <p>
 	In addition to the items mentioned above, see <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%3A2_5+status%3AFixed">for
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%3A2_5+status%3AFixed">for
 		a list of bug fixes and enhancements for 2.5.0</a> in the GWT issue
 	tracker.
 </p>
@@ -683,12 +683,12 @@ and the [issue tracker](https://code.google.com/p/google-web-toolkit/issues/list
 		cache compilation artifacts between runs. This results in faster
 		startup time for iterative development.</li>
 	<li>Scrolling DataGrid (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=188">#188</a>):
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=188">#188</a>):
 		The new DataGrid widget supports vertical scrolling with a fixed
 		header (above) and footer (below).
 	</li>
 	<li>Design Time Support (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=226">#226</a>):
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=226">#226</a>):
 		The Beans.isDesignTime() method was added to the GWT emulation library
 		in order to better isolate runtime-only code when a UI is edited in
 		the UI Designer.
@@ -699,41 +699,41 @@ and the [issue tracker](https://code.google.com/p/google-web-toolkit/issues/list
 <h3>Noteworthy Fixed Issues</h3>
 <ul>
 	<li>Polymorphism not supported by RequestFactory (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5367">#5367</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5367">#5367</a>)
 	</li>
 	<li>Support RequestFactory service inheritance on the client (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=6234">#6234</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=6234">#6234</a>)
 	</li>
 	<li>ListEditor subeditors' value is not flushed when used with a
 		RequestFactoryEditorDriver (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=6081">#6081</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=6081">#6081</a>)
 	</li>
 	<li>Memory-leak in pure-Java's c.g.g.core.client.impl.WeakMapping
 		(<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=6193">#6193</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=6193">#6193</a>)
 	</li>
 	<li>GWT compiler dropping clinits (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5707">#5707</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5707">#5707</a>)
 	</li>
 	<li>Make RequestFactory type tokens more compact (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5394">#5394</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5394">#5394</a>)
 	</li>
 	<li>Editor framework does not support is / has methods (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=6040">#6040</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=6040">#6040</a>)
 	</li>
 
 </ul>
 
 <p>
 	See <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%3A2_4+status%3AFixed">the
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%3A2_4+status%3AFixed">the
 		complete list of bug fixes and enhancements for 2.4.0</a> in the GWT issue
 	tracker.
 </p>
 
 <p>
 	See <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%3A2_4+ReleaseNote%3DBreakingChange+status%3AFixed">the
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%3A2_4+ReleaseNote%3DBreakingChange+status%3AFixed">the
 		complete list of breaking changes</a> in the GWT issue tracker.
 </p>
 
@@ -806,18 +806,18 @@ and the [issue tracker](https://code.google.com/p/google-web-toolkit/issues/list
 		"useSafeHtmlTemplates" property to true in UiBinder.gwt.xml. You can
 		determine whether you are affected by the known bugs by checking the
 		public bugs <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=6145">6145</a>,
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=6145">6145</a>,
 		<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=6149">6149</a>,
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=6149">6149</a>,
 		and <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=6198">6198</a>.
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=6198">6198</a>.
 	</li>
 </ul>
 
 
 <p>
 	See <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=2&q=Milestone%3A2_3+status%3AFixedNotReleased">the
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=2&q=Milestone%3A2_3+status%3AFixedNotReleased">the
 		complete list of bug fixes and enhancements for 2.3.0</a> in the GWT issue
 	tracker.
 </p>
@@ -851,14 +851,14 @@ and the [issue tracker](https://code.google.com/p/google-web-toolkit/issues/list
 	<li>Launching against an external URL that contains a port number
 		now works properly in Eclipse 3.6</li>
 	<li>Updated IE9 support <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5125">(#5125)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5125">(#5125)</a></li>
 	<li>Fixed iFrame loading issues within Internet Explorer <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1720">(#1720)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1720">(#1720)</a></li>
 </ul>
 
 <p>
 	See <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=2&q=Milestone%3A2_3+status%3AFixedNotReleased">the
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=2&q=Milestone%3A2_3+status%3AFixedNotReleased">the
 		complete list of bug fixes and enhancements for 2.3.0 M1</a> in the GWT
 	issue tracker.
 </p>
@@ -878,7 +878,7 @@ and the [issue tracker](https://code.google.com/p/google-web-toolkit/issues/list
 <ul>
 	<li>Touchstart, touchmove, touchend, touchcancel have been
 		integrated into the GWT event framework (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5148">#5148</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5148">#5148</a>)
 	</li>
 	<li>Built-in bidi text support for widgets such as Label, HTML,
 		Anchor, Hyperlink and ListBox. More information on this feature can be
@@ -901,15 +901,15 @@ and the [issue tracker](https://code.google.com/p/google-web-toolkit/issues/list
 <ul>
 	<li>RC releases are now being deployed as non-SNAPSHOTs in the
 		maven repository (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5429">#5429</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5429">#5429</a>)
 	</li>
 	<li>Date/Time patterns are correct in the "sv" local (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5890">#5890</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5890">#5890</a>)
 	</li>
 </ul>
 <p>
 	See <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%202_2%20status:Fixed,FixedNotReleased">the
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%202_2%20status:Fixed,FixedNotReleased">the
 		complete list of bug fixes and enhancements for 2.2.0 M1, RC1 and
 		final release</a> in the GWT issue tracker.
 </p>
@@ -919,25 +919,25 @@ and the [issue tracker](https://code.google.com/p/google-web-toolkit/issues/list
 <h3>General Enhancements</h3>
 <ul>
 	<li>Add a service layer to RequestFactory (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5111">#5111</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5111">#5111</a>)
 	</li>
 </ul>
 <h3>Noteworthy Fixed Issues</h3>
 <ul>
 	<li>GPE flags &lt;g:MenuItem&gt; as an error (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5453">#5453</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5453">#5453</a>)
 	</li>
 	<li>Unable to disable a MenuItem (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1649">#1649</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1649">#1649</a>)
 	</li>
 	<li>No way to set vertical/horizontal alignment of Cells in
 		CellTable (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5632">#5623</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5632">#5623</a>)
 	</li>
 </ul>
 See the GWT issue tracker for
 <a
-	href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone=2_1_1%20status:Fixed&sort=type&colspec=ID%20Type%20Status%20Owner%20Milestone%20Summary%20Stars">the
+	href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone=2_1_1%20status:Fixed&sort=type&colspec=ID%20Type%20Status%20Owner%20Milestone%20Summary%20Stars">the
 	complete list of bug fixes and enhancements</a>
 in this release.
 </p>
@@ -1015,48 +1015,48 @@ in this release.
 <ul>
 
 	<li>RequestFactory does not fail gracefully for primitive types <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5357">(5357)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5357">(5357)</a></li>
 	<li>Allow CellTable headers/footers to be refreshed <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5360">(5360)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5360">(5360)</a></li>
 	<li>Need to document what situations source change events <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5361">(5361)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5361">(5361)</a></li>
 	<li>Enable tests for RequestFactoryPolymorphicTest <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5364">(5364)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5364">(5364)</a></li>
 	<li>Bring history management to Expenses sample <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5366">(5366)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5366">(5366)</a></li>
 	<li>Polymorphism not supported by Request Factory <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5367">(5367)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5367">(5367)</a></li>
 	<li>Server cannot return unpersisted objects <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5373">(5374)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5373">(5374)</a></li>
 	<li>Javadoc polymorphism rules <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5374">(5374)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5374">(5374)</a></li>
 	<li>Stopping an ActivityManager from a PlaceChangeEvent might
 		cause an NPE <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5375">(5375)</a>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5375">(5375)</a>
 	</li>
 	<li>Why is gwt-servlet.jar a compile-time dependency in the
 		pom.xml generated by the expenses.roo script? <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5376">(5376)</a>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5376">(5376)</a>
 	</li>
 	<li>Why does gwt-user.jar have scope "provided" in the pom.xml
 		generated by the expenses.roo script? <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5377">(5377)</a>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5377">(5377)</a>
 	</li>
 	<li>Server side domain classes cannot be resolved <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5378">(5378)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5378">(5378)</a></li>
 	<li>Confirm logging compiles out of generated scaffold apps <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5379">(5379)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5379">(5379)</a></li>
 	<li>Many classes added in 2.1 still have the experimental API
 		warnings in their javadoc that need to be removed <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5380">(5380)</a>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5380">(5380)</a>
 	</li>
 	<li>Showcase Cell List show {2} in entries with JDK 1.5 <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5385">(5385)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5385">(5385)</a></li>
 	<li>Many stale javadoc warnings of experimental API <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5380">(5380)</a></li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5380">(5380)</a></li>
 	<li>Instance methods are not looked up properly in the
 		OperationRegistry <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5425">(5425)</a>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5425">(5425)</a>
 	</li>
 </ul>
 
@@ -1122,11 +1122,11 @@ in this release.
 	</li>
 	<li>RootPanel.get(id) fails to set 'position:relative' and
 		'overflow:hidden' (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1813">#1813</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1813">#1813</a>)
 	</li>
 	<li>UncaughtExceptionHandler not triggered for exceptions
 		occurring in onModuleLoad() (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1617">#1617</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1617">#1617</a>)
 	</li>
 </ul>
 
@@ -1155,36 +1155,36 @@ in this release.
 <ul>
 	<li>Image.onload event does not fire on Internet Explorer when
 		image is in cache (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=863">#863</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=863">#863</a>)
 	</li>
 	<li>Image should provide method to set alternative text (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1333">#1333</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1333">#1333</a>)
 	</li>
 	<li>setWordWrap() for CheckBox (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1483">#1483</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1483">#1483</a>)
 	</li>
 	<li>RichTextArea - setEnabled does not work (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1488">#1488</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1488">#1488</a>)
 	</li>
 	<li>ImageSrc6 throws native NPE exception (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1700">#1700</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1700">#1700</a>)
 	</li>
 	<li>Array returned inside Serializable field causes
 		ClassCastException in web mode (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1822">#1822</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1822">#1822</a>)
 	</li>
 	<li>BigDecimal Support (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1857">#1857</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1857">#1857</a>)
 	</li>
 	<li>When a MenuBar loses focus, the MenuItem remains selected (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=2458">#2458</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=2458">#2458</a>)
 	</li>
 	<li>KeyPressEvent contains improper UTF codes (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3753">#3753</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3753">#3753</a>)
 	</li>
 	<li>Make RemoteServiceRelativePath annotation
 		RetentionPolicy.RUNTIME (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3803">#3803</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3803">#3803</a>)
 	</li>
 	<li>TextBox fires JSException in IE (<a href=""
 		http:/code.google.com/p/google-web-toolkit/issues/detail?id=4027“">(#4027</a>)
@@ -1193,53 +1193,53 @@ in this release.
 		http:/code.google.com/p/google-web-toolkit/issues/detail?id=4173“">(#4173</a>)
 	</li>
 	<li>file:line citations in ui.xml files (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4194">#4194</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4194">#4194</a>)
 	</li>
 	<li>Remove method in SplitLayoutPanel is broken (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4217">#4217</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4217">#4217</a>)
 	</li>
 	<li>Refactor SessionHandler and BrowserChannelClient to allow
 		other OOPHM clients than HtmlUnit (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4287">#4287</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4287">#4287</a>)
 	</li>
 	<li>FinallyCommand scheduled from within another FinallyCommand
 		sometimes gets stuck (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4293">#4293</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4293">#4293</a>)
 	</li>
 	<li>Wrong result after formatting of a big number in the
 		NumberFormat (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4473">#4473</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4473">#4473</a>)
 	</li>
 	<li>Dictionary.keySet() contains "__gwt_ObjectId" in DevMode (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4486">#4486</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4486">#4486</a>)
 	</li>
 	<li>JsStackEmulator may break up JsInvocation (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4512">#4512</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4512">#4512</a>)
 	</li>
 	<li>DOMImpl.g/setInnerText() use unnecessarily expensive node
 		manipulation (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4586">#4586</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4586">#4586</a>)
 	</li>
 	<li>NumberFormat error formatting more than 6 decimal places (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4598">#4598</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4598">#4598</a>)
 	</li>
 	<li>DateBox can generate an untrapped exception if a non-default
 		format is used (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4633">#4633</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4633">#4633</a>)
 	</li>
 	<li>PopupPanel.removeFromParent() dosen't remove glass panel (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4720">#4720</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4720">#4720</a>)
 	</li>
 	<li>ClassNotFoundException from web.xml for configured listeners
 		during devmode servlet validation (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4760">#4760</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4760">#4760</a>)
 	</li>
 	<li>Converting ImageBundle to ResourceBundle causes a regression
 		if bundle is used on the server side as well (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4797">#4797</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4797">#4797</a>)
 	</li>
 	<li>Add java.util.logging emulation (<a
-		href="# http://code.google.com/p/google-web-toolkit/issues/detail?id=4954">#4954</a>)
+		href="# https://code.google.com/p/google-web-toolkit/issues/detail?id=4954">#4954</a>)
 	</li>
 </ul>
 
@@ -1251,15 +1251,15 @@ in this release.
 <ul>
 	<li>Whole UI disappear in IE 7 when we Hover over the menubar menu
 		item (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4532">#4532</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4532">#4532</a>)
 	</li>
 	<li>List.subList not fully compatible with java.util.List
 		interface (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4993">#4993</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4993">#4993</a>)
 	</li>
 	<li>Safari 5 fails to execute non-integral right-shifts correctly
 		(<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=5056">#5056</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=5056">#5056</a>)
 	</li>
 </ul>
 
@@ -1271,10 +1271,10 @@ in this release.
 <ul>
 	<li>Using a PopupPanel in Internet Explorer without a history
 		IFrame throws a NullPointerException (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4584">#4584</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4584">#4584</a>)
 	</li>
 	<li>Opera support for History is not working (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3956">#3956</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3956">#3956</a>)
 	</li>
 </ul>
 
@@ -1285,7 +1285,7 @@ in this release.
 <h3>Noteworthy Fixed Issues</h3>
 <ul>
 	<li>Standard.css missing new layout styles (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4429">#4429</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4429">#4429</a>)
 	</li>
 </ul>
 
@@ -1305,7 +1305,7 @@ in this release.
 		localhost which will break cross-machine debugging. You can get the
 		old behavior by specifying <code>-bindAddress 0.0.0.0</code>. Please
 		see issue (#<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4322">4322</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4322">4322</a>)
 		for more details. For webAppCreator-generated ant files, you can pass
 		this with <tt>ant -Dgwt.args="-bindAddress 0.0.0.0" devmode</tt>.
 	</li>
@@ -1318,42 +1318,42 @@ in this release.
 <ul>
 	<li>UiBinder Image class with resource attribute, removes styles
 		on that image (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4415">#4415</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4415">#4415</a>)
 	</li>
 	<li>Widgets lose focus if its placed on FocusPanel (Opera, Safari)
 		(<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1471">#1471</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1471">#1471</a>)
 	</li>
 	<li>Remove method in SplitLayoutPanel is broken (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4217">#4217</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4217">#4217</a>)
 	</li>
 	<li>Splitter constructor hard codes the background color of the
 		splitter to white (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4335">#4335</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4335">#4335</a>)
 	</li>
 	<li>Image should provide method to set alternative text (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4335">#4335</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4335">#4335</a>)
 	</li>
 	<li>CssResource cannot parse unescaped '-', '_' in class selectors
 		and unknown at-rules (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3946">#3946</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3946">#3946</a>)
 	</li>
 	<li>Focusable implementation breaks ScrollPanels in Safari (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1313">#1313</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1313">#1313</a>)
 	</li>
 	<li>RequestBuilder restricted to GET and POST (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3388">#3388</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3388">#3388</a>)
 	</li>
 	<li>HTMLTable.Cell.getElement() calls
 		getCellFormatter().getElement() with row and column swapped
 		RequestBuilder restricted to GET and POST (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3757">#3757</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3757">#3757</a>)
 	</li>
 	<li>MenuBar steals focus when hovered (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3884">#3884</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3884">#3884</a>)
 	</li>
 	<li>TabLayoutPanel tabs don't line up properly on IE (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4447">#4447</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4447">#4447</a>)
 	</li>
 	<li>webAppCreator produces ant build files which support the
 		gwt.args property for passing additional flags to the gwtc and devmode
@@ -1362,7 +1362,7 @@ in this release.
 </ul>
 <p>
 	See the GWT issue tracker for <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status:Fixed,FixedNotReleased%20milestone:2_0_1&num=1000">
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status:Fixed,FixedNotReleased%20milestone:2_0_1&num=1000">
 		the complete list of bug fixes and enhancements</a> in this release.
 </p>
 <hr />
@@ -1465,21 +1465,21 @@ in this release.
 	</li>
 	<li>Non-Java method safe characters in inline <ui:style> class names doesn't work
           (<a
-				href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4052">#4052</a>)
+				href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4052">#4052</a>)
         </li>
 	<li>@external does not work reliably for inline styles in <ui:style>
           (<a
-				href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4053">#4053</a>)
+				href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4053">#4053</a>)
         </li>
 	<li>Various false alarm warnings about invalid JSNI references
 		have been fixed.</li>
 	<li>Various Swing UI improvements.</li>
 	<li>RPC calls leaking memory for IE (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4133">#4133</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4133">#4133</a>)
 	</li>
 	<li>deRPC raise an Error 500 instead of propagating the correct
 		RuntimeException in ProdMode (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=4237">#4237</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4237">#4237</a>)
 	</li>
 </ul>
 
@@ -1616,9 +1616,9 @@ in this release.
 <h3>Fixed Issues</h3>
 <ul>
 	<li>Allow hosted mode using a 1.6 JRE with the -d32 flag (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3843">#3843</a>,
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3843">#3843</a>,
 		<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3998">#3998</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3998">#3998</a>)
 	</li>
 </ul>
 
@@ -1653,31 +1653,31 @@ in this release.
 <h3>Fixed Issues</h3>
 <ul>
 	<li>Updated GWT libraries to support IE8 (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3558">#3558</a>,
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3558">#3558</a>,
 		<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3329">#3329</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3329">#3329</a>)
 	</li>
 	<li>Native exception in Node.is() (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3644">#3644</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3644">#3644</a>)
 	</li>
 	<li>Incorrect firing of two click events from CheckBox and a
 		related issue (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3508">#3508</a>,
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3508">#3508</a>,
 		<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3679">#3679</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3679">#3679</a>)
 	</li>
 	<li>Compiler java.lang.StackOverflowError if you don't use -Xss to
 		set a stack size (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3510">#3510</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3510">#3510</a>)
 	</li>
 	<li>Mouse wheel in FF3 (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=2902">#2902</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=2902">#2902</a>)
 	</li>
 	<li>GWT outputs expressions too long for WebKit (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3455">#3455</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3455">#3455</a>)
 	</li>
 	<li>java.sql.Date.valueOf error (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3731">#3731</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3731">#3731</a>)
 	</li>
 	<li>Added a workaround for Firefox 3.5 regression (<a
 		href="https://bugzilla.mozilla.org/show_bug.cgi?id=497780">bugzilla
@@ -1699,7 +1699,7 @@ in this release.
 <h3>Fixed Issues</h3>
 <ul>
 	<li>Various <a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=3496">servlet
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=3496">servlet
 			classpath issues</a> introduced in 1.6.2 are resolved.
 	</li>
 	<li>JSP compilation should work out of the box in hosted mode.</li>
@@ -1735,7 +1735,7 @@ in this release.
 </ul>
 <p>
 	See the GWT issue tracker for <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%2CFixedNotReleased%20milestone%3A1_5_3&num=1000">
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%2CFixedNotReleased%20milestone%3A1_5_3&num=1000">
 		the complete list of bug fixes and enhancements</a> in this release.
 </p>
 
@@ -1783,7 +1783,7 @@ in this release.
 </ul>
 <p>
 	See the GWT issue tracker for <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%2CFixedNotReleased%20milestone%3A1_5_Final&num=1000">
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%2CFixedNotReleased%20milestone%3A1_5_Final&num=1000">
 		the complete list of bug fixes and enhancements</a> in this release.
 </p>
 
@@ -1863,7 +1863,7 @@ in this release.
 </ul>
 <p>
 	See the GWT issue tracker for <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_5_RC2%20type%3Adefect&num=1000">
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_5_RC2%20type%3Adefect&num=1000">
 		the complete list of bug fixes and enhancements</a> in this release.
 </p>
 
@@ -1911,27 +1911,27 @@ in this release.
 	<li><a
 		href="doc/html/com.google.gwt.user.client.DOM#eventGetCurrentEvent()">DOM.eventGetCurrentEvent()</a>
 		now provides global access to the current Event object. (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1309">#1309</a>)</li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1309">#1309</a>)</li>
 	<li><a
 		href="doc/html/com.google.gwt.user.client.ui.PopupPanel#setPopupPositionAndShow(com.google.gwt.user.client.ui.PopupPanel.PositionCallback)">PopupPanel.setPopupPositionAndShow(PopupCallback
 			callback)</a> now provides now provides a simpler and bulletproof way to
 		control the layout of popups. (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1120">#1120</a>,
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1120">#1120</a>,
 		<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1243">#1243</a>)</li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1243">#1243</a>)</li>
 	<li>The <a
 		href="doc/html/com.google.gwt.user.client.ui.SuggestionHandler">SuggestionHandler</a>
 		interface can be used to respond to the user selecting a suggstion in
 		the <a href="doc/html/com.google.gwt.user.client.ui.SuggestBox">SuggestBox</a>.
 		(<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1086">#1086</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1086">#1086</a>)
 	</li>
 	<li><a href="doc/html/java.util.Collection">Collection.toArray(Object[])</a>
 		is now implemented. (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=695">#695</a>)</li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=695">#695</a>)</li>
 	<li>If you have it installed, <a href="http://gears.google.com/">Google
 			Gears</a> is now accessible in hosted mode (Windows only). (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1252">#1252</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1252">#1252</a>)
 	</li>
 </ul>
 
@@ -1945,29 +1945,29 @@ in this release.
 		fully loaded.
 	</li>
 	<li>Linux hosted mode should be less crashy. (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1105">#1105</a>,
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1105">#1105</a>,
 		<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1281">#1281</a>,
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1281">#1281</a>,
 		<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1358">#1358</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1358">#1358</a>)
 	</li>
 	<li>An important discussion of HTTP headers, caching, and HTTPS
 		has been added to the <a
 		href="doc/html/com.google.gwt.user.client.ui.ImageBundle">ImageBundle</a>
 		documentation. (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1172">#1172</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1172">#1172</a>)
 	</li>
 	<li><a
 		href="doc/html/com.google.gwt.user.client.ui.PopupPanel#center()">PopupPanel.center()</a>
 		now causes the popup to be shown as well as centered. (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1120">#1120</a>)</li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1120">#1120</a>)</li>
 	<li><a href="doc/html/com.google.gwt.user.client.ui.RichTextArea">RichTextArea</a>
 		underwent number of bugfixes and should be stable now. (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1130">#1130</a>,
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1130">#1130</a>,
 		<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1214">#1214</a>,
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1214">#1214</a>,
 		<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1276">#1276</a>)</li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1276">#1276</a>)</li>
 	<li>New <a
 		href="doc/html/com.google.gwt.doc.DeveloperGuide.RemoteProcedureCalls">RPC</a>
 		warnings
@@ -1990,7 +1990,7 @@ in this release.
 		properly, RPC will run in 1.3.3 compatibility mode and refuse to
 		serialize types implementing <a href="doc/html/java.io.Serializable">Serializable</a>.
 		(<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1297">#1297</a>)</li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1297">#1297</a>)</li>
 	<li><a
 		href="doc/html/com.google.gwt.user.client.ui.Panel#adopt(com.google.gwt.user.client.ui.Widget,%20com.google.gwt.user.client.Element)">Panel.adopt(Widget,
 			Element)</a> and <a
@@ -2002,7 +2002,7 @@ in this release.
 		href="doc/html/com.google.gwt.user.client.ui.Panel#remove(com.google.gwt.user.client.ui.Widget)">Panel.remove(Widget)</a>
 		for details on the correct way to add and remove Widgets from Panels.
 		(<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1121">#1121</a>)</li>
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1121">#1121</a>)</li>
 	<li>The benchmark viewer application is now faster, prettier, and
 		a bit more user friendly.</li>
 </ul>
@@ -2013,37 +2013,37 @@ in this release.
 		href="doc/html/com.google.gwt.user.client.ui.UIObject#setStyleName(java.lang.String)">UIObject.setStyleName()</a>
 		have been backed out. All changes relative to 1.3.3 should now be
 		backwards-compatible. (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1079">#1079</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1079">#1079</a>)
 	</li>
 	<li>The linux distribution of 1.4.10 bundled Mozilla 1.7.13
 		instead of version 1.7.12, which is bundled in previous releases. This
 		change caused problems on some systems, so it's been reverted back to
 		Mozilla 1.7.12 again. (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1105">#1105</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1105">#1105</a>)
 	</li>
 	<li>Numerous RPC warnings were added in 1.4.10. One of these
 		warnings would be issued when a class containing native methods was
 		found to be serializable. This warning now only applies to
 		automatically serialized types; types with custom serializers will no
 		longer trigger this warning. (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1161">#1161</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1161">#1161</a>)
 	</li>
 	<li>A change to RPC in 1.4.10 would cause an error to be issued if
 		a serializable type had any subtypes that were not serializable. This
 		change caused code that worked in 1.3.3 to fail in 1.4.10. In this
 		release, the error has been downgraded to a warning. (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1163">#1163</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1163">#1163</a>)
 	</li>
 	<li>A potentially breaking change to event bubbling in 1.4.10 has
 		been backed out in favor of the 1.3.3 behavior. (<a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=1159">#1159</a>)
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=1159">#1159</a>)
 	</li>
 </ul>
 
 <h3>Fixed Issues</h3>
 <p>
 	See the GWT issue tracker for <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_4_RC2%20type%3Adefect&num=1000">the
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_4_RC2%20type%3Adefect&num=1000">the
 		complete list of bug fixes</a> in this release.
 </p>
 
@@ -2189,9 +2189,9 @@ Here are a few of the coolest new features and enhancements in GWT 1.4.
 	<li><b>Size and Speed Optimizations</b>
 	<ul>
 			<li>New <a
-				href="http://code.google.com/p/google-web-toolkit/issues/detail?id=610">size</a>
+				href="https://code.google.com/p/google-web-toolkit/issues/detail?id=610">size</a>
 				<a
-				href="http://code.google.com/p/google-web-toolkit/issues/detail?id=599">improvements</a>
+				href="https://code.google.com/p/google-web-toolkit/issues/detail?id=599">improvements</a>
 				in the GWT compiler produce JavaScript that is 10-20% smaller; just
 				recompile your app with 1.4.
 			</li>
@@ -2209,7 +2209,7 @@ Here are a few of the coolest new features and enhancements in GWT 1.4.
 	<li><b>Deployment Enhancements</b>
 	<ul>
 			<li>GWT RPC is no longer tied to exclusively to servlets. New <a
-				href="http://code.google.com/p/google-web-toolkit/issues/detail?id=389">modularized
+				href="https://code.google.com/p/google-web-toolkit/issues/detail?id=389">modularized
 					RPC</a> server code makes it easy to connect GWT RPC to your choice of
 				Java back-ends.
 			</li>
@@ -2263,12 +2263,12 @@ Here are a few of the coolest new features and enhancements in GWT 1.4.
 				bottlenecks and compare performance of alternative implementations.
 			</li>
 			<li>The oft-requested <a
-				href="http://code.google.com/p/google-web-toolkit/issues/detail?id=21">java.io.Serializable</a>
+				href="https://code.google.com/p/google-web-toolkit/issues/detail?id=21">java.io.Serializable</a>
 				is now included in the JRE emulation library and is synonymous with
 				IsSerializable for the purpose of GWT RPC.
 			</li>
 			<li><a
-				href="http://code.google.com/p/google-web-toolkit/issues/detail?id=844">Mouse
+				href="https://code.google.com/p/google-web-toolkit/issues/detail?id=844">Mouse
 					wheel events</a> are now available on a variety of widgets.</li>
 		</ul></li>
 	<li id="ImageBundle"><b><a
@@ -2302,14 +2302,14 @@ Here are a few of the coolest new features and enhancements in GWT 1.4.
 
 <p>
 	See the GWT issue tracker for <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_4_RC%20type%3Aenhancement&num=1000">the
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_4_RC%20type%3Aenhancement&num=1000">the
 		complete list of enhancements</a> in this release.
 </p>
 
 <h3>Fixed Issues</h3>
 <p>
 	See the GWT issue tracker for <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_4_RC%20type%3Adefect&num=1000">the
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_4_RC%20type%3Adefect&num=1000">the
 		complete list of bug fixes</a> in this release.
 </p>
 
@@ -2321,14 +2321,14 @@ Here are a few of the coolest new features and enhancements in GWT 1.4.
 <h3>Fixed Issues</h3>
 <ul>
 	<li><a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=319">Issue
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=319">Issue
 			#319 - Calling native super method in implementation class results in
 			infinite loop in web mode</a></li>
 	<li><a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=496">Issue
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=496">Issue
 			#496 - gwt.js in gwt-user.jar lacks Apache 2.0 license header</a></li>
 	<li><a
-		href="http://code.google.com/p/google-web-toolkit/issues/detail?id=497">Issue
+		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=497">Issue
 			#497 - Unexpected internal compiler error - Analyzing permutation #1</a></li>
 </ul>
 
@@ -2350,7 +2350,7 @@ Here are a few of the coolest new features and enhancements in GWT 1.4.
 		operate the project and how you can access the GWT source, compile it
 		yourself, and contribute.</li>
 	<li><b><a
-			href="http://code.google.com/p/google-web-toolkit/issues/list">The
+			href="https://code.google.com/p/google-web-toolkit/issues/list">The
 				GWT Issue Tracker</a></b> <br>Please report any bugs in 1.3 RC that
 		weren't in 1.2.22 in the GWT issue tracker. These would be likely
 		related to the new build, and we want to know ASAP so we can fix them.</li>
@@ -2376,13 +2376,13 @@ later.
 <ul>
 
 	<li><b><a
-			href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_Final">Changes
+			href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_Final">Changes
 				included in GWT 1.2 since the RC</a></b> <br>Also see the GWT Blog for
 		a discussion of the <a
 		href="http://googlewebtoolkit.blogspot.com/2006/11/wrapping-up-gwt-12-soon.html">noteworthy
 			issues related to 1.2 RC</a></li>
 	<li><b><a
-			href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_RC">New
+			href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_RC">New
 				features and bug fixes in GWT 1.2 RC</a></b></li>
 </ul>
 
@@ -2406,29 +2406,29 @@ change if you are using the new HTTP functionality available as of build
 	unique to GWT 1.2 RC.
 <p>
 	See the GWT issue tracker for <a
-		href="http://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_RC">the
+		href="https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_RC">the
 		complete list of enhancements and bug fixes</a> in this release.
 </p>
 
 <h3>New Features</h3>
 <ul>
 	<li><b><a
-			href="http://code.google.com/p/google-web-toolkit/issues/detail?id=91">Full
+			href="https://code.google.com/p/google-web-toolkit/issues/detail?id=91">Full
 				support for OS X development</a></b> <br>Develop with GWT on OS X as
 		easily as on Linux and Windows</li>
 	<li><b><a
-			href="http://code.google.com/p/google-web-toolkit/issues/detail?id=93">Much
+			href="https://code.google.com/p/google-web-toolkit/issues/detail?id=93">Much
 				faster hosted mode</a></b> <br>Hosted mode startup time has improved
 		significantly, but, even better, refreshes are now lightning fast
 		&mdash; even when your source changes</li>
 	<li><b><a
-			href="http://code.google.com/p/google-web-toolkit/issues/detail?id=52">New
+			href="https://code.google.com/p/google-web-toolkit/issues/detail?id=52">New
 				HTTP request module</a></b> <br>The HTTP functionality that GWT users
 		have been asking for (custom headers, status code, timeouts, and
 		more), all wrapped up in an API that's easier to use than the
 		JavaScript XMLHttpRequest object</li>
 	<li><b><a
-			href="http://code.google.com/p/google-web-toolkit/issues/detail?id=10">Widgets
+			href="https://code.google.com/p/google-web-toolkit/issues/detail?id=10">Widgets
 				in TreeItems</a></b> <br>Tree items can now contain arbitrary
 		widgets...finally, you can easily create trees with checkboxes :-)</li>
 </ul>
