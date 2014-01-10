@@ -74,7 +74,7 @@ This document describes or points to three kinds of code examples, so you can ju
 Note: The prefix "Cw" in showcase class names stands for "ContentWidget", the parent class of each Showcase example.</li>
   <li><b>Simplified examples</b> - The code examples displayed in-line throughout this documented are short, simplified examples, often pared-down versions of the real-world examples.</li>
   <li><b>Real-world examples</b> - Most of the cell widgets also have source code examples (.java files) at 
-    <a href="http://google-web-toolkit.googlecode.com/svn/trunk/user/javadoc/com/google/gwt/examples/cellview/">cell widget code examples</a>.</li>
+    <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview">cell widget code examples</a>.</li>
 </li>
 </ul>
 <p>
