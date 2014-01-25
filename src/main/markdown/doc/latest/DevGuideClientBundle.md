@@ -74,7 +74,7 @@ The resources in a deployed GWT application can be roughly categorized into reso
   MyResources.INSTANCE.css().ensureInjected();
 
   // Display the manual file in an iframe
-  new Frame(MyResources.INSTANCE.ownersManual().getURL());</pre>
+  new Frame(MyResources.INSTANCE.ownersManual().getSafeUri().asString());</pre>
 
 
 <h3 id="I18N">I18N</h3>
