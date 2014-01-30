@@ -87,7 +87,7 @@
       <p>
       The GWT SDK contains the core libraries and compiler
       that you need to write web applications.
-      See the <a href="release-notes.html#Release_Notes_2_5_1">Release Notes for this latest version</a>.
+      See the <a href="release-notes.html#Release_Notes_2_6_0">Release Notes for this latest version</a>.
       </p>
       <p style="font-size: 90%;">
       <b style="color: #444;">Note</b> - This download contains the standalone GWT SDK and tools only. If you're
@@ -97,7 +97,7 @@
     <td class="moreinfo" style="vertical-align:top;">
       <div class="g-button" style="margin-top: 1em; margin-left: 2em; width: 18em; padding: 10px;">
         <div><span><span>
-          <a href="https://google-web-toolkit.googlecode.com/files/gwt-2.5.1.zip" style="font-size: 80%;">Download GWT SDK</a>
+          <a href="https://google-web-toolkit.googlecode.com/files/gwt-2.6.0.zip" style="font-size: 80%;">Download GWT SDK</a>
         </span></span></div>
        
       </div>

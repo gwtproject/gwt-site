@@ -1,6 +1,10 @@
 The GWT Release Notes
 =====================
 
+* <a href="#Release_Notes_2_6_0">2.6.0</a>
+* <a href="#Release_Notes_2_6_0_RC4">2.6.0 (RC4)</a>
+* <a href="#Release_Notes_2_6_0_RC3">2.6.0 (RC3)</a>
+* <a href="#Release_Notes_2_6_0_RC2">2.6.0 (RC2)</a>
 * <a href="#Release_Notes_2_6_0_RC1">2.6.0 (RC1)</a>
 * <a href="#Release_Notes_2_5_1">2.5.1</a>
 * <a href="#Release_Notes_2_5_1_RC1">2.5.1 (RC1)</a>
@@ -51,6 +55,34 @@ The GWT Release Notes
 <hr />
 
 <a name="Release_Notes_Current"></a>
+<h2 id="Release_Notes_2_6_0">Release Notes for 2.6.0</h2>
+<p>
+	This release includes minor updates to silence unnecessary debugging warnings.
+	See the release notes for <a href="#Release_Notes_2_6_0_RC1">2.6.0 (RC1)</a>
+	for the full list of features and bugs fixes included in the GWT 2.6.0 release.
+</p>
+
+<h2 id="Release_Notes_2_6_0_RC4">Release Notes for 2.6.0 (RC4)</h2>
+<p>
+	This release enabled the Super Dev Mode hook by default, updated the sample
+	Maven POMs, included a Firefox memory leak fix for Dev Mode, and a few other
+	minor regressions noted during release candidate testing.
+</p>
+
+<h2 id="Release_Notes_2_6_0_RC3">Release Notes for 2.6.0 (RC3)</h2>
+<p>
+	This release fixed an incompatibility with the Google Plugin for Eclipse,
+	improved uncaught exception handling, and reverted some backwards-incompatible
+	changes made since GWT 2.5.1.
+</p>
+
+<h2 id="Release_Notes_2_6_0_RC2">Release Notes for 2.6.0 (RC2)</h2>
+<p>
+	This release disabled the Opera permutation, added a more maintainable
+	DOM event dispatch mechanism, and fixed a few GWT-RPC and IE11 issues
+	raised during release candidate testing.
+</p>
+
 <h2 id="Release_Notes_2_6_0_RC1">Release Notes for 2.6.0 (RC1)</h2>
 
 <h3>Highlights</h3>
