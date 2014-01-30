@@ -4,7 +4,7 @@
 
   <h3 class="version">Version 2.6.0 RC1</h3>
 
-  <p>Build 2.6.0 (RC1) - November 16, 2013 - <a href="release-notes.html#Release_Notes_2_6_0_RC1">Release notes</a></p>
+  <p>Build 2.6.0 - Jan 23, 2014 - <a href="release-notes.html#Release_Notes_2_6_0">Release notes</a></p>
   <table class="downloads" style="width:500px">
     <tbody><tr>
       <th>Platform</th>
@@ -14,9 +14,9 @@
     </tr>
     <tr>
       <td>Windows, Mac OS X, and Linux</td>
-      <td><a href="http://google-web-toolkit.googlecode.com/files/gwt-2.6.0-rc1.zip">gwt-2.6.0-rc1.zip</a></td>
-      <td>106 MB</td>
-      <td>4724a7ffeb7028814eedd45f90395f8af20f93fe</td>
+      <td><a href="http://google-web-toolkit.googlecode.com/files/gwt-2.6.0.zip">gwt-2.6.0.zip</a></td>
+      <td>103 MB</td>
+      <td>36d45c9dffbe59d15c6f6d04657438dc78e343c1</td>
     </tr>
   </tbody></table>
 
