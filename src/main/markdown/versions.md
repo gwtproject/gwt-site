@@ -2,7 +2,7 @@
 
 <div class="release">
 
-  <h3 class="version">Version 2.6.0 RC1</h3>
+  <h3 class="version">Version 2.6.0</h3>
 
   <p>Build 2.6.0 - Jan 23, 2014 - <a href="release-notes.html#Release_Notes_2_6_0">Release notes</a></p>
   <table class="downloads" style="width:500px">
