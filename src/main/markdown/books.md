@@ -28,7 +28,7 @@
 <p>Below is a set of books that have been published regarding GWT, including a short description of each.</p>
 
 <p>Please note that the books linked from this page are provided by third-parties and are not endorsed by Google. Please direct any questions about these resources to the appropriate contact listed below.</p>
-<p>Books are order by release date. You can also jump on <a href="#related">Related frameworks</a> books (GXT, Vaddin, etc.)</p>
+<p>Books are order by release date. You can also jump on <a href="#related">Related frameworks</a> books (GXT, Vaadin, etc.)</p>
 <br/>
 
 <table class="columns" style="clear: left;">
