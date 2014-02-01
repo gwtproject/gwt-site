@@ -27,6 +27,7 @@
 			<entry name="resources" displayName="Resources" description="Resources"></entry>
 			<entry name="steering" displayName="Steering Committee" description="The GWT Steering Committee"></entry>
 			<entry name="terms" displayName="Terms" description="Terms"></entry>
+            <entry name="GWTPolicy" displayName="GWT Name Use Policy" description="GWT Name Use Policy"></entry>
 			<entry name="usingeclipse" displayName="Using Eclipse" description="Using Eclipse"></entry>
 			<entry name="versions" displayName="Versions" description="Versions"></entry>
 			<entry name="whos_using_gwt" displayName="Who is using GWT?" description="Who is using GWT"></entry>
