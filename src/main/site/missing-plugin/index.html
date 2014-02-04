@@ -139,7 +139,8 @@ var allDownloads = {
   },
 
   "firefox-old": {
-    "caption": "Sorry, the GWT Developer Plugin only supports Firefox 3.0 - 26.0 at present",
+    "caption": "Sorry, the GWT Developer Plugin only supports Firefox 3.0 - 26.0.<br>" +
+    " Perhaps download <a href=\"http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/24.3.0esr/\">Firefox 24</a>?",
   },
 
   "opera": {
@@ -277,11 +278,7 @@ function startsWith(haystack, needle) {
 }
 
 function makeButton(descr, plats, url) {
-  var supported = true;
-  if (!url) {
-    url = "https://groups.google.com/group/google-web-toolkit";
-    supported = false;
-  }
+  var supported = !!url;
 
   function anchor(url) {
     var n = document.createElement('a');
@@ -315,14 +312,20 @@ function makeButton(descr, plats, url) {
     return n;
   }
 
-  return anchor(url,
+  var button =
     div('button',
       div('buttonText',
         html(descr),
         div('details',
           text(plats))),
       div('buttonIconHolder',
-        div(supported ? 'downloadIcon' : 'unsupportedIcon'))));
+        div(supported ? 'downloadIcon' : 'unsupportedIcon')));
+
+  if (url) {
+    return anchor(url, button);
+  } else {
+    return button;
+  }
 }
 
 function showBest(x) {
