@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>Timer (Google Web Toolkit Javadoc)</title>
+<title>Timer (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Timer (Google Web Toolkit Javadoc)";
+        parent.document.title="Timer (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -179,21 +179,27 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>(package private) void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/Timer.html#fire()">fire</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/Timer.html#fire(int)">fire</a></strong>(int&nbsp;scheduleCancelCounter)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/Timer.html#isRunning()">isRunning</a></strong>()</code>
+<div class="block">Returns <code>true</code> if the timer is running.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/Timer.html#run()">run</a></strong>()</code>
 <div class="block">This method will be called when a timer fires.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/Timer.html#schedule(int)">schedule</a></strong>(int&nbsp;delayMillis)</code>
 <div class="block">Schedules a timer to elapse in the future.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/Timer.html#scheduleRepeating(int)">scheduleRepeating</a></strong>(int&nbsp;periodMillis)</code>
 <div class="block">Schedules a timer that elapses repeatedly.</div>
@@ -238,6 +244,17 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="isRunning()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isRunning</h4>
+<pre>public final&nbsp;boolean&nbsp;isRunning()</pre>
+<div class="block">Returns <code>true</code> if the timer is running. Timer is running if and only if it is scheduled
+ but it is not expired or cancelled.</div>
+</li>
+</ul>
 <a name="cancel()">
 <!--   -->
 </a>
@@ -245,7 +262,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>cancel</h4>
 <pre>public&nbsp;void&nbsp;cancel()</pre>
-<div class="block">Cancels this timer.</div>
+<div class="block">Cancels this timer. If the timer is not running, this is a no-op.</div>
 </li>
 </ul>
 <a name="run()">
@@ -266,9 +283,9 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>schedule</h4>
 <pre>public&nbsp;void&nbsp;schedule(int&nbsp;delayMillis)</pre>
-<div class="block">Schedules a timer to elapse in the future.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>delayMillis</code> - how long to wait before the timer elapses, in
-          milliseconds</dd></dl>
+<div class="block">Schedules a timer to elapse in the future. If the timer is already running then it will be
+ first canceled before re-scheduling.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>delayMillis</code> - how long to wait before the timer elapses, in milliseconds</dd></dl>
 </li>
 </ul>
 <a name="scheduleRepeating(int)">
@@ -278,18 +295,19 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>scheduleRepeating</h4>
 <pre>public&nbsp;void&nbsp;scheduleRepeating(int&nbsp;periodMillis)</pre>
-<div class="block">Schedules a timer that elapses repeatedly.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>periodMillis</code> - how long to wait before the timer elapses, in
-          milliseconds, between each repetition</dd></dl>
+<div class="block">Schedules a timer that elapses repeatedly. If the timer is already running then it will be
+ first canceled before re-scheduling.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>periodMillis</code> - how long to wait before the timer elapses, in milliseconds, between each
+        repetition</dd></dl>
 </li>
 </ul>
-<a name="fire()">
+<a name="fire(int)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>fire</h4>
-<pre>final&nbsp;void&nbsp;fire()</pre>
+<pre>final&nbsp;void&nbsp;fire(int&nbsp;scheduleCancelCounter)</pre>
 </li>
 </ul>
 </li>
@@ -313,7 +331,7 @@ extends java.lang.Object</pre>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

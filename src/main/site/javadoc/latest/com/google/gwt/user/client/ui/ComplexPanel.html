@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>ComplexPanel (Google Web Toolkit Javadoc)</title>
+<title>ComplexPanel (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ComplexPanel (Google Web Toolkit Javadoc)";
+        parent.document.title="ComplexPanel (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -208,13 +208,22 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/IndexedPanel
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#add(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)">add</a></strong>(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child,
-   <a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;container)</code>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#add(com.google.gwt.user.client.ui.Widget, com.google.gwt.dom.client.Element)">add</a></strong>(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child,
+   <a href="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;container)</code>
 <div class="block">Adds a new child widget to the panel, attaching its Element to the
  specified container Element.</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#add(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)">add</a></strong>(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child,
+   <a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;container)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Call and override <a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#add(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)"><code>add(Widget, Element)</code></a> instead.</i></div>
+</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>protected int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#adjustIndex(com.google.gwt.user.client.ui.Widget, int)">adjustIndex</a></strong>(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child,
            int&nbsp;beforeIndex)</code>
@@ -222,66 +231,56 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/IndexedPanel
  already a child of this panel.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#checkIndexBoundsForAccess(int)">checkIndexBoundsForAccess</a></strong>(int&nbsp;index)</code>
 <div class="block">Checks that <code>index</code> is in the range [0, getWidgetCount()), which
  is the valid range on accessible indexes.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#checkIndexBoundsForInsertion(int)">checkIndexBoundsForInsertion</a></strong>(int&nbsp;index)</code>
 <div class="block">Checks that <code>index</code> is in the range [0, getWidgetCount()], which
  is the valid range for indexes on an insertion.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>(package private) void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#doLogicalClear()">doLogicalClear</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../../../../com/google/gwt/user/client/ui/WidgetCollection.html" title="class in com.google.gwt.user.client.ui">WidgetCollection</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#getChildren()">getChildren</a></strong>()</code>
 <div class="block">Gets the list of children contained in this panel.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#getWidget(int)">getWidget</a></strong>(int&nbsp;index)</code>
 <div class="block">Gets the child widget at the specified index.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#getWidgetCount()">getWidgetCount</a></strong>()</code>
 <div class="block">Gets the number of child widgets in this panel.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#getWidgetIndex(com.google.gwt.user.client.ui.IsWidget)">getWidgetIndex</a></strong>(<a href="../../../../../../com/google/gwt/user/client/ui/IsWidget.html" title="interface in com.google.gwt.user.client.ui">IsWidget</a>&nbsp;child)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#getWidgetIndex(com.google.gwt.user.client.ui.Widget)">getWidgetIndex</a></strong>(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child)</code>
 <div class="block">Gets the index of the specified child widget.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int)">insert</a></strong>(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child,
-      <a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;container,
-      int&nbsp;beforeIndex)</code>
-<div class="block"><strong>Deprecated.</strong>&nbsp;
-<div class="block"><i>Use <a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int, boolean)"><code>insert(Widget, Element, int, boolean)</code></a> instead</i></div>
-</div>
-</td>
-</tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int, boolean)">insert</a></strong>(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child,
-      <a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;container,
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.dom.client.Element, int, boolean)">insert</a></strong>(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child,
+      <a href="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;container,
       int&nbsp;beforeIndex,
       boolean&nbsp;domInsert)</code>
 <div class="block">Insert a new child Widget into this Panel at a specified index, attaching
@@ -289,18 +288,29 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/IndexedPanel
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int, boolean)">insert</a></strong>(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child,
+      <a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;container,
+      int&nbsp;beforeIndex,
+      boolean&nbsp;domInsert)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Call and override <a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int, boolean)"><code>insert(Widget, Element, int, boolean)</code></a> instead.</i></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>java.util.Iterator&lt;<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#iterator()">iterator</a></strong>()</code>
 <div class="block">Gets an iterator for the contained widgets.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#remove(int)">remove</a></strong>(int&nbsp;index)</code>
 <div class="block">Removes the widget at the specified index.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#remove(com.google.gwt.user.client.ui.Widget)">remove</a></strong>(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;w)</code>
 <div class="block">Removes a child widget.</div>
@@ -312,21 +322,21 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/IndexedPanel
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.google.gwt.user.client.ui.<a href="../../../../../../com/google/gwt/user/client/ui/Panel.html" title="class in com.google.gwt.user.client.ui">Panel</a></h3>
-<code><a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#add(com.google.gwt.user.client.ui.IsWidget)">add</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#add(com.google.gwt.user.client.ui.Widget)">add</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#adopt(com.google.gwt.user.client.ui.Widget)">adopt</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#adopt(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)">adopt</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#clear()">clear</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#disown(com.google.gwt.user.client.ui.Widget)">disown</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#doAttachChildren()">doAttachChildren</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#doDetachChildren()">doDetachChildren</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#orphan(com.google.gwt.user.client.ui.Widget)">orphan</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#remove(com.google.gwt.user.client.ui.IsWidget)">remove</a></code></li>
+<code><a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#add(com.google.gwt.user.client.ui.IsWidget)">add</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#add(com.google.gwt.user.client.ui.Widget)">add</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#adopt(com.google.gwt.user.client.ui.Widget)">adopt</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#clear()">clear</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#doAttachChildren()">doAttachChildren</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#doDetachChildren()">doDetachChildren</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#orphan(com.google.gwt.user.client.ui.Widget)">orphan</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Panel.html#remove(com.google.gwt.user.client.ui.IsWidget)">remove</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_com.google.gwt.user.client.ui.Widget">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.google.gwt.user.client.ui.<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a></h3>
-<code><a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addAttachHandler(com.google.gwt.event.logical.shared.AttachEvent.Handler)">addAttachHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addBitlessDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)">addBitlessDomHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)">addDomHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addHandler(H, com.google.gwt.event.shared.GwtEvent.Type)">addHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#asWidget()">asWidget</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#asWidgetOrNull(com.google.gwt.user.client.ui.IsWidget)">asWidgetOrNull</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#createHandlerManager()">createHandlerManager</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#delegateEvent(com.google.gwt.user.client.ui.Widget, com.google.gwt.event.shared.GwtEvent)">delegateEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#ensureHandlers()">ensureHandlers</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#fireEvent(com.google.gwt.event.shared.GwtEvent)">fireEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getHandlerCount(com.google.gwt.event.shared.GwtEvent.Type)">getHandlerCount</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getHandlerManager()">getHandlerManager</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getLayoutData()">getLayoutData</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getParent()">getParent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#isAttached()">isAttached</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#isOrWasAttached()">isOrWasAttached</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onAttach()">onAttach</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onBrowserEvent(com.google.gwt.user.client.Event)">onBrowserEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onDetach()">onDetach</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onLoad()">onLoad</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onUnload()">onUnload</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#removeFromParent()">removeFromParent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#replaceElement(com.google.gwt.dom.client.Element)">replaceElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#setLayoutData(java.lang.Object)">setLayoutData</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#setParent(com.google.gwt.user.client.ui.Widget)">setParent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#sinkEvents(int)">sinkEvents</a></code></li>
+<code><a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addAttachHandler(com.google.gwt.event.logical.shared.AttachEvent.Handler)">addAttachHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addBitlessDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)">addBitlessDomHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)">addDomHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addHandler(H, com.google.gwt.event.shared.GwtEvent.Type)">addHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#asWidget()">asWidget</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#asWidgetOrNull(com.google.gwt.user.client.ui.IsWidget)">asWidgetOrNull</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#createHandlerManager()">createHandlerManager</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#delegateEvent(com.google.gwt.user.client.ui.Widget, com.google.gwt.event.shared.GwtEvent)">delegateEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#ensureHandlers()">ensureHandlers</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#fireEvent(com.google.gwt.event.shared.GwtEvent)">fireEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getHandlerCount(com.google.gwt.event.shared.GwtEvent.Type)">getHandlerCount</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getHandlerManager()">getHandlerManager</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getLayoutData()">getLayoutData</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getParent()">getParent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#isAttached()">isAttached</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#isOrWasAttached()">isOrWasAttached</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onAttach()">onAttach</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onBrowserEvent(com.google.gwt.user.client.Event)">onBrowserEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onDetach()">onDetach</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onLoad()">onLoad</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onUnload()">onUnload</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#removeFromParent()">removeFromParent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#replaceElement(com.google.gwt.dom.client.Element)">replaceElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#setLayoutData(java.lang.Object)">setLayoutData</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#setParent(com.google.gwt.user.client.ui.Widget)">setParent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#sinkEvents(int)">sinkEvents</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#unsinkEvents(int)">unsinkEvents</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_com.google.gwt.user.client.ui.UIObject">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.google.gwt.user.client.ui.<a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html" title="class in com.google.gwt.user.client.ui">UIObject</a></h3>
-<code><a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#addStyleDependentName(java.lang.String)">addStyleDependentName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#addStyleName(java.lang.String)">addStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#ensureDebugId(com.google.gwt.dom.client.Element, java.lang.String)">ensureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#ensureDebugId(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">ensureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#ensureDebugId(java.lang.String)">ensureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getAbsoluteLeft()">getAbsoluteLeft</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getAbsoluteTop()">getAbsoluteTop</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getElement()">getElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getOffsetHeight()">getOffsetHeight</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getOffsetWidth()">getOffsetWidth</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStyleElement()">getStyleElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStyleName()">getStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStyleName(com.google.gwt.dom.client.Element)">getStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStylePrimaryName()">getStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStylePrimaryName(com.google.gwt.dom.client.Element)">getStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getTitle()">getTitle</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#isVisible()">isVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#isVisible(com.google.gwt.dom.client.Element)">isVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#onEnsureDebugId(java.lang.String)">onEnsureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#removeStyleDependentName(java.lang.String)">removeStyleDependentName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#removeStyleName(java.lang.String)">removeStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#resolvePotentialElement()">resolvePotentialElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.dom.client.Element)">setElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.user.client.Element)">setElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setHeight(java.lang.String)">setHeight</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setPixelSize(int, int)">setPixelSize</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setSize(java.lang.String, java.lang.String)">setSize</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleDependentName(java.lang.String, boolean)">setStyleDependentName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(com.google.gwt.dom.client.Element, java.lang.String)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(com.google.gwt.dom.client.Element, java.lang.String, boolean)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String, boolean)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(com.google.gwt.dom.client.Element, java.lang.String)">setStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(java.lang.String)">setStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setTitle(java.lang.String)">setTitle</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setVisible(boolean)">setVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setVisible(com.google.gwt.dom.client.Element, boolean)">setVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setWidth(java.lang.String)">setWidth</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#sinkBitlessEvent(java.lang.String)">sinkBitlessEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#toString()">toString</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#unsinkEvents(int)">unsinkEvents</a></code></li>
+<code><a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#addStyleDependentName(java.lang.String)">addStyleDependentName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#addStyleName(java.lang.String)">addStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#ensureDebugId(com.google.gwt.dom.client.Element, java.lang.String)">ensureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#ensureDebugId(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">ensureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#ensureDebugId(java.lang.String)">ensureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getAbsoluteLeft()">getAbsoluteLeft</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getAbsoluteTop()">getAbsoluteTop</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getElement()">getElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getOffsetHeight()">getOffsetHeight</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getOffsetWidth()">getOffsetWidth</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStyleElement()">getStyleElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStyleName()">getStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStyleName(com.google.gwt.dom.client.Element)">getStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStylePrimaryName()">getStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStylePrimaryName(com.google.gwt.dom.client.Element)">getStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getTitle()">getTitle</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#isVisible()">isVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#isVisible(com.google.gwt.dom.client.Element)">isVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#onEnsureDebugId(java.lang.String)">onEnsureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#removeStyleDependentName(java.lang.String)">removeStyleDependentName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#removeStyleName(java.lang.String)">removeStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#resolvePotentialElement()">resolvePotentialElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.dom.client.Element)">setElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.user.client.Element)">setElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setHeight(java.lang.String)">setHeight</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setPixelSize(int, int)">setPixelSize</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setSize(java.lang.String, java.lang.String)">setSize</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleDependentName(java.lang.String, boolean)">setStyleDependentName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(com.google.gwt.dom.client.Element, java.lang.String)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(com.google.gwt.dom.client.Element, java.lang.String, boolean)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String, boolean)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(com.google.gwt.dom.client.Element, java.lang.String)">setStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(java.lang.String)">setStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setTitle(java.lang.String)">setTitle</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setVisible(boolean)">setVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setVisible(com.google.gwt.dom.client.Element, boolean)">setVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setWidth(java.lang.String)">setWidth</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#sinkBitlessEvent(java.lang.String)">sinkBitlessEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#toString()">toString</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -500,17 +510,29 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/IndexedPanel
 <dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the child was present</dd></dl>
 </li>
 </ul>
-<a name="add(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)">
+<a name="add(com.google.gwt.user.client.ui.Widget, com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
 <pre>protected&nbsp;void&nbsp;add(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child,
-       <a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;container)</pre>
+       <a href="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;container)</pre>
 <div class="block">Adds a new child widget to the panel, attaching its Element to the
  specified container Element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>child</code> - the child widget to be added</dd><dd><code>container</code> - the element within which the child will be contained</dd></dl>
+</li>
+</ul>
+<a name="add(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>add</h4>
+<pre>@Deprecated
+protected&nbsp;void&nbsp;add(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child,
+                  <a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;container)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Call and override <a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#add(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)"><code>add(Widget, Element)</code></a> instead.</i></div>
 </li>
 </ul>
 <a name="adjustIndex(com.google.gwt.user.client.ui.Widget, int)">
@@ -562,33 +584,14 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/IndexedPanel
 <dl><dt><span class="strong">Returns:</span></dt><dd>a collection of child widgets</dd></dl>
 </li>
 </ul>
-<a name="insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>insert</h4>
-<pre>@Deprecated
-protected&nbsp;void&nbsp;insert(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child,
-                     <a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;container,
-                     int&nbsp;beforeIndex)</pre>
-<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int, boolean)"><code>insert(Widget, Element, int, boolean)</code></a> instead</i></div>
-<div class="block">This method was used by subclasses to insert a new child Widget. It is now
- deprecated because it was ambiguous whether the <code>child</code> should
- be appended to <code>container</code> element versus inserted into
- <code>container</code> at <code>beforeIndex</code>. Use
- <a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int, boolean)"><code>insert(Widget, Element, int, boolean)</code></a>, which clarifies this
- ambiguity.</div>
-</li>
-</ul>
-<a name="insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int, boolean)">
+<a name="insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.dom.client.Element, int, boolean)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>insert</h4>
 <pre>protected&nbsp;void&nbsp;insert(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child,
-          <a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;container,
+          <a href="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;container,
           int&nbsp;beforeIndex,
           boolean&nbsp;domInsert)</pre>
 <div class="block">Insert a new child Widget into this Panel at a specified index, attaching
@@ -600,6 +603,20 @@ protected&nbsp;void&nbsp;insert(<a href="../../../../../../com/google/gwt/user/c
           inserted</dd><dd><code>domInsert</code> - if <code>true</code>, insert <code>child</code> into
           <code>container</code> at <code>beforeIndex</code>; otherwise
           append <code>child</code> to the end of <code>container</code>.</dd></dl>
+</li>
+</ul>
+<a name="insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>insert</h4>
+<pre>@Deprecated
+protected&nbsp;void&nbsp;insert(<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a>&nbsp;child,
+                     <a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;container,
+                     int&nbsp;beforeIndex,
+                     boolean&nbsp;domInsert)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Call and override <a href="../../../../../../com/google/gwt/user/client/ui/ComplexPanel.html#insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int, boolean)"><code>insert(Widget, Element, int, boolean)</code></a> instead.</i></div>
 </li>
 </ul>
 <a name="doLogicalClear()">
@@ -632,7 +649,7 @@ protected&nbsp;void&nbsp;insert(<a href="../../../../../../com/google/gwt/user/c
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

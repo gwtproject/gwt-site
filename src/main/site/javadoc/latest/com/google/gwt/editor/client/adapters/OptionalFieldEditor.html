@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>OptionalFieldEditor (Google Web Toolkit Javadoc)</title>
+<title>OptionalFieldEditor (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="OptionalFieldEditor (Google Web Toolkit Javadoc)";
+        parent.document.title="OptionalFieldEditor (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -77,7 +77,7 @@
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">com.google.gwt.editor.client.adapters</div>
-<h2 title="Class OptionalFieldEditor" class="title">Class OptionalFieldEditor&lt;T,E extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;T&gt;&gt;</h2>
+<h2 title="Class OptionalFieldEditor" class="title">Class OptionalFieldEditor&lt;T,E extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;? super T&gt;&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -98,7 +98,7 @@
 </dl>
 <hr>
 <br>
-<pre>public class <span class="strong">OptionalFieldEditor&lt;T,E extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;T&gt;&gt;</span>
+<pre>public class <span class="strong">OptionalFieldEditor&lt;T,E extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;? super T&gt;&gt;</span>
 extends java.lang.Object
 implements <a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html" title="interface in com.google.gwt.editor.client">CompositeEditor</a>&lt;T,T,E&gt;, <a href="../../../../../../com/google/gwt/editor/client/LeafValueEditor.html" title="interface in com.google.gwt.editor.client">LeafValueEditor</a>&lt;T&gt;</pre>
 <div class="block">This adapter can be used when a type being edited has an optional field that
@@ -131,7 +131,7 @@ implements <a href="../../../../../../com/google/gwt/editor/client/CompositeEdit
 <!--   -->
 </a>
 <h3>Nested classes/interfaces inherited from interface&nbsp;com.google.gwt.editor.client.<a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html" title="interface in com.google.gwt.editor.client">CompositeEditor</a></h3>
-<code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.EditorChain.html" title="interface in com.google.gwt.editor.client">CompositeEditor.EditorChain</a>&lt;<a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.EditorChain.html" title="type parameter in CompositeEditor.EditorChain">C</a>,<a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.EditorChain.html" title="type parameter in CompositeEditor.EditorChain">E</a> extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;<a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.EditorChain.html" title="type parameter in CompositeEditor.EditorChain">C</a>&gt;&gt;</code></li>
+<code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.EditorChain.html" title="interface in com.google.gwt.editor.client">CompositeEditor.EditorChain</a>&lt;<a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.EditorChain.html" title="type parameter in CompositeEditor.EditorChain">C</a>,<a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.EditorChain.html" title="type parameter in CompositeEditor.EditorChain">E</a> extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;? super <a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.EditorChain.html" title="type parameter in CompositeEditor.EditorChain">C</a>&gt;&gt;</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="nested_classes_inherited_from_class_com.google.gwt.editor.client.Editor">
@@ -201,7 +201,7 @@ implements <a href="../../../../../../com/google/gwt/editor/client/CompositeEdit
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static &lt;T,E extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;T&gt;&gt;&nbsp;<br><a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="class in com.google.gwt.editor.client.adapters">OptionalFieldEditor</a>&lt;T,E&gt;</code></td>
+<td class="colFirst"><code>static &lt;T,E extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;? super T&gt;&gt;&nbsp;<br><a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="class in com.google.gwt.editor.client.adapters">OptionalFieldEditor</a>&lt;T,E&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html#of(E)">of</a></strong>(E&nbsp;subEditor)</code>
 <div class="block">Construct an OptionalFieldEditor backed by the given sub-Editor.</div>
 </td>
@@ -286,7 +286,7 @@ implements <a href="../../../../../../com/google/gwt/editor/client/CompositeEdit
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
-<pre>public static&nbsp;&lt;T,E extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="class in com.google.gwt.editor.client.adapters">OptionalFieldEditor</a>&lt;T,E&gt;&nbsp;of(E&nbsp;subEditor)</pre>
+<pre>public static&nbsp;&lt;T,E extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;? super T&gt;&gt;&nbsp;<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="class in com.google.gwt.editor.client.adapters">OptionalFieldEditor</a>&lt;T,E&gt;&nbsp;of(E&nbsp;subEditor)</pre>
 <div class="block">Construct an OptionalFieldEditor backed by the given sub-Editor.</div>
 <dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - The type of data being managed</dd><dd><code>E</code> - The type of Editor</dd><dt><span class="strong">Parameters:</span></dt><dd><code>subEditor</code> - the sub-Editor that will be attached to the Editor
           hierarchy</dd>
@@ -304,7 +304,7 @@ implements <a href="../../../../../../com/google/gwt/editor/client/CompositeEdit
  with.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html#createEditorForTraversal()">createEditorForTraversal</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html" title="interface in com.google.gwt.editor.client">CompositeEditor</a>&lt;<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>,<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>,<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">E</a> extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>&gt;&gt;</code></dd>
+<dd><code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html#createEditorForTraversal()">createEditorForTraversal</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html" title="interface in com.google.gwt.editor.client">CompositeEditor</a>&lt;<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>,<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>,<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">E</a> extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;? super <a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>&gt;&gt;</code></dd>
 <dt><span class="strong">Returns:</span></dt><dd>an <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client"><code>Editor</code></a> of type E</dd></dl>
 </li>
 </ul>
@@ -337,7 +337,7 @@ implements <a href="../../../../../../com/google/gwt/editor/client/CompositeEdit
 <div class="block">Returns an empty string because there is only ever one sub-editor used.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html#getPathElement(E)">getPathElement</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html" title="interface in com.google.gwt.editor.client">CompositeEditor</a>&lt;<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>,<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>,<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">E</a> extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>&gt;&gt;</code></dd>
+<dd><code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html#getPathElement(E)">getPathElement</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html" title="interface in com.google.gwt.editor.client">CompositeEditor</a>&lt;<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>,<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>,<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">E</a> extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;? super <a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>&gt;&gt;</code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>subEditor</code> - an instance of the Editor type previously passed into
           <a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.EditorChain.html#attach(C, E)"><code>CompositeEditor.EditorChain.attach(C, E)</code></a></dd>
 <dt><span class="strong">Returns:</span></dt><dd>the path element as a String</dd></dl>
@@ -401,7 +401,7 @@ implements <a href="../../../../../../com/google/gwt/editor/client/CompositeEdit
 <div class="block">Called by the Editor framework to provide the <a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.EditorChain.html" title="interface in com.google.gwt.editor.client"><code>CompositeEditor.EditorChain</code></a>.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html#setEditorChain(com.google.gwt.editor.client.CompositeEditor.EditorChain)">setEditorChain</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html" title="interface in com.google.gwt.editor.client">CompositeEditor</a>&lt;<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>,<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>,<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">E</a> extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>&gt;&gt;</code></dd>
+<dd><code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html#setEditorChain(com.google.gwt.editor.client.CompositeEditor.EditorChain)">setEditorChain</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.html" title="interface in com.google.gwt.editor.client">CompositeEditor</a>&lt;<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>,<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>,<a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">E</a> extends <a href="../../../../../../com/google/gwt/editor/client/Editor.html" title="interface in com.google.gwt.editor.client">Editor</a>&lt;? super <a href="../../../../../../com/google/gwt/editor/client/adapters/OptionalFieldEditor.html" title="type parameter in OptionalFieldEditor">T</a>&gt;&gt;</code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>chain</code> - an <a href="../../../../../../com/google/gwt/editor/client/CompositeEditor.EditorChain.html" title="interface in com.google.gwt.editor.client"><code>CompositeEditor.EditorChain</code></a> instance</dd></dl>
 </li>
 </ul>
@@ -448,7 +448,7 @@ implements <a href="../../../../../../com/google/gwt/editor/client/CompositeEdit
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

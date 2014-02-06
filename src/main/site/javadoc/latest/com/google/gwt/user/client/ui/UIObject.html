@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>UIObject (Google Web Toolkit Javadoc)</title>
+<title>UIObject (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="UIObject (Google Web Toolkit Javadoc)";
+        parent.document.title="UIObject (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -454,7 +454,9 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/HasVisibilit
 <tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.user.client.Element)">setElement</a></strong>(<a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
-<div class="block">Sets this object's browser element.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use and override <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.user.client.Element)"><code>setElement(Element)</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -705,7 +707,8 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/HasVisibilit
 <h4>setVisible</h4>
 <pre>public static&nbsp;void&nbsp;setVisible(<a href="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
               boolean&nbsp;visible)</pre>
-<div class="block">Shows or hides the given element. Also updates the "aria-hidden" attribute.
+<div class="block">Shows or hides the given element. Also updates the "aria-hidden" attribute
+ by setting it to true when it is hidden and removing it when it is shown.
 
  <p>
  Warning: implemented with a heuristic based on the "display" style:
@@ -975,8 +978,7 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/HasVisibilit
  This method should not be overridden. It is non-final solely to support
  legacy code that depends upon overriding it. If it is overridden, the
  subclass implementation must not return a different element than was
- previously set using
- <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.user.client.Element)"><code>setElement(com.google.gwt.user.client.Element)</code></a>.</div>
+ previously set using <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.user.client.Element)"><code>setElement(Element)</code></a>.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>the object's browser element</dd></dl>
 </li>
 </ul>
@@ -1345,7 +1347,7 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/HasVisibilit
  </ul>
  <p>
  This method is called when the receiver's element is about to be
- added to a parent node, as a side effect of <a href="../../../../../../com/google/gwt/user/client/DOM.html#appendChild(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)"><code>DOM.appendChild(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)</code></a>.
+ added to a parent node, as a side effect of <a href="../../../../../../com/google/gwt/user/client/DOM.html#appendChild(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)"><code>DOM.appendChild(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)</code></a>.
  <p>
  Note that this method is normally called only on the top element
  of an IsRenderable tree. Children instead will receive <a href="../../../../../../com/google/gwt/user/client/ui/IsRenderable.html#render(com.google.gwt.user.client.ui.RenderableStamper)"><code>IsRenderable.render(com.google.gwt.user.client.ui.RenderableStamper)</code></a> and <a href="../../../../../../com/google/gwt/user/client/ui/IsRenderable.html#claimElement(com.google.gwt.dom.client.Element)"><code>IsRenderable.claimElement(Element)</code></a>.</div>
@@ -1372,7 +1374,9 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/HasVisibilit
 <ul class="blockList">
 <li class="blockList">
 <h4>setElement</h4>
-<pre>protected&nbsp;void&nbsp;setElement(<a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>@Deprecated
+protected&nbsp;void&nbsp;setElement(<a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use and override <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.user.client.Element)"><code>setElement(Element)</code></a> instead.</i></div>
 <div class="block">Sets this object's browser element. UIObject subclasses must call this
  method before attempting to call any other methods, and it may only be
  called once.
@@ -1417,7 +1421,7 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/HasVisibilit
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

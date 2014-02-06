@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>CrossSiteIframeLinker (Google Web Toolkit Javadoc)</title>
+<title>CrossSiteIframeLinker (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="CrossSiteIframeLinker (Google Web Toolkit Javadoc)";
+        parent.document.title="CrossSiteIframeLinker (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,12 +29,12 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
 <li>Prev Class</li>
-<li><a href="../../../../../com/google/gwt/core/linker/DirectInstallLinker.html" title="class in com.google.gwt.core.linker"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../../com/google/gwt/core/linker/D8ScriptLinker.html" title="class in com.google.gwt.core.linker"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?com/google/gwt/core/linker/CrossSiteIframeLinker.html" target="_top">Frames</a></li>
@@ -193,9 +193,13 @@ extends com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#getDeferredFragmentSuffix(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext, int)">getDeferredFragmentSuffix</a></strong>(<a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
-                         <a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context,
-                         int&nbsp;fragment)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#getDeferredFragmentSuffix2(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext, int, java.lang.String)">getDeferredFragmentSuffix2</a></strong>(<a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
+                          <a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context,
+                          int&nbsp;fragment,
+                          java.lang.String&nbsp;strongName)</code>
+<div class="block">Returns the suffix at the end of a JavaScript fragment other than the initial fragment
+ (new version).</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
@@ -226,7 +230,21 @@ extends com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#getJsDevModeRedirectHook(com.google.gwt.core.ext.LinkerContext)">getJsDevModeRedirectHook</a></strong>(<a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context)</code>
-<div class="block">Returns a code fragment to check for the new development mode.</div>
+<div class="block">Returns a JavaScript fragment that starts Super Dev Mode, if enabled.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#getJsDevModeRedirectHookPermitted(com.google.gwt.core.ext.LinkerContext)">getJsDevModeRedirectHookPermitted</a></strong>(<a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context)</code>
+<div class="block">Returns a JavaScript expression that determines whether Super Dev Mode may be turned on
+ for the current page.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#getJsDevModeUrlValidation(com.google.gwt.core.ext.LinkerContext)">getJsDevModeUrlValidation</a></strong>(<a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context)</code>
+<div class="block">Returns a JavaScript fragment that validates "devModeUrl"&mdash;the URL that Super Dev Mode's
+ JavaScript is loaded from&mdash;before it's used.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -299,8 +317,11 @@ extends com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#getModuleSuffix(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext)">getModuleSuffix</a></strong>(<a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
-               <a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#getModuleSuffix2(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext, java.lang.String)">getModuleSuffix2</a></strong>(<a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
+                <a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context,
+                java.lang.String&nbsp;strongName)</code>
+<div class="block">Returns the suffix for the initial JavaScript fragment (new version).</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
@@ -316,18 +337,27 @@ extends com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#getSourceMapUrl(com.google.gwt.core.ext.LinkerContext, java.lang.String, int)">getSourceMapUrl</a></strong>(<a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context,
+               java.lang.String&nbsp;strongName,
+               int&nbsp;fragmentId)</code>
+<div class="block">Returns the sourcemap URL that will be put in the comment at the end of a JavaScript
+ fragment, or null if the comment should be omitted.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#getStringConfigurationProperty(com.google.gwt.core.ext.LinkerContext, java.lang.String, java.lang.String)">getStringConfigurationProperty</a></strong>(<a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context,
                               java.lang.String&nbsp;name,
                               java.lang.String&nbsp;def)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#includeJs(java.lang.StringBuffer, com.google.gwt.core.ext.TreeLogger, java.lang.String, java.lang.String)">includeJs</a></strong>(java.lang.StringBuffer&nbsp;selectionScript,
          <a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
          java.lang.String&nbsp;jsSource,
          java.lang.String&nbsp;templateVar)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#maybeAddHostedModeFile(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext, com.google.gwt.core.ext.linker.ArtifactSet, com.google.gwt.core.ext.linker.CompilationResult)">maybeAddHostedModeFile</a></strong>(<a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
                       <a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context,
@@ -336,27 +366,27 @@ extends com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</pre>
 <div class="block">Add the Development Mode file to the artifact set.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#maybeOutputPropertyMap(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext, com.google.gwt.core.ext.linker.ArtifactSet)">maybeOutputPropertyMap</a></strong>(<a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
                       <a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context,
                       <a href="../../../../../com/google/gwt/core/ext/linker/ArtifactSet.html" title="class in com.google.gwt.core.ext.linker">ArtifactSet</a>&nbsp;toReturn)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#shouldIncludeBootstrapInPrimaryFragment(com.google.gwt.core.ext.LinkerContext)">shouldIncludeBootstrapInPrimaryFragment</a></strong>(<a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#shouldInstallCode(com.google.gwt.core.ext.LinkerContext)">shouldInstallCode</a></strong>(<a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#shouldUseSelfForWindowAndDocument(com.google.gwt.core.ext.LinkerContext)">shouldUseSelfForWindowAndDocument</a></strong>(<a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context)</code>
 <div class="block">Returns whether to use "self" for $wnd and $doc references.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#wrapDeferredFragment(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext, int, java.lang.String, com.google.gwt.core.ext.linker.ArtifactSet)">wrapDeferredFragment</a></strong>(<a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
                     <a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context,
@@ -364,7 +394,7 @@ extends com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</pre>
                     java.lang.String&nbsp;js,
                     <a href="../../../../../com/google/gwt/core/ext/linker/ArtifactSet.html" title="class in com.google.gwt.core.ext.linker">ArtifactSet</a>&nbsp;artifacts)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/linker/CrossSiteIframeLinker.html#wrapPrimaryFragment(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext, java.lang.String, com.google.gwt.core.ext.linker.ArtifactSet, com.google.gwt.core.ext.linker.CompilationResult)">wrapPrimaryFragment</a></strong>(<a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
                    <a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context,
@@ -378,7 +408,7 @@ extends com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</pre>
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</h3>
-<code>charsPerChunk, doEmitCompilation, emitSelectionInformation, emitSelectionScript, generateDeferredFragment, generatePrimaryFragment, generatePrimaryFragmentString, generateSelectionScript, generateSelectionScript, getDeferredFragmentPrefix, getFragmentSubdir, getModulePrefix, link, link, readFileToStringBuffer, replaceAll, splitPrimaryJavaScript, supportsDevModeInJunit</code></li>
+<code>charsPerChunk, doEmitCompilation, emitSelectionInformation, emitSelectionScript, generateDeferredFragment, generatePrimaryFragment, generatePrimaryFragmentString, generateSelectionScript, generateSelectionScript, getDeferredFragmentPrefix, getDeferredFragmentSuffix, getFragmentSubdir, getModulePrefix, getModuleSuffix, link, link, readFileToStringBuffer, replaceAll, splitPrimaryJavaScript, supportsDevModeInJunit</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_com.google.gwt.core.ext.linker.AbstractLinker">
@@ -494,18 +524,24 @@ extends com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</pre>
 </dl>
 </li>
 </ul>
-<a name="getDeferredFragmentSuffix(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext, int)">
+<a name="getDeferredFragmentSuffix2(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext, int, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getDeferredFragmentSuffix</h4>
-<pre>protected&nbsp;java.lang.String&nbsp;getDeferredFragmentSuffix(<a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
-                                         <a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context,
-                                         int&nbsp;fragment)</pre>
+<h4>getDeferredFragmentSuffix2</h4>
+<pre>protected&nbsp;java.lang.String&nbsp;getDeferredFragmentSuffix2(<a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
+                                          <a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context,
+                                          int&nbsp;fragment,
+                                          java.lang.String&nbsp;strongName)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code>com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</code></strong></div>
+<div class="block">Returns the suffix at the end of a JavaScript fragment other than the initial fragment
+ (new version). This method won't be called if <code>SelectionScriptLinker.getDeferredFragmentSuffix(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext, int)</code> is overridden
+ to return non-null. Subclasses should stop implementing getDeferredFramgnentSuffix and
+ implement getDeferredFragmentSuffix2 instead.</div>
 <dl>
 <dt><strong>Overrides:</strong></dt>
-<dd><code>getDeferredFragmentSuffix</code>&nbsp;in class&nbsp;<code>com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</code></dd>
+<dd><code>getDeferredFragmentSuffix2</code>&nbsp;in class&nbsp;<code>com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</code></dd>
 </dl>
 </li>
 </ul>
@@ -562,7 +598,42 @@ extends com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</pre>
 <li class="blockList">
 <h4>getJsDevModeRedirectHook</h4>
 <pre>protected&nbsp;java.lang.String&nbsp;getJsDevModeRedirectHook(<a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context)</pre>
-<div class="block">Returns a code fragment to check for the new development mode.</div>
+<div class="block">Returns a JavaScript fragment that starts Super Dev Mode, if enabled.
+ (May return either the JavaScript itself or the name of a Java resource ending with ".js".)</div>
+</li>
+</ul>
+<a name="getJsDevModeUrlValidation(com.google.gwt.core.ext.LinkerContext)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getJsDevModeUrlValidation</h4>
+<pre>protected&nbsp;java.lang.String&nbsp;getJsDevModeUrlValidation(<a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context)</pre>
+<div class="block">Returns a JavaScript fragment that validates "devModeUrl"&mdash;the URL that Super Dev Mode's
+ JavaScript is loaded from&mdash;before it's used.  The variable may be modified to change what
+ what URL is loaded, or it maybe be set to "" to disable completely.
+ (May return either the JavaScript itself or the name of a Java resource ending with ".js".)</div>
+</li>
+</ul>
+<a name="getJsDevModeRedirectHookPermitted(com.google.gwt.core.ext.LinkerContext)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getJsDevModeRedirectHookPermitted</h4>
+<pre>protected&nbsp;java.lang.String&nbsp;getJsDevModeRedirectHookPermitted(<a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context)</pre>
+<div class="block">Returns a JavaScript expression that determines whether Super Dev Mode may be turned on
+ for the current page. (May return either the JavaScript itself or the name of a Java resource
+ ending with ".js".)
+
+ <p>The default implementation allows Super Dev Mode only on http: and file: pages. It could be
+ overridden to implement a blacklist or whitelist of hostnames where Super Dev Mode may run.
+ As a safety precaution, it's recommended to return false for https and for the hostnames in
+ URL's visited by end users.
+
+ <p>If you override this method to allow https, it probably won't work anyway because
+ browsers often disallow loading JavaScript from http URL's into https pages. To make it work,
+ you will also have to find a way to run the code server using https.</div>
 </li>
 </ul>
 <a name="getJsInstallLocation(com.google.gwt.core.ext.LinkerContext)">
@@ -710,17 +781,22 @@ extends com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</pre>
 <dd><code><a href="../../../../../com/google/gwt/core/ext/UnableToCompleteException.html" title="class in com.google.gwt.core.ext">UnableToCompleteException</a></code></dd></dl>
 </li>
 </ul>
-<a name="getModuleSuffix(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext)">
+<a name="getModuleSuffix2(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getModuleSuffix</h4>
-<pre>protected&nbsp;java.lang.String&nbsp;getModuleSuffix(<a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
-                               <a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context)</pre>
+<h4>getModuleSuffix2</h4>
+<pre>protected&nbsp;java.lang.String&nbsp;getModuleSuffix2(<a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
+                                <a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context,
+                                java.lang.String&nbsp;strongName)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code>com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</code></strong></div>
+<div class="block">Returns the suffix for the initial JavaScript fragment (new version). This version
+ will not be called if <code>SelectionScriptLinker.getModuleSuffix(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.LinkerContext)</code> is overridden so that it doesn't return null.
+ Subclasses should stop implementing getModuleSuffix and implmenet getModuleSuffix2 instead.</div>
 <dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code>getModuleSuffix</code>&nbsp;in class&nbsp;<code>com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code>getModuleSuffix2</code>&nbsp;in class&nbsp;<code>com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</code></dd>
 </dl>
 </li>
 </ul>
@@ -754,6 +830,20 @@ extends com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</pre>
 <dt><strong>Specified by:</strong></dt>
 <dd><code>getSelectionScriptTemplate</code>&nbsp;in class&nbsp;<code>com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</code></dd>
 </dl>
+</li>
+</ul>
+<a name="getSourceMapUrl(com.google.gwt.core.ext.LinkerContext, java.lang.String, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSourceMapUrl</h4>
+<pre>protected&nbsp;java.lang.String&nbsp;getSourceMapUrl(<a href="../../../../../com/google/gwt/core/ext/LinkerContext.html" title="interface in com.google.gwt.core.ext">LinkerContext</a>&nbsp;context,
+                               java.lang.String&nbsp;strongName,
+                               int&nbsp;fragmentId)</pre>
+<div class="block">Returns the sourcemap URL that will be put in the comment at the end of a JavaScript
+ fragment, or null if the comment should be omitted. The default implementation uses
+ the includeSourceMapUrl config property.</div>
 </li>
 </ul>
 <a name="getStringConfigurationProperty(com.google.gwt.core.ext.LinkerContext, java.lang.String, java.lang.String)">
@@ -903,12 +993,12 @@ extends com.google.gwt.core.ext.linker.impl.SelectionScriptLinker</pre>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
 <li>Prev Class</li>
-<li><a href="../../../../../com/google/gwt/core/linker/DirectInstallLinker.html" title="class in com.google.gwt.core.linker"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../../com/google/gwt/core/linker/D8ScriptLinker.html" title="class in com.google.gwt.core.linker"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?com/google/gwt/core/linker/CrossSiteIframeLinker.html" target="_top">Frames</a></li>

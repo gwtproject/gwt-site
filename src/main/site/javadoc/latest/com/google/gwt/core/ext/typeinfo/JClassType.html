@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>JClassType (Google Web Toolkit Javadoc)</title>
+<title>JClassType (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="JClassType (Google Web Toolkit Javadoc)";
+        parent.document.title="JClassType (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -127,7 +127,9 @@ extends <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" 
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JConstructor.html" title="interface in com.google.gwt.core.ext.typeinfo">JConstructor</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#findConstructor(com.google.gwt.core.ext.typeinfo.JType[])">findConstructor</a></strong>(<a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" title="interface in com.google.gwt.core.ext.typeinfo">JType</a>[]&nbsp;paramTypes)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#findConstructor(com.google.gwt.core.ext.typeinfo.JType[])">findConstructor</a></strong>(<a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" title="interface in com.google.gwt.core.ext.typeinfo">JType</a>[]&nbsp;paramTypes)</code>
+<div class="block">Returns the constructor with parameters that have the given types, or null if not found.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JField.html" title="interface in com.google.gwt.core.ext.typeinfo">JField</a></code></td>
@@ -152,7 +154,9 @@ extends <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" 
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getEnclosingType()">getEnclosingType</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getEnclosingType()">getEnclosingType</a></strong>()</code>
+<div class="block">Returns the enclosing type, or null if none.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
@@ -194,11 +198,18 @@ extends <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" 
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JMethod.html" title="interface in com.google.gwt.core.ext.typeinfo">JMethod</a>[]</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getMethods()">getMethods</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getMethods()">getMethods</a></strong>()</code>
+<div class="block">Returns the declared methods of this class (not any superclasses or
+ superinterfaces).</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getName()">getName</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getName()">getName</a></strong>()</code>
+<div class="block">If an array, returns the name of this class without the package name or
+ enclosing class name, followed by multiple pairs of square brackets;
+ if not, returns the nested name of this type, without the package name.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
@@ -214,7 +225,10 @@ extends <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" 
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JMethod.html" title="interface in com.google.gwt.core.ext.typeinfo">JMethod</a>[]</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getOverloads(java.lang.String)">getOverloads</a></strong>(java.lang.String&nbsp;name)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getOverloads(java.lang.String)">getOverloads</a></strong>(java.lang.String&nbsp;name)</code>
+<div class="block">Returns the declared methods of this class with the given name
+ (doesn't include any superclasses or superinterfaces).</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JMethod.html" title="interface in com.google.gwt.core.ext.typeinfo">JMethod</a>[]</code></td>
@@ -230,11 +244,15 @@ extends <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" 
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a>[]</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getSubtypes()">getSubtypes</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getSubtypes()">getSubtypes</a></strong>()</code>
+<div class="block">Returns all subtypes of this type, recursively, not including this type.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getSuperclass()">getSuperclass</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getSuperclass()">getSuperclass</a></strong>()</code>
+<div class="block">Returns the superclass of this type, or <code>null</code> if none.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -385,6 +403,7 @@ extends <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" 
 <li class="blockList">
 <h4>findConstructor</h4>
 <pre><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JConstructor.html" title="interface in com.google.gwt.core.ext.typeinfo">JConstructor</a>&nbsp;findConstructor(<a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" title="interface in com.google.gwt.core.ext.typeinfo">JType</a>[]&nbsp;paramTypes)</pre>
+<div class="block">Returns the constructor with parameters that have the given types, or null if not found.</div>
 </li>
 </ul>
 <a name="findField(java.lang.String)">
@@ -443,6 +462,7 @@ extends <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" 
 <li class="blockList">
 <h4>getEnclosingType</h4>
 <pre><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a>&nbsp;getEnclosingType()</pre>
+<div class="block">Returns the enclosing type, or null if none.</div>
 </li>
 </ul>
 <a name="getErasedType()">
@@ -541,6 +561,8 @@ extends <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" 
 <li class="blockList">
 <h4>getMethods</h4>
 <pre><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JMethod.html" title="interface in com.google.gwt.core.ext.typeinfo">JMethod</a>[]&nbsp;getMethods()</pre>
+<div class="block">Returns the declared methods of this class (not any superclasses or
+ superinterfaces).</div>
 </li>
 </ul>
 <a name="getName()">
@@ -550,6 +572,9 @@ extends <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" 
 <li class="blockList">
 <h4>getName</h4>
 <pre>java.lang.String&nbsp;getName()</pre>
+<div class="block">If an array, returns the name of this class without the package name or
+ enclosing class name, followed by multiple pairs of square brackets;
+ if not, returns the nested name of this type, without the package name.</div>
 </li>
 </ul>
 <a name="getNestedType(java.lang.String)">
@@ -589,6 +614,8 @@ extends <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" 
 <li class="blockList">
 <h4>getOverloads</h4>
 <pre><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JMethod.html" title="interface in com.google.gwt.core.ext.typeinfo">JMethod</a>[]&nbsp;getOverloads(java.lang.String&nbsp;name)</pre>
+<div class="block">Returns the declared methods of this class with the given name
+ (doesn't include any superclasses or superinterfaces).</div>
 </li>
 </ul>
 <a name="getOverridableMethods()">
@@ -630,6 +657,7 @@ extends <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" 
 <li class="blockList">
 <h4>getSubtypes</h4>
 <pre><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a>[]&nbsp;getSubtypes()</pre>
+<div class="block">Returns all subtypes of this type, recursively, not including this type.</div>
 </li>
 </ul>
 <a name="getSuperclass()">
@@ -639,6 +667,7 @@ extends <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html" 
 <li class="blockList">
 <h4>getSuperclass</h4>
 <pre><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a>&nbsp;getSuperclass()</pre>
+<div class="block">Returns the superclass of this type, or <code>null</code> if none.</div>
 </li>
 </ul>
 <a name="isAbstract()">
@@ -816,7 +845,7 @@ boolean&nbsp;isLocalType()</pre>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

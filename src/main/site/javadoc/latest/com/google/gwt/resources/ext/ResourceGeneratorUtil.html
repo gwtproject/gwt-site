@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>ResourceGeneratorUtil (Google Web Toolkit Javadoc)</title>
+<title>ResourceGeneratorUtil (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ResourceGeneratorUtil (Google Web Toolkit Javadoc)";
+        parent.document.title="ResourceGeneratorUtil (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -155,6 +155,14 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>static long</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/resources/ext/ResourceGeneratorUtil.html#getLastModified(java.net.URL[], com.google.gwt.core.ext.TreeLogger)">getLastModified</a></strong>(java.net.URL[]&nbsp;resources,
+               <a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger)</code>
+<div class="block">Returns the most recent value of the <code>last-modified</code> header fields of all the Urls
+ in the <code>resources</code> array.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/core/ext/typeinfo/JMethod.html" title="interface in com.google.gwt.core.ext.typeinfo">JMethod</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/resources/ext/ResourceGeneratorUtil.html#getMethodByPath(com.google.gwt.core.ext.typeinfo.JClassType, java.util.List, com.google.gwt.core.ext.typeinfo.JType)">getMethodByPath</a></strong>(<a href="../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a>&nbsp;rootType,
                java.util.List&lt;java.lang.String&gt;&nbsp;pathElements,
@@ -163,7 +171,7 @@ extends java.lang.Object</pre>
  method invocations from an instance of a given root type.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static java.net.URL</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/resources/ext/ResourceGeneratorUtil.html#tryFindResource(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, com.google.gwt.resources.ext.ResourceContext, java.lang.String)">tryFindResource</a></strong>(<a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
                <a href="../../../../../com/google/gwt/core/ext/GeneratorContext.html" title="interface in com.google.gwt.core.ext">GeneratorContext</a>&nbsp;genContext,
@@ -334,6 +342,24 @@ extends java.lang.Object</pre>
            provided to this method</dd></dl>
 </li>
 </ul>
+<a name="getLastModified(java.net.URL[], com.google.gwt.core.ext.TreeLogger)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLastModified</h4>
+<pre>public static&nbsp;long&nbsp;getLastModified(java.net.URL[]&nbsp;resources,
+                   <a href="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger)</pre>
+<div class="block">Returns the most recent value of the <code>last-modified</code> header fields of all the Urls
+ in the <code>resources</code> array.
+ The result is the number of milliseconds since January 1, 1970 GMT.
+
+ Returns 0 if the <code>last-modified</code> header field of one of the resources cannot
+ be determined.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the most recent modification date of the resources present in
+          <code>resources</code> or 0 if not known.</dd></dl>
+</li>
+</ul>
 <a name="getMethodByPath(com.google.gwt.core.ext.typeinfo.JClassType, java.util.List, com.google.gwt.core.ext.typeinfo.JType)">
 <!--   -->
 </a>
@@ -391,7 +417,7 @@ extends java.lang.Object</pre>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

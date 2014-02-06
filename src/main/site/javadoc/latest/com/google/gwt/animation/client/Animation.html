@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>Animation (Google Web Toolkit Javadoc)</title>
+<title>Animation (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Animation (Google Web Toolkit Javadoc)";
+        parent.document.title="Animation (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -160,43 +160,49 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/animation/client/Animation.html#isRunning()">isRunning</a></strong>()</code>
+<div class="block">Returns true if the animation is running.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/animation/client/Animation.html#onCancel()">onCancel</a></strong>()</code>
 <div class="block">Called immediately after the animation is canceled.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/animation/client/Animation.html#onComplete()">onComplete</a></strong>()</code>
 <div class="block">Called immediately after the animation completes.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/animation/client/Animation.html#onStart()">onStart</a></strong>()</code>
 <div class="block">Called immediately before the animation starts.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/animation/client/Animation.html#onUpdate(double)">onUpdate</a></strong>(double&nbsp;progress)</code>
 <div class="block">Called when the animation should be updated.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/animation/client/Animation.html#run(int)">run</a></strong>(int&nbsp;duration)</code>
 <div class="block">Immediately run this animation.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/animation/client/Animation.html#run(int, double)">run</a></strong>(int&nbsp;duration,
    double&nbsp;startTime)</code>
 <div class="block">Run this animation at the given startTime.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/animation/client/Animation.html#run(int, double, com.google.gwt.dom.client.Element)">run</a></strong>(int&nbsp;duration,
    double&nbsp;startTime,
@@ -204,7 +210,7 @@ extends java.lang.Object</pre>
 <div class="block">Run this animation at the given startTime.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/animation/client/Animation.html#run(int, com.google.gwt.dom.client.Element)">run</a></strong>(int&nbsp;duration,
    <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;element)</code>
@@ -344,6 +350,17 @@ extends java.lang.Object</pre>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>duration</code> - the duration of the animation in milliseconds</dd><dd><code>startTime</code> - the synchronized start time in milliseconds</dd><dd><code>element</code> - the element that visually bounds the entire animation</dd></dl>
 </li>
 </ul>
+<a name="isRunning()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isRunning</h4>
+<pre>public&nbsp;boolean&nbsp;isRunning()</pre>
+<div class="block">Returns true if the animation is running.
+ Note that animation may be 'running' but no callbacks is executed yet.</div>
+</li>
+</ul>
 <a name="interpolate(double)">
 <!--   -->
 </a>
@@ -430,7 +447,7 @@ extends java.lang.Object</pre>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

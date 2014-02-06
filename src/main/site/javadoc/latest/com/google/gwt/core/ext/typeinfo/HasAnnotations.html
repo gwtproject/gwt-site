@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>HasAnnotations (Google Web Toolkit Javadoc)</title>
+<title>HasAnnotations (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="HasAnnotations (Google Web Toolkit Javadoc)";
+        parent.document.title="HasAnnotations (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -163,7 +163,8 @@
 <h4>getAnnotation</h4>
 <pre>&lt;T extends java.lang.annotation.Annotation&gt;&nbsp;T&nbsp;getAnnotation(java.lang.Class&lt;T&gt;&nbsp;annotationClass)</pre>
 <div class="block">Returns an instance of the specified annotation type if it is present on
- this element or <code>null</code> if it is not.</div>
+ this element or <code>null</code> if it is not. For a class, this will
+ look for annotations on supertypes as well.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>annotationClass</code> - annotation type to search for</dd>
 <dt><span class="strong">Returns:</span></dt><dd>instance of the specified annotation type if it is present on this
          element or <code>null</code> if it is not</dd></dl>
@@ -176,7 +177,8 @@
 <li class="blockList">
 <h4>getAnnotations</h4>
 <pre>java.lang.annotation.Annotation[]&nbsp;getAnnotations()</pre>
-<div class="block">Returns all the annotations present on this element.</div>
+<div class="block">Returns all the annotations present on this element. For a class, the list
+ will include annotations on supertypes as well.</div>
 </li>
 </ul>
 <a name="getDeclaredAnnotations()">
@@ -198,9 +200,8 @@
 <h4>isAnnotationPresent</h4>
 <pre>boolean&nbsp;isAnnotationPresent(java.lang.Class&lt;? extends java.lang.annotation.Annotation&gt;&nbsp;annotationClass)</pre>
 <div class="block">Returns <code>true</code> if this item has an annotation of the specified
- type.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>annotationClass</code> - </dd>
-<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if this item has an annotation of the specified
+ type. For a class, this will look at supertypes as well.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd><code>true</code> if this item has an annotation of the specified
          type</dd></dl>
 </li>
 </ul>
@@ -225,7 +226,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

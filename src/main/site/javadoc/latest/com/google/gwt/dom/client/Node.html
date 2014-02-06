@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>Node (Google Web Toolkit Javadoc)</title>
+<title>Node (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Node (Google Web Toolkit Javadoc)";
+        parent.document.title="Node (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -322,18 +322,24 @@ extends <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/Node.html#removeAllChildren()">removeAllChildren</a></strong>()</code>
+<div class="block">Remove all children of the node.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/Node.html#removeChild(com.google.gwt.dom.client.Node)">removeChild</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a>&nbsp;oldChild)</code>
 <div class="block">Removes the child node indicated by oldChild from the list of children, and
  returns it.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/Node.html#removeFromParent()">removeFromParent</a></strong>()</code>
 <div class="block">Removes this node from its parent node if it is attached to one.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/Node.html#replaceChild(com.google.gwt.dom.client.Node, com.google.gwt.dom.client.Node)">replaceChild</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a>&nbsp;newChild,
             <a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a>&nbsp;oldChild)</code>
@@ -341,7 +347,7 @@ extends <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html
  returns the oldChild node.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/Node.html#setNodeValue(java.lang.String)">setNodeValue</a></strong>(java.lang.String&nbsp;nodeValue)</code>
 <div class="block">The value of this node, depending on its type; see the table above.</div>
@@ -353,7 +359,7 @@ extends <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.google.gwt.core.client.<a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a></h3>
-<code><a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#cast()">cast</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createArray()">createArray</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createFunction()">createFunction</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createObject()">createObject</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#equals(java.lang.Object)">equals</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#hashCode()">hashCode</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#toSource()">toSource</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#toString()">toString</a></code></li>
+<code><a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#cast()">cast</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createArray()">createArray</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createArray(int)">createArray</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createFunction()">createFunction</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createObject()">createObject</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#equals(java.lang.Object)">equals</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#hashCode()">hashCode</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#toSource()">toSource</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#toString()">toString</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -727,6 +733,16 @@ extends <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html
 <dt><span class="strong">Returns:</span></dt><dd>The node removed</dd></dl>
 </li>
 </ul>
+<a name="removeAllChildren()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeAllChildren</h4>
+<pre>public final&nbsp;<a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a>&nbsp;removeAllChildren()</pre>
+<div class="block">Remove all children of the node.</div>
+</li>
+</ul>
 <a name="removeFromParent()">
 <!--   -->
 </a>
@@ -783,7 +799,7 @@ extends <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
