@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>JType (Google Web Toolkit Javadoc)</title>
+<title>JType (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="JType (Google Web Toolkit Javadoc)";
+        parent.document.title="JType (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -122,9 +122,9 @@
 <tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#getJNISignature()">getJNISignature</a></strong>()</code>
-<div class="block">Returns the turns the
+<div class="block">Returns the
  <a href="http://java.sun.com/docs/books/jvms/second_edition/html/ClassFile.doc.html#14152">
- field descriptor"</a> for a type as specified by the Java Virtual Machine Specification.</div>
+ "field descriptor"</a> for a type as specified by the Java Virtual Machine Specification.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -136,7 +136,10 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#getParameterizedQualifiedSourceName()">getParameterizedQualifiedSourceName</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#getParameterizedQualifiedSourceName()">getParameterizedQualifiedSourceName</a></strong>()</code>
+<div class="block">Returns a type name as it would be specified in Java source, with the
+ package name included.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
@@ -172,11 +175,17 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isClass()">isClass</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isClass()">isClass</a></strong>()</code>
+<div class="block">Returns this instance if the erased version of this type is a class (as opposed to a primitive,
+ array, or interface) or <code>null</code> if it is not.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isClassOrInterface()">isClassOrInterface</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isClassOrInterface()">isClassOrInterface</a></strong>()</code>
+<div class="block">Returns this instance if the erased version of this type is a class or interface (as opposed to
+ a primitive or array array) or <code>null</code> if it is not.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JEnumType.html" title="interface in com.google.gwt.core.ext.typeinfo">JEnumType</a></code></td>
@@ -187,15 +196,23 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JGenericType.html" title="interface in com.google.gwt.core.ext.typeinfo">JGenericType</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isGenericType()">isGenericType</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isGenericType()">isGenericType</a></strong>()</code>
+<div class="block">Returns this instance if it is a real class that has type parameters or <code>null</code>
+ if it is not.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isInterface()">isInterface</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isInterface()">isInterface</a></strong>()</code>
+<div class="block">Returns this instance if it is an interface or <code>null</code> if it is not.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JParameterizedType.html" title="interface in com.google.gwt.core.ext.typeinfo">JParameterizedType</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isParameterized()">isParameterized</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isParameterized()">isParameterized</a></strong>()</code>
+<div class="block">Returns this instance as a <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JParameterizedType.html" title="interface in com.google.gwt.core.ext.typeinfo"><code>JParameterizedType</code></a> if it is a parameterized type
+ or <code>null</code> if it is not.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JPrimitiveType.html" title="enum in com.google.gwt.core.ext.typeinfo">JPrimitiveType</a></code></td>
@@ -250,9 +267,9 @@
 <li class="blockList">
 <h4>getJNISignature</h4>
 <pre>java.lang.String&nbsp;getJNISignature()</pre>
-<div class="block">Returns the turns the
+<div class="block">Returns the
  <a href="http://java.sun.com/docs/books/jvms/second_edition/html/ClassFile.doc.html#14152">
- field descriptor"</a> for a type as specified by the Java Virtual Machine Specification.
+ "field descriptor"</a> for a type as specified by the Java Virtual Machine Specification.
 
  Examples:
 
@@ -281,6 +298,11 @@
 <li class="blockList">
 <h4>getParameterizedQualifiedSourceName</h4>
 <pre>java.lang.String&nbsp;getParameterizedQualifiedSourceName()</pre>
+<div class="block">Returns a type name as it would be specified in Java source, with the
+ package name included.  Includes the type parameters.  If called on a type parameter,
+ does not include any bounds.  For example, a type Foo<T extends Bar> declared in
+ com.example would be given as "com.example.Foo<T>", while the same type instantiated
+ with Baz would be "com.example.Foo<com.example.Baz>".</div>
 </li>
 </ul>
 <a name="getQualifiedBinaryName()">
@@ -303,7 +325,8 @@
 <h4>getQualifiedSourceName</h4>
 <pre>java.lang.String&nbsp;getQualifiedSourceName()</pre>
 <div class="block">Returns a type name as it would be specified in Java source, with the
- package name included.</div>
+ package name included.  Does not include the type parameters.  If called on
+ a type parameter, includes any bounds.</div>
 </li>
 </ul>
 <a name="getSimpleSourceName()">
@@ -343,6 +366,8 @@
 <li class="blockList">
 <h4>isClass</h4>
 <pre><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a>&nbsp;isClass()</pre>
+<div class="block">Returns this instance if the erased version of this type is a class (as opposed to a primitive,
+ array, or interface) or <code>null</code> if it is not.</div>
 </li>
 </ul>
 <a name="isClassOrInterface()">
@@ -352,6 +377,8 @@
 <li class="blockList">
 <h4>isClassOrInterface</h4>
 <pre><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a>&nbsp;isClassOrInterface()</pre>
+<div class="block">Returns this instance if the erased version of this type is a class or interface (as opposed to
+ a primitive or array array) or <code>null</code> if it is not.</div>
 </li>
 </ul>
 <a name="isEnum()">
@@ -372,6 +399,8 @@
 <li class="blockList">
 <h4>isGenericType</h4>
 <pre><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JGenericType.html" title="interface in com.google.gwt.core.ext.typeinfo">JGenericType</a>&nbsp;isGenericType()</pre>
+<div class="block">Returns this instance if it is a real class that has type parameters or <code>null</code>
+ if it is not.</div>
 </li>
 </ul>
 <a name="isInterface()">
@@ -381,6 +410,7 @@
 <li class="blockList">
 <h4>isInterface</h4>
 <pre><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a>&nbsp;isInterface()</pre>
+<div class="block">Returns this instance if it is an interface or <code>null</code> if it is not.</div>
 </li>
 </ul>
 <a name="isParameterized()">
@@ -390,6 +420,8 @@
 <li class="blockList">
 <h4>isParameterized</h4>
 <pre><a href="../../../../../../com/google/gwt/core/ext/typeinfo/JParameterizedType.html" title="interface in com.google.gwt.core.ext.typeinfo">JParameterizedType</a>&nbsp;isParameterized()</pre>
+<div class="block">Returns this instance as a <a href="../../../../../../com/google/gwt/core/ext/typeinfo/JParameterizedType.html" title="interface in com.google.gwt.core.ext.typeinfo"><code>JParameterizedType</code></a> if it is a parameterized type
+ or <code>null</code> if it is not.</div>
 </li>
 </ul>
 <a name="isPrimitive()">
@@ -451,7 +483,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

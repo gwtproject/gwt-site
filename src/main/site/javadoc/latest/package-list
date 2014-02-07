@@ -2,8 +2,6 @@ com.google.gwt.activity.shared
 com.google.gwt.animation.client
 com.google.gwt.animation.client.testing
 com.google.gwt.aria.client
-com.google.gwt.benchmarks
-com.google.gwt.benchmarks.client
 com.google.gwt.canvas.client
 com.google.gwt.canvas.dom.client
 com.google.gwt.cell.client

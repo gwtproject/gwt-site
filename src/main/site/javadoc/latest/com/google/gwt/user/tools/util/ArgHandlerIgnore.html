@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>ArgHandlerIgnore (Google Web Toolkit Javadoc)</title>
+<title>ArgHandlerIgnore (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ArgHandlerIgnore (Google Web Toolkit Javadoc)";
+        parent.document.title="ArgHandlerIgnore (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -105,7 +105,7 @@
 <br>
 <pre>public abstract class <span class="strong">ArgHandlerIgnore</span>
 extends <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html" title="class in com.google.gwt.util.tools">ArgHandlerFlag</a></pre>
-<div class="block">Arg handler for "ignore" option.</div>
+<div class="block">Ignores any existing files and does not overwrite them.</div>
 </li>
 </ul>
 </div>
@@ -143,11 +143,16 @@ extends <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/tools/util/ArgHandlerIgnore.html#getPurpose()">getPurpose</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/tools/util/ArgHandlerIgnore.html#getLabel()">getLabel</a></strong>()</code>
+<div class="block">The root String that will be munged into -label and -nolabel variants for flag value toggling.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/tools/util/ArgHandlerIgnore.html#getTag()">getTag</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/tools/util/ArgHandlerIgnore.html#getPurposeSnippet()">getPurposeSnippet</a></strong>()</code>
+<div class="block">Returns a description that will be mixed together with default value to come up with the
+ overall flag purpose.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -155,14 +160,14 @@ extends <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.google.gwt.util.tools.<a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html" title="class in com.google.gwt.util.tools">ArgHandlerFlag</a></h3>
-<code><a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getTagArgs()">getTagArgs</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#handle(java.lang.String[], int)">handle</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#isRequired()">isRequired</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#setFlag()">setFlag</a></code></li>
+<code><a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#addTagValue(java.lang.String, boolean)">addTagValue</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getDefaultValue()">getDefaultValue</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getHelpTag()">getHelpTag</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getPurpose()">getPurpose</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getTag()">getTag</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getTagArgs()">getTagArgs</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getTags()">getTags</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#handle(java.lang.String[], int)">handle</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#isRequired()">isRequired</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#setFlag(boolean)">setFlag</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_com.google.gwt.util.tools.ArgHandler">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.google.gwt.util.tools.<a href="../../../../../../com/google/gwt/util/tools/ArgHandler.html" title="class in com.google.gwt.util.tools">ArgHandler</a></h3>
-<code><a href="../../../../../../com/google/gwt/util/tools/ArgHandler.html#getDefaultArgs()">getDefaultArgs</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandler.html#isUndocumented()">isUndocumented</a></code></li>
+<code><a href="../../../../../../com/google/gwt/util/tools/ArgHandler.html#getDefaultArgs()">getDefaultArgs</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandler.html#isExperimental()">isExperimental</a>, <a href="../../../../../../com/google/gwt/util/tools/ArgHandler.html#isUndocumented()">isUndocumented</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -202,29 +207,35 @@ extends <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="getPurpose()">
+<a name="getPurposeSnippet()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getPurpose</h4>
-<pre>public&nbsp;java.lang.String&nbsp;getPurpose()</pre>
+<h4>getPurposeSnippet</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getPurposeSnippet()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getPurposeSnippet()">ArgHandlerFlag</a></code></strong></div>
+<div class="block">Returns a description that will be mixed together with default value to come up with the
+ overall flag purpose.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../../com/google/gwt/util/tools/ArgHandler.html#getPurpose()">getPurpose</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/gwt/util/tools/ArgHandler.html" title="class in com.google.gwt.util.tools">ArgHandler</a></code></dd>
+<dd><code><a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getPurposeSnippet()">getPurposeSnippet</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html" title="class in com.google.gwt.util.tools">ArgHandlerFlag</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="getTag()">
+<a name="getLabel()">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getTag</h4>
-<pre>public&nbsp;java.lang.String&nbsp;getTag()</pre>
+<h4>getLabel</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getLabel()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getLabel()">ArgHandlerFlag</a></code></strong></div>
+<div class="block">The root String that will be munged into -label and -nolabel variants for flag value toggling.
+ Should follow the verb[Adjective]Noun naming pattern. For example:</div>
 <dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../../com/google/gwt/util/tools/ArgHandler.html#getTag()">getTag</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/gwt/util/tools/ArgHandler.html" title="class in com.google.gwt.util.tools">ArgHandler</a></code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getLabel()">getLabel</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html" title="class in com.google.gwt.util.tools">ArgHandlerFlag</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -249,7 +260,7 @@ extends <a href="../../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

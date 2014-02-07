@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>StringUtils (Google Web Toolkit Javadoc)</title>
+<title>StringUtils (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="StringUtils (Google Web Toolkit Javadoc)";
+        parent.document.title="StringUtils (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -159,6 +159,12 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/util/tools/shared/StringUtils.html#javaScriptString(java.lang.String)">javaScriptString</a></strong>(java.lang.String&nbsp;value)</code>
+<div class="block">Generate JavaScript code that evaluates to the supplied string.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/util/tools/shared/StringUtils.html#toHexString(byte[])">toHexString</a></strong>(byte[]&nbsp;bytes)</code>
 <div class="block">Returns a string representation of the byte array as a series of
  hexadecimal characters.</div>
@@ -231,6 +237,19 @@ extends java.lang.Object</pre>
 <div class="block">A 4-digit hex result.</div>
 </li>
 </ul>
+<a name="javaScriptString(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>javaScriptString</h4>
+<pre>public static&nbsp;java.lang.String&nbsp;javaScriptString(java.lang.String&nbsp;value)</pre>
+<div class="block">Generate JavaScript code that evaluates to the supplied string. Adapted
+ from <code>ScriptRuntime.escapeString(String)</code>
+ . The difference is that we quote with either &quot; or &apos; depending on
+ which one is used less inside the string.</div>
+</li>
+</ul>
 <a name="toHexString(byte[])">
 <!--   -->
 </a>
@@ -266,7 +285,7 @@ extends java.lang.Object</pre>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

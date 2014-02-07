@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>RemoteServiceServlet (Google Web Toolkit Javadoc)</title>
+<title>RemoteServiceServlet (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="RemoteServiceServlet (Google Web Toolkit Javadoc)";
+        parent.document.title="RemoteServiceServlet (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -195,11 +195,16 @@ implements <a href="../../../../../../com/google/gwt/user/server/rpc/Serializati
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#doGetSerializationPolicy(javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)">doGetSerializationPolicy</a></strong>(javax.servlet.http.HttpServletRequest&nbsp;request,
                         java.lang.String&nbsp;moduleBaseURL,
                         java.lang.String&nbsp;strongName)</code>
-<div class="block">Gets the <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><code>SerializationPolicy</code></a> for given module base URL and strong
- name if there is one.</div>
+<div class="block">Loads the <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><code>SerializationPolicy</code></a> for given module base URL and strong name.</div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#getCodeServerPolicyUrl(java.lang.String)">getCodeServerPolicyUrl</a></strong>(java.lang.String&nbsp;strongName)</code>
+<div class="block">Returns a URL for fetching a serialization policy from a Super Dev Mode code server.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#getSerializationPolicy(java.lang.String, java.lang.String)">getSerializationPolicy</a></strong>(java.lang.String&nbsp;moduleBaseURL,
                       java.lang.String&nbsp;strongName)</code>
@@ -207,43 +212,56 @@ implements <a href="../../../../../../com/google/gwt/user/server/rpc/Serializati
  serialization policy strong name.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#init(javax.servlet.ServletConfig)">init</a></strong>(javax.servlet.ServletConfig&nbsp;config)</code>
+<div class="block">Overridden to load the gwt.codeserver.port system property.</div>
+</td>
+</tr>
 <tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#loadPolicyFromCodeServer(java.lang.String)">loadPolicyFromCodeServer</a></strong>(java.lang.String&nbsp;url)</code>
+<div class="block">Loads a serialization policy from a Super Dev Mode code server.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>(package private) static <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#loadSerializationPolicy(javax.servlet.http.HttpServlet, javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)">loadSerializationPolicy</a></strong>(javax.servlet.http.HttpServlet&nbsp;servlet,
                        javax.servlet.http.HttpServletRequest&nbsp;request,
                        java.lang.String&nbsp;moduleBaseURL,
                        java.lang.String&nbsp;strongName)</code>
-<div class="block">Used by HybridServiceServlet.</div>
+<div class="block">Loads a serialization policy stored as a servlet resource in the same
+ ServletContext as this servlet.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#onAfterResponseSerialized(java.lang.String)">onAfterResponseSerialized</a></strong>(java.lang.String&nbsp;serializedResponse)</code>
 <div class="block">Override this method to examine the serialized response that will be
  returned to the client.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#onBeforeRequestDeserialized(java.lang.String)">onBeforeRequestDeserialized</a></strong>(java.lang.String&nbsp;serializedRequest)</code>
 <div class="block">Override this method to examine the serialized version of the request
  payload before it is deserialized into objects.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#processCall(java.lang.String)">processCall</a></strong>(java.lang.String&nbsp;payload)</code>
 <div class="block">Process a call originating from the given request.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#processPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)">processPost</a></strong>(javax.servlet.http.HttpServletRequest&nbsp;request,
            javax.servlet.http.HttpServletResponse&nbsp;response)</code>
 <div class="block">Standard HttpServlet method: handle the POST.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#shouldCompressResponse(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, java.lang.String)">shouldCompressResponse</a></strong>(javax.servlet.http.HttpServletRequest&nbsp;request,
                       javax.servlet.http.HttpServletResponse&nbsp;response,
@@ -272,7 +290,7 @@ implements <a href="../../../../../../com/google/gwt/user/server/rpc/Serializati
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;javax.servlet.GenericServlet</h3>
-<code>destroy, getInitParameter, getInitParameterNames, getServletConfig, getServletContext, getServletInfo, getServletName, init, init, log, log</code></li>
+<code>destroy, getInitParameter, getInitParameterNames, getServletConfig, getServletContext, getServletInfo, getServletName, init, log, log</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -337,7 +355,27 @@ implements <a href="../../../../../../com/google/gwt/user/server/rpc/Serializati
                                           javax.servlet.http.HttpServletRequest&nbsp;request,
                                           java.lang.String&nbsp;moduleBaseURL,
                                           java.lang.String&nbsp;strongName)</pre>
-<div class="block">Used by HybridServiceServlet.</div>
+<div class="block">Loads a serialization policy stored as a servlet resource in the same
+ ServletContext as this servlet. Returns null if not found.
+ (Used by HybridServiceServlet.)</div>
+</li>
+</ul>
+<a name="init(javax.servlet.ServletConfig)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>init</h4>
+<pre>public&nbsp;void&nbsp;init(javax.servlet.ServletConfig&nbsp;config)
+          throws javax.servlet.ServletException</pre>
+<div class="block">Overridden to load the gwt.codeserver.port system property.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code>init</code>&nbsp;in interface&nbsp;<code>javax.servlet.Servlet</code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code>init</code>&nbsp;in class&nbsp;<code>javax.servlet.GenericServlet</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code>javax.servlet.ServletException</code></dd></dl>
 </li>
 </ul>
 <a name="getSerializationPolicy(java.lang.String, java.lang.String)">
@@ -444,15 +482,51 @@ implements <a href="../../../../../../com/google/gwt/user/server/rpc/Serializati
 <pre>protected&nbsp;<a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</a>&nbsp;doGetSerializationPolicy(javax.servlet.http.HttpServletRequest&nbsp;request,
                                            java.lang.String&nbsp;moduleBaseURL,
                                            java.lang.String&nbsp;strongName)</pre>
-<div class="block">Gets the <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><code>SerializationPolicy</code></a> for given module base URL and strong
- name if there is one.
- 
- Override this method to provide a <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><code>SerializationPolicy</code></a> using an
+<div class="block">Loads the <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><code>SerializationPolicy</code></a> for given module base URL and strong name.
+ Returns the policy if successful or null if not found. Due to caching, this method
+ will only be called once for each combination of moduleBaseURL and strongName.</p>
+
+ <p>The default implementation loads serialization policies stored as servlet resources
+ in the same ServletContext as this servlet.
+
+ <p>Override this method to load the <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><code>SerializationPolicy</code></a> using an
  alternative approach.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - the HTTP request being serviced</dd><dd><code>moduleBaseURL</code> - as specified in the incoming payload</dd><dd><code>strongName</code> - a strong name that uniquely identifies a serialization
-          policy file</dd>
-<dt><span class="strong">Returns:</span></dt><dd>a <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><code>SerializationPolicy</code></a> for the given module base URL and
-         strong name, or <code>null</code> if there is none</dd></dl>
+          policy file</dd></dl>
+</li>
+</ul>
+<a name="getCodeServerPolicyUrl(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCodeServerPolicyUrl</h4>
+<pre>protected&nbsp;java.lang.String&nbsp;getCodeServerPolicyUrl(java.lang.String&nbsp;strongName)</pre>
+<div class="block">Returns a URL for fetching a serialization policy from a Super Dev Mode code server.
+
+ <p>By default, returns null. If the <code>gwt.codeserver.port</code> system property is set,
+ returns a URL under <code>http://localhost:{port}</code>.
+
+ <p>To use a server not on localhost, you must override this method. If you do so,
+ consider the security implications: the policy server and network transport must be
+ trusted or this could be used as a way to disable security checks for some
+ GWT-RPC requests, allowing access to arbitrary Java classes.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>strongName</code> - the strong name from the GWT-RPC request (already validated).</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the URL to use or <code>null</code> if no request should be made.</dd></dl>
+</li>
+</ul>
+<a name="loadPolicyFromCodeServer(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>loadPolicyFromCodeServer</h4>
+<pre>protected&nbsp;<a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</a>&nbsp;loadPolicyFromCodeServer(java.lang.String&nbsp;url)</pre>
+<div class="block">Loads a serialization policy from a Super Dev Mode code server.
+ (Not used unless <a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#getCodeServerPolicyUrl(java.lang.String)"><code>getCodeServerPolicyUrl(java.lang.String)</code></a> returns a URL.)
+
+ <p>The default version is a simple implementation built on java.net.URL that does
+ no authentication. It should only be used during development.</p></div>
 </li>
 </ul>
 <a name="onAfterResponseSerialized(java.lang.String)">
@@ -524,7 +598,7 @@ implements <a href="../../../../../../com/google/gwt/user/server/rpc/Serializati
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

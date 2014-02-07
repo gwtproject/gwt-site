@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>DOMImpl (Google Web Toolkit Javadoc)</title>
+<title>DOMImpl (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="DOMImpl (Google Web Toolkit Javadoc)";
+        parent.document.title="DOMImpl (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -523,38 +523,44 @@ extends java.lang.Object</pre>
             int&nbsp;top)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#toInt32(double)">toInt32</a></strong>(double&nbsp;val)</code>
+<div class="block">Fast helper method to convert small doubles to 32-bit int.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#toString(com.google.gwt.dom.client.Element)">toString</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#touchGetClientX(com.google.gwt.dom.client.Touch)">touchGetClientX</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Touch.html" title="class in com.google.gwt.dom.client">Touch</a>&nbsp;touch)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#touchGetClientY(com.google.gwt.dom.client.Touch)">touchGetClientY</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Touch.html" title="class in com.google.gwt.dom.client">Touch</a>&nbsp;touch)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#touchGetIdentifier(com.google.gwt.dom.client.Touch)">touchGetIdentifier</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Touch.html" title="class in com.google.gwt.dom.client">Touch</a>&nbsp;touch)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#touchGetPageX(com.google.gwt.dom.client.Touch)">touchGetPageX</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Touch.html" title="class in com.google.gwt.dom.client">Touch</a>&nbsp;touch)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#touchGetPageY(com.google.gwt.dom.client.Touch)">touchGetPageY</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Touch.html" title="class in com.google.gwt.dom.client">Touch</a>&nbsp;touch)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#touchGetScreenX(com.google.gwt.dom.client.Touch)">touchGetScreenX</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Touch.html" title="class in com.google.gwt.dom.client">Touch</a>&nbsp;touch)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#touchGetScreenY(com.google.gwt.dom.client.Touch)">touchGetScreenY</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Touch.html" title="class in com.google.gwt.dom.client">Touch</a>&nbsp;touch)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/google/gwt/dom/client/EventTarget.html" title="class in com.google.gwt.dom.client">EventTarget</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#touchGetTarget(com.google.gwt.dom.client.Touch)">touchGetTarget</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Touch.html" title="class in com.google.gwt.dom.client">Touch</a>&nbsp;touch)</code>&nbsp;</td>
 </tr>
@@ -614,6 +620,21 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="toInt32(double)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toInt32</h4>
+<pre>protected static&nbsp;int&nbsp;toInt32(double&nbsp;val)</pre>
+<div class="block">Fast helper method to convert small doubles to 32-bit int.
+
+ <p>Note: you should be aware that this uses JavaScript rounding and thus
+ does NOT provide the same semantics as <code>int b = (int) someDouble;</code>.
+ In particular, if x is outside the range [-2^31,2^31), then toInt32(x) would return a value
+ equivalent to x modulo 2^32, whereas (int) x would evaluate to either MIN_INT or MAX_INT.</div>
+</li>
+</ul>
 <a name="buttonClick(com.google.gwt.dom.client.ButtonElement)">
 <!--   -->
 </a>
@@ -1464,7 +1485,7 @@ public abstract&nbsp;<a href="../../../../../com/google/gwt/dom/client/NativeEve
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

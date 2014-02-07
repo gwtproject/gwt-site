@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>Uses of Class com.google.gwt.core.client.JavaScriptObject (Google Web Toolkit Javadoc)</title>
+<title>Uses of Class com.google.gwt.core.client.JavaScriptObject (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Class com.google.gwt.core.client.JavaScriptObject (Google Web Toolkit Javadoc)";
+        parent.document.title="Uses of Class com.google.gwt.core.client.JavaScriptObject (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -366,29 +366,37 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a></code></td>
+<td class="colLast"><span class="strong">JavaScriptObject.</span><code><strong><a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#createArray(int)">createArray</a></strong>(int&nbsp;size)</code>
+<div class="block">Returns a new array with a given size.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a></code></td>
 <td class="colLast"><span class="strong">JavaScriptObject.</span><code><strong><a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#createFunction()">createFunction</a></strong>()</code>
 <div class="block">Returns an empty function.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a></code></td>
 <td class="colLast"><span class="strong">JavaScriptObject.</span><code><strong><a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#createObject()">createObject</a></strong>()</code>
 <div class="block">Returns a new object.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a></code></td>
 <td class="colLast"><span class="strong">JavaScriptException.</span><code><strong><a href="../../../../../../com/google/gwt/core/client/JavaScriptException.html#getException()">getException</a></strong>()</code>
-<div class="block">Returns the original JavaScript the exception; may be <code>null</code>.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>deprecated in favor for <a href="../../../../../../com/google/gwt/core/client/JavaScriptException.html#getThrown()"><code>JavaScriptException.getThrown()</code></a> and <a href="../../../../../../com/google/gwt/core/client/JavaScriptException.html#isThrownSet()"><code>JavaScriptException.isThrownSet()</code></a></i></div>
+</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a></code></td>
 <td class="colLast"><span class="strong">ScriptInjector.FromString.</span><code><strong><a href="../../../../../../com/google/gwt/core/client/ScriptInjector.FromString.html#inject()">inject</a></strong>()</code>
 <div class="block">Injects a script into the DOM.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a></code></td>
 <td class="colLast"><span class="strong">ScriptInjector.FromUrl.</span><code><strong><a href="../../../../../../com/google/gwt/core/client/ScriptInjector.FromUrl.html#inject()">inject</a></strong>()</code>
 <div class="block">Injects an external JavaScript reference into the document and optionally
@@ -871,18 +879,347 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">UListElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/UListElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">TitleElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/TitleElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">TextAreaElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/TextAreaElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">TableSectionElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/TableSectionElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">TableRowElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/TableRowElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">TableElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/TableElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">TableColElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/TableColElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">TableCellElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/TableCellElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">TableCaptionElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/TableCaptionElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">StyleElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/StyleElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">SpanElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/SpanElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">SourceElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/SourceElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">SelectElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/SelectElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">ScriptElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/ScriptElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">QuoteElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/QuoteElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">PreElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/PreElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">ParamElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/ParamElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">ParagraphElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/ParagraphElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">OptionElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/OptionElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">OptGroupElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/OptGroupElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">ObjectElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/ObjectElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">OListElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/OListElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><span class="strong">Node.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/Node.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
 <div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> is a DOM node.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">ModElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/ModElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">MetaElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/MetaElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">MapElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/MapElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">LinkElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/LinkElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">LegendElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/LegendElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">LabelElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/LabelElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">LIElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/LIElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">InputElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/InputElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">ImageElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/ImageElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">IFrameElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/IFrameElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">HeadingElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/HeadingElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">HeadElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/HeadElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">HRElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/HRElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">FrameSetElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/FrameSetElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">FrameElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/FrameElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">FormElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/FormElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">FieldSetElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/FieldSetElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><span class="strong">Element.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/Element.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
 <div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to an
  <a href="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client"><code>Element</code></a>.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">DivElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/DivElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
 <tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">DListElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/DListElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">ButtonElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/ButtonElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">BodyElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/BodyElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">BaseElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/BaseElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">BRElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/BRElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">AreaElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/AreaElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">AnchorElement.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/AnchorElement.html#is(com.google.gwt.core.client.JavaScriptObject)">is</a></strong>(<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;o)</code>
+<div class="block">Determines whether the given <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client"><code>JavaScriptObject</code></a> can be cast to
+ this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">Element.</span><code><strong><a href="../../../../../../com/google/gwt/dom/client/Element.html#setPropertyJSO(java.lang.String, com.google.gwt.core.client.JavaScriptObject)">setPropertyJSO</a></strong>(java.lang.String&nbsp;name,
               <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a>&nbsp;value)</code>
@@ -1401,7 +1738,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

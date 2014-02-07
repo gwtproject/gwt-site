@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>FirebugLogHandler (Google Web Toolkit Javadoc)</title>
+<title>FirebugLogHandler (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="FirebugLogHandler (Google Web Toolkit Javadoc)";
+        parent.document.title="FirebugLogHandler (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -97,12 +97,23 @@
 <ul class="blockList">
 <li class="blockList">
 <hr>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>use <a href="../../../../../com/google/gwt/logging/client/ConsoleLogHandler.html" title="class in com.google.gwt.logging.client"><code>ConsoleLogHandler</code></a> instead.</i></div>
+</div>
 <br>
-<pre>public class <span class="strong">FirebugLogHandler</span>
+<pre>@Deprecated
+public class <span class="strong">FirebugLogHandler</span>
 extends java.util.logging.Handler</pre>
 <div class="block">A Handler that prints logs to window.console which is used by Firebug.
+ <p>
  Note we are consciously using 'window' rather than '$wnd' to avoid issues
- similar to http://code.google.com/p/fbug/issues/detail?id=2914</div>
+ similar to http://code.google.com/p/fbug/issues/detail?id=2914
+ <p>
+ Note this handler will only be used in old versions of Firebug which expose
+ their versions in 'window.console.firebug'; newer versions will use the
+ <a href="../../../../../com/google/gwt/logging/client/ConsoleLogHandler.html" title="class in com.google.gwt.logging.client"><code>ConsoleLogHandler</code></a> instead. See
+ http://code.google.com/p/fbug/issues/detail?id=4772
+ Because of this, this handle will log a warning when initialized.</div>
 </li>
 </ul>
 </div>
@@ -121,7 +132,9 @@ extends java.util.logging.Handler</pre>
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../../com/google/gwt/logging/client/FirebugLogHandler.html#FirebugLogHandler()">FirebugLogHandler</a></strong>()</code>&nbsp;</td>
+<td class="colOne"><code><strong><a href="../../../../../com/google/gwt/logging/client/FirebugLogHandler.html#FirebugLogHandler()">FirebugLogHandler</a></strong>()</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -140,15 +153,21 @@ extends java.util.logging.Handler</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/client/FirebugLogHandler.html#close()">close</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/client/FirebugLogHandler.html#close()">close</a></strong>()</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/client/FirebugLogHandler.html#flush()">flush</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/client/FirebugLogHandler.html#flush()">flush</a></strong>()</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/client/FirebugLogHandler.html#publish(java.util.logging.LogRecord)">publish</a></strong>(java.util.logging.LogRecord&nbsp;record)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/client/FirebugLogHandler.html#publish(java.util.logging.LogRecord)">publish</a></strong>(java.util.logging.LogRecord&nbsp;record)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -186,6 +205,7 @@ extends java.util.logging.Handler</pre>
 <li class="blockList">
 <h4>FirebugLogHandler</h4>
 <pre>public&nbsp;FirebugLogHandler()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -203,6 +223,7 @@ extends java.util.logging.Handler</pre>
 <li class="blockList">
 <h4>close</h4>
 <pre>public&nbsp;void&nbsp;close()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code>close</code>&nbsp;in class&nbsp;<code>java.util.logging.Handler</code></dd>
@@ -216,6 +237,7 @@ extends java.util.logging.Handler</pre>
 <li class="blockList">
 <h4>flush</h4>
 <pre>public&nbsp;void&nbsp;flush()</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code>flush</code>&nbsp;in class&nbsp;<code>java.util.logging.Handler</code></dd>
@@ -229,6 +251,7 @@ extends java.util.logging.Handler</pre>
 <li class="blockList">
 <h4>publish</h4>
 <pre>public&nbsp;void&nbsp;publish(java.util.logging.LogRecord&nbsp;record)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code>publish</code>&nbsp;in class&nbsp;<code>java.util.logging.Handler</code></dd>
@@ -256,7 +279,7 @@ extends java.util.logging.Handler</pre>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>CheckBox (Google Web Toolkit Javadoc)</title>
+<title>CheckBox (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="CheckBox (Google Web Toolkit Javadoc)";
+        parent.document.title="CheckBox (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -153,15 +153,17 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/HasName.html
  <h3>Example</h3>
  <blockquote><pre>public class CheckBoxExample implements EntryPoint {
 
+  @Override
   public void onModuleLoad() {
     // Make a new check box, and select it by default.
     CheckBox cb = new CheckBox("Foo");
-    cb.setChecked(true);
+    cb.setValue(true);
 
     // Hook up a handler to find out when it's clicked.
     cb.addClickHandler(new ClickHandler() {
+      @Override
       public void onClick(ClickEvent event) {
-        boolean checked = ((CheckBox) event.getSource()).isChecked();
+        boolean checked = ((CheckBox) event.getSource()).getValue();
         Window.alert("It is " + (checked ? "" : "not ") + "checked");
       }
     });
@@ -258,7 +260,7 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/HasName.html
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected </code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#CheckBox(com.google.gwt.user.client.Element)">CheckBox</a></strong>(<a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#CheckBox(com.google.gwt.dom.client.Element)">CheckBox</a></strong>(<a href="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&nbsp;</code></td>
@@ -429,17 +431,25 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/HasName.html
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#replaceInputElement(com.google.gwt.user.client.Element)">replaceInputElement</a></strong>(<a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#replaceInputElement(com.google.gwt.dom.client.Element)">replaceInputElement</a></strong>(<a href="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
 <div class="block">Replace the current input element with a new one.</div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#replaceInputElement(com.google.gwt.user.client.Element)">replaceInputElement</a></strong>(<a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Call and use <a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#replaceInputElement(com.google.gwt.user.client.Element)"><code>replaceInputElement(Element)</code></a> instead.</i></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setAccessKey(char)">setAccessKey</a></strong>(char&nbsp;key)</code>
 <div class="block">Sets the widget's 'access key'.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setChecked(boolean)">setChecked</a></strong>(boolean&nbsp;checked)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
@@ -447,81 +457,81 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/HasName.html
 </div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setDirectionEstimator(boolean)">setDirectionEstimator</a></strong>(boolean&nbsp;enabled)</code>
 <div class="block">Toggles on / off direction estimation.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setDirectionEstimator(com.google.gwt.i18n.shared.DirectionEstimator)">setDirectionEstimator</a></strong>(<a href="../../../../../../com/google/gwt/i18n/shared/DirectionEstimator.html" title="class in com.google.gwt.i18n.shared">DirectionEstimator</a>&nbsp;directionEstimator)</code>
 <div class="block">Sets the <a href="../../../../../../com/google/gwt/i18n/shared/DirectionEstimator.html" title="class in com.google.gwt.i18n.shared"><code>DirectionEstimator</code></a> object.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setEnabled(boolean)">setEnabled</a></strong>(boolean&nbsp;enabled)</code>
 <div class="block">Sets whether this widget is enabled.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setFocus(boolean)">setFocus</a></strong>(boolean&nbsp;focused)</code>
 <div class="block">Explicitly focus/unfocus this widget.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setFormValue(java.lang.String)">setFormValue</a></strong>(java.lang.String&nbsp;value)</code>
 <div class="block">Set the value property on the input element that backs this widget.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setHTML(com.google.gwt.safehtml.shared.SafeHtml, com.google.gwt.i18n.client.HasDirection.Direction)">setHTML</a></strong>(<a href="../../../../../../com/google/gwt/safehtml/shared/SafeHtml.html" title="interface in com.google.gwt.safehtml.shared">SafeHtml</a>&nbsp;html,
        <a href="../../../../../../com/google/gwt/i18n/client/HasDirection.Direction.html" title="enum in com.google.gwt.i18n.client">HasDirection.Direction</a>&nbsp;dir)</code>
 <div class="block">Sets this object's html, also declaring its direction.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setHTML(java.lang.String)">setHTML</a></strong>(java.lang.String&nbsp;html)</code>
 <div class="block">Sets this object's contents via HTML.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setName(java.lang.String)">setName</a></strong>(java.lang.String&nbsp;name)</code>
 <div class="block">Sets the widget's name.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setTabIndex(int)">setTabIndex</a></strong>(int&nbsp;index)</code>
 <div class="block">Sets the widget's position in the tab index.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setText(java.lang.String)">setText</a></strong>(java.lang.String&nbsp;text)</code>
 <div class="block">Sets this object's text.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setText(java.lang.String, com.google.gwt.i18n.client.HasDirection.Direction)">setText</a></strong>(java.lang.String&nbsp;text,
        <a href="../../../../../../com/google/gwt/i18n/client/HasDirection.Direction.html" title="enum in com.google.gwt.i18n.client">HasDirection.Direction</a>&nbsp;dir)</code>
 <div class="block">Sets this object's text, also declaring its direction.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setValue(java.lang.Boolean)">setValue</a></strong>(java.lang.Boolean&nbsp;value)</code>
 <div class="block">Checks or unchecks the check box.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setValue(java.lang.Boolean, boolean)">setValue</a></strong>(java.lang.Boolean&nbsp;value,
         boolean&nbsp;fireEvents)</code>
@@ -529,13 +539,13 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/HasName.html
  appropriate.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#setWordWrap(boolean)">setWordWrap</a></strong>(boolean&nbsp;wrap)</code>
 <div class="block">Sets whether word-wrapping is enabled.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#sinkEvents(int)">sinkEvents</a></strong>(int&nbsp;eventBitsToAdd)</code>
 <div class="block">Overridden to defer the call to super.sinkEvents until the first time this
@@ -562,14 +572,14 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/HasName.html
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.google.gwt.user.client.ui.<a href="../../../../../../com/google/gwt/user/client/ui/Widget.html" title="class in com.google.gwt.user.client.ui">Widget</a></h3>
-<code><a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addAttachHandler(com.google.gwt.event.logical.shared.AttachEvent.Handler)">addAttachHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addBitlessDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)">addBitlessDomHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)">addDomHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addHandler(H, com.google.gwt.event.shared.GwtEvent.Type)">addHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#asWidget()">asWidget</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#asWidgetOrNull(com.google.gwt.user.client.ui.IsWidget)">asWidgetOrNull</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#createHandlerManager()">createHandlerManager</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#delegateEvent(com.google.gwt.user.client.ui.Widget, com.google.gwt.event.shared.GwtEvent)">delegateEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#doAttachChildren()">doAttachChildren</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#doDetachChildren()">doDetachChildren</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#ensureHandlers()">ensureHandlers</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#fireEvent(com.google.gwt.event.shared.GwtEvent)">fireEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getHandlerCount(com.google.gwt.event.shared.GwtEvent.Type)">getHandlerCount</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getHandlerManager()">getHandlerManager</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getLayoutData()">getLayoutData</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getParent()">getParent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#isAttached()">isAttached</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#isOrWasAttached()">isOrWasAttached</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onBrowserEvent(com.google.gwt.user.client.Event)">onBrowserEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onDetach()">onDetach</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#removeFromParent()">removeFromParent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#replaceElement(com.google.gwt.dom.client.Element)">replaceElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#setLayoutData(java.lang.Object)">setLayoutData</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#setParent(com.google.gwt.user.client.ui.Widget)">setParent</a></code></li>
+<code><a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addAttachHandler(com.google.gwt.event.logical.shared.AttachEvent.Handler)">addAttachHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addBitlessDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)">addBitlessDomHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)">addDomHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#addHandler(H, com.google.gwt.event.shared.GwtEvent.Type)">addHandler</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#asWidget()">asWidget</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#asWidgetOrNull(com.google.gwt.user.client.ui.IsWidget)">asWidgetOrNull</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#createHandlerManager()">createHandlerManager</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#delegateEvent(com.google.gwt.user.client.ui.Widget, com.google.gwt.event.shared.GwtEvent)">delegateEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#doAttachChildren()">doAttachChildren</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#doDetachChildren()">doDetachChildren</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#ensureHandlers()">ensureHandlers</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#fireEvent(com.google.gwt.event.shared.GwtEvent)">fireEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getHandlerCount(com.google.gwt.event.shared.GwtEvent.Type)">getHandlerCount</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getHandlerManager()">getHandlerManager</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getLayoutData()">getLayoutData</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#getParent()">getParent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#isAttached()">isAttached</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#isOrWasAttached()">isOrWasAttached</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onBrowserEvent(com.google.gwt.user.client.Event)">onBrowserEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#onDetach()">onDetach</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#removeFromParent()">removeFromParent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#replaceElement(com.google.gwt.dom.client.Element)">replaceElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#setLayoutData(java.lang.Object)">setLayoutData</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#setParent(com.google.gwt.user.client.ui.Widget)">setParent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/Widget.html#unsinkEvents(int)">unsinkEvents</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_com.google.gwt.user.client.ui.UIObject">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.google.gwt.user.client.ui.<a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html" title="class in com.google.gwt.user.client.ui">UIObject</a></h3>
-<code><a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#addStyleDependentName(java.lang.String)">addStyleDependentName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#addStyleName(java.lang.String)">addStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#ensureDebugId(com.google.gwt.dom.client.Element, java.lang.String)">ensureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#ensureDebugId(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">ensureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#ensureDebugId(java.lang.String)">ensureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getAbsoluteLeft()">getAbsoluteLeft</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getAbsoluteTop()">getAbsoluteTop</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getElement()">getElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getOffsetHeight()">getOffsetHeight</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getOffsetWidth()">getOffsetWidth</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStyleElement()">getStyleElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStyleName()">getStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStyleName(com.google.gwt.dom.client.Element)">getStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStylePrimaryName()">getStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStylePrimaryName(com.google.gwt.dom.client.Element)">getStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getTitle()">getTitle</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#isVisible()">isVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#isVisible(com.google.gwt.dom.client.Element)">isVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#removeStyleDependentName(java.lang.String)">removeStyleDependentName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#removeStyleName(java.lang.String)">removeStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#resolvePotentialElement()">resolvePotentialElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.dom.client.Element)">setElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.user.client.Element)">setElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setHeight(java.lang.String)">setHeight</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setPixelSize(int, int)">setPixelSize</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setSize(java.lang.String, java.lang.String)">setSize</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleDependentName(java.lang.String, boolean)">setStyleDependentName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(com.google.gwt.dom.client.Element, java.lang.String)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(com.google.gwt.dom.client.Element, java.lang.String, boolean)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String, boolean)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(com.google.gwt.dom.client.Element, java.lang.String)">setStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(java.lang.String)">setStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setTitle(java.lang.String)">setTitle</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setVisible(boolean)">setVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setVisible(com.google.gwt.dom.client.Element, boolean)">setVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setWidth(java.lang.String)">setWidth</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#sinkBitlessEvent(java.lang.String)">sinkBitlessEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#toString()">toString</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#unsinkEvents(int)">unsinkEvents</a></code></li>
+<code><a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#addStyleDependentName(java.lang.String)">addStyleDependentName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#addStyleName(java.lang.String)">addStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#ensureDebugId(com.google.gwt.dom.client.Element, java.lang.String)">ensureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#ensureDebugId(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">ensureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#ensureDebugId(java.lang.String)">ensureDebugId</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getAbsoluteLeft()">getAbsoluteLeft</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getAbsoluteTop()">getAbsoluteTop</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getElement()">getElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getOffsetHeight()">getOffsetHeight</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getOffsetWidth()">getOffsetWidth</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStyleElement()">getStyleElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStyleName()">getStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStyleName(com.google.gwt.dom.client.Element)">getStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStylePrimaryName()">getStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getStylePrimaryName(com.google.gwt.dom.client.Element)">getStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#getTitle()">getTitle</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#isVisible()">isVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#isVisible(com.google.gwt.dom.client.Element)">isVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#removeStyleDependentName(java.lang.String)">removeStyleDependentName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#removeStyleName(java.lang.String)">removeStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#resolvePotentialElement()">resolvePotentialElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.dom.client.Element)">setElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.user.client.Element)">setElement</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setHeight(java.lang.String)">setHeight</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setPixelSize(int, int)">setPixelSize</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setSize(java.lang.String, java.lang.String)">setSize</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleDependentName(java.lang.String, boolean)">setStyleDependentName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(com.google.gwt.dom.client.Element, java.lang.String)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(com.google.gwt.dom.client.Element, java.lang.String, boolean)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String, boolean)">setStyleName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(com.google.gwt.dom.client.Element, java.lang.String)">setStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(java.lang.String)">setStylePrimaryName</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setTitle(java.lang.String)">setTitle</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setVisible(boolean)">setVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setVisible(com.google.gwt.dom.client.Element, boolean)">setVisible</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#setWidth(java.lang.String)">setWidth</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#sinkBitlessEvent(java.lang.String)">sinkBitlessEvent</a>, <a href="../../../../../../com/google/gwt/user/client/ui/UIObject.html#toString()">toString</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -748,13 +758,13 @@ implements <a href="../../../../../../com/google/gwt/user/client/ui/HasName.html
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>label</code> - the check box's label</dd><dd><code>asHTML</code> - <code>true</code> to treat the specified label as html</dd></dl>
 </li>
 </ul>
-<a name="CheckBox(com.google.gwt.user.client.Element)">
+<a name="CheckBox(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>CheckBox</h4>
-<pre>protected&nbsp;CheckBox(<a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>protected&nbsp;CheckBox(<a href="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
 </li>
 </ul>
 </li>
@@ -1344,17 +1354,28 @@ public&nbsp;void&nbsp;setChecked(boolean&nbsp;checked)</pre>
 </dl>
 </li>
 </ul>
+<a name="replaceInputElement(com.google.gwt.dom.client.Element)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>replaceInputElement</h4>
+<pre>protected&nbsp;void&nbsp;replaceInputElement(<a href="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block">Replace the current input element with a new one. Preserves all state
+ except for the name property, for nasty reasons related to radio button
+ grouping. (See implementation of <a href="../../../../../../com/google/gwt/user/client/ui/RadioButton.html#setName(java.lang.String)"><code>RadioButton.setName(java.lang.String)</code></a>.)</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the new input element</dd></dl>
+</li>
+</ul>
 <a name="replaceInputElement(com.google.gwt.user.client.Element)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>replaceInputElement</h4>
-<pre>protected&nbsp;void&nbsp;replaceInputElement(<a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
-<div class="block">Replace the current input element with a new one. Preserves all state
- except for the name property, for nasty reasons related to radio button
- grouping. (See implementation of <a href="../../../../../../com/google/gwt/user/client/ui/RadioButton.html#setName(java.lang.String)"><code>RadioButton.setName(java.lang.String)</code></a>.)</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the new input element</dd></dl>
+<pre>@Deprecated
+protected&nbsp;void&nbsp;replaceInputElement(<a href="../../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Call and use <a href="../../../../../../com/google/gwt/user/client/ui/CheckBox.html#replaceInputElement(com.google.gwt.user.client.Element)"><code>replaceInputElement(Element)</code></a> instead.</i></div>
 </li>
 </ul>
 </li>
@@ -1378,7 +1399,7 @@ public&nbsp;void&nbsp;setChecked(boolean&nbsp;checked)</pre>
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

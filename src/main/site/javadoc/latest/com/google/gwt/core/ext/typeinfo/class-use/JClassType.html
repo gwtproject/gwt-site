@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>Uses of Interface com.google.gwt.core.ext.typeinfo.JClassType (Google Web Toolkit Javadoc)</title>
+<title>Uses of Interface com.google.gwt.core.ext.typeinfo.JClassType (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Interface com.google.gwt.core.ext.typeinfo.JClassType (Google Web Toolkit Javadoc)";
+        parent.document.title="Uses of Interface com.google.gwt.core.ext.typeinfo.JClassType (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -73,32 +73,26 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><a href="#com.google.gwt.benchmarks">com.google.gwt.benchmarks</a></td>
-<td class="colLast">
-<div class="block">Classes for benchmarking support.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><a href="#com.google.gwt.core.ext.typeinfo">com.google.gwt.core.ext.typeinfo</a></td>
 <td class="colLast">
 <div class="block">Type-introspection support classes used by generators.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="#com.google.gwt.i18n.rebind.format">com.google.gwt.i18n.rebind.format</a></td>
 <td class="colLast">
 <div class="block">Implementations for various MessageCatalogFormat implementations, which are used
  to generate files for translation or to read translated messages.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="#com.google.gwt.resources.ext">com.google.gwt.resources.ext</a></td>
 <td class="colLast">
 <div class="block">This package contains extension hooks for adding new resource types to
  ClientBundle.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="#com.google.gwt.uibinder.elementparsers">com.google.gwt.uibinder.elementparsers</a></td>
 <td class="colLast">
 <div class="block">Classes that parse XML elements, using the context to generate widget initialization code.</div>
@@ -109,27 +103,6 @@
 </li>
 <li class="blockList">
 <ul class="blockList">
-<li class="blockList"><a name="com.google.gwt.benchmarks">
-<!--   -->
-</a>
-<h3>Uses of <a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a> in <a href="../../../../../../../com/google/gwt/benchmarks/package-summary.html">com.google.gwt.benchmarks</a></h3>
-<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
-<caption><span>Methods in <a href="../../../../../../../com/google/gwt/benchmarks/package-summary.html">com.google.gwt.benchmarks</a> with parameters of type <a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Method and Description</th>
-</tr>
-<tbody>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="strong">BenchmarkReport.</span><code><strong><a href="../../../../../../../com/google/gwt/benchmarks/BenchmarkReport.html#addBenchmark(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.typeinfo.JClassType)">addBenchmark</a></strong>(<a href="../../../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</a>&nbsp;logger,
-            <a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a>&nbsp;benchmarkClass)</code>
-<div class="block">Adds the Benchmark to the report.</div>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
 <li class="blockList"><a name="com.google.gwt.core.ext.typeinfo">
 <!--   -->
 </a>
@@ -253,7 +226,9 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
-<td class="colLast"><span class="strong">JClassType.</span><code><strong><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getEnclosingType()">getEnclosingType</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><span class="strong">JClassType.</span><code><strong><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getEnclosingType()">getEnclosingType</a></strong>()</code>
+<div class="block">Returns the enclosing type, or null if none.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
@@ -312,11 +287,15 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a>[]</code></td>
-<td class="colLast"><span class="strong">JClassType.</span><code><strong><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getSubtypes()">getSubtypes</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><span class="strong">JClassType.</span><code><strong><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getSubtypes()">getSubtypes</a></strong>()</code>
+<div class="block">Returns all subtypes of this type, recursively, not including this type.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
-<td class="colLast"><span class="strong">JClassType.</span><code><strong><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getSuperclass()">getSuperclass</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><span class="strong">JClassType.</span><code><strong><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html#getSuperclass()">getSuperclass</a></strong>()</code>
+<div class="block">Returns the superclass of this type, or <code>null</code> if none.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a>[]</code></td>
@@ -369,7 +348,10 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
-<td class="colLast"><span class="strong">JType.</span><code><strong><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isClass()">isClass</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><span class="strong">JType.</span><code><strong><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isClass()">isClass</a></strong>()</code>
+<div class="block">Returns this instance if the erased version of this type is a class (as opposed to a primitive,
+ array, or interface) or <code>null</code> if it is not.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
@@ -377,7 +359,10 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
-<td class="colLast"><span class="strong">JType.</span><code><strong><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isClassOrInterface()">isClassOrInterface</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><span class="strong">JType.</span><code><strong><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isClassOrInterface()">isClassOrInterface</a></strong>()</code>
+<div class="block">Returns this instance if the erased version of this type is a class or interface (as opposed to
+ a primitive or array array) or <code>null</code> if it is not.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
@@ -385,7 +370,9 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
-<td class="colLast"><span class="strong">JType.</span><code><strong><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isInterface()">isInterface</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><span class="strong">JType.</span><code><strong><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JType.html#isInterface()">isInterface</a></strong>()</code>
+<div class="block">Returns this instance if it is an interface or <code>null</code> if it is not.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../../com/google/gwt/core/ext/typeinfo/JClassType.html" title="interface in com.google.gwt.core.ext.typeinfo">JClassType</a></code></td>
@@ -856,7 +843,7 @@
 <li><a href="../../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

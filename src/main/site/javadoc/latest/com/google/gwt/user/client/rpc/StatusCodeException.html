@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>StatusCodeException (Google Web Toolkit Javadoc)</title>
+<title>StatusCodeException (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="StatusCodeException (Google Web Toolkit Javadoc)";
+        parent.document.title="StatusCodeException (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -147,6 +147,13 @@ extends <a href="../../../../../../com/google/gwt/user/client/rpc/InvocationExce
 <div class="block">Construct an exception with the given status code and description.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../../../../com/google/gwt/user/client/rpc/StatusCodeException.html#StatusCodeException(int, java.lang.String, java.lang.String)">StatusCodeException</a></strong>(int&nbsp;statusCode,
+                   java.lang.String&nbsp;statusText,
+                   java.lang.String&nbsp;encodedResponse)</code>
+<div class="block">Construct an exception with the given status code, status text and description.</div>
+</td>
+</tr>
 </table>
 </li>
 </ul>
@@ -172,6 +179,12 @@ extends <a href="../../../../../../com/google/gwt/user/client/rpc/InvocationExce
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/rpc/StatusCodeException.html#getStatusCode()">getStatusCode</a></strong>()</code>
 <div class="block">Returns the status code associated with the failed request.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/client/rpc/StatusCodeException.html#getStatusText()">getStatusText</a></strong>()</code>
+<div class="block">Returns the status text associated with the failed request.</div>
 </td>
 </tr>
 </table>
@@ -206,13 +219,26 @@ extends <a href="../../../../../../com/google/gwt/user/client/rpc/InvocationExce
 <a name="StatusCodeException(int, java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>StatusCodeException</h4>
 <pre>public&nbsp;StatusCodeException(int&nbsp;statusCode,
                    java.lang.String&nbsp;encodedResponse)</pre>
 <div class="block">Construct an exception with the given status code and description.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>statusCode</code> - the HTTP status code to report</dd><dd><code>encodedResponse</code> - the HTTP response message to report</dd></dl>
+</li>
+</ul>
+<a name="StatusCodeException(int, java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>StatusCodeException</h4>
+<pre>public&nbsp;StatusCodeException(int&nbsp;statusCode,
+                   java.lang.String&nbsp;statusText,
+                   java.lang.String&nbsp;encodedResponse)</pre>
+<div class="block">Construct an exception with the given status code, status text and description.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>statusCode</code> - the HTTP status code to report</dd><dd><code>statusText</code> - the HTTP status text to report</dd><dd><code>encodedResponse</code> - the HTTP response message to report</dd></dl>
 </li>
 </ul>
 </li>
@@ -236,11 +262,21 @@ extends <a href="../../../../../../com/google/gwt/user/client/rpc/InvocationExce
 <a name="getStatusCode()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getStatusCode</h4>
 <pre>public&nbsp;int&nbsp;getStatusCode()</pre>
 <div class="block">Returns the status code associated with the failed request.</div>
+</li>
+</ul>
+<a name="getStatusText()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getStatusText</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getStatusText()</pre>
+<div class="block">Returns the status text associated with the failed request.</div>
 </li>
 </ul>
 </li>
@@ -264,7 +300,7 @@ extends <a href="../../../../../../com/google/gwt/user/client/rpc/InvocationExce
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

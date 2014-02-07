@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>HtmlAnchorBuilder (Google Web Toolkit Javadoc)</title>
+<title>HtmlAnchorBuilder (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="HtmlAnchorBuilder (Google Web Toolkit Javadoc)";
+        parent.document.title="HtmlAnchorBuilder (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -154,35 +154,41 @@ implements <a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBu
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBuilder.html" title="interface in com.google.gwt.dom.builder.shared">AnchorBuilder</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/dom/builder/shared/HtmlAnchorBuilder.html#href(java.lang.String)">href</a></strong>(java.lang.String&nbsp;href)</code>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/dom/builder/shared/HtmlAnchorBuilder.html#href(com.google.gwt.safehtml.shared.SafeUri)">href</a></strong>(<a href="../../../../../../com/google/gwt/safehtml/shared/SafeUri.html" title="interface in com.google.gwt.safehtml.shared">SafeUri</a>&nbsp;href)</code>
 <div class="block">The absolute URI of the linked resource.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBuilder.html" title="interface in com.google.gwt.dom.builder.shared">AnchorBuilder</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/dom/builder/shared/HtmlAnchorBuilder.html#href(java.lang.String)">href</a></strong>(java.lang.String&nbsp;href)</code>
+<div class="block">The absolute URI of the linked resource.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBuilder.html" title="interface in com.google.gwt.dom.builder.shared">AnchorBuilder</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/dom/builder/shared/HtmlAnchorBuilder.html#hreflang(java.lang.String)">hreflang</a></strong>(java.lang.String&nbsp;hreflang)</code>
 <div class="block">Language code of the linked resource.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBuilder.html" title="interface in com.google.gwt.dom.builder.shared">AnchorBuilder</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/dom/builder/shared/HtmlAnchorBuilder.html#name(java.lang.String)">name</a></strong>(java.lang.String&nbsp;name)</code>
 <div class="block">Anchor name.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBuilder.html" title="interface in com.google.gwt.dom.builder.shared">AnchorBuilder</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/dom/builder/shared/HtmlAnchorBuilder.html#rel(java.lang.String)">rel</a></strong>(java.lang.String&nbsp;rel)</code>
 <div class="block">Forward link type.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBuilder.html" title="interface in com.google.gwt.dom.builder.shared">AnchorBuilder</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/dom/builder/shared/HtmlAnchorBuilder.html#target(java.lang.String)">target</a></strong>(java.lang.String&nbsp;target)</code>
 <div class="block">Frame to render the resource in.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBuilder.html" title="interface in com.google.gwt.dom.builder.shared">AnchorBuilder</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/dom/builder/shared/HtmlAnchorBuilder.html#type(java.lang.String)">type</a></strong>(java.lang.String&nbsp;type)</code>
 <div class="block">Advisory content type.</div>
@@ -262,6 +268,23 @@ implements <a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBu
 <dd><code><a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBuilder.html#accessKey(java.lang.String)">accessKey</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBuilder.html" title="interface in com.google.gwt.dom.builder.shared">AnchorBuilder</a></code></dd>
 <dt><span class="strong">See Also:</span></dt><dd><a
       href="http://www.w3.org/TR/1999/REC-html401-19991224/interact/forms.html#adef-accesskey">W3C
+      HTML Specification</a></dd></dl>
+</li>
+</ul>
+<a name="href(com.google.gwt.safehtml.shared.SafeUri)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>href</h4>
+<pre>public&nbsp;<a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBuilder.html" title="interface in com.google.gwt.dom.builder.shared">AnchorBuilder</a>&nbsp;href(<a href="../../../../../../com/google/gwt/safehtml/shared/SafeUri.html" title="interface in com.google.gwt.safehtml.shared">SafeUri</a>&nbsp;href)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBuilder.html#href(com.google.gwt.safehtml.shared.SafeUri)">AnchorBuilder</a></code></strong></div>
+<div class="block">The absolute URI of the linked resource.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBuilder.html#href(com.google.gwt.safehtml.shared.SafeUri)">href</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBuilder.html" title="interface in com.google.gwt.dom.builder.shared">AnchorBuilder</a></code></dd>
+<dt><span class="strong">See Also:</span></dt><dd><a
+      href="http://www.w3.org/TR/1999/REC-html401-19991224/struct/links.html#adef-href">W3C
       HTML Specification</a></dd></dl>
 </li>
 </ul>
@@ -388,7 +411,7 @@ implements <a href="../../../../../../com/google/gwt/dom/builder/shared/AnchorBu
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

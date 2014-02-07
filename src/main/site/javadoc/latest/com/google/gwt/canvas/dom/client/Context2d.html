@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>Context2d (Google Web Toolkit Javadoc)</title>
+<title>Context2d (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Context2d (Google Web Toolkit Javadoc)";
+        parent.document.title="Context2d (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -415,11 +415,43 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#drawImage(com.google.gwt.dom.client.VideoElement, double, double)">drawImage</a></strong>(<a href="../../../../../../com/google/gwt/dom/client/VideoElement.html" title="class in com.google.gwt.dom.client">VideoElement</a>&nbsp;image,
+         double&nbsp;dx,
+         double&nbsp;dy)</code>
+<div class="block">Draws a video's current frame.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#drawImage(com.google.gwt.dom.client.VideoElement, double, double, double, double)">drawImage</a></strong>(<a href="../../../../../../com/google/gwt/dom/client/VideoElement.html" title="class in com.google.gwt.dom.client">VideoElement</a>&nbsp;image,
+         double&nbsp;dx,
+         double&nbsp;dy,
+         double&nbsp;dw,
+         double&nbsp;dh)</code>
+<div class="block">Draws a scaled video's current frame.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#drawImage(com.google.gwt.dom.client.VideoElement, double, double, double, double, double, double, double, double)">drawImage</a></strong>(<a href="../../../../../../com/google/gwt/dom/client/VideoElement.html" title="class in com.google.gwt.dom.client">VideoElement</a>&nbsp;image,
+         double&nbsp;sx,
+         double&nbsp;sy,
+         double&nbsp;sw,
+         double&nbsp;sh,
+         double&nbsp;dx,
+         double&nbsp;dy,
+         double&nbsp;dw,
+         double&nbsp;dh)</code>
+<div class="block">Draws a scaled subset of a video's current frame.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#fill()">fill</a></strong>()</code>
 <div class="block">Fills the current path.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#fillRect(double, double, double, double)">fillRect</a></strong>(double&nbsp;x,
         double&nbsp;y,
@@ -428,7 +460,7 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
 <div class="block">Fills a rectangle.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#fillText(java.lang.String, double, double)">fillText</a></strong>(java.lang.String&nbsp;text,
         double&nbsp;x,
@@ -436,7 +468,7 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
 <div class="block">Draws filled text.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#fillText(java.lang.String, double, double, double)">fillText</a></strong>(java.lang.String&nbsp;text,
         double&nbsp;x,
@@ -445,37 +477,37 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
 <div class="block">Draws filled text squeezed into the given max width.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/dom/client/CanvasElement.html" title="class in com.google.gwt.dom.client">CanvasElement</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getCanvas()">getCanvas</a></strong>()</code>
 <div class="block">Gets this context's canvas.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/canvas/dom/client/FillStrokeStyle.html" title="class in com.google.gwt.canvas.dom.client">FillStrokeStyle</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getFillStyle()">getFillStyle</a></strong>()</code>
 <div class="block">Returns the context's fillStyle.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getFont()">getFont</a></strong>()</code>
 <div class="block">Gets this context's font.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getGlobalAlpha()">getGlobalAlpha</a></strong>()</code>
 <div class="block">Gets the global alpha value.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getGlobalCompositeOperation()">getGlobalCompositeOperation</a></strong>()</code>
 <div class="block">Gets the global composite operation.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/canvas/dom/client/ImageData.html" title="class in com.google.gwt.canvas.dom.client">ImageData</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getImageData(double, double, double, double)">getImageData</a></strong>(double&nbsp;sx,
             double&nbsp;sy,
@@ -485,80 +517,80 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
  sx, sy, sw and sh.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getLineCap()">getLineCap</a></strong>()</code>
 <div class="block">Gets the current line-cap style.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getLineJoin()">getLineJoin</a></strong>()</code>
 <div class="block">Gets the current line-join style.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getLineWidth()">getLineWidth</a></strong>()</code>
 <div class="block">Gets the current line-width.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getMiterLimit()">getMiterLimit</a></strong>()</code>
 <div class="block">Gets the current miter-limit.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getShadowBlur()">getShadowBlur</a></strong>()</code>
 <div class="block">Gets the current shadow-blur.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getShadowColor()">getShadowColor</a></strong>()</code>
 <div class="block">Gets the current shadow color.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getShadowOffsetX()">getShadowOffsetX</a></strong>()</code>
 <div class="block">Gets the current x-shadow-offset.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getShadowOffsetY()">getShadowOffsetY</a></strong>()</code>
 <div class="block">Gets the current y-shadow-offset.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/canvas/dom/client/FillStrokeStyle.html" title="class in com.google.gwt.canvas.dom.client">FillStrokeStyle</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getStrokeStyle()">getStrokeStyle</a></strong>()</code>
 <div class="block">Returns the context's strokeStyle.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getTextAlign()">getTextAlign</a></strong>()</code>
 <div class="block">Gets the current text align.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#getTextBaseline()">getTextBaseline</a></strong>()</code>
 <div class="block">Gets the current text baseline.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#isPointInPath(double, double)">isPointInPath</a></strong>(double&nbsp;x,
              double&nbsp;y)</code>
 <div class="block">Returns true if the given point is in the current path.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#lineTo(double, double)">lineTo</a></strong>(double&nbsp;x,
       double&nbsp;y)</code>
@@ -566,13 +598,13 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
  path.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../com/google/gwt/canvas/dom/client/TextMetrics.html" title="class in com.google.gwt.canvas.dom.client">TextMetrics</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#measureText(java.lang.String)">measureText</a></strong>(java.lang.String&nbsp;text)</code>
 <div class="block">Returns the metrics for the given text.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#moveTo(double, double)">moveTo</a></strong>(double&nbsp;x,
       double&nbsp;y)</code>
@@ -580,7 +612,7 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
  (x, y).</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#putImageData(com.google.gwt.canvas.dom.client.ImageData, double, double)">putImageData</a></strong>(<a href="../../../../../../com/google/gwt/canvas/dom/client/ImageData.html" title="class in com.google.gwt.canvas.dom.client">ImageData</a>&nbsp;imagedata,
             double&nbsp;x,
@@ -588,7 +620,7 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
 <div class="block">Draws the given image data at the given screen position.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#quadraticCurveTo(double, double, double, double)">quadraticCurveTo</a></strong>(double&nbsp;cpx,
                 double&nbsp;cpy,
@@ -598,7 +630,7 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
  (x, y), with control point (cpx, cpy).</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#rect(double, double, double, double)">rect</a></strong>(double&nbsp;x,
     double&nbsp;y,
@@ -607,165 +639,165 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
 <div class="block">Creates a new rectangular path.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#restore()">restore</a></strong>()</code>
 <div class="block">Restores the context's state.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#rotate(double)">rotate</a></strong>(double&nbsp;angle)</code>
 <div class="block">Applies rotation to the current transform.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#save()">save</a></strong>()</code>
 <div class="block">Saves the context's state.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#scale(double, double)">scale</a></strong>(double&nbsp;x,
      double&nbsp;y)</code>
 <div class="block">Applies scale to the current transform.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setFillStyle(com.google.gwt.canvas.dom.client.FillStrokeStyle)">setFillStyle</a></strong>(<a href="../../../../../../com/google/gwt/canvas/dom/client/FillStrokeStyle.html" title="class in com.google.gwt.canvas.dom.client">FillStrokeStyle</a>&nbsp;fillStyle)</code>
 <div class="block">Sets the context's fillStyle.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setFillStyle(java.lang.String)">setFillStyle</a></strong>(java.lang.String&nbsp;fillStyleColor)</code>
 <div class="block">Convenience method to set the context's fillStyle to a <a href="../../../../../../com/google/gwt/canvas/dom/client/CssColor.html" title="class in com.google.gwt.canvas.dom.client"><code>CssColor</code></a>,
  specified in String form.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setFont(java.lang.String)">setFont</a></strong>(java.lang.String&nbsp;f)</code>
 <div class="block">Sets the font.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setGlobalAlpha(double)">setGlobalAlpha</a></strong>(double&nbsp;alpha)</code>
 <div class="block">Sets the global alpha value.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setGlobalCompositeOperation(com.google.gwt.canvas.dom.client.Context2d.Composite)">setGlobalCompositeOperation</a></strong>(<a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.Composite.html" title="enum in com.google.gwt.canvas.dom.client">Context2d.Composite</a>&nbsp;composite)</code>
 <div class="block">Sets the global composite operation.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setGlobalCompositeOperation(java.lang.String)">setGlobalCompositeOperation</a></strong>(java.lang.String&nbsp;globalCompositeOperation)</code>
 <div class="block">Sets the global composite operation.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setLineCap(com.google.gwt.canvas.dom.client.Context2d.LineCap)">setLineCap</a></strong>(<a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.LineCap.html" title="enum in com.google.gwt.canvas.dom.client">Context2d.LineCap</a>&nbsp;lineCap)</code>
 <div class="block">Sets the line-cap style.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setLineCap(java.lang.String)">setLineCap</a></strong>(java.lang.String&nbsp;lineCap)</code>
 <div class="block">Sets the line-cap style.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setLineJoin(com.google.gwt.canvas.dom.client.Context2d.LineJoin)">setLineJoin</a></strong>(<a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.LineJoin.html" title="enum in com.google.gwt.canvas.dom.client">Context2d.LineJoin</a>&nbsp;lineJoin)</code>
 <div class="block">Sets the line-join style.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setLineJoin(java.lang.String)">setLineJoin</a></strong>(java.lang.String&nbsp;lineJoin)</code>
 <div class="block">Sets the line-join style.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setLineWidth(double)">setLineWidth</a></strong>(double&nbsp;lineWidth)</code>
 <div class="block">Sets the line-width.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setMiterLimit(double)">setMiterLimit</a></strong>(double&nbsp;miterLimit)</code>
 <div class="block">Sets the miter-limit.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setShadowBlur(double)">setShadowBlur</a></strong>(double&nbsp;shadowBlur)</code>
 <div class="block">Sets the shadow-blur.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setShadowColor(java.lang.String)">setShadowColor</a></strong>(java.lang.String&nbsp;shadowColor)</code>
 <div class="block">Sets the shadow-color.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setShadowOffsetX(double)">setShadowOffsetX</a></strong>(double&nbsp;shadowOffsetX)</code>
 <div class="block">Sets the x-shadow-offset.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setShadowOffsetY(double)">setShadowOffsetY</a></strong>(double&nbsp;shadowOffsetY)</code>
 <div class="block">Sets the y-shadow-offset.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setStrokeStyle(com.google.gwt.canvas.dom.client.FillStrokeStyle)">setStrokeStyle</a></strong>(<a href="../../../../../../com/google/gwt/canvas/dom/client/FillStrokeStyle.html" title="class in com.google.gwt.canvas.dom.client">FillStrokeStyle</a>&nbsp;strokeStyle)</code>
 <div class="block">Sets the context's stroke style.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setStrokeStyle(java.lang.String)">setStrokeStyle</a></strong>(java.lang.String&nbsp;strokeStyleColor)</code>
 <div class="block">Convenience method to set the context's strokeStyle to a <a href="../../../../../../com/google/gwt/canvas/dom/client/CssColor.html" title="class in com.google.gwt.canvas.dom.client"><code>CssColor</code></a>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setTextAlign(com.google.gwt.canvas.dom.client.Context2d.TextAlign)">setTextAlign</a></strong>(<a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.TextAlign.html" title="enum in com.google.gwt.canvas.dom.client">Context2d.TextAlign</a>&nbsp;align)</code>
 <div class="block">Sets the text alignment.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setTextAlign(java.lang.String)">setTextAlign</a></strong>(java.lang.String&nbsp;align)</code>
 <div class="block">Sets the text alignment.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setTextBaseline(com.google.gwt.canvas.dom.client.Context2d.TextBaseline)">setTextBaseline</a></strong>(<a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.TextBaseline.html" title="enum in com.google.gwt.canvas.dom.client">Context2d.TextBaseline</a>&nbsp;baseline)</code>
 <div class="block">Sets the text baseline.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setTextBaseline(java.lang.String)">setTextBaseline</a></strong>(java.lang.String&nbsp;baseline)</code>
 <div class="block">Sets the text baseline.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#setTransform(double, double, double, double, double, double)">setTransform</a></strong>(double&nbsp;m11,
             double&nbsp;m12,
@@ -776,13 +808,13 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
 <div class="block">Sets the 2D transformation matrix.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#stroke()">stroke</a></strong>()</code>
 <div class="block">Draws the current path with the current stroke style.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#strokeRect(double, double, double, double)">strokeRect</a></strong>(double&nbsp;x,
           double&nbsp;y,
@@ -791,7 +823,7 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
 <div class="block">Draws the outline of a rectangle with the current stroke style.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#strokeText(java.lang.String, double, double)">strokeText</a></strong>(java.lang.String&nbsp;text,
           double&nbsp;x,
@@ -799,7 +831,7 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
 <div class="block">Draws the text outline.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#strokeText(java.lang.String, double, double, double)">strokeText</a></strong>(java.lang.String&nbsp;text,
           double&nbsp;x,
@@ -809,7 +841,7 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
  compressing the font.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#transform(double, double, double, double, double, double)">transform</a></strong>(double&nbsp;m11,
          double&nbsp;m12,
@@ -820,7 +852,7 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
 <div class="block">Multiplies the current transform by the given matrix.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/canvas/dom/client/Context2d.html#translate(double, double)">translate</a></strong>(double&nbsp;x,
          double&nbsp;y)</code>
@@ -833,7 +865,7 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.google.gwt.core.client.<a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a></h3>
-<code><a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#cast()">cast</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#createArray()">createArray</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#createFunction()">createFunction</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#createObject()">createObject</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#equals(java.lang.Object)">equals</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#hashCode()">hashCode</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#toSource()">toSource</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#toString()">toString</a></code></li>
+<code><a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#cast()">cast</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#createArray()">createArray</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#createArray(int)">createArray</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#createFunction()">createFunction</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#createObject()">createObject</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#equals(java.lang.Object)">equals</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#hashCode()">hashCode</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#toSource()">toSource</a>, <a href="../../../../../../com/google/gwt/core/client/JavaScriptObject.html#toString()">toString</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -1212,6 +1244,53 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
              double&nbsp;dh)</pre>
 <div class="block">Draws a scaled subset of an image.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>image</code> - an <a href="../../../../../../com/google/gwt/dom/client/ImageElement.html" title="class in com.google.gwt.dom.client"><code>ImageElement</code></a> object</dd><dd><code>sx</code> - the x coordinate of the upper-left corner of the source rectangle</dd><dd><code>sy</code> - the y coordinate of the upper-left corner of the source rectangle</dd><dd><code>sw</code> - the width of the source rectangle</dd><dd><code>sh</code> - the width of the source rectangle</dd><dd><code>dx</code> - the x coordinate of the upper-left corner of the destination rectangle</dd><dd><code>dy</code> - the y coordinate of the upper-left corner of the destination rectangle</dd><dd><code>dw</code> - the width of the destination rectangle</dd><dd><code>dh</code> - the height of the destination rectangle</dd></dl>
+</li>
+</ul>
+<a name="drawImage(com.google.gwt.dom.client.VideoElement, double, double)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>drawImage</h4>
+<pre>public final&nbsp;void&nbsp;drawImage(<a href="../../../../../../com/google/gwt/dom/client/VideoElement.html" title="class in com.google.gwt.dom.client">VideoElement</a>&nbsp;image,
+             double&nbsp;dx,
+             double&nbsp;dy)</pre>
+<div class="block">Draws a video's current frame.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>image</code> - a <a href="../../../../../../com/google/gwt/dom/client/VideoElement.html" title="class in com.google.gwt.dom.client"><code>VideoElement</code></a> object</dd><dd><code>dx</code> - the x coordinate of the upper-left corner of the destination rectangle</dd><dd><code>dy</code> - the y coordinate of the upper-left corner of the destination rectangle</dd></dl>
+</li>
+</ul>
+<a name="drawImage(com.google.gwt.dom.client.VideoElement, double, double, double, double)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>drawImage</h4>
+<pre>public final&nbsp;void&nbsp;drawImage(<a href="../../../../../../com/google/gwt/dom/client/VideoElement.html" title="class in com.google.gwt.dom.client">VideoElement</a>&nbsp;image,
+             double&nbsp;dx,
+             double&nbsp;dy,
+             double&nbsp;dw,
+             double&nbsp;dh)</pre>
+<div class="block">Draws a scaled video's current frame.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>image</code> - a <a href="../../../../../../com/google/gwt/dom/client/VideoElement.html" title="class in com.google.gwt.dom.client"><code>VideoElement</code></a> object</dd><dd><code>dx</code> - the x coordinate of the upper-left corner of the destination rectangle</dd><dd><code>dy</code> - the y coordinate of the upper-left corner of the destination rectangle</dd><dd><code>dw</code> - the width of the destination rectangle</dd><dd><code>dh</code> - the height of the destination rectangle</dd></dl>
+</li>
+</ul>
+<a name="drawImage(com.google.gwt.dom.client.VideoElement, double, double, double, double, double, double, double, double)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>drawImage</h4>
+<pre>public final&nbsp;void&nbsp;drawImage(<a href="../../../../../../com/google/gwt/dom/client/VideoElement.html" title="class in com.google.gwt.dom.client">VideoElement</a>&nbsp;image,
+             double&nbsp;sx,
+             double&nbsp;sy,
+             double&nbsp;sw,
+             double&nbsp;sh,
+             double&nbsp;dx,
+             double&nbsp;dy,
+             double&nbsp;dw,
+             double&nbsp;dh)</pre>
+<div class="block">Draws a scaled subset of a video's current frame.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>image</code> - a <a href="../../../../../../com/google/gwt/dom/client/VideoElement.html" title="class in com.google.gwt.dom.client"><code>VideoElement</code></a> object</dd><dd><code>sx</code> - the x coordinate of the upper-left corner of the source rectangle</dd><dd><code>sy</code> - the y coordinate of the upper-left corner of the source rectangle</dd><dd><code>sw</code> - the width of the source rectangle</dd><dd><code>sh</code> - the width of the source rectangle</dd><dd><code>dx</code> - the x coordinate of the upper-left corner of the destination rectangle</dd><dd><code>dy</code> - the y coordinate of the upper-left corner of the destination rectangle</dd><dd><code>dw</code> - the width of the destination rectangle</dd><dd><code>dh</code> - the height of the destination rectangle</dd></dl>
 </li>
 </ul>
 <a name="fill()">
@@ -1971,7 +2050,7 @@ implements <a href="../../../../../../com/google/gwt/canvas/dom/client/Context.h
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

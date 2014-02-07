@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>GWT (Google Web Toolkit Javadoc)</title>
+<title>GWT (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="GWT (Google Web Toolkit Javadoc)";
+        parent.document.title="GWT (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -184,6 +184,16 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/client/GWT.html#debugger()">debugger</a></strong>()</code>
+<div class="block">Emits a JavaScript "debugger" statement on the line that called this method.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/client/GWT.html#exportUnloadModule()">exportUnloadModule</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/client/GWT.html#getHostPageBaseURL()">getHostPageBaseURL</a></strong>()</code>
 <div class="block">Gets the URL prefix of the hosting page, useful for prepending to relative
@@ -267,17 +277,26 @@ extends java.lang.Object</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/client/GWT.html#log(java.lang.String)">log</a></strong>(java.lang.String&nbsp;message)</code>
-<div class="block">Logs a message to the development shell logger in Development Mode.</div>
+<div class="block">Logs a message to the development shell logger in Development Mode, or to
+ the console in Super Dev Mode.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/client/GWT.html#log(java.lang.String, java.lang.Throwable)">log</a></strong>(java.lang.String&nbsp;message,
    java.lang.Throwable&nbsp;e)</code>
-<div class="block">Logs a message to the development shell logger in Development Mode.</div>
+<div class="block">Logs a message to the development shell logger in Development Mode, or to
+ the console in Super Dev Mode.</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/client/GWT.html#reportUncaughtException(java.lang.Throwable)">reportUncaughtException</a></strong>(java.lang.Throwable&nbsp;e)</code>
+<div class="block">Reports an exception caught at the "top level" to a handler set via
+ <a href="../../../../../com/google/gwt/core/client/GWT.html#setUncaughtExceptionHandler(com.google.gwt.core.client.GWT.UncaughtExceptionHandler)"><code>setUncaughtExceptionHandler(UncaughtExceptionHandler)</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/client/GWT.html#runAsync(java.lang.Class, com.google.gwt.core.client.RunAsyncCallback)">runAsync</a></strong>(java.lang.Class&lt;?&gt;&nbsp;name,
         <a href="../../../../../com/google/gwt/core/client/RunAsyncCallback.html" title="interface in com.google.gwt.core.client">RunAsyncCallback</a>&nbsp;callback)</code>
@@ -285,20 +304,20 @@ extends java.lang.Object</pre>
  parameter to provide a name for the call.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/client/GWT.html#runAsync(com.google.gwt.core.client.RunAsyncCallback)">runAsync</a></strong>(<a href="../../../../../com/google/gwt/core/client/RunAsyncCallback.html" title="interface in com.google.gwt.core.client">RunAsyncCallback</a>&nbsp;callback)</code>
 <div class="block">Run the specified callback once the necessary code for it has been loaded.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>(package private) static void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/client/GWT.html#setBridge(com.google.gwt.core.client.GWTBridge)">setBridge</a></strong>(<a href="../../../../../com/google/gwt/core/client/GWTBridge.html" title="class in com.google.gwt.core.client">GWTBridge</a>&nbsp;bridge)</code>
 <div class="block">Called via reflection in Development Mode; do not ever call this method in
  Production Mode.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/client/GWT.html#setUncaughtExceptionHandler(com.google.gwt.core.client.GWT.UncaughtExceptionHandler)">setUncaughtExceptionHandler</a></strong>(<a href="../../../../../com/google/gwt/core/client/GWT.UncaughtExceptionHandler.html" title="interface in com.google.gwt.core.client">GWT.UncaughtExceptionHandler</a>&nbsp;handler)</code>
 <div class="block">Sets a custom uncaught exception handler.</div>
@@ -381,6 +400,15 @@ extends java.lang.Object</pre>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>classLiteral</code> - a class literal specifying the base class to be
           instantiated</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the new instance, which must be cast to the requested class</dd></dl>
+</li>
+</ul>
+<a name="exportUnloadModule()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>exportUnloadModule</h4>
+<pre>public static&nbsp;void&nbsp;exportUnloadModule()</pre>
 </li>
 </ul>
 <a name="getHostPageBaseURL()">
@@ -472,14 +500,25 @@ public static&nbsp;java.lang.String&nbsp;getTypeName(java.lang.Object&nbsp;o)</p
 <li class="blockList">
 <h4>getUncaughtExceptionHandler</h4>
 <pre>public static&nbsp;<a href="../../../../../com/google/gwt/core/client/GWT.UncaughtExceptionHandler.html" title="interface in com.google.gwt.core.client">GWT.UncaughtExceptionHandler</a>&nbsp;getUncaughtExceptionHandler()</pre>
-<div class="block">Returns the currently active uncaughtExceptionHandler. "Top level" methods
- that dispatch events from the browser into user code must call this method
- on entry to get the active handler. If the active handler is null, the
- entry point must allow exceptions to escape into the browser. If the
- handler is non-null, exceptions must be caught and routed to the handler.
- See the source code for <code>DOM.dispatchEvent()</code> for an example
- of how to handle this correctly.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>the currently active handler, or null if no handler is active.</dd></dl>
+<div class="block">Returns the currently active uncaughtExceptionHandler.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the currently active handler, or null if no handler is active.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../com/google/gwt/core/client/GWT.html#reportUncaughtException(java.lang.Throwable)"><code>reportUncaughtException(Throwable)</code></a></dd></dl>
+</li>
+</ul>
+<a name="reportUncaughtException(java.lang.Throwable)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reportUncaughtException</h4>
+<pre>public static&nbsp;void&nbsp;reportUncaughtException(java.lang.Throwable&nbsp;e)</pre>
+<div class="block">Reports an exception caught at the "top level" to a handler set via
+ <a href="../../../../../com/google/gwt/core/client/GWT.html#setUncaughtExceptionHandler(com.google.gwt.core.client.GWT.UncaughtExceptionHandler)"><code>setUncaughtExceptionHandler(UncaughtExceptionHandler)</code></a>. This is
+ used in places where the browser calls into user code such as event
+ callbacks, timers, and RPC.
+ <p>
+ If no <code>UncaughtExceptionHandler</code> is set, the exception is reported
+ to browser. Browsers usually log these exceptions to the JavaScript
+ console.</div>
 </li>
 </ul>
 <a name="getUniqueThreadId()">
@@ -551,8 +590,8 @@ public static&nbsp;java.lang.String&nbsp;getTypeName(java.lang.Object&nbsp;o)</p
 <li class="blockList">
 <h4>log</h4>
 <pre>public static&nbsp;void&nbsp;log(java.lang.String&nbsp;message)</pre>
-<div class="block">Logs a message to the development shell logger in Development Mode. Calls
- are optimized out in Production Mode.</div>
+<div class="block">Logs a message to the development shell logger in Development Mode, or to
+ the console in Super Dev Mode. Calls are optimized out in Production Mode.</div>
 </li>
 </ul>
 <a name="log(java.lang.String, java.lang.Throwable)">
@@ -563,8 +602,21 @@ public static&nbsp;java.lang.String&nbsp;getTypeName(java.lang.Object&nbsp;o)</p
 <h4>log</h4>
 <pre>public static&nbsp;void&nbsp;log(java.lang.String&nbsp;message,
        java.lang.Throwable&nbsp;e)</pre>
-<div class="block">Logs a message to the development shell logger in Development Mode. Calls
- are optimized out in Production Mode.</div>
+<div class="block">Logs a message to the development shell logger in Development Mode, or to
+ the console in Super Dev Mode. Calls are optimized out in Production Mode.</div>
+</li>
+</ul>
+<a name="debugger()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>debugger</h4>
+<pre>public static&nbsp;void&nbsp;debugger()</pre>
+<div class="block">Emits a JavaScript "debugger" statement on the line that called this method.
+ If the user has the browser's debugger open, the debugger will stop when the
+ GWT application executes that line. There is no effect in Dev Mode or in
+ server-side code.</div>
 </li>
 </ul>
 <a name="runAsync(java.lang.Class, com.google.gwt.core.client.RunAsyncCallback)">
@@ -577,8 +629,9 @@ public static&nbsp;java.lang.String&nbsp;getTypeName(java.lang.Object&nbsp;o)</p
             <a href="../../../../../com/google/gwt/core/client/RunAsyncCallback.html" title="interface in com.google.gwt.core.client">RunAsyncCallback</a>&nbsp;callback)</pre>
 <div class="block">The same as <a href="../../../../../com/google/gwt/core/client/GWT.html#runAsync(com.google.gwt.core.client.RunAsyncCallback)"><code>runAsync(RunAsyncCallback)</code></a>, except with an extra
  parameter to provide a name for the call. The name parameter should be
- supplied with a class literal. No two runAsync calls in the same program
- should use the same name.</div>
+ supplied with a class literal. If two GWT.runAsync calls  use the same
+ class literal, the codesplitter will put the corresponding code in
+ the same code fragment.</div>
 </li>
 </ul>
 <a name="runAsync(com.google.gwt.core.client.RunAsyncCallback)">
@@ -600,9 +653,9 @@ public static&nbsp;java.lang.String&nbsp;getTypeName(java.lang.Object&nbsp;o)</p
 <pre>public static&nbsp;void&nbsp;setUncaughtExceptionHandler(<a href="../../../../../com/google/gwt/core/client/GWT.UncaughtExceptionHandler.html" title="interface in com.google.gwt.core.client">GWT.UncaughtExceptionHandler</a>&nbsp;handler)</pre>
 <div class="block">Sets a custom uncaught exception handler. See
  <a href="../../../../../com/google/gwt/core/client/GWT.html#getUncaughtExceptionHandler()"><code>getUncaughtExceptionHandler()</code></a> for details.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>handler</code> - the handler that should be called when an exception is about
-          to escape to the browser, or <code>null</code> to clear the
-          handler and allow exceptions to escape.</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>handler</code> - the handler that should be called when an exception is
+        about to escape to the browser, or <code>null</code> to clear the
+        handler and allow exceptions to escape.</dd></dl>
 </li>
 </ul>
 <a name="setBridge(com.google.gwt.core.client.GWTBridge)">
@@ -637,7 +690,7 @@ public static&nbsp;java.lang.String&nbsp;getTypeName(java.lang.Object&nbsp;o)</p
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>Deprecated List (Google Web Toolkit Javadoc)</title>
+<title>Deprecated List (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Deprecated List (Google Web Toolkit Javadoc)";
+        parent.document.title="Deprecated List (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li class="navBarCell1Rev">Deprecated</li>
 <li><a href="help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -84,7 +84,10 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colOne"><a href="com/google/gwt/benchmarks/client/Category.html" title="interface in com.google.gwt.benchmarks.client">com.google.gwt.benchmarks.client.Category</a></td>
+<td class="colOne"><a href="com/google/gwt/user/client/AsyncProxy.html" title="interface in com.google.gwt.user.client">com.google.gwt.user.client.AsyncProxy</a>
+<div class="block"><i>AsyncProxy will no longer be part of the SDK with next release. Please
+             look for third party libraries if you still need to use it.</i></div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ChangeListener.html" title="interface in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.ChangeListener</a>
@@ -443,17 +446,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/BaseListenerWrapper.html" title="class in com.google.gwt.user.client">com.google.gwt.user.client.BaseListenerWrapper</a>
-<div class="block"><i>will be removed in GWT 2.0 with the handler listeners themselves</i></div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colOne"><a href="com/google/gwt/benchmarks/client/Benchmark.html" title="class in com.google.gwt.benchmarks.client">com.google.gwt.benchmarks.client.Benchmark</a>
-<div class="block"><i>This class is scheduled to be removed in the next GWT release.</i></div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/benchmarks/BenchmarkShell.html" title="class in com.google.gwt.benchmarks">com.google.gwt.benchmarks.BenchmarkShell</a>
-<div class="block"><i>This class is scheduled to be removed in the next GWT release.</i></div>
+<div class="block"><i>will be removed in GWT 2.7 with the handler listeners themselves</i></div>
 </td>
 </tr>
 <tr class="altColor">
@@ -508,34 +501,37 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/dom/client/DOMImplSafari.html" title="class in com.google.gwt.dom.client">com.google.gwt.dom.client.DOMImplSafari</a>
-<div class="block"><i>As of release 2.3, replaced by <a href="com/google/gwt/dom/client/DOMImplWebkit.html" title="class in com.google.gwt.dom.client"><code>DOMImplWebkit</code></a></i></div>
-</td>
+<td class="colOne"><a href="com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">com.google.gwt.user.client.Element</a></td>
 </tr>
 <tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/logging/client/FirebugLogHandler.html" title="class in com.google.gwt.logging.client">com.google.gwt.logging.client.FirebugLogHandler</a>
+<div class="block"><i>use <a href="com/google/gwt/logging/client/ConsoleLogHandler.html" title="class in com.google.gwt.logging.client"><code>ConsoleLogHandler</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FocusListenerAdapter.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.FocusListenerAdapter</a>
 <div class="block"><i>Use <a href="com/google/gwt/event/dom/client/FocusHandler.html" title="interface in com.google.gwt.event.dom.client"><code>FocusHandler</code></a> and
              <a href="com/google/gwt/event/dom/client/BlurHandler.html" title="interface in com.google.gwt.event.dom.client"><code>BlurHandler</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FocusListenerCollection.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.FocusListenerCollection</a>
 <div class="block"><i>Widgets should now manage their own handlers via <a href="com/google/gwt/user/client/ui/Widget.html#addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)"><code>Widget.addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type&lt;H&gt;)</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FormHandlerCollection.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.FormHandlerCollection</a>
 <div class="block"><i>Widgets should now manage their own handlers via <a href="com/google/gwt/user/client/ui/Widget.html#addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)"><code>Widget.addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type&lt;H&gt;)</code></a></i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/i18n/rebind/keygen/FullyQualifiedMethodNameKeyGenerator.html" title="class in com.google.gwt.i18n.rebind.keygen">com.google.gwt.i18n.rebind.keygen.FullyQualifiedMethodNameKeyGenerator</a>
 <div class="block"><i>Use
  <code>FullyQualifiedMethodNameKeyGenerator</code>
  instead.</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/HorizontalSplitPanel.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.HorizontalSplitPanel</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/SplitLayoutPanel.html" title="class in com.google.gwt.user.client.ui"><code>SplitLayoutPanel</code></a> instead, but understand that it is
              not a drop in replacement for this class. It requires standards
@@ -543,59 +539,59 @@
              opposed to a <a href="com/google/gwt/user/client/ui/RootPanel.html" title="class in com.google.gwt.user.client.ui"><code>RootPanel</code></a></i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/KeyboardListenerAdapter.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.KeyboardListenerAdapter</a>
 <div class="block"><i>use <a href="com/google/gwt/event/dom/client/KeyDownHandler.html" title="interface in com.google.gwt.event.dom.client"><code>KeyDownHandler</code></a>,
              <a href="com/google/gwt/event/dom/client/KeyUpHandler.html" title="interface in com.google.gwt.event.dom.client"><code>KeyUpHandler</code></a> and/or
              <a href="com/google/gwt/event/dom/client/KeyPressHandler.html" title="interface in com.google.gwt.event.dom.client"><code>KeyPressHandler</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/KeyboardListenerCollection.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.KeyboardListenerCollection</a>
 <div class="block"><i>Widgets should now manage their own handlers via <a href="com/google/gwt/user/client/ui/Widget.html#addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)"><code>Widget.addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type&lt;H&gt;)</code></a></i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.ListenerWrapper</a>
-<div class="block"><i>will be removed in GWT 2.0 with the handler listeners themselves</i></div>
+<div class="block"><i>will be removed in GWT 2.7 with the handler listeners themselves</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedChangeListener.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.ListenerWrapper.WrappedChangeListener</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listeners being
              wrapped</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedClickListener.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.ListenerWrapper.WrappedClickListener</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listeners being
              wrapped</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedLogicalChangeListener.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.ListenerWrapper.WrappedLogicalChangeListener</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listeners being
              wrapped</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/LoadListenerCollection.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.LoadListenerCollection</a>
 <div class="block"><i>Widgets should now manage their own handlers via <a href="com/google/gwt/user/client/ui/Widget.html#addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)"><code>Widget.addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type&lt;H&gt;)</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/i18n/rebind/keygen/MD5KeyGenerator.html" title="class in com.google.gwt.i18n.rebind.keygen">com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator</a>
 <div class="block"><i>Use <code>MD5KeyGenerator</code>
  instead.</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/i18n/rebind/keygen/MethodNameKeyGenerator.html" title="class in com.google.gwt.i18n.rebind.keygen">com.google.gwt.i18n.rebind.keygen.MethodNameKeyGenerator</a>
 <div class="block"><i>Use
  <code>MethodNameKeyGenerator</code> instead.</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/MouseListenerAdapter.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.MouseListenerAdapter</a>
 <div class="block"><i>use <a href="com/google/gwt/event/dom/client/MouseDownHandler.html" title="interface in com.google.gwt.event.dom.client"><code>MouseDownHandler</code></a>,
              <a href="com/google/gwt/event/dom/client/MouseUpHandler.html" title="interface in com.google.gwt.event.dom.client"><code>MouseUpHandler</code></a>,
@@ -604,39 +600,44 @@
              <a href="com/google/gwt/event/dom/client/MouseOutHandler.html" title="interface in com.google.gwt.event.dom.client"><code>MouseOutHandler</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/MouseListenerCollection.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.MouseListenerCollection</a>
 <div class="block"><i>Widgets should now manage their own handlers via <a href="com/google/gwt/user/client/ui/Widget.html#addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)"><code>Widget.addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type&lt;H&gt;)</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/MouseWheelListenerCollection.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.MouseWheelListenerCollection</a>
 <div class="block"><i>Widgets should now manage their own handlers via <a href="com/google/gwt/user/client/ui/Widget.html#addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)"><code>Widget.addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type&lt;H&gt;)</code></a></i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/MouseWheelVelocity.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.MouseWheelVelocity</a>
 <div class="block"><i>use
              <a href="com/google/gwt/event/dom/client/MouseWheelEvent.html#getDeltaY()"><code>MouseWheelEvent.getDeltaY()</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/PopupListenerCollection.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.PopupListenerCollection</a>
 <div class="block"><i>Widgets should now manage their own handlers via <a href="com/google/gwt/user/client/ui/Widget.html#addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)"><code>Widget.addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type&lt;H&gt;)</code></a></i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ScrollListenerCollection.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.ScrollListenerCollection</a>
 <div class="block"><i>Widgets should now manage their own handlers via <a href="com/google/gwt/user/client/ui/Widget.html#addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type)"><code>Widget.addDomHandler(H, com.google.gwt.event.dom.client.DomEvent.Type&lt;H&gt;)</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SplitPanel.html" title="class in com.google.gwt.user.client.ui">com.google.gwt.user.client.ui.SplitPanel</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/SplitLayoutPanel.html" title="class in com.google.gwt.user.client.ui"><code>SplitLayoutPanel</code></a> instead, but understand that it is
              not a drop in replacement for this class. It requires standards
              mode, and is most easily used under a <a href="com/google/gwt/user/client/ui/RootLayoutPanel.html" title="class in com.google.gwt.user.client.ui"><code>RootLayoutPanel</code></a> (as
              opposed to a <a href="com/google/gwt/user/client/ui/RootPanel.html" title="class in com.google.gwt.user.client.ui"><code>RootPanel</code></a></i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/logging/server/StackTraceDeobfuscator.html" title="class in com.google.gwt.logging.server">com.google.gwt.logging.server.StackTraceDeobfuscator</a>
+<div class="block"><i>Use com.google.gwt.core.server.StackTraceDeobfuscator instead.</i></div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -889,50 +890,44 @@
 </td>
 </tr>
 <tr class="altColor">
-<td class="colOne"><a href="com/google/gwt/user/client/BaseListenerWrapper.NativePreview.html#add(com.google.gwt.user.client.EventPreview)">com.google.gwt.user.client.BaseListenerWrapper.NativePreview.add(EventPreview)</a></td>
-</tr>
-<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedFocusListener.html#add(com.google.gwt.event.dom.client.HasAllFocusHandlers, com.google.gwt.user.client.ui.FocusListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedFocusListener.add(HasAllFocusHandlers, FocusListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedKeyboardListener.html#add(com.google.gwt.event.dom.client.HasAllKeyHandlers, com.google.gwt.user.client.ui.KeyboardListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedKeyboardListener.add(HasAllKeyHandlers, KeyboardListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedChangeListener.html#add(com.google.gwt.event.dom.client.HasChangeHandlers, com.google.gwt.user.client.ui.ChangeListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedChangeListener.add(HasChangeHandlers, ChangeListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedClickListener.html#add(com.google.gwt.event.dom.client.HasClickHandlers, com.google.gwt.user.client.ui.ClickListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedClickListener.add(HasClickHandlers, ClickListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedTableListener.html#add(com.google.gwt.event.dom.client.HasClickHandlers, com.google.gwt.user.client.ui.TableListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedTableListener.add(HasClickHandlers, TableListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedMouseWheelListener.html#add(com.google.gwt.event.dom.client.HasMouseWheelHandlers, com.google.gwt.user.client.ui.MouseWheelListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedMouseWheelListener.add(HasMouseWheelHandlers, MouseWheelListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedScrollListener.html#add(com.google.gwt.event.dom.client.HasScrollHandlers, com.google.gwt.user.client.ui.ScrollListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedScrollListener.add(HasScrollHandlers, ScrollListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedLogicalChangeListener.html#add(com.google.gwt.event.logical.shared.HasValueChangeHandlers, com.google.gwt.user.client.ui.ChangeListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedLogicalChangeListener.add(HasValueChangeHandlers<V>, ChangeListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/user/client/BaseListenerWrapper.WrapHistory.html#add(com.google.gwt.user.client.HistoryListener)">com.google.gwt.user.client.BaseListenerWrapper.WrapHistory.add(HistoryListener)</a></td>
 </tr>
 <tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedLoadListener.html#add(S, com.google.gwt.user.client.ui.LoadListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedLoadListener.add(S, LoadListener)</a>
@@ -955,57 +950,57 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/ui/ComplexPanel.html#add(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)">com.google.gwt.user.client.ui.ComplexPanel.add(Widget, Element)</a>
+<div class="block"><i>Call and override <a href="com/google/gwt/user/client/ui/ComplexPanel.html#add(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)"><code>ComplexPanel.add(Widget, Element)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/BaseListenerWrapper.WrapWindowClose.html#add(com.google.gwt.user.client.WindowCloseListener)">com.google.gwt.user.client.BaseListenerWrapper.WrapWindowClose.add(WindowCloseListener)</a></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/BaseListenerWrapper.WrapWindowResize.html#add(com.google.gwt.user.client.WindowResizeListener)">com.google.gwt.user.client.BaseListenerWrapper.WrapWindowResize.add(WindowResizeListener)</a></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/BaseListenerWrapper.WrapWindowScroll.html#add(com.google.gwt.user.client.WindowScrollListener)">com.google.gwt.user.client.BaseListenerWrapper.WrapWindowScroll.add(WindowScrollListener)</a></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/RenderablePanel.html#addAndReplaceElement(com.google.gwt.user.client.ui.IsWidget, com.google.gwt.user.client.Element)">com.google.gwt.user.client.ui.RenderablePanel.addAndReplaceElement(IsWidget, Element)</a>
 <div class="block"><i>use <a href="com/google/gwt/user/client/ui/RenderablePanel.html#addAndReplaceElement(com.google.gwt.user.client.ui.IsWidget, com.google.gwt.dom.client.Element)"><code>RenderablePanel.addAndReplaceElement(IsWidget, Element)</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/HTMLPanel.html#addAndReplaceElement(com.google.gwt.user.client.ui.IsWidget, com.google.gwt.user.client.Element)">com.google.gwt.user.client.ui.HTMLPanel.addAndReplaceElement(IsWidget, Element)</a>
 <div class="block"><i>use <a href="com/google/gwt/user/client/ui/HTMLPanel.html#addAndReplaceElement(com.google.gwt.user.client.ui.IsWidget, com.google.gwt.dom.client.Element)"><code>HTMLPanel.addAndReplaceElement(IsWidget, Element)</code></a></i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/RenderablePanel.html#addAndReplaceElement(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)">com.google.gwt.user.client.ui.RenderablePanel.addAndReplaceElement(Widget, Element)</a>
 <div class="block"><i>use <a href="com/google/gwt/user/client/ui/RenderablePanel.html#addAndReplaceElement(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)"><code>RenderablePanel.addAndReplaceElement(Widget, Element)</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/HTMLPanel.html#addAndReplaceElement(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)">com.google.gwt.user.client.ui.HTMLPanel.addAndReplaceElement(Widget, Element)</a>
 <div class="block"><i>use <a href="com/google/gwt/user/client/ui/HTMLPanel.html#addAndReplaceElement(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)"><code>HTMLPanel.addAndReplaceElement(Widget, Element)</code></a></i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TextBoxBase.html#addChangeListener(com.google.gwt.user.client.ui.ChangeListener)">com.google.gwt.user.client.ui.TextBoxBase.addChangeListener(ChangeListener)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/ValueBoxBase.html#addChangeHandler(com.google.gwt.event.dom.client.ChangeHandler)"><code>ValueBoxBase.addChangeHandler(com.google.gwt.event.dom.client.ChangeHandler)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SuggestBox.html#addChangeListener(com.google.gwt.user.client.ui.ChangeListener)">com.google.gwt.user.client.ui.SuggestBox.addChangeListener(ChangeListener)</a>
 <div class="block"><i>use <a href="com/google/gwt/user/client/ui/SuggestBox.html#getTextBox()"><code>SuggestBox.getTextBox()</code></a>().addChangeHandler instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SourcesChangeEvents.html#addChangeListener(com.google.gwt.user.client.ui.ChangeListener)">com.google.gwt.user.client.ui.SourcesChangeEvents.addChangeListener(ChangeListener)</a>
 <div class="block"><i>use addChangeHandler or addValueChangeHandler instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListBox.html#addChangeListener(com.google.gwt.user.client.ui.ChangeListener)">com.google.gwt.user.client.ui.ListBox.addChangeListener(ChangeListener)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/ListBox.html#addChangeHandler(com.google.gwt.event.dom.client.ChangeHandler)"><code>ListBox.addChangeHandler(com.google.gwt.event.dom.client.ChangeHandler)</code></a> instead</i></div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/junit/client/GWTTestCase.html#addCheckpoint(java.lang.String)">com.google.gwt.junit.client.GWTTestCase.addCheckpoint(String)</a>
-<div class="block"><i>implementation removed</i></div>
 </td>
 </tr>
 <tr class="altColor">
@@ -1126,16 +1121,6 @@
 <tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/History.html#addHistoryListener(com.google.gwt.user.client.HistoryListener)">com.google.gwt.user.client.History.addHistoryListener(HistoryListener)</a>
 <div class="block"><i>use <a href="com/google/gwt/user/client/History.html#addValueChangeHandler(com.google.gwt.event.logical.shared.ValueChangeHandler)"><code>History.addValueChangeHandler(ValueChangeHandler)</code></a> instead</i></div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colOne"><a href="com/google/gwt/user/client/ui/TreeItem.html#addItem(java.lang.String)">com.google.gwt.user.client.ui.TreeItem.addItem(String)</a>
-<div class="block"><i>use <a href="com/google/gwt/user/client/ui/TreeItem.html#addItem(com.google.gwt.safehtml.shared.SafeHtml)"><code>TreeItem.addItem(SafeHtml)</code></a> instead</i></div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/user/client/ui/Tree.html#addItem(java.lang.String)">com.google.gwt.user.client.ui.Tree.addItem(String)</a>
-<div class="block"><i>use <a href="com/google/gwt/user/client/ui/Tree.html#addItem(com.google.gwt.safehtml.shared.SafeHtml)"><code>Tree.addItem(SafeHtml)</code></a> instead</i></div>
 </td>
 </tr>
 <tr class="altColor">
@@ -1339,18 +1324,8 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/user/client/ui/Panel.html#adopt(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element)">com.google.gwt.user.client.ui.Panel.adopt(Widget, Element)</a>
-<div class="block"><i>Use <a href="com/google/gwt/user/client/ui/Panel.html#adopt(com.google.gwt.user.client.ui.Widget)"><code>Panel.adopt(Widget)</code></a>.</i></div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/Event.html#cancelBubble(boolean)">com.google.gwt.user.client.Event.cancelBubble(boolean)</a>
 <div class="block"><i>use <a href="com/google/gwt/dom/client/NativeEvent.html#stopPropagation()"><code>NativeEvent.stopPropagation()</code></a> instead</i></div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/junit/client/GWTTestCase.html#clearCheckpoints()">com.google.gwt.junit.client.GWTTestCase.clearCheckpoints()</a>
-<div class="block"><i>implementation removed</i></div>
 </td>
 </tr>
 <tr class="altColor">
@@ -1359,7 +1334,7 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#compare(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)">com.google.gwt.user.client.DOM.compare(Element, Element)</a>
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#compare(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">com.google.gwt.user.client.DOM.compare(Element, Element)</a>
 <div class="block"><i>Use identity comparison.</i></div>
 </td>
 </tr>
@@ -1439,34 +1414,94 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/user/client/ui/Panel.html#disown(com.google.gwt.user.client.ui.Widget)">com.google.gwt.user.client.ui.Panel.disown(Widget)</a>
-<div class="block"><i>Use <a href="com/google/gwt/user/client/ui/Panel.html#orphan(com.google.gwt.user.client.ui.Widget)"><code>Panel.orphan(Widget)</code></a>.</i></div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colOne"><a href="com/google/web/bindery/event/shared/SimpleEventBus.html#doRemove(com.google.web.bindery.event.shared.Event.Type, java.lang.Object, H)">com.google.web.bindery.event.shared.SimpleEventBus.doRemove(Event.Type<H>, Object, H)</a>
 <div class="block"><i>required by legacy features in GWT's old HandlerManager</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/tools/WebAppCreator.html#doRun()">com.google.gwt.user.tools.WebAppCreator.doRun()</a>
 <div class="block"><i>as of GWT 2.1, replaced by <a href="com/google/gwt/user/tools/WebAppCreator.html#doRun(java.lang.String)"><code>WebAppCreator.doRun(String)</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/http/client/URL.html#encodeComponent(java.lang.String)">com.google.gwt.http.client.URL.encodeComponent(String)</a>
 <div class="block"><i>Use <a href="com/google/gwt/http/client/URL.html#encodeQueryString(java.lang.String)"><code>URL.encodeQueryString(String)</code></a></i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/http/client/URL.html#encodeComponent(java.lang.String, boolean)">com.google.gwt.http.client.URL.encodeComponent(String, boolean)</a>
 <div class="block"><i>Use <a href="com/google/gwt/http/client/URL.html#encodeQueryString(java.lang.String)"><code>URL.encodeQueryString(String)</code></a>,
              <a href="com/google/gwt/http/client/URL.html#encodePathSegment(java.lang.String)"><code>URL.encodePathSegment(String)</code></a></i></div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventGetAltKey(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventGetAltKey(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#getAltKey()"><code>NativeEvent.getAltKey()</code></a> instead.</i></div>
+</td>
+</tr>
 <tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventGetButton(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventGetButton(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#getButton()"><code>NativeEvent.getButton()</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventGetClientX(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventGetClientX(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#getClientX()"><code>NativeEvent.getClientX()</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventGetClientY(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventGetClientY(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#getClientY()"><code>NativeEvent.getClientY()</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventGetCtrlKey(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventGetCtrlKey(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#getCtrlKey()"><code>NativeEvent.getCtrlKey()</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventGetKeyCode(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventGetKeyCode(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#getKeyCode()"><code>NativeEvent.getKeyCode()</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventGetMetaKey(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventGetMetaKey(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#getMetaKey()"><code>NativeEvent.getMetaKey()</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventGetMouseWheelVelocityY(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventGetMouseWheelVelocityY(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#getMouseWheelVelocityY()"><code>NativeEvent.getMouseWheelVelocityY()</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventGetRepeat(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventGetRepeat(Event)</a>
 <div class="block"><i>not supported in any browser but IE</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventGetScreenX(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventGetScreenX(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#getScreenX()"><code>NativeEvent.getScreenX()</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventGetScreenY(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventGetScreenY(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#getScreenY()"><code>NativeEvent.getScreenY()</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventGetShiftKey(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventGetShiftKey(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#getShiftKey()"><code>NativeEvent.getShiftKey()</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventGetTypeString(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventGetTypeString(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#getType()"><code>NativeEvent.getType()</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventPreventDefault(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventPreventDefault(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#preventDefault()"><code>NativeEvent.preventDefault()</code></a> instead.</i></div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -1476,49 +1511,59 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#eventToString(com.google.gwt.user.client.Event)">com.google.gwt.user.client.DOM.eventToString(Event)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/NativeEvent.html#getString()"><code>NativeEvent.getString()</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/core/ext/typeinfo/JPackage.html#findType(java.lang.String[])">com.google.gwt.core.ext.typeinfo.JPackage.findType(String[])</a>
 <div class="block"><i>use <a href="com/google/gwt/core/ext/typeinfo/JPackage.html#findType(java.lang.String)"><code>JPackage.findType(String)</code></a></i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TableListenerCollection.html#fireCellClicked(com.google.gwt.user.client.ui.SourcesTableEvents, int, int)">com.google.gwt.user.client.ui.TableListenerCollection.fireCellClicked(SourcesTableEvents, int, int)</a></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FormHandlerCollection.html#fireOnComplete(com.google.gwt.user.client.ui.FormPanel, java.lang.String)">com.google.gwt.user.client.ui.FormHandlerCollection.fireOnComplete(FormPanel, String)</a>
 <div class="block"><i><a href="com/google/gwt/user/client/ui/FormPanel.html" title="class in com.google.gwt.user.client.ui"><code>FormPanel</code></a> now implements all handler management internally</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FormHandlerCollection.html#fireOnSubmit(com.google.gwt.user.client.ui.FormPanel)">com.google.gwt.user.client.ui.FormHandlerCollection.fireOnSubmit(FormPanel)</a>
 <div class="block"><i><a href="com/google/gwt/user/client/ui/FormPanel.html" title="class in com.google.gwt.user.client.ui"><code>FormPanel</code></a> now implements all handler management internally</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/PopupListenerCollection.html#firePopupClosed(com.google.gwt.user.client.ui.PopupPanel, boolean)">com.google.gwt.user.client.ui.PopupListenerCollection.firePopupClosed(PopupPanel, boolean)</a>
 <div class="block"><i>use <a href="com/google/gwt/event/logical/shared/CloseHandler.html#onClose(com.google.gwt.event.logical.shared.CloseEvent)"><code>CloseHandler.onClose(com.google.gwt.event.logical.shared.CloseEvent&lt;T&gt;)</code></a>
              instead</i></div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getAbsoluteLeft(com.google.gwt.dom.client.Element)">com.google.gwt.user.client.DOM.getAbsoluteLeft(Element)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#getAbsoluteLeft()"><code>Element.getAbsoluteLeft()</code></a> instead.</i></div>
+</td>
+</tr>
 <tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getAttribute(com.google.gwt.user.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.getAttribute(Element, String)</a>
-<div class="block"><i>Use the more appropriately named
-             <a href="com/google/gwt/user/client/DOM.html#getElementProperty(com.google.gwt.user.client.Element, java.lang.String)"><code>DOM.getElementProperty(Element, String)</code></a> instead.</i></div>
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getAbsoluteTop(com.google.gwt.dom.client.Element)">com.google.gwt.user.client.DOM.getAbsoluteTop(Element)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#getAbsoluteTop()"><code>Element.getAbsoluteTop()</code></a> instead.</i></div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getAttribute(com.google.gwt.dom.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.getAttribute(Element, String)</a>
+<div class="block"><i>Use the more appropriately named
+             <a href="com/google/gwt/dom/client/Element.html#getPropertyString(java.lang.String)"><code>Element.getPropertyString(String)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/RichTextArea.html#getBasicFormatter()">com.google.gwt.user.client.ui.RichTextArea.getBasicFormatter()</a>
 <div class="block"><i>use <a href="com/google/gwt/user/client/ui/RichTextArea.html#getFormatter()"><code>RichTextArea.getFormatter()</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getBooleanAttribute(com.google.gwt.user.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.getBooleanAttribute(Element, String)</a>
-<div class="block"><i>Use the more appropriately named
-             <a href="com/google/gwt/user/client/DOM.html#getElementPropertyBoolean(com.google.gwt.user.client.Element, java.lang.String)"><code>DOM.getElementPropertyBoolean(Element, String)</code></a> instead.</i></div>
-</td>
-</tr>
 <tr class="altColor">
-<td class="colOne"><a href="com/google/gwt/junit/client/GWTTestCase.html#getCheckpoints()">com.google.gwt.junit.client.GWTTestCase.getCheckpoints()</a>
-<div class="block"><i>implementation removed</i></div>
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getBooleanAttribute(com.google.gwt.dom.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.getBooleanAttribute(Element, String)</a>
+<div class="block"><i>Use the more appropriately named
+             <a href="com/google/gwt/dom/client/Element.html#getPropertyBoolean(java.lang.String)"><code>Element.getPropertyBoolean(String)</code></a> instead.</i></div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -1594,101 +1639,146 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/ui/HTMLTable.html#getDOMCellCount(com.google.gwt.user.client.Element, int)">com.google.gwt.user.client.ui.HTMLTable.getDOMCellCount(Element, int)</a>
+<div class="block"><i>Call and override <a href="com/google/gwt/user/client/ui/HTMLTable.html#getDOMCellCount(com.google.gwt.user.client.Element, int)"><code>HTMLTable.getDOMCellCount(Element, int)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/ui/HTMLTable.html#getDOMRowCount(com.google.gwt.user.client.Element)">com.google.gwt.user.client.ui.HTMLTable.getDOMRowCount(Element)</a>
+<div class="block"><i>Call and override <a href="com/google/gwt/user/client/ui/HTMLTable.html#getDOMRowCount(com.google.gwt.user.client.Element)"><code>HTMLTable.getDOMRowCount(Element)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getElementAttribute(com.google.gwt.dom.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.getElementAttribute(Element, String)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#getAttribute(java.lang.String)"><code>Element.getAttribute(String)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getElementProperty(com.google.gwt.dom.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.getElementProperty(Element, String)</a>
+<div class="block"><i>Use <code>Element#getProperty(String)</code> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getElementPropertyBoolean(com.google.gwt.dom.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.getElementPropertyBoolean(Element, String)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#getPropertyBoolean(java.lang.String)"><code>Element.getPropertyBoolean(String)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getElementPropertyInt(com.google.gwt.dom.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.getElementPropertyInt(Element, String)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#getPropertyInt(java.lang.String)"><code>Element.getPropertyInt(String)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/cellview/client/CellList.html#getEmptyListMessage()">com.google.gwt.user.cellview.client.CellList.getEmptyListMessage()</a>
 <div class="block"><i>as of GWT 2.3, use <a href="com/google/gwt/user/cellview/client/CellList.html#getEmptyListWidget()"><code>CellList.getEmptyListWidget()</code></a> instead</i></div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/core/client/JavaScriptException.html#getException()">com.google.gwt.core.client.JavaScriptException.getException()</a>
+<div class="block"><i>deprecated in favor for <a href="com/google/gwt/core/client/JavaScriptException.html#getThrown()"><code>JavaScriptException.getThrown()</code></a> and <a href="com/google/gwt/core/client/JavaScriptException.html#isThrownSet()"><code>JavaScriptException.isThrownSet()</code></a></i></div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/RichTextArea.html#getExtendedFormatter()">com.google.gwt.user.client.ui.RichTextArea.getExtendedFormatter()</a>
 <div class="block"><i>use <a href="com/google/gwt/user/client/ui/RichTextArea.html#getFormatter()"><code>RichTextArea.getFormatter()</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TreeItem.html#getFocusableWidget()">com.google.gwt.user.client.ui.TreeItem.getFocusableWidget()</a>
 <div class="block"><i>use <a href="com/google/gwt/user/client/ui/TreeItem.html#getFocusable()"><code>TreeItem.getFocusable()</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/Event.html#getFromElement()">com.google.gwt.user.client.Event.getFromElement()</a>
 <div class="block"><i>use <a href="com/google/gwt/dom/client/NativeEvent.html#getRelatedEventTarget()"><code>NativeEvent.getRelatedEventTarget()</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/i18n/client/DateTimeFormat.html#getFullDateFormat()">com.google.gwt.i18n.client.DateTimeFormat.getFullDateFormat()</a>
 <div class="block"><i>use <a href="com/google/gwt/i18n/client/DateTimeFormat.html#getFormat(com.google.gwt.i18n.client.DateTimeFormat.PredefinedFormat)"><code>DateTimeFormat.getFormat(PredefinedFormat)</code></a> with
      <a href="com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html#DATE_FULL"><code>DateTimeFormat.PredefinedFormat.DATE_FULL</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/i18n/client/DateTimeFormat.html#getFullDateTimeFormat()">com.google.gwt.i18n.client.DateTimeFormat.getFullDateTimeFormat()</a>
 <div class="block"><i>use <a href="com/google/gwt/i18n/client/DateTimeFormat.html#getFormat(com.google.gwt.i18n.client.DateTimeFormat.PredefinedFormat)"><code>DateTimeFormat.getFormat(PredefinedFormat)</code></a> with
      <a href="com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html#DATE_TIME_FULL"><code>DateTimeFormat.PredefinedFormat.DATE_TIME_FULL</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/i18n/client/DateTimeFormat.html#getFullTimeFormat()">com.google.gwt.i18n.client.DateTimeFormat.getFullTimeFormat()</a>
 <div class="block"><i>use <a href="com/google/gwt/i18n/client/DateTimeFormat.html#getFormat(com.google.gwt.i18n.client.DateTimeFormat.PredefinedFormat)"><code>DateTimeFormat.getFormat(PredefinedFormat)</code></a> with
      <a href="com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html#TIME_FULL"><code>DateTimeFormat.PredefinedFormat.TIME_FULL</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/web/bindery/event/shared/SimpleEventBus.html#getHandler(com.google.web.bindery.event.shared.Event.Type, int)">com.google.web.bindery.event.shared.SimpleEventBus.getHandler(Event.Type<H>, int)</a>
 <div class="block"><i>required by legacy features in GWT's old HandlerManager</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/web/bindery/event/shared/SimpleEventBus.html#getHandlerCount(com.google.web.bindery.event.shared.Event.Type)">com.google.web.bindery.event.shared.SimpleEventBus.getHandlerCount(Event.Type<?>)</a>
 <div class="block"><i>required by legacy features in GWT's old HandlerManager</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/core/ext/ServletContainerLauncher.html#getIconPath()">com.google.gwt.core.ext.ServletContainerLauncher.getIconPath()</a>
 <div class="block"><i>see <a href="com/google/gwt/core/ext/ServletContainerLauncher.html#getIconBytes()"><code>ServletContainerLauncher.getIconBytes()</code></a> instead.</i></div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getInnerHTML(com.google.gwt.dom.client.Element)">com.google.gwt.user.client.DOM.getInnerHTML(Element)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#getInnerHTML()"><code>Element.getInnerHTML()</code></a> instead.</i></div>
+</td>
+</tr>
 <tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getIntAttribute(com.google.gwt.user.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.getIntAttribute(Element, String)</a>
-<div class="block"><i>Use the more appropriately named
-             <a href="com/google/gwt/user/client/DOM.html#getElementPropertyInt(com.google.gwt.user.client.Element, java.lang.String)"><code>DOM.getElementPropertyInt(Element, String)</code></a> instead.</i></div>
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getInnerText(com.google.gwt.dom.client.Element)">com.google.gwt.user.client.DOM.getInnerText(Element)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#getInnerText()"><code>Element.getInnerText()</code></a> instead.</i></div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getIntAttribute(com.google.gwt.dom.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.getIntAttribute(Element, String)</a>
+<div class="block"><i>Use the more appropriately named
+             <a href="com/google/gwt/dom/client/Element.html#getPropertyInt(java.lang.String)"><code>Element.getPropertyInt(String)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/i18n/client/DateTimeFormat.html#getLongDateFormat()">com.google.gwt.i18n.client.DateTimeFormat.getLongDateFormat()</a>
 <div class="block"><i>use <a href="com/google/gwt/i18n/client/DateTimeFormat.html#getFormat(com.google.gwt.i18n.client.DateTimeFormat.PredefinedFormat)"><code>DateTimeFormat.getFormat(PredefinedFormat)</code></a> with
      <a href="com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html#DATE_LONG"><code>DateTimeFormat.PredefinedFormat.DATE_LONG</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/i18n/client/DateTimeFormat.html#getLongDateTimeFormat()">com.google.gwt.i18n.client.DateTimeFormat.getLongDateTimeFormat()</a>
 <div class="block"><i>use <a href="com/google/gwt/i18n/client/DateTimeFormat.html#getFormat(com.google.gwt.i18n.client.DateTimeFormat.PredefinedFormat)"><code>DateTimeFormat.getFormat(PredefinedFormat)</code></a> with
      <a href="com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html#DATE_TIME_LONG"><code>DateTimeFormat.PredefinedFormat.DATE_TIME_LONG</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/i18n/client/DateTimeFormat.html#getLongTimeFormat()">com.google.gwt.i18n.client.DateTimeFormat.getLongTimeFormat()</a>
 <div class="block"><i>use <a href="com/google/gwt/i18n/client/DateTimeFormat.html#getFormat(com.google.gwt.i18n.client.DateTimeFormat.PredefinedFormat)"><code>DateTimeFormat.getFormat(PredefinedFormat)</code></a> with
      <a href="com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html#TIME_LONG"><code>DateTimeFormat.PredefinedFormat.TIME_LONG</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/i18n/client/DateTimeFormat.html#getMediumDateFormat()">com.google.gwt.i18n.client.DateTimeFormat.getMediumDateFormat()</a>
 <div class="block"><i>use <a href="com/google/gwt/i18n/client/DateTimeFormat.html#getFormat(com.google.gwt.i18n.client.DateTimeFormat.PredefinedFormat)"><code>DateTimeFormat.getFormat(PredefinedFormat)</code></a> with
      <a href="com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html#DATE_MEDIUM"><code>DateTimeFormat.PredefinedFormat.DATE_MEDIUM</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/i18n/client/DateTimeFormat.html#getMediumDateTimeFormat()">com.google.gwt.i18n.client.DateTimeFormat.getMediumDateTimeFormat()</a>
 <div class="block"><i>use <a href="com/google/gwt/i18n/client/DateTimeFormat.html#getFormat(com.google.gwt.i18n.client.DateTimeFormat.PredefinedFormat)"><code>DateTimeFormat.getFormat(PredefinedFormat)</code></a> with
      <a href="com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html#DATE_TIME_MEDIUM"><code>DateTimeFormat.PredefinedFormat.DATE_TIME_MEDIUM</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/i18n/client/DateTimeFormat.html#getMediumTimeFormat()">com.google.gwt.i18n.client.DateTimeFormat.getMediumTimeFormat()</a>
 <div class="block"><i>use <a href="com/google/gwt/i18n/client/DateTimeFormat.html#getFormat(com.google.gwt.i18n.client.DateTimeFormat.PredefinedFormat)"><code>DateTimeFormat.getFormat(PredefinedFormat)</code></a> with
      <a href="com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html#TIME_MEDIUM"><code>DateTimeFormat.PredefinedFormat.TIME_MEDIUM</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/core/ext/typeinfo/HasMetaData.html#getMetaData(java.lang.String)">com.google.gwt.core.ext.typeinfo.HasMetaData.getMetaData(String)</a>
 <div class="block"><i>Javadoc comment metadata has been deprecated in favor of proper
              Java annotations. See
@@ -1696,7 +1786,7 @@
              functionality.</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/core/ext/typeinfo/HasMetaData.html#getMetaDataTags()">com.google.gwt.core.ext.typeinfo.HasMetaData.getMetaDataTags()</a>
 <div class="block"><i>Javadoc comment metadata has been deprecated in favor of proper
              Java annotations. The <a href="com/google/gwt/core/ext/typeinfo/HasAnnotations.html" title="interface in com.google.gwt.core.ext.typeinfo"><code>HasAnnotations</code></a> interface does not
@@ -1704,37 +1794,36 @@
              member; the type of the desired annotation must be known.</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/core/ext/typeinfo/JParameterizedType.html#getNonParameterizedQualifiedSourceName()">com.google.gwt.core.ext.typeinfo.JParameterizedType.getNonParameterizedQualifiedSourceName()</a>
 <div class="block"><i>See <a href="com/google/gwt/core/ext/typeinfo/JType.html#getQualifiedSourceName()"><code>JType.getQualifiedSourceName()</code></a></i></div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/core/ext/PropertyOracle.html#getPropertyValue(com.google.gwt.core.ext.TreeLogger, java.lang.String)">com.google.gwt.core.ext.PropertyOracle.getPropertyValue(TreeLogger, String)</a></td>
-</tr>
 <tr class="altColor">
-<td class="colOne"><a href="com/google/gwt/core/ext/PropertyOracle.html#getPropertyValueSet(com.google.gwt.core.ext.TreeLogger, java.lang.String)">com.google.gwt.core.ext.PropertyOracle.getPropertyValueSet(TreeLogger, String)</a></td>
-</tr>
-<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/dom/client/TextAreaElement.html#getReadOnly()">com.google.gwt.dom.client.TextAreaElement.getReadOnly()</a>
 <div class="block"><i>use <a href="com/google/gwt/dom/client/TextAreaElement.html#isReadOnly()"><code>TextAreaElement.isReadOnly()</code></a> instead.</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/Event.html#getRelatedTarget()">com.google.gwt.user.client.Event.getRelatedTarget()</a>
 <div class="block"><i>use <a href="com/google/gwt/dom/client/NativeEvent.html#getRelatedEventTarget()"><code>NativeEvent.getRelatedEventTarget()</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/core/ext/typeinfo/TypeOracle.html#getReloadCount()">com.google.gwt.core.ext.typeinfo.TypeOracle.getReloadCount()</a>
 <div class="block"><i>This method will always return 0 because a TypeOracle never
              gets reloaded anymore. Callers should not rely on this value to
              manage static state.</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/Event.html#getRepeat()">com.google.gwt.user.client.Event.getRepeat()</a>
 <div class="block"><i>not supported on all browsers</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/ui/HTMLTable.RowFormatter.html#getRow(com.google.gwt.user.client.Element, int)">com.google.gwt.user.client.ui.HTMLTable.RowFormatter.getRow(Element, int)</a>
+<div class="block"><i>Call and override <a href="com/google/gwt/user/client/ui/HTMLTable.RowFormatter.html#getRow(com.google.gwt.user.client.Element, int)"><code>HTMLTable.RowFormatter.getRow(Element, int)</code></a> instead.</i></div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -1761,66 +1850,67 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#getStyleAttribute(com.google.gwt.dom.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.getStyleAttribute(Element, String)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#getStyle()"><code>Element.getStyle()</code></a> and
+             <code>Style#getProperty(String)</code> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/Event.html#getTarget()">com.google.gwt.user.client.Event.getTarget()</a>
 <div class="block"><i>use <a href="com/google/gwt/dom/client/NativeEvent.html#getEventTarget()"><code>NativeEvent.getEventTarget()</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SuggestBox.html#getTextBox()">com.google.gwt.user.client.ui.SuggestBox.getTextBox()</a>
 <div class="block"><i>in favour of getValueBox</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/Event.html#getToElement()">com.google.gwt.user.client.Event.getToElement()</a>
 <div class="block"><i>use <a href="com/google/gwt/dom/client/NativeEvent.html#getRelatedEventTarget()"><code>NativeEvent.getRelatedEventTarget()</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/core/client/GWT.html#getTypeName(java.lang.Object)">com.google.gwt.core.client.GWT.getTypeName(Object)</a>
 <div class="block"><i>Use <code>Object.getClass()</code>, <code>Class.getName()</code></i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/resources/client/DataResource.html#getUrl()">com.google.gwt.resources.client.DataResource.getUrl()</a>
 <div class="block"><i>Use <a href="com/google/gwt/resources/client/DataResource.html#getSafeUri()"><code>DataResource.getSafeUri()</code></a> instead.</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/resources/client/ImageResource.html#getURL()">com.google.gwt.resources.client.ImageResource.getURL()</a>
 <div class="block"><i>Use <a href="com/google/gwt/resources/client/ImageResource.html#getSafeUri()"><code>ImageResource.getSafeUri()</code></a> instead.</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/core/ext/linker/ConfigurationProperty.html#getValue()">com.google.gwt.core.ext.linker.ConfigurationProperty.getValue()</a></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/json/client/JSONNumber.html#getValue()">com.google.gwt.json.client.JSONNumber.getValue()</a>
 <div class="block"><i>See <a href="com/google/gwt/json/client/JSONNumber.html#doubleValue()"><code>JSONNumber.doubleValue()</code></a></i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/core/client/JsDate.html#getYear()">com.google.gwt.core.client.JsDate.getYear()</a>
 <div class="block"><i>Use <a href="com/google/gwt/core/client/JsDate.html#getFullYear()"><code>JsDate.getFullYear()</code></a>.</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SuggestBox.html#hideSuggestionList()">com.google.gwt.user.client.ui.SuggestBox.hideSuggestionList()</a>
 <div class="block"><i>use <a href="com/google/gwt/user/client/ui/SuggestBox.DefaultSuggestionDisplay.html#hideSuggestions()"><code>SuggestBox.DefaultSuggestionDisplay.hideSuggestions()</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/user/client/ui/ComplexPanel.html#insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int)">com.google.gwt.user.client.ui.ComplexPanel.insert(Widget, Element, int)</a>
-<div class="block"><i>Use <a href="com/google/gwt/user/client/ui/ComplexPanel.html#insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int, boolean)"><code>ComplexPanel.insert(Widget, Element, int, boolean)</code></a> instead</i></div>
-</td>
-</tr>
 <tr class="altColor">
-<td class="colOne"><a href="com/google/gwt/user/client/ui/TreeItem.html#insertItem(int, java.lang.String)">com.google.gwt.user.client.ui.TreeItem.insertItem(int, String)</a>
-<div class="block"><i>use <a href="com/google/gwt/user/client/ui/TreeItem.html#insertItem(int, com.google.gwt.safehtml.shared.SafeHtml)"><code>TreeItem.insertItem(int, SafeHtml)</code></a> instead</i></div>
+<td class="colOne"><a href="com/google/gwt/user/client/ui/ComplexPanel.html#insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int, boolean)">com.google.gwt.user.client.ui.ComplexPanel.insert(Widget, Element, int, boolean)</a>
+<div class="block"><i>Call and override <a href="com/google/gwt/user/client/ui/ComplexPanel.html#insert(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.Element, int, boolean)"><code>ComplexPanel.insert(Widget, Element, int, boolean)</code></a> instead.</i></div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/user/client/ui/Tree.html#insertItem(int, java.lang.String)">com.google.gwt.user.client.ui.Tree.insertItem(int, String)</a>
-<div class="block"><i>use <a href="com/google/gwt/user/client/ui/Tree.html#insertItem(int, com.google.gwt.safehtml.shared.SafeHtml)"><code>Tree.insertItem(int, SafeHtml)</code></a> instead</i></div>
+<td class="colOne"><a href="com/google/gwt/user/client/ui/HTMLTable.html#internalClearCell(com.google.gwt.user.client.Element, boolean)">com.google.gwt.user.client.ui.HTMLTable.internalClearCell(Element, boolean)</a>
+<div class="block"><i>Call and override <a href="com/google/gwt/user/client/ui/HTMLTable.html#internalClearCell(com.google.gwt.user.client.Element, boolean)"><code>HTMLTable.internalClearCell(Element, boolean)</code></a> instead.</i></div>
 </td>
 </tr>
 <tr class="altColor">
@@ -1862,276 +1952,281 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#isOrHasChild(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">com.google.gwt.user.client.DOM.isOrHasChild(Element, Element)</a>
+<div class="block"><i>Use <code>Element#isOrHasChild(Element)</code> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/core/ext/linker/EmittedArtifact.html#isPrivate()">com.google.gwt.core.ext.linker.EmittedArtifact.isPrivate()</a>
 <div class="block"><i>use <a href="com/google/gwt/core/ext/linker/EmittedArtifact.html#getVisibility()"><code>EmittedArtifact.getVisibility()</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/MouseWheelVelocity.html#isSouth()">com.google.gwt.user.client.ui.MouseWheelVelocity.isSouth()</a>
 <div class="block"><i>use
              <a href="com/google/gwt/event/dom/client/MouseWheelEvent.html#isSouth()"><code>MouseWheelEvent.isSouth()</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SuggestBox.html#isSuggestionListShowing()">com.google.gwt.user.client.ui.SuggestBox.isSuggestionListShowing()</a>
 <div class="block"><i>use <a href="com/google/gwt/user/client/ui/SuggestBox.DefaultSuggestionDisplay.html#isSuggestionListShowing()"><code>SuggestBox.DefaultSuggestionDisplay.isSuggestionListShowing()</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SuggestBox.SuggestionDisplay.html#isSuggestionListShowingImpl()">com.google.gwt.user.client.ui.SuggestBox.SuggestionDisplay.isSuggestionListShowingImpl()</a>
 <div class="block"><i>implemented in DefaultSuggestionDisplay</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/server/rpc/SerializationPolicyLoader.html#loadFromStream(java.io.InputStream)">com.google.gwt.user.server.rpc.SerializationPolicyLoader.loadFromStream(InputStream)</a>
 <div class="block"><i>see <a href="com/google/gwt/user/server/rpc/SerializationPolicyLoader.html#loadFromStream(java.io.InputStream, java.util.List)"><code>SerializationPolicyLoader.loadFromStream(InputStream, List)</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TabPanel.html#onBeforeTabSelected(com.google.gwt.user.client.ui.SourcesTabEvents, int)">com.google.gwt.user.client.ui.TabPanel.onBeforeTabSelected(SourcesTabEvents, int)</a>
 <div class="block"><i>Use <a href="com/google/gwt/event/logical/shared/BeforeSelectionHandler.html#onBeforeSelection(com.google.gwt.event.logical.shared.BeforeSelectionEvent)"><code>BeforeSelectionHandler.onBeforeSelection(com.google.gwt.event.logical.shared.BeforeSelectionEvent&lt;T&gt;)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TabListener.html#onBeforeTabSelected(com.google.gwt.user.client.ui.SourcesTabEvents, int)">com.google.gwt.user.client.ui.TabListener.onBeforeTabSelected(SourcesTabEvents, int)</a>
 <div class="block"><i>use
              <a href="com/google/gwt/user/client/ui/TabPanel.html#addBeforeSelectionHandler(com.google.gwt.event.logical.shared.BeforeSelectionHandler)"><code>TabPanel.addBeforeSelectionHandler(com.google.gwt.event.logical.shared.BeforeSelectionHandler)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TableListener.html#onCellClicked(com.google.gwt.user.client.ui.SourcesTableEvents, int, int)">com.google.gwt.user.client.ui.TableListener.onCellClicked(SourcesTableEvents, int, int)</a>
 <div class="block"><i>use <a href="com/google/gwt/event/dom/client/ClickHandler.html" title="interface in com.google.gwt.event.dom.client"><code>ClickHandler</code></a> and
              <a href="com/google/gwt/user/client/ui/HTMLTable.html#getCellForEvent(com.google.gwt.event.dom.client.ClickEvent)"><code>HTMLTable.getCellForEvent(com.google.gwt.event.dom.client.ClickEvent)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ChangeListener.html#onChange(com.google.gwt.user.client.ui.Widget)">com.google.gwt.user.client.ui.ChangeListener.onChange(Widget)</a>
 <div class="block"><i>See the deprecation message on this interface for details</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TabBar.html#onClick(com.google.gwt.user.client.ui.Widget)">com.google.gwt.user.client.ui.TabBar.onClick(Widget)</a>
 <div class="block"><i>add a <a href="com/google/gwt/event/logical/shared/BeforeSelectionHandler.html" title="interface in com.google.gwt.event.logical.shared"><code>BeforeSelectionHandler</code></a> instead. Alternatively, if
  you need to access to the individual tabs, add a click handler to each
  <a href="com/google/gwt/user/client/ui/TabBar.Tab.html" title="interface in com.google.gwt.user.client.ui"><code>TabBar.Tab</code></a> element instead.</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ClickListener.html#onClick(com.google.gwt.user.client.ui.Widget)">com.google.gwt.user.client.ui.ClickListener.onClick(Widget)</a>
 <div class="block"><i>Use <a href="com/google/gwt/event/dom/client/ClickHandler.html#onClick(com.google.gwt.event.dom.client.ClickEvent)"><code>ClickHandler.onClick(com.google.gwt.event.dom.client.ClickEvent)</code></a> 
              instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/DisclosureHandler.html#onClose(com.google.gwt.user.client.ui.DisclosureEvent)">com.google.gwt.user.client.ui.DisclosureHandler.onClose(DisclosureEvent)</a>
 <div class="block"><i>Use <a href="com/google/gwt/event/logical/shared/CloseHandler.html" title="interface in com.google.gwt.event.logical.shared"><code>CloseHandler</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/EventPreview.html#onEventPreview(com.google.gwt.user.client.Event)">com.google.gwt.user.client.EventPreview.onEventPreview(Event)</a>
 <div class="block"><i>replaced by
              <a href="com/google/gwt/user/client/Event.NativePreviewHandler.html#onPreviewNativeEvent(com.google.gwt.user.client.Event.NativePreviewEvent)"><code>Event.NativePreviewHandler.onPreviewNativeEvent(com.google.gwt.user.client.Event.NativePreviewEvent)</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/PopupPanel.html#onEventPreview(com.google.gwt.user.client.Event)">com.google.gwt.user.client.ui.PopupPanel.onEventPreview(Event)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/PopupPanel.html#onPreviewNativeEvent(com.google.gwt.user.client.Event.NativePreviewEvent)"><code>PopupPanel.onPreviewNativeEvent(com.google.gwt.user.client.Event.NativePreviewEvent)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FocusListener.html#onFocus(com.google.gwt.user.client.ui.Widget)">com.google.gwt.user.client.ui.FocusListener.onFocus(Widget)</a>
 <div class="block"><i>Use
              <a href="com/google/gwt/event/dom/client/FocusHandler.html#onFocus(com.google.gwt.event.dom.client.FocusEvent)"><code>FocusHandler.onFocus(com.google.gwt.event.dom.client.FocusEvent)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/HistoryListener.html#onHistoryChanged(java.lang.String)">com.google.gwt.user.client.HistoryListener.onHistoryChanged(String)</a></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/History.html#onHistoryChanged(java.lang.String)">com.google.gwt.user.client.History.onHistoryChanged(String)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/History.html#fireCurrentHistoryState()"><code>History.fireCurrentHistoryState()</code></a> instead.</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TabBar.html#onKeyDown(com.google.gwt.user.client.ui.Widget, char, int)">com.google.gwt.user.client.ui.TabBar.onKeyDown(Widget, char, int)</a>
 <div class="block"><i>add a key down handler to the individual <a href="com/google/gwt/user/client/ui/TabBar.Tab.html" title="interface in com.google.gwt.user.client.ui"><code>TabBar.Tab</code></a> objects
   instead.</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/KeyboardListener.html#onKeyDown(com.google.gwt.user.client.ui.Widget, char, int)">com.google.gwt.user.client.ui.KeyboardListener.onKeyDown(Widget, char, int)</a>
 <div class="block"><i>use
              <a href="com/google/gwt/event/dom/client/KeyDownHandler.html#onKeyDown(com.google.gwt.event.dom.client.KeyDownEvent)"><code>KeyDownHandler.onKeyDown(com.google.gwt.event.dom.client.KeyDownEvent)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/PopupPanel.html#onKeyDownPreview(char, int)">com.google.gwt.user.client.ui.PopupPanel.onKeyDownPreview(char, int)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/PopupPanel.html#onPreviewNativeEvent(com.google.gwt.user.client.Event.NativePreviewEvent)"><code>PopupPanel.onPreviewNativeEvent(com.google.gwt.user.client.Event.NativePreviewEvent)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TabBar.html#onKeyPress(com.google.gwt.user.client.ui.Widget, char, int)">com.google.gwt.user.client.ui.TabBar.onKeyPress(Widget, char, int)</a>
 <div class="block"><i>this method has been doing nothing for the entire last release,
  if what you wanted to do was to listen to key press events on tabs, add the
  key press handler to the individual tab wrappers instead.</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/KeyboardListener.html#onKeyPress(com.google.gwt.user.client.ui.Widget, char, int)">com.google.gwt.user.client.ui.KeyboardListener.onKeyPress(Widget, char, int)</a>
 <div class="block"><i>use
              <a href="com/google/gwt/event/dom/client/KeyPressHandler.html#onKeyPress(com.google.gwt.event.dom.client.KeyPressEvent)"><code>KeyPressHandler.onKeyPress(com.google.gwt.event.dom.client.KeyPressEvent)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/PopupPanel.html#onKeyPressPreview(char, int)">com.google.gwt.user.client.ui.PopupPanel.onKeyPressPreview(char, int)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/PopupPanel.html#onPreviewNativeEvent(com.google.gwt.user.client.Event.NativePreviewEvent)"><code>PopupPanel.onPreviewNativeEvent(com.google.gwt.user.client.Event.NativePreviewEvent)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TabBar.html#onKeyUp(com.google.gwt.user.client.ui.Widget, char, int)">com.google.gwt.user.client.ui.TabBar.onKeyUp(Widget, char, int)</a>
 <div class="block"><i>this method has been doing nothing for the entire last release,
  if what you wanted to do was to listen to key up events on tabs, add the
  key up handler to the individual tab wrappers instead.</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/KeyboardListener.html#onKeyUp(com.google.gwt.user.client.ui.Widget, char, int)">com.google.gwt.user.client.ui.KeyboardListener.onKeyUp(Widget, char, int)</a>
 <div class="block"><i>use
              <a href="com/google/gwt/event/dom/client/KeyUpHandler.html#onKeyUp(com.google.gwt.event.dom.client.KeyUpEvent)"><code>KeyUpHandler.onKeyUp(com.google.gwt.event.dom.client.KeyUpEvent)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/PopupPanel.html#onKeyUpPreview(char, int)">com.google.gwt.user.client.ui.PopupPanel.onKeyUpPreview(char, int)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/PopupPanel.html#onPreviewNativeEvent(com.google.gwt.user.client.Event.NativePreviewEvent)"><code>PopupPanel.onPreviewNativeEvent(com.google.gwt.user.client.Event.NativePreviewEvent)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FocusListener.html#onLostFocus(com.google.gwt.user.client.ui.Widget)">com.google.gwt.user.client.ui.FocusListener.onLostFocus(Widget)</a>
 <div class="block"><i>Use
              <a href="com/google/gwt/event/dom/client/BlurHandler.html#onBlur(com.google.gwt.event.dom.client.BlurEvent)"><code>BlurHandler.onBlur(com.google.gwt.event.dom.client.BlurEvent)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/MouseListener.html#onMouseDown(com.google.gwt.user.client.ui.Widget, int, int)">com.google.gwt.user.client.ui.MouseListener.onMouseDown(Widget, int, int)</a>
 <div class="block"><i>use
              <a href="com/google/gwt/event/dom/client/MouseDownHandler.html#onMouseDown(com.google.gwt.event.dom.client.MouseDownEvent)"><code>MouseDownHandler.onMouseDown(com.google.gwt.event.dom.client.MouseDownEvent)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/DialogBox.html#onMouseDown(com.google.gwt.user.client.ui.Widget, int, int)">com.google.gwt.user.client.ui.DialogBox.onMouseDown(Widget, int, int)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/DialogBox.html#beginDragging(com.google.gwt.event.dom.client.MouseDownEvent)"><code>DialogBox.beginDragging(com.google.gwt.event.dom.client.MouseDownEvent)</code></a> and <a href="com/google/gwt/user/client/ui/DialogBox.html#getCaption()"><code>DialogBox.getCaption()</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/MouseListener.html#onMouseEnter(com.google.gwt.user.client.ui.Widget)">com.google.gwt.user.client.ui.MouseListener.onMouseEnter(Widget)</a>
 <div class="block"><i>use
              <a href="com/google/gwt/event/dom/client/MouseOverHandler.html#onMouseOver(com.google.gwt.event.dom.client.MouseOverEvent)"><code>MouseOverHandler.onMouseOver(com.google.gwt.event.dom.client.MouseOverEvent)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/DialogBox.html#onMouseEnter(com.google.gwt.user.client.ui.Widget)">com.google.gwt.user.client.ui.DialogBox.onMouseEnter(Widget)</a>
 <div class="block"><i>Use <a href="com/google/gwt/event/dom/client/HasMouseOverHandlers.html#addMouseOverHandler(com.google.gwt.event.dom.client.MouseOverHandler)"><code>HasMouseOverHandlers.addMouseOverHandler(com.google.gwt.event.dom.client.MouseOverHandler)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/MouseListener.html#onMouseLeave(com.google.gwt.user.client.ui.Widget)">com.google.gwt.user.client.ui.MouseListener.onMouseLeave(Widget)</a>
 <div class="block"><i>use
              <a href="com/google/gwt/event/dom/client/MouseOutHandler.html#onMouseOut(com.google.gwt.event.dom.client.MouseOutEvent)"><code>MouseOutHandler.onMouseOut(com.google.gwt.event.dom.client.MouseOutEvent)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/DialogBox.html#onMouseLeave(com.google.gwt.user.client.ui.Widget)">com.google.gwt.user.client.ui.DialogBox.onMouseLeave(Widget)</a>
 <div class="block"><i>Use <a href="com/google/gwt/event/dom/client/HasMouseOutHandlers.html#addMouseOutHandler(com.google.gwt.event.dom.client.MouseOutHandler)"><code>HasMouseOutHandlers.addMouseOutHandler(com.google.gwt.event.dom.client.MouseOutHandler)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/MouseListener.html#onMouseMove(com.google.gwt.user.client.ui.Widget, int, int)">com.google.gwt.user.client.ui.MouseListener.onMouseMove(Widget, int, int)</a>
 <div class="block"><i>use
              <a href="com/google/gwt/event/dom/client/MouseMoveHandler.html#onMouseMove(com.google.gwt.event.dom.client.MouseMoveEvent)"><code>MouseMoveHandler.onMouseMove(com.google.gwt.event.dom.client.MouseMoveEvent)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/DialogBox.html#onMouseMove(com.google.gwt.user.client.ui.Widget, int, int)">com.google.gwt.user.client.ui.DialogBox.onMouseMove(Widget, int, int)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/DialogBox.html#continueDragging(com.google.gwt.event.dom.client.MouseMoveEvent)"><code>DialogBox.continueDragging(com.google.gwt.event.dom.client.MouseMoveEvent)</code></a> and <a href="com/google/gwt/user/client/ui/DialogBox.html#getCaption()"><code>DialogBox.getCaption()</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/MouseListener.html#onMouseUp(com.google.gwt.user.client.ui.Widget, int, int)">com.google.gwt.user.client.ui.MouseListener.onMouseUp(Widget, int, int)</a>
 <div class="block"><i>use
              <a href="com/google/gwt/event/dom/client/MouseUpHandler.html#onMouseUp(com.google.gwt.event.dom.client.MouseUpEvent)"><code>MouseUpHandler.onMouseUp(com.google.gwt.event.dom.client.MouseUpEvent)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/DialogBox.html#onMouseUp(com.google.gwt.user.client.ui.Widget, int, int)">com.google.gwt.user.client.ui.DialogBox.onMouseUp(Widget, int, int)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/DialogBox.html#endDragging(com.google.gwt.event.dom.client.MouseUpEvent)"><code>DialogBox.endDragging(com.google.gwt.event.dom.client.MouseUpEvent)</code></a> and <a href="com/google/gwt/user/client/ui/DialogBox.html#getCaption()"><code>DialogBox.getCaption()</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/MouseWheelListener.html#onMouseWheel(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.ui.MouseWheelVelocity)">com.google.gwt.user.client.ui.MouseWheelListener.onMouseWheel(Widget, MouseWheelVelocity)</a>
 <div class="block"><i>use <a href="com/google/gwt/event/dom/client/MouseWheelHandler.html#onMouseWheel(com.google.gwt.event.dom.client.MouseWheelEvent)"><code>MouseWheelHandler.onMouseWheel(com.google.gwt.event.dom.client.MouseWheelEvent)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/DisclosureHandler.html#onOpen(com.google.gwt.user.client.ui.DisclosureEvent)">com.google.gwt.user.client.ui.DisclosureHandler.onOpen(DisclosureEvent)</a>
 <div class="block"><i>Use <a href="com/google/gwt/event/logical/shared/OpenHandler.html" title="interface in com.google.gwt.event.logical.shared"><code>OpenHandler</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/PopupListener.html#onPopupClosed(com.google.gwt.user.client.ui.PopupPanel, boolean)">com.google.gwt.user.client.ui.PopupListener.onPopupClosed(PopupPanel, boolean)</a>
 <div class="block"><i>use <a href="com/google/gwt/event/logical/shared/CloseHandler.html#onClose(com.google.gwt.event.logical.shared.CloseEvent)"><code>CloseHandler.onClose(com.google.gwt.event.logical.shared.CloseEvent&lt;T&gt;)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/MenuBar.html#onPopupClosed(com.google.gwt.user.client.ui.PopupPanel, boolean)">com.google.gwt.user.client.ui.MenuBar.onPopupClosed(PopupPanel, boolean)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/MenuBar.html#addCloseHandler(com.google.gwt.event.logical.shared.CloseHandler)"><code>MenuBar.addCloseHandler(CloseHandler)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FormHandler.html#onSubmit(com.google.gwt.user.client.ui.FormSubmitEvent)">com.google.gwt.user.client.ui.FormHandler.onSubmit(FormSubmitEvent)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/FormPanel.SubmitHandler.html" title="interface in com.google.gwt.user.client.ui"><code>FormPanel.SubmitHandler</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FormHandler.html#onSubmitComplete(com.google.gwt.user.client.ui.FormSubmitCompleteEvent)">com.google.gwt.user.client.ui.FormHandler.onSubmitComplete(FormSubmitCompleteEvent)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/FormPanel.SubmitCompleteHandler.html" title="interface in com.google.gwt.user.client.ui"><code>FormPanel.SubmitCompleteHandler</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TabPanel.html#onTabSelected(com.google.gwt.user.client.ui.SourcesTabEvents, int)">com.google.gwt.user.client.ui.TabPanel.onTabSelected(SourcesTabEvents, int)</a>
 <div class="block"><i>Use <a href="com/google/gwt/event/logical/shared/SelectionHandler.html#onSelection(com.google.gwt.event.logical.shared.SelectionEvent)"><code>SelectionHandler.onSelection(com.google.gwt.event.logical.shared.SelectionEvent&lt;T&gt;)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TabListener.html#onTabSelected(com.google.gwt.user.client.ui.SourcesTabEvents, int)">com.google.gwt.user.client.ui.TabListener.onTabSelected(SourcesTabEvents, int)</a>
 <div class="block"><i>use
              <a href="com/google/gwt/user/client/ui/TabPanel.html#addSelectionHandler(com.google.gwt.event.logical.shared.SelectionHandler)"><code>TabPanel.addSelectionHandler(com.google.gwt.event.logical.shared.SelectionHandler)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TreeListener.html#onTreeItemSelected(com.google.gwt.user.client.ui.TreeItem)">com.google.gwt.user.client.ui.TreeListener.onTreeItemSelected(TreeItem)</a>
 <div class="block"><i>use
              <a href="com/google/gwt/event/logical/shared/SelectionHandler.html#onSelection(com.google.gwt.event.logical.shared.SelectionEvent)"><code>SelectionHandler.onSelection(com.google.gwt.event.logical.shared.SelectionEvent)</code></a>
              instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TreeListener.html#onTreeItemStateChanged(com.google.gwt.user.client.ui.TreeItem)">com.google.gwt.user.client.ui.TreeListener.onTreeItemStateChanged(TreeItem)</a>
 <div class="block"><i>use
              <a href="com/google/gwt/event/logical/shared/OpenHandler.html#onOpen(com.google.gwt.event.logical.shared.OpenEvent)"><code>OpenHandler.onOpen(com.google.gwt.event.logical.shared.OpenEvent)</code></a>
@@ -2139,106 +2234,106 @@
              <a href="com/google/gwt/event/logical/shared/CloseHandler.html#onClose(com.google.gwt.event.logical.shared.CloseEvent)"><code>CloseHandler.onClose(com.google.gwt.event.logical.shared.CloseEvent)</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/web/bindery/requestfactory/shared/Receiver.html#onViolation(java.util.Set)">com.google.web.bindery.requestfactory.shared.Receiver.onViolation(Set<Violation>)</a>
 <div class="block"><i>Use <a href="com/google/web/bindery/requestfactory/shared/Receiver.html#onConstraintViolation(java.util.Set)"><code>Receiver.onConstraintViolation(Set)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/web/bindery/requestfactory/shared/FanoutReceiver.html#onViolation(java.util.Set)">com.google.web.bindery.requestfactory.shared.FanoutReceiver.onViolation(Set<Violation>)</a></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/WindowCloseListener.html#onWindowClosed()">com.google.gwt.user.client.WindowCloseListener.onWindowClosed()</a></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/WindowCloseListener.html#onWindowClosing()">com.google.gwt.user.client.WindowCloseListener.onWindowClosing()</a></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/WindowResizeListener.html#onWindowResized(int, int)">com.google.gwt.user.client.WindowResizeListener.onWindowResized(int, int)</a></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/WindowScrollListener.html#onWindowScrolled(int, int)">com.google.gwt.user.client.WindowScrollListener.onWindowScrolled(int, int)</a></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/json/client/JSONParser.html#parse(java.lang.String)">com.google.gwt.json.client.JSONParser.parse(String)</a>
 <div class="block"><i>use <a href="com/google/gwt/json/client/JSONParser.html#parseStrict(java.lang.String)"><code>JSONParser.parseStrict(String)</code></a> or
              <a href="com/google/gwt/json/client/JSONParser.html#parseLenient(java.lang.String)"><code>JSONParser.parseLenient(String)</code></a></i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/server/rpc/RPCServletUtils.html#readContentAsUtf8(javax.servlet.http.HttpServletRequest)">com.google.gwt.user.server.rpc.RPCServletUtils.readContentAsUtf8(HttpServletRequest)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/server/rpc/RPCServletUtils.html#readContent(javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)"><code>RPCServletUtils.readContent(javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)</code></a> instead.</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/server/rpc/RPCServletUtils.html#readContentAsUtf8(javax.servlet.http.HttpServletRequest, boolean)">com.google.gwt.user.server.rpc.RPCServletUtils.readContentAsUtf8(HttpServletRequest, boolean)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/server/rpc/RPCServletUtils.html#readContent(javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)"><code>RPCServletUtils.readContent(javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)</code></a> instead.</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/place/shared/PlaceHistoryHandler.html#register(com.google.gwt.place.shared.PlaceController, com.google.gwt.event.shared.EventBus, com.google.gwt.place.shared.Place)">com.google.gwt.place.shared.PlaceHistoryHandler.register(PlaceController, EventBus, Place)</a>
 <div class="block"><i>use <a href="com/google/gwt/place/shared/PlaceHistoryHandler.html#register(com.google.gwt.place.shared.PlaceController, com.google.web.bindery.event.shared.EventBus, com.google.gwt.place.shared.Place)"><code>PlaceHistoryHandler.register(PlaceController, EventBus, Place)</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedChangeListener.html#remove(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.ui.ChangeListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedChangeListener.remove(Widget, ChangeListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedLogicalChangeListener.html#remove(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.ui.ChangeListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedLogicalChangeListener.remove(Widget, ChangeListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedClickListener.html#remove(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.ui.ClickListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedClickListener.remove(Widget, ClickListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedFocusListener.html#remove(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.ui.FocusListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedFocusListener.remove(Widget, FocusListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedKeyboardListener.html#remove(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.ui.KeyboardListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedKeyboardListener.remove(Widget, KeyboardListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedLoadListener.html#remove(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.ui.LoadListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedLoadListener.remove(Widget, LoadListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedMouseListener.html#remove(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.ui.MouseListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedMouseListener.remove(Widget, MouseListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedMouseWheelListener.html#remove(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.ui.MouseWheelListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedMouseWheelListener.remove(Widget, MouseWheelListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListenerWrapper.WrappedScrollListener.html#remove(com.google.gwt.user.client.ui.Widget, com.google.gwt.user.client.ui.ScrollListener)">com.google.gwt.user.client.ui.ListenerWrapper.WrappedScrollListener.remove(Widget, ScrollListener)</a>
 <div class="block"><i>will be removed in GWT 2.0 along with the listener classes</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ValueBoxBase.html#removeChangeListener(com.google.gwt.user.client.ui.ChangeListener)">com.google.gwt.user.client.ui.ValueBoxBase.removeChangeListener(ChangeListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by <a href="com/google/gwt/user/client/ui/ValueBoxBase.html#addChangeHandler(com.google.gwt.event.dom.client.ChangeHandler)"><code>ValueBoxBase.addChangeHandler(com.google.gwt.event.dom.client.ChangeHandler)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SuggestBox.html#removeChangeListener(com.google.gwt.user.client.ui.ChangeListener)">com.google.gwt.user.client.ui.SuggestBox.removeChangeListener(ChangeListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by <a href="com/google/gwt/user/client/ui/SuggestBox.html#getTextBox()"><code>SuggestBox.getTextBox()</code></a>().addChangeHandler
              instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SourcesChangeEvents.html#removeChangeListener(com.google.gwt.user.client.ui.ChangeListener)">com.google.gwt.user.client.ui.SourcesChangeEvents.removeChangeListener(ChangeListener)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
@@ -2247,10 +2342,15 @@
  instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ListBox.html#removeChangeListener(com.google.gwt.user.client.ui.ChangeListener)">com.google.gwt.user.client.ui.ListBox.removeChangeListener(ChangeListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by <a href="com/google/gwt/user/client/ui/ListBox.html#addChangeHandler(com.google.gwt.event.dom.client.ChangeHandler)"><code>ListBox.addChangeHandler(com.google.gwt.event.dom.client.ChangeHandler)</code></a> instead</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#removeChild(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">com.google.gwt.user.client.DOM.removeChild(Element, Element)</a>
+<div class="block"><i>Use <code>Element#removeChild(Element)</code> instead.</i></div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -2300,58 +2400,63 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#removeElementAttribute(com.google.gwt.dom.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.removeElementAttribute(Element, String)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#removeAttribute(java.lang.String)"><code>Element.removeAttribute(String)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FiresDisclosureEvents.html#removeEventHandler(com.google.gwt.user.client.ui.DisclosureHandler)">com.google.gwt.user.client.ui.FiresDisclosureEvents.removeEventHandler(DisclosureHandler)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/DisclosurePanel.html#removeEventHandler(com.google.gwt.user.client.ui.DisclosureHandler)">com.google.gwt.user.client.ui.DisclosurePanel.removeEventHandler(DisclosureHandler)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SuggestBox.html#removeEventHandler(com.google.gwt.user.client.ui.SuggestionHandler)">com.google.gwt.user.client.ui.SuggestBox.removeEventHandler(SuggestionHandler)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method no the
              object returned by <a href="com/google/gwt/user/client/ui/SuggestBox.html#addSelectionHandler(com.google.gwt.event.logical.shared.SelectionHandler)"><code>SuggestBox.addSelectionHandler(com.google.gwt.event.logical.shared.SelectionHandler&lt;com.google.gwt.user.client.ui.SuggestOracle.Suggestion&gt;)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FiresSuggestionEvents.html#removeEventHandler(com.google.gwt.user.client.ui.SuggestionHandler)">com.google.gwt.user.client.ui.FiresSuggestionEvents.removeEventHandler(SuggestionHandler)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/Event.html#removeEventPreview(com.google.gwt.user.client.EventPreview)">com.google.gwt.user.client.Event.removeEventPreview(EventPreview)</a>
 <div class="block"><i>use <a href="com/google/gwt/event/shared/HandlerRegistration.html" title="interface in com.google.gwt.event.shared"><code>HandlerRegistration</code></a> returned from
              <a href="com/google/gwt/user/client/Event.html#addNativePreviewHandler(com.google.gwt.user.client.Event.NativePreviewHandler)"><code>Event.addNativePreviewHandler(NativePreviewHandler)</code></a></i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/DOM.html#removeEventPreview(com.google.gwt.user.client.EventPreview)">com.google.gwt.user.client.DOM.removeEventPreview(EventPreview)</a>
 <div class="block"><i>use <a href="com/google/gwt/event/shared/HandlerRegistration.html" title="interface in com.google.gwt.event.shared"><code>HandlerRegistration</code></a>
              returned from
              <a href="com/google/gwt/user/client/Event.html#addNativePreviewHandler(com.google.gwt.user.client.Event.NativePreviewHandler)"><code>Event.addNativePreviewHandler(Event.NativePreviewHandler)</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/Tree.html#removeFocusListener(com.google.gwt.user.client.ui.FocusListener)">com.google.gwt.user.client.ui.Tree.removeFocusListener(FocusListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by <a href="com/google/gwt/user/client/ui/Tree.html#addFocusHandler(com.google.gwt.event.dom.client.FocusHandler)"><code>Tree.addFocusHandler(com.google.gwt.event.dom.client.FocusHandler)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SuggestBox.html#removeFocusListener(com.google.gwt.user.client.ui.FocusListener)">com.google.gwt.user.client.ui.SuggestBox.removeFocusListener(FocusListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by <a href="com/google/gwt/user/client/ui/SuggestBox.html#getTextBox()"><code>SuggestBox.getTextBox()</code></a>().addFocusListener
              instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SourcesFocusEvents.html#removeFocusListener(com.google.gwt.user.client.ui.FocusListener)">com.google.gwt.user.client.ui.SourcesFocusEvents.removeFocusListener(FocusListener)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
@@ -2360,66 +2465,66 @@
  instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FocusWidget.html#removeFocusListener(com.google.gwt.user.client.ui.FocusListener)">com.google.gwt.user.client.ui.FocusWidget.removeFocusListener(FocusListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on 
  the object returned by <a href="com/google/gwt/user/client/ui/FocusWidget.html#addFocusHandler(com.google.gwt.event.dom.client.FocusHandler)"><code>FocusWidget.addFocusHandler(com.google.gwt.event.dom.client.FocusHandler)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FocusPanel.html#removeFocusListener(com.google.gwt.user.client.ui.FocusListener)">com.google.gwt.user.client.ui.FocusPanel.removeFocusListener(FocusListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on 
  the object returned by <a href="com/google/gwt/user/client/ui/FocusPanel.html#addFocusHandler(com.google.gwt.event.dom.client.FocusHandler)"><code>FocusPanel.addFocusHandler(com.google.gwt.event.dom.client.FocusHandler)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FormPanel.html#removeFormHandler(com.google.gwt.user.client.ui.FormHandler)">com.google.gwt.user.client.ui.FormPanel.removeFormHandler(FormHandler)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by and add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FiresFormEvents.html#removeFormHandler(com.google.gwt.user.client.ui.FormHandler)">com.google.gwt.user.client.ui.FiresFormEvents.removeFormHandler(FormHandler)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/History.html#removeHistoryListener(com.google.gwt.user.client.HistoryListener)">com.google.gwt.user.client.History.removeHistoryListener(HistoryListener)</a></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/Tree.html#removeKeyboardListener(com.google.gwt.user.client.ui.KeyboardListener)">com.google.gwt.user.client.ui.Tree.removeKeyboardListener(KeyboardListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SuggestBox.html#removeKeyboardListener(com.google.gwt.user.client.ui.KeyboardListener)">com.google.gwt.user.client.ui.SuggestBox.removeKeyboardListener(KeyboardListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by <a href="com/google/gwt/user/client/ui/SuggestBox.html#getTextBox()"><code>SuggestBox.getTextBox()</code></a>().add*Handler instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SourcesKeyboardEvents.html#removeKeyboardListener(com.google.gwt.user.client.ui.KeyboardListener)">com.google.gwt.user.client.ui.SourcesKeyboardEvents.removeKeyboardListener(KeyboardListener)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FocusWidget.html#removeKeyboardListener(com.google.gwt.user.client.ui.KeyboardListener)">com.google.gwt.user.client.ui.FocusWidget.removeKeyboardListener(KeyboardListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FocusPanel.html#removeKeyboardListener(com.google.gwt.user.client.ui.KeyboardListener)">com.google.gwt.user.client.ui.FocusPanel.removeKeyboardListener(KeyboardListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SourcesLoadEvents.html#removeLoadListener(com.google.gwt.user.client.ui.LoadListener)">com.google.gwt.user.client.ui.SourcesLoadEvents.removeLoadListener(LoadListener)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
@@ -2428,50 +2533,50 @@
  instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/Image.html#removeLoadListener(com.google.gwt.user.client.ui.LoadListener)">com.google.gwt.user.client.ui.Image.removeLoadListener(LoadListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/Tree.html#removeMouseListener(com.google.gwt.user.client.ui.MouseListener)">com.google.gwt.user.client.ui.Tree.removeMouseListener(MouseListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SourcesMouseEvents.html#removeMouseListener(com.google.gwt.user.client.ui.MouseListener)">com.google.gwt.user.client.ui.SourcesMouseEvents.removeMouseListener(MouseListener)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/Label.html#removeMouseListener(com.google.gwt.user.client.ui.MouseListener)">com.google.gwt.user.client.ui.Label.removeMouseListener(MouseListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/Image.html#removeMouseListener(com.google.gwt.user.client.ui.MouseListener)">com.google.gwt.user.client.ui.Image.removeMouseListener(MouseListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FocusWidget.html#removeMouseListener(com.google.gwt.user.client.ui.MouseListener)">com.google.gwt.user.client.ui.FocusWidget.removeMouseListener(MouseListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FocusPanel.html#removeMouseListener(com.google.gwt.user.client.ui.MouseListener)">com.google.gwt.user.client.ui.FocusPanel.removeMouseListener(MouseListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SourcesMouseWheelEvents.html#removeMouseWheelListener(com.google.gwt.user.client.ui.MouseWheelListener)">com.google.gwt.user.client.ui.SourcesMouseWheelEvents.removeMouseWheelListener(MouseWheelListener)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
@@ -2480,31 +2585,31 @@
  instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/Label.html#removeMouseWheelListener(com.google.gwt.user.client.ui.MouseWheelListener)">com.google.gwt.user.client.ui.Label.removeMouseWheelListener(MouseWheelListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by <a href="com/google/gwt/user/client/ui/Label.html#addMouseWheelHandler(com.google.gwt.event.dom.client.MouseWheelHandler)"><code>Label.addMouseWheelHandler(com.google.gwt.event.dom.client.MouseWheelHandler)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/Image.html#removeMouseWheelListener(com.google.gwt.user.client.ui.MouseWheelListener)">com.google.gwt.user.client.ui.Image.removeMouseWheelListener(MouseWheelListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by <a href="com/google/gwt/user/client/ui/Image.html#addMouseWheelHandler(com.google.gwt.event.dom.client.MouseWheelHandler)"><code>Image.addMouseWheelHandler(com.google.gwt.event.dom.client.MouseWheelHandler)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FocusWidget.html#removeMouseWheelListener(com.google.gwt.user.client.ui.MouseWheelListener)">com.google.gwt.user.client.ui.FocusWidget.removeMouseWheelListener(MouseWheelListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by <a href="com/google/gwt/user/client/ui/FocusWidget.html#addMouseWheelHandler(com.google.gwt.event.dom.client.MouseWheelHandler)"><code>FocusWidget.addMouseWheelHandler(com.google.gwt.event.dom.client.MouseWheelHandler)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FocusPanel.html#removeMouseWheelListener(com.google.gwt.user.client.ui.MouseWheelListener)">com.google.gwt.user.client.ui.FocusPanel.removeMouseWheelListener(MouseWheelListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by <a href="com/google/gwt/user/client/ui/FocusPanel.html#addMouseWheelHandler(com.google.gwt.event.dom.client.MouseWheelHandler)"><code>FocusPanel.addMouseWheelHandler(com.google.gwt.event.dom.client.MouseWheelHandler)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SourcesPopupEvents.html#removePopupListener(com.google.gwt.user.client.ui.PopupListener)">com.google.gwt.user.client.ui.SourcesPopupEvents.removePopupListener(PopupListener)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
@@ -2513,13 +2618,13 @@
  instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/PopupPanel.html#removePopupListener(com.google.gwt.user.client.ui.PopupListener)">com.google.gwt.user.client.ui.PopupPanel.removePopupListener(PopupListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by <a href="com/google/gwt/user/client/ui/PopupPanel.html#addCloseHandler(com.google.gwt.event.logical.shared.CloseHandler)"><code>PopupPanel.addCloseHandler(com.google.gwt.event.logical.shared.CloseHandler&lt;com.google.gwt.user.client.ui.PopupPanel&gt;)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SourcesScrollEvents.html#removeScrollListener(com.google.gwt.user.client.ui.ScrollListener)">com.google.gwt.user.client.ui.SourcesScrollEvents.removeScrollListener(ScrollListener)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
@@ -2528,81 +2633,86 @@
  instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/ScrollPanel.html#removeScrollListener(com.google.gwt.user.client.ui.ScrollListener)">com.google.gwt.user.client.ui.ScrollPanel.removeScrollListener(ScrollListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by <a href="com/google/gwt/user/client/ui/ScrollPanel.html#addScrollHandler(com.google.gwt.event.dom.client.ScrollHandler)"><code>ScrollPanel.addScrollHandler(com.google.gwt.event.dom.client.ScrollHandler)</code></a> instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SourcesTableEvents.html#removeTableListener(com.google.gwt.user.client.ui.TableListener)">com.google.gwt.user.client.ui.SourcesTableEvents.removeTableListener(TableListener)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/HTMLTable.html#removeTableListener(com.google.gwt.user.client.ui.TableListener)">com.google.gwt.user.client.ui.HTMLTable.removeTableListener(TableListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TabPanel.html#removeTabListener(com.google.gwt.user.client.ui.TabListener)">com.google.gwt.user.client.ui.TabPanel.removeTabListener(TabListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by and add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TabBar.html#removeTabListener(com.google.gwt.user.client.ui.TabListener)">com.google.gwt.user.client.ui.TabBar.removeTabListener(TabListener)</a>
 <div class="block"><i>Instead use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  call on the object returned by an add*Handler method</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SourcesTabEvents.html#removeTabListener(com.google.gwt.user.client.ui.TabListener)">com.google.gwt.user.client.ui.SourcesTabEvents.removeTabListener(TabListener)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by and add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/Tree.html#removeTreeListener(com.google.gwt.user.client.ui.TreeListener)">com.google.gwt.user.client.ui.Tree.removeTreeListener(TreeListener)</a>
 <div class="block"><i>Use the <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a> method on the
              object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/SourcesTreeEvents.html#removeTreeListener(com.google.gwt.user.client.ui.TreeListener)">com.google.gwt.user.client.ui.SourcesTreeEvents.removeTreeListener(TreeListener)</a>
 <div class="block"><i>Use the
  <a href="com/google/web/bindery/event/shared/HandlerRegistration.html#removeHandler()"><code>HandlerRegistration.removeHandler()</code></a>
  method on the object returned by an add*Handler method instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/Window.html#removeWindowCloseListener(com.google.gwt.user.client.WindowCloseListener)">com.google.gwt.user.client.Window.removeWindowCloseListener(WindowCloseListener)</a></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/Window.html#removeWindowResizeListener(com.google.gwt.user.client.WindowResizeListener)">com.google.gwt.user.client.Window.removeWindowResizeListener(WindowResizeListener)</a></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/Window.html#removeWindowScrollListener(com.google.gwt.user.client.WindowScrollListener)">com.google.gwt.user.client.Window.removeWindowScrollListener(WindowScrollListener)</a></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/cellview/client/AbstractCellTable.html#renderRowValues(com.google.gwt.safehtml.shared.SafeHtmlBuilder, java.util.List, int, com.google.gwt.view.client.SelectionModel)">com.google.gwt.user.cellview.client.AbstractCellTable.renderRowValues(SafeHtmlBuilder, List<T>, int, SelectionModel<? super T>)</a>
 <div class="block"><i>as of GWT 2.5, use a <a href="com/google/gwt/user/cellview/client/CellTableBuilder.html" title="interface in com.google.gwt.user.cellview.client"><code>CellTableBuilder</code></a> to customize the
              table structure instead</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/cellview/client/AbstractCellTable.html#renderRowValuesLegacy(com.google.gwt.safehtml.shared.SafeHtmlBuilder, java.util.List, int, com.google.gwt.view.client.SelectionModel)">com.google.gwt.user.cellview.client.AbstractCellTable.renderRowValuesLegacy(SafeHtmlBuilder, List<T>, int, SelectionModel<? super T>)</a>
 <div class="block"><i>as of GWT 2.5, use a <a href="com/google/gwt/user/cellview/client/CellTableBuilder.html" title="interface in com.google.gwt.user.cellview.client"><code>CellTableBuilder</code></a> to customize the
              table structure instead</i></div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/ui/CheckBox.html#replaceInputElement(com.google.gwt.user.client.Element)">com.google.gwt.user.client.ui.CheckBox.replaceInputElement(Element)</a>
+<div class="block"><i>Call and use <a href="com/google/gwt/user/client/ui/CheckBox.html#replaceInputElement(com.google.gwt.user.client.Element)"><code>CheckBox.replaceInputElement(Element)</code></a> instead.</i></div>
+</td>
+</tr>
 <tr class="altColor">
-<td class="colOne"><a href="com/google/gwt/benchmarks/BenchmarkShell.html#runTest(java.lang.String, junit.framework.TestCase, junit.framework.TestResult)">com.google.gwt.benchmarks.BenchmarkShell.runTest(String, TestCase, TestResult)</a>
-<div class="block"><i>use <a href="com/google/gwt/benchmarks/BenchmarkShell.html#runTest(com.google.gwt.junit.client.GWTTestCase, junit.framework.TestResult)"><code>BenchmarkShell.runTest(GWTTestCase, TestResult)</code></a> instead</i></div>
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#scrollIntoView(com.google.gwt.dom.client.Element)">com.google.gwt.user.client.DOM.scrollIntoView(Element)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#scrollIntoView()"><code>Element.scrollIntoView()</code></a> instead.</i></div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -2618,21 +2728,33 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#setAttribute(com.google.gwt.user.client.Element, java.lang.String, java.lang.String)">com.google.gwt.user.client.DOM.setAttribute(Element, String, String)</a>
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#setAttribute(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">com.google.gwt.user.client.DOM.setAttribute(Element, String, String)</a>
 <div class="block"><i>Use the more appropriately named
-             <a href="com/google/gwt/user/client/DOM.html#setElementProperty(com.google.gwt.user.client.Element, java.lang.String, java.lang.String)"><code>DOM.setElementProperty(Element, String, String)</code></a> instead.</i></div>
+             <a href="com/google/gwt/dom/client/Element.html#setPropertyString(java.lang.String, java.lang.String)"><code>Element.setPropertyString(String, String)</code></a> instead.</i></div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#setBooleanAttribute(com.google.gwt.user.client.Element, java.lang.String, boolean)">com.google.gwt.user.client.DOM.setBooleanAttribute(Element, String, boolean)</a>
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#setBooleanAttribute(com.google.gwt.dom.client.Element, java.lang.String, boolean)">com.google.gwt.user.client.DOM.setBooleanAttribute(Element, String, boolean)</a>
 <div class="block"><i>Use the more appropriately named
-             <a href="com/google/gwt/user/client/DOM.html#setElementPropertyBoolean(com.google.gwt.user.client.Element, java.lang.String, boolean)"><code>DOM.setElementPropertyBoolean(Element, String, boolean)</code></a>
+             <a href="com/google/gwt/dom/client/Element.html#setPropertyBoolean(java.lang.String, boolean)"><code>Element.setPropertyBoolean(String, boolean)</code></a>
              instead.</i></div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/FormPanel.SubmitEvent.html#setCanceled(boolean)">com.google.gwt.user.client.ui.FormPanel.SubmitEvent.setCanceled(boolean)</a>
 <div class="block"><i>Use <a href="com/google/gwt/user/client/ui/FormPanel.SubmitEvent.html#cancel()"><code>FormPanel.SubmitEvent.cancel()</code></a> instead</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/ui/CellPanel.html#setCellHorizontalAlignment(com.google.gwt.user.client.Element, com.google.gwt.user.client.ui.HasHorizontalAlignment.HorizontalAlignmentConstant)">com.google.gwt.user.client.ui.CellPanel.setCellHorizontalAlignment(Element, HasHorizontalAlignment.HorizontalAlignmentConstant)</a>
+<div class="block"><i>Call and override <code>#setCellHorizontalAlignment(Element,
+             HorizontalAlignmentConstant)</code> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/ui/CellPanel.html#setCellVerticalAlignment(com.google.gwt.user.client.Element, com.google.gwt.user.client.ui.HasVerticalAlignment.VerticalAlignmentConstant)">com.google.gwt.user.client.ui.CellPanel.setCellVerticalAlignment(Element, HasVerticalAlignment.VerticalAlignmentConstant)</a>
+<div class="block"><i>Call and override <code>#setCellVerticalAlignment(Element,
+             VerticalAlignmentConstant)</code> instead.</i></div>
 </td>
 </tr>
 <tr class="altColor">
@@ -2671,27 +2793,57 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.user.client.Element)">com.google.gwt.user.client.ui.UIObject.setElement(Element)</a>
+<div class="block"><i>Use and override <a href="com/google/gwt/user/client/ui/UIObject.html#setElement(com.google.gwt.user.client.Element)"><code>UIObject.setElement(Element)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#setElementAttribute(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">com.google.gwt.user.client.DOM.setElementAttribute(Element, String, String)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#setAttribute(java.lang.String, java.lang.String)"><code>Element.setAttribute(String, String)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#setElementProperty(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">com.google.gwt.user.client.DOM.setElementProperty(Element, String, String)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#setPropertyString(java.lang.String, java.lang.String)"><code>Element.setPropertyString(String, String)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#setElementPropertyBoolean(com.google.gwt.dom.client.Element, java.lang.String, boolean)">com.google.gwt.user.client.DOM.setElementPropertyBoolean(Element, String, boolean)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#setPropertyBoolean(java.lang.String, boolean)"><code>Element.setPropertyBoolean(String, boolean)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#setElementPropertyInt(com.google.gwt.dom.client.Element, java.lang.String, int)">com.google.gwt.user.client.DOM.setElementPropertyInt(Element, String, int)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#setPropertyInt(java.lang.String, int)"><code>Element.setPropertyInt(String, int)</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/cellview/client/CellList.html#setEmptyListMessage(com.google.gwt.safehtml.shared.SafeHtml)">com.google.gwt.user.cellview.client.CellList.setEmptyListMessage(SafeHtml)</a>
 <div class="block"><i>as of GWT 2.3, use
              <a href="com/google/gwt/user/cellview/client/CellList.html#setEmptyListWidget(com.google.gwt.user.client.ui.Widget)"><code>CellList.setEmptyListWidget(com.google.gwt.user.client.ui.Widget)</code></a>
              instead</i></div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#setInnerHTML(com.google.gwt.dom.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.setInnerHTML(Element, String)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#setInnerHTML(java.lang.String)"><code>Element.setInnerHTML(String)</code></a> instead.</i></div>
+</td>
+</tr>
 <tr class="altColor">
-<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#setIntAttribute(com.google.gwt.user.client.Element, java.lang.String, int)">com.google.gwt.user.client.DOM.setIntAttribute(Element, String, int)</a>
-<div class="block"><i>Use the more appropriately named
-             <a href="com/google/gwt/user/client/DOM.html#setElementPropertyInt(com.google.gwt.user.client.Element, java.lang.String, int)"><code>DOM.setElementPropertyInt(Element, String, int)</code></a> instead.</i></div>
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#setInnerText(com.google.gwt.dom.client.Element, java.lang.String)">com.google.gwt.user.client.DOM.setInnerText(Element, String)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#setInnerText(java.lang.String)"><code>Element.setInnerText(String)</code></a> instead.</i></div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><a href="com/google/gwt/user/client/ui/ValueBoxBase.html#setKey(char)">com.google.gwt.user.client.ui.ValueBoxBase.setKey(char)</a>
-<div class="block"><i>this method only works in IE and should not have been added to
-             the API</i></div>
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#setIntAttribute(com.google.gwt.dom.client.Element, java.lang.String, int)">com.google.gwt.user.client.DOM.setIntAttribute(Element, String, int)</a>
+<div class="block"><i>Use the more appropriately named
+             <a href="com/google/gwt/dom/client/Element.html#setPropertyInt(java.lang.String, int)"><code>Element.setPropertyInt(String, int)</code></a> instead.</i></div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colOne"><a href="com/google/gwt/user/client/ui/ListBox.html#setMultipleSelect(boolean)">com.google.gwt.user.client.ui.ListBox.setMultipleSelect(boolean)</a>
-<div class="block"><i>use <a href="com/google/gwt/user/client/ui/ListBox.html#ListBox(boolean)"><code>ListBox.ListBox(boolean)</code></a> instead</i></div>
+<td class="colOne"><a href="com/google/gwt/user/client/ui/ValueBoxBase.html#setKey(char)">com.google.gwt.user.client.ui.ValueBoxBase.setKey(char)</a>
+<div class="block"><i>this method only works in IE and should not have been added to
+             the API</i></div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -2731,6 +2883,19 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#setStyleAttribute(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">com.google.gwt.user.client.DOM.setStyleAttribute(Element, String, String)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#getStyle()"><code>Element.getStyle()</code></a> and
+             <code>Style#setProperty(String, String)</code> instead.</i></div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/logging/server/StackTraceDeobfuscator.html#setSymbolMapsDirectory(java.lang.String)">com.google.gwt.logging.server.StackTraceDeobfuscator.setSymbolMapsDirectory(String)</a>
+<div class="block"><i>The behavior of changing symbol map after construction is undefined, please provide
+             it in construction time. If the directory needs to be changed after construction, a
+             new instance of this class can be instantiated with the different one.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/TextBoxBase.html#setTextAlignment(com.google.gwt.user.client.ui.TextBoxBase.TextAlignConstant)">com.google.gwt.user.client.ui.TextBoxBase.setTextAlignment(TextBoxBase.TextAlignConstant)</a>
 <div class="block"><i>use <a href="com/google/gwt/user/client/ui/ValueBoxBase.html#setAlignment(com.google.gwt.user.client.ui.ValueBoxBase.TextAlignment)"><code>ValueBoxBase.setAlignment(TextAlignment)</code></a></i></div>
 </td>
@@ -2757,6 +2922,11 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colOne"><a href="com/google/gwt/user/client/DOM.html#toString(com.google.gwt.dom.client.Element)">com.google.gwt.user.client.DOM.toString(Element)</a>
+<div class="block"><i>Use <a href="com/google/gwt/dom/client/Element.html#getString()"><code>Element.getString()</code></a> instead.</i></div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/safehtml/shared/UriUtils.html#unsafeCastFromUntrustedString(java.lang.String)">com.google.gwt.safehtml.shared.UriUtils.unsafeCastFromUntrustedString(String)</a>
 <div class="block"><i>This method is intended only for use in APIs that use
              <a href="com/google/gwt/safehtml/shared/SafeUri.html" title="interface in com.google.gwt.safehtml.shared"><code>SafeUri</code></a> to represent URIs, but for backwards
@@ -2764,12 +2934,12 @@
              strings.</i></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="com/google/gwt/user/client/DOM.html#windowGetClientHeight()">com.google.gwt.user.client.DOM.windowGetClientHeight()</a>
 <div class="block"><i>As of GWT 1.5, replaced by <a href="com/google/gwt/user/client/Window.html#getClientHeight()"><code>Window.getClientHeight()</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/DOM.html#windowGetClientWidth()">com.google.gwt.user.client.DOM.windowGetClientWidth()</a>
 <div class="block"><i>As of GWT 1.5, replaced by <a href="com/google/gwt/user/client/Window.html#getClientWidth()"><code>Window.getClientWidth()</code></a></i></div>
 </td>
@@ -2948,16 +3118,11 @@
 </td>
 </tr>
 <tr class="altColor">
-<td class="colOne"><a href="com/google/gwt/user/client/ui/TreeItem.html#TreeItem(java.lang.String)">com.google.gwt.user.client.ui.TreeItem(String)</a>
-<div class="block"><i>use <a href="com/google/gwt/user/client/ui/TreeItem.html#TreeItem(com.google.gwt.safehtml.shared.SafeHtml)"><code>TreeItem.TreeItem(SafeHtml)</code></a> instead</i></div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/user/client/ui/VerticalSplitPanel.html#VerticalSplitPanel(com.google.gwt.user.client.ui.VerticalSplitPanelImages)">com.google.gwt.user.client.ui.VerticalSplitPanel(VerticalSplitPanelImages)</a>
 <div class="block"><i>replaced by <a href="com/google/gwt/user/client/ui/VerticalSplitPanel.html#VerticalSplitPanel(com.google.gwt.user.client.ui.VerticalSplitPanel.Resources)"><code>VerticalSplitPanel.VerticalSplitPanel(Resources)</code></a></i></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="com/google/gwt/media/client/Video.html#Video(java.lang.String)">com.google.gwt.media.client.Video(String)</a>
 <div class="block"><i>use <a href="com/google/gwt/media/client/Video.html#createIfSupported()"><code>Video.createIfSupported()</code></a>.</i></div>
 </td>
@@ -2981,7 +3146,7 @@
 <li class="navBarCell1Rev">Deprecated</li>
 <li><a href="help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

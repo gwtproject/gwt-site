@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>ArgHandler (Google Web Toolkit Javadoc)</title>
+<title>ArgHandler (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ArgHandler (Google Web Toolkit Javadoc)";
+        parent.document.title="ArgHandler (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -140,17 +140,29 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getDefaultArgs()">getDefaultArgs</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>abstract java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getPurpose()">getPurpose</a></strong>()</code>&nbsp;</td>
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getHelpTag()">getHelpTag</a></strong>()</code>
+<div class="block">The tag to display in help messages.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>abstract java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getTag()">getTag</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getPurpose()">getPurpose</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>abstract java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getTag()">getTag</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>abstract java.lang.String[]</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getTagArgs()">getTagArgs</a></strong>()</code>
 <div class="block">A list of words representing the arguments in help text.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>java.lang.String[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getTags()">getTags</a></strong>()</code>
+<div class="block">The set of tags matched by this argument handler.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -163,9 +175,13 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#isRequired()">isRequired</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#isExperimental()">isExperimental</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#isRequired()">isRequired</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#isUndocumented()">isUndocumented</a></strong>()</code>&nbsp;</td>
 </tr>
@@ -235,6 +251,27 @@ extends java.lang.Object</pre>
 <pre>public abstract&nbsp;java.lang.String&nbsp;getTag()</pre>
 </li>
 </ul>
+<a name="getTags()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTags</h4>
+<pre>public&nbsp;java.lang.String[]&nbsp;getTags()</pre>
+<div class="block">The set of tags matched by this argument handler. By default includes just the one primary tag
+ mentioned in getTag() but can be overridden to provide broader matching.</div>
+</li>
+</ul>
+<a name="getHelpTag()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHelpTag</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getHelpTag()</pre>
+<div class="block">The tag to display in help messages.</div>
+</li>
+</ul>
 <a name="getTagArgs()">
 <!--   -->
 </a>
@@ -275,10 +312,19 @@ extends java.lang.Object</pre>
 <a name="isUndocumented()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>isUndocumented</h4>
 <pre>public&nbsp;boolean&nbsp;isUndocumented()</pre>
+</li>
+</ul>
+<a name="isExperimental()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isExperimental</h4>
+<pre>public&nbsp;boolean&nbsp;isExperimental()</pre>
 </li>
 </ul>
 </li>
@@ -302,7 +348,7 @@ extends java.lang.Object</pre>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

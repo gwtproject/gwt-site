@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>JsArrayMixed (Google Web Toolkit Javadoc)</title>
+<title>JsArrayMixed (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="JsArrayMixed (Google Web Toolkit Javadoc)";
+        parent.document.title="JsArrayMixed (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -307,7 +307,7 @@ extends <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.google.gwt.core.client.<a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</a></h3>
-<code><a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#cast()">cast</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createArray()">createArray</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createFunction()">createFunction</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createObject()">createObject</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#equals(java.lang.Object)">equals</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#hashCode()">hashCode</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#toSource()">toSource</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#toString()">toString</a></code></li>
+<code><a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#cast()">cast</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createArray()">createArray</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createArray(int)">createArray</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createFunction()">createFunction</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#createObject()">createObject</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#equals(java.lang.Object)">equals</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#hashCode()">hashCode</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#toSource()">toSource</a>, <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#toString()">toString</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -356,7 +356,7 @@ extends <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html
 <pre>public final&nbsp;boolean&nbsp;getBoolean(int&nbsp;index)</pre>
 <div class="block">Gets the boolean at a given index.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - the index to be retrieved</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the object at the given index, or <code>null</code> if none exists</dd></dl>
+<dt><span class="strong">Returns:</span></dt><dd>the object at the given index coerced to boolean.</dd></dl>
 </li>
 </ul>
 <a name="getNumber(int)">
@@ -368,7 +368,7 @@ extends <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html
 <pre>public final&nbsp;double&nbsp;getNumber(int&nbsp;index)</pre>
 <div class="block">Gets the double at a given index.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>index</code> - the index to be retrieved</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the object at the given index, or <code>null</code> if none exists</dd></dl>
+<dt><span class="strong">Returns:</span></dt><dd>the object at the given index coerced to number.</dd></dl>
 </li>
 </ul>
 <a name="getObject(int)">
@@ -550,7 +550,7 @@ extends <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html
 <h4>shiftBoolean</h4>
 <pre>public final&nbsp;boolean&nbsp;shiftBoolean()</pre>
 <div class="block">Shifts the first value off the array.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>the shifted boolean</dd></dl>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the shifted item coerced to a boolean</dd></dl>
 </li>
 </ul>
 <a name="shiftNumber()">
@@ -561,7 +561,7 @@ extends <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html
 <h4>shiftNumber</h4>
 <pre>public final&nbsp;double&nbsp;shiftNumber()</pre>
 <div class="block">Shifts the first value off the array.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>the shifted double</dd></dl>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the shifted item coerced to a number</dd></dl>
 </li>
 </ul>
 <a name="shiftObject()">
@@ -651,7 +651,7 @@ extends <a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

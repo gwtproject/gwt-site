@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>ArgHandlerFlag (Google Web Toolkit Javadoc)</title>
+<title>ArgHandlerFlag (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ArgHandlerFlag (Google Web Toolkit Javadoc)";
+        parent.document.title="ArgHandlerFlag (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -104,7 +104,10 @@
 <br>
 <pre>public abstract class <span class="strong">ArgHandlerFlag</span>
 extends <a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title="class in com.google.gwt.util.tools">ArgHandler</a></pre>
-<div class="block">Argument handler for flags that have no parameters.</div>
+<div class="block">Argument handler for boolean flags that have no parameters.
+ 
+ Supports toggling the boolean value on and off using -label and -nolabel tag variants and
+ calculating a meaningful purpose including default value.</div>
 </li>
 </ul>
 </div>
@@ -141,12 +144,62 @@ extends <a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#addTagValue(java.lang.String, boolean)">addTagValue</a></strong>(java.lang.String&nbsp;tag,
+           boolean&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getDefaultValue()">getDefaultValue</a></strong>()</code>
+<div class="block">Returns the default value that will appear in help messages.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getHelpTag()">getHelpTag</a></strong>()</code>
+<div class="block">The tag to display in help messages.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getLabel()">getLabel</a></strong>()</code>
+<div class="block">The root String that will be munged into -label and -nolabel variants for flag value toggling.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getPurpose()">getPurpose</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getPurposeSnippet()">getPurposeSnippet</a></strong>()</code>
+<div class="block">Returns a description that will be mixed together with default value to come up with the
+ overall flag purpose.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getTag()">getTag</a></strong>()</code>
+<div class="block">The primary tag matched by this argument handler.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.String[]</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getTagArgs()">getTagArgs</a></strong>()</code>
 <div class="block">A list of words representing the arguments in help text.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code>java.lang.String[]</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getTags()">getTags</a></strong>()</code>
+<div class="block">The set of tags matched by this argument handler.</div>
+</td>
+</tr>
 <tr class="rowColor">
+<td class="colFirst"><code>(package private) boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#getValueByTag(java.lang.String)">getValueByTag</a></strong>(java.lang.String&nbsp;tag)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#handle(java.lang.String[], int)">handle</a></strong>(java.lang.String[]&nbsp;args,
       int&nbsp;startIndex)</code>
@@ -154,13 +207,16 @@ extends <a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title
  without a flag).</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#isRequired()">isRequired</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#setFlag()">setFlag</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/util/tools/ArgHandlerFlag.html#setFlag(boolean)">setFlag</a></strong>(boolean&nbsp;value)</code>
+<div class="block">Takes the explicitly provided value and propagates it into whatever option settings this flag
+ controls.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -168,7 +224,7 @@ extends <a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.google.gwt.util.tools.<a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title="class in com.google.gwt.util.tools">ArgHandler</a></h3>
-<code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getDefaultArgs()">getDefaultArgs</a>, <a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getPurpose()">getPurpose</a>, <a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getTag()">getTag</a>, <a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#isUndocumented()">isUndocumented</a></code></li>
+<code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getDefaultArgs()">getDefaultArgs</a>, <a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#isExperimental()">isExperimental</a>, <a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#isUndocumented()">isUndocumented</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -208,6 +264,90 @@ extends <a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="addTagValue(java.lang.String, boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addTagValue</h4>
+<pre>protected&nbsp;void&nbsp;addTagValue(java.lang.String&nbsp;tag,
+               boolean&nbsp;value)</pre>
+</li>
+</ul>
+<a name="getDefaultValue()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefaultValue</h4>
+<pre>public abstract&nbsp;boolean&nbsp;getDefaultValue()</pre>
+<div class="block">Returns the default value that will appear in help messages.</div>
+</li>
+</ul>
+<a name="getHelpTag()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getHelpTag</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getHelpTag()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getHelpTag()">ArgHandler</a></code></strong></div>
+<div class="block">The tag to display in help messages.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getHelpTag()">getHelpTag</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title="class in com.google.gwt.util.tools">ArgHandler</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getLabel()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLabel</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getLabel()</pre>
+<div class="block">The root String that will be munged into -label and -nolabel variants for flag value toggling.
+ Should follow the verb[Adjective]Noun naming pattern. For example:</div>
+</li>
+</ul>
+<a name="getPurpose()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPurpose</h4>
+<pre>public final&nbsp;java.lang.String&nbsp;getPurpose()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getPurpose()">getPurpose</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title="class in com.google.gwt.util.tools">ArgHandler</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getPurposeSnippet()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPurposeSnippet</h4>
+<pre>public abstract&nbsp;java.lang.String&nbsp;getPurposeSnippet()</pre>
+<div class="block">Returns a description that will be mixed together with default value to come up with the
+ overall flag purpose.</div>
+</li>
+</ul>
+<a name="getTag()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTag</h4>
+<pre>public final&nbsp;java.lang.String&nbsp;getTag()</pre>
+<div class="block">The primary tag matched by this argument handler.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getTag()">getTag</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title="class in com.google.gwt.util.tools">ArgHandler</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="getTagArgs()">
 <!--   -->
 </a>
@@ -221,6 +361,31 @@ extends <a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getTagArgs()">getTagArgs</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title="class in com.google.gwt.util.tools">ArgHandler</a></code></dd>
 </dl>
+</li>
+</ul>
+<a name="getTags()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTags</h4>
+<pre>public final&nbsp;java.lang.String[]&nbsp;getTags()</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getTags()">ArgHandler</a></code></strong></div>
+<div class="block">The set of tags matched by this argument handler. By default includes just the one primary tag
+ mentioned in getTag() but can be overridden to provide broader matching.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html#getTags()">getTags</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title="class in com.google.gwt.util.tools">ArgHandler</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getValueByTag(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getValueByTag</h4>
+<pre>boolean&nbsp;getValueByTag(java.lang.String&nbsp;tag)</pre>
 </li>
 </ul>
 <a name="handle(java.lang.String[], int)">
@@ -258,13 +423,17 @@ extends <a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title
 </dl>
 </li>
 </ul>
-<a name="setFlag()">
+<a name="setFlag(boolean)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>setFlag</h4>
-<pre>public abstract&nbsp;boolean&nbsp;setFlag()</pre>
+<pre>public abstract&nbsp;boolean&nbsp;setFlag(boolean&nbsp;value)</pre>
+<div class="block">Takes the explicitly provided value and propagates it into whatever option settings this flag
+ controls.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - the new value for the flag.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>whether the assignment was valid.</dd></dl>
 </li>
 </ul>
 </li>
@@ -288,7 +457,7 @@ extends <a href="../../../../../com/google/gwt/util/tools/ArgHandler.html" title
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

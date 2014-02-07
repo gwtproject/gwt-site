@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>StackTraceDeobfuscator (Google Web Toolkit Javadoc)</title>
+<title>StackTraceDeobfuscator (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="StackTraceDeobfuscator (Google Web Toolkit Javadoc)";
+        parent.document.title="StackTraceDeobfuscator (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -84,7 +84,12 @@
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
+<li><a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html" title="class in com.google.gwt.core.server">com.google.gwt.core.server.StackTraceDeobfuscator</a></li>
+<li>
+<ul class="inheritance">
 <li>com.google.gwt.logging.server.StackTraceDeobfuscator</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -92,21 +97,13 @@
 <ul class="blockList">
 <li class="blockList">
 <hr>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use com.google.gwt.core.server.StackTraceDeobfuscator instead.</i></div>
+</div>
 <br>
-<pre>public class <span class="strong">StackTraceDeobfuscator</span>
-extends java.lang.Object</pre>
-<div class="block">Deobfuscates stack traces on the server side. This class requires that you have turned on
- emulated stack traces, via <code>&lt;set-property name="compiler.stackMode" value="emulated"
- /&gt;</code> in your <code>.gwt.xml</code> module file for non-Chrome browsers or
- <code>&lt;set-property name="compiler.useSourceMaps" value="true"/&gt;</code> for Chrome, and
- moved your symbol map files to a location accessible by your server sever side code. You can use
- the GWT compiler <code>-deploy</code> command line argument to specify the location of the folder
- into which the generated <code>symbolMaps</code> directory is written. By default, the final
- <code>symbolMaps</code> directory is <code>war/WEB-INF/deploy/<i>yourmodulename</i>/symbolMaps/</code>.
- Pass the resulting directory location into this class' <a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#symbolMapsDirectory"><code>symbolMapsDirectory</code></a>
- constructor or <a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#setSymbolMapsDirectory(java.lang.String)"><code>setSymbolMapsDirectory(String)</code></a> setter method.
-
- TODO(unnurg): Combine this code with similar code in JUnitHostImpl</div>
+<pre>@Deprecated
+public class <span class="strong">StackTraceDeobfuscator</span>
+extends <a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html" title="class in com.google.gwt.core.server">StackTraceDeobfuscator</a></pre>
 </li>
 </ul>
 </div>
@@ -126,12 +123,10 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>(package private) java.util.regex.Pattern</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#fragmentIdPattern">fragmentIdPattern</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>protected java.io.File</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#symbolMapsDirectory">symbolMapsDirectory</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#symbolMapsDirectory">symbolMapsDirectory</a></strong></code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -149,12 +144,14 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colOne"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#StackTraceDeobfuscator(java.lang.String)">StackTraceDeobfuscator</a></strong>(java.lang.String&nbsp;symbolMapsDirectory)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 <div class="block">Creates a deobfuscator that loads symbol map files from the given directory.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colOne"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#StackTraceDeobfuscator(java.lang.String, boolean)">StackTraceDeobfuscator</a></strong>(java.lang.String&nbsp;symbolMapsDirectory,
                       boolean&nbsp;lazyLoad)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 <div class="block">Creates a deobfuscator that loads symbol map files from the given directory.</div>
 </td>
 </tr>
@@ -177,6 +174,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>java.util.logging.LogRecord</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#deobfuscateLogRecord(java.util.logging.LogRecord, java.lang.String)">deobfuscateLogRecord</a></strong>(java.util.logging.LogRecord&nbsp;lr,
                     java.lang.String&nbsp;strongName)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 <div class="block">Best effort resymbolization of a log record's stack trace.</div>
 </td>
 </tr>
@@ -184,37 +182,41 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>java.lang.StackTraceElement[]</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#deobfuscateStackTrace(java.lang.StackTraceElement[], java.lang.String)">deobfuscateStackTrace</a></strong>(java.lang.StackTraceElement[]&nbsp;st,
                      java.lang.String&nbsp;strongName)</code>
-<div class="block">Convenience method which resymbolizes an entire stack trace to extent possible.</div>
-</td>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>java.lang.Throwable</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#deobfuscateThrowable(java.lang.Throwable, java.lang.String)">deobfuscateThrowable</a></strong>(java.lang.Throwable&nbsp;old,
-                    java.lang.String&nbsp;strongName)</code>&nbsp;</td>
+                    java.lang.String&nbsp;strongName)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected java.io.InputStream</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#getSourceMapInputStream(java.lang.String, int)">getSourceMapInputStream</a></strong>(java.lang.String&nbsp;permutationStrongName,
-                       int&nbsp;fragmentNumber)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected java.io.InputStream</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#getSymbolMapInputStream(java.lang.String)">getSymbolMapInputStream</a></strong>(java.lang.String&nbsp;permutationStrongName)</code>
-<div class="block">Retrieves a new <code>InputStream</code> for the given permutation strong name.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>java.lang.StackTraceElement</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#resymbolize(java.lang.StackTraceElement, java.lang.String)">resymbolize</a></strong>(java.lang.StackTraceElement&nbsp;ste,
-           java.lang.String&nbsp;strongName)</code>
-<div class="block">Best effort resymbolization of a single stack trace element.</div>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#openInputStream(java.lang.String)">openInputStream</a></strong>(java.lang.String&nbsp;fileName)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
+<div class="block">Opens a new <code>InputStream</code> for a symbol or source map file.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#setSymbolMapsDirectory(java.lang.String)">setSymbolMapsDirectory</a></strong>(java.lang.String&nbsp;symbolMapsDirectory)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/logging/server/StackTraceDeobfuscator.html#setSymbolMapsDirectory(java.lang.String)">setSymbolMapsDirectory</a></strong>(java.lang.String&nbsp;symbolMapsDirectory)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>The behavior of changing symbol map after construction is undefined, please provide
+             it in construction time. If the directory needs to be changed after construction, a
+             new instance of this class can be instantiated with the different one.</i></div>
+</div>
+</td>
 </tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_com.google.gwt.core.server.StackTraceDeobfuscator">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;com.google.gwt.core.server.<a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html" title="class in com.google.gwt.core.server">StackTraceDeobfuscator</a></h3>
+<code><a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html#deobfuscateStackTrace(java.lang.Throwable, java.lang.String)">deobfuscateStackTrace</a>, <a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html#fromFileSystem(java.lang.String)">fromFileSystem</a>, <a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html#fromResource(java.lang.String)">fromResource</a>, <a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html#fromUrl(java.net.URL)">fromUrl</a>, <a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html#getSourceMapInputStream(java.lang.String, int)">getSourceMapInputStream</a>, <a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html#getSymbolMapInputStream(java.lang.String)">getSymbolMapInputStream</a>, <a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html#resymbolize(java.lang.StackTraceElement[], java.lang.String)">resymbolize</a>, <a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html#resymbolize(java.lang.StackTraceElement, java.lang.String)">resymbolize</a>, <a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html#setLazyLoad(boolean)">setLazyLoad</a></code></li>
+</ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
 <!--   -->
@@ -236,15 +238,6 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Field Detail</h3>
-<a name="fragmentIdPattern">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>fragmentIdPattern</h4>
-<pre>final&nbsp;java.util.regex.Pattern fragmentIdPattern</pre>
-</li>
-</ul>
 <a name="symbolMapsDirectory">
 <!--   -->
 </a>
@@ -252,6 +245,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>symbolMapsDirectory</h4>
 <pre>protected&nbsp;java.io.File symbolMapsDirectory</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -269,6 +263,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>StackTraceDeobfuscator</h4>
 <pre>public&nbsp;StackTraceDeobfuscator(java.lang.String&nbsp;symbolMapsDirectory)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <div class="block">Creates a deobfuscator that loads symbol map files from the given directory. Symbol maps are
  generated into the location specified by the GWT compiler <code>-deploy</code> command line
  argument.</div>
@@ -284,6 +279,7 @@ extends java.lang.Object</pre>
 <h4>StackTraceDeobfuscator</h4>
 <pre>public&nbsp;StackTraceDeobfuscator(java.lang.String&nbsp;symbolMapsDirectory,
                       boolean&nbsp;lazyLoad)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <div class="block">Creates a deobfuscator that loads symbol map files from the given directory. Symbol maps are
  generated into the location specified by the GWT compiler <code>-deploy</code> command line
  argument.</div>
@@ -308,6 +304,7 @@ extends java.lang.Object</pre>
 <h4>deobfuscateLogRecord</h4>
 <pre>public&nbsp;java.util.logging.LogRecord&nbsp;deobfuscateLogRecord(java.util.logging.LogRecord&nbsp;lr,
                                                java.lang.String&nbsp;strongName)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <div class="block">Best effort resymbolization of a log record's stack trace.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>lr</code> - the log record to resymbolize</dd><dd><code>strongName</code> - the GWT permutation strong name</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the best effort resymbolized log record</dd></dl>
@@ -321,9 +318,7 @@ extends java.lang.Object</pre>
 <h4>deobfuscateStackTrace</h4>
 <pre>public&nbsp;java.lang.StackTraceElement[]&nbsp;deobfuscateStackTrace(java.lang.StackTraceElement[]&nbsp;st,
                                                   java.lang.String&nbsp;strongName)</pre>
-<div class="block">Convenience method which resymbolizes an entire stack trace to extent possible.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>st</code> - the stack trace to resymbolize</dd><dd><code>strongName</code> - the GWT permutation strong name</dd>
-<dt><span class="strong">Returns:</span></dt><dd>a best effort resymbolized stack trace</dd></dl>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="deobfuscateThrowable(java.lang.Throwable, java.lang.String)">
@@ -334,19 +329,7 @@ extends java.lang.Object</pre>
 <h4>deobfuscateThrowable</h4>
 <pre>public&nbsp;java.lang.Throwable&nbsp;deobfuscateThrowable(java.lang.Throwable&nbsp;old,
                                        java.lang.String&nbsp;strongName)</pre>
-</li>
-</ul>
-<a name="resymbolize(java.lang.StackTraceElement, java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>resymbolize</h4>
-<pre>public&nbsp;java.lang.StackTraceElement&nbsp;resymbolize(java.lang.StackTraceElement&nbsp;ste,
-                                      java.lang.String&nbsp;strongName)</pre>
-<div class="block">Best effort resymbolization of a single stack trace element.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ste</code> - the stack trace element to resymbolize</dd><dd><code>strongName</code> - the GWT permutation strong name</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the best effort resymbolized stack trace element</dd></dl>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="setSymbolMapsDirectory(java.lang.String)">
@@ -355,37 +338,31 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setSymbolMapsDirectory</h4>
-<pre>public&nbsp;void&nbsp;setSymbolMapsDirectory(java.lang.String&nbsp;symbolMapsDirectory)</pre>
+<pre>@Deprecated
+public&nbsp;void&nbsp;setSymbolMapsDirectory(java.lang.String&nbsp;symbolMapsDirectory)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>The behavior of changing symbol map after construction is undefined, please provide
+             it in construction time. If the directory needs to be changed after construction, a
+             new instance of this class can be instantiated with the different one.</i></div>
 </li>
 </ul>
-<a name="getSourceMapInputStream(java.lang.String, int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getSourceMapInputStream</h4>
-<pre>protected&nbsp;java.io.InputStream&nbsp;getSourceMapInputStream(java.lang.String&nbsp;permutationStrongName,
-                                          int&nbsp;fragmentNumber)
-                                               throws java.io.IOException</pre>
-<dl><dt><span class="strong">Throws:</span></dt>
-<dd><code>java.io.IOException</code></dd></dl>
-</li>
-</ul>
-<a name="getSymbolMapInputStream(java.lang.String)">
+<a name="openInputStream(java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getSymbolMapInputStream</h4>
-<pre>protected&nbsp;java.io.InputStream&nbsp;getSymbolMapInputStream(java.lang.String&nbsp;permutationStrongName)
-                                               throws java.io.IOException</pre>
-<div class="block">Retrieves a new <code>InputStream</code> for the given permutation strong name. This implementation,
- which subclasses may override, returns a <code>InputStream</code> for the <code>
- <i>permutation-strong-name</i>.symbolMap</code> file in the <code>symbolMaps</code> directory.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>permutationStrongName</code> - the GWT permutation strong name</dd>
-<dt><span class="strong">Returns:</span></dt><dd>a new <code>InputStream</code></dd>
+<h4>openInputStream</h4>
+<pre>protected&nbsp;java.io.InputStream&nbsp;openInputStream(java.lang.String&nbsp;fileName)
+                                       throws java.io.IOException</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html#openInputStream(java.lang.String)">StackTraceDeobfuscator</a></code></strong></div>
+<div class="block">Opens a new <code>InputStream</code> for a symbol or source map file.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html#openInputStream(java.lang.String)">openInputStream</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/core/server/StackTraceDeobfuscator.html" title="class in com.google.gwt.core.server">StackTraceDeobfuscator</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>fileName</code> - name of the symbol or source map file</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an input stream for reading the file (doesn't need to be buffered).</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code>java.io.IOException</code></dd></dl>
+<dd><code>java.io.IOException</code> - if an I/O error occurs while creating the input stream.</dd></dl>
 </li>
 </ul>
 </li>
@@ -409,7 +386,7 @@ extends java.lang.Object</pre>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

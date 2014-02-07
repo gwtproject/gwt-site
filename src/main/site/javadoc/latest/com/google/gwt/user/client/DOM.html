@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>DOM (Google Web Toolkit Javadoc)</title>
+<title>DOM (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="DOM (Google Web Toolkit Javadoc)";
+        parent.document.title="DOM (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -164,136 +164,143 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#appendChild(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)">appendChild</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
-           <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;child)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#appendChild(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">appendChild</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
+           <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child)</code>
 <div class="block">Appends one element to another's list of children.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#clone(com.google.gwt.user.client.Element, boolean)">clone</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#asOld(com.google.gwt.dom.client.Element)">asOld</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block">Provided as a convenient way to upcast values statically typed as
+ <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client"><code>Element</code></a> to <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client"><code>Element</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#clone(com.google.gwt.dom.client.Element, boolean)">clone</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
      boolean&nbsp;deep)</code>
 <div class="block">Clones an element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#compare(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)">compare</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem1,
-       <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem2)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#compare(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">compare</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem1,
+       <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem2)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
 <div class="block"><i>Use identity comparison.</i></div>
 </div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createAnchor()">createAnchor</a></strong>()</code>
 <div class="block">Creates an HTML A element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createButton()">createButton</a></strong>()</code>
 <div class="block">Creates an HTML BUTTON element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createCaption()">createCaption</a></strong>()</code>
 <div class="block">Creates an HTML CAPTION element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createCol()">createCol</a></strong>()</code>
 <div class="block">Creates an HTML COL element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createColGroup()">createColGroup</a></strong>()</code>
 <div class="block">Creates an HTML COLGROUP element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createDiv()">createDiv</a></strong>()</code>
 <div class="block">Creates an HTML DIV element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createElement(java.lang.String)">createElement</a></strong>(java.lang.String&nbsp;tagName)</code>
 <div class="block">Creates an HTML element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createFieldSet()">createFieldSet</a></strong>()</code>
 <div class="block">Creates an HTML FIELDSET element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createForm()">createForm</a></strong>()</code>
 <div class="block">Creates an HTML FORM element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createIFrame()">createIFrame</a></strong>()</code>
 <div class="block">Creates an HTML IFRAME element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createImg()">createImg</a></strong>()</code>
 <div class="block">Creates an HTML IMG element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createInputCheck()">createInputCheck</a></strong>()</code>
 <div class="block">Creates an HTML INPUT type='CHECK' element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createInputPassword()">createInputPassword</a></strong>()</code>
 <div class="block">Creates an HTML INPUT type='PASSWORD' element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createInputRadio(java.lang.String)">createInputRadio</a></strong>(java.lang.String&nbsp;name)</code>
 <div class="block">Creates an HTML INPUT type='RADIO' element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createInputText()">createInputText</a></strong>()</code>
 <div class="block">Creates an HTML INPUT type='TEXT' element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createLabel()">createLabel</a></strong>()</code>
 <div class="block">Creates an HTML LABEL element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createLegend()">createLegend</a></strong>()</code>
 <div class="block">Creates an HTML LEGEND element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createOption()">createOption</a></strong>()</code>
 <div class="block">Creates an HTML OPTION element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createOptions()">createOptions</a></strong>()</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
@@ -302,82 +309,90 @@ extends java.lang.Object</pre>
 </div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createSelect()">createSelect</a></strong>()</code>
 <div class="block">Creates a single-selection HTML SELECT element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createSelect(boolean)">createSelect</a></strong>(boolean&nbsp;multiple)</code>
 <div class="block">Creates an HTML SELECT element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createSpan()">createSpan</a></strong>()</code>
 <div class="block">Creates an HTML SPAN element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createTable()">createTable</a></strong>()</code>
 <div class="block">Creates an HTML TABLE element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createTBody()">createTBody</a></strong>()</code>
 <div class="block">Creates an HTML TBODY element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createTD()">createTD</a></strong>()</code>
 <div class="block">Creates an HTML TD element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createTextArea()">createTextArea</a></strong>()</code>
 <div class="block">Creates an HTML TEXTAREA element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createTFoot()">createTFoot</a></strong>()</code>
 <div class="block">Creates an HTML TFOOT element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createTH()">createTH</a></strong>()</code>
 <div class="block">Creates an HTML TH element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createTHead()">createTHead</a></strong>()</code>
 <div class="block">Creates an HTML THEAD element.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createTR()">createTR</a></strong>()</code>
 <div class="block">Creates an HTML TR element.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#createUniqueId()">createUniqueId</a></strong>()</code>
 <div class="block">Generates a unique DOM id.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#dispatchEvent(com.google.gwt.user.client.Event, com.google.gwt.dom.client.Element)">dispatchEvent</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt,
+             <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block">This method is a similar to <a href="../../../../../com/google/gwt/user/client/DOM.html#dispatchEvent(com.google.gwt.user.client.Event, com.google.gwt.dom.client.Element, com.google.gwt.user.client.EventListener)"><code>dispatchEvent(Event, Element, EventListener)</code></a> but only
+ dispatches if an event listener is set to element.</div>
+</td>
+</tr>
 <tr class="rowColor">
-<td class="colFirst"><code>(package private) static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#dispatchEvent(com.google.gwt.user.client.Event, com.google.gwt.user.client.Element, com.google.gwt.user.client.EventListener)">dispatchEvent</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt,
-             <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#dispatchEvent(com.google.gwt.user.client.Event, com.google.gwt.dom.client.Element, com.google.gwt.user.client.EventListener)">dispatchEvent</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt,
+             <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
              <a href="../../../../../com/google/gwt/user/client/EventListener.html" title="interface in com.google.gwt.user.client">EventListener</a>&nbsp;listener)</code>
 <div class="block">This method is called directly by native code when any event is fired.</div>
 </td>
@@ -392,31 +407,41 @@ extends java.lang.Object</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventGetAltKey(com.google.gwt.user.client.Event)">eventGetAltKey</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Gets whether the ALT key was depressed when the given event occurred.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getAltKey()"><code>NativeEvent.getAltKey()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventGetButton(com.google.gwt.user.client.Event)">eventGetButton</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Gets the mouse buttons that were depressed when the given event occurred.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getButton()"><code>NativeEvent.getButton()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventGetClientX(com.google.gwt.user.client.Event)">eventGetClientX</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Gets the mouse x-position within the browser window's client area.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getClientX()"><code>NativeEvent.getClientX()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventGetClientY(com.google.gwt.user.client.Event)">eventGetClientY</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Gets the mouse y-position within the browser window's client area.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getClientY()"><code>NativeEvent.getClientY()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventGetCtrlKey(com.google.gwt.user.client.Event)">eventGetCtrlKey</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Gets whether the CTRL key was depressed when the given event occurred.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getCtrlKey()"><code>NativeEvent.getCtrlKey()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -441,20 +466,25 @@ extends java.lang.Object</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventGetKeyCode(com.google.gwt.user.client.Event)">eventGetKeyCode</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Gets the key code associated with this event.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getKeyCode()"><code>NativeEvent.getKeyCode()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventGetMetaKey(com.google.gwt.user.client.Event)">eventGetMetaKey</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Gets whether the META key was depressed when the given event occurred.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getMetaKey()"><code>NativeEvent.getMetaKey()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventGetMouseWheelVelocityY(com.google.gwt.user.client.Event)">eventGetMouseWheelVelocityY</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Gets the velocity of the mouse wheel associated with the event along the Y
- axis.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getMouseWheelVelocityY()"><code>NativeEvent.getMouseWheelVelocityY()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -468,19 +498,25 @@ extends java.lang.Object</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventGetScreenX(com.google.gwt.user.client.Event)">eventGetScreenX</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Gets the mouse x-position on the user's display.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getScreenX()"><code>NativeEvent.getScreenX()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventGetScreenY(com.google.gwt.user.client.Event)">eventGetScreenY</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Gets the mouse y-position on the user's display.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getScreenY()"><code>NativeEvent.getScreenY()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventGetShiftKey(com.google.gwt.user.client.Event)">eventGetShiftKey</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Gets whether the shift key was depressed when the given event occurred.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getShiftKey()"><code>NativeEvent.getShiftKey()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -505,13 +541,17 @@ extends java.lang.Object</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventGetTypeString(com.google.gwt.user.client.Event)">eventGetTypeString</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Gets the type of the given event as a string.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getType()"><code>NativeEvent.getType()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventPreventDefault(com.google.gwt.user.client.Event)">eventPreventDefault</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Prevents the browser from taking its default action for the given event.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#preventDefault()"><code>NativeEvent.preventDefault()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -527,40 +567,44 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#eventToString(com.google.gwt.user.client.Event)">eventToString</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
-<div class="block">Returns a stringized version of the event.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getString()"><code>NativeEvent.getString()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getAbsoluteLeft(com.google.gwt.user.client.Element)">getAbsoluteLeft</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
-<div class="block">Gets an element's absolute left coordinate in the document's coordinate
- system.</div>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getAbsoluteLeft(com.google.gwt.dom.client.Element)">getAbsoluteLeft</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getAbsoluteLeft()"><code>Element.getAbsoluteLeft()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getAbsoluteTop(com.google.gwt.user.client.Element)">getAbsoluteTop</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
-<div class="block">Gets an element's absolute top coordinate in the document's coordinate
- system.</div>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getAbsoluteTop(com.google.gwt.dom.client.Element)">getAbsoluteTop</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getAbsoluteTop()"><code>Element.getAbsoluteTop()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getAttribute(com.google.gwt.user.client.Element, java.lang.String)">getAttribute</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getAttribute(com.google.gwt.dom.client.Element, java.lang.String)">getAttribute</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
             java.lang.String&nbsp;attr)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
 <div class="block"><i>Use the more appropriately named
-             <a href="../../../../../com/google/gwt/user/client/DOM.html#getElementProperty(com.google.gwt.user.client.Element, java.lang.String)"><code>getElementProperty(Element, String)</code></a> instead.</i></div>
+             <a href="../../../../../com/google/gwt/dom/client/Element.html#getPropertyString(java.lang.String)"><code>Element.getPropertyString(String)</code></a> instead.</i></div>
 </div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getBooleanAttribute(com.google.gwt.user.client.Element, java.lang.String)">getBooleanAttribute</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getBooleanAttribute(com.google.gwt.dom.client.Element, java.lang.String)">getBooleanAttribute</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                    java.lang.String&nbsp;attr)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
 <div class="block"><i>Use the more appropriately named
-             <a href="../../../../../com/google/gwt/user/client/DOM.html#getElementPropertyBoolean(com.google.gwt.user.client.Element, java.lang.String)"><code>getElementPropertyBoolean(Element, String)</code></a> instead.</i></div>
+             <a href="../../../../../com/google/gwt/dom/client/Element.html#getPropertyBoolean(java.lang.String)"><code>Element.getPropertyBoolean(String)</code></a> instead.</i></div>
 </div>
 </td>
 </tr>
@@ -572,29 +616,31 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getChild(com.google.gwt.user.client.Element, int)">getChild</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getChild(com.google.gwt.dom.client.Element, int)">getChild</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
         int&nbsp;index)</code>
 <div class="block">Gets an element's n-th child element.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getChildCount(com.google.gwt.user.client.Element)">getChildCount</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getChildCount(com.google.gwt.dom.client.Element)">getChildCount</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</code>
 <div class="block">Gets the number of child elements present in a given parent element.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getChildIndex(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)">getChildIndex</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
-             <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;child)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getChildIndex(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">getChildIndex</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
+             <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child)</code>
 <div class="block">Gets the index of a given child element within its parent.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getElementAttribute(com.google.gwt.user.client.Element, java.lang.String)">getElementAttribute</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getElementAttribute(com.google.gwt.dom.client.Element, java.lang.String)">getElementAttribute</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                    java.lang.String&nbsp;attr)</code>
-<div class="block">Gets the named attribute from the element.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getAttribute(java.lang.String)"><code>Element.getAttribute(String)</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -606,118 +652,131 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getElementProperty(com.google.gwt.user.client.Element, java.lang.String)">getElementProperty</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getElementProperty(com.google.gwt.dom.client.Element, java.lang.String)">getElementProperty</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                   java.lang.String&nbsp;prop)</code>
-<div class="block">Gets any named property from an element, as a string.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <code>Element#getProperty(String)</code> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getElementPropertyBoolean(com.google.gwt.user.client.Element, java.lang.String)">getElementPropertyBoolean</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getElementPropertyBoolean(com.google.gwt.dom.client.Element, java.lang.String)">getElementPropertyBoolean</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                          java.lang.String&nbsp;prop)</code>
-<div class="block">Gets any named property from an element, as a boolean.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getPropertyBoolean(java.lang.String)"><code>Element.getPropertyBoolean(String)</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getElementPropertyInt(com.google.gwt.user.client.Element, java.lang.String)">getElementPropertyInt</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getElementPropertyInt(com.google.gwt.dom.client.Element, java.lang.String)">getElementPropertyInt</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                      java.lang.String&nbsp;prop)</code>
-<div class="block">Gets any named property from an element, as an int.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getPropertyInt(java.lang.String)"><code>Element.getPropertyInt(String)</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/EventListener.html" title="interface in com.google.gwt.user.client">EventListener</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getEventListener(com.google.gwt.user.client.Element)">getEventListener</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getEventListener(com.google.gwt.dom.client.Element)">getEventListener</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
 <div class="block">Gets the <a href="../../../../../com/google/gwt/user/client/EventListener.html" title="interface in com.google.gwt.user.client"><code>EventListener</code></a> that will receive events for the given
  element.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getEventsSunk(com.google.gwt.user.client.Element)">getEventsSunk</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getEventsSunk(com.google.gwt.dom.client.Element)">getEventsSunk</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
 <div class="block">Gets the current set of events sunk by a given element.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getFirstChild(com.google.gwt.user.client.Element)">getFirstChild</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getFirstChild(com.google.gwt.dom.client.Element)">getFirstChild</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
 <div class="block">Gets the first child element of the given element.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getImgSrc(com.google.gwt.user.client.Element)">getImgSrc</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;img)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getImgSrc(com.google.gwt.dom.client.Element)">getImgSrc</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;img)</code>
 <div class="block">Gets the src attribute of an img element.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getInnerHTML(com.google.gwt.user.client.Element)">getInnerHTML</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
-<div class="block">Gets an HTML representation of an element's children.</div>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getInnerHTML(com.google.gwt.dom.client.Element)">getInnerHTML</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getInnerHTML()"><code>Element.getInnerHTML()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getInnerText(com.google.gwt.user.client.Element)">getInnerText</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
-<div class="block">Gets the text contained within an element.</div>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getInnerText(com.google.gwt.dom.client.Element)">getInnerText</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getInnerText()"><code>Element.getInnerText()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getIntAttribute(com.google.gwt.user.client.Element, java.lang.String)">getIntAttribute</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getIntAttribute(com.google.gwt.dom.client.Element, java.lang.String)">getIntAttribute</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                java.lang.String&nbsp;attr)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
 <div class="block"><i>Use the more appropriately named
-             <a href="../../../../../com/google/gwt/user/client/DOM.html#getElementPropertyInt(com.google.gwt.user.client.Element, java.lang.String)"><code>getElementPropertyInt(Element, String)</code></a> instead.</i></div>
+             <a href="../../../../../com/google/gwt/dom/client/Element.html#getPropertyInt(java.lang.String)"><code>Element.getPropertyInt(String)</code></a> instead.</i></div>
 </div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getIntStyleAttribute(com.google.gwt.user.client.Element, java.lang.String)">getIntStyleAttribute</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getIntStyleAttribute(com.google.gwt.dom.client.Element, java.lang.String)">getIntStyleAttribute</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                     java.lang.String&nbsp;attr)</code>
 <div class="block">Gets an integer attribute on a given element's style.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getNextSibling(com.google.gwt.user.client.Element)">getNextSibling</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getNextSibling(com.google.gwt.dom.client.Element)">getNextSibling</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
 <div class="block">Gets an element's next sibling element.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getParent(com.google.gwt.user.client.Element)">getParent</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getParent(com.google.gwt.dom.client.Element)">getParent</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
 <div class="block">Gets an element's parent element.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getStyleAttribute(com.google.gwt.user.client.Element, java.lang.String)">getStyleAttribute</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#getStyleAttribute(com.google.gwt.dom.client.Element, java.lang.String)">getStyleAttribute</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                  java.lang.String&nbsp;attr)</code>
-<div class="block">Gets an attribute of the given element's style.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getStyle()"><code>Element.getStyle()</code></a> and
+             <code>Style#getProperty(String)</code> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#insertBefore(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)">insertBefore</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
-            <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;child,
-            <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;before)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#insertBefore(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">insertBefore</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
+            <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child,
+            <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;before)</code>
 <div class="block">Inserts an element as a child of the given parent element, before another
  child of that parent.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#insertChild(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element, int)">insertChild</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
-           <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;child,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#insertChild(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element, int)">insertChild</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
+           <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child,
            int&nbsp;index)</code>
 <div class="block">Inserts an element as a child of the given parent element.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#insertListItem(com.google.gwt.user.client.Element, java.lang.String, java.lang.String, int)">insertListItem</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;selectElem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#insertListItem(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String, int)">insertListItem</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;selectElem,
               java.lang.String&nbsp;item,
               java.lang.String&nbsp;value,
               int&nbsp;index)</code>
@@ -727,9 +786,11 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#isOrHasChild(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)">isOrHasChild</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
-            <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;child)</code>
-<div class="block">Determine whether one element is equal to, or the child of, another.</div>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#isOrHasChild(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">isOrHasChild</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
+            <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <code>Element#isOrHasChild(Element)</code> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -739,7 +800,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>(package private) static boolean</code></td>
+<td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#previewEvent(com.google.gwt.user.client.Event)">previewEvent</a></strong>(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</code>
 <div class="block">This method is called directly by native code when event preview is being
  used.</div>
@@ -747,22 +808,26 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#releaseCapture(com.google.gwt.user.client.Element)">releaseCapture</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#releaseCapture(com.google.gwt.dom.client.Element)">releaseCapture</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
 <div class="block">Releases mouse/touch/gesture capture on the given element.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#removeChild(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)">removeChild</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
-           <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;child)</code>
-<div class="block">Removes a child element from the given parent element.</div>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#removeChild(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">removeChild</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
+           <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <code>Element#removeChild(Element)</code> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#removeElementAttribute(com.google.gwt.user.client.Element, java.lang.String)">removeElementAttribute</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#removeElementAttribute(com.google.gwt.dom.client.Element, java.lang.String)">removeElementAttribute</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                       java.lang.String&nbsp;attr)</code>
-<div class="block">Removes the named attribute from the given element.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#removeAttribute(java.lang.String)"><code>Element.removeAttribute(String)</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -777,113 +842,127 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#scrollIntoView(com.google.gwt.user.client.Element)">scrollIntoView</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
-<div class="block">Scrolls the given element into view.</div>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#scrollIntoView(com.google.gwt.dom.client.Element)">scrollIntoView</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#scrollIntoView()"><code>Element.scrollIntoView()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setAttribute(com.google.gwt.user.client.Element, java.lang.String, java.lang.String)">setAttribute</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setAttribute(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">setAttribute</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
             java.lang.String&nbsp;attr,
             java.lang.String&nbsp;value)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
 <div class="block"><i>Use the more appropriately named
-             <a href="../../../../../com/google/gwt/user/client/DOM.html#setElementProperty(com.google.gwt.user.client.Element, java.lang.String, java.lang.String)"><code>setElementProperty(Element, String, String)</code></a> instead.</i></div>
+             <a href="../../../../../com/google/gwt/dom/client/Element.html#setPropertyString(java.lang.String, java.lang.String)"><code>Element.setPropertyString(String, String)</code></a> instead.</i></div>
 </div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setBooleanAttribute(com.google.gwt.user.client.Element, java.lang.String, boolean)">setBooleanAttribute</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setBooleanAttribute(com.google.gwt.dom.client.Element, java.lang.String, boolean)">setBooleanAttribute</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                    java.lang.String&nbsp;attr,
                    boolean&nbsp;value)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
 <div class="block"><i>Use the more appropriately named
-             <a href="../../../../../com/google/gwt/user/client/DOM.html#setElementPropertyBoolean(com.google.gwt.user.client.Element, java.lang.String, boolean)"><code>setElementPropertyBoolean(Element, String, boolean)</code></a>
+             <a href="../../../../../com/google/gwt/dom/client/Element.html#setPropertyBoolean(java.lang.String, boolean)"><code>Element.setPropertyBoolean(String, boolean)</code></a>
              instead.</i></div>
 </div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setCapture(com.google.gwt.user.client.Element)">setCapture</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setCapture(com.google.gwt.dom.client.Element)">setCapture</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
 <div class="block">Sets mouse/touch/gesture capture on the given element.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setElementAttribute(com.google.gwt.user.client.Element, java.lang.String, java.lang.String)">setElementAttribute</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setElementAttribute(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">setElementAttribute</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                    java.lang.String&nbsp;attr,
                    java.lang.String&nbsp;value)</code>
-<div class="block">Sets an attribute on a given element.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#setAttribute(java.lang.String, java.lang.String)"><code>Element.setAttribute(String, String)</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setElementProperty(com.google.gwt.user.client.Element, java.lang.String, java.lang.String)">setElementProperty</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setElementProperty(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">setElementProperty</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                   java.lang.String&nbsp;prop,
                   java.lang.String&nbsp;value)</code>
-<div class="block">Sets a property on the given element.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#setPropertyString(java.lang.String, java.lang.String)"><code>Element.setPropertyString(String, String)</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setElementPropertyBoolean(com.google.gwt.user.client.Element, java.lang.String, boolean)">setElementPropertyBoolean</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setElementPropertyBoolean(com.google.gwt.dom.client.Element, java.lang.String, boolean)">setElementPropertyBoolean</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                          java.lang.String&nbsp;prop,
                          boolean&nbsp;value)</code>
-<div class="block">Sets a boolean property on the given element.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#setPropertyBoolean(java.lang.String, boolean)"><code>Element.setPropertyBoolean(String, boolean)</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setElementPropertyInt(com.google.gwt.user.client.Element, java.lang.String, int)">setElementPropertyInt</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setElementPropertyInt(com.google.gwt.dom.client.Element, java.lang.String, int)">setElementPropertyInt</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                      java.lang.String&nbsp;prop,
                      int&nbsp;value)</code>
-<div class="block">Sets an int property on the given element.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#setPropertyInt(java.lang.String, int)"><code>Element.setPropertyInt(String, int)</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setEventListener(com.google.gwt.user.client.Element, com.google.gwt.user.client.EventListener)">setEventListener</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setEventListener(com.google.gwt.dom.client.Element, com.google.gwt.user.client.EventListener)">setEventListener</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                 <a href="../../../../../com/google/gwt/user/client/EventListener.html" title="interface in com.google.gwt.user.client">EventListener</a>&nbsp;listener)</code>
 <div class="block">Sets the <a href="../../../../../com/google/gwt/user/client/EventListener.html" title="interface in com.google.gwt.user.client"><code>EventListener</code></a> to receive events for the given element.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setImgSrc(com.google.gwt.user.client.Element, java.lang.String)">setImgSrc</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;img,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setImgSrc(com.google.gwt.dom.client.Element, java.lang.String)">setImgSrc</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;img,
          java.lang.String&nbsp;src)</code>
 <div class="block">Sets the src attribute of an img element.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setInnerHTML(com.google.gwt.user.client.Element, java.lang.String)">setInnerHTML</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setInnerHTML(com.google.gwt.dom.client.Element, java.lang.String)">setInnerHTML</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
             java.lang.String&nbsp;html)</code>
-<div class="block">Sets the HTML contained within an element.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setInnerText(com.google.gwt.user.client.Element, java.lang.String)">setInnerText</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-            java.lang.String&nbsp;text)</code>
-<div class="block">Sets the text contained within an element.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setIntAttribute(com.google.gwt.user.client.Element, java.lang.String, int)">setIntAttribute</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-               java.lang.String&nbsp;attr,
-               int&nbsp;value)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
-<div class="block"><i>Use the more appropriately named
-             <a href="../../../../../com/google/gwt/user/client/DOM.html#setElementPropertyInt(com.google.gwt.user.client.Element, java.lang.String, int)"><code>setElementPropertyInt(Element, String, int)</code></a> instead.</i></div>
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#setInnerHTML(java.lang.String)"><code>Element.setInnerHTML(String)</code></a> instead.</i></div>
 </div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setIntStyleAttribute(com.google.gwt.user.client.Element, java.lang.String, int)">setIntStyleAttribute</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setInnerText(com.google.gwt.dom.client.Element, java.lang.String)">setInnerText</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+            java.lang.String&nbsp;text)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#setInnerText(java.lang.String)"><code>Element.setInnerText(String)</code></a> instead.</i></div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setIntAttribute(com.google.gwt.dom.client.Element, java.lang.String, int)">setIntAttribute</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+               java.lang.String&nbsp;attr,
+               int&nbsp;value)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use the more appropriately named
+             <a href="../../../../../com/google/gwt/dom/client/Element.html#setPropertyInt(java.lang.String, int)"><code>Element.setPropertyInt(String, int)</code></a> instead.</i></div>
+</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setIntStyleAttribute(com.google.gwt.dom.client.Element, java.lang.String, int)">setIntStyleAttribute</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                     java.lang.String&nbsp;attr,
                     int&nbsp;value)</code>
 <div class="block">Sets an integer attribute on the given element's style.</div>
@@ -891,7 +970,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setOptionText(com.google.gwt.user.client.Element, java.lang.String, int)">setOptionText</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;select,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setOptionText(com.google.gwt.dom.client.Element, java.lang.String, int)">setOptionText</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;select,
              java.lang.String&nbsp;text,
              int&nbsp;index)</code>
 <div class="block">Sets the option text of the given select object.</div>
@@ -899,30 +978,35 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setStyleAttribute(com.google.gwt.user.client.Element, java.lang.String, java.lang.String)">setStyleAttribute</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#setStyleAttribute(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">setStyleAttribute</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                  java.lang.String&nbsp;attr,
                  java.lang.String&nbsp;value)</code>
-<div class="block">Sets an attribute on the given element's style.</div>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getStyle()"><code>Element.getStyle()</code></a> and
+             <code>Style#setProperty(String, String)</code> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#sinkBitlessEvent(com.google.gwt.user.client.Element, java.lang.String)">sinkBitlessEvent</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#sinkBitlessEvent(com.google.gwt.dom.client.Element, java.lang.String)">sinkBitlessEvent</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                 java.lang.String&nbsp;eventTypeName)</code>
 <div class="block">Sinks a named event.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#sinkEvents(com.google.gwt.user.client.Element, int)">sinkEvents</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#sinkEvents(com.google.gwt.dom.client.Element, int)">sinkEvents</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
           int&nbsp;eventBits)</code>
 <div class="block">Sets the current set of events sunk by a given element.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#toString(com.google.gwt.user.client.Element)">toString</a></strong>(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</code>
-<div class="block">Returns a stringized version of the element.</div>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/user/client/DOM.html#toString(com.google.gwt.dom.client.Element)">toString</a></strong>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getString()"><code>Element.getString()</code></a> instead.</i></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -1015,14 +1099,14 @@ public static&nbsp;void&nbsp;addEventPreview(<a href="../../../../../com/google/
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>preview</code> - the event preview to be added to the stack.</dd></dl>
 </li>
 </ul>
-<a name="appendChild(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)">
+<a name="appendChild(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>appendChild</h4>
-<pre>public static&nbsp;void&nbsp;appendChild(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
-               <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;child)</pre>
+<pre>public static&nbsp;void&nbsp;appendChild(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
+               <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child)</pre>
 <div class="block">Appends one element to another's list of children.
  <p>
  If the child element is a <a href="../../../../../com/google/gwt/user/client/ui/PotentialElement.html" title="class in com.google.gwt.user.client.ui"><code>PotentialElement</code></a>, it is first
@@ -1031,27 +1115,27 @@ public static&nbsp;void&nbsp;addEventPreview(<a href="../../../../../com/google/
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>parent</code> - the parent element</dd><dd><code>child</code> - its new child</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../com/google/gwt/user/client/ui/PotentialElement.html#resolve(com.google.gwt.dom.client.Element)"><code>PotentialElement.resolve(Element)</code></a></dd></dl>
 </li>
 </ul>
-<a name="clone(com.google.gwt.user.client.Element, boolean)">
+<a name="clone(com.google.gwt.dom.client.Element, boolean)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>clone</h4>
-<pre>public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;clone(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<pre>public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;clone(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
             boolean&nbsp;deep)</pre>
 <div class="block">Clones an element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element to be cloned</dd><dd><code>deep</code> - should children be cloned as well?</dd></dl>
 </li>
 </ul>
-<a name="compare(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)">
+<a name="compare(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>compare</h4>
 <pre>@Deprecated
-public static&nbsp;boolean&nbsp;compare(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem1,
-                         <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem2)</pre>
+public static&nbsp;boolean&nbsp;compare(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem1,
+                         <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem2)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use identity comparison.</i></div>
 <div class="block">Compares two elements for equality. Note that this method is now deprecated
  because reference identity accurately reports equality.</div>
@@ -1430,7 +1514,9 @@ public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>eventGetAltKey</h4>
-<pre>public static&nbsp;boolean&nbsp;eventGetAltKey(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;boolean&nbsp;eventGetAltKey(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getAltKey()"><code>NativeEvent.getAltKey()</code></a> instead.</i></div>
 <div class="block">Gets whether the ALT key was depressed when the given event occurred.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the event to be tested</dd>
 <dt><span class="strong">Returns:</span></dt><dd><code>true</code> if ALT was depressed when the event occurred</dd></dl>
@@ -1442,7 +1528,9 @@ public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>eventGetButton</h4>
-<pre>public static&nbsp;int&nbsp;eventGetButton(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;int&nbsp;eventGetButton(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getButton()"><code>NativeEvent.getButton()</code></a> instead.</i></div>
 <div class="block">Gets the mouse buttons that were depressed when the given event occurred.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the event to be tested</dd>
 <dt><span class="strong">Returns:</span></dt><dd>a bit-field, defined by <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#BUTTON_LEFT"><code>NativeEvent.BUTTON_LEFT</code></a>,
@@ -1455,7 +1543,9 @@ public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>eventGetClientX</h4>
-<pre>public static&nbsp;int&nbsp;eventGetClientX(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;int&nbsp;eventGetClientX(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getClientX()"><code>NativeEvent.getClientX()</code></a> instead.</i></div>
 <div class="block">Gets the mouse x-position within the browser window's client area.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the event to be tested</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the mouse x-position</dd></dl>
@@ -1467,7 +1557,9 @@ public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>eventGetClientY</h4>
-<pre>public static&nbsp;int&nbsp;eventGetClientY(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;int&nbsp;eventGetClientY(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getClientY()"><code>NativeEvent.getClientY()</code></a> instead.</i></div>
 <div class="block">Gets the mouse y-position within the browser window's client area.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the event to be tested</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the mouse y-position</dd></dl>
@@ -1479,7 +1571,9 @@ public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>eventGetCtrlKey</h4>
-<pre>public static&nbsp;boolean&nbsp;eventGetCtrlKey(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;boolean&nbsp;eventGetCtrlKey(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getCtrlKey()"><code>NativeEvent.getCtrlKey()</code></a> instead.</i></div>
 <div class="block">Gets whether the CTRL key was depressed when the given event occurred.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the event to be tested</dd>
 <dt><span class="strong">Returns:</span></dt><dd><code>true</code> if CTRL was depressed when the event occurred</dd></dl>
@@ -1530,7 +1624,9 @@ public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>eventGetKeyCode</h4>
-<pre>public static&nbsp;int&nbsp;eventGetKeyCode(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;int&nbsp;eventGetKeyCode(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getKeyCode()"><code>NativeEvent.getKeyCode()</code></a> instead.</i></div>
 <div class="block">Gets the key code associated with this event.
  
  <p>
@@ -1548,7 +1644,9 @@ public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>eventGetMetaKey</h4>
-<pre>public static&nbsp;boolean&nbsp;eventGetMetaKey(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;boolean&nbsp;eventGetMetaKey(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getMetaKey()"><code>NativeEvent.getMetaKey()</code></a> instead.</i></div>
 <div class="block">Gets whether the META key was depressed when the given event occurred.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the event to be tested</dd>
 <dt><span class="strong">Returns:</span></dt><dd><code>true</code> if META was depressed when the event occurred</dd></dl>
@@ -1560,7 +1658,9 @@ public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>eventGetMouseWheelVelocityY</h4>
-<pre>public static&nbsp;int&nbsp;eventGetMouseWheelVelocityY(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;int&nbsp;eventGetMouseWheelVelocityY(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getMouseWheelVelocityY()"><code>NativeEvent.getMouseWheelVelocityY()</code></a> instead.</i></div>
 <div class="block">Gets the velocity of the mouse wheel associated with the event along the Y
  axis.
  <p>
@@ -1595,7 +1695,9 @@ public static&nbsp;boolean&nbsp;eventGetRepeat(<a href="../../../../../com/googl
 <ul class="blockList">
 <li class="blockList">
 <h4>eventGetScreenX</h4>
-<pre>public static&nbsp;int&nbsp;eventGetScreenX(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;int&nbsp;eventGetScreenX(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getScreenX()"><code>NativeEvent.getScreenX()</code></a> instead.</i></div>
 <div class="block">Gets the mouse x-position on the user's display.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the event to be tested</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the mouse x-position</dd></dl>
@@ -1607,7 +1709,9 @@ public static&nbsp;boolean&nbsp;eventGetRepeat(<a href="../../../../../com/googl
 <ul class="blockList">
 <li class="blockList">
 <h4>eventGetScreenY</h4>
-<pre>public static&nbsp;int&nbsp;eventGetScreenY(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;int&nbsp;eventGetScreenY(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getScreenY()"><code>NativeEvent.getScreenY()</code></a> instead.</i></div>
 <div class="block">Gets the mouse y-position on the user's display.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the event to be tested</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the mouse y-position</dd></dl>
@@ -1619,7 +1723,9 @@ public static&nbsp;boolean&nbsp;eventGetRepeat(<a href="../../../../../com/googl
 <ul class="blockList">
 <li class="blockList">
 <h4>eventGetShiftKey</h4>
-<pre>public static&nbsp;boolean&nbsp;eventGetShiftKey(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;boolean&nbsp;eventGetShiftKey(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getShiftKey()"><code>NativeEvent.getShiftKey()</code></a> instead.</i></div>
 <div class="block">Gets whether the shift key was depressed when the given event occurred.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the event to be tested</dd>
 <dt><span class="strong">Returns:</span></dt><dd><code>true</code> if shift was depressed when the event occurred</dd></dl>
@@ -1668,7 +1774,9 @@ public static&nbsp;boolean&nbsp;eventGetRepeat(<a href="../../../../../com/googl
 <ul class="blockList">
 <li class="blockList">
 <h4>eventGetTypeString</h4>
-<pre>public static&nbsp;java.lang.String&nbsp;eventGetTypeString(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;java.lang.String&nbsp;eventGetTypeString(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getType()"><code>NativeEvent.getType()</code></a> instead.</i></div>
 <div class="block">Gets the type of the given event as a string.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the event to be tested</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the event's type name</dd></dl>
@@ -1680,7 +1788,9 @@ public static&nbsp;boolean&nbsp;eventGetRepeat(<a href="../../../../../com/googl
 <ul class="blockList">
 <li class="blockList">
 <h4>eventPreventDefault</h4>
-<pre>public static&nbsp;void&nbsp;eventPreventDefault(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;void&nbsp;eventPreventDefault(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#preventDefault()"><code>NativeEvent.preventDefault()</code></a> instead.</i></div>
 <div class="block">Prevents the browser from taking its default action for the given event.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the event whose default action is to be prevented</dd></dl>
 </li>
@@ -1706,69 +1816,75 @@ public static&nbsp;void&nbsp;eventSetKeyCode(<a href="../../../../../com/google/
 <ul class="blockList">
 <li class="blockList">
 <h4>eventToString</h4>
-<pre>public static&nbsp;java.lang.String&nbsp;eventToString(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>@Deprecated
+public static&nbsp;java.lang.String&nbsp;eventToString(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html#getString()"><code>NativeEvent.getString()</code></a> instead.</i></div>
 <div class="block">Returns a stringized version of the event. This string is for debugging
  purposes and will NOT be consistent on different browsers.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the event to stringize</dd>
 <dt><span class="strong">Returns:</span></dt><dd>a string form of the event</dd></dl>
 </li>
 </ul>
-<a name="getAbsoluteLeft(com.google.gwt.user.client.Element)">
+<a name="getAbsoluteLeft(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getAbsoluteLeft</h4>
-<pre>public static&nbsp;int&nbsp;getAbsoluteLeft(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>@Deprecated
+public static&nbsp;int&nbsp;getAbsoluteLeft(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getAbsoluteLeft()"><code>Element.getAbsoluteLeft()</code></a> instead.</i></div>
 <div class="block">Gets an element's absolute left coordinate in the document's coordinate
  system.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element to be measured</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the element's absolute left coordinate</dd></dl>
 </li>
 </ul>
-<a name="getAbsoluteTop(com.google.gwt.user.client.Element)">
+<a name="getAbsoluteTop(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getAbsoluteTop</h4>
-<pre>public static&nbsp;int&nbsp;getAbsoluteTop(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>@Deprecated
+public static&nbsp;int&nbsp;getAbsoluteTop(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getAbsoluteTop()"><code>Element.getAbsoluteTop()</code></a> instead.</i></div>
 <div class="block">Gets an element's absolute top coordinate in the document's coordinate
  system.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element to be measured</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the element's absolute top coordinate</dd></dl>
 </li>
 </ul>
-<a name="getAttribute(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="getAttribute(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getAttribute</h4>
 <pre>@Deprecated
-public static&nbsp;java.lang.String&nbsp;getAttribute(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+public static&nbsp;java.lang.String&nbsp;getAttribute(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                                        java.lang.String&nbsp;attr)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use the more appropriately named
-             <a href="../../../../../com/google/gwt/user/client/DOM.html#getElementProperty(com.google.gwt.user.client.Element, java.lang.String)"><code>getElementProperty(Element, String)</code></a> instead.</i></div>
-<div class="block">Gets any named attribute from an element, as a string.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose attribute is to be retrieved</dd><dd><code>attr</code> - the name of the attribute</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the attribute's value</dd></dl>
+             <a href="../../../../../com/google/gwt/dom/client/Element.html#getPropertyString(java.lang.String)"><code>Element.getPropertyString(String)</code></a> instead.</i></div>
+<div class="block">Gets any named property from an element, as a string.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose property is to be retrieved</dd><dd><code>attr</code> - the name of the property</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the property's value</dd></dl>
 </li>
 </ul>
-<a name="getBooleanAttribute(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="getBooleanAttribute(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getBooleanAttribute</h4>
 <pre>@Deprecated
-public static&nbsp;boolean&nbsp;getBooleanAttribute(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+public static&nbsp;boolean&nbsp;getBooleanAttribute(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                                      java.lang.String&nbsp;attr)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use the more appropriately named
-             <a href="../../../../../com/google/gwt/user/client/DOM.html#getElementPropertyBoolean(com.google.gwt.user.client.Element, java.lang.String)"><code>getElementPropertyBoolean(Element, String)</code></a> instead.</i></div>
-<div class="block">Gets a boolean attribute on the given element.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose attribute is to be set</dd><dd><code>attr</code> - the name of the attribute to be set</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the attribute's value as a boolean</dd></dl>
+             <a href="../../../../../com/google/gwt/dom/client/Element.html#getPropertyBoolean(java.lang.String)"><code>Element.getPropertyBoolean(String)</code></a> instead.</i></div>
+<div class="block">Gets a boolean property on the given element.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose property is to be set</dd><dd><code>attr</code> - the name of the property to be set</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the property's value as a boolean</dd></dl>
 </li>
 </ul>
 <a name="getCaptureElement()">
@@ -1783,53 +1899,55 @@ public static&nbsp;boolean&nbsp;getBooleanAttribute(<a href="../../../../../com/
          exists</dd></dl>
 </li>
 </ul>
-<a name="getChild(com.google.gwt.user.client.Element, int)">
+<a name="getChild(com.google.gwt.dom.client.Element, int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getChild</h4>
-<pre>public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;getChild(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
+<pre>public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;getChild(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
                int&nbsp;index)</pre>
 <div class="block">Gets an element's n-th child element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>parent</code> - the element whose child is to be retrieved</dd><dd><code>index</code> - the index of the child element</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the n-th child element</dd></dl>
 </li>
 </ul>
-<a name="getChildCount(com.google.gwt.user.client.Element)">
+<a name="getChildCount(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getChildCount</h4>
-<pre>public static&nbsp;int&nbsp;getChildCount(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent)</pre>
+<pre>public static&nbsp;int&nbsp;getChildCount(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</pre>
 <div class="block">Gets the number of child elements present in a given parent element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>parent</code> - the element whose children are to be counted</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the number of children</dd></dl>
 </li>
 </ul>
-<a name="getChildIndex(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)">
+<a name="getChildIndex(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getChildIndex</h4>
-<pre>public static&nbsp;int&nbsp;getChildIndex(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
-                <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;child)</pre>
+<pre>public static&nbsp;int&nbsp;getChildIndex(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
+                <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child)</pre>
 <div class="block">Gets the index of a given child element within its parent.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>parent</code> - the parent element</dd><dd><code>child</code> - the child element</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the child's index within its parent, or <code>-1</code> if it is
          not a child of the given parent</dd></dl>
 </li>
 </ul>
-<a name="getElementAttribute(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="getElementAttribute(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getElementAttribute</h4>
-<pre>public static&nbsp;java.lang.String&nbsp;getElementAttribute(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-                                   java.lang.String&nbsp;attr)</pre>
+<pre>@Deprecated
+public static&nbsp;java.lang.String&nbsp;getElementAttribute(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+                                              java.lang.String&nbsp;attr)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getAttribute(java.lang.String)"><code>Element.getAttribute(String)</code></a> instead.</i></div>
 <div class="block">Gets the named attribute from the element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose property is to be retrieved</dd><dd><code>attr</code> - the name of the attribute</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the value of the attribute</dd></dl>
@@ -1848,197 +1966,210 @@ public static&nbsp;boolean&nbsp;getBooleanAttribute(<a href="../../../../../com/
 <dt><span class="strong">Returns:</span></dt><dd>the associated element, or <code>null</code> if none is found</dd></dl>
 </li>
 </ul>
-<a name="getElementProperty(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="getElementProperty(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getElementProperty</h4>
-<pre>public static&nbsp;java.lang.String&nbsp;getElementProperty(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-                                  java.lang.String&nbsp;prop)</pre>
+<pre>@Deprecated
+public static&nbsp;java.lang.String&nbsp;getElementProperty(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+                                             java.lang.String&nbsp;prop)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <code>Element#getProperty(String)</code> instead.</i></div>
 <div class="block">Gets any named property from an element, as a string.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose property is to be retrieved</dd><dd><code>prop</code> - the name of the property</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the property's value</dd></dl>
 </li>
 </ul>
-<a name="getElementPropertyBoolean(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="getElementPropertyBoolean(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getElementPropertyBoolean</h4>
-<pre>public static&nbsp;boolean&nbsp;getElementPropertyBoolean(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-                                java.lang.String&nbsp;prop)</pre>
+<pre>@Deprecated
+public static&nbsp;boolean&nbsp;getElementPropertyBoolean(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+                                           java.lang.String&nbsp;prop)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getPropertyBoolean(java.lang.String)"><code>Element.getPropertyBoolean(String)</code></a> instead.</i></div>
 <div class="block">Gets any named property from an element, as a boolean.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose property is to be retrieved</dd><dd><code>prop</code> - the name of the property</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the property's value as a boolean</dd></dl>
 </li>
 </ul>
-<a name="getElementPropertyInt(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="getElementPropertyInt(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getElementPropertyInt</h4>
-<pre>public static&nbsp;int&nbsp;getElementPropertyInt(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-                        java.lang.String&nbsp;prop)</pre>
+<pre>@Deprecated
+public static&nbsp;int&nbsp;getElementPropertyInt(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+                                   java.lang.String&nbsp;prop)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getPropertyInt(java.lang.String)"><code>Element.getPropertyInt(String)</code></a> instead.</i></div>
 <div class="block">Gets any named property from an element, as an int.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose property is to be retrieved</dd><dd><code>prop</code> - the name of the property</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the property's value as an int</dd></dl>
 </li>
 </ul>
-<a name="getEventListener(com.google.gwt.user.client.Element)">
+<a name="getEventListener(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getEventListener</h4>
-<pre>public static&nbsp;<a href="../../../../../com/google/gwt/user/client/EventListener.html" title="interface in com.google.gwt.user.client">EventListener</a>&nbsp;getEventListener(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>public static&nbsp;<a href="../../../../../com/google/gwt/user/client/EventListener.html" title="interface in com.google.gwt.user.client">EventListener</a>&nbsp;getEventListener(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
 <div class="block">Gets the <a href="../../../../../com/google/gwt/user/client/EventListener.html" title="interface in com.google.gwt.user.client"><code>EventListener</code></a> that will receive events for the given
  element. Only one such listener may exist for a single element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose listener is to be set</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the element's event listener</dd></dl>
 </li>
 </ul>
-<a name="getEventsSunk(com.google.gwt.user.client.Element)">
+<a name="getEventsSunk(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getEventsSunk</h4>
-<pre>public static&nbsp;int&nbsp;getEventsSunk(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>public static&nbsp;int&nbsp;getEventsSunk(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
 <div class="block">Gets the current set of events sunk by a given element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose events are to be retrieved</dd>
 <dt><span class="strong">Returns:</span></dt><dd>a bitfield describing the events sunk on this element (its possible
          values are described in <a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client"><code>Event</code></a>)</dd></dl>
 </li>
 </ul>
-<a name="getFirstChild(com.google.gwt.user.client.Element)">
+<a name="getFirstChild(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getFirstChild</h4>
-<pre>public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;getFirstChild(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;getFirstChild(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
 <div class="block">Gets the first child element of the given element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose child is to be retrieved</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the child element</dd></dl>
 </li>
 </ul>
-<a name="getImgSrc(com.google.gwt.user.client.Element)">
+<a name="getImgSrc(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getImgSrc</h4>
-<pre>public static&nbsp;java.lang.String&nbsp;getImgSrc(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;img)</pre>
+<pre>public static&nbsp;java.lang.String&nbsp;getImgSrc(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;img)</pre>
 <div class="block">Gets the src attribute of an img element. This method is paired with
- <a href="../../../../../com/google/gwt/user/client/DOM.html#setImgSrc(com.google.gwt.user.client.Element, java.lang.String)"><code>setImgSrc(Element, String)</code></a> so that it always returns the correct
+ <a href="../../../../../com/google/gwt/user/client/DOM.html#setImgSrc(com.google.gwt.dom.client.Element, java.lang.String)"><code>setImgSrc(Element, String)</code></a> so that it always returns the correct
  url.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>img</code> - a non-null img whose src attribute is to be read.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the src url of the img</dd></dl>
 </li>
 </ul>
-<a name="getInnerHTML(com.google.gwt.user.client.Element)">
+<a name="getInnerHTML(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getInnerHTML</h4>
-<pre>public static&nbsp;java.lang.String&nbsp;getInnerHTML(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>@Deprecated
+public static&nbsp;java.lang.String&nbsp;getInnerHTML(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getInnerHTML()"><code>Element.getInnerHTML()</code></a> instead.</i></div>
 <div class="block">Gets an HTML representation of an element's children.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose HTML is to be retrieved</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the HTML representation of the element's children</dd></dl>
 </li>
 </ul>
-<a name="getInnerText(com.google.gwt.user.client.Element)">
+<a name="getInnerText(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getInnerText</h4>
-<pre>public static&nbsp;java.lang.String&nbsp;getInnerText(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>@Deprecated
+public static&nbsp;java.lang.String&nbsp;getInnerText(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getInnerText()"><code>Element.getInnerText()</code></a> instead.</i></div>
 <div class="block">Gets the text contained within an element. If the element has child
  elements, only the text between them will be retrieved.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose inner text is to be retrieved</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the text inside this element</dd></dl>
 </li>
 </ul>
-<a name="getIntAttribute(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="getIntAttribute(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getIntAttribute</h4>
 <pre>@Deprecated
-public static&nbsp;int&nbsp;getIntAttribute(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+public static&nbsp;int&nbsp;getIntAttribute(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                              java.lang.String&nbsp;attr)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use the more appropriately named
-             <a href="../../../../../com/google/gwt/user/client/DOM.html#getElementPropertyInt(com.google.gwt.user.client.Element, java.lang.String)"><code>getElementPropertyInt(Element, String)</code></a> instead.</i></div>
-<div class="block">Gets an integer attribute on a given element.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose attribute is to be retrieved</dd><dd><code>attr</code> - the name of the attribute to be retrieved</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the attribute's value as an integer</dd></dl>
+             <a href="../../../../../com/google/gwt/dom/client/Element.html#getPropertyInt(java.lang.String)"><code>Element.getPropertyInt(String)</code></a> instead.</i></div>
+<div class="block">Gets an integer property on a given element.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose property is to be retrieved</dd><dd><code>attr</code> - the name of the property to be retrieved</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the property's value as an integer</dd></dl>
 </li>
 </ul>
-<a name="getIntStyleAttribute(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="getIntStyleAttribute(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getIntStyleAttribute</h4>
-<pre>public static&nbsp;int&nbsp;getIntStyleAttribute(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<pre>public static&nbsp;int&nbsp;getIntStyleAttribute(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                        java.lang.String&nbsp;attr)</pre>
 <div class="block">Gets an integer attribute on a given element's style.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose style attribute is to be retrieved</dd><dd><code>attr</code> - the name of the attribute to be retrieved</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the style attribute's value as an integer</dd></dl>
 </li>
 </ul>
-<a name="getNextSibling(com.google.gwt.user.client.Element)">
+<a name="getNextSibling(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getNextSibling</h4>
-<pre>public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;getNextSibling(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;getNextSibling(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
 <div class="block">Gets an element's next sibling element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose sibling is to be retrieved</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the sibling element</dd></dl>
 </li>
 </ul>
-<a name="getParent(com.google.gwt.user.client.Element)">
+<a name="getParent(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getParent</h4>
-<pre>public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;getParent(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;getParent(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
 <div class="block">Gets an element's parent element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose parent is to be retrieved</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the parent element</dd></dl>
 </li>
 </ul>
-<a name="getStyleAttribute(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="getStyleAttribute(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getStyleAttribute</h4>
-<pre>public static&nbsp;java.lang.String&nbsp;getStyleAttribute(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-                                 java.lang.String&nbsp;attr)</pre>
+<pre>@Deprecated
+public static&nbsp;java.lang.String&nbsp;getStyleAttribute(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+                                            java.lang.String&nbsp;attr)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getStyle()"><code>Element.getStyle()</code></a> and
+             <code>Style#getProperty(String)</code> instead.</i></div>
 <div class="block">Gets an attribute of the given element's style.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose style attribute is to be retrieved</dd><dd><code>attr</code> - the name of the style attribute to be retrieved</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the style attribute's value</dd></dl>
 </li>
 </ul>
-<a name="insertBefore(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)">
+<a name="insertBefore(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>insertBefore</h4>
-<pre>public static&nbsp;void&nbsp;insertBefore(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
-                <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;child,
-                <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;before)</pre>
+<pre>public static&nbsp;void&nbsp;insertBefore(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
+                <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child,
+                <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;before)</pre>
 <div class="block">Inserts an element as a child of the given parent element, before another
  child of that parent.
  <p>
@@ -2049,14 +2180,14 @@ public static&nbsp;int&nbsp;getIntAttribute(<a href="../../../../../com/google/g
           <code>child</code> will be inserted</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../com/google/gwt/user/client/ui/PotentialElement.html#resolve(com.google.gwt.dom.client.Element)"><code>PotentialElement.resolve(Element)</code></a></dd></dl>
 </li>
 </ul>
-<a name="insertChild(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element, int)">
+<a name="insertChild(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element, int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>insertChild</h4>
-<pre>public static&nbsp;void&nbsp;insertChild(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
-               <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;child,
+<pre>public static&nbsp;void&nbsp;insertChild(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
+               <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child,
                int&nbsp;index)</pre>
 <div class="block">Inserts an element as a child of the given parent element.
  <p>
@@ -2068,13 +2199,13 @@ public static&nbsp;int&nbsp;getIntAttribute(<a href="../../../../../com/google/g
           to be appended)</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../com/google/gwt/user/client/ui/PotentialElement.html#resolve(com.google.gwt.dom.client.Element)"><code>PotentialElement.resolve(Element)</code></a></dd></dl>
 </li>
 </ul>
-<a name="insertListItem(com.google.gwt.user.client.Element, java.lang.String, java.lang.String, int)">
+<a name="insertListItem(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String, int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>insertListItem</h4>
-<pre>public static&nbsp;void&nbsp;insertListItem(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;selectElem,
+<pre>public static&nbsp;void&nbsp;insertListItem(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;selectElem,
                   java.lang.String&nbsp;item,
                   java.lang.String&nbsp;value,
                   int&nbsp;index)</pre>
@@ -2086,52 +2217,58 @@ public static&nbsp;int&nbsp;getIntAttribute(<a href="../../../../../com/google/g
           <code>&lt;option&gt;</code>; cannot be <code>null</code></dd><dd><code>index</code> - the index at which to insert the child</dd></dl>
 </li>
 </ul>
-<a name="isOrHasChild(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)">
+<a name="isOrHasChild(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>isOrHasChild</h4>
-<pre>public static&nbsp;boolean&nbsp;isOrHasChild(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
-                   <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;child)</pre>
+<pre>@Deprecated
+public static&nbsp;boolean&nbsp;isOrHasChild(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
+                              <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <code>Element#isOrHasChild(Element)</code> instead.</i></div>
 <div class="block">Determine whether one element is equal to, or the child of, another.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>parent</code> - the potential parent element</dd><dd><code>child</code> - the potential child element</dd>
 <dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the relationship holds</dd></dl>
 </li>
 </ul>
-<a name="releaseCapture(com.google.gwt.user.client.Element)">
+<a name="releaseCapture(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>releaseCapture</h4>
-<pre>public static&nbsp;void&nbsp;releaseCapture(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>public static&nbsp;void&nbsp;releaseCapture(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
 <div class="block">Releases mouse/touch/gesture capture on the given element. Calling this
  method has no effect if the element does not currently have
  mouse/touch/gesture capture.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element to release capture</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../com/google/gwt/user/client/DOM.html#setCapture(com.google.gwt.user.client.Element)"><code>setCapture(Element)</code></a></dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element to release capture</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../com/google/gwt/user/client/DOM.html#setCapture(com.google.gwt.dom.client.Element)"><code>setCapture(Element)</code></a></dd></dl>
 </li>
 </ul>
-<a name="removeChild(com.google.gwt.user.client.Element, com.google.gwt.user.client.Element)">
+<a name="removeChild(com.google.gwt.dom.client.Element, com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>removeChild</h4>
-<pre>public static&nbsp;void&nbsp;removeChild(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;parent,
-               <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;child)</pre>
+<pre>@Deprecated
+public static&nbsp;void&nbsp;removeChild(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
+                          <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <code>Element#removeChild(Element)</code> instead.</i></div>
 <div class="block">Removes a child element from the given parent element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>parent</code> - the parent element</dd><dd><code>child</code> - the child element to be removed</dd></dl>
 </li>
 </ul>
-<a name="removeElementAttribute(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="removeElementAttribute(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>removeElementAttribute</h4>
-<pre>public static&nbsp;void&nbsp;removeElementAttribute(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-                          java.lang.String&nbsp;attr)</pre>
+<pre>@Deprecated
+public static&nbsp;void&nbsp;removeElementAttribute(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+                                     java.lang.String&nbsp;attr)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#removeAttribute(java.lang.String)"><code>Element.removeAttribute(String)</code></a> instead.</i></div>
 <div class="block">Removes the named attribute from the given element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose attribute is to be removed</dd><dd><code>attr</code> - the name of the element to remove</dd></dl>
 </li>
@@ -2152,13 +2289,15 @@ public static&nbsp;void&nbsp;removeEventPreview(<a href="../../../../../com/goog
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>preview</code> - the event preview to be removed from the stack</dd></dl>
 </li>
 </ul>
-<a name="scrollIntoView(com.google.gwt.user.client.Element)">
+<a name="scrollIntoView(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>scrollIntoView</h4>
-<pre>public static&nbsp;void&nbsp;scrollIntoView(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>@Deprecated
+public static&nbsp;void&nbsp;scrollIntoView(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#scrollIntoView()"><code>Element.scrollIntoView()</code></a> instead.</i></div>
 <div class="block">Scrolls the given element into view.
  
  <p>
@@ -2170,230 +2309,245 @@ public static&nbsp;void&nbsp;removeEventPreview(<a href="../../../../../com/goog
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element to be made visible</dd></dl>
 </li>
 </ul>
-<a name="setAttribute(com.google.gwt.user.client.Element, java.lang.String, java.lang.String)">
+<a name="setAttribute(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setAttribute</h4>
 <pre>@Deprecated
-public static&nbsp;void&nbsp;setAttribute(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+public static&nbsp;void&nbsp;setAttribute(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                            java.lang.String&nbsp;attr,
                            java.lang.String&nbsp;value)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use the more appropriately named
-             <a href="../../../../../com/google/gwt/user/client/DOM.html#setElementProperty(com.google.gwt.user.client.Element, java.lang.String, java.lang.String)"><code>setElementProperty(Element, String, String)</code></a> instead.</i></div>
-<div class="block">Sets an attribute on the given element.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose attribute is to be set</dd><dd><code>attr</code> - the name of the attribute to be set</dd><dd><code>value</code> - the new attribute value</dd></dl>
+             <a href="../../../../../com/google/gwt/dom/client/Element.html#setPropertyString(java.lang.String, java.lang.String)"><code>Element.setPropertyString(String, String)</code></a> instead.</i></div>
+<div class="block">Sets a property on the given element.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose property is to be set</dd><dd><code>attr</code> - the name of the property to be set</dd><dd><code>value</code> - the new property value</dd></dl>
 </li>
 </ul>
-<a name="setBooleanAttribute(com.google.gwt.user.client.Element, java.lang.String, boolean)">
+<a name="setBooleanAttribute(com.google.gwt.dom.client.Element, java.lang.String, boolean)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setBooleanAttribute</h4>
 <pre>@Deprecated
-public static&nbsp;void&nbsp;setBooleanAttribute(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+public static&nbsp;void&nbsp;setBooleanAttribute(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                                   java.lang.String&nbsp;attr,
                                   boolean&nbsp;value)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use the more appropriately named
-             <a href="../../../../../com/google/gwt/user/client/DOM.html#setElementPropertyBoolean(com.google.gwt.user.client.Element, java.lang.String, boolean)"><code>setElementPropertyBoolean(Element, String, boolean)</code></a>
+             <a href="../../../../../com/google/gwt/dom/client/Element.html#setPropertyBoolean(java.lang.String, boolean)"><code>Element.setPropertyBoolean(String, boolean)</code></a>
              instead.</i></div>
-<div class="block">Sets a boolean attribute on the given element.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose attribute is to be set</dd><dd><code>attr</code> - the name of the attribute to be set</dd><dd><code>value</code> - the attribute's new boolean value</dd></dl>
+<div class="block">Sets a boolean property on the given element.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose property is to be set</dd><dd><code>attr</code> - the name of the property to be set</dd><dd><code>value</code> - the property's new boolean value</dd></dl>
 </li>
 </ul>
-<a name="setCapture(com.google.gwt.user.client.Element)">
+<a name="setCapture(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setCapture</h4>
-<pre>public static&nbsp;void&nbsp;setCapture(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>public static&nbsp;void&nbsp;setCapture(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
 <div class="block">Sets mouse/touch/gesture capture on the given element. This element will
- directly receive all mouse events until <a href="../../../../../com/google/gwt/user/client/DOM.html#releaseCapture(com.google.gwt.user.client.Element)"><code>releaseCapture(Element)</code></a> is
+ directly receive all mouse events until <a href="../../../../../com/google/gwt/user/client/DOM.html#releaseCapture(com.google.gwt.dom.client.Element)"><code>releaseCapture(Element)</code></a> is
  called on it.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element on which to set mouse/touch/gesture capture</dd></dl>
 </li>
 </ul>
-<a name="setElementAttribute(com.google.gwt.user.client.Element, java.lang.String, java.lang.String)">
+<a name="setElementAttribute(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setElementAttribute</h4>
-<pre>public static&nbsp;void&nbsp;setElementAttribute(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-                       java.lang.String&nbsp;attr,
-                       java.lang.String&nbsp;value)</pre>
+<pre>@Deprecated
+public static&nbsp;void&nbsp;setElementAttribute(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+                                  java.lang.String&nbsp;attr,
+                                  java.lang.String&nbsp;value)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#setAttribute(java.lang.String, java.lang.String)"><code>Element.setAttribute(String, String)</code></a> instead.</i></div>
 <div class="block">Sets an attribute on a given element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - element whose attribute is to be set</dd><dd><code>attr</code> - the name of the attribute</dd><dd><code>value</code> - the value to which the attribute should be set</dd></dl>
 </li>
 </ul>
-<a name="setElementProperty(com.google.gwt.user.client.Element, java.lang.String, java.lang.String)">
+<a name="setElementProperty(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setElementProperty</h4>
-<pre>public static&nbsp;void&nbsp;setElementProperty(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-                      java.lang.String&nbsp;prop,
-                      java.lang.String&nbsp;value)</pre>
+<pre>@Deprecated
+public static&nbsp;void&nbsp;setElementProperty(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+                                 java.lang.String&nbsp;prop,
+                                 java.lang.String&nbsp;value)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#setPropertyString(java.lang.String, java.lang.String)"><code>Element.setPropertyString(String, String)</code></a> instead.</i></div>
 <div class="block">Sets a property on the given element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose property is to be set</dd><dd><code>prop</code> - the name of the property to be set</dd><dd><code>value</code> - the new property value</dd></dl>
 </li>
 </ul>
-<a name="setElementPropertyBoolean(com.google.gwt.user.client.Element, java.lang.String, boolean)">
+<a name="setElementPropertyBoolean(com.google.gwt.dom.client.Element, java.lang.String, boolean)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setElementPropertyBoolean</h4>
-<pre>public static&nbsp;void&nbsp;setElementPropertyBoolean(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-                             java.lang.String&nbsp;prop,
-                             boolean&nbsp;value)</pre>
+<pre>@Deprecated
+public static&nbsp;void&nbsp;setElementPropertyBoolean(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+                                        java.lang.String&nbsp;prop,
+                                        boolean&nbsp;value)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#setPropertyBoolean(java.lang.String, boolean)"><code>Element.setPropertyBoolean(String, boolean)</code></a> instead.</i></div>
 <div class="block">Sets a boolean property on the given element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose property is to be set</dd><dd><code>prop</code> - the name of the property to be set</dd><dd><code>value</code> - the new property value as a boolean</dd></dl>
 </li>
 </ul>
-<a name="setElementPropertyInt(com.google.gwt.user.client.Element, java.lang.String, int)">
+<a name="setElementPropertyInt(com.google.gwt.dom.client.Element, java.lang.String, int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setElementPropertyInt</h4>
-<pre>public static&nbsp;void&nbsp;setElementPropertyInt(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-                         java.lang.String&nbsp;prop,
-                         int&nbsp;value)</pre>
+<pre>@Deprecated
+public static&nbsp;void&nbsp;setElementPropertyInt(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+                                    java.lang.String&nbsp;prop,
+                                    int&nbsp;value)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#setPropertyInt(java.lang.String, int)"><code>Element.setPropertyInt(String, int)</code></a> instead.</i></div>
 <div class="block">Sets an int property on the given element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose property is to be set</dd><dd><code>prop</code> - the name of the property to be set</dd><dd><code>value</code> - the new property value as an int</dd></dl>
 </li>
 </ul>
-<a name="setEventListener(com.google.gwt.user.client.Element, com.google.gwt.user.client.EventListener)">
+<a name="setEventListener(com.google.gwt.dom.client.Element, com.google.gwt.user.client.EventListener)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setEventListener</h4>
-<pre>public static&nbsp;void&nbsp;setEventListener(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<pre>public static&nbsp;void&nbsp;setEventListener(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                     <a href="../../../../../com/google/gwt/user/client/EventListener.html" title="interface in com.google.gwt.user.client">EventListener</a>&nbsp;listener)</pre>
 <div class="block">Sets the <a href="../../../../../com/google/gwt/user/client/EventListener.html" title="interface in com.google.gwt.user.client"><code>EventListener</code></a> to receive events for the given element.
  Only one such listener may exist for a single element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose listener is to be set</dd><dd><code>listener</code> - the listener to receive <a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client"><code>events</code></a></dd></dl>
 </li>
 </ul>
-<a name="setImgSrc(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="setImgSrc(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setImgSrc</h4>
-<pre>public static&nbsp;void&nbsp;setImgSrc(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;img,
+<pre>public static&nbsp;void&nbsp;setImgSrc(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;img,
              java.lang.String&nbsp;src)</pre>
 <div class="block">Sets the src attribute of an img element. This method ensures that imgs
  only ever have their contents requested one single time from the server.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>img</code> - a non-null img whose src attribute will be set.</dd><dd><code>src</code> - a non-null url for the img</dd></dl>
 </li>
 </ul>
-<a name="setInnerHTML(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="setInnerHTML(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setInnerHTML</h4>
-<pre>public static&nbsp;void&nbsp;setInnerHTML(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-                java.lang.String&nbsp;html)</pre>
+<pre>@Deprecated
+public static&nbsp;void&nbsp;setInnerHTML(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+                           java.lang.String&nbsp;html)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#setInnerHTML(java.lang.String)"><code>Element.setInnerHTML(String)</code></a> instead.</i></div>
 <div class="block">Sets the HTML contained within an element.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose inner HTML is to be set</dd><dd><code>html</code> - the new html</dd></dl>
 </li>
 </ul>
-<a name="setInnerText(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="setInnerText(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setInnerText</h4>
-<pre>public static&nbsp;void&nbsp;setInnerText(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-                java.lang.String&nbsp;text)</pre>
+<pre>@Deprecated
+public static&nbsp;void&nbsp;setInnerText(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+                           java.lang.String&nbsp;text)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#setInnerText(java.lang.String)"><code>Element.setInnerText(String)</code></a> instead.</i></div>
 <div class="block">Sets the text contained within an element. If the element already has
  children, they will be destroyed.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose inner text is to be set</dd><dd><code>text</code> - the new text</dd></dl>
 </li>
 </ul>
-<a name="setIntAttribute(com.google.gwt.user.client.Element, java.lang.String, int)">
+<a name="setIntAttribute(com.google.gwt.dom.client.Element, java.lang.String, int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setIntAttribute</h4>
 <pre>@Deprecated
-public static&nbsp;void&nbsp;setIntAttribute(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+public static&nbsp;void&nbsp;setIntAttribute(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                               java.lang.String&nbsp;attr,
                               int&nbsp;value)</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use the more appropriately named
-             <a href="../../../../../com/google/gwt/user/client/DOM.html#setElementPropertyInt(com.google.gwt.user.client.Element, java.lang.String, int)"><code>setElementPropertyInt(Element, String, int)</code></a> instead.</i></div>
-<div class="block">Sets an integer attribute on the given element.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose attribute is to be set</dd><dd><code>attr</code> - the name of the attribute to be set</dd><dd><code>value</code> - the attribute's new integer value</dd></dl>
+             <a href="../../../../../com/google/gwt/dom/client/Element.html#setPropertyInt(java.lang.String, int)"><code>Element.setPropertyInt(String, int)</code></a> instead.</i></div>
+<div class="block">Sets an integer property on the given element.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose property is to be set</dd><dd><code>attr</code> - the name of the property to be set</dd><dd><code>value</code> - the property's new integer value</dd></dl>
 </li>
 </ul>
-<a name="setIntStyleAttribute(com.google.gwt.user.client.Element, java.lang.String, int)">
+<a name="setIntStyleAttribute(com.google.gwt.dom.client.Element, java.lang.String, int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setIntStyleAttribute</h4>
-<pre>public static&nbsp;void&nbsp;setIntStyleAttribute(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<pre>public static&nbsp;void&nbsp;setIntStyleAttribute(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                         java.lang.String&nbsp;attr,
                         int&nbsp;value)</pre>
 <div class="block">Sets an integer attribute on the given element's style.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose style attribute is to be set</dd><dd><code>attr</code> - the name of the style attribute to be set</dd><dd><code>value</code> - the style attribute's new integer value</dd></dl>
 </li>
 </ul>
-<a name="setOptionText(com.google.gwt.user.client.Element, java.lang.String, int)">
+<a name="setOptionText(com.google.gwt.dom.client.Element, java.lang.String, int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setOptionText</h4>
-<pre>public static&nbsp;void&nbsp;setOptionText(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;select,
+<pre>public static&nbsp;void&nbsp;setOptionText(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;select,
                  java.lang.String&nbsp;text,
                  int&nbsp;index)</pre>
 <div class="block">Sets the option text of the given select object.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>select</code> - the select object whose option text is being set</dd><dd><code>text</code> - the text to set</dd><dd><code>index</code> - the index of the option whose text should be set</dd></dl>
 </li>
 </ul>
-<a name="setStyleAttribute(com.google.gwt.user.client.Element, java.lang.String, java.lang.String)">
+<a name="setStyleAttribute(com.google.gwt.dom.client.Element, java.lang.String, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setStyleAttribute</h4>
-<pre>public static&nbsp;void&nbsp;setStyleAttribute(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
-                     java.lang.String&nbsp;attr,
-                     java.lang.String&nbsp;value)</pre>
+<pre>@Deprecated
+public static&nbsp;void&nbsp;setStyleAttribute(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
+                                java.lang.String&nbsp;attr,
+                                java.lang.String&nbsp;value)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getStyle()"><code>Element.getStyle()</code></a> and
+             <code>Style#setProperty(String, String)</code> instead.</i></div>
 <div class="block">Sets an attribute on the given element's style.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose style attribute is to be set</dd><dd><code>attr</code> - the name of the style attribute to be set</dd><dd><code>value</code> - the style attribute's new value</dd></dl>
 </li>
 </ul>
-<a name="sinkBitlessEvent(com.google.gwt.user.client.Element, java.lang.String)">
+<a name="sinkBitlessEvent(com.google.gwt.dom.client.Element, java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>sinkBitlessEvent</h4>
-<pre>public static&nbsp;void&nbsp;sinkBitlessEvent(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<pre>public static&nbsp;void&nbsp;sinkBitlessEvent(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                     java.lang.String&nbsp;eventTypeName)</pre>
 <div class="block">Sinks a named event. Events will be fired to the nearest
  <a href="../../../../../com/google/gwt/user/client/EventListener.html" title="interface in com.google.gwt.user.client"><code>EventListener</code></a> specified on any of the element's parents.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element whose events are to be retrieved</dd><dd><code>eventTypeName</code> - name of the event to sink on this element</dd></dl>
 </li>
 </ul>
-<a name="sinkEvents(com.google.gwt.user.client.Element, int)">
+<a name="sinkEvents(com.google.gwt.dom.client.Element, int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>sinkEvents</h4>
-<pre>public static&nbsp;void&nbsp;sinkEvents(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<pre>public static&nbsp;void&nbsp;sinkEvents(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
               int&nbsp;eventBits)</pre>
 <div class="block">Sets the current set of events sunk by a given element. These events will
  be fired to the nearest <a href="../../../../../com/google/gwt/user/client/EventListener.html" title="interface in com.google.gwt.user.client"><code>EventListener</code></a> specified on any of the
@@ -2402,13 +2556,15 @@ public static&nbsp;void&nbsp;setIntAttribute(<a href="../../../../../com/google/
           possible values are described in <a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client"><code>Event</code></a>)</dd></dl>
 </li>
 </ul>
-<a name="toString(com.google.gwt.user.client.Element)">
+<a name="toString(com.google.gwt.dom.client.Element)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public static&nbsp;java.lang.String&nbsp;toString(<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem)</pre>
+<pre>@Deprecated
+public static&nbsp;java.lang.String&nbsp;toString(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Use <a href="../../../../../com/google/gwt/dom/client/Element.html#getString()"><code>Element.getString()</code></a> instead.</i></div>
 <div class="block">Returns a stringized version of the element. This string is for debugging
  purposes and will NOT be consistent on different browsers.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>elem</code> - the element to stringize</dd>
@@ -2437,18 +2593,32 @@ public static&nbsp;int&nbsp;windowGetClientWidth()</pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>As of GWT 1.5, replaced by <a href="../../../../../com/google/gwt/user/client/Window.html#getClientWidth()"><code>Window.getClientWidth()</code></a></i></div>
 </li>
 </ul>
-<a name="dispatchEvent(com.google.gwt.user.client.Event, com.google.gwt.user.client.Element, com.google.gwt.user.client.EventListener)">
+<a name="dispatchEvent(com.google.gwt.user.client.Event, com.google.gwt.dom.client.Element, com.google.gwt.user.client.EventListener)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>dispatchEvent</h4>
-<pre>static&nbsp;void&nbsp;dispatchEvent(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt,
-                 <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;elem,
+<pre>public static&nbsp;void&nbsp;dispatchEvent(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt,
+                 <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                  <a href="../../../../../com/google/gwt/user/client/EventListener.html" title="interface in com.google.gwt.user.client">EventListener</a>&nbsp;listener)</pre>
 <div class="block">This method is called directly by native code when any event is fired.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the handle to the event being fired.</dd><dd><code>elem</code> - the handle to the element that received the event.</dd><dd><code>listener</code> - the listener associated with the element that received the
           event.</dd></dl>
+</li>
+</ul>
+<a name="dispatchEvent(com.google.gwt.user.client.Event, com.google.gwt.dom.client.Element)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dispatchEvent</h4>
+<pre>public static&nbsp;boolean&nbsp;dispatchEvent(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt,
+                    <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block">This method is a similar to <a href="../../../../../com/google/gwt/user/client/DOM.html#dispatchEvent(com.google.gwt.user.client.Event, com.google.gwt.dom.client.Element, com.google.gwt.user.client.EventListener)"><code>dispatchEvent(Event, Element, EventListener)</code></a> but only
+ dispatches if an event listener is set to element.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - the handle to the event being fired.</dd><dd><code>elem</code> - the handle to the element that received the event.</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the event was dispatched</dd></dl>
 </li>
 </ul>
 <a name="maybeInitializeEventSystem()">
@@ -2464,14 +2634,29 @@ public static&nbsp;int&nbsp;windowGetClientWidth()</pre>
 <a name="previewEvent(com.google.gwt.user.client.Event)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>previewEvent</h4>
-<pre>static&nbsp;boolean&nbsp;previewEvent(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
+<pre>public static&nbsp;boolean&nbsp;previewEvent(<a href="../../../../../com/google/gwt/user/client/Event.html" title="class in com.google.gwt.user.client">Event</a>&nbsp;evt)</pre>
 <div class="block">This method is called directly by native code when event preview is being
  used.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>evt</code> - a handle to the event being previewed</dd>
 <dt><span class="strong">Returns:</span></dt><dd><code>false</code> to cancel the event</dd></dl>
+</li>
+</ul>
+<a name="asOld(com.google.gwt.dom.client.Element)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>asOld</h4>
+<pre>public static&nbsp;<a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client">Element</a>&nbsp;asOld(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block">Provided as a convenient way to upcast values statically typed as
+ <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client"><code>Element</code></a> to <a href="../../../../../com/google/gwt/user/client/Element.html" title="class in com.google.gwt.user.client"><code>Element</code></a>.
+ For easier upgrades in the future, it's recommended that this function
+ only be called within a <code>return</code> statement.
+ <p>
+ Does <em>not</em> throw a <code>NullPointerException</code> if elem is null.</div>
 </li>
 </ul>
 </li>
@@ -2495,7 +2680,7 @@ public static&nbsp;int&nbsp;windowGetClientWidth()</pre>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

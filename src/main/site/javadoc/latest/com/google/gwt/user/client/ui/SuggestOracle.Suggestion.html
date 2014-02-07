@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>SuggestOracle.Suggestion (Google Web Toolkit Javadoc)</title>
+<title>SuggestOracle.Suggestion (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="SuggestOracle.Suggestion (Google Web Toolkit Javadoc)";
+        parent.document.title="SuggestOracle.Suggestion (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,7 +29,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -135,11 +135,11 @@
  
  <p>
  To access a suggestion's DTO when the suggestion is selected, add a
- <a href="../../../../../../com/google/gwt/event/dom/client/ChangeHandler.html" title="interface in com.google.gwt.event.dom.client"><code>ChangeHandler</code></a> to the SuggestBox
+ <a href="../../../../../../com/google/gwt/event/logical/shared/SelectionHandler.html" title="interface in com.google.gwt.event.logical.shared"><code>SelectionHandler</code></a> to the SuggestBox
  (see SuggestBox's documentation for more information). In the
- <code>SuggestionHandler.onSuggestionSelected(SuggestionEvent event)</code>
+ <code>SelectionHandler.onSelection(SelectionEvent&lt;Suggestion&gt; event)</code>
  method, obtain the selected <code>Suggestion</code> object from the
- <a href="../../../../../../com/google/gwt/event/dom/client/ChangeHandler.html" title="interface in com.google.gwt.event.dom.client"><code>ChangeHandler</code></a> object, and downcast
+ <a href="../../../../../../com/google/gwt/event/logical/shared/SelectionEvent.html" title="class in com.google.gwt.event.logical.shared"><code>SelectionEvent</code></a> object, and downcast
  the <code>Suggestion</code> object to the subinterface. Then, acces the DTO
  using the DTO getter method that was defined on the subinterface.
  </p></div>
@@ -236,7 +236,7 @@
 <li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">

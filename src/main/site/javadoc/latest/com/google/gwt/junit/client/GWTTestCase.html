@@ -2,13 +2,13 @@
 <!-- NewPage -->
 <html lang="fr">
 <head>
-<title>GWTTestCase (Google Web Toolkit Javadoc)</title>
+<title>GWTTestCase (GWT Javadoc)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="GWTTestCase (Google Web Toolkit Javadoc)";
+        parent.document.title="GWTTestCase (GWT Javadoc)";
     }
 //-->
 </script>
@@ -29,12 +29,12 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
 <li>Prev Class</li>
-<li><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.BaseStrategy.html" title="class in com.google.gwt.junit.client"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.TestModuleInfo.html" title="class in com.google.gwt.junit.client"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?com/google/gwt/junit/client/GWTTestCase.html" target="_top">Frames</a></li>
@@ -105,10 +105,6 @@
 <dt>All Implemented Interfaces:</dt>
 <dd>junit.framework.Test</dd>
 </dl>
-<dl>
-<dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../../com/google/gwt/benchmarks/client/Benchmark.html" title="class in com.google.gwt.benchmarks.client">Benchmark</a></dd>
-</dl>
 <hr>
 <br>
 <pre>public abstract class <span class="strong">GWTTestCase</span>
@@ -144,12 +140,6 @@ extends junit.framework.TestCase</pre>
 <th class="colLast" scope="col">Class and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.BaseStrategy.html" title="class in com.google.gwt.junit.client">GWTTestCase.BaseStrategy</a></strong></code>
-<div class="block">The base class for strategies to use for tests.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.TestModuleInfo.html" title="class in com.google.gwt.junit.client">GWTTestCase.TestModuleInfo</a></strong></code>
 <div class="block">Information about a synthetic module used for testing.</div>
@@ -219,57 +209,27 @@ extends junit.framework.TestCase</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#addCheckpoint(java.lang.String)">addCheckpoint</a></strong>(java.lang.String&nbsp;msg)</code>
-<div class="block"><strong>Deprecated.</strong>&nbsp;
-<div class="block"><i>implementation removed</i></div>
-</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#catchExceptions()">catchExceptions</a></strong>()</code>
 <div class="block">Determines whether or not exceptions will be caught by the test fixture.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#clearCheckpoints()">clearCheckpoints</a></strong>()</code>
-<div class="block"><strong>Deprecated.</strong>&nbsp;
-<div class="block"><i>implementation removed</i></div>
-</div>
-</td>
-</tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected com.google.gwt.junit.JUnitShell.Strategy</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#createStrategy()">createStrategy</a></strong>()</code>
-<div class="block">Creates the test strategy to use (see <a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#getStrategy()"><code>getStrategy()</code></a>).</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#delayTestFinish(int)">delayTestFinish</a></strong>(int&nbsp;timeoutMillis)</code>
 <div class="block">Put the current test in asynchronous mode.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#finishTest()">finishTest</a></strong>()</code>
 <div class="block">Cause this test to succeed during asynchronous mode.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String[]</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#getAllTestModuleNames()">getAllTestModuleNames</a></strong>()</code>
 <div class="block">Get the names of all test modules.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>java.lang.String[]</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#getCheckpoints()">getCheckpoints</a></strong>()</code>
-<div class="block"><strong>Deprecated.</strong>&nbsp;
-<div class="block"><i>implementation removed</i></div>
-</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -322,40 +282,40 @@ extends junit.framework.TestCase</pre>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#reportUncaughtException(java.lang.Throwable)">reportUncaughtException</a></strong>(java.lang.Throwable&nbsp;ex)</code>
+<div class="block">Reports an exception that might have escaped to the browser.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#run(junit.framework.TestResult)">run</a></strong>(junit.framework.TestResult&nbsp;result)</code>
 <div class="block">Stashes <code>result</code> so that it can be accessed during
  <a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#runTest()"><code>runTest()</code></a>.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#runTest()">runTest</a></strong>()</code>
 <div class="block">Runs the test via the <code>JUnitShell</code> environment.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#setForcePureJava(boolean)">setForcePureJava</a></strong>(boolean&nbsp;forcePureJava)</code>
 <div class="block">Specifies whether this test case should be always run in pure Java mode
  (non-GWT).</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#setName(java.lang.String)">setName</a></strong>(java.lang.String&nbsp;name)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#setUp()">setUp</a></strong>()</code>
 <div class="block">This method has been made final to prevent you from accidentally running
  client code outside of the GWT environment.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#supportsAsync()">supportsAsync</a></strong>()</code>
-<div class="block">Returns true if this test case supports asynchronous mode.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -491,18 +451,6 @@ extends junit.framework.TestCase</pre>
 <dt><span class="strong">Returns:</span></dt><dd>all tests for the module</dd></dl>
 </li>
 </ul>
-<a name="addCheckpoint(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>addCheckpoint</h4>
-<pre>@Deprecated
-public final&nbsp;void&nbsp;addCheckpoint(java.lang.String&nbsp;msg)</pre>
-<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>implementation removed</i></div>
-<div class="block">Does nothing.</div>
-</li>
-</ul>
 <a name="catchExceptions()">
 <!--   -->
 </a>
@@ -517,30 +465,6 @@ public final&nbsp;void&nbsp;addCheckpoint(java.lang.String&nbsp;msg)</pre>
  where exceptions are originating.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd><code>true</code> for normal JUnit behavior, or <code>false</code>
          to disable normal JUnit exception reporting</dd></dl>
-</li>
-</ul>
-<a name="clearCheckpoints()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>clearCheckpoints</h4>
-<pre>@Deprecated
-public final&nbsp;void&nbsp;clearCheckpoints()</pre>
-<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>implementation removed</i></div>
-<div class="block">Does nothing.</div>
-</li>
-</ul>
-<a name="getCheckpoints()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getCheckpoints</h4>
-<pre>@Deprecated
-public final&nbsp;java.lang.String[]&nbsp;getCheckpoints()</pre>
-<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>implementation removed</i></div>
-<div class="block">Returns a zero-length array.</div>
 </li>
 </ul>
 <a name="getModuleName()">
@@ -641,16 +565,6 @@ public final&nbsp;java.lang.String[]&nbsp;getCheckpoints()</pre>
 </dl>
 </li>
 </ul>
-<a name="createStrategy()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createStrategy</h4>
-<pre>protected&nbsp;com.google.gwt.junit.JUnitShell.Strategy&nbsp;createStrategy()</pre>
-<div class="block">Creates the test strategy to use (see <a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#getStrategy()"><code>getStrategy()</code></a>).</div>
-</li>
-</ul>
 <a name="delayTestFinish(int)">
 <!--   -->
 </a>
@@ -702,7 +616,7 @@ public final&nbsp;java.lang.String[]&nbsp;getCheckpoints()</pre>
  </p></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>timeoutMillis</code> - how long to wait before the current test will time out</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code>java.lang.UnsupportedOperationException</code> - if <a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#supportsAsync()"><code>supportsAsync()</code></a> is false</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#finishTest()"><code>finishTest()</code></a></dd><DT><B>Tip:</B></DT><DD>Subsequent calls to this method reset the timeout.</DD></dl>
+<dd><code>java.lang.UnsupportedOperationException</code> - if <code>#supportsAsync()</code> is false</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#finishTest()"><code>finishTest()</code></a></dd><DT><B>Tip:</B></DT><DD>Subsequent calls to this method reset the timeout.</DD></dl>
 </li>
 </ul>
 <a name="finishTest()">
@@ -749,7 +663,45 @@ public final&nbsp;java.lang.String[]&nbsp;getCheckpoints()</pre>
  </p></div>
 <dl><dt><span class="strong">Throws:</span></dt>
 <dd><code>java.lang.IllegalStateException</code> - if this test is not in asynchronous mode</dd>
-<dd><code>java.lang.UnsupportedOperationException</code> - if <a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#supportsAsync()"><code>supportsAsync()</code></a> is false</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#delayTestFinish(int)"><code>delayTestFinish(int)</code></a></dd></dl>
+<dd><code>java.lang.UnsupportedOperationException</code> - if <code>#supportsAsync()</code> is false</dd><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.html#delayTestFinish(int)"><code>delayTestFinish(int)</code></a></dd></dl>
+</li>
+</ul>
+<a name="reportUncaughtException(java.lang.Throwable)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reportUncaughtException</h4>
+<pre>protected&nbsp;void&nbsp;reportUncaughtException(java.lang.Throwable&nbsp;ex)</pre>
+<div class="block">Reports an exception that might have escaped to the browser.
+ <p>
+ This method is called by the test framework to report uncaught exceptions. The default
+ implementation causes the test case to be reported as 'failed'. However in some rare situations
+ where an uncaught exception is expected, a test case may choose to alter the behavior by
+ overriding it:
+ <pre>
+ class SomeTestCase extends GWTTestCase {
+
+   class ExpectedTestException extends Exception {}
+
+   @Override
+   protected void reportUncaughtException(Throwable t) {
+     // Ignore exceptions that are expected to be thrown by our test cases:
+     if (t instanceof ExpectedTestException) {
+       return;
+     }
+     super.reportUncaughtException(t);
+   }
+   ...
+ }
+ </pre>
+
+ Note that this method will not cause the test case to fail immediately if the main test body is
+ still executing. In that case, test will fail after the main body returns with the reported
+ exception. If the test has already finished (fail or success) before this method is called,
+ the reported exception is currently ignored, but this may result in an error in a future
+ version of GWT.</div>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../com/google/gwt/core/client/GWT.html#reportUncaughtException(java.lang.Throwable)"><code>GWT.reportUncaughtException(java.lang.Throwable)</code></a></dd></dl>
 </li>
 </ul>
 <a name="gwtSetUp()">
@@ -819,17 +771,6 @@ public final&nbsp;java.lang.String[]&nbsp;getCheckpoints()</pre>
 <dd><code>java.lang.Exception</code></dd></dl>
 </li>
 </ul>
-<a name="supportsAsync()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>supportsAsync</h4>
-<pre>protected&nbsp;boolean&nbsp;supportsAsync()</pre>
-<div class="block">Returns true if this test case supports asynchronous mode. By default, this
- is set to true.</div>
-</li>
-</ul>
 <a name="tearDown()">
 <!--   -->
 </a>
@@ -869,12 +810,12 @@ public final&nbsp;java.lang.String[]&nbsp;getCheckpoints()</pre>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.5.1</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
 <li>Prev Class</li>
-<li><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.BaseStrategy.html" title="class in com.google.gwt.junit.client"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../../com/google/gwt/junit/client/GWTTestCase.TestModuleInfo.html" title="class in com.google.gwt.junit.client"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?com/google/gwt/junit/client/GWTTestCase.html" target="_top">Frames</a></li>
