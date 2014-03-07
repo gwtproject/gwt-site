@@ -2,10 +2,6 @@
 
 <p>In traditional JavaScript programming, dynamic user interface creation is done by manipulating the browser's DOM. While GWT provides access to the browser's DOM directly using the <a href="/javadoc/latest/com/google/gwt/dom/client/package-summary.html">DOM package</a>, it is far easier to use classes from the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Widget.html">Widget</a> hierarchy. The Widget classes make it easier to quickly build interfaces that will work correctly on all browsers. </p>
 
-<p class="note" style="margin-left: 1.5em; margin-right: 3.5em;"><b>Note</b>: Use <a href="http://code.google.com/webtoolkit/tools/gwtdesigner/index.html">GWT Designer</a>,
-a powerful and easy-to-use bi-directional Java GUI designer, to easily create GWT GUI applications
-without spending a lot of time writing code.</p>
-
 <style type="text/css">
    ol.toc li { font-weight: normal; }
    ol.toc li a { font-weight: bold; }
