@@ -295,7 +295,7 @@ value should return type Request&lt;Void&gt;. Requests can be parameterized with
   <li>Built-in value types: BigDecimal, BigInteger, Boolean, Byte, Enum, Character, Date, Double, Float, Integer, Long, Short, String, Void</li>
   <li>Custom value types: any subclass of ValueProxy</li>
   <li>Entity types: any subclass of EntityProxy</li>
-  <li>Collections: List&lt;T&gt; or Set&lt;T&gt;, where T is one of the above value or entity types</li>
+  <li>Collections: List&lt;T&gt; or Set&lt;T&gt;, where T is one of the above value or entity types, or Map&lt;K,V&gt; where K and V are one of the above value or entity types</li>
 </ul>
 
 <p> Instance methods that operate on an entity itself, like persist() and
@@ -334,8 +334,11 @@ as <em>transportable types</em>.  Each client-side transportable type is mapped 
     <td>A <code>Bar</code> value object</td> 
   </tr>
   <tr>
-    <td><code>Set&lt;T&gt;</code> or <code>List&lt;T&gt;</code> where <code>T</code> is a scalar transportable type</td>
+    <td><code>Set&lt;T&gt;</code> or <code>List&lt;T&gt;</code> where <code>T</code> is a transportable type</td>
     <td><code>Set&lt;T&gt;</code> or <code>List&lt;T&gt;</code></td>
+  <tr>
+    <td><code>Map&lt;K,V&gt;</code> where <code>K</code> and <code>V</code> are transportable types</td>
+    <td><code>Map&lt;K,V&gt;</code></td>
 </table>
 
 <p>In determining whether or not a client-side method defined in a proxy or
