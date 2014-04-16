@@ -474,7 +474,7 @@ will be popped off of the stack and the current history token will be the
 
 <p>Now that we have the flow straight, we need to decide where to put the code.
 Given that history is not specific to a particular view, it
-makes sense to to add it to the AppController class.</p>
+makes sense to add it to the AppController class.</p>
 
 <p>To start with, we'll need to have the AppController implement <a href="/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeHandler.html">ValueChangeHandler</a>
 and declare its own <a href="/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeHandler.html#onValueChange(com.google.gwt.event.logical.shared.ValueChangeEvent)">onValueChange()</a>

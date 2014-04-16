@@ -194,7 +194,7 @@ module that specifies exact values for client properties that you want to nail d
 
 <li>Use <tt>&lt;set-property&gt;</tt> in the <tt>HelloFirefox</tt> module that explicitly sets a value for the <tt>user.agent</tt> client property. (See <tt>&lt;define-property&gt;</tt> in <tt>UserAgent.gwt.xml</tt> for the possible values.)
 
-<li>Use <tt>rename-to</tt> in the <tt>HelloFirefox</tt> with the same value as in the <tt>Firefox</tt> module so the generated <tt>.nocache.js</tt> file will have the same name (see <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">Renaming modules</a>.)</li>
+<li>Use <tt>rename-to</tt> in the <tt>HelloFirefox</tt> with the same value as in the <tt>Hello</tt> module so the generated <tt>.nocache.js</tt> file will have the same name (see <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">Renaming modules</a>.)</li>
 
 <li>Compile the <tt>HelloFirefox</tt> module instead of the <tt>Hello</tt> module.</li>
 

@@ -334,7 +334,7 @@ Because you've mapped the StockPriceService to "stockPrices" and the module rena
 
 <h3>Making asynchronous calls to the server</h3>
 <p>
-You need to to add an AsyncCallback parameter to all your service methods.
+You need to add an AsyncCallback parameter to all your service methods.
 </p>
 <p>
 To add an AsyncCallback parameter to all of our service methods, you must define a new interface as follows:
