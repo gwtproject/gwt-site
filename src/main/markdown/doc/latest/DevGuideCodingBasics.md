@@ -1,12 +1,12 @@
 <h2 id="DevGuideClientSide">Client-side code</h2>
 
-<p><a href="DevGuideCodingBasicsClient.html">Client-side code</a> describes how to create an entry point into a client-side application &mdash; code that executes when the user starts the application.
+<p><a href="DevGuideCodingBasicsClient.html">Client-side code</a> describes how to create an entry-point (code that executes when the user starts the application) into a client-side application.
 When your application is sent across a network to a user, it runs as JavaScript inside their web browser. </p>
 
 
 <h2 id="DevGuideJavaCompatibility">Compatibility with the Java Language and Libraries</h2>
 
-<p><a href="DevGuideCodingBasicsCompatibility.html">Compatibility with the Java Language and Libraries</a> describes the differences in syntax and semantics between GWT and the core Java language.  It is important to remember that the target language of your GWT application is ultimately JavaScript, so there are some differences between running your application in development mode and production mode (previously known as <i>hosted mode</i> and <i>web mode</i>, respectively). </p>
+<p><a href="DevGuideCodingBasicsCompatibility.html">Compatibility with the Java Language and Libraries</a> describes the differences in syntax and semantics between GWT and the core Java language.  It is important to remember that the target language of your GWT application is ultimately JavaScript, so there are some differences between running your application in <a href='DevGuideCompilingAndDebugging.html#DevGuideDevMode'>dev-mode</a>, <a href='../../articles/superdevmode.html'>superdev-mode</a>, and <a href='DevGuideCompilingAndDebugging.html#DevGuideProdMode'>production</a> mode. </p>
 
 
 <h2 id="DevGuideHistory">History</h2>

@@ -4,7 +4,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
     $head
     <script type="text/javascript">
-
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-40673139-1']);
       _gaq.push(['_setDomainName', 'gwtproject.org']);
@@ -31,15 +30,14 @@
 
 <div id="gwt-header2">
   <div class="gwt-wrap">
-    <a href="/"><div class="first"><h1>GWT</h1></div></a>
+    <a id='gwt-home' href=""><div class="first"><h1>GWT</h1></div></a>
     <div class="second">
       <ul class="nav">
-        <li><a href="/">Home</a></li>
-        <li><a href="/download.html">Download</a></li>
-        <li><a href="/doc/latest/DevGuide.html">Docs</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="doc/latest/DevGuide.html">Docs</a></li>
       </ul>
-      <div style="float:right; font-size: 50%; margin-top: 8px; color: red">This is a <b>beta version</b>. If you find errors, please <a href="https://code.google.com/p/google-web-toolkit/issues/entry">report them</a> or <a href="/makinggwtbetter.html#webpage">change them</a>!</div>
-      <a href="http://gwtcreate.com" title="Go to gwtcreate.com" class="gwtcreate"><img src="/images/gwtproject.org-2015-banner@2x.png" alt="GWT.create Conference &ndash; The #1 GWT conference in 2015. Mountain View / Munich, January 2015"></a>
+      <a href="http://gwtcreate.com" title="Go to gwtcreate.com" class="gwtcreate"><img src="images/gwtproject.org-2015-banner@2x.png" alt="GWT.create Conference &ndash; The #1 GWT conference in 2015. Mountain View / Munich, January 2015"></a>
     </div>
   </div>
 </div>
@@ -47,6 +45,7 @@
 <div id="gwt-header3">
   <div class="gwt-wrap">
     <div class="first"><h2>TABLE OF CONTENTS</h2></div>
+    <div class="beta-info">This is a <b>beta version</b>. If you find errors, please <a href="https://code.google.com/p/google-web-toolkit/issues/entry">report them</a> or <a href="makinggwtbetter.html#webpage">change them</a>!</div>
   </div>
 </div>
 
@@ -66,5 +65,6 @@
     <div class="gwt-license">Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>.</div>
   </div>
 </div>
-  </body>
+
+</body>
 </html>

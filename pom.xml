@@ -43,6 +43,7 @@
 								<argument>${basedir}/src/main/markdown/</argument>
 								<argument>${basedir}/target/generated-site</argument>
 								<argument>${basedir}/src/main/resources/main.tpl</argument>
+								<argument>${basedir}/src/main/resources/toc.md</argument>
 							</arguments>
 						</configuration>
 					</execution>

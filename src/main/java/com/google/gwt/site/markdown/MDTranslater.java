@@ -1,11 +1,11 @@
 /*
  * Copyright 2013 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software distributed under the License
  * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
  * or implied. See the License for the specific language governing permissions and limitations under
@@ -37,7 +37,6 @@ public class MDTranslater {
     this.tocCreator = tocCreator;
     this.writer = writer;
     this.template = template;
-
   }
 
   public void render(MDParent root) throws TranslaterException {
@@ -62,34 +61,36 @@ public class MDTranslater {
 
       String head = createHeadForNode(node);
 
-      String html = fillTemplate(htmlMarkDown, toc, head);
+      String relativePath = "./";
+      for (int i = 1; i < node.getDepth(); i++) {
+        relativePath += "../";
+      }
+
+      String html = fillTemplate(
+          adjustRelativePath(template, relativePath),
+          htmlMarkDown,
+          adjustRelativePath(toc, relativePath),
+          adjustRelativePath(head, relativePath));
 
       writer.writeHTML(node, html);
-
     }
 
   }
 
   private String createHeadForNode(MDNode node) {
-    int depth = node.getDepth();
-    StringBuffer buffer = new StringBuffer();
-
-    for (int i = 1; i < depth; i++) {
-      buffer.append("../");
-    }
-
-    String baseUrl = buffer.toString();
-    StringBuffer headBuffer = new StringBuffer();
-
-    headBuffer.append("<link href='");
-    headBuffer.append(baseUrl);
-    headBuffer.append("css/main.css' rel='stylesheet' type='text/css'>");
-
-    return headBuffer.toString();
+    return "<link href='css/main.css' rel='stylesheet' type='text/css'>";
   }
 
-  private String fillTemplate(String html, String toc, String head) {
+  private String fillTemplate(String template, String html, String toc, String head) {
     return template.replace("$content", html).replace("$toc", toc).replace("$head", head);
+  }
+
+  protected String adjustRelativePath(String html, String relativePath) {
+    // Just using Regexp to add relative paths to certain urls.
+    // If we wanted to support a more complicated syntax
+    // we could parse the template with some library like jsoup
+    return html.replaceAll("(href|src)=(['\"])(?:(?:/+)|(?!(?:[a-z]+:|#)))(.*?)(\\2)",
+        "$1='" + relativePath + "$3'");
   }
 
   private String getNodeContent(String path) throws TranslaterException {

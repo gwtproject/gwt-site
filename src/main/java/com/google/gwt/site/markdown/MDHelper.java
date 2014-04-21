@@ -1,11 +1,11 @@
 /*
  * Copyright 2013 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software distributed under the License
  * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
  * or implied. See the License for the specific language governing permissions and limitations under
@@ -14,22 +14,27 @@
 package com.google.gwt.site.markdown;
 
 import java.io.File;
-import java.io.IOException;
+
+import org.pegdown.PegDownProcessor;
 
 import com.google.gwt.site.markdown.fs.FileSystemTraverser;
 import com.google.gwt.site.markdown.fs.MDParent;
 import com.google.gwt.site.markdown.toc.TocCreator;
+import com.google.gwt.site.markdown.toc.TocFromMdCreator;
+import com.google.gwt.site.markdown.toc.TocFromTemplateCreator;
 
 public class MDHelper {
   private String sourceDirectory;
   private String outputDirectory;
 
   private String templateFile;
+  private String templateTocFile;
 
   private boolean created = false;
   private File sourceDirectoryFile;
   private File outputDirectoryFile;
   private String template;
+  private String templateToc;
 
   public MDHelper setSourceDirectory(String sourceDirectory) {
     this.sourceDirectory = sourceDirectory;
@@ -43,6 +48,11 @@ public class MDHelper {
 
   public MDHelper setTemplateFile(String templateFile) {
     this.templateFile = templateFile;
+    return this;
+  }
+
+  public MDHelper setTemplateToc(String templateTocFile) {
+    this.templateTocFile = templateTocFile;
     return this;
   }
 
@@ -93,16 +103,24 @@ public class MDHelper {
     if (templateFile == null) {
       throw new MDHelperException("no templateFile set");
     }
-    File file = new File(templateFile);
+    template = readFile(templateFile);
 
-    try {
-      template = Util.getStringFromFile(file);
-    } catch (IOException e) {
-      throw new MDHelperException("can not read template file", e);
+    // read template TOC if parameter is provided
+    if (templateTocFile != null) {
+      templateToc = new PegDownProcessor().markdownToHtml(readFile(templateTocFile));
     }
 
     created = true;
     return this;
+  }
+
+  private String readFile(String filePath) throws MDHelperException {
+    File file = new File(filePath);
+    try {
+        return Util.getStringFromFile(file);
+     } catch (Exception e) {
+       throw new MDHelperException("can not read file" + filePath, e);
+     }
   }
 
   public void translate() throws TranslaterException {
@@ -114,8 +132,10 @@ public class MDHelper {
     FileSystemTraverser traverser = new FileSystemTraverser();
     MDParent mdRoot = traverser.traverse(sourceDirectoryFile);
 
-    new MDTranslater(new TocCreator(), new MarkupWriter(outputDirectoryFile), template).render(
-        mdRoot);
+    TocCreator tocCreator = templateToc != null ? new TocFromTemplateCreator(templateToc) : new TocFromMdCreator();
+
+    new MDTranslater(tocCreator, new MarkupWriter(outputDirectoryFile), template)
+       .render(mdRoot);
   }
 
 }

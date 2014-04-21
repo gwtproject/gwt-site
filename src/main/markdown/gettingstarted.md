@@ -1,5 +1,3 @@
-<link href="https://www.google.com/css/modules/buttons/g-button.css" rel="stylesheet" type="text/css" />
-
 <style>
 code, .code {font-size: 9pt; font-family: Courier, Courier New, monospace; color:#007000;}
 .highlight {background-color: #ffc;}
@@ -66,7 +64,7 @@ $JDK_HOME environment variable with export JDK_HOME="/Library/Java/Home"</p>
     </td>
     <td>
       <p>
-        Download and unzip the GWT SDK. This contains the core
+        <a href='download.html'>Download</a> and unzip the GWT SDK. This contains the core
         libraries, compiler, and development server that you need to write web
         applications.
       </p>
@@ -74,14 +72,6 @@ $JDK_HOME environment variable with export JDK_HOME="/Library/Java/Home"</p>
         See <a href="doc/latest/FAQ_GettingStarted.html">FAQ</a>
         for system and browser requirements.
       </p>
-    </td>
-    <td class="moreinfo" style="vertical-align:top">
-      <div class="g-button">
-        <div><span><span>
-          <a href="download.html">Download GWT SDK</a>
-        </span></span></div>
-      </div>
-      <br/>
     </td>
   </tr>
 </tbody></table>

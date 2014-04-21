@@ -1,4 +1,10 @@
 GWT Surveys
 ==========================
 
-<p>Download the Future of GWT report, conducted to the GWT community in 2012 <a href="https://vaadin.com/documents/10187/b74a2275-232d-4d55-9158-fad1c8da5230">here</a>.</p>
+ With over 30 pages of data, charts, stats and commentary from the most well-respected folks in the world of GWT, we'd like to think that this report is the most complete survey of the GWT community to date.
+
+ Download the Future of GWT report, conducted to the GWT community:
+
+- [2013 Report](https://vaadin.com/gwt/report-2013).
+- [2012 Report](https://vaadin.com/gwt/report-2012).
+

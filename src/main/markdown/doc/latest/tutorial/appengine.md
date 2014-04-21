@@ -534,7 +534,8 @@ Considering all of these, you should add something similar to the following to y
 
 <span class="highlight">  private LoginInfo loginInfo = null;
   private VerticalPanel loginPanel = new VerticalPanel();
-  private Label loginLabel = new Label("Please sign in to your Google Account to access the StockWatcher application.");
+  private Label loginLabel = new Label(
+      "Please sign in to your Google Account to access the StockWatcher application.");
   private Anchor signInLink = new Anchor("Sign In");</span>
 
   public void onModuleLoad() {
@@ -964,12 +965,9 @@ When the StockWatcher application loads, it should be prepopulated with the user
     stocks.add(symbol);
     stocksFlexTable.setText(row, 0, symbol);
     stocksFlexTable.setWidget(row, 2, new Label());
-    stocksFlexTable.getCellFormatter().addStyleName(row, 1, "watchListNumericCol
-umn");
-    stocksFlexTable.getCellFormatter().addStyleName(row, 2, "watchListNumericCol
-umn");
-    stocksFlexTable.getCellFormatter().addStyleName(row, 3, "watchListRemoveColu
-mn");
+    stocksFlexTable.getCellFormatter().addStyleName(row, 1, "watchListNumericColumn");
+    stocksFlexTable.getCellFormatter().addStyleName(row, 2, "watchListNumericColumn");
+    stocksFlexTable.getCellFormatter().addStyleName(row, 3, "watchListRemoveColumn");
 
     // Add a button to remove this stock from the table.
     Button removeStockButton = new Button("x");
@@ -1062,7 +1060,7 @@ Instead of just displaying stocks when they are added, we will call the StockSer
     if (stocks.contains(symbol))
       return;
 
-<span class="strike">    displayStock(symbol);</span>
+    <span class="strike">displayStock(symbol);</span>
 <span class="highlight">    addStock(symbol);</span>
   }
 
@@ -1174,7 +1172,6 @@ Here's a helper method to accomplish these two error handling requirements.
 
 <p>
 We can add this to each AsyncCallback <code>onFailure(Throwable error)</code> method.
-<p>
 <pre class="code">
     loginService.login(GWT.getHostPageBaseURL(), new AsyncCallback&lt;LoginInfo&gt;() {
       public void onFailure(Throwable error) {

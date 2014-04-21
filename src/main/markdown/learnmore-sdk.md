@@ -58,7 +58,7 @@ applications in the Java programming language.
 <a name="how"></a>
 <h2>How the SDK works</h2>
 
-<div style="float: right; display: inline; margin: 10px 0 10px 10px">
+<div>
 <object width="560" height="340"><param name="movie" value="https://www.youtube.com/v/ShkYDPN5Knc&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="https://www.youtube.com/v/ShkYDPN5Knc&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object>
 </div>
 

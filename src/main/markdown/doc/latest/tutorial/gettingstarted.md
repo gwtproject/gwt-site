@@ -12,10 +12,9 @@ code, .code {font-size: 9pt; font-family: Courier, Courier New, monospace; color
 In this tutorial, you'll write this simple AJAX application, StockWatcher.
 </p>
 <p>
-<iframe name="StockWatcher" height="400" width="400" src="gettingstarted/StockWatcher"></iframe>
-<p>
 Go ahead and try StockWatcher out. Add a few stock codes and see how it works.
 </p>
+<iframe name="StockWatcher" src="gettingstarted/StockWatcher.html"></iframe>
 <p>
 In the process of building StockWatcher, you'll learn how GWT provides the tools for you to:
 </p>

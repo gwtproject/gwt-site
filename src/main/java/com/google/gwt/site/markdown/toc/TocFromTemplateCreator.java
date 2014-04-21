@@ -16,6 +16,15 @@ package com.google.gwt.site.markdown.toc;
 import com.google.gwt.site.markdown.fs.MDNode;
 import com.google.gwt.site.markdown.fs.MDParent;
 
-public interface TocCreator {
-  String createTocForNode(MDParent root, MDNode node);
+public class TocFromTemplateCreator implements TocCreator {
+
+  private String templateToc;
+
+  public TocFromTemplateCreator(String templateToc) {
+    this.templateToc = templateToc;
+  }
+
+  public String createTocForNode(MDParent root, MDNode node) {
+    return templateToc;
+  }
 }

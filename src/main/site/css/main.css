@@ -6,18 +6,22 @@ html {
 }
 
 body {
-	margin: 0;
+  margin: 0;
+  overflow-y: scroll;
 }
 
 .gwt-wrap {
-  width: 1062px;
+  width: 1150px;
   margin: 0 auto 0 auto;
   font-family: verdana, arial, helvetica;
 }
 
+#gwt-header1, #gwt-header3 {
+  min-width: 1150px;
+}
+
 #gwt-header1 {
   background: #606060;
-  
 }
 
 #gwt-header1 .first {
@@ -54,33 +58,33 @@ body {
 }
 
 .nav {
-	list-style-type: none;
-	height: 100px;
-	margin: auto;
+  list-style-type: none;
+  height: 100px;
+  margin: auto;
 }
 
 .nav li {
-	float: left;
-	margin-top: 13px;
-	margin-left: 40px;
-	margin-right: -30px;
+  float: left;
+  margin-top: 13px;
+  margin-left: 40px;
+  margin-right: -30px;
 }
 
 .nav a, .nav a:VISITED,.nav a:LINK  {
-	padding-right: 10px;
-	padding-left: 10px;
-        margin: 0;
-        padding-bottom: 10px;
-	display: block;
-	line-height: 77px;
-	text-decoration: none;
-	font-size: 18px;
-	color: #972108;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 0;
+  padding-bottom: 10px;
+  display: block;
+  line-height: 77px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #972108;
 }
 
-.nav a:HOVER {	
-	background-color: #e54827;
-	color: white;
+.nav a:HOVER {
+  background-color: #e54827;
+  color: white;
 }
 
 #gwt-header2 .gwt-wrap {
@@ -90,17 +94,18 @@ body {
 #gwt-header2 .gwtcreate {
   position: absolute;
   top: 5px;
-  right: -20px;
+  right: 0px;
+  height: 90px;
 }
 
 #gwt-header2 .gwtcreate img {
-  width: 474px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 #gwt-header3 {
   background-color: #ceedf4;
 }
-
 
 #gwt-header3 .first {
   background-color: white;
@@ -108,12 +113,20 @@ body {
   height: 30px;
 }
 
-#gwt-header3 .first h2{
+#gwt-header3 .first h2 {
   margin: 0;
   padding: 9px 40px;
   color: #f55837;
   font-size: 11px;
   font-weight: lighter;
+}
+
+#gwt-header3 .beta-info {
+  float: right;
+  font-size: 50%;
+  margin-top: -20px;
+  padding-left: 5px;
+  color: red;
 }
 
 #gwt-toc {
@@ -122,31 +135,48 @@ body {
   padding: 10px;
   overflow: hidden;
   background: #efefef;
+  z-index: 1;
 }
 
 #gwt-toc ul {
   margin: 0;
   padding: 0;
-  margin-left: 22px;
   list-style-type: none;
+  margin-left: 15px;
 }
 
 #gwt-toc li {
-	margin: 0;
-	font-size: 12px;
-	margin-left: 8px;
-	line-height: 24px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 22px;
 }
 
-#gwt-toc li.folder > a {
+#agwt-toc li.open > ul > li {
+  margin-left: 18px;
+  -webkit-transition: margin-left 1s ease 0s;
+  transition: margin-left 1s ease 0s;
+}
+
+#gwt-toc li > span {
   background-image: url("../images/arrow-closed.png");
   background-repeat: no-repeat;
-  background-position: 0 2px;
+  background-position: 0 5px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+#gwt-toc li.open > span{
+  background-image: url("../images/arrow-open.png");
+}
+
+#gwt-toc li > a {
   padding-left: 15px;
 }
 
-#gwt-toc li.folder.open > a {
-  background-image: url("../images/arrow-open.png");
+#gwt-toc li > span + a {
+  padding-left: 0px;
 }
 
 #gwt-toc a, #gwt-toc a:VISITED{
@@ -154,21 +184,42 @@ body {
   text-decoration: none;
 }
 
-#gwt-toc a:HOVER{
+#gwt-toc a:HOVER {
   color: #0aa7c8;
   text-decoration: none;
+  cursor: pointer;
+}
+
+#gwt-toc a.selected {
+  color:#0aa7c8;
+}
+
+#gwt-toc > ul > li:not(:last-child) {
+  border-bottom: 1px dotted #d6d7da
 }
 
 #gwt-content {
-  float: left;
-  width: 672px;
-  padding: 50px;
+  overflow: hidden;
+  padding: 30px 50px 50px 30px;
   color: #564b49;
+  font-size: 14px;
 }
 
-#gwt-content a{
+#gwt-content p, #gwt-content p li {
+  text-align: justify;
+}
+
+#gwt-content a {
   color: #0aa7c8;
-  font-size: 14px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+  margin: 0 0 40px;
 }
 
 #gwt-footer {
@@ -176,16 +227,18 @@ body {
   padding-top: 20px 0;
   background-color: #d5f0f6;
   border-bottom: 10px solid #606060;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .gwt-license {
   clear: both;
-  margin-top: 20px;
   font-size: 12px;
   text-align: center;
   padding: 5px;
   color: #9eb4b9;
- 
 }
 
 .gwt-license a {
@@ -195,6 +248,8 @@ body {
 
 img {
   border: 0;
+  max-width: 800px;
+  height: auto;
 }
 
 table {
@@ -221,7 +276,7 @@ a:visited {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 29px;
   margin-top: 0px;
 }
 
@@ -251,15 +306,15 @@ li {
 pre,code {
   color: #007000;
   font-family: "bogus font here", monospace;
-  font-size: 70%;
+  font-size: 80%;
 }
 
 pre {
   border: 1px solid silver;
   background-color: #f5f5f5;
-  padding: 0.5em;
+  padding: 0.5em 0 0.5em 0.5em;
   overflow: auto;
-  margin: 2em;
+  margin-left: 2em;
 }
 
 pre ins {
@@ -723,5 +778,14 @@ hr {
 span.new {
   vertical-align: super;
   color: #cc0000;
-  font-size: 70%;
+  font-size: 80%;
+}
+
+iframe[name='StockWatcher'] {
+  border: solid 1px grey;
+  padding: 20px 0px 0px 75px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  width: 550px;
+  height: 350px;
 }
