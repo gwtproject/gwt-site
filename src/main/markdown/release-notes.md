@@ -1,6 +1,7 @@
 The GWT Release Notes
 =====================
 
+* <a href="#Release_Notes_2_6_1">2.6.1</a>
 * <a href="#Release_Notes_2_6_0">2.6.0</a>
 * <a href="#Release_Notes_2_6_0_RC4">2.6.0 (RC4)</a>
 * <a href="#Release_Notes_2_6_0_RC3">2.6.0 (RC3)</a>
@@ -55,6 +56,27 @@ The GWT Release Notes
 <hr />
 
 <a name="Release_Notes_Current"></a>
+<h2 id="Release_Notes_2_6_1">Release Notes for 2.6.1</h2>
+<p>
+	This release contains bug fixes for
+	<a href="#Release_Notes_2_6_0">GWT 2.6.0</a>.
+</p>
+
+<h3>Highlights</h3>
+- Fixed classloader problems when running web apps in Development Mode.
+    - <a href="https://code.google.com/p/google-web-toolkit/issues/detail?id=8526">Issue 8526</a>
+    - <a href="https://code.google.com/p/google-web-toolkit/issues/detail?id=8585">Issue 8585</a>
+- Restored GWT Designer support.
+- Fixed JSNI calls that return primitive values when in Development Mode.
+<a href="https://code.google.com/p/google-web-toolkit/issues/detail?id=8548">Issue 8548</a>
+- Fixed Super Dev Mode for Windows and Internet Explorer (The page must have an HTML5 doctype).
+    - <a href="https://code.google.com/p/google-web-toolkit/issues/detail?id=8587">Issue 8587</a>
+    - <a href="https://code.google.com/p/google-web-toolkit/issues/detail?id=8618">Issue 8618</a>
+    - <a href="https://gwt-review.googlesource.com/#/c/7510/">Updated cache headers</a>
+
+<p>A complete list of changes can be found
+<a href="https://gwt.googlesource.com/gwt/+log/2.6.0..2.6.1">here</a>.</p>
+
 <h2 id="Release_Notes_2_6_0">Release Notes for 2.6.0</h2>
 <p>
 	This release includes minor updates to silence unnecessary debugging warnings.
