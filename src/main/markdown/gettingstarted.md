@@ -87,8 +87,8 @@ $JDK_HOME environment variable with export JDK_HOME="/Library/Java/Home"</p>
 </tbody></table>
 
 
-<div class="details">On Windows, extract the files from the compressed folder <code>gwt-2.6.0.zip</code>.  On Mac or Linux, you can unpack the package with a command like:
-<pre class="code">unzip gwt-2.6.0.zip</pre></div>
+<div class="details">On Windows, extract the files from the compressed folder <code>gwt-2.6.1.zip</code>.  On Mac or Linux, you can unpack the package with a command like:
+<pre class="code">unzip gwt-2.6.1.zip</pre></div>
 
 <p>
 The GWT SDK doesn't have an installer application.  All the files you  need to
@@ -107,7 +107,7 @@ run and use the SDK are located in the extracted directory.
 <li><b>Windows</b>
 
 <pre class="code">
-cd gwt-2.6.0
+cd gwt-2.6.1
 
 webAppCreator -out MyWebApp com.mycompany.mywebapp.MyWebApp
 </pre>
@@ -116,7 +116,7 @@ webAppCreator -out MyWebApp com.mycompany.mywebapp.MyWebApp
 <li><b>Mac or Linux</b> - you may need to make the script executable:
 
 <pre class="code">
-cd gwt-2.6.0
+cd gwt-2.6.1
 
 chmod u+x webAppCreator
 

@@ -2,6 +2,24 @@
 
 <div class="release">
 
+  <h3 class="version">Version 2.6.1</h3>
+
+  <p>Build 2.6.1 - May 09, 2014 - <a href="release-notes.html#Release_Notes_2_6_1">Release notes</a></p>
+  <table class="downloads" style="width:500px">
+    <tbody><tr>
+      <th>Platform</th>
+      <th>Package</th>
+      <th>Size</th>
+      <th>SHA1 Sum</th>
+    </tr>
+    <tr>
+      <td>Windows, Mac OS X, and Linux</td>
+      <td><a href="http://goo.gl/BLc6R8">gwt-2.6.1.zip</a></td>
+      <td>104 MB</td>
+      <td>8ebc808e9ca6ef7e8f6460c8c0840423c192b3c5</td>
+    </tr>
+  </tbody></table>
+
   <h3 class="version">Version 2.6.0</h3>
 
   <p>Build 2.6.0 - Jan 23, 2014 - <a href="release-notes.html#Release_Notes_2_6_0">Release notes</a></p>
