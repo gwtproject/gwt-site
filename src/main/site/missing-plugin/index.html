@@ -158,7 +158,11 @@ var allDownloads = {
   "chrome": {
     "caption": "Download the GWT Developer Plugin<br>For Chrome",
     "url": "https://chrome.google.com/webstore/detail/gwt-developer-plugin/jpjpnpmbddbjkfaccnmhnkdgjideieim",
-    "platforms": "Win x86, Linux x86/x86_64, Mac x86",
+    "platforms": "Win x86, Mac x86",
+  },
+
+  "chrome-linux": {
+    "caption": "Sorry, the GWT Developer Plugin no longer works with Chrome on Linux",
   },
 
   "safari-win": {
@@ -229,7 +233,11 @@ if (ua.indexOf("webkit") != -1) {
   } else if (ua.indexOf("android") != -1) {
     id = 'webkit-android';
   } else if (ua.indexOf("chrome") != -1) {
-    id = 'chrome';
+    if (ua.indexOf('linux') != -1) {
+      id = 'chrome-linux';
+    } else {
+      id = 'chrome';
+    }
   } else if (ua.indexOf("macintosh") != -1) {
     if (isSafariLate(ua)) {
       id = 'safari-mac-late';
