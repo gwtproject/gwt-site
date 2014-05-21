@@ -789,3 +789,120 @@ iframe[name='StockWatcher'] {
   width: 550px;
   height: 350px;
 }
+
+#nav-mobile {
+  display: none;
+}
+
+#gwt-toc, #gwt-content, .gwt-wrap, .first, .second, .gwtcreate, img {
+   transition: all 0.4s linear;
+}
+
+/* tablet */
+@media screen and (max-width: 1024px) {
+  .gwt-wrap {
+    width: 960px;
+  }
+  #gwt-header1, #gwt-header3 {
+    min-width: 960px;
+  }
+  #gwt-toc {
+    width: 230px;
+  }
+  #gwt-content {
+    padding: 15px 15px 50px 15px;
+  }
+  #gwt-header2 .first, #gwt-header3 .first {
+    width: 250px;
+  }
+  #gwt-header2 .gwtcreate {
+    height: 75px;
+  }
+}
+/* mobile phone */
+@media screen and (max-width: 768px) {
+  /* Show hide some elements */
+  #nav-desktop, #gwt-toc, #gwt-header3, #gwt-header1 {
+    display: none;
+  }
+  #nav-mobile, #gwt-toc.show {
+    display: block;
+  }
+  /* Button to show/hide menu */
+  #nav-mobile {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  #nav-mobile li {
+    margin: 0px;
+  }
+  #nav-mobile a {
+    font-size: 38px;
+    line-height: 38px;
+    font-weight: bold;
+    padding: 0px;
+    margin: 15px 0px 0px 0px;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  /* menu */
+  #gwt-toc {
+    position: absolute;
+    width: auto;
+    min-width: 40%;
+    top: 5px;
+    left: 10px;
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: scale(1.5);
+    transform-origin: 0 0;
+    transform: scale(1.5);
+    box-shadow: 3px 3px 10px 1px #ccc;
+    padding: 4px;
+    border: 1px solid rgb(187, 174, 174);
+    border-radius: 10px;
+  }
+  /* content */
+  #gwt-content {
+    float: left;
+    width: 100%;
+    padding: 0px 0px 50px 0px;
+  }
+  #gwt-content img, iframe[name='StockWatcher'] {
+    max-width: 100%;
+  }
+  #gwt-content pre {
+    margin-left: 0px;
+  }
+  #gwt-content h1, #gwt-content h2, #gwt-content h3 {
+    font-size: 20px;
+  }
+  .gwt-wrap {
+    width: 95%;
+    padding: 0px 7px 0px 7px;
+  }
+  /* Reduce GWT header */
+  #gwt-header2 .first {
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: scale(0.6);
+    transform-origin: 0 0;
+    transform: scale(0.6);
+  }
+  #gwt-header2 .second {
+     height: 70px;
+  }
+  /* If .gwtcreate is present reduce and move it */
+  #gwt-header2 .gwtcreate {
+    right: 52px;
+    max-width: calc(100% - 50px);
+    height: 62px;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  #gwt-footer {
+    position: inherit;
+  }
+}

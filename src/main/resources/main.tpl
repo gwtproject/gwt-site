@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
     $head
     <script type="text/javascript">
@@ -32,10 +33,13 @@
   <div class="gwt-wrap">
     <a id='gwt-home' href=""><div class="first"><h1>GWT</h1></div></a>
     <div class="second">
-      <ul class="nav">
+      <ul id='nav-desktop' class="nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="download.html">Download</a></li>
         <li><a href="doc/latest/DevGuide.html">Docs</a></li>
+      </ul>
+      <ul id='nav-mobile' class="nav">
+        <li><a href="#">···</a></li>
       </ul>
       <a href="http://gwtcreate.com" title="Go to gwtcreate.com" class="gwtcreate"><img src="images/gwtproject.org-2015-banner@2x.png" alt="GWT.create Conference &ndash; The #1 GWT conference in 2015. Mountain View / Munich, January 2015"></a>
     </div>
