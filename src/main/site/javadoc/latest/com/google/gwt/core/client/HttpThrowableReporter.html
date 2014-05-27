@@ -29,7 +29,7 @@
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.1</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -92,8 +92,12 @@
 <ul class="blockList">
 <li class="blockList">
 <hr>
+<div class="block"><strong>Deprecated.</strong>&nbsp;
+<div class="block"><i>Use <code>JsonLogRecordClientUtil</code> instead.</i></div>
+</div>
 <br>
-<pre>public final class <span class="strong">HttpThrowableReporter</span>
+<pre>@Deprecated
+public final class <span class="strong">HttpThrowableReporter</span>
 extends java.lang.Object</pre>
 <div class="block">This is a utility class which can report Throwables to the server via a
  JSON-formatted payload.</div>
@@ -118,12 +122,14 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <td class="colFirst"><code>(package private) static java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/client/HttpThrowableReporter.html#buildPayload(java.lang.Throwable)">buildPayload</a></strong>(java.lang.Throwable&nbsp;t)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 <div class="block">Visible for testing.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/client/HttpThrowableReporter.html#installUncaughtExceptionHandler(java.lang.String)">installUncaughtExceptionHandler</a></strong>(java.lang.String&nbsp;url)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 <div class="block">Installs an <a href="../../../../../com/google/gwt/core/client/GWT.UncaughtExceptionHandler.html" title="interface in com.google.gwt.core.client"><code>GWT.UncaughtExceptionHandler</code></a> that will automatically invoke
  <a href="../../../../../com/google/gwt/core/client/HttpThrowableReporter.html#report(java.lang.String, java.lang.Throwable)"><code>report(String, Throwable)</code></a>.</div>
 </td>
@@ -132,6 +138,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../com/google/gwt/core/client/HttpThrowableReporter.html#report(java.lang.String, java.lang.Throwable)">report</a></strong>(java.lang.String&nbsp;url,
       java.lang.Throwable&nbsp;t)</code>
+<div class="block"><strong>Deprecated.</strong>&nbsp;</div>
 <div class="block">Report a Throwable to the server.</div>
 </td>
 </tr>
@@ -164,6 +171,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>installUncaughtExceptionHandler</h4>
 <pre>public static&nbsp;void&nbsp;installUncaughtExceptionHandler(java.lang.String&nbsp;url)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <div class="block">Installs an <a href="../../../../../com/google/gwt/core/client/GWT.UncaughtExceptionHandler.html" title="interface in com.google.gwt.core.client"><code>GWT.UncaughtExceptionHandler</code></a> that will automatically invoke
  <a href="../../../../../com/google/gwt/core/client/HttpThrowableReporter.html#report(java.lang.String, java.lang.Throwable)"><code>report(String, Throwable)</code></a>.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>url</code> - A URL that is suitable for use with <a href="../../../../../com/google/gwt/xhr/client/XMLHttpRequest.html" title="class in com.google.gwt.xhr.client"><code>XMLHttpRequest</code></a></dd></dl>
@@ -177,6 +185,7 @@ extends java.lang.Object</pre>
 <h4>report</h4>
 <pre>public static&nbsp;boolean&nbsp;report(java.lang.String&nbsp;url,
              java.lang.Throwable&nbsp;t)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <div class="block">Report a Throwable to the server. This method will sent an HTTP
  <code>POST</code> request with a JSON-formatted payload. The payload will
  consist of a single JSON object with the following keys:
@@ -202,6 +211,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>buildPayload</h4>
 <pre>static&nbsp;java.lang.String&nbsp;buildPayload(java.lang.Throwable&nbsp;t)</pre>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;</div>
 <div class="block">Visible for testing.</div>
 </li>
 </ul>
@@ -226,7 +236,7 @@ extends java.lang.Object</pre>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage"><em>GWT 2.6.0</em></div>
+<div class="aboutLanguage"><em>GWT 2.6.1</em></div>
 </div>
 <div class="subNav">
 <ul class="navList">
