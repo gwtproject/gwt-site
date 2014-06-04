@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
     $head
+    <script type="text/javascript" src="/gwtproject/gwtproject.nocache.js"></script>
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-40673139-1']);
@@ -18,7 +19,18 @@
       })();
 
     </script>
-    <script type="text/javascript" src="/gwtproject/gwtproject.nocache.js"></script>
+    <script>
+      (function() {
+        var cx = '008698606704604874043:or32ypbnrfu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
     <title>GWT Project</title>
   </head>
   <body>
@@ -48,10 +60,12 @@
 
 <div id="gwt-header3">
   <div class="gwt-wrap">
-    <div class="first"><h2>TABLE OF CONTENTS</h2></div>
+    <div class="first"><gcse:search></gcse:search></div>
     <div class="beta-info">This is a <b>beta version</b>. If you find errors, please <a href="https://code.google.com/p/google-web-toolkit/issues/entry">report them</a> or <a href="makinggwtbetter.html#webpage">change them</a>!</div>
   </div>
 </div>
+
+<div id="mobileSearch"><gcse:search></gcse:search></div>
 
 <div class="gwt-wrap">
   <div id="gwt-toc">

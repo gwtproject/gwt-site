@@ -108,17 +108,22 @@ body {
 }
 
 #gwt-header3 .first {
-  background-color: white;
   width: 290px;
-  height: 30px;
+  height: 40px;
 }
 
-#gwt-header3 .first h2 {
-  margin: 0;
-  padding: 9px 40px;
-  color: #f55837;
-  font-size: 11px;
-  font-weight: lighter;
+/* search box */
+#gwt-header3 .first > div {
+    width: 290px;
+}
+
+#gwt-header3 .first > div > div,
+#mobileSearch > div > div {
+    padding: 0;
+}
+
+#mobileSearch {
+    display:none;
 }
 
 #gwt-header3 .beta-info {
@@ -809,6 +814,12 @@ iframe[name='StockWatcher'] {
   #gwt-toc {
     width: 230px;
   }
+
+  /* search box */
+  #gwt-header3 .first > div {
+    width: 250px;
+  }
+
   #gwt-content {
     padding: 15px 15px 50px 15px;
   }
@@ -866,8 +877,9 @@ iframe[name='StockWatcher'] {
   #gwt-content {
     float: left;
     width: 100%;
-    padding: 0px 0px 50px 0px;
+    padding: 15px 0px 50px 0px;
   }
+
   #gwt-content img, iframe[name='StockWatcher'] {
     max-width: 100%;
   }
@@ -904,5 +916,10 @@ iframe[name='StockWatcher'] {
 
   #gwt-footer {
     position: inherit;
+  }
+
+  #mobileSearch {
+    display: block;
+    position: absolute;
   }
 }
