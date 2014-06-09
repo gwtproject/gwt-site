@@ -60,12 +60,12 @@
 
 <div id="gwt-header3">
   <div class="gwt-wrap">
-    <div class="first"><gcse:search></gcse:search></div>
+    <div class="first"><gcse:search linktarget="_parent"></gcse:search></div>
     <div class="beta-info">This is a <b>beta version</b>. If you find errors, please <a href="https://code.google.com/p/google-web-toolkit/issues/entry">report them</a> or <a href="makinggwtbetter.html#webpage">change them</a>!</div>
   </div>
 </div>
 
-<div id="mobileSearch"><gcse:search></gcse:search></div>
+<div id="mobileSearch"><gcse:search linktarget="_parent"></gcse:search></div>
 
 <div class="gwt-wrap">
   <div id="gwt-toc">
