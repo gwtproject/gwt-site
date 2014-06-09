@@ -48,8 +48,8 @@ We suggest downloading Eclipse 4.3 (Kepler).
 
 <h2 id="installing">Install the Plugin</h2>
 
-<img src="https://developers.google.com/eclipse/images/google-plugin.png" style="float: right; width: 100px;
-margin: 5px 15px 5px 5px;" height="100" width="100" />
+<img src="https://developers.google.com/eclipse/images/google-plugin.png" style="float: left; width: 40px;
+margin-right: 15px;"/>
 
 <p>
 Install the Google Plugin for Eclipse 4.3 by using the following update
