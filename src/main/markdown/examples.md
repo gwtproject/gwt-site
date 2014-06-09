@@ -18,15 +18,13 @@
     }
 
     .project {
-      position: relative;
-      height: 109px;
+      clear: both;
       margin-bottom: 1.25em;
+      padding: 10px 0 10px 0;
     }
 
-    .project .screenshot, logo {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .project .screenshot {
+      float: left;
     }
 
     .project .name {
@@ -36,16 +34,11 @@
       background-position: left center;
     }
 
-    .project .info {
-      position: absolute;
-      top: 0;
-      left: 140px;
-    }
-
     .project .screenshot img {
       width: 125px;
       height: 109px;
       border: 1px solid;
+      margin-right: 10px;
     }
 
     .project .info .apis {
@@ -161,7 +154,6 @@ If you're like us, the first thing you want to do is see examples of what you ca
 
 <h2 id="real-world-projects">Real world projects</h2>
 <p>GWT is being used by tens of thousands of projects around the world. Take a look at just a few example of GWT in action:</p>
-<br/>
 
 <div class="project">
   <div class="screenshot">
