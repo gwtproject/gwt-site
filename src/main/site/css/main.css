@@ -923,3 +923,23 @@ iframe[name='StockWatcher'] {
     position: absolute;
   }
 }
+
+@media print {
+   #gwt-header1,
+   #gwt-header2 .second,
+   #gwt-header3,
+   #gwt-toc,
+   #gwt-footer {
+     display: none;
+   }
+   #gwt-content {
+     padding: 0px 10px 0px 10px;
+   }
+   #gwt-header2 .first h1 {
+     margin: 0px;
+   }
+   #gwt-header2 .first {
+     float: none;
+     height: auto;
+   }
+}
