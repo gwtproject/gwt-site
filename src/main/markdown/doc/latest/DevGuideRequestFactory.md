@@ -1,6 +1,8 @@
 <style type="text/css">
-  table, tr, td {
-    border: 1px solid #000;
+  #gwt-content th,
+  #gwt-content td {
+    border: 1px solid #ccc;
+    font-size: 95%;
   }
 </style>
 
@@ -306,11 +308,11 @@ explained further in the next section.</p>
 <p>RequestFactory restricts the types that may be used as proxy properties and service method parameters.  Collectively, these types are referred to
 as <em>transportable types</em>.  Each client-side transportable type is mapped to a server-side domain type.  The mapping rules are as follows:
 
-<table width="100%" border="1">
+<table width="100%">
   <caption style="font-weight:bold; text-align:center; margin-bottom:8px;">
     Mapping of transportable types to domain types
   </caption>
-  <tr style="border: 1px solid #aaa; padding: 5px;">
+  <tr>
     <th>Client type</th>
     <th>Domain type</th>
   </tr>
@@ -399,11 +401,11 @@ rules:</p>
   <li>Methods that operate on an instance of an entity, like persist() and remove(), return an InstanceRequest object in the client interface. Instance methods do not pass the instance directly, but rather via the <code>using()</code> method on the InstanceRequest. On the server, instance methods must be implemented as non-static methods in the entity type.</li>
 </ul>
 <p>The RequestFactory servlet requires four special methods for all entities. They may be implemented either in the entity itself or in a default-instantiable type  that implements the <code>Locator</code> interface. The required methods are summarized in the table below.
-<table width="100%" border="1">
+<table width="100%">
   <caption style="font-weight:bold; text-align:center; margin-bottom:8px;">
     Entity locator methods can be implemented in the entity or a Locator class
     </caption>
-  <tr style="border: 1px solid #aaa; padding: 5px;">
+  <tr>
     <th width="8%">Method</td>
     <th width="15%">Directly in entity</td>
     <th width="18%">Locator&lt;T,I&gt; impl</td>
