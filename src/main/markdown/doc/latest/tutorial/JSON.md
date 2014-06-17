@@ -289,7 +289,7 @@ They can be static or instance methods.
 
 <h3>Converting JSON into JavaScript objects</h3>
 <p>
-First you need to convert the JSON text from the server into JavaScript objects. This can be easily done using the static JsonUtils.safeEval() method. We'll see later how to use it.
+First you need to convert the JSON text from the server into JavaScript objects. This can be easily done using the static <code>JsonUtils.safeEval()</code> method. We'll see later how to use it.
 </p>
 
 <h4>JSON data types</h4>
@@ -498,7 +498,7 @@ The RequestCallback interface is analogous to the AsyncCallback interface in GWT
 
         public void onResponseReceived(Request request, Response response) {
           if (200 == response.getStatusCode()) {
-            updateTable(JsonUtils.safeEval(response.getText()));
+            updateTable(JsonUtils.&lt;JsArray&lt;StockData>>safeEval(response.getText()));
           } else {
             displayError("Couldn't retrieve JSON (" + response.getStatusText()
                 + ")");
@@ -508,7 +508,7 @@ The RequestCallback interface is analogous to the AsyncCallback interface in GWT
     } catch (RequestException e) {
       displayError("Couldn't retrieve JSON");
     }</pre></div>
-      <div class="details">This is where we use JsonUtils.safeEval() to convert the JSON string into JavaScript objects.</div>
+      <div class="details">This is where we use <code>JsonUtils.safeEval()</code> to convert the JSON string into JavaScript objects.</div>
     </li>
     <li>
      <div class="header">You receive two compile errors which you will resolve in a minute.</div>
