@@ -167,7 +167,7 @@ As shown in the following code, do the following:
     <li>Save the file StockWatcher.html.</li>
 </ol>
 <pre class="code">
-&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;meta http-equiv="content-type" content="text/html; charset=UTF-8"&gt;
