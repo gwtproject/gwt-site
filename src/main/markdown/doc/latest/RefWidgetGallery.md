@@ -4,7 +4,7 @@
 
 <p>The following are <a href="#Widgets">widgets</a> and <a
   href="#Panels">panels</a> available in the GWT user-interface library. You
-can view a code example of each widget in the <a href="http://gwt.google.com/samples/Showcase/Showcase.html">Showcase</a> sample application.</p>
+can view a code example of each widget in the <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html">Showcase</a> sample application.</p>
 
 <p>
 <b>Widgets:</b><br>

@@ -2,14 +2,15 @@
 <br>
 <i>July 2007</i>
 
+<p><i>This article is obsolete, but may be of historical interest.</i></p>
+
 <p>
 It's now been a few weeks since the release of GWT 1.4 and Apple's iPhone.&nbsp;
 We've spent some of that time learning how to optimize GWT
 applications for the iPhone.&nbsp; Since nothing beats experience with real
 code, we decided to write an application that we would find useful and that
 shows off the cool features of the iPhone.&nbsp; The result is the
-<a href="http://gwt.google.com/samples/GwtFeedReader">GWT
-Feed Reader</a>, an RSS feed reader that uses the
+GWT Feed Reader, an RSS feed reader that uses the
 <a href="//developers.google.com/feed/">Google
 AJAX Feed API</a> with a user interface optimized for the iPhone. This article
 will discuss what we've learned from writing this RSS reader.

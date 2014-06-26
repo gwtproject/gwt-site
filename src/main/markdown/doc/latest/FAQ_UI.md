@@ -130,7 +130,7 @@ such as <a href="/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.h
 the browser resizes.
 </p>
 
-<p>The <a href="http://gwt.google.com/samples/Mail/Mail.html">Mail sample application</a> demonstrates SplitLayoutPanel in action.</p>
+<p>The <a href="http://samples.gwtproject.org/samples/Mail/Mail.html">Mail sample application</a> demonstrates SplitLayoutPanel in action.</p>
 
 <p>See the Developer's Guide on <a href="DevGuideUiPanels.html#LayoutPanels">Layout Panels</a> for more details and code snippets.
 

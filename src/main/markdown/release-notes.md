@@ -1474,7 +1474,7 @@ in this release.
 			<li>Select "Add/Remove Programs"</li>
 			<li>Select "GWT Developer Plugin for IE" then click "Uninstall"</li>
 			<li>Run Internet Explorer and browse to <a
-				href="http://gwt.google.com/samples/MissingPlugin">http://gwt.google.com/samples/MissingPlugin</a>
+				href="/missing-plugin/">http://gwtproject.org/missing-plugin/</a>
 				to install the new version of the plugin
 			</li>
 		</ol>

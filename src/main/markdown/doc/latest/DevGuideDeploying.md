@@ -15,7 +15,7 @@ href="/javadoc/latest/com/google/gwt/jsonp/client/JsonpRequestBuilder.html">JSON
 and <a
 href="DevGuideCodingBasics.html#DevGuideJSON">working with JSON data</a>, server-side scripts that receive and parse HTTP requests sent through the GWT <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a>, or GWT RPC (see <a href="#DevGuideDeployingServletContainerUsingRPC">&quot;Deploying on a servlet container using RPC&quot;</a> section below).
 
-<p>For an example of deploying GWT application files to a web server, suppose you want to deploy the <a href="http://gwt.google.com/samples/DynaTable/DynaTable.html">DynaTable</a> application on a web server, serving files from <code>/web/apps/dynatable_app/</code>. Once you've run the GWT compiler and generated the output in the <code>war/dynatable</code> directory, all you need to do is copy the host HTML page and stylesheet over to <code>web/apps/dynatable_app/</code> and copy the contents of the <code>war/dynatable</code> subdirectory to <code>/web/apps/dynatable_app/dynatable/</code>. At this point, the application is deployed. However, there are a few important points to keep in mind to make sure your application is properly deployed:</p>
+<p>For an example of deploying GWT application files to a web server, suppose you want to deploy the DynaTable application on a web server, serving files from <code>/web/apps/dynatable_app/</code>. Once you've run the GWT compiler and generated the output in the <code>war/dynatable</code> directory, all you need to do is copy the host HTML page and stylesheet over to <code>web/apps/dynatable_app/</code> and copy the contents of the <code>war/dynatable</code> subdirectory to <code>/web/apps/dynatable_app/dynatable/</code>. At this point, the application is deployed. However, there are a few important points to keep in mind to make sure your application is properly deployed:</p>
 
 <p></p>
 <ul>
@@ -30,7 +30,7 @@ href="DevGuideCodingBasics.html#DevGuideJSON">working with JSON data</a>, server
 
 <p>Deploying a GWT application on a servlet container is also an easy process. Since the GWT compiler generates output in a directory structure that is already compliant to the <a href="http://jcp.org/aboutJava/communityprocess/mrel/jsr154/index2.html">Servlet 2.5 API specification</a>, you can deploy your application from the output directory itself. It would be better practice to copy the output and deploy it to a separate directory on your servlet container, however.</p>
 
-<p>Referring to the <a href="http://gwt.google.com/samples/DynaTable/DynaTable.html">DynaTable</a> sample, deploying your project would involve copying the GWT compiler output to the following path on your servlet container:</p>
+<p>Referring to the DynaTable sample, deploying your project would involve copying the GWT compiler output to the following path on your servlet container:</p>
 
 <pre class="prettyprint">
 webapps/dynatable/DynaTable.html

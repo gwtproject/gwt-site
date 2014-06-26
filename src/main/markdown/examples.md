@@ -86,10 +86,10 @@ If you're like us, the first thing you want to do is see examples of what you ca
 
   <div class="project">
       <div class="screenshot">
-        <a href="http://gwt.google.com/samples/Showcase/Showcase.html" target="_blank"><img src="images/showcase.jpg" alt="Screenshot"/></a>
+        <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank"><img src="images/showcase.jpg" alt="Screenshot"/></a>
       </div>
       <div class="info">
-        <div class="name"><a href="http://gwt.google.com/samples/Showcase/Showcase.html" target="_blank">GWT Showcase</a></div>
+        <div class="name"><a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank">GWT Showcase</a></div>
         <div class="snippet">A showcase of GWT features with accompanying source code and CSS styles.</div>
         <div class="apis">
           <div class="head">GWT features used:</div>
@@ -101,30 +101,15 @@ If you're like us, the first thing you want to do is see examples of what you ca
 
     <div class="project">
       <div class="screenshot">
-        <a href="http://gwt.google.com/samples/Mail/Mail.html" target="_blank"><img src="images/mail.jpg" alt="Screenshot"/></a>
+        <a href="http://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank"><img src="images/mail.jpg" alt="Screenshot"/></a>
       </div>
       <div class="info">
-        <div class="name"><a href="http://gwt.google.com/samples/Mail/Mail.html" target="_blank">Mail Application</a></div>
+        <div class="name"><a href="http://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank">Mail Application</a></div>
         <div class="snippet">A replica of the UI of a desktop email application.</div>
         <div class="apis">
           <div class="head">GWT features used:</div>
           <div class="item"><a href="doc/latest/DevGuideUiWidgets.html">UI widgets</a></div>
           <div class="item"><a href="doc/latest/DevGuideCodingBasics.html#DevGuideHistory">History management</a></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="screenshot">
-        <a href="http://gwt.google.com/samples/DynaTable/DynaTable.html" target="_blank"><img src="images/dynamictable.jpg" alt="Screenshot"/></a>
-      </div>
-      <div class="info">
-        <div class="name"><a href="http://gwt.google.com/samples/DynaTable/DynaTable.html" target="_blank">Dynamic Table</a></div>
-        <div class="snippet">A table of data that demonstrates paging over objects retrieved through RPCs.</div>
-        <div class="apis">
-          <div class="head">GWT features used:</div>
-          <div class="item"><a href="doc/latest/DevGuideUiWidgets.html">UI widgets</a></div>
-          <div class="item"><a href="doc/latest/DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">Polymorphic RPC</a></div>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@
 <p>
 A cell table (data presentation table) provides high-performance rendering of large data sets
 in a tabular view. You can check out the
-<a href="http://gwt.google.com/samples/Showcase/Showcase.html#!CwCellTable">Cell Table example</a>
+<a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable">Cell Table example</a>
 in the GWT Showcase to see it in action.
 </p>
 

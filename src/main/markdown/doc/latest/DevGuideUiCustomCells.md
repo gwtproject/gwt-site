@@ -40,7 +40,7 @@ The core method that all Cells must implement is the
 Cell#render(Context, C value, SafeHtmlBuilder)</a>
 method, which renders the parameterized <code>value</code> into the <code>SafeHtmlBuilder</code>.  In some cases, you will only need to render
 simple HTML, such as a single <code>div</code> with some content.  In other cases, you might need to render a complex HTML structure, such as the one
-in the <a href="http://gwt.google.com/samples/Showcase/Showcase.html#!CwCellList">CellList</a> example, which contains an image and two lines of
+in the <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList">CellList</a> example, which contains an image and two lines of
 text. The basic principles are the same in either case.
 </p>
 

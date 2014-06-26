@@ -55,7 +55,7 @@ starts with a capital letter):</p>
 <p>If you are not familiar with <em>development</em> mode versus <em>production mode</em>, you should read the associated tutorials
 on <a href="DevGuideCompilingAndDebugging.html">Compiling and Debugging</a> first. All of the following examples assume that you are running
 tests in development mode, which requires that you have the
-<a href="http://gwt.google.com/missing-plugin/">GWT Developer Plugin</a> installed. Its important to note that URLs must be
+<a href="/missing-plugin/">GWT Developer Plugin</a> installed. Its important to note that URLs must be
 whitelisted before this plugin will connect to them.  <font color="red">This means that you must allow the remote connection on the remote
 system the first time you run the test, or ahead of time if possible.</font></p>
 
@@ -150,7 +150,7 @@ Plugin. On our test systems, we use the following settings: </p>
 
   <li>Install <a href="http://getfirebug.com/">Firebug</a> (useful for debugging) </li>
 
-  <li>Install the <a href="http://gwt.google.com/missing-plugin/">GWT Developer Plugin</a></li>
+  <li>Install the <a href="/missing-plugin/">GWT Developer Plugin</a></li>
 
   <li>Whitelist the hosts that will launch the development mode code server.  Since Selenium copies the
       profile for each test, you must do this now.  If you do not, you will have to allow the remote connection for every test!

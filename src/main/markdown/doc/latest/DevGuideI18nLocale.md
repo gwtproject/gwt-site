@@ -135,7 +135,7 @@ a country-specific locale such as Argentinian Spanish (<tt>es_AR</tt>).</p>
 XML</a> file, and all locales that GWT knows about that inherit from
 your compile-time locale will be automatically included.  You can see the
 result in the <a
-href="http://gwt.google.com/samples/Showcase/Showcase.html"><tt>Showcase</tt>
+href="http://samples.gwtproject.org/samples/Showcase/Showcase.html"><tt>Showcase</tt>
 sample application</a>.</p>
 
 <h3>Caveats</h3>
@@ -146,7 +146,7 @@ sample application</a>.</p>
  to be included in the selection script, so inheritance won't work properly
  in all cases.  This means you either need to specifically control the set
  of possible locales, such as in the locale selector in the <a
-href="http://gwt.google.com/samples/Showcase/Showcase.html"><tt>Showcase</tt>
+href="http://samples.gwtproject.org/samples/Showcase/Showcase.html"><tt>Showcase</tt>
 sample application</a>, or have the server choose the locale using the
 proper inheritance tables (<tt>GwtLocaleFactoryImpl</tt> will be helpful here,
 and you will need a way to get the set of locales your application was built
