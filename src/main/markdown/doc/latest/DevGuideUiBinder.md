@@ -474,7 +474,7 @@ So you either make the @UiFactory method...
 
 &lt;/ui:UiBinder></pre>
 
-<p>A <a href="/javadoc/latest/com/google/gwt/resources/client/CssResource.html">CssResource</a> interface is generated for you, along with a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a>. This means that the compiler will warn you if you misspell the class name when you try to use it (e.g. <tt>{style.prettty}</tt>). Also, your CSS class name will be obfuscated, thus protecting it from collision with like class names in other CSS blocks&mdash;no more global CSS namespace!  </p>
+<p>A <a href="/javadoc/latest/com/google/gwt/resources/client/CssResource.html">CssResource</a> interface is generated for you, along with a <a href="/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a>. This means that the compiler will warn you if you misspell the class name when you try to use it (e.g. <tt>{style.prettty}</tt>). Also, your CSS class name will be obfuscated, thus protecting it from collision with like class names in other CSS blocks&mdash;no more global CSS namespace!  </p>
 
 <p>In fact, you can take advantage of this within a single template: </p>
 

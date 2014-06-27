@@ -1,6 +1,6 @@
 <p>GWT user interface classes are similar to those in existing UI frameworks such as <a href="http://java.sun.com/javase/6/docs/api/javax/swing/package-summary.html">Swing</a> and <a href="http://www.eclipse.org/swt/">SWT</a> except that the widgets are rendered using dynamically-created HTML rather than pixel-oriented graphics.   </p>
 
-<p>In traditional JavaScript programming, dynamic user interface creation is done by manipulating the browser's DOM. While GWT provides access to the browser's DOM directly using the <a href="/javadoc/latest/com/google/gwt/dom/client/package-summary.html">DOM package</a>, it is far easier to use classes from the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/Widget.html">Widget</a> hierarchy. The Widget classes make it easier to quickly build interfaces that will work correctly on all browsers. </p>
+<p>In traditional JavaScript programming, dynamic user interface creation is done by manipulating the browser's DOM. While GWT provides access to the browser's DOM directly using the <a href="/javadoc/latest/com/google/gwt/dom/client/package-summary.html">DOM package</a>, it is far easier to use classes from the <a href="/javadoc/latest/com/google/gwt/user/client/ui/Widget.html">Widget</a> hierarchy. The Widget classes make it easier to quickly build interfaces that will work correctly on all browsers. </p>
 
 <style type="text/css">
    ol.toc li { font-weight: normal; }

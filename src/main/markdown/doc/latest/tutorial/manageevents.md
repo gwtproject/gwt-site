@@ -44,7 +44,7 @@ Let's review the StockWatcher requirements to see what events occur.
     </tr>
 </table>
 <p>
-GWT provides a number of different event handler interfaces. To handle click events on the Add and Remove buttons, you'll use the <a href="/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html">ClickHandler</a> interface. To handle keyboard events in the input box, you'll use the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/event/dom/client/KeyPressHandler.html">KeyPressHandler</a> interface.
+GWT provides a number of different event handler interfaces. To handle click events on the Add and Remove buttons, you'll use the <a href="/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html">ClickHandler</a> interface. To handle keyboard events in the input box, you'll use the <a href="/javadoc/latest/com/google/gwt/event/dom/client/KeyPressHandler.html">KeyPressHandler</a> interface.
 </p>
 
 <p class="note">

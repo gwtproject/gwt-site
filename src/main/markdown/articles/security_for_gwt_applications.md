@@ -275,7 +275,7 @@ http://site.domain.tld/path?name=Dan%3Cscript%20%3Ealert%28%22Hi%22%29%3B%3C/scr
 
 <h4>Protecting Your Application</h4>
 
-<p>If you are using the <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/http/client/RequestCallback.html">RequestCallback</a> classes in GWT, you can implement XSRF protection by setting a custom header to contain the value of your cookie. Here is some sample code:</p>
+<p>If you are using the <a href="/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html">RequestBuilder</a> and <a href="/javadoc/latest/com/google/gwt/http/client/RequestCallback.html">RequestCallback</a> classes in GWT, you can implement XSRF protection by setting a custom header to contain the value of your cookie. Here is some sample code:</p>
 
 <pre>
 RequestBuilder rb = new RequestBuilder(RequestBuilder.POST, url);

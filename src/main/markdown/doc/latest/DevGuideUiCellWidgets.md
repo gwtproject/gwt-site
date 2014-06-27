@@ -107,7 +107,7 @@ CellList is the simplest cell widget, where data is rendered using cells of the 
 </ol>
 
 <p>
-The data inserted in the last step is updated by the data provider (<a href="/javadoc/latest/com/google/gwt/view/client/ListDataProvider.html">ListDataProvider</a> or <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html">AsyncDataProvider</a>).  If you need to allow the user to modify the content of a cell and update the database, use ValueUpdater instead of setRowData in the last step, as described in <a href="#updating-from-celllist">Updating a Database From a CellList</a>.
+The data inserted in the last step is updated by the data provider (<a href="/javadoc/latest/com/google/gwt/view/client/ListDataProvider.html">ListDataProvider</a> or <a href="/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html">AsyncDataProvider</a>).  If you need to allow the user to modify the content of a cell and update the database, use ValueUpdater instead of setRowData in the last step, as described in <a href="#updating-from-celllist">Updating a Database From a CellList</a>.
 </p>
 
 <p>
@@ -184,7 +184,7 @@ A Header can span multiple columns if adjacent headers are equal (==) to each ot
 </ol>
 
 <p>
-The data inserted in the last step is updated by the data provider (<a href="/javadoc/latest/com/google/gwt/view/client/ListDataProvider.html">ListDataProvider</a> or <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html">AsyncDataProvider</a>).  If you need to allow the user to modify the content of a cell and update the database, use FieldUpdater instead of setRowData in the last step, as described in <a href="#updating-from-celltable">Updating a Database From a CellTable</a>.
+The data inserted in the last step is updated by the data provider (<a href="/javadoc/latest/com/google/gwt/view/client/ListDataProvider.html">ListDataProvider</a> or <a href="/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html">AsyncDataProvider</a>).  If you need to allow the user to modify the content of a cell and update the database, use FieldUpdater instead of setRowData in the last step, as described in <a href="#updating-from-celltable">Updating a Database From a CellTable</a>.
 </p>
 
 <p>
@@ -289,7 +289,7 @@ A CellTree can have its own CSS styles and its own resources, such as images tha
 </p>
 
 <ol>
- <li>Define a <a href="/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html">TreeViewModel</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html#getNodeInfo(T)">getNodeInfo</a>
+ <li>Define a <a href="/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html">TreeViewModel</a> and <a href="/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html#getNodeInfo(T)">getNodeInfo</a>
     <ol style="list-style-type: lower-alpha">
       <li>In getNodeInfo, create a data provider for the child nodes.</li>
       <li>Populate the data provider with data.</li>
@@ -352,7 +352,7 @@ public class CellTreeExample implements EntryPoint {
 </pre>
 
 <p>
-When you instantiate a CellTree, you must pass in an instance of a concrete class that implements interface <a href="/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html">TreeViewModel</a>.  This concrete class gets and organizes the data into a hierarchy in the implementation of method getNodeInfo(value).  When a tree node is opened, the tree calls <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html#getNodeInfo(T)">getNodeInfo(value)</a> to get the data provider and Cell used to render the child nodes.
+When you instantiate a CellTree, you must pass in an instance of a concrete class that implements interface <a href="/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html">TreeViewModel</a>.  This concrete class gets and organizes the data into a hierarchy in the implementation of method getNodeInfo(value).  When a tree node is opened, the tree calls <a href="/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html#getNodeInfo(T)">getNodeInfo(value)</a> to get the data provider and Cell used to render the child nodes.
 </p>
 
 <p>

@@ -61,7 +61,7 @@ the user uses the back button, a call will be made to any object that was added 
 <ul>
 <li>Add a history token to the history stack when you want to enable a history event.</li>
 
-<li>Create an object that implements the <a href="/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeHandler.html">ValueChangeHandler</a> interface, parses the new token (available by calling <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeEvent.html#getValue()">ValueChangeEvent.getValue()</a>) and changes the application state to match.</li>
+<li>Create an object that implements the <a href="/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeHandler.html">ValueChangeHandler</a> interface, parses the new token (available by calling <a href="/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeEvent.html#getValue()">ValueChangeEvent.getValue()</a>) and changes the application state to match.</li>
 </ul>
 
 <p>The following short example shows how to add a history event each time the user selects a new tab in a <a href="/javadoc/latest/com/google/gwt/user/client/ui/TabPanel.html">TabPanel</a>.</p>

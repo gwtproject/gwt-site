@@ -50,7 +50,7 @@ Use <a href="/javadoc/latest/com/google/gwt/i18n/client/Messages.html">Messages<
 
 <ul>
 <li><strong>Do you have existing localized properties files you'd like to reuse?</strong><br/>
-The i18nCreator tool can automatically generate interfaces that extend either <a href="/javadoc/latest/com/google/gwt/i18n/client/Constants.html">Constants</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/ConstantsWithLookup.html">ConstantsWithLookup</a> or <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Messages.html">Messages</a>.</li>
+The i18nCreator tool can automatically generate interfaces that extend either <a href="/javadoc/latest/com/google/gwt/i18n/client/Constants.html">Constants</a>, <a href="/javadoc/latest/com/google/gwt/i18n/client/ConstantsWithLookup.html">ConstantsWithLookup</a> or <a href="/javadoc/latest/com/google/gwt/i18n/client/Messages.html">Messages</a>.</li>
 </ul>
 
 <ul>
@@ -114,7 +114,7 @@ requiring arguments</li>
 </ul>
 
 <ul>
-<li><a href="/javadoc/latest/com/google/gwt/i18n/client/ConstantsWithLookup.html">ConstantsWithLookup</a> Like <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Constants.html">Constants</a> but with extra lookup flexibility for highly
+<li><a href="/javadoc/latest/com/google/gwt/i18n/client/ConstantsWithLookup.html">ConstantsWithLookup</a> Like <a href="/javadoc/latest/com/google/gwt/i18n/client/Constants.html">Constants</a> but with extra lookup flexibility for highly
 data-driven applications</li>
 </ul>
 
@@ -386,7 +386,7 @@ translating tags into localized values. These files may be placed into the same 
 
 <p/>
 
-<p>Both <a href="/javadoc/latest/com/google/gwt/i18n/client/Constants.html">Constants</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/i18n/client/Messages.html">Messages</a> use traditional Java properties files, with
+<p>Both <a href="/javadoc/latest/com/google/gwt/i18n/client/Constants.html">Constants</a> and <a href="/javadoc/latest/com/google/gwt/i18n/client/Messages.html">Messages</a> use traditional Java properties files, with
 one notable difference: properties files used with GWT should be encoded as UTF-8 and may contain Unicode characters directly, avoiding the need for <tt>native2ascii</tt>. See the
 API documentation for the above interfaces for examples and formatting details. Many thanks to the <a href="http://tapestry.apache.org/">Tapestry</a> project for
 solving the problem of reading UTF-8 properties files in Tapestry's <tt>LocalizedProperties</tt> class.</p>

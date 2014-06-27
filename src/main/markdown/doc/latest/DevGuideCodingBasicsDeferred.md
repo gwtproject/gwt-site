@@ -193,7 +193,7 @@ to deferred binding:</p>
 &lt;/module&gt;
 </pre>
 
-<p>These directives instruct the GWT compiler to invoke methods in a <a href="/javadoc/latest/com/google/gwt/core/ext/Generator.html">Generator</a> subclass (<tt>ServiceInterfaceProxyGenerator</tt>) in order to generate special code when the deferred binding mechanism <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> is encountered while
+<p>These directives instruct the GWT compiler to invoke methods in a <a href="/javadoc/latest/com/google/gwt/core/ext/Generator.html">Generator</a> subclass (<tt>ServiceInterfaceProxyGenerator</tt>) in order to generate special code when the deferred binding mechanism <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> is encountered while
 compiling. In this case, if the <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> call references an instance of <tt>RemoteService</tt> or one of its subclasses, the <tt>ServiceInterfaceProxyGenerator</tt>'s generate() method
 will be invoked.</p>
 

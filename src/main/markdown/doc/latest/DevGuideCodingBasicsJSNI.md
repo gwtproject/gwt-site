@@ -398,7 +398,7 @@ from the GWT compiler and development mode. Its purpose is to provide an opaque 
 <p/>
 
 <ul>
-<li>Although Java arrays are not directly usable in JavaScript, there are some helper classes that efficiently achieve a similar effect: <a href="/javadoc/latest/com/google/gwt/core/client/JsArray.html">JsArray</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsArrayBoolean.html">JsArrayBoolean</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsArrayInteger.html">JsArrayInteger</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsArrayNumber.html">JsArrayNumber</a>, and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/JsArrayString.html">JsArrayString</a>. These classes are wrappers around a native JavaScript array.</li>
+<li>Although Java arrays are not directly usable in JavaScript, there are some helper classes that efficiently achieve a similar effect: <a href="/javadoc/latest/com/google/gwt/core/client/JsArray.html">JsArray</a>, <a href="/javadoc/latest/com/google/gwt/core/client/JsArrayBoolean.html">JsArrayBoolean</a>, <a href="/javadoc/latest/com/google/gwt/core/client/JsArrayInteger.html">JsArrayInteger</a>, <a href="/javadoc/latest/com/google/gwt/core/client/JsArrayNumber.html">JsArrayNumber</a>, and <a href="/javadoc/latest/com/google/gwt/core/client/JsArrayString.html">JsArrayString</a>. These classes are wrappers around a native JavaScript array.</li>
 </ul>
 
 

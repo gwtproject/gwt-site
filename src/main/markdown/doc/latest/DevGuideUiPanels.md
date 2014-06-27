@@ -49,12 +49,12 @@ by this panel will be wrapped in a <code>&lt;form&gt;</code> element.</p>
 a <a href="/javadoc/latest/com/google/gwt/user/client/ui/ScrollPanel.html">ScrollPanel</a>. This panel works well in layout panels (see below), which
 provide it with the explicit size it needs to scroll properly.</p>
 
-<h3><a href="/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/DialogBox.html">DialogBox</a></h3>
+<h3><a href="/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> and <a href="/javadoc/latest/com/google/gwt/user/client/ui/DialogBox.html">DialogBox</a></h3>
 
 <p>Use these two panels to create simple popups and modal dialogs. They overlap
 existing content in browser window, and can be stacked over one-another.</p>
 
-<h3><a href="/javadoc/latest/com/google/gwt/user/client/ui/Grid.html">Grid</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/FlexTable.html">FlexTable</a></h3>
+<h3><a href="/javadoc/latest/com/google/gwt/user/client/ui/Grid.html">Grid</a> and <a href="/javadoc/latest/com/google/gwt/user/client/ui/FlexTable.html">FlexTable</a></h3>
 
 <p>These two widgets are used to create traditional HTML <code>&lt;table&gt;</code> elements, and can
 also be used as panels, in that arbitrary widgets may be added to their cells.</p>
@@ -107,7 +107,7 @@ p.setWidgetTopBottom(child2, 5, EM, 5, EM);
 
 <h3><a href="/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a></h3>
 
-<p><a href="/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a> serves the same purpose as the existing <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/DockPanel.html">DockPanel</a> widget,
+<p><a href="/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a> serves the same purpose as the existing <a href="/javadoc/latest/com/google/gwt/user/client/ui/DockPanel.html">DockPanel</a> widget,
 except that it uses the layout system to achieve this structure without using
 tables, and in a predictable manner. You would often use to build
 application-level structure, as in the following example:</p>
@@ -128,10 +128,10 @@ explicitly along its primary axis.</p>
 
 <h3>SplitLayoutPanel</h3>
 
-<p>The <a href="/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html">SplitLayoutPanel</a> is identical to the <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a> (and indeed
+<p>The <a href="/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html">SplitLayoutPanel</a> is identical to the <a href="/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a> (and indeed
 extends it), except that it automatically creates a user-draggable splitter
 between each pair of child widgets. It also supports only the use of pixel
-units. Use this instead of <a href="/javadoc/latest/com/google/gwt/user/client/ui/HorizontalSplitPanel.html">HorizontalSplitPanel</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/VerticalSplitPanel.html">VerticalSplitPanel</a>.</p>
+units. Use this instead of <a href="/javadoc/latest/com/google/gwt/user/client/ui/HorizontalSplitPanel.html">HorizontalSplitPanel</a> and <a href="/javadoc/latest/com/google/gwt/user/client/ui/VerticalSplitPanel.html">VerticalSplitPanel</a>.</p>
 
 <pre class='prettyprint'>SplitLayoutPanel p = new SplitLayoutPanel();
 p.addWest(new HTML("navigation"), 128);
@@ -143,7 +143,7 @@ p.add(new HTML("details"));
 
 <h3>StackLayoutPanel</h3>
 
-<p><a href="/javadoc/latest/com/google/gwt/user/client/ui/StackLayoutPanel.html">StackLayoutPanel</a> replaces the existing <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/StackPanel.html">StackPanel</a> (which does not work very
+<p><a href="/javadoc/latest/com/google/gwt/user/client/ui/StackLayoutPanel.html">StackLayoutPanel</a> replaces the existing <a href="/javadoc/latest/com/google/gwt/user/client/ui/StackPanel.html">StackPanel</a> (which does not work very
 well in standards mode). It displays one child widget at a time, each of which is
 associated with a single "header" widget. Clicking on a header widget shows its
 associated child widget.</p>
@@ -162,7 +162,7 @@ method specifies the size of the header widget, which must be of a fixed size.</
 
 <h3>TabLayoutPanel</h3>
 
-<p>As with the existing <a href="/javadoc/latest/com/google/gwt/user/client/ui/TabPanel.html">TabPanel</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TabLayoutPanel.html">TabLayoutPanel</a> displays a row of clickable
+<p>As with the existing <a href="/javadoc/latest/com/google/gwt/user/client/ui/TabPanel.html">TabPanel</a>, <a href="/javadoc/latest/com/google/gwt/user/client/ui/TabLayoutPanel.html">TabLayoutPanel</a> displays a row of clickable
 tabs. Each tab is associated with another child widget, which is shown when a
 user clicks on the tab.</p>
 
@@ -191,8 +191,8 @@ which the HTML/CSS layout algorithm works well. In particular, consider using
 necessary to support a number of use-cases, because the layout system must
 properly handle animation among sets of layout constraints.</p>
 
-<p>Panels that implement <a href="/javadoc/latest/com/google/gwt/user/client/ui/AnimatedLayout.html">AnimatedLayout</a>, such as <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html">LayoutPanel</a>,
-<a href="/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a>, and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html">SplitLayoutPanel</a>, can animate their child widgets from
+<p>Panels that implement <a href="/javadoc/latest/com/google/gwt/user/client/ui/AnimatedLayout.html">AnimatedLayout</a>, such as <a href="/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html">LayoutPanel</a>,
+<a href="/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a>, and <a href="/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html">SplitLayoutPanel</a>, can animate their child widgets from
 one set of constraints to another. Typically this is done by setting up the
 state towards which you wish to animate, then calling
 <a href="/javadoc/latest/com/google/gwt/user/client/ui/AnimatedLayout.html#animate(int)">animate()</a>. See <a href="#recipes">"Recipes"</a>
@@ -234,7 +234,7 @@ custom widgets will want to composite an existing layout panel using
 <h3>ResizeComposite</h3>
 
 <p>When creating a custom <a href="/javadoc/latest/com/google/gwt/user/client/ui/Composite.html">Composite</a> widget that wrap a widget that implements
-<a href="/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html">RequiresResize</a>, you should use <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/ResizeComposite.html">ResizeComposite</a> as its base class. This
+<a href="/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html">RequiresResize</a>, you should use <a href="/javadoc/latest/com/google/gwt/user/client/ui/ResizeComposite.html">ResizeComposite</a> as its base class. This
 subclass of <a href="/javadoc/latest/com/google/gwt/user/client/ui/Composite.html">Composite</a> automatically propagates resize events to its wrapped
 widget.</p>
 
@@ -261,7 +261,7 @@ and height properties (it is common to set children of CellPanels explicitly to
 allocates space to individual table rows and columns that can lead to
 unexpected behavior in standards mode.</p>
 
-<p>You should use <a href="/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a> in place of <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/DockPanel.html">DockPanel</a>. <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/VerticalPanel.html">VerticalPanel</a> can
+<p>You should use <a href="/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a> in place of <a href="/javadoc/latest/com/google/gwt/user/client/ui/DockPanel.html">DockPanel</a>. <a href="/javadoc/latest/com/google/gwt/user/client/ui/VerticalPanel.html">VerticalPanel</a> can
 usually be replaced by a simple <a href="/javadoc/latest/com/google/gwt/user/client/ui/FlowPanel.html">FlowPanel</a> (since block-level elements will
 naturally stack up vertically).</p>
 
@@ -399,7 +399,7 @@ public void onModuleLoad() {
 
 <h3>Splitters</h3>
 
-<p><a href="/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html">SplitLayoutPanel</a> works much like <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a>, except that it only
+<p><a href="/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html">SplitLayoutPanel</a> works much like <a href="/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html">DockLayoutPanel</a>, except that it only
 supports pixel units. The basic application structure above can be given a
 splitter between the navigation and content areas like so:</p>
 
@@ -450,9 +450,9 @@ panel.animate(500);
 
 <h3>Implementing a Composite that RequiresResize</h3>
 
-<p>Widgets that implement <a href="/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html">RequiresResize</a> expect <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize()">RequiresResize.onResize()</a> to
+<p>Widgets that implement <a href="/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html">RequiresResize</a> expect <a href="/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize()">RequiresResize.onResize()</a> to
 be called whenever the widget's size changes. If you are wrapping such a widget
-in a <a href="/javadoc/latest/com/google/gwt/user/client/ui/Composite.html">Composite</a>, you'll need to use <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/ResizeComposite.html">ResizeComposite</a> instead to ensure that
+in a <a href="/javadoc/latest/com/google/gwt/user/client/ui/Composite.html">Composite</a>, you'll need to use <a href="/javadoc/latest/com/google/gwt/user/client/ui/ResizeComposite.html">ResizeComposite</a> instead to ensure that
 this call is propagated correctly, like so:</p>
 
 <pre class='prettyprint'>class MyWidget extends ResizeComposite {
@@ -468,7 +468,7 @@ this call is propagated correctly, like so:</p>
 
 <p>The <a href="/javadoc/latest/com/google/gwt/layout/client/Layout.html">Layout</a> class has to wrap each of its child elements in a "container"
 element in order to work properly. One implication of this is that, when you
-call <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setVisible(boolean)">UIObject.setVisible(boolean)</a> on a widget within a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html">LayoutPanel</a>, it
+call <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setVisible(boolean)">UIObject.setVisible(boolean)</a> on a widget within a <a href="/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html">LayoutPanel</a>, it
 won't behave quite as expected: the widget will indeed be made invisible, but
 it will tend to consume mouse events (actually, it's the container element that
 is doing so).</p>
@@ -490,7 +490,7 @@ UIObject.setVisible(panel.getWidgetContainerElement(child), false);
 <a href="/javadoc/latest/com/google/gwt/user/client/ui/ProvidesResize.html">ProvidesResize</a>.</p>
 
 <p>There are, however, instances where you need to use a layout panel within a
-normal widget (e.g., <a href="/javadoc/latest/com/google/gwt/user/client/ui/FlowPanel.html">FlowPanel</a> or <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html">RootPanel</a>). In these cases, you will need
+normal widget (e.g., <a href="/javadoc/latest/com/google/gwt/user/client/ui/FlowPanel.html">FlowPanel</a> or <a href="/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html">RootPanel</a>). In these cases, you will need
 to set the panel's size explicitly, as in the following example:</p>
 
 <pre class='prettyprint'>LayoutPanel panel = new LayoutPanel();
@@ -504,7 +504,7 @@ does. This is because it is impossible to know when an arbitrary element has bee
 you must do so manually.</p>
 
 <p>This also applies to layout panels used in <a href="/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> and
-<a href="/javadoc/latest/com/google/gwt/user/client/ui/DialogBox.html">DialogBox</a>. The following example shows the use of a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html">SplitLayoutPanel</a> in a
+<a href="/javadoc/latest/com/google/gwt/user/client/ui/DialogBox.html">DialogBox</a>. The following example shows the use of a <a href="/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html">SplitLayoutPanel</a> in a
 <a href="/javadoc/latest/com/google/gwt/user/client/ui/DialogBox.html">DialogBox</a>:</p>
 
 <pre class='prettyprint'>SplitLayoutPanel split = new SplitLayoutPanel();

@@ -280,7 +280,7 @@ your application's server-side code. That said, you may want both GWTTestCase an
 <p>GWT's <a href="http://www.junit.org">JUnit</a> integration provides special support for testing functionality that cannot be executed in straight-line code. For
 example, you might want to make an <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">RPC</a> call to a server and then validate the response. However, in a normal
 JUnit test run, the test stops as soon as the test method returns control to the caller, and GWT does not support multiple threads or blocking. To support this use case, <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a> has extended the <tt>TestCase</tt> API.
-The two key methods are <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#delayTestFinish(int)">GWTTestCase.delayTestFinish(int)</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#finishTest()">GWTTestCase.finishTest()</a>. Calling
+The two key methods are <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#delayTestFinish(int)">GWTTestCase.delayTestFinish(int)</a> and <a href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#finishTest()">GWTTestCase.finishTest()</a>. Calling
 <tt>delayTestFinish()</tt> during a test method's execution puts that test in asynchronous mode, which means the test will not finish when the test method returns control to the
 caller. Instead, a <i>delay period</i> begins, which lasts the amount of time specified in the call to <tt>delayTestFinish()</tt>. During the delay period, the test system will
 wait for one of three things to happen:</p>
