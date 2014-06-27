@@ -187,7 +187,7 @@ contributing a patch, please visit the <a href="../../makinggwtbetter.html">Maki
 <ul>
 <li>Firefox</li>
 
-<li>Internet Explorer 6, 7, 8, 9</li>
+<li>Internet Explorer 8, 9, 10, 11</li>
 
 <li>Safari 5, 6</li>
 
