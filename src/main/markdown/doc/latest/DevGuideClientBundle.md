@@ -657,7 +657,7 @@ class MyResources extends ClientBundle {
 ImageResource logo();</pre>
 
 
-  <li><a href="http://google-web-toolkit.googlecode.com/svn/releases/2.5/user/test/com/google/gwt/resources/rg">Current auto-RTL test cases</a> </li></ul>
+  <li><a href="https://gwt.googlesource.com/gwt/+/master/user/test/com/google/gwt/resources/rg">Current auto-RTL test cases</a> </li></ul>
 
 <h4 id="Selector_obfuscation">Selector obfuscation</h4>
 

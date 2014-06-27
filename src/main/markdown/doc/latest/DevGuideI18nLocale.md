@@ -163,8 +163,8 @@ or specifying <tt>locale=</tt> as a query string. In this case, you could write 
 
 <p>A property provider is specified in the <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">module XML file</a> as a JavaScript fragment that will return the value for the
 named property at runtime. In this case, you would want to define the locale property using a property provider. To see examples of <tt>&lt;property-provider&gt;</tt> definitions
-in action, see the files <a href="http://code.google.com/p/google-web-toolkit/source/browse/releases/2.5/user/src/com/google/gwt/i18n/I18N.gwt.xml">I18N.gwt.xml</a> and
-<a href="http://code.google.com/p/google-web-toolkit/source/browse/releases/2.5/user/src/com/google/gwt/user/UserAgent.gwt.xml">UserAgent.gwt.xml</a> in the GWT source code.</p>
+in action, see the files <a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/i18n/I18N.gwt.xml">I18N.gwt.xml</a> and
+<a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/UserAgent.gwt.xml">UserAgent.gwt.xml</a> in the GWT source code.</p>
 
 <h2 id="LocaleInfo">Programmatic Access to Locale Information</h2>
 

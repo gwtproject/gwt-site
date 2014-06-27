@@ -111,7 +111,7 @@ The data inserted in the last step is updated by the data provider (<a href="/ja
 </p>
 
 <p>
-<b>Code Example</b> - The example below is available at <a href="http://google-web-toolkit.googlecode.com/svn/trunk/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java">CellListExample.java</a>
+<b>Code Example</b> - The example below is available at <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java">CellListExample.java</a>
 </p>
 
 <p>
@@ -193,7 +193,7 @@ information about CellTable-specific features, such as column sorting.
 </p>
 
 <p>
-<b>Code Example</b> - The example below is a pared-down version of <a href="http://google-web-toolkit.googlecode.com/svn/trunk/user/javadoc/com/google/gwt/examples/cellview/CellTableExample.java">CellTableExample.java</a>
+<b>Code Example</b> - The example below is a pared-down version of <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTableExample.java">CellTableExample.java</a>
 </p>
 
 <pre class="prettyprint">
@@ -301,11 +301,11 @@ A CellTree can have its own CSS styles and its own resources, such as images tha
 </ol>
 
 <p>
-<b>Code Example #1</b> - The example below is a simplified example of CellTree, and is available at  <a href="http://google-web-toolkit.googlecode.com/svn/trunk/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample.java">CellTreeExample.java</a>.
+<b>Code Example #1</b> - The example below is a simplified example of CellTree, and is available at  <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample.java">CellTreeExample.java</a>.
 </p>
 
 <p>
-<b>Code Example #2</b> - For a real-world example of CellTree, see <a href="http://google-web-toolkit.googlecode.com/svn/trunk/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample2.java">CellTreeExample2.java</a>.
+<b>Code Example #2</b> - For a real-world example of CellTree, see <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample2.java">CellTreeExample2.java</a>.
 </p>
 
 <pre class="prettyprint">
@@ -381,11 +381,11 @@ CellBrowser is similar to a CellTree but displays the node levels side-by-side. 
 </p>
 
 <p>
-<b>Code Example #1</b> - For a simple example of CellBrowser, see <a href="http://google-web-toolkit.googlecode.com/svn/trunk/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample.java">CellBrowerExample.java</a>. 
+<b>Code Example #1</b> - For a simple example of CellBrowser, see <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample.java">CellBrowerExample.java</a>. 
 </p>
 
 <p>
-<b>Code Example #2</b> - For a real-world example of CellBrowser, see <a href="http://google-web-toolkit.googlecode.com/svn/trunk/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample2.java">CellBrowserExample2.java</a>.
+<b>Code Example #2</b> - For a real-world example of CellBrowser, see <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample2.java">CellBrowserExample2.java</a>.
 </p>
 
 <h2 class="h2-group" id="Cells">Cells</h2>
@@ -556,7 +556,7 @@ By using a subscription model, we can link selection across multiple views. If m
 </ol>
 
 <p>
-<b>Code Example</b> - The example of SelectionModel below is available at <a href="http://google-web-toolkit.googlecode.com/svn/trunk/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java">CellListExample.java</a>.
+<b>Code Example</b> - The example of SelectionModel below is available at <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java">CellListExample.java</a>.
 </p>
 
 <pre class="prettyprint">
@@ -621,7 +621,7 @@ Every DTO (Data Transfer Object) must have a key associated with it in order to 
 Keys allow us to associate ViewData, such as selection state and validation information, with a DTO.  If you select some items in a table or list, then when the list refreshes with new data, you can maintain the same selection.
 </p>
 
-<p><b>Code Example</b> - The example of KeyProvider below is available at <a href="http://google-web-toolkit.googlecode.com/svn/trunk/user/javadoc/com/google/gwt/examples/view/KeyProviderExample.java">KeyProviderExample.java</a>.</p>
+<p><b>Code Example</b> - The example of KeyProvider below is available at <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/view/KeyProviderExample.java">KeyProviderExample.java</a>.</p>
 
 <pre class="prettyprint">
 /**
@@ -939,7 +939,7 @@ Two procedures follow &mdash; one for adding a standard SimplePager to a cell wi
 </p>
 
 <p>
-<b>Code Example</b> - The example below is available at  <a href="http://google-web-toolkit.googlecode.com/svn/trunk/user/javadoc/com/google/gwt/examples/cellview/SimplePagerExample.java">SimplePagerExample.java</a>.
+<b>Code Example</b> - The example below is available at  <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/SimplePagerExample.java">SimplePagerExample.java</a>.
 </p>
 
 <p>
@@ -1038,7 +1038,7 @@ When the user makes the change to the data, the Cell receives an event in its <a
 <b>Demo</b> - <i>(none)</i>
 </p>
 <p>
-<b>Code Example</b> - The example below is available at <a href="http://google-web-toolkit.googlecode.com/svn/trunk/user/javadoc/com/google/gwt/examples/cellview/CellListValueUpdaterExample.java">CellListValueUpdaterExample.java</a>.
+<b>Code Example</b> - The example below is available at <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellListValueUpdaterExample.java">CellListValueUpdaterExample.java</a>.
 </p>
 
 <p>
@@ -1116,7 +1116,7 @@ Use a <a href="/javadoc/latest/com/google/gwt/cell/client/FieldUpdater.html">Fie
 </ol>
 
 <p>
-<b>Code Example</b> - An example is available at <a href="http://google-web-toolkit.googlecode.com/svn/trunk/user/javadoc/com/google/gwt/examples/cellview/CellTableFieldUpdaterExample.java">CellTableFieldUpdaterExample.java</a>.
+<b>Code Example</b> - An example is available at <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTableFieldUpdaterExample.java">CellTableFieldUpdaterExample.java</a>.
 </p>
 
 <pre class="prettyprint">

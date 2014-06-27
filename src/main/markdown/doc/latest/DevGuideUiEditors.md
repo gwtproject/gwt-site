@@ -264,7 +264,7 @@ The GWT distribution provides the following Editor adapter classes that provide 
   <ul>
     <li>The <code>ListEditor</code> is created with a user-provided <code>EditorSource</code> which vends sub-Editors (usually Widget subtypes).</li>
     <li>Changes made to the structure of the <code>List</code> returned by <code>ListEditor.getList()</code> will be reflected in calls made to the <code>EditorSource</code>.</li>
-    <li><a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/dynatablerf/#dynatablerf/src/main/java/com/google/gwt/sample/dynatablerf/client/widgets/FavoritesWidget.java" rel="nofollow">Sample code</a>.</li>
+    <li><a href="https://gwt.googlesource.com/gwt/+/master/samples/dynatablerf/#dynatablerf/src/main/java/com/google/gwt/sample/dynatablerf/client/widgets/FavoritesWidget.java" rel="nofollow">Sample code</a>.</li>
   </ul>
 
   <li><code>OptionalFieldEditor</code> can be used with nullable or resettable bean properties.</li>

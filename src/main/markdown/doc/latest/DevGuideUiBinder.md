@@ -74,7 +74,7 @@ UiBinder</a> explains how to internationalize it.
 <p class='note'>
 <strong>Quick start:</strong> If instead you want to jump right in to
 the code, take a peek
-at <a href="http://code.google.com/p/google-web-toolkit/source/detail?r=6192">this
+at <a href="https://gwt.googlesource.com/gwt/+/ee29b77c519e7fbdee1794b72a983715b398c27d%5E!/">this
 patch</a>. It includes the work to change the venerable Mail sample to
 use UiBinder. Look for pairs of files like Mail.java and Mail.ui.xml.
 </p>

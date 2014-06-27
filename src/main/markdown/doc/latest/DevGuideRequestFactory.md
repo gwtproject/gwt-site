@@ -65,7 +65,7 @@ Google App Engine Datastore. In persistence frameworks like JDO and JPA,
 entities are annotated with @Entity. RequestFactory does not require the use of
 any particular framework or annotations on your domain classes.  Here's part of
 an entity definition from the <a
-href="http://code.google.com/p/google-web-toolkit/source/browse/#svn/trunk/samples/expenses">Expenses
+href="https://gwt.googlesource.com/gwt/+/master/samples/expenses">Expenses
 sample application</a> found in the GWT distribution.</p>
 
 <pre class="prettyprint">
@@ -679,7 +679,7 @@ any method invocation will result in changes being sent to the server.</p>
 
 <p>Changes to related entities can be persisted in a single request.
 For example, this code from the 
-<a href="http://code.google.com/p/google-web-toolkit/source/browse/#svn/trunk/samples/dynatablerf">DynatableRF sample app</a> in GWT trunk creates a new Person and Address at the same time:</p>
+<a href="https://gwt.googlesource.com/gwt/+/master/samples/dynatablerf">DynatableRF sample app</a> in GWT trunk creates a new Person and Address at the same time:</p>
 
 <pre class="prettyprint">
 PersonRequest context = requestFactory.personRequest();
