@@ -34,7 +34,7 @@ The topics in this guide span project organization, coding, debugging, testing, 
 
 <h2>Developer Guide</h2>
 <ol class="toc">
- <li><a href="ReleaseNotes.html">What's New in GWT 2.5.1?</a></li>
+ <li><a href="ReleaseNotes.html">What's New in GWT 2.6.1?</a></li>
   <li><a href="DevGuideOrganizingProjects.html">Organize Projects</a> &ndash; Describes conventions to identify which code is intended to run on the client browser, the server, or both</li>
   <li><a href="DevGuideCompilingAndDebugging.html">Compile &amp; Debug</a> &ndash; Describes development and production modes</li>
   <li><a href="DevGuideCodingBasics.html">Coding Basics</a> &ndash; Describes GWT programming fundamentals
