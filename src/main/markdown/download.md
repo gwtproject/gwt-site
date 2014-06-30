@@ -41,7 +41,7 @@
 <div class='download-block'>
   <h3 style="margin-top: 0em;">GWT SDK</h3>
   <p>
-    The GWT SDK contains the core libraries and compiler that you need to write web applications. See the <a href="release-notes.html#Release_Notes_2_6_0">Release Notes for
+    The GWT SDK contains the core libraries and compiler that you need to write web applications. See the <a href="release-notes.html#Release_Notes_Current">Release Notes for
       this latest version</a>.
   </p>
   <p style="font-size: 90%;">
