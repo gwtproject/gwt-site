@@ -39,7 +39,7 @@ Here's how to turn the feature on.
 
 <pre class="code">&lt;ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
     ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
-    ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+    ui:generateKeys="com.google.gwt.i18n.server.keygen.MD5KeyGenerator"
     ui:generateLocales="default">
   &lt;div>&lt;ui:msg description="Greeting">Hello, world.&lt;/ui:msg>&lt;/div>
 &lt;/ui:UiBinder></pre>
