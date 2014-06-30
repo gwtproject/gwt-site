@@ -90,7 +90,7 @@ When implementing a render method, you should follow these steps:
 </p>
 
 <p>
-You can download this example at <a href="http://google-web-toolkit.googlecode.com/svn/trunk/user/javadoc/com/google/gwt/examples/cell/CellExample.java">CellExample.java</a>.
+You can download this example at <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cell/CellExample.java">CellExample.java</a>.
 </p>
 
 <pre class="prettyprint">

@@ -225,7 +225,7 @@ with GWT.create in onModuleLoad(), like this:</p>
 
 <p>You can use &lt;when-property-is&gt; to specify different
 implementations based on user.agent, locale, or other properties you
-define. The <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/mobilewebapp/">mobilewebapp</a>
+define. The <a href="https://gwt.googlesource.com/gwt/+/master/samples/mobilewebapp/">mobilewebapp</a>
 sample application defines a "formfactor" property used to 
 select a different view implementations for mobile, tablet, and desktop devices.</p>
 

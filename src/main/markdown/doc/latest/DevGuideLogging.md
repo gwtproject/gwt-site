@@ -59,8 +59,8 @@ You build and run LogExample the same way you would build and run any of the oth
 </p>
 
 <p>
-LogExample is configured using <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/logexample/src/com/google/gwt/sample/logexample/LogExample.gwt.xml"><code>LogExample.gwt.xml</code></a>.
-The entry point for the app is <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java"><code>LogExample.java</code></a> &mdash; it simply creates and adds the various demo modules to the page.  Each of these modules illustrates a different set of logging concepts; this tutorial will walk you through them.
+LogExample is configured using <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/LogExample.gwt.xml"><code>LogExample.gwt.xml</code></a>.
+The entry point for the app is <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java"><code>LogExample.java</code></a> &mdash; it simply creates and adds the various demo modules to the page.  Each of these modules illustrates a different set of logging concepts; this tutorial will walk you through them.
 </p>
 
 
@@ -75,10 +75,10 @@ The entry point for the app is <a href="http://code.google.com/p/google-web-tool
 </p>
 
 <p>
- If you open <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java"><code>LogExample.java</code></a> you can see that we've created 3 loggers:
+ If you open <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java"><code>LogExample.java</code></a> you can see that we've created 3 loggers:
 </p>
 
-<pre class="prettyprint">// <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java">LogExample.java</a>
+<pre class="prettyprint">// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java">LogExample.java</a>
 
   private static Logger childLogger = Logger.getLogger("ParentLogger.Child");
   private static Logger parentLogger = Logger.getLogger("ParentLogger");
@@ -86,11 +86,11 @@ The entry point for the app is <a href="http://code.google.com/p/google-web-tool
 </pre>
 
 <p>
-We've passed these 3 loggers into <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/logexample/src/com/google/gwt/sample/logexample/client/LoggerController.java"><code>LoggerController</code></a>, which in turn, creates an instance of
-<a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/logexample/src/com/google/gwt/sample/logexample/client/OneLoggerController.java"><code>OneLoggerController</code></a> for each of them.  In <code>OneLoggerController.java</code> you can see example code for changing the Level of the logger, logging to the logger, and logging an exception to the logger.
+We've passed these 3 loggers into <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/LoggerController.java"><code>LoggerController</code></a>, which in turn, creates an instance of
+<a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/OneLoggerController.java"><code>OneLoggerController</code></a> for each of them.  In <code>OneLoggerController.java</code> you can see example code for changing the Level of the logger, logging to the logger, and logging an exception to the logger.
 </p>
 
-<pre class="prettyprint">// <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/logexample/src/com/google/gwt/sample/logexample/client/OneLoggerController.java">OneLoggerController</a>
+<pre class="prettyprint">// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/OneLoggerController.java">OneLoggerController</a>
 
   // Change the level of the logger
   @UiHandler("levelTextBox")
@@ -164,7 +164,7 @@ You can experiment with configuring logging in the provided LogExample.gwt.xml f
 Here's an example of how a checkbox adds or removes a handler:
 </p>
 
-<pre class="prettyprint">// <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/logexample/src/com/google/gwt/sample/logexample/client/HandlerController.java">HandlerController.java</a>
+<pre class="prettyprint">// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/HandlerController.java">HandlerController.java</a>
 
     public void onValueChange(ValueChangeEvent<Boolean> event) {
       if (checkbox.getValue()) {
@@ -202,7 +202,7 @@ Once we have one of these widgets, we simply pass it into the constructor
 of a <code>HasWidgetsLogHandler</code> and add that Handler to a logger.
 </p>
 
-<pre class="prettyprint">// <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/user/src/com/google/gwt/user/client/ui/VerticalPanel.java">VerticalPanel.java</a>
+<pre class="prettyprint">// <a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/client/ui/VerticalPanel.java">VerticalPanel.java</a>
 
     VerticalPanel customLogArea;
 
@@ -225,7 +225,7 @@ To make this clear, the client-side GWT code has a Root Logger (and logger hiera
 </p>
 
 <p>
- In <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/logexample/src/com/google/gwt/sample/logexample/client/ServerLoggingArea.java"><code>ServerLoggingArea.java</code></a>, you can experiment with these concepts.  The buttons in that section will trigger logging calls on the server, as well as logging calls in <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/logexample/src/com/google/gwt/sample/logexample/shared/SharedClass.java"><code>SharedClass.java</code></a> from both the client and server side.  Note the slight differences in formatting between client-side and server-side logging, as well as the different handlers each is logged to (in the tutorial, server-side logging will simply log to stderr, while client-side logging will log to all of the Handlers discussed above).
+ In <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/ServerLoggingArea.java"><code>ServerLoggingArea.java</code></a>, you can experiment with these concepts.  The buttons in that section will trigger logging calls on the server, as well as logging calls in <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/shared/SharedClass.java"><code>SharedClass.java</code></a> from both the client and server side.  Note the slight differences in formatting between client-side and server-side logging, as well as the different handlers each is logged to (in the tutorial, server-side logging will simply log to stderr, while client-side logging will log to all of the Handlers discussed above).
 </p>
 
 <h2 id="Remote_Logging"> Remote Logging </h2>
@@ -235,7 +235,7 @@ To make this clear, the client-side GWT code has a Root Logger (and logger hiera
 </p>
 
 <pre class="prettyprint">
-# <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/logexample/src/com/google/gwt/sample/logexample/LogExample.gwt.xml">LogExample.gwt.xml</a>
+# <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/LogExample.gwt.xml">LogExample.gwt.xml</a>
 
   &lt;set-property name="gwt.logging.simpleRemoteHandler" value="ENABLED" /&gt;
 </pre>
@@ -262,7 +262,7 @@ When logging is disabled, the compiler will used Deferred Binding to substitute 
 Code that normally compiles out will still be present in Development mode.  You can  use the same condition as above to hide code from Development Mode, as shown here:
 </p>
 
-<pre class="prettyprint">// <a href="http://code.google.com/p/google-web-toolkit/source/browse/trunk/samples/logexample/src/com/google/gwt/sample/logexample/client/CustomLogArea.java">VerticalPanel.java</a>
+<pre class="prettyprint">// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/CustomLogArea.java">VerticalPanel.java</a>
 
     // Although this code will compile out without this check in web mode, the guard will ensure
     // that the handler does not show up in development mode.

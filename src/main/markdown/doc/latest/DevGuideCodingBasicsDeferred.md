@@ -62,12 +62,12 @@ rules are pulled into the module build through <tt>&lt;inherits&gt;</tt> element
 <p>For example, the following configuration invokes deferred binding for the <a href="/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> widget:</p>
 
 <ul>
-<li>Top level <i>&lt;module&gt;</i>.gwt.xml <i><strong>inherits</strong></i> <a href="http://google-web-toolkit.googlecode.com/svn/releases/2.5/user/src/com/google/gwt/user/User.gwt.xml">com.google.gwt.user.User</a></li>
+<li>Top level <i>&lt;module&gt;</i>.gwt.xml <i><strong>inherits</strong></i> <a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml">com.google.gwt.user.User</a></li>
 
-<li><a href="http://google-web-toolkit.googlecode.com/svn/releases/2.5/user/src/com/google/gwt/user/User.gwt.xml">com/google/gwt/user/User.gwt.xml</a>
-<i><strong>inherits</strong></i> <a href="http://google-web-toolkit.googlecode.com/svn/releases/2.5/user/src/com/google/gwt/user/Popup.gwt.xml">com.google.gwt.user.Popup</a></li>
+<li><a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml">com/google/gwt/user/User.gwt.xml</a>
+<i><strong>inherits</strong></i> <a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/Popup.gwt.xml">com.google.gwt.user.Popup</a></li>
 
-<li><a href="http://google-web-toolkit.googlecode.com/svn/releases/2.5/user/src/com/google/gwt/user/Popup.gwt.xml">com/google/gwt/user/Popup.gwt.xml</a>
+<li><a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/Popup.gwt.xml">com/google/gwt/user/Popup.gwt.xml</a>
 <i><strong>contains</strong></i> <tt>&lt;replace-with&gt;</tt> elements to define deferred binding rules for the <a href="/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> class.</li>
 </ul>
 
@@ -165,12 +165,12 @@ client will download based on its browser environment.</p>
 hierarchy for the <tt>RemoteService</tt> class - used for GWT-RPC:</p>
 
 <ul>
-<li>Top level <i>&lt;module&gt;</i>.gwt.xml <i><strong>inherits</strong></i> <a href="http://google-web-toolkit.googlecode.com/svn/releases/2.5/user/src/com/google/gwt/user/User.gwt.xml">com.google.gwt.user.User</a></li>
+<li>Top level <i>&lt;module&gt;</i>.gwt.xml <i><strong>inherits</strong></i> <a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml">com.google.gwt.user.User</a></li>
 
-<li><a href="http://google-web-toolkit.googlecode.com/svn/releases/2.5/user/src/com/google/gwt/user/User.gwt.xml">com/google/gwt/user/User.gwt.xml</a>
-<i><strong>inherits</strong></i> <a href="http://google-web-toolkit.googlecode.com/svn/releases/2.5/user/src/com/google/gwt/user/RemoteService.gwt.xml">com.googl.gwt.user.RemoteService</a></li>
+<li><a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml">com/google/gwt/user/User.gwt.xml</a>
+<i><strong>inherits</strong></i> <a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/RemoteService.gwt.xml">com.googl.gwt.user.RemoteService</a></li>
 
-<li><a href="http://google-web-toolkit.googlecode.com/svn/releases/2.5/user/src/com/google/gwt/user/RemoteService.gwt.xml">com/google/gwt/user/RemoteService.gwt.xml</a>
+<li><a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/RemoteService.gwt.xml">com/google/gwt/user/RemoteService.gwt.xml</a>
 <i><strong>contains</strong></i> <tt>&lt;generates-with&gt;</tt> elements to define deferred binding rules for the <tt>RemoteService</tt> class.</li>
 </ul>
 
