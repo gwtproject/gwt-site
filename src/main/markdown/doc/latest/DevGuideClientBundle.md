@@ -102,7 +102,7 @@ public TextResource defaultText();</pre>
 
 
 
-<p>Each subtype of <tt><a href="/javadoc/latest/index.html?com/google/gwt/resources/client/ResourcePrototype.html">ResourcePrototype</a></tt> must define a <tt><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGeneratorType.html">@ResourceGeneratorType</a></tt> annotation whose value is a concrete Java class that extends <tt><a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGenerator.html">ResourceGenerator</a></tt>.  The instance of the <tt>ResourceGenerator</tt> is responsible for accumulation (or bundling) of incoming resource data as well as a small degree of code generation to assemble the concrete implementation of the <tt>ClientBundle</tt> class.  Implementors of <tt>ResourceGenerator</tt> subclasses can expect that only one <tt>ResourceGenerator</tt> will be created for a given type of resource within a <tt>ClientBundle</tt> interface. </p>
+<p>Each subtype of <tt><a href="/javadoc/latest/index.html?com/google/gwt/resources/client/ResourcePrototype.html">ResourcePrototype</a></tt> must define a <tt><a href="/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGeneratorType.html">@ResourceGeneratorType</a></tt> annotation whose value is a concrete Java class that extends <tt><a href="/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGenerator.html">ResourceGenerator</a></tt>.  The instance of the <tt>ResourceGenerator</tt> is responsible for accumulation (or bundling) of incoming resource data as well as a small degree of code generation to assemble the concrete implementation of the <tt>ClientBundle</tt> class.  Implementors of <tt>ResourceGenerator</tt> subclasses can expect that only one <tt>ResourceGenerator</tt> will be created for a given type of resource within a <tt>ClientBundle</tt> interface. </p>
 
 <p>The methods on a <tt>ResourceGenerator</tt> are called in the following order
 
@@ -158,7 +158,7 @@ someDiv.getStyle().setProperty("cursor", "url(" + Resources.INSTANCE.customCurso
 
 <h2 id="TextResource">TextResource and ExternalTextResource</h2>
 
-<p>The related resource types <a href="/javadoc/latest/index.html?com/google/gwt/resources/client/TextResource.html">TextResource</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/index.html?com/google/gwt/resources/client/ExternalTextResource.html">ExternalTextResource</a> provide access to static text content.  The main difference between these two types is that the former interns the text into the compiled JavaScript, while the latter bundles related text resources into a single file, which is accessed asynchronously.</p>
+<p>The related resource types <a href="/javadoc/latest/index.html?com/google/gwt/resources/client/TextResource.html">TextResource</a> and <a href="/javadoc/latest/index.html?com/google/gwt/resources/client/ExternalTextResource.html">ExternalTextResource</a> provide access to static text content.  The main difference between these two types is that the former interns the text into the compiled JavaScript, while the latter bundles related text resources into a single file, which is accessed asynchronously.</p>
 
 <pre class="prettyprint">interface Resources extends ClientBundle {
   Resources INSTANCE = GWT.create(Resources.class);

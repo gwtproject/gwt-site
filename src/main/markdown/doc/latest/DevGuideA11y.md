@@ -63,15 +63,15 @@ for getting, setting and removing states and properties, or an extra attribute l
 <p>The ARIA standard specifies the HTML attribute type for the state and property
 values. These attribute types are supported in the new library with compile-time checks. Enumerations have been added for
 HTML attributes of type token like 'aria-dropeffect' property type, 'aria-checked' type etc. There is a common type added for
-IDREF(S) in the class. All the states and properties are defined in the <a href="/javadoc/latest/com/google/gwt/aria/client/State.html">State</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/aria/client/Property.html">Property</a> classes. The
+IDREF(S) in the class. All the states and properties are defined in the <a href="/javadoc/latest/com/google/gwt/aria/client/State.html">State</a> and <a href="/javadoc/latest/com/google/gwt/aria/client/Property.html">Property</a> classes. The
 <tt>tabIndex</tt> attribute has also been added as an extra attribute in the ARIA standard and we have <a href="/javadoc/latest/com/google/gwt/aria/client/ExtraAttribute.html">added it to the library</a>. We encourage users to get access to states and
 properties through the role by getting it from the <a href="/javadoc/latest/com/google/gwt/aria/client/Roles.html">Roles factory</a> because
 the factory checks that the state or property is supported for the role.</p>
 
 <p>Many GWT widgets now have keyboard accessibility and ARIA properties. These include <a href="/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.html">CustomButton</a>,
- <a href="/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TreeItem.html">TreeItem</a>,
- <a href="/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/MenuItem.html">MenuItem</a>,
- <a href="/javadoc/latest/com/google/gwt/user/client/ui/TabBar.html">TabBar</a>, and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TabPanel.html">TabPanel</a>.
+ <a href="/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a>, <a href="/javadoc/latest/com/google/gwt/user/client/ui/TreeItem.html">TreeItem</a>,
+ <a href="/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a>, <a href="/javadoc/latest/com/google/gwt/user/client/ui/MenuItem.html">MenuItem</a>,
+ <a href="/javadoc/latest/com/google/gwt/user/client/ui/TabBar.html">TabBar</a>, and <a href="/javadoc/latest/com/google/gwt/user/client/ui/TabPanel.html">TabPanel</a>.
  Also, all widgets that inherit from FocusWidget now have a tabindex by default, allowing for better keyboard navigation.</p>
 
 
@@ -216,7 +216,7 @@ tab index attribute is reset to -1.</p>
 
 <h2 id="selectionChanges">Indicating Selection Changes</h2>
 
-<p>Some widgets, such as GWT's <a href="/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a> widgets,
+<p>Some widgets, such as GWT's <a href="/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a> and <a href="/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a> widgets,
 consist of a container with a set of items. The container has a naturally focusable DOM element, but the items
 themselves do not. The focusable element receives all keyboard input, and causes visual changes in the contained items
 to indicate a change in item selection. For example, GWT's Tree widget contains <a href="/javadoc/latest/com/google/gwt/user/client/ui/TreeItem.html">TreeItems</a>; both of these elements are made up of <tt>div</tt> elements. However, the Tree also

@@ -26,7 +26,7 @@ would inherit from its Panel superclass.</p>
 <h3>Example Composite Widget</h3>
 
 <p>The following code snippet shows how to create a composite widget composed of a <a href="/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html" >TextBox</a> widget and a
-<a href="/javadoc/latest/com/google/gwt/user/client/ui/CheckBox.html">CheckBox</a> widget laid out in a <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/VerticalPanel.html">VerticalPanel</a>.</p>
+<a href="/javadoc/latest/com/google/gwt/user/client/ui/CheckBox.html">CheckBox</a> widget laid out in a <a href="/javadoc/latest/com/google/gwt/user/client/ui/VerticalPanel.html">VerticalPanel</a>.</p>
 
 <pre class="prettyprint">
 package com.google.gwt.examples;
@@ -114,7 +114,7 @@ public class CompositeExample implements EntryPoint {
 <h2 id="new">From Scratch in Java Code</h2>
 
 <p>It is also possible to create a widget from scratch, although it is trickier since you have to write code at a lower level. Many of the basic widgets are written this way, such
-as <a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html">TextBox</a>. Please refer to the implementations of these
+as <a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> and <a href="/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html">TextBox</a>. Please refer to the implementations of these
 widgets to understand how to create your own.</p>
 
 <p>To understand how to create your own, refer to the implementations of these widgets in the com.google.gwt.user.client.ui package. The source code is in gwt-user.jar.</p>

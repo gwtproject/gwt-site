@@ -43,7 +43,7 @@ htmlWidget.getElement().getStyle().setBackgroundColor("#ffee80");
 structure and adds a style attribute to it.</p>
 
 <p>This is an example where using the DOM isn't absolutely necessary. An alternative approach is to use <a href="DevGuideUiCss.html">style sheets</a> and
-associate different style classes to the widget using the <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(java.lang.String)">setStylePrimaryName()</a> or <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName()</a> method
+associate different style classes to the widget using the <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(java.lang.String)">setStylePrimaryName()</a> or <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName()</a> method
 instead.</p>
 
 <h2>Finding an element in the DOM</h2>

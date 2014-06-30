@@ -355,7 +355,7 @@ recommended that they appear in the root package of a <a href="DevGuideOrganizin
 
 <h3>Entry-Point Classes</h3>
 
-<p>A module entry-point is any class that is assignable to <a href="/javadoc/latest/com/google/gwt/core/client/EntryPoint.html">EntryPoint</a> and that can be constructed without parameters. When a module is loaded, every entry point class is instantiated and its <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad()">EntryPoint.onModuleLoad()</a> method gets
+<p>A module entry-point is any class that is assignable to <a href="/javadoc/latest/com/google/gwt/core/client/EntryPoint.html">EntryPoint</a> and that can be constructed without parameters. When a module is loaded, every entry point class is instantiated and its <a href="/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad()">EntryPoint.onModuleLoad()</a> method gets
 called.</p>
 
 <h3>Source Path</h3>

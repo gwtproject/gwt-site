@@ -65,7 +65,7 @@ this manner, and you must insure that each &quot;id&quot; value is unique. A com
 <p>In the above style sheet code, there are two style rules that apply to menu items. The first applies to all menu items (both selected and unselected), while the second (with
 the -selected suffix) applies only to selected menu items. A selected menu item's style name will be set to <tt>&quot;gwt-MenuItem gwt-MenuItem-selected&quot;</tt>, specifying that both
 style rules will be applied. The most common way of doing this is to use <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName</a> to set
-the base style name, then <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#addStyleName(java.lang.String)">addStyleName()</a> and <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#removeStyleName(java.lang.String)">removeStyleName()</a>
+the base style name, then <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#addStyleName(java.lang.String)">addStyleName()</a> and <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#removeStyleName(java.lang.String)">removeStyleName()</a>
 to add and remove the second style name.</p>
 
 <h2 id="cssfiles">Associating CSS Files</h2>
@@ -151,4 +151,4 @@ sheet, but you can still reference the files associate with the standard visual 
 
 <h2 id="documentation">Documentation</h2>
 
-<p>It is standard practice to document the relevant CSS style names for each widget class as part of its documentation comment. For a simple example, see <a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a>. For a more complex example, see <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a>.</p>
+<p>It is standard practice to document the relevant CSS style names for each widget class as part of its documentation comment. For a simple example, see <a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a>. For a more complex example, see <a href="/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a>.</p>

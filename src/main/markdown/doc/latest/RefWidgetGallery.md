@@ -101,7 +101,7 @@ can view a code example of each widget in the <a href="http://samples.gwtproject
   <dt id="menubar"><a href="/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a></dt>
   <dd><img src="images/MenuBar.png"/></dd>
   
-  <dt id="tree"><a href="/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a>, <a href="http://google-web-toolkit.googlecode.com/svn/javadoc/latest/com/google/gwt/user/cellview/client/CellTree.html">CellTree</a></dt>
+  <dt id="tree"><a href="/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a>, <a href="/javadoc/latest/com/google/gwt/user/cellview/client/CellTree.html">CellTree</a></dt>
   <dd><img src="images/Tree.png"/></dd>
   
   <dt id="suggestbox"><a href="/javadoc/latest/com/google/gwt/user/client/ui/SuggestBox.html">SuggestBox</a></dt>
