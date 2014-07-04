@@ -50,6 +50,9 @@
   </p>
   <div class='moreinfo'>
     <a class='download-button' href="http://goo.gl/BLc6R8">Download GWT SDK</a> <br />
+    <p style='font-size: 85%;'>
+      <a href="versions.html">[Old versions]</a>
+    </p>
     <p style='font-size: 90%;'>
       Next: Go to <a href="gettingstarted.html">Getting Started with the GWT SDK</a>
     </p>
