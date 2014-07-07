@@ -1,4 +1,4 @@
-<p>GWT is licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0 open source license</a> (since version 1.3).</p>
+<p>GWT is licensed under the <a href="terms.html">Apache 2.0 open source license</a> (since version 1.3).</p>
 
 <div class="release">
 
