@@ -16,7 +16,7 @@
           <li><a href="#Firefox_Profile">Firefox Profile</a></li>
         </ul>
       </li>
-      <li><a href="#Remote_Web">Remote Web</a></li>
+      <li><a href="#Remote_Web">Remote Web (deprecated)</a></li>
     </ul>
   </li>
 </ol>
@@ -89,7 +89,7 @@ the browser may be running on a computer different from the one where the tests 
 <p class="note"><b>Internet Explorer:</b> You can try running Internet Explorer in Selenium as it is a supported browser. If the tests work for you,
 then you don&#x27;t need to use the RemoteWeb runstyle at all, which should simplify your testing.  However, we&#x27;ve found that
 Selenium does not always open Internet Explorer successfully on newer versions of Windows.  If this happens, you can try passing the
-<code>-singleWindow</code> argument into Selenium, or you can use the <a href="#Remote_Web">RemoteWeb</a> run style to test IE.</p>
+<code>-singleWindow</code> argument into Selenium.</p>
 
 <p>GWT can execute tests against a remote system running the <a href="http://seleniumhq.org/projects/remote-control/">Selenium Remote Control</a>.
 You do this using the following command: </p>
@@ -170,7 +170,7 @@ Plugin. On our test systems, we use the following settings: </p>
 
 <h3 id="Remote_Web">Remote Web</h3>
 
-<p><i>Recommended for Internet Explorer if Selenium does not meet your needs.  See note <a href="#SeleniumInternetExplorerNote">Internet Explorer</a> above.</i></p>
+<p><i>Deprecated. Will be removed in GWT 2.7.</i></p>
 
 <p>The RemoteWeb run style allows you to run tests against systems running the BrowserManagerServer, a server that GWT provides. </p>
 
