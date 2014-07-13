@@ -5,19 +5,19 @@
     <format>zip</format>
   </formats>
   <fileSets>
-  	<fileSet>
-  		<directory>target/generated-site</directory>
-  		<includes>
- 			<include>**/*.html</include>
- 			<include>**/*.css</include>
- 			<include>**/*.js</include>
- 			<include>**/*.png</include>
- 			<include>**/*.jpg</include>
- 			<include>**/*.jpeg</include>
-      <include>**/*.gif</include>
-      <include>**/package-list</include>
- 		</includes>
-  		<outputDirectory></outputDirectory>
-  	</fileSet>
+    <fileSet>
+      <directory>target/generated-site</directory>
+      <includes>
+        <include>**/*.html</include>
+        <include>**/*.css</include>
+        <include>**/*.js</include>
+        <include>**/*.png</include>
+        <include>**/*.jpg</include>
+        <include>**/*.jpeg</include>
+        <include>**/*.gif</include>
+        <include>**/package-list</include>
+      </includes>
+      <outputDirectory></outputDirectory>
+    </fileSet>
   </fileSets>
 </assembly>
