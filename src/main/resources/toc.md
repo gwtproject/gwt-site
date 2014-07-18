@@ -72,6 +72,7 @@
               - [Contents](doc/latest/DevGuideSecurity.html)
               - [Using SafeHtml](doc/latest/DevGuideSecuritySafeHtml.html)
               - [XSRF Protection](doc/latest/DevGuideSecurityRpcXsrf.html)
+          - [AutoBeans](doc/latest/DevGuideAutoBeans.html)
           - [Request Factory](doc/latest/DevGuideRequestFactory.html)
           - [Activities And Places](doc/latest/DevGuideMvpActivitiesAndPlaces.html)
           - [Validation](doc/latest/DevGuideValidation.html)
