@@ -33,7 +33,7 @@
           - [Compile & Debug](doc/latest/DevGuideCompilingAndDebugging.html)
           - [Client-side](doc/latest/DevGuideCodingBasicsClient.html)
           - [JRE Compatibility](doc/latest/DevGuideCodingBasicsCompatibility.html)
-          - [Ajax Communitation](doc/latest/DevGuideServerCommunication.html 'Communicate with a server')
+          - [Ajax Communication](doc/latest/DevGuideServerCommunication.html 'Communicate with a server')
           - [History Mechanism](doc/latest/DevGuideCodingBasicsHistory.html)
           - [Formatting](doc/latest/DevGuideCodingBasicsFormatting.html 'Number and Date Formating')
           - [Delayed Logic](doc/latest/DevGuideCodingBasicsDelayed.html)
