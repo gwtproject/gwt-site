@@ -1,3 +1,6 @@
+Testing Coverage
+===
+
 <p>
 For measuring code coverage, GWT supports <a href="http://emma.sourceforge.net/">EMMA</a>, a widely used code coverage tool for Java code. To be able to interact with other EMMA tools, GWT uses EMMA in offline mode &mdash; that is, GWT uses classes instrumented by EMMA over the classes it obtains by compiling the Java source files.</p>
 

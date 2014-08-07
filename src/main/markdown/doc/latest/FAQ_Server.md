@@ -1,3 +1,6 @@
+FAQ - Server
+===
+
 <ol class="toc" id="pageToc">
   <li><a href="#Why_doesn't_GWT_provide_a_synchronous_server_connection_opt">Why doesn't GWT provide a synchronous server connection option?</a></li>
   <li><a href="#What_is_the_Same_Origin_Policy,_and_how_does_it_affect_GWT?">What is the Same Origin Policy, and how does it affect GWT?</a></li>

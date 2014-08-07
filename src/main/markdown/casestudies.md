@@ -3,6 +3,9 @@
      max-width:700px;
    }
    </style>
+   
+Case Studies
+===
 
 <h2>GBST</h2>
 <p><a href="http://google-web-toolkit.googlecode.com/files/CaseStudy-GBST-Uses-GWT.pdf">GBST Uses GWT to Improve Productivity and Create a Rich User Experience</a> <em>January 2011</em></p>

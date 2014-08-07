@@ -23,6 +23,9 @@ div.screenshot img {
 }
 </style>
 
+Using Eclipse
+===
+
 <p>GWT provides a set of tools that can simply be used with a
 text editor, the command line, and a browser. However, you may also use GWT with your
 favorite IDE. Google provides a plugin for Eclipse that makes development with

@@ -1,3 +1,6 @@
+Security
+===
+
 <p>
 If not guarded against, JavaScript applications can be vulnerable to several types of security exploits.
 Because the GWT (GWT) produces JavaScript code, that code is is also vulnerable to JavaScript attacks.

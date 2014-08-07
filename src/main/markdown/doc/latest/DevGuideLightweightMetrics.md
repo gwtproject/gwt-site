@@ -1,3 +1,6 @@
+Lightweight Metrics
+===
+
 <p>The Lightweight Metrics system is a useful tool to find key areas where latency may be noticeable to your end users. Some of the advantages of the system are:</p>
 <ul>
   <li>It's a negligible cost system with very little overhead</li>

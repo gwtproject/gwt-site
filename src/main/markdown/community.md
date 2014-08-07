@@ -1,3 +1,6 @@
+Community
+===
+
 <p>Welcome to the GWT developer community. A number of community resources are already available for GWT that you can begin using today. We're excited to share these with you, and we invite you to get involved in these channels and contribute your own knowledge and experience back to the community.</p>
 
 <h2>Discussion groups/lists</h2>

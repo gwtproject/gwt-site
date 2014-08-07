@@ -1,3 +1,6 @@
+Code Splitting
+===
+
 <p>As an AJAX app develops, the JavaScript part of it tends to grow.
 Eventually, the code itself is often large enough that merely
 downloading and installing it adds significant time to the

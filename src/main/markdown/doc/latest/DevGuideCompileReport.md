@@ -1,3 +1,6 @@
+Compile report
+===
+
 When programming in GWT, it can sometimes be difficult to understand the compiled output. This is especially true for users of <a href="DevGuideCodeSplitting.html">code splitting</a>: why are some fragments bigger, some smaller? Our answer to these questions are Compile Reports. Compile Reports let GWT programmers gain insight into what happens in their application during the compile: how much output their code leads to, what Java packages and classes lead to large JavaScript output, and how the code is split up during code splitting. With this information, you can then modify their application in a targeted way in order to reduce the size of the entire compiled application or the size of certain fragments.
 
 A compile report can be produced during a regular GWT compile. It consists of a set of HTML pages that can easily be browsed and navigated and that provide a graphical representation of the application's compile.

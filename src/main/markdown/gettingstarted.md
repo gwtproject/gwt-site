@@ -1,58 +1,27 @@
-<style>
-code, .code {font-size: 9pt; font-family: Courier, Courier New, monospace; color:#007000;}
-.highlight {background-color: #ffc;}
-.strike {text-decoration:line-through; color:red;}
-.header {margin-top: 1.5ex;}
-.details {margin-top: 1ex;}
-</style>
+Getting Started
+===
 
-<style>
-
-div.screenshot img {
-  margin: 20px;
-}
-
-.download {
-  border: none;
-}
-.download td {
-  vertical-align: middle;
-  border: none;
-}
-</style>
-
-
-
-<ul class="toc">
-  <li><a href="#prereqs">Prerequisites</a></li>
-  <li><a href="#download">Download and Install GWT</a></li>
-  <li><a href="#create">Create your first web application</a></li>
-  <li><a href="#run">Run locally in development mode</a></li>
-  <li><a href="#change">Make a few changes</a></li>
-  <li><a href="#compile">Compile and run in production mode</a></li>
-  <li><a href="#setup">Set up an IDE</a></li>
-</ul>
-
+- <a href="#prereqs">Prerequisites</a>
+- <a href="#download">Download and Install GWT</a>
+- <a href="#create">Create your first web application</a></li>
+- <a href="#run">Run locally in development mode</a></li>
+- <a href="#change">Make a few changes</a></li>
+- <a href="#compile">Compile and run in production mode</a></li>
+- <a href="#setup">Set up an IDE</a></li>
 
 <h2 id="prereqs">Prerequisites</h2>
 
-<ol class="instructions">
-  <li>
-    <div class="header">You will need the Java SDK version 1.6 or later. If necessary, <a
+1.  You will need the Java SDK version 1.6 or later. If necessary, <a
     href="http://java.sun.com/javase/downloads/" rel="nofollow">download and
     install the Java SE Development Kit (JDK)</a> for your platform. Mac users,
     see <a href="http://developer.apple.com/java/">Apple's Java developer
     site</a> to download and install the latest version of the Java Developer
-    Kit available for Mac OS X.</div>
-  </li>
-  <li>
-    <div class="header">Apache Ant is also necessary to run command line arguments. If
-    you don't already have it, install <a href="http://ant.apache.org/" rel="nofollow">Apache Ant</a>.</div>
-  </li>
+    Kit available for Mac OS X.
+2.  Apache Ant is also necessary to run command line arguments. If
+    you don't already have it, install <a href="http://ant.apache.org/" rel="nofollow">Apache Ant</a>.
 
-</ol>
-<p class="note">If you have problems running Ant on the Mac, try setting the
-$JDK_HOME environment variable with export JDK_HOME="/Library/Java/Home"</p>
+If you have problems running Ant on the Mac, try setting the
+$JDK_HOME environment variable with export JDK_HOME="/Library/Java/Home"
 
 <h2 id="download">Download and Install the GWT SDK</h2>
 
@@ -77,21 +46,19 @@ $JDK_HOME environment variable with export JDK_HOME="/Library/Java/Home"</p>
 </tbody></table>
 
 
-<div class="details">On Windows, extract the files from the compressed folder <code>gwt-2.6.1.zip</code>.  On Mac or Linux, you can unpack the package with a command like:
-<pre class="code">unzip gwt-2.6.1.zip</pre></div>
+On Windows, extract the files from the compressed folder <code>gwt-2.6.1.zip</code>.  On Mac or Linux, you can unpack the package with a command like:
 
-<p>
+<pre class="code">unzip gwt-2.6.1.zip</pre>
+
 The GWT SDK doesn't have an installer application.  All the files you  need to
 run and use the SDK are located in the extracted directory.
-</p>
 
 
 <h2 id="create">Create your first web application </h2>
 
-<p>GWT ships with a command line utility called <code><a href="doc/latest/RefCommandLineTools.html#webAppCreator">webAppCreator</a></code> that automatically generates all the files you'll need in order to start a GWT project.  It also generates <a href="http://www.eclipse.org/" rel="nofollow">Eclipse</a> project files and launch config files for easy debugging in GWT's development mode.</p>
+GWT ships with a command line utility called <code><a href="doc/latest/RefCommandLineTools.html#webAppCreator">webAppCreator</a></code> that automatically generates all the files you'll need in order to start a GWT project.  It also generates <a href="http://www.eclipse.org/" rel="nofollow">Eclipse</a> project files and launch config files for easy debugging in GWT's development mode.
 
-<p>You can create a new demo application in a new MyWebApp directory by running <code>webAppCreator</code>:
-</p>
+You can create a new demo application in a new MyWebApp directory by running <code>webAppCreator</code>:
 
 <ul>
 <li><b>Windows</b>

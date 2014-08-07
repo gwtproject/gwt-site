@@ -7,6 +7,9 @@
   }
 </style>
 
+Security Safe HTML
+===
+
 <p>
 Cross-Site-Scripting (XSS) vulnerabilities are a class of web application
 security bugs that allow an attacker to execute arbitrary malicious JavaScript

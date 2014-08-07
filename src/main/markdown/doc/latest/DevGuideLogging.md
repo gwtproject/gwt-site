@@ -1,3 +1,6 @@
+Logging
+===
+
 <p>
 This document is for developers interested in logging client-side code in their GWT applications.  Logging is the process of recording events in an application to provide an audit trail to understand how the application executes and to diagnose problems.  Logging makes it easier to troubleshoot issues encountered by developers and users.
 </p>

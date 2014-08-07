@@ -7,6 +7,9 @@
   }
 </style>
 
+UiCellTable
+===
+
 <p>
 A cell table (data presentation table) provides high-performance rendering of large data sets
 in a tabular view. You can check out the

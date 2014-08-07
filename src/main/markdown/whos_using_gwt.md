@@ -47,6 +47,9 @@
      font-weight: bold;
    }
    </style>
+   
+Who's using GWT
+===
 
 <h2 id="profiles">Developer Profiles</h2>
 <p>Watch developers talk about their web applications and how they used Google

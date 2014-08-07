@@ -1,3 +1,6 @@
+Deferred
+===
+
 <p>Deferred binding is a feature of the GWT compiler that works by generating many versions of code at compile time, only one of which needs to be loaded by a particular client
 during bootstrapping at runtime. Each version is generated on a per browser basis, along with any other axis that your application defines or uses. For example, if you were to
 internationalize your application using <a href="DevGuideI18n.html">GWT's Internationalization module</a>, the GWT compiler would generate

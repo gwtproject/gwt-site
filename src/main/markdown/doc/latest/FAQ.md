@@ -1,3 +1,6 @@
+FAQ
+===
+
 <p>
 This section includes often-asked and answered questions about GWT, organized by category. 
 If you can't find the answer to your question here, try searching in the <a href="http://groups.google.com/group/Google-Web-Toolkit">GWT Developer Forum</a> as well. 

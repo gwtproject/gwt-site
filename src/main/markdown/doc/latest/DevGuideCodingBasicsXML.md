@@ -1,3 +1,6 @@
+XML
+===
+
 <p><a href="http://www.w3.org/XML/">Extensible Markup Language (XML)</a> is a data format commonly used in modern web applications. XML uses custom tags to describe
 data and is encoded as plain text, making it both flexible and easy to work with. The GWT class library contains a set of types designed for processing XML data.</p>
 

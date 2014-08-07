@@ -1,3 +1,6 @@
+Life of an issue
+===
+
 <p>The GWT project maintains a <a href="http://code.google.com/p/google-web-toolkit/issues">public issue tracker</a>
 where you can report bugs and request features for GWT.</p>
 

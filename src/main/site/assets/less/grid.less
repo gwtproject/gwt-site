@@ -1,0 +1,245 @@
+/**
+ * GRIDPAK
+ * responsive grid with breakpoints for mobile and desktop
+ * 
+ * Mobile   < 650px
+ * Table    >= 650px, < 960px
+ * Desktop  >= 960px
+ *
+ * Generator - http://gridpak.com/
+ * Created by @erskinedesign
+ * Adapted version by @jasonlemay
+ */
+
+
+ // -- Media Queries Mixins --------------------------------
+
+@screen-mobile-min:     0px;
+@screen-mobile-max:     749px;
+@screen-tablet-min:     750px;
+@screen-tablet-max:     979px;
+@screen-desktop-min:    980px;
+
+@mobile:                ~'max-width: @{screen-mobile-max}';
+
+@tablet:                ~'max-width: @{screen-tablet-max}';
+@tablet-only:           ~'min-width: @{screen-tablet-min}) and (max-width: @{screen-tablet-max}';
+
+@desktop:               ~'min-width: @{screen-desktop-min}';
+
+
+// -- Grid system ------------------------------------------
+
+.mixin-col {
+     border:0px solid rgba(0,0,0,0);
+     float:left;
+     -webkit-box-sizing:border-box;
+     -moz-box-sizing:border-box;
+     box-sizing:border-box;
+     -moz-background-clip:padding-box !important;
+     -webkit-background-clip:padding-box !important;
+     background-clip:padding-box !important;
+     margin-bottom: 0;
+}
+.col {
+     .mixin-col;
+}
+
+.row.nospace .col{padding:0;}
+
+.mixin-span(@num, @gutter_pc, @gutter_px, @padding, @max_columns) {
+    @one_col: (100% - (@gutter_pc * (@max_columns - 1))) / @max_columns;
+    width:(@one_col * @num) + (@gutter_pc * (@num - 1));
+    border-left-width:@gutter_px/2;
+    border-right-width:@gutter_px/2;
+    padding:0 @padding;
+    margin-left:@gutter_pc;
+}
+.mixin-span_first {
+    margin-left:0;
+}
+
+// Same height hack
+.row.sameh { overflow: hidden; margin-bottom: 10px; }
+.row.sameh .col {
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+ 
+ 
+/* 1. MOBILE - 4 Column Grid 0px - 649px 
+----------------------------------------------------------------------------- 
+
+.col-m1_4:      1 / 4
+.col-m1_2:      1 / 2
+.col-m3_4:      3 / 4
+.col-mfull:     Full
+.col-mhide:     Hidden in mobile
+
+----------------------------------------------------------------------------- */    
+
+@media screen and (min-width: 0px) and (max-width: 649px) {
+    
+    .col {
+        margin-left:1%;
+        padding: 0 10px;
+    }
+    
+    @max_columns: 4;
+    @padding: 10px;
+    @gutter_px: 4px;
+    @gutter_pc: 0;
+
+    .col-m1_4, .col-t1_4, .col-1_4 {
+        .mixin-span(1, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-m1_2, .col-t1_2, .col-1_2 {
+        .mixin-span(2, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-m3_4, .col-t3_4, .col-3_4 {
+        .mixin-span(3, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-mfull, .col-tfull, .col-full {
+        .mixin-span_first;
+        width:98%;
+        margin-left: 1%;
+    }
+
+    .col-mhide{display: none;}
+}
+
+
+/* 2. TABLET - 8 Column Grid 650px - 959px 
+----------------------------------------------------------------------------- 
+
+.col-t1_8:      1 / 8
+.col-t1_4:      1 / 4
+.col-t3_8:      3 / 8 (fallback for DESKTOP 1 / 3)
+.col-t1_2:      1 / 2
+.col-t5_8:      5 / 8 (fallback for DESKTOP 2 / 3)
+.col-t3_4:      3 / 4
+.col-t7_8:      7 / 8
+.col-tfull:     Full
+.col-thide:     Hidden in tablet
+
+----------------------------------------------------------------------------- */    
+
+@media screen and (min-width: 650px) and (max-width: 959px) {
+    
+    .col {
+        margin-left:0.5%;
+        padding: 0 10px;
+    }
+    
+    @max_columns: 8;
+    @padding: 10px;
+    @gutter_px: 4px;
+    @gutter_pc: 0;
+    
+    .row .col:first-child {
+        .mixin-span_first;
+    }
+    
+    .col-t1_8 {
+        .mixin-span(1, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-t1_4, .col-1_4 {
+        .mixin-span(2, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-t3_8, .col-1_3 {
+        .mixin-span(3, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-t1_2, .col-1_2 {
+        .mixin-span(4, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-t5_8, .col-2_3 {
+        .mixin-span(5, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-t3_4, .col-3_4 {
+        .mixin-span(6, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-t7_8 {
+        .mixin-span(7, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-tfull, .col-full {
+        .mixin-span(8, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+
+    .col-thide{display: none;}
+}
+
+
+/* 3. DESKTOP - 12 Column Grid 960px - Infinity 
+----------------------------------------------------------------------------- 
+
+.col-1_12:     1 / 12
+.col-1_6:      1 / 6
+.col-1_4:      1 / 4
+.col-1_3:      1 / 3 
+.col-5_12:     5 / 12
+.col-1_2:      1 / 2 
+.col-7_12:     7 / 12
+.col-2_3:      2 / 3
+.col-3_4:      3 / 4
+.col-5_6:      5 / 6
+.col-11_12:    11 / 12
+.col-full:     Full
+.col-hide:     Hidden in desktop
+
+----------------------------------------------------------------------------- */    
+
+@media screen and (min-width: 960px) {
+    
+    .col {
+        margin-left:0;
+        padding:0 5px;
+    }
+    
+    @max_columns: 12;
+    @padding: 0px;
+    @gutter_px: 40px;
+    @gutter_pc: 0;
+    
+    .row .col:first-child {
+        .mixin-span_first;
+    }
+    
+    .col-1_12 {
+        .mixin-span(1, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-1_6 {
+        .mixin-span(2, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-1_4 {
+        .mixin-span(3, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-1_3 {
+        .mixin-span(4, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-5_12 {
+        .mixin-span(5, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-1_2 {
+        .mixin-span(6, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-7_12 {
+        .mixin-span(7, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-2_3 {
+        .mixin-span(8, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-3_4 {
+        .mixin-span(9, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-5_6 {
+        .mixin-span(10, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-11_12 {
+        .mixin-span(11, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+    .col-full {
+        .mixin-span(12, @gutter_pc, @gutter_px, @padding, @max_columns);
+    }
+
+    .col-hide{display: none;}
+}
