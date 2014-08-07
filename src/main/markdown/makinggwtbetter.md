@@ -1,9 +1,7 @@
 Making GWT better
 ===
 
-<p>If you are interested in understanding the internals of Google
-Web Toolkit (GWT), building from source, or contributing ideas or
-modifications to the project, then this document is for you.</p>
+If you are interested in understanding the internals of Google Web Toolkit (GWT), building from source, or contributing ideas or modifications to the project, then this document is for you.
 
 <ol class="toc">
   <li><a href="#introduction">Introduction</a>
@@ -46,18 +44,16 @@ modifications to the project, then this document is for you.</p>
   
 </ol>
 
-<h2 id="introduction">Introduction</h2>
-<p>To start with the basics, why does GWT exist in the first place?
-The short answer is that GWT exists to make the web better for users.
-We've infused a slightly longer answer into our mission statement:</p>
+## Introduction
 
-<blockquote>GWT's mission is to radically improve the web
-experience for users by enabling developers to use existing Java tools
-to build no-compromise AJAX for any modern browser.</blockquote>
+To start with the basics, why does GWT exist in the first place? The short answer is that GWT exists to make the web better for users. We've infused a slightly longer answer into our mission statement:
 
-<p>We spent a lot of time on that sentence and really tried to pack
-it with meaning. So, if you'll indulge us, let's explain why our mission
-statement is formulated the way that it is:
+> GWT's mission is to radically improve the web
+> experience for users by enabling developers to use existing Java tools
+> to build no-compromise AJAX for any modern browser.
+
+We spent a lot of time on that sentence and really tried to pack it with meaning. So, if you'll indulge us, let's explain why our mission statement is formulated the way that it is:
+
 <dl>
   <dt><q>to radically improve</q></dt>
   <dd>The unconventional premise of GWT (i.e. compiling to
@@ -119,10 +115,9 @@ statement is formulated the way that it is:
   <dd>We want GWT to be as portable as it can be so long as it
   doesn't involve sacrificing user experience in any significant way.</dd>
 </dl>
-</p>
 
-<p>So that's what GWT is all about. It's also useful to say what
-kinds of things GWT <i>isn't</i> about...
+So that's what GWT is all about. It's also useful to say what kinds of things GWT _isn't_ about...
+
 <dl>
   <dt>Language wars</dt>
   <dd>Why does GWT support the Java programming language instead of
@@ -156,140 +151,76 @@ kinds of things GWT <i>isn't</i> about...
   circumspect about introducing features "just because" they are used
   often in desktop applications.</dd>
 </dl>
-</p>
 
 <h3 id="licensing">Licensing</h3>
-<p>All GWT source and pre-built binaries are provided under the <a
-  href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0
-license</a>.</p>
+
+All GWT source and pre-built binaries are provided under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0).
 
 <h3 id="whyopensource">Why is GWT Open Source?</h3>
-<p>A good first question is, "Why wasn't GWT open source to begin
-with?" Since GWT's release in May 2006 at JavaOne, we've tried to stay
-totally focused on lowering the barrier for building AJAX apps. We
-weren't quite ready to open source the whole thing immediately because
-we knew we had plans for major infrastructure work (like Mac OS X hosted
-mode), and we really wanted to encourage everyone to focus on the idea
-of the product itself and how to write apps instead of creating
-distractions having to do with GWT's open sourceness.</p>
 
-<p>GWT took off much faster than we expected, and it quickly became
-clear that the most sensible way to advance GWT would be to open
-it sooner rather than later. While we've never actually felt
-particularly stingy about keeping the source closed, now all
-code for the GWT Java to JavaScript compiler, the hosted mode browser,
-and so on can progress before your eyes. We're very much looking forward
-to contributions of ideas, bug reports, and patches.</p>
+A good first question is, "Why wasn't GWT open source to begin with?" Since GWT's release in May 2006 at JavaOne, we've tried to stay totally focused on lowering the barrier for building AJAX apps. We weren't quite ready to open source the whole thing immediately because we knew we had plans for major infrastructure work (like Mac OS X hosted mode), and we really wanted to encourage everyone to focus on the idea of the product itself and how to write apps instead of creating distractions having to do with GWT's open sourceness.
+
+GWT took off much faster than we expected, and it quickly became clear that the most sensible way to advance GWT would be to open it sooner rather than later. While we've never actually felt particularly stingy about keeping the source closed, now all code for the GWT Java to JavaScript compiler, the hosted mode browser, and so on can progress before your eyes. We're very much looking forward to contributions of ideas, bug reports, and patches.
 
 <h3 id="designaxioms">Design Axioms</h3>
-<p>We adopted these on February 17, 2006.</p>
 
-<ul>
-  <li>User experience is primary</li>
-  <li>Simplify AJAX development
-  <ul>
-    <li>Java debugging is non-negotiable</li>
-    <li>Key facilities out of the box: history, RPC, localization,
-    and unit testing</li>
-  </ul>
-  </li>
-  <li>The big pieces must be independently useful
-  <ul>
-    <li>Simple browser abstraction (i.e. using DOM without using
-    Widget classes)</li>
-    <li>Widget classes available but not required (i.e. use DOM
-    and/or JSNI)</li>
-    <li>Application management available but not required (e.g.
-    history support is optional)</li>
-    <li>RPC available but not required</li>
-    <li>Java-to-JavaScript compiler is useful without the rest of
-    the user libraries (implies JSNI and debugging aren't tangled with
-    up gwt-user)</li>
-  </ul>
-  </li>
-  <li>Interoperate with existing web pages
-  <ul>
-    <li>Other than RPC, components operate without a GWT-specific
-    server</li>
-    <li>Scriptable from JavaScript and vice-versa</li>
-    <li>Styling with CSS</li>
-  </ul>
-  </li>
-  <li>Facilitate reuse of AJAX code
-  <ul>
-    <li>Sharing of entire components and applications via
-    self-contained JAR files</li>
-    <li>Ability to publish Google Maps-style JavaScript API from
-    Java classes</li>
-  </ul>
-  </li>
-  <li>Optimize performance aggressively
-  <ul>
-    <li>Don't do at run-time what you can do at compile-time</li>
-    <li>Discourage unoptimizable patterns</li>
-  </ul>
-  </li>
-  <li>Be secure by default
-  <ul>
-    <li>Don't expose services automatically</li>
-  </ul>
-  </li>
-</ul>
+We adopted these on February 17, 2006.
+
+*   User experience is primary
+*   Simplify AJAX development
+    *   Java debugging is non-negotiable
+    *   Key facilities out of the box: history, RPC, localization, and unit testing
+*   The big pieces must be independently useful
+    *   Simple browser abstraction (i.e. using DOM without using Widget classes)
+    *   Widget classes available but not required (i.e. use DOM and/or JSNI)
+    *   Application management available but not required (e.g. history support is optional)
+    *   RPC available but not required
+    *   Java-to-JavaScript compiler is useful without the rest of the user libraries (implies JSNI and debugging aren't tangled with up gwt-user)
+*   Interoperate with existing web pages
+    *   Other than RPC, components operate without a GWT-specific server
+    *   Scriptable from JavaScript and vice-versa
+    *   Styling with CSS
+*   Facilitate reuse of AJAX code
+    *   Sharing of entire components and applications via self-contained JAR files
+    *   Ability to publish Google Maps-style JavaScript API from Java classes
+*   Optimize performance aggressively
+    *   Don't do at run-time what you can do at compile-time
+    *   Discourage unoptimizable patterns
+*   Be secure by default
+    *   Don't expose services automatically
 
 <h2 id="community">The GWT Community</h2>
-<p>The GWT community exists primarily through mailing lists, the issue tracker
-and, to a lesser extent, the source control repository. You are definitely
-encouraged to contribute to the discussion and you can also help us to keep
-the effectiveness of the groups high by following and promoting the guidelines
-listed here. </p>
+
+The GWT community exists primarily through mailing lists, the issue tracker and, to a lesser extent, the source control repository. You are definitely encouraged to contribute to the discussion and you can also help us to keep the effectiveness of the groups high by following and promoting the guidelines listed here.
 
 <h3 id="befriendly">Please Be Friendly</h3>
-<p>Showing courtesy and respect to others is a vital part of the
-Google culture, and we strongly encourage everyone participating in GWT
-development to join us in accepting nothing less. Of course, being
-courteous is not the same as failing to constructively disagree with
-each other, but it does mean that we should be respectful of each other
-when enumerating the 42 technical reasons that a particular proposal may
-not be the best choice. There's never a reason to be antagonistic or
-dismissive toward anyone who is sincerely trying to contribute to a
-discussion.</p>
 
-<p>Sure, web development is serious business and all that, but it's
-also a lot of fun. Let's keep it that way. Let's strive to be one of the
-friendliest communities in all of open source.</p>
+Showing courtesy and respect to others is a vital part of the Google culture, and we strongly encourage everyone participating in GWT development to join us in accepting nothing less. Of course, being courteous is not the same as failing to constructively disagree with each other, but it does mean that we should be respectful of each other when enumerating the 42 technical reasons that a particular proposal may not be the best choice. There's never a reason to be antagonistic or dismissive toward anyone who is sincerely trying to contribute to a discussion.
+
+Sure, web development is serious business and all that, but it's also a lot of fun. Let's keep it that way. Let's strive to be one of the friendliest communities in all of open source.
 
 <h3 id="wheretodiscussgwt">Where to Discuss GWT</h3>
-<p>As always, discuss <i>using</i> GWT in the <a
-  href="http://groups.google.com/group/Google-Web-Toolkit">official
-GWT (GWT) developer discussion group</a>. There is an
-additional group for people to discuss any of the stuff in this document
-(e.g. how to build, how to submit patches) called <a
-  href="http://groups.google.com/group/Google-Web-Toolkit-Contributors">GWT
-Contributors</a>. You don't have to actually submit code in order to sign
-up. Your participation itself is a valuable contribution.</p>
+
+As always, discuss _using_ GWT in the [official GWT (GWT) developer discussion group](http://groups.google.com/group/Google-Web-Toolkit). There is an additional group for people to discuss any of the stuff in this document (e.g. how to build, how to submit patches) called [GWT Contributors](http://groups.google.com/group/Google-Web-Toolkit-Contributors). You don't have to actually submit code in order to sign up. Your participation itself is a valuable contribution.
 
 <h3 id="issuetracking">How to Report a Bug</h3>
-<p>See <a href="lifeofanissue.html">Issue Tracking</a>.</p>
+
+See [Issue Tracking](lifeofanissue.html).
 
 <h2 id="workingoncode">Working with the Code</h2>
-<p>If you want to get your hands dirty with the code inside GWT,
-this is the section for you.</p>
+
+If you want to get your hands dirty with the code inside GWT, this is the section for you.
 
 <h3 id="checkingout">Checking Out the Source</h3>
-<p>Checking out the GWT source is most useful if you plan to compile
-GWT yourself. The pre-built GWT distribution already contains all the
-Java source, so you don't actually need to check it out from the
-repository just to debug through it. Just tweak your IDE to read source
-from the GWT jars.</p>
 
-<p>GWT is hosted at <a href="https://gwt.googlesource.com/"
-  >gwt.googlesource.com</a>, so you check out the source for GWT using a
-  <a href="http://git-scm.com/">Git</a> client as you
-would for any other Git project:</p>
+Checking out the GWT source is most useful if you plan to compile GWT yourself. The pre-built GWT distribution already contains all the Java source, so you don't actually need to check it out from the repository just to debug through it. Just tweak your IDE to read source from the GWT jars.
+
+GWT is hosted at [gwt.googlesource.com](https://gwt.googlesource.com/), so you check out the source for GWT using a [Git](http://git-scm.com/) client as you would for any other Git project:
 
 <pre>git clone https://gwt.googlesource.com/gwt trunk</pre>
 
 <h3 id="compiling">Compiling from Source</h3>
+
 <p>Other than a few native libs, everything is Java source that can
 be built on any supported platform with the included GWT <a
   href="http://ant.apache.org">Ant</a> build files. At the moment, you
@@ -325,20 +256,13 @@ just a pain to doc all that and make it build in a cross-platform way.)</p>
 </ol>
 
 <h3 id="testing">Testing</h3>
-<p>
-Testing is very important to maintaining the quality of GWT.
-<a href="#unittesting">Unit Tests</a> should be written for any new code, and
-changes should be verified to not break existing tests before they
-are submitted for review.  To perform the tests, simply run <code>ant test</code>
-and verify that there are no failures.
-</p>
+
+Testing is very important to maintaining the quality of GWT. [Unit Tests](#unittesting) should be written for any new code, and changes should be verified to not break existing tests before they are submitted for review.  To perform the tests, simply run `ant test` and verify that there are no failures.
 
 <h4 id="antjunit">Ant JUnit Issues</h4>
-<p>
-There is a problem, detailed at <a
-href="http://ant.apache.org/manual/OptionalTasks/junit.html">ant.apache.org</a>,
-where ant cannot find the JUnit classes.  The simple workaround is to either:
-</p>
+
+There is a problem, detailed at [ant.apache.org](http://ant.apache.org/manual/OptionalTasks/junit.html), where ant cannot find the JUnit classes.  The simple workaround is to either:
+
 <ul>
   <li>Delete ant-junit.jar from the ant lib directory (for example,
   <code>/usr/share/ant/lib/</code>)</li>
@@ -346,6 +270,7 @@ where ant cannot find the JUnit classes.  The simple workaround is to either:
 </ul>
 
 <h2 id="contributingcode">Contributing Code</h2>
+
 <p>Now that GWT is open source, we're excited that it is now easier
 for our users to fix bugs and create new features, and we hope to get
 great patches from the community. Before you fire up your favorite IDE
@@ -357,6 +282,7 @@ Also, please be aware that we code contributors must sign a <a
 accept any code.</p>
 
 <h3 id="codestyle">Code Style</h3>
+
 <p>To keep the source consistent, readable, diffable and easy to
 merge, we use a fairly rigid coding style, and all patches will be
 expected to conform to the style outlined here. To keep things as simple
@@ -379,11 +305,13 @@ somewhat consistent with Oracle's Java coding conventions, codify it well,
 and stick to it.</p>
 
 <h4>Comments and Javadoc</h4>
+
 <p>Every file should have an Apache license header at the top,
 prefaced with a copyright notice. A package statement and import
 statements should follow, each block separated by a blank line. Next is
 the class or interface declaration. In the Javadoc comments, describe
 what the class or interface does.</p>
+
 <pre>
 /*
  * Copyright 2006 Google Inc.
@@ -649,19 +577,20 @@ necessary.</p>
 </table>
 
 <h3 id="unittesting">Unit Testing</h3>
-<p>Unit tests are very important, and we strongly encourage
-submissions that include them, adding new unit tests for new
-functionality or updating existing unit tests for bug fixes.</p>
+
+Unit tests are very important, and we strongly encourage submissions that include them, adding new unit tests for new functionality or updating existing unit tests for bug fixes.
 
 <p>Tests for Java classes should be placed in a parallel source tree
 under <code>test</code> and the test class name should be suffixed with
 <code>Test</code>. For example:</p>
+
 <pre>
 src/com/google/gwt/core/client/EntryPoint.java
 test/com/google/gwt/core/client/EntryPointTest.java
 </pre>
 
-<p>The use of the parallel test tree has two major advantages:</p>
+The use of the parallel test tree has two major advantages:
+
 <ul>
   <li>You can do package scope testing (vs. a <code>tests</code>
   subpackage).</li>
@@ -670,11 +599,12 @@ test/com/google/gwt/core/client/EntryPointTest.java
   the amount of time spent updating build files.</li>
 </ul>
 
-<p>Note that there is a problem using JUnit tests with ant &mdash; a <a
-href="#antjunit">workaround</a> is described above.</p>
+Note that there is a problem using JUnit tests with ant &mdash; a [workaround](#antjunit) is described above.
 
 <h3 id="submittingpatches">Submitting Patches</h3>
-<p>Please do submit code. Here's what you need to do:</p>
+
+Please do submit code. Here's what you need to do:
+
 <ol>
   <li>Decide which code you want to submit. A submission should be
   a set of changes that addresses one issue in the <a
@@ -707,6 +637,7 @@ href="#antjunit">workaround</a> is described above.</p>
 </ol>
 
 <h3 id="gerritsetup">Gerrit setup</h3>
+
 Finally, to actually create an issue is slightly more involved, but most of the steps only need to be done once:
 
 1. Setup your HTTP Password: 
@@ -720,42 +651,24 @@ Finally, to actually create an issue is slightly more involved, but most of the 
 3. Make a change and commit it locally using git (e.g., edit a file foo and then run `git commit -m "my first change" foofile`).
    Push the commit to Gerrit for review: <pre>git push origin HEAD:refs/for/master</pre>.
 
-If you have any problems you might want to consult the gerrit documentation on 
-<a href="https://gerrit-review.googlesource.com/Documentation/user-upload.html">Uploading Changes</a> 
+If you have any problems you might want to consult the gerrit documentation on [Uploading Changes](https://gerrit-review.googlesource.com/Documentation/user-upload.html) 
 
 <h3 id="committers">GWT Committers</h3>
-<p>The current members of the GWT engineering team are the only
-committers at present. In the great tradition of eating one's own
-dogfood, we will be requiring each new GWT engineering team member to
-earn the right to become a committer by following the procedures in this
-document, writing consistently great code, and demonstrating repeatedly
-that he or she truly gets the zen of GWT.</p>
+
+The current members of the GWT engineering team are the only committers at present. In the great tradition of eating one's own dogfood, we will be requiring each new GWT engineering team member to earn the right to become a committer by following the procedures in this document, writing consistently great code, and demonstrating repeatedly that he or she truly gets the zen of GWT.
 
 <h3 id="clas">Contributor License Agreements</h3>
-<p>Before we can accept a patch from you, you must sign a
-Contributor License Agreement (CLA). The CLA protects you and us.</p>
 
-<ul>
-  <li>If you are an individual writing original source code and
-  you're sure you own the intellectual property, then you'll need to
-  sign an <a
-    href="http://code.google.com/legal/individual-cla-v1.0.html">individual
-  CLA</a>.</li>
-  <li>If you work for a company that wants to allow you to
-  contribute your work to GWT, then you'll need to sign a <a
-    href="http://code.google.com/legal/corporate-cla-v1.0.html">corporate
-  CLA</a>.</li>
-</ul>
+Before we can accept a patch from you, you must sign a Contributor License Agreement (CLA). The CLA protects you and us.
 
-<p>You can sign either CLA through <a
-  href="https://gwt-review.googlesource.com/#/settings/agreements">GWT's
-Gerrit service</a>.</p>
+*   If you are an individual writing original source code and you're sure you own the intellectual property, then you'll need to sign an [individual CLA](http://code.google.com/legal/individual-cla-v1.0.html).
+*   If you work for a company that wants to allow you to contribute your work to GWT, then you'll need to sign a [corporate CLA](http://code.google.com/legal/corporate-cla-v1.0.html).
 
+You can sign either CLA through [GWT's Gerrit service](https://gwt-review.googlesource.com/#/settings/agreements).
 
 <h3 id="webpage">Contributing to webpage and Documentation</h3>
-This webpage and the documentation hosted on it are completly written in markdown.
-If you find an error, want to make an improvement, write an article or do something to 
-the webpage feel free to do so.
+
+This webpage and the documentation hosted on it are completly written in markdown. If you find an error, want to make an improvement, write an article or do something to the webpage feel free to do so.
 
 Here is how it works:
 
@@ -763,9 +676,7 @@ All the code is stored inside a git repository. You can clone it like this:
 
 <pre>git clone https://gwt.googlesource.com/gwt-site</pre>
 
-The source code for this webpage will be found in *src/main/markdown*.
-You can edit existing files and add new ones. If you want to see your changes
-you will need to run:
+The source code for this webpage will be found in *src/main/markdown*. You can edit existing files and add new ones. If you want to see your changes you will need to run:
 
 <pre>mvn clean install</pre>
 
@@ -774,16 +685,12 @@ After that you can go to *target/generated-site* and see the generated site.
 If you think your change is ready to be published on gwtproject.org you can send us
 your changes for review by using gerrit. Note: you need to have signed a <a href="#clas">CLA Agreement</a>.
 
-This works the same way you would submit a code change to GWT. More information can be found 
-<a href="#submittingpatches">here</a>.
+This works the same way you would submit a code change to GWT. More information can be found [here](#submittingpatches).
 
 <h3 id="global_gitignore">Global .gitignore</h3>
 
-Since our .gitignore files don't contain IDE or OS specific .gitignore entries
-you should setup your global .gitignore.
+Since our .gitignore files don't contain IDE or OS specific .gitignore entries you should setup your global .gitignore.
 
-[This](https://help.github.com/articles/ignoring-files) is how you setup a
-global .gitingore.
-[Here](https://github.com/github/gitignore/tree/master/Global) you find a list
-of IDE specific global .gitignore files.
+[This](https://help.github.com/articles/ignoring-files) is how you setup a global .gitingore.
 
+[Here](https://github.com/github/gitignore/tree/master/Global) you find a list of IDE specific global .gitignore files.

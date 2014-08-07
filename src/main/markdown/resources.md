@@ -1,7 +1,7 @@
 Resources
 ===
 
-<p>Below you will find a variety of resources that will help you understand and use the GWT (GWT):</p>
+Below you will find a variety of resources that will help you understand and use the GWT (GWT):
 
 <ul>
   <li>
@@ -25,7 +25,8 @@ videos (where available).
   </li>
 </ul>
 
-<p>GWT community information:</p>
+GWT community information:
+
 <ul>
      <li>
      <a href="http://groups.google.com/group/Google-Web-Toolkit">GWT Developer Forum</a>
@@ -48,6 +49,3 @@ href="makinggwtbetter.html">Making GWT Better</a>.
 href="http://www.mozilla.org/projects/rt-messaging/chatzilla/">ChatZilla</a>.
      </li>
 </ul>
-
-
-

@@ -1,10 +1,12 @@
 Community
 ===
 
-<p>Welcome to the GWT developer community. A number of community resources are already available for GWT that you can begin using today. We're excited to share these with you, and we invite you to get involved in these channels and contribute your own knowledge and experience back to the community.</p>
+Welcome to the GWT developer community. A number of community resources are already available for GWT that you can begin using today. We're excited to share these with you, and we invite you to get involved in these channels and contribute your own knowledge and experience back to the community.
 
-<h2>Discussion groups/lists</h2>
-<p>We've established a set of discussion groups/mailing lists to help you find answers to your technical issues as well as enabling you to share your latest tips and tricks and projects with the greater GWT developer community. Each group has a particular purpose, summarized below.</p>
+## Discussion groups/lists
+
+We've established a set of discussion groups/mailing lists to help you find answers to your technical issues as well as enabling you to share your latest tips and tricks and projects with the greater GWT developer community. Each group has a particular purpose, summarized below.
+
 <ul>
 <p>
   <li>
@@ -51,35 +53,32 @@ Community
 </p>
 </ul>
 
-<h4>Before posting</h4>
-<p>Before submitting your post, please try the following:</p>
-<ol>
-<li>Read the <a href="doc/latest/FAQ.html">official FAQs</a>. The most commonly-asked GWT questions are already addressed in these lists.</li>
-<li>Enter one or more keywords of your question in the search box at the top of this page. Relevant results from the documentation pages on Google Code as well as GWT articles and blog entries will be returned. </li>
-<li>Search the mailing list archives to see whether your questions have already been discussed.</li>
-<li>Read the <a href="http://groups.google.com/group/google-web-toolkit/web/gwt-discussion-group-charter">GWT discussion group charter</a> which highlights the community guidelines.</li>
-</ol>
+### Before posting
 
-<h2>Other communities</h2>
-<p>There is a <a href="https://plus.google.com/u/0/communities/116543000751323604177">GWT community over at Google+</a>. There's also the IRC channel #gwt on the Freenode network.</p>
+Before submitting your post, please try the following:
 
+1.  Read the [official FAQs](doc/latest/FAQ.html). The most commonly-asked GWT questions are already addressed in these lists.
+2.  Enter one or more keywords of your question in the search box at the top of this page. Relevant results from the documentation pages on Google Code as well as GWT articles and blog entries will be returned.
+3.  Search the mailing list archives to see whether your questions have already been discussed.
+4.  Read the [GWT discussion group charter](http://groups.google.com/group/google-web-toolkit/web/gwt-discussion-group-charter) which highlights the community guidelines.
 
-<h2>Contribute</h2>
+## Other communities
 
-<p>There are several ways to contribute back to the GWT community.</p>  
-<ul>
-  <li>Getting involved with discussions in the general <a href="http://groups.google.com/group/google-web-toolkit">GWT group</a> is a great way of educating others that are in need of assistance or are just getting started with GWT.</li>
-  <li>Contributing source code patches and updates to the project itself is a way to share new features and functionality that you benefited from with the rest of the community. If code contribution is something you are interested in, be sure to check out <a href="makinggwtbetter.html">Making GWT Better</a> and discussions that are taking place over at the <a href="http://groups.google.com/group/google-web-toolkit-contributors">GWT Contributors group</a>.</li>
-</ul>
+There is a [GWT community over at Google+](https://plus.google.com/u/0/communities/116543000751323604177). There's also the IRC channel #gwt on the Freenode network.
 
-<h2>Other developers and projects</h2>
+## Contribute
 
-<p>To see how other developers used GWT to build real-world applications, be sure to checkout our <a href="developer_spotlight.html">Developer Spotlight</a> section. Here developers from several third-party companies talk about specific features that they used to build their applications, what they like and would like to see from GWT, as well as tips and learnings from developing with GWT.</p>
+There are several ways to contribute back to the GWT community.
 
-<p>If you'd like to see who else is using GWT, check out the <a href="http://gwtgallery.appspot.com">GWT Gallery</a>. You'll be able to find other applications and libraries built with GWT, comment on them, rate them, and search for them by tag or by name. You can also <a href="http://gwtgallery.appspot.com/submit">submit your own entry</a> if you have a project that  you want to share.</p>
-<p>You can also find a wide variety of open source <a href="http://code.google.com/hosting/search?q=GWT&btn=Search+Projects"> projects related to GWT</a> hosted on Google Code.</p>
-<p>Please note that the applications linked from this page are provided by third parties and are not endorsed by Google.</p>
+*   Getting involved with discussions in the general [GWT group](http://groups.google.com/group/google-web-toolkit) is a great way of educating others that are in need of assistance or are just getting started with GWT.
+*   Contributing source code patches and updates to the project itself is a way to share new features and functionality that you benefited from with the rest of the community. If code contribution is something you are interested in, be sure to check out [Making GWT Better](makinggwtbetter.html) and discussions that are taking place over at the [GWT Contributors group](http://groups.google.com/group/google-web-toolkit-contributors).
 
-</div>
+## Other developers and projects
 
+To see how other developers used GWT to build real-world applications, be sure to checkout our [Developer Spotlight](developer_spotlight.html) section. Here developers from several third-party companies talk about specific features that they used to build their applications, what they like and would like to see from GWT, as well as tips and learnings from developing with GWT.
 
+If you'd like to see who else is using GWT, check out the [GWT Gallery](http://gwtgallery.appspot.com). You'll be able to find other applications and libraries built with GWT, comment on them, rate them, and search for them by tag or by name. You can also [submit your own entry](http://gwtgallery.appspot.com/submit) if you have a project that  you want to share.
+
+You can also find a wide variety of open source [ projects related to GWT](http://code.google.com/hosting/search?q=GWT&btn=Search+Projects) hosted on Google Code.
+
+Please note that the applications linked from this page are provided by third parties and are not endorsed by Google.

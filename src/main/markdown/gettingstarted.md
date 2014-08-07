@@ -1,13 +1,13 @@
 Getting Started
 ===
 
-- <a href="#prereqs">Prerequisites</a>
-- <a href="#download">Download and Install GWT</a>
-- <a href="#create">Create your first web application</a></li>
-- <a href="#run">Run locally in development mode</a></li>
-- <a href="#change">Make a few changes</a></li>
-- <a href="#compile">Compile and run in production mode</a></li>
-- <a href="#setup">Set up an IDE</a></li>
+- [Prerequisites](#prereqs)
+- [Download and Install GWT](#download)
+- [Create your first web application](#create)
+- [Run locally in development mode](#run)
+- [Make a few changes](#change)
+- [Compile and run in production mode](#compile)
+- [Set up an IDE](#setup)
 
 <h2 id="prereqs">Prerequisites</h2>
 

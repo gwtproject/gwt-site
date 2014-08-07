@@ -1,3 +1,0 @@
- - [Overview](gettingstarted.html 'Getting Started with GWT SDK')
- - [SDK Learn More](learnmore-sdk.html 'Learn more about the GWT SDK')
- - [Configure Eclipse](usingeclipse.html)

@@ -1,29 +1,3 @@
-  <style>
-    ul.toolsList li {
-        margin-bottom:1em;
-  }
-
-  ul.toolsList li a:visited,
-  ul.toolsList li a:link,
-  ul.toolsList li a:hover,
-  ul.toolsList li a:active,
-  ul.toolsList li a:focus {
-    font-weight:bold;
-  }
-
-  .pay {
-   color: #008000;
-  }
-
-   ul.toolsList li p.toolsDescription {
-     margin-left:2em;
-     margin-top:3px;
-   }
-   #body {
-     max-width:700px;
-   }
-   </style>
-
 Books
 ===
 

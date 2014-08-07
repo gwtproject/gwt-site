@@ -70,18 +70,16 @@
 Exemples
 ===
 
-<p>
 If you're like us, the first thing you want to do is see examples of what you can do with GWT.
 
-<ul>
-  <li><a href="#samples">Samples</a> are included in the SDK for you to play around with and build off of. A few are below. Some are from the <a href="//developers.google.com/appengine/">App Engine SDK</a> that use GWT for their front end.</li>
-  <li><a href="#real-world-projects">Real world projects</a> let you see the real power of GWT, with complex applications that developers are building.</li>
-</ul>
+*   [Samples](#samples) are included in the SDK for you to play around with and build off of. A few are below. Some are from the [App Engine SDK](//developers.google.com/appengine/) that use GWT for their front end.
+*   [Real world projects](#real-world-projects) let you see the real power of GWT, with complex applications that developers are building.
 
-<p>If you'd like to see who else is using GWT, check out the <a href="http://gwtgallery.appspot.com">GWT Gallery</a>. You'll be able to find other applications and libraries built with GWT, comment on them, rate them, and search for them by tag or by name. You can also <a href="http://gwtgallery.appspot.com/submit">submit your own entry</a> if you have a project that  you want to share.</p>
-<p>You can also find a wide variety of open source <a href="http://code.google.com/hosting/search?q=GWT&btn=Search+Projects"> projects related to GWT</a> hosted on Google Code.</p>
-<p>Please note that the applications linked from this page are provided by third-parties and are not endorsed by Google.</p>
-</p>
+If you'd like to see who else is using GWT, check out the [GWT Gallery](http://gwtgallery.appspot.com). You'll be able to find other applications and libraries built with GWT, comment on them, rate them, and search for them by tag or by name. You can also [submit your own entry](http://gwtgallery.appspot.com/submit) if you have a project that  you want to share.
+
+You can also find a wide variety of open source [projects related to GWT](http://code.google.com/hosting/search?q=GWT&btn=Search+Projects) hosted on Google Code.
+
+Please note that the applications linked from this page are provided by third-parties and are not endorsed by Google.
 
 <h2 id="samples">Samples</h2>
 <div class="section">

@@ -1,68 +1,30 @@
 Welcome to the GWT Discussion Group!
 ===
 
-<p>
-The GWT (GWT) allows developers to use the Java
-programming language to build no-compromise AJAX applications.&nbsp;
-This is the official discussion forum for GWT.
-</p>
+The GWT (GWT) allows developers to use the Java programming language to build no-compromise AJAX applications. This is the official discussion forum for GWT.
 
+## Overview
 
-<h2>Overview</h2>
+GWT consists of a Java-to-JavaScript compiler, user interface API, and related tools. It allows developers to write and debug browser AJAX applications in the Java language using Java tools, and then compile and deploy those applications into pure JavaScript. If you use GWT or are interested in it, this group is for you!
 
-<p>
-GWT consists of a Java-to-JavaScript compiler, user interface API, and
-related tools.&nbsp; It allows developers to write and debug browser
-AJAX applications in the Java language using Java tools, and then
-compile and deploy those applications into pure JavaScript.&nbsp; If
-you use GWT or are interested in it, this group is for you!
-</p>
+GWT is open source, and is licensed according to the terms of the [Apache 2.0 License](terms.html "Apache 2.0 License").
 
-<p>
-GWT is open source, and is licensed according to the terms of the <a title="Apache 2.0 License" href="terms.html">Apache 2.0 License</a>.
-</p>
-
-<p>
 Here are some important GWT resources:
-</p>
 
-<ul>
-  <li><a title="The GWT Home Page" href="http://www.gwtproject.org">The GWT Home Page</a> </li>
-  <li>The GWT Developer Documentation, including the
-     <a title="Overview" href="docs/latest/DevGuide.html">Overview</a>, the
-     <a title="Tutorials" href="doc/latest/tutorial/index.html">Tutorials</a>, and the
-     <a title="API Reference" href="doc/latest/RefGWTClassAPI.html">API Reference</a> </li>
-  <li><a title="Discussion Group Archives" href="http://groups.google.com/group/Google-Web-Toolkit/topics">The Discussion Group Archives</a> </li>
-  <li><a title="The GWT Issue Tracker" href="http://code.google.com/p/google-web-toolkit/issues/list">The GWT Issue Tracker</a></li>
-</ul>
+*   [The GWT Home Page](http://www.gwtproject.org "The GWT Home Page")
+*   The GWT Developer Documentation, including the [Overview](docs/latest/DevGuide.html "Overview"), the [Tutorials](doc/latest/tutorial/index.html "Tutorials"), and the [API Reference](doc/latest/RefGWTClassAPI.html "API Reference")
+*   [The Discussion Group Archives](http://groups.google.com/group/Google-Web-Toolkit/topics "Discussion Group Archives")
+*   [The GWT Issue Tracker](http://code.google.com/p/google-web-toolkit/issues/list "The GWT Issue Tracker") 
 
+## Audience
 
-<h2>Audience</h2>
+This Discussion Group is intended for developers using GWT to build applications. Everyone is welcome to join in, provided you follow our community's policies described below. Our users help each other, and there are many experts who post to this group, including some from Google.
 
-<p>
-This Discussion Group is intended for developers using GWT to build
-applications.&nbsp; Everyone is welcome to join in, provided you follow
-our community's policies described below.&nbsp; Our users help each
-other, and there are many experts who post to this group, including
-some from Google.
-</p>
+No topic is off-limits, provided it relates to GWT in some way.&nbsp; However, since it _is_ a very busy list, please check out the list of resources above before posting your question; you may find your question has already been answered.
 
-<p>
-No topic is off-limits, provided it relates to GWT in some way.&nbsp; However, since it <i>is</i> a
-very busy list, please check out the list of resources above before
-posting your question;&nbsp; you may find your question has already
-been answered.
-</p>
+## Discussion Group Rules
 
-
-<h2>Discussion Group Rules</h2>
-
-<p>
-We love simplicity and hate restrictions, so we also keep our policies
-simple and minimal.&nbsp; The rules below describe what's expected of
-subscribers to this forum.
-</p>
-
+We love simplicity and hate restrictions, so we also keep our policies simple and minimal. The rules below describe what's expected of subscribers to this forum.
 
 <ul>
   <li><b>Please be Friendly</b>
@@ -114,29 +76,12 @@ The primary language for this group is English, however if you have trouble comm
   </li>
 </ul>
 
-<p>
-As you can see our rules are simple, and the most important rule is friendliness.&nbsp;
-Remember:&nbsp; disrespect and rudeness &mdash; under <b>any</b> circumstances
--- is not welcome in our community.&nbsp; We don't have a formal policy
-on dealing with troublemakers, and we hope we never need to come up
-with one.&nbsp; That said, though, we do pledge to do our best to be
-fair, and we will always try to warn someone before banning him or her.
-</p>
+As you can see our rules are simple, and the most important rule is friendliness. Remember: disrespect and rudeness &mdash; under **any** circumstances -- is not welcome in our community.  We don't have a formal policy on dealing with troublemakers, and we hope we never need to come up with one.  That said, though, we do pledge to do our best to be fair, and we will always try to warn someone before banning him or her.
 
+## Contacting the Moderators
 
-<h2>Contacting the Moderators</h2>
+If you see anyone being rude, by all means call them out on it; this is your group too, and you don't have to accept someone else being disrespectful just because it wasn't directed at you. Just remember to be **polite** and **courteous** yourself! Don't add fuel to the fire.
 
-<p>
-If you see anyone being rude, by all means call them out on it; this is
-your group too, and you don't have to accept someone else being
-disrespectful just because it wasn't directed at you.&nbsp; Just remember to
-be <b>polite</b> and <b>courteous</b> yourself!&nbsp; Don't add fuel to the fire.
-</p>
-
-<p>
-But, if you see an outrageous violation, want to report spam, feel very
-strongly about something, or even if you just want to chat, then by all
-means <a title="contact the Group's owners" href="http://groups.google.com/group/Google-Web-Toolkit/post?sendowner=1&amp;_done=%2Fgroup%2FGoogle-Web-Toolkit%2Fabout%3F&amp;">contact the Group's owners</a>.&nbsp; It's what we're here for!
-</p>
+But, if you see an outrageous violation, want to report spam, feel very strongly about something, or even if you just want to chat, then by all means [contact the Group's owners](http://groups.google.com/group/Google-Web-Toolkit/post?sendowner=1&amp;_done=%2Fgroup%2FGoogle-Web-Toolkit%2Fabout%3F&amp; "contact the Group"). It's what we're here for!
 
 
