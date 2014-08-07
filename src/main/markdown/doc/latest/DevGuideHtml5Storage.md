@@ -1,3 +1,6 @@
+HTML5 Storage
+===
+
 <ol class="toc" id="'pageToc">
   <li><a href="#WhatIsStorage">What is HTML5 Storage?</a></li>
   <li><a href="#WhyUse">Why Use HTML5 Storage?</a></li>

@@ -1,3 +1,6 @@
+Making GWT better
+===
+
 <p>If you are interested in understanding the internals of Google
 Web Toolkit (GWT), building from source, or contributing ideas or
 modifications to the project, then this document is for you.</p>

@@ -1,3 +1,6 @@
+Compiling and Debugging
+===
+
 <p>
 Let's start with the core principle of GWT development:
 <ol class="nolist">

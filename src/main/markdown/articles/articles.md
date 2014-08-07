@@ -1,33 +1,8 @@
-  <style>
-    ul.toolsList li {
-        margin-bottom:1em;
-  }
-
-    ul.toolsList li a:visited,
-    ul.toolsList li a:link,
-    ul.toolsList li a:hover,
-    ul.toolsList li a:active,
-    ul.toolsList li a:focus {
-    font-weight:bold;
-  }
-
-  .pay {
-   color: #008000;
-  }
-
-   ul.toolsList li p.toolsDescription {
-     margin-left:2em;
-     margin-top:3px;
-   }
-   #body {
-     max-width:700px;
-   }
-   </style>
+Articles
+===
 
 <p>Below is a list of articles (most recent first) that have been published about GWT development. If you're interested in contributing an article on a specific GWT topic,
  please <a href="http://groups.google.com/group/Google-Web-Toolkit/post?sendowner=1&_done=/group/Google-Web-Toolkit/about%3F&">drop us a line</a>.</p>
-
-<br>
 
 <ul class="toolsList">
   <li>
@@ -83,9 +58,7 @@ JSON services across the web.</p>
   </li>
 </ul>
 
-<b>Externally hosted articles:</b>
-
-<br>
+## Externally hosted articles
 
 <ul class="toolsList">
   <li>
@@ -94,8 +67,7 @@ JSON services across the web.</p>
   <li>
     <a href="//code.google.com/p/gwtchismes/wiki/Tutorial_ExportingGwtLibrariesToJavascript_en">Exporting Libraries Developed in GWT to JavaScript</a> - <i>Contributed by Manuel Carrasco Moñino</i>
     <p class="toolsDescription">This article describes how you can export GWT defined methods to the outside JavaScript world, allowing your GWT application to provide an API for external consumption. It covers both a manual technique which uses only the GWT core library, as well as an even easier technique which uses of the <a href="//code.google.com/p/gwt-exporter">GWT-Exporter library</a>.</p>
+</ul>
 
 <p>If you believe that any resource should be added or removed from the list above, please <a href="mailto:Google-Web-Toolkit+owner@googlegroups.com">let us
 know</a>.</p>
-
-

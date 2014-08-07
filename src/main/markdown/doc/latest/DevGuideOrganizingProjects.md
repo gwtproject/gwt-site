@@ -1,3 +1,6 @@
+Organizing Projects
+===
+
 <p>GWT projects can be organized in a variety of ways. However, particular conventions are encouraged to make it easy to identify which code is intended to run on the client
 browser, the server, or both.</p>
 

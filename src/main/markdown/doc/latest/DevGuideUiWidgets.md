@@ -1,3 +1,6 @@
+UiWidgets
+===
+
 <p>You construct user interfaces in GWT applications using <a href="/javadoc/latest/com/google/gwt/user/client/ui/Widget.html">widgets</a> that
 are contained within <a href="/javadoc/latest/com/google/gwt/user/client/ui/Panel.html">panels</a>. Widgets allow you to interact with the user. Panels
 control the placement of user interface elements on the page. Widgets and panels work the same way

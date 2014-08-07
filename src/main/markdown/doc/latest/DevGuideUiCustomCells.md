@@ -7,6 +7,9 @@
   }
 </style>
 
+UiCustomCells
+===
+
 <p>
 If you use a CellTable or other Cell Widgets in your applications, you will probably want to create custom
 Cells tailored for your data. Cells are like widget flyweights, so a single Cell can render multiple

@@ -1,3 +1,6 @@
+i18n Constants
+===
+
 <style type="text/css"> .TODO { background-color: yellow; } </style>
 
 <ol class="toc" id="pageToc">

@@ -1,3 +1,6 @@
+UiCustomWidgets
+===
+
 <p>GWT makes it easy to create custom user interface elements. There are three general strategies to follow:</p>
 
 <ul>

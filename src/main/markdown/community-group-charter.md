@@ -1,4 +1,5 @@
-<h2>Welcome to the GWT Discussion Group!</h2>
+Welcome to the GWT Discussion Group!
+===
 
 <p>
 The GWT (GWT) allows developers to use the Java

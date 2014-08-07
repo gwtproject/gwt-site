@@ -1,3 +1,6 @@
+FAQ - Client
+===
+
 <ol class="toc" id="pageToc"><li><a href="#Project_Architecture">Project Architecture</a><ol class="toc"><li><a href="#What_is_a_GWT_Module?">What is a GWT Module?</a></li></ol></li><li><a href="#Writing_Java_code">Writing Java code</a><ol class="toc"><li><a href="#How_do_I_enable_assertions?">How do I enable assertions?</a></li></ol></li><li><a href="#JavaScript_Native_Interface">JavaScript Native Interface</a><ol class="toc"><li><a href="#How_do_I_call_Java_methods_from_handwritten_JavaScript_or_third">How do I call Java methods
 from handwritten JavaScript or third party libraries?</a></li><li><a href="#Help!_I'm_having_problems_with_eval()_in_my_JSNI_method!">Help! I'm having problems with eval() in my
 JSNI method!</a></li><li><a href="#Why_doesn't_the_bridge_call_to_my_JSNI_method_work_in_onclick">Why doesn't the bridge call to my JSNI method work in <code>&lt;some_obj&gt;.onclick</code>?<li><a href="#How_do_I_pass_a_Java_method_as_a_callback_function?">How do I pass a Java method as a callback

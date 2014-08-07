@@ -1,3 +1,6 @@
+UiImageBundles
+===
+
 <p>An <i>image bundle</i> is a construct used to improve application performance by reducing the number of round trip HTTP requests to the server to fetch images. GWT can package
 many image files into a single large file to be downloaded from the server and managed as a Java object.</p>
 

@@ -1,3 +1,6 @@
+Widget Gallery
+===
+
 <style type="text/css">
   dt { margin-top: 1.5em; }
 </style>

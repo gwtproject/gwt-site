@@ -1,4 +1,5 @@
-
+Privacy
+===
 
 <p><a href="terms.html">Terms of Service</a> | <b>Privacy Notice</b> </p>
 <p>Last modified: May 11th, 2013</p>

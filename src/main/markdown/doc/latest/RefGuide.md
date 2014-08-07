@@ -1,3 +1,6 @@
+Guide
+===
+
 <p>
 The GWT reference guide provides javadoc for GWT and related libraries, and technical details for GWT widgets.
 </p>

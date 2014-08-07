@@ -67,6 +67,9 @@
     }
 </style>
 
+Exemples
+===
+
 <p>
 If you're like us, the first thing you want to do is see examples of what you can do with GWT.
 

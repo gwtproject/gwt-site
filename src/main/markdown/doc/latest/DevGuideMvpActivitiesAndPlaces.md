@@ -1,3 +1,6 @@
+MVP Activities and Places
+===
+
 <p>GWT 2.1 introduced a built-in framework for browser history management.
 The Activities and Places framework allows you to create bookmarkable
 URLs within your application, thus allowing the browser's back button and

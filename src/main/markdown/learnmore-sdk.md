@@ -55,6 +55,9 @@ applications in the Java programming language.
 </p>
 </div>
 
+Learn more
+===
+
 <a name="how"></a>
 <h2>How the SDK works</h2>
 

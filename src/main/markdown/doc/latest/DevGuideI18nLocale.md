@@ -1,3 +1,6 @@
+i18n Locale
+===
+
 <ol class="toc" id="pageToc">
   <li><a href="#LocaleOverview">Overview</a></li>
   <li><a href="#LocaleProperty">Client Properties and the GWT Compilation Process</a></li>

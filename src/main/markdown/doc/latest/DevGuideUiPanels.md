@@ -1,3 +1,6 @@
+UiPanels
+===
+
 <ol class="toc" id="pageToc">
   <li><a href="#BasicPanels">Basic Panels</a></li>
   <li><a href="#LayoutPanels">Layout Panels</a></li>

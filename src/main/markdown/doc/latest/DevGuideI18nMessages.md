@@ -1,3 +1,6 @@
+i18n Messages
+===
+
 <ol class="toc" id="pageToc">
   <li><a href="#MessagesOverview">Overview</a></li>
   <li><a href="#GwtFormats">GWT-specific formats</a></li>

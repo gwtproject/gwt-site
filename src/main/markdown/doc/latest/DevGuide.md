@@ -1,3 +1,6 @@
+Developer's Guide
+===
+
 <p>
 Welcome to the GWT Developer's Guide.
 This guide introduces the key concepts, tools, and libraries you'll encounter when building web applications with GWT.

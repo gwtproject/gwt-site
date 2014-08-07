@@ -6,6 +6,9 @@
   }
 </style>
 
+Request Factory
+===
+
 <p>RequestFactory is an alternative to GWT-RPC for creating data-oriented
 services. RequestFactory and its related interfaces (RequestContext and
 EntityProxy) make it easy to build data-oriented (CRUD) apps with an

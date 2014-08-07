@@ -1,3 +1,6 @@
+Coding basics
+===
+
 <h2 id="DevGuideClientSide">Client-side code</h2>
 
 <p><a href="DevGuideCodingBasicsClient.html">Client-side code</a> describes how to create an entry-point (code that executes when the user starts the application) into a client-side application.

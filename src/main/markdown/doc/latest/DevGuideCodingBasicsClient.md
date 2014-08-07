@@ -1,3 +1,6 @@
+Client
+===
+
 <p>Your application is sent across a network to a user where it runs as JavaScript inside their web browser. Everything that happens within the user's web browser is
 referred to as <i>client-side processing</i>. When you write client-side code that is intended to run in the web browser, remember that it ultimately becomes JavaScript. Thus, it
 is important to use only <a href="DevGuideCodingBasics.html#DevGuideJavaCompatibility">libraries and Java language constructs</a> that can be translated into JavaScript.</p>

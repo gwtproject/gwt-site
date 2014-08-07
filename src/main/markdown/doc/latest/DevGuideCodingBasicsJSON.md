@@ -1,3 +1,6 @@
+JSON
+===
+
 <p>Many AJAX application developers have adopted <a href="http://www.json.org/">JSON</a> as the data format of choice for server communication. It is a relatively
 simple format based on the object-literal notation of JavaScript. If you choose to use JSON-encoded data within your application, you can use GWT classes to parse and manipulate JSON objects, as well as the very useful and elegant concept of <a href="DevGuideCodingBasicsOverlay.html">JavaScript Overlay Types</a>.</p>
 

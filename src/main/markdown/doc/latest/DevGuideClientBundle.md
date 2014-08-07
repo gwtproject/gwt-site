@@ -1,3 +1,6 @@
+Client Bundle
+===
+
 <p>
 The resources in a deployed GWT application can be roughly categorized into resources to never cache (<tt>.nocache.js</tt>), to cache forever (<tt>.cache.html</tt>), and everything else (<tt>myapp.css</tt>).  The <a href="/javadoc/latest/index.html?com/google/gwt/resources/client/ClientBundle.html">ClientBundle</a> interface moves entries from the everything-else category into the cache-forever category.
 </p>

@@ -1,3 +1,6 @@
+UiCellWidgets
+===
+
 <p>
 Cell widgets (data presentation widgets) are high-performance, lightweight widgets composed of Cells for displaying data.
 Examples are <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList">lists</a>,

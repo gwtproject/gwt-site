@@ -1,3 +1,6 @@
+Resources
+===
+
 <p>Below you will find a variety of resources that will help you understand and use the GWT (GWT):</p>
 
 <ul>

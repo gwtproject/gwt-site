@@ -1,3 +1,6 @@
+UiHandlers
+===
+
 <p>Events in GWT use the <i>handler</i> model similar to other user interface frameworks. A handler interface defines one or more methods that the widget calls to announce an
 event. A class wishing to receive events of a particular type implements the associated handler interface and then passes a reference to itself to the widget to <i>subscribe</i>
 to a set of events. The <a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> class, for example,

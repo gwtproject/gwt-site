@@ -1,0 +1,483 @@
+/**
+ * STYLE
+ * Main CSS to rule them all
+ * Pages and custom elements style goes here
+ *
+ * Using
+ * - reset.less 		reset stylesheet
+ * - grid.less 			grid system, including mixins
+ * - colors.less 		variables for colorscheme
+ * - layout.less 		default style layout for your website
+ * - components.less 	styles and mixins for buttons, form, etc
+ *
+ * Created by @jasonlemay
+ */
+
+@import 'normalize.less';
+@import 'grid.less';
+@import 'colors.less';
+@import 'layout.less';
+@import 'functions.less';
+@import 'flexnav.less';
+
+// -- Styles ---------------------------------------------
+
+#nav {
+
+  // -> Opened menu
+
+  background-color: @c-secondary;
+
+  min-height: 100%;
+  width: 260px;
+  padding: 0;
+  border-top: 6px solid @c-primary;
+  overflow-x: hidden;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+
+  .transition();
+
+  .wrapper {
+    width: 260px;
+  }
+
+  ul {
+    margin: 35px 0 0;
+    padding: 0;
+  }
+
+  li {
+
+    .transition();
+    a {
+      color: @c-text-light;
+      text-decoration: none;
+      font-size: 15px;
+      font-size: 1.5rem;
+
+      display: inline-block;
+      width: 100%;
+      padding: 0 35px 4px;
+
+      .box-sizing();
+      .transition();
+
+      &:hover,
+      &.active {
+        background-color: @c-secondary-dark;
+      }
+    }
+
+    i {
+      font-size: 130%;
+      vertical-align: baseline;
+
+      &::before {
+        margin-left: 0;
+        margin-right: 0.5em;
+
+        position: relative;
+        top: 1px;
+      }
+    }
+
+    &.logo a {
+      background: url('../img/navLogoBig.png') no-repeat;
+      text-align: center;
+      text-indent: -9999px;
+
+      display: block;
+      width: 160px;
+      height: 149px;
+      margin: 0 auto 40px;
+
+      &::after {
+        content: "";
+        background: url('../img/navLogoSmall.png') no-repeat;
+
+        display: block;
+        width: 24px;
+        height: 17px;
+
+        position: absolute;
+        top: 20px;
+        left: 8px;
+
+        .transition();
+        .opacity(0);
+      }
+    }
+
+    &.sep {
+      margin-bottom: 25px;
+
+      position: relative;
+
+      &::after{
+        content: "";
+
+        display: block;
+        width: 22px;
+        height: 3px;
+        background-color: @c-secondary-dark;
+
+        position: absolute;
+        bottom: -14px;
+        left: 35px;
+
+        .transition();
+      }
+    }
+    
+    &.btn {
+      padding: 0 35px;
+      margin-bottom: 10px;
+      margin-left: 0;
+
+      a{
+        background-color: @c-primary;
+        color: #fff;
+        font-size: 14px;
+        font-size: 1.4rem;
+
+        .rounded(8px);
+        .transition();
+
+        &:hover{
+          background-color: @c-primary-dark;
+        }
+      }
+    }
+  }
+
+  #social {
+    .transition();
+
+    a {
+      color: #fff;
+      text-align: center;
+      font-size: 50px;
+      font-size: 5rem;
+
+      display: block;
+      width: 100%;
+      height: 40px;
+
+      .transition();
+
+      span {
+        display: none;
+      }
+    }
+  }
+  
+  #cc {
+    color: #9e9d9d;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-size: 1.3rem;
+
+    display: block;
+    width: 100%;
+    padding: 10px 35px;
+    margin-top: 20px;
+
+    .box-sizing();
+  }
+
+  // -> Closed menu
+
+  &.closed {
+    width: 40px;
+
+    a {
+      padding-left: 14px;
+
+      @media(@tablet) {
+        padding-left: 15px;
+      }
+    }
+
+    li i {
+      margin-left: -3px;
+      padding-right: 1em;
+    }
+
+    .logo a::after {
+      .opacity(1);
+    }
+
+    .sep::after {
+      left: 10px;
+    }
+
+    .btn {
+      margin-left: -32px;
+    }
+
+    #social {
+      a {
+        font-size: 30px;
+        font-size: 3rem;
+
+        margin-left: -122px;
+        height: 30px;
+
+        @media(@tablet) {
+          margin-left: -123px;
+        }
+      }
+    }
+  }
+
+  @media(@mobile) {
+    display: none;
+  }
+}
+
+aside#submenu {
+  background-color: @c-secondary-dark;
+
+  width: 240px;
+  height: 100%;
+  padding-top: 229px;
+
+  position: fixed;
+  top: 0;
+  left: 30px;
+  z-index: 8500;
+
+  @media(@tablet) {
+    width: 200px;
+  }
+
+  a {
+    color: @c-text-light;
+    text-decoration: none;
+    font-size: 15px;
+    font-size: 1.5rem;
+
+    display: inline-block;
+    width: 100%;
+    padding: 6px 25px;
+
+    .box-sizing();
+    .transition();
+
+    &:hover {
+      background-color: @c-background;
+    }
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+
+    ul {
+      padding: 0 0 5px;
+      margin-bottom: 5px;
+
+      &::before {
+        content: "\e80e";
+        font-family: "icons";
+
+        display: block;
+        width: 10px;
+        height: 10px;
+
+        position: absolute;
+        top: -27px;
+        right: 12px;
+      }
+
+      a{
+        padding-left: 50px;
+      }
+
+      &::after {
+        content: "";
+        background-color: @c-secondary;
+
+        display: block;
+        width: 190px;
+        height: 2px;
+
+        position: relative;
+        bottom: -5px;
+        left: 25px;
+
+        @media(@tablet) {
+          width: 160px;
+        }
+      }
+    }
+  }
+
+  @media(@mobile) {
+    display: none;
+  }
+}
+
+a#logo-mobile {
+  display: none;
+
+  @media(@mobile) {
+    background: url('../img/navLogoBig.png') no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    text-indent: -9999px;
+
+    display: block;
+    width: 80px;
+    height: 80px;
+
+    position: relative;
+    top: 14px;
+    left: 2.2%;
+  }
+}
+
+.menu-button {
+  top: -20px;
+}
+
+nav#nav-mobile {
+  display: none;
+
+  @media(@mobile) {
+    display: block;
+
+    position: relative;
+    top: -22px;
+  }
+}
+
+#search {
+  background-color: @c-primary;
+  color: #fff;
+
+  padding: 4px 2px 5px 6px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  .border-radius(0, 0, 5px, 0);
+
+  input {
+    display: none;
+    border: 0;
+    padding: 2px 4px;
+
+    .border-radius(0, 0, 3px, 0);
+
+    @media(@mobile) {
+      display: inline-block;
+    }
+  }
+
+  button {
+    background-color: @c-primary;
+    color: #fff;
+    font-weight: normal;
+
+    border: 0;
+
+    span {
+      text-indent: -9999px;
+
+      display: inline-block;
+    }
+  }
+
+  &:hover {
+    input {
+      display: inline-block;
+
+    }
+  }
+}
+
+#content {
+  padding: 8em 0 3em;
+
+  @media(@mobile) {
+    padding-top: 3em;
+  }
+
+  &.home {
+    padding: 0;
+
+    h1 {
+      font-size: 85px;
+      font-size: 8.5rem;
+
+      margin: 0 0 0.5em;
+
+      span {
+        display: inline-block;
+      }
+
+      strong{
+        font-size: 150px;
+        font-size: 15rem;
+        font-weight: 800;
+        line-height: 0.7em;
+
+        display: block;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    h2 {
+      font-size: 28px;
+      font-size: 2.8rem;
+      text-transform: uppercase;
+
+      margin: 0.2em 0 0.9em;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    section {
+      padding: 5em 0;
+      width: 100%;
+
+      &.alternate {
+        background-color: @c-primary;
+        color: #fff;
+        
+        h1 strong {
+          color: #000;
+        }
+      }
+
+      &#letsbegin .col-1_4 {
+        text-align: center;
+
+        p{
+          font-size: 14px;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+
+// -- Print ----------------------------------------------
+
+@import url('print.less');
+
+

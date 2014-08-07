@@ -1,3 +1,6 @@
+Server Communication
+===
+
 <p>At some point, most GWT applications will need to interact with a backend server. GWT provides a couple of different ways to communicate with a server via HTTP. You can use the
 <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">GWT RPC</a> framework to transparently make calls to Java servlets and let GWT take care of low-level details like
 object serialization. Alternatively, you can use GWT's <a href="/javadoc/latest/com/google/gwt/http/client/package-summary.html">HTTP client classes</a> to build and send custom HTTP requests.</p>

@@ -1,3 +1,6 @@
+Optimizing
+===
+
 <p>Once you have your application basically working, it's time to
 improve its performance.  You can
 use Speed Tracer to

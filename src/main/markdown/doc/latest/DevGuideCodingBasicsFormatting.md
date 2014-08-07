@@ -1,3 +1,6 @@
+Formatting
+===
+
 <p>GWT does not provide full emulation for the date and number formatting classes (java.text.DateFormat, java.text.DecimalFormat, java.text.NumberFormat, java.TimeFormat, et
 cetera). Instead, a subset of the functionality of the JRE classes is provided by <a href="/javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html">com.google.gwt.i18n.client.NumberFormat</a> and <a href="/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.html">com.google.gwt.i18n.client.DateTimeFormat</a>.</p>
 

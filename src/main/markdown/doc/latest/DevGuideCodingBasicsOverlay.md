@@ -1,3 +1,6 @@
+Overlay
+===
+
 <p>Suppose you're happily using JSNI to call bits of handwritten JavaScript from within your GWT module. It works well, but JSNI only works at the level of individual methods.
 Some integration scenarios require you to more deeply intertwine JavaScript and Java objects &mdash; DOM and JSON programming are two good examples &mdash; and so what we really want is a
 way to interact directly with JavaScript objects from our Java source code. In other words, we want JavaScript objects that <i>look like</i> Java objects when we're coding.</p>

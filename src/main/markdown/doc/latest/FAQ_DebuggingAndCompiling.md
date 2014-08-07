@@ -1,3 +1,6 @@
+FAQ - Debugging and Compiling
+===
+
 <ol class="toc" id="pageToc">
       <li><a href="#What's_with_all_the_cache/nocache_stuff_and_weird_filenames">What's with all the cache/nocache stuff and weird filenames?</a></li>
       <li><a href="#How_do_I_change_the_location_of_my_cache/nocache_HTML_files?">How do I change the location of my cache/nocache HTML files?</a></li>

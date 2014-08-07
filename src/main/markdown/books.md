@@ -24,6 +24,8 @@
    }
    </style>
 
+Books
+===
 
 <p>Below is a set of books that have been published regarding GWT, including a short description of each.</p>
 
