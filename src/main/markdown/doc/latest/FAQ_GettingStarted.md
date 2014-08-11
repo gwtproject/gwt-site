@@ -134,92 +134,68 @@ commercial/enterprise applications?</h3>
 <h3 id="Can_I_redistribute_the_GWT_binaries_with_my_product?">Can I redistribute the GWT binaries with my
 product?</h3>
 
-<p>GWT has been released under the Apache 2.0 license, so you're allowed to distribute binaries as per the <a href="../../terms.html">Apache 2.0 terms</a>. Please note that some libraries used in the GWT are under other licenses as referenced <a href="../../terms.html#licenses">here</a>, so you must comply with their terms as well.</p>
+GWT has been released under the Apache 2.0 license, so you're allowed to distribute binaries as per the [Apache 2.0 terms](../../terms.html). Please note that some libraries used in the GWT are under other licenses as referenced [here](../../terms.html#licenses), so you must comply with their terms as well.
 
-<h2 id="Support">Support</h2>
+## Support<a id="Support"></a>
 
-<p/>
+### Does GWT have a blog?<a id="Does_GWT_have_a_blog?"></a>
 
-<h3 id="Does_GWT_have_a_blog?">Does GWT have a blog?</h3>
+Glad you asked! Our blog is [http://googlewebtoolkit.blogspot.com/](http://googlewebtoolkit.blogspot.com/)
 
-<p>Glad you asked! Our blog is <a href="http://googlewebtoolkit.blogspot.com/">http://googlewebtoolkit.blogspot.com/</a></p>
+### Whom do I contact if I have questions?<a id="Whom_do_I_contact_if_I_have_questions?"></a>
 
-<p/>
+You can post your questions to the [GWT developer discussion group](http://groups.google.com/group/Google-Web-Toolkit) on Google
+Groups. The GWT engineering and operations team will participate in the group and try to answer questions as they come up.
 
-<h3 id="Whom_do_I_contact_if_I_have_questions?">Whom do I contact if I have questions?</h3>
+### Where should I report bugs?<a id="Where_should_I_report_bugs?"></a>
 
-<p>You can post your questions to the <a href="http://groups.google.com/group/Google-Web-Toolkit">GWT developer discussion group</a> on Google
-Groups. The GWT engineering and operations team will participate in the group and try to answer questions as they come up.</p>
-
-<p/>
-
-<h3 id="Where_should_I_report_bugs?">Where should I report bugs?</h3>
-
-<p>You can file a bug in the <a href="http://code.google.com/p/google-web-toolkit/issues/list">GWT Issue Tracker</a>. Please be sure to search for
+You can file a bug in the [GWT Issue Tracker](http://code.google.com/p/google-web-toolkit/issues/list). Please be sure to search for
 your problem before reporting a new issue, since someone else might have already reported it. If you would like to be notified about activities on your issue, star the report and
-you will receive emails at your account's email address.</p>
+you will receive emails at your account's email address.
 
-<p/>
+### Where should I submit suggestions to improve GWT?<a id="Where_should_I_submit_suggestions_to_improve_GWT?"></a>
 
-<h3 id="Where_should_I_submit_suggestions_to_improve_GWT?">Where should I submit suggestions to improve GWT?</h3>
+If you have an idea for an enhancement to GWT, please search through the [Issue Tracker](http://code.google.com/p/google-web-toolkit/issues/list). If
+it isn't there, you might want to first suggest it to the [GWT developer discussion
+group](http://groups.google.com/group/Google-Web-Toolkit).
 
-<p>If you have an idea for an enhancement to GWT, please search through the <a href="http://code.google.com/p/google-web-toolkit/issues/list">Issue Tracker</a>. If
-it isn't there, you might want to first suggest it to the <a href="http://groups.google.com/group/Google-Web-Toolkit">GWT developer discussion
-group</a>.</p>
-
-<p>You can submit requests for enhancements at the <a href="http://code.google.com/p/google-web-toolkit/issues/list">GWT Issue Tracker</a>. When you
+You can submit requests for enhancements at the [GWT Issue Tracker](http://code.google.com/p/google-web-toolkit/issues/list). When you
 save your report, it will be labeled as a &quot;Defect&quot; even though you want to submit an RFE (Request for Enhancement). Don't worry! We review each item submitted to our Issue
-Tracker, and will mark enhancement requests appropriately when we receive them.</p>
+Tracker, and will mark enhancement requests appropriately when we receive them.
 
-<p/>
+### Where can I find the GWT source code? Can I submit a patch?<a id="Where_can_I_find_the_GWT_source_code?_Can_I_submit_a_patch?"></a>
 
-<h3 id="Where_can_I_find_the_GWT_source_code?_Can_I_submit_a_patch?">Where can I find the GWT source code?
-Can I submit a patch?</h3>
+The GWT source code, licensed under Apache 2.0, is available [here](http://code.google.com/p/google-web-toolkit/). If you are interested in
+contributing a patch, please visit the [Making GWT Better](../../makinggwtbetter.html) guide.
 
-<p>The GWT source code, licensed under Apache 2.0, is available <a href="http://code.google.com/p/google-web-toolkit/">here</a>. If you are interested in
-contributing a patch, please visit the <a href="../../makinggwtbetter.html">Making GWT Better</a> guide.</p>
+## Browsers and Servers<a id="Browsers_and_Servers"></a>
 
-<h2 id="Browsers_and_Servers">Browsers and Servers</h2>
+### What browsers does GWT support?<a id="What_browsers_does_GWT_support?"></a>
 
-<p/>
+GWT supports the following browsers:
 
-<h3 id="What_browsers_does_GWT_support?">What browsers does GWT support?</h3>
+*   Firefox
+*   Internet Explorer 8, 9, 10, 11
+*   Safari 5, 6
+*   Chromium and Google Chrome
+*   Opera latest version
 
-<p>GWT supports the following browsers:</p>
+### Will my app break when a new browser comes out?<a id="Will_my_app_break_when_a_new_browser_comes_out?"></a>
 
-<ul>
-<li>Firefox</li>
+Generally, no. GWT was designed in such a way to have all browser-specific code in user-level libraries. What's more, JavaScript itself has very consistent support across
+browsers, so when the GWT compiler performs its Java-to-JavaScript compilation, it doesn't need to worry about which browser the JavaScript is being generated for.
 
-<li>Internet Explorer 8, 9, 10, 11</li>
-
-<li>Safari 5, 6</li>
-
-<li>Chromium and Google Chrome</li>
-
-<li>Opera latest version</li>
-</ul>
-
-<p/>
-
-<h3 id="Will_my_app_break_when_a_new_browser_comes_out?">Will my app break when a new browser comes out?</h3>
-
-<p>Generally, no. GWT was designed in such a way to have all browser-specific code in user-level libraries. What's more, JavaScript itself has very consistent support across
-browsers, so when the GWT compiler performs its Java-to-JavaScript compilation, it doesn't need to worry about which browser the JavaScript is being generated for.</p>
-
-<p>That said, what makes compliance to newer browsers tricky is the DOM API. For backwards-compatible browsers, it just works. For other cases, it's straightforward to change the
+That said, what makes compliance to newer browsers tricky is the DOM API. For backwards-compatible browsers, it just works. For other cases, it's straightforward to change the
 user-level libraries. All that's required is to implement a version of DOMImpl for the desired browser. In some cases an entirely new browser may require a bit more work to be
-supported by GWT, but this would be the exception rather than the rule.</p>
+supported by GWT, but this would be the exception rather than the rule.
 
-<p/>
+### Can I use GWT with my favorite server-side templating tool?<a id="Can_I_use_GWT_with_my_favorite_server-side_templating_tool?"></a>
 
-<h3 id="Can_I_use_GWT_with_my_favorite_server-side_templating_tool?">Can I use GWT with my favorite
-server-side templating tool?</h3>
+Yes, you are free to use GWT with any server-side templating tool such as XSLT, Frontpage, Dreamweaver, WebObjects, PHP, Active Server Pages, or JavaServer Pages to name a
+few.
 
-<p>Yes, you are free to use GWT with any server-side templating tool such as XSLT, Frontpage, Dreamweaver, WebObjects, PHP, Active Server Pages, or JavaServer Pages to name a
-few.</p>
+With GWT development, your Java client code gets compiled into equivalent JavaScript that is loaded into your host pages. The generated product is totally independent from the
+server-side technology that you choose to use in your web application.
 
-<p>With GWT development, your Java client code gets compiled into equivalent JavaScript that is loaded into your host pages. The generated product is totally independent from the
-server-side technology that you choose to use in your web application.</p>
-
-<p>You can go ahead and use your favorite server-side templating tool and include your template directives into your host pages along with your GWT-generated JavaScript files. The
-server-side technology you're using to realize the templates is invisible to the browser and works just as it does without your GWT modules.</p>
+You can go ahead and use your favorite server-side templating tool and include your template directives into your host pages along with your GWT-generated JavaScript files. The
+server-side technology you're using to realize the templates is invisible to the browser and works just as it does without your GWT modules.

@@ -1,101 +1,98 @@
 Accessibility
 ===
 
-<ol class="toc" id="pageToc">
-  <li><a href="#DevGuideAccessibility">Overview</a></li>
-  <li><a href="#DevGuideAccessibilityHowTo">Making Widgets Accessible</a></li>
-  <li><a href="#ariaRoles">Adding ARIA Roles</a></li>
-  <li><a href="#ariaPropertiesAndStates">Adding ARIA Properties and States</a></li>
-  <li><a href="#kbdA11y">Adding Keyboard Accessibility</a></li>
-  <li><a href="#selectionChanges">Indicating Selection Changes</a></li>
-  <li><a href="#labels">Associating Meaningful Labels</a></li>
-  <li><a href="#speaking">Automatically Speaking Highlighted Content</a></li>
-  <li><a href="#widgets">General Advice For Widget Developers</a></li>
-</ol>
+1.  [Overview](#DevGuideAccessibility)
+2.  [Making Widgets Accessible](#DevGuideAccessibilityHowTo)
+3.  [Adding ARIA Roles](#ariaRoles)
+4.  [Adding ARIA Properties and States](#ariaPropertiesAndStates)
+5.  [Adding Keyboard Accessibility](#kbdA11y)
+6.  [Indicating Selection Changes](#selectionChanges)
+7.  [Associating Meaningful Labels](#labels)
+8.  [Automatically Speaking Highlighted Content](#speaking)
+9.  [General Advice For Widget Developers](#widgets)
 
 
-<h2 id="DevGuideAccessibility">Overview</h2>
+## Overview<a id="DevGuideAccessibility"></a>
 
-<h3>Screen Readers</h3>
+### Screen Readers
 
-<p>A screen reader is an assistive application that interprets what is displayed on the screen for a blind or visually impaired user. Screen readers can interact with the user in
-a variety of ways, including speaking out loud or even producing a braille output.</p>
+A screen reader is an assistive application that interprets what is displayed on the screen for a blind or visually impaired user. Screen readers can interact with the user in
+a variety of ways, including speaking out loud or even producing a braille output.
 
-<h4>Who uses screen readers?</h4>
+#### Who uses screen readers?
 
-<p>Many people find it helpful to be able to interact with their computers in multiple ways. Though Google does not keep statistics on how many of our users are using screen
-readers, as the population ages, more people will require assistive technology. It is important to make sure that our applications are accessible for everybody.</p>
+Many people find it helpful to be able to interact with their computers in multiple ways. Though Google does not keep statistics on how many of our users are using screen
+readers, as the population ages, more people will require assistive technology. It is important to make sure that our applications are accessible for everybody.
 
-<h4>How do screen readers work?</h4>
+#### How do screen readers work?
 
-<p>Screen readers listen for a standard set of events that are raised by platform-specific APIs. For example, when an alert window pops up on your screen, Microsoft Windows would
-expose this event using the Microsoft Active Accessibility API, while a Linux machine would use the Linux Access Toolkit. <a href="https://chrome.google.com/webstore/detail/kgejglhpjiefppelpmljglcjbhoiplfn">ChromeVox</a> for Chrome and <a href="http://www.firevox.clcworld.net/">FireVox</a> for Firefox are screen reader browser extensions that are built
-on top of the latest web technologies.</p>
+Screen readers listen for a standard set of events that are raised by platform-specific APIs. For example, when an alert window pops up on your screen, Microsoft Windows would
+expose this event using the Microsoft Active Accessibility API, while a Linux machine would use the Linux Access Toolkit. [ChromeVox](https://chrome.google.com/webstore/detail/kgejglhpjiefppelpmljglcjbhoiplfn) for Chrome and [FireVox](http://www.firevox.clcworld.net/) for Firefox are screen reader browser extensions that are built
+on top of the latest web technologies.
 
-<h3>GWT and Screen Readers</h3>
+### GWT and Screen Readers
 
-<p>Ajax applications are often written in ways that screen readers have difficulty interpreting correctly. A GWT developer writing a tree widget, for example, might use a list
+Ajax applications are often written in ways that screen readers have difficulty interpreting correctly. A GWT developer writing a tree widget, for example, might use a list
 element that has been altered to behave like a tree control. But a screen reader would present the control as a list - an incorrect description that renders the tree unusable.
 Screen readers will also treat HTML span or div elements as regular static text elements, regardless of the presence of JavaScript event handlers for user interaction; you can
-easily imagine how this causes problems.</p>
+easily imagine how this causes problems.
 
-<h3>ARIA</h3>
+### ARIA
 
-<p><a href="http://www.w3.org/WAI/intro/aria">ARIA</a> is a W3C specification for making rich Internet applications accessible via a standard set of DOM properties. It is still new but there exist helpful resources on the web. More information can be found at <a href="http://www.google.com/accessibility/">Google accessibility site</a>, <a href="http://code.google.com/p/google-axs-chrome/">Chrome accessibility extensions page</a>, and codetalks.org.</p>
+[ARIA](http://www.w3.org/WAI/intro/aria) is a W3C specification for making rich Internet applications accessible via a standard set of DOM properties. It is still new but there exist helpful resources on the web. More information can be found at [Google accessibility site](http://www.google.com/accessibility/), [Chrome accessibility extensions page](http://code.google.com/p/google-axs-chrome/), and codetalks.org.
 
-<p>Adding accessibility support to GWT widgets involves adding the relevant properties to DOM elements that can be used by browsers to raise events during user interaction. Screen readers can react to these events to represent the function of GWT widgets. The DOM properties specified by ARIA are classified into Roles with their Properties and States.</p>
+Adding accessibility support to GWT widgets involves adding the relevant properties to DOM elements that can be used by browsers to raise events during user interaction. Screen readers can react to these events to represent the function of GWT widgets. The DOM properties specified by ARIA are classified into Roles with their Properties and States.
 
-<p> An ARIA <tt>role</tt> attribute is added to HTML elements to define widgets and page structure elements that can be interpreted by a reader application/device, and therefore describes the way the widget should behave. A role is static and does not change over the lifetime of a widget. Some examples of ARIA roles: <tt>tree</tt>, <tt>menubar</tt>, <tt>menuitem</tt>, and <tt>tab</tt>. The ARIA role of a widget is expressed as a DOM attribute named <tt>role</tt> with its value set to one of the ARIA role strings.</p>
+An ARIA <tt>role</tt> attribute is added to HTML elements to define widgets and page structure elements that can be interpreted by a reader application/device, and therefore describes the way the widget should behave. A role is static and does not change over the lifetime of a widget. Some examples of ARIA roles: <tt>tree</tt>, <tt>menubar</tt>, <tt>menuitem</tt>, and <tt>tab</tt>. The ARIA role of a widget is expressed as a DOM attribute named <tt>role</tt> with its value set to one of the ARIA role strings.
 
-<p>There are also ARIA properties and states. ARIA states supply information about the changes in the web page that can be used for alerts, notification, navigation assistance. The state is changed as a result of an user interaction and developers should consider changing the widget state when handling user actions. For example, a checkbox widget could be in the states &quot;checked&quot; or &quot;unchecked&quot;. A state is dynamic and should be updated during user interaction. Some examples of ARIA states: <tt>aria-disabled</tt>, <tt>aria-pressed</tt> and <tt>aria-expanded</tt>. An ARIA property is a characteristic feature of a widget that can change over time but more rarely than the ARIA state, and is often not changed as a result of user action. Examples of properties are <tt>aria-haspopup</tt>, <tt>aria-label</tt> and <tt>aria-level</tt>, which are semantic information about the interactivity between the page layout and a particular widget. ARIA states and properties are DOM attributes themselves &mdash; for example, to express that a toggle button widget has been pressed, we need to add the attribute <tt>aria-pressed = 'true'</tt> to the widgets HTML element. As another example,  a textarea widget that has a popup attached when in focus will have the attribute <tt>aria-haspopup = 'true'</tt>.</p>
+There are also ARIA properties and states. ARIA states supply information about the changes in the web page that can be used for alerts, notification, navigation assistance. The state is changed as a result of an user interaction and developers should consider changing the widget state when handling user actions. For example, a checkbox widget could be in the states &quot;checked&quot; or &quot;unchecked&quot;. A state is dynamic and should be updated during user interaction. Some examples of ARIA states: <tt>aria-disabled</tt>, <tt>aria-pressed</tt> and <tt>aria-expanded</tt>. An ARIA property is a characteristic feature of a widget that can change over time but more rarely than the ARIA state, and is often not changed as a result of user action. Examples of properties are <tt>aria-haspopup</tt>, <tt>aria-label</tt> and <tt>aria-level</tt>, which are semantic information about the interactivity between the page layout and a particular widget. ARIA states and properties are DOM attributes themselves &mdash; for example, to express that a toggle button widget has been pressed, we need to add the attribute <tt>aria-pressed = 'true'</tt> to the widgets HTML element. As another example,  a textarea widget that has a popup attached when in focus will have the attribute <tt>aria-haspopup = 'true'</tt>.
 
-<p>The role of a widget determines the set of states and properties that it supports. A widget with the role of <tt>list</tt>, for example, would not expose the <tt>aria-pressed</tt> state but will have the <tt>aria-expanded</tt> state.</p>
+The role of a widget determines the set of states and properties that it supports. A widget with the role of <tt>list</tt>, for example, would not expose the <tt>aria-pressed</tt> state but will have the <tt>aria-expanded</tt> state.
 
-<p>Also, accessible widgets require keyboard support. Screen readers will speak the element that has keyboard focus, so keyboard accessibility can be accomplished by moving focus to different elements in response to keyboard commands.</p>
+Also, accessible widgets require keyboard support. Screen readers will speak the element that has keyboard focus, so keyboard accessibility can be accomplished by moving focus to different elements in response to keyboard commands.
 
-<h3>GWT and ARIA</h3>
+### GWT and ARIA
 
-<p>Once ARIA roles, properties and states are added to the DOM of a GWT widget, browsers will raise the appropriate
+Once ARIA roles, properties and states are added to the DOM of a GWT widget, browsers will raise the appropriate
 events to the screen reader. As ARIA is still a work in progress, browsers may not raise an event for every ARIA
-property, and screen readers may not recognize all of the events being raised.</p>
-<p>Recently, we upgraded the accessibility support in GWT and deprecated the <a href="/javadoc/latest/com/google/gwt/user/client/ui/Accessibility.html">Accessibility</a> class which contained a subset of the ARIA roles and states. We added a GWT
+property, and screen readers may not recognize all of the events being raised.
+
+Recently, we upgraded the accessibility support in GWT and deprecated the [Accessibility](/javadoc/latest/com/google/gwt/user/client/ui/Accessibility.html) class which contained a subset of the ARIA roles and states. We added a GWT
 ARIA library that contains all the roles, states and properties defined in the ARIA standard. The roles are organized in
 a hierarchy of interfaces. For each role there is a set of states and properties that are supported. There is a getter
-for each role in the <a href="/javadoc/latest/com/google/gwt/aria/client/Roles.html">Roles factory</a>. For each role there exist accessors
-for getting, setting and removing states and properties, or an extra attribute like <tt>tabindex</tt>.  </p>
-<p>The ARIA standard specifies the HTML attribute type for the state and property
+for each role in the [Roles factory](/javadoc/latest/com/google/gwt/aria/client/Roles.html). For each role there exist accessors
+for getting, setting and removing states and properties, or an extra attribute like <tt>tabindex</tt>.  
+
+The ARIA standard specifies the HTML attribute type for the state and property
 values. These attribute types are supported in the new library with compile-time checks. Enumerations have been added for
 HTML attributes of type token like 'aria-dropeffect' property type, 'aria-checked' type etc. There is a common type added for
-IDREF(S) in the class. All the states and properties are defined in the <a href="/javadoc/latest/com/google/gwt/aria/client/State.html">State</a> and <a href="/javadoc/latest/com/google/gwt/aria/client/Property.html">Property</a> classes. The
-<tt>tabIndex</tt> attribute has also been added as an extra attribute in the ARIA standard and we have <a href="/javadoc/latest/com/google/gwt/aria/client/ExtraAttribute.html">added it to the library</a>. We encourage users to get access to states and
-properties through the role by getting it from the <a href="/javadoc/latest/com/google/gwt/aria/client/Roles.html">Roles factory</a> because
-the factory checks that the state or property is supported for the role.</p>
+IDREF(S) in the class. All the states and properties are defined in the [State](/javadoc/latest/com/google/gwt/aria/client/State.html) and [Property](/javadoc/latest/com/google/gwt/aria/client/Property.html) classes. The
+<tt>tabIndex</tt> attribute has also been added as an extra attribute in the ARIA standard and we have [added it to the library](/javadoc/latest/com/google/gwt/aria/client/ExtraAttribute.html). We encourage users to get access to states and
+properties through the role by getting it from the [Roles factory](/javadoc/latest/com/google/gwt/aria/client/Roles.html) because
+the factory checks that the state or property is supported for the role.
 
-<p>Many GWT widgets now have keyboard accessibility and ARIA properties. These include <a href="/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.html">CustomButton</a>,
- <a href="/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a>, <a href="/javadoc/latest/com/google/gwt/user/client/ui/TreeItem.html">TreeItem</a>,
- <a href="/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a>, <a href="/javadoc/latest/com/google/gwt/user/client/ui/MenuItem.html">MenuItem</a>,
- <a href="/javadoc/latest/com/google/gwt/user/client/ui/TabBar.html">TabBar</a>, and <a href="/javadoc/latest/com/google/gwt/user/client/ui/TabPanel.html">TabPanel</a>.
- Also, all widgets that inherit from FocusWidget now have a tabindex by default, allowing for better keyboard navigation.</p>
+Many GWT widgets now have keyboard accessibility and ARIA properties. These include [CustomButton](/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.html),
+ [Tree](/javadoc/latest/com/google/gwt/user/client/ui/Tree.html), [TreeItem](/javadoc/latest/com/google/gwt/user/client/ui/TreeItem.html),
+ [MenuBar](/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html), [MenuItem](/javadoc/latest/com/google/gwt/user/client/ui/MenuItem.html),
+ [TabBar](/javadoc/latest/com/google/gwt/user/client/ui/TabBar.html), and [TabPanel](/javadoc/latest/com/google/gwt/user/client/ui/TabPanel.html).
+ Also, all widgets that inherit from FocusWidget now have a tabindex by default, allowing for better keyboard navigation.
 
 
-<h2 id="DevGuideAccessibilityHowTo">Making Widgets Accessible</h2>
+## Making Widgets Accessible<a id="DevGuideAccessibilityHowTo"></a>
 
-<p>The remainder of this page describes how to add accessibility support to your GWT application and widgets with the new ARIA library. A variety of different
-techniques are discussed; there is not yet a standard and generally-applicable approach for making AJAX applications accessible, but we provide some suggestions.</p>
+The remainder of this page describes how to add accessibility support to your GWT application and widgets with the new ARIA library. A variety of different
+techniques are discussed; there is not yet a standard and generally-applicable approach for making AJAX applications accessible, but we provide some suggestions.
 
-<h2 id="ariaRoles">Adding ARIA Roles</h2>
+## Adding ARIA Roles<a id="ariaRoles"></a>
 
-<p>The ARIA attribute <tt>role</tt> is an indication of the widget type; it describes the way the widget should behave. Roles are static and should not change during the lifetime of a widget. Widget authors should:</p>
+The ARIA attribute <tt>role</tt> is an indication of the widget type; it describes the way the widget should behave. Roles are static and should not change during the lifetime of a widget. Widget authors should:
 
-<ul>
-<li>Pick the right role for the widget from the  <a href="/javadoc/latest/com/google/gwt/aria/client/Roles.html">Roles factory</a> class.</li>
+*   Pick the right role for the widget from the  [Roles factory](/javadoc/latest/com/google/gwt/aria/client/Roles.html) class.
+*   Set this attribute at construction time.
 
-<li>Set this attribute at construction time.</li>
-</ul>
-
-<p>The following is an example taken from the <a href="/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.html">CustomButton</a> widget.
+The following is an example taken from the <a href="/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.html">CustomButton</a> widget.
 Adding the <tt>button</tt> role indicates to an assistive technology that the widget will behave like a
-button.</p>
+button.
 
 <pre class="prettyprint">
   protected CustomButton() {
@@ -106,22 +103,21 @@ button.</p>
   }
 </pre>
 
-<h2 id="ariaPropertiesAndStates">Adding ARIA Properties and States</h2>
+## Adding ARIA Properties and States<a id="ariaPropertiesAndStates"></a>
 
-<p>An ARIA state is an additional attribute that reflects the current state of a widget which is a result of a user action; for example, whether a checkbox is checked or unchecked. A state should be initialized at the time a widget is constructed and updated during user interaction.</p>
-<p>An ARIA property is an additional attribute that provides additional information about the widget; for example, a label of a widget is a property and is set once when constructing the widget. An example of a property that changes its value is <tt>aria-activedescendant</tt> and is used to supply information about the currently selected child element for a composite widget like a tree or menu.</p>
+An ARIA state is an additional attribute that reflects the current state of a widget which is a result of a user action; for example, whether a checkbox is checked or unchecked. A state should be initialized at the time a widget is constructed and updated during user interaction.
 
-<p>Note that:</p>
+An ARIA property is an additional attribute that provides additional information about the widget; for example, a label of a widget is a property and is set once when constructing the widget. An example of a property that changes its value is <tt>aria-activedescendant</tt> and is used to supply information about the currently selected child element for a composite widget like a tree or menu.
 
-<ul>
-<li>A widget can have numerous state attributes, one or more property attributes, and only one role attribute.</li>
-<li>State attributes are dynamic and change during the widget's lifetime. A role once set does not change.</li>
-<li>Property attributes reflect additional widget features that make the applications more interactive and may or may not change over time.</li>
-</ul>
+Note that:
 
-<h4>Initializing States and Properties</h4>
+*   A widget can have numerous state attributes, one or more property attributes, and only one role attribute.
+*   State attributes are dynamic and change during the widget's lifetime. A role once set does not change.
+*   Property attributes reflect additional widget features that make the applications more interactive and may or may not change over time.
 
-<p>Once a specific ARIA role has been associated with a widget, it is important to check which states and properties are associated with that role. For example, the <tt>button</tt> role has two state attributes:</p>
+#### Initializing States and Properties
+
+Once a specific ARIA role has been associated with a widget, it is important to check which states and properties are associated with that role. For example, the <tt>button</tt> role has two state attributes:
 
 <dl>
 <dt><code>aria-disabled</code></dt>
@@ -131,7 +127,7 @@ button.</p>
 <dd>Used for buttons that are toggleable to indicate their current pressed state.</dd>
 </dl>
 
-<p>In the CustomButton widget, the <tt>aria-pressed</tt> and <tt>aria-disabled</tt> ARIA state is initialized as follows:</p>
+In the CustomButton widget, the <tt>aria-pressed</tt> and <tt>aria-disabled</tt> ARIA state is initialized as follows:
 
 <pre class="prettyprint">
   protected CustomButton() {
@@ -142,12 +138,12 @@ button.</p>
   }
 </pre>
 
-<h4>Updating States During User Interaction</h4>
+#### Updating States During User Interaction
 
-<p>The <a href="/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.html">CustomButton</a> widget has support for multiple button faces, giving developers more stylistic control. Also, unlike the
-<a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> widget, a CustomButton can be toggleable, as is
-the case with the CustomButton subclass <a href="/javadoc/latest/com/google/gwt/user/client/ui/ToggleButton.html">ToggleButton</a>. Event handlers attached
-to the underlying DOM element update the button faces when the button is pressed. We need to toggle the ARIA state <tt>aria-pressed</tt> as shown below.</p>
+The [CustomButton](/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.html) widget has support for multiple button faces, giving developers more stylistic control. Also, unlike the
+[Button](/javadoc/latest/com/google/gwt/user/client/ui/Button.html) widget, a CustomButton can be toggleable, as is
+the case with the CustomButton subclass [ToggleButton](/javadoc/latest/com/google/gwt/user/client/ui/ToggleButton.html). Event handlers attached
+to the underlying DOM element update the button faces when the button is pressed. We need to toggle the ARIA state <tt>aria-pressed</tt> as shown below.
 
 <pre class="prettyprint">
   void toggleDown() {
@@ -172,66 +168,62 @@ to the underlying DOM element update the button faces when the button is pressed
 
 </pre>
 
-<p>It is important to make sure that all event handlers that change the state of the widget also change the ARIA state.</p>
+It is important to make sure that all event handlers that change the state of the widget also change the ARIA state.
 
-<h2 id="kbdA11y">Adding Keyboard Accessibility</h2>
+## Adding Keyboard Accessibility<a id="kbdA11y"></a>
 
-<p>Keyboard accessibility is a key requirement when access-enabling GWT widgets. When developing a new widget, ensure that it is keyboard accessible from the outset; adding
+Keyboard accessibility is a key requirement when access-enabling GWT widgets. When developing a new widget, ensure that it is keyboard accessible from the outset; adding
 keyboard accessibility later can be difficult. Screen readers will speak the element that has keyboard focus, so keyboard accessibility can be accomplished by moving focus to
-different elements in response to keyboard commands.</p>
+different elements in response to keyboard commands.
 
-<p>Proper keyboard accessibility affords the following end-user behavior:</p>
+Proper keyboard accessibility affords the following end-user behavior:
 
-<ul>
-<li>Users can tab to move focus to the widget.</li>
+*   Users can tab to move focus to the widget.
+*   When the widget receives focus, the screen reader will interpret the ARIA roles and states that are set on the widget.
+*   The screen reader will speak a description of the widget, and its textual content.
 
-<li>When the widget receives focus, the screen reader will interpret the ARIA roles and states that are set on the widget.</li>
-
-<li>The screen reader will speak a description of the widget, and its textual content.</li>
-</ul>
-
-<p>By default, the only elements in the HTML DOM that can receive keyboard focus are anchor and form fields. However, setting the DOM property <tt>tabIndex</tt> (note that this
+By default, the only elements in the HTML DOM that can receive keyboard focus are anchor and form fields. However, setting the DOM property <tt>tabIndex</tt> (note that this
 corresponds to HTML attribute <tt>tabindex</tt>) to 0 will place such elements in the default tab sequence and thereby
 enable them to receive keyboard focus. Setting <tt>tabIndex = -1</tt>, while removing the element from the tab sequence,
 still allows the element to receive keyboard focus programmatically. Tabindex support can be added for any role by
 setting the <tt>tabindex</tt> ARIA attribute. The code below shows how to add the heading element to the natural tab
 order of the page.  You might want to do this if you want to allow further interaction with the heading (e.g. for some type of
-clickable heading). </p>
+clickable heading). 
 
 <pre class="prettyprint">
   // Set tab index for a heading element
   Roles.getHeadingRole().setTabindexExtraAttribute(heading.getElement(), 0);
 </pre>
 
-<p>In GWT, any widget that extends the <a href="/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html">FocusWidget</a> abstract class will be keyboard focusable by default. The FocusWidget abstract class includes a
-<a href="/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html#setFocus(boolean)">setFocus(boolean)</a> method that
+In GWT, any widget that extends the [FocusWidget](/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html) abstract class will be keyboard focusable by default. The FocusWidget abstract class includes a
+[setFocus(boolean)](/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html#setFocus(boolean)) method that
 can be used to programmatically set the focus or remove focus on the widget. FocusWidget also includes a
-<a href="/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html##setTabIndex(int)">setTabIndex(int)</a> method that allows the user to set the DOM property
-<tt>tabIndex</tt> for the widget.</p>
+[setTabIndex(int)](/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html##setTabIndex(int)) method that allows the user to set the DOM property
+<tt>tabIndex</tt> for the widget.
 
-<p>Keep in mind that extending FocusWidget does not guarantee focusability for your widget. The base element of the FocusWidget (passed to the superclass constructor) must be a naturally focusable HTML element.</p>
+Keep in mind that extending FocusWidget does not guarantee focusability for your widget. The base element of the FocusWidget (passed to the superclass constructor) must be a naturally focusable HTML element.
 
-<p>For widgets that don't extend the FocusWidget abstract class, ensuring keyboard accessibility can be more difficult. Different browsers set focus in different ways, and focus on arbitrary elements is not supported everywhere. You can use <a href="/javadoc/latest/com/google/gwt/user/client/ui/FocusPanel.html">FocusPanel</a> to enclose elements that need to receive keyboard focus; just be sure to test your widget on different browsers.</p>
+For widgets that don't extend the FocusWidget abstract class, ensuring keyboard accessibility can be more difficult. Different browsers set focus in different ways, and focus on arbitrary elements is not supported everywhere. You can use [FocusPanel](/javadoc/latest/com/google/gwt/user/client/ui/FocusPanel.html) to enclose elements that need to receive keyboard focus; just be sure to test your widget on different browsers.
 
-<p>For an example of using the <tt>tabIndex</tt> property, see the MenuBar widget. The root menu is the only one that should be in the tab sequence; its sub-menus are not. To
+For an example of using the <tt>tabIndex</tt> property, see the MenuBar widget. The root menu is the only one that should be in the tab sequence; its sub-menus are not. To
 achieve this, the tab index is set to 0 in the MenuBar's constructor, and as new MenuBars are added as sub-menus, their
-tab index attribute is reset to -1.</p>
+tab index attribute is reset to -1.
 
-<h2 id="selectionChanges">Indicating Selection Changes</h2>
+## Indicating Selection Changes<a id="selectionChanges"></a>
 
-<p>Some widgets, such as GWT's <a href="/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a> and <a href="/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html">MenuBar</a> widgets,
+Some widgets, such as GWT's [Tree](/javadoc/latest/com/google/gwt/user/client/ui/Tree.html) and [MenuBar](/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html) widgets,
 consist of a container with a set of items. The container has a naturally focusable DOM element, but the items
 themselves do not. The focusable element receives all keyboard input, and causes visual changes in the contained items
-to indicate a change in item selection. For example, GWT's Tree widget contains <a href="/javadoc/latest/com/google/gwt/user/client/ui/TreeItem.html">TreeItems</a>; both of these elements are made up of <tt>div</tt> elements. However, the Tree also
+to indicate a change in item selection. For example, GWT's Tree widget contains [TreeItems](/javadoc/latest/com/google/gwt/user/client/ui/TreeItem.html); both of these elements are made up of <tt>div</tt> elements. However, the Tree also
 has a naturally focusable hidden element which receives keyboard events. Whenever the user hits the arrow keys, this
-element handles the event and causes the appropriate TreeItem to be highlighted.</p>
+element handles the event and causes the appropriate TreeItem to be highlighted.
 
-<p>While this technique works for sighted users, it plays havoc with screen readers. Since the TreeItems themselves never get natural focus when selected, there is no way for the screen reader to know that the item selection has changed. One possible way to remedy this would be to have each TreeItem be naturally focusable. Unfortunately, TreeItems can contain more than just text -- they can contain other widgets, which themselves can be focusable. Here, delegating focus properly would be fairly complex -- each TreeItem would have to handle all of the key events for its child widget, and decide whether or not to delegate key events to its child (for user interaction with the child widget), or to handle the key events itself (for Tree navigation). Keep in mind that hooking up keyboard event handlers for each item would become unwieldy, as Trees may become very large. One can avoid doing this by relying on the natural event bubbling of key events, and having an element at the root of the Tree widget be responsible for receiving events.</p>
+While this technique works for sighted users, it plays havoc with screen readers. Since the TreeItems themselves never get natural focus when selected, there is no way for the screen reader to know that the item selection has changed. One possible way to remedy this would be to have each TreeItem be naturally focusable. Unfortunately, TreeItems can contain more than just text -- they can contain other widgets, which themselves can be focusable. Here, delegating focus properly would be fairly complex -- each TreeItem would have to handle all of the key events for its child widget, and decide whether or not to delegate key events to its child (for user interaction with the child widget), or to handle the key events itself (for Tree navigation). Keep in mind that hooking up keyboard event handlers for each item would become unwieldy, as Trees may become very large. One can avoid doing this by relying on the natural event bubbling of key events, and having an element at the root of the Tree widget be responsible for receiving events.
 
-<p>Another way to remedy the situation is to use the ARIA <tt>aria-activedescendant</tt> property. This property is set on an element that is naturally focusable, and its value is the HTML id of the currently-selected item. Whenever the item changes, the <tt>aria-activedescendant</tt> value should be updated to the id of the newly-selected item. The screen reader will notice the change in the value and read the element corresponding to the id. Below is an example of how this technique is used on the GWT Tree and TreeItem
-widgets.</p>
+Another way to remedy the situation is to use the ARIA <tt>aria-activedescendant</tt> property. This property is set on an element that is naturally focusable, and its value is the HTML id of the currently-selected item. Whenever the item changes, the <tt>aria-activedescendant</tt> value should be updated to the id of the newly-selected item. The screen reader will notice the change in the value and read the element corresponding to the id. Below is an example of how this technique is used on the GWT Tree and TreeItem
+widgets.
 
-<p>First, we set roles on the Tree's root element and its focusable element:</p>
+First, we set roles on the Tree's root element and its focusable element:
 
 <pre class="prettyprint">
   // Called from Tree(...) constructor
@@ -263,7 +255,7 @@ widgets.</p>
  }
 </pre>
 
-<p>Whenever an item selection changes, the value of the <tt>aria-activedescendant</tt> property is set on the focusable element, and the ARIA states and properties of the currently-selected item are set:</p>
+Whenever an item selection changes, the value of the <tt>aria-activedescendant</tt> property is set on the focusable element, and the ARIA states and properties of the currently-selected item are set:
 
 <pre class="prettyprint">
   // Called after a new item has been selected
@@ -290,40 +282,40 @@ widgets.</p>
   }
 </pre>
 
-<p>Though it is not shown in this code snippet, when TreeItems are created, they are constructed out of several divs, only one of which contains the content that we wish to be
-interpreted by the screen reader. This div is assigned a unique DOM id (which is generated using the <a href="/javadoc/latest/com/google/gwt/user/client/DOM.html#createUniqueId()">DOM.createUniqueId()</a> method), and a role of <tt>treeitem</tt>. These attributes are not set on the root TreeItem div because it contains a child image, which we do not want to be read.</p>
+Though it is not shown in this code snippet, when TreeItems are created, they are constructed out of several divs, only one of which contains the content that we wish to be
+interpreted by the screen reader. This div is assigned a unique DOM id (which is generated using the [DOM.createUniqueId()](/javadoc/latest/com/google/gwt/user/client/DOM.html#createUniqueId()) method), and a role of <tt>treeitem</tt>. These attributes are not set on the root TreeItem div because it contains a child image, which we do not want to be read.
 
-<h4>Caveats with this Approach</h4>
+#### Caveats with this Approach
 
-<p>The obvious problem with this approach is that unique DOM ids need to be assigned to all of the possible items that could be selected. While this is easy enough to implement, it seems unwieldy to assign a DOM id to each item.</p>
+The obvious problem with this approach is that unique DOM ids need to be assigned to all of the possible items that could be selected. While this is easy enough to implement, it seems unwieldy to assign a DOM id to each item.
 
-<p>Also, there is a subtle problem with using the <tt>aria-activedescendant</tt> state. Originally, the intended use-case for this state was the implementation of a listbox with divs. Whenever the <tt>aria-activedescendant</tt> value of the parent div (which was the one with natural focus) would change, the screen reader would read out the text of the list item with the corresponding id, ignoring any roles or states set on the selected item. This is fine for widgets as simple as a listbox; the selected item has enough text for the user to understand what is selected. However, in the case of a Tree, the selected item's text may not be enough. For example, which level of the tree is the selected item on?</p>
+Also, there is a subtle problem with using the <tt>aria-activedescendant</tt> state. Originally, the intended use-case for this state was the implementation of a listbox with divs. Whenever the <tt>aria-activedescendant</tt> value of the parent div (which was the one with natural focus) would change, the screen reader would read out the text of the list item with the corresponding id, ignoring any roles or states set on the selected item. This is fine for widgets as simple as a listbox; the selected item has enough text for the user to understand what is selected. However, in the case of a Tree, the selected item's text may not be enough. For example, which level of the tree is the selected item on?
 
-<p>Some screen readers have started to do more than just read the text of items selected with <tt>aria-activedescendant</tt>, interpreting the item just as they would any other
-element that received keyboard focus. However, not all screen readers do this yet.</p>
+Some screen readers have started to do more than just read the text of items selected with <tt>aria-activedescendant</tt>, interpreting the item just as they would any other
+element that received keyboard focus. However, not all screen readers do this yet.
 
-<h2 id="labels">Associating Meaningful Labels</h2>
+## Associating Meaningful Labels<a id="labels"></a>
 
-<p>A web page will often include human-readable descriptive elements (such as <a href="/javadoc/latest/com/google/gwt/user/client/ui/Label.html">Label</a> and
-<a href="/javadoc/latest/com/google/gwt/user/client/ui/HTML.html">HTML</a> widgets) that explain the purpose of a particular widget. However, the association
-between a widget and its description may not be obvious to a browser or a screen reader. ARIA defines the <tt>aria-labelledby</tt> property which can be used to explicitly associate a widget with one or more descriptive elements.</p>
+A web page will often include human-readable descriptive elements (such as [Label](/javadoc/latest/com/google/gwt/user/client/ui/Label.html) and
+[HTML](/javadoc/latest/com/google/gwt/user/client/ui/HTML.html) widgets) that explain the purpose of a particular widget. However, the association
+between a widget and its description may not be obvious to a browser or a screen reader. ARIA defines the <tt>aria-labelledby</tt> property which can be used to explicitly associate a widget with one or more descriptive elements.
 
-<p>In order to associate a label with a widget, ensure that descriptive elements all have a unique id. The assigned id can later be used with to set the <tt>aria-labelledby</tt> state of a widget to refer to the id values of any descriptive elements, thereby associating those descriptive elements with the widget.</p>
+In order to associate a label with a widget, ensure that descriptive elements all have a unique id. The assigned id can later be used with to set the <tt>aria-labelledby</tt> state of a widget to refer to the id values of any descriptive elements, thereby associating those descriptive elements with the widget.
 
-<h2 id="speaking">Automatically Speaking Highlighted Content</h2>
+## Automatically Speaking Highlighted Content<a id="speaking"></a>
 
-<p>AJAX components often highlight an item of interest without moving keyboard focus to that item. This creates a good end-user experience when using components such as
-autocomplete widgets; the user can continue to type and obtain further refinements to the available set of choices. Because screen readers traditionally attempt to speak the item that has keyboard focus, they will not read highlighted items. ARIA live regions help make widgets such as autocomplete boxes usable for visually impaired users.</p>
+AJAX components often highlight an item of interest without moving keyboard focus to that item. This creates a good end-user experience when using components such as
+autocomplete widgets; the user can continue to type and obtain further refinements to the available set of choices. Because screen readers traditionally attempt to speak the item that has keyboard focus, they will not read highlighted items. ARIA live regions help make widgets such as autocomplete boxes usable for visually impaired users.
 
-<h4>How It Works</h4>
+#### How It Works
 
-<p>The ARIA role <tt>region</tt> is used to declare areas that hold such live content, i.e., content that updates dynamically without having keyboard focus. The ARIA state
+The ARIA role <tt>region</tt> is used to declare areas that hold such live content, i.e., content that updates dynamically without having keyboard focus. The ARIA state
 <tt>aria-live</tt> on such regions specifies the priority of such updates; think of this as a politeness setting. Here is a code example that should provide the general idea of
-how to implement this technique for an auto-complete widget:</p>
+how to implement this technique for an auto-complete widget:
 
-<h4>Initialize Live Region</h4>
+#### Initialize Live Region
 
-<p>The ARIA role <tt>region</tt> is added when instantiating the relevant DOM nodes in the AutoCompleteWidget constructor:</p>
+The ARIA role <tt>region</tt> is added when instantiating the relevant DOM nodes in the AutoCompleteWidget constructor:
 
 <pre class="prettyprint">
   public AutoCompleteWidget() {
@@ -338,7 +330,7 @@ how to implement this technique for an auto-complete widget:</p>
   }
 </pre>
 
-<p>Here, we have created a hidden div element that holds the content to be spoken. We've declared it to have <tt>role = 'region'</tt> and <tt>live = 'assertive'</tt>; the latter setting specifies that updates to this content have the highest priority. Next, we set up the needed associations so that the set of suggestions returned as the user types into the AutoCompleteWidget's text box are put in hidden div:</p>
+Here, we have created a hidden div element that holds the content to be spoken. We've declared it to have <tt>role = 'region'</tt> and <tt>live = 'assertive'</tt>; the latter setting specifies that updates to this content have the highest priority. Next, we set up the needed associations so that the set of suggestions returned as the user types into the AutoCompleteWidget's text box are put in hidden div:
 
 <pre class="prettyprint">
     // This method is called via a keyboard event handler
@@ -360,56 +352,41 @@ how to implement this technique for an auto-complete widget:</p>
     }
 </pre>
 
-<h4>Problems with this Approach</h4>
+#### Problems with this Approach
 
-<p>With this technique, the developer has complete control over the text that is spoken by the screen reader. While this seems like a good thing for the developer, it's not great for users of screen readers. Taking this approach, developers of AutoComplete widgets may decide on different text that the screen reader should read. For example, another screen reader might prefix each suggestion with the &quot;Suggestion x&quot;, where x is the index of the suggestion in the list. This leads to an inconsistent experience across applications. If both developers were able to make use of ARIA roles, properties and states, then a more consistent experience would result, in accordance with the ARIA specification.</p>
+With this technique, the developer has complete control over the text that is spoken by the screen reader. While this seems like a good thing for the developer, it's not great for users of screen readers. Taking this approach, developers of AutoComplete widgets may decide on different text that the screen reader should read. For example, another screen reader might prefix each suggestion with the &quot;Suggestion x&quot;, where x is the index of the suggestion in the list. This leads to an inconsistent experience across applications. If both developers were able to make use of ARIA roles, properties and states, then a more consistent experience would result, in accordance with the ARIA specification.
 
-<p>A more direct problem with this approach is internationalization. Most developers would realize that the list of suggestions needs to be translated into different languages;
+A more direct problem with this approach is internationalization. Most developers would realize that the list of suggestions needs to be translated into different languages;
 this list is directly displayed on the screen. However, the word 'Suggestions', which is the first word on the live region, could easily be missed, since it is never visually
 displayed to the user. These sorts of descriptive terms must also be translated. If ARIA roles and states could be used, then translation of the spoken terms associated with the
-roles and states would be the screen reader's job; developers would only need to be responsible for translating their content.</p>
+roles and states would be the screen reader's job; developers would only need to be responsible for translating their content.
 
-<h2 id="widgets">General Advice For Widget Developers</h2>
+## General Advice For Widget Developers<a id="widgets"></a>
 
-<p>First and foremost, use native HTML controls whenever possible. Native HTML controls are well understood by screen readers. They do not require ARIA roles and states, which has
-two main benefits:</p>
+First and foremost, use native HTML controls whenever possible. Native HTML controls are well understood by screen readers. They do not require ARIA roles and states, which has
+two main benefits:
 
-<ul>
-<li>ARIA is not yet supported by all major browsers. Screen reader and browser developers have already done the work to make HTML controls accessible.</li>
+*   ARIA is not yet supported by all major browsers. Screen reader and browser developers have already done the work to make HTML controls accessible.
+*   Reimplementing native HTML controls using divs (for example) can cause poor performance. For example, suppose a developer were to re-implement a listbox using divs. One of the ARIA properties that applies to the <tt>listitem</tt> role is <tt>aria-posinset</tt>. This value indicates the position of the item within its parent container, which corresponds to the item's index in the listbox. The problem is that every time an item is added or removed from the listbox, one has to iterate through all of the items in the list, adjusting their <tt>aria-posinset</tt> values. Though there are some optimizations that can be done, this is still much slower than native HTML select elements.
 
-<li>Reimplementing native HTML controls using divs (for example) can cause poor performance. For example, suppose a developer were to re-implement a listbox using divs. One of the ARIA properties that applies to the <tt>listitem</tt> role is <tt>aria-posinset</tt>. This value indicates the position of the item within its parent container, which corresponds to the item's index in the listbox. The problem is that every time an item is added or removed from the listbox, one has to iterate through all of the items in the list, adjusting their <tt>aria-posinset</tt> values. Though there are some optimizations that can be done, this is still much slower than native HTML select elements.</li>
-</ul>
-
-<p>If native HTML controls cannot be used and a custom widget has to be built, keep in mind that it is much easier to develop an accessible widget from the beginning than to go
+If native HTML controls cannot be used and a custom widget has to be built, keep in mind that it is much easier to develop an accessible widget from the beginning than to go
 back and add accessibility support to an existing widget. While adding ARIA roles, properties and states is relatively easy, ensuring that the appropriate elements receive keyboard focus
-during user interaction can be more complicated.</p>
+during user interaction can be more complicated.
 
-<p>Make sure to test that a new widget is accessible! There are three basic steps in the translation between the DOM and the screen reader:</p>
+Make sure to test that a new widget is accessible! There are three basic steps in the translation between the DOM and the screen reader:
 
-<ul>
-  <li>
-    <p>
-      <b>DOM</b><br/>
+*   **DOM**
+
       Since ARIA attributes are being added directly to the DOM, an easy way to check that the attributes are in the right location is to use a DOM inspector like
-      <a href="http://getfirebug.com/">Firebug</a> or the <a href="https://developers.google.com/chrome-developer-tools/">Chrome developer tools</a>.
-    </p>
-  </li>
+      [Firebug](http://getfirebug.com/) or the [Chrome developer tools](https://developers.google.com/chrome-developer-tools/).
 
-  <li>
-    <p>
-      <b>Events</b><br/>
-      It is important to make sure that the browser raises the appropriate events in response to ARIA attributes, changes in focus, and changes in the widget itself. A Microsoft tool called the <a href="http://msdn.microsoft.com/en-us/library/dd317979(VS.85).aspx">Accessible Event Watcher</a>, or AccEvent, can allow you to check which events are being raised.
-    </p>
-  </li>
+*   **Events**
 
-  <li>
-    <p>
-      <b>Screen Reader</b><br/>
+      It is important to make sure that the browser raises the appropriate events in response to ARIA attributes, changes in focus, and changes in the widget itself. A Microsoft tool called the [Accessible Event Watcher](http://msdn.microsoft.com/en-us/library/dd317979(VS.85).aspx), or AccEvent, can allow you to check which events are being raised.
+
+*   **Screen Reader**
+
       In the end, the best way to verify that your GWT widgets are accessible is by using a screen reader. Some screen readers may not be listening for all of the
       events raised by the browser, or they might expect the ARIA attributes to be added to the DOM in certain locations. The most widely used screen readers with some support for ARIA are
-      <a href="http://www.freedomscientific.com/products/fs/jaws-product-page.asp">JAWS</a>, <a href="http://www.gwmicro.com/Window-Eyes/">Window-Eyes</a>. New browser screen readers are the
-      <a href="http://www.firevox.clcworld.net/">FireVox</a> text-to-speech add-on for Firefox and the <a href="https://chrome.google.com/webstore/detail/kgejglhpjiefppelpmljglcjbhoiplfn">ChromeVox</a> extension for Chrome and Chrome OS.
-    </p>
-  </li>
-</ul>
-
+      [JAWS](http://www.freedomscientific.com/products/fs/jaws-product-page.asp), [Window-Eyes](http://www.gwmicro.com/Window-Eyes/). New browser screen readers are the
+      [FireVox](http://www.firevox.clcworld.net/) text-to-speech add-on for Firefox and the [ChromeVox](https://chrome.google.com/webstore/detail/kgejglhpjiefppelpmljglcjbhoiplfn) extension for Chrome and Chrome OS.

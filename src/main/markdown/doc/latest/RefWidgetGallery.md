@@ -1,13 +1,8 @@
 Widget Gallery
 ===
 
-<style type="text/css">
-  dt { margin-top: 1.5em; }
-</style>
-
-<p>The following are <a href="#Widgets">widgets</a> and <a
-  href="#Panels">panels</a> available in the GWT user-interface library. You
-can view a code example of each widget in the <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html">Showcase</a> sample application.</p>
+The following are [widgets](#Widgets) and [panels](#Panels) available in the GWT user-interface library. You
+can view a code example of each widget in the [Showcase](http://samples.gwtproject.org/samples/Showcase/Showcase.html) sample application.
 
 <p>
 <b>Widgets:</b><br>
@@ -174,7 +169,6 @@ can view a code example of each widget in the <a href="http://samples.gwtproject
 </dl>
 
 <a name="LayoutPanelNote"></a>
-<p class="note" style="margin-top:30px;">
+
 *Layout panels are a collection of new panels, introduced in GWT 2.0, which together form a stable basis for fast and predictable application-level layout.
-Read the Developer's Guide on <a href="DevGuideUiPanels.html#LayoutPanels">Layout Using Panels</a> for more information.
-</p>
+Read the Developer's Guide on <a href="DevGuideUiPanels.html#LayoutPanels">Layout Using Panels</a> for more information.*

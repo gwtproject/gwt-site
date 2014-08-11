@@ -51,7 +51,7 @@
 Developer Spotlight
 ===
 
-Watch developers talk about their web applications and how they used GWT to build them.  These videos are also available on the [GWT Developers playlist](http://www.youtube.com/view_play_list?p=4DAEFAF23BB3CDD0).
+Watch developers talk about their web applications and how they used GWT to build them. These videos are also available on the [GWT Developers playlist](http://www.youtube.com/view_play_list?p=4DAEFAF23BB3CDD0).
 
 <table class="columns">
   <tr class="video">
@@ -122,7 +122,7 @@ Watch developers talk about their web applications and how they used GWT to buil
   </tr>
 </table>
 
-If you'd like to see who else is using GWT, check out the [GWT Gallery](http://gwtgallery.appspot.com). You'll be able to find other applications and libraries built with GWT, comment on them, rate them, and search for them by tag or by name. You can also [submit your own entry](http://gwtgallery.appspot.com/submit) if you have a project that  you want to share.
+If you'd like to see who else is using GWT, check out the [GWT Gallery](http://gwtgallery.appspot.com). You'll be able to find other applications and libraries built with GWT, comment on them, rate them, and search for them by tag or by name. You can also [submit your own entry](http://gwtgallery.appspot.com/submit) if you have a project that you want to share.
 
 You can also find a wide variety of open source [projects related to GWT](http://code.google.com/hosting/search?q=GWT&btn=Search+Projects) hosted on Google Code.
 

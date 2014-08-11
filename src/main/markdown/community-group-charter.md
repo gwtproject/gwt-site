@@ -20,7 +20,7 @@ Here are some important GWT resources:
 
 This Discussion Group is intended for developers using GWT to build applications. Everyone is welcome to join in, provided you follow our community's policies described below. Our users help each other, and there are many experts who post to this group, including some from Google.
 
-No topic is off-limits, provided it relates to GWT in some way.&nbsp; However, since it _is_ a very busy list, please check out the list of resources above before posting your question; you may find your question has already been answered.
+No topic is off-limits, provided it relates to GWT in some way. However, since it _is_ a very busy list, please check out the list of resources above before posting your question; you may find your question has already been answered.
 
 ## Discussion Group Rules
 
@@ -76,7 +76,7 @@ The primary language for this group is English, however if you have trouble comm
   </li>
 </ul>
 
-As you can see our rules are simple, and the most important rule is friendliness. Remember: disrespect and rudeness &mdash; under **any** circumstances -- is not welcome in our community.  We don't have a formal policy on dealing with troublemakers, and we hope we never need to come up with one.  That said, though, we do pledge to do our best to be fair, and we will always try to warn someone before banning him or her.
+As you can see our rules are simple, and the most important rule is friendliness. Remember: disrespect and rudeness &mdash; under **any** circumstances -- is not welcome in our community. We don't have a formal policy on dealing with troublemakers, and we hope we never need to come up with one. That said, though, we do pledge to do our best to be fair, and we will always try to warn someone before banning him or her.
 
 ## Contacting the Moderators
 

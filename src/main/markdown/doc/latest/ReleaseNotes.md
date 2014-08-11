@@ -1,4 +1,4 @@
 Release Notes
 ===
 
-<p>The release notes have <a href="../../release-notes.html">moved</a>.
+The release notes have [moved](../../release-notes.html).
