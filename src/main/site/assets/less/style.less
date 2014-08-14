@@ -243,17 +243,17 @@
 aside#submenu {
   background-color: @c-secondary-dark;
 
+  display: table-cell;
   width: 240px;
   height: 100%;
-  padding-top: 229px;
-
-  position: fixed;
-  top: 0;
-  left: 30px;
-  z-index: 8500;
+  padding: 174px 0 0 40px;
 
   @media(@tablet) {
     width: 200px;
+  }
+
+  @media(@mobile) {
+    display: block;
   }
 
   a {
@@ -266,11 +266,21 @@ aside#submenu {
     width: 100%;
     padding: 6px 25px;
 
+    position: relative;
+
     .box-sizing();
     .transition();
 
     &:hover {
       background-color: @c-background;
+    }
+
+    &:before {
+      content: "\003e";
+
+      margin-right: 4px;
+
+      position: relative;
     }
   }
   
@@ -281,40 +291,13 @@ aside#submenu {
     position: relative;
 
     ul {
-      padding: 0 0 5px;
-      margin-bottom: 5px;
-
-      &::before {
-        content: "\e80e";
-        font-family: "icons";
-
-        display: block;
-        width: 10px;
-        height: 10px;
-
-        position: absolute;
-        top: -27px;
-        right: 12px;
+      a {
+        padding-left: 40px;
       }
 
-      a{
-        padding-left: 50px;
-      }
-
-      &::after {
-        content: "";
-        background-color: @c-secondary;
-
-        display: block;
-        width: 190px;
-        height: 2px;
-
-        position: relative;
-        bottom: -5px;
-        left: 25px;
-
-        @media(@tablet) {
-          width: 160px;
+      ul {
+        a{
+          padding-left: 55px;
         }
       }
     }
@@ -407,8 +390,10 @@ nav#nav-mobile {
 
 #content {
   padding: 8em 0 3em;
+  display: table-cell;
 
   @media(@mobile) {
+    display: block;
     padding-top: 3em;
   }
 
@@ -467,9 +452,23 @@ nav#nav-mobile {
       &#letsbegin .col-1_4 {
         text-align: center;
 
-        p{
+        a {
+          color: #000;
+        }
+
+        h2 {
+          color: #000;
+        }
+
+        p {
           font-size: 14px;
           font-size: 1.4rem;
+        }
+
+        i {
+          color: @c-primary !important;
+          font-size: 100px;
+          font-size: 10rem;
         }
       }
     }
@@ -479,5 +478,3 @@ nav#nav-mobile {
 // -- Print ----------------------------------------------
 
 @import url('print.less');
-
-

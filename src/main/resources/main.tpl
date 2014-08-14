@@ -75,48 +75,34 @@
             </div>
         </nav>
 
-        <aside id="submenu">
-            <nav>
-                <ul>
-                    <li><a href="#">Overview</a></li>
-                    <li><a href="#">Build a GWT App.</a></li>
-                    <li>
-                        <a href="#">AJAX Communication</a>
-                        <ul>
-                            <li><a href="#">Introduction</a></li>
-                            <li><a href="#">Using GWT RPC</a></li>
-                            <li><a href="#">Retrieving JSON</a></li>
-                            <li><a href="#">Cross-site Requests</a></li>
-                            <li><a href="#">JSON php</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Internationalization</a></li>
-                    <li><a href="#">JUnit Testing</a></li>
-                    <li><a href="#">Deploy to GEA</a></li>
-                </ul>
+        <div class="holder">
+            <aside id="submenu">
+                <nav>
+                    $toc
+                </nav>
+            </aside>
+
+            <a id="logo-mobile" href="#"><span>>Back to GWT homepage</span></a>
+
+            <div class="menu-button">Menu</div>
+
+            <nav id="nav-mobile" class="flexnav">
+                $toc
             </nav>
-        </aside>
 
-        <a id="logo-mobile" href="#"><span>>Back to GWT homepage</span></a>
+            <div id="search">
+                <form action="#">
+                    <input type="text"/>
+                    <button type="submit"><i class="icon_search"></i> <span>Search</span></button>
+                </form>
+            </div>
 
-        <div class="menu-button">Menu</div>
+            <div id="content" role="main">
+                <div class="container">
 
-        <nav id="nav-mobile" class="flexnav">
-            $toc
-        </nav>
+                    $content
 
-        <div id="search">
-            <form action="#">
-                <input type="text"/>
-                <button type="submit"><i class="icon_search"></i> <span>Search</span></button>
-            </form>
-        </div>
-
-        <div id="content" class="docs" role="main">
-            <div class="container">
-
-                $content
-
+                </div>
             </div>
         </div>
 
