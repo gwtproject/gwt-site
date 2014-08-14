@@ -30,7 +30,7 @@ See [json.org/example.html](http://www.json.org/example.html) for more JSON exam
 
 ## Parsing JSON<a id="parsing"></a>
 
-<p>You can parse JSON Strings and convert them to a [JavaScriptObject](/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html) using [JsonUtils](http://www.gwtproject.org/javadoc/latest/com/google/gwt/core/client/JsonUtils.html).
+You can parse JSON Strings and convert them to a [JavaScriptObject](/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html) using [JsonUtils](http://www.gwtproject.org/javadoc/latest/com/google/gwt/core/client/JsonUtils.html).
 
 <pre class="prettyprint">
 /*

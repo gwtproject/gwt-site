@@ -1,28 +1,26 @@
 Organizing Projects
 ===
 
-<p>GWT projects can be organized in a variety of ways. However, particular conventions are encouraged to make it easy to identify which code is intended to run on the client
-browser, the server, or both.</p>
+GWT projects can be organized in a variety of ways. However, particular conventions are encouraged to make it easy to identify which code is intended to run on the client
+browser, the server, or both.
 
-<p>This section describes the fundamentals of project organization with GWT as well as the recommended conventions.</p>
+This section describes the fundamentals of project organization with GWT as well as the recommended conventions.
 
-<ol class="toc" id="pageToc">
-  <li><a href="#DevGuideHostPage">HTML Host Pages</a></li>
-  <li><a href="#DevGuideDirectoriesPackageConventions">Standard Directory and Package Layout</a></li>
-  <li><a href="#DevGuideModules">Modules: Units of configuration</a></li>
-  <li><a href="#DevGuideModuleXml">Module XML files</a></li>
-  <li><a href="#DevGuideInheritingModules">How do I know which GWT modules I need to inherit?</a></li>
-  <li><a href="#DevGuideAutomaticResourceInclusion">Automatic Resource Inclusion</a></li>
-  <li><a href="#DevGuidePathFiltering">Filtering Public and Source Packages</a></li>
-  <li><a href="#DevGuideBootstrap">The Bootstrap Sequence</a></li>
-</ol>
+1.  [HTML Host Pages](#DevGuideHostPage)
+2.  [Standard Directory and Package Layout](#DevGuideDirectoriesPackageConventions)
+3.  [Modules: Units of configuration](#DevGuideModules)
+4.  [Module XML files](#DevGuideModuleXml)
+5.  [How do I know which GWT modules I need to inherit?](#DevGuideInheritingModules)
+6.  [Automatic Resource Inclusion](#DevGuideAutomaticResourceInclusion)
+7.  [Filtering Public and Source Packages](#DevGuidePathFiltering)
+8.  [The Bootstrap Sequence](#DevGuideBootstrap)
 
-<h2 id="DevGuideHostPage">HTML Host Pages</h2>
+## HTML Host Pages<a id="DevGuideHostPage"></a>
 
-<p>GWT modules are stored on a web server as a set of JavaScript and related files. In order to run the module, it must be loaded from a web page of some sort. Any HTML page can
-include a GWT application via a <tt>SCRIPT</tt> tag. This HTML page is referred to as a <i>host page</i> from the GWT application's point of view. A typical HTML host page for an
+GWT modules are stored on a web server as a set of JavaScript and related files. In order to run the module, it must be loaded from a web page of some sort. Any HTML page can
+include a GWT application via a <tt>SCRIPT</tt> tag. This HTML page is referred to as a _host page_ from the GWT application's point of view. A typical HTML host page for an
 application written with GWT from scratch might not include any visible HTML body content at all. The example below shows how to embed a GWT application that will use the entire
-browser window.</p>
+browser window.
 
 <pre class="prettyprint">
  &lt;html&gt;
@@ -54,11 +52,11 @@ browser window.</p>
  &lt;/html&gt;
 </pre>
 
-<p>Note that the body of the page contains only a <tt>SCRIPT</tt> tag and an <tt>IFRAME</tt> tag. It is left to the GWT application to then fill in all the visual content.</p>
+Note that the body of the page contains only a <tt>SCRIPT</tt> tag and an <tt>IFRAME</tt> tag. It is left to the GWT application to then fill in all the visual content.
 
-<p>But GWT was designed to make it easy to add GWT functionality to existing web applications with only minor changes. It is possible to allow the GWT module to selectively insert
+But GWT was designed to make it easy to add GWT functionality to existing web applications with only minor changes. It is possible to allow the GWT module to selectively insert
 widgets into specific places in an HTML page. To accomplish this, use the <tt>id</tt> attribute in your HTML tags to specify a unique identifier that your GWT code will use to
-attach widgets to that HTML element. For example:</p>
+attach widgets to that HTML element. For example:
 
 <pre class="prettyprint">
   &lt;body&gt;
@@ -72,8 +70,8 @@ attach widgets to that HTML element. For example:</p>
   &lt;/body&gt;
 </pre>
 
-<p>Notice that the <tt>td</tt> tags include an <tt>id</tt> attribute associated with them. This attribute is accessible through the <tt>DOM</tt> class. You can easily attach
-widgets using the method <tt>RootPanel.get()</tt>. For example:</p>
+Notice that the <tt>td</tt> tags include an <tt>id</tt> attribute associated with them. This attribute is accessible through the <tt>DOM</tt> class. You can easily attach
+widgets using the method <tt>RootPanel.get()</tt>. For example:
 
 <pre class="prettyprint">
     final Button button = new Button(&quot;Click me&quot;);
@@ -85,68 +83,45 @@ widgets using the method <tt>RootPanel.get()</tt>. For example:</p>
     RootPanel.get(&quot;slot2&quot;).add(label);
 </pre>
 
-<p>In this manner, GWT functionality can be added as just a part of an existing page, and changing the application layout can be done in plain HTML. The <tt>I18N</tt> sample uses
-this technique heavily.</p>
+In this manner, GWT functionality can be added as just a part of an existing page, and changing the application layout can be done in plain HTML. The <tt>I18N</tt> sample uses
+this technique heavily.
 
-<p>A host HTML page does not have to be static content. It could also be generated by a servlet, or by a JSP page.</p>
+A host HTML page does not have to be static content. It could also be generated by a servlet, or by a JSP page.
 
-<h2 id="DevGuideDirectoriesPackageConventions">Standard Directory and Package Layout</h2>
+## Standard Directory and Package Layout<a id="DevGuideDirectoriesPackageConventions"></a>
 
-<p>GWT projects are overlaid onto Java packages such that most of the configuration can be inferred from the classpath and the <a href="DevGuideOrganizingProjects.html#DevGuideModules">module definitions</a>.</p>
+GWT projects are overlaid onto Java packages such that most of the configuration can be inferred from the classpath and the [module definitions](DevGuideOrganizingProjects.html#DevGuideModules).
 
-<p><img src="images/DevGuideDirectoriesPackageConventions.png"/></p>
+![](images/DevGuideDirectoriesPackageConventions.png)
 
-<h3>Guidelines</h3>
+### Guidelines
 
-<p>If you are not using the Command-line tools to generate your project files and directories, here are some guidelines to keep in mind when organizing your code and creating Java
-packages.</p>
+If you are not using the Command-line tools to generate your project files and directories, here are some guidelines to keep in mind when organizing your code and creating Java
+packages.
 
-<ol>
-<li>Under the main project directory create the following directories:</li>
+1.  Under the main project directory create the following directories:
+2.  *   src folder - contains production Java source
+    *   war folder - your web app; contains static resources as well as compiled output
+    *   test folder - (optional) JUnit test code would go here
+3.  Within the src package, create a project root package and a client package.
+4.  If you have server-side code, also create a server package to differentiate between the client-side code (which is translated into JavaScript) from the server-side code (which
+is not).
+5.  Within the project root package, place one or more module definitions.
+6.  In the war directory, place any static resources (such as the host page, style sheets, or images).
+7.  Within the client and server packages, you are free to organize your code into any subpackages you require.
 
-<li style="list-style: none">
-<ul>
-<li>src folder - contains production Java source</li>
+### Example: GWT standard package layout
 
-<li>war folder - your web app; contains static resources as well as compiled output</li>
+For example, all the files for the &quot;DynaTable&quot; sample are organized in a main project directory also called &quot;DynaTable&quot;.
 
-<li>test folder - (optional) JUnit test code would go here</li>
-</ul>
-</li>
+*   Java source files are in the directory: <tt>DynaTable/src/com/google/gwt/sample/dynatable</tt>
+*   The module is defined in the XML file: <tt>DynaTable/src/com/google/gwt/sample/dynatable/DynaTable.gwt.xml</tt>
+*   The project root package is: <tt>com.google.gwt.sample.dynatable</tt>
+*   The logical module name is: <tt>com.google.gwt.sample.dynatable.DynaTable</tt>
 
-<li>Within the src package, create a project root package and a client package.</li>
+#### The src directory
 
-<li>If you have server-side code, also create a server package to differentiate between the client-side code (which is translated into JavaScript) from the server-side code (which
-is not).</li>
-
-<li>Within the project root package, place one or more module definitions.</li>
-
-<li>In the war directory, place any static resources (such as the host page, style sheets, or images).</li>
-
-<li>Within the client and server packages, you are free to organize your code into any subpackages you require.</li>
-</ol>
-
-
-
-<h3>Example: GWT standard package layout</h3>
-
-<p>For example, all the files for the &quot;DynaTable&quot; sample are organized in a main project directory also called &quot;DynaTable&quot;.</p>
-
-<ul>
-<li>Java source files are in the directory: <tt>DynaTable/src/com/google/gwt/sample/dynatable</tt></li>
-
-<li>The module is defined in the XML file: <tt>DynaTable/src/com/google/gwt/sample/dynatable/DynaTable.gwt.xml</tt></li>
-
-<li>The project root package is: <tt>com.google.gwt.sample.dynatable</tt></li>
-
-<li>The logical module name is: <tt>com.google.gwt.sample.dynatable.DynaTable</tt></li>
-</ul>
-
-
-
-<h4>The src directory</h4>
-
-<p>The src directory contains an application's Java source files, the module definition, and external resource files.</p>
+The src directory contains an application's Java source files, the module definition, and external resource files.
 
 <table>
 <tr>
@@ -213,24 +188,17 @@ as the GWT compiler output.</td>
 </tr>
 </table>
 
+#### The war directory
 
+The war directory is the deployment image of your web application. It is in the standard expanded war format recognized by a variety of Java web servers, including Tomcat,
+Jetty, and other J2EE servlet containers. It contains a variety of resources:
 
-<h4>The war directory</h4>
+*   Static content you provide, such as the host HTML page
+*   GWT compiled output
+*   Java class files and jar files for server-side code
+*   A web.xml file that configures your web app and any servlets
 
-<p>The war directory is the deployment image of your web application. It is in the standard expanded war format recognized by a variety of Java web servers, including Tomcat,
-Jetty, and other J2EE servlet containers. It contains a variety of resources:</p>
-
-<ul>
-<li>Static content you provide, such as the host HTML page</li>
-
-<li>GWT compiled output</li>
-
-<li>Java class files and jar files for server-side code</li>
-
-<li>A web.xml file that configures your web app and any servlets</li>
-</ul>
-
-<p>A detailed description of the war format is beyond the scope of this document, but here are the basic pieces you will want to know about:</p>
+A detailed description of the war format is beyond the scope of this document, but here are the basic pieces you will want to know about:
 
 <table>
 <tr>
@@ -298,11 +266,9 @@ this folder.</td>
 </tr>
 </table>
 
+#### The test directory
 
-
-<h4>The test directory</h4>
-
-<p>The test directory contains the source files for any JUnit tests.</p>
+The test directory contains the source files for any JUnit tests.
 
 <table>
 <tr>
@@ -336,56 +302,48 @@ this folder.</td>
 </tr>
 </table>
 
+## Modules: Units of configuration<a id="DevGuideModules"></a>
 
-<h2 id="DevGuideModules">Modules: Units of configuration</h2>
+Individual units of GWT configuration are called _modules_. A module bundles together all the configuration settings that your GWT project needs:
 
-<p>Individual units of GWT configuration are called <i>modules</i>. A module bundles together all the configuration settings that your GWT project needs:</p>
+*   inherited modules
+*   an entry point application class name; these are optional, although any module referred to in HTML must have at least one entry-point class specified
+*   source path entries
+*   public path entries
+*   deferred binding rules, including property providers and class generators
 
-<ul>
-<li>inherited modules</li>
+Modules are [defined in XML](DevGuideOrganizingProjects.html#DevGuideModuleXml) and placed into your [project's package hierarchy](DevGuideOrganizingProjects.html#DevGuideDirectoriesPackageConventions). Modules may appear in any package in your classpath, although it is strongly
+recommended that they appear in the root package of a [standard project layout](DevGuideOrganizingProjects.html#DevGuideDirectoriesPackageConventions).
 
-<li>an entry point application class name; these are optional, although any module referred to in HTML must have at least one entry-point class specified</li>
+### Entry-Point Classes
 
-<li>source path entries</li>
+A module entry-point is any class that is assignable to [EntryPoint](/javadoc/latest/com/google/gwt/core/client/EntryPoint.html) and that can be constructed without parameters. When a module is loaded, every entry point class is instantiated and its [EntryPoint.onModuleLoad()](/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad()) method gets
+called.
 
-<li>public path entries</li>
+### Source Path
 
-<li>deferred binding rules, including property providers and class generators</li>
-</ul>
+Modules can specify which subpackages contain translatable _source_, causing the named package and its subpackages to be added to the _source path_. Only files found
+on the source path are candidates to be translated into JavaScript, making it possible to mix [client-side](DevGuideCodingBasics.html#DevGuideClientSide) and [server-side](DevGuideServerCommunication.html#DevGuideServerSide) code together in the same classpath without conflict. When module inherit other modules, their source paths are
+combined so that each module will have access to the translatable source it requires.
 
-<p>Modules are <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">defined in XML</a> and placed into your <a href="DevGuideOrganizingProjects.html#DevGuideDirectoriesPackageConventions">project's package hierarchy</a>. Modules may appear in any package in your classpath, although it is strongly
-recommended that they appear in the root package of a <a href="DevGuideOrganizingProjects.html#DevGuideDirectoriesPackageConventions">standard project layout</a>.</p>
+The default source path is the _client_ subpackage underneath where the [Module XML File](DevGuideOrganizingProjects.html#DevGuideModuleXml) is stored.
 
-<h3>Entry-Point Classes</h3>
+### Public Path
 
-<p>A module entry-point is any class that is assignable to <a href="/javadoc/latest/com/google/gwt/core/client/EntryPoint.html">EntryPoint</a> and that can be constructed without parameters. When a module is loaded, every entry point class is instantiated and its <a href="/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad()">EntryPoint.onModuleLoad()</a> method gets
-called.</p>
-
-<h3>Source Path</h3>
-
-<p>Modules can specify which subpackages contain translatable <i>source</i>, causing the named package and its subpackages to be added to the <i>source path</i>. Only files found
-on the source path are candidates to be translated into JavaScript, making it possible to mix <a href="DevGuideCodingBasics.html#DevGuideClientSide">client-side</a> and <a href="DevGuideServerCommunication.html#DevGuideServerSide">server-side</a> code together in the same classpath without conflict. When module inherit other modules, their source paths are
-combined so that each module will have access to the translatable source it requires.</p>
-
-<p>The default source path is the <i>client</i> subpackage underneath where the <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">Module XML File</a> is stored.</p>
-
-<h3>Public Path</h3>
-
-<p>Modules can specify which subpackages are <i>public</i>, causing the named package and its subpackages to be added to the <i>public path</i>. The public path is the place in
+Modules can specify which subpackages are _public_, causing the named package and its subpackages to be added to the _public path_. The public path is the place in
 your project where static resources referenced by your GWT module, such as CSS or images, are stored. When you compile your application into JavaScript, all the files that can be
 found on your public path are copied to the module's output directory. When referencing public resources in client code (for example, setting the URL of an <tt>Image</tt> widget,
-you should construct the URL like this: <tt>GWT.getModuleBaseForStaticFiles() + &quot;resourceName.png&quot;</tt>. When referencing public resources from a <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">Module XML File</a>, just use the relative path within the public folder, the module's base URL will be prepended automatically.
-When a module inherits other modules, their public paths are combined so that each module will have access to the static resources it expects.</p>
+you should construct the URL like this: <tt>GWT.getModuleBaseForStaticFiles() + &quot;resourceName.png&quot;</tt>. When referencing public resources from a [Module XML File](DevGuideOrganizingProjects.html#DevGuideModuleXml), just use the relative path within the public folder, the module's base URL will be prepended automatically.
+When a module inherits other modules, their public paths are combined so that each module will have access to the static resources it expects.
 
-<p>The default public path is the <i>public</i> subdirectory underneath where the <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">Module XML File</a> is stored.</p>
+The default public path is the _public_ subdirectory underneath where the [Module XML File](DevGuideOrganizingProjects.html#DevGuideModuleXml) is stored.
 
+## Defining a module: format of module XML files<a id="DevGuideModuleXml"></a>
 
-<h2 id="DevGuideModuleXml">Defining a module: format of module XML files</h2>
+Modules are defined in XML files with a file extension of _.gwt.xml_. Module XML files should reside in your project's root package.
 
-<p>Modules are defined in XML files with a file extension of <i>.gwt.xml</i>. Module XML files should reside in your project's root package.</p>
-
-<p>If you are using the <a href="DevGuideOrganizingProjects.html#DevGuideDirectoriesPackageConventions">standard project structure</a>, your module XML can be as simple as the following
-example:</p>
+If you are using the [standard project structure](DevGuideOrganizingProjects.html#DevGuideDirectoriesPackageConventions), your module XML can be as simple as the following
+example:
 
 <pre class="prettyprint">
  &lt;module rename-to=&quot;dynatable&quot;&gt;
@@ -394,36 +352,32 @@ example:</p>
  &lt;/module&gt;
 </pre>
 
-<h3>Loading modules</h3>
+### Loading modules
 
-<p>Module XML files are found on the Java classpath. Modules are always referred to by their logical names. The logical name of a module is of the form <i>pkg1.pkg2.ModuleName</i>
-(although any number of packages may be present). The logical name includes neither the actual file system path nor the file extension.</p>
+Module XML files are found on the Java classpath. Modules are always referred to by their logical names. The logical name of a module is of the form _pkg1.pkg2.ModuleName_
+(although any number of packages may be present). The logical name includes neither the actual file system path nor the file extension.
 
-<p>For example, if the module XML file has a file name of...</p>
+For example, if the module XML file has a file name of...
 
 <pre>
 ~/src/com/example/cal/Calendar.gwt.xml
 </pre>
 
-<p>...then the logical name of the module is:</p>
+...then the logical name of the module is:
 
 <pre>
 com.example.cal.Calendar
 </pre>
 
-<h3>Renaming modules</h3>
+### Renaming modules
 
-<p>The <tt>&lt;module&gt;</tt> element supports an optional attribute <tt>rename-to</tt> that causes the compiler to behave as though the module had a different name than the
-long, fully-qualified name. Renaming a module has two primary use cases:</p>
+The <tt>&lt;module&gt;</tt> element supports an optional attribute <tt>rename-to</tt> that causes the compiler to behave as though the module had a different name than the
+long, fully-qualified name. Renaming a module has two primary use cases:
 
-<ul>
-<li>to have a shorter module name that doesn't reflect the actual package structure, this is the most typical and recommended use case</li>
+*   to have a shorter module name that doesn't reflect the actual package structure, this is the most typical and recommended use case
+*   to create a &quot;working module&quot; to speed up development time by restricting the number of permutations
 
-<li>to create a &quot;working module&quot; to speed up development time by restricting the number of permutations</li>
-</ul>
-
-
-<p><tt>com.foo.WorkingModule.gwt.xml</tt>:</p>
+<tt>com.foo.WorkingModule.gwt.xml</tt>:
 
 <pre class="prettyprint">
 &lt;module rename-to=&quot;com.foo.MyModule&quot;&gt;
@@ -433,16 +387,16 @@ long, fully-qualified name. Renaming a module has two primary use cases:</p>
 &lt;/module&gt;
 </pre>
 
-<p>When <tt>WorkingModule.gwt.xml</tt> is compiled, the compiler will produce only an <tt>ie6</tt> variant using the default locale; this will speed up development compilations.
+When <tt>WorkingModule.gwt.xml</tt> is compiled, the compiler will produce only an <tt>ie6</tt> variant using the default locale; this will speed up development compilations.
 The output from the <tt>WorkingModule.gwt.xml</tt> will be a drop-in replacement for <tt>MyModule.gwt.xml</tt> because the compiler will generate the output using the alternate
-name. (Of course, if <tt>com.foo.MyModule</tt> was itself renamed, you would just copy its rename-to attribute.)</p>
+name. (Of course, if <tt>com.foo.MyModule</tt> was itself renamed, you would just copy its rename-to attribute.)
 
-<h3>Dividing code into multiple modules</h3>
+### Dividing code into multiple modules
 
-<p>Creating a second module doesn't necessarily mean that that module must define an entry point. Typically, you create a new module when you want to package up a library of GWT
-code that you want to reuse in other GWT projects. An example of this is the Google API Library for GWT (<a href="http://code.google.com/p/gwt-google-apis/">GALGWT</a>), specifically the Gears for GWT API binding. If you download the library and take a look at the <tt>gwt-google-apis/com/google/gwt/gears</tt> you'll
+Creating a second module doesn't necessarily mean that that module must define an entry point. Typically, you create a new module when you want to package up a library of GWT
+code that you want to reuse in other GWT projects. An example of this is the Google API Library for GWT ([GALGWT](http://code.google.com/p/gwt-google-apis/)), specifically the Gears for GWT API binding. If you download the library and take a look at the <tt>gwt-google-apis/com/google/gwt/gears</tt> you'll
 find the <tt>Gears.gwt.xml</tt> file for the module which doesn't define an entry point. However, any GWT project that would like to use Gears for GWT will have to inherit the
-Gears.gwt.xml module. For example, a module named &quot;Foo&quot; might want to use GALGWT, so in <tt>Foo.gwt.xml</tt> an <tt>&lt;inherits&gt;</tt> entry would be needed:</p>
+Gears.gwt.xml module. For example, a module named &quot;Foo&quot; might want to use GALGWT, so in <tt>Foo.gwt.xml</tt> an <tt>&lt;inherits&gt;</tt> entry would be needed:
 
 <pre class="prettyprint">
 &lt;module&gt;
@@ -450,49 +404,37 @@ Gears.gwt.xml module. For example, a module named &quot;Foo&quot; might want to 
     &lt;inherits name='com.google.gwt.gears.Gears' /&gt;
 </pre>
 
-<h3>Loading multiple modules in an HTML host page</h3>
+### Loading multiple modules in an HTML host page
 
-<p>If you have multiple GWT modules in your application, there are two ways to approach loading them.</p>
+If you have multiple GWT modules in your application, there are two ways to approach loading them.
 
-<ol>
-<li>Compile each module separately and include each module with a separate <tt>&lt;script&gt;</tt> tag in your <a href="DevGuideOrganizingProjects.html#DevGuideHostPage">HTML host
-page</a>.</li>
+1.  Compile each module separately and include each module with a separate <tt>&lt;script&gt;</tt> tag in your [HTML host
+page](DevGuideOrganizingProjects.html#DevGuideHostPage).
+2.  Create a top level module XML definition that includes all the modules you want to include. Compile the top level module to create a single set of JavaScript output.
 
-<li>Create a top level module XML definition that includes all the modules you want to include. Compile the top level module to create a single set of JavaScript output.</li>
-</ol>
-
-<p>The first approach may seem the easiest and most obvious. However, the second approach will lead to much better end-user performance. The problem with loading multiple modules
+The first approach may seem the easiest and most obvious. However, the second approach will lead to much better end-user performance. The problem with loading multiple modules
 is that each module has to be downloaded separately by the end-user's browser. In addition, each module will contain redundant copies of GWT library code and could possibly
-conflict with each other during event handling. The second approach is strongly recommended.</p>
+conflict with each other during event handling. The second approach is strongly recommended.
 
-<h3>Controlling compiler output</h3>
+### Controlling compiler output
 
-<p>The GWT compiler separates the act of compiling and packaging its output with the Linker subsystem. It is responsible for the final packaging of the JavaScript code and
-providing a pluggable bootstrap mechanism for any particular deployment scenario.</p>
+The GWT compiler separates the act of compiling and packaging its output with the Linker subsystem. It is responsible for the final packaging of the JavaScript code and
+providing a pluggable bootstrap mechanism for any particular deployment scenario.
 
-<ul>
-<li><tt>&lt;</tt>define-linker name=&quot;<i>short_name</i>&quot; class=&quot;<i>fully_qualified_class_name</i>&quot; /<tt>&gt;</tt> : Register a new Linker instance with the compiler. The
+*   <tt>&lt;</tt>define-linker name=&quot;_short_name_&quot; class=&quot;_fully_qualified_class_name_&quot; /<tt>&gt;</tt> : Register a new Linker instance with the compiler. The
 <tt>name</tt> attribute must be a valid Java identifier and is used to identify the Linker in <tt>&lt;add-linker&gt;</tt> tags. It is permissible to redefine an already-defined
 Linker by declaring a new <tt>&lt;define-linker&gt;</tt> tag with the same name. Linkers are divided into three categories, PRE, POST, and PRIMARY. Exactly one primary linker is
-run for a compilation. Pre-linkers are run in lexical order before the primary linker, and post-linkers are run in reverse lexical order after the primary linker.</li>
+run for a compilation. Pre-linkers are run in lexical order before the primary linker, and post-linkers are run in reverse lexical order after the primary linker.
+*   <tt>&lt;</tt>add-linker name=&quot;_linker_name_&quot; /<tt>&gt;</tt> : Specify a Linker to use when generating the output from the compiler. The <tt>name</tt> property is a
+previously-defined Linker name. This tag is additive for pre- and post-linkers; only the last primary linker will be run.
 
-<li><tt>&lt;</tt>add-linker name=&quot;<i>linker_name</i>&quot; /<tt>&gt;</tt> : Specify a Linker to use when generating the output from the compiler. The <tt>name</tt> property is a
-previously-defined Linker name. This tag is additive for pre- and post-linkers; only the last primary linker will be run.</li>
-</ul>
+Several linkers are provided by <tt>Core.gwt.xml</tt>, which is automatically inherited by <tt>User.gwt.xml</tt>.
 
-<p>Several linkers are provided by <tt>Core.gwt.xml</tt>, which is automatically inherited by <tt>User.gwt.xml</tt>.</p>
+*   **std** : The standard iframe-based bootstrap deployment model.
+*   **xs** : The cross-site deployment model.
+*   **sso** : This Linker will produce a monolithic JavaScript file. It may be used only when there is a single distinct compilation result.
 
-<ul>
-<li><strong>std</strong> : The standard iframe-based bootstrap deployment model.</li>
-
-<li><strong>xs</strong> : The cross-site deployment model.</li>
-
-<li><strong>sso</strong> : This Linker will produce a monolithic JavaScript file. It may be used only when there is a single distinct compilation result.</li>
-</ul>
-
-
-
-<p>From <tt>Core.gwt.xml</tt>:</p>
+From <tt>Core.gwt.xml</tt>:
 
 <pre class="prettyprint">
 &lt;module&gt;
@@ -503,7 +445,7 @@ previously-defined Linker name. This tag is additive for pre- and post-linkers; 
 &lt;/module&gt;
 </pre>
 
-<p>Changing the desired linker in <tt>MyModule.gwt.xml</tt>:</p>
+Changing the desired linker in <tt>MyModule.gwt.xml</tt>:
 
 <pre class="prettyprint">
 &lt;module&gt;
@@ -512,165 +454,122 @@ previously-defined Linker name. This tag is additive for pre- and post-linkers; 
 &lt;/module&gt;
 </pre>
 
-<h3>Overriding one package implementation with another</h3>
+### Overriding one package implementation with another
 
-<p>The <tt>&lt;super-source&gt;</tt> tag instructs the compiler to &quot;re-root&quot; a source path. This is useful for cases where you want to be re-use an existing Java API for a GWT
-project, but the original source is not available or not translatable. A common reason for this is to emulate part of the JRE not implemented by GWT.</p>
+The <tt>&lt;super-source&gt;</tt> tag instructs the compiler to &quot;re-root&quot; a source path. This is useful for cases where you want to be re-use an existing Java API for a GWT
+project, but the original source is not available or not translatable. A common reason for this is to emulate part of the JRE not implemented by GWT.
 
-<p>For example, suppose you want implement the UUID class provided by the JRE under <tt>java.util</tt>. Assume your project's module file is
+For example, suppose you want implement the UUID class provided by the JRE under <tt>java.util</tt>. Assume your project's module file is
 <tt>com/example/myproject/MyProject.gwt.xml</tt>. Place the source for the UUID class into <tt>com/example/myproject/jre/java/util/UUID.java</tt>. Then add a line to
-<tt>MyProject.gwt.xml</tt>:</p>
+<tt>MyProject.gwt.xml</tt>:
 
 <pre class="prettyprint">
     &lt;super-source path=&quot;jre&quot; /&gt;
 </pre>
 
-<p>This tells the compiler to add all subfolders of <tt>com/example/myproject/jre/</tt> to the <a href="DevGuideOrganizingProjects.html#DevGuideModules">source path</a>, but to strip off
+This tells the compiler to add all subfolders of <tt>com/example/myproject/jre/</tt> to the [source path](DevGuideOrganizingProjects.html#DevGuideModules), but to strip off
 the path prefix up to and including <tt>jre</tt>. As a result, <tt>com/google/myproject/gwt/jre/java/util/UUID.java</tt> will be visible to the compiler as
-<tt>java/util/UUID.java</tt>, which is the intended result.</p>
+<tt>java/util/UUID.java</tt>, which is the intended result.
 
-<p>The GWT project uses this technique internally for the JRE emulation
+The GWT project uses this technique internally for the JRE emulation
 classes provided with GWT. One caveat specific to overriding JRE classes in
 this way is that they will never actually be used in development mode. In
 development mode, the native JRE classes always supercede classes compiled
-from source.</p>
+from source.
 
-<p>The <tt>&lt;super-source&gt;</tt> element supports <a
-href="DevGuideOrganizingProjects.html#DevGuidePathFiltering">pattern-based
-filtering</a> to allow fine-grained control over which resources get copied
-into the output directory during a GWT compile.</p>
+The <tt>&lt;super-source&gt;</tt> element supports [pattern-based
+filtering](DevGuideOrganizingProjects.html#DevGuidePathFiltering) to allow fine-grained control over which resources get copied
+into the output directory during a GWT compile.
 
-<h3>XML Element Reference</h3>
+### XML Element Reference
 
-<p>This section documents the most commonly used elements in the module XML file.</p>
+This section documents the most commonly used elements in the module XML file.
 
-<ul>
-<li><tt>&lt;</tt>inherits name=&quot;<i>logical-module-name</i>&quot; /<tt>&gt;</tt> : Inherits all the settings from the specified module as if the contents of the inherited module's XML
-were copied verbatim. Any number of modules can be inherited in this manner. See also <a href="DevGuideOrganizingProjects.html#DevGuideInheritingModules">this advice about deciding which modules to inherit</a>.</li>
-</ul>
+*   <tt>&lt;</tt>inherits name=&quot;_logical-module-name_&quot; /<tt>&gt;</tt> : Inherits all the settings from the specified module as if the contents of the inherited module's XML
+were copied verbatim. Any number of modules can be inherited in this manner. See also [this advice about deciding which modules to inherit](DevGuideOrganizingProjects.html#DevGuideInheritingModules).
 
-<ul>
-<li><tt>&lt;</tt>entry-point class=&quot;<i>classname</i>&quot; /<tt>&gt;</tt> : Specifies an <a href="/javadoc/latest/com/google/gwt/core/client/EntryPoint.html">entry point</a> class. Any number of entry-point classes
+*   <tt>&lt;</tt>entry-point class=&quot;_classname_&quot; /<tt>&gt;</tt> : Specifies an [entry point](/javadoc/latest/com/google/gwt/core/client/EntryPoint.html) class. Any number of entry-point classes
 can be added, including those from inherited modules. Entry points are all compiled into a single codebase. They are called sequentially in the order in which they appear in the
-module file. So when the <tt>onModuleLoad()</tt> of your first entry point finishes, the next entry point is called immediately.</li>
-</ul>
+module file. So when the <tt>onModuleLoad()</tt> of your first entry point finishes, the next entry point is called immediately.
 
-<ul>
-<li><tt>&lt;</tt>source path=&quot;<i>path</i>&quot; /<tt>&gt;</tt> : Each occurrence of the <tt>&lt;source&gt;</tt> tag adds a package to the <a href="DevGuideOrganizingProjects.html#DevGuideModules">source path</a> by combining the package in which the module XML is found with the specified path to a subpackage. Any Java source
-file appearing in this subpackage or any of its subpackages is assumed to be translatable. The <tt>&lt;source&gt;</tt> element supports <a href="DevGuideOrganizingProjects.html#DevGuidePathFiltering">pattern-based filtering</a> to allow fine-grained control over which resources get copied into the output directory
-during a GWT compile.</li>
-</ul>
+*   <tt>&lt;</tt>source path=&quot;_path_&quot; /<tt>&gt;</tt> : Each occurrence of the <tt>&lt;source&gt;</tt> tag adds a package to the [source path](DevGuideOrganizingProjects.html#DevGuideModules) by combining the package in which the module XML is found with the specified path to a subpackage. Any Java source
+file appearing in this subpackage or any of its subpackages is assumed to be translatable. The <tt>&lt;source&gt;</tt> element supports [pattern-based filtering](DevGuideOrganizingProjects.html#DevGuidePathFiltering) to allow fine-grained control over which resources get copied into the output directory
+during a GWT compile.
 
-<blockquote>If no <tt>&lt;source&gt;</tt> element is defined in a module XML file, the <i>client</i> subpackage is implicitly added to the source path as if <tt>&lt;source
-path=&quot;client&quot; /&gt;</tt> had been found in the XML. This default helps keep module XML compact for standard project layouts.</blockquote>
+> If no <tt>&lt;source&gt;</tt> element is defined in a module XML file, the _client_ subpackage is implicitly added to the source path as if <tt>&lt;source
+> path=&quot;client&quot; /&gt;</tt> had been found in the XML. This default helps keep module XML compact for standard project layouts.
 
-<ul>
-<li><tt>&lt;</tt>public path=&quot;<i>path</i>&quot; /<tt>&gt;</tt> : Each occurrence of the <tt>&lt;public&gt;</tt> tag adds a package to the <a href="DevGuideOrganizingProjects.html#DevGuideModules">public path</a> by combining the package in which the module XML is found with the specified path to identify the root of a public
-path entry. Any file appearing in this package or any of its subpackages will be treated as a publicly-accessible resource. The <tt>&lt;public&gt;</tt> element supports <a href="DevGuideOrganizingProjects.html#DevGuidePathFiltering">pattern-based filtering</a> to allow fine-grained control over which resources get copied into the output directory
-during a GWT compile.</li>
-</ul>
+*   <tt>&lt;</tt>public path=&quot;_path_&quot; /<tt>&gt;</tt> : Each occurrence of the <tt>&lt;public&gt;</tt> tag adds a package to the [public path](DevGuideOrganizingProjects.html#DevGuideModules) by combining the package in which the module XML is found with the specified path to identify the root of a public
+path entry. Any file appearing in this package or any of its subpackages will be treated as a publicly-accessible resource. The <tt>&lt;public&gt;</tt> element supports [pattern-based filtering](DevGuideOrganizingProjects.html#DevGuidePathFiltering) to allow fine-grained control over which resources get copied into the output directory
+during a GWT compile.
 
-<blockquote>If no <tt>&lt;public&gt;</tt> element is defined in a module XML file, the <i>public</i> subpackage is implicitly added to the public path as if <tt>&lt;public
-path=&quot;public&quot;&gt;</tt> had been found in the XML. This default helps keep module XML compact for standard project layouts.</blockquote>
+> If no <tt>&lt;public&gt;</tt> element is defined in a module XML file, the _public_ subpackage is implicitly added to the public path as if <tt>&lt;public
+> path=&quot;public&quot;&gt;</tt> had been found in the XML. This default helps keep module XML compact for standard project layouts.
 
-<ul>
-<li><tt>&lt;</tt>servlet path=&quot;<i>url-path</i>&quot; class=&quot;<i>classname</i>&quot; /<tt>&gt;</tt> : For RPC, this element loads a servlet class mounted at the specified URL path. The URL
+*   <tt>&lt;</tt>servlet path=&quot;_url-path_&quot; class=&quot;_classname_&quot; /<tt>&gt;</tt> : For RPC, this element loads a servlet class mounted at the specified URL path. The URL
 path should be absolute and have the form of a directory (for example, <tt>/calendar</tt>). Your client code then specifies this URL mapping by annotating the service interface
-with the <a href="/javadoc/latest/com/google/gwt/user/client/rpc/RemoteServiceRelativePath.html">@RemoteServiceRelativePath</a> attribute. Any number of servlets may be loaded in this manner, including those from inherited modules.</li>
-</ul>
+with the [@RemoteServiceRelativePath](/javadoc/latest/com/google/gwt/user/client/rpc/RemoteServiceRelativePath.html) attribute. Any number of servlets may be loaded in this manner, including those from inherited modules.
 
-<blockquote>The <tt>&lt;servlet&gt;</tt> element applies only to GWT's embedded server server-side debugging feature.</blockquote>
+> The <tt>&lt;servlet&gt;</tt> element applies only to GWT's embedded server server-side debugging feature.
 
-<blockquote><i>NOTE: as of GWT 1.6, this tag does no longer loads servlets in
-development mode, instead you must configure a <tt>WEB-INF/web.xml</tt> in
-your war directory to load any servlets needed.</i></blockquote>
+> _NOTE: as of GWT 1.6, this tag does no longer loads servlets in
+> development mode, instead you must configure a <tt>WEB-INF/web.xml</tt> in
+> your war directory to load any servlets needed._
 
-<ul>
-<li><tt>&lt;</tt>script src=&quot;<i>js-url</i>&quot; /<tt>&gt;</tt> : Automatically injects the external JavaScript file located at the location specified by <i>src</i>. See <a href="DevGuideOrganizingProjects.html#DevGuideAutomaticResourceInclusion">automatic resource inclusion</a> for details. If the specified URL is not absolute, the resource will be loaded
-from the module's base URL (in other words, it would most likely be a public resource).</li>
-</ul>
+*   <tt>&lt;</tt>script src=&quot;_js-url_&quot; /<tt>&gt;</tt> : Automatically injects the external JavaScript file located at the location specified by _src_. See [automatic resource inclusion](DevGuideOrganizingProjects.html#DevGuideAutomaticResourceInclusion) for details. If the specified URL is not absolute, the resource will be loaded
+from the module's base URL (in other words, it would most likely be a public resource).
 
-<ul>
-<li><tt>&lt;</tt>stylesheet src=&quot;<i>css-url</i>&quot; /<tt>&gt;</tt> : Automatically injects the external CSS file located at the location specified by <i>src</i>. See <a href="DevGuideOrganizingProjects.html#DevGuideAutomaticResourceInclusion">automatic resource inclusion</a> for details. If the specified URL is not absolute, the resource will be loaded
-from the module's base URL (in other words, it would most likely be a public resource).</li>
-</ul>
+*   <tt>&lt;</tt>stylesheet src=&quot;_css-url_&quot; /<tt>&gt;</tt> : Automatically injects the external CSS file located at the location specified by _src_. See [automatic resource inclusion](DevGuideOrganizingProjects.html#DevGuideAutomaticResourceInclusion) for details. If the specified URL is not absolute, the resource will be loaded
+from the module's base URL (in other words, it would most likely be a public resource).
 
-<ul>
-<li><tt>&lt;</tt>extend-property name=&quot;<i>client-property-name</i>&quot; values=&quot;<i>comma-separated-values</i>&quot; /<tt>&gt;</tt> : Extends the set of values for an existing client
-property. Any number of values may be added in this manner, and client property values accumulate through inherited modules. You will likely only find this useful for <a href="DevGuideI18nLocale.html#LocaleSpecifying">specifying locales in internationalization</a>.</li>
-</ul>
+*   <tt>&lt;</tt>extend-property name=&quot;_client-property-name_&quot; values=&quot;_comma-separated-values_&quot; /<tt>&gt;</tt> : Extends the set of values for an existing client
+property. Any number of values may be added in this manner, and client property values accumulate through inherited modules. You will likely only find this useful for [specifying locales in internationalization](DevGuideI18nLocale.html#LocaleSpecifying).
 
-<h3>Elements for Deferred Binding</h3>
+### Elements for Deferred Binding
 
-<p>The following elements are used for defining <a href="DevGuideCodingBasics.html#DevGuideDeferredBinding">deferred binding</a> rules. Deferred binding is not commonly used in user
-projects.</p>
+The following elements are used for defining [deferred binding](DevGuideCodingBasics.html#DevGuideDeferredBinding) rules. Deferred binding is not commonly used in user
+projects.
 
-<ul>
-<li><tt>&lt;</tt>replace-with class=&quot;<i>replacement_class_name</i>&quot;<tt>&gt;</tt> : A directive to use deferred binding with replacement.</li>
-</ul>
+*   <tt>&lt;</tt>replace-with class=&quot;_replacement_class_name_&quot;<tt>&gt;</tt> : A directive to use deferred binding with replacement.
 
-<p/>
+*   <tt>&lt;</tt>generate-with class=&quot;_generator_class_name_&quot;<tt>&gt;</tt> : A directive to use deferred binding using a [Generator](/javadoc/latest/com/google/gwt/core/ext/Generator.html)
 
-<ul>
-<li><tt>&lt;</tt>generate-with class=&quot;<i>generator_class_name</i>&quot;<tt>&gt;</tt> : A directive to use deferred binding using a <a href="/javadoc/latest/com/google/gwt/core/ext/Generator.html">Generator</a></li>
-</ul>
+*   <tt>&lt;</tt>define-property name=&quot;_property_name_&quot; values=&quot;_property_values_&quot;<tt>&gt;</tt> : Define a property and allowable values (comma-separated identifiers).
+This element is typically used to generate a value that will be evaluated by a rule using a <tt>&lt;when...&gt;</tt> element.
 
-
-
-<ul>
-<li><tt>&lt;</tt>define-property name=&quot;<i>property_name</i>&quot; values=&quot;<i>property_values</i>&quot;<tt>&gt;</tt> : Define a property and allowable values (comma-separated identifiers).
-This element is typically used to generate a value that will be evaluated by a rule using a <tt>&lt;when...&gt;</tt> element.</li>
-</ul>
-
-<ul>
-<li><tt>&lt;</tt>set-property name=&quot;<i>property_name</i>&quot; value=&quot;<i>property_value</i>&quot;<tt>&gt;</tt> : Set the value of a previously-defined property (see <tt>&lt;define
+*   <tt>&lt;</tt>set-property name=&quot;_property_name_&quot; value=&quot;_property_value_&quot;<tt>&gt;</tt> : Set the value of a previously-defined property (see <tt>&lt;define
 property&gt;</tt> above). This element is typically used to generate a value that will be evaluated by a rule using a <tt>&lt;when...&gt;</tt> element. Note that
-<tt>set-property</tt> and <tt>property-provider</tt> on the same value will overwrite each other. The last definition encountered is the one that is used.</li>
-</ul>
+<tt>set-property</tt> and <tt>property-provider</tt> on the same value will overwrite each other. The last definition encountered is the one that is used.
 
-<ul>
-<li><tt>&lt;</tt>property-provider name=&quot;<i>property_name</i>&quot;<tt>&gt;</tt> : Define a JavaScript fragment that will return the value for the named property at runtime. This
+*   <tt>&lt;</tt>property-provider name=&quot;_property_name_&quot;<tt>&gt;</tt> : Define a JavaScript fragment that will return the value for the named property at runtime. This
 element is typically used to generate a value that will be evaluated in a <tt>&lt;when...&gt;</tt> element. To see examples of <tt>&lt;property-provider&gt;</tt> definitions in
 action, see the files <tt>I18N.gwt.xml</tt> and <tt>UserAgent.gwt.xml</tt> in the GWT source code. Note that <tt>set-property</tt> and <tt>property-provider</tt> on the same value
-will overwrite each other. The last definition encountered is the one that is used.</li>
-</ul>
+will overwrite each other. The last definition encountered is the one that is used.
 
-<h4>Defining conditions</h4>
+#### Defining conditions
 
-<p>The <tt>&lt;replace-with-class&gt;</tt> and <tt>&lt;generate-with-class&gt;</tt> elements can take a <tt>&lt;when...&gt;</tt> child element that defines when this rule should
-be used, much like the <tt>WHERE</tt> predicate of an SQL query. The three different types of predicates are:</p>
+The <tt>&lt;replace-with-class&gt;</tt> and <tt>&lt;generate-with-class&gt;</tt> elements can take a <tt>&lt;when...&gt;</tt> child element that defines when this rule should
+be used, much like the <tt>WHERE</tt> predicate of an SQL query. The three different types of predicates are:
 
-<ul>
-<li><tt>&lt;</tt>when-property-is name=&quot;<i>property_name</i>&quot; value=&quot;<i>value</i>&quot; /<tt>&gt;</tt> : Deferred binding predicate that is true when a named property has a given
-value.</li>
-</ul>
+*   <tt>&lt;</tt>when-property-is name=&quot;_property_name_&quot; value=&quot;_value_&quot; /<tt>&gt;</tt> : Deferred binding predicate that is true when a named property has a given
+value.
 
-<ul>
-<li><tt>&lt;</tt>when-type-assignable class=&quot;<i>class_name</i>&quot; /<tt>&gt;</tt> : Deferred binding predicate that is true for types in the type system that are assignable to the
-specified type.</li>
-</ul>
+*   <tt>&lt;</tt>when-type-assignable class=&quot;_class_name_&quot; /<tt>&gt;</tt> : Deferred binding predicate that is true for types in the type system that are assignable to the
+specified type.
 
-<ul>
-<li><tt>&lt;</tt>when-type-is class=&quot;<i>class_name</i>&quot; /<tt>&gt;</tt> : Deferred binding predicate that is true for exactly one type in the type system.</li>
-</ul>
+*   <tt>&lt;</tt>when-type-is class=&quot;_class_name_&quot; /<tt>&gt;</tt> : Deferred binding predicate that is true for exactly one type in the type system.
 
-<p>Several different predicates can be combined into an expression. Surround your <tt>&lt;when...&gt;</tt> elements using the following nesting elements begin/end tags:</p>
+Several different predicates can be combined into an expression. Surround your <tt>&lt;when...&gt;</tt> elements using the following nesting elements begin/end tags:
 
-<ul>
-<li><tt>&lt;all&gt;</tt> <i>when_expressions</i> <tt>&lt;/all&gt;</tt> : Predicate that ANDs all child conditions.</li>
-</ul>
+*   <tt>&lt;all&gt;</tt> _when_expressions_ <tt>&lt;/all&gt;</tt> : Predicate that ANDs all child conditions.
 
-<ul>
-<li><tt>&lt;any&gt;</tt> <i>when_expressions</i> <tt>&lt;/any&gt;</tt> : Predicate that ORs all child conditions.</li>
-</ul>
+*   <tt>&lt;any&gt;</tt> _when_expressions_ <tt>&lt;/any&gt;</tt> : Predicate that ORs all child conditions.
 
-<ul>
-<li><tt>&lt;none&gt;</tt> <i>when_expressions</i> <tt>&lt;/none&gt;</tt> : Predicate that NANDs all child conditions.</li>
-</ul>
+*   <tt>&lt;none&gt;</tt> _when_expressions_ <tt>&lt;/none&gt;</tt> : Predicate that NANDs all child conditions.
 
-<h4>Deferred Binding Example</h4>
+#### Deferred Binding Example
 
-<p>As an example module XML file that makes use of deferred binding rules, here is a module XML file from the GWT source code, Focus.gwt.xml:</p>
+As an example module XML file that makes use of deferred binding rules, here is a module XML file from the GWT source code, Focus.gwt.xml:
 
 <pre class="prettyprint">
 &lt;module&gt;
@@ -702,16 +601,15 @@ specified type.</li>
 &lt;/module&gt;
 </pre>
 
+## How do I know which GWT modules I need to inherit?<a id="DevGuideInheritingModules"></a>
 
-<h2 id="DevGuideInheritingModules">How do I know which GWT modules I need to inherit?</h2>
+GWT libraries are organized into modules. The standard modules contain big pieces of functionality designed to work independently of each other. By selecting only the modules
+you need for your project (for example the JSON module rather than the XML module), you minimize complexity and reduce compilation time.
 
-<p>GWT libraries are organized into modules. The standard modules contain big pieces of functionality designed to work independently of each other. By selecting only the modules
-you need for your project (for example the JSON module rather than the XML module), you minimize complexity and reduce compilation time.</p>
+Generally, you want to inherit at least the User module. The User module contains all the core GWT functionality, including the EntryPoint class. The User module also contains
+reusable UI components (widgets and panels) and support for the History feature, Internationalization, DOM programming, and more.
 
-<p>Generally, you want to inherit at least the User module. The User module contains all the core GWT functionality, including the EntryPoint class. The User module also contains
-reusable UI components (widgets and panels) and support for the History feature, Internationalization, DOM programming, and more.</p>
-
-<h3>Standard Modules GWT 1.5</h3>
+### Standard Modules GWT 1.5
 
 <table>
 <tr>
@@ -757,12 +655,10 @@ reusable UI components (widgets and panels) and support for the History feature,
 </tr>
 </table>
 
+GWT 1.5 also provides several _theme_ modules which contain default styles for widgets and panels. You can specify one theme in your project's module XML file to use as a
+starting point for styling your application, but you are not required to use any of them.
 
-
-<p>GWT 1.5 also provides several <i>theme</i> modules which contain default styles for widgets and panels. You can specify one theme in your project's module XML file to use as a
-starting point for styling your application, but you are not required to use any of them.</p>
-
-<h3>Themes</h3>
+### Themes
 
 <table>
 <tr>
@@ -794,97 +690,86 @@ starting point for styling your application, but you are not required to use any
 </tr>
 </table>
 
+### How To
 
-
-<h3>How To</h3>
-
-<p>To inherit a module, edit your project's module XML file and specify the logical name of the module you want to inherit in the <tt>&lt;</tt>inherits<tt>&gt;</tt> tag.</p>
+To inherit a module, edit your project's module XML file and specify the logical name of the module you want to inherit in the <tt>&lt;</tt>inherits<tt>&gt;</tt> tag.
 
 <pre class="prettyprint">
   &lt;inherits name=&quot;com.google.gwt.junit.JUnit&quot;/&gt;
 </pre>
 
-<p><strong>Note:</strong> Modules are always referred to by their logical names. The logical name of a module is of the form <i>pkg1.pkg2.ModuleName</i> (although any number of
-packages may be present). The logical name includes neither the actual file system path nor the file extension.</p>
+**Note:** Modules are always referred to by their logical names. The logical name of a module is of the form _pkg1.pkg2.ModuleName_ (although any number of
+packages may be present). The logical name includes neither the actual file system path nor the file extension.
 
-<h2 id="DevGuideAutomaticResourceInclusion">Automatic Resource Inclusion</h2>
+## Automatic Resource Inclusion<a id="DevGuideAutomaticResourceInclusion"></a>
 
-<p>Modules can contain references to external JavaScript and CSS files, causing them to be automatically loaded when the module itself is loaded. This can be handy if your module
-is intended to be used as a reusable component because your module will not have to rely on the HTML host page to specify an external JavaScript file or stylesheet.</p>
+Modules can contain references to external JavaScript and CSS files, causing them to be automatically loaded when the module itself is loaded. This can be handy if your module
+is intended to be used as a reusable component because your module will not have to rely on the HTML host page to specify an external JavaScript file or stylesheet.
 
-<h3>Including External JavaScript</h3>
+### Including External JavaScript
 
-<p>Script inclusion is a convenient way to automatically associate external JavaScript files with your module. Use the following syntax to cause an external JavaScript file to be
-loaded into the <a href="DevGuideOrganizingProjects.html#DevGuideHostPage">host page</a> before your module entry point is called.</p>
+Script inclusion is a convenient way to automatically associate external JavaScript files with your module. Use the following syntax to cause an external JavaScript file to be
+loaded into the [host page](DevGuideOrganizingProjects.html#DevGuideHostPage) before your module entry point is called.
 
 <pre class="prettyprint">
 &lt;script src=&quot;_js-url_&quot;/&gt;
 </pre>
 
-<p>The script is loaded into the namespace of the <a href="DevGuideOrganizingProjects.html#DevGuideHostPage">host page</a> as if you had included it explicitly using the HTML
-<tt>&lt;script&gt;</tt> element. The script will be loaded before your <a href="/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad()">onModuleLoad()</a> is called.</p>
+The script is loaded into the namespace of the [host page](DevGuideOrganizingProjects.html#DevGuideHostPage) as if you had included it explicitly using the HTML
+<tt>&lt;script&gt;</tt> element. The script will be loaded before your [onModuleLoad()](/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad()) is called.
 
-<blockquote><i>Versions of GWT prior to 1.4 required a script-ready function to determine when an included script was loaded. This is no longer required; all included scripts will
-be loaded when your application starts, in the order in which they are declared.</i></blockquote>
+> _Versions of GWT prior to 1.4 required a script-ready function to determine when an included script was loaded. This is no longer required; all included scripts will
+> be loaded when your application starts, in the order in which they are declared._
 
-<h3>Including External Stylesheets</h3>
+### Including External Stylesheets
 
-<p>Stylesheet inclusion is a convenient way to automatically associate external CSS files with your module. Use the following syntax to cause a CSS file to be automatically
-attached to the <a href="DevGuideOrganizingProjects.html#DevGuideHostPage">host page</a>.</p>
+Stylesheet inclusion is a convenient way to automatically associate external CSS files with your module. Use the following syntax to cause a CSS file to be automatically
+attached to the [host page](DevGuideOrganizingProjects.html#DevGuideHostPage).
 
 <pre class="prettyprint">
 &lt;stylesheet src=&quot;_css-url_&quot;/&gt;
 </pre>
 
-<p>You can add any number of stylesheets this way, and the order of inclusion into the page reflects the order in which the elements appear in your module XML.</p>
+You can add any number of stylesheets this way, and the order of inclusion into the page reflects the order in which the elements appear in your module XML.
 
-<h3>Relative vs. Absolute URL</h3>
+### Relative vs. Absolute URL
 
-<p>If an absolute URL is specified in the <tt>src</tt> attribute, that URL will be used verbatim. However, if a non-absolute URL is used (for example, &quot;foo.css&quot;), the module's
+If an absolute URL is specified in the <tt>src</tt> attribute, that URL will be used verbatim. However, if a non-absolute URL is used (for example, &quot;foo.css&quot;), the module's
 base URL is prepended to the resource name. This is identical to constructing an absolute URL using <tt>GWT.getModuleBaseForStaticFiles() + &quot;foo.css&quot;</tt> in client code. This is useful when
-the target resource is from the module's public path.</p>
+the target resource is from the module's public path.
 
-<h3>Inclusion and Module Inheritance</h3>
+### Inclusion and Module Inheritance
 
-<p>Module inheritance makes resource inclusion particularly convenient. If you wish to create a reusable library that relies upon particular stylesheets or JavaScript files, you
-can be sure that clients of your library have everything they need automatically by inheriting from your module.</p>
+Module inheritance makes resource inclusion particularly convenient. If you wish to create a reusable library that relies upon particular stylesheets or JavaScript files, you
+can be sure that clients of your library have everything they need automatically by inheriting from your module.
 
-<h4>See Also</h4>
+#### See Also
 
-<ul>
-<li><a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">Module XML Format</a></li>
-</ul>
+*   [Module XML Format](DevGuideOrganizingProjects.html#DevGuideModuleXml)
 
-<h2 id="DevGuidePathFiltering">Filtering Public and Source Packages</h2>
+## Filtering Public and Source Packages<a id="DevGuidePathFiltering"></a>
 
-<p>The <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">module XML format's</a> <tt>&lt;public&gt;</tt>, <tt>&lt;source&gt;</tt> and <tt>&lt;super-source&gt;</tt> elements
-supports certain attributes and nested elements to allow pattern-based inclusion and exclusion in the <a href="DevGuideOrganizingProjects.html#DevGuideModules">public path</a>. These
-elements follow the same rules as <a href="http://ant.apache.org/">Ant</a>'s <tt>FileSet</tt> element. Please see the <a href="http://ant.apache.org/manual/Types/fileset.html">documentation</a> for <tt>FileSet</tt> for a general overview. These elements do not support the full
-<tt>FileSet</tt> semantics. Only the following attributes and nested elements are currently supported:</p>
+The [module XML format's](DevGuideOrganizingProjects.html#DevGuideModuleXml) <tt>&lt;public&gt;</tt>, <tt>&lt;source&gt;</tt> and <tt>&lt;super-source&gt;</tt> elements
+supports certain attributes and nested elements to allow pattern-based inclusion and exclusion in the [public path](DevGuideOrganizingProjects.html#DevGuideModules). These
+elements follow the same rules as [Ant](http://ant.apache.org/)'s <tt>FileSet</tt> element. Please see the [documentation](http://ant.apache.org/manual/Types/fileset.html) for <tt>FileSet</tt> for a general overview. These elements do not support the full
+<tt>FileSet</tt> semantics. Only the following attributes and nested elements are currently supported:
 
-<ul>
-<li>The <tt>includes</tt> attribute</li>
+*   The <tt>includes</tt> attribute
+*   The <tt>excludes</tt> attribute
+*   The <tt>defaultexcludes</tt> attribute
+*   The <tt>casesensitive</tt> attribute
+*   Nested <tt>include</tt> tags
+*   Nested <tt>exclude</tt> tags
 
-<li>The <tt>excludes</tt> attribute</li>
+Other attributes and nested elements are not supported.
 
-<li>The <tt>defaultexcludes</tt> attribute</li>
+#### Important
 
-<li>The <tt>casesensitive</tt> attribute</li>
+The default value of <tt>defaultexcludes</tt> is <tt>true</tt>. By default, the patterns listed [here](http://ant.apache.org/manual/dirtasks.html#defaultexcludes) are excluded.
 
-<li>Nested <tt>include</tt> tags</li>
+## The Bootstrap Sequence<a id="DevGuideBootstrap"></a>
 
-<li>Nested <tt>exclude</tt> tags</li>
-</ul>
-
-<p>Other attributes and nested elements are not supported.</p>
-
-<h4>Important</h4>
-
-<p>The default value of <tt>defaultexcludes</tt> is <tt>true</tt>. By default, the patterns listed <a href="http://ant.apache.org/manual/dirtasks.html#defaultexcludes">here</a> are excluded.</p>
-
-<h2 id="DevGuideBootstrap">The Bootstrap Sequence</h2>
-
-<p>Consider the following HTML page that loads a GWT module:</p>
+Consider the following HTML page that loads a GWT module:
 
 <pre class="prettyprint">
 &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
@@ -900,77 +785,44 @@ elements follow the same rules as <a href="http://ant.apache.org/">Ant</a>'s <tt
 &lt;/html&gt;
 </pre>
 
-<p>The following principles are needed to understand the sequence of operations that will occur in this page:</p>
+The following principles are needed to understand the sequence of operations that will occur in this page:
 
-<ul>
-<li><tt>&lt;script&gt;</tt> tags always block evaluation of the page until the script is fetched and evaluated.</li>
+*   <tt>&lt;script&gt;</tt> tags always block evaluation of the page until the script is fetched and evaluated.
+*   <tt>&lt;img&gt;</tt> tags do **not** block page evaluation.
+*   Most browsers will allow a maximum of two simultaneous connections for fetching resources.
+*   The <tt>body.onload()</tt> event will only fire once **all** external resources are fetched, including images and frames.
+*   The GWT selection script (i.e. <tt>myApp/myApp.nocache.js</tt>) will be fetched and evaluated like a normal script tag, but the compiled script will be fetched
+**asynchronously**.
+*   Once the GWT selection script has started, its <tt>onModuleLoad()</tt> can be called at any point after the outer document has been parsed.
 
-<li><tt>&lt;img&gt;</tt> tags do <strong>not</strong> block page evaluation.</li>
+Applying these principles to the above example, we obtain the following sequence:
 
-<li>Most browsers will allow a maximum of two simultaneous connections for fetching resources.</li>
+1.  The HTML document is fetched and parsing begins.
+2.  Begin fetching <tt>bigImageZero.jpg</tt>.
+3.  Begin fetching <tt>externalScriptZero.js</tt>.
+4.  <tt>bigImageZero.jpg</tt> completes (let's assume). Parsing is blocked until <tt>externalScriptZero.js</tt> is done fetching and evaluating.
+5.  <tt>externalScriptZero.js</tt> completes.
+6.  Begin fetching <tt>bigImageOne.jpg</tt> and <tt>reallyBigImageTwo.jpg</tt> simultaneously.
+7.  <tt>bigImageOne.jpg</tt> completes (let's assume again). <tt>myApp/myApp.nocache.js</tt> begins fetching and evaluating.
+8.  <tt>myApp/myApp.nocache.js</tt> completes, and the compiled script (<tt>&lt;hashname&gt;.cache.html</tt>) begins fetching in a hidden <tt>IFRAME</tt> (this is non-blocking).
+9.  <tt>&lt;hashname&gt;.cache.html</tt> completes. <tt>onModuleLoad()</tt> is not called yet, as we're still waiting on <tt>externalScriptOne.js</tt> to complete before the document is considered 'ready'.
+10.  <tt>externalScriptOne.js</tt> completes. The document is ready, so onModuleLoad() fires.
+11.  <tt>reallyBigImageTwo.jpg</tt> completes.
+12.  <tt>body.onload()</tt> fires, in this case showing an alert() box.
 
-<li>The <tt>body.onload()</tt> event will only fire once <strong>all</strong> external resources are fetched, including images and frames.</li>
+This is a bit complex, but the point is to show exactly when various resources are fetched, and when <tt>onModuleLoad()</tt> will be called. The most important things to
+remember are that
 
-<li>The GWT selection script (i.e. <tt>myApp/myApp.nocache.js</tt>) will be fetched and evaluated like a normal script tag, but the compiled script will be fetched
-<strong>asynchronously</strong>.</li>
+*   You want to put the GWT selection script as early as possible within the body, so that it begins fetching the compiled script before other scripts (because it won't block any
+other script requests).
+*   If you are going to be fetching external images and scripts, you want to manage your two connections carefully.
+*   <tt>&lt;img&gt;</tt> tags are not guaranteed to be done loading when <tt>onModuleLoad()</tt> is called.
+*   <tt>&lt;script&gt;</tt> tags **are** guaranteed to be done loading when <tt>onModuleLoad()</tt> is called.
 
-<li>Once the GWT selection script has started, its <tt>onModuleLoad()</tt> can be called at any point after the outer document has been parsed.</li>
-</ul>
+### A Note on Multiple GWT Modules and EntryPoints
 
+If you have multiple EntryPoints (the interface that defines <tt>onModuleLoad()</tt>) within a module, they will all be called in sequence as soon as that module (and the outer
+document) is ready.
 
-
-<p>Applying these principles to the above example, we obtain the following sequence:</p>
-
-<ol>
-<li>The HTML document is fetched and parsing begins.</li>
-
-<li>Begin fetching <tt>bigImageZero.jpg</tt>.</li>
-
-<li>Begin fetching <tt>externalScriptZero.js</tt>.</li>
-
-<li><tt>bigImageZero.jpg</tt> completes (let's assume). Parsing is blocked until <tt>externalScriptZero.js</tt> is done fetching and evaluating.</li>
-
-<li><tt>externalScriptZero.js</tt> completes.</li>
-
-<li>Begin fetching <tt>bigImageOne.jpg</tt> and <tt>reallyBigImageTwo.jpg</tt> simultaneously.</li>
-
-<li><tt>bigImageOne.jpg</tt> completes (let's assume again). <tt>myApp/myApp.nocache.js</tt> begins fetching and evaluating.</li>
-
-<li><tt>myApp/myApp.nocache.js</tt> completes, and the compiled script (<tt>&lt;hashname&gt;.cache.html</tt>) begins fetching in a hidden <tt>IFRAME</tt> (this is
-non-blocking).</li>
-
-<li><tt>&lt;hashname&gt;.cache.html</tt> completes. <tt>onModuleLoad()</tt> is not called yet, as we're still waiting on <tt>externalScriptOne.js</tt> to complete before the
-document is considered 'ready'.</li>
-
-<li><tt>externalScriptOne.js</tt> completes. The document is ready, so onModuleLoad() fires.</li>
-
-<li><tt>reallyBigImageTwo.jpg</tt> completes.</li>
-
-<li><tt>body.onload()</tt> fires, in this case showing an alert() box.</li>
-</ol>
-
-
-
-<p>This is a bit complex, but the point is to show exactly when various resources are fetched, and when <tt>onModuleLoad()</tt> will be called. The most important things to
-remember are that</p>
-
-<ul>
-<li>You want to put the GWT selection script as early as possible within the body, so that it begins fetching the compiled script before other scripts (because it won't block any
-other script requests).</li>
-
-<li>If you are going to be fetching external images and scripts, you want to manage your two connections carefully.</li>
-
-<li><tt>&lt;img&gt;</tt> tags are not guaranteed to be done loading when <tt>onModuleLoad()</tt> is called.</li>
-
-<li><tt>&lt;script&gt;</tt> tags <strong>are</strong> guaranteed to be done loading when <tt>onModuleLoad()</tt> is called.</li>
-</ul>
-
-
-
-<h3>A Note on Multiple GWT Modules and EntryPoints</h3>
-
-<p>If you have multiple EntryPoints (the interface that defines <tt>onModuleLoad()</tt>) within a module, they will all be called in sequence as soon as that module (and the outer
-document) is ready.</p>
-
-<p>If you are loading multiple GWT modules within the same page, each module's EntryPoint will be called as soon as both that module and the outer document is ready. Two modules'
-EntryPoints are not guaranteed to fire at the same time, or in the same order in which their selection scripts were specified in the host page.</p>
+If you are loading multiple GWT modules within the same page, each module's EntryPoint will be called as soon as both that module and the outer document is ready. Two modules'
+EntryPoints are not guaranteed to fire at the same time, or in the same order in which their selection scripts were specified in the host page.

@@ -63,7 +63,6 @@ You can then say:
   // Display the manual file in an iframe
   new Frame(MyResources.INSTANCE.ownersManual().getSafeUri().asString());</pre>
 
-
 ### I18N<a id="I18N"></a>
 
 <tt>ClientBundle</tt> is compatible with GWT's I18N module. 
@@ -1021,5 +1020,3 @@ In order to make the content area of a 9-box have the correct size, the height a
 &lt;div class="contentAreaLeftBorder"&gt;&lt;/div&gt;
 &lt;div class="contentAreaRightBorder"&gt;&lt;/div&gt;
 &lt;/div&gt;</pre>
-
-

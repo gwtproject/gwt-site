@@ -3,12 +3,10 @@ Life of an issue
 
 The GWT project maintains a [public issue tracker](http://code.google.com/p/google-web-toolkit/issues) where you can report bugs and request features for GWT.
 
-<ol class="toc" id="pageToc">  
-  <li><a href="#guide">Issue reporting guidelines</a></li>
-  <li><a href="#life">What happens when you submit an issue</a></li>
-</ol>
+1.  [Issue reporting guidelines](#guide)
+2.  [What happens when you submit an issue](#life)
 
-<h2><a name="guide"></a>Issue reporting guidelines</h2>
+## Issue reporting guidelines<a id="guide"></a>
 
 One of the best ways you can help us improve GWT is to let us know about any problems you find with it.
 
@@ -21,7 +19,7 @@ Here's how to report issues:
 
 To see what happens to your issue once you report it, keep reading.
 
-<h2><a name="life"></a>What happens when you submit an issue</h2>
+## What happens when you submit an issue<a id="life"></a>
 
 Here's the Life of an Issue, in a nutshell:
 
@@ -118,5 +116,3 @@ The following tables provide detail on all issue status types.
 The states and lifecycle above are how we generally try to track software. However, GWT contains a lot of software and gets a correspondingly large number of issues. As a result, sometimes issues don't make it through all the states in a formal progression. We do try to keep the system up to date, but we tend to do so in periodic "issue sweeps" where we review the database and make updates.
 
 Occasionally, we make tweaks to the list of issue states and the lifecycle described above. When we do this, we'll update this page as well.
-
-

@@ -1,12 +1,3 @@
-<style>
-    code, .code {font-size: 9pt; font-family: Courier, Courier New, monospace; color:#007000;}
-    .highlight {background-color: #ffc;}
-    .strike {text-decoration:line-through; color:red;}
-    .header {margin-top: 1.5ex;}
-    .details {margin-top: 1ex;}
-    div.screenshot img {margin: 20px;}
-</style>
-
 Using Eclipse
 ===
 
@@ -15,20 +6,18 @@ text editor, the command line, and a browser. However, you may also use GWT with
 favorite IDE. Google provides a plugin for Eclipse that makes development with
 GWT even easier.
 
-<ul class="toc">
-  <li><a href="#eclipse">Download Eclipse</a></li>
-  <li><a href="#installing">Install the Plugin</a></li>
-  <li><a href="#creating">Create a Web Application</a></li>
-  <li><a href="#running">Run locally in Development Mode</a></li>
-  <li><a href="#compiling">Compile and run in Production Mode</a></li>
-  <li><a href="#deploying">Deploy to App Engine</a></li>
-</ul>
+*   [Download Eclipse](#eclipse)
+*   [Install the Plugin](#installing)
+*   [Create a Web Application](#creating)
+*   [Run locally in Development Mode](#running)
+*   [Compile and run in Production Mode](#compiling)
+*   [Deploy to App Engine](#deploying)
 
-<h2 id="eclipse">Download Eclipse</h2>
+## Download Eclipse<a id="eclipse"></a>
 
 If you do not already have Eclipse, you may download it from the [Eclipse Website](http://www.eclipse.org/downloads/). We suggest downloading Eclipse 4.3 (Kepler).
 
-<h2 id="installing">Install the Plugin</h2>
+## Install the Plugin<a id="installing"></a>
 
 <img src="https://developers.google.com/eclipse/images/google-plugin.png" style="float: left; width: 40px;
 margin-right: 15px;"/>
@@ -53,7 +42,7 @@ GWT release candidates are not bundled with The Google Plugin For Eclipse. If yo
   style="width: 385px; height: 100px;" alt="screenshot"/>
 </div>
 
-<h2 id="creating">Create a Web Application</h2>
+## Create a Web Application<a id="creating"></a>
 
 To create a Web Application, select **File &gt; New &gt; Web Application Project** from the Eclipse menu.
 
@@ -152,7 +141,7 @@ Congratulations! You've created your first web application using GWT. Since you'
 
 directory from your web servers.
 
-<h2 id="deploying">Deploy to App Engine</h2>
+## Deploy to App Engine<a id="deploying"></a>
 
 Using the plugin, you can also easily deploy GWT projects to Google App Engine. If you installed the App Engine for Java SDK when you installed the plugin, you can now right-click on the project and App Engine "enable" it by choosing **Google** &gt; **App Engine Settings**. Check the box marked **Use Google App Engine**. This will add the necessary configuration files to your project.
 

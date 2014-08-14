@@ -11,7 +11,6 @@ Accessibility
 8.  [Automatically Speaking Highlighted Content](#speaking)
 9.  [General Advice For Widget Developers](#widgets)
 
-
 ## Overview<a id="DevGuideAccessibility"></a>
 
 ### Screen Readers

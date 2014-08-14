@@ -180,8 +180,6 @@ Overview
 
 ## Ready to get started?
 
-<a href="gettingstarted.html">
-  <img src="images/arrow-md.png" style="float: left; margin:10px 10px 0px 0px; border-style:none; width: 80px; height: 80px" />
-</a>
+[![](images/arrow-md.png)](gettingstarted.html)
 
 [Download the SDK](gettingstarted.html) and get a simple web application up and running. From there, work through the fundamentals of GWT development with the in-depth [tutorials](doc/latest/tutorial/index.html).

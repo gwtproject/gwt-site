@@ -18,7 +18,6 @@ of this technique, including the ability to use your Java IDE's code completion 
 Overlay types are easiest to understand with examples. Suppose we want to access an array of JSON objects representing a set of &quot;customer&quot; entities. The JavaScript structure
 might look like this:
 
-
 <pre class="prettyprint">
 var jsonData = [
   { &quot;FirstName&quot; : &quot;Jimmy&quot;, &quot;LastName&quot; : &quot;Webber&quot; },

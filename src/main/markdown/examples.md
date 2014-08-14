@@ -81,7 +81,8 @@ You can also find a wide variety of open source [projects related to GWT](http:/
 
 Please note that the applications linked from this page are provided by third-parties and are not endorsed by Google.
 
-<h2 id="samples">Samples</h2>
+## Samples<a id="samples"></a>
+
 <div class="section">
   <div class="example">
 
@@ -137,9 +138,9 @@ Please note that the applications linked from this page are provided by third-pa
   </div>
 </div>
 
+## Real world projects<a id="real-world-projects"></a>
 
-<h2 id="real-world-projects">Real world projects</h2>
-<p>GWT is being used by tens of thousands of projects around the world. Take a look at just a few example of GWT in action:</p>
+GWT is being used by tens of thousands of projects around the world. Take a look at just a few example of GWT in action:
 
 <div class="project">
   <div class="screenshot">
@@ -165,11 +166,8 @@ unique multi-server control panel. Visit our <a href="developer_spotlight.html">
 developer on GoGrid, share how they used GWT to build GoGrid, what he
 likes and would like to see from GWT, and his tips and learnings from
 developing with GWT.</div>
-
   </div>
 </div>
-
-
 
 <div class="project">
   <div class="screenshot">
@@ -181,7 +179,6 @@ developing with GWT.</div>
 television and commercials. Visit our <a href="developer_spotlight.html">Developer Spotlight</a> to see Rob Powers, director of engineering, share
 how they used GWT to build scenechronize, what he likes and would like to
 see from GWT, and his tips and learnings from developing with GWT.</div>
-
   </div>
 </div>
 
@@ -196,7 +193,5 @@ is a social virtual world website which includes multi-player games.
 Visit our <a href="developer_spotlight.html">Developer Spotlight</a> to see Michael Bayne, CTO of Three Rings and lead engineer on Whirled, share
 how they used GWT to build Whirled, what he likes and would like to see
 from GWT, and his tips and learnings from developing with GWT.</div>
-
   </div>
 </div>
-

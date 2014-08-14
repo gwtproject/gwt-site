@@ -51,7 +51,7 @@
 Who's using GWT
 ===
 
-<h2 id="profiles">Developer Profiles</h2>
+## Developer Profiles<a id="profiles"></a>
 
 Watch developers talk about their web applications and how they used Google Web Toolkit to build them.  These videos are also available on the [GWT Developers playlist](http://www.youtube.com/view_play_list?p=4DAEFAF23BB3CDD0).
 

@@ -3,46 +3,24 @@ Making GWT better
 
 If you are interested in understanding the internals of Google Web Toolkit (GWT), building from source, or contributing ideas or modifications to the project, then this document is for you.
 
-<ol class="toc">
-  <li><a href="#introduction">Introduction</a>
-  <ol>
-    <li><a href="#licensing">Licensing</a></li>
-    <li><a href="#whyopensource">Why is GWT Open Source?</a></li>
-    <li><a href="#designaxioms">Design Axioms</a></li>
-  </ol>
-  </li>
-
-  <li><a href="#community">The GWT Community</a>
-  <ol>
-    <li><a href="#befriendly">Please Be Friendly</a></li>
-    <li><a href="#wheretodiscussgwt">Where to Discuss GWT</a></li>
-    <li><a href="#issuetracking">How to Report a Bug</a></li>
-  </ol>
-  </li>
-
-  <li><a href="#workingoncode">Working with the Code</a>
-  <ol>
-    <li><a href="#checkingout">Checking out the Source</a></li>
-    <li><a href="#compiling">Compiling from Source</a></li>
-    <li><a href="#testing">Testing</a></li>
-  </ol>
-  </li>
-
-  <li><a href="#contributingcode">Contributing Code</a>
-  <ol>
-    <li><a href="#codestyle">Code Style</a></li>
-    <li><a href="#clas">Contributor License Agreement</a></li>
-    <li><a href="#submittingpatches">Submitting Patches</a></li>
-    <li><a href="#committers">GWT Committers</a></li>
-  </ol>
-  </li>
-  
-  <li><a href="#webpage">Contributing to Webpage &amp; Documentation</a>
-  
-  </li>
-  
-  
-</ol>
+1.  [Introduction](#introduction)
+    1.  [Licensing](#licensing)
+    2.  [Why is GWT Open Source?](#whyopensource)
+    3.  [Design Axioms](#designaxioms)
+2.  [The GWT Community](#community)
+    1.  [Please Be Friendly](#befriendly)
+    2.  [Where to Discuss GWT](#wheretodiscussgwt)
+    3.  [How to Report a Bug](#issuetracking)
+3.  [Working with the Code](#workingoncode)
+    1.  [Checking out the Source](#checkingout)
+    2.  [Compiling from Source](#compiling)
+    3.  [Testing](#testing)
+4.  [Contributing Code](#contributingcode)
+    1.  [Code Style](#codestyle)
+    2.  [Contributor License Agreement](#clas)
+    3.  [Submitting Patches](#submittingpatches)
+    4.  [GWT Committers](#committers)
+5.  [Contributing to Webpage &amp; Documentation](#webpage)
 
 ## Introduction
 
@@ -152,17 +130,17 @@ So that's what GWT is all about. It's also useful to say what kinds of things GW
   often in desktop applications.</dd>
 </dl>
 
-<h3 id="licensing">Licensing</h3>
+### Licensing<a id="licensing"></a>
 
 All GWT source and pre-built binaries are provided under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0).
 
-<h3 id="whyopensource">Why is GWT Open Source?</h3>
+### Why is GWT Open Source?<a id="whyopensource"></a>
 
 A good first question is, "Why wasn't GWT open source to begin with?" Since GWT's release in May 2006 at JavaOne, we've tried to stay totally focused on lowering the barrier for building AJAX apps. We weren't quite ready to open source the whole thing immediately because we knew we had plans for major infrastructure work (like Mac OS X hosted mode), and we really wanted to encourage everyone to focus on the idea of the product itself and how to write apps instead of creating distractions having to do with GWT's open sourceness.
 
 GWT took off much faster than we expected, and it quickly became clear that the most sensible way to advance GWT would be to open it sooner rather than later. While we've never actually felt particularly stingy about keeping the source closed, now all code for the GWT Java to JavaScript compiler, the hosted mode browser, and so on can progress before your eyes. We're very much looking forward to contributions of ideas, bug reports, and patches.
 
-<h3 id="designaxioms">Design Axioms</h3>
+### Design Axioms<a id="designaxioms"></a>
 
 We adopted these on February 17, 2006.
 
@@ -189,29 +167,29 @@ We adopted these on February 17, 2006.
 *   Be secure by default
     *   Don't expose services automatically
 
-<h2 id="community">The GWT Community</h2>
+## The GWT Community<a id="community"></a>
 
 The GWT community exists primarily through mailing lists, the issue tracker and, to a lesser extent, the source control repository. You are definitely encouraged to contribute to the discussion and you can also help us to keep the effectiveness of the groups high by following and promoting the guidelines listed here.
 
-<h3 id="befriendly">Please Be Friendly</h3>
+### Please Be Friendly<a id="befriendly"></a>
 
 Showing courtesy and respect to others is a vital part of the Google culture, and we strongly encourage everyone participating in GWT development to join us in accepting nothing less. Of course, being courteous is not the same as failing to constructively disagree with each other, but it does mean that we should be respectful of each other when enumerating the 42 technical reasons that a particular proposal may not be the best choice. There's never a reason to be antagonistic or dismissive toward anyone who is sincerely trying to contribute to a discussion.
 
 Sure, web development is serious business and all that, but it's also a lot of fun. Let's keep it that way. Let's strive to be one of the friendliest communities in all of open source.
 
-<h3 id="wheretodiscussgwt">Where to Discuss GWT</h3>
+### Where to Discuss GWT<a id="wheretodiscussgwt"></a>
 
 As always, discuss _using_ GWT in the [official GWT (GWT) developer discussion group](http://groups.google.com/group/Google-Web-Toolkit). There is an additional group for people to discuss any of the stuff in this document (e.g. how to build, how to submit patches) called [GWT Contributors](http://groups.google.com/group/Google-Web-Toolkit-Contributors). You don't have to actually submit code in order to sign up. Your participation itself is a valuable contribution.
 
-<h3 id="issuetracking">How to Report a Bug</h3>
+### How to Report a Bug<a id="issuetracking"></a>
 
 See [Issue Tracking](lifeofanissue.html).
 
-<h2 id="workingoncode">Working with the Code</h2>
+## Working with the Code<a id="workingoncode"></a>
 
 If you want to get your hands dirty with the code inside GWT, this is the section for you.
 
-<h3 id="checkingout">Checking Out the Source</h3>
+### Checking Out the Source<a id="checkingout"></a>
 
 Checking out the GWT source is most useful if you plan to compile GWT yourself. The pre-built GWT distribution already contains all the Java source, so you don't actually need to check it out from the repository just to debug through it. Just tweak your IDE to read source from the GWT jars.
 
@@ -219,59 +197,37 @@ GWT is hosted at [gwt.googlesource.com](https://gwt.googlesource.com/), so you c
 
 <pre>git clone https://gwt.googlesource.com/gwt trunk</pre>
 
-<h3 id="compiling">Compiling from Source</h3>
+### Compiling from Source<a id="compiling"></a>
 
-<p>Other than a few native libs, everything is Java source that can
-be built on any supported platform with the included GWT <a
-  href="http://ant.apache.org">Ant</a> build files. At the moment, you
+Other than a few native libs, everything is Java source that can
+be built on any supported platform with the included GWT [Ant](http://ant.apache.org) build files. At the moment, you
 can only build the native code binaries on Linux, and even then with a
 bit of effort that is currently beyond the scope of this document. To
 keep things simple, we've checked in pre-built native binaries. (Yes, we
 know that's unusual. But the source and makefiles are all there... it's
-just a pain to doc all that and make it build in a cross-platform way.)</p>
+just a pain to doc all that and make it build in a cross-platform way.)
 
-<ol>
-  <li>Install <a href="http://ant.apache.org/bindownload.cgi">Apache
-  Ant 1.7.0</a> or later. We'll assume that the <code>ant</code> command is in
-  your path.</li>
-  <li>Check out the GWT prerequisite tools and third-party
-  libraries: <pre>
-~/gwt$ svn checkout http://google-web-toolkit.googlecode.com/svn/tools/ tools</pre></li>
-  <li>Check out the GWT source: <pre>~/gwt$ git clone https://gwt.googlesource.com/gwt trunk</pre>
-  </li>
-  <li>Optionally, set an environment variable that contains the
-  full path to the directory into which you just checked out the tools.
-  (If the <code>tools</code> directory is a sibling of the GWT source
-  directory, you don't have to specify <code>GWT_TOOLS</code>.) In this
-  example, you executed the previous command from the directory <code>~/gwt</code>,
-  so you'd type:<pre>
-~/gwt$ export GWT_TOOLS=~/gwt/tools</pre></li>
-  <li>Switch to the directory into which you checked out the GWT
-  source. Let's assume you checked it out into <code>~/gwt/trunk</code>.
-  Make sure you're in that directory... <pre>~/gwt$ cd ~/gwt/trunk</pre>
-  then just invoke Ant <pre>ant</pre></li>
-  <li>The GWT build creates each binary distribution in the <code>build/dist</code>
-  subdirectory of the source root directory. In this example, the
-  distributions would be in <code>~/gwt/trunk/build</code>.</li>
-</ol>
+1.  Install [Apache Ant 1.7.0](http://ant.apache.org/bindownload.cgi) or later. We'll assume that the `ant` command is in your path.
+2.  Check out the GWT prerequisite tools and third-party libraries: <pre>~/gwt$ svn checkout http://google-web-toolkit.googlecode.com/svn/tools/ tools</pre>
+3.  Check out the GWT source: <pre>~/gwt$ git clone https://gwt.googlesource.com/gwt trunk</pre>
+4.  Optionally, set an environment variable that contains the full path to the directory into which you just checked out the tools. (If the `tools` directory is a sibling of the GWT source directory, you don't have to specify `GWT_TOOLS`.) In this example, you executed the previous command from the directory `~/gwt`, so you'd type:<pre>~/gwt$ export GWT_TOOLS=~/gwt/tools</pre>
+5.  Switch to the directory into which you checked out the GWT source. Let's assume you checked it out into `~/gwt/trunk`. Make sure you're in that directory... <pre>~/gwt$ cd ~/gwt/trunk</pre> then just invoke Ant <pre>ant</pre>
+6.  The GWT build creates each binary distribution in the `build/dist` subdirectory of the source root directory. In this example, the distributions would be in `~/gwt/trunk/build`.
 
-<h3 id="testing">Testing</h3>
+### Testing<a id="testing"></a>
 
 Testing is very important to maintaining the quality of GWT. [Unit Tests](#unittesting) should be written for any new code, and changes should be verified to not break existing tests before they are submitted for review.  To perform the tests, simply run `ant test` and verify that there are no failures.
 
-<h4 id="antjunit">Ant JUnit Issues</h4>
+#### Ant JUnit Issues<a id="antjunit"></a>
 
 There is a problem, detailed at [ant.apache.org](http://ant.apache.org/manual/OptionalTasks/junit.html), where ant cannot find the JUnit classes.  The simple workaround is to either:
 
-<ul>
-  <li>Delete ant-junit.jar from the ant lib directory (for example,
-  <code>/usr/share/ant/lib/</code>)</li>
-  <li>Copy junit.jar into your ant lib directory</li>
-</ul>
+*   Delete ant-junit.jar from the ant lib directory (for example, `/usr/share/ant/lib/`)
+*   Copy junit.jar into your ant lib directory
 
-<h2 id="contributingcode">Contributing Code</h2>
+## Contributing Code<a id="contributingcode"></a>
 
-<p>Now that GWT is open source, we're excited that it is now easier
+Now that GWT is open source, we're excited that it is now easier
 for our users to fix bugs and create new features, and we hope to get
 great patches from the community. Before you fire up your favorite IDE
 and begin hammering away at that new feature, though, please take the
@@ -279,38 +235,37 @@ time to read this section and understand the process. While it seems
 rigorous, we want to keep a high standard of quality in the code base.
 Also, please be aware that we code contributors must sign a <a
   href="#committers">Contributor License Agreement</a> before we can
-accept any code.</p>
+accept any code.
 
-<h3 id="codestyle">Code Style</h3>
+### Code Style<a id="codestyle"></a>
 
-<p>To keep the source consistent, readable, diffable and easy to
+To keep the source consistent, readable, diffable and easy to
 merge, we use a fairly rigid coding style, and all patches will be
 expected to conform to the style outlined here. To keep things as simple
 as possible, many of these style rules will be automatically verified by
 the GWT build; style issues that can't be caught by the build system should be
-addressed during code review.</p>
+addressed during code review.
 
-<p>To make it easier to format your GWT code correctly, use the
-<a href="https://gwt.googlesource.com/gwt/+/master/eclipse/settings/code-style/gwt-format.xml">GWT style formatter</a>
+To make it easier to format your GWT code correctly, use the
+[GWT style formatter](https://gwt.googlesource.com/gwt/+/master/eclipse/settings/code-style/gwt-format.xml)
 for Eclipse (Preferences | Java &gt; Code Style &gt; Formatter | Import...).
 
-<p>In general, the GWT style is based on <a
-  href="http://java.sun.com/docs/codeconv/html/CodeConvTOC.doc.html">the
-standard Java conventions</a>, except for the differences spelled out below.</p>
+In general, the GWT style is based on [the
+standard Java conventions](http://java.sun.com/docs/codeconv/html/CodeConvTOC.doc.html), except for the differences spelled out below.
 
-<p>For the record, we know that coding style is often a
+For the record, we know that coding style is often a
 controversial topic. We acknowledge that plenty of great approaches
 exist out there. We're simply trying to pick one that is at least
 somewhat consistent with Oracle's Java coding conventions, codify it well,
-and stick to it.</p>
+and stick to it.
 
-<h4>Comments and Javadoc</h4>
+#### Comments and Javadoc
 
-<p>Every file should have an Apache license header at the top,
+Every file should have an Apache license header at the top,
 prefaced with a copyright notice. A package statement and import
 statements should follow, each block separated by a blank line. Next is
 the class or interface declaration. In the Javadoc comments, describe
-what the class or interface does.</p>
+what the class or interface does.
 
 <pre>
 /*
@@ -344,31 +299,30 @@ public class Foo {
 } 
 </pre>
 
-<h4>Class Structure and Member Sort Order</h4>
-<p>Java types should have the following member order:</p>
-<ol>
-  <li>Nested Types (mixing inner and static classes is okay)</li>
-  <li>Static Fields</li>
-  <li>Static Initializers</li>
-  <li>Static Methods</li>
-  <li>Instance Fields</li>
-  <li>Instance Initializers</li>
-  <li>Constructors</li>
-  <li>Instance Methods</li>
-</ol>
+#### Class Structure and Member Sort Order
 
-<p>Members that fall into the same category (e.g. static methods)
-should also be sorted in this order based on visibility:</p>
-<ol>
-  <li>public</li>
-  <li>protected</li>
-  <li>default</li>
-  <li>private</li>
-</ol>
+Java types should have the following member order:
 
-<p>All methods should be sorted alphabetically. Sorting is optional
+1.  Nested Types (mixing inner and static classes is okay)
+2.  Static Fields
+3.  Static Initializers
+4.  Static Methods
+5.  Instance Fields
+6.  Instance Initializers
+7.  Constructors
+8.  Instance Methods
+
+Members that fall into the same category (e.g. static methods)
+should also be sorted in this order based on visibility:
+
+1.  public
+2.  protected
+3.  default
+4.  private
+
+All methods should be sorted alphabetically. Sorting is optional
 but recommended for fields. For example, the following class excerpt is
-correctly sorted:</p>
+correctly sorted:
 
 <pre>
 public abstract class Foo {
@@ -450,12 +404,14 @@ public abstract class Foo {
 }
 </pre>
 
-<h4>Indentation</h4>
-<p>We use 2-space indents for blocks. No tabs at all, anywhere.</p>
+#### Indentation
 
-<p>We use 4-space indents after line wraps, including function calls
+We use 2-space indents for blocks. No tabs at all, anywhere.
+
+We use 4-space indents after line wraps, including function calls
 and assignments. For example, this is correct (4 spaces after the
-newline):</p>
+newline):
+
 <pre>
 Instrument i =
     new Instrument();
@@ -468,42 +424,33 @@ Instrument i =
   new Instrument();
 </pre>
 
-<h4>Imports</h4>
-<p>The ordering of import statements is:</p>
-<ul>
-  <li>GWT imports</li>
-  <li>Imports from third parties (com, junit, net, org)</li>
-  <li>java and javax</li>
-</ul>
+#### Imports
 
-<p>To exactly match the IDE settings, the imports should be:</p>
-<ul>
-  <li>Alphabetical within each grouping. Capital letters are
-  considered to come before lower case letter (e.g. Z before a).</li>
-  <li>There should be a blank line between each major grouping
-  (google, com, junit, net, org, java, javax).</li>
-</ul>
+The ordering of import statements is:
 
-<h4>Line Length and Wrapping</h4>
-<p>Each line of text in your code should be at most 100 characters
+*   GWT imports
+*   Imports from third parties (com, junit, net, org)
+*   java and javax
+
+To exactly match the IDE settings, the imports should be:
+
+*   Alphabetical within each grouping. Capital letters are considered to come before lower case letter (e.g. Z before a).
+*   There should be a blank line between each major grouping (google, com, junit, net, org, java, javax).
+
+#### Line Length and Wrapping
+
+Each line of text in your code should be at most 100 characters
 long. Use linefeed characters to break lines (Unix-style). There are
-some exceptions:</p>
+some exceptions:
 
-<ul>
-  <li>Java identifiers referenced from within
-  <a href="latest/DevGuideCodingBasicsJSNI.html#methods-fields">JSNI
-  methods</a> can get quite long and cannot be parsed if split across lines.</li>
+*   Java identifiers referenced from within [JSNI methods](latest/DevGuideCodingBasicsJSNI.html#methods-fields) can get quite long and cannot be parsed if split across lines.
+*   Exception: If a comment line contains an example command or a literal URL longer than 100 characters, that line may be longer than 100 characters for ease of cut and paste.
+*   Exception: Import lines can go over the limit because humans rarely see them. This also simplifies tool writing.
 
-  <li>Exception: If a comment line contains an example command or a
-  literal URL longer than 100 characters, that line may be longer than 100
-  characters for ease of cut and paste.</li>
+#### Acronyms in names
 
-  <li>Exception: Import lines can go over the limit because humans
-  rarely see them. This also simplifies tool writing.</li>
-</ul>
+Treat acronyms and abbreviations as words. The names are much more readable:
 
-<h4>Acronyms in names</h4>
-<p>Treat acronyms and abbreviations as words. The names are much more readable:</p>
 <table style="margin-left: 2em">
   <tr>
     <th style="width: 16em">Good</th>
@@ -519,7 +466,8 @@ some exceptions:</p>
   </tr>
 </table>
 
-<p>This style rule also applies when an acronym or abbreviation is the entire name:
+This style rule also applies when an acronym or abbreviation is the entire name:
+
 <table style="margin-left: 2em">
   <tr>
     <th style="width: 16em">Good</th>
@@ -539,21 +487,21 @@ some exceptions:</p>
   </tr>
 </table>
 
-<p>Note that this is a reversal of an earlier, regretted decision, and
+Note that this is a reversal of an earlier, regretted decision, and
 much code in GWT violates this rule. While it's not worth breaking
 existing APIs for stylistic concerns, all new code should treat
-acronyms as words.</p>
+acronyms as words.
 
-<p>For further justifications of this style rule, see Effective Java
-Item 56 (Item 38 in 1st edition) and Java Puzzlers Number 68.</p>
+For further justifications of this style rule, see Effective Java
+Item 56 (Item 38 in 1st edition) and Java Puzzlers Number 68.
 
-<h4>Parameterized type names</h4>
+#### Parameterized type names
 
-<p>Parameterized type names should be one capital letter. However, if
+Parameterized type names should be one capital letter. However, if
 readability demands longer names (particularly due to having multiple
 parameters), the name should be capitalized and have suffix "T". In a
 nutshell, prefer &lt;T> or &lt;K, V>, and devolve to &lt;KeyT, ValueT> if
-necessary.</p>
+necessary.
 
 <table style="margin-left: 2em">
   <tr>
@@ -576,13 +524,13 @@ necessary.</p>
   </tr>
 </table>
 
-<h3 id="unittesting">Unit Testing</h3>
+### Unit Testing<a id="unittesting"></a>
 
 Unit tests are very important, and we strongly encourage submissions that include them, adding new unit tests for new functionality or updating existing unit tests for bug fixes.
 
-<p>Tests for Java classes should be placed in a parallel source tree
-under <code>test</code> and the test class name should be suffixed with
-<code>Test</code>. For example:</p>
+Tests for Java classes should be placed in a parallel source tree
+under `test` and the test class name should be suffixed with
+`Test`. For example:
 
 <pre>
 src/com/google/gwt/core/client/EntryPoint.java
@@ -591,52 +539,25 @@ test/com/google/gwt/core/client/EntryPointTest.java
 
 The use of the parallel test tree has two major advantages:
 
-<ul>
-  <li>You can do package scope testing (vs. a <code>tests</code>
-  subpackage).</li>
-  <li>There is a clear separation between production and test code
-  making packaging easier. This reduces the number of build breaks and
-  the amount of time spent updating build files.</li>
-</ul>
+*   You can do package scope testing (vs. a `tests` subpackage).
+*   There is a clear separation between production and test code making packaging easier. This reduces the number of build breaks and the amount of time spent updating build files.
 
 Note that there is a problem using JUnit tests with ant &mdash; a [workaround](#antjunit) is described above.
 
-<h3 id="submittingpatches">Submitting Patches</h3>
+### Submitting Patches<a id="submittingpatches"></a>
 
 Please do submit code. Here's what you need to do:
 
-<ol>
-  <li>Decide which code you want to submit. A submission should be
-  a set of changes that addresses one issue in the <a
-    href="http://code.google.com/p/google-web-toolkit/issues/list"
-    target="_blank">GWT issue tracker</a>. Please don't mix more than
-  one logical change per submittal, because it makes the history hard to
-  follow. If you want to make a change that doesn't have a corresponding
-  issue in the issue tracker, please create one.</li>
-
-  <li>Also, coordinate with team members that are listed on the
-  issue in question. This ensures that work isn't being duplicated and
-  communicating your plan early also generally leads to better patches.</li>
-
-  <li>Ensure that your code adheres to the <a href="#codestyle">GWT
-  source code style</a>.</li>
-
-  <li>Ensure that there are unit tests for your code.</li>
-
-  <li>Sign in to <a href="https://gwt-review.googlesource.com">GWT's
-  Gerrit service</a> and sign the <a
-    href="https://gwt-review.googlesource.com/#/settings/agreements">Contributor
-  License Agreement</a>.</li>
-
-  <li>Push your changes to Gerrit for review. The first time you will need to do 
-  some <a href="#gerritsetup">initial setup</a>. Follow Gerrit's documentation to create a change and upload it for review.</li>
-  
-  <li>After setting up gerrit on your system, you can push your changes for review using:
+1.  Decide which code you want to submit. A submission should be a set of changes that addresses one issue in the [GWT issue tracker](http://code.google.com/p/google-web-toolkit/issues/list). Please don't mix more than one logical change per submittal, because it makes the history hard to follow. If you want to make a change that doesn't have a corresponding issue in the issue tracker, please create one.
+2.  Also, coordinate with team members that are listed on the issue in question. This ensures that work isn't being duplicated and communicating your plan early also generally leads to better patches.
+3.  Ensure that your code adheres to the [GWT source code style](#codestyle).
+4.  Ensure that there are unit tests for your code.
+5.  Sign in to [GWT's Gerrit service](https://gwt-review.googlesource.com) and sign the [Contributor License Agreement](https://gwt-review.googlesource.com/#/settings/agreements).
+6.  Push your changes to Gerrit for review. The first time you will need to do some [initial setup](#gerritsetup). Follow Gerrit's documentation to create a change and upload it for review.
+7.  After setting up gerrit on your system, you can push your changes for review using:
   	<pre>git push origin HEAD:refs/for/master</pre>
-  </li>
-</ol>
 
-<h3 id="gerritsetup">Gerrit setup</h3>
+### Gerrit setup<a id="gerritsetup"></a>
 
 Finally, to actually create an issue is slightly more involved, but most of the steps only need to be done once:
 
@@ -653,11 +574,11 @@ Finally, to actually create an issue is slightly more involved, but most of the 
 
 If you have any problems you might want to consult the gerrit documentation on [Uploading Changes](https://gerrit-review.googlesource.com/Documentation/user-upload.html) 
 
-<h3 id="committers">GWT Committers</h3>
+### GWT Committers<a id="committers"></a>
 
 The current members of the GWT engineering team are the only committers at present. In the great tradition of eating one's own dogfood, we will be requiring each new GWT engineering team member to earn the right to become a committer by following the procedures in this document, writing consistently great code, and demonstrating repeatedly that he or she truly gets the zen of GWT.
 
-<h3 id="clas">Contributor License Agreements</h3>
+### Contributor License Agreements<a id="clas"></a>
 
 Before we can accept a patch from you, you must sign a Contributor License Agreement (CLA). The CLA protects you and us.
 
@@ -666,7 +587,7 @@ Before we can accept a patch from you, you must sign a Contributor License Agree
 
 You can sign either CLA through [GWT's Gerrit service](https://gwt-review.googlesource.com/#/settings/agreements).
 
-<h3 id="webpage">Contributing to webpage and Documentation</h3>
+### Contributing to webpage and Documentation<a id="webpage"></a>
 
 This webpage and the documentation hosted on it are completly written in markdown. If you find an error, want to make an improvement, write an article or do something to the webpage feel free to do so.
 
@@ -687,7 +608,7 @@ your changes for review by using gerrit. Note: you need to have signed a <a href
 
 This works the same way you would submit a code change to GWT. More information can be found [here](#submittingpatches).
 
-<h3 id="global_gitignore">Global .gitignore</h3>
+### Global .gitignore<a id="global_gitignore"></a>
 
 Since our .gitignore files don't contain IDE or OS specific .gitignore entries you should setup your global .gitignore.
 

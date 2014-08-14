@@ -7,51 +7,18 @@ Welcome to the GWT developer community. A number of community resources are alre
 
 We've established a set of discussion groups/mailing lists to help you find answers to your technical issues as well as enabling you to share your latest tips and tricks and projects with the greater GWT developer community. Each group has a particular purpose, summarized below.
 
-<ul>
-<p>
-  <li>
-    <b>General discussion</b> - If you are new to GWT and have general questions about the product that aren't addressed in the overview documentation, this group is for you.
-    <ul>
-      <li><a href="community-group-charter.html">Group Charter</a> (audience, rules, moderators)</li>
-      <li>Go to the group: <a href="http://groups.google.com/group/google-web-toolkit">google-web-toolkit</a></li>
-      <li>Subscribe via email: <a href="mailto:google-web-toolkit-subscribe@googlegroups.com">google-web-toolkit-subscribe@googlegroups.com</a></li>
-    </ul>
-  </li>
-  </p>
-  <p>
-  <li>
-    <b>GWT Contributors</b> - If interested in contributing to the <a href="makinggwtbetter.html">GWT open source project</a> this is your group. For more general questions not concerned with source code contribution, please use the general discussion forum.
-    <ul>
-      <li>Go to the group: <a href="http://groups.google.com/group/google-web-toolkit-contributors">google-web-toolkit-contributors</a></li>
-      <li>Subscribe via email: <a href="mailto:google-web-toolkit-contributors-subscribe@googlegroups.com">google-web-toolkit-contributors-subscribe@googlegroups.com</a></li>
-    </ul>
-  </li>
-  </p>
-  <p>
-  <li>
-    <b>Speed Tracer</b> - If you are interested in hearing about new
-    features, or in contributing to Speed Tracer.
-    <ul>
-      <li>Go to the group: <a href="https://groups.google.com/group/speedtracer">speedtracer</a></li>
-      <li>Visit
-      the <a href="http://code.google.com/p/speedtracer">codesite
-      project</a>.</li>
-      </ul>
-  </li>
-  </p>
-  <p>
-    <li>
-    <b>CodePro AnalytiX, GWT Designer, WindowBuilder Pro, and
-    WindowTester Pro discussions</b> -  If you're looking for Q&A as
-    well as general conversation regarding any of these tools, this is
-    the site for you.
-    <ul>
-      <li>Product forums: <a href="http://forums.instantiations.com
-      ">http://forums.instantiations.com</a></li>
-      </li>
-    </ul>
-</p>
-</ul>
+*   **General discussion** - If you are new to GWT and have general questions about the product that aren't addressed in the overview documentation, this group is for you.
+    *   [Group Charter](community-group-charter.html) (audience, rules, moderators)
+    *   Go to the group: [google-web-toolkit](http://groups.google.com/group/google-web-toolkit)
+    *   Subscribe via email: [google-web-toolkit-subscribe@googlegroups.com](mailto:google-web-toolkit-subscribe@googlegroups.com)  
+*   **GWT Contributors** - If interested in contributing to the [GWT open source project](makinggwtbetter.html) this is your group. For more general questions not concerned with source code contribution, please use the general discussion forum.
+    *   Go to the group: [google-web-toolkit-contributors](http://groups.google.com/group/google-web-toolkit-contributors)
+    *   Subscribe via email: [google-web-toolkit-contributors-subscribe@googlegroups.com](mailto:google-web-toolkit-contributors-subscribe@googlegroups.com)
+*   **Speed Tracer** - If you are interested in hearing about new features, or in contributing to Speed Tracer.
+    *   Go to the group: [speedtracer](https://groups.google.com/group/speedtracer)
+    *   Visit the [codesite project](http://code.google.com/p/speedtracer).
+*   **CodePro AnalytiX, GWT Designer, WindowBuilder Pro, and WindowTester Pro discussions** - If you're looking for Q&amp;A as well as general conversation regarding any of these tools, this is the site for you.
+    *   Product forums: [http://forums.instantiations.com](http://forums.instantiations.com)
 
 ### Before posting
 

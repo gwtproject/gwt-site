@@ -4,8 +4,8 @@ Widget Gallery
 The following are [widgets](#Widgets) and [panels](#Panels) available in the GWT user-interface library. You
 can view a code example of each widget in the [Showcase](http://samples.gwtproject.org/samples/Showcase/Showcase.html) sample application.
 
-<p>
-<b>Widgets:</b><br>
+**Widgets:**
+
 <div style="font-size: 80%;">
   <a href="#button">Button</a>&nbsp;
   <a href="#pushbutton">PushButton</a>&nbsp;
@@ -31,10 +31,9 @@ can view a code example of each widget in the [Showcase](http://samples.gwtproje
   <a href="#tabbar">TabBar</a>&nbsp;
   <a href="#dialogbox">DialogBox</a>
 </div>
-</p>
 
-<p>
-<b>Panels:</b><br>
+**Panels:**
+
 <div style="font-size: 80%;">
   <a href="#popuppanel">PopupPanel</a>&nbsp;
   <a href="#stackpanel">StackPanel</a>&nbsp;
@@ -51,9 +50,8 @@ can view a code example of each widget in the [Showcase](http://samples.gwtproje
   <a href="#tabpanel">TabLayoutPanel</a>&nbsp;
   <a href="#disclosurepanel">DisclosurePanel</a>
 </div>
-</p>
 
-<h2 id="Widgets">Widgets</h2>
+## Widgets<a id="Widgets"></a>
 
 <dl>
   <dt id="button"><a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a></dt>

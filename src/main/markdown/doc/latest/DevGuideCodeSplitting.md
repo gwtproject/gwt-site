@@ -136,7 +136,6 @@ modifications to get it working better.  This section describes
 several tools that GWT provides for iterating toward better code
 splitting.
 
-
 <img src="images/CodeSplittingFragments.png" width="100%">
 <br><i>Figure 1: Fragments produced by code splitting</i>
 

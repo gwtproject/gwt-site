@@ -6,7 +6,6 @@ Comptability
 3.  [Differences between JRE and emulated classes](#differences)
 4.  [Classes that provide similar functionality](#similar)
 
-
 ## Language support<a id="language"></a>
 
 GWT supports most of the core Java language syntax and semantics, but there are a few differences you will want to be aware of.

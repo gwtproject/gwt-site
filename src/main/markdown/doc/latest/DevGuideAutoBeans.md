@@ -265,4 +265,3 @@ A category implementation may additionally declare an interceptor method to exam
     }
 
 RequestFactory uses this to make `EntityProxy` objects returned from an editable object editable.
-
