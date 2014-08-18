@@ -777,7 +777,7 @@ html {
   font-size: 62.5%;
   line-height: 1.4;
 }
-@media (max-width: 979px) {
+@media (max-width: 959px) {
   html {
     font-size: 55%;
   }
@@ -802,20 +802,20 @@ body {
 .container {
   margin: 0;
   padding: 0 50px 0 50px;
-  max-width: 960px;
+  max-width: 980px;
   position: relative;
 }
 .container.full {
   max-width: 100%;
   padding-right: 25px;
 }
-@media (max-width: 979px) {
+@media (max-width: 959px) {
   .container {
     padding: 0 40px 0 40px;
-    max-width: 650px;
+    max-width: 750px;
   }
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   .container {
     padding: 0 2%;
     width: 96%;
@@ -824,7 +824,7 @@ body {
 .home .container {
   padding: 0 45px 0 285px;
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   .home .container {
     padding: 0;
   }
@@ -1553,7 +1553,7 @@ a {
 #nav.closed a {
   padding-left: 14px;
 }
-@media (max-width: 979px) {
+@media (max-width: 959px) {
   #nav.closed a {
     padding-left: 15px;
   }
@@ -1582,12 +1582,12 @@ a {
   margin-left: -122px;
   height: 30px;
 }
-@media (max-width: 979px) {
+@media (max-width: 959px) {
   #nav.closed #social a {
     margin-left: -123px;
   }
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   #nav {
     display: none;
   }
@@ -1600,12 +1600,12 @@ aside#submenu {
   padding: 174px 0 0 40px;
   z-index: 9999;
 }
-@media (max-width: 979px) {
+@media (max-width: 959px) {
   aside#submenu {
     width: 200px;
   }
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   aside#submenu {
     display: block;
   }
@@ -1647,7 +1647,7 @@ aside#submenu ul ul a {
 aside#submenu ul ul ul a {
   padding-left: 55px;
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   aside#submenu {
     display: none;
   }
@@ -1655,7 +1655,7 @@ aside#submenu ul ul ul a {
 a#logo-mobile {
   display: none;
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   a#logo-mobile {
     background: url('../img/navLogoBig.png') no-repeat;
     -webkit-background-size: contain;
@@ -1675,7 +1675,7 @@ a#logo-mobile {
 nav#nav-mobile {
   display: none;
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   nav#nav-mobile {
     display: block;
     position: relative;
@@ -1725,7 +1725,7 @@ nav#nav-mobile {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   #search input {
     display: inline-block;
   }
@@ -1747,7 +1747,7 @@ nav#nav-mobile {
   padding: 8em 0 3em;
   display: table-cell;
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   #content {
     display: block;
     padding-top: 3em;
@@ -1761,13 +1761,13 @@ nav#nav-mobile {
   font-size: 8.5rem;
   margin: 0 0 0.5em;
 }
-@media (max-width: 979px) {
+@media (max-width: 959px) {
   #content.home h1 {
     font-size: 70px;
     font-size: 7rem;
   }
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   #content.home h1 {
     font-size: 40px;
     font-size: 4rem;
@@ -1783,7 +1783,7 @@ nav#nav-mobile {
   line-height: 0.7em;
   display: block;
 }
-@media (max-width: 979px) {
+@media (max-width: 959px) {
   #content.home h1 strong {
     font-size: 120px;
     font-size: 12rem;
@@ -1804,7 +1804,7 @@ nav#nav-mobile {
   text-transform: uppercase;
   margin: 0.2em 0 0.9em;
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   #content.home h2 {
     font-size: 24px;
     font-size: 2.4rem;
@@ -1824,7 +1824,7 @@ nav#nav-mobile {
   left: 50%;
   z-index: 9900;
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   #content.home .next {
     margin-left: -10px;
   }
@@ -1894,7 +1894,7 @@ nav#nav-mobile {
   right: 0;
   z-index: 1000;
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   #content.home section.alternate::after {
     display: none;
   }
@@ -1912,7 +1912,7 @@ nav#nav-mobile {
   font-size: 14px;
   font-size: 1.4rem;
 }
-@media (max-width: 979px) {
+@media (max-width: 959px) {
   #content.home section#letsbegin .col-1_4 p {
     font-size: 16px;
     font-size: 1.6rem;
@@ -1930,7 +1930,7 @@ nav#nav-mobile {
   right: 10px;
   z-index: 9999;
 }
-@media (max-width: 749px) {
+@media (max-width: 649px) {
   .pager {
     display: none;
   }
@@ -1951,6 +1951,11 @@ nav#nav-mobile {
 }
 .pager a.active {
   background-color: #000;
+}
+@media (min-width: 960px) {
+  .nodesktop {
+    display: none;
+  }
 }
 /* ==========================================================================
    Print styles
