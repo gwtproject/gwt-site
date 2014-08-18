@@ -37,7 +37,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9000;
+  z-index: 9900;
 
   .transition();
 
@@ -248,6 +248,8 @@ aside#submenu {
   height: 100%;
   padding: 174px 0 0 40px;
 
+  z-index: 9999;
+
   @media(@tablet) {
     width: 200px;
   }
@@ -406,6 +408,16 @@ nav#nav-mobile {
 
       margin: 0 0 0.5em;
 
+      @media(@tablet) {
+        font-size:70px;
+        font-size: 7rem;
+      }
+
+      @media(@mobile) {
+        font-size: 40px;
+        font-size: 4rem;
+      }
+
       span {
         display: inline-block;
       }
@@ -417,6 +429,16 @@ nav#nav-mobile {
         line-height: 0.7em;
 
         display: block;
+
+        @media(@tablet) {
+          font-size: 120px;
+          font-size: 12rem;
+        }
+
+        @media(mobile) {
+          font-size: 100px;
+          font-size: 10rem;
+        }
       }
 
       &::after {
@@ -431,8 +453,56 @@ nav#nav-mobile {
 
       margin: 0.2em 0 0.9em;
 
+      @media(@mobile) {
+        font-size: 24px;
+        font-size: 2.4rem;
+      }
+
       &::after {
         display: none;
+      }
+    }
+
+    .next {
+      text-indent: -9999px;
+
+      display: block;
+      margin-left: -285px;
+      width: 24px;
+      height: 20px;
+
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      z-index: 9900;
+
+      @media(@mobile) {
+        margin-left: -10px;
+      }
+
+      &::before,
+      &::after {
+        content: " ";
+        background-color: #000;
+
+        display: block;
+        width: 15px;
+        height: 3px;
+
+        position: absolute;
+        top: 8px;
+        left: 0;
+
+        .rounded(2px)
+      }
+
+      &::before {
+        .rotation(45deg);
+      }
+
+      &::after {
+        .rotation(-45deg);
+        left: 8px;
       }
     }
 
@@ -440,12 +510,46 @@ nav#nav-mobile {
       padding: 5em 0;
       width: 100%;
 
+      position: relative;
+
+      .box-sizing();
+
+      .container {
+        position: relative;
+        z-index: 9500;
+      }
+
       &.alternate {
         background-color: @c-primary;
         color: #fff;
+
+        position: relative;
         
         h1 strong {
           color: #000;
+        }
+
+        .next::before,
+        .next::after {
+          background-color: #fff;
+        }
+
+        &::after {
+          content: " ";
+          background: url('../img/logoBig.png') no-repeat;
+
+          display: block;
+          width: 1429px;
+          height: 1549px;
+
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          z-index: 1000;
+
+          @media(@mobile) {
+            display: none;
+          }
         }
       }
 
@@ -463,6 +567,11 @@ nav#nav-mobile {
         p {
           font-size: 14px;
           font-size: 1.4rem;
+
+          @media(@tablet) {
+            font-size: 16px;
+            font-size: 1.6rem;
+          }
         }
 
         i {
@@ -471,6 +580,34 @@ nav#nav-mobile {
           font-size: 10rem;
         }
       }
+    }
+  }
+}
+
+.pager {
+  margin-top: -30px;
+
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  z-index: 9999;
+
+  @media(@mobile) {
+    display: none;
+  }
+
+  a {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #000;
+    margin-bottom: 8px;
+
+    .rounded(100%);
+    .transition();
+
+    &.active {
+      background-color: #000;
     }
   }
 }
