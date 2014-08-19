@@ -1,7 +1,7 @@
 Versions
 ===
 
-<p>GWT is licensed under the <a href="terms.html">Apache 2.0 open source license</a> (since version 1.3).</p>
+GWT is licensed under the [Apache 2.0 open source license](terms.html) (since version 1.3).
 
 <div class="release">
 

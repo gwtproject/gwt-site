@@ -43,7 +43,6 @@ Overview
 
 <img src="images/gwt-sm.png" style="float: left;" height="80" width="80" />
 
-
 <div style="margin-left: 112px; ">
   <div style="padding-top: 5px; line-height: 125%;">
     GWT is a development toolkit for building and optimizing
@@ -59,7 +58,7 @@ Overview
   </div>
 </div>
 
-<h2>What's inside the toolbox?</h2>
+## What's inside the toolbox?
 
 <table width="100%" class="columns">
   <tr>
@@ -97,7 +96,8 @@ Overview
 </table>
 
 <a name="how"></a>
-<h2>Developing with GWT</h2>
+
+## Developing with GWT
 
 <div>
   <img src="images/flow1-sm.png" class="flow-img"/>
@@ -178,14 +178,8 @@ Overview
 </div>
 <br/>
 
-<h2>Ready to get started?</h2>
-<a href="gettingstarted.html">
-  <img src="images/arrow-md.png" style="float: left; margin:10px 10px 0px 0px; border-style:none; width: 80px; height: 80px" />
-</a>
-<p>
-  <a href="gettingstarted.html">Download the SDK</a> and get a simple web
-  application up and running. From there, work through the
-  fundamentals of GWT development with the in-depth 
-  <a href="doc/latest/tutorial/index.html">tutorials</a>.</p>
+## Ready to get started?
 
+[![](images/arrow-md.png)](gettingstarted.html)
 
+[Download the SDK](gettingstarted.html) and get a simple web application up and running. From there, work through the fundamentals of GWT development with the in-depth [tutorials](doc/latest/tutorial/index.html).

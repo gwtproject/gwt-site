@@ -1,219 +1,158 @@
-
-<style>
-code, .code {font-size: 9pt; font-family: Courier, Courier New, monospace; color:#007000;}
-.highlight {background-color: #ffc;}
-.strike {text-decoration:line-through; color:red;}
-.header {margin-top: 1.5ex;}
-.details {margin-top: 1ex;}
-</style>
-
-<style>
-
-div.screenshot img {
-  margin: 20px;
-}
-
-
-.download {
-  border: none;
-}
-
-.download td {
-  border: none;
-}
-</style>
-
 Using Eclipse
 ===
 
-<p>GWT provides a set of tools that can simply be used with a
+GWT provides a set of tools that can simply be used with a
 text editor, the command line, and a browser. However, you may also use GWT with your
 favorite IDE. Google provides a plugin for Eclipse that makes development with
 GWT even easier.
-</p>
 
-<ul class="toc">
-  <li><a href="#eclipse">Download Eclipse</a></li>
-  <li><a href="#installing">Install the Plugin</a></li>
-  <li><a href="#creating">Create a Web Application</a></li>
-  <li><a href="#running">Run locally in Development Mode</a></li>
-  <li><a href="#compiling">Compile and run in Production Mode</a></li>
-  <li><a href="#deploying">Deploy to App Engine</a></li>
-</ul>
+*   [Download Eclipse](#eclipse)
+*   [Install the Plugin](#installing)
+*   [Create a Web Application](#creating)
+*   [Run locally in Development Mode](#running)
+*   [Compile and run in Production Mode](#compiling)
+*   [Deploy to App Engine](#deploying)
 
-<h2 id="eclipse">Download Eclipse</h2>
+## Download Eclipse<a id="eclipse"></a>
 
-<p>
-If you do not already have Eclipse, you may download it from the <a
-href="http://www.eclipse.org/downloads/" rel="nofollow">Eclipse Website</a>.
-We suggest downloading Eclipse 4.3 (Kepler).
-</p>
+If you do not already have Eclipse, you may download it from the [Eclipse Website](http://www.eclipse.org/downloads/). We suggest downloading Eclipse 4.3 (Kepler).
 
-<h2 id="installing">Install the Plugin</h2>
+## Install the Plugin<a id="installing"></a>
 
 <img src="https://developers.google.com/eclipse/images/google-plugin.png" style="float: left; width: 40px;
 margin-right: 15px;"/>
 
-<p>
-Install the Google Plugin for Eclipse 4.3 by using the following update
-site:
-<p><code>http://dl.google.com/eclipse/plugin/4.3</code></p>
+Install the Google Plugin for Eclipse 4.3 by using the following update site:
 
-<p>
+`http://dl.google.com/eclipse/plugin/4.3`
+
 If you are using an earlier version of Eclipse, replace the 4.3 version number
 with your version (4.2 or 3.7). For detailed instructions on installing plugins
-in Eclipse, see instructions for <a href="//developers.google.com/eclipse/docs/install-eclipse-4.3">Eclipse 4.3</a>,
-<a href="https://developers.google.com/eclipse/docs/install-eclipse-4.2">Eclipse 3.8/4.2</a>
-</p>
+in Eclipse, see instructions for [Eclipse 4.3](//developers.google.com/eclipse/docs/install-eclipse-4.3),
+[Eclipse 3.8/4.2](https://developers.google.com/eclipse/docs/install-eclipse-4.2)
 
-<p>In the Install dialog, you will see an option to install the Plugin as well
+In the Install dialog, you will see an option to install the Plugin as well
 as the GWT and App Engine SDKs. Choosing the SDK options will install a GWT
 and/or App Engine SDK within your Eclipse plugin directory as a convenience.
-</p>
 
-<p class="note" style="margin-top: 0.7em;">GWT release candidates are not bundled with The Google Plugin For Eclipse. If you're interested in using a GWT RC SDK, download and add it to your workspace as described <a href="https://developers.google.com/eclipse/docs/using_sdks">here</a>.
-</p>
+GWT release candidates are not bundled with The Google Plugin For Eclipse. If you're interested in using a GWT RC SDK, download and add it to your workspace as described [here](https://developers.google.com/eclipse/docs/using_sdks).
 
 <div class="screenshot">
   <img src="images/eclipse/eclipse-install-options.png"
   style="width: 385px; height: 100px;" alt="screenshot"/>
 </div>
 
-<h2 id="creating">Create a Web Application</h2>
-<p>
-  To create a Web Application, select <b>File &gt; New &gt;
-  Web Application Project</b> from the Eclipse menu.
-</p>
-<p>
-  In the <b>New Web Application Project</b> wizard, enter a name for your project
-  and a java package name, e.g., <code>com.mycompany.mywebapp</code>. If you
-  installed the Google App Engine SDK, the wizard
-  gives you the option to use App Engine as well. For now, uncheck this
-  option and click <b>Finish</b>.
-</p>
+## Create a Web Application<a id="creating"></a>
+
+To create a Web Application, select **File &gt; New &gt; Web Application Project** from the Eclipse menu.
+
+In the **New Web Application Project** wizard, enter a name for your project
+and a java package name, e.g., `com.mycompany.mywebapp` If you
+installed the Google App Engine SDK, the wizard
+gives you the option to use App Engine as well. For now, uncheck this
+option and click **Finish**.
 
 <div class="screenshot">
   <img src="images/eclipse/web-app-wizard.png"
   style="width: 366px; height: 409px;" alt="screenshot"/>
 </div>
 
-<p>
-  Congratulations, you now have a GWT enabled web application.
-  The plugin has created a boilerplate project in your workspace.
-</p>
+Congratulations, you now have a GWT enabled web application. The plugin has created a boilerplate project in your workspace.
 
 <h2 id="running">Run locally in Development Mode</h2>
-<p>
-  Right-click on your web application project and select <b>Debug As &gt; Web
-  Application</b> from the popup menu.
-</p>
-<p>
-  This creates a <b>Web Application</b> launch configuration for
-  you and launches it.  The web application launch configuration will start a
-  local web server and GWT development mode server.
-</p>
-<p>
-  You will find a Web Application view next to the console window.
-  Inside you will find the URL for the development mode server. Paste
-  this URL into Firefox, Internet Explorer, Chrome, or Safari. If this is your first time
-  using that browser with the development mode server, it will prompt you to install
-  the GWT Developer Plugin. Follow the instructions in the browser to install.
-</p>
+
+Right-click on your web application project and select **Debug As &gt; Web
+Application** from the popup menu.
+
+This creates a **Web Application** launch configuration for
+you and launches it.  The web application launch configuration will start a
+local web server and GWT development mode server.
+
+You will find a Web Application view next to the console window.
+Inside you will find the URL for the development mode server. Paste
+this URL into Firefox, Internet Explorer, Chrome, or Safari. If this is your first time
+using that browser with the development mode server, it will prompt you to install
+the GWT Developer Plugin. Follow the instructions in the browser to install.
+  
 <div class="screenshot">
   <img src="images/myapplication-missing-plugin.png" alt="screenshot"/>
 </div>
-<p>
-  Once the browser plugin is installed, navigate to the URL again and the starter application will load in development
-  mode.
-</p>
 
+Once the browser plugin is installed, navigate to the URL again and the starter application will load in development mode.
 
-<h2>Make a Few Changes</h2>
-<p>The source code for the starter application is in the <code>MyWebApp/src/</code> subdirectory, where MyWebApp is the name you gave to the project.
-You'll see two packages, <code>com.mycompany.mywebapp.client</code> and
-<code>com.mycompany.mywebapp.server</code>. Inside the client package is code that will eventually be compiled to JavaScript and run as client code in the browser. The java files in the server package will be run as Java bytecode on a server.</p>
+## Make a Few Changes
+
+The source code for the starter application is in the 
+
+`MyWebApp/src/`
+
+subdirectory, where MyWebApp is the name you gave to the project. You'll see two packages, 
+
+`com.mycompany.mywebapp.client` 
+
+and
+
+`com.mycompany.mywebapp.server`
+
+Inside the client package is code that will eventually be compiled to JavaScript and run as client code in the browser. The java files in the server package will be run as Java bytecode on a server.
 
 <div class="screenshot">
   <img src="images/eclipse/web-app-src.png"
   style="width: 350px; height: 243px;" alt="screenshot"/>
 </div>
 
-<p>
-  Look inside the <code>MyWebApp.java</code> file in the client package. Line 40 constructs the send button.
-</p>
+Look inside the 
+
+`MyWebApp.java` 
+
+file in the client package. Line 40 constructs the send button.
 
 <pre class="code">final Button sendButton = new Button(&quot;Send&quot;);</pre>
 
-<p>
-  Change the text from &quot;Send&quot; to &quot;Send to Server&quot;.
-</p>
+Change the text from &quot;Send&quot; to &quot;Send to Server&quot;.
 
 <pre class="code">final Button sendButton = new Button(&quot;Send to Server&quot;);</pre>
 
+Now, save the file and simply click "Refresh" back in your browser to see your change. The button should now say &quot;Send to Server&quot; instead of &quot;Send&quot;.
 
-<p>Now, save the file and simply click "Refresh" back in your browser to see your change. The button should now say &quot;Send to Server&quot; instead of &quot;Send&quot;.</p>
-
-<p>
-  At this point, you can also set breakpoints, inspect variables and modify code as
-  you would normally expect from a Java Eclipse debugging session.
-</p>
+At this point, you can also set breakpoints, inspect variables and modify code as you would normally expect from a Java Eclipse debugging session.
 
 <a name="compiling"></a>
-<h2>Compile and run in Production Mode</h2>
 
-<p>To run the application as JavaScript in what GWT calls "production mode",
-compile the application by right-clicking the project and choosing <b>Google</b>
-&gt; <b>GWT Compile</b>.
-</p>
-<p>This command invokes the GWT compiler which generates a number of
-JavaScript and HTML files from the MyWebApp Java source code in the
-<code>MyWebApp/war/</code> subdirectory.  To see the final application, open the file
-<code>MyWebApp/war/MyWebApp.html</code> in your web browser.</p>
+## Compile and run in Production Mode
 
-<div class="screenshot"><img src="images/myapplication-browser.png"
-  alt="Screenshot"/></div>
+To run the application as JavaScript in what GWT calls "production mode", compile the application by right-clicking the project and choosing **Google** &gt; **GWT Compile**.
 
-<p>Congratulations! You've created your first web application using GWT.
-Since you've compiled the project, you're now running pure JavaScript
-and
-HTML that works in IE, Chrome, Firefox, Safari, and Opera. You could now deploy
-your application to production by serving the HTML and JavaScript files in your
-<code>MyWebApp/war/</code> directory from your web servers.</p>
+This command invokes the GWT compiler which generates a number of JavaScript and HTML files from the MyWebApp Java source code in the
 
+`MyWebApp/war/` 
 
+subdirectory. To see the final application, open the file
 
-<h2 id="deploying">Deploy to App Engine</h2>
-<p>
-  Using the plugin, you can also easily deploy GWT projects to Google App
-  Engine. If you installed the App Engine for Java SDK when you installed the plugin,
-  you can now right-click on the project and App Engine "enable" it by choosing
-  <b>Google</b> &gt; <b>App Engine Settings</b>. Check the box marked <b>Use
-    Google App Engine</b>. This will add the necessary configuration files to
-  your project.
-</p>
-<p>
-  To deploy your project to App Engine, you first need to create an application
-  ID from the <a href="https://appengine.google.com/">App Engine Administration Console</a>.
-</p>
+`MyWebApp/war/MyWebApp.html` 
 
-<p>
-  Once you have an application ID, right-click on your project, and
-  select <b>Google &gt; App Engine Settings...</b> from the context menu.  Enter
-  your application ID into the <b>Application ID</b> text box. Click <b>OK</b>.
-</p>
+in your web browser.
 
-<p>
-  Right-click on your project and select <b>Google &gt; Deploy to App Engine</b>.
-  In the resulting <b>Deploy Project to Google App Engine</b> dialog, enter your
-  Google Account email and password.
-</p>
+<div class="screenshot"><img src="images/myapplication-browser.png" alt="Screenshot"/></div>
 
-<p>
-  Click <b>Deploy</b>.
-</p>
+Congratulations! You've created your first web application using GWT. Since you've compiled the project, you're now running pure JavaScript and HTML that works in IE, Chrome, Firefox, Safari, and Opera. You could now deploy your application to production by serving the HTML and JavaScript files in your 
 
-<p>
-Congratulations! You now have a new web application built with GWT live on the web at <code>http://<i>application-id</i>.appspot.com/</code>.
-</p>
+`MyWebApp/war/` 
 
+directory from your web servers.
 
+## Deploy to App Engine<a id="deploying"></a>
+
+Using the plugin, you can also easily deploy GWT projects to Google App Engine. If you installed the App Engine for Java SDK when you installed the plugin, you can now right-click on the project and App Engine "enable" it by choosing **Google** &gt; **App Engine Settings**. Check the box marked **Use Google App Engine**. This will add the necessary configuration files to your project.
+
+To deploy your project to App Engine, you first need to create an application ID from the [App Engine Administration Console](https://appengine.google.com/).
+
+Once you have an application ID, right-click on your project, and select **Google &gt; App Engine Settings...** from the context menu. Enter your application ID into the **Application ID** text box. Click **OK**.
+
+Right-click on your project and select **Google &gt; Deploy to App Engine**. In the resulting **Deploy Project to Google App Engine** dialog, enter your Google Account email and password.
+
+Click **Deploy**.
+
+Congratulations! You now have a new web application built with GWT live on the web at 
+
+`http://_application-id_.appspot.com/`.

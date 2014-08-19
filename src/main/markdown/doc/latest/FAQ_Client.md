@@ -1,53 +1,49 @@
 FAQ - Client
 ===
 
-<ol class="toc" id="pageToc"><li><a href="#Project_Architecture">Project Architecture</a><ol class="toc"><li><a href="#What_is_a_GWT_Module?">What is a GWT Module?</a></li></ol></li><li><a href="#Writing_Java_code">Writing Java code</a><ol class="toc"><li><a href="#How_do_I_enable_assertions?">How do I enable assertions?</a></li></ol></li><li><a href="#JavaScript_Native_Interface">JavaScript Native Interface</a><ol class="toc"><li><a href="#How_do_I_call_Java_methods_from_handwritten_JavaScript_or_third">How do I call Java methods
-from handwritten JavaScript or third party libraries?</a></li><li><a href="#Help!_I'm_having_problems_with_eval()_in_my_JSNI_method!">Help! I'm having problems with eval() in my
-JSNI method!</a></li><li><a href="#Why_doesn't_the_bridge_call_to_my_JSNI_method_work_in_onclick">Why doesn't the bridge call to my JSNI method work in <code>&lt;some_obj&gt;.onclick</code>?<li><a href="#How_do_I_pass_a_Java_method_as_a_callback_function?">How do I pass a Java method as a callback
-function?</a></li></ol></li><li><a href="#Deferred_Binding">Deferred Binding</a><ol class="toc"><li><a href="#What_is_Deferred_Binding?">What is Deferred Binding?</a></li></ol></li></ol><div id="FAQ_Client"/>
+1.  [Project Architecture](#Project_Architecture)
+    1.  [What is a GWT Module?](#What_is_a_GWT_Module?)
+2.  [Writing Java code](#Writing_Java_code)
+    1.  [How do I enable assertions?](#How_do_I_enable_assertions?)
+3.  [JavaScript Native Interface](#JavaScript_Native_Interface)
+    1.  [How do I call Java methods from handwritten JavaScript or third party libraries?](#How_do_I_call_Java_methods_from_handwritten_JavaScript_or_third)
+    2.  [Help! I'm having problems with eval() in my JSNI method!](#Help!_I)
+    3.  [Why doesn't the bridge call to my JSNI method work in `<some_obj>.onclick`?<li><a href="#How_do_I_pass_a_Java_method_as_a_callback_function?">How do I pass a Java method as a callback function?](#Why_doesn)
+4.  [Deferred Binding](#Deferred_Binding)
+    1.  [What is Deferred Binding?](#What_is_Deferred_Binding?)<div id="FAQ_Client"/>
 
+## Project Architecture<a id="Project_Architecture"></a>
 
-<h2 id="Project_Architecture">Project Architecture</h2>
+### What is a GWT Module?<a id="What_is_a_GWT_Module?"></a>
 
-<p/>
+A GWT module is simply an encapsulation of functionality. It shares some similarities with a Java package but is not the same thing. 
 
-<h3 id="What_is_a_GWT_Module?">What is a GWT Module?</h3>
+A GWT module is named similarly to a Java package in that it follows the usual dotted-path naming convention. For example, most of the standard GWT modules are located
+underneath &quot;com.google.gwt&quot; However, the similarity between GWT modules and Java packages ends with this naming convention.
 
-<p>A GWT module is simply an encapsulation of functionality. It shares some similarities with a Java package but is not the same thing. 
-</p>
-
-<p>A GWT module is named similarly to a Java package in that it follows the usual dotted-path naming convention. For example, most of the standard GWT modules are located
-underneath &quot;com.google.gwt&quot; However, the similarity between GWT modules and Java packages ends with this naming convention.</p>
-
-<p>A module is defined by an XML descriptor file ending with the extension &quot;.gwt.xml&quot;, and the name of that file determines the name of the module. For example, if you have a file
+A module is defined by an XML descriptor file ending with the extension &quot;.gwt.xml&quot;, and the name of that file determines the name of the module. For example, if you have a file
 named <tt>src/com/mycompany/apps/MyApplication.gwt.xml</tt>, then that will create a GWT module named <tt>com.mycompany.apps.MyApplication</tt>. The contents of the
 <tt>.gwt.xml</tt> file specify the precise list of Java classes and other resources that are included in the GWT module. 
-</p>
 
-<h2 id="Writing_Java_code">Writing Java code</h2>
+## Writing Java code<a id="Writing_Java_code"></a>
 
-<p/>
+### How do I enable assertions?<a id="How_do_I_enable_assertions?"></a>
 
-<h3 id="How_do_I_enable_assertions?">How do I enable assertions?</h3>
+In order to use the assert() feature in Java, you must enable them with the <tt>-enableassertions</tt> or <tt>-ea</tt> command line argument. See the article on the Java
+website [Programming with Assertions](http://java.sun.com/j2se/1.4.2/docs/guide/lang/assert.html) for more details. If you are using an IDE, add this
+argument to the VM argument list.
 
-<p>In order to use the assert() feature in Java, you must enable them with the <tt>-enableassertions</tt> or <tt>-ea</tt> command line argument. See the article on the Java
-website <a href="http://java.sun.com/j2se/1.4.2/docs/guide/lang/assert.html">Programming with Assertions</a> for more details. If you are using an IDE, add this
-argument to the VM argument list.</p>
+The GWT compiler also recognizes the <tt>-ea</tt> flag to generate code for assertions in the compiled JavaScript.
 
-<p>The GWT compiler also recognizes the <tt>-ea</tt> flag to generate code for assertions in the compiled JavaScript.</p>
-
-<p>Only use assertions for debugging purposes, not production logic because
+Only use assertions for debugging purposes, not production logic because
 assertions will only work under GWT's development mode. By default, they are compiled away by the GWT
-compiler so do not have any effect in production mode unless you explicitly enable them.</p>
+compiler so do not have any effect in production mode unless you explicitly enable them.
 
-<h2 id="JavaScript_Native_Interface">JavaScript Native Interface</h2>
+## JavaScript Native Interface<a id="JavaScript_Native_Interface"></a>
 
-<p/>
+### How do I call Java methods from handwritten JavaScript or third party libraries?<a id="How_do_I_call_Java_methods_from_handwritten_JavaScript_or_third"></a>
 
-<h3 id="How_do_I_call_Java_methods_from_handwritten_JavaScript_or_third">How do I call Java methods
-from handwritten JavaScript or third party libraries?</h3>
-
-<p>You can get this to work by assigning the method via JSNI to an external, globally visible JavaScript name that can be referenced by your hand-crafted JavaScript code. For example,</p>
+You can get this to work by assigning the method via JSNI to an external, globally visible JavaScript name that can be referenced by your hand-crafted JavaScript code. For example,
 
 <pre class="prettyprint">
 package mypackage;
@@ -60,17 +56,16 @@ public MyUtilityClass
     }-*/;
 }
 </pre>
-<p>Notice that the reference to the exported method has been wrapped in a call to the $entry function. This implicitly-defined function ensures that the Java-derived method is executed with the uncaught exception handler installed and pumps a number of other utility services. The $entry function is reentrant-safe and should be used anywhere that GWT-derived JavaScript may be called into from a non-GWT context.</p>
-<p>On application initialization, call <tt>MyUtilityClass.exportStaticMethod()</tt> (e.g. from your GWT Entry Point). This will create a function on the window object called
+
+Notice that the reference to the exported method has been wrapped in a call to the $entry function. This implicitly-defined function ensures that the Java-derived method is executed with the uncaught exception handler installed and pumps a number of other utility services. The $entry function is reentrant-safe and should be used anywhere that GWT-derived JavaScript may be called into from a non-GWT context.
+
+On application initialization, call <tt>MyUtilityClass.exportStaticMethod()</tt> (e.g. from your GWT Entry Point). This will create a function on the window object called
 <tt>computeLoanInterest()</tt> which will invoke, via JSNI, the compiled Java method of the same name. The bridge method is needed because the GWT compiler will
-obfuscate/compress/rename the names of Java methods when it translates them to JavaScript.</p>
+obfuscate/compress/rename the names of Java methods when it translates them to JavaScript.
 
-<p/>
+### Help! I'm having problems with eval() in my JSNI method!<a id="Help!_I'm_having_problems_with_eval()_in_my_JSNI_method!"></a>
 
-<h3 id="Help!_I'm_having_problems_with_eval()_in_my_JSNI_method!">Help! I'm having problems with eval() in my
-JSNI method!</h3>
-
-<p>Occasionally you might want to use this idiom for a GWT class method:</p>
+Occasionally you might want to use this idiom for a GWT class method:
 
 <pre class="prettyprint">
 public static native String myMethod(String arg) /*-{
@@ -79,11 +74,11 @@ public static native String myMethod(String arg) /*-{
 }-*/;
 </pre>
 
-<p>The code above will work in development mode, but not in production mode. The reason is that when GWT compiles the Java source code to JavaScript, it obfuscates variable names. In this
+The code above will work in development mode, but not in production mode. The reason is that when GWT compiles the Java source code to JavaScript, it obfuscates variable names. In this
 case, it will change the name of the <tt>arg</tt> variable. However, GWT can't see into JavaScript string literals in a JSNI method, and so it can't update the corresponding
-embedded references to <tt>arg</tt> to also use the new varname.</p>
+embedded references to <tt>arg</tt> to also use the new varname.
 
-<p>The fix is to tweak the <tt>eval()</tt> statement so that the variable names are visible to the GWT compiler:</p>
+The fix is to tweak the <tt>eval()</tt> statement so that the variable names are visible to the GWT compiler:
 
 <pre class="prettyprint">
 public static native String myMethod(String arg) /*-{
@@ -92,15 +87,12 @@ public static native String myMethod(String arg) /*-{
 }-*/;
 </pre>
 
-<p/>
+### Why doesn't the bridge call to my JSNI method work in `<some_obj>.onclick`?<a id="Why_doesn't_the_bridge_call_to_my_JSNI_method_work_in_onclick"></a>
 
-<h3 id="Why_doesn't_the_bridge_call_to_my_JSNI_method_work_in_onclick">Why doesn't the bridge call to my JSNI
-method work in <code>&lt;some_obj&gt;.onclick</code>?</h3>
+While there are many reasons why your bridge call may not seem to be called in <tt>onclick</tt>, one of the most common causes has to do with function closures and how
+JavaScript variables are stored.
 
-<p>While there are many reasons why your bridge call may not seem to be called in <tt>onclick</tt>, one of the most common causes has to do with function closures and how
-JavaScript variables are stored.</p>
-
-<p>The code below illustrates this point:</p>
+The code below illustrates this point:
 
 <pre class="prettyprint">
 public native void doSomething() /*-{
@@ -115,13 +107,13 @@ public void doSomethingElse(String foo) {
 }
 </pre>
 
-<p>Someone new to JavaScript looking at this code may expect the &quot;immediate&quot; alert to display as soon as the code runs, and the &quot;on click&quot; alert to pop up when <tt>someObj</tt> is
+Someone new to JavaScript looking at this code may expect the &quot;immediate&quot; alert to display as soon as the code runs, and the &quot;on click&quot; alert to pop up when <tt>someObj</tt> is
 clicked. However, what actually will happen is that the first alert will display, but never the &quot;on click.&quot; This problem occurs because &quot;<tt>this.@com...</tt>&quot; idioms create
 function closures over <tt>this</tt>. However, in JavaScript function closures, variables like <tt>this</tt> are stored by reference, not by value. Since the state of
 <tt>this</tt> isn't guaranteed once the JSNI <tt>doSomething</tt> function goes out of scope, by the time the <tt>onclick</tt> anonymous function callback gets run, this either
 points to some different object (which may not have a <tt>doSomethingElse</tt> method) or is even null or undefined. The fix is to create a local var that stores a copy of
 <tt>this</tt>, and creating the function closure over that. The snippet below shows the correct way to have the bridge call to <tt>doSomethingElse</tt> run when <tt>someObj</tt>
-is clicked.</p>
+is clicked.
 
 <pre class="prettyprint">
 public native void doSomething() /*-{
@@ -136,13 +128,10 @@ public native void doSomething() /*-{
 <p>In this way, the variable over which we have created the closure is stored by value, and hence will retain that value even after the <tt>doSomething</tt> function goes out of
 scope.</p>
 
-<p/>
+### How do I pass a Java method as a callback function?<a id="How_do_I_pass_a_Java_method_as_a_callback_function?"></a>
 
-<h3 id="How_do_I_pass_a_Java_method_as_a_callback_function?">How do I pass a Java method as a callback
-function?</h3>
-
-<p>It is quite common for a JavaScript api to return a value asynchronously through a callback function. You can refer to Java functions as first-class objects with <a href="DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface">JSNI</a> syntax. Assuming a JavaScript function <tt>externalJsFunction</tt> that takes a data value and a callback
-function, here is an example of how to code this:</p>
+It is quite common for a JavaScript api to return a value asynchronously through a callback function. You can refer to Java functions as first-class objects with [JSNI](DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface) syntax. Assuming a JavaScript function <tt>externalJsFunction</tt> that takes a data value and a callback
+function, here is an example of how to code this:
 
 <pre class="prettyprint">
 package p;
@@ -155,8 +144,8 @@ class C {
 }
 </pre>
 
-<p>Depending on the nature of the callback, it's sometimes helpful to use an anonymous JavaScript function to create a wrapper callback when you invoke the API method. When the
-callback is invoked, wrapper will forward the parameter values to the Java method:</p>
+Depending on the nature of the callback, it's sometimes helpful to use an anonymous JavaScript function to create a wrapper callback when you invoke the API method. When the
+callback is invoked, wrapper will forward the parameter values to the Java method:
 
 <pre class="prettyprint">
 package p;
@@ -171,39 +160,39 @@ class D {
 }
 </pre>
 
-<h2 id="Deferred_Binding">Deferred Binding</h2>
+## Deferred Binding<a id="Deferred_Binding"></a>
 
-<h3 id="What_is_Deferred_Binding?">What is Deferred Binding?</h3>
+### What is Deferred Binding?<a id="What_is_Deferred_Binding?"></a>
 
-<p>Deferred Binding is GWT's answer to Java reflection.</p>
+Deferred Binding is GWT's answer to Java reflection.
 
-<p>It's easiest to explain Deferred Binding by starting with a use case. Every web browser has its own idiosyncrasies, usually lots of them. (The sheer unmanageable number of them
+It's easiest to explain Deferred Binding by starting with a use case. Every web browser has its own idiosyncrasies, usually lots of them. (The sheer unmanageable number of them
 is the problem GWT was created to solve in the first place.) The standard Java way of dealing with idiosyncrasies would be to encapsulate the custom code into subclasses, with one
 subclass for each supported browser. At runtime, the application would use reflection and dynamic classloading to select the appropriate subclass for the current environment, load
-the class, create an instance, and then use that instance as the service provider for the duration of the program.</p>
+the class, create an instance, and then use that instance as the service provider for the duration of the program.
 
-<p>This is indeed what GWT does. However, the JavaScript environment in which GWT applications ultimately run simply does not support dynamic classloading (also known as
-<i>dynamic binding</i>.) You can certainly include code to support each browser in your generated JavaScript code, but to do so you must include support for all browsers is in the
-single application file. Why should an Opera user have to download code specific to Firefox, when there is no chance at all that she will ever need it?</p>
+This is indeed what GWT does. However, the JavaScript environment in which GWT applications ultimately run simply does not support dynamic classloading (also known as
+_dynamic binding_.) You can certainly include code to support each browser in your generated JavaScript code, but to do so you must include support for all browsers is in the
+single application file. Why should an Opera user have to download code specific to Firefox, when there is no chance at all that she will ever need it?
 
-<p>Because <i><strong>dynamic</strong> binding</i> is unavailable as a technique to GWT, GWT instead uses <i><strong>deferred</strong> binding</i>. One way to think of this is as
+Because _**dynamic** binding_ is unavailable as a technique to GWT, GWT instead uses _**deferred** binding_. One way to think of this is as
 &quot;dynamic class-loading that occurs at compile time instead of execution time.&quot; When the GWT Compiler compiles your Java application, it determines all the different
 &quot;idiosyncrasies&quot; that it must support, and generates a separate, tightly streamlined version of the application for that specific configuration. For example, it generates a
-different version of the application file for Firefox than it does for Opera.</p>
+different version of the application file for Firefox than it does for Opera.
 
-<p>There's more to it than just browser detection, though. Deferred Binding is a fully generic mechanism for handling features that vary according to some context. Another classic
+There's more to it than just browser detection, though. Deferred Binding is a fully generic mechanism for handling features that vary according to some context. Another classic
 example of Deferred Binding is internationalization: the GWT Compiler uses Deferred Binding to generate a completely separate version of the application for each language. Why
-should an English speaker have to download the French text of your application?</p>
+should an English speaker have to download the French text of your application?
 
-<p>Browser version and language represent two &quot;axes&quot; of variance for your application. It is possible to define your own axis, if you need to, and the GWT compiler handles all the
+Browser version and language represent two &quot;axes&quot; of variance for your application. It is possible to define your own axis, if you need to, and the GWT compiler handles all the
 gory details of generating all the possible permutations. For instance, if GWT supports 4 browsers, and you write your application in 3 languages, then GWT will generate a total
-of 12 different permutations of your application. During bootstrapping at runtime, GWT picks the appropriate permutation to show the user.</p>
+of 12 different permutations of your application. During bootstrapping at runtime, GWT picks the appropriate permutation to show the user.
 
-<p>It's probably pretty clear by now that Deferred Binding works a little differently than standard dynamic binding. Conceptually, though, the two concepts are fairly similar, and
+It's probably pretty clear by now that Deferred Binding works a little differently than standard dynamic binding. Conceptually, though, the two concepts are fairly similar, and
 in practice all you usually need to do is just substitute a GWT method for a Java Reflection method. Instead of <tt>Class.forName(&quot;MyClass&quot;)</tt> you use
-<tt>GWT.create(MyClass)</tt>. GWT handles all the details of managing the permutations.</p>
+<tt>GWT.create(MyClass)</tt>. GWT handles all the details of managing the permutations.
 
-<p>Deferred Binding is one of the key features that lets GWT produce high-quality, well-optimized JavaScript code. If you're just using GWT, you usually won't have to get very far
+Deferred Binding is one of the key features that lets GWT produce high-quality, well-optimized JavaScript code. If you're just using GWT, you usually won't have to get very far
 into the details. If you are developing an extension to GWT such as a new widget, you'll want to look into it further. See the GWT Developer's Guide for some concrete examples of
-deferred binding. If you have further questions, the <a href="http://groups.google.com/group/Google-Web-Toolkit">GWT Discussion Group</a> is ready to
-help!</p>
+deferred binding. If you have further questions, the [GWT Discussion Group](http://groups.google.com/group/Google-Web-Toolkit) is ready to
+help!

@@ -95,4 +95,3 @@ GWT Logo use
     adding a text "GWT User Group X" under the logo as showcased in the graphical guidelines below.*
 
 6.  When you use GWT logo, you must follow the graphical guidelines for logo use.
-

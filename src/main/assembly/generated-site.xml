@@ -16,6 +16,10 @@
         <include>**/*.jpeg</include>
         <include>**/*.gif</include>
         <include>**/package-list</include>
+        <include>**/*.eot</include>
+        <include>**/*.svg</include>
+        <include>**/*.ttf</include>
+        <include>**/*.woff</include>
       </includes>
       <outputDirectory></outputDirectory>
     </fileSet>

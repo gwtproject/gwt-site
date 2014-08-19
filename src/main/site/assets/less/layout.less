@@ -30,10 +30,14 @@ body {
   padding: 0;
 }
 
+.holder {
+  display: table;
+}
+
 .container {
   margin: 0;
-  padding: 0 50px 0 330px;
-  max-width: 960px;
+  padding: 0 50px 0 50px;
+  max-width: 980px;
 
   position: relative;
 
@@ -43,8 +47,8 @@ body {
   }
 
   @media(@tablet) {
-    padding: 0 40px 0 280px;
-    max-width: 650px;
+    padding: 0 40px 0 40px;
+    max-width: 750px;
   }
 
   @media(@mobile) {
@@ -55,6 +59,10 @@ body {
 
 .home .container {
   padding: 0 45px 0 285px;
+
+  @media(@mobile) {
+    padding: 0;
+  }
 }
 
 // -- Headings -------------------------------------------

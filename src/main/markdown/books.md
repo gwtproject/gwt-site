@@ -1,37 +1,11 @@
-  <style>
-    ul.toolsList li {
-        margin-bottom:1em;
-  }
-
-  ul.toolsList li a:visited,
-  ul.toolsList li a:link,
-  ul.toolsList li a:hover,
-  ul.toolsList li a:active,
-  ul.toolsList li a:focus {
-    font-weight:bold;
-  }
-
-  .pay {
-   color: #008000;
-  }
-
-   ul.toolsList li p.toolsDescription {
-     margin-left:2em;
-     margin-top:3px;
-   }
-   #body {
-     max-width:700px;
-   }
-   </style>
-
 Books
 ===
 
-<p>Below is a set of books that have been published regarding GWT, including a short description of each.</p>
+Below is a set of books that have been published regarding GWT, including a short description of each.
 
-<p>Please note that the books linked from this page are provided by third-parties and are not endorsed by Google. Please direct any questions about these resources to the appropriate contact listed below.</p>
-<p>Books are order by release date. You can also jump on <a href="#related">Related frameworks</a> books (GXT, Vaadin, etc.)</p>
-<br/>
+Please note that the books linked from this page are provided by third-parties and are not endorsed by Google. Please direct any questions about these resources to the appropriate contact listed below.
+
+Books are order by release date. You can also jump on [Related frameworks](#related) books (GXT, Vaadin, etc.)
 
 <table class="columns" style="clear: left;">
   <tbody>
@@ -201,7 +175,8 @@ http://www.packtpub.com/learning-vaadin-7-second-edition/book
 -->
 
 <a name="related"></a>
-<h2 id="prereqs">Related frameworks</h2> 
+## Related frameworks<a id="prereqs"></a>
+
 <table class="columns" style="clear: left;">
   <tbody>
     <tr>
@@ -296,6 +271,4 @@ http://www.packtpub.com/learning-vaadin-7-second-edition/book
   </tbody>
 </table>
 
-<p>If you believe that a resource should be added or removed, please <a href="mailto:gwt-third-party@google.com">let us know</a>. If you are developing new tools related to the GWT, please review our <a href="http://www.google.com/permissions/guidelines.html">branding guidelines</a>.</p>
-
-
+If you believe that a resource should be added or removed, please [let us know](mailto:gwt-third-party@google.com). If you are developing new tools related to the GWT, please review our [branding guidelines](http://www.google.com/permissions/guidelines.html).
