@@ -77,7 +77,22 @@
 
         <div id="content" class="home" role="main">
 
-            <section>
+            <a id="logo-mobile" href="#"><span>>Back to GWT homepage</span></a>
+
+            <div class="menu-button">Menu</div>
+
+            <nav id="nav-mobile" class="flexnav">
+                $toc
+            </nav>
+
+            <div id="search">
+                <form action="#">
+                    <input type="text"/>
+                    <button type="submit"><i class="icon_search"></i> <span>Search</span></button>
+                </form>
+            </div>
+
+            <section id="intro">
                 <div class="container">
                     <div class="row clearfix">
 
@@ -95,9 +110,10 @@
 
                     </div>
                 </div>
+                <a href="#gwt" class="next">Next</a>
             </section>
 
-            <section class="alternate">
+            <section id="gwt" class="alternate">
                 <div class="container">
                     <div class="row clearfix">
 
@@ -119,6 +135,7 @@
 
                     </div>
                 </div>
+                <a href="#letsbegin" class="next">Next</a>
             </section>
 
             <section id="letsbegin">
@@ -129,7 +146,7 @@
                             <h1>Let's begin</h1>
                         </div>
 
-                        <div class="col col-1_4">
+                        <div class="col col-1_4 col-t1_2 col-mfull">
                             <a href="overview.html">
                                 <i class="icon_overview"></i>
                                 <h2>Learn about GWT</h2>
@@ -138,7 +155,7 @@
                             </a>
                         </div>
 
-                        <div class="col col-1_4">
+                        <div class="col col-1_4 col-t1_2 col-mfull">
                             <a href="download.html">
                                 <i class="icon_download"></i>
                                 <h2>Download</h2>
@@ -146,7 +163,9 @@
                             </a>
                         </div>
 
-                        <div class="col col-1_4">
+                        <div class="clearfix nodesktop"></div>
+
+                        <div class="col col-1_4 col-t1_2 col-mfull">
                             <a href="gettingstarted.html">
                                 <i class="icon_arrow"></i>
                                 <h2>Get started</h2>
@@ -155,7 +174,7 @@
                             </a>
                         </div>
 
-                        <div class="col col-1_4">
+                        <div class="col col-1_4 col-t1_2 col-mfull">
                             <a href="doc/latest/DevGuide.html">
                                 <i class="icon_doc"></i>
                                 <h2>Docs</h2>
@@ -166,6 +185,12 @@
                     </div>
                 </div>
             </section>
+
+            <div class="pager">
+                <a class="active" href="#intro"></a>
+                <a href="#gwt"></a>
+                <a href="#letsbegin"></a>
+            </div>
 
         </div>
 
