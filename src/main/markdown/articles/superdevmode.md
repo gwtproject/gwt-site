@@ -1,8 +1,8 @@
 <i>Brian Slesinsky, Senior Software Engineer</i>
 <br>
-<i>Updated June 2012</i>
+<i>Updated September 2014</i>
 
-<p> Super Dev Mode is an experimental replacement for GWT's
+<p> Super Dev Mode is a replacement for GWT's
 <a href="../doc/latest/DevGuideCompilingAndDebugging.html#dev_mode">Development Mode</a>.
 Like its predecessor (which I'll call <i>classic</i> Dev Mode), Super Dev Mode allows GWT
 developers to quickly recompile their code and see the results in a browser. It also allows
@@ -33,9 +33,7 @@ http://localhost:9876/hello/hello.nocache.js
 <p> That's nice, but how do we use it on an HTML page? One possibility would be to
 temporarily edit the &lt;script&gt; tag in an HTML page that runs a GWT application. But this can be
 inconvenient when the HTML page is on a server that's shared with other users, or when
-modifying the HTML can only be done via a slow server restart. We could also use a browser plugin
-like "classic" Dev Mode, but the GWT team has learned that browser plugins are often hard to
-maintain.
+modifying the HTML can only be done via a slow server restart.
 </p>
 
 <p> Instead, Super Dev Mode provides another way to change the GWT application's URL, using
@@ -61,15 +59,20 @@ applications on the current page and allows you to compile them:
 in session storage and automatically redirect to the provided URL.
 </p>
 
-<p> However, since Super Dev Mode is still an experimental feature, the redirect is not enabled by
-default. To enable Super Dev Mode for a GWT application, you must currently add the following lines
-to its module.xml file:
-</p>
-
-<blockquote><pre>
-&lt;add-linker name="xsiframe"/&gt;
-&lt;set-configuration-property name="devModeRedirectEnabled" value="true"/&gt;
-</pre></blockquote>
+<p>Add the Super Dev Mode linker to the module.xml file. Older GWT versions require more project module settings.</p> 
+<ul> 
+<li><p>GWT 2.5.1 project module settings.</p> <pre>
+<code>&lt;add-linker name=&quot;xsiframe&quot;/&gt;
+&lt;set-configuration-property name=&quot;devModeRedirectEnabled&quot; value=&quot;true&quot;/&gt;
+&lt;set-property name=&quot;compiler.useSourceMaps&quot; value=&quot;true&quot;/&gt;</code></pre></li> 
+</ul> 
+<ul> 
+<li><p>GWT 2.6.1 project module settings.</p><pre>
+<code>&lt;add-linker name=&quot;xsiframe&quot;/&gt;</code></pre></li> 
+</ul> 
+<ul> 
+<li><p>GWT 2.7 (Future): No linker settings are necessary at this time.</p></li> 
+</ul> 
 
 (Currently, only the xsiframe linker supports Super Dev Mode.)
 
@@ -145,14 +148,9 @@ same network might look at the source code.</p>
   is out of range.</li>
 </ul>
 
-<p>For these reasons, Super Dev Mode is still considered experimental. We hope that early adopters
-will enjoy using it and contribute improvements, so that eventually Super Dev Mode can replace
-classic Dev Mode.
-</p>
-
 <h2 id="Starting">Starting the code server</h2>
 
-<p> If that hasn't scared you off, here are some details you'll need for starting Super Dev Mode:
+<p> Here are some details you'll need for starting Super Dev Mode:
 </p>
 
  <ul>
@@ -177,4 +175,3 @@ and
 </pre>
 
 <p>Happy hacking!</p>
-
