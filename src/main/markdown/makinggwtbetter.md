@@ -302,7 +302,7 @@ just a pain to doc all that and make it build in a cross-platform way.)</p>
   your path.</li>
   <li>Check out the GWT prerequisite tools and third-party
   libraries: <pre>
-~/gwt$ svn checkout http://google-web-toolkit.googlecode.com/svn/tools/ tools</pre></li>
+~/gwt$ svn checkout https://google-web-toolkit.googlecode.com/svn/tools/ tools</pre></li>
   <li>Check out the GWT source: <pre>~/gwt$ git clone https://gwt.googlesource.com/gwt trunk</pre>
   </li>
   <li>Optionally, set an environment variable that contains the
