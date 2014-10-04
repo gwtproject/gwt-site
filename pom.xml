@@ -99,6 +99,20 @@
         </configuration>
       </plugin>
     </plugins>
+
+    <pluginManagement>
+      <plugins>
+        <!-- Run site locally: mvn jetty:run -->
+        <plugin>
+          <groupId>org.mortbay.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <version>8.1.9.v20130131</version>
+          <configuration>
+            <webAppSourceDirectory>${project.build.directory}/generated-site</webAppSourceDirectory>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 
   <dependencies>
