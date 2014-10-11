@@ -15,6 +15,7 @@
         <include>**/*.jpg</include>
         <include>**/*.jpeg</include>
         <include>**/*.gif</include>
+        <include>**/*.dtd</include>
         <include>**/package-list</include>
       </includes>
       <outputDirectory></outputDirectory>
