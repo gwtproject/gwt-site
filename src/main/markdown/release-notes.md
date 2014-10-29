@@ -1,6 +1,7 @@
 The GWT Release Notes
 =====================
 
+* <a href="#Release_Notes_2_7_0_RC1">2.7.0 (RC1)</a>
 * <a href="#Release_Notes_2_6_1">2.6.1</a>
 * <a href="#Release_Notes_2_6_0">2.6.0</a>
 * <a href="#Release_Notes_2_6_0_RC4">2.6.0 (RC4)</a>
@@ -54,6 +55,185 @@ The GWT Release Notes
 </p>
 
 <hr />
+
+<h2 id="Release_Notes_2_7_0_RC1">Release Notes for 2.7.0 (RC1)</h2>
+
+<h3>Highlights</h3>
+
+- Super Dev Mode is now the default. DevMode automatically starts Super Dev Mode
+and reloading a web page automatically runs the compiler when necessary.
+(The -noSuperDevMode flag may be used to revert to the old behavior.)
+
+- Compiling in Super Dev Mode is much faster after the first compile.
+
+- Experimental support for GSS, also known as
+  [Closure Stylesheets](https://code.google.com/p/closure-stylesheets/). (See below.)
+
+<h3>Known Issues</h3>
+
+- GWT Designer doesn't work with RC1.
+
+- gwttar files are incorrect. (These files store intermediate results from an early
+attempt at incremental compilation. GWT doesn't use these files anymore, but some
+external builds may need to be adjusted.)
+
+<h3>Compiler changes</h3>
+
+- In draft mode and Super Dev Mode, all compiler optimizations are turned off for
+better debugging. For example, null pointers are detected sooner.
+
+- JSNI references no longer require fully qualified class names when this
+wouldn't be necessary in Java. (For example, imports work.)
+
+- We've started implementing [JS Interop annotations](http://goo.gl/nGeiq7),
+which will make it much easier to use GWT with JavaScript libraries.
+The specification is not final and there are bugs, so production GWT apps and
+libraries should continue to use JSNI for now. If you wish to experiment,
+you can enable JS Interop using the `-XjsInteropMode` flag, which is available
+for the compiler and Super Dev Mode. (It doesn't work with old DevMode.)
+
+- The experimental `-XmethodNameDisplayMode` flag adds a `displayName`
+property to each JavaScript function containing the name of the Java method.
+This makes Java method names available in browser debuggers at the expense
+of code size. (Also available in Super Dev Mode.)
+
+- Boxed JavaScript strings (created in JavaScript using `new String(...)`)
+are no longer considered equivalent to Java strings. They should be unboxed
+before being passed to Java.
+
+- Many bugfixes.
+
+<h3>Library Changes</h3>
+
+<h4>JDK emulation</h4>
+
+- Significant performance improvements in `String`, `ArrayList`, `HashMap`,
+and `Exception`.
+
+- New emulated classes: `Locale`, `NavigableSet`, and `NavigableMap`.
+
+- New emulated methods in `Class`, `String`, `Exception`, `RuntimeException`,
+`Logger`, `Arrays`, `Collections`, and `Map.Entry`.
+
+- `LinkedList` extends `Deque` and handles incorrect usage better.
+
+<h4>Logging and Stack Traces</h4>
+
+- Better wrapping of exceptions thrown from JavaScript.
+
+- GWT apps that inherit the `com.google.gwt.logging.Logging` module
+have different default behavior for messages logged using the
+`java.util.logging` package. The new default is to log messages at
+level `SEVERE` and above to the browser's console. `PopupLogHandler`
+and `SystemHandler` are no longer enabled by default.
+
+- `FirebugLogHandler` and `NullLoggingPopup` have been removed. ()
+
+<h4>Experimental GSS support</h4>
+
+The `CssResource.enableGss` configuration property turns on GSS support.
+
+- When enabled, resource files with a 'gss' extension are parsed as a
+[Closure Stylesheet](https://code.google.com/p/closure-stylesheets/).
+
+- When enabled, GSS can be used in a UiBinder file by setting
+`gss=true` on a `ui:style` tag.
+
+- If the `CssResource.legacy` configuration property is set,
+.css resources and `ui:style` tags without `gss=true` will first be converted to GSS
+and then parsed as GSS.
+
+<h4>UiBinder</h4>
+
+- The `ui:data` tag has new attributes: `mimeType` and `doNotEmbed`.
+
+<h4>GWT-RPC</h4>
+
+- The `rpc.XserializeFinalFields` configuration property turns on experimental
+support for serializing final fields.
+
+- `LinkedHashSet` may be serialized without a serialization policy.
+
+- deRPC is removed.
+
+<h4>RequestFactory</h4>
+
+- Support overridden methods and generics better.
+
+- Fix support for `@SkipInterfaceValidation` on `RequestContext` methods.
+
+<h4>Internationalization</h4>
+
+- Upgraded to CLDR 25.
+
+<h4>Browser API changes</h4>
+
+- Updated support for typed arrays.
+
+- Added `History.replaceItem()`.
+
+- Fixed an issue with `Window.addWindowScrollHandler` on Chrome.
+
+<h4>Widgets</h4>
+
+- The deprecated `com.google.gwt.widgets` package is removed.
+
+- Various bugfixes and minor improvements.
+
+<h3>Developer Tool Changes</h3>
+
+<h4>Dev Mode</h4>
+
+- The `-noSuperDevMode` flag may be used to turn off Super Dev Mode and
+revert to old Dev Mode. (However, most current browsers no longer support
+Dev Mode plugins.)
+
+- The `-modulePathPrefix` flag may be used to move DevMode's output to a
+subdirectory of the war directory.
+
+<h4>Super Dev Mode</h4>
+
+- Compiling is much faster after the first compile. (Compiling is skipped
+altogether if no files have changed.)
+
+- The first compile no longer happens at startup.
+
+- Chrome reloads the page faster while debugging. (Sourcemap file size is
+reduced.)
+
+- The `-launcherDir` flag may be used to avoid running the GWT compiler
+before starting Super Dev Mode. When enabled, Super Dev Mode writes
+stub .nocache.js files that automatically recompile the GWT app before
+loading it. Therefore the bookmarklets aren't needed.
+(This feature is automatically enabled when launched via DevMode.)
+
+- The `-logLevel` flag may be used to adjust how compile errors are reported.
+
+- The `Dev Mode On` bookmarklet dialog shows whether Super Dev Mode is turned on
+for each module on the page.
+
+- Messages logged using `java.util.logging` at level `SEVERE` and above are
+written to the browser console by default.
+
+- Fixed a startup failure caused by locked directories on Windows.
+
+<h4>Testing</h4>
+
+- Better error reporting for compile errors while running tests.
+
+- Messages logged using `java.util.logging` at level `SEVERE` and above are written
+to the browser console and test output by default.
+
+- `-Dgwt.htmlunit.debug` may be used to open a JavaScript debugger window when
+running a test using HtmlUnit.
+
+- Removed `RunStyleRemoteWeb` and the `BrowserManager` tool.
+
+- Removed flags: `-standardsMode`, `-nostandardsMode`, `-quirksMode`. (GWTTestCase
+tests are always run in an HTML page in standards mode.)
+
+For even more detail, see the [Issue Tracker.]
+(https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%3D2_7+status%3AFixed)
 
 <a name="Release_Notes_Current"></a>
 <h2 id="Release_Notes_2_6_1">Release Notes for 2.6.1</h2>
