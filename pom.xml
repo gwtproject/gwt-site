@@ -111,6 +111,22 @@
             <webAppSourceDirectory>${project.build.directory}/generated-site</webAppSourceDirectory>
           </configuration>
         </plugin>
+        <!-- Work around a performance issue with Maven and Java 7: 
+          Maven has a dependency that does a getgrgid for each file.
+          This is very slow for large groups, and not cached.
+          See issue: http://jira.codehaus.org/browse/PLXCOMP-203
+        -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.plexus</groupId>
+              <artifactId>plexus-io</artifactId>
+              <version>2.0.5</version>
+            </dependency>
+          </dependencies>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
