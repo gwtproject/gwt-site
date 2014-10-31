@@ -2,6 +2,26 @@
 
 <div class="release">
 
+  <h3 class="version">Version 2.7.0-RC1</h3>
+
+  <p>Build 2.7.0-RC1 - Oct 29, 2014 - <a href="release-notes.html#Release_Notes_2_7_0_RC1">Release notes</a></p>
+  <table class="downloads" style="width:500px">
+    <tbody>
+      <tr>
+        <th>Platform</th>
+        <th>Package</th>
+        <th>Size</th>
+        <th>SHA1 Sum</th>
+      </tr>
+      <tr>
+        <td>Windows, Mac OS X, and Linux</td>
+        <td><a href="http://goo.gl/npqEUR">gwt-2.7.0-RC1.zip</a></td>
+        <td>153 MB</td>
+        <td>441f81c09eff871c509383905a0ab0e8ef0bd544</td>
+      </tr>
+    </tbody>
+  </table>
+
   <h3 class="version">Version 2.6.1</h3>
 
   <p>Build 2.6.1 - May 09, 2014 - <a href="release-notes.html#Release_Notes_2_6_1">Release notes</a></p>
