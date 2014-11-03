@@ -71,11 +71,7 @@ and reloading a web page automatically runs the compiler when necessary.
 
 <h3>Known Issues</h3>
 
-- GWT Designer doesn't work with RC1.
-
-- gwttar files are incorrect. (These files store intermediate results from an early
-attempt at incremental compilation. GWT doesn't use these files anymore, but some
-external builds may need to be adjusted.)
+- gwttar files are incorrect. (Fixed in the next version)
 
 <h3>Compiler changes</h3>
 
@@ -102,6 +98,10 @@ are no longer considered equivalent to Java strings. They should be unboxed
 before being passed to Java.
 
 - Many bugfixes.
+
+<h3>Deprecations</h3>
+
+- GWT Designer doesn't work and is no longer supported.
 
 <h3>Library Changes</h3>
 
