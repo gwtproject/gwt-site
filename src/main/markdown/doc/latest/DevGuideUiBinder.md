@@ -862,7 +862,7 @@ public class FooPickerDisplay extends Composite
   }
 
   protected FooPickerDisplay(UiBinder&lt;Widget, FooPickerDisplay> binder) {
-    initWidget(uiBinder.createAndBindUi(this));
+    initWidget(binder.createAndBindUi(this));
   }
 
   public static FooPickerDisplay createRedPicker() {
