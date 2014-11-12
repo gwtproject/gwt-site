@@ -73,6 +73,17 @@ and reloading a web page automatically runs the compiler when necessary.
 
 - gwttar files are incorrect. (Fixed in the next version)
 
+<h3>Deprecations</h3>
+
+- GWT Designer doesn't work with 2.7 and is no longer supported.
+([Source code](https://code.google.com/p/gwt-designer/) is available
+if someone wishes to revive this project.)
+
+- IFrameLinker and XSLinker are deprecated because they don't work in
+Super Dev Mode. However, we don't have suitable replacements for all
+use cases yet. For updates and possible workarounds, see
+[issue 8997](https://code.google.com/p/google-web-toolkit/issues/detail?id=8997).
+
 <h3>Compiler changes</h3>
 
 - In draft mode and Super Dev Mode, all compiler optimizations are turned off for
@@ -98,10 +109,6 @@ are no longer considered equivalent to Java strings. They should be unboxed
 before being passed to Java.
 
 - Many bugfixes.
-
-<h3>Deprecations</h3>
-
-- GWT Designer doesn't work and is no longer supported.
 
 <h3>Library Changes</h3>
 
