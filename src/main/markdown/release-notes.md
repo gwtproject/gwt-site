@@ -1,6 +1,7 @@
 The GWT Release Notes
 =====================
 
+* <a href="#Release_Notes_2_7_0">2.7.0</a>
 * <a href="#Release_Notes_2_7_0_RC1">2.7.0 (RC1)</a>
 * <a href="#Release_Notes_2_6_1">2.6.1</a>
 * <a href="#Release_Notes_2_6_0">2.6.0</a>
@@ -56,6 +57,20 @@ The GWT Release Notes
 
 <hr />
 
+<h2 id="Release_Notes_2_7_0">Release Notes for 2.7.0</h2>
+
+This release fixes issues found while testing RC1.
+
+For details, see the
+[commit logs.](https://gwt.googlesource.com/gwt/+log/2.7.0-rc1..2.7.0)
+
+<h3>Known Issues</h3>
+
+DevMode always starts in Super Dev Mode, so it's not as easy to test in
+production mode. See
+[issue 9004](https://code.google.com/p/google-web-toolkit/issues/detail?id=9004)
+for workarounds.
+
 <h2 id="Release_Notes_2_7_0_RC1">Release Notes for 2.7.0 (RC1)</h2>
 
 <h3>Highlights</h3>
@@ -71,7 +86,7 @@ and reloading a web page automatically runs the compiler when necessary.
 
 <h3>Known Issues</h3>
 
-- gwttar files are incorrect. (Fixed in the next version)
+- gwttar files are incorrect. (Fixed in the next version.)
 
 <h3>Deprecations</h3>
 
