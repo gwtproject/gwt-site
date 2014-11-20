@@ -2,9 +2,9 @@
 
 <div class="release">
 
-  <h3 class="version">Version 2.7.0-RC1</h3>
+  <h3 class="version">Version 2.7.0</h3>
 
-  <p>Build 2.7.0-RC1 - Oct 29, 2014 - <a href="release-notes.html#Release_Notes_2_7_0_RC1">Release notes</a></p>
+  <p>Build 2.7.0 - Nov 20, 2014 - <a href="release-notes.html#Release_Notes_2_7_0">Release notes</a></p>
   <table class="downloads" style="width:500px">
     <tbody>
       <tr>
@@ -15,9 +15,9 @@
       </tr>
       <tr>
         <td>Windows, Mac OS X, and Linux</td>
-        <td><a href="http://goo.gl/npqEUR">gwt-2.7.0-RC1.zip</a></td>
-        <td>153 MB</td>
-        <td>441f81c09eff871c509383905a0ab0e8ef0bd544</td>
+        <td><a href="http://goo.gl/t7FQSn">gwt-2.7.0.zip</a></td>
+        <td>104 MB</td>
+        <td>2688f2ed80a36ba0e6170a4ef656581d811f330f</td>
       </tr>
     </tbody>
   </table>
