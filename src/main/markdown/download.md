@@ -64,7 +64,7 @@
   <h3 style="margin-top: 0em;">
     Plugin for Eclipse <span style="font-weight: normal; font-size: 95%;"> (incl. SDKs)</span>
   </h3>
-  <p>The Google Plugin for Eclipse provides IDE support for the GWT and App Engine web projects, and includes a lightweight version of GWT Designer.</p>
+  <p>The Google Plugin for Eclipse provides IDE support for the GWT and App Engine web projects.</p>
   <p style="font-size: 90%;">
     <b style="color: #444;">Note</b> - This download includes Eclipse tools as well as the option to install the GWT SDK and <a
       href="https://developer.google.com/appengine/docs/whatisgoogleappengine">App Engine SDK</a>.
