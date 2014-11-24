@@ -70,8 +70,8 @@
       href="https://developer.google.com/appengine/docs/whatisgoogleappengine">App Engine SDK</a>.
   </p>
   <p style="margin-top: 0.5em; font-size: 90%">
-    <b style="color: #444;">Note</b> - GWT release candidates are not bundled with The Google Plugin For Eclipse. Download the SDK and add it to your workspace as described <a
-      href="https://developers.google.com/eclipse/docs/using_sdks">here</a>.
+    <b style="color: #444;">Note</b> - GWT release candidates are not bundled with the Google Plugin For Eclipse. Download the SDK and add it to your workspace as described <a
+      href="https://developers.google.com/eclipse/docs/using_sdks">here</a>. The Google Plugin for Eclipse's version of GWT might also not always be up-to-date.
   </p>
   <div class='moreinfo'>
     <a class='download-button' href="https://developer.google.com/eclipse/docs/download">Download Plugin &amp; SDKs</a>
