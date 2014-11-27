@@ -1,3 +1,4 @@
+<a href="http://bit.ly/GWT2015" style="background: #f55837; padding: 0.5em; color: #fff; float: right; border-radius: 2px; border: 1px solid #e54827">Answer the Future of GWT 2015 Study</a>
 
 GWT
 ===
