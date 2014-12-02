@@ -850,14 +850,14 @@ h1::after {
   border-radius: 10px;
 }
 h2 {
-  color: #d6171e;
+  color: #f93535;
   font-size: 28px;
   font-size: 2.8rem;
   margin: 1em 0 0.9em;
 }
 h2::after {
   content: "";
-  background-color: #d6171e;
+  background-color: #f93535;
   display: block;
   width: 22px;
   height: 3px;
@@ -880,7 +880,7 @@ h4 {
 }
 h4 strong,
 h4 code {
-  color: #d6171e;
+  color: #f93535;
 }
 html,
 button,
@@ -1387,7 +1387,7 @@ a {
   min-height: 100%;
   width: 260px;
   padding: 0;
-  border-top: 6px solid #d6171e;
+  border-top: 6px solid #f93535;
   overflow-x: hidden;
   position: fixed;
   top: 0;
@@ -1418,7 +1418,7 @@ a {
   font-size: 1.5rem;
   display: inline-block;
   width: 100%;
-  padding: 0 35px 4px;
+  padding: 3px 35px 4px;
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1440,26 +1440,28 @@ a {
   margin-left: 0;
   margin-right: 0.5em;
   position: relative;
-  top: 1px;
+  top: 3px;
 }
 #nav li.logo a {
   background: url('../img/navLogoBig.png') no-repeat;
   text-align: center;
   text-indent: -9999px;
   display: block;
-  width: 160px;
-  height: 149px;
+  width: 150px;
+  height: 160px;
   margin: 0 auto 40px;
 }
 #nav li.logo a::after {
-  content: "";
-  background: url('../img/navLogoSmall.png') no-repeat;
+  content: "\e601";
+  font-family: "icons";
+  font-size: 30px;
+  font-size: 3rem;
   display: block;
   width: 24px;
   height: 17px;
   position: absolute;
   top: 20px;
-  left: 8px;
+  left: 5px;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -1470,6 +1472,9 @@ a {
   opacity: 0;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
   filter: alpha(opacity=0);
+}
+#nav li.logo a span {
+  display: none;
 }
 #nav li.sep {
   margin-bottom: 25px;
@@ -1495,7 +1500,7 @@ a {
   margin-left: 0;
 }
 #nav li.btn a {
-  background-color: #d6171e;
+  background-color: #f93535;
   color: #fff;
   font-size: 14px;
   font-size: 1.4rem;
@@ -1631,11 +1636,6 @@ aside#submenu a {
 aside#submenu a:hover {
   background-color: #f2f2f2;
 }
-aside#submenu a:before {
-  content: "\003e";
-  margin-right: 4px;
-  position: relative;
-}
 aside#submenu ul {
   margin: 0;
   padding: 0;
@@ -1651,6 +1651,16 @@ aside#submenu ul ul ul a {
   aside#submenu {
     display: none;
   }
+}
+aside#submenu nav > ul a:before {
+  content: "\e809";
+  font-family: "icons";
+  margin-left: 4px;
+  position: relative;
+  float: right;
+}
+aside#submenu nav > ul li > ul a:before {
+  content: "";
 }
 a#logo-mobile {
   display: none;
@@ -1683,7 +1693,7 @@ nav#nav-mobile {
   }
 }
 #search {
-  background-color: #d6171e;
+  background-color: #f93535;
   color: #fff;
   padding: 4px 2px 5px 6px;
   position: absolute;
@@ -1731,7 +1741,7 @@ nav#nav-mobile {
   }
 }
 #search button {
-  background-color: #d6171e;
+  background-color: #f93535;
   color: #fff;
   font-weight: normal;
   border: 0;
@@ -1872,7 +1882,7 @@ nav#nav-mobile {
   z-index: 9500;
 }
 #content.home section.alternate {
-  background-color: #d6171e;
+  background-color: #f93535;
   color: #fff;
   position: relative;
 }
@@ -1887,11 +1897,11 @@ nav#nav-mobile {
   content: " ";
   background: url('../img/logoBig.png') no-repeat;
   display: block;
-  width: 1429px;
-  height: 1549px;
+  width: 1084px;
+  height: 665px;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: -660px;
+  right: 35px;
   z-index: 1000;
 }
 @media (max-width: 649px) {
@@ -1919,7 +1929,7 @@ nav#nav-mobile {
   }
 }
 #content.home section#letsbegin .col-1_4 i {
-  color: #d6171e !important;
+  color: #f93535 !important;
   font-size: 100px;
   font-size: 10rem;
 }

@@ -51,8 +51,8 @@
   }
 
   li {
-
     .transition();
+
     a {
       color: @c-text-light;
       text-decoration: none;
@@ -61,7 +61,7 @@
 
       display: inline-block;
       width: 100%;
-      padding: 0 35px 4px;
+      padding: 3px 35px 4px;
 
       .box-sizing();
       .transition();
@@ -81,7 +81,7 @@
         margin-right: 0.5em;
 
         position: relative;
-        top: 1px;
+        top: 3px;
       }
     }
 
@@ -91,13 +91,15 @@
       text-indent: -9999px;
 
       display: block;
-      width: 160px;
-      height: 149px;
+      width: 150px;
+      height: 160px;
       margin: 0 auto 40px;
 
       &::after {
-        content: "";
-        background: url('../img/navLogoSmall.png') no-repeat;
+        content: "\e601";
+        font-family: "icons";
+        font-size: 30px;
+        font-size: 3rem;
 
         display: block;
         width: 24px;
@@ -105,10 +107,14 @@
 
         position: absolute;
         top: 20px;
-        left: 8px;
+        left: 5px;
 
         .transition();
         .opacity(0);
+      }
+
+      span {
+        display: none;
       }
     }
 
@@ -132,7 +138,7 @@
         .transition();
       }
     }
-    
+
     &.btn {
       padding: 0 35px;
       margin-bottom: 10px;
@@ -174,7 +180,7 @@
       }
     }
   }
-  
+
   #cc {
     color: #9e9d9d;
     text-align: center;
@@ -276,14 +282,6 @@ aside#submenu {
     &:hover {
       background-color: @c-background;
     }
-
-    &:before {
-      content: "\003e";
-
-      margin-right: 4px;
-
-      position: relative;
-    }
   }
   
   ul {
@@ -308,6 +306,20 @@ aside#submenu {
   @media(@mobile) {
     display: none;
   }
+}
+
+aside#submenu nav > ul a:before {
+  content: "\e809";
+  font-family: "icons";
+
+  margin-left: 4px;
+
+  position: relative;
+  float: right;
+}
+
+aside#submenu nav > ul li > ul a:before {
+  content: "";
 }
 
 a#logo-mobile {
@@ -539,12 +551,12 @@ nav#nav-mobile {
           background: url('../img/logoBig.png') no-repeat;
 
           display: block;
-          width: 1429px;
-          height: 1549px;
+          width: 1084px;
+          height: 665px;
 
           position: absolute;
-          bottom: 0;
-          right: 0;
+          top: -660px;
+          right: 35px;
           z-index: 1000;
 
           @media(@mobile) {

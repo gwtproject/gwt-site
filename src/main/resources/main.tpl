@@ -68,7 +68,7 @@
                 </ul>
                 <div id="social">
                     <a class="googleplus" href="#"><i
-                            class="icon_gplus"></i><span>Access our Google+ community</span></a>
+                            class="icon_google"></i><span>Access our Google+ community</span></a>
                     <a class="twitter" href="#"><i class="icon_twitter"></i><span>Join us on Twitter</span></a>
                 </div>
                 <a id="cc" href="#">Creative Commons Attribution 3.0 License.</a>
