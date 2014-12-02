@@ -8,12 +8,14 @@ com.google.gwt.cell.client
 com.google.gwt.codegen.server
 com.google.gwt.core.client
 com.google.gwt.core.client.debug
+com.google.gwt.core.client.js
 com.google.gwt.core.client.prefetch
 com.google.gwt.core.client.testing
 com.google.gwt.core.ext
 com.google.gwt.core.ext.debug
 com.google.gwt.core.ext.linker
 com.google.gwt.core.ext.soyc
+com.google.gwt.core.ext.soyc.coderef
 com.google.gwt.core.ext.typeinfo
 com.google.gwt.core.linker
 com.google.gwt.core.server
@@ -55,10 +57,10 @@ com.google.gwt.place.shared
 com.google.gwt.precompress.linker
 com.google.gwt.regexp.shared
 com.google.gwt.resources.client
+com.google.gwt.resources.converter
 com.google.gwt.resources.ext
-com.google.gwt.rpc.client
-com.google.gwt.rpc.linker
-com.google.gwt.rpc.server
+com.google.gwt.resources.gss
+com.google.gwt.resources.gss.ast
 com.google.gwt.safecss.shared
 com.google.gwt.safehtml.client
 com.google.gwt.safehtml.shared
@@ -89,7 +91,6 @@ com.google.gwt.util.regexfilter
 com.google.gwt.util.tools
 com.google.gwt.util.tools.shared
 com.google.gwt.view.client
-com.google.gwt.widget.client
 com.google.gwt.xhr.client
 com.google.gwt.xml.client
 com.google.web.bindery.autobean.shared

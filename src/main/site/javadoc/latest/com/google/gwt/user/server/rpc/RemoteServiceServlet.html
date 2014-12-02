@@ -1,508 +1,629 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!-- NewPage -->
-<html lang="fr">
-<head>
-<title>RemoteServiceServlet (GWT Javadoc)</title>
-<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
-</head>
-<body>
-<script type="text/javascript"><!--
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+RemoteServiceServlet (GWT Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
     if (location.href.indexOf('is-external=true') == -1) {
         parent.document.title="RemoteServiceServlet (GWT Javadoc)";
     }
-//-->
-</script>
-<noscript>
-<div>JavaScript is disabled on your browser.</div>
-</noscript>
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
 <!-- ========= START OF TOP NAVBAR ======= -->
-<div class="topNav"><a name="navbar_top">
-<!--   -->
-</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
-<!--   -->
-</a>
-<ul class="navList" title="Navigation">
-<li><a href="../../../../../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Package</a></li>
-<li class="navBarCell1Rev">Class</li>
-<li><a href="class-use/RemoteServiceServlet.html">Use</a></li>
-<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../help-doc.html">Help</a></li>
-</ul>
-<div class="aboutLanguage"><em>GWT 2.6.1</em></div>
-</div>
-<div class="subNav">
-<ul class="navList">
-<li><a href="../../../../../../com/google/gwt/user/server/rpc/NoXsrfProtect.html" title="annotation in com.google.gwt.user.server.rpc"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../../../com/google/gwt/user/server/rpc/RPC.html" title="class in com.google.gwt.user.server.rpc"><span class="strong">Next Class</span></a></li>
-</ul>
-<ul class="navList">
-<li><a href="../../../../../../index.html?com/google/gwt/user/server/rpc/RemoteServiceServlet.html" target="_top">Frames</a></li>
-<li><a href="RemoteServiceServlet.html" target="_top">No Frames</a></li>
-</ul>
-<ul class="navList" id="allclasses_navbar_top">
-<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
-</ul>
-<div>
-<script type="text/javascript"><!--
-  allClassesLink = document.getElementById("allclasses_navbar_top");
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/RemoteServiceServlet.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.7.0</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/gwt/user/server/rpc/NoXsrfProtect.html" title="annotation in com.google.gwt.user.server.rpc"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/gwt/user/server/rpc/RPC.html" title="class in com.google.gwt.user.server.rpc"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/gwt/user/server/rpc/RemoteServiceServlet.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="RemoteServiceServlet.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
   if(window==top) {
-    allClassesLink.style.display = "block";
-  }
-  else {
-    allClassesLink.style.display = "none";
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
   }
   //-->
-</script>
-</div>
-<div>
-<ul class="subNavList">
-<li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#fields_inherited_from_class_com.google.gwt.user.server.rpc.AbstractRemoteServiceServlet">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
-</ul>
-<ul class="subNavList">
-<li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
-</ul>
-</div>
-<a name="skip-navbar_top">
-<!--   -->
-</a></div>
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_com.google.gwt.user.server.rpc.AbstractRemoteServiceServlet">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
 <!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
 <!-- ======== START OF CLASS DATA ======== -->
-<div class="header">
-<div class="subTitle">com.google.gwt.user.server.rpc</div>
-<h2 title="Class RemoteServiceServlet" class="title">Class RemoteServiceServlet</h2>
-</div>
-<div class="contentContainer">
-<ul class="inheritance">
-<li>java.lang.Object</li>
-<li>
-<ul class="inheritance">
-<li>javax.servlet.GenericServlet</li>
-<li>
-<ul class="inheritance">
-<li>javax.servlet.http.HttpServlet</li>
-<li>
-<ul class="inheritance">
-<li><a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html" title="class in com.google.gwt.user.server.rpc">com.google.gwt.user.server.rpc.AbstractRemoteServiceServlet</a></li>
-<li>
-<ul class="inheritance">
-<li>com.google.gwt.user.server.rpc.RemoteServiceServlet</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<div class="description">
-<ul class="blockList">
-<li class="blockList">
-<dl>
-<dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicyProvider.html" title="interface in com.google.gwt.user.server.rpc">SerializationPolicyProvider</a>, java.io.Serializable, javax.servlet.Servlet, javax.servlet.ServletConfig</dd>
-</dl>
-<dl>
-<dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../../../com/google/gwt/user/server/rpc/AbstractXsrfProtectedServiceServlet.html" title="class in com.google.gwt.user.server.rpc">AbstractXsrfProtectedServiceServlet</a>, <a href="../../../../../../com/google/gwt/logging/server/RemoteLoggingServiceImpl.html" title="class in com.google.gwt.logging.server">RemoteLoggingServiceImpl</a>, <a href="../../../../../../com/google/gwt/user/server/rpc/XsrfTokenServiceServlet.html" title="class in com.google.gwt.user.server.rpc">XsrfTokenServiceServlet</a></dd>
-</dl>
-<hr>
-<br>
-<pre>public class <span class="strong">RemoteServiceServlet</span>
-extends <a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html" title="class in com.google.gwt.user.server.rpc">AbstractRemoteServiceServlet</a>
-implements <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicyProvider.html" title="interface in com.google.gwt.user.server.rpc">SerializationPolicyProvider</a></pre>
-<div class="block">The servlet base class for your RPC service implementations that
+<H2>
+<FONT SIZE="-1">
+com.google.gwt.user.server.rpc</FONT>
+<BR>
+Class RemoteServiceServlet</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by ">javax.servlet.GenericServlet
+      <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by ">javax.servlet.http.HttpServlet
+          <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html" title="class in com.google.gwt.user.server.rpc">com.google.gwt.user.server.rpc.AbstractRemoteServiceServlet</A>
+              <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.gwt.user.server.rpc.RemoteServiceServlet</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicyProvider.html" title="interface in com.google.gwt.user.server.rpc">SerializationPolicyProvider</A>, java.io.Serializable, javax.servlet.Servlet, javax.servlet.ServletConfig</DD>
+</DL>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractXsrfProtectedServiceServlet.html" title="class in com.google.gwt.user.server.rpc">AbstractXsrfProtectedServiceServlet</A>, <A HREF="../../../../../../com/google/gwt/logging/server/RemoteLoggingServiceImpl.html" title="class in com.google.gwt.logging.server">RemoteLoggingServiceImpl</A>, <A HREF="../../../../../../com/google/gwt/user/server/rpc/XsrfTokenServiceServlet.html" title="class in com.google.gwt.user.server.rpc">XsrfTokenServiceServlet</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <B>RemoteServiceServlet</B><DT>extends <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html" title="class in com.google.gwt.user.server.rpc">AbstractRemoteServiceServlet</A><DT>implements <A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicyProvider.html" title="interface in com.google.gwt.user.server.rpc">SerializationPolicyProvider</A></DL>
+</PRE>
+
+<P>
+The servlet base class for your RPC service implementations that
  automatically deserializes incoming requests from the client and serializes
- outgoing responses for client/server RPCs.</div>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../../serialized-form.html#com.google.gwt.user.server.rpc.RemoteServiceServlet">Serialized Form</a></dd></dl>
-</li>
-</ul>
-</div>
-<div class="summary">
-<ul class="blockList">
-<li class="blockList">
+ outgoing responses for client/server RPCs.
+<P>
+
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../../../../serialized-form.html#com.google.gwt.user.server.rpc.RemoteServiceServlet">Serialized Form</A></DL>
+<HR>
+
+<P>
 <!-- =========== FIELD SUMMARY =========== -->
-<ul class="blockList">
-<li class="blockList"><a name="field_summary">
-<!--   -->
-</a>
-<h3>Field Summary</h3>
-<ul class="blockList">
-<li class="blockList"><a name="fields_inherited_from_class_com.google.gwt.user.server.rpc.AbstractRemoteServiceServlet">
-<!--   -->
-</a>
-<h3>Fields inherited from class&nbsp;com.google.gwt.user.server.rpc.<a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html" title="class in com.google.gwt.user.server.rpc">AbstractRemoteServiceServlet</a></h3>
-<code><a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#perThreadRequest">perThreadRequest</a>, <a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#perThreadResponse">perThreadResponse</a></code></li>
-</ul>
-</li>
-</ul>
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.google.gwt.user.server.rpc.AbstractRemoteServiceServlet"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.google.gwt.user.server.rpc.<A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html" title="class in com.google.gwt.user.server.rpc">AbstractRemoteServiceServlet</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#perThreadRequest">perThreadRequest</A>, <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#perThreadResponse">perThreadResponse</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<ul class="blockList">
-<li class="blockList"><a name="constructor_summary">
-<!--   -->
-</a>
-<h3>Constructor Summary</h3>
-<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
-<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colOne" scope="col">Constructor and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#RemoteServiceServlet()">RemoteServiceServlet</a></strong>()</code>
-<div class="block">The default constructor used by service implementations that
- extend this class.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#RemoteServiceServlet(java.lang.Object)">RemoteServiceServlet</a></strong>(java.lang.Object&nbsp;delegate)</code>
-<div class="block">The wrapping constructor used by service implementations that are
- separate from this class.</div>
-</td>
-</tr>
-</table>
-</li>
-</ul>
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#RemoteServiceServlet()">RemoteServiceServlet</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The default constructor used by service implementations that
+ extend this class.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#RemoteServiceServlet(java.lang.Object)">RemoteServiceServlet</A></B>(java.lang.Object&nbsp;delegate)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The wrapping constructor used by service implementations that are
+ separate from this class.</TD>
+</TR>
+</TABLE>
+&nbsp;
 <!-- ========== METHOD SUMMARY =========== -->
-<ul class="blockList">
-<li class="blockList"><a name="method_summary">
-<!--   -->
-</a>
-<h3>Method Summary</h3>
-<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Method and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#checkPermutationStrongName()">checkPermutationStrongName</a></strong>()</code>
-<div class="block">This method is called by <a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#processCall(java.lang.String)"><code>processCall(String)</code></a> and will throw a
- SecurityException if <a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getPermutationStrongName()"><code>AbstractRemoteServiceServlet.getPermutationStrongName()</code></a> returns
- <code>null</code>.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#doGetSerializationPolicy(javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)">doGetSerializationPolicy</a></strong>(javax.servlet.http.HttpServletRequest&nbsp;request,
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#checkPermutationStrongName()">checkPermutationStrongName</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is called by <A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#processCall(java.lang.String)"><CODE>processCall(String)</CODE></A> and will throw a
+ SecurityException if <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getPermutationStrongName()"><CODE>AbstractRemoteServiceServlet.getPermutationStrongName()</CODE></A> returns
+ <code>null</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#doGetSerializationPolicy(javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)">doGetSerializationPolicy</A></B>(javax.servlet.http.HttpServletRequest&nbsp;request,
+                         java.lang.String&nbsp;moduleBaseURL,
+                         java.lang.String&nbsp;strongName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loads the <A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><CODE>SerializationPolicy</CODE></A> for given module base URL and strong name.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#getCodeServerPolicyUrl(java.lang.String)">getCodeServerPolicyUrl</A></B>(java.lang.String&nbsp;strongName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a URL for fetching a serialization policy from a Super Dev Mode code server.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#getRequestModuleBasePath()">getRequestModuleBasePath</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extract the module's base path from the current request.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#getSerializationPolicy(java.lang.String, java.lang.String)">getSerializationPolicy</A></B>(java.lang.String&nbsp;moduleBaseURL,
+                       java.lang.String&nbsp;strongName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a <A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><CODE>SerializationPolicy</CODE></A> for a given module base URL and
+ serialization policy strong name.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#init(javax.servlet.ServletConfig)">init</A></B>(javax.servlet.ServletConfig&nbsp;config)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overridden to load the gwt.codeserver.port system property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#loadPolicyFromCodeServer(java.lang.String)">loadPolicyFromCodeServer</A></B>(java.lang.String&nbsp;url)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loads a serialization policy from a Super Dev Mode code server.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>(package private) static&nbsp;<A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#loadSerializationPolicy(javax.servlet.http.HttpServlet, javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)">loadSerializationPolicy</A></B>(javax.servlet.http.HttpServlet&nbsp;servlet,
+                        javax.servlet.http.HttpServletRequest&nbsp;request,
                         java.lang.String&nbsp;moduleBaseURL,
-                        java.lang.String&nbsp;strongName)</code>
-<div class="block">Loads the <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><code>SerializationPolicy</code></a> for given module base URL and strong name.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#getCodeServerPolicyUrl(java.lang.String)">getCodeServerPolicyUrl</a></strong>(java.lang.String&nbsp;strongName)</code>
-<div class="block">Returns a URL for fetching a serialization policy from a Super Dev Mode code server.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#getSerializationPolicy(java.lang.String, java.lang.String)">getSerializationPolicy</a></strong>(java.lang.String&nbsp;moduleBaseURL,
-                      java.lang.String&nbsp;strongName)</code>
-<div class="block">Returns a <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><code>SerializationPolicy</code></a> for a given module base URL and
- serialization policy strong name.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#init(javax.servlet.ServletConfig)">init</a></strong>(javax.servlet.ServletConfig&nbsp;config)</code>
-<div class="block">Overridden to load the gwt.codeserver.port system property.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#loadPolicyFromCodeServer(java.lang.String)">loadPolicyFromCodeServer</a></strong>(java.lang.String&nbsp;url)</code>
-<div class="block">Loads a serialization policy from a Super Dev Mode code server.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>(package private) static <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#loadSerializationPolicy(javax.servlet.http.HttpServlet, javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)">loadSerializationPolicy</a></strong>(javax.servlet.http.HttpServlet&nbsp;servlet,
-                       javax.servlet.http.HttpServletRequest&nbsp;request,
-                       java.lang.String&nbsp;moduleBaseURL,
-                       java.lang.String&nbsp;strongName)</code>
-<div class="block">Loads a serialization policy stored as a servlet resource in the same
- ServletContext as this servlet.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#onAfterResponseSerialized(java.lang.String)">onAfterResponseSerialized</a></strong>(java.lang.String&nbsp;serializedResponse)</code>
-<div class="block">Override this method to examine the serialized response that will be
- returned to the client.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#onBeforeRequestDeserialized(java.lang.String)">onBeforeRequestDeserialized</a></strong>(java.lang.String&nbsp;serializedRequest)</code>
-<div class="block">Override this method to examine the serialized version of the request
- payload before it is deserialized into objects.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#processCall(java.lang.String)">processCall</a></strong>(java.lang.String&nbsp;payload)</code>
-<div class="block">Process a call originating from the given request.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#processPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)">processPost</a></strong>(javax.servlet.http.HttpServletRequest&nbsp;request,
-           javax.servlet.http.HttpServletResponse&nbsp;response)</code>
-<div class="block">Standard HttpServlet method: handle the POST.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#shouldCompressResponse(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, java.lang.String)">shouldCompressResponse</a></strong>(javax.servlet.http.HttpServletRequest&nbsp;request,
-                      javax.servlet.http.HttpServletResponse&nbsp;response,
-                      java.lang.String&nbsp;responsePayload)</code>
-<div class="block">Determines whether the response to a given servlet request should or should
- not be GZIP compressed.</div>
-</td>
-</tr>
-</table>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_com.google.gwt.user.server.rpc.AbstractRemoteServiceServlet">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;com.google.gwt.user.server.rpc.<a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html" title="class in com.google.gwt.user.server.rpc">AbstractRemoteServiceServlet</a></h3>
-<code><a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)">doPost</a>, <a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#doUnexpectedFailure(java.lang.Throwable)">doUnexpectedFailure</a>, <a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getPermutationStrongName()">getPermutationStrongName</a>, <a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getThreadLocalRequest()">getThreadLocalRequest</a>, <a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getThreadLocalResponse()">getThreadLocalResponse</a>, <a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#onAfterRequestDeserialized(com.google.gwt.user.server.rpc.RPCRequest)">onAfterRequestDeserialized</a>, <a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#readContent(javax.servlet.http.HttpServletRequest)">readContent</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_javax.servlet.http.HttpServlet">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;javax.servlet.http.HttpServlet</h3>
-<code>doDelete, doGet, doHead, doOptions, doPut, doTrace, getLastModified, service, service</code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_javax.servlet.GenericServlet">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;javax.servlet.GenericServlet</h3>
-<code>destroy, getInitParameter, getInitParameterNames, getServletConfig, getServletContext, getServletInfo, getServletName, init, log, log</code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="details">
-<ul class="blockList">
-<li class="blockList">
+                        java.lang.String&nbsp;strongName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loads a serialization policy stored as a servlet resource in the same
+ ServletContext as this servlet.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#onAfterResponseSerialized(java.lang.String)">onAfterResponseSerialized</A></B>(java.lang.String&nbsp;serializedResponse)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override this method to examine the serialized response that will be
+ returned to the client.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#onBeforeRequestDeserialized(java.lang.String)">onBeforeRequestDeserialized</A></B>(java.lang.String&nbsp;serializedRequest)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Override this method to examine the serialized version of the request
+ payload before it is deserialized into objects.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#processCall(com.google.gwt.user.server.rpc.RPCRequest)">processCall</A></B>(<A HREF="../../../../../../com/google/gwt/user/server/rpc/RPCRequest.html" title="class in com.google.gwt.user.server.rpc">RPCRequest</A>&nbsp;rpcRequest)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Process an already decoded RPC request.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#processCall(java.lang.String)">processCall</A></B>(java.lang.String&nbsp;payload)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Process a call originating from the given request.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#processPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)">processPost</A></B>(javax.servlet.http.HttpServletRequest&nbsp;request,
+            javax.servlet.http.HttpServletResponse&nbsp;response)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Standard HttpServlet method: handle the POST.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#shouldCompressResponse(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, java.lang.String)">shouldCompressResponse</A></B>(javax.servlet.http.HttpServletRequest&nbsp;request,
+                       javax.servlet.http.HttpServletResponse&nbsp;response,
+                       java.lang.String&nbsp;responsePayload)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Determines whether the response to a given servlet request should or should
+ not be GZIP compressed.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.google.gwt.user.server.rpc.AbstractRemoteServiceServlet"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.google.gwt.user.server.rpc.<A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html" title="class in com.google.gwt.user.server.rpc">AbstractRemoteServiceServlet</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)">doPost</A>, <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#doUnexpectedFailure(java.lang.Throwable)">doUnexpectedFailure</A>, <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getPermutationStrongName()">getPermutationStrongName</A>, <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getThreadLocalRequest()">getThreadLocalRequest</A>, <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getThreadLocalResponse()">getThreadLocalResponse</A>, <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#onAfterRequestDeserialized(com.google.gwt.user.server.rpc.RPCRequest)">onAfterRequestDeserialized</A>, <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#readContent(javax.servlet.http.HttpServletRequest)">readContent</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_javax.servlet.http.HttpServlet"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class javax.servlet.http.HttpServlet</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>doDelete, doGet, doHead, doOptions, doPut, doTrace, getLastModified, service, service</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_javax.servlet.GenericServlet"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class javax.servlet.GenericServlet</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>destroy, getInitParameter, getInitParameterNames, getServletConfig, getServletContext, getServletInfo, getServletName, init, log, log</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
-<ul class="blockList">
-<li class="blockList"><a name="constructor_detail">
-<!--   -->
-</a>
-<h3>Constructor Detail</h3>
-<a name="RemoteServiceServlet()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>RemoteServiceServlet</h4>
-<pre>public&nbsp;RemoteServiceServlet()</pre>
-<div class="block">The default constructor used by service implementations that
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="RemoteServiceServlet()"><!-- --></A><H3>
+RemoteServiceServlet</H3>
+<PRE>
+public <B>RemoteServiceServlet</B>()</PRE>
+<DL>
+<DD>The default constructor used by service implementations that
  extend this class.  The servlet will delegate AJAX requests to
- the appropriate method in the subclass.</div>
-</li>
-</ul>
-<a name="RemoteServiceServlet(java.lang.Object)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>RemoteServiceServlet</h4>
-<pre>public&nbsp;RemoteServiceServlet(java.lang.Object&nbsp;delegate)</pre>
-<div class="block">The wrapping constructor used by service implementations that are
+ the appropriate method in the subclass.
+<P>
+</DL>
+<HR>
+
+<A NAME="RemoteServiceServlet(java.lang.Object)"><!-- --></A><H3>
+RemoteServiceServlet</H3>
+<PRE>
+public <B>RemoteServiceServlet</B>(java.lang.Object&nbsp;delegate)</PRE>
+<DL>
+<DD>The wrapping constructor used by service implementations that are
  separate from this class.  The servlet will delegate AJAX
- requests to the appropriate method in the given object.</div>
-</li>
-</ul>
-</li>
-</ul>
+ requests to the appropriate method in the given object.
+<P>
+</DL>
+
 <!-- ============ METHOD DETAIL ========== -->
-<ul class="blockList">
-<li class="blockList"><a name="method_detail">
-<!--   -->
-</a>
-<h3>Method Detail</h3>
-<a name="loadSerializationPolicy(javax.servlet.http.HttpServlet, javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>loadSerializationPolicy</h4>
-<pre>static&nbsp;<a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</a>&nbsp;loadSerializationPolicy(javax.servlet.http.HttpServlet&nbsp;servlet,
-                                          javax.servlet.http.HttpServletRequest&nbsp;request,
-                                          java.lang.String&nbsp;moduleBaseURL,
-                                          java.lang.String&nbsp;strongName)</pre>
-<div class="block">Loads a serialization policy stored as a servlet resource in the same
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="loadSerializationPolicy(javax.servlet.http.HttpServlet, javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)"><!-- --></A><H3>
+loadSerializationPolicy</H3>
+<PRE>
+static <A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</A> <B>loadSerializationPolicy</B>(javax.servlet.http.HttpServlet&nbsp;servlet,
+                                                   javax.servlet.http.HttpServletRequest&nbsp;request,
+                                                   java.lang.String&nbsp;moduleBaseURL,
+                                                   java.lang.String&nbsp;strongName)</PRE>
+<DL>
+<DD>Loads a serialization policy stored as a servlet resource in the same
  ServletContext as this servlet. Returns null if not found.
- (Used by HybridServiceServlet.)</div>
-</li>
-</ul>
-<a name="init(javax.servlet.ServletConfig)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>init</h4>
-<pre>public&nbsp;void&nbsp;init(javax.servlet.ServletConfig&nbsp;config)
-          throws javax.servlet.ServletException</pre>
-<div class="block">Overridden to load the gwt.codeserver.port system property.</div>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code>init</code>&nbsp;in interface&nbsp;<code>javax.servlet.Servlet</code></dd>
-<dt><strong>Overrides:</strong></dt>
-<dd><code>init</code>&nbsp;in class&nbsp;<code>javax.servlet.GenericServlet</code></dd>
-<dt><span class="strong">Throws:</span></dt>
-<dd><code>javax.servlet.ServletException</code></dd></dl>
-</li>
-</ul>
-<a name="getSerializationPolicy(java.lang.String, java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getSerializationPolicy</h4>
-<pre>public final&nbsp;<a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</a>&nbsp;getSerializationPolicy(java.lang.String&nbsp;moduleBaseURL,
-                                         java.lang.String&nbsp;strongName)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicyProvider.html#getSerializationPolicy(java.lang.String, java.lang.String)">SerializationPolicyProvider</a></code></strong></div>
-<div class="block">Returns a <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><code>SerializationPolicy</code></a> for a given module base URL and
- serialization policy strong name.</div>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicyProvider.html#getSerializationPolicy(java.lang.String, java.lang.String)">getSerializationPolicy</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicyProvider.html" title="interface in com.google.gwt.user.server.rpc">SerializationPolicyProvider</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>moduleBaseURL</code> - the URL for the module</dd><dd><code>strongName</code> - strong name of the serialization
-          policy for the specified module URL</dd>
-<dt><span class="strong">Returns:</span></dt><dd>a <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><code>SerializationPolicy</code></a> for a given module base URL and RPC
-         strong name; must not return <code>null</code></dd></dl>
-</li>
-</ul>
-<a name="processCall(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>processCall</h4>
-<pre>public&nbsp;java.lang.String&nbsp;processCall(java.lang.String&nbsp;payload)
-                             throws <a href="../../../../../../com/google/gwt/user/client/rpc/SerializationException.html" title="class in com.google.gwt.user.client.rpc">SerializationException</a></pre>
-<div class="block">Process a call originating from the given request. Uses the
- <a href="../../../../../../com/google/gwt/user/server/rpc/RPC.html#invokeAndEncodeResponse(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])"><code>RPC.invokeAndEncodeResponse(Object, java.lang.reflect.Method, Object[])</code></a>
- method to do the actual work.
+ (Used by HybridServiceServlet.)
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="init(javax.servlet.ServletConfig)"><!-- --></A><H3>
+init</H3>
+<PRE>
+public void <B>init</B>(javax.servlet.ServletConfig&nbsp;config)
+          throws javax.servlet.ServletException</PRE>
+<DL>
+<DD>Overridden to load the gwt.codeserver.port system property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>init</CODE> in interface <CODE>javax.servlet.Servlet</CODE><DT><B>Overrides:</B><DD><CODE>init</CODE> in class <CODE>javax.servlet.GenericServlet</CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE>javax.servlet.ServletException</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getRequestModuleBasePath()"><!-- --></A><H3>
+getRequestModuleBasePath</H3>
+<PRE>
+protected java.lang.String <B>getRequestModuleBasePath</B>()</PRE>
+<DL>
+<DD>Extract the module's base path from the current request.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the module's base path, modulo protocol and host, as reported by
+         <A HREF="../../../../../../com/google/gwt/core/client/GWT.html#getModuleBaseURL()"><CODE>GWT.getModuleBaseURL()</CODE></A> or
+         <code>null</code> if the request did not contain the
+         <A HREF="../../../../../../com/google/gwt/user/client/rpc/RpcRequestBuilder.html#MODULE_BASE_HEADER">"X-GWT-Module-Base"</A> header</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getSerializationPolicy(java.lang.String, java.lang.String)"><!-- --></A><H3>
+getSerializationPolicy</H3>
+<PRE>
+public final <A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</A> <B>getSerializationPolicy</B>(java.lang.String&nbsp;moduleBaseURL,
+                                                        java.lang.String&nbsp;strongName)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicyProvider.html#getSerializationPolicy(java.lang.String, java.lang.String)">SerializationPolicyProvider</A></CODE></B></DD>
+<DD>Returns a <A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><CODE>SerializationPolicy</CODE></A> for a given module base URL and
+ serialization policy strong name.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicyProvider.html#getSerializationPolicy(java.lang.String, java.lang.String)">getSerializationPolicy</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicyProvider.html" title="interface in com.google.gwt.user.server.rpc">SerializationPolicyProvider</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>moduleBaseURL</CODE> - the URL for the module<DD><CODE>strongName</CODE> - strong name of the serialization
+          policy for the specified module URL
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><CODE>SerializationPolicy</CODE></A> for a given module base URL and RPC
+         strong name; must not return <code>null</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="processCall(java.lang.String)"><!-- --></A><H3>
+processCall</H3>
+<PRE>
+public java.lang.String <B>processCall</B>(java.lang.String&nbsp;payload)
+                             throws <A HREF="../../../../../../com/google/gwt/user/client/rpc/SerializationException.html" title="class in com.google.gwt.user.client.rpc">SerializationException</A></PRE>
+<DL>
+<DD>Process a call originating from the given request. This method calls
+ <A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#checkPermutationStrongName()"><CODE>checkPermutationStrongName()</CODE></A> to prevent
+ possible XSRF attacks and then decodes the <code>payload</code> using
+ <A HREF="../../../../../../com/google/gwt/user/server/rpc/RPC.html#decodeRequest(java.lang.String, java.lang.Class, com.google.gwt.user.server.rpc.SerializationPolicyProvider)"><CODE>RPC.decodeRequest(String, Class, SerializationPolicyProvider)</CODE></A>
+ to do the actual work.
+ Once the request is decoded <A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#processCall(com.google.gwt.user.server.rpc.RPCRequest)"><CODE>processCall(RPCRequest)</CODE></A>
+ will be called.
  <p>
  Subclasses may optionally override this method to handle the payload in any
  way they desire (by routing the request to a framework component, for
- instance). The <code>HttpServletRequest</code> and <code>HttpServletResponse</code>
- can be accessed via the <a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getThreadLocalRequest()"><code>AbstractRemoteServiceServlet.getThreadLocalRequest()</code></a> and
- <a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getThreadLocalResponse()"><code>AbstractRemoteServiceServlet.getThreadLocalResponse()</code></a> methods.
+ instance). The <CODE>HttpServletRequest</CODE> and <CODE>HttpServletResponse</CODE>
+ can be accessed via the <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getThreadLocalRequest()"><CODE>AbstractRemoteServiceServlet.getThreadLocalRequest()</CODE></A> and
+ <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getThreadLocalResponse()"><CODE>AbstractRemoteServiceServlet.getThreadLocalResponse()</CODE></A> methods.
  </p>
- This is public so that it can be unit tested easily without HTTP.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>payload</code> - the UTF-8 request payload</dd>
-<dt><span class="strong">Returns:</span></dt><dd>a string which encodes either the method's return, a checked
+ This is public so that it can be unit tested easily without HTTP.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>payload</CODE> - the UTF-8 request payload
+<DT><B>Returns:</B><DD>a string which encodes either the method's return, a checked
          exception thrown by the method, or an
-         <a href="../../../../../../com/google/gwt/user/client/rpc/IncompatibleRemoteServiceException.html" title="class in com.google.gwt.user.client.rpc"><code>IncompatibleRemoteServiceException</code></a></dd>
-<dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../../../../../com/google/gwt/user/client/rpc/SerializationException.html" title="class in com.google.gwt.user.client.rpc">SerializationException</a></code> - if we cannot serialize the response</dd>
-<dd><code><a href="../../../../../../com/google/gwt/user/server/rpc/UnexpectedException.html" title="class in com.google.gwt.user.server.rpc">UnexpectedException</a></code> - if the invocation throws a checked exception
-           that is not declared in the service method's signature</dd>
-<dd><code>java.lang.RuntimeException</code> - if the service method throws an unchecked
-           exception (the exception will be the one thrown by the service)</dd></dl>
-</li>
-</ul>
-<a name="processPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>processPost</h4>
-<pre>public final&nbsp;void&nbsp;processPost(javax.servlet.http.HttpServletRequest&nbsp;request,
-               javax.servlet.http.HttpServletResponse&nbsp;response)
+         <A HREF="../../../../../../com/google/gwt/user/client/rpc/IncompatibleRemoteServiceException.html" title="class in com.google.gwt.user.client.rpc"><CODE>IncompatibleRemoteServiceException</CODE></A>
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../../../../com/google/gwt/user/client/rpc/SerializationException.html" title="class in com.google.gwt.user.client.rpc">SerializationException</A></CODE> - if we cannot serialize the response
+<DD><CODE><A HREF="../../../../../../com/google/gwt/user/server/rpc/UnexpectedException.html" title="class in com.google.gwt.user.server.rpc">UnexpectedException</A></CODE> - if the invocation throws a checked exception
+           that is not declared in the service method's signature
+<DD><CODE>java.lang.RuntimeException</CODE> - if the service method throws an unchecked
+           exception (the exception will be the one thrown by the service)</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="processCall(com.google.gwt.user.server.rpc.RPCRequest)"><!-- --></A><H3>
+processCall</H3>
+<PRE>
+public java.lang.String <B>processCall</B>(<A HREF="../../../../../../com/google/gwt/user/server/rpc/RPCRequest.html" title="class in com.google.gwt.user.server.rpc">RPCRequest</A>&nbsp;rpcRequest)
+                             throws <A HREF="../../../../../../com/google/gwt/user/client/rpc/SerializationException.html" title="class in com.google.gwt.user.client.rpc">SerializationException</A></PRE>
+<DL>
+<DD>Process an already decoded RPC request. Uses the
+ <A HREF="../../../../../../com/google/gwt/user/server/rpc/RPC.html#invokeAndEncodeResponse(java.lang.Object, java.lang.reflect.Method, java.lang.Object[])"><CODE>RPC.invokeAndEncodeResponse(Object, java.lang.reflect.Method, Object[])</CODE></A>
+ method to do the actual work.
+ <p>
+ Subclasses may optionally override this method to handle the decoded rpc
+ request in any way they desire (by routing the request to a framework
+ component, for instance).
+ The <CODE>HttpServletRequest</CODE> and <CODE>HttpServletResponse</CODE>
+ can be accessed via the <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getThreadLocalRequest()"><CODE>AbstractRemoteServiceServlet.getThreadLocalRequest()</CODE></A> and
+ <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getThreadLocalResponse()"><CODE>AbstractRemoteServiceServlet.getThreadLocalResponse()</CODE></A> methods.
+ </p>
+ This is public so that it can be unit tested easily without HTTP.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>rpcRequest</CODE> - the already decoded RPC request
+<DT><B>Returns:</B><DD>a string which encodes either the method's return, a checked
+         exception thrown by the method, or an
+         <A HREF="../../../../../../com/google/gwt/user/client/rpc/IncompatibleRemoteServiceException.html" title="class in com.google.gwt.user.client.rpc"><CODE>IncompatibleRemoteServiceException</CODE></A>
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../../../../com/google/gwt/user/client/rpc/SerializationException.html" title="class in com.google.gwt.user.client.rpc">SerializationException</A></CODE> - if we cannot serialize the response
+<DD><CODE><A HREF="../../../../../../com/google/gwt/user/server/rpc/UnexpectedException.html" title="class in com.google.gwt.user.server.rpc">UnexpectedException</A></CODE> - if the invocation throws a checked exception
+           that is not declared in the service method's signature
+<DD><CODE>java.lang.RuntimeException</CODE> - if the service method throws an unchecked
+           exception (the exception will be the one thrown by the service)</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="processPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)"><!-- --></A><H3>
+processPost</H3>
+<PRE>
+public final void <B>processPost</B>(javax.servlet.http.HttpServletRequest&nbsp;request,
+                              javax.servlet.http.HttpServletResponse&nbsp;response)
                        throws java.io.IOException,
                               javax.servlet.ServletException,
-                              <a href="../../../../../../com/google/gwt/user/client/rpc/SerializationException.html" title="class in com.google.gwt.user.client.rpc">SerializationException</a></pre>
-<div class="block">Standard HttpServlet method: handle the POST.
+                              <A HREF="../../../../../../com/google/gwt/user/client/rpc/SerializationException.html" title="class in com.google.gwt.user.client.rpc">SerializationException</A></PRE>
+<DL>
+<DD>Standard HttpServlet method: handle the POST.
  
  This doPost method swallows ALL exceptions, logs them in the
  ServletContext, and returns a GENERIC_FAILURE_MSG response with status code
- 500.</div>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#processPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)">processPost</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html" title="class in com.google.gwt.user.server.rpc">AbstractRemoteServiceServlet</a></code></dd>
-<dt><span class="strong">Throws:</span></dt>
-<dd><code>javax.servlet.ServletException</code></dd>
-<dd><code><a href="../../../../../../com/google/gwt/user/client/rpc/SerializationException.html" title="class in com.google.gwt.user.client.rpc">SerializationException</a></code></dd>
-<dd><code>java.io.IOException</code></dd></dl>
-</li>
-</ul>
-<a name="checkPermutationStrongName()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>checkPermutationStrongName</h4>
-<pre>protected&nbsp;void&nbsp;checkPermutationStrongName()
-                                   throws java.lang.SecurityException</pre>
-<div class="block">This method is called by <a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#processCall(java.lang.String)"><code>processCall(String)</code></a> and will throw a
- SecurityException if <a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getPermutationStrongName()"><code>AbstractRemoteServiceServlet.getPermutationStrongName()</code></a> returns
+ 500.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#processPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)">processPost</A></CODE> in class <CODE><A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html" title="class in com.google.gwt.user.server.rpc">AbstractRemoteServiceServlet</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE>javax.servlet.ServletException</CODE>
+<DD><CODE><A HREF="../../../../../../com/google/gwt/user/client/rpc/SerializationException.html" title="class in com.google.gwt.user.client.rpc">SerializationException</A></CODE>
+<DD><CODE>java.io.IOException</CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="checkPermutationStrongName()"><!-- --></A><H3>
+checkPermutationStrongName</H3>
+<PRE>
+protected void <B>checkPermutationStrongName</B>()
+                                   throws java.lang.SecurityException</PRE>
+<DL>
+<DD>This method is called by <A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#processCall(java.lang.String)"><CODE>processCall(String)</CODE></A> and will throw a
+ SecurityException if <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getPermutationStrongName()"><CODE>AbstractRemoteServiceServlet.getPermutationStrongName()</CODE></A> returns
  <code>null</code>. This method can be overridden to be a no-op if there are
  clients that are not expected to provide the
- <a href="../../../../../../com/google/gwt/user/client/rpc/RpcRequestBuilder.html#STRONG_NAME_HEADER">"X-GWT-Permutation"</a>
- header.</div>
-<dl><dt><span class="strong">Throws:</span></dt>
-<dd><code>java.lang.SecurityException</code> - if <a href="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getPermutationStrongName()"><code>AbstractRemoteServiceServlet.getPermutationStrongName()</code></a> returns
-           <code>null</code></dd></dl>
-</li>
-</ul>
-<a name="doGetSerializationPolicy(javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>doGetSerializationPolicy</h4>
-<pre>protected&nbsp;<a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</a>&nbsp;doGetSerializationPolicy(javax.servlet.http.HttpServletRequest&nbsp;request,
-                                           java.lang.String&nbsp;moduleBaseURL,
-                                           java.lang.String&nbsp;strongName)</pre>
-<div class="block">Loads the <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><code>SerializationPolicy</code></a> for given module base URL and strong name.
+ <A HREF="../../../../../../com/google/gwt/user/client/rpc/RpcRequestBuilder.html#STRONG_NAME_HEADER">"X-GWT-Permutation"</A>
+ header.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE>java.lang.SecurityException</CODE> - if <A HREF="../../../../../../com/google/gwt/user/server/rpc/AbstractRemoteServiceServlet.html#getPermutationStrongName()"><CODE>AbstractRemoteServiceServlet.getPermutationStrongName()</CODE></A> returns
+           <code>null</code></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doGetSerializationPolicy(javax.servlet.http.HttpServletRequest, java.lang.String, java.lang.String)"><!-- --></A><H3>
+doGetSerializationPolicy</H3>
+<PRE>
+protected <A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</A> <B>doGetSerializationPolicy</B>(javax.servlet.http.HttpServletRequest&nbsp;request,
+                                                       java.lang.String&nbsp;moduleBaseURL,
+                                                       java.lang.String&nbsp;strongName)</PRE>
+<DL>
+<DD>Loads the <A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><CODE>SerializationPolicy</CODE></A> for given module base URL and strong name.
  Returns the policy if successful or null if not found. Due to caching, this method
  will only be called once for each combination of moduleBaseURL and strongName.</p>
 
  <p>The default implementation loads serialization policies stored as servlet resources
  in the same ServletContext as this servlet.
 
- <p>Override this method to load the <a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><code>SerializationPolicy</code></a> using an
- alternative approach.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - the HTTP request being serviced</dd><dd><code>moduleBaseURL</code> - as specified in the incoming payload</dd><dd><code>strongName</code> - a strong name that uniquely identifies a serialization
-          policy file</dd></dl>
-</li>
-</ul>
-<a name="getCodeServerPolicyUrl(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getCodeServerPolicyUrl</h4>
-<pre>protected&nbsp;java.lang.String&nbsp;getCodeServerPolicyUrl(java.lang.String&nbsp;strongName)</pre>
-<div class="block">Returns a URL for fetching a serialization policy from a Super Dev Mode code server.
+ <p>Override this method to load the <A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc"><CODE>SerializationPolicy</CODE></A> using an
+ alternative approach.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the HTTP request being serviced<DD><CODE>moduleBaseURL</CODE> - as specified in the incoming payload<DD><CODE>strongName</CODE> - a strong name that uniquely identifies a serialization
+          policy file</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getCodeServerPolicyUrl(java.lang.String)"><!-- --></A><H3>
+getCodeServerPolicyUrl</H3>
+<PRE>
+protected java.lang.String <B>getCodeServerPolicyUrl</B>(java.lang.String&nbsp;strongName)</PRE>
+<DL>
+<DD>Returns a URL for fetching a serialization policy from a Super Dev Mode code server.
 
  <p>By default, returns null. If the <code>gwt.codeserver.port</code> system property is set,
  returns a URL under <code>http://localhost:{port}</code>.
@@ -510,138 +631,158 @@ implements <a href="../../../../../../com/google/gwt/user/server/rpc/Serializati
  <p>To use a server not on localhost, you must override this method. If you do so,
  consider the security implications: the policy server and network transport must be
  trusted or this could be used as a way to disable security checks for some
- GWT-RPC requests, allowing access to arbitrary Java classes.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>strongName</code> - the strong name from the GWT-RPC request (already validated).</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the URL to use or <code>null</code> if no request should be made.</dd></dl>
-</li>
-</ul>
-<a name="loadPolicyFromCodeServer(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>loadPolicyFromCodeServer</h4>
-<pre>protected&nbsp;<a href="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</a>&nbsp;loadPolicyFromCodeServer(java.lang.String&nbsp;url)</pre>
-<div class="block">Loads a serialization policy from a Super Dev Mode code server.
- (Not used unless <a href="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#getCodeServerPolicyUrl(java.lang.String)"><code>getCodeServerPolicyUrl(java.lang.String)</code></a> returns a URL.)
+ GWT-RPC requests, allowing access to arbitrary Java classes.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>strongName</CODE> - the strong name from the GWT-RPC request (already validated).
+<DT><B>Returns:</B><DD>the URL to use or <code>null</code> if no request should be made.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="loadPolicyFromCodeServer(java.lang.String)"><!-- --></A><H3>
+loadPolicyFromCodeServer</H3>
+<PRE>
+protected <A HREF="../../../../../../com/google/gwt/user/server/rpc/SerializationPolicy.html" title="class in com.google.gwt.user.server.rpc">SerializationPolicy</A> <B>loadPolicyFromCodeServer</B>(java.lang.String&nbsp;url)</PRE>
+<DL>
+<DD>Loads a serialization policy from a Super Dev Mode code server.
+ (Not used unless <A HREF="../../../../../../com/google/gwt/user/server/rpc/RemoteServiceServlet.html#getCodeServerPolicyUrl(java.lang.String)"><CODE>getCodeServerPolicyUrl(java.lang.String)</CODE></A> returns a URL.)
 
  <p>The default version is a simple implementation built on java.net.URL that does
- no authentication. It should only be used during development.</p></div>
-</li>
-</ul>
-<a name="onAfterResponseSerialized(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>onAfterResponseSerialized</h4>
-<pre>protected&nbsp;void&nbsp;onAfterResponseSerialized(java.lang.String&nbsp;serializedResponse)</pre>
-<div class="block">Override this method to examine the serialized response that will be
+ no authentication. It should only be used during development.</p>
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="onAfterResponseSerialized(java.lang.String)"><!-- --></A><H3>
+onAfterResponseSerialized</H3>
+<PRE>
+protected void <B>onAfterResponseSerialized</B>(java.lang.String&nbsp;serializedResponse)</PRE>
+<DL>
+<DD>Override this method to examine the serialized response that will be
  returned to the client. The default implementation does nothing and need
- not be called by subclasses.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>serializedResponse</code> - </dd></dl>
-</li>
-</ul>
-<a name="onBeforeRequestDeserialized(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>onBeforeRequestDeserialized</h4>
-<pre>protected&nbsp;void&nbsp;onBeforeRequestDeserialized(java.lang.String&nbsp;serializedRequest)</pre>
-<div class="block">Override this method to examine the serialized version of the request
+ not be called by subclasses.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>serializedResponse</CODE> - </DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="onBeforeRequestDeserialized(java.lang.String)"><!-- --></A><H3>
+onBeforeRequestDeserialized</H3>
+<PRE>
+protected void <B>onBeforeRequestDeserialized</B>(java.lang.String&nbsp;serializedRequest)</PRE>
+<DL>
+<DD>Override this method to examine the serialized version of the request
  payload before it is deserialized into objects. The default implementation
- does nothing and need not be called by subclasses.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>serializedRequest</code> - </dd></dl>
-</li>
-</ul>
-<a name="shouldCompressResponse(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>shouldCompressResponse</h4>
-<pre>protected&nbsp;boolean&nbsp;shouldCompressResponse(javax.servlet.http.HttpServletRequest&nbsp;request,
-                             javax.servlet.http.HttpServletResponse&nbsp;response,
-                             java.lang.String&nbsp;responsePayload)</pre>
-<div class="block">Determines whether the response to a given servlet request should or should
+ does nothing and need not be called by subclasses.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>serializedRequest</CODE> - </DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="shouldCompressResponse(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, java.lang.String)"><!-- --></A><H3>
+shouldCompressResponse</H3>
+<PRE>
+protected boolean <B>shouldCompressResponse</B>(javax.servlet.http.HttpServletRequest&nbsp;request,
+                                         javax.servlet.http.HttpServletResponse&nbsp;response,
+                                         java.lang.String&nbsp;responsePayload)</PRE>
+<DL>
+<DD>Determines whether the response to a given servlet request should or should
  not be GZIP compressed. This method is only called in cases where the
  requester accepts GZIP encoding.
  <p>
  This implementation currently returns <code>true</code> if the response
  string's estimated byte length is longer than 256 bytes. Subclasses can
  override this logic.
- </p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>request</code> - the request being served</dd><dd><code>response</code> - the response that will be written into</dd><dd><code>responsePayload</code> - the payload that is about to be sent to the client</dd>
-<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if responsePayload should be GZIP compressed,
-         otherwise <code>false</code>.</dd></dl>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+ </p>
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>request</CODE> - the request being served<DD><CODE>response</CODE> - the response that will be written into<DD><CODE>responsePayload</CODE> - the payload that is about to be sent to the client
+<DT><B>Returns:</B><DD><code>true</code> if responsePayload should be GZIP compressed,
+         otherwise <code>false</code>.</DL>
+</DD>
+</DL>
 <!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
-<div class="bottomNav"><a name="navbar_bottom">
-<!--   -->
-</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
-<!--   -->
-</a>
-<ul class="navList" title="Navigation">
-<li><a href="../../../../../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Package</a></li>
-<li class="navBarCell1Rev">Class</li>
-<li><a href="class-use/RemoteServiceServlet.html">Use</a></li>
-<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../help-doc.html">Help</a></li>
-</ul>
-<div class="aboutLanguage"><em>GWT 2.6.1</em></div>
-</div>
-<div class="subNav">
-<ul class="navList">
-<li><a href="../../../../../../com/google/gwt/user/server/rpc/NoXsrfProtect.html" title="annotation in com.google.gwt.user.server.rpc"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../../../com/google/gwt/user/server/rpc/RPC.html" title="class in com.google.gwt.user.server.rpc"><span class="strong">Next Class</span></a></li>
-</ul>
-<ul class="navList">
-<li><a href="../../../../../../index.html?com/google/gwt/user/server/rpc/RemoteServiceServlet.html" target="_top">Frames</a></li>
-<li><a href="RemoteServiceServlet.html" target="_top">No Frames</a></li>
-</ul>
-<ul class="navList" id="allclasses_navbar_bottom">
-<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
-</ul>
-<div>
-<script type="text/javascript"><!--
-  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/RemoteServiceServlet.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.7.0</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/gwt/user/server/rpc/NoXsrfProtect.html" title="annotation in com.google.gwt.user.server.rpc"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/gwt/user/server/rpc/RPC.html" title="class in com.google.gwt.user.server.rpc"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/gwt/user/server/rpc/RemoteServiceServlet.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="RemoteServiceServlet.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
   if(window==top) {
-    allClassesLink.style.display = "block";
-  }
-  else {
-    allClassesLink.style.display = "none";
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
   }
   //-->
-</script>
-</div>
-<div>
-<ul class="subNavList">
-<li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#fields_inherited_from_class_com.google.gwt.user.server.rpc.AbstractRemoteServiceServlet">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
-</ul>
-<ul class="subNavList">
-<li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
-</ul>
-</div>
-<a name="skip-navbar_bottom">
-<!--   -->
-</a></div>
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_com.google.gwt.user.server.rpc.AbstractRemoteServiceServlet">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-</body>
-</html>
+
+<HR>
+
+</BODY>
+</HTML>

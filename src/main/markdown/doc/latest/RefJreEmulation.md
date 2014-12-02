@@ -29,7 +29,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>ArrayStoreException(), ArrayStoreException(String)</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/AssertionError.html">AssertionError</a></dt>
-  <dd>AssertionError(), AssertionError(boolean), AssertionError(char), AssertionError(double), AssertionError(float), AssertionError(int), AssertionError(long), AssertionError(Object)</dd>
+  <dd>AssertionError(), AssertionError(boolean), AssertionError(char), AssertionError(double), AssertionError(float), AssertionError(int), AssertionError(long), AssertionError(Object), AssertionError(String, Throwable)</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/AutoCloseable.html">AutoCloseable</a></dt>
   <dd>close()</dd>
@@ -50,7 +50,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>Character(char), charCount(int), codePointAt(char[], int), codePointAt(char[], int, int), codePointAt(CharSequence, int), codePointBefore(char[], int), codePointBefore(char[], int, int), codePointBefore(CharSequence, int), codePointCount(char[], int, int), codePointCount(CharSequence, int, int), compare(char, char), digit(char, int), forDigit(int, int), hashCode(char), isDigit(char), isHighSurrogate(char), isLetter(char), isLetterOrDigit(char), isLowerCase(char), isLowSurrogate(char), isSpace(char), isSupplementaryCodePoint(int), isSurrogatePair(char, char), isUpperCase(char), isValidCodePoint(int), offsetByCodePoints(char[], int, int, int, int), offsetByCodePoints(CharSequence, int, int), toChars(int), toChars(int, char[], int), toCodePoint(char, char), toLowerCase(char), toString(char), toUpperCase(char), valueOf(char), charValue(), compareTo(Character), equals(Object), hashCode(), toString()</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html">Class</a></dt>
-  <dd>isClassMetadataEnabled(), desiredAssertionStatus(), getComponentType(), getEnumConstants(), getName(), getSimpleName(), getSuperclass(), isArray(), isEnum(), isInterface(), isPrimitive(), toString()</dd>
+  <dd>isClassMetadataEnabled(), desiredAssertionStatus(), getCanonicalName(), getComponentType(), getEnumConstants(), getName(), getSimpleName(), getSuperclass(), isArray(), isEnum(), isInterface(), isPrimitive(), toString()</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/ClassCastException.html">ClassCastException</a></dt>
   <dd>ClassCastException(), ClassCastException(String)</dd>
@@ -67,7 +67,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>Double(double), Double(String), compare(double, double), doubleToLongBits(double), hashCode(double), isInfinite(double), isNaN(double), longBitsToDouble(long), parseDouble(String), toString(double), valueOf(double), valueOf(String), byteValue(), compareTo(Double), doubleValue(), equals(Object), floatValue(), hashCode(), intValue(), isInfinite(), isNaN(), longValue(), shortValue(), toString()</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html">Enum</a></dt>
-  <dd>valueOf(Class, String), compareTo(E), equals(Object), getDeclaringClass(), hashCode(), name(), obfuscatedName(), ordinal(), toString()</dd>
+  <dd>valueOf(Class, String), compareTo(E), equals(Object), getDeclaringClass(), hashCode(), name(), ordinal(), toString()</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Error.html">Error</a></dt>
   <dd>Error(), Error(String, Throwable), Error(String), Error(Throwable)</dd>
@@ -134,17 +134,17 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>Short(short), Short(String), compare(short, short), decode(String), hashCode(short), parseShort(String), parseShort(String, int), reverseBytes(short), toString(short), valueOf(short), valueOf(String), valueOf(String, int), byteValue(), compareTo(Short), doubleValue(), equals(Object), floatValue(), hashCode(), intValue(), longValue(), shortValue(), toString()</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/StackTraceElement.html">StackTraceElement</a></dt>
-  <dd>StackTraceElement(), StackTraceElement(String, String, String, int), getClassName(), getFileName(), getLineNumber(), getMethodName(), toString()</dd>
+  <dd>StackTraceElement(), StackTraceElement(String, String, String, int), getClassName(), getFileName(), getLineNumber(), getMethodName(), equals(Object), hashCode(), toString()</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html">String</a></dt>
   <dd style='margin-bottom: 0.5em;'>CASE_INSENSITIVE_ORDER</dd>
-  <dd>String(), String(byte[]), String(byte[], int, int), String(byte[], int, int, String), String(byte[], String), String(char[]), String(char[], int, int), String(int[], int, int), String(String), String(StringBuffer), String(StringBuilder), copyValueOf(char[]), copyValueOf(char[], int, int), valueOf(boolean), valueOf(char), valueOf(char[], int, int), valueOf(char[]), valueOf(double), valueOf(float), valueOf(int), valueOf(long), valueOf(Object), charAt(int), codePointAt(int), codePointBefore(int), codePointCount(int, int), compareTo(String), compareToIgnoreCase(String), concat(String), contains(CharSequence), contentEquals(CharSequence), contentEquals(StringBuffer), endsWith(String), equals(Object), equalsIgnoreCase(String), getBytes(), getBytes(String), getChars(int, int, char[], int), hashCode(), indexOf(int), indexOf(int, int), indexOf(String), indexOf(String, int), intern(), isEmpty(), lastIndexOf(int), lastIndexOf(int, int), lastIndexOf(String), lastIndexOf(String, int), length(), matches(String), offsetByCodePoints(int, int), regionMatches(boolean, int, String, int, int), regionMatches(int, String, int, int), replace(char, char), replace(CharSequence, CharSequence), replaceAll(String, String), replaceFirst(String, String), split(String), split(String, int), startsWith(String), startsWith(String, int), subSequence(int, int), substring(int), substring(int, int), toCharArray(), toLowerCase(), toString(), toUpperCase(), trim()</dd>
+  <dd>String(), String(byte[]), String(byte[], int, int), String(byte[], int, int, String), String(byte[], String), String(char[]), String(char[], int, int), String(int[], int, int), String(String), String(StringBuffer), String(StringBuilder), copyValueOf(char[]), copyValueOf(char[], int, int), valueOf(boolean), valueOf(char), valueOf(char[], int, int), valueOf(char[]), valueOf(double), valueOf(float), valueOf(int), valueOf(long), valueOf(Object), charAt(int), codePointAt(int), codePointBefore(int), codePointCount(int, int), compareTo(String), compareToIgnoreCase(String), concat(String), contains(CharSequence), contentEquals(CharSequence), contentEquals(StringBuffer), endsWith(String), equals(Object), equalsIgnoreCase(String), getBytes(), getBytes(String), getChars(int, int, char[], int), getClass(), hashCode(), indexOf(int), indexOf(int, int), indexOf(String), indexOf(String, int), intern(), isEmpty(), lastIndexOf(int), lastIndexOf(int, int), lastIndexOf(String), lastIndexOf(String, int), length(), matches(String), offsetByCodePoints(int, int), regionMatches(boolean, int, String, int, int), regionMatches(int, String, int, int), replace(char, char), replace(CharSequence, CharSequence), replaceAll(String, String), replaceFirst(String, String), split(String), split(String, int), startsWith(String), startsWith(String, int), subSequence(int, int), substring(int), substring(int, int), toCharArray(), toLowerCase(), toLowerCase(Locale), toUpperCase(), toUpperCase(Locale), toString(), trim()</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html">StringBuffer</a></dt>
-  <dd>StringBuffer(), StringBuffer(CharSequence), StringBuffer(int), StringBuffer(String), append(boolean), append(char), append(char[]), append(char[], int, int), append(CharSequence), append(CharSequence, int, int), append(double), append(float), append(int), append(long), append(Object), append(String), append(StringBuffer), capacity(), charAt(int), delete(int, int), deleteCharAt(int), ensureCapacity(int), getChars(int, int, char[], int), indexOf(String), indexOf(String, int), insert(int, boolean), insert(int, char), insert(int, char[]), insert(int, char[], int, int), insert(int, CharSequence), insert(int, CharSequence, int, int), insert(int, double), insert(int, float), insert(int, int), insert(int, long), insert(int, Object), insert(int, String), lastIndexOf(String), lastIndexOf(String, int), length(), replace(int, int, String), reverse(), setCharAt(int, char), setLength(int), subSequence(int, int), substring(int), substring(int, int), toString(), trimToSize()</dd>
+  <dd>StringBuffer(), StringBuffer(CharSequence), StringBuffer(int), StringBuffer(String), append(boolean), append(char), append(char[]), append(char[], int, int), append(CharSequence), append(CharSequence, int, int), append(double), append(float), append(int), append(long), append(Object), append(String), append(StringBuffer), appendCodePoint(int), delete(int, int), deleteCharAt(int), insert(int, boolean), insert(int, char), insert(int, char[]), insert(int, char[], int, int), insert(int, CharSequence), insert(int, CharSequence, int, int), insert(int, double), insert(int, float), insert(int, int), insert(int, long), insert(int, Object), insert(int, String), replace(int, int, String), reverse()</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html">StringBuilder</a></dt>
-  <dd>StringBuilder(), StringBuilder(CharSequence), StringBuilder(int), StringBuilder(String), append(boolean), append(char), append(char[]), append(char[], int, int), append(CharSequence), append(CharSequence, int, int), append(double), append(float), append(int), append(long), append(Object), append(String), append(StringBuffer), appendCodePoint(int), capacity(), charAt(int), delete(int, int), deleteCharAt(int), ensureCapacity(int), getChars(int, int, char[], int), indexOf(String), indexOf(String, int), insert(int, boolean), insert(int, char), insert(int, char[]), insert(int, char[], int, int), insert(int, CharSequence), insert(int, CharSequence, int, int), insert(int, double), insert(int, float), insert(int, int), insert(int, long), insert(int, Object), insert(int, String), lastIndexOf(String), lastIndexOf(String, int), length(), replace(int, int, String), reverse(), setCharAt(int, char), setLength(int), subSequence(int, int), substring(int), substring(int, int), toString(), trimToSize()</dd>
+  <dd>StringBuilder(), StringBuilder(CharSequence), StringBuilder(int), StringBuilder(String), append(boolean), append(char), append(char[]), append(char[], int, int), append(CharSequence), append(CharSequence, int, int), append(double), append(float), append(int), append(long), append(Object), append(String), append(StringBuffer), appendCodePoint(int), delete(int, int), deleteCharAt(int), insert(int, boolean), insert(int, char), insert(int, char[]), insert(int, char[], int, int), insert(int, CharSequence), insert(int, CharSequence, int, int), insert(int, double), insert(int, float), insert(int, int), insert(int, long), insert(int, Object), insert(int, String), replace(int, int, String), reverse()</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/StringIndexOutOfBoundsException.html">StringIndexOutOfBoundsException</a></dt>
   <dd>StringIndexOutOfBoundsException(), StringIndexOutOfBoundsException(String), StringIndexOutOfBoundsException(int)</dd>
@@ -262,6 +262,12 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractMap.html">AbstractMap</a></dt>
   <dd>clear(), containsKey(Object), containsValue(Object), entrySet(), equals(Object), get(Object), hashCode(), isEmpty(), keySet(), put(K, V), putAll(Map), remove(Object), size(), toString(), values()</dd>
 
+  <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractMap.SimpleEntry.html">AbstractMap.SimpleEntry</a></dt>
+  <dd>AbstractMap.SimpleEntry(K, V), AbstractMap.SimpleEntry(Map.Entry)</dd>
+
+  <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractMap.SimpleImmutableEntry.html">AbstractMap.SimpleImmutableEntry</a></dt>
+  <dd>AbstractMap.SimpleImmutableEntry(K, V), AbstractMap.SimpleImmutableEntry(Map.Entry), setValue(V)</dd>
+
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractQueue.html">AbstractQueue</a></dt>
   <dd>add(E), addAll(Collection), clear(), element(), offer(E), peek(), poll(), remove()</dd>
 
@@ -275,14 +281,14 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>ArrayList(), ArrayList(Collection), ArrayList(int), add(E), add(int, E), addAll(Collection), addAll(int, Collection), clear(), clone(), contains(Object), ensureCapacity(int), get(int), indexOf(Object), isEmpty(), lastIndexOf(Object), remove(int), remove(Object), set(int, E), size(), toArray(), toArray(T[]), trimToSize()</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html">Arrays</a></dt>
-  <dd>Arrays(), asList(T[]), binarySearch(byte[], byte), binarySearch(char[], char), binarySearch(double[], double), binarySearch(float[], float), binarySearch(int[], int), binarySearch(long[], long), binarySearch(Object[], Object), binarySearch(short[], short), binarySearch(T[], T, Comparator), deepEquals(Object[], Object[]), deepHashCode(Object[]), deepToString(Object[]), equals(boolean[], boolean[]), equals(byte[], byte[]), equals(char[], char[]), equals(double[], double[]), equals(float[], float[]), equals(int[], int[]), equals(long[], long[]), equals(Object[], Object[]), equals(short[], short[]), fill(boolean[], boolean), fill(boolean[], int, int, boolean), fill(byte[], byte), fill(byte[], int, int, byte), fill(char[], char), fill(char[], int, int, char), fill(double[], double), fill(double[], int, int, double), fill(float[], float), fill(float[], int, int, float), fill(int[], int), fill(int[], int, int, int), fill(long[], int, int, long), fill(long[], long), fill(Object[], int, int, Object), fill(Object[], Object), fill(short[], int, int, short), fill(short[], short), hashCode(boolean[]), hashCode(byte[]), hashCode(char[]), hashCode(double[]), hashCode(float[]), hashCode(int[]), hashCode(long[]), hashCode(Object[]), hashCode(short[]), sort(byte[]), sort(byte[], int, int), sort(char[]), sort(char[], int, int), sort(double[]), sort(double[], int, int), sort(float[]), sort(float[], int, int), sort(int[]), sort(int[], int, int), sort(long[]), sort(long[], int, int), sort(Object[]), sort(Object[], int, int), sort(short[]), sort(short[], int, int), sort(T[], Comparator), sort(T[], int, int, Comparator), toString(boolean[]), toString(byte[]), toString(char[]), toString(double[]), toString(float[]), toString(int[]), toString(long[]), toString(Object[]), toString(short[])</dd>
+  <dd>Arrays(), asList(T[]), binarySearch(byte[], byte), binarySearch(char[], char), binarySearch(double[], double), binarySearch(float[], float), binarySearch(int[], int), binarySearch(long[], long), binarySearch(Object[], Object), binarySearch(short[], short), binarySearch(T[], T, Comparator), copyOf(boolean[], int), copyOf(byte[], int), copyOf(char[], int), copyOf(double[], int), copyOf(float[], int), copyOf(int[], int), copyOf(long[], int), copyOf(short[], int), copyOf(T[], int), copyOfRange(boolean[], int, int), copyOfRange(byte[], int, int), copyOfRange(char[], int, int), copyOfRange(double[], int, int), copyOfRange(float[], int, int), copyOfRange(int[], int, int), copyOfRange(long[], int, int), copyOfRange(short[], int, int), copyOfRange(T[], int, int), deepEquals(Object[], Object[]), deepHashCode(Object[]), deepToString(Object[]), equals(boolean[], boolean[]), equals(byte[], byte[]), equals(char[], char[]), equals(double[], double[]), equals(float[], float[]), equals(int[], int[]), equals(long[], long[]), equals(Object[], Object[]), equals(short[], short[]), fill(boolean[], boolean), fill(boolean[], int, int, boolean), fill(byte[], byte), fill(byte[], int, int, byte), fill(char[], char), fill(char[], int, int, char), fill(double[], double), fill(double[], int, int, double), fill(float[], float), fill(float[], int, int, float), fill(int[], int), fill(int[], int, int, int), fill(long[], int, int, long), fill(long[], long), fill(Object[], int, int, Object), fill(Object[], Object), fill(short[], int, int, short), fill(short[], short), hashCode(boolean[]), hashCode(byte[]), hashCode(char[]), hashCode(double[]), hashCode(float[]), hashCode(int[]), hashCode(long[]), hashCode(Object[]), hashCode(short[]), sort(byte[]), sort(byte[], int, int), sort(char[]), sort(char[], int, int), sort(double[]), sort(double[], int, int), sort(float[]), sort(float[], int, int), sort(int[]), sort(int[], int, int), sort(long[]), sort(long[], int, int), sort(Object[]), sort(Object[], int, int), sort(short[]), sort(short[], int, int), sort(T[], Comparator), sort(T[], int, int, Comparator), toString(boolean[]), toString(byte[]), toString(char[]), toString(double[]), toString(float[]), toString(int[]), toString(long[]), toString(Object[]), toString(short[])</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html">Collection</a></dt>
   <dd>add(E), addAll(Collection), clear(), contains(Object), containsAll(Collection), equals(Object), hashCode(), isEmpty(), iterator(), remove(Object), removeAll(Collection), retainAll(Collection), size(), toArray(), toArray(T[])</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collections.html">Collections</a></dt>
   <dd style='margin-bottom: 0.5em;'>EMPTY_LIST, EMPTY_MAP, EMPTY_SET</dd>
-  <dd>Collections(), addAll(Collection, T[]), binarySearch(List, T), binarySearch(List, T, Comparator), copy(List, List), disjoint(Collection, Collection), emptyList(), emptyMap(), emptySet(), enumeration(Collection), fill(List, T), frequency(Collection, Object), list(Enumeration), max(Collection), max(Collection, Comparator), min(Collection), min(Collection, Comparator), nCopies(int, T), replaceAll(List, T, T), reverse(List), reverseOrder(), reverseOrder(Comparator), singleton(T), singletonList(T), singletonMap(K, V), sort(List), sort(List, Comparator), swap(List, int, int), unmodifiableCollection(Collection), unmodifiableList(List), unmodifiableMap(Map), unmodifiableSet(Set), unmodifiableSortedMap(SortedMap), unmodifiableSortedSet(SortedSet)</dd>
+  <dd>Collections(), addAll(Collection, T[]), asLifoQueue(Deque), binarySearch(List, T), binarySearch(List, T, Comparator), copy(List, List), disjoint(Collection, Collection), emptyIterator(), emptyList(), emptyListIterator(), emptyMap(), emptySet(), enumeration(Collection), fill(List, T), frequency(Collection, Object), list(Enumeration), max(Collection), max(Collection, Comparator), min(Collection), min(Collection, Comparator), newSetFromMap(Map), nCopies(int, T), replaceAll(List, T, T), reverse(List), reverseOrder(), reverseOrder(Comparator), singleton(T), singletonList(T), singletonMap(K, V), sort(List), sort(List, Comparator), swap(List, int, int), unmodifiableCollection(Collection), unmodifiableList(List), unmodifiableMap(Map), unmodifiableSet(Set), unmodifiableSortedMap(SortedMap), unmodifiableSortedSet(SortedSet)</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html">Comparator</a></dt>
   <dd>compare(T, T), equals(Object)</dd>
@@ -292,6 +298,9 @@ Note that in some cases, only a subset of methods is supported for a given type.
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html">Date</a></dt>
   <dd>Date(), Date(int, int, int), Date(int, int, int, int, int), Date(int, int, int, int, int, int), Date(long), Date(String), parse(String), UTC(int, int, int, int, int, int), after(Date), before(Date), clone(), compareTo(Date), equals(Object), getDate(), getDay(), getHours(), getMinutes(), getMonth(), getSeconds(), getTime(), getTimezoneOffset(), getYear(), hashCode(), setDate(int), setHours(int), setMinutes(int), setMonth(int), setSeconds(int), setTime(long), setYear(int), toGMTString(), toLocaleString(), toString()</dd>
+
+  <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Deque.html">Deque</a></dt>
+  <dd>addFirst(E), addLast(E), descendingIterator(), getFirst(), getLast(), offerFirst(E), offerLast(E), peekFirst(), peekLast(), pollFirst(), pollLast(), pop(), push(E), removeFirst(), removeFirstOccurrence(Object), removeLast(), removeLastOccurrence(Object)</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/EmptyStackException.html">EmptyStackException</a></dt>
   <dd>EmptyStackException()</dd>
@@ -329,13 +338,17 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>LinkedHashSet(), LinkedHashSet(Collection), LinkedHashSet(int), LinkedHashSet(int, float), clone()</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html">LinkedList</a></dt>
-  <dd>LinkedList(), LinkedList(Collection), add(E), addFirst(E), addLast(E), clear(), element(), getFirst(), getLast(), listIterator(int), offer(E), peek(), poll(), remove(), removeFirst(), removeLast(), size()</dd>
+  <dd>LinkedList(), LinkedList(Collection), add(E), addFirst(E), addLast(E), clear(), clone(), descendingIterator(), element(), getFirst(), getLast(), listIterator(int), offer(E), offerFirst(E), offerLast(E), peek(), peekFirst(), peekLast(), poll(), pollFirst(), pollLast(), pop(), push(E), remove(), removeFirst(), removeFirstOccurrence(Object), removeLast(), removeLastOccurrence(Object), size()</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a></dt>
   <dd>add(E), add(int, E), addAll(Collection), addAll(int, Collection), clear(), contains(Object), containsAll(Collection), equals(Object), get(int), hashCode(), indexOf(Object), isEmpty(), iterator(), lastIndexOf(Object), listIterator(), listIterator(int), remove(int), remove(Object), removeAll(Collection), retainAll(Collection), set(int, E), size(), subList(int, int), toArray(), toArray(T[])</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/ListIterator.html">ListIterator</a></dt>
   <dd>add(E), hasNext(), hasPrevious(), next(), nextIndex(), previous(), previousIndex(), remove(), set(E)</dd>
+
+  <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html">Locale</a></dt>
+  <dd style='margin-bottom: 0.5em;'>ROOT, ENGLISH, US</dd>
+  <dd>getDefault()</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html">Map</a></dt>
   <dd>clear(), containsKey(Object), containsValue(Object), entrySet(), equals(Object), get(Object), hashCode(), isEmpty(), keySet(), put(K, V), putAll(Map), remove(Object), size(), values()</dd>
@@ -345,6 +358,12 @@ Note that in some cases, only a subset of methods is supported for a given type.
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/MissingResourceException.html">MissingResourceException</a></dt>
   <dd>MissingResourceException(String, String, String), getClassName(), getKey()</dd>
+
+  <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/NavigableMap.html">NavigableMap</a></dt>
+  <dd>ceilingEntry(K), ceilingKey(K), descendingKeySet(), descendingMap(), firstEntry(), floorEntry(K), floorKey(K), headMap(K, boolean), higherEntry(K), higherKey(K), lastEntry(), lowerEntry(K), lowerKey(K), navigableKeySet(), pollFirstEntry(), pollLastEntry(), subMap(K, boolean, K, boolean), tailMap(K, boolean)</dd>
+
+  <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/NavigableSet.html">NavigableSet</a></dt>
+  <dd>ceiling(E), descendingIterator(), descendingSet(), floor(E), headSet(E, boolean), higher(E), lower(E), pollFirst(), pollLast(), subSet(E, boolean, E, boolean), tailSet(E, boolean)</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/NoSuchElementException.html">NoSuchElementException</a></dt>
   <dd>NoSuchElementException(), NoSuchElementException(String)</dd>
@@ -379,10 +398,10 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>TooManyListenersException(), TooManyListenersException(String)</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/TreeMap.html">TreeMap</a></dt>
-  <dd>TreeMap(), TreeMap(Comparator), TreeMap(Map), TreeMap(SortedMap), clear(), comparator(), containsKey(Object), entrySet(), firstKey(), get(Object), headMap(K), lastKey(), put(K, V), remove(Object), size(), subMap(K, K), tailMap(K)</dd>
+  <dd>TreeMap(), TreeMap(Comparator), TreeMap(Map), TreeMap(SortedMap), clear(), comparator(), entrySet(), headMap(K, boolean), put(K, V), remove(Object), size(), subMap(K, boolean, K, boolean), tailMap(K, boolean)</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html">TreeSet</a></dt>
-  <dd>TreeSet(), TreeSet(Collection), TreeSet(Comparator), TreeSet(SortedSet), add(E), clear(), comparator(), contains(Object), first(), headSet(E), iterator(), last(), remove(Object), size(), subSet(E, E), tailSet(E)</dd>
+  <dd>TreeSet(), TreeSet(Collection), TreeSet(Comparator), TreeSet(SortedSet), add(E), ceiling(E), clear(), comparator(), contains(Object), descendingIterator(), descendingSet(), first(), floor(E), headSet(E), headSet(E, boolean), higher(E), iterator(), last(), lower(E), pollFirst(), pollLast(), remove(Object), size(), subSet(E, boolean, E, boolean), subSet(E, E), tailSet(E), tailSet(E, boolean)</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Vector.html">Vector</a></dt>
   <dd>Vector(), Vector(Collection), Vector(int), Vector(int, int), add(E), add(int, E), addAll(Collection), addAll(int, Collection), addElement(E), capacity(), clear(), clone(), contains(Object), containsAll(Collection), copyInto(Object[]), elementAt(int), elements(), ensureCapacity(int), firstElement(), get(int), indexOf(Object), indexOf(Object, int), insertElementAt(E, int), isEmpty(), iterator(), lastElement(), lastIndexOf(Object), lastIndexOf(Object, int), remove(int), removeAll(Collection), removeAllElements(), removeElement(Object), removeElementAt(int), set(int, E), setElementAt(E, int), setSize(int), size(), subList(int, int), toArray(), toArray(T[]), toString(), trimToSize()</dd>
@@ -407,6 +426,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>LogRecord(Level, String), getLevel(), getLoggerName(), getMessage(), getMillis(), getThrown(), setLevel(Level), setLoggerName(String), setMessage(String), setMillis(long), setThrown(Throwable)</dd>
 
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/Logger.html">Logger</a></dt>
-  <dd>getLogger(String), addHandler(Handler), config(String), fine(String), finer(String), finest(String), getHandlers(), getLevel(), getName(), getParent(), getUseParentHandlers(), info(String), isLoggable(Level), log(Level, String), log(Level, String, Throwable), log(LogRecord), removeHandler(Handler), setLevel(Level), setParent(Logger), setUseParentHandlers(boolean), severe(String), warning(String)</dd>
+  <dd style='margin-bottom: 0.5em;'>GLOBAL_LOGGER_NAME</dd>
+  <dd>getGlobal(), getLogger(String), addHandler(Handler), config(String), fine(String), finer(String), finest(String), getHandlers(), getLevel(), getName(), getParent(), getUseParentHandlers(), info(String), isLoggable(Level), log(Level, String), log(Level, String, Throwable), log(LogRecord), removeHandler(Handler), setLevel(Level), setParent(Logger), setUseParentHandlers(boolean), severe(String), warning(String)</dd>
 </dl>
 

@@ -1,0 +1,487 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+CssPrinter (GWT Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="CssPrinter (GWT Javadoc)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/CssPrinter.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.7.0</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/google/gwt/resources/gss/CreateRuntimeConditionalNodes.html" title="class in com.google.gwt.resources.gss"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/gwt/resources/gss/EvalFunction.html" title="class in com.google.gwt.resources.gss"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/google/gwt/resources/gss/CssPrinter.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="CssPrinter.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_com.google.gwt.thirdparty.common.css.compiler.passes.CompactPrinter">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.gwt.resources.gss</FONT>
+<BR>
+Class CssPrinter</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by ">com.google.gwt.thirdparty.common.css.compiler.ast.DefaultTreeVisitor
+      <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by ">com.google.gwt.thirdparty.common.css.compiler.passes.CompactPrinter
+          <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.gwt.resources.gss.CssPrinter</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>com.google.gwt.thirdparty.common.css.compiler.ast.AtRuleHandler, com.google.gwt.thirdparty.common.css.compiler.ast.CssCompilerPass, com.google.gwt.thirdparty.common.css.compiler.ast.CssTreeVisitor</DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <B>CssPrinter</B><DT>extends com.google.gwt.thirdparty.common.css.compiler.passes.CompactPrinter</DL>
+</PRE>
+
+<P>
+Visitor that converts the AST to a <code>String</code> that can be evaluated as a Java expression.
+
+ <p>For example, the following GSS code
+ <pre>
+<P>
+
+<P>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.google.gwt.thirdparty.common.css.compiler.passes.CompactPrinter"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.google.gwt.thirdparty.common.css.compiler.passes.CompactPrinter</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>sb</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/resources/gss/CssPrinter.html#CssPrinter(com.google.gwt.thirdparty.common.css.compiler.ast.CssNode)">CssPrinter</A></B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssNode&nbsp;node)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/resources/gss/CssPrinter.html#CssPrinter(com.google.gwt.thirdparty.common.css.compiler.ast.CssTree)">CssPrinter</A></B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssTree&nbsp;tree)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/resources/gss/CssPrinter.html#appendValueNode(com.google.gwt.thirdparty.common.css.compiler.ast.CssValueNode)">appendValueNode</A></B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssValueNode&nbsp;node)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/resources/gss/CssPrinter.html#enterConditionalBlock(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalBlockNode)">enterConditionalBlock</A></B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalBlockNode&nbsp;node)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/resources/gss/CssPrinter.html#enterConditionalRule(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalRuleNode)">enterConditionalRule</A></B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalRuleNode&nbsp;node)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/resources/gss/CssPrinter.html#enterTree(com.google.gwt.thirdparty.common.css.compiler.ast.CssRootNode)">enterTree</A></B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssRootNode&nbsp;root)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/resources/gss/CssPrinter.html#getCompactPrintedString()">getCompactPrintedString</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/resources/gss/CssPrinter.html#leaveConditionalBlock(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalBlockNode)">leaveConditionalBlock</A></B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalBlockNode&nbsp;block)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/resources/gss/CssPrinter.html#leaveConditionalRule(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalRuleNode)">leaveConditionalRule</A></B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalRuleNode&nbsp;node)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/resources/gss/CssPrinter.html#leaveTree(com.google.gwt.thirdparty.common.css.compiler.ast.CssRootNode)">leaveTree</A></B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssRootNode&nbsp;root)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/resources/gss/CssPrinter.html#runPass()">runPass</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.google.gwt.thirdparty.common.css.compiler.passes.CompactPrinter"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.google.gwt.thirdparty.common.css.compiler.passes.CompactPrinter</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>deleteLastCharIfCharIs, enterArgumentNode, enterAttributeSelector, enterBlock, enterClassSelector, enterCombinator, enterCompositeValueNodeOperator, enterDeclaration, enterDeclarationBlock, enterDefinition, enterFontFace, enterFunctionNode, enterIdSelector, enterImportRule, enterKey, enterKeyframesRule, enterMediaRule, enterMediaTypeListDelimiter, enterPageRule, enterPageSelector, enterPseudoClass, enterPseudoElement, enterSelector, enterUnknownAtRule, enterValueNode, leaveCombinator, leaveCompositeValueNode, leaveDeclaration, leaveDeclarationBlock, leaveFunctionNode, leaveImportRule, leaveKey, leaveKeyBlock, leaveKeyframesRule, leaveMediaRule, leavePseudoClass, leaveSelector, leaveSelectorBlock, leaveUnknownAtRule, leaveValueNode, printCompactly, printCompactly</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.google.gwt.thirdparty.common.css.compiler.ast.DefaultTreeVisitor"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.google.gwt.thirdparty.common.css.compiler.ast.DefaultTreeVisitor</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>enterComponent, enterCompositeValueNode, enterImportBlock, enterKeyBlock, enterKeyframeRuleset, enterMixin, enterMixinDefinition, enterPropertyValue, enterProvideNode, enterRequireNode, enterRuleset, enterSelectorBlock, leaveArgumentNode, leaveAttributeSelector, leaveBlock, leaveClassSelector, leaveComponent, leaveCompositeValueNodeOperator, leaveDefinition, leaveFontFace, leaveIdSelector, leaveImportBlock, leaveKeyframeRuleset, leaveMediaTypeListDelimiter, leaveMixin, leaveMixinDefinition, leavePageRule, leavePageSelector, leavePropertyValue, leaveProvideNode, leavePseudoElement, leaveRequireNode, leaveRuleset, visit</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="CssPrinter(com.google.gwt.thirdparty.common.css.compiler.ast.CssTree)"><!-- --></A><H3>
+CssPrinter</H3>
+<PRE>
+public <B>CssPrinter</B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssTree&nbsp;tree)</PRE>
+<DL>
+</DL>
+<HR>
+
+<A NAME="CssPrinter(com.google.gwt.thirdparty.common.css.compiler.ast.CssNode)"><!-- --></A><H3>
+CssPrinter</H3>
+<PRE>
+public <B>CssPrinter</B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssNode&nbsp;node)</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="enterTree(com.google.gwt.thirdparty.common.css.compiler.ast.CssRootNode)"><!-- --></A><H3>
+enterTree</H3>
+<PRE>
+public boolean <B>enterTree</B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssRootNode&nbsp;root)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>enterTree</CODE> in interface <CODE>com.google.gwt.thirdparty.common.css.compiler.ast.CssTreeVisitor</CODE><DT><B>Overrides:</B><DD><CODE>enterTree</CODE> in class <CODE>com.google.gwt.thirdparty.common.css.compiler.ast.DefaultTreeVisitor</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getCompactPrintedString()"><!-- --></A><H3>
+getCompactPrintedString</H3>
+<PRE>
+public java.lang.String <B>getCompactPrintedString</B>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>getCompactPrintedString</CODE> in class <CODE>com.google.gwt.thirdparty.common.css.compiler.passes.CompactPrinter</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="leaveTree(com.google.gwt.thirdparty.common.css.compiler.ast.CssRootNode)"><!-- --></A><H3>
+leaveTree</H3>
+<PRE>
+public void <B>leaveTree</B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssRootNode&nbsp;root)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>leaveTree</CODE> in interface <CODE>com.google.gwt.thirdparty.common.css.compiler.ast.CssTreeVisitor</CODE><DT><B>Overrides:</B><DD><CODE>leaveTree</CODE> in class <CODE>com.google.gwt.thirdparty.common.css.compiler.ast.DefaultTreeVisitor</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="runPass()"><!-- --></A><H3>
+runPass</H3>
+<PRE>
+public void <B>runPass</B>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>runPass</CODE> in interface <CODE>com.google.gwt.thirdparty.common.css.compiler.ast.CssCompilerPass</CODE><DT><B>Overrides:</B><DD><CODE>runPass</CODE> in class <CODE>com.google.gwt.thirdparty.common.css.compiler.passes.CompactPrinter</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="enterConditionalBlock(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalBlockNode)"><!-- --></A><H3>
+enterConditionalBlock</H3>
+<PRE>
+public boolean <B>enterConditionalBlock</B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalBlockNode&nbsp;node)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>enterConditionalBlock</CODE> in interface <CODE>com.google.gwt.thirdparty.common.css.compiler.ast.CssTreeVisitor</CODE><DT><B>Overrides:</B><DD><CODE>enterConditionalBlock</CODE> in class <CODE>com.google.gwt.thirdparty.common.css.compiler.passes.CompactPrinter</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="leaveConditionalBlock(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalBlockNode)"><!-- --></A><H3>
+leaveConditionalBlock</H3>
+<PRE>
+public void <B>leaveConditionalBlock</B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalBlockNode&nbsp;block)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>leaveConditionalBlock</CODE> in interface <CODE>com.google.gwt.thirdparty.common.css.compiler.ast.CssTreeVisitor</CODE><DT><B>Overrides:</B><DD><CODE>leaveConditionalBlock</CODE> in class <CODE>com.google.gwt.thirdparty.common.css.compiler.ast.DefaultTreeVisitor</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="enterConditionalRule(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalRuleNode)"><!-- --></A><H3>
+enterConditionalRule</H3>
+<PRE>
+public boolean <B>enterConditionalRule</B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalRuleNode&nbsp;node)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>enterConditionalRule</CODE> in interface <CODE>com.google.gwt.thirdparty.common.css.compiler.ast.AtRuleHandler</CODE><DT><B>Overrides:</B><DD><CODE>enterConditionalRule</CODE> in class <CODE>com.google.gwt.thirdparty.common.css.compiler.ast.DefaultTreeVisitor</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="leaveConditionalRule(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalRuleNode)"><!-- --></A><H3>
+leaveConditionalRule</H3>
+<PRE>
+public void <B>leaveConditionalRule</B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssConditionalRuleNode&nbsp;node)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>leaveConditionalRule</CODE> in interface <CODE>com.google.gwt.thirdparty.common.css.compiler.ast.AtRuleHandler</CODE><DT><B>Overrides:</B><DD><CODE>leaveConditionalRule</CODE> in class <CODE>com.google.gwt.thirdparty.common.css.compiler.ast.DefaultTreeVisitor</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="appendValueNode(com.google.gwt.thirdparty.common.css.compiler.ast.CssValueNode)"><!-- --></A><H3>
+appendValueNode</H3>
+<PRE>
+protected void <B>appendValueNode</B>(com.google.gwt.thirdparty.common.css.compiler.ast.CssValueNode&nbsp;node)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>appendValueNode</CODE> in class <CODE>com.google.gwt.thirdparty.common.css.compiler.passes.CompactPrinter</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/CssPrinter.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.7.0</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/google/gwt/resources/gss/CreateRuntimeConditionalNodes.html" title="class in com.google.gwt.resources.gss"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/gwt/resources/gss/EvalFunction.html" title="class in com.google.gwt.resources.gss"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/google/gwt/resources/gss/CssPrinter.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="CssPrinter.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_com.google.gwt.thirdparty.common.css.compiler.passes.CompactPrinter">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>
