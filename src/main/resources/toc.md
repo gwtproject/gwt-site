@@ -89,6 +89,7 @@
               - [Code Splitting](doc/latest/DevGuideCodeSplitting.html)
               - [Compile Report](doc/latest/DevGuideCompileReport.html)
               - [Client Bundle](doc/latest/DevGuideClientBundle.html)
+              - [GSS vs CSS Syntax](doc/latest/DevGuideGssVsCss.html)
               - [Lightweight Metrics](doc/latest/DevGuideLightweightMetrics.html)
           - [Linkers](doc/latest/DevGuideLinkers.html)
       - [Reference](#)
