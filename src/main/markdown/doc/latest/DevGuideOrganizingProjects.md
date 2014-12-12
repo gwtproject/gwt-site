@@ -466,48 +466,7 @@ conflict with each other during event handling. The second approach is strongly 
 
 <p>The GWT compiler separates the act of compiling and packaging its output with the Linker subsystem. It is responsible for the final packaging of the JavaScript code and
 providing a pluggable bootstrap mechanism for any particular deployment scenario.</p>
-
-<ul>
-<li><tt>&lt;</tt>define-linker name=&quot;<i>short_name</i>&quot; class=&quot;<i>fully_qualified_class_name</i>&quot; /<tt>&gt;</tt> : Register a new Linker instance with the compiler. The
-<tt>name</tt> attribute must be a valid Java identifier and is used to identify the Linker in <tt>&lt;add-linker&gt;</tt> tags. It is permissible to redefine an already-defined
-Linker by declaring a new <tt>&lt;define-linker&gt;</tt> tag with the same name. Linkers are divided into three categories, PRE, POST, and PRIMARY. Exactly one primary linker is
-run for a compilation. Pre-linkers are run in lexical order before the primary linker, and post-linkers are run in reverse lexical order after the primary linker.</li>
-
-<li><tt>&lt;</tt>add-linker name=&quot;<i>linker_name</i>&quot; /<tt>&gt;</tt> : Specify a Linker to use when generating the output from the compiler. The <tt>name</tt> property is a
-previously-defined Linker name. This tag is additive for pre- and post-linkers; only the last primary linker will be run.</li>
-</ul>
-
-<p>Several linkers are provided by <tt>Core.gwt.xml</tt>, which is automatically inherited by <tt>User.gwt.xml</tt>.</p>
-
-<ul>
-<li><strong>std</strong> : The standard iframe-based bootstrap deployment model.</li>
-
-<li><strong>xs</strong> : The cross-site deployment model.</li>
-
-<li><strong>sso</strong> : This Linker will produce a monolithic JavaScript file. It may be used only when there is a single distinct compilation result.</li>
-</ul>
-
-
-
-<p>From <tt>Core.gwt.xml</tt>:</p>
-
-<pre class="prettyprint">
-&lt;module&gt;
-   &lt;define-linker name=&quot;std&quot; class=&quot;com.google.gwt.dev.linker.IFrameLinker&quot; /&gt;
-   &lt;define-linker name=&quot;sso&quot; class=&quot;com.google.gwt.dev.linker.SingleScriptLinker&quot; /&gt;
-   &lt;define-linker name=&quot;xs&quot; class=&quot;com.google.gwt.dev.linker.XSLinker&quot; /&gt;
-   &lt;add-linker name=&quot;std&quot; /&gt;
-&lt;/module&gt;
-</pre>
-
-<p>Changing the desired linker in <tt>MyModule.gwt.xml</tt>:</p>
-
-<pre class="prettyprint">
-&lt;module&gt;
-  &lt;inherits name=&quot;com.google.gwt.core.Core&quot; /&gt;
-  &lt;add-linker name=&quot;xs&quot; /&gt;
-&lt;/module&gt;
-</pre>
+<p>For more information, see <a href="DevGuideLinkers.html">Linkers</a>.</p>
 
 <h3>Overriding one package implementation with another</h3>
 

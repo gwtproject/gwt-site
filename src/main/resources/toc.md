@@ -90,6 +90,7 @@
               - [Compile Report](doc/latest/DevGuideCompileReport.html)
               - [Client Bundle](doc/latest/DevGuideClientBundle.html)
               - [Lightweight Metrics](doc/latest/DevGuideLightweightMetrics.html)
+          - [Linkers](doc/latest/DevGuideLinkers.html)
       - [Reference](#)
           - [Command Line Tools](doc/latest/RefCommandLineTools.html)
           - [GWT Class API](doc/latest/RefGWTClassAPI.html)
