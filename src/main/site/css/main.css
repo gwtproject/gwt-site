@@ -322,6 +322,10 @@ pre {
   margin-left: 2em;
 }
 
+pre code {
+  font-size: 100% !important;
+}
+
 pre ins {
   color: #cc0000;
   font-weight: bold;
