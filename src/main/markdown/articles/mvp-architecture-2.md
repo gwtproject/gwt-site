@@ -1,48 +1,28 @@
-<style>
-code, .code {font-size: 9pt; font-family: Courier, Courier New, monospace; color:#007000;}
-.highlight {background-color: #ffc;}
-.strike {text-decoration:line-through; color:red;}
-.header {margin-top: 1.5ex;}
-.details {margin-top: 1ex;}
-</style>
+Building MVP apps: MVP Part II
+===
 
-<style>
+_Chris Ramsdale, Google Developer Relations_
 
-div.screenshot img {
-  margin: 20px;
-}
+_Updated March 2010_
 
-.download {
-  border: none;
-}
-.download td {
-  vertical-align: middle;
-  border: none;
-}
-</style>
+The sample project, referenced throughout this tutorial, can be downloaded at
+[Tutorial-Contacts2.zip](http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-Contacts2.zip).
 
-<i>Chris Ramsdale, Google Developer Relations</i>
-<br>
-<i>Updated March 2010</i>
-
-<p>The sample project, referenced throughout this tutorial, can be downloaded at
-<a href="http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-Contacts2.zip">Tutorial-Contacts2.zip</a>.</p>
-
-<p>With the foundation of our MVP-based app laid out, you may be asking 
-yourself, "Hey, why can't I use that fancy <a href="#uibinder">UiBinder</a>
+With the foundation of our MVP-based app laid out, you may be asking 
+yourself, "Hey, why can't I use that fancy [UiBinder](#uibinder)
 feature that was previously discussed?" This answer is, you can with a little
 bit of tweaking within the Views and Presenters. On top of that, you may find
 that the code flows more smoothly and the techniques we put in place will
 dovetail nicely when we address the topic of implementing more
-<a href="#complex_uis">complex UIs</a>,
-<a href="#optimized_uis">optimized UIs</a>, and
-<a href="#code_splitting">code splitting</a>.</p>
+[complex UIs](#complex_uis),
+[optimized UIs](#optimized_uis), and
+[code splitting](#code_splitting).
 
-<h2 id="uibinder">Doing things the UiBinder way</h2>
+## Doing things the UiBinder way <a id="uibinder"></a>
 
-<p>To start things out, let's take a look at the code that constructs our main
+To start things out, let's take a look at the code that constructs our main
 ContactList view. Previously we programmatically setup the UI within the
-ContactsView constructor:</p>
+ContactsView constructor:
 
 <pre class="prettyprint">
 public class ContactsView extends Composite implements ContactsPresenter.Display {
@@ -86,11 +66,11 @@ public class ContactsView extends Composite implements ContactsPresenter.Display
 }
 </pre>
 
-<p>The first step towards a UiBinder-way of doing things is to move this code
+The first step towards a UiBinder-way of doing things is to move this code
 into a Contacts.ui.xml file and perform the associated transformations. As
 mentioned in previous chapters, constructing UiBinder-based UIs allows you to
 do so in a declarative way that resembles HTML more than straight Java code.
-To that extent, the result is the following:</p>
+To that extent, the result is the following:
 
 <pre style="color:#008">
 ContactsView.ui.xml
@@ -121,12 +101,12 @@ ContactsView.ui.xml
 &lt;/ui:UiBinder>
 </pre>
 
-<p>Here we've laid out a VerticalPanel that wraps our Add/Delete buttons and
+Here we've laid out a VerticalPanel that wraps our Add/Delete buttons and
 FlexTable that contains the list of contacts. This is then wrapped by a
 DecoratorPanel for a bit of style. The &lt;ui:style> element declares a small
 amount of margin so that things aren't placed too close together.
 The ContactsView constructor and members are then reduced to the
-following:</p>
+following:
 
 <pre class="prettyprint">
 public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
@@ -147,15 +127,15 @@ public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt
 }
 </pre>
 
-<p>We'll get to why it's templatized, why it's an "impl" class, and why we use
+We'll get to why it's templatized, why it's an "impl" class, and why we use
 the UiTemplate annotation later on when we discuss "Complex UIs - Dumb Views".
 For now it's important to note that a) we'll access the  underlying widgets
 via the UiField annotations, and b) the constructor code is significantly
 smaller. And by "smaller", I mean a single line. UiBinder does a good job of
 removing the boilerplate code necessary to setup UIs, and allows you to further
-segment the code that declares the UI from the code that drives the UI.</p>
+segment the code that declares the UI from the code that drives the UI.
 
-<p>Now that we have the UI constructed, we need to hook up the associated UI
+Now that we have the UI constructed, we need to hook up the associated UI
 events, namely Add/Delete button clicks, and interaction with the contact list
 FlexTable. This is where we'll start to notice significant changes in the
 overall layout of our application design. Mainly due to the fact that we want
@@ -163,7 +143,7 @@ to link methods within the view to UI interactions via the UiHandler annotation.
 The first major change is that we want our ContactsPresenter to implement a
 Presenter interface that allows our ContactsView to callback into the presenter
 when it receives a click, select or other event. The Presenter interface defines
-the following:</p>
+the following:
 
 <pre class="prettyprint">
   public interface Presenter&lt;T> {
@@ -174,12 +154,12 @@ the following:</p>
   }
 </pre>
 
-<p>Again, templatizing the interface will be covered in the next section, but
+Again, templatizing the interface will be covered in the next section, but
 with this interface in place you can start to see how the ContactsView is going
 to communicate with the ContactsPresenter. The first part of wiring everything
 up is to have our ContactsPresenter implement the Presenter interface, and then
 register itself with the underlying view. To register itself, we'll need our
-ContactsView to expose a setPresenter() method:</p>
+ContactsView to expose a setPresenter() method:
 
 <pre class="prettyprint">
   private Presenter&lt;T> presenter;
@@ -188,8 +168,8 @@ ContactsView to expose a setPresenter() method:</p>
   }
 </pre>
 
-<p>Now we can take a look at how we'll wire up the UI interactions within the
-ContactsView via the UiHandler annotation:</p>
+Now we can take a look at how we'll wire up the UI interactions within the
+ContactsView via the UiHandler annotation:
 
 <pre class="prettyprint">
 public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
@@ -229,10 +209,10 @@ public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt
 }
 </pre>
 
-<p>Using this technique, we've provided the UiBinder generator the corresponding
+Using this technique, we've provided the UiBinder generator the corresponding
 methods that should be called when a Widget has a "ui:field" attribute set to
 "addButton", "deleteButton", and "contactsTable". On the ContactsPresenter side
-of the fence we end up with the following:</p>
+of the fence we end up with the following:
 
 <pre class="prettyprint">
 public class ContactsPresenter implements Presenter {
@@ -261,18 +241,18 @@ public class ContactsPresenter implements Presenter {
 }
 </pre>
 
-<p>The resulting method implementations are the same as the non-UiBinder sample,
+The resulting method implementations are the same as the non-UiBinder sample,
 with the exception of the onItemClicked() and onItemSelected() methods. And
 while these methods may seem straightforward, we need to dive into how they
 came about, and explain what this "SelectionModel" is in the first place. This
-and much, much more is explained in the next section.</p>
+and much, much more is explained in the next section.
 
-<h2 id="complex_uis">Complex UIs - Dumb Views</h2>
+## Complex UIs - Dumb Views <a id="complex_uis"></a>
 
-<p>Our current solution is to have our presenters pass a dumbed down version of
+Our current solution is to have our presenters pass a dumbed down version of
 the model to our views. In the case of our ContactsView, the presenter takes a
 list of DTOs (Data Transfer Objects) and constructs a list of Strings that it
-then passes to the view.</p>
+then passes to the view.
 
 <pre class="prettyprint">
 public ContactsPresenter implements Presenter {
@@ -291,7 +271,7 @@ public ContactsPresenter implements Presenter {
 }
 </pre>
 
-<p>The "data" object that is passed to the view is a very (and I mean very)
+The "data" object that is passed to the view is a very (and I mean very)
 simplistic ViewModel &mdash; basically a representation of a more complex data model
 using primitives. This is fine for a simplistic view, but as soon as you start to
 do something more complex, you quickly realize that something has to give.
@@ -299,12 +279,12 @@ Either the presenter needs to know more about the view (making it hard to swap
 out views for other platforms), or the view needs to know more about the data
 model (ultimately making your view smarter, thus requiring more GwtTestCases).
 The solution is to use generics along with a third party that abstracts any
-knowledge of a cell's data type, as well as how that data type is rendered.</p>
+knowledge of a cell's data type, as well as how that data type is rendered.
 
-<p>First, we're going to rely on the fact that data types are typically
+First, we're going to rely on the fact that data types are typically
 homogeneous within column borders. Doing so allows us to define a
 ColumnDefinition abstract class that houses the any type-specific code (this is
-the third party mentioned above).</p>
+the third party mentioned above).
 
 <pre class="prettyprint">
   public abstract class ColumnDefinition&lt;T> {
@@ -320,10 +300,10 @@ the third party mentioned above).</p>
   }
 </pre>
 
-<p>By stringing together a list of these classes, and providing the necessary
+By stringing together a list of these classes, and providing the necessary
 render() implementations and isClickable()/isSelectable() overrides, you can
 start see how we would define our layout. Let's take a look at how we would
-make this work with our Contacts sample.</p>
+make this work with our Contacts sample.
 
 <pre class="prettyprint">
   public class ContactsViewColumnDefinitions&lt;ContactDetails> {
@@ -358,13 +338,12 @@ make this work with our Contacts sample.</p>
   }
 </pre>
 
-<p>These ColumnDefinition(s) would be created outside of the presenter so that
+These ColumnDefinition(s) would be created outside of the presenter so that
 we can reuse its logic regardless of what view we've attached ourself to (be it
 an iPhone, Android, desktop, etc... view). This can be done using a
 platform-specific ContactsViewColumnDefinitions class that is loaded (or
 injected using GIN) on a per-permutation basis. Regardless of the technique,
 we'll need to update our views such that we can set their ColumnDefinition(s).
-</p>
 
 <pre class="prettyprint">
   public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
@@ -378,10 +357,10 @@ we'll need to update our views such that we can set their ColumnDefinition(s).
   }
 </pre>
 
-<p>Note that our ContactsView is now ContactsViewImpl&lt;T> and implements
+Note that our ContactsView is now ContactsViewImpl&lt;T> and implements
 ContactsView&lt;T>. This is so that we can pass in a mocked ContactsView instance
 when testing our ContactsPresenter. Now in our AppController, when we create the
-ContactsView, we can initialize it with the necessary ColumnDefinition(s).</p>
+ContactsView, we can initialize it with the necessary ColumnDefinition(s).
 
 <pre class="prettyprint">
   public class AppController implements Presenter, ValueChangeHandler&lt;String> {
@@ -409,10 +388,10 @@ ContactsView, we can initialize it with the necessary ColumnDefinition(s).</p>
   }
 </pre>
 
-<p>With the ColumnDefinition(s) in place, we will start to see the fruits of our
+With the ColumnDefinition(s) in place, we will start to see the fruits of our
 labor. Mainly in the way we pass model data to the view. As mentioned above we
 were previously dumbing down the model into a list of Strings. With our
-ColumnDefinition(s) we can pass the model untouched.</p>
+ColumnDefinition(s) we can pass the model untouched.
 
 <pre class="prettyprint">
   public class ContactsPresenter implements Presenter,
@@ -431,7 +410,7 @@ ColumnDefinition(s) we can pass the model untouched.</p>
   }
 </pre>
 
-<p>And our ContactsViewImpl has the following setRowData() implementation:</p>
+And our ContactsViewImpl has the following setRowData() implementation:
 
 <pre class="prettyprint">
   public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
@@ -452,11 +431,11 @@ ColumnDefinition(s) we can pass the model untouched.</p>
   }
 </pre>
 
-<p>A definite improvement; the presenter can pass the model untouched and the
+A definite improvement; the presenter can pass the model untouched and the
 view has no rendering code that we would otherwise need to test. And the fun
 doesn't stop there. Remember the isClickable() and isSelectable() methods? Well,
 let's take a look at how they work in conjunction with ClickEvents that are
-received within the view.</p>
+received within the view.
 
 <pre class="prettyprint">
   public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
@@ -511,17 +490,17 @@ received within the view.</p>
   }
 </pre>
 
-<p>The notion here is that you'll want to respond to user interaction in
+The notion here is that you'll want to respond to user interaction in
 different ways based upon the cell type that was clicked. Given that our
 ColumnDefinition(s) are intertwined with the cell type, we're not only able to
 use them for rendering purposes, but for defining how to interpret user
-interactions.</p>
+interactions.
 
-<p>To take this one final step further, we're going to remove any application
+To take this one final step further, we're going to remove any application
 state from the ContactsView. To do this, we'll replace the view's
 getSelectedRows() with a SelectionModel that the presenter holds on to. The
 SelectionModel is nothing more than a wrapper around a list of model
-objects.</p>
+objects.
 
 <pre class="prettyprint">
   public class SelectionModel&lt;T> {
@@ -545,8 +524,8 @@ objects.</p>
   }
 </pre>
 
-<p>The ContactsPresenter holds on to an instance of this class and updates it
-accordingly, based on calls to onItemSelected().</p>
+The ContactsPresenter holds on to an instance of this class and updates it
+accordingly, based on calls to onItemSelected().
 
 <pre class="prettyprint">
   public class ContactsPresenter implements Presenter,
@@ -564,8 +543,8 @@ accordingly, based on calls to onItemSelected().</p>
   }
 </pre>
 
-<p>When it needs to grab the list of selected items, for example when the user
-clicks the "Delete" button, it has them right at its disposal.</p>
+When it needs to grab the list of selected items, for example when the user
+clicks the "Delete" button, it has them right at its disposal.
 
 <pre class="prettyprint">
   public class ContactsPresenter implements Presenter,
@@ -594,42 +573,36 @@ clicks the "Delete" button, it has them right at its disposal.</p>
   }
 </pre>
 
-<p>Alright, so that was a fair amount to digest, and describing it in code
+Alright, so that was a fair amount to digest, and describing it in code
 snippets might lead to some being "lost in translation". If that's the case,
 be sure to check out the full source that is available
-<a href="http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-Contacts2.zip">here</a>.</p>
+[here](http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-Contacts2.zip).
 
-<h2 id="optimized_uis">Optimized UIs - Dumb Views</h2>
+## Optimized UIs - Dumb Views <a id="optimized_uis"></a>
 
-<p>We've figured out how to create the foundation for complex UIs while sticking
+We've figured out how to create the foundation for complex UIs while sticking
 to our requirement that the view remain as dumb (and minimally testable) as
 possible, but that's no reason to stop. While functionality is decoupled, there
 is still room for optimization. Having the ColumnDefinition create a new widget
 for each cell is too heavy, and can quickly lead to performance degradation as
-your application grows. The two leading factors of this degradation are:</p>
+your application grows. The two leading factors of this degradation are:
 
-<ul>
-<li>Inefficiencies related to inserting new elements via DOM manipulation
-</li>
-<li>Overhead associated with sinking events per Widget</li>
-</ul>
+*   Inefficiencies related to inserting new elements via DOM manipulation
 
-<p>
+*   Overhead associated with sinking events per Widget
+
 To overcome this we will update our application to do the following (in
 respective order):
 
-<ul>
-<li>Replace our FlexTable implementation with an HTML widget that we'll
+*   Replace our FlexTable implementation with an HTML widget that we'll
 populate by calling setHTML(), effectively batching all DOM manipulation into
-a single call.</li>
-<li>Reduce the event overhead by sinking events on the HTML widget, rather than
-the individual cells.</li>
-</ul>
+a single call.
+*   Reduce the event overhead by sinking events on the HTML widget, rather than
+the individual cells.
 
 <p>The changes are encompassed within our ContactsView.ui.xml file, as well as
 our setRowData() and onTableClicked() methods. First we'll need to update our
 ContactsView.ui.xml file to use a HTML widget rather than a FlexTable widget.
-</p>
 
 <pre style="color:#008">
 &lt;ui:UiBinder>
@@ -646,8 +619,8 @@ ContactsView.ui.xml file to use a HTML widget rather than a FlexTable widget.
 &lt;/ui:UiBinder>
 </pre>
 
-<p>We'll also need to change the widget that we reference within our
-ContactsViewImpl class.</p>
+We'll also need to change the widget that we reference within our
+ContactsViewImpl class.
 
 <pre class="prettyprint">
 public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
@@ -656,7 +629,7 @@ public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt
   ...
 </pre>
 
-<p>Next we'll make the necessary changes to our setRowData() method.</p>
+Next we'll make the necessary changes to our setRowData() method.
 
 <pre class="prettyprint">
 public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
@@ -692,15 +665,15 @@ public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt
 }
 </pre>
 
-<p>The above code is similar to our original setRowData() method, we iterate
+The above code is similar to our original setRowData() method, we iterate
 through the rowData and for each item ask our column definitions to render
 accordingly. The main differences being that a) we're expecting each column
 definition to render itself into the StringBuilder rather than passing back a
 full-on widget, and b) we're calling setHTML on a HTML widget rather than
 calling setWidget on a FlexTable. This will decrease your load time, especially
-as your tables start to grow.</p>
+as your tables start to grow.
 
-<p>Now let's take a look at the code used to sink events on the table.</p>
+Now let's take a look at the code used to sink events on the table.
 
 <pre class="prettyprint">
 public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
@@ -730,18 +703,18 @@ public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt
 }
 </pre>
 
-<p>Here our onTableClicked() code gets a bit more complicated, but nothing that
+Here our onTableClicked() code gets a bit more complicated, but nothing that
 would raise a red flag when compared to the rest of our application. To
 reiterate, we're reducing the overhead of sinking events on per-cell widgets,
 and instead sinking on a single container, our HTML widget. The ClickEvents are
 still wired up via our UiHandler annotations, but with this approach, we're
 going to get the Element that was clicked on and walk the DOM until we find a
 parent TableCellElement. From there we can determine the row, and thus the
-corresponding rowData.</p>
+corresponding rowData.
 
-<p>The other tweak we need to make is to update our shouldFirdClickEvent() and
+The other tweak we need to make is to update our shouldFirdClickEvent() and
 shouldFireSelectEvent() to take as a parameter a TableCellElement rather than
-a HTMLTable.Cell. The implementation remains the same, as you can see below.</p>
+a HTMLTable.Cell. The implementation remains the same, as you can see below.
 
 <pre class="prettyprint">
 public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
@@ -779,9 +752,9 @@ public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt
  }
 </pre>
 
-<h2 id="code_splitting">Code Splitting &ndash; Only the relevant parts please</h2>
+## Code Splitting &ndash; Only the relevant parts please <a id="code_splitting"></a>
 
-<p>Up to this point we've discussed how code maintainability and testing are
+Up to this point we've discussed how code maintainability and testing are
 benefits of an MVP-based application. One other benefit that may go overlooked
 is faster startup times via Code Splitting. I know, you're probably wondering
 what in the world an MVP architecture has to do with code splitting, but the same
@@ -791,15 +764,15 @@ Code Splitting is the act of wrapping segmented pieces of your application into
 "split" points by declaring them within a runAsync() call. As long as the split
 portion of your code is purely segmented, and not referenced by other parts of
 the app, it will be downloaded and executed at the point that it needs to
-run.</p>
+run.
 
-<p>So take for example the code we wrote in the previous section. It was rather
+So take for example the code we wrote in the previous section. It was rather
 lengthy, right? Now assume that our application has a login screen, and as usual
 once the user logs in they're taken to the main application screen (in this case
 their list of Contacts). Do we really want to download all of that code before
 the user even logs in? Not really. It would be nice if we could simply grab the
 login code, and leave the rest for when we actually need it (e.g. after the user
-has logged in). Well we can, and here's how.</p>
+has logged in). Well we can, and here's how.
 
 <pre class="prettyprint">
   public void onValueChange(ValueChangeEvent&lt;String> event) {
@@ -823,15 +796,13 @@ has logged in). Well we can, and here's how.</p>
    }
 </pre>
 
-<p>Here, all we've done is wrap the code that creates the ContactsView and
+Here, all we've done is wrap the code that creates the ContactsView and
 ContactsPresenter in a runAsync() call, and as a result it won't be downloaded
 until the first time we go to show the Contact list. After that, subsequent calls
 will realize that the code has already been downloaded, and will use it in lieu
-of re-downloading.</p>
+of re-downloading.
 
-<p>A bit anti climatic isn't it? Well, that's not always a bad thing. The amount
+A bit anti climatic isn't it? Well, that's not always a bad thing. The amount
 of boilerplate code necessary to get an MVP-based app up and running is
 generally large. But the time spent is not wasted, as optimizations such as this
-one become easier and easier to implement.</p>
-
-
+one become easier and easier to implement.

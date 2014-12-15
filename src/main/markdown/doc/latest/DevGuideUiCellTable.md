@@ -1,52 +1,35 @@
-<style type="text/css">
-  #gc-pagecontent h1.smaller  {
-    font-size: 145%;
-    border-top: thin black solid;
-    padding-top: 3px;
-    margin-top: 1.8em;
-  }
-</style>
+UiCellTable
+===
 
-<p>
 A cell table (data presentation table) provides high-performance rendering of large data sets
 in a tabular view. You can check out the
-<a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable">Cell Table example</a>
+[Cell Table example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable)
 in the GWT Showcase to see it in action.
-</p>
 
-<p>
 This developer guide will walk you through some advanced features specific to CellTable, such as
 column sorting. If you are not familiar with the cell widgets, you should read the
-<a href="DevGuideUiCellWidgets.html">Cell Widgets Developer Guide</a>
+[Cell Widgets Developer Guide](DevGuideUiCellWidgets.html)
 before continuing.
-</p>
 
-<ol class="toc" style="margin-top: 0;">
-  <li><a href="#columnSorting">Column Sorting</a></li>
-  <li><a href="#columnWidths">Controlling Column Widths</a></li>
-</ol>
+1.  [Column Sorting](#columnSorting)
+2.  [Controlling Column Widths](#columnWidths)
 
-<h2 id="columnSorting">Column Sorting</h2>
+## Column Sorting<a id="columnSorting"></a>
 
-<p>
 CellTable has built-in support for column sorting. Use
-<a href="/javadoc/latest/com/google/gwt/user/cellview/client/Column.html#setSortable(boolean)">Column.setSortable(boolean)</a>
+[Column.setSortable(boolean)](/javadoc/latest/com/google/gwt/user/cellview/client/Column.html#setSortable(boolean))
 to make a column sortable. Users will then be able to click on the column header and trigger a
-<a href="/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.html">ColumnSortEvent</a>.
+[ColumnSortEvent](/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.html).
 How you handle the event depends on how you push data into your CellTable.
 
-<h3>ColumnSorting with ListDataProvider</h3>
+### ColumnSorting with ListDataProvider
 
-<p>
 GWT provides a default implementation of 
-<a href="/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.Handler.html">ColumnSortEvent.Handler</a>
-called <a href="/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.ListHandler.html">ColumnSortEvent.ListHandler</a>
+[ColumnSortEvent.Handler](/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.Handler.html)
+called [ColumnSortEvent.ListHandler](/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.ListHandler.html)
 that is designed to perform local sorting of a java.util.List.
-</p>
 
-<p>
-<b>Code Example</b> - The example below adds column sorting support to a CellTable backed by a ListDataProvider.
-</p>
+**Code Example** - The example below adds column sorting support to a CellTable backed by a ListDataProvider.
 
 <pre class="prettyprint">
 /**
@@ -139,20 +122,16 @@ public class CellTableExample implements EntryPoint {
 }
 </pre>
 
-<h3>ColumnSorting with AsyncDataProvider</h3>
+### ColumnSorting with AsyncDataProvider
 
-<p>
 GWT provides a default implementation of 
-<a href="/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.Handler.html">ColumnSortEvent.Handler</a>
-called <a href="/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.AsyncHandler.html">ColumnSortEvent.AsyncHandler</a>
+[ColumnSortEvent.Handler](/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.Handler.html)
+called [ColumnSortEvent.AsyncHandler](/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.AsyncHandler.html)
 that helps with asynchronous (server-side) column sorting. When the user sorts a Column, AsyncHandler calls
-<a href="/javadoc/latest/com/google/gwt/view/client/HasData.html#setVisibleRangeAndClearData(Range, boolean)">HasData.setVisibleRangeAndClearData(Range, boolean)</a>,
+[HasData.setVisibleRangeAndClearData(Range, boolean)](/javadoc/latest/com/google/gwt/view/client/HasData.html#setVisibleRangeAndClearData(Range, boolean)),
 which triggers a RangeChangeEvent to the AsyncDataProvider.
-</p>
 
-<p>
-<b>Code Example</b> - The example below adds column sorting support to a CellTable backed by an AsyncDataProvider.
-</p>
+**Code Example** - The example below adds column sorting support to a CellTable backed by an AsyncDataProvider.
 
 <pre class="prettyprint">
 /**
@@ -271,24 +250,18 @@ public class CellTableExample implements EntryPoint {
 }
 </pre>
 
-<h2 id="columnWidths">Controlling Column Widths</h2>
+## Controlling Column Widths<a id="columnWidths"></a>
 
-<p>
 By default, columns in a CellTable expand to fit the contents of the Cells. This works fine for a static table, but
 if the content changes due to paging or user interaction, the columns might change width and appear jumpy. CellTable
 provides an API that gives you fine grain control of how the available width is distributed between columns.
-</p>
 
-<p>
-In order to gain fine-grain control over the width of columns, you must set the table layout to "fixed" by passing <code>true</code> into
-<a href="/javadoc/latest/com/google/gwt/user/cellview/client/CellTable.html#setWidth(java.lang.String, boolean)">CellTable.setWidth(String, boolean)</a>.
+In order to gain fine-grain control over the width of columns, you must set the table layout to "fixed" by passing `true` into
+[CellTable.setWidth(String, boolean)](/javadoc/latest/com/google/gwt/user/cellview/client/CellTable.html#setWidth(java.lang.String, boolean)).
 Once in fixed-width mode, tables behave differently than they normally would. The following sections describe
 recipes for achieving various effects.
-</p>
 
-<p>
-<b>Code Example</b> - The example below creates a CellTable with fixed-width columns that expand to fill the available space.
-</p>
+**Code Example** - The example below creates a CellTable with fixed-width columns that expand to fill the available space.
 
 <pre class="prettyprint">
 /**
@@ -355,16 +328,14 @@ public class Tester implements EntryPoint {
 }
 </pre>
 
-<h3>Specify Exact Width of All Columns</h3>
+### Specify Exact Width of All Columns
 
-<p>
 If you want to assign a specific width to every column, then you must set the
 table width to "auto" and assign an absolute width to every column.
-</p>
 
-<p class="warning"><b>WARNING:</b> If you set the width of the table to "auto" and do not
+**WARNING:** If you set the width of the table to "auto" and do not
 set the width of a column, the column will not be visible. Columns default to
-a width of 0.</p>
+a width of 0.
 
 <pre class="prettyprint">
     table.setWidth("auto", true);
@@ -374,17 +345,15 @@ a width of 0.</p>
     table.setColumnWidth(col3, 100.0, Unit.PX);
 </pre>
 
-<h3>Specify Relative Width of All Columns</h3>
+### Specify Relative Width of All Columns
 
-<p>
 You can assign relative widths to every column by setting the width of the table
 to a non-zero value (such as "100%" or "600px") and setting the width of each
 Column in percentages.
-</p>
 
-<p class="warning"><b>WARNING:</b> Whenever you set the width of one or more columns using
+**WARNING:** Whenever you set the width of one or more columns using
 percentages, the percentages should add up to 100%. Failure to do so may result
-in unintended layout issues.</p>
+in unintended layout issues.
 
 <pre class="prettyprint">
     table.setWidth("100%", true);
@@ -394,26 +363,22 @@ in unintended layout issues.</p>
     table.setColumnWidth(col3, 40.0, Unit.PCT);
 </pre>
 
-<h3>Mix Fixed and Relative Column Widths</h3>
+### Mix Fixed and Relative Column Widths
 
-<p>
 One of the great features of fixed-width tables is that you can specify that some
 columns should have a fixed width, while others should resize based on the width
 of the table.  For example, you might fix the width of a checkbox column because
 a checkbox is always about 25px wide, but let other columns resize.
-</p>
 
-<p>
 In order to achieve this affect, set the width of the table to a non-zero value,
 set the width of the fixed columns using non-relative units (such as px, em, or ex), and specify
 the width of the remaining columns in percentages. If you only want one column
 to be resizable, then set its width to 100%, and set the width of all other
 columns in pixels.
-</p>
 
-<p class="warning"><b>WARNING:</b> The width of the columns specified in percentages should
+**WARNING:** The width of the columns specified in percentages should
 add up to 100%. If they do not, then columns specified in pixels will also resize
-with the table in an unpredictable way.</p>
+with the table in an unpredictable way.
 
 <pre class="prettyprint">
     table.setWidth("100%", true);

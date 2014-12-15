@@ -1,6 +1,9 @@
+Super Dev Mode
+===
+
 *Revised November 4, 2014 for GWT 2.7*
 
-<h2 id="Introduction">Introduction</h2>
+## Introduction <a id="Introduction"></a>
 
 Super Dev Mode replaces the internals of
 <a href="../doc/latest/DevGuideCompilingAndDebugging.html#dev_mode">Dev Mode</a> with
@@ -10,7 +13,7 @@ developers to quickly recompile their code and see the results in a browser.
 It also allows developers to use a debugger to inspect a running GWT application.
 However, it works differently.
 
-<h2 id="Prerequisites">Prerequisites</h2>
+## Prerequisites <a id="Prerequisites"></a>
 
 Super Dev Mode requires the xsiframe linker.
 
@@ -31,15 +34,15 @@ module.xml file:
 
     In 2.7, the xsiframe linker is the default.
 
-<h2 id="Launch">Launching Super Dev Mode</h2>
+## Launching Super Dev Mode <a id="Launch"></a>
 
-<h3 id="LaunchDevMode">Via Dev Mode</h3>
+### Via Dev Mode <a id="LaunchDevMode"></a>
 
 Starting with GWT 2.7, Dev Mode launches Super Dev Mode automatically. Just
 [start Dev Mode](../doc/latest/DevGuideCompilingAndDebugging.html#launching_in_dev_mode)
 and reload the page, and it will recompile automatically when necessary.
 
-<h4 id="HowItWorksWithDevMode">How it works</h4>
+#### How it works <a id="HowItWorksWithDevMode"></a>
 
 At startup, Dev Mode overwrites the GWT application's nocache.js files
 with stub files that automatically recompile the GWT application if necessary.
@@ -47,7 +50,7 @@ with stub files that automatically recompile the GWT application if necessary.
 The GWT application itself is loaded from a separate web server running
 on a different port (9876 by default).
 
-<h3 id="Starting">Without Dev Mode</h3>
+### Without Dev Mode <a id="Starting"></a>
 
 You can also run Super Dev Mode without Dev Mode.
 This is required in older versions of GWT and may also be useful
@@ -115,7 +118,7 @@ and it will recompile and then reload the page.
 Tip: each `Compile` button is also a bookmarklet, so you can drag it the toolbar
 if you like.
 
-<h4 id="HowItWorks">How the bookmarklet works</h4>
+#### How the bookmarklet works <a id="HowItWorks"></a>
 
 Pressing the "Compile" button sends a request to recompile the GWT application
 to the code server.
@@ -137,7 +140,7 @@ After reloading the page, the original hello.nocache.js script will look for thi
 (with the same module name) in session storage and automatically redirect to the
 provided URL.
 
-<h2 id="Debugging">Debugging</h2>
+## Debugging <a id="Debugging"></a>
 
 Super Dev Mode compiles entire GWT applications to JavaScript, similar to production mode. This
 means we can't use a normal Java debugger like in classic Dev Mode. Instead, we will use the
@@ -156,14 +159,14 @@ Once this setting is on, you should be able to browse all the Java source in you
 the "Sources" panel in Chrome's developer tools. (You can also press Control-P to search for
 a source file.)
 
-<h4 id="HowSourceMapsWork">How Sourcemap-based debugging works</h4>
+#### How Sourcemap-based debugging works <a id="HowSourceMapsWork"></a>
 
 When using Super Dev Mode, the browser's debugger will download Java files
 from the code server. Here's an example URL that a browser debugger might use to download a file:
 
     http://localhost:9876/sourcemaps/hello/com/google/gwt/core/client/GWT.java
 
-<h2 id="Differences">Differences</h2>
+## Differences <a id="Differences"></a>
 
 Compared to classic Dev Mode, Super Dev Mode's approach has some advantages:
 

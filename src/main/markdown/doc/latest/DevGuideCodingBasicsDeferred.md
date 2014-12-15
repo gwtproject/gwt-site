@@ -1,89 +1,75 @@
-<p>Deferred binding is a feature of the GWT compiler that works by generating many versions of code at compile time, only one of which needs to be loaded by a particular client
+Deferred
+===
+
+Deferred binding is a feature of the GWT compiler that works by generating many versions of code at compile time, only one of which needs to be loaded by a particular client
 during bootstrapping at runtime. Each version is generated on a per browser basis, along with any other axis that your application defines or uses. For example, if you were to
-internationalize your application using <a href="DevGuideI18n.html">GWT's Internationalization module</a>, the GWT compiler would generate
+internationalize your application using [GWT's Internationalization module](DevGuideI18n.html), the GWT compiler would generate
 various versions of your application per browser environment, such as &quot;Firefox in English&quot;, &quot;Firefox in French&quot;, &quot;Internet Explorer in English&quot;, etc... As a result, the deployed
-JavaScript code is compact and quicker to download than hand coded JavaScript, containing only the code and resources it needs for a particular browser environment.</p>
+JavaScript code is compact and quicker to download than hand coded JavaScript, containing only the code and resources it needs for a particular browser environment.
 
-<ol class="toc" id="pageToc">
-  <li><a href="#benefits">Deferred Binding Benefits</a></li>
-  <li><a href="#rules">Defining Deferred Binding Rules</a></li>
-  <li><a href="#directives">Directives in Module XML files</a></li>
-  <li><a href="#replacement">Deferred Binding Using Replacement</a></li>
-  <li><a href="#example">Example Class Hierarchy using Replacement</a></li>
-  <li><a href="#generators">Deferred Binding using Generators</a></li>
-  <li><a href="#generator">Generator Configuration in Module XML</a></li>
-  <li><a href="#generator-implementation">Generator Implementation</a></li>
-</ol>
+1.  [Deferred Binding Benefits](#benefits)
+2.  [Defining Deferred Binding Rules](#rules)
+3.  [Directives in Module XML files](#directives)
+4.  [Deferred Binding Using Replacement](#replacement)
+5.  [Example Class Hierarchy using Replacement](#example)
+6.  [Deferred Binding using Generators](#generators)
+7.  [Generator Configuration in Module XML](#generator)
+8.  [Generator Implementation](#generator-implementation)
 
-<h2 id="benefits">Deferred Binding Benefits</h2>
+## Deferred Binding Benefits<a id="benefits"></a>
 
-<p>Deferred Binding is a technique used by the GWT compiler to create and select a specific implementation of a class based on a set of parameters. In essence, deferred binding is
+Deferred Binding is a technique used by the GWT compiler to create and select a specific implementation of a class based on a set of parameters. In essence, deferred binding is
 the GWT answer to Java reflection. It allows the GWT developer to produce several variations of their applications custom to each browser environment and have only
-one of them actually downloaded and executed in the browser.</p>
+one of them actually downloaded and executed in the browser.
 
-<p>Deferred binding has several benefits:</p>
+Deferred binding has several benefits:
 
-<ul>
-<li>Reduces the size of the generated JavaScript code that a client will need to download by only including the code needed to run a particular browser/locale instance (used by
-the <a href="DevGuideI18n.html">Internationalization module</a>)</li>
+*   Reduces the size of the generated JavaScript code that a client will need to download by only including the code needed to run a particular browser/locale instance (used by
+the [Internationalization module](DevGuideI18n.html))
+*   Saves development time by automatically generating code to implement an interface or create a proxy class (used by the [GWT RPC module](DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls))
+*   Since the implementations are pre-bound at compile time, there is no run-time penalty to look up an implementation in a data structure as with dynamic binding or using virtual
+functions.
 
-<li>Saves development time by automatically generating code to implement an interface or create a proxy class (used by the <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">GWT RPC module</a>)</li>
+Some parts of the toolkit make implicit use of deferred binding, that is, they use the technique as a part of their implementation, but it is not visible to the user of the
+API. For example, many [widgets and <a href="DevGuideUiPanels.html">panels](DevGuideUiWidgets.html) as well as the [DOM](/javadoc/latest/com/google/gwt/user/client/DOM.html) class use this technique to implement browser specific
+logic. Other GWT features require the API user to explicity invoke deferred binding by designing classes that follow specific rules and instantiating instances of the classes with [GWT.create(Class)](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)), including [GWT RPC](DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls) and [I18N](DevGuideI18n.html).
 
-<li>Since the implementations are pre-bound at compile time, there is no run-time penalty to look up an implementation in a data structure as with dynamic binding or using virtual
-functions.</li>
-</ul>
+As a user of the GWT, you may never need to create a new interface that uses deferred binding. If you follow the instructions in the guide for creating
+internationalized applications or GWT RPC calls you will be using deferred binding, but you will not have to actually write any browser dependent or locale dependent code.
 
-<p>Some parts of the toolkit make implicit use of deferred binding, that is, they use the technique as a part of their implementation, but it is not visible to the user of the
-API. For example, many <a href="DevGuideUiWidgets.html">widgets and <a href="DevGuideUiPanels.html">panels</a> as well as the <a href="/javadoc/latest/com/google/gwt/user/client/DOM.html">DOM</a> class use this technique to implement browser specific
-logic. Other GWT features require the API user to explicity invoke deferred binding by designing classes that follow specific rules and instantiating instances of the classes with <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create(Class)</a>, including <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">GWT RPC</a> and <a href="DevGuideI18n.html">I18N</a>.</p>
-
-<p>As a user of the GWT, you may never need to create a new interface that uses deferred binding. If you follow the instructions in the guide for creating
-internationalized applications or GWT RPC calls you will be using deferred binding, but you will not have to actually write any browser dependent or locale dependent code.</p>
-
-<p>The rest of the deferred binding section describes how to create new rules and classes using deferred binding. If you are new to the toolkit or only intend to use pre-packaged
+The rest of the deferred binding section describes how to create new rules and classes using deferred binding. If you are new to the toolkit or only intend to use pre-packaged
 widgets, you will probably want to skip on to the next topic. If you are interested in programming entirely new widgets from the ground up or other functionality that requires
-cross-browser dependent code, the next sections should be of interest.</p>
+cross-browser dependent code, the next sections should be of interest.
 
-<h2 id="rules">Defining Deferred Binding Rules</h2>
+## Defining Deferred Binding Rules<a id="rules"></a>
 
-<p>There are two ways in which types can be replaced via deferred binding:</p>
+There are two ways in which types can be replaced via deferred binding:
 
-<ul>
-<li>Replacement: A type is replaced with another depending on a set of configurable rules.</li>
-<li>Code generation: A type is substituted by the result of invoking a code generator at compile time.</li>
-</ul>
+*   Replacement: A type is replaced with another depending on a set of configurable rules.
+*   Code generation: A type is substituted by the result of invoking a code generator at compile time.
 
-<h2 id="directives">Directives in Module XML files</h2>
+## Directives in Module XML files<a id="directives"></a>
 
-<p>The deferred binding mechanism is completely configurable and does not require editing the GWT distributed source code. Deferred binding is configured through the
-<tt>&lt;replace-with&gt;</tt> and <tt>&lt;generate-with&gt;</tt> elements in the <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">module XML files</a>. The deferred binding
-rules are pulled into the module build through <tt>&lt;inherits&gt;</tt> elements.</p>
+The deferred binding mechanism is completely configurable and does not require editing the GWT distributed source code. Deferred binding is configured through the
+`&lt;replace-with&gt;` and `&lt;generate-with&gt;` elements in the [module XML files](DevGuideOrganizingProjects.html#DevGuideModuleXml). The deferred binding
+rules are pulled into the module build through `&lt;inherits&gt;` elements.
 
-<p>For example, the following configuration invokes deferred binding for the <a href="/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> widget:</p>
+For example, the following configuration invokes deferred binding for the [PopupPanel](/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html) widget:
 
-<ul>
-<li>Top level <i>&lt;module&gt;</i>.gwt.xml <i><strong>inherits</strong></i> <a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml">com.google.gwt.user.User</a></li>
+*   Top level _&lt;module&gt;_.gwt.xml _**inherits**_ [com.google.gwt.user.User](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml)
+*   [com/google/gwt/user/User.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml) _**inherits**_ [com.google.gwt.user.Popup](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/Popup.gwt.xml)
+*   [com/google/gwt/user/Popup.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/Popup.gwt.xml) _**contains**_ `&lt;replace-with&gt;` elements to define deferred binding rules for the [PopupPanel](/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html) class.
 
-<li><a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml">com/google/gwt/user/User.gwt.xml</a>
-<i><strong>inherits</strong></i> <a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/Popup.gwt.xml">com.google.gwt.user.Popup</a></li>
+Inside the [PopupPanel](/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html) module XML file, there
+happens to be some rules defined for deferred binding. In this case, we're using a replacement rule.
 
-<li><a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/Popup.gwt.xml">com/google/gwt/user/Popup.gwt.xml</a>
-<i><strong>contains</strong></i> <tt>&lt;replace-with&gt;</tt> elements to define deferred binding rules for the <a href="/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> class.</li>
-</ul>
+## Deferred Binding Using Replacement<a id="replacement"></a>
 
-<p>Inside the <a href="/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a> module XML file, there
-happens to be some rules defined for deferred binding. In this case, we're using a replacement rule.</p>
-
-
-<h2 id="replacement">Deferred Binding Using Replacement</h2>
-
-<p>
-The first type of deferred binding uses <i>replacement</i>.
+The first type of deferred binding uses _replacement_.
 Replacement means overriding the implementation of one java class with another that is determined at compile time.
-For example, this technique is used to conditionalize the implementation of some widgets, such as the <a href="/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html">PopupPanel</a>.
-The use of <tt>&lt;inherits&gt;</tt> for the <tt>PopupPanel</tt> class is shown in the previous section describing the deferred binding rules.
-The actual replacement rules are specified in <tt>Popup.gwt.xml</tt>, as shown below:
-</p>
+For example, this technique is used to conditionalize the implementation of some widgets, such as the [PopupPanel](/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html).
+The use of `&lt;inherits&gt;` for the `PopupPanel` class is shown in the previous section describing the deferred binding rules.
+The actual replacement rules are specified in `Popup.gwt.xml`, as shown below:
 
 <pre class="prettyprint">
 &lt;module&gt;
@@ -112,24 +98,24 @@ The actual replacement rules are specified in <tt>Popup.gwt.xml</tt>, as shown b
 &lt;/module&gt;
 </pre>
 
-<p>These directives tell the GWT compiler to swap out the <tt>PopupImpl</tt> class code with different class implementations according to the <tt>user.agent</tt> property. The
-<tt>Popup.gwt.xml</tt> file specifies a default implementation for the <tt>PopupImpl</tt> class, an overide for the Mozilla browser (<tt>PopupImplMozilla</tt> is substituted for
-<tt>PopupImpl</tt>), and an override for Internet Explorer version 6 (<tt>PopupImplIE6</tt> is substituted for <tt>PopupImpl</tt>). Note that <tt>PopupImpl</tt> class or its
-derived classes cannot be instantiated directly. Instead, the <tt>PopupPanel</tt> class is used and the <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create(Class)</a> technique is used
-under the hood to instruct the compiler to use deferred binding.</p>
+These directives tell the GWT compiler to swap out the `PopupImpl` class code with different class implementations according to the `user.agent` property. The
+`Popup.gwt.xml` file specifies a default implementation for the `PopupImpl` class, an overide for the Mozilla browser (`PopupImplMozilla` is substituted for
+`PopupImpl`), and an override for Internet Explorer version 6 (`PopupImplIE6` is substituted for `PopupImpl`). Note that `PopupImpl` class or its
+derived classes cannot be instantiated directly. Instead, the `PopupPanel` class is used and the [GWT.create(Class)](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)) technique is used
+under the hood to instruct the compiler to use deferred binding.
 
-<h2 id="example">Example Class Hierarchy using Replacement</h2>
+## Example Class Hierarchy using Replacement<a id="example"></a>
 
-<p>To see how this is used when designing a widget, we will examine the case of the <tt>PopupPanel</tt> widget further. The <tt>PopupPanel</tt> class implements the user visible
-API and contains logic that is common to all browsers. It also instantiates the proper implementation specific logic using the <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create(Class)</a> as follows:</p>
+To see how this is used when designing a widget, we will examine the case of the `PopupPanel` widget further. The `PopupPanel` class implements the user visible
+API and contains logic that is common to all browsers. It also instantiates the proper implementation specific logic using the [GWT.create(Class)](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)) as follows:
 
 <pre class="prettyprint">
   private static final PopupImpl impl = GWT.create(PopupImpl.class);
 </pre>
 
-<p>The two classes PopupImplMozilla and PopupImplIE6 extend the PopupImpl class and override some <tt>PopupImpl</tt>'s methods to implement browser specific behavior.</p>
+The two classes PopupImplMozilla and PopupImplIE6 extend the PopupImpl class and override some `PopupImpl`'s methods to implement browser specific behavior.
 
-<p>Then, when the <tt>PopupPanel</tt> class needs to switch to some browser dependent code, it accesses a member function inside the <tt>PopupImpl</tt> class:</p>
+Then, when the `PopupPanel` class needs to switch to some browser dependent code, it accesses a member function inside the `PopupImpl` class:
 
 <pre class="prettyprint">
   public void setVisible(boolean visible) {
@@ -141,7 +127,7 @@ API and contains logic that is common to all browsers. It also instantiates the 
   }
 </pre>
 
-<p>The default implementation of <tt>PopupImpl.setVisible()</tt> is empty, but <tt>PopupImplIE6</tt> has some special logic implemented as a <a href="DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface">JSNI</a> method:</p>
+The default implementation of `PopupImpl.setVisible()` is empty, but `PopupImplIE6` has some special logic implemented as a [JSNI](DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface) method:
 
 <pre class="prettyprint">
   public native void setVisible(Element popup, boolean visible) /*-{
@@ -151,33 +137,27 @@ API and contains logic that is common to all browsers. It also instantiates the 
   }-*/;{
 </pre>
 
-<p>After the GWT compiler runs, it prunes out any unused code. If your application references the <tt>PopupPanel</tt> class, the compiler will create a separate JavaScript output
-file for each browser, each containing only one of the implementations: <tt>PopupImpl</tt>, <tt>PopupImplIE6</tt> or <tt>PopupImplMozilla</tt>. This means that each browser only
-downloads the implementation it needs, thus reducing the size of the output JavaScript code and minimizing the time needed to download your application from the server.</p>
+After the GWT compiler runs, it prunes out any unused code. If your application references the `PopupPanel` class, the compiler will create a separate JavaScript output
+file for each browser, each containing only one of the implementations: `PopupImpl`, `PopupImplIE6` or `PopupImplMozilla`. This means that each browser only
+downloads the implementation it needs, thus reducing the size of the output JavaScript code and minimizing the time needed to download your application from the server.
 
-<h2 id="generators">Deferred Binding using Generators</h2>
+## Deferred Binding using Generators<a id="generators"></a>
 
-<p>The second technique for deferred binding consists of using <i>generators</i>. Generators are classes that are invoked by the GWT compiler to generate a Java implementation of
+The second technique for deferred binding consists of using _generators_. Generators are classes that are invoked by the GWT compiler to generate a Java implementation of
 a class during compilation. When compiling for production mode, this generated implementation is directly translated to one of the versions of your application in JavaScript code that a
-client will download based on its browser environment.</p>
+client will download based on its browser environment.
 
-<p>The following is an example of how a deferred binding generator is specified to the compiler in the <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">module XML file</a>
-hierarchy for the <tt>RemoteService</tt> class - used for GWT-RPC:</p>
+The following is an example of how a deferred binding generator is specified to the compiler in the [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml)
+hierarchy for the `RemoteService` class - used for GWT-RPC:
 
-<ul>
-<li>Top level <i>&lt;module&gt;</i>.gwt.xml <i><strong>inherits</strong></i> <a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml">com.google.gwt.user.User</a></li>
+*   Top level _&lt;module&gt;_.gwt.xml _**inherits**_ [com.google.gwt.user.User](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml)
+*   [com/google/gwt/user/User.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml) _**inherits**_ [com.googl.gwt.user.RemoteService](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/RemoteService.gwt.xml)
+*   [com/google/gwt/user/RemoteService.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/RemoteService.gwt.xml) _**contains**_ `&lt;generates-with&gt;` elements to define deferred binding rules for the `RemoteService` class.
 
-<li><a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml">com/google/gwt/user/User.gwt.xml</a>
-<i><strong>inherits</strong></i> <a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/RemoteService.gwt.xml">com.googl.gwt.user.RemoteService</a></li>
+## Generator Configuration in Module XML<a id="generator"></a>
 
-<li><a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/RemoteService.gwt.xml">com/google/gwt/user/RemoteService.gwt.xml</a>
-<i><strong>contains</strong></i> <tt>&lt;generates-with&gt;</tt> elements to define deferred binding rules for the <tt>RemoteService</tt> class.</li>
-</ul>
-
-<h2 id="generator">Generator Configuration in Module XML</h2>
-
-<p>The XML element <tt>&lt;generate-with&gt;</tt> tells the compiler to use a <tt>Generator</tt> class. Here are the contents of the <tt>RemoteService.gwt.xml</tt> file relevant
-to deferred binding:</p>
+The XML element `&lt;generate-with&gt;` tells the compiler to use a `Generator` class. Here are the contents of the `RemoteService.gwt.xml` file relevant
+to deferred binding:
 
 <pre class="prettyprint">
 &lt;module&gt;
@@ -193,17 +173,17 @@ to deferred binding:</p>
 &lt;/module&gt;
 </pre>
 
-<p>These directives instruct the GWT compiler to invoke methods in a <a href="/javadoc/latest/com/google/gwt/core/ext/Generator.html">Generator</a> subclass (<tt>ServiceInterfaceProxyGenerator</tt>) in order to generate special code when the deferred binding mechanism <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> is encountered while
-compiling. In this case, if the <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> call references an instance of <tt>RemoteService</tt> or one of its subclasses, the <tt>ServiceInterfaceProxyGenerator</tt>'s generate() method
-will be invoked.</p>
+These directives instruct the GWT compiler to invoke methods in a [Generator](/javadoc/latest/com/google/gwt/core/ext/Generator.html) subclass (`ServiceInterfaceProxyGenerator`) in order to generate special code when the deferred binding mechanism [GWT.create()](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)) is encountered while
+compiling. In this case, if the [GWT.create()](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)) call references an instance of `RemoteService` or one of its subclasses, the `ServiceInterfaceProxyGenerator`'s generate() method
+will be invoked.
 
-<h2 id="generator-implementation">Generator Implementation</h2>
+## Generator Implementation<a id="generator-implementation"></a>
 
-<p>Defining a subclass of the <tt>Generator</tt> class is much like defining a plug-in to the GWT compiler. The <tt>Generator</tt> gets called to generate a Java class definition
+Defining a subclass of the `Generator` class is much like defining a plug-in to the GWT compiler. The `Generator` gets called to generate a Java class definition
 before the Java to JavaScript conversion occurs. The implementation consists of one method that must output Java code to a file and return the name of the generated class as a
-string.</p>
+string.
 
-<p>The following code shows the <tt>Generator</tt> that is responsible for deferred binding of a <tt>RemoteService</tt> interface:</p>
+The following code shows the `Generator` that is responsible for deferred binding of a `RemoteService` interface:
 
 <pre class="prettyprint">
 /**
@@ -252,7 +232,5 @@ public class ServiceInterfaceProxyGenerator extends Generator {
 }
 </pre>
 
-<p>The <tt>typeOracle</tt> is an object that contains information about the Java code that has already been parsed that the generator may need to consult. In this case, the
-<tt>generate()</tt> method checks it arguments and the passes off the bulk of the work to another class (<tt>ProxyCreator</tt>).</p>
-
-
+The `typeOracle` is an object that contains information about the Java code that has already been parsed that the generator may need to consult. In this case, the
+`generate()` method checks it arguments and the passes off the bulk of the work to another class (`ProxyCreator`).

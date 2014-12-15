@@ -1,20 +1,20 @@
-<p>
+Jre Emulation
+===
+
 GWT includes a library that emulates a subset of the Java runtime library. 
 The list below shows the set of JRE packages, types and methods that GWT can translate automatically. 
 Note that in some cases, only a subset of methods is supported for a given type.
-</p>
 
-<ol class="toc" id="pageToc">
-  <li><a href="#Package_java_lang">java.lang</a></li>
-  <li><a href="#Package_java_lang_annotation">java.lang.annotation</a></li>
-  <li><a href="#Package_java_math">java.math</a></li>
-  <li><a href="#Package_java_io">java.io</a></li>
-  <li><a href="#Package_java_sql">java.sql</a></li>
-  <li><a href="#Package_java_util">java.util</a></li>
-  <li><a href="#Package_java_util_logging">java.util.logging</a></li>
-</ol>
+1.  [java.lang](#Package_java_lang)
+2.  [java.lang.annotation](#Package_java_lang_annotation)
+3.  [java.math](#Package_java_math)
+4.  [java.io](#Package_java_io)
+5.  [java.sql](#Package_java_sql)
+6.  [java.util](#Package_java_util)
+7.  [java.util.logging](#Package_java_util_logging)
 
-<h1 id="Package_java_lang">Package java.lang</h1>
+## Package java.lang<a id="Package_java_lang"></a>
+
 <dl>
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Appendable.html">Appendable</a></dt>
   <dd>append(char), append(CharSequence), append(CharSequence, int, int)</dd>
@@ -166,7 +166,8 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd style='margin-bottom: 0.5em;'>TYPE</dd>
 </dl>
 
-<h1 id="Package_java_lang_annotation">Package java.lang.annotation</h1>
+## Package java.lang.annotation<a id="Package_java_lang_annotation"></a>
+
 <dl>
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html">Annotation</a></dt>
   <dd>annotationType(), equals(Object), hashCode(), toString()</dd>
@@ -200,7 +201,8 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>value()</dd>
 </dl>
 
-<h1 id="Package_java_math">Package java.math</h1>
+## Package java.math<a id="Package_java_math"></a>
+
 <dl>
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/math/BigDecimal.html">BigDecimal</a></dt>
   <dd style='margin-bottom: 0.5em;'>ONE, ROUND_CEILING, ROUND_DOWN, ROUND_FLOOR, ROUND_HALF_DOWN, ROUND_HALF_EVEN, ROUND_HALF_UP, ROUND_UNNECESSARY, ROUND_UP, TEN, ZERO</dd>
@@ -219,7 +221,8 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>values(), valueOf(String), valueOf(int)</dd>
 </dl>
 
-<h1 id="Package_java_io">Package java.io</h1>
+## Package java.io<a id="Package_java_io"></a>
+
 <dl>
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/io/FilterOutputStream.html">FilterOutputStream</a></dt>
   <dd>FilterOutputStream(OutputStream)</dd>
@@ -239,7 +242,8 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>UnsupportedEncodingException(), UnsupportedEncodingException(String)</dd>
 </dl>
 
-<h1 id="Package_java_sql">Package java.sql</h1>
+## Package java.sql<a id="Package_java_sql"></a>
+
 <dl>
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/sql/Date.html">Date</a></dt>
   <dd>Date(int, int, int), Date(long), valueOf(String), getHours(), getMinutes(), getSeconds(), setHours(int), setMinutes(int), setSeconds(int), toString()</dd>
@@ -251,7 +255,8 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>Timestamp(int, int, int, int, int, int, int), Timestamp(long), valueOf(String), after(Timestamp), before(Timestamp), compareTo(Date), compareTo(Timestamp), equals(Object), equals(Timestamp), getNanos(), getTime(), hashCode(), setNanos(int), setTime(long), toString()</dd>
 </dl>
 
-<h1 id="Package_java_util">Package java.util</h1>
+## Package java.util<a id="Package_java_util"></a>
+
 <dl>
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/AbstractCollection.html">AbstractCollection</a></dt>
   <dd>add(E), addAll(Collection), clear(), contains(Object), containsAll(Collection), isEmpty(), iterator(), remove(Object), removeAll(Collection), retainAll(Collection), size(), toArray(), toArray(T[]), toString()</dd>
@@ -407,7 +412,8 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>Vector(), Vector(Collection), Vector(int), Vector(int, int), add(E), add(int, E), addAll(Collection), addAll(int, Collection), addElement(E), capacity(), clear(), clone(), contains(Object), containsAll(Collection), copyInto(Object[]), elementAt(int), elements(), ensureCapacity(int), firstElement(), get(int), indexOf(Object), indexOf(Object, int), insertElementAt(E, int), isEmpty(), iterator(), lastElement(), lastIndexOf(Object), lastIndexOf(Object, int), remove(int), removeAll(Collection), removeAllElements(), removeElement(Object), removeElementAt(int), set(int, E), setElementAt(E, int), setSize(int), size(), subList(int, int), toArray(), toArray(T[]), toString(), trimToSize()</dd>
 </dl>
 
-<h1 id="Package_java_util_logging">Package java.util.logging</h1>
+## Package java.util.logging<a id="Package_java_util_logging"></a>
+
 <dl>
   <dt><a href="http://docs.oracle.com/javase/7/docs/api/java/util/logging/Formatter.html">Formatter</a></dt>
   <dd>Formatter(), format(LogRecord), formatMessage(LogRecord)</dd>
@@ -429,4 +435,3 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd style='margin-bottom: 0.5em;'>GLOBAL_LOGGER_NAME</dd>
   <dd>getGlobal(), getLogger(String), addHandler(Handler), config(String), fine(String), finer(String), finest(String), getHandlers(), getLevel(), getName(), getParent(), getUseParentHandlers(), info(String), isLoggable(Level), log(Level, String), log(Level, String, Throwable), log(LogRecord), removeHandler(Handler), setLevel(Level), setParent(Logger), setUseParentHandlers(boolean), severe(String), warning(String)</dd>
 </dl>
-

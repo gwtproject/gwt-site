@@ -1,23 +1,23 @@
-<ol class="toc" id="pageToc">
-  <li><a href="#ValidationIntro">Introduction</a></li>
-  <li><a href="#SetupInstructions">Setup Instructions</a></li>
-  <li><a href="#GettingStarted">Getting Started with GWT Validation</a></li>
-  <li><a href="#BestPractices">Best Practices</a></li>
-  <li><a href="#Unsupported">Unsupported Features</a></li>
-</ol>
+Validation
+===
 
+1.  [Introduction](#ValidationIntro)
+2.  [Setup Instructions](#SetupInstructions)
+3.  [Getting Started with GWT Validation](#GettingStarted)
+4.  [Best Practices](#BestPractices)
+5.  [Unsupported Features](#Unsupported)
 
-<h2 id="ValidationIntro">Introduction</h2>
+## Introduction<a id="ValidationIntro"></a>
 
-<p>An important part of any application that accepts input is the process of validating that input to ensure it is correct
+An important part of any application that accepts input is the process of validating that input to ensure it is correct
 and valid. This validation can be done in several ways, including manually inserting conditionals every time any input is
-received, but this process can be tedious and difficult to maintain.</p>
+received, but this process can be tedious and difficult to maintain.
 
-<p>To make data validation simpler, GWT supports <a href="http://jcp.org/en/jsr/detail?id=303">JSR-303 Bean Validation</a>,
+To make data validation simpler, GWT supports [JSR-303 Bean Validation](http://jcp.org/en/jsr/detail?id=303),
 which provides a framework for specifying &quot;constraints&quot; that define what data is valid or allowed for your
-application.</p>
+application.
 
-<p>For example, by specifying the following annotations on your class:</p>
+For example, by specifying the following annotations on your class:
 
 <pre class="prettyprint">
 public class Person implements Serializable {
@@ -27,49 +27,36 @@ public class Person implements Serializable {
 }
 </pre>
 
-<p>You can ensure these conditions are met, as well as generate meaningful errors when they are not:</p>
+You can ensure these conditions are met, as well as generate meaningful errors when they are not:
 
-<img src="images/ValidationScreenshot.png"/>
+![img](images/ValidationScreenshot.png)
 
-<p>At compile time GWT validation creates a Validator for all your objects that can be used to do client-side validation.
-If you are using a Java-based server the very same constraints can be used to do server-side data validation as well.</p>
+At compile time GWT validation creates a Validator for all your objects that can be used to do client-side validation.
+If you are using a Java-based server the very same constraints can be used to do server-side data validation as well.
 
+## Setup Instructions<a id="SetupInstructions"></a>
 
-<h2 id="SetupInstructions">Setup Instructions</h2>
+In order to use GWT validation you must ensure that the following libraries are on your system classpath:
 
-<p>In order to use GWT validation you must ensure that the following libraries are on your system classpath:</p>
-<ul>
-  <li>Validation API (classes and sources) <strong>(already included in the GWT SDK)</strong>
-    <ul>
-      <li>validation-api-1.0.0.GA.jar</li>
-    </ul>
-  </li>
-  <li><a href="http://www.hibernate.org/subprojects/validator.html">Hibernate Validator</a> 4.1.0 (classes and sources)
-    <ul>
-      <li>hibernate-validator-4.1.0.Final.jar</li>
-      <li>hibernate-validator-4.1.0.Final-sources.jar</li>
-    </ul>
-  </li>
-  <li><a href="http://www.slf4j.org/">Simple Logging Facade for Java</a> and 
-  <a href="http://logging.apache.org/log4j/1.2/">log4j</a> (Needed for Hibernate Validator)
-    <ul>
-      <li>slf4j-api-1.6.1.jar</li>
-      <li>slf4j-log4j12-1.6.1.jar</li>
-      <li>log4j-1.2.16.jar</li>
-    </ul>
-  </li>
-</ul>
+*   Validation API (classes and sources) **(already included in the GWT SDK)**
+    *   validation-api-1.0.0.GA.jar
+*   [Hibernate Validator](http://www.hibernate.org/subprojects/validator.html) 4.1.0 (classes and sources)
+    *   hibernate-validator-4.1.0.Final.jar
+    *   hibernate-validator-4.1.0.Final-sources.jar
+*   [Simple Logging Facade for Java](http://www.slf4j.org/) and  [log4j](http://logging.apache.org/log4j/1.2/) (Needed for Hibernate Validator)
+    *   slf4j-api-1.6.1.jar
+    *   slf4j-log4j12-1.6.1.jar
+    *   log4j-1.2.16.jar
 
-<p>If you are using the validator for server-side validation be sure to configure your web app classpath properly as well.</p>
+If you are using the validator for server-side validation be sure to configure your web app classpath properly as well.
 
+## Getting Started with GWT Validation<a id="GettingStarted"></a>
 
-<h2 id="GettingStarted">Getting Started with GWT Validation</h2>
+### Setting Constraints
 
-<h3>Setting Constraints</h3>
-
-<p>GWT validation is done by annotating beans, getters, and properties with constraint annotations. See the
-<a href="http://jcp.org/en/jsr/detail?id=303">JSR-303 specification</a> for more information on how to define and use
-constraints.</p>
+GWT validation is done by annotating beans, getters, and properties with constraint annotations. See the
+[JSR-303 specification](http://jcp.org/en/jsr/detail?id=303) for more information on how to define and use
+constraints.
 
 <pre class="prettyprint">
 public class Person {
@@ -77,15 +64,15 @@ public class Person {
   private String name;
 </pre>
 
-<h3>Creating a Validator Factory</h3>
+### Creating a Validator Factory
 
-<p>A validator factory is required to bootstrap the validation process. To create a validator factory you must make a
-class which extends <tt>AbstractGwtValidatorFactory</tt> and implements the <tt>createValidator()</tt> method. This method
-should return the validator object which will be used to perform the validation.</p>
+A validator factory is required to bootstrap the validation process. To create a validator factory you must make a
+class which extends `AbstractGwtValidatorFactory` and implements the `createValidator()` method. This method
+should return the validator object which will be used to perform the validation.
 
-<p>Luckily, you do not need to implement the validator yourself because GWT can generate one for you. In order to generate
-a validator simply define an interface which extends <tt>Validator</tt> and contains a <tt>@GwtValidation</tt> annotation.
-This annotation requires you to list all classes that will be validated on the client side.</p>
+Luckily, you do not need to implement the validator yourself because GWT can generate one for you. In order to generate
+a validator simply define an interface which extends `Validator` and contains a `@GwtValidation` annotation.
+This annotation requires you to list all classes that will be validated on the client side.
 
 <pre class="prettyprint">
 public final class SampleValidatorFactory extends AbstractGwtValidatorFactory {
@@ -105,8 +92,8 @@ public final class SampleValidatorFactory extends AbstractGwtValidatorFactory {
 }
 </pre>
 
-<p>Lastly, we must tell GWT to use deferred binding to generate our validator object, adding the following snippet
-to your <tt>module.gwt.xml</tt>.</p>
+Lastly, we must tell GWT to use deferred binding to generate our validator object, adding the following snippet
+to your `module.gwt.xml`.
 
 <pre class="prettyprint">
 &lt;inherits name=&quot;org.hibernate.validator.HibernateValidator&quot; /&gt;
@@ -116,31 +103,31 @@ to your <tt>module.gwt.xml</tt>.</p>
 &lt;/replace-with&gt;
 </pre>
 
-<h3>Validating Constraints</h3>
+### Validating Constraints
 
-<p>Use the standard validation bootstrap with the default factory to get the generated <tt>Validator</tt> for your objects.
-You may use this validator to validate an entire bean object or just specific properties of a bean.</p>
+Use the standard validation bootstrap with the default factory to get the generated `Validator` for your objects.
+You may use this validator to validate an entire bean object or just specific properties of a bean.
 
 <pre class="prettyprint">
 Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 Set&lt;ConstraintViolation&lt;Person&gt;&gt; violations = validator.validate(person);
 </pre>
 
-<h3>Validation Groups</h3>
+### Validation Groups
 
-<p>You may also put constraints on your objects into &quot;validation groups,&quot; and then perform the validation only
-on certain subsets of constraints.</p>
+You may also put constraints on your objects into &quot;validation groups,&quot; and then perform the validation only
+on certain subsets of constraints.
 
-<p>All constraints are automatically a part of the <tt>Default</tt> group unless you specify otherwise. Creating a new group
-is as simple as making an empty interface:</p>
+All constraints are automatically a part of the `Default` group unless you specify otherwise. Creating a new group
+is as simple as making an empty interface:
 
 <pre class="prettyprint">
 /** Validates a minimal set of constraints */
 public interface Minimal { }
 </pre>
 
-<p>If you are using any validation groups other than <tt>Default</tt> in client code, it is important that you list them in
-the &quot;groups&quot; parameter of the <tt>@GwtValidation</tt> annotation.
+If you are using any validation groups other than `Default` in client code, it is important that you list them in
+the &quot;groups&quot; parameter of the `@GwtValidation` annotation.
 
 <pre class="prettyprint">
 @GwtValidation(value = Person.class, groups = {Default.class, Minimal.class})
@@ -148,7 +135,7 @@ public interface GwtValidator extends Validator {
 }
 </pre>
 
-<p>After that, you can specify this group in the &quot;groups&quot; parameter of any constraint:</p>
+After that, you can specify this group in the &quot;groups&quot; parameter of any constraint:
 
 <pre class="prettyprint">
 public class Address {
@@ -165,26 +152,26 @@ public class Address {
 }
 </pre>
 
-<p>From here you can validate an <tt>Address</tt> object using the <tt>Default</tt> group, which contains three constraints
-(<tt>@Size</tt> on &quot;street&quot;, <tt>@NotEmpty</tt> on &quot;city&quot;, and <tt>@NotEmpty</tt> on &quot;zipCode&quot;):</p>
+From here you can validate an `Address` object using the `Default` group, which contains three constraints
+(`@Size` on &quot;street&quot;, `@NotEmpty` on &quot;city&quot;, and `@NotEmpty` on &quot;zipCode&quot;):
 
 <pre class="prettyprint">
 Address address = new Address();
 validator.validate(address);
 </pre>
 
-<p>Or validate using the <tt>Minimal</tt> group, which contains <tt>@NotEmpty</tt> on &quot;street&quot; and <tt>@NotEmpty</tt> on
-&quot;zipCode&quot;:</p>
+Or validate using the `Minimal` group, which contains `@NotEmpty` on &quot;street&quot; and `@NotEmpty` on
+&quot;zipCode&quot;:
 
 <pre class="prettyprint">
 validator.validate(address, Minimal.class);
 </pre>
 
-<h2 id="BestPractices">Best Practices</h2>
+## Best Practices<a id="BestPractices"></a>
 
-<p>Validation groups can be used to specify what constraints to run on the client and what to run on the server. You can even make
+Validation groups can be used to specify what constraints to run on the client and what to run on the server. You can even make
 server-side constraints which do not work with GWT&mdash;just be sure to omit any server-side-only groups from your validator
-factory's <tt>@GwtValidation</tt> annotation to avoid compilation issues.</p>
+factory's `@GwtValidation` annotation to avoid compilation issues.
 
 <pre class="prettyprint">
 @ServerConstraint(groups = ServerGroup.class)
@@ -216,15 +203,13 @@ if (!violations.isEmpty()) {
 }
 </pre>
 
+## Unsupported Features<a id="Unsupported></a>
 
-<h2 id="Unsupported">Unsupported Features</h2>
+The following features are not supported in GWT validation:
 
-<p>The following features are not supported in GWT validation:</p>
-<ul>
-  <li>XML configuration</li>
-  <li>Validating non-GWT compatible classes like <tt>Calendar</tt> on the client side</li>
-  <li><tt>ConstraintValidatorFactory</tt>. Constraint validators are generated using <tt>GWT.create()</tt> instead.</li>
-  <li>Validation providers other than the default provider. Always use <tt>Validation.buildDefaultValidatorFactory()</tt> or
-    <tt>Validation.byDefaultProvider()</tt> and not <tt>Validation.byProvider()</tt>.</li>
-  <li>Validation provider resolvers. Because there is only one provider the use of provider resolvers is unnecessary.</li>
-</ul>
+*   XML configuration
+*   Validating non-GWT compatible classes like `Calendar` on the client side
+*   `ConstraintValidatorFactory`. Constraint validators are generated using `GWT.create()` instead.
+*   Validation providers other than the default provider. Always use `Validation.buildDefaultValidatorFactory()` or
+    `Validation.byDefaultProvider()` and not `Validation.byProvider()`.
+*   Validation provider resolvers. Because there is only one provider the use of provider resolvers is unnecessary.

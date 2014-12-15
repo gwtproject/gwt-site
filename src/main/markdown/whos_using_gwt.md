@@ -48,12 +48,9 @@
    }
    </style>
 
-<h2 id="profiles">Developer Profiles</h2>
-<p>Watch developers talk about their web applications and how they used Google
-Web Toolkit to build them.  These videos are also available on the <a
-  href="http://www.youtube.com/view_play_list?p=4DAEFAF23BB3CDD0">GWT
-  Developers playlist</a>.</p>
+## Developer Profiles<a id="profiles"></a>
 
+Watch developers talk about their web applications and how they used Google Web Toolkit to build them.  These videos are also available on the [GWT Developers playlist](http://www.youtube.com/view_play_list?p=4DAEFAF23BB3CDD0).
 
 <table class="columns">
   <tr class="video">
@@ -124,17 +121,8 @@ Web Toolkit to build them.  These videos are also available on the <a
   </tr>
 </table>
 
-<p>If you'd like to see who else is using GWT, check out the <a
- href="http://gwtgallery.appspot.com">GWT Gallery</a>. You'll be 
-able to find other applications and libraries built with GWT, comment on them, rate them, 
-and search for them by tag or by name. You can also <a href="http://gwtgallery.appspot.com/submit">
-submit your own entry</a> if you have a project that  you want to share.</p>
+If you'd like to see who else is using GWT, check out the [GWT Gallery](http://gwtgallery.appspot.com). You'll be able to find other applications and libraries built with GWT, comment on them, rate them, and search for them by tag or by name. You can also [submit your own entry](http://gwtgallery.appspot.com/submit) if you have a project that  you want to share.
 
-<p>You can also find a wide variety of open source <a
- href="http://code.google.com/hosting/search?q=GWT&btn=Search+Projects">
-projects related to GWT</a> hosted on Google Code.</p>
+You can also find a wide variety of open source [projects related to GWT](http://code.google.com/hosting/search?q=GWT&btn=Search+Projects) hosted on Google Code.
 
-<p>Please note that the applications linked from this page are provided by
-third-parties and are not endorsed by Google.</p>
-
-
+Please note that the applications linked from this page are provided by third-parties and are not endorsed by Google.

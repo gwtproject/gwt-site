@@ -1,124 +1,75 @@
-<p>
+UiCellWidgets
+===
+
 Cell widgets (data presentation widgets) are high-performance, lightweight widgets composed of Cells for displaying data.
-Examples are <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList">lists</a>,
-<a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable">tables</a>,
-<a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree">trees</a> and
-<a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellBrowser">browsers</a>.
+Examples are [lists](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList),
+[tables](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable),
+[trees](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree) and
+[browsers](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellBrowser).
 These widgets are designed to handle and display very large sets of data quickly.
 A cell widget renders its user interface as an HTML string, using innerHTML instead of traditional DOM manipulation.
 This design follows the flyweight pattern where data is accessed and cached only as needed, and passed to
 flyweight Cell objects. A cell widget can accept data from any type of data source.  The data model handles
 asynchronous updates as well as push updates. When you change the data, the view is automatically updated.
-</p>
 
-<p>
-Cells are the basic blocks of a user interface and come in a variety of <a href="#available">available cell types</a>.  They render views of data, interpret browser events and can be selected.  A Cell has a type based on the data that the cell represents;  for example, DatePickerCell is a Cell&lt;Date&gt; that represents a Date and allows the user to select a new Date.  Cells must implement a render method that renders the typed value as an HTML string. In addition, cells can override onBrowserEvent to act as a flyweight that handles events that are fired on elements that were rendered by the cell. 
-</p>
+Cells are the basic blocks of a user interface and come in a variety of [available cell types](#available).  They render views of data, interpret browser events and can be selected.  A Cell has a type based on the data that the cell represents;  for example, DatePickerCell is a Cell&lt;Date&gt; that represents a Date and allows the user to select a new Date.  Cells must implement a render method that renders the typed value as an HTML string. In addition, cells can override onBrowserEvent to act as a flyweight that handles events that are fired on elements that were rendered by the cell. 
 
-<p>
-For example, in the <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList">CellList example</a> of the Showcase, every selectable data record is rendered by a single Cell instance. Notice that the data that a single cell represents can be a composition of different data fields from the data source. In this example, the cell holds data of type ContactInfo, which represents a contact, including name, address and picture.
-</p>
+For example, in the [CellList example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) of the Showcase, every selectable data record is rendered by a single Cell instance. Notice that the data that a single cell represents can be a composition of different data fields from the data source. In this example, the cell holds data of type ContactInfo, which represents a contact, including name, address and picture.
 
-<p>
-In the <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable">CellTable example</a>, a different Cell is used to render each Column of a row.  The five columns in this example present data from a boolean and four strings.
-</p>
+In the [CellTable example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable), a different Cell is used to render each Column of a row.  The five columns in this example present data from a boolean and four strings.
 
-<ol style="list-style: none; margin-top: 12px;">
-  <li><a href="#Cell_Widgets">Cell Widgets</a>
-    <ol class="toc" style="margin-top: 0;">
-      <li><a href="#demos">Demos and Code Examples</a></li>
-      <li><a href="#celllist">Creating a CellList and Setting Data</a></li>
-      <li><a href="#celltable">Creating a CellTable</a></li>
-      <li><a href="#celltree">Creating a CellTree</a></li>
-      <li><a href="#cellbrowser">Creating a CellBrowser</a></li>
-    </ol>
-  </li>
-</ol>
+1.  [Cell Widgets](#Cell_Widgets)
+    1.  [Demos and Code Examples](#demos)
+    2.  [Creating a CellList and Setting Data](#celllist)
+    3.  [Creating a CellTable](#celltable)
+    4.  [Creating a CellTree](#celltree)
+    5.  [Creating a CellBrowser](#cellbrowser)
+2.  [Cells](#Cells)
+    1.  [Available Cell Types](#available)
+    2.  [Creating a Custom Cell](#custom-cell)
+3.  [Selection, Data and Paging](#Selection_Data_Paging)
+    1.  [Adding Selection Support](#selection)
+    2.  [Providing Dynamic Data](#data-provider)
+    3.  [Adding Paging Controls](#paging)
+    4.  [Updating a Database from Changes in a Cell](#updating-database)
 
-<ol style="list-style: none; margin-top: 12px;">
-  <li><a href="#Cells">Cells</a>
-    <ol class="toc" style="margin-top: 0;">
-      <li><a href="#available">Available Cell Types</a></li>
-      <li><a href="#custom-cell">Creating a Custom Cell</a></li>
-    </ol>
-</ol>
-
-<ol style="list-style: none; margin-top: 12px;">
-  <li><a href="#Selection_Data_Paging">Selection, Data and Paging
-    <ol class="toc" style="margin-top: 0;">
-      <li><a href="#selection">Adding Selection Support</a></li>
-      <li><a href="#data-provider">Providing Dynamic Data</a></li>
-      <li><a href="#paging">Adding Paging Controls</a></li>
-      <li><a href="#updating-database">Updating a Database from Changes in a Cell</a></li>
-    </ol>
-  </li>
-</ol>
-
-<p class="note" style="margin-top: 20px;">
 NOTE: CellPanel is not a cell widget. CellPanel is an abstract base class for GWT Panel Widgets that are implemented using a table element.
-</p>
 
-<h2 class="h2-group" id="Cell_Widgets">Cell Widgets</h2>
+## Cell Widgets<a id="Cell_Widgets"></a>
 
-<h2 id="demos">Demos and Code Examples</h2>
+### Demos and Code Examples<a id="demos"></a>
 
-<p>
 This document describes or points to three kinds of code examples, so you can jump in at any level.
-<ul>
-  <li><b>Live demos</b> - Visit the GWT Showcase for examples of widgets
-<a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList">CellList</a>,
-<a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable">CellTable</a>,
-<a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree">CellTree</a>,
-<a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellBrowser">CellBrowser</a>, plus examples of Cells in the 
-<a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellSampler">Cell Sampler</a>.
-Note: The prefix "Cw" in showcase class names stands for "ContentWidget", the parent class of each Showcase example.</li>
-  <li><b>Simplified examples</b> - The code examples displayed in-line throughout this documented are short, simplified examples, often pared-down versions of the real-world examples.</li>
-  <li><b>Real-world examples</b> - Most of the cell widgets also have source code examples (.java files) at 
-    <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview">cell widget code examples</a>.</li>
-</li>
-</ul>
-<p>
+
+*   **Live demos** - Visit the GWT Showcase for examples of widgets
+[CellList](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList),
+[CellTable](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable),
+[CellTree](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree),
+[CellBrowser](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellBrowser), plus examples of Cells in the[Cell Sampler](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellSampler).
+Note: The prefix "Cw" in showcase class names stands for "ContentWidget", the parent class of each Showcase example.
+*   **Simplified examples** - The code examples displayed in-line throughout this documented are short, simplified examples, often pared-down versions of the real-world examples.
+*   **Real-world examples** - Most of the cell widgets also have source code examples (.java files) at    [cell widget code examples](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview).
+
 These files are referenced, where appropriate, in the sections below.
-</p>
 
-<h2 id="celllist">Creating a CellList and Setting Data</h2>
+### Creating a CellList and Setting Data<a id="celllist"></a>
 
-<p>
-CellList is the simplest cell widget, where data is rendered using cells of the same type in a list.  For instance, you can create a CellList&lt;String&gt; that uses a Cell&lt;String&gt; to render a list of Strings. For a fancier list view, you can create a custom cell, described at <a href="#custom-cell">Creating a Custom Cell</a>.
-</p>
+CellList is the simplest cell widget, where data is rendered using cells of the same type in a list.  For instance, you can create a CellList&lt;String&gt; that uses a Cell&lt;String&gt; to render a list of Strings. For a fancier list view, you can create a custom cell, described at [Creating a Custom Cell](#custom-cell).
 
+**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) shows a CellList&lt;ContactInfo&gt; (on the left). Each list item is a custom type ContactCell&lt;ContactInfo&gt;.  The right-hand widget is a normal Composite widget that renders the data for a selected contact.
 
+**To Create a CellList:**
 
-<p>
-<b>Demo</b> - <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList">CwCellList example</a> shows a CellList&lt;ContactInfo&gt; (on the left). Each list item is a custom type ContactCell&lt;ContactInfo&gt;.  The right-hand widget is a normal Composite widget that renders the data for a selected contact.
-</p>
+1.  Create a [standard](#available) or [custom](#custom-cell) Cell to hold the list items.
+2.  Create a [CellList](/javadoc/latest/com/google/gwt/user/cellview/client/CellList.html), passing the cell into its contructor.
+3.  Access the data to populate the list.
+4.  Call [setRowData](/javadoc/latest/com/google/gwt/user/cellview/client/AbstractHasData.html#setRowData(int,%20java.util.List)) on the CellList to add the data.
 
+The data inserted in the last step is updated by the data provider ([ListDataProvider](/javadoc/latest/com/google/gwt/view/client/ListDataProvider.html) or [AsyncDataProvider](/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html)).  If you need to allow the user to modify the content of a cell and update the database, use ValueUpdater instead of setRowData in the last step, as described in [Updating a Database From a CellList](#updating-from-celllist).
 
+**Code Example** - The example below is available at [CellListExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java)
 
-<p>
-<b>To Create a CellList:</b>
-</p>
-
-<ol>
-  <li>Create a <a href="#available">standard</a> or <a href="#custom-cell">custom</a> Cell to hold the list items.</li>
-  <li>Create a <a href="/javadoc/latest/com/google/gwt/user/cellview/client/CellList.html">CellList</a>, passing the cell into its contructor.</li>
-  <li>Access the data to populate the list.</li>
-  <li>Call <a href="/javadoc/latest/com/google/gwt/user/cellview/client/AbstractHasData.html#setRowData(int,%20java.util.List)">setRowData</a> on the CellList to add the data.</li>
-</ol>
-
-<p>
-The data inserted in the last step is updated by the data provider (<a href="/javadoc/latest/com/google/gwt/view/client/ListDataProvider.html">ListDataProvider</a> or <a href="/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html">AsyncDataProvider</a>).  If you need to allow the user to modify the content of a cell and update the database, use ValueUpdater instead of setRowData in the last step, as described in <a href="#updating-from-celllist">Updating a Database From a CellList</a>.
-</p>
-
-<p>
-<b>Code Example</b> - The example below is available at <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java">CellListExample.java</a>
-</p>
-
-<p>
 The following code is a very simple example that creates a CellList widget containing a single TextCell and sets data from the data source.  The list shows names.
-</p>
-
-
 
 <pre class="prettyprint">
 /**
@@ -150,51 +101,31 @@ public class CellListExample implements EntryPoint {
 }
 </pre>
 
-<p>
-You can add a SelectionModel to a CellList, as shown in the <a href="#selection">SelectionModel example</a> below.
-</p>
+You can add a SelectionModel to a CellList, as shown in the [SelectionModel example](#selection) below.
 
+### Creating a CellTable<a id="celltable"></a>
 
-<h2 id="celltable">Creating a CellTable</h2>
+[CellTable](/javadoc/latest/com/google/gwt/user/cellview/client/CellTable.html) renders row values in columns.  A Column represents a single field in a data object. Every column defines getValue(), which retrieves the value for the column from the data object. Each column uses a Cell to render the column-specific data. Note that columns can return whatever object they want for getValue(), including the row object itself (for example, to allow columns that show calculations based on several row values).
 
-<p>
-<a href="/javadoc/latest/com/google/gwt/user/cellview/client/CellTable.html">CellTable</a> renders row values in columns.  A Column represents a single field in a data object. Every column defines getValue(), which retrieves the value for the column from the data object. Each column uses a Cell to render the column-specific data. Note that columns can return whatever object they want for getValue(), including the row object itself (for example, to allow columns that show calculations based on several row values).
-</p>
-
-<p>
 A Header represents either a header or a footer in a table. A table can have a header and footer for each column.
 A Header can span multiple columns if adjacent headers are equal (==) to each other.
-</p>
 
-<p>
-<b>Demo</b> - <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable">CwCellTable example</a> shows a CellTable&lt;ContactInfo&gt;. Each row item has 5 columns rendered respectively as a CheckboxCell, EditTextCell, EditTextCell, SelectionCell and TextCell.
-</p>
+**Demo** - [CwCellTable example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable) shows a CellTable&lt;ContactInfo&gt;. Each row item has 5 columns rendered respectively as a CheckboxCell, EditTextCell, EditTextCell, SelectionCell and TextCell.
 
-<p>
-<b>To Create a CellTable:</b>
-</p>
+**To Create a CellTable:**
 
-<ol>
-  <li>Create a <a href="#available">standard</a> or <a href="#custom-cell">custom</a> Cell for each column of data.</li>
-  <li>Create a <a href="/javadoc/latest/com/google/gwt/user/cellview/client/CellTable.html">CellTable</a></li>
-  <li>Create and add <a href="/javadoc/latest/com/google/gwt/user/cellview/client/Column.html">Column</a>s to the CellTable.</li>
-  <li>Access the data to populate the list.</li>
-  <li>Add the data to the CellTable by calling <a href="/javadoc/latest/com/google/gwt/user/cellview/client/AbstractHasData.html#setRowData(int,%20java.util.List)">setRowData</a> on the CellTable for each Column.</li>
- </ul>
-</ol>
+1.  Create a [standard](#available) or [custom](#custom-cell) Cell for each column of data.
+2.  Create a [CellTable](/javadoc/latest/com/google/gwt/user/cellview/client/CellTable.html)
+3.  Create and add [Column](/javadoc/latest/com/google/gwt/user/cellview/client/Column.html)s to the CellTable.
+4.  Access the data to populate the list.
+5.  Add the data to the CellTable by calling [setRowData](/javadoc/latest/com/google/gwt/user/cellview/client/AbstractHasData.html#setRowData(int,%20java.util.List)) on the CellTable for each Column.
 
-<p>
-The data inserted in the last step is updated by the data provider (<a href="/javadoc/latest/com/google/gwt/view/client/ListDataProvider.html">ListDataProvider</a> or <a href="/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html">AsyncDataProvider</a>).  If you need to allow the user to modify the content of a cell and update the database, use FieldUpdater instead of setRowData in the last step, as described in <a href="#updating-from-celltable">Updating a Database From a CellTable</a>.
-</p>
+The data inserted in the last step is updated by the data provider ([ListDataProvider](/javadoc/latest/com/google/gwt/view/client/ListDataProvider.html) or [AsyncDataProvider](/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html)).  If you need to allow the user to modify the content of a cell and update the database, use FieldUpdater instead of setRowData in the last step, as described in [Updating a Database From a CellTable](#updating-from-celltable).
 
-<p>
-<b>More Information</b> - Read the <a href="DevGuideUiCellTable.html">Cell Table Developer Guide</a> for more
+**More Information** - Read the [Cell Table Developer Guide](DevGuideUiCellTable.html) for more
 information about CellTable-specific features, such as column sorting.
-</p>
 
-<p>
-<b>Code Example</b> - The example below is a pared-down version of <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTableExample.java">CellTableExample.java</a>
-</p>
+**Code Example** - The example below is a pared-down version of [CellTableExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTableExample.java)
 
 <pre class="prettyprint">
 /**
@@ -256,57 +187,32 @@ public class CellTableExample implements EntryPoint {
 }
 </pre>
 
-<p>
-You can add a SelectionModel to a CellTable, as shown in the <a href="#selection">SelectionModel example</a> below.
-</p>
+You can add a SelectionModel to a CellTable, as shown in the [SelectionModel example](#selection) below.
 
+### Creating a CellTree<a id="celltree"></a>
 
+CellTree renders a hierarchy of nodes, such as this [CwCellTree](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree).  A node can be either a leaf node or have children.  Thus, a CellTree can have levels of nodes that go progressively deeper.  A node is represented by a NodeInfo, which contains all of the information needed to render a single node.
 
-<h2 id="celltree">Creating a CellTree</h2>
-
-<p>
-CellTree renders a hierarchy of nodes, such as this <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree">CwCellTree</a>.  A node can be either a leaf node or have children.  Thus, a CellTree can have levels of nodes that go progressively deeper.  A node is represented by a NodeInfo, which contains all of the information needed to render a single node.
-</p>
-
-<p>
 Each node has a Cell of a specific type;  usually, all Cells at a given level are of the same type, but that isn't required.  The example has a top level of nodes with each cell having an image and string.  Likewise, the second and third levels of cells have their own distinct types.  In addition to a cell, a node also has a DataProvider, to provide the data to the children of the NodeInfo, and a SelectionModel, to indicate how it can be selected by the user.  
-</p>
 
-<p>
-The TreeViewModel provides the NodeInfo for each child node.  When a node is opened, CellTree will call <a href="/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html#getNodeInfo(T)">getNodeInfo()</a> on TreeViewModel to get the NodeInfo used to render the children.
-</p>
+The TreeViewModel provides the NodeInfo for each child node.  When a node is opened, CellTree will call [getNodeInfo()](/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html#getNodeInfo(T)) on TreeViewModel to get the NodeInfo used to render the children.
 
-<p>
 A CellTree can have its own CSS styles and its own resources, such as images that the user clicks on to open or close a node.  It can also respond to browser events.  In addition, a CellTree can have built-in animation for progressively revealing or hiding children when its node opens or closes. 
-</p>
 
-<p>
-<b>Demo</b> - <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree">CwCellTree example</a> shows a CellTree.  It has three levels rendered respectively as custom types CategoryCell, LetterCountCell and ContactCell (the same type from the <a href="#celllist">CellList</a> demo).  The checkbox has an update method to select the ContactCell when checked.
-</p>
+**Demo** - [CwCellTree example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree) shows a CellTree.  It has three levels rendered respectively as custom types CategoryCell, LetterCountCell and ContactCell (the same type from the [CellList](#celllist) demo).  The checkbox has an update method to select the ContactCell when checked.
 
-<p>
-<b>Creating a CellTree:</b>
-</p>
+**Creating a CellTree:**
 
-<ol>
- <li>Define a <a href="/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html">TreeViewModel</a> and <a href="/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html#getNodeInfo(T)">getNodeInfo</a>
-    <ol style="list-style-type: lower-alpha">
-      <li>In getNodeInfo, create a data provider for the child nodes.</li>
-      <li>Populate the data provider with data.</li>
-      <li>Create a <a href="#available">standard</a> or <a href="#custom-cell">custom</a> Cell to render the children.</li>
-    </li>
-  </ol>
-  <li>Create an instance of your TreeViewModel class.</li>
-  <li>Create a <a href="/javadoc/latest/com/google/gwt/user/cellview/client/CellTree.html">CellTree</a>, passing in the TreeViewModel instance.</li>
-</ol>
+1.  Define a [TreeViewModel](/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html) and [getNodeInfo](/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html#getNodeInfo(T))
+    1.  In getNodeInfo, create a data provider for the child nodes.
+    2.  Populate the data provider with data.
+    3.  Create a [standard](#available) or [custom](#custom-cell) Cell to render the children.
+2.  Create an instance of your TreeViewModel class.
+3.  Create a [CellTree](/javadoc/latest/com/google/gwt/user/cellview/client/CellTree.html), passing in the TreeViewModel instance.
 
-<p>
-<b>Code Example #1</b> - The example below is a simplified example of CellTree, and is available at  <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample.java">CellTreeExample.java</a>.
-</p>
+**Code Example #1** - The example below is a simplified example of CellTree, and is available at  [CellTreeExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample.java).
 
-<p>
-<b>Code Example #2</b> - For a real-world example of CellTree, see <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample2.java">CellTreeExample2.java</a>.
-</p>
+**Code Example #2** - For a real-world example of CellTree, see [CellTreeExample2.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample2.java).
 
 <pre class="prettyprint">
 /**
@@ -351,69 +257,53 @@ public class CellTreeExample implements EntryPoint {
 }
 </pre>
 
-<p>
-When you instantiate a CellTree, you must pass in an instance of a concrete class that implements interface <a href="/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html">TreeViewModel</a>.  This concrete class gets and organizes the data into a hierarchy in the implementation of method getNodeInfo(value).  When a tree node is opened, the tree calls <a href="/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html#getNodeInfo(T)">getNodeInfo(value)</a> to get the data provider and Cell used to render the child nodes.
-</p>
+When you instantiate a CellTree, you must pass in an instance of a concrete class that implements interface [TreeViewModel](/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html).  This concrete class gets and organizes the data into a hierarchy in the implementation of method getNodeInfo(value).  When a tree node is opened, the tree calls [getNodeInfo(value)](/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html#getNodeInfo(T)) to get the data provider and Cell used to render the child nodes.
 
-<p>
-You can add a SelectionModel to a CellTree, as shown in the <a href="#selection">SelectionModel example</a> below.
-</p>
+You can add a SelectionModel to a CellTree, as shown in the [SelectionModel example](#selection) below.
 
+## Creating a CellBrowser
 
-<h2 id="cellbrowser">Creating a CellBrowser</h2>
+CellBrowser is similar to a CellTree but displays the node levels side-by-side.  The only code difference is you use a CellBrowser constructor and use a different [CellBrowser.Resources](/javadoc/latest/com/google/gwt/user/cellview/client/CellBrowser.Resources.html) for CSS style (and images) to create side-by-side levels.
 
-<p>
-CellBrowser is similar to a CellTree but displays the node levels side-by-side.  The only code difference is you use a CellBrowser constructor and use a different <a href="/javadoc/latest/com/google/gwt/user/cellview/client/CellBrowser.Resources.html">CellBrowser.Resources</a> for CSS style (and images) to create side-by-side levels.
-</p>
+**Demo** - [CwCellBrowser example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellBrowser) shows a CellBrowser.  It displays the same data in the same three levels as the above CellTree example, except that it displays the levels side-by-side.
 
-<p>
-<b>Demo</b> - <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellBrowser">CwCellBrowser example</a> shows a CellBrowser.  It displays the same data in the same three levels as the above CellTree example, except that it displays the levels side-by-side.
-</p>
+**To Create a CellBrowser**
 
-<p>
-<b>To Create a CellBrowser</b>
-</ul>
-  <li>Follow the above procedure for CellTree, but change the CellTree constructor to CellBrowser, as follows:</li>
+*   Follow the above procedure for CellTree, but change the CellTree constructor to CellBrowser, as follows:
+
 <pre class="prettyprint">
     // Create the browser using the model.
     CellBrowser browser = new CellBrowser(model, "Item 1");
 </pre>
-</p>
 
-<p>
-<b>Code Example #1</b> - For a simple example of CellBrowser, see <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample.java">CellBrowerExample.java</a>. 
-</p>
+**Code Example #1** - For a simple example of CellBrowser, see [CellBrowerExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample.java). 
 
-<p>
-<b>Code Example #2</b> - For a real-world example of CellBrowser, see <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample2.java">CellBrowserExample2.java</a>.
-</p>
+**Code Example #2** - For a real-world example of CellBrowser, see [CellBrowserExample2.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample2.java).
 
-<h2 class="h2-group" id="Cells">Cells</h2>
+## Cells<a id="Cells"></a>
 
-<h2 id="available">Available Cell Types</h2>
+### Available Cell Types<a id="available"></a>
 
-<p>
-GWT offers a number of concrete Cell implementations that you can use immediately. See the <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellSampler">Cell Sampler </a>for examples.
-</p>
+GWT offers a number of concrete Cell implementations that you can use immediately. See the [Cell Sampler ](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellSampler)for examples.
 
 <dl>
   <dt id="text-cells">
     Text
 </dt>
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/TextCell.html">TextCell</a> - A non-editable cell that displays text
+[TextCell](/javadoc/latest/com/google/gwt/cell/client/TextCell.html) - A non-editable cell that displays text
 </dd>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/ClickableTextCell.html">ClickableTextCell</a> - A text field; clicking on the cell causes its ValueUpdater to be called
+[ClickableTextCell](/javadoc/latest/com/google/gwt/cell/client/ClickableTextCell.html) - A text field; clicking on the cell causes its ValueUpdater to be called
 </dd>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/EditTextCell.html">EditTextCell</a> - A cell that initially displays text;  when clicked, the text becomes editable
+[EditTextCell](/javadoc/latest/com/google/gwt/cell/client/EditTextCell.html) - A cell that initially displays text;  when clicked, the text becomes editable
 </dd>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/TextInputCell.html">TextInputCell</a> - A field for entering text
+[TextInputCell](/javadoc/latest/com/google/gwt/cell/client/TextInputCell.html) - A field for entering text
 </dd>
 
 <dt id="button-cells">
@@ -421,19 +311,19 @@ GWT offers a number of concrete Cell implementations that you can use immediatel
 </dt>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/ActionCell.html">ActionCell&lt;C&gt;</a> - A button that takes a delegate to perform actions on mouseUp
+[ActionCell&lt;C&gt;](/javadoc/latest/com/google/gwt/cell/client/ActionCell.html) - A button that takes a delegate to perform actions on mouseUp
 </dd>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/ButtonCell.html">ButtonCell</a> - A button whose text is the data value
+[ButtonCell](/javadoc/latest/com/google/gwt/cell/client/ButtonCell.html) - A button whose text is the data value
 </dd>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/CheckboxCell.html">CheckboxCell</a> - A checkbox that can be checked or unchecked
+[CheckboxCell](/javadoc/latest/com/google/gwt/cell/client/CheckboxCell.html) - A checkbox that can be checked or unchecked
 </dd>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/SelectionCell.html">SelectionCell</a> - A drop-down menu for selecting one of many choices
+[SelectionCell](/javadoc/latest/com/google/gwt/cell/client/SelectionCell.html) - A drop-down menu for selecting one of many choices
 </dd>
 
 <dt id="date-cells">
@@ -441,11 +331,11 @@ GWT offers a number of concrete Cell implementations that you can use immediatel
 </dt>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/DateCell.html">DateCell</a> - A date that conforms to a specified date format
+[DateCell](/javadoc/latest/com/google/gwt/cell/client/DateCell.html) - A date that conforms to a specified date format
 </dd>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/DatePickerCell.html">DatePickerCell</a> - A date picker that displays a month calendar in which the user can select a date
+[DatePickerCell](/javadoc/latest/com/google/gwt/cell/client/DatePickerCell.html) - A date picker that displays a month calendar in which the user can select a date
 </dd>
 
 <dt id="image-cells">
@@ -453,15 +343,15 @@ GWT offers a number of concrete Cell implementations that you can use immediatel
 </dt>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/ImageCell.html">ImageCell</a> - A cell used to render an image URL
+[ImageCell](/javadoc/latest/com/google/gwt/cell/client/ImageCell.html) - A cell used to render an image URL
 </dd>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/ImageResourceCell.html">ImageResourceCell</a>  - A cell used to render an ImageResource
+[ImageResourceCell](/javadoc/latest/com/google/gwt/cell/client/ImageResourceCell.html)  - A cell used to render an ImageResource
 </dd>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/ImageLoadingCell.html">ImageLoadingCell</a> - A cell used to render an image URL.  A loading indicator is initially displayed
+[ImageLoadingCell](/javadoc/latest/com/google/gwt/cell/client/ImageLoadingCell.html) - A cell used to render an image URL.  A loading indicator is initially displayed
 </dd>
 
 <dt id="number-cells">
@@ -469,7 +359,7 @@ GWT offers a number of concrete Cell implementations that you can use immediatel
 </dt>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/NumberCell.html">NumberCell</a> - A number that conforms to a specified number format
+[NumberCell](/javadoc/latest/com/google/gwt/cell/client/NumberCell.html) - A number that conforms to a specified number format
 </dd>
 
 <dt id="composition-cells">
@@ -477,7 +367,7 @@ GWT offers a number of concrete Cell implementations that you can use immediatel
 </dt>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/CompositeCell.html">CompositeCell&lt;C&gt;</a> - A composition of multiple Cells.
+[CompositeCell&lt;C&gt;](/javadoc/latest/com/google/gwt/cell/client/CompositeCell.html) - A composition of multiple Cells.
 </dd>
 
 <dt id="decorator-cells">
@@ -485,79 +375,43 @@ GWT offers a number of concrete Cell implementations that you can use immediatel
 </dt>
 
 <dd>
-<a href="/javadoc/latest/com/google/gwt/cell/client/IconCellDecorator.html">IconCellDecorator&lt;C&gt;</a> - A decorator that adds an icon to another Cell
+[IconCellDecorator&lt;C&gt;](/javadoc/latest/com/google/gwt/cell/client/IconCellDecorator.html) - A decorator that adds an icon to another Cell
 </dd>
 
 </dl>
 
-<h2 id="custom-cell">Creating a Custom Cell</h2>
+### Creating a Custom Cell<a id="custom-cell"></a>
 
-<p>
 If you want more control, you can subclass AbstractCell, or you can implement the Cell interface directly to define how your Cell is rendered and how it responds to events.  See
-the instructions in the <a href="DevGuideUiCustomCells.html">Creating Custom Cells Dev Guide</a> for detailed information.
-</p>
+the instructions in the [Creating Custom Cells Dev Guide](DevGuideUiCustomCells.html) for detailed information.
 
+**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) shows a CellList&lt;ContactInfo&gt; (on the left). Each list item is a custom type ContactCell&lt;ContactInfo&gt;.  The right-hand widget is a normal Composite widget that renders the data for a selected contact.
 
-<p>
-<b>Demo</b> - <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList">CwCellList example</a> shows a CellList&lt;ContactInfo&gt; (on the left). Each list item is a custom type ContactCell&lt;ContactInfo&gt;.  The right-hand widget is a normal Composite widget that renders the data for a selected contact.
-</p>
+## Selection, Data and Paging<a id="Selection_Data_Paging"></a>
 
+### Adding Selection Support<a id="selection"></a>
 
-<h2 class="h2-group" id="Selection_Data_Paging">Selection, Data and Paging</h2>
+The [SelectionModel](/javadoc/latest/com/google/gwt/view/client/SelectionModel.html) is a simple interface that views use to determine if an item is selected.  Cell widgets provide several selection models for selecting the children of a node:  DefaultSelectionModel, NoSelectionModel, SingleSelectionModel and MultiSelectionModel.  One of these is likely to fit your need.
 
-<h2 id="selection">Adding Selection Support</h2>
+For demonstrations of selection, the [CwCellList](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) widget creates a SingleSelectionModel, whereas CwCellTable implements a MultiSelectionModel using checkboxes.
 
-<p>
-The <a href="/javadoc/latest/com/google/gwt/view/client/SelectionModel.html">SelectionModel</a> is a simple interface that views use to determine if an item is selected.  Cell widgets provide several selection models for selecting the children of a node:  DefaultSelectionModel, NoSelectionModel, SingleSelectionModel and MultiSelectionModel.  One of these is likely to fit your need.
-</p>
-
-
-
-<p>
-For demonstrations of selection, the <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList">CwCellList</a> widget creates a SingleSelectionModel, whereas CwCellTable implements a MultiSelectionModel using checkboxes.
-</p>
-
-
-
-<p>
 Views or application code can call setSelected() to select an item. Views call isSelected() to determine if an item is selected. Views also subscribe to the SelectionModel so they can be informed of selection changes that arrive from outside the view.  In fact, you can extend DefaultSelectionModel and override isDefaultSelected().
-</p>
 
-
-
-<p>
 This simple approach offers a lot of flexibility. A complex implementation can handle "select all" across multiple pages using a boolean to indicate that everything is selected, and then keep track of negative selections.
-</p>
 
-
-
-<p>
 By using a subscription model, we can link selection across multiple views. If multiple views subscribe to a single SelectionModel, then selecting a row in one view will select the row in other views. This behavior is optional and can be avoided by using a single SelectionModel instance per view.
-</p>
 
+**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) shows a cell widget that has a SelectionModel added to it. Clicking on an item selects it.
 
+**To Add a Selection to a Cell Widget:**
 
-<p>
-<b>Demo</b> - <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList">CwCellList example</a> shows a cell widget that has a SelectionModel added to it. Clicking on an item selects it.
-</p>
+1.  Create a cell widget.
+2.  Choose a standard [SelectionModel](/javadoc/latest/com/google/gwt/view/client/SelectionModel.html) (or roll your own).
+3.  Add this SelectionModel to the cell widget using [setSelectionModel](/javadoc/latest/index.html?com/google/gwt/user/cellview/client/AbstractHasData.html)(SelectionModel).
+4.  Create a [SelectionChangeEvent.Handler](/javadoc/latest/com/google/gwt/view/client/SelectionChangeEvent.Handler.html) implementing onSelectionChange.
+5.  Add this handler to the SelectionModel using [addSelectionChangeHandler](/javadoc/latest/com/google/gwt/view/client/SelectionModel.html#addSelectionChangeHandler(com.google.gwt.view.client.SelectionChangeEvent.Handler)).
 
-
-
-<p>
-<b>To Add a Selection to a Cell Widget:</b>
-</p>
-
-<ol>
-  <li>Create a cell widget.</li>
-  <li>Choose a standard <a href="/javadoc/latest/com/google/gwt/view/client/SelectionModel.html">SelectionModel</a> (or roll your own).</li>
-  <li>Add this SelectionModel to the cell widget using <a href="/javadoc/latest/index.html?com/google/gwt/user/cellview/client/AbstractHasData.html">setSelectionModel</a>(SelectionModel).</li>
-  <li>Create a <a href="/javadoc/latest/com/google/gwt/view/client/SelectionChangeEvent.Handler.html">SelectionChangeEvent.Handler</a> implementing onSelectionChange.</li>
-  <li>Add this handler to the SelectionModel using <a href="/javadoc/latest/com/google/gwt/view/client/SelectionModel.html#addSelectionChangeHandler(com.google.gwt.view.client.SelectionChangeEvent.Handler)">addSelectionChangeHandler</a>.</li>
-</ol>
-
-<p>
-<b>Code Example</b> - The example of SelectionModel below is available at <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java">CellListExample.java</a>.
-</p>
+**Code Example** - The example of SelectionModel below is available at [CellListExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java).
 
 <pre class="prettyprint">
 /**
@@ -602,26 +456,13 @@ public class CellListExample implements EntryPoint {
 }
 </pre>
 
+**Keys**
 
-<p id="keys">
-<b>Keys</b>
-</p>
-
-<!--
-<p>
-<span style="color: red;">jlabanca: You use the key if a data object can change, but should still be considered the same object for selection purposes.  For example, you can change the address of a ContactInfo, but its the same contact as long as the name is the same, so you would use the name as a key.  Often times, the key would be the unique database id assigned to the object.</span>
-</p>
--->
-
-<p>
 Every DTO (Data Transfer Object) must have a key associated with it in order to be able to identify it as the same object, even though some of its properties may have changed.  For example, given a table of current stock prices, the stock price may change in one of the columns, but the row represents the same fundamental DTO.
-</p>
 
-<p>
 Keys allow us to associate ViewData, such as selection state and validation information, with a DTO.  If you select some items in a table or list, then when the list refreshes with new data, you can maintain the same selection.
-</p>
 
-<p><b>Code Example</b> - The example of KeyProvider below is available at <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/view/KeyProviderExample.java">KeyProviderExample.java</a>.</p>
+**Code Example** - The example of KeyProvider below is available at [KeyProviderExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/view/KeyProviderExample.java).
 
 <pre class="prettyprint">
 /**
@@ -700,45 +541,32 @@ public class KeyProviderExample implements EntryPoint {
 }
 </pre>
 
+### Providing Dynamic Data<a id="data-provider"></a>
 
-<h2 id="data-provider">Providing Dynamic Data</h2>
+We saw in a previous section [Creating a CellList and Setting Data](#celllist) how to push data into a CellList.  However, in most applications, you want to display dynamic data or a range of data, not just a static list.  This section explains how to attach a data source to a cell widgets.
 
-<p>
-We saw in a previous section <a href="#celllist">Creating a CellList and Setting Data</a> how to push data into a CellList.  However, in most applications, you want to display dynamic data or a range of data, not just a static list.  This section explains how to attach a data source to a cell widgets.
-</p>
-
-<p>
 Cell widgets do not impose any restrictions on the data source.  Instead, the data source listens to the cell widget for changes in the visible range, then pushes new data to the cell widget.  The data source detects changes in the visible range by adding a
-<a href="/javadoc/latest/com/google/gwt/view/client/RangeChangeEvent.Handler.html">RangeChangeEvent.Handler</a>
+[RangeChangeEvent.Handler](/javadoc/latest/com/google/gwt/view/client/RangeChangeEvent.Handler.html)
 via addRangeChangeHandler().  The data source can then access data asynchronously, eventually calling
-<a href="/javadoc/latest/com/google/gwt/view/client/HasData.html#setRowData(int, java.util.List)">HasData#setRowData()</a>
+[HasData#setRowData()](/javadoc/latest/com/google/gwt/view/client/HasData.html#setRowData(int, java.util.List))
 with the new data.
-</p>
 
-<p>
-Fortunately, we provide a few convenience classes to make this even easier.  <a href="#list-data-provider">ListDataProvider</a> is a concrete data source that is backed by a 
-<code>java.util.List</code>, which is useful if your data lives entirely on the client side.  If your data lives on a server, you can extend the abstract class 
-<a href="#async-data-provider">AsyncDataProvider</a>, which you can override to connect to an asynchronous data source, such as a database running on a server.
-</p>
+Fortunately, we provide a few convenience classes to make this even easier.  [ListDataProvider](#list-data-provider) is a concrete data source that is backed by a 
+`java.util.List`, which is useful if your data lives entirely on the client side.  If your data lives on a server, you can extend the abstract class 
+[AsyncDataProvider](#async-data-provider), which you can override to connect to an asynchronous data source, such as a database running on a server.
 
-<p>
-Alternatively, you can create a <a href="#custom-data-provider">custom data source</a> by handling RangeChangeEvents directly. If you are
+Alternatively, you can create a [custom data source](#custom-data-provider) by handling RangeChangeEvents directly. If you are
 writing your own presenter logic to control a Cell widget, you might find it easier to write your own data source instead of using a data
 provider.
-</p>
 
-<h3 id="list-data-provider">ListDataProvider</h3>
+### ListDataProvider<a id="list-data-provider"></a>
 
-<p>
-<a href="/javadoc/latest/com/google/gwt/view/client/ListDataProvider.html">ListDataProvider</a>
-binds your cell widget to a <code>java.util.List</code>. Any changes to the internal list, which can be accessed via getList(), will be reflected in
+[ListDataProvider](/javadoc/latest/com/google/gwt/view/client/ListDataProvider.html)
+binds your cell widget to a `java.util.List`. Any changes to the internal list, which can be accessed via getList(), will be reflected in
 the views. The views are updated at the end of the current event block, so you can make multiple synchronous changes without causing multiple refreshes
 of the views.
-</p>
 
-<p>
-<b>Code Example</b> - The example below updates the view through a ListDataProvider.
-</p>
+**Code Example** - The example below updates the view through a ListDataProvider.
 
 <pre class="prettyprint">
 /**
@@ -780,32 +608,22 @@ public class CellListExample implements EntryPoint {
 }
 </pre>
 
-<h3 id="async-data-provider">AsyncDataProvider</h3>
+### AsyncDataProvider<a id="async-data-provider"></a>
 
-<p>
-<a href="/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html">AsyncListDataProvider</a>
+[AsyncListDataProvider](/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html)
 binds your cell widget to an asynchronous data source. When the cell widget requests new data, the AsyncDataProvider fetches the new data and pushes it to the widget.
 Just implement the onRangeChanged() method and request the data in the new Range for the specified cell widget.  When the data is returned, call updateRowCount()
 and/or updateRowData() to push the data to the widgets.
-</p>
 
-<p>
-<b>Basic Recipe:</b>
-</p>
+**Basic Recipe:**
 
-<ol>
-  <li>Create a subclass of <a href="/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html">AsyncDataProvider</a>.</li>
-  <li>Implement <a href="/javadoc/latest/com/google/gwt/view/client/AbstractDataProvider.html#onRangeChanged(com.google.gwt.view.client.HasData)">onRangeChanged(HasData)</a>. 
-    <ol style="list-style-type: lower-alpha">
-      <li>Get the current range from the display</li>
-      <li>Request the data from the server or data source</li>
-    </ol>
-  </li>
-  <li>When the data is returned, call <a href="/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html#updateRowData(int,%20java.util.List)">updateRowData() </a>to push the data to the widgets.</li>
-</ol>
-<p>
-<b>Code Example</b> - The example below updates the view through a AsyncDataProvider.
-</p>
+1.  Create a subclass of [AsyncDataProvider](/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html).
+2.  Implement [onRangeChanged(HasData)](/javadoc/latest/com/google/gwt/view/client/AbstractDataProvider.html#onRangeChanged(com.google.gwt.view.client.HasData)).
+    1.  Get the current range from the display
+    2.  Request the data from the server or data source
+3.  When the data is returned, call [updateRowData() ](/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html#updateRowData(int,%20java.util.List))to push the data to the widgets.
+
+**Code Example** - The example below updates the view through a AsyncDataProvider.
 
 <pre class="prettyprint">
 /**
@@ -863,17 +681,14 @@ public class CellListExample implements EntryPoint {
 }
 </pre>
 
-<h3 id="custom-data-provider">Custom Data Source</h3>
+### Custom Data Source<a id="custom-data-provider"></a>
 
-<p>
 Cell widgets fire a 
-<a href="/javadoc/latest/com/google/gwt/view/client/RangeChangeEvent.html">RangeChangeEvent</a>
+[RangeChangeEvent](/javadoc/latest/com/google/gwt/view/client/RangeChangeEvent.html)
 when the user pages through the list. You can handle RangeChangeEvents from the view and push new data into the view accordingly. This is useful if
 you are writing a presenter class for your cell widget.
-</p>
-<p>
-<b>Code Example</b> - The example below handlers RangeChangeEvents from the view and pushes new data based on the new range.
-</p>
+
+**Code Example** - The example below handlers RangeChangeEvents from the view and pushes new data based on the new range.
 
 <pre class="prettyprint">
 /**
@@ -923,35 +738,21 @@ public class RangeChangeHandlerExample implements EntryPoint {
 }
 </pre>
 
+## Adding Paging Controls<a id="paging"></a>
 
-<h2 id="paging">Adding Paging Controls</h2>
-
-<p>
 Paging is the operation of loading and bringing into view a range of data that is not currently loaded.  Paging improves initial load time of large data sets by loading only the data that is needed by the current view.
-</p>
 
-<p>
 Two procedures follow &mdash; one for adding a standard SimplePager to a cell widget, and the other for adding custom paging controls to a cell widget.
-</p>
 
-<p>
-<b>Demo</b> - <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable">CwCellTable example</a> shows a SimplePager control below a table.
-</p>
+**Demo** - [CwCellTable example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable) shows a SimplePager control below a table.
 
-<p>
-<b>Code Example</b> - The example below is available at  <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/SimplePagerExample.java">SimplePagerExample.java</a>.
-</p>
+**Code Example** - The example below is available at  [SimplePagerExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/SimplePagerExample.java).
 
-<p>
-<b>To Add SimplePager to a Cell Widget:</b>
-</p>
+**To Add SimplePager to a Cell Widget:**
 
-<ol>
-  <li>Create an instance of <a href="/javadoc/latest/com/google/gwt/user/cellview/client/SimplePager.html">SimplePager</a> widget using its constructor.</li>
-  <li>Assign the SimplePager to the cell widget you want to control using
-      <a href="/javadoc/latest/com/google/gwt/user/cellview/client/SimplePager.html#setDisplay(com.google.gwt.view.client.HasRows)">setDisplay(HasRows)</a>.</li>
-  <li>Add the SimplePager instance to the panel.</li>
-</ol>
+1.  Create an instance of [SimplePager](/javadoc/latest/com/google/gwt/user/cellview/client/SimplePager.html) widget using its constructor.
+2.  Assign the SimplePager to the cell widget you want to control using [setDisplay(HasRows)](/javadoc/latest/com/google/gwt/user/cellview/client/SimplePager.html#setDisplay(com.google.gwt.view.client.HasRows)).
+3.  Add the SimplePager instance to the panel.
 
 <pre class="prettyprint">
 /**
@@ -985,74 +786,39 @@ public class SimplePagerExample implements EntryPoint {
   }
 }</pre>
 
-<p>
-<b>To Add Custom Paging Controls to a Cell Widget:</b>
-</p>
+**To Add Custom Paging Controls to a Cell Widget:**
 
-<ol>
-  <li>Create a custom pager &mdash; extending
-      <a href="/javadoc/latest/com/google/gwt/user/cellview/client/AbstractPager.html">AbstractPager</a>
-      works for most use cases.  AbstractPager provides many convenience methods that your pager will use to
-      change the visible range, including a method to hook up the cell widget.
-    <ol style="list-style-type: lower-alpha">
-      <li>AbstractPager is a Composite, so you need to define the Widget part of the pager and initialize AbstractPager by calling 
-          <a href="/javadoc/latest/com/google/gwt/user/client/ui/Composite.html#initWidget(com.google.gwt.user.client.ui.Widget)">initWidget(Widget)</a>.</li>
-      <li>You also need to override
-          <a href="/javadoc/latest/com/google/gwt/user/cellview/client/AbstractPager.html#onRangeOrRowCountChanged()">onRangeOrRowCountChanged()</a>
-          to update the widget when the visible range changes for any reason.
-    </ol>
-  </li>
-  <li>Assign the pager to the cell widget you want to control using
-      <a href="/javadoc/latest/com/google/gwt/user/cellview/client/SimplePager.html#setDisplay(com.google.gwt.view.client.HasRows)">setDisplay(HasRows)</a></li>
-  <li>Add the custom pager to a panel.</li>
-</ol>
+1.  Create a custom pager &mdash; extending [AbstractPager](/javadoc/latest/com/google/gwt/user/cellview/client/AbstractPager.html) works for most use cases.  AbstractPager provides many convenience methods that your pager will use to change the visible range, including a method to hook up the cell widget.
+    1.  AbstractPager is a Composite, so you need to define the Widget part of the pager and initialize AbstractPager by calling [initWidget(Widget)](/javadoc/latest/com/google/gwt/user/client/ui/Composite.html#initWidget(com.google.gwt.user.client.ui.Widget)).</li>
+    2.  You also need to override [onRangeOrRowCountChanged()](/javadoc/latest/com/google/gwt/user/cellview/client/AbstractPager.html#onRangeOrRowCountChanged()) to update the widget when the visible range changes for any reason.
+2.  Assign the pager to the cell widget you want to control using [setDisplay(HasRows)](/javadoc/latest/com/google/gwt/user/cellview/client/SimplePager.html#setDisplay(com.google.gwt.view.client.HasRows))</li>
+3.  Add the custom pager to a panel.
 
+### Updating a Database from Changes in a Cell<a id="updating-database"></a>
 
-<h2 id="updating-database">Updating a Database from Changes in a Cell</h2>
-
-<p>
 In most applications, the user takes actions in the user interface that should update the application's current state or send data back to the database (or data source).  These user actions might be clicking a checkbox, pressing a button, or entering text into a field and pressing "Save". 
-</p>
 
-<p>
 This process varies slightly for a CellList, CellTree,
 <!-- <span style="color: red;">doog3: how does it work for CellTree?</span> --> and CellTable, as described below.
-</p>
 
-
-<p class="note">
 NOTE: In the case of ButtonCell, the value (the button text) doesn't actually change.  Instead, ValueUpdater serves the purpose of informing external code of a change or an important action, such as a click.
-</p>
 
-<h3 id="updating-from-celllist">Updating a Database From a CellList</h3>
+#### Updating a Database From a CellList<a id="updating-from-celllist"></a>
 
-<p>
-Use a <a href="/javadoc/latest/com/google/gwt/cell/client/ValueUpdater.html">ValueUpdater</a> in a Column to allow the user to modify the content of the Cell (as is possible with TextInputCell).  The example below shows how to update data and handle invalid data.  The FieldUpdater's update method takes three arguments: the row index of the data object,  the data object that represents the field, and the new value of the Cell. 
-</p>
+Use a [ValueUpdater](/javadoc/latest/com/google/gwt/cell/client/ValueUpdater.html) in a Column to allow the user to modify the content of the Cell (as is possible with TextInputCell).  The example below shows how to update data and handle invalid data.  The FieldUpdater's update method takes three arguments: the row index of the data object,  the data object that represents the field, and the new value of the Cell. 
 
-<p>
-When the user makes the change to the data, the Cell receives an event in its <a href="/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent(com.google.gwt.dom.client.Element, C, java.lang.Object, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater)">onBrowserEvent</a> method.  For cells that support user interaction, onBrowserEvent calls the update method of the ValueUpdater, passing in the new value.
-</p>
+When the user makes the change to the data, the Cell receives an event in its [onBrowserEvent](/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent(com.google.gwt.dom.client.Element, C, java.lang.Object, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater)) method.  For cells that support user interaction, onBrowserEvent calls the update method of the ValueUpdater, passing in the new value.
 
-<p>
-<b>Demo</b> - <i>(none)</i>
-</p>
-<p>
-<b>Code Example</b> - The example below is available at <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellListValueUpdaterExample.java">CellListValueUpdaterExample.java</a>.
-</p>
+**Demo** - _(none)_
 
-<p>
-<b>To Update the Database from a CellList:</b>
-</p>
+**Code Example** - The example below is available at [CellListValueUpdaterExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellListValueUpdaterExample.java).
 
-<ol>
-  <li>Create a class that implements <a href="/javadoc/latest/com/google/gwt/cell/client/ValueUpdater.html">ValueUpdater</a> to accept a new data value and send it to your database.</li>
-  <li>Set the ValueUpdater to the CellList using <a href="/javadoc/latest/com/google/gwt/user/cellview/client/CellList.html#setValueUpdater(com.google.gwt.cell.client.ValueUpdater)">cellList.setValueUpdater</a>.</li>
-</ol>
+**To Update the Database from a CellList:**
 
-<p>
-<b>Code Example - ValueUpdater</b>
-</p>
+1.  Create a class that implements [ValueUpdater](/javadoc/latest/com/google/gwt/cell/client/ValueUpdater.html) to accept a new data value and send it to your database.
+2.  Set the ValueUpdater to the CellList using [cellList.setValueUpdater](/javadoc/latest/com/google/gwt/user/cellview/client/CellList.html#setValueUpdater(com.google.gwt.cell.client.ValueUpdater)).
+
+**Code Example - ValueUpdater**
 
 <pre class="prettyprint">
 /**
@@ -1096,28 +862,17 @@ public class CellListValueUpdaterExample implements EntryPoint {
 }
 </pre>
 
-<h3 id="updating-from-celltable">Updating a Database From a CellTable</h3>
+#### Updating a Database From a CellTable<a id="updating-from-celltable"></a>
 
-<p>
-Use a <a href="/javadoc/latest/com/google/gwt/cell/client/FieldUpdater.html">FieldUpdater</a> in a Column to allow the user to modify the content of the Cell (as is possible with TextInputCell).  The example below shows how to update data and handle invalid data.  The FieldUpdater's update method takes three arguments: the row index of the data object,  the data object that represents the field, and the new value of the Cell. 
-</p>
+Use a [FieldUpdater](/javadoc/latest/com/google/gwt/cell/client/FieldUpdater.html) in a Column to allow the user to modify the content of the Cell (as is possible with TextInputCell).  The example below shows how to update data and handle invalid data.  The FieldUpdater's update method takes three arguments: the row index of the data object,  the data object that represents the field, and the new value of the Cell. 
 
-<p>
-<b>Demo</b> - <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable">CwCellTable example</a> lets you modify the First and Last names (these columns use <a href="#text-cells">EditTextCell</a>).
-</p>
+**Demo** - [CwCellTable example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable) lets you modify the First and Last names (these columns use [EditTextCell](#text-cells)).
 
-<p>
-<b>To Update the Database from a CellTable:</b>
-</p>
+**To Update the Database from a CellTable:**
 
-<ol>
-  <li>Create a class that implements <a href="/javadoc/latest/com/google/gwt/cell/client/FieldUpdater.html">FieldUpdater</a> to accept a new data value and send it to your database. </li>
-  <li>Set the FieldUpdater in the Column by calling  <a href="/javadoc/latest/com/google/gwt/user/cellview/client/Column.html#setFieldUpdater(com.google.gwt.cell.client.FieldUpdater)">column.setFieldUpdater(fieldUpdater)</a>.</li>
-</ol>
+1.  Create a class that implements [FieldUpdater](/javadoc/latest/com/google/gwt/cell/client/FieldUpdater.html) to accept a new data value and send it to your database.2.  Set the FieldUpdater in the Column by calling  [column.setFieldUpdater(fieldUpdater)](/javadoc/latest/com/google/gwt/user/cellview/client/Column.html#setFieldUpdater(com.google.gwt.cell.client.FieldUpdater)).
 
-<p>
-<b>Code Example</b> - An example is available at <a href="https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTableFieldUpdaterExample.java">CellTableFieldUpdaterExample.java</a>.
-</p>
+**Code Example** - An example is available at [CellTableFieldUpdaterExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTableFieldUpdaterExample.java).
 
 <pre class="prettyprint">
 /**

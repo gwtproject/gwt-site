@@ -7,7 +7,6 @@ The intention of the steering committee is to ensure that no particular individu
 
 The committee will lead the GWT project in major decisions by consensus and ensures that GWT can meet its goals as a truly open source project.
 
-
 The steering committee consists of the following members (no particular order):
 
 * Ray Cromwell, [Google](https://www.google.com/about/)

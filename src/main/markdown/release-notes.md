@@ -1559,11 +1559,11 @@ in this release.
 		be updated.</li>
 	<li>The development mode server will, by default, only bind to
 		localhost which will break cross-machine debugging. You can get the
-		old behavior by specifying <code>-bindAddress 0.0.0.0</code>. Please
+		old behavior by specifying `-bindAddress 0.0.0.0`. Please
 		see issue (#<a
 		href="https://code.google.com/p/google-web-toolkit/issues/detail?id=4322">4322</a>)
 		for more details. For webAppCreator-generated ant files, you can pass
-		this with <tt>ant -Dgwt.args="-bindAddress 0.0.0.0" devmode</tt>.
+		this with `ant -Dgwt.args="-bindAddress 0.0.0.0" devmode`.
 	</li>
 	<li>The CurrencyList/CurrencyData APIs are now public - if you
 		were relying upon these classes in their non-public location, you
@@ -1613,7 +1613,7 @@ in this release.
 	</li>
 	<li>webAppCreator produces ant build files which support the
 		gwt.args property for passing additional flags to the gwtc and devmode
-		rules, such as <tt>ant -Dgwt.args="-style PRETTY" gwtc</tt>.
+		rules, such as `ant -Dgwt.args="-style PRETTY" gwtc`.
 	</li>
 </ul>
 <p>
@@ -1653,7 +1653,7 @@ in this release.
 		and <a
 		href="/javadoc/latest/com/google/gwt/user/client/ui/TabLayoutPanel.html">TabLayoutPanel</a>.
 	</li>
-	<li>UiBinder now directly supports <code>LayoutPanel</code>. For
+	<li>UiBinder now directly supports `LayoutPanel`. For
 		example:<pre style="margin-left: 2em;">
 &lt;g:LayoutPanel&gt;
   &lt;g:layer left='1em' width='20px'&gt;&lt;g:Label&gt;left-width&lt;/g:Label&gt;&lt;/g:Layer&gt;
@@ -1681,42 +1681,42 @@ in this release.
 			</li>
 		</ol>
 	</li>
-	<li>Running a <code>GWTTestCase</code> as compiled script was
-		previously done using <code>-Dgwt.args="-web"</code>. The <code>-web</code>
-		argument is now deprecated in favor of <code>-prod</code>, consistent
+	<li>Running a `GWTTestCase` as compiled script was
+		previously done using `-Dgwt.args="-web"</code>. The <code>-web`
+		argument is now deprecated in favor of `-prod`, consistent
 		with the terminology change from <i>web mode</i> to <i>production
 			mode</i>.
 	</li>
-	<li>The <code>-portHosted</code> command line argument for <code>DevMode</code>
-		and <code>GWTTestCase</code> has changed to <code>-codeServerPort</code>
+	<li>The `-portHosted</code> command line argument for <code>DevMode`
+		and `GWTTestCase</code> has changed to <code>-codeServerPort`
 		to be consistent with the new term <i>code server</i>.
 	</li>
-	<li>The <code>junitCreator</code> command line utility has been
-		removed. Instead, the <code>webAppCreator</code> utility takes new
+	<li>The `junitCreator` command line utility has been
+		removed. Instead, the `webAppCreator` utility takes new
 		argument: <code>
 			-junit <i>&lt;path-to-junit-jar&gt;</i>
 		</code>, which incorporates the functionality previously in junitCreator and
-		generates <code>ant test</code> targets.
+		generates `ant test` targets.
 	</li>
 	<li>When running development mode on on Chrome, any JavaScript
-		objects that pass into Java code will be assigned a new property <code>__gwt_ObjectId</code>.
+		objects that pass into Java code will be assigned a new property `__gwt_ObjectId`.
 		This could break native code that looks iterates through the
 		properties of such an object. To work around this issue, see this <a
 		href="http://code.google.com/p/google-web-toolkit/source/diff?old=4807&r=7063&format=side&path=/trunk/user/src/com/google/gwt/json/client/JSONObject.java">example</a>
-		of our changes to <code>JSONObject</code> (scroll to the bottom).
+		of our changes to `JSONObject` (scroll to the bottom).
 	</li>
 	<li>Compile reports (formerly SOYC reports) are now generated with
-		the <code>-compileReport</code> command line flag to <code>Compiler</code>.
+		the `-compileReport</code> command line flag to <code>Compiler`.
 		The generated reports are now written to the private <i>extra</i>
-		directory. If no <code>-extra</code> argument is specified, this
-		directory defaults to <code>extras/</code>. This eliminates an
+		directory. If no `-extra` argument is specified, this
+		directory defaults to `extras/`. This eliminates an
 		unlikely security risk of accidentally deploying compile reports to a
 		publicly accessible location.
 	</li>
 </ul>
 <h3>Fixed Issues</h3>
 <ul>
-	<li>In UiBinder <code>&lt;ui:style&gt;</code> blocks, css class
+	<li>In UiBinder `&lt;ui:style&gt;` blocks, css class
 		names may contain dashes.
 	</li>
 	<li>Non-Java method safe characters in inline <ui:style> class names doesn't work
@@ -1804,9 +1804,9 @@ in this release.
 	</li>
 	<li>Using HtmlUnit for running test cases based on <a
 		href="/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html">GWTTestCase</a>:
-		Prior to 2.0, <code>GWTTestCase</code> relied on SWT and native code
+		Prior to 2.0, `GWTTestCase` relied on SWT and native code
 		versions of actual browsers to run unit tests. As a result, running
-		unit tests required starting an actual browser. As of 2.0, <code>GWTTestCase</code>
+		unit tests required starting an actual browser. As of 2.0, `GWTTestCase`
 		no longer uses SWT or native code. Instead, it uses <i>HtmlUnit</i> as
 		the built-in browser. Because HtmlUnit is written entirely in the Java
 		language, there is no longer any native code involved in typical
@@ -1818,48 +1818,48 @@ in this release.
 <h3>Breaking changes and known issues/bugs/problems</h3>
 <ul>
 	<li>Prior to 2.0, GWT tools such as the compiler were provide in a
-		platform-specific jar (that is, with names like <code>gwt-dev-windows.jar</code>).
+		platform-specific jar (that is, with names like `gwt-dev-windows.jar`).
 		As of 2.0, GWT tools are no longer platform specific and they reside
-		in generically-named <code>gwt-dev.jar</code>. You are quite likely to
+		in generically-named `gwt-dev.jar`. You are quite likely to
 		have to update build scripts to remove the platform-specific suffix,
 		but that's the extent of it.
 	</li>
 	<li>The development mode entry point has changed a few times since
-		GWT 1.0. It was originally called <code>GWTShell</code>, and in GWT
-		1.6 a replacement entry point called <code>HostedMode</code> was
+		GWT 1.0. It was originally called `GWTShell`, and in GWT
+		1.6 a replacement entry point called `HostedMode` was
 		introduced. As of GWT 2.0, to reflect the new "development mode"
-		terminology, the new entry point for development mode is <code>com.google.gwt.dev.DevMode</code>.
+		terminology, the new entry point for development mode is `com.google.gwt.dev.DevMode`.
 		Sorry to keep changing that on ya, but the good news is that the prior
 		entry point still works. But, to really stay current, we recommend you
-		switch to the new <code>DevMode</code> entry point.
+		switch to the new `DevMode` entry point.
 	</li>
 	<li>Also due to the "development mode" terminology change, the
-		name of the ant build target produced by <code>webAppCreator</code>
-		has changed from <code>hosted</code> to <code>devmode</code>. In other
+		name of the ant build target produced by `webAppCreator`
+		has changed from `hosted</code> to <code>devmode`. In other
 		words, to start development mode from the command-line, type <code>ant
 			devmode</code>.
 	</li>
 	<li>HtmlUnit does not attempt to emulate authentic browser layout.
 		Consequently, tests that are sensitive to browser layout are very
-		likely to fail. However, since <code>GWTTestCase</code> supports other
+		likely to fail. However, since `GWTTestCase` supports other
 		methods of running tests, such as Selenium, that do support accurate
 		layout testing, it can still make sense to keep layout-sensitive tests
 		in the same test case as non-layout-sensitive tests. If you want such
 		tests to be ignored by HtmlUnit, simply annotate the test methods with
-		<code>@DoNotRunWith({Platform.Htmlunit})</code>.
+		`@DoNotRunWith({Platform.Htmlunit})`.
 	</li>
 	<li>Versions of Google Plugin for Eclipse prior to 1.2 will only
 		allow you to add GWT release directories that include a file with a
-		name like <code>gwt-dev-windows.jar</code>. You can fool it by sym
+		name like `gwt-dev-windows.jar`. You can fool it by sym
 		linking or copying gwt-dev.jar to the appropriate name.
 	</li>
 	<li>The way arguments are passed to the GWT testing infrastructure
 		has been revamped. There is now a consistent syntax to support
 		arbitrary "run styles", including user-written, with no changes to GWT
-		itself. For example, <code>-selenium FF3</code> has become <code>-runStyle
+		itself. For example, `-selenium FF3` has become <code>-runStyle
 			selenium:FF3</code>. This change likely does not affect typical test
-		invocation scripts, but if you do use <code>-Dgwt.args</code> to pass
-		arguments to <code>GWTTestCase</code>, be aware that you may need to
+		invocation scripts, but if you do use `-Dgwt.args` to pass
+		arguments to `GWTTestCase`, be aware that you may need to
 		make some changes.
 	</li>
 </ul>
@@ -1895,12 +1895,12 @@ in this release.
 <ul>
 	<li>This release includes explicit support for IE8, which has some
 		significant behavioral changes from prior versions of IE. These
-		changes are great enough that the new value <code>ie8</code> has been
-		added for the <code>user.agent</code> deferred binding client
-		property. If you have deferred binding rules (i.e. <code>&lt;replace-with&gt;</code>
-		or <code>&lt;generate-with&gt;</code>) or property providers that are
-		sensitive to <code>user.agent</code>, you may need to update them to
-		account for the <code>ie8</code> value. For more information, see the
+		changes are great enough that the new value `ie8` has been
+		added for the `user.agent` deferred binding client
+		property. If you have deferred binding rules (i.e. `&lt;replace-with&gt;`
+		or `&lt;generate-with&gt;`) or property providers that are
+		sensitive to `user.agent`, you may need to update them to
+		account for the `ie8` value. For more information, see the
 		<a href="http://code.google.com/p/google-web-toolkit/wiki/IE8Support">technical
 			notes</a>.
 	</li>
@@ -1946,7 +1946,7 @@ in this release.
 <h3>Fixed Issues</h3>
 <ul>
 	<li>The classpath in the scripts created by junitCreator was
-		updated to refer to <code>/war/WEB-INF/classes</code> rather than <code>/bin</code>.
+		updated to refer to `/war/WEB-INF/classes</code> rather than <code>/bin`.
 	</li>
 </ul>
 
@@ -1974,20 +1974,20 @@ in this release.
 <ul>
 	<li>RPC requests no longer fail on the embedded Android web
 		browser</li>
-	<li>Leaf <code>TreeItems</code> now line up with their non-leaf
+	<li>Leaf `TreeItems` now line up with their non-leaf
 		siblings
 	</li>
-	<li>Removing the last child node from a <code>TreeItem</code> no
+	<li>Removing the last child node from a `TreeItem` no
 		longer creates extra margins on the left
 	</li>
-	<li><code>HTTPRequest</code> no longer uses POST instead of GET on
+	<li>`HTTPRequest` no longer uses POST instead of GET on
 		some IE installs because of incorrect XHR selection</li>
 	<li>Compiler now uses a more reliable check to prevent methods
 		with local variables from being inlined</li>
-	<li><code>getAbsoluteTop()/Left()</code> can no longer return
+	<li>`getAbsoluteTop()/Left()` can no longer return
 		non-integral values</li>
-	<li><code>Time.valueOf()</code> no longer fails to parse <code>"08:00:00"</code>
-		or incorrectly accepts <code>"0xC:0xB:0xA"</code>.</li>
+	<li>`Time.valueOf()</code> no longer fails to parse <code>"08:00:00"`
+		or incorrectly accepts `"0xC:0xB:0xA"`.</li>
 </ul>
 <p>
 	See the GWT issue tracker for <a
@@ -1999,18 +1999,18 @@ in this release.
 <h2 id="Release_Notes_1_5_2">Release Notes for 1.5.2</h2>
 <h3>Potentially breaking changes and fixes</h3>
 <ul>
-	<li><code>History.onHistoryChanged()</code> has been added back
+	<li>`History.onHistoryChanged()` has been added back
 		(it was missing from 1.5 RC2) but is now deprecated. Application
-		startup should be handled by calling the new <code>History.fireCurrentHistoryState()</code>.</li>
-	<li>Fields marked <code>final</code> in serializable types will
+		startup should be handled by calling the new `History.fireCurrentHistoryState()`.</li>
+	<li>Fields marked `final` in serializable types will
 		now generate a warning; the fact that they were not being serialized
-		was a source of confusion. Mark such fields both <code>final</code>
-		and <code>transient</code> to avoid the warning.
+		was a source of confusion. Mark such fields both `final`
+		and `transient` to avoid the warning.
 	</li>
 	<li>Instance methods on overlay types cannot be accessed from
 		JSNI. (This used to work in hosted mode, but failed at runtime in web
 		mode.)</li>
-	<li>The hosted mode server no longer serves <code>hosted.html</code>
+	<li>The hosted mode server no longer serves `hosted.html`
 		from a module's public path; instead the file is read directly from
 		the classpath. This file is tightly coupled with the hosted mode
 		implementation and was not meant to be user overridable.
@@ -2018,9 +2018,9 @@ in this release.
 </ul>
 <h3>General Enhancements</h3>
 <ul>
-	<li><code>Collections.unmodifiableSortedSet()</code> and <code>Collections.unmodifiableSortedMap()</code>
+	<li>`Collections.unmodifiableSortedSet()</code> and <code>Collections.unmodifiableSortedMap()`
 		are now implemented.</li>
-	<li>The new <code>Accessibility</code> class enables widget
+	<li>The new `Accessibility` class enables widget
 		authors to add ARIA support to their widgets. Many GWT widgets come
 		with ARIA support by default.
 	</li>
@@ -2029,8 +2029,8 @@ in this release.
 </ul>
 <h3>Fixed Issues</h3>
 <ul>
-	<li>Fixed the relationship between the coordinates returned by <code>Element.getAbsoluteLeft/Top()</code>
-		and <code>Event.getClientX/Y()</code>. <code>Document.getBodyOffsetLeft/Top()</code>
+	<li>Fixed the relationship between the coordinates returned by `Element.getAbsoluteLeft/Top()`
+		and `Event.getClientX/Y()</code>. <code>Document.getBodyOffsetLeft/Top()`
 		can be used to account for the difference between these two coordinate
 		systems.
 	</li>
@@ -2051,15 +2051,15 @@ in this release.
 	applications, but some widgets (especially those with table based
 	layouts) may not behave as expected. The low level standards mode bugs
 	(such as with
-	<code>getAbsoluteLeft/Top()</code>
+	`getAbsoluteLeft/Top()`
 	) have been addressed, but some of the constructs that our widgets rely
 	on do not work in standards mode. For example, you cannot set the
 	height and width of a widget relative to its parent if its parent is a
 	table cell, and
-	<code>StackPanel</code>
+	`StackPanel`
 	takes up much more vertical space than it should in Internet Explorer.
 	All of our samples have been reverted back to quirks mode, and the
-	<code>applicationCreator</code>
+	`applicationCreator`
 	defaults to quirks mode when creating a new GWT app.
 </p>
 <p>You can still use standards mode for your GWT app, but please be
@@ -2069,9 +2069,9 @@ in this release.
 	continue to address standards mode support in future GWT releases.</p>
 <h3>Potentially breaking changes and fixes</h3>
 <ul>
-	<li><code>DOM.eventGetClientX/Y()</code> now takes into account
+	<li>`DOM.eventGetClientX/Y()` now takes into account
 		the margin and border of the body element</li>
-	<li>In hosted mode, all <code>DOM.eventGetXXX()</code> methods now
+	<li>In hosted mode, all `DOM.eventGetXXX()` methods now
 		assert that the requested attribute is reliable across all supported
 		browsers. This means that attempting to retrieve an attribute for an
 		event that does not support that attribute will now throw an assertion
@@ -2079,7 +2079,7 @@ in this release.
 		event throws an assertion error if you attempt to get the mouse button
 		that was clicked.
 	</li>
-	<li>The return value of <code>DOM.eventGetXXX()</code> methods are
+	<li>The return value of `DOM.eventGetXXX()` methods are
 		now coerced to 0 instead of -1 in web mode. In hosted mode, an
 		assertion error will be thrown if the attribute is not defined for the
 		given event, as described in the previous bullet.
@@ -2088,32 +2088,32 @@ in this release.
 		but may not work with older versions of Opera as we only support the
 		most recent release. Specifically, some widgets may not be able to
 		receive focus.</li>
-	<li>Calls to <code>History.newItem()</code> now trigger an <code>onHistoryChanged()</code>
+	<li>Calls to `History.newItem()</code> now trigger an <code>onHistoryChanged()`
 		event synchronously instead of asynchronously
 	</li>
 </ul>
 <h3>General Enhancements</h3>
 <ul>
-	<li>Added support for the <code>contextmenu</code> event, which
+	<li>Added support for the `contextmenu` event, which
 		allows users to detect and override the browser's default context menu
 	</li>
-	<li>Improved performance of <code>NumberFormat</code></li>
+	<li>Improved performance of `NumberFormat`</li>
 	<li>Added support for altering the number of decimals in a
-		currency in <code>NumberFormat</code>
+		currency in `NumberFormat`
 	</li>
 	<li>Improved performance of Animations</li>
 	<li>Improved the appearance of the default GWT style themes</li>
 	<li>Improved the Showcase sample with more robust examples and
 		more language translations</li>
-	<li><code>FormPanel</code> can now wrap an existing form and still
+	<li>`FormPanel` can now wrap an existing form and still
 		submit it to a hidden iframe</li>
 </ul>
 <h3>Fixed Issues</h3>
 <ul>
-	<li><code>DOM.getAbsoluteLeft/Top()</code> and <code>DOM.eventGetClientX/Y()</code>
+	<li>`DOM.getAbsoluteLeft/Top()</code> and <code>DOM.eventGetClientX/Y()`
 		no longer log an exception to the console in Firefox 3</li>
 	<li>Fixed a memory leak in Internet Explorer</li>
-	<li><code>DOM.getAbsoluteLeft/Top()</code> now takes into account
+	<li>`DOM.getAbsoluteLeft/Top()` now takes into account
 		the margin and border of the target element in Safari 3</li>
 	<li>Fixed some bugs associated with history support</li>
 </ul>
@@ -2238,11 +2238,11 @@ in this release.
 		href="doc/html/com.google.gwt.doc.DeveloperGuide.RemoteProcedureCalls">RPC</a>
 		now generates a serialization policy file during compilation. The
 		serialization policy file contains a whitelist of allowed types which
-		may be serialized. Its name is a strong hash name followed by <code>.gwt.rpc</code>.
+		may be serialized. Its name is a strong hash name followed by `.gwt.rpc`.
 		This file must be deployed to your web server as a public resource,
 		accessible from a <a
 		href="doc/html/com.google.gwt.user.server.rpc.RemoteServiceServlet">RemoteServiceServlet</a>
-		via <code>ServletContext.getResource()</code>. If it is not deployed
+		via `ServletContext.getResource()`. If it is not deployed
 		properly, RPC will run in 1.3.3 compatibility mode and refuse to
 		serialize types implementing <a href="doc/html/java.io.Serializable">Serializable</a>.
 		(<a
@@ -2356,16 +2356,16 @@ warnings will result in a smaller, faster, and more reliable app.
 		but confusing situations in which exceptions would be thrown at
 		runtime.</li>
 	<li><b>Warn about non-transient, final instance fields</b><br />
-		RPC has never actually serialized <code>final</code> instance fields,
+		RPC has never actually serialized `final` instance fields,
 		but now it explicitly warns about the existence of such fields unless
-		they are also <code>transient</code>. Thus, the warning can be
-		addressed by making <code>final</code> instance fields <code>transient</code>
+		they are also `transient`. Thus, the warning can be
+		addressed by making `final</code> instance fields <code>transient`
 		as well, or it can be suppressed via a module property.</li>
 	<li><b>Warn about local and non-static nested types that
 			implement IsSerializable or Serializable</b><br /> RPC has never
 		serialized these kinds of classes and will now generate a warning.</li>
 	<li><b>Warn about native methods in serializable classes</b><br />
-		Attempting to serialize classes that contain <code>native</code>
+		Attempting to serialize classes that contain `native`
 		methods will cause UnsatisfiedLinkErrors if such methods are called in
 		server-side code.</li>
 </ul>
@@ -2648,9 +2648,9 @@ renamed in a class that was new in 1.2 RC.
 
 <h4>com.google.gwt.http.client.RequestBuilder</h4>
 The method
-<code>addHeader()</code>
+`addHeader()`
 was renamed to
-<code>setHeader()</code>
+`setHeader()`
 to more clearly reflect its intent. You will only be affected by this
 change if you are using the new HTTP functionality available as of build
 1.2.11.
@@ -2821,7 +2821,7 @@ change if you are using the new HTTP functionality available as of build
 	<li><b><a href="doc/html/com.google.gwt.xml.client">XML
 				classes</a></b><br>An XML library based on the W3C DOM</li>
 	<li><b><a href="doc/html/com.google.gwt.json.client">JSON
-				classes</a></b><br>JSON has moved into <code>gwt-user.jar</code>, and
+				classes</a></b><br>JSON has moved into `gwt-user.jar`, and
 		it's much faster than the sample that shipped with 1.0.21</li>
 	<li><b><a
 			href="doc/html/com.google.gwt.doc.DeveloperGuide.JUnitIntegration">JUnit
@@ -2830,10 +2830,10 @@ change if you are using the new HTTP functionality available as of build
 		like RPCs and timers</li>
 	<li><b><a href="doc/javadoc/index">Javadoc</a></b><br>Now
 		included for your convenience, with sample code fragments</li>
-	<li><b><code>gwt-servlet.jar</code></b><br>Although you
-		should continue to build against <code>gwt-user.jar</code> as always,
-		you only need to deploy <code>gwt-servlet.jar</code> with your
-		webapps; it contains the subset of <code>gwt-user.jar</code> you'll
+	<li><b>`gwt-servlet.jar`</b><br>Although you
+		should continue to build against `gwt-user.jar` as always,
+		you only need to deploy `gwt-servlet.jar` with your
+		webapps; it contains the subset of `gwt-user.jar` you'll
 		need to support RPC</li>
 </ul>
 There are also a significant number of bug fixes from all the great
@@ -2909,7 +2909,7 @@ want to catch you off guard.
 <h4>JUnit Modules</h4>
 <ul>
 	<li>GWT test modules (that is, modules intended to run
-		GWTTestCase-derived JUnit test cases) no longer need to inherit the <code>com.google.gwt.junit.JUnit</code>
+		GWTTestCase-derived JUnit test cases) no longer need to inherit the `com.google.gwt.junit.JUnit`
 		module. Additionally, it is no longer an error to declare entry points
 		within a test module (they will be ignored when running under JUnit).
 		Most test cases can now simply use the existing application module,
@@ -2957,7 +2957,7 @@ rectify.
 	<li>You can now set cookies as well!</li>
 </ul>
 
-<h3 id="Appendix">Appendix: Complete List of Fixed Issues</h3>
+### Appendix: Complete List of Fixed Issues <a id="Appendix"></a>
 
 <p>
 	The list of issues below is a short synopsis of all of the major and

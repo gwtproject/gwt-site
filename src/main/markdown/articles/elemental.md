@@ -1,36 +1,35 @@
-<i>Ray Cromwell, Senior Software Engineer</i>
-<br>
-<i>Updated June 2012</i>
+Elemental
+===
 
-<p> Elemental is a new library for fast, lightweight, and "to the metal" web programming in GWT.
+_Ray Cromwell, Senior Software Engineer_
+
+_Updated June 2012_
+
+ Elemental is a new library for fast, lightweight, and "to the metal" web programming in GWT.
 It's intended for developers who are comfortable working with the browser API's that JavaScript
 programmers use. We think it will be an excellent 'thin' library for both mobile and desktop web
 applications.
-</p>
 
-<h2 id="Contents">What's In It?</h2>
+## What's In It? <a id="Contents"></a>
 
-<p> Elemental includes every HTML5 feature, including DOM access of course, but also
+ Elemental includes every HTML5 feature, including DOM access of course, but also
 bleeding edge features like WebGL, WebAudio, WebSockets, WebRTC, Web Intents, Shadow DOM,
 the File API, and more. We can do this because we generate Java code directly from the WebIDL
 files used by JavaScript engines.
-</p>
 
-<p> Elemental also includes high-performance collections and a new JSON library. These libraries
+ Elemental also includes high-performance collections and a new JSON library. These libraries
 work equally well in a browser or in a server (JVM) environment.
-</p>
 
-<h2 id="Performance">Performance</h2>
+## Performance <a id="Performance"></a>
 
-<p> Elemental is designed to allow the GWT compiler to generate high-performance JavaScript with no
+ Elemental is designed to allow the GWT compiler to generate high-performance JavaScript with no
 overhead. It does this by using only
-<a href="../doc/latest/DevGuideCodingBasicsOverlay.html">JavaScript overlay types.</a>. Also,
+[JavaScript overlay types.](../doc/latest/DevGuideCodingBasicsOverlay.html). Also,
 the collection classes map directly to underlying JavaScript collections with no overhead.
-</p>
 
-<h2 id="Example">Example Usage</h2>
+## Example Usage <a id="Example"></a>
 <p> Elemental uses Java interfaces to hide most of the generated overlay types it uses. JS APIs instances
-can be obtained by the <code>Window</code> or <code>Document</code> interfaces. Here is a simple example to play a sound using
+can be obtained by the `Window` or `Document` interfaces. Here is a simple example to play a sound using
 the Web Audio API.
 
 <pre class="prettyprint">
@@ -53,12 +52,12 @@ public class ElementalExample implements EntryPoint {
 </pre>
 
 <p> In general, HTML elements can be constructed by invoking methods starting with the pattern
-<code>Document.createXXXElement</code> where XXX could be elements like <code>Select</code>,
-or <code>Video</code>. JS APIs which allow the <code>new</code> keyword to construct instances
-are found on <code>Window.newXXX</code> where XXX represents the underlying Javascript 
+`Document.createXXXElement` where XXX could be elements like `Select`,
+or `Video`. JS APIs which allow the `new` keyword to construct instances
+are found on `Window.newXXX` where XXX represents the underlying Javascript 
 constructor name.
 
-<h2 id="Caveats">Caveats</h2>
+## Caveats <a id="Caveats"></a>
 
 <p>
 Elemental is a work in progress. Due to the nature of it being auto-generated from IDL specifications,

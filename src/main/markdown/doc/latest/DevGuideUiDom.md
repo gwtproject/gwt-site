@@ -1,34 +1,29 @@
-<p>Browsers provide an interface to examine and manipulate the on-screen elements using the <a href="http://w3c.org/DOM/">DOM</a> (Document Object Model).
+UiDOM
+===
+
+Browsers provide an interface to examine and manipulate the on-screen elements using the [DOM](http://w3c.org/DOM/) (Document Object Model).
 Traditionally, JavaScript programmers use the DOM to program the user interface portion of their logic, and traditionally, they have had to account for the many differences in the
-implementation of the DOM on different browsers.</p>
+implementation of the DOM on different browsers.
 
-<p>So that you don't have to worry (generally) about cross-browser support when implementing user interfaces, GWT provides a set of <a href="DevGuideUiWidgets.html">widget</a> and <a href="DevGuideUiPanels.html">panel</a> classes that wrap up this functionality. But sometimes you need to access the DOM. For example, if you
-want to:</p>
+So that you don't have to worry (generally) about cross-browser support when implementing user interfaces, GWT provides a set of [widget](DevGuideUiWidgets.html) and [panel](DevGuideUiPanels.html) classes that wrap up this functionality. But sometimes you need to access the DOM. For example, if you
+want to:
 
-<ul>
-<li>provide a feature in your user interface that GWT does not support</li>
+*   provide a feature in your user interface that GWT does not support
+*   write a new Widget class
+*   access an HTML element defined directly in the host page
+*   handle browser Events at a low level
+*   perform some filtering or other processing on an HTML document loaded into the browser
 
-<li>write a new Widget class</li>
-
-<li>access an HTML element defined directly in the host page</li>
-
-<li>handle browser Events at a low level</li>
-
-<li>perform some filtering or other processing on an HTML document loaded into the browser</li>
-</ul>
-
-
-
-<p>GWT provides the classes in the <a href="/javadoc/latest/com/google/gwt/dom/client/package-summary.html">DOM</a>
+GWT provides the classes in the [DOM](/javadoc/latest/com/google/gwt/dom/client/package-summary.html)
 package for interacting with the DOM directly. These classes provide statically-typed interfaces for interacting with DOM objects, as well as a degree of
-cross-browser abstraction.</p>
+cross-browser abstraction.
 
-<h2>Using the DOM to manipulate a widget</h2>
+## Using the DOM to manipulate a widget
 
-<p>Each widget and panel has an underlying DOM element that you can access with the <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#getElement()">getElement()</a> method. You can use the
-getElement() method to get the underlying element from the DOM.</p>
+Each widget and panel has an underlying DOM element that you can access with the [getElement()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#getElement()) method. You can use the
+getElement() method to get the underlying element from the DOM.
 
-<p>The following example shows how to set a style attribute to change a widget's background color.</p>
+The following example shows how to set a style attribute to change a widget's background color.
 
 <pre class="prettyprint">
 private HTML htmlWidget;
@@ -39,17 +34,17 @@ private HTML htmlWidget;
 htmlWidget.getElement().getStyle().setBackgroundColor("#ffee80");
 </pre>
 
-<p>Here, the getElement() method derived from the <tt>Widget</tt> superclass returns a DOM <a href="/javadoc/latest/com/google/gwt/dom/client/Element.html">Element</a> object representing a node in the DOM tree
-structure and adds a style attribute to it.</p>
+Here, the getElement() method derived from the `Widget` superclass returns a DOM [Element](/javadoc/latest/com/google/gwt/dom/client/Element.html) object representing a node in the DOM tree
+structure and adds a style attribute to it.
 
-<p>This is an example where using the DOM isn't absolutely necessary. An alternative approach is to use <a href="DevGuideUiCss.html">style sheets</a> and
-associate different style classes to the widget using the <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(java.lang.String)">setStylePrimaryName()</a> or <a href="/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)">setStyleName()</a> method
-instead.</p>
+This is an example where using the DOM isn't absolutely necessary. An alternative approach is to use [style sheets](DevGuideUiCss.html) and
+associate different style classes to the widget using the [setStylePrimaryName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(java.lang.String)) or [setStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)) method
+instead.
 
-<h2>Finding an element in the DOM</h2>
+## Finding an element in the DOM
 
-<p>The following example shows how to combine a JSNI method with Java code to manipulate the DOM. First, we have a JSNI routine that will retrieve all the child elements that are
-Anchor tags. The element objects are assigned a unique ID for easy access from Java:</p>
+The following example shows how to combine a JSNI method with Java code to manipulate the DOM. First, we have a JSNI routine that will retrieve all the child elements that are
+Anchor tags. The element objects are assigned a unique ID for easy access from Java:
 
 <pre class="prettyprint">
 /**
@@ -68,8 +63,8 @@ private native void putElementLinkIDsInList(Element elt, ArrayList&lt;String&gt;
 }-*/;
 </pre>
 
-<p>And what could you possibly do with a DOM element once you have found it? This code iterates through all the anchor tags returned from the above method and then rewrites where
-it points to:</p>
+And what could you possibly do with a DOM element once you have found it? This code iterates through all the anchor tags returned from the above method and then rewrites where
+it points to:
 
 <pre class="prettyprint">
 /**
@@ -104,15 +99,15 @@ private void rewriteLink(Element element, sitename) {
 }
 </pre>
 
-<p>The JSNI method sets an ID on each element which we then used as an argument to <a href="/javadoc/latest/com/google/gwt/dom/client/Document.html#getElementById(java.lang.String)">Document.getElementById(id)</a> to
-fetch the <tt>Element</tt> in Java.</p>
+The JSNI method sets an ID on each element which we then used as an argument to [Document.getElementById(id)](/javadoc/latest/com/google/gwt/dom/client/Document.html#getElementById(java.lang.String)) to
+fetch the `Element` in Java.
 
-<h2>Using the DOM to capture a browser event</h2>
+## Using the DOM to capture a browser event
 
-<p>GWT contains an <a href="/javadoc/latest/com/google/gwt/dom/client/NativeEvent.html">Event</a> class as a typed interface to the
-native DOM Event.</p>
+GWT contains an [Event](/javadoc/latest/com/google/gwt/dom/client/NativeEvent.html) class as a typed interface to the
+native DOM Event.
 
-<p>This example shows how to use the DOM methods to catch a keyboard event for particular elements and handle them before the <a href="DevGuideUiHandlers.html">event</a> gets dispatched:</p>
+This example shows how to use the DOM methods to catch a keyboard event for particular elements and handle them before the [event](DevGuideUiHandlers.html) gets dispatched:
 
 <pre class="prettyprint">
 private ArrayList&lt;Element&gt; keyboardEventReceivers = new ArrayList&lt;Element&gt;();

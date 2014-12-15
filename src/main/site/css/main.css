@@ -308,9 +308,9 @@ li {
   margin-bottom: 0.25em;
 }
 
-pre,code {
+pre,code,.code {
   color: #007000;
-  font-family: "bogus font here", monospace;
+  font-family: Courier, 'Courier New', monospace;;
   font-size: 80%;
 }
 
@@ -330,6 +330,23 @@ pre ins {
   color: #cc0000;
   font-weight: bold;
   text-decoration: none;
+}
+
+.highlight {
+  background-color: #ffc;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: red;
+}
+
+.header {
+  margin-top: 1.5ex;
+}
+
+.details {
+  margin-top: 1ex;
 }
 
 .newmark {

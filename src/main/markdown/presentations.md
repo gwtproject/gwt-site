@@ -14,16 +14,17 @@ hr.divider {
 
 </style>
 
-<p>The following is a sample of presentations that have been given at various conferences in the past.</p>
+Presentations
+===
 
-<ul>
-  <li><a href="#GDD2007">Fast, Easy, Beautiful: Pick Three - Google Developer Day 2007</a></li>
-  <li><a href="#GDDFireside2007">GWT Fireside Chat: Common Questions - Google Developer Day 2007</a></li>
-  <li><a href="#TSSJS2007">Writing Big Apps with GWT - TheServerSide Java Symposium 2007</a></li>
-  <li><a href="#EclipseCon2007">GWT: Quick relief of AJAX pain (tutorial) - EclipseCon 2007</a></li>
-  <li><a href="#JAOO2006">A Business Case for Ajax with GWT - JAOO 2006</a></li>
-  <li><a href="#JavaZone2006">GWT: What, Why, and How - JavaZone 2006</a></li>
-</ul>
+The following is a sample of presentations that have been given at various conferences in the past.
+
+*   [Fast, Easy, Beautiful: Pick Three - Google Developer Day 2007](#GDD2007)
+*   [GWT Fireside Chat: Common Questions - Google Developer Day 2007](#GDDFireside2007)
+*   [Writing Big Apps with GWT - TheServerSide Java Symposium 2007](#TSSJS2007)
+*   [GWT: Quick relief of AJAX pain (tutorial) - EclipseCon 2007](#EclipseCon2007)
+*   [A Business Case for Ajax with GWT - JAOO 2006](#JAOO2006)
+*   [GWT: What, Why, and How - JavaZone 2006](#JavaZone2006)
 
 <hr class="divider">
 
@@ -59,7 +60,6 @@ we have heard regarding usage of GWT. We used these slides to kick-off the conve
 <a href="http://google-web-toolkit.googlecode.com/files/GWT-Fireside-Chat-GDD-2007.pdf">Slides (PDF)</a>
 </div>
 
-
 <div class="preso-detail">
 <a name="TSSJS2007"></a>
 <strong>Writing Big Apps with GWT</strong>
@@ -73,7 +73,6 @@ practices for building large, multi-page AJAX applications.
 </blockquote>
 <a href="http://google-web-toolkit.googlecode.com/files/Writing-Big-Apps-with-GWT-TSSJS-Vegas-2007.pdf">Slides (PDF)</a>
 </div>
-
 
 <div class="preso-detail">
 <a name="EclipseCon2007"></a>
@@ -93,7 +92,6 @@ engineering using Java and Eclipse and still end up with fast, light-weight Java
 &nbsp;-&nbsp;
 <a href="http://code.google.com/p/gwt-eclipsecon-chat/">Source Code</a></p>
 </div>
-
 
 <div class="preso-detail">
 <a name="JAOO2006"></a>
@@ -137,4 +135,3 @@ building large, multi-page AJAX applications.
 &nbsp;-&nbsp;
 <a href="http://www.infoq.com/presentations/gwt">Presentation (Video)</a></p>
 </div>
-

@@ -1,34 +1,27 @@
-<p>Do you need to do any of the following?</p>
+Delayed
+===
 
-<ul>
-<li>schedule an activity for some time in the future</li>
+Do you need to do any of the following?
 
-<li>periodically query the server or update the interface</li>
+*   schedule an activity for some time in the future
+*   periodically query the server or update the interface
+*   queue up work to do that must wait for other initialization to finish
+*   perform a large amount of computation
 
-<li>queue up work to do that must wait for other initialization to finish</li>
+GWT provides three classes that you can use to defer running code until a later point in time: Timer, DeferredCommand, and IncrementalCommand.
 
-<li>perform a large amount of computation</li>
-</ul>
+1.  [Scheduling work: the Timer class](#timer)
+    *   [Creating Timeout Logic](#timeout)
+    *   [Periodically Running Logic](#running)
+2.  [Deferring some logic into the immediate future: the DeferredCommand class](#deferred)
+3.  [Avoiding Slow Script Warnings: the IncrementalCommand class](#incremental)
 
-<p>GWT provides three classes that you can use to defer running code until a later point in time: Timer, DeferredCommand, and IncrementalCommand.</p>
+## Scheduling work: the Timer class<a id="timer"></a>
 
-<ol class="toc" id="pageToc">
-  <li><a href="#timer">Scheduling work: the Timer class</a>
-    <ul>
-      <li><a href="#timeout">Creating Timeout Logic</a></li>
-      <li><a href="#running">Periodically Running Logic</a></li>
-    </ul>
-  </li>
-  <li><a href="#deferred">Deferring some logic into the immediate future: the DeferredCommand class</a></li>
-  <li><a href="#incremental">Avoiding Slow Script Warnings: the IncrementalCommand class</a></li>
-</ol>
+Use the [Timer](/javadoc/latest/com/google/gwt/user/client/Timer.html) class to schedule work to be done in
+the future.
 
-<h2 id="timer">Scheduling work: the Timer class</h2>
-
-<p>Use the <a href="/javadoc/latest/com/google/gwt/user/client/Timer.html">Timer</a> class to schedule work to be done in
-the future.</p>
-
-<p>To create a timer, create a new instance of the Timer class and then override the run() method entry point.</p>
+To create a timer, create a new instance of the Timer class and then override the run() method entry point.
 
 <pre class="prettyprint">
    Timer timer = new Timer() {
@@ -41,23 +34,18 @@ the future.</p>
     timer.schedule(2000);
 </pre>
 
-<p>Notice that the timer will not have a chance to execute the run() method until after control returns to the JavaScript event loop.</p>
+Notice that the timer will not have a chance to execute the run() method until after control returns to the JavaScript event loop.
 
-<h3 id="timeout">Creating Timeout Logic</h3>
+### Creating Timeout Logic<a id="timeout"></a>
 
-<p>One typical use for a timer is to timeout a long running command. There are a few rules of thumb to remember in this situation:</p>
+One typical use for a timer is to timeout a long running command. There are a few rules of thumb to remember in this situation:
 
-<ul>
-<li>Store the timer in an instance variable.</li>
+*   Store the timer in an instance variable.
+*   Always check to see that the timer is not currently running before starting a new one. (Check the instance variable to see that it is null.)
+*   Remember to cancel the timer when the command completes successfully.
+*   Always set the instance variable to null when the command completes or the timer expires.
 
-<li>Always check to see that the timer is not currently running before starting a new one. (Check the instance variable to see that it is null.)</li>
-
-<li>Remember to cancel the timer when the command completes successfully.</li>
-
-<li>Always set the instance variable to null when the command completes or the timer expires.</li>
-</ul>
-
-<p>Below is a an example of using a timeout with a <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">Remote Procedure Call</a> (RPC).</p>
+Below is a an example of using a timeout with a [Remote Procedure Call](DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls) (RPC).
 
 <pre class="prettyprint">
 import com.google.gwt.user.client.Timer;
@@ -126,11 +114,11 @@ public class Foo {
 }
 </pre>
 
-<h3 id="running">Periodically Running Logic</h3>
+### Periodically Running Logic<a id="running"></a>
 
-<p>In order to keep a user interface up to date, you sometimes want to perform an update periodically. You might want to run a poll to the server to check for new data, or update
+In order to keep a user interface up to date, you sometimes want to perform an update periodically. You might want to run a poll to the server to check for new data, or update
 some sort of animation on the screen. In this case, use the Timer class
-<a href="/javadoc/latest/com/google/gwt/user/client/Timer.html#scheduleRepeating(int)">scheduleRepeating()</a> method:</p>
+[scheduleRepeating()](/javadoc/latest/com/google/gwt/user/client/Timer.html#scheduleRepeating(int)) method:
 
 <pre class="prettyprint">
 public class Foo {
@@ -170,14 +158,13 @@ public class Foo {
 }
 </pre>
 
-<h2 id="deferred">Deferring some logic into the immediate future: the Scheduler class</h2>
+## Deferring some logic into the immediate future: the Scheduler class<a id="deferred"></a>
 
-<p>Sometimes you want to break up your logic loop so that the JavaScript event
-loop gets a chance to run between two pieces of code. The <a
-href="/javadoc/latest/com/google/gwt/core/client/Scheduler.html">Scheduler</a> class will allow you to do that.
-The logic that you pass to <code>Scheduler</code> will run at some point in the future, after control has been returned to the JavaScript event loop. This little delay may give the
-interface a chance to process some user events or initialize other code. To use the <code>Scheduler</code> class in its simplest form, you create a subclass of the <a href="/javadoc/latest/com/google/gwt/user/client/Command.html">Command</a> class, overriding the execute() method and pass
-it to <a href="/javadoc/latest/com/google/gwt/core/client/Scheduler.html#scheduleDeferred(Command)">Scheduler.scheduleDeferred</a></p>
+Sometimes you want to break up your logic loop so that the JavaScript event
+loop gets a chance to run between two pieces of code. The [Scheduler](/javadoc/latest/com/google/gwt/core/client/Scheduler.html) class will allow you to do that.
+The logic that you pass to `Scheduler` will run at some point in the future, after control has been returned to the JavaScript event loop. This little delay may give the
+interface a chance to process some user events or initialize other code. To use the `Scheduler` class in its simplest form, you create a subclass of the [Command](/javadoc/latest/com/google/gwt/user/client/Command.html) class, overriding the execute() method and pass
+it to [Scheduler.scheduleDeferred](/javadoc/latest/com/google/gwt/core/client/Scheduler.html#scheduleDeferred(Command))
 
 <pre class="prettyprint">
 
@@ -193,24 +180,22 @@ it to <a href="/javadoc/latest/com/google/gwt/core/client/Scheduler.html#schedul
   dataEntry = new TextBox();
 </pre>
 
-<h2 id="incremental">Avoiding Slow Script Warnings: the IncrementalCommand class</h2>
+## Avoiding Slow Script Warnings: the IncrementalCommand class<a id="incremental"></a>
 
-<p>AJAX developers need to be aware of keeping the browser responsive to the user. When JavaScript code is running, user interface components like buttons and text areas will not
+AJAX developers need to be aware of keeping the browser responsive to the user. When JavaScript code is running, user interface components like buttons and text areas will not
 respond to user input. If the browser were to allow this to continue, the user might think the browser is &quot;hung&quot; and be tempted to restart it. But browsers have a built-in defense
-mechanism, the <i>unresponsive script warning</i>.</p>
+mechanism, the _unresponsive script warning_.
 
-<p>
-<img src="images/UnresponsiveScriptDialog.png"/>
-</p>
+![img](images/UnresponsiveScriptDialog.png)
 
-<p>Any script that runs without returning control to the JavaScript main event loop for more than 10 seconds or so runs the risk of having the browser popup this dialog to the
+Any script that runs without returning control to the JavaScript main event loop for more than 10 seconds or so runs the risk of having the browser popup this dialog to the
 user. The dialog is there because a poorly written script might have an infinite loop or some other bug that is keeping the browser from responding. But in AJAX applications, the
-script may be doing legitimate work.</p>
+script may be doing legitimate work.
 
-<p>GWT provides an <a href="/javadoc/latest/com/google/gwt/user/client/IncrementalCommand.html">IncrementalCommand</a>
-class that helps perform long running calculations. It works by repeatedly calling an 'execute()' entry point until the computation is complete.</p>
+GWT provides an [IncrementalCommand](/javadoc/latest/com/google/gwt/user/client/IncrementalCommand.html)
+class that helps perform long running calculations. It works by repeatedly calling an 'execute()' entry point until the computation is complete.
 
-<p>The following example is an outline of how to use the IncrementalCommand class to do some computation in a way that allows the browser's user interface to be responsive:</p>
+The following example is an outline of how to use the IncrementalCommand class to do some computation in a way that allows the browser's user interface to be responsive:
 
 <pre class="prettyprint">
 public class IncrementalCommandTest implements EntryPoint {
@@ -290,5 +275,3 @@ public class IncrementalCommandTest implements EntryPoint {
     return result;
   }
 </pre>
-
-

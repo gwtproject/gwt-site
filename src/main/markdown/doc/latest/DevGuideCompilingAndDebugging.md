@@ -1,50 +1,39 @@
-<p>
-Let's start with the core principle of GWT development:
-<ol class="nolist">
-  <li>If your GWT application runs in development mode as you expect...</li>
-  <li>and the GWT compiler successfully compiles your application into JavaScript...</li>
-  <li>then your application will work the same way in a web browser as it did in
-  development mode.</li>
-</ol>
-</p>
+Compiling and Debugging
+===
 
-<p>
+Let's start with the core principle of GWT development:
+
+1.  If your GWT application runs in development mode as you expect...
+2.  and the GWT compiler successfully compiles your application into JavaScript...
+3.  then your application will work the same way in a web browser as it did in development mode.
+
 The rest of this section introduces development mode (previously called "hosted mode")
 and production mode (previously called "web mode") and explains how and when to use each.
-</p>
 
-<ol class="toc" id="pageToc">
-<li><a href="#DevGuideDevMode">Debugging in Development Mode
- <ol class="toc">
-    <li><a href="#launching_in_dev_mode">Launching an application in development mode</a></li>
-    <li><a href="#dev_mode">GWT Development Mode</a></li>
-    <li><a href="#launching_a_browser">Launching a Browser</a></li>
-    <li><a href="#generating_debug_messages">Generating debug messages in development mode: GWT.log()</a></li>
-    <li><a href="#enabling_internal_debug">Enabling internal GWT debug messages</a></li>
-    <li><a href="#using_an_ide_with_dev_mode">Using an IDE with Development Mode</a></li>
-    <li><a href="#an_example_launch">An Example Launch</a></li>
-    <li><a href="#What_are_the_language_differences_between_production_mode_and_development_mo">Language differences between production mode and development mode</a></li>
-    <li><a href="#How_do_I_use_EJBs_in_development_mode?">Using EJBs in development mode</a></li>
-    <li><a href="#How_do_I_use_my_own_server_in_development_mode_instead_of_GWT's">Using my own server in development mode instead of GWT's built-in Jetty instance</a></li>
-    <li><a href="#What_options_can_be_passed_to_development_mode">Development Mode Options</a></li>
-    <li><a href="#SuperDevMode">Super Dev Mode</a></li>
-  </ol>
-</li>
-<li><a href="#DevGuideProdMode">Running in Production Mode</a></li>
-<li><a href="#DevGuideJavaToJavaScriptCompiler">Understanding the GWT Compiler
-  <ol class="toc">
-    <li><a href="#key_application_files">Key application files</a></li>
-    <li><a href="#public_resources">Public Resources</a></li>
-    <li><a href="#perfect_caching">Perfect Caching</a></li>
-    <li><a href="#DevGuideCompilerOptions">GWT Compiler Options</a></li>
-  </ol>
-</li>
-</ol>
+*   <a href="#DevGuideDevMode">Debugging in Development Mode
+    1.  [Launching an application in development mode](#launching_in_dev_mode)
+    2.  [GWT Development Mode](#dev_mode)
+    3.  [Launching a Browser](#launching_a_browser)
+    4.  [Generating debug messages in development mode: GWT.log()](#generating_debug_messages)
+    5.  [Enabling internal GWT debug messages](#enabling_internal_debug)
+    6.  [Using an IDE with Development Mode](#using_an_ide_with_dev_mode)
+    7.  [An Example Launch](#an_example_launch)
+    8.  [Language differences between production mode and development mode](#What_are_the_language_differences_between_production_mode_and_development_mo)
+    9.  [Using EJBs in development mode](#How_do_I_use_EJBs_in_development_mode?)
+    10.  [Using my own server in development mode instead of GWT's built-in Jetty instance](#How_do_I_use_my_own_server_in_development_mode_instead_of_GWT)
+    11.  [Development Mode Options](#What_options_can_be_passed_to_development_mode)
+    12.  [Super Dev Mode](#SuperDevMode)
+*   [Running in Production Mode](#DevGuideProdMode)
+*   [Understanding the GWT Compiler](#DevGuideJavaToJavaScriptCompiler)
+    1.  [Key application files](#key_application_files)
+    2.  [Public Resources](#public_resources)
+    3.  [Perfect Caching](#perfect_caching)
+    4.  [GWT Compiler Options](#DevGuideCompilerOptions)
 
-<h2 class="smaller" id="DevGuideDevMode">Debugging in Development Mode</h2>
+## Debugging in Development Mode<a id="DevGuideDevMode"></a>
 
-<p>You will spend most of your development time running your application in
-<i>development mode</i>, which means that you are interacting with your GWT
+You will spend most of your development time running your application in
+_development mode_, which means that you are interacting with your GWT
 application without it having been translated into JavaScript. Anytime you
 edit, run, and debug applications from a Java integrated development
 environment (IDE), you are working in development mode. When an application is
@@ -54,122 +43,117 @@ to connect to a browser window. This means that the debugging facilities of
 your IDE are available to debug both your client-side GWT code and any
 server-side Java code as well. By remaining in this traditional
 &quot;code-test-debug&quot; cycle, development mode is by far the most
-productive way to develop your application quickly.</p>
+productive way to develop your application quickly.
 
-<p>A typical development mode session can be seen below:</p>
+A typical development mode session can be seen below:
 
-<p><img src="images/DevModeTypical.jpg"/></p>
+![DevModeTypical](images/DevModeTypical.jpg)
 
-<h3 id="launching_in_dev_mode">Launching an application in development mode</h3>
+### Launching an application in development mode<a id="launching_in_dev_mode"></a>
 
-<p>To launch a development mode session, from the command line run <tt>ant
-devmode</tt>, assuming you have an Ant <tt>build.xml</tt> file generated by
-webAppCreator.</p>
+To launch a development mode session, from the command line run `ant
+devmode`, assuming you have an Ant `build.xml` file generated by
+webAppCreator.
 
-<p class="note"><strong>Tip:</strong> If you are using Eclipse, you can instead run the <tt>&lt;app&gt;.launch</tt> configuration file created by webAppCreator using the Run or Debug
-menus.</p>
+**Tip:** If you are using Eclipse, you can instead run the `&lt;app&gt;.launch` configuration file created by webAppCreator using the Run or Debug
+menus.
 
-<p>If you didn't use webAppCreator, you can manually run the main class in
-<tt>com.google.gwt.dev.DevMode</tt> found in <tt>gwt-dev.jar</tt>.</p>
+If you didn't use webAppCreator, you can manually run the main class in
+`com.google.gwt.dev.DevMode` found in `gwt-dev.jar`.
 
-<p><strong>Important:</strong> If you are not using a generated launch config,
-be aware that GWT development mode looks for <a href="DevGuideOrganizingProjects.html#DevGuideModules">modules</a> (and therefore <a href="DevGuideCodingBasics.html#DevGuideClientSide">client-side</a> source) using the JVM's classpath.
-Make sure to add your source directories first in your classpath.</p>
+**Important:** If you are not using a generated launch config,
+be aware that GWT development mode looks for [modules](DevGuideOrganizingProjects.html#DevGuideModules) (and therefore [client-side](DevGuideCodingBasics.html#DevGuideClientSide) source) using the JVM's classpath.
+Make sure to add your source directories first in your classpath.
 
-<h3 id="dev_mode">GWT Development Mode</h3>
+### GWT Development Mode<a id="dev_mode"></a>
 
-<p><i>Note: this section describes using development mode without the Google
-Plugin for Eclipse</i>.</p>
+_Note: this section describes using development mode without the Google
+Plugin for Eclipse_.
 
-<p>The GWT Development Mode window opens up initially with two tabs.  The first
+The GWT Development Mode window opens up initially with two tabs.  The first
 provides an interface to launching your GWT module(s) and logs that aren't
-specific to a particular module.</p>
+specific to a particular module.
 
+[![DevelopmentShell1](images/DevelopmentShell1.png)](images/DevelopmentShell1.png)
+<div style="margin-left: 18em; font-size: 80%;">_(Click to enlarge)_</div>
 
-<p><a href="images/DevelopmentShell1.png"><img src="images/DevelopmentShell1.png" width="50%"/></a>
-<div style="margin-left: 18em; font-size: 80%;"><em>(Click to enlarge)</em></div></p>
+#### Serving the application
 
-<h4>Serving the application</h4>
-
-<p>The second tab displays log messages from the embedded web server.  By
+The second tab displays log messages from the embedded web server.  By
 default, development mode runs an internal Jetty instance to serve your web
 application. This embedded Jetty instance serves directly out of your
-project's war directory.</p>
+project's war directory.
 
-<p>You can disable this internal server by passing the <tt>-noserver</tt>
-option to development mode and instead run your own external server. See FAQ <a
-href="#How_do_I_use_my_own_server_in_development_mode_instead_of_GWT's">&quot;How do I use my own server in
-development mode instead of GWT's built-in server?&quot;</a></p>
+You can disable this internal server by passing the `-noserver`
+option to development mode and instead run your own external server. See FAQ [&quot;How do I use my own server in
+development mode instead of GWT's built-in server?&quot;](#How_do_I_use_my_own_server_in_development_mode_instead_of_GWT)
 
-<h3 id="launching_a_browser">Launching a Browser</h3>
+### Launching a Browser<a id="launching_a_browser"></a>
 
-<p>As of GWT 2.0, development mode uses a regular browser instead of an
+As of GWT 2.0, development mode uses a regular browser instead of an
 embedded browser.  You can use any supported browser, including ones on other
 machines, as long as it has the GWT Developer Plugin installed.  If you use
 a browser that does not have the plugin installed, you will get a message
-with an offer to download the plugin.</p>
+with an offer to download the plugin.
 
-<p>Browsers are typically opened automatically via the <tt>-startupUrl</tt>
+Browsers are typically opened automatically via the `-startupUrl`
 command line option (though GWT will try to find plausible startup URLs if you
 do not supply any).  To launch an application, choose the URL you want to use,
-and choose <b>Launch Default Browser</b>.  GWT uses a number of heuristics
+and choose **Launch Default Browser**.  GWT uses a number of heuristics
 to determine which browser to use, but depending on your setup it may not
-launch the one you want.  In that case, you can choose <b>Copy to Clipboard</b>
+launch the one you want.  In that case, you can choose **Copy to Clipboard**
 and the URL you need to launch will be copied to the system clipboard (and will
 also be shown in the log window).  You can then paste this URL into any
 browser with the plugin installed, or you can type in the URL to a browser on
 a different machine (in which case you will have to change the host names in
-the URL as necessary).</p>
+the URL as necessary).
 
-<p><a href="images/HostedMode1.png"><img src="images/HostedMode1.png" width="50%"/></a></p>
+[![HostedMode1](images/HostedMode1.png)](images/HostedMode1.png)
 
-<p>When a module is loaded in a browser, you will see a new tab which contains
+When a module is loaded in a browser, you will see a new tab which contains
 the logs for one URL in a particular browser.  If there are multiple
 modules on one page, there will be a drop-down box to select which module's
 logs are shown.  When you refresh a page, there is a session drop-down box
-which lets you select which session's logs to show.</p>
+which lets you select which session's logs to show.
 
-<h4>Refreshing development mode</h4>
+#### Refreshing development mode
 
-<p>You do not need to restart development mode after modifying your source
+You do not need to restart development mode after modifying your source
 code. Instead, with Development Mode still running, edit client code or
 resources, save your changes, then refresh the page in your browser.
 On refresh, your code is recompiled with the changes and the new version is
 loaded into the browser. Refreshing the browser is much faster than closing
-and restarting Development Mode.</p>
+and restarting Development Mode.
 
-<p>You might notice that sometimes your changes take effect even if you
-<i>do not</i> refresh the browser. This behavior is a result of the way
+You might notice that sometimes your changes take effect even if you
+_do not_ refresh the browser. This behavior is a result of the way
 development mode interacts with the compiled code, but it is not always
 reliable. Specifically, it only happens when you make minor changes to
 existing functions and the IDE is able to replace the running code. To ensure
 your changes are included, make it a habit to always refresh the browser after
-making changes.</p>
+making changes.
 
-<h4>Reloading server code</h4>
+#### Reloading server code
 
-<p>Similarly, the <i>Restart Server</i> button in the Jetty tab allows you to
+Similarly, the _Restart Server_ button in the Jetty tab allows you to
 restart the embedded Jetty server without having to close and restart
 Development Mode. This is useful when you have made configuration or code
 changes to your server-side code. All server-side classes will be reloaded
-from scratch with fresh code for your <tt>war/WEB-INF/classes</tt> and
-<tt>war/WEB-INF/lib</tt> folders. If you are getting an <a
-href="/javadoc/latest/com/google/gwt/user/client/rpc/IncompatibleRemoteServiceException.html">IncompatibleRemoteServiceException</a>
+from scratch with fresh code for your `war/WEB-INF/classes` and
+`war/WEB-INF/lib` folders. If you are getting an [IncompatibleRemoteServiceException](/javadoc/latest/com/google/gwt/user/client/rpc/IncompatibleRemoteServiceException.html)
 in development mode while using RPC, try restarting the server and refreshing
-the client.</p>
+the client.
 
-<h3 id="generating_debug_messages">Generating debug messages in development mode: GWT.log()</h3>
+### Generating debug messages in development mode: GWT.log()<a id="generating_debug_messages"></a>
 
-<p>Debugging messages are displayed within the Development Mode log window.
+Debugging messages are displayed within the Development Mode log window.
 Some of these messages are from GWT. However, you can generate your own debug
-messages by using calls to <a
-href="/javadoc/latest/com/google/gwt/core/client/GWT.html#log(java.lang.String,%20java.lang.Throwable)">GWT.log()</a>.</p>
+messages by using calls to [GWT.log()](/javadoc/latest/com/google/gwt/core/client/GWT.html#log(java.lang.String,%20java.lang.Throwable)).
 
-<p>For example, modifying the standard project to emit a debug message inside
-the <a
-href="/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html">ClickHandler</a>
+For example, modifying the standard project to emit a debug message inside
+the [ClickHandler](/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html)
 results in a debug message displaying on the log window whenever the user
-clicks the button.</p>
+clicks the button.
 
 <pre class="prettyprint">
    import com.google.gwt.core.client.GWT;
@@ -187,12 +171,12 @@ clicks the button.</p>
     });
 </pre>
 
-<p><a href="images/DevelopmentShell2.png"><img src="images/DevelopmentShell2.png" width="50%"/></a></p>
+[![DevelopmentShell2](images/DevelopmentShell2.png)](images/DevelopmentShell2.png)
 
-<p>Calls to GWT.log() are intended just for use while debugging your
+Calls to GWT.log() are intended just for use while debugging your
 application. They are optimized out in production mode. For example, consider
 the following change to the onClick() method intended to intentionally trigger
-an exception:</p>
+an exception:
 
 <pre class="prettyprint">
   public void onClick(Widget sender) {
@@ -201,44 +185,43 @@ an exception:</p>
         nullObject.toString(); // Should cause NullPointerException
 </pre>
 
-<p>When the application encounters an exception, a message is printed on the
+When the application encounters an exception, a message is printed on the
 module's log window. The exception is highlighted with a red icon. In this
 example, when you click on the button in the browser window, a
 NullPointerException is triggered and the back trace for the exception
 displays in the status area below the log area. Clicking on the exception
 message or icon displays the full text of the exception in the message area
-below.</p>
+below.
 
-<p><a href="images/DevelopmentShell3.png"><img src="images/DevelopmentShell3.png" width="50%"/></a></p>
+[![DevelopmentShell3](images/DevelopmentShell3.png)](images/DevelopmentShell3.png)
 
-<h3 id="enabling_internal_debug">Enabling internal GWT debug messages</h3>
+### Enabling internal GWT debug messages<a id="enabling_internal_debug"></a>
 
-<p>The log window can display more verbose debugging if you invoke it by
-specifying the <tt>-logLevel</tt> command-line argument. Specifying the level
-of <tt>SPAM</tt> turns on many messages inside of the GWT engine. These
+The log window can display more verbose debugging if you invoke it by
+specifying the `-logLevel` command-line argument. Specifying the level
+of `SPAM` turns on many messages inside of the GWT engine. These
 messages are displayed in a hierarchical tree which can be manipulated by
 clicking on individual lines or by using the Expand All and Collapse All icons
-in the toolbar.</p>
+in the toolbar.
 
-<p><a href="images/DevelopmentShell4.png"><img src="images/DevelopmentShell4.png" width="50%"/></a></p>
+[![DevelopmentShell4](images/DevelopmentShell4.png)](images/DevelopmentShell4.png)
 
-<h3 id="using_an_ide_with_dev_mode">Using an IDE with Development Mode</h3>
+### Using an IDE with Development Mode<a id="using_an_ide_with_dev_mode"></a>
 
-<p>When using an IDE such as Eclipse, JBuilder, or IntelliJ, it is easy to use
+When using an IDE such as Eclipse, JBuilder, or IntelliJ, it is easy to use
 the IDE's built-in Java debugger to debug your module. Simply set a breakpoint
-somewhere inside your code, (such as the <tt>onModuleLoad()</tt> entry point)
+somewhere inside your code, (such as the `onModuleLoad()` entry point)
 where you want the debugger to stop and let you inspect the state of your
 program. For an example of debugging in development mode using the Eclipse
-IDE, see the Getting Started tutorial, <a
-href="tutorial/debug.html">Debugging a GWT
-Application</a>.</p>
+IDE, see the Getting Started tutorial, [Debugging a GWT
+Application](tutorial/debug.html).
 
-<h3 id="an_example_launch">An Example Launch</h3>
+### An Example Launch<a id="an_example_launch"></a>
 
-<p>Let's look behind the scenes when you launch your GWT application in
+Let's look behind the scenes when you launch your GWT application in
 development mode. To run development mode, you start a Java VM using the main
-class <tt>com.google.com.gwt.dev.DevMode</tt>. If you look inside a generated
-ant <tt>build.xml</tt>, you'll find something like this:</p>
+class `com.google.com.gwt.dev.DevMode`. If you look inside a generated
+ant `build.xml`, you'll find something like this:
 
 <pre class="prettyprint">
 &lt;target name=&quot;devmode&quot; depends=&quot;javac&quot; description=&quot;Run development mode&quot;&gt;
@@ -256,101 +239,77 @@ ant <tt>build.xml</tt>, you'll find something like this:</p>
 &lt;/target&gt;
 </pre>
 
-<p>This is similar to running the following command on the command line:</p>
+This is similar to running the following command on the command line:
 
 <pre class="prettyprint">
 java -Xmx256M -cp &quot;src;war/WEB-INF/classes;\gwt-2.0.0\gwt-user.jar;\gwt-2.0.0\gwt-dev.jar&quot;
   com.google.gwt.dev.DevMode -startupUrl Hello.html com.google.gwt.sample.hello.Hello
 </pre>
 
-<p>The <tt>-startupUrl</tt> parameter tells Development Mode which URL(s) to
+The `-startupUrl` parameter tells Development Mode which URL(s) to
 make available for launching. If the value excludes the domain, the domain is
-assumed to be <tt>localhost</tt>. The port is assumed to be the port running
+assumed to be `localhost`. The port is assumed to be the port running
 the embedded server. In the example above, this address is
-<tt>http://localhost:8888/Hello.html</tt> (with an additional parameter giving
-the location of the development mode code server).</p>
+`http://localhost:8888/Hello.html` (with an additional parameter giving
+the location of the development mode code server).
 
-<p>The final parameter (the one at the end with no flag preceding it) is the
+The final parameter (the one at the end with no flag preceding it) is the
 module or set of modules we care about. This value is required in order to
 correctly initialize the war directory with bootstrap scripts for any GWT
-modules you may wish to run.</p>
+modules you may wish to run.
 
+### Language differences between production mode and development mode<a id="What_are_the_language_differences_between_production_mode_and_development_mo"></a>
 
-<h3 id="What_are_the_language_differences_between_production_mode_and_development_mo">Language
-differences between production mode and development mode</h3>
+Typically, if your code runs as intended in development mode and compiles to JavaScript without error, production mode behavior will be equivalent. Occasional different problems can cause
+subtle bugs to appear in production mode that don't appear in development mode. Fortunately those cases are rare.
 
-<p>Typically, if your code runs as intended in development mode and compiles to JavaScript without error, production mode behavior will be equivalent. Occasional different problems can cause
-subtle bugs to appear in production mode that don't appear in development mode. Fortunately those cases are rare.</p>
+A [full list of known language-related &quot;gotchas&quot;](DevGuideCodingBasicsCompatibility.html) is available in the GWT documentation.
 
-<p>A <a href="DevGuideCodingBasicsCompatibility.html">full list of known language-related &quot;gotchas&quot;</a> is available in the GWT documentation.</p>
+### Using EJBs in development mode<a id="How_do_I_use_EJBs_in_development_mode?"></a>
 
-<p/>
+GWT provides the `-noserver` option to the development mode shell script for this sort of thing.
 
-<h3 id="How_do_I_use_EJBs_in_development_mode?">Using EJBs in development mode</h3>
+The `-noserver` option instructs development mode to not start the embedded Jetty instance. In its place, you would run the J2EE container of your choice and simply use that
+in place of the embedded Jetty instance.
 
-<p>GWT provides the <tt>-noserver</tt> option to the development mode shell script for this sort of thing.</p>
+### Using my own server in development mode instead of GWT's built-in Jetty instance<a id="How_do_I_use_my_own_server_in_development_mode_instead_of_GWT's"></a>
 
-<p>The <tt>-noserver</tt> option instructs development mode to not start the embedded Jetty instance. In its place, you would run the J2EE container of your choice and simply use that
-in place of the embedded Jetty instance.</p>
+If you do not need to use, or prefer not to use, the Jetty instance embedded in GWT's development mode to serve up your servlets for debugging, you can use the `-noserver`
+flag to prevent Jetty from starting, while still taking advantage of development mode for debugging your GWT client code.
 
-<p/>
+If you need the `-noserver` option, it is likely because your server-side code that handles your XMLHTTPRequest data requests requires something more, or just something
+different than Jetty. Here are some example cases where you might need to use `-noserver`:
 
-<h3 id="How_do_I_use_my_own_server_in_development_mode_instead_of_GWT's">Using my own server in development mode instead of GWT's built-in Jetty instance</h3>
+*   You need an EJB container, which the embedded Jetty server does not support.
+*   You have an extensive Servlet configuration (with custom web.xml and possibly server.xml files) that is too inconvenient to use with the embedded Jetty.
+*   You are not using J2EE on the server at all (for example, you might be using JSON with Python).
 
-<p>If you do not need to use, or prefer not to use, the Jetty instance embedded in GWT's development mode to serve up your servlets for debugging, you can use the <tt>-noserver</tt>
-flag to prevent Jetty from starting, while still taking advantage of development mode for debugging your GWT client code.</p>
-
-<p>If you need the <tt>-noserver</tt> option, it is likely because your server-side code that handles your XMLHTTPRequest data requests requires something more, or just something
-different than Jetty. Here are some example cases where you might need to use <tt>-noserver</tt>:</p>
-
-<ul>
-<li>You need an EJB container, which the embedded Jetty server does not support.</li>
-
-<li>You have an extensive Servlet configuration (with custom web.xml and possibly server.xml files) that is too inconvenient to use with the embedded Jetty.</li>
-
-<li>You are not using J2EE on the server at all (for example, you might be using JSON with Python).</li>
-</ul>
-
-<p>When using the <tt>-noserver</tt> flag, your external server is used by the GWT Development Mode browser to serve up both your dynamic content, and all static content (such as the
+When using the `-noserver` flag, your external server is used by the GWT Development Mode browser to serve up both your dynamic content, and all static content (such as the
 GWT application's host page, other HTML files, images, CSS, and so on.) This allows you to structure your project files in whatever way is most convenient to your application and
-infrastructure.</p>
+infrastructure.
 
-<p>Though your own external server handles all static content and dynamic resources, all browser application logic continues to be handled in Java, internal to development mode. This
+Though your own external server handles all static content and dynamic resources, all browser application logic continues to be handled in Java, internal to development mode. This
 means that you can continue to debug your client-side code in Java as usual, but all server-side requests will be served by your web or application server of choice. (If you are
 using an IDE such as Eclipse configured to integrate with GWT's development mode for debugging, then using -noserver will prevent you from automatically debugging your server code in
-the same debugger instance you use to debug development mode. However, if the server software you use supports it, you can of course use an external debugging tools.)</p>
+the same debugger instance you use to debug development mode. However, if the server software you use supports it, you can of course use an external debugging tools.)
 
-<p>Here is a step-by-step description of how to use <tt>-noserver</tt>:</p>
+Here is a step-by-step description of how to use `-noserver`:
 
-<ol>
-<li>Configure your server however you need to; note the URL which contains the host page for your GWT application.</li>
+1.  Configure your server however you need to; note the URL which contains the host page for your GWT application.
+2.  Arrange all your static content files (such as the host HTML page, images, CSS, etc.) on the server however you like.
+3.  Edit your development mode execution script (such as your Eclipse run configuration or the ant development build target generated by the GWT webAppCreator) and add or update the following options:
+    *   Add the `-noserver` command line argument.
+    *   Change the URL at the end of the argument list to match the URL you recorded in step #1.
+4.  Compile your application once using the ant build target.  Ideally, you can use GWT's -war option to generate output files directly into your
+external server's static content folder.  Otherwise, you'll need to copy the GWT output folder from `war/&lt;moduleName&gt;` to your external server's
+static content.
 
-<li>Arrange all your static content files (such as the host HTML page, images, CSS, etc.) on the server however you like.</li>
+Be careful not to omit copying the files in Step #4: This is an action you'll only have to do once, but is a necessary step. However, one important point to note is that
+you may need to replace the `.gwt.rpc` file if your application uses GWT RPC and if the types that your application serializes across the wire implement the `java.io.Serializable` interface. If these types are changed, or new serializable types are added to your RPC calls, the GWT compiler will generate a new .gwt.rpc file. You will need to replace the old file deployed on your web server with the newly generated file. However, if your web server targets the GWT compiler's war output directory as the war directory for your application, you will not need to re-compile for these changes, and development mode will take care of generating and correctly placing the `*.gwt.rpc` file.
 
-<li>Edit your development mode execution script (such as your Eclipse run configuration or the ant development build target generated by the GWT webAppCreator) and add or update the following options:
+### Development Mode Options<a id="What_options_can_be_passed_to_development_mode"></a>
 
-  <ul>
-  <li>Add the <tt>-noserver</tt> command line argument.</li>
-
-  <li>Change the URL at the end of the argument list to match the URL you recorded in step #1.</li>
-  </ul>
-</li>
-
-<li>Compile your application once using the ant build target.  Ideally, you can use GWT's -war option to generate output files directly into your
-external server's static content folder.  Otherwise, you'll need to copy the GWT output folder from <tt>war/&lt;moduleName&gt;</tt> to your external server's
-static content.</li>
-
-</ol>
-
-<p>Be careful not to omit copying the files in Step #4: This is an action you'll only have to do once, but is a necessary step. However, one important point to note is that
-you may need to replace the <tt>.gwt.rpc</tt> file if your application uses GWT RPC and if the types that your application serializes across the wire implement the <tt>java.io.Serializable</tt> interface. If these types are changed, or new serializable types are added to your RPC calls, the GWT compiler will generate a new .gwt.rpc file. You will need to replace the old file deployed on your web server with the newly generated file. However, if your web server targets the GWT compiler's war output directory as the war directory for your application, you will not need to re-compile for these changes, and development mode will take care of generating and correctly placing the <tt>*.gwt.rpc</tt> file.</p>
-
-<p/>
-
-<h3 id="What_options_can_be_passed_to_development_mode">Development Mode Options</h3>
-
-<p>There are many options you can pass to the development mode process to control how you want to start up the development mode browser. These options can differ slightly from version to version, but will generally include the options shown in the command-line help text below:</p>
-
+There are many options you can pass to the development mode process to control how you want to start up the development mode browser. These options can differ slightly from version to version, but will generally include the options shown in the command-line help text below:
 
 <pre>
 $ java -cp gwt-dev.jar com.google.gwt.dev.DevMode
@@ -379,33 +338,31 @@ and
   module[s]         Specifies the name(s) of the module(s) to host
 </pre>
 
+Any time you want to look up the development mode options available for your version of GWT, you can simply invoke the DevMode class from command-line as shown above and it will list out the options available along with their descriptions.  (Run the command from the directory containing `gwt-dev.jar` or add the path ahead of that file: `-cp _path_/gwt-dev.jar`.)
 
-<p>Any time you want to look up the development mode options available for your version of GWT, you can simply invoke the DevMode class from command-line as shown above and it will list out the options available along with their descriptions.  (Run the command from the directory containing <code>gwt-dev.jar</code> or add the path ahead of that file: <code>-cp <em>path</em>/gwt-dev.jar</code>.)</p>
+### Super Dev Mode<a id="SuperDevMode"></a>
 
-<h3 id="SuperDevMode">Super Dev Mode</h3>
+Early adopters may wish to try out an alternative to Development Mode. See
+[Introducing Super Dev Mode](../../articles/superdevmode.html)
 
-<p>Early adopters may wish to try out an alternative to Development Mode. See
-<a href="../../articles/superdevmode.html">Introducing Super Dev Mode</a></p>
+## Running in Production Mode<a id="DevGuideProdMode"></a>
 
-<h2 class="smaller" id="DevGuideProdMode">Running in Production Mode</h2>
-
-<p>After you have your application working well in <i>development</i> mode,
+After you have your application working well in _development_ mode,
 you will want to try out your application in your target web browsers; that
-is, you want to run it in <i>production</i> mode.</p>
+is, you want to run it in _production_ mode.
 
-<p>Running your application in production mode allows you to test your
+Running your application in production mode allows you to test your
 application as it is deployed. If you have a servlet component specified in
-your <tt>web.xml</tt> file, your GWT RPC calls will also be served to the
+your `web.xml` file, your GWT RPC calls will also be served to the
 browser. You can also take a different browser or a browser running on another
 machine and point it at the same URL (substitute the hostname or IP address of
-your workstation for <tt>localhost</tt> in the URL.)</p>
+your workstation for `localhost` in the URL.)
 
-<p>Running in production mode is a good way to test:</p>
+Running in production mode is a good way to test:
 
 <dl>
 <dt>The performance of your application</dt>
 <dd>
-<p>
 Development mode uses a special engine to run your app as a mix of both Java
 bytecode and native JavaScript. If your code makes many calls back and forth
 between Java and and JavaScript, your code may seem slower in development mode
@@ -413,11 +370,10 @@ than it will actually be in production mode. This can be particularly true of
 UI code. On the other hand, intense algorithmic pure Java code will tend to
 run faster in development mode, since the JVM outperforms most JavaScript
 engines.
-</p>
 
-<p>If your application displays lots of data or has a large number of widgets,
+If your application displays lots of data or has a large number of widgets,
 you will want to confirm that performance will be acceptable when the
-application is finally deployed.</p>
+application is finally deployed.
 </dd>
 
 <dt>How your application looks on different browsers</dt>
@@ -435,24 +391,21 @@ browser you plan to support.</dd>
 
 </dl>
 
-<h2 class="smaller" id="DevGuideJavaToJavaScriptCompiler">Understanding the GWT Compiler</h2>
+## Understanding the GWT Compiler<a id="DevGuideJavaToJavaScriptCompiler"></a>
 
-<p>The heart of GWT is a compiler that converts Java source into JavaScript, transforming your working Java application into an equivalent JavaScript application.</p> 
+The heart of GWT is a compiler that converts Java source into JavaScript, transforming your working Java application into an equivalent JavaScript application.
 
-<p>The GWT compiler supports the vast majority of the Java language. The <a href="DevGuideCodingBasics.html#DevGuideJavaCompatibility">GWT runtime library</a> emulates a relevant
-subset of the Java runtime library. If a JRE class or method is not supported, the compiler will emit an error.</p>
+The GWT compiler supports the vast majority of the Java language. The [GWT runtime library](DevGuideCodingBasics.html#DevGuideJavaCompatibility) emulates a relevant
+subset of the Java runtime library. If a JRE class or method is not supported, the compiler will emit an error.
 
-<p>You can run the compiler with the name of the module you want to compile in one of the following manners:</p>
+You can run the compiler with the name of the module you want to compile in one of the following manners:
 
-<ul>
-<li>Run the main class <tt>com.google.gwt.dev.Compiler</tt> using <tt>java</tt> from the command-line.</li>
-<li>If you used the webAppCreator script to create your project, you can use Ant to run the generated <tt>build.xml</tt>.</li>
-<li>If you are using the Google Plugin for Eclipse, you can compile your application by clicking GWT Compile Project button <img src="tutorial/images/GWTCompileProject.png" alt="icon" />.</li> 
-</ul>
+*   Run the main class `com.google.gwt.dev.Compiler` using `java` from the command-line.
+*   If you used the webAppCreator script to create your project, you can use Ant to run the generated `build.xml`.
+*   If you are using the Google Plugin for Eclipse, you can compile your application by clicking GWT Compile Project button ![icon](tutorial/images/GWTCompileProject.png).
 
-<p>Once compilation completes sucessfully, directories will be created containing the JavaScript implementation of your project. The compiler will create one directory for each
-module it compiles.</p>
-
+Once compilation completes sucessfully, directories will be created containing the JavaScript implementation of your project. The compiler will create one directory for each
+module it compiles.
 
 <pre>
 C:\gwt-2.6.1\samples\Hello&gt;ant
@@ -476,8 +429,7 @@ BUILD SUCCESSFUL
 Total time: 22 seconds
 </pre>
 
-
-<p>After running the GWT compiler your war directory should look something like this:</p>
+After running the GWT compiler your war directory should look something like this:
 
 <pre>
 C:\gwt-2.6.1\samples\Hello&gt;\bin\find war
@@ -499,24 +451,24 @@ war\hello\hosted.html
 war\Hello.html
 </pre>
 
-<p>In the above example, <tt>war/hello/hello.nocache.js</tt> is the script you would include in a host HTML page to load the Hello application. In this case, the host HTML page is
-located at <tt>war/Hello.html</tt> and loads the GWT startup script through the relative URL <tt>hello/hello.nocache.js</tt>.</p>
+In the above example, `war/hello/hello.nocache.js` is the script you would include in a host HTML page to load the Hello application. In this case, the host HTML page is
+located at `war/Hello.html` and loads the GWT startup script through the relative URL `hello/hello.nocache.js`.
 
-<p>You may have noticed in the compilation target in the build.xml file generated by the webAppCreator uses the war output directory as both an input and output source. This doesn't have to be the case, and you can easily configure the war directory as the output directory only, while using other directories as source directory paths by adding build targets to copy static resources from the source to the final output directory. See this <a href="FAQ_DebuggingAndCompiling.html#Is_the_war_directory_used_by_GWT_compiler_for_both_input_and_output">war directory FAQ</a> for more details.</p>
+You may have noticed in the compilation target in the build.xml file generated by the webAppCreator uses the war output directory as both an input and output source. This doesn't have to be the case, and you can easily configure the war directory as the output directory only, while using other directories as source directory paths by adding build targets to copy static resources from the source to the final output directory. See this [war directory FAQ](FAQ_DebuggingAndCompiling.html#Is_the_war_directory_used_by_GWT_compiler_for_both_input_and_output) for more details.
 
-<p>The other thing you may have noticed is that there are a number of other files generated along with the GWT compiler output. Of these there are a few that are key to <a href="DevGuideDeploying.html">deploying your application</a>.
+<p>The other thing you may have noticed is that there are a number of other files generated along with the GWT compiler output. Of these there are a few that are key to [deploying your application](DevGuideDeploying.html).
 
-<h3 id="key_application_files">Key application files</h3>
+### Key application files<a id="key_application_files"></a>
 
-<p>After running the GWT compiler, you'll find the output in the WAR, or Web Archive, folder with the following structure:</p>
+After running the GWT compiler, you'll find the output in the WAR, or Web Archive, folder with the following structure:
 
-<p><img src="../../images/war_output_dir.png"/></p>
+![img](../../images/war_output_dir.png)
 
-<p>If you've worked with GWT prior to the 1.6 release, the files in the <code>war/hello</code> directory are familiar to you. The only difference is where these files are now generated, and the fact that the <a href="DevGuideOrganizingProjects.html#DevGuideHostPage">host HTML page</a> and CSS files are not in the same directory as the rest of the <code>.cache.html/png</code> files. The path where these files are generated is controlled by the GWT module XML file. These are the key applications files to deploy you GWT application on your web server.</p>
+If you've worked with GWT prior to the 1.6 release, the files in the `war/hello` directory are familiar to you. The only difference is where these files are now generated, and the fact that the [host HTML page](DevGuideOrganizingProjects.html#DevGuideHostPage) and CSS files are not in the same directory as the rest of the `.cache.html/png` files. The path where these files are generated is controlled by the GWT module XML file. These are the key applications files to deploy you GWT application on your web server.
 
 <dt>The host HTML page</dt>
 
-<p>The <a href="DevGuideOrganizingProjects.html#DevGuideHostPage">host HTML page</a> is the first page your clients should visit when they browse to your application and is also where the rest of your application files are loaded from. To load your application, the host HTML page must contain a <code>&lt;script&gt;</code> tag referencing your GWT application bootstrap file (described below). You would typically include a <code>&lt;link&gt;</code> tag referencing your application CSS file as well, unless you inject the stylesheet directly by adding the <code>&lt;stylesheet&gt;</code> tag to your module XML file.</p>
+The [host HTML page](DevGuideOrganizingProjects.html#DevGuideHostPage) is the first page your clients should visit when they browse to your application and is also where the rest of your application files are loaded from. To load your application, the host HTML page must contain a `<script>` tag referencing your GWT application bootstrap file (described below). You would typically include a `<link>` tag referencing your application CSS file as well, unless you inject the stylesheet directly by adding the `<stylesheet>` tag to your module XML file.
 
 You could also load the script from anywhere else in a website, but the default start page is typically the entry point that developers use to load their GWT applications. The host page from the Hello starter sample application mentioned above is shown below.</p>
 
@@ -537,31 +489,31 @@ You could also load the script from anywhere else in a website, but the default 
 
 <dt>The Bootstrap File</dt>
 
-<p>You may have noticed that one of the generated files is named after your module, followed by a <code>.nocache.js</code> suffix. This is the GWT bootstrap file. Similar to the output subdirectory <code>war/&lt;app_name&gt;</code>, the name of this file is also controlled by the <code>rename-to</code> attribute in your module XML file. This file is responsible for choosing the correct version of your application to load for your client based on their browser and locale, or any other custom selection rule (see <a href="DevGuideCodingBasics.html#DevGuideDeferredBinding">Deferred Binding</a>). The various versions of your application compliant to each browser / locale are the <code>&lt;md5&gt;.cache.html</code> application files (discussed below).</p>
+You may have noticed that one of the generated files is named after your module, followed by a `.nocache.js` suffix. This is the GWT bootstrap file. Similar to the output subdirectory `war/<app_name>`, the name of this file is also controlled by the `rename-to` attribute in your module XML file. This file is responsible for choosing the correct version of your application to load for your client based on their browser and locale, or any other custom selection rule (see [Deferred Binding](DevGuideCodingBasics.html#DevGuideDeferredBinding)). The various versions of your application compliant to each browser / locale are the `<md5>.cache.html` application files (discussed below).
 
-<p>The host HTML page references this file so that clients visiting your page first download the bootstrap, and the bootstrap script in turn figures out which browser environment it is running in and determines the appropriate version of your application to load. See the <a href="DevGuideOrganizingProjects.html#DevGuideBootstrap">documentation</a> on the bootstrap process for more details.</p>
+The host HTML page references this file so that clients visiting your page first download the bootstrap, and the bootstrap script in turn figures out which browser environment it is running in and determines the appropriate version of your application to load. See the [documentation](DevGuideOrganizingProjects.html#DevGuideBootstrap) on the bootstrap process for more details.
 
 <dt>Application Files</dt>
 
-<p>The <code>&lt;md5&gt;.cache.html</code> files generated in the <code>war/&lt;app_name&gt;</code> directory, along with the bootstrap script, are the most important part of the generated fileset. They represent one version of your application tailored to a specific browser (or locale). These are the application files that the bootstrap script selects after it determines which browser it's running on.</p>
+The `<md5>.cache.html` files generated in the `war/<app_name>` directory, along with the bootstrap script, are the most important part of the generated fileset. They represent one version of your application tailored to a specific browser (or locale). These are the application files that the bootstrap script selects after it determines which browser it's running on.
 
-<p>Another generated application file that isn't strictly necessary to deploy your GWT application, but required if you're using GWT RPC and the support for the Serializable interface for types transferred through RPC, is the <code>&lt;md5&gt;.gwt.rpc</code> file. The serialization policy file must be accessible by your RPC <a href="/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html">RemoteServiceServlet</a> via the <a href="http://java.sun.com/products/servlet/2.3/javadoc/javax/servlet/ServletContext.html#getResource(java.lang.String)">ServletContext.getResource()</a> call.</p>
+Another generated application file that isn't strictly necessary to deploy your GWT application, but required if you're using GWT RPC and the support for the Serializable interface for types transferred through RPC, is the `<md5>.gwt.rpc` file. The serialization policy file must be accessible by your RPC [RemoteServiceServlet](/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html) via the [ServletContext.getResource()](http://java.sun.com/products/servlet/2.3/javadoc/javax/servlet/ServletContext.html#getResource(java.lang.String)) call.
 
-<h3 id="public_resources">Public Resources</h3>
+### Public Resources<a id="public_resources"></a>
 
-<p>All public resources, such as image files, stylesheets or XML files, can be placed anywhere under the war directory or any subdirectory therein during development. As long as references to these resources in your GWT application code hold when deployed, you can expect your application to work properly in production. In GWT 1.6 and later, the <code>&lt;public&gt;</code> tag is still respected, so you can place public resources in a public directory, as defined in your module XML file, and these resources will be copied into the <code>war/&lt;app_name&gt;</code> folder. However, the best practice would be to place public resources in the war directory and work with them from that location. This complies with the standard <a href="http://jcp.org/aboutJava/communityprocess/mrel/jsr154/index2.html">Servlet 2.5 API specification</a>, and makes it easier to deploy your application if you're planning to deploy on a servlet container.</p>
+All public resources, such as image files, stylesheets or XML files, can be placed anywhere under the war directory or any subdirectory therein during development. As long as references to these resources in your GWT application code hold when deployed, you can expect your application to work properly in production. In GWT 1.6 and later, the `<public>` tag is still respected, so you can place public resources in a public directory, as defined in your module XML file, and these resources will be copied into the `war/<app_name>` folder. However, the best practice would be to place public resources in the war directory and work with them from that location. This complies with the standard [Servlet 2.5 API specification](http://jcp.org/aboutJava/communityprocess/mrel/jsr154/index2.html), and makes it easier to deploy your application if you're planning to deploy on a servlet container.
 
-<p>If you're using <a href="DevGuideClientBundle.html">ClientBundle</a> in
+If you're using [ClientBundle](DevGuideClientBundle.html) in
 your application, the generated bundles are placed in the
-<code>war/&lt;app_name&gt;</code> directory after compilation.</p>
+`war/<app_name>` directory after compilation.
 
-<h3 id="perfect_caching">Perfect Caching</h3>
+### Perfect Caching<a id="perfect_caching"></a>
 
-<p>Among other optimization and performance improvement techniques, GWT also offers the concept of &quot;Perfect Caching&quot;, which you can take advantage of if you deploy your application correctly.</p>
+Among other optimization and performance improvement techniques, GWT also offers the concept of &quot;Perfect Caching&quot;, which you can take advantage of if you deploy your application correctly.
 
-<p>You may have noticed that the bootstrap script filename contains a <code>.nocache.js</code> suffix, whereas the rest of the GWT application files contain a <code>.cache.html</code> suffix. These are meant as indicators that you can use to configure your web server to implement perfect caching. The bootstrap script is named after a well-known application name (<code>&lt;app_name&gt;.nocache.js</code>), while the GWT application files all contain md5 sums in their names. Those md5 sums are computed from your GWT codebase at the time of compilation. The bootstrap script contains a lookup table that selects the right <code>&lt;md5&gt;.cache.html</code> file when your client first visits your site and loads up your GWT application. The bootstrap process is explained in greater detail <a href="DevGuideOrganizingProjects.html#DevGuideBootstrap">here</a>.</p>
+You may have noticed that the bootstrap script filename contains a `.nocache.js` suffix, whereas the rest of the GWT application files contain a `.cache.html` suffix. These are meant as indicators that you can use to configure your web server to implement perfect caching. The bootstrap script is named after a well-known application name (`<app_name>.nocache.js`), while the GWT application files all contain md5 sums in their names. Those md5 sums are computed from your GWT codebase at the time of compilation. The bootstrap script contains a lookup table that selects the right `<md5>.cache.html` file when your client first visits your site and loads up your GWT application. The bootstrap process is explained in greater detail [here](DevGuideOrganizingProjects.html#DevGuideBootstrap).
 
-<p>The fact that the application filenames will always change if your codebase changes means that your clients can safely cache these resources and don't need to refetch the GWT application files each time they visit your site. The resource that should never be completely cached (an If-Modified-Since fetch is sufficient and saves bandwidth) is the bootstrap script, since it contains the logic necessary to lookup the correct application file. If you were to configure these rules on an Apache HTTP server, you might get something like this in your <code>.htaccess</code> config file, using both mod_expires and mod_headers:</p>
+The fact that the application filenames will always change if your codebase changes means that your clients can safely cache these resources and don't need to refetch the GWT application files each time they visit your site. The resource that should never be completely cached (an If-Modified-Since fetch is sufficient and saves bandwidth) is the bootstrap script, since it contains the logic necessary to lookup the correct application file. If you were to configure these rules on an Apache HTTP server, you might get something like this in your `.htaccess` config file, using both mod_expires and mod_headers:
 
 <pre class="prettyprint">
 &lt;Files *.nocache.*&gt;
@@ -576,10 +528,9 @@ your application, the generated bundles are placed in the
 &lt;/Files&gt;
 </pre>
 
-<h3 id="DevGuideCompilerOptions">GWT Compiler Options</h3>
+### GWT Compiler Options<a id="DevGuideCompilerOptions"></a>
 
-<p>There are many options you can pass to the GWT compiler process to control how you want to compile your GWT application and where you want the output to be generated. These options can differ slightly from version to version, but will generally include the options shown in the command-line help text below:</p>
-
+There are many options you can pass to the GWT compiler process to control how you want to compile your GWT application and where you want the output to be generated. These options can differ slightly from version to version, but will generally include the options shown in the command-line help text below:
 
 <pre>
 java -cp gwt-dev.jar com.google.gwt.dev.Compiler
@@ -615,6 +566,4 @@ and
   module[s]                     Specifies the name(s) of the module(s) to compile
 </pre>
 
-
-<p>Any time you want to look up GWT compiler options available for your version of GWT, you can simply invoke the Compiler class from command-line as shown above and it will list out the options available along with their descriptions.  (Run the command from the directory containing <code>gwt-dev.jar</code> or add the path ahead of that file: <code>-cp <em>path</em>/gwt-dev.jar</code>.)</p>
-
+Any time you want to look up GWT compiler options available for your version of GWT, you can simply invoke the Compiler class from command-line as shown above and it will list out the options available along with their descriptions.  (Run the command from the directory containing `gwt-dev.jar` or add the path ahead of that file: `-cp _path_/gwt-dev.jar`.)

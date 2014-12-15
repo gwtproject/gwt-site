@@ -1,35 +1,11 @@
-  <style>
-    ul.toolsList li {
-        margin-bottom:1em;
-  }
+Books
+===
 
-  ul.toolsList li a:visited,
-  ul.toolsList li a:link,
-  ul.toolsList li a:hover,
-  ul.toolsList li a:active,
-  ul.toolsList li a:focus {
-    font-weight:bold;
-  }
+Below is a set of books that have been published regarding GWT, including a short description of each.
 
-  .pay {
-   color: #008000;
-  }
+Please note that the books linked from this page are provided by third-parties and are not endorsed by Google. Please direct any questions about these resources to the appropriate contact listed below.
 
-   ul.toolsList li p.toolsDescription {
-     margin-left:2em;
-     margin-top:3px;
-   }
-   #body {
-     max-width:700px;
-   }
-   </style>
-
-
-<p>Below is a set of books that have been published regarding GWT, including a short description of each.</p>
-
-<p>Please note that the books linked from this page are provided by third-parties and are not endorsed by Google. Please direct any questions about these resources to the appropriate contact listed below.</p>
-<p>Books are order by release date. You can also jump on <a href="#related">Related frameworks</a> books (GXT, Vaadin, etc.)</p>
-<br/>
+Books are order by release date. You can also jump on [Related frameworks](#related) books (GXT, Vaadin, etc.)
 
 <table class="columns" style="clear: left;">
   <tbody>
@@ -45,8 +21,8 @@
           </div>
         </div>
       </td>
-	</tr>
-	<tr>
+    </tr>
+    <tr>
       <td>
         <a href="http://www.packtpub.com/google-app-engine-java-and-gwt-application-development/book">
           <img src="images/books/Google_App_Engine_Java_and_GWT_Application_Development.jpg" style="float: left; margin-left: 0px; border: 0;" width="150" />
@@ -60,7 +36,7 @@
         </div>
       </td>
     </tr>
-	<tr>
+    <tr>
       <td>
         <a href="http://www.packtpub.com/google-web-toolkit-2-application-development-cookbook/book">
           <img src="images/books/Google_Web_Toolkit_2_Application_Development_Cookbook.jpg" style="float: left; margin-left: 0px; border: 0;" width="150" />
@@ -74,7 +50,7 @@
         </div>
       </td>
     </tr>
-	<tr>
+    <tr>
       <td>
         <a href="http://www.amazon.com/Essential-GWT-Building-Toolkit-Developers/dp/0321705149/ref=sr_1_3?ie=UTF8&qid=1369219185&sr=8-3&keywords=GWT">
           <img src="images/books/Essential_GWT_Building_for_the_Web_with_Google_Web_Toolkit_2.jpg" style="float: left; margin-left: 0px; border: 0;" width="150" />
@@ -116,7 +92,7 @@
         </div>
       </td>
     </tr>
-	<tr>
+    <tr>
       <td>
         <a href="http://www.informit.com/store/google-web-toolkit-applications-9780321501967">
           <img src="images/books/Google_Web_Toolkit_Applications.jpeg" style="float: left; margin-left: 0px; border: 0;" width="150" />
@@ -130,8 +106,8 @@
         </div>
       </td>
     </tr>
-	<td>
-		<a href="http://www.manning.com/hanson/">
+    <td>
+      <a href="http://www.manning.com/hanson/">
           <img src="images/books/gwt_in_action.jpg" style="float: left; margin-left: 0px; border: 0;" width="150" />
         </a>
         <div style="margin-left: 155px; margin-bottom: 10px;">
@@ -140,9 +116,9 @@
             GWT in Action shows you how to set up your development environment, use and create widgets, communicate with the server, and much more. Readers will follow an example running throughout the book and quickly master the basics of GWT: widgets, panels, and event handling. The book covers the full development cycle, from setting up your development environment, to building the application, then deploying it to the web server. The entire core GWT library is discussed, with details and examples on how it can be extended.
           </div>
         </div>
-	</td>
+    </td>
     </tr>
-	<tr>
+    <tr>
       <td>
         <a href="http://www.packtpub.com/google-web-toolkit-gwt-java-ajax-programming/book">
           <img src="images/books/Google_Web_Toolkit_GWT_Java_AJAX_Programming.jpg" style="float: left; margin-left: 0px; border: 0;" width="150" />
@@ -186,20 +162,9 @@
   </tbody>
 </table>
 
-<!--
-http://www.amazon.com/Application-Development-Experts-Voice-ebook/dp/B001DA9MT6/ref=sr_1_10?ie=UTF8&qid=1369219185&sr=8-10&keywords=GWT
-http://www.amazon.com/HTML5-meets-German-Edition-ebook/dp/B007M8VBOW/ref=sr_1_11?ie=UTF8&qid=1369219185&sr=8-11&keywords=GWT
-http://www.amazon.com/Google-Toolkit-Programming-step---step/dp/1847191002/ref=sr_1_12?ie=UTF8&qid=1369219185&sr=8-12&keywords=GWT
-http://www.amazon.com/Accelerated-GWT-Enterprise-Applications-Development/dp/B008SMGDVM/ref=sr_1_13?ie=UTF8&qid=1369219185&sr=8-13&keywords=GWT
-http://www.amazon.com/Google-Web-Toolkit-Solutions-Useful/dp/0132344815/ref=sr_1_43?ie=UTF8&qid=1369219345&sr=8-43&keywords=GWT
-http://www.amazon.com/Programmation-GWT-2-French-Edition/dp/2212125690/ref=sr_1_51?ie=UTF8&qid=1369219360&sr=8-51&keywords=GWT
-http://www.amazon.com/Programmation-D%C3%83%C2%A9velopper-applications-JavaScript-Toolkit/dp/2212134789/ref=sr_1_54?ie=UTF8&qid=1369219360&sr=8-54&keywords=GWT
-
-http://www.packtpub.com/learning-vaadin-7-second-edition/book
--->
-
 <a name="related"></a>
-<h2 id="prereqs">Related frameworks</h2> 
+## Related frameworks<a id="prereqs"></a>
+
 <table class="columns" style="clear: left;">
   <tbody>
     <tr>
@@ -277,7 +242,7 @@ http://www.packtpub.com/learning-vaadin-7-second-edition/book
         </div>
       </td>
     </tr>        
-	<tr>
+    <tr>
       <td>
         <a href="http://www.apress.com/9781430219408">
           <img src="images/books/Developing_with_Ext_GWT_Enterprise_RIA_Development.png" style="float: left; margin-left: 0px; border: 0;" width="150" />
@@ -294,6 +259,4 @@ http://www.packtpub.com/learning-vaadin-7-second-edition/book
   </tbody>
 </table>
 
-<p>If you believe that a resource should be added or removed, please <a href="mailto:gwt-third-party@google.com">let us know</a>. If you are developing new tools related to the GWT, please review our <a href="http://www.google.com/permissions/guidelines.html">branding guidelines</a>.</p>
-
-
+If you believe that a resource should be added or removed, please [let us know](mailto:gwt-third-party@google.com). If you are developing new tools related to the GWT, please review our [branding guidelines](http://www.google.com/permissions/guidelines.html).

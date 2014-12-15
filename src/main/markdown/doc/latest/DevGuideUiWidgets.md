@@ -1,70 +1,48 @@
-<p>You construct user interfaces in GWT applications using <a href="/javadoc/latest/com/google/gwt/user/client/ui/Widget.html">widgets</a> that
-are contained within <a href="/javadoc/latest/com/google/gwt/user/client/ui/Panel.html">panels</a>. Widgets allow you to interact with the user. Panels
+UiWidgets
+===
+
+You construct user interfaces in GWT applications using [widgets](/javadoc/latest/com/google/gwt/user/client/ui/Widget.html) that
+are contained within [panels](/javadoc/latest/com/google/gwt/user/client/ui/Panel.html). Widgets allow you to interact with the user. Panels
 control the placement of user interface elements on the page. Widgets and panels work the same way
-on all browsers; by using them, you eliminate the need to write specialized code for each browser.</p>
+on all browsers; by using them, you eliminate the need to write specialized code for each browser.
 
-<h2>Widgets</h2>
+## Widgets
 
-<p>Widgets define your applications input and output with the user. Examples of widgets include the following:</p>
+Widgets define your applications input and output with the user. Examples of widgets include the following:
 
-<ul>
-<li><a href="/javadoc/latest/com/google/gwt/user/client/ui/Button.html">Button</a> A user clicks the mouse button to
-activate the button.</li>
+*   [Button](/javadoc/latest/com/google/gwt/user/client/ui/Button.html) A user clicks the mouse button to
+activate the button.
+*   > ![img](images/Button.png)
 
-<li style="list-style: none">
-<blockquote><img src="images/Button.png"/></blockquote>
-</li>
+*   [TextBox](/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html) The application can display text and
+the user can type in the text box.
+*   > ![img](images/TextBox.png)
 
-<li><a href="/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html">TextBox</a> The application can display text and
-the user can type in the text box.</li>
+*   [Tree](/javadoc/latest/com/google/gwt/user/client/ui/Tree.html) A collapsible hierarchy of widgets.
+*   > ![img](images/Tree.png)
 
-<li style="list-style: none">
-<blockquote><img src="images/TextBox.png"/></blockquote>
-</li>
+*   [RichTextArea](/javadoc/latest/com/google/gwt/user/client/ui/RichTextArea.html) A text editor that allows
+users to apply rich formatting of the text.
+*   > ![img](images/RichTextArea.png)
 
-<li><a href="/javadoc/latest/com/google/gwt/user/client/ui/Tree.html">Tree</a> A collapsible hierarchy of widgets.</li>
+For the complete list of GWT UI elements, see [Widget Gallery](RefWidgetGallery.html).
 
-<li style="list-style: none">
-<blockquote><img src="images/Tree.png"/></blockquote>
-</li>
+You are not limited to the set of widgets provided by GWT. There are a number of ways to [create custom
+widgets](DevGuideUiCustomWidgets.html):
 
-<li><a href="/javadoc/latest/com/google/gwt/user/client/ui/RichTextArea.html">RichTextArea</a> A text editor that allows
-users to apply rich formatting of the text.</li>
+*   You can bundle together existing widgets and create a [Composite](/javadoc/latest/com/google/gwt/user/client/ui/Composite.html) widget.
+*   You can write GWT bindings to an existing JavaScript widget.
+*   You can create your own widget from scratch using either Java or JavaScript.
 
-<li style="list-style: none">
-<blockquote><img src="images/RichTextArea.png"/></blockquote>
-</li>
-</ul>
+You can also use one or more of the many third party widget libraries written for GWT.
 
-<p>
-For the complete list of GWT UI elements, see <a href="RefWidgetGallery.html">Widget Gallery</a>.
-</p>
+## Styles
 
-<p>You are not limited to the set of widgets provided by GWT. There are a number of ways to <a href="DevGuideUiCustomWidgets.html">create custom
-widgets</a>:</p>
+Visual styles are applied to widgets using [Cascading Style Sheets (CSS)](DevGuideUiCss.html). Besides the default browser supplied
+definitions, each GWT widget and panel has pre-defined style sheet class definitions documented in the class reference documentation.
 
-<ul>
-<li>You can bundle together existing widgets and create a <a href="/javadoc/latest/com/google/gwt/user/client/ui/Composite.html">Composite</a> widget.</li>
+## See Also
 
-<li>You can write GWT bindings to an existing JavaScript widget.</li>
+*   [Creating Custom Widgets](DevGuideUiCustomWidgets.html) Discussion of how to create your own widgets in GWT.
 
-<li>You can create your own widget from scratch using either Java or JavaScript.</li>
-</ul>
-
-<p>You can also use one or more of the many third party widget libraries written for GWT.</p>
-
-
-<h2>Styles</h2>
-
-<p>Visual styles are applied to widgets using <a href="DevGuideUiCss.html">Cascading Style Sheets (CSS)</a>. Besides the default browser supplied
-definitions, each GWT widget and panel has pre-defined style sheet class definitions documented in the class reference documentation.</p>
-
-<h2>See Also</h2>
-
-<ul>
-<li><a href="DevGuideUiCustomWidgets.html">Creating Custom Widgets</a> Discussion of how to create your own widgets in GWT.</li>
-</ul>
-
-<ul>
-<li><a href="DevGuideUiPanels.html">Layout Using Panels</a> Examples of how to use panels.</li>
-</ul>
+*   [Layout Using Panels](DevGuideUiPanels.html) Examples of how to use panels.

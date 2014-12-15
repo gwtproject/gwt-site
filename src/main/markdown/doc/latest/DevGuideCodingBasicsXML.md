@@ -1,23 +1,24 @@
-<p><a href="http://www.w3.org/XML/">Extensible Markup Language (XML)</a> is a data format commonly used in modern web applications. XML uses custom tags to describe
-data and is encoded as plain text, making it both flexible and easy to work with. The GWT class library contains a set of types designed for processing XML data.</p>
+XML
+===
 
-<ol class="toc" id="pageToc">
-  <li><a href="#types">XML types</a></li>
-  <li><a href="#parsing">Parsing XML</a></li>
-  <li><a href="#building">Building an XML document</a></li>
-</ol>
+[Extensible Markup Language (XML)](http://www.w3.org/XML/) is a data format commonly used in modern web applications. XML uses custom tags to describe
+data and is encoded as plain text, making it both flexible and easy to work with. The GWT class library contains a set of types designed for processing XML data.
 
-<h2 id="types">XML types</h2>
+1.  [XML types](#types)
+2.  [Parsing XML](#parsing)
+3.  [Building an XML document](#building)
 
-<p>The XML types provided by GWT can be found in the <a href="/javadoc/latest/com/google/gwt/xml/client/package-summary.html">com.google.gwt.xml.client</a> package. In order to use these in your application, you'll need to add the following <tt>&lt;inherits&gt;</tt> tag to your <a href="DevGuideOrganizingProjects.html#DevGuideModuleXml">module XML file</a>:</p>
+## XML types<a id="types"></a>
+
+The XML types provided by GWT can be found in the [com.google.gwt.xml.client](/javadoc/latest/com/google/gwt/xml/client/package-summary.html) package. In order to use these in your application, you'll need to add the following `&lt;inherits&gt;` tag to your [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml):
 
 <pre class="prettyprint">
 &lt;inherits name=&quot;com.google.gwt.xml.XML&quot; /&gt;
 </pre>
 
-<h2 id="parsing">Parsing XML</h2>
+## Parsing XML<a id="parsing"></a>
 
-<p>To demonstrate how to parse XML with GWT, we'll use the following XML document that contains an email message:</p>
+To demonstrate how to parse XML with GWT, we'll use the following XML document that contains an email message:
 
 <pre class="prettyprint">
 &lt;?xml version=&quot;1.0&quot; ?&gt;
@@ -32,8 +33,8 @@ data and is encoded as plain text, making it both flexible and easy to work with
 &lt;/message&gt;
 </pre>
 
-<p>Suppose that you're writing an email application and need to extract the name of the sender, the subject line, and the message body from the XML. Here is sample code that will
-do just that (we'll explain the code in just a bit):</p>
+Suppose that you're writing an email application and need to extract the name of the sender, the subject line, and the message body from the XML. Here is sample code that will
+do just that (we'll explain the code in just a bit):
 
 <pre class="prettyprint">
 private void parseMessage(String messageXml) {
@@ -61,55 +62,41 @@ private void parseMessage(String messageXml) {
 }
 </pre>
 
-<p>The first step is to parse the raw XML text into an <a href="http://www.w3schools.com/dom/default.asp">XML DOM</a> structure we can use to navigate the data.
-GWT's XML parser is contained in the <a href="/javadoc/latest/com/google/gwt/xml/client/XMLParser.html">XMLParser</a>
-class. Call its <a href="/javadoc/latest/com/google/gwt/xml/client/XMLParser.html#parse(java.lang.String)">parse(String)</a> static method to parse the XML and return a <a href="/javadoc/latest/com/google/gwt/xml/client/Document.html">Document</a> object. If an error occurs during parsing (for
-example, if the XML is not <a href="http://en.wikipedia.org/wiki/Well-formed_XML_document">well-formed</a>), the XMLParser will throw a <a href="/javadoc/latest/com/google/gwt/xml/client/DOMException.html">DOMException</a>.</p>
+The first step is to parse the raw XML text into an [XML DOM](http://www.w3schools.com/dom/default.asp) structure we can use to navigate the data.
+GWT's XML parser is contained in the [XMLParser](/javadoc/latest/com/google/gwt/xml/client/XMLParser.html)
+class. Call its [parse(String)](/javadoc/latest/com/google/gwt/xml/client/XMLParser.html#parse(java.lang.String)) static method to parse the XML and return a [Document](/javadoc/latest/com/google/gwt/xml/client/Document.html) object. If an error occurs during parsing (for
+example, if the XML is not [well-formed](http://en.wikipedia.org/wiki/Well-formed_XML_document)), the XMLParser will throw a [DOMException](/javadoc/latest/com/google/gwt/xml/client/DOMException.html).
 
-<p>If parsing succeeds, the Document object we receive represents the XML document in memory. It is a tree composed of generic <a href="/javadoc/latest/com/google/gwt/xml/client/Node.html">Node</a> objects. A node in the XML DOM is the basic unit of
-data in an XML document. GWT contains several subinterfaces of Node which provide specialized methods for processing the various types of nodes:</p>
+If parsing succeeds, the Document object we receive represents the XML document in memory. It is a tree composed of generic [Node](/javadoc/latest/com/google/gwt/xml/client/Node.html) objects. A node in the XML DOM is the basic unit of
+data in an XML document. GWT contains several subinterfaces of Node which provide specialized methods for processing the various types of nodes:
 
-<ul>
-<li><a href="/javadoc/latest/com/google/gwt/xml/client/Element.html">Element</a> - represents DOM elements, which are
-specified by tags in XML: <tt>&lt;someElement&gt;&lt;/someElement&gt;</tt>.</li>
-</ul>
+*   [Element](/javadoc/latest/com/google/gwt/xml/client/Element.html) - represents DOM elements, which are specified by tags in XML: `&lt;someElement&gt;&lt;/someElement&gt;`.
 
-<ul>
-<li><a href="/javadoc/latest/com/google/gwt/xml/client/Text.html">Text</a> - represents the text between the opening and
-closing tag of an element: <tt>&lt;someElement&gt;Here is some text.&lt;/someElement&gt;</tt>.</li>
-</ul>
+*   [Text](/javadoc/latest/com/google/gwt/xml/client/Text.html) - represents the text between the opening and closing tag of an element: `&lt;someElement&gt;Here is some text.&lt;/someElement&gt;`.
 
-<ul>
-<li><a href="/javadoc/latest/com/google/gwt/xml/client/Comment.html">Comment</a> - represents an XML comment: <tt>&lt;!--
-notes about this data --&gt;</tt>.</li>
-</ul>
+*   [Comment](/javadoc/latest/com/google/gwt/xml/client/Comment.html) - represents an XML comment: `&lt;!-- notes about this data --&gt;`.
 
-<ul>
-<li><a href="/javadoc/latest/com/google/gwt/xml/client/Attr.html">Attr</a> - represents an attribute of an element:
-<tt>&lt;someElement myAttribute=&quot;123&quot; /&gt;</tt>.</li>
-</ul>
+*   [Attr](/javadoc/latest/com/google/gwt/xml/client/Attr.html) - represents an attribute of an element: `&lt;someElement myAttribute=&quot;123&quot; /&gt;`.
 
-<p>Refer to the documentation for the <a href="/javadoc/latest/com/google/gwt/xml/client/Node.html">Node</a> interface for
-a complete list of types that derive from Node.</p>
+Refer to the documentation for the [Node](/javadoc/latest/com/google/gwt/xml/client/Node.html) interface for
+a complete list of types that derive from Node.
 
-<p>To get to the DOM nodes from the Document object, we can use one of three methods. The <a href="/javadoc/latest/com/google/gwt/xml/client/Document.html#getDocumentElement()">getDocumentElement()</a> method
-retrieves the <i>document element</i> (the top element at the root of the DOM tree) as an <a href="/javadoc/latest/com/google/gwt/xml/client/Element.html">Element</a>. We can then use the navigation methods of the <a href="/javadoc/latest/com/google/gwt/xml/client/Node.html">Node</a> class from which Element derives (e.g., <a href="/javadoc/latest/com/google/gwt/xml/client/Node.html#getChildNodes()">getChildNodes()</a>, <a href="/javadoc/latest/com/google/gwt/xml/client/Node.html#getNextSibling()">getNextSibling()</a>, <a href="/javadoc/latest/com/google/gwt/xml/client/Node.html#getParentNode()">getParentNode()</a>, etc.) to drill down and
-retrieve the data we need.</p>
+To get to the DOM nodes from the Document object, we can use one of three methods. The [getDocumentElement()](/javadoc/latest/com/google/gwt/xml/client/Document.html#getDocumentElement()) method
+retrieves the _document element_ (the top element at the root of the DOM tree) as an [Element](/javadoc/latest/com/google/gwt/xml/client/Element.html). We can then use the navigation methods of the [Node](/javadoc/latest/com/google/gwt/xml/client/Node.html) class from which Element derives (e.g., [getChildNodes()](/javadoc/latest/com/google/gwt/xml/client/Node.html#getChildNodes()), [getNextSibling()](/javadoc/latest/com/google/gwt/xml/client/Node.html#getNextSibling()), [getParentNode()](/javadoc/latest/com/google/gwt/xml/client/Node.html#getParentNode()), etc.) to drill down and
+retrieve the data we need.
 
-<p>We can also go directly to a particular node or list of nodes using the <a href="/javadoc/latest/com/google/gwt/xml/client/Document.html#getElementById(java.lang.String)">getElementById(String)</a>
-and <a href="/javadoc/latest/com/google/gwt/xml/client/Document.html#getElementsByTagName(java.lang.String)">getElementsByTagName(String)</a> methods. The getElementById(String) method will retrieve the Element with the specified ID. If you want to use ID's in your XML,
-you'll need to supply the name of the attribute to use as the ID in the <a href="http://www.w3schools.com/dtd/default.asp">DTD</a> of the XML document (just setting
-an attribute named <tt>id</tt> will not work). The getElementsByTagName(String) method is useful if you want to retrieve one or more elements with a particular tag name. The list
-of elements will be returned in the form of a <a href="/javadoc/latest/com/google/gwt/xml/client/NodeList.html">NodeList</a> object, which can be iterated over to get the individual Nodes it contains.</p>
+We can also go directly to a particular node or list of nodes using the [getElementById(String)](/javadoc/latest/com/google/gwt/xml/client/Document.html#getElementById(java.lang.String))
+and [getElementsByTagName(String)](/javadoc/latest/com/google/gwt/xml/client/Document.html#getElementsByTagName(java.lang.String)) methods. The getElementById(String) method will retrieve the Element with the specified ID. If you want to use ID's in your XML,
+you'll need to supply the name of the attribute to use as the ID in the [DTD](http://www.w3schools.com/dtd/default.asp) of the XML document (just setting
+an attribute named `id` will not work). The getElementsByTagName(String) method is useful if you want to retrieve one or more elements with a particular tag name. The list
+of elements will be returned in the form of a [NodeList](/javadoc/latest/com/google/gwt/xml/client/NodeList.html) object, which can be iterated over to get the individual Nodes it contains.
 
-<p>In the example code, we use the getElementsByTagName(String) method to retrieve the necessary elements from the XML containing the email message. The sender's name is stored as
-an attribute of the <tt>&lt;from&gt;</tt> tag, so we use <a href="/javadoc/latest/com/google/gwt/xml/client/Element.html#getAttribute(java.lang.String)">getAttribute(String)</a>. The
-subject line is stored as text inside the <tt>&lt;subject&gt;</tt> tag, so we first find the subject element, and then retrieve its first (and only) child node and call <a href="/javadoc/latest/com/google/gwt/xml/client/Node.html#getNodeValue()">getNodeValue()</a> on it to get the text.
-Finally, the message body is stored in the same way (text within the <tt>&lt;body&gt;</tt> tag), but this time we explicitly cast the <a href="/javadoc/latest/com/google/gwt/xml/client/Node.html">Node</a> to a <a href="/javadoc/latest/com/google/gwt/xml/client/Text.html">Text</a> object and extract the text using <a href="/javadoc/latest/com/google/gwt/xml/client/CharacterData.html#getData()">getData()</a>.</p>
+In the example code, we use the getElementsByTagName(String) method to retrieve the necessary elements from the XML containing the email message. The sender's name is stored as
+an attribute of the `&lt;from&gt;` tag, so we use [getAttribute(String)](/javadoc/latest/com/google/gwt/xml/client/Element.html#getAttribute(java.lang.String)). The
+subject line is stored as text inside the `&lt;subject&gt;` tag, so we first find the subject element, and then retrieve its first (and only) child node and call [getNodeValue()](/javadoc/latest/com/google/gwt/xml/client/Node.html#getNodeValue()) on it to get the text.
+Finally, the message body is stored in the same way (text within the `&lt;body&gt;` tag), but this time we explicitly cast the [Node](/javadoc/latest/com/google/gwt/xml/client/Node.html) to a [Text](/javadoc/latest/com/google/gwt/xml/client/Text.html) object and extract the text using [getData()](/javadoc/latest/com/google/gwt/xml/client/CharacterData.html#getData()).
 
-<h2 id="building">Building an XML document</h2>
+## Building an XML document<a id="building"></a>
 
-<p>In addition to parsing existing documents, the GWT XML types can also be used to create and modify XML. To create a new XML document, call the static <a href="/javadoc/latest/com/google/gwt/xml/client/XMLParser.html#createDocument()">createDocument()</a> method of the <a href="/javadoc/latest/com/google/gwt/xml/client/XMLParser.html">XMLParser</a> class. You can then use the methods of the
-resulting <a href="/javadoc/latest/com/google/gwt/xml/client/Document.html">Document</a> to <a href="/javadoc/latest/com/google/gwt/xml/client/Document.html#createElement(java.lang.String)">create elements</a>, <a href="/javadoc/latest/com/google/gwt/xml/client/Document.html#createTextNode(java.lang.String)">text nodes</a>, and other XML nodes. These nodes can be added to the DOM tree using the <a href="/javadoc/latest/com/google/gwt/xml/client/Node.html#appendChild(com.google.gwt.xml.client.Node)">appendChild(Node)</a> and <a href="/javadoc/latest/com/google/gwt/xml/client/Node.html#insertBefore(com.google.gwt.xml.client.Node,%20com.google.gwt.xml.client.Node)">insertBefore(Node, Node)</a> methods. <a href="/javadoc/latest/com/google/gwt/xml/client/Node.html">Node</a> also has methods for replacing and removing child nodes (<a href="/javadoc/latest/com/google/gwt/xml/client/Node.html#replaceChild(com.google.gwt.xml.client.Node,%20com.google.gwt.xml.client.Node)">replaceChild(Node, Node)</a> and <a href="/javadoc/latest/com/google/gwt/xml/client/Node.html#removeChild(com.google.gwt.xml.client.Node)">removeChild(Node)</a>, respectively).</p>
-
-
+In addition to parsing existing documents, the GWT XML types can also be used to create and modify XML. To create a new XML document, call the static [createDocument()](/javadoc/latest/com/google/gwt/xml/client/XMLParser.html#createDocument()) method of the [XMLParser](/javadoc/latest/com/google/gwt/xml/client/XMLParser.html) class. You can then use the methods of the
+resulting [Document](/javadoc/latest/com/google/gwt/xml/client/Document.html) to [create elements](/javadoc/latest/com/google/gwt/xml/client/Document.html#createElement(java.lang.String)), [text nodes](/javadoc/latest/com/google/gwt/xml/client/Document.html#createTextNode(java.lang.String)), and other XML nodes. These nodes can be added to the DOM tree using the [appendChild(Node)](/javadoc/latest/com/google/gwt/xml/client/Node.html#appendChild(com.google.gwt.xml.client.Node)) and [insertBefore(Node, Node)](/javadoc/latest/com/google/gwt/xml/client/Node.html#insertBefore(com.google.gwt.xml.client.Node,%20com.google.gwt.xml.client.Node)) methods. [Node](/javadoc/latest/com/google/gwt/xml/client/Node.html) also has methods for replacing and removing child nodes ([replaceChild(Node, Node)](/javadoc/latest/com/google/gwt/xml/client/Node.html#replaceChild(com.google.gwt.xml.client.Node,%20com.google.gwt.xml.client.Node)) and [removeChild(Node)](/javadoc/latest/com/google/gwt/xml/client/Node.html#removeChild(com.google.gwt.xml.client.Node)), respectively).

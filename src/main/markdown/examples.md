@@ -67,20 +67,22 @@
     }
 </style>
 
-<p>
+Examples
+==
+
 If you're like us, the first thing you want to do is see examples of what you can do with GWT.
 
-<ul>
-  <li><a href="#samples">Samples</a> are included in the SDK for you to play around with and build off of. A few are below. Some are from the <a href="//developers.google.com/appengine/">App Engine SDK</a> that use GWT for their front end.</li>
-  <li><a href="#real-world-projects">Real world projects</a> let you see the real power of GWT, with complex applications that developers are building.</li>
-</ul>
+*   [Samples](#samples) are included in the SDK for you to play around with and build off of. A few are below. Some are from the [App Engine SDK](//developers.google.com/appengine/) that use GWT for their front end.
+*   [Real world projects](#real-world-projects) let you see the real power of GWT, with complex applications that developers are building.
 
-<p>If you'd like to see who else is using GWT, check out the <a href="http://gwtgallery.appspot.com">GWT Gallery</a>. You'll be able to find other applications and libraries built with GWT, comment on them, rate them, and search for them by tag or by name. You can also <a href="http://gwtgallery.appspot.com/submit">submit your own entry</a> if you have a project that  you want to share.</p>
-<p>You can also find a wide variety of open source <a href="http://code.google.com/hosting/search?q=GWT&btn=Search+Projects"> projects related to GWT</a> hosted on Google Code.</p>
-<p>Please note that the applications linked from this page are provided by third-parties and are not endorsed by Google.</p>
-</p>
+If you'd like to see who else is using GWT, check out the [GWT Gallery](http://gwtgallery.appspot.com). You'll be able to find other applications and libraries built with GWT, comment on them, rate them, and search for them by tag or by name. You can also [submit your own entry](http://gwtgallery.appspot.com/submit) if you have a project that  you want to share.
 
-<h2 id="samples">Samples</h2>
+You can also find a wide variety of open source [projects related to GWT](http://code.google.com/hosting/search?q=GWT&btn=Search+Projects) hosted on Google Code.
+
+Please note that the applications linked from this page are provided by third-parties and are not endorsed by Google.
+
+## Samples<a id="samples"></a>
+
 <div class="section">
   <div class="example">
 
@@ -131,14 +133,14 @@ If you're like us, the first thing you want to do is see examples of what you ca
     </div>
 
     <br>
-    The source for these examples as well as others can be found in your GWT distribution under the <code>samples/</code> directory. If you haven't downloaded GWT yet, you can download it <a href="download.html">here</a>.
+    The source for these examples as well as others can be found in your GWT distribution under the `samples/` directory. If you haven't downloaded GWT yet, you can download it <a href="download.html">here</a>.
 
   </div>
 </div>
 
+## Real world projects<a id="real-world-projects"></a>
 
-<h2 id="real-world-projects">Real world projects</h2>
-<p>GWT is being used by tens of thousands of projects around the world. Take a look at just a few example of GWT in action:</p>
+GWT is being used by tens of thousands of projects around the world. Take a look at just a few example of GWT in action:
 
 <div class="project">
   <div class="screenshot">
@@ -164,11 +166,8 @@ unique multi-server control panel. Visit our <a href="developer_spotlight.html">
 developer on GoGrid, share how they used GWT to build GoGrid, what he
 likes and would like to see from GWT, and his tips and learnings from
 developing with GWT.</div>
-
   </div>
 </div>
-
-
 
 <div class="project">
   <div class="screenshot">
@@ -180,7 +179,6 @@ developing with GWT.</div>
 television and commercials. Visit our <a href="developer_spotlight.html">Developer Spotlight</a> to see Rob Powers, director of engineering, share
 how they used GWT to build scenechronize, what he likes and would like to
 see from GWT, and his tips and learnings from developing with GWT.</div>
-
   </div>
 </div>
 
@@ -195,7 +193,5 @@ is a social virtual world website which includes multi-player games.
 Visit our <a href="developer_spotlight.html">Developer Spotlight</a> to see Michael Bayne, CTO of Three Rings and lead engineer on Whirled, share
 how they used GWT to build Whirled, what he likes and would like to see
 from GWT, and his tips and learnings from developing with GWT.</div>
-
   </div>
 </div>
-

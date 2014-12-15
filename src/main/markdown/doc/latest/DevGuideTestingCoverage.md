@@ -1,31 +1,24 @@
-<p>
-For measuring code coverage, GWT supports <a href="http://emma.sourceforge.net/">EMMA</a>, a widely used code coverage tool for Java code. To be able to interact with other EMMA tools, GWT uses EMMA in offline mode &mdash; that is, GWT uses classes instrumented by EMMA over the classes it obtains by compiling the Java source files.</p>
+Testing Coverage
+===
 
-<p>
-We offer two ways of measuring code coverage: (i) using the EclEmma plugin in Eclipse and (ii) using command-line tools. For both techniques, use the <a href="http://google-web-toolkit.googlecode.com/files/emma-2.0.5312-patched.jar">EMMA jar from GWT's download page</a> &mdash; it includes a patch so that EMMA does not throw away the coverage data if the same class is loaded by different classloaders, as is common in GWT.
-</p>
+For measuring code coverage, GWT supports [EMMA](http://emma.sourceforge.net/), a widely used code coverage tool for Java code. To be able to interact with other EMMA tools, GWT uses EMMA in offline mode &mdash; that is, GWT uses classes instrumented by EMMA over the classes it obtains by compiling the Java source files.
 
-<ol class="toc" id="pageToc">
-  <li><a href="#example">Example</a></li>
-  <li><a href="#eclemma">Using EclEmma, the Eclipse plugin for EMMA</a></li>
-  <li><a href="#command-line">Using command-line tools</a></li>
-</ol>
+We offer two ways of measuring code coverage: (i) using the EclEmma plugin in Eclipse and (ii) using command-line tools. For both techniques, use the [EMMA jar from GWT's download page](http://google-web-toolkit.googlecode.com/files/emma-2.0.5312-patched.jar) &mdash; it includes a patch so that EMMA does not throw away the coverage data if the same class is loaded by different classloaders, as is common in GWT.
 
+1.  [Example](#example)
+2.  [Using EclEmma, the Eclipse plugin for EMMA](#eclemma)
+3.  [Using command-line tools](#command-line)
 
-<h2 id="example">Example</h2>
+## Example<a id="example"></a>
 
-<p>
-As a running example, let us say we create a project with the provided <tt>webAppCreator</tt> and <tt>junitCreator</tt> tools as:
-</p>
+As a running example, let us say we create a project with the provided `webAppCreator` and `junitCreator` tools as:
 
 <pre>./webAppCreator -out myapp  
                      -junit ../../../../gwt-tools/lib/junit/junit-3.8.1.jar 
                      com.example.myapp.MyApp
 </pre>
 
-<p>
-Add the following <tt>computeFactorial()</tt> method to MyApp.java and the dummy <tt>testFactorial()</tt> method to MyAppTest.java
-</p>
+Add the following `computeFactorial()` method to MyApp.java and the dummy `testFactorial()` method to MyAppTest.java
 
 <pre>int computeFactorial(int number) {
   if (number &le; 1) {
@@ -37,98 +30,60 @@ Add the following <tt>computeFactorial()</tt> method to MyApp.java and the dummy
 <pre>public void testFactorial() {
 }</pre>
 
-<p>
 This example is used in the following sections.
-</p>
 
-<h2 id="eclemma">Using EclEmma, the Eclipse plugin for EMMA</h2>
+## Using EclEmma, the Eclipse plugin for EMMA<a id="eclemma"></a>
 
-<h3 id="install">Step 1: Install patched version of EclEmma &mdash; the Eclipse plugin</h3>
+### Step 1: Install patched version of EclEmma &mdash; the Eclipse plugin<a id="install"></a>
 
-<ol>
-  <li>Follow instructions at <a href="http://www.eclemma.org/installation.html">http://www.eclemma.org/installation.html</a> to install EclEmma.</li>
+1.  Follow instructions at [http://www.eclemma.org/installation.html](http://www.eclemma.org/installation.html) to install EclEmma.
 
- <li>Find com.mountainminds.eclemma.core_<version>.jar (say,
-com.mountainminds.eclemma.core_1.3.2.jar) in your eclipse plugins directory.
+Confirm that there is a "Coverage" block  in the **Run** menu. 
 
- <li>Download the latest <a href="http://google-web-toolkit.googlecode.com/files/emma-2.0.5312-patched.jar">EMMA jar from GWT's download page</a>. Rename the downloaded file to emma.jar
+### Step 2: Create a "Run configuration" for running the tests in development mode<a id="configuration"></a>
 
- <li>Update the com.mountainminds.eclemma.core_<version>.jar with the new emma.jar. For example, <tt>jar uf ../plugins/com.mountainminds.eclemma.core_1.3.2.jar emma.jar</tt>
- 
- <li> Restart eclipse.
-</ol>
+Follow instructions for [running tests in Eclipse](DevGuideTesting.html#DevGuideRunningTestsInEclipse)
 
-<p>
-Confirm that there is a "Coverage" block  in the <b>Run</b> menu. 
-</p>
+### Step 3: Get initial coverage data<a id="initial"></a>
 
-<h3 id="configuration">Step 2: Create a "Run configuration" for running the tests in development mode</h3>
-<p>Follow instructions for <a href="DevGuideTesting.html#DevGuideRunningTestsInEclipse">running tests in Eclipse</a>
+To get coverage data, select the configuration from the Coverage tab and click "coverage."  In the screenshot below of the Eclipse window, you can see that the `src` folder has zero coverage (0 covered instructions of 195 instructions) whereas the test folder has 100% coverage (9 covered instructions). When you run it, your numbers might be different because we keep updating the starter application generated by webAppCreator. Note that these instructions are bytecode instructions; EclEmma maps them back to Java source code wherever possible. EclEmma highlights lines with colors:
 
-<h3 id="initial">Step 3: Get initial coverage data</h3>
+*   covered lines = green
+*   partially covered lines = yellow
+*   lines with no coverage = red
 
-<p>
-To get coverage data, select the configuration from the Coverage tab and click "coverage."  In the screenshot below of the Eclipse window, you can see that the <tt>src</tt> folder has zero coverage (0 covered instructions of 195 instructions) whereas the test folder has 100% coverage (9 covered instructions). When you run it, your numbers might be different because we keep updating the starter application generated by webAppCreator. Note that these instructions are bytecode instructions; EclEmma maps them back to Java source code wherever possible. EclEmma highlights lines with colors:
-</p>
-
-<ul>
-  <li>covered lines = green</li>
-  <li>partially covered lines = yellow</li>
-  <li>lines with no coverage = red</li>
-</ul>
-
-<p>
 This result is expected because, by default, the MyAppTest.java file does not exercise any of the application code. It has a simple test that returns true.
-</p>
 
-<p>
-<img src="images/TestCoverageInitial.jpg" style="border: 1pt solid;" title="Initial test coverage">
-</p>
+![img](images/TestCoverageInitial.jpg "Initial test coverage")
 
-<h3 id="improving">Step 4: Improving coverage</h3>
+### Step 4: Improving coverage<a id="improving"></a>
 
-<p>
 Augment the MyAppTest.java by creating the testFactorial method:
-</p>
 
 <pre>public void testFactorial() {
   assertEquals(1, new MyApp().computeFactorial(0));
 }</pre>
 
-<p>
-On running coverage, now we see that out of 13 instructions in the method <tt>computeFactorial</tt> (the figure below shows the total instructions in the <tt>computeFactorial</tt> method), 5 instructions are covered. (Note that these instructions are bytecode instructions.) Let us add another statement to testFactorial() for testing the factorial computation for numbers greater than <tt>0</tt> such that the method becomes:
-</p>
+On running coverage, now we see that out of 13 instructions in the method `computeFactorial` (the figure below shows the total instructions in the `computeFactorial` method), 5 instructions are covered. (Note that these instructions are bytecode instructions.) Let us add another statement to testFactorial() for testing the factorial computation for numbers greater than `0` such that the method becomes:
 
 <pre>public void testFactorial() {
   assertEquals(1, new MyApp().computeFactorial(0));
   assertEquals(2, new MyApp().computeFactorial(2));
 }</pre>
  
-<p>
-On running coverage, now we see that coverage for the <tt>computeFactorial()</tt> method is indeed 100% as expected. The following screenshot of the Eclipse window shows the final coverage information. You can drill down on the individual class and methods to find the coverage information at the desired granularity. You can also export the coverage data to html or xml formats to keep track of your code coverage over time. 
-</p>
+On running coverage, now we see that coverage for the `computeFactorial()` method is indeed 100% as expected. The following screenshot of the Eclipse window shows the final coverage information. You can drill down on the individual class and methods to find the coverage information at the desired granularity. You can also export the coverage data to html or xml formats to keep track of your code coverage over time.
 
-<p>
-<img src="images/TestCoverageFinal.jpg" style="border: 1pt solid;" title="Final test coverage">
-</p>
+![img](images/TestCoverageFinal.jpg "Final test coverage")
 
+## Using command-line tools<a id="command-line"></a>
 
-<h2 id="command-line">Using command-line tools</h2>
+Since GWT requires a patched version of EMMA, use the [EMMA jar from GWT's download page](http://google-web-toolkit.googlecode.com/files/emma-2.0.5312-patched.jar). Getting coverage results requires these steps:
 
-<p>
-Since GWT requires a patched version of EMMA, use the <a href="http://google-web-toolkit.googlecode.com/files/emma-2.0.5312-patched.jar">EMMA jar from GWT's download page</a>. Getting coverage results requires these steps:
-</p>
+1.  Step i - Generate the class files
+2.  Step ii - Instrument the class files using Emma &mdash; this produces a coverage.em file
+3.  Step iii - Run the test code after putting the modified emma.jar in the classpath
 
-<ol style="list-style-type: none;">
-  <li>Step i - Generate the class files</li>
-  <li>Step ii - Instrument the class files using Emma &mdash; this produces a coverage.em file</li>
-  <li>Step iii - Run the test code after putting the modified emma.jar in the classpath</li>
-  <li>Step iv - Produce the EMMA coverage report
-</ol>
-
-<p>
 (The yellow text is the output of the tool. For convenience, we copied the patched EMMA jar as emma.jar in the current directory.)
-</p>
 
 <pre><strong>cd myapp </strong>
 
@@ -159,6 +114,4 @@ EMMA: runtime coverage data merged into [PARENT_DIR/samples/com/example/myapp/co
 EMMA: 2 file(s) read and merged in 13 ms
 EMMA: writing [html] report to [PARENT_DIR/samples/com/example/myapp/coverage/index.html] ...</span></pre>
 
-<p>
-Follow <a href="#improving">Step 4</a> of the EclEmma section to improve coverage. As you add more tests, you can see your coverage increasing.
-</p>
+Follow [Step 4](#improving) of the EclEmma section to improve coverage. As you add more tests, you can see your coverage increasing.
