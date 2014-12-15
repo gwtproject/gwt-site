@@ -263,6 +263,33 @@ public MyUtilityClass
 <p>On application initialization, call <tt>MyUtilityClass.exportStaticMethod()</tt> (e.g. from your GWT Entry Point). This will assign the function to a variable in the window
 object called <tt>computeLoanInterest</tt>.</p>
 
+If you want to export an instance method, and correctly use it from JS, then you need to do something like:
+
+<pre class="prettyprint">
+package mypackage;
+
+public class Account {
+    private int balance = 0;
+    public int add(int amt) {
+      balance += amt;
+    }
+
+    public native void exportAdd() /*-{
+        var that = this;
+        $wnd.add = $entry(function(amt) {
+          that.@mypackage.Account::add(I)(amt);
+        });
+    }-*/;
+}
+</pre>
+
+Then you can call it in JS using
+
+<pre class="prettyprint">
+$wnd.add(5);
+</pre>
+
+The above code might look strange for Java developers but is needed because `this` in JavaScript can act differently than `this` in Java. If you are interested, a good introduction to `this` in JavaScript can be found [here](https://justin.harmonize.fm/development/2009/09/26/an-introduction-to-javascripts-this.html) or [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this).
 
 <h2 id="sharing">Sharing objects between Java source and JavaScript</h2>
 
@@ -430,5 +457,3 @@ JavaScript code and Java exceptions in Java code.</p>
 
 <p>The exception thrown from <tt>fooImpl()</tt> will propagate through <tt>nativeFoo()</tt> and can be caught in <tt>doFoo()</tt>. The exception will retain its type and
 identity.</p>
-
-
