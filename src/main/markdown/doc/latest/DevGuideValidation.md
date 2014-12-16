@@ -14,18 +14,18 @@ and valid. This validation can be done in several ways, including manually inser
 received, but this process can be tedious and difficult to maintain.
 
 To make data validation simpler, GWT supports [JSR-303 Bean Validation](http://jcp.org/en/jsr/detail?id=303),
-which provides a framework for specifying &quot;constraints&quot; that define what data is valid or allowed for your
+which provides a framework for specifying "constraints" that define what data is valid or allowed for your
 application.
 
 For example, by specifying the following annotations on your class:
 
-<pre class="prettyprint">
+```
 public class Person implements Serializable {
   @NotNull
-  @Size(min = 4, message = &quot;Name must be at least 4 characters long.&quot;)
+  @Size(min = 4, message = "Name must be at least 4 characters long.")
   private String name;
 }
-</pre>
+```
 
 You can ensure these conditions are met, as well as generate meaningful errors when they are not:
 
@@ -58,11 +58,11 @@ GWT validation is done by annotating beans, getters, and properties with constra
 [JSR-303 specification](http://jcp.org/en/jsr/detail?id=303) for more information on how to define and use
 constraints.
 
-<pre class="prettyprint">
+```
 public class Person {
   @Size(min = 4)
   private String name;
-</pre>
+```
 
 ### Creating a Validator Factory
 
@@ -74,7 +74,7 @@ Luckily, you do not need to implement the validator yourself because GWT can gen
 a validator simply define an interface which extends `Validator` and contains a `@GwtValidation` annotation.
 This annotation requires you to list all classes that will be validated on the client side.
 
-<pre class="prettyprint">
+```
 public final class SampleValidatorFactory extends AbstractGwtValidatorFactory {
 
   /**
@@ -90,54 +90,54 @@ public final class SampleValidatorFactory extends AbstractGwtValidatorFactory {
     return GWT.create(GwtValidator.class);
   }
 }
-</pre>
+```
 
 Lastly, we must tell GWT to use deferred binding to generate our validator object, adding the following snippet
 to your `module.gwt.xml`.
 
-<pre class="prettyprint">
-&lt;inherits name=&quot;org.hibernate.validator.HibernateValidator&quot; /&gt;
-&lt;replace-with
-  class=&quot;com.google.gwt.sample.validation.client.SampleValidatorFactory&quot;&gt;
-  &lt;when-type-is class=&quot;javax.validation.ValidatorFactory&quot; /&gt;
-&lt;/replace-with&gt;
-</pre>
+```
+<inherits name="org.hibernate.validator.HibernateValidator" />
+<replace-with
+  class="com.google.gwt.sample.validation.client.SampleValidatorFactory">
+  <when-type-is class="javax.validation.ValidatorFactory" />
+</replace-with>
+```
 
 ### Validating Constraints
 
 Use the standard validation bootstrap with the default factory to get the generated `Validator` for your objects.
 You may use this validator to validate an entire bean object or just specific properties of a bean.
 
-<pre class="prettyprint">
+```
 Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
-Set&lt;ConstraintViolation&lt;Person&gt;&gt; violations = validator.validate(person);
-</pre>
+Set<ConstraintViolation<Person>> violations = validator.validate(person);
+```
 
 ### Validation Groups
 
-You may also put constraints on your objects into &quot;validation groups,&quot; and then perform the validation only
+You may also put constraints on your objects into "validation groups," and then perform the validation only
 on certain subsets of constraints.
 
 All constraints are automatically a part of the `Default` group unless you specify otherwise. Creating a new group
 is as simple as making an empty interface:
 
-<pre class="prettyprint">
+```
 /** Validates a minimal set of constraints */
 public interface Minimal { }
-</pre>
+```
 
 If you are using any validation groups other than `Default` in client code, it is important that you list them in
-the &quot;groups&quot; parameter of the `@GwtValidation` annotation.
+the "groups" parameter of the `@GwtValidation` annotation.
 
-<pre class="prettyprint">
+```
 @GwtValidation(value = Person.class, groups = {Default.class, Minimal.class})
 public interface GwtValidator extends Validator {
 }
-</pre>
+```
 
-After that, you can specify this group in the &quot;groups&quot; parameter of any constraint:
+After that, you can specify this group in the "groups" parameter of any constraint:
 
-<pre class="prettyprint">
+```
 public class Address {
   @NotEmpty(groups = Minimal.class)
   @Size(max=50)
@@ -150,22 +150,22 @@ public class Address {
   private String zipCode;
   ...
 }
-</pre>
+```
 
 From here you can validate an `Address` object using the `Default` group, which contains three constraints
-(`@Size` on &quot;street&quot;, `@NotEmpty` on &quot;city&quot;, and `@NotEmpty` on &quot;zipCode&quot;):
+(`@Size` on "street", `@NotEmpty` on "city", and `@NotEmpty` on "zipCode"):
 
-<pre class="prettyprint">
+```
 Address address = new Address();
 validator.validate(address);
-</pre>
+```
 
-Or validate using the `Minimal` group, which contains `@NotEmpty` on &quot;street&quot; and `@NotEmpty` on
-&quot;zipCode&quot;:
+Or validate using the `Minimal` group, which contains `@NotEmpty` on "street" and `@NotEmpty` on
+"zipCode":
 
-<pre class="prettyprint">
+```
 validator.validate(address, Minimal.class);
-</pre>
+```
 
 ## Best Practices<a id="BestPractices"></a>
 
@@ -173,7 +173,7 @@ Validation groups can be used to specify what constraints to run on the client a
 server-side constraints which do not work with GWT&mdash;just be sure to omit any server-side-only groups from your validator
 factory's `@GwtValidation` annotation to avoid compilation issues.
 
-<pre class="prettyprint">
+```
 @ServerConstraint(groups = ServerGroup.class)
 public class Person {
   @NotNull(groups = ClientGroup.class)
@@ -182,12 +182,12 @@ public class Person {
 
 Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 // validate on the client
-Set&lt;ConstraintViolation&lt;Person&gt;&gt; violations = validator.validate(person, Default.class, ClientGroup.class);
+Set<ConstraintViolation<Person>> violations = validator.validate(person, Default.class, ClientGroup.class);
 if (!violations.isEmpty()) {
   // client-side violation(s) occurred
 } else {
   // client-side validation passed so check server-side
-  greetingService.serverSideValidate(person, new AsyncCallback&lt;SafeHtml&gt;() {
+  greetingService.serverSideValidate(person, new AsyncCallback<SafeHtml>() {
     @Override
     public void onFailure(Throwable caught) {
       if (caught instanceof ConstraintViolationException) {
@@ -201,7 +201,7 @@ if (!violations.isEmpty()) {
     }
   }
 }
-</pre>
+```
 
 ## Unsupported Features<a id="Unsupported></a>
 

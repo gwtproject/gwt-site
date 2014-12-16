@@ -8,9 +8,7 @@ In this section, you'll review the functional requirements and design the user i
 1.  [Examine the functional requirements.](#requirements)
 2.  [Identify the elements of the UI design.](#elements)
 
-<a name="requirements"></a>
-
-##  Examining the functional requirements
+##  Examining the functional requirements <a id="requirements"></a>
 
 Initially you want the StockWatcher application to do six things.
 
@@ -21,9 +19,8 @@ Initially you want the StockWatcher application to do six things.
 *   Calculate the change since the last refresh as both a number and a percentage.
 *   Display a timestamp indicating the last update.
 
-<a name="elements"></a>
 
-##  Identifying the elements of the UI design
+##  Identifying the elements of the UI design <a id="elements"></a>
 
 ![StockWatcher completed](images/DesignStockWatcherFinal.png)
 

@@ -32,4 +32,4 @@ define the system property `gwt.args`, as explained before. For example,
 to cause tests to run both in FF3 and IE8 emulation mode, set
 [`gwt.args`](DevGuideTesting.html#passingTestArguments) to:
 
-<pre>-runStyle HtmlUnit:FF3,IE6</pre>
+`-runStyle HtmlUnit:FF3,IE6`

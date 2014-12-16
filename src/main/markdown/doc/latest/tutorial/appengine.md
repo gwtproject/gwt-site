@@ -34,123 +34,140 @@ If you initially created your StockWatcher Eclipse project using the Google Plug
 1.  If you haven't yet, install the [Google Plugin for Eclipse](//developers.google.com/appengine/docs/java/tools/eclipse) with both GWT and App Engine SDK and restart Eclipse.
 2.  Complete the [Build a Sample GWT Application](gettingstarted.html) tutorial, making sure to create a project with both GWT and Google App Engine enabled.  Alternatively, if you would like to skip the Build a Sample GWT Application tutorial, then [download](http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-GettingStartedAppEngine-2.1.zip), unzip and import the StockWatcher Eclipse project.  To import the project:
 
-1.  In the File menu, select the Import... menu option.
-2.  Select the import source General &gt; Existing Projects into Workspace.  Click the Next button.
-3.  At "Select root directory", browse to and select the StockWatcher directory (from the unzipped file).  Click the Finish button.
-4.  Add the Google Web Toolkit and App Engine functionality to your newly created project (right-click on your project > Google > Web Toolkit / App Engine Settings...). This will add Google Plugin functionality to your project as well as copy required libraries to your project `WEB-INF/lib` directory automatically.
+    1.  In the File menu, select the Import... menu option.
+    2.  Select the import source General > Existing Projects into Workspace.  Click the Next button.
+    3.  At "Select root directory", browse to and select the StockWatcher directory (from the unzipped file).  Click the Finish button.
+    4.  Add the Google Web Toolkit and App Engine functionality to your newly created project (right-click on your project > Google > Web Toolkit / App Engine Settings...). This will add Google Plugin functionality to your project as well as copy required libraries to your project `WEB-INF/lib` directory automatically.
 
 #### Set up a project (without Eclipse)
 
 1.  If you haven't yet, download the [App Engine SDK](//developers.google.com/appengine/downloads) for Java.
 2.  Complete the [Build a Sample GWT Application](gettingstarted.html) tutorial,  using webAppCreator to create a GWT application.  Alternatively, If you would like to skip the Build a Sample GWT Application tutorial, then download and unzip [this file](http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-GettingStarted-2.1.zip).  Edit the gwt.sdk property in the StockWatcher/build.xml, then proceed with the modifications below.
 3.  App Engine requires its own web application deployment descriptor.  Create a file StockWatcher/war/WEB-INF/appengine-web.xml with these contents:
-<pre class="code">
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;appengine-web-app xmlns="http://appengine.google.com/ns/1.0"&gt;
-  &lt;application&gt;<span class="highlight">&lt;!-- Your App Engine application ID goes here --&gt;</span>&lt;/application&gt;
-  &lt;version&gt;1&lt;/version&gt;
-&lt;/appengine-web-app&gt;
-</pre>
-Substitute your App Engine application ID on the second line.  Read more about [appengine-web.xml](//developers.google.com/appengine/docs/java/config/appconfig).
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+    <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+        <application><!-- Your App Engine application ID goes here --></application>
+        <version>1</version>
+    </appengine-web-app>
+```
+
+Substitute your App Engine application ID on the second line.  Read more about
+[appengine-web.xml](//developers.google.com/appengine/docs/java/config/appconfig).
+
 4.  As we will be using [Java Data Objects (JDO)](//developers.google.com/appengine/docs/java/gettingstarted/usingdatastore) later for storing data, create a file StockWatcher/src/META-INF/jdoconfig.xml with these contents:
-<pre class="code">
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;jdoconfig xmlns="http://java.sun.com/xml/ns/jdo/jdoconfig"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="http://java.sun.com/xml/ns/jdo/jdoconfig"&gt;
-  &lt;persistence-manager-factory name="<span class="highlight">transactions-optional</span>"&gt;
-    &lt;property name="javax.jdo.PersistenceManagerFactoryClass" value="org.datanucleus.store.appengine.jdo.DatastoreJDOPersistenceManagerFactory"/&gt;
-    &lt;property name="javax.jdo.option.ConnectionURL" value="appengine"/&gt;
-    &lt;property name="javax.jdo.option.NontransactionalRead" value="true"/&gt;
-    &lt;property name="javax.jdo.option.NontransactionalWrite" value="true"/&gt;
-    &lt;property name="javax.jdo.option.RetainValues" value="true"/&gt;
-    &lt;property name="datanucleus.appengine.autoCreateDatastoreTxns" value="true"/&gt;
-  &lt;/persistence-manager-factory&gt;
-&lt;/jdoconfig&gt;
-</pre>
-You will refrence this configuration later by its name "transactions-optional".  Read more about [jdoconfig.xml](//developers.google.com/appengine/docs/java/datastore/usingjdo).
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+    <jdoconfig xmlns="http://java.sun.com/xml/ns/jdo/jdoconfig"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="http://java.sun.com/xml/ns/jdo/jdoconfig">
+      <persistence-manager-factory name="transactions-optional">
+        <property name="javax.jdo.PersistenceManagerFactoryClass" value="org.datanucleus.store.appengine.jdo.DatastoreJDOPersistenceManagerFactory"/>
+        <property name="javax.jdo.option.ConnectionURL" value="appengine"/>
+        <property name="javax.jdo.option.NontransactionalRead" value="true"/>
+        <property name="javax.jdo.option.NontransactionalWrite" value="true"/>
+        <property name="javax.jdo.option.RetainValues" value="true"/>
+        <property name="datanucleus.appengine.autoCreateDatastoreTxns" value="true"/>
+      </persistence-manager-factory>
+    </jdoconfig>
+```
+
+You will reference this configuration later by its name "transactions-optional".  Read more
+    about [jdoconfig.xml](//developers.google.com/appengine/docs/java/datastore/usingjdo).
+
 5.  The GWT ant build file needs to be modified to support DataNucleus JDO compilation and use of the App Engine development server.  Edit StockWatcher/build.xml and add the following:
 
-1.  Add a property for the App Engine SDK directory.
-<pre class="code">
-  &lt;!-- Configure path to GWT SDK --&gt;
-  &lt;property name="gwt.sdk" location="_Path to GWT_" /&gt;
-<span class="highlight">  &lt;!-- Configure path to App Engine SDK --&gt;
-  &lt;property name="appengine.sdk" location="_Path to App Engine SDK_" /&gt;</span>
-</pre>
-2.  Add a property for a App Engine tools class path.
-<pre class="code">
-  &lt;path id="project.class.path"&gt;
-    &lt;pathelement location="war/WEB-INF/classes"/&gt;
-    &lt;pathelement location="${gwt.sdk}/gwt-user.jar"/&gt;
-    &lt;fileset dir="${gwt.sdk}" includes="gwt-dev*.jar"/&gt;
-    &lt;!-- Add any additional non-server libs (such as JUnit) --&gt;
-    &lt;fileset dir="war/WEB-INF/lib" includes="**/*.jar"/&gt;
-  &lt;/path&gt;
+6.  Add a property for the App Engine SDK directory.
 
-        <span class="highlight">  &lt;path id="tools.class.path"&gt;
-    &lt;path refid="project.class.path"/&gt;
-    &lt;pathelement location="${appengine.sdk}/lib/appengine-tools-api.jar"/&gt;
-    &lt;fileset dir="${appengine.sdk}/lib/tools"&gt;
-      &lt;include name="**/asm-*.jar"/&gt;
-      &lt;include name="**/datanucleus-enhancer-*.jar"/&gt;
-    &lt;/fileset&gt;
-  &lt;/path&gt;</span>
-</pre>
-3.  Modify the "libs" ant target so that the required jar files are copied to WEB-INF/lib.
-<pre class="code">
-  &lt;target name="libs" description="Copy libs to WEB-INF/lib"&gt;
-    &lt;mkdir dir="war/WEB-INF/lib" /&gt;
-    &lt;copy todir="war/WEB-INF/lib" file="${gwt.sdk}/gwt-servlet.jar" /&gt;
-    &lt;!-- Add any additional server libs that need to be copied --&gt;
-<span class="highlight">    &lt;copy todir="war/WEB-INF/lib" flatten="true"&gt;
-      &lt;fileset dir="${appengine.sdk}/lib/user" includes="**/*.jar"/&gt;
-    &lt;/copy&gt;</span>
-  &lt;/target&gt;
-</pre>
-4.  JDO is implemented with DataNucleus Java byte-code enhancement.  Modify the "javac" ant target to add byte-code enhancement.
-<pre class="code">
-  &lt;target name="javac" depends="libs" description="Compile java source"&gt;
-    &lt;mkdir dir="war/WEB-INF/classes"/&gt;
-    &lt;javac srcdir="src" includes="**" encoding="utf-8"
-        destdir="war/WEB-INF/classes"
-        source="1.5" target="1.5" nowarn="true"
-        debug="true" debuglevel="lines,vars,source"&gt;
-      &lt;classpath refid="project.class.path"/&gt;
-    &lt;/javac&gt;
-    &lt;copy todir="war/WEB-INF/classes"&gt;
-      &lt;fileset dir="src" excludes="**/*.java"/&gt;
-    &lt;/copy&gt;
-<span class="highlight">    &lt;taskdef
-       name="datanucleusenhancer"
-       classpathref="tools.class.path"
-       classname="org.datanucleus.enhancer.tools.EnhancerTask" /&gt;
-    &lt;datanucleusenhancer
-       classpathref="tools.class.path"
-       failonerror="true"&gt;
-      &lt;fileset dir="war/WEB-INF/classes" includes="**/*.class" /&gt;
-    &lt;/datanucleusenhancer&gt;</span>
-  &lt;/target&gt;
-</pre>
-5.  Modify the "devmode" ant target to use the App Engine development server instead of the servlet container which comes with GWT.
-<pre class="code">
-  &lt;target name="devmode" depends="javac" description="Run development mode""&gt;
-    &lt;java failonerror="true" fork="true" classname="com.google.gwt.dev.DevMode""&gt;
-      &lt;classpath&gt;
-        &lt;pathelement location="src"/&gt;
-        &lt;path refid="project.class.path"/&gt;
-<span class="highlight">        &lt;path refid="tools.class.path"/&gt;</span>
-      &lt;/classpath&gt;
-      &lt;jvmarg value="-Xmx256M"/&gt;
-      &lt;arg value="-startupUrl"/&gt;
-      &lt;arg value="StockWatcher.html"/&gt;
-      &lt;!-- Additional arguments like -style PRETTY or -logLevel DEBUG --&gt;
-<span class="highlight">      &lt;arg value="-server"/&gt;
-      &lt;arg value="com.google.appengine.tools.development.gwt.AppEngineLauncher"/&gt;</span>
-      &lt;arg value="com.google.gwt.sample.stockwatcher.StockWatcher"/&gt;
-    &lt;/java&gt;
-  &lt;/target&gt;
-</pre>
+```
+<!-- Configure path to GWT SDK -->
+    <property name="gwt.sdk" location="_Path to GWT_" />
+    <!-- Configure path to App Engine SDK -->
+    <property name="appengine.sdk" location="_Path to App Engine SDK_" />
+```
+
+7.  Add a property for a App Engine tools class path.
+
+        <path id="project.class.path">
+        <pathelement location="war/WEB-INF/classes"/>
+        <pathelement location="${gwt.sdk}/gwt-user.jar"/>
+        <fileset dir="${gwt.sdk}" includes="gwt-dev*.jar"/>
+        <!-- Add any additional non-server libs (such as JUnit) -->
+        <fileset dir="war/WEB-INF/lib" includes="**/*.jar"/>
+        </path>
+
+        <path id="tools.class.path">
+        <path refid="project.class.path"/>
+        <pathelement location="${appengine.sdk}/lib/appengine-tools-api.jar"/>
+        <fileset dir="${appengine.sdk}/lib/tools">
+          <include name="**/asm-*.jar"/>
+          <include name="**/datanucleus-enhancer-*.jar"/>
+        </fileset>
+        </path>
+
+8.  Modify the "libs" ant target so that the required jar files are copied to WEB-INF/lib.
+
+```
+<target name="libs" description="Copy libs to WEB-INF/lib">
+        <mkdir dir="war/WEB-INF/lib" />
+        <copy todir="war/WEB-INF/lib" file="${gwt.sdk}/gwt-servlet.jar" />
+        <!-- Add any additional server libs that need to be copied -->
+        <copy todir="war/WEB-INF/lib" flatten="true">
+          <fileset dir="${appengine.sdk}/lib/user" includes="**/*.jar"/>
+        </copy>
+      </target>
+```
+
+9.  JDO is implemented with DataNucleus Java byte-code enhancement.  Modify the "javac" ant
+target to add byte-code enhancement.
+
+```
+<target name="javac" depends="libs" description="Compile java source">
+        <mkdir dir="war/WEB-INF/classes"/>
+        <javac srcdir="src" includes="**" encoding="utf-8"
+            destdir="war/WEB-INF/classes"
+            source="1.5" target="1.5" nowarn="true"
+            debug="true" debuglevel="lines,vars,source">
+          <classpath refid="project.class.path"/>
+        </javac>
+        <copy todir="war/WEB-INF/classes">
+          <fileset dir="src" excludes="**/*.java"/>
+        </copy>
+        <taskdef
+           name="datanucleusenhancer"
+           classpathref="tools.class.path"
+           classname="org.datanucleus.enhancer.tools.EnhancerTask" />
+        <datanucleusenhancer
+           classpathref="tools.class.path"
+           failonerror="true">
+          <fileset dir="war/WEB-INF/classes" includes="**/*.class" />
+        </datanucleusenhancer>
+      </target>
+```
+
+10.  Modify the "devmode" ant target to use the App Engine development server instead of the
+servlet container which comes with GWT.
+
+```
+<target name="devmode" depends="javac" description="Run development mode"">
+        <java failonerror="true" fork="true" classname="com.google.gwt.dev.DevMode"">
+          <classpath>
+            <pathelement location="src"/>
+            <path refid="project.class.path"/>
+            <path refid="tools.class.path"/>
+          </classpath>
+          <jvmarg value="-Xmx256M"/>
+          <arg value="-startupUrl"/>
+          <arg value="StockWatcher.html"/>
+          <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+          <arg value="-server"/>
+          <arg value="com.google.appengine.tools.development.gwt.AppEngineLauncher"/>
+          <arg value="com.google.gwt.sample.stockwatcher.StockWatcher"/>
+        </java>
+      </target>
+```
 
 ### Test locally
 
@@ -164,7 +181,11 @@ We will run the application in GWT development mode to verify the project was se
 #### Run the application in development mode (without Eclipse)
 
 1.  From the command-line, change to the StockWatcher directory.
-2.  Execute: <pre class="code">ant devmode</pre>
+2.  Execute:
+
+```
+ant devmode
+```
 
 ## Deploy the application to App Engine <a id="deploy"></a>
 
@@ -182,11 +203,17 @@ Now that we've verified the StockWatcher project is running locally in GWT devel
 1.  From the command-line, change to the StockWatcher directory.
 2.  Compile the application by executing:
 
-<pre class="code">ant build</pre>
+```
+ant build
+```
 
 **Tip:** Add the ant bin directory to your environment PATH to avoid having to specify the full path to ant.
 
-3.  appcfg is a command-line tool which comes with the App Engine SDKs.  Upload the application by executing: <pre class="code">appcfg.sh update war</pre>
+3.  appcfg is a command-line tool which comes with the App Engine SDKs.  Upload the application by executing:
+
+```
+appcfg.sh update war
+```
 
 From the Windows command prompt, the command is `appcfg update war`.  The first parameter is the action to perform.  The second parameter is the directory with the update, which in this case is a relative directory containing the static files and output from the GWT compiler.  Enter your Google Accounts email and password when prompted.
 
@@ -205,14 +232,18 @@ Now that the StockWatcher is deployed on App Engine, we can start using some of 
 To implement login functionality we'll use the User Serivce. With this service in place, any user with a Google Account will be able to login using their account to access the StockWatcher application. In this section, you'll use the App Engine User API to add user login to the application.
 
 The App Engine User Service is very easy to use. First, you need to instantiate the UserService class, as shown in the code snippet below:
-<pre class="code">
-      UserService userService = UserServiceFactory.getUserService();
-</pre>
+
+```
+UserService userService = UserServiceFactory.getUserService();
+
+```
 
 Next, you need to get the current user who is accessing the StockWatcher application:
-<pre class="code">
-     User user = userService.getCurrentUser();
-</pre>
+
+```
+User user = userService.getCurrentUser();
+
+```
 
 The UserService returns an instantiated User object if the current user who is accessing the application is logged into their Google Account. The User object contains useful information such as the email address associated with the account, as well as the account nickname. If the person accessing the application is not logged into their account, or doesn't have a Google Account, the returned User object will be null. In this case we have a number of options available to us in how we want to handle the situation, but for the purposes of the StockWatcher application, we will point the user to a login URL where they will be able to log into their Google Account.
 
@@ -226,7 +257,7 @@ First, create the LoginInfo object which will contain the login info from the Us
 
 #### LoginInfo.java:
 
-<pre class="code">
+```
 package com.google.gwt.sample.stockwatcher.client;
 
 import java.io.Serializable;
@@ -279,7 +310,8 @@ public class LoginInfo implements Serializable {
     this.nickname = nickname;
   }
 }
-</pre>
+
+```
 
 LoginInfo is serializable since it is the return type of an RPC method.
 
@@ -287,7 +319,7 @@ Next, create the LoginService and LoginServiceAsync interfaces.
 
 #### LoginService.java:
 
-<pre class="code">
+```
 package com.google.gwt.sample.stockwatcher.client;
 
 import com.google.gwt.user.client.rpc.RemoteService;
@@ -297,27 +329,29 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 public interface LoginService extends RemoteService {
   public LoginInfo login(String requestUri);
 }
-</pre>
+
+```
 
 The path annotation "login" will be configured below.
 
 #### LoginServiceAsync.java:
 
-<pre class="code">
+```
 package com.google.gwt.sample.stockwatcher.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public interface LoginServiceAsync {
-  public void login(String requestUri, AsyncCallback&lt;LoginInfo&gt; async);
+  public void login(String requestUri, AsyncCallback<LoginInfo> async);
 }
-</pre>
+
+```
 
 Create the LoginServiceImpl class in the com.google.gwt.sample.stockwatcher.server package as follows:
 
 #### LoginServiceImpl.java:
 
-<pre class="code">
+```
 package com.google.gwt.sample.stockwatcher.server;
 
 import com.google.appengine.api.users.User;
@@ -348,35 +382,36 @@ public class LoginServiceImpl extends RemoteServiceServlet implements
   }
 
 }
-</pre>
+
+```
 
 Lastly, configure the servlet in your web.xml file.  The mapping is composed of the rename-to attribute in the GWT module definition (stockwatcher) and the RemoteServiceRelativePath annotation(login).  Also, because the greetServlet is not needed for this application, its configuration can be deleted.
 
 #### web.xml:
 
-<pre class="code">
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+```
+<?xml version="1.0" encoding="UTF-8"?>
 
-&lt;web-app&gt;
+<web-app>
 
-  &lt;!-- Default page to serve --&gt;
-  &lt;welcome-file-list&gt;
-    &lt;welcome-file&gt;StockWatcher.html&lt;/welcome-file&gt;
-  &lt;/welcome-file-list&gt;
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>StockWatcher.html</welcome-file>
+  </welcome-file-list>
 
-  &lt;!-- Servlets --&gt;
-<span class="highlight">  &lt;servlet&gt;
-    &lt;servlet-name&gt;loginService&lt;/servlet-name&gt;
-    &lt;servlet-class&gt;com.google.gwt.sample.stockwatcher.server.LoginServiceImpl&lt;/servlet-class&gt;
-  &lt;/servlet&gt;</span>
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>loginService</servlet-name>
+    <servlet-class>com.google.gwt.sample.stockwatcher.server.LoginServiceImpl</servlet-class>
+  </servlet>
 
-<span class="highlight">  &lt;servlet-mapping&gt;
-    &lt;servlet-name&gt;loginService&lt;/servlet-name&gt;
-    &lt;url-pattern&gt;/stockwatcher/login&lt;/url-pattern&gt;
-  &lt;/servlet-mapping&gt;</span>
+  <servlet-mapping>
+    <servlet-name>loginService</servlet-name>
+    <url-pattern>/stockwatcher/login</url-pattern>
+  </servlet-mapping>
 
-&lt;/web-app&gt;
-</pre>
+</web-app>
+```
 
 ### Update the StockWatcher UI
 
@@ -390,12 +425,12 @@ You should end up with something similar to the following:
 
 #### StockWatcher.java:
 
-<pre class="code">
-  public void onModuleLoad() {
-<span class="highlight">    loadStockWatcher();
-  }</span>
+```
+public void onModuleLoad() {
+    loadStockWatcher();
+  }
 
-<span class="highlight">  private void loadStockWatcher() {</span>
+  private void loadStockWatcher() {
     // Create table for stock data.
     stocksFlexTable.setText(0, 0, "Symbol");
     stocksFlexTable.setText(0, 1, "Price");
@@ -403,7 +438,7 @@ You should end up with something similar to the following:
     stocksFlexTable.setText(0, 3, "Remove");
     ...
   }
-</pre>
+```
 
 Now that you've refactored the StockWatcher loading logic to a callable method, we can make the login RPC service call in the `onModuleLoad()` method and call the `loadStockWatcher()` method when login passes. However, if the user isn't logged in, you'll need to give them some kind of indication that they need to log in to proceed. For this, it makes sense to use a Login panel along with accompanying label and button to instruct the user to proceed to login.
 
@@ -411,57 +446,57 @@ Considering all of these, you should add something similar to the following to y
 
 #### StockWatcher.java
 
-<pre class="code">
-<span class="highlight">import com.google.gwt.user.client.ui.Anchor;</span>
+```
+import com.google.gwt.user.client.ui.Anchor;
 
 ...
 
-<span class="highlight">  private LoginInfo loginInfo = null;
+  private LoginInfo loginInfo = null;
   private VerticalPanel loginPanel = new VerticalPanel();
   private Label loginLabel = new Label(
       "Please sign in to your Google Account to access the StockWatcher application.");
-  private Anchor signInLink = new Anchor("Sign In");</span>
+  private Anchor signInLink = new Anchor("Sign In");
 
   public void onModuleLoad() {
-<span class="highlight">    // Check login status using login service.
+    // Check login status using login service.
     LoginServiceAsync loginService = GWT.create(LoginService.class);
-    loginService.login(GWT.getHostPageBaseURL(), new AsyncCallback&lt;LoginInfo&gt;() {
+    loginService.login(GWT.getHostPageBaseURL(), new AsyncCallback<LoginInfo>() {
       public void onFailure(Throwable error) {
       }
 
       public void onSuccess(LoginInfo result) {
         loginInfo = result;
-        if(loginInfo.isLoggedIn()) {</span>
+        if(loginInfo.isLoggedIn()) {
           loadStockWatcher();
-<span class="highlight">        } else {
+        } else {
           loadLogin();
         }
       }
-    });</span>
+    });
   }
 
-<span class="highlight">  private void loadLogin() {
+  private void loadLogin() {
     // Assemble login panel.
     signInLink.setHref(loginInfo.getLoginUrl());
     loginPanel.add(loginLabel);
     loginPanel.add(signInLink);
     RootPanel.get("stockList").add(loginPanel);
-  }</span>
-</pre>
+  }
+```
 
 Another important point about login functionality is the ability to sign out of the application. This is something you should add to the StockWatcher application as well. Fortunately, the User Service provides us with a logout URL through a similar call as the createLoginURL(String requestUri) method. We can add this to the StockWatcher sample application by adding the following snippets:
 
 #### StockWatcher.java
 
-<pre class="code">
-  private Anchor signInLink = new Anchor("Sign In");
-<span class="highlight">  private Anchor signOutLink = new Anchor("Sign Out");</span>
+```
+private Anchor signInLink = new Anchor("Sign In");
+  private Anchor signOutLink = new Anchor("Sign Out");
 
 ...
 
   private void loadStockWatcher() {
-<span class="highlight">    // Set up sign out hyperlink.
-    signOutLink.setHref(loginInfo.getLogoutUrl());</span>
+    // Set up sign out hyperlink.
+    signOutLink.setHref(loginInfo.getLogoutUrl());
 
     // Create table for stock data.
     stocksFlexTable.setText(0, 0, "Symbol");
@@ -472,11 +507,11 @@ Another important point about login functionality is the ability to sign out of 
   ...
 
     // Assemble Main panel.
-<span class="highlight">    mainPanel.add(signOutLink);</span>
+    mainPanel.add(signOutLink);
     mainPanel.add(stocksFlexTable);
     mainPanel.add(addPanel);
     mainPanel.add(lastUpdatedLabel);
-</pre>
+```
 
 ### Test User Service features
 
@@ -496,7 +531,7 @@ We will create a basic stock service to handle the persistence of users' stocks.
 
 #### StockService.java
 
-<pre class="code">
+```
 package com.google.gwt.sample.stockwatcher.client;
 
 import com.google.gwt.user.client.rpc.RemoteService;
@@ -508,25 +543,27 @@ public interface StockService extends RemoteService {
   public void removeStock(String symbol) throws NotLoggedInException;
   public String[] getStocks() throws NotLoggedInException;
 }
-</pre>
+
+```
 
 #### StockServiceAsync.java
 
-<pre class="code">
+```
 package com.google.gwt.sample.stockwatcher.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public interface StockServiceAsync {
-  public void addStock(String symbol, AsyncCallback&lt;Void&gt; async);
-  public void removeStock(String symbol, AsyncCallback&lt;Void&gt; async);
-  public void getStocks(AsyncCallback&lt;String[]&gt; async);
+  public void addStock(String symbol, AsyncCallback<Void> async);
+  public void removeStock(String symbol, AsyncCallback<Void> async);
+  public void getStocks(AsyncCallback<String[]> async);
 }
-</pre>
+
+```
 
 #### StockWatcher.java
 
-<pre class="code">
+```
 public class StockWatcher implements EntryPoint {
 
   private static final int REFRESH_INTERVAL = 5000; // ms
@@ -541,14 +578,14 @@ public class StockWatcher implements EntryPoint {
     private VerticalPanel loginPanel = new VerticalPanel();
     private Label loginLabel = new Label("Please sign in to your Google Account to access the StockWatcher application.");
     private Anchor signInLink = new Anchor("Sign In");
-    <span class="highlight">private final StockServiceAsync stockService = GWT.create(StockService.class);</span>
-</pre>
+    private final StockServiceAsync stockService = GWT.create(StockService.class);
+```
 
 A checked exception will indicate that the user is not logged in yet.  Such a scenario is possible since a RPC call can be received by the stock service even if there is no current user.  The class is serializable so that it may be returned by the RPC call via the AsyncCallback `onFailure(Throwable error)` method.  You could also implement security with a servlet filter or Spring security.
 
 #### NotLoggedInException.java
 
-<pre class="code">
+```
 package com.google.gwt.sample.stockwatcher.client;
 
 import java.io.Serializable;
@@ -564,18 +601,20 @@ public class NotLoggedInException extends Exception implements Serializable {
   }
 
 }
-</pre>
+
+```
 
 The Stock class is what is persisted with JDO.  The specifics of how it is persisted are dictated by the JDO annotations.  In particular:
 
 *   The PersistenceCapable annotation tells the DataNucleus byte-code enhancer to process this class.
 *   The PrimaryKey annotation designates an `id` attribute for storing its primary key.
 *   In this class, every attribute is persisted.  However you can designate attributes as not being persisted with the NotPersistent annotation.
-<li>The User attribute is a special App Engine type which can allow you to identify users across email address changes.
+*   The User attribute is a special App Engine type which can allow you to identify users across
+email address changes.
 
-    #### Stock.java
+#### Stock.java
 
-<pre class="code">
+```
 package com.google.gwt.sample.stockwatcher.server;
 
 import java.util.Date;
@@ -633,18 +672,19 @@ public class Stock {
     this.symbol = symbol;
   }
 }
-</pre>
+```
 
-    This class implements the stock service and includes calls to the JDO API for persisting stock data.  Things to notice:
+This class implements the stock service and includes calls to the JDO API for persisting stock data.  Things to notice:
 
-    *   The messages logged by the logger are viewable when you inspect your application in the [App Engine Administration Console](https://appengine.google.com/).</ol>
-<li>The PersistenceManagerFactory singleton is created from the properties named "transactions-optional" in jdoconfig.xml above.
-    *   The checkedLoggedIn method is called whenever we want to make sure a user is logged in.
-    *   The getUser method uses the UserService.
+*   The messages logged by the logger are viewable when you inspect your application in the [App Engine Administration Console](https://appengine.google.com/).</ol>
+*   The PersistenceManagerFactory singleton is created from the properties named
+"transactions-optional" in jdoconfig.xml above.
+*   The checkedLoggedIn method is called whenever we want to make sure a user is logged in.
+*   The getUser method uses the UserService.
 
-    #### StockServiceImpl.java
+#### StockServiceImpl.java
 
-<pre class="code">
+```
 package com.google.gwt.sample.stockwatcher.server;
 
 import java.util.ArrayList;
@@ -688,7 +728,7 @@ StockService {
       long deleteCount = 0;
       Query q = pm.newQuery(Stock.class, "user == u");
       q.declareParameters("com.google.appengine.api.users.User u");
-      List&lt;Stock&gt; stocks = (List&lt;Stock&gt;) q.execute(getUser());
+      List<Stock> stocks = (List<Stock>) q.execute(getUser());
       for (Stock stock : stocks) {
         if (symbol.equals(stock.getSymbol())) {
           deleteCount++;
@@ -706,12 +746,12 @@ StockService {
   public String[] getStocks() throws NotLoggedInException {
     checkLoggedIn();
     PersistenceManager pm = getPersistenceManager();
-    List&lt;String&gt; symbols = new ArrayList&lt;String&gt;();
+    List<String> symbols = new ArrayList<String>();
     try {
       Query q = pm.newQuery(Stock.class, "user == u");
       q.declareParameters("com.google.appengine.api.users.User u");
       q.setOrdering("createDate");
-      List&lt;Stock&gt; stocks = (List&lt;Stock&gt;) q.execute(getUser());
+      List<Stock> stocks = (List<Stock>) q.execute(getUser());
       for (Stock stock : stocks) {
         symbols.add(stock.getSymbol());
       }
@@ -736,54 +776,55 @@ StockService {
     return PMF.getPersistenceManager();
   }
 }
-</pre>
 
-    Now that the GWT RPC service is implemented, we'll make sure the servlet container knows about it.  The mapping /stockwatcher/stock is composed of the rename-to attribute in the GWT module definition (stockwatcher) and the RemoteServiceRelativePath annotation (stock).
+```
 
-    #### web.xml
+Now that the GWT RPC service is implemented, we'll make sure the servlet container knows about it.  The mapping /stockwatcher/stock is composed of the rename-to attribute in the GWT module definition (stockwatcher) and the RemoteServiceRelativePath annotation (stock).
 
-<pre class="code">
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+#### web.xml
 
-&lt;web-app&gt;
+```
+<?xml version="1.0" encoding="UTF-8"?>
 
-  &lt;!-- Default page to serve --&gt;
-  &lt;welcome-file-list&gt;
-    &lt;welcome-file&gt;StockWatcher.html&lt;/welcome-file&gt;
-  &lt;/welcome-file-list&gt;
+<web-app>
 
-  &lt;!-- Servlets --&gt;
-  &lt;servlet&gt;
-    &lt;servlet-name&gt;loginService&lt;/servlet-name&gt;
-    &lt;servlet-class&gt;com.google.gwt.sample.stockwatcher.server.LoginServiceImpl&lt;/servlet-class&gt;
-  &lt;/servlet&gt;
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>StockWatcher.html</welcome-file>
+  </welcome-file-list>
 
-<span class="highlight">  &lt;servlet&gt;
-    &lt;servlet-name&gt;stockService&lt;/servlet-name&gt;
-    &lt;servlet-class&gt;com.google.gwt.sample.stockwatcher.server.StockServiceImpl&lt;/servlet-class&gt;
-  &lt;/servlet&gt;</span>
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>loginService</servlet-name>
+    <servlet-class>com.google.gwt.sample.stockwatcher.server.LoginServiceImpl</servlet-class>
+  </servlet>
 
-  &lt;servlet-mapping&gt;
-    &lt;servlet-name&gt;loginService&lt;/servlet-name&gt;
-    &lt;url-pattern&gt;/stockwatcher/login&lt;/url-pattern&gt;
-  &lt;/servlet-mapping&gt;
+  <servlet>
+    <servlet-name>stockService</servlet-name>
+    <servlet-class>com.google.gwt.sample.stockwatcher.server.StockServiceImpl</servlet-class>
+  </servlet>
 
-<span class="highlight">  &lt;servlet-mapping&gt;
-    &lt;servlet-name&gt;stockService&lt;/servlet-name&gt;
-    &lt;url-pattern&gt;/stockwatcher/stock&lt;/url-pattern&gt;
-  &lt;/servlet-mapping&gt;</span>
+  <servlet-mapping>
+    <servlet-name>loginService</servlet-name>
+    <url-pattern>/stockwatcher/login</url-pattern>
+  </servlet-mapping>
 
-&lt;/web-app&gt;
-</pre>
+  <servlet-mapping>
+    <servlet-name>stockService</servlet-name>
+    <url-pattern>/stockwatcher/stock</url-pattern>
+  </servlet-mapping>
 
-    ### Update the StockWatcher UI
+</web-app>
+```
 
-    #### Retrieving stocks
+### Update the StockWatcher UI
 
-    When the StockWatcher application loads, it should be prepopulated with the user's stocks.  In order to reuse the existing code which displays a stock, we will refactor StockWatcher `addStock()` so that the logic for displaying the new stock is in a new `displayStock(String symbol)` method.
+#### Retrieving stocks
 
-<pre class="code">
-  private void addStock() {
+When the StockWatcher application loads, it should be prepopulated with the user's stocks.  In order to reuse the existing code which displays a stock, we will refactor StockWatcher `addStock()` so that the logic for displaying the new stock is in a new `displayStock(String symbol)` method.
+
+```
+private void addStock() {
     final String symbol = newSymbolTextBox.getText().toUpperCase().trim();
     newSymbolTextBox.setFocus(true);
 
@@ -800,10 +841,10 @@ StockService {
     if (stocks.contains(symbol))
       return;
 
-<span class="highlight">    displayStock(symbol);
+    displayStock(symbol);
   }
 
-  private void displayStock(final String symbol) {</span>
+  private void displayStock(final String symbol) {
     // Add the stock to the table.
     int row = stocksFlexTable.getRowCount();
     stocks.add(symbol);
@@ -829,12 +870,12 @@ StockService {
     refreshWatchList();
 
   }
-</pre>
+```
 
-    After the stock table is set up is an appropriate time to load the stocks.
+After the stock table is set up is an appropriate time to load the stocks.
 
-<pre class="code">
-  private void loadStockWatcher() {
+```
+private void loadStockWatcher() {
 
   ...
 
@@ -845,18 +886,18 @@ StockService {
     stocksFlexTable.getCellFormatter().addStyleName(0, 2, "watchListNumericColumn");
     stocksFlexTable.getCellFormatter().addStyleName(0, 3, "watchListRemoveColumn");
 
-<span class="highlight">    loadStocks();</span>
+    loadStocks();
 
   ...
 
   }
-</pre>
+```
 
-    The `loadStocks()` method calls the StockService defined earlier.  The RPC returns an array of stock symbols, which are displayed individually using the method `displayStock(String symbol)`.
-    <p>
-<pre class="code">
-<span class="highlight">  private void loadStocks() {
-    stockService.getStocks(new AsyncCallback&lt;String[]&gt;() {
+The `loadStocks()` method calls the StockService defined earlier.  The RPC returns an array of stock symbols, which are displayed individually using the method `displayStock(String symbol)`.
+
+```
+private void loadStocks() {
+    stockService.getStocks(new AsyncCallback<String[]>() {
       public void onFailure(Throwable error) {
       }
       public void onSuccess(String[] symbols) {
@@ -869,15 +910,15 @@ StockService {
     for (String symbol : symbols) {
       displayStock(symbol);
     }
-  }</span>
-</pre>
+  }
+```
 
-    #### Adding stocks
+#### Adding stocks
 
-    Instead of just displaying stocks when they are added, we will call the StockService to save the new stock symbol to the datastore.
+Instead of just displaying stocks when they are added, we will call the StockService to save the new stock symbol to the datastore.
 
-<pre class="code">
-  private void addStock() {
+```
+private void addStock() {
     final String symbol = newSymbolTextBox.getText().toUpperCase().trim();
     newSymbolTextBox.setFocus(true);
 
@@ -894,19 +935,19 @@ StockService {
     if (stocks.contains(symbol))
       return;
 
-    <span class="strike">displayStock(symbol);</span>
-<span class="highlight">    addStock(symbol);</span>
+    <span class="strike">displayStock(symbol);
+    addStock(symbol);
   }
 
-<span class="highlight">  private void addStock(final String symbol) {
-    stockService.addStock(symbol, new AsyncCallback&lt;Void&gt;() {
+  private void addStock(final String symbol) {
+    stockService.addStock(symbol, new AsyncCallback<Void>() {
       public void onFailure(Throwable error) {
       }
       public void onSuccess(Void ignore) {
         displayStock(symbol);
       }
     });
-  }</span>
+  }
 
   private void displayStock(final String symbol) {
     // Add the stock to the table.
@@ -916,14 +957,14 @@ StockService {
 ...
 
   }
-</pre>
+```
 
-    #### Removing stocks
+#### Removing stocks
 
-    And instead of simply removing stocks from display, we will call the StockService to remove the stock symbol from the datastore.
+And instead of simply removing stocks from display, we will call the StockService to remove the stock symbol from the datastore.
 
-<pre class="code">
-  private void displayStock(final String symbol) {
+```
+private void displayStock(final String symbol) {
 
   ...
 
@@ -933,7 +974,7 @@ StockService {
 
     removeStock.addClickHandler(new ClickHandler(){
       public void onClick(ClickEvent event) {
-<span class="highlight">        removeStock(symbol);</span>
+        removeStock(symbol);
       }
     });
     stocksFlexTable.setWidget(row, 3, removeStock);
@@ -943,8 +984,8 @@ StockService {
 
   }
 
-<span class="highlight">  private void removeStock(final String symbol) {
-    stockService.removeStock(symbol, new AsyncCallback&lt;Void&gt;() {
+  private void removeStock(final String symbol) {
+    stockService.removeStock(symbol, new AsyncCallback<Void>() {
       public void onFailure(Throwable error) {
       }
       public void onSuccess(Void ignore) {
@@ -953,103 +994,111 @@ StockService {
     });
   }
 
-  private void undisplayStock(String symbol) {</span>
+  private void undisplayStock(String symbol) {
     int removedIndex = stocks.indexOf(symbol);
     stocks.remove(removedIndex);
     stocksFlexTable.removeRow(removedIndex+1);
-<span class="highlight">  }</span>
-</pre>
+  }
+```
 
-    ### Error handling
+### Error handling
 
-    When one of the RPC calls results in an error, we want to display the message to the user.
+When one of the RPC calls results in an error, we want to display the message to the user.
 
-    Furthermore, recall that the StockService throws a NotLoggedInException if for some reason the user is no longer logged in to his Google Account:
+Furthermore, recall that the StockService throws a NotLoggedInException if for some reason the user is no longer logged in to his Google Account:
 
-<pre class="code">
-  private void checkLoggedIn() throws NotLoggedInException {
+```
+private void checkLoggedIn() throws NotLoggedInException {
     if (getUser() == null) {
       throw new NotLoggedInException("Not logged in.");
     }
   }
-</pre>
 
-    If we receive this error, we will redirect the user to the logout URL.
+```
 
-    Here's a helper method to accomplish these two error handling requirements.
+If we receive this error, we will redirect the user to the logout URL.
 
-<pre class="code">
-<span class="highlight">  private void handleError(Throwable error) {
+Here's a helper method to accomplish these two error handling requirements.
+
+```
+private void handleError(Throwable error) {
     Window.alert(error.getMessage());
     if (error instanceof NotLoggedInException) {
       Window.Location.replace(loginInfo.getLogoutUrl());
     }
-  }</span>
-</pre>
+  }
+```
 
-    We can add this to each AsyncCallback `onFailure(Throwable error)` method.
-<pre class="code">
-    loginService.login(GWT.getHostPageBaseURL(), new AsyncCallback&lt;LoginInfo&gt;() {
+We can add this to each AsyncCallback `onFailure(Throwable error)` method.
+
+```
+loginService.login(GWT.getHostPageBaseURL(), new AsyncCallback<LoginInfo>() {
       public void onFailure(Throwable error) {
-<span class="highlight">        handleError(error);</span>
+        handleError(error);
       }
 
     ...
 
     }
-</pre>
+```
 
-<pre class="code">
-    stockService.getStocks(new AsyncCallback&lt;String[]&gt;() {
+
+
+```
+stockService.getStocks(new AsyncCallback<String[]>() {
       public void onFailure(Throwable error) {
-<span class="highlight">        handleError(error);</span>
+        handleError(error);
       }
 
     ...
 
     });
-</pre>
+```
 
-<pre class="code">
-    stockService.addStock(symbol, new AsyncCallback&lt;Void&gt;() {
+
+
+```
+stockService.addStock(symbol, new AsyncCallback<Void>() {
       public void onFailure(Throwable error) {
-<span class="highlight">        handleError(error);</span>
+        handleError(error);
       }
 
     ...
 
     });
-</pre>
+```
 
-<pre class="code">
-    stockService.removeStock(symbol, new AsyncCallback&lt;Void&gt;() {
+
+
+```
+stockService.removeStock(symbol, new AsyncCallback<Void>() {
       public void onFailure(Throwable error) {
-<span class="highlight">        handleError(error);</span>
+        handleError(error);
       }
 
     ...
 
     });
-</pre>
+```
 
-    ### Test Datastore features
+### Test Datastore features
 
-    You can repeat the instructions above to run the application [locally](#test) or on [App Engine](#deploy).
+You can repeat the instructions above to run the application [locally](#test) or on [App Engine](#deploy).
 
-    If you encounter runtime errors, examine the logs in the [App Engine Administration Console](https://appengine.google.com/).
+If you encounter runtime errors, examine the logs in the [App Engine Administration Console](https://appengine.google.com/).
 
-    ## More resources
+## More resources
 
-    ### Further exercises
+### Further exercises
 
-    Users can now sign in to Google Account and manage their own stock lists in the StockWatcher application running on App Engine.  Here are some suggested enhancements you can try as exercises:
+Users can now sign in to Google Account and manage their own stock lists in the StockWatcher application running on App Engine.  Here are some suggested enhancements you can try as exercises:
 
-    *   Loading the stock list has a noticeable delay.  Add a UI element to indicate that the stock list is loading.
-    *   Add more attributes to the Stock class.  What happens to the data which was saved before these attributes were added?
-    *   The StockService does not detect when one user has signed out and another user has signed in.  How would you modify the application to handle this edge case?
+*   Loading the stock list has a noticeable delay.  Add a UI element to indicate that the stock list is loading.
+*   Add more attributes to the Stock class.  What happens to the data which was saved before these attributes were added?
+*   The StockService does not detect when one user has signed out and another user has signed in.  How would you modify the application to handle this edge case?
 
-    ### Learn more about App Engine
+### Learn more about App Engine
 
-    The App Engine [Java Getting Started tutorial](//developers.google.com/appengine/docs/java/gettingstarted) gives more details on building an App Engine application including topics such as creating a project from scratch, using JSPs, managing different application versions, and more details on the web application descriptor files.
+The App Engine [Java Getting Started tutorial](//developers.google.com/appengine/docs/java/gettingstarted) gives more details on building an App Engine application including topics such as creating a project from scratch, using JSPs, managing different application versions, and more details on the web application descriptor files.
 
-    The App Engine [Java documentation](//developers.google.com/appengine/docs/java) covers the User service and datastore service in greater detail.  In particular, it documents how to use JPA to access the datastore service.  Other services documented include Memcache, HTTP client, and, Java Mail.  The limitations of the App Engine Java runtime are also itemized.
+The App Engine [Java documentation](//developers.google.com/appengine/docs/java) covers the User service and datastore service in greater detail.  In particular, it documents how to use JPA to access the datastore service.  Other services documented include Memcache, HTTP client, and, Java Mail.  The limitations of the App Engine Java runtime are also itemized.

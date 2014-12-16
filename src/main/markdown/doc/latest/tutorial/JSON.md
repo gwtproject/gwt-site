@@ -22,7 +22,7 @@ JSON is a universal, language-independent format for data. In this way, it's sim
 
 When you encode the stock data for StockWatcher in JSON format, it will look something like this (but the whitespace will be stripped out).
 
-<pre class="code">
+```
 [
   {
     "symbol": "ABC",
@@ -40,18 +40,17 @@ When you encode the stock data for StockWatcher in JSON format, it will look som
     "change": 0.05
   }
 ]
-</pre>
 
-<a name="server"></a>
+```
 
-##  Creating a source of JSON data on your local server
+##  Creating a source of JSON data on your local server <a id="server"></a>
 
 ### Reviewing the existing implementation
 
 In the original StockWatcher implementation, you created a StockPrice class and used the refreshWatchList method to generate random stock data and then call the updateTable method to populate StockWatcher's flex table.
 
-<pre class="code">
-  /**
+```
+/**
    * Generate random stock prices.
    */
   private void refreshWatchList() {
@@ -59,7 +58,7 @@ In the original StockWatcher implementation, you created a StockPrice class and 
     final double MAX_PRICE_CHANGE = 0.02; // +/- 2%
 
     StockPrice[] prices = new StockPrice[stocks.size()];
-    for (int i = 0; i &lt; stocks.size(); i++) {
+    for (int i = 0; i < stocks.size(); i++) {
       double price = Random.nextDouble() * MAX_PRICE;
       double change = price * MAX_PRICE_CHANGE
           * (Random.nextDouble() * 2.0 - 1.0);
@@ -69,7 +68,8 @@ In the original StockWatcher implementation, you created a StockPrice class and 
 
     updateTable(prices);
   }
-</pre>
+
+```
 
 In this tutorial, you'll create a servlet to generate the stock data in JSON format. Then you'll make an HTTP call to retrieve the JSON data from the server. You'll use JSNI and GWT overlay types to work with the JSON data while writing the client-side code.
 
@@ -80,15 +80,14 @@ To serve up hypothetical stock quotes in JSON format, you'll create a servlet. T
 **Note**: If you have a web server (Apache, IIS, etc) installed locally and PHP installed, you could instead [write a PHP script to generate the stock data](JSONphp.html) and make the call to your local server. What's important for this example is that the stock data is JSON-encoded and that the server is local.
 
 1.  Create a servlet.
-        *  In the Package Explorer, select the client package:`com.google.gwt.sample.stockwatcher.client`
-        *  In Eclipse, open the New Java Class wizard (File &gt; New &gt; Class).
+    *  In the Package Explorer, select the client package:`com.google.gwt.sample.stockwatcher.client`
+    *  In Eclipse, open the New Java Class wizard (File > New > Class).
 2.  At Package, change the name from `.client` to `.server`
-        *  At name, enter `JsonStockData`.
-        *  Eclipse will create a package for the server-side code and a stub for the JsonStockData class.
+    *  At name, enter `JsonStockData`.
+    *  Eclipse will create a package for the server-side code and a stub for the JsonStockData class.
 3.  Replace the stub with the following code.
-        *
 
-    <pre class="code">
+```
 package com.google.gwt.sample.stockwatcher.server;
 
     import java.io.IOException;
@@ -141,19 +140,18 @@ import javax.servlet.http.HttpServletResponse;
   }
 
     }
-</pre>
 
-
+```
 
 ### Including the server-side code in the GWT module
 
 The embedded servlet container (Jetty) can host the servlet that generates the stock data in JSON format.
 
-To set this up, add &lt;servlet&gt; and &lt;servlet-mapping&gt; elements to the web application deployment descriptor (web.xml) and point to JsonStockData.
+To set this up, add `<servlet>` and `<servlet-mapping>` elements to the web application deployment descriptor (web.xml) and point to JsonStockData.
 
 Starting with GWT 1.6, servlets should be defined in the web application deployment descriptor (web.xml) instead of the GWT module (StockWatcher.gwt.xml).
 
-In the &lt;servlet-mapping&gt; element, the url-pattern can be in the form of an absolute directory path (for example, `/spellcheck` or `/common/login`).
+In the `<servlet-mapping>` element, the url-pattern can be in the form of an absolute directory path (for example, `/spellcheck` or `/common/login`).
 If you specify a default service path with a @RemoteServiceRelativePath annotation on the service interface (as you did with StockPriceService), then make sure the path attribute matches the annotation value.
 
 Because you've mapped the StockPriceService to "stockPrices" and the module rename-to attribute in StockWatcher.gwt.xml is "stockwatcher", the full URL will be: 
@@ -161,46 +159,46 @@ Because you've mapped the StockPriceService to "stockPrices" and the module rena
 `http://localhost:8888/stockwatcher/stockPrices`
 
 1.  Edit the web application deployment descriptor (StockWatcher/war/WEB-INF/web.xml).
-        *  Since the greetServlet is no longer needed, its definition can be removed.<pre class="code">
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;!DOCTYPE web-app
+    *  Since the greetServlet is no longer needed, its definition can be removed.
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
     PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-    "http://java.sun.com/dtd/web-app_2_3.dtd"&gt;
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
 
-    &lt;web-app&gt;
+    <web-app>
 
-      &lt;!-- Default page to serve --&gt;
-  &lt;welcome-file-list&gt;
-    &lt;welcome-file&gt;StockWatcher.html&lt;/welcome-file&gt;
-  &lt;/welcome-file-list&gt;
+      <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>StockWatcher.html</welcome-file>
+  </welcome-file-list>
 
-      &lt;!-- Servlets --&gt;
-<span class="highlight"> &lt;servlet&gt;
-    &lt;servlet-name&gt;jsonStockData&lt;/servlet-name&gt;
-    &lt;servlet-class&gt;com.google.gwt.sample.stockwatcher.server.JsonStockData&lt;/servlet-class&gt;
-  &lt;/servlet&gt;
+      <!-- Servlets -->
+ <servlet>
+    <servlet-name>jsonStockData</servlet-name>
+    <servlet-class>com.google.gwt.sample.stockwatcher.server.JsonStockData</servlet-class>
+  </servlet>
 
-      &lt;servlet-mapping&gt;
-    &lt;servlet-name&gt;jsonStockData&lt;/servlet-name&gt;
-    &lt;url-pattern&gt;/stockwatcher/stockPrices&lt;/url-pattern&gt;
-  &lt;/servlet-mapping&gt;</span>
+      <servlet-mapping>
+    <servlet-name>jsonStockData</servlet-name>
+    <url-pattern>/stockwatcher/stockPrices</url-pattern>
+  </servlet-mapping>
 
-    &lt;/web-app&gt;
-</pre>
+    </web-app>
+```
 
 ### Testing your ability to retrieve JSON data from the server
 
 1.  Debug StockWatcher in development mode.
-        *  At this point, the stock data is still coming from the client-side code.
+    *  At this point, the stock data is still coming from the client-side code.
 2.  Test the stock quote server.
-        *  Ensure that the development mode code server is running and pass stock codes to the servlet URL
+    *  Ensure that the development mode code server is running and pass stock codes to the servlet URL
 `http://localhost:8888/stockwatcher/stockPrices?q=ABC+DEF`
 3.  The servlet generates an array of simulated stock data encoded in JSON format.
-        *  ![JSON formatted stock data](images/JSONdata.png)
+    *  ![JSON formatted stock data](images/JSONdata.png)
 
-<a name="client"></a>
-
-##  Manipulating JSON data in the client-side code
+##  Manipulating JSON data in the client-side code <a id="client"></a>
 
 ### Overview
 
@@ -211,22 +209,25 @@ Two techiques you'll use are JSNI (JavaScript Native Interface) and GWT overlay 
 
 This is the JSON data coming back from the server.
 
-<pre class="code">[
+```
+[
   {
     "symbol": "ABC",
     "price": 47.65563005127077,
     "change": -0.4426563818062567
   },
-]</pre>
+]
+```
 
 First, you'll use [JsonUtils.safeEval()](/javadoc/latest/com/google/gwt/core/client/JsonUtils.html) to convert the JSON string into JavaScript objects. Then, you'll be able to write methods to access those objects.
 
-<pre class="code">
-  // JSNI methods to get stock data.
+```
+// JSNI methods to get stock data.
   public final native String getSymbol() /*-{ return this.symbol; }-*/;
   public final native double getPrice() /*-{ return this.price; }-*/;
   public final native double getChange() /*-{ return this.change; }-*/;
-</pre>
+
+```
 
 For the latter, you'll use JSNI. When the client-side code is compiled to JavaScript, the Java methods are replaced with the JavaScript exactly as you write it inside the tokens.
 
@@ -266,7 +267,9 @@ The new StockData class will be an overlay type which overlays the existing Java
 
     **Note:** The commented numbers refer to the implementation notes below. You can delete them.
 
-            *  <pre class="code">
+
+
+```
 package com.google.gwt.sample.stockwatcher.client;
 
     import com.google.gwt.core.client.JavaScriptObject;
@@ -285,7 +288,7 @@ package com.google.gwt.sample.stockwatcher.client;
     return 100.0 * getChange() / getPrice();
   }
 }
-</pre>
+```
 
 #### Implementation Notes
 
@@ -316,9 +319,7 @@ In this example, you can access directly the JSON fields you know exist: this.Pr
 
 Because the methods on overlay types can be statically resolved by the GWT compiler, they are candidates for automatic inlining. Inlined code runs significantly faster. This makes it possible for the GWT compiler to create highly-optimized JavaScript for your application's client-side code.
 
-<a name="http"></a>
-
-##  Making HTTP requests to retrieve data from the server
+##  Making HTTP requests to retrieve data from the server <a id="http"></a>
 
 Now that you have the mechanism for working with the JSON data in place, you'll write the HTTP request that gets the data from the server.
 
@@ -335,19 +336,26 @@ Then, append the stock codes in the watch list to the base module URL.
 Rather than hardcoding the URL for the JSON server, add a constant to the StockWatcher class.
 
 1.  Add a constant to the StockWatcher class that specifies the URL of the JSON data.
-        *  **Note:** Earlier you specified a path to /stockPrices in the module XML file.
-        *  <pre class="code">
-  private static final String JSON_URL = GWT.getModuleBaseURL() + "stockPrices?q=";</pre>
+    *  **Note:** Earlier you specified a path to /stockPrices in the module XML file.
 
-        *  Eclipse flags GWT.
+```
+private static final String JSON_URL = GWT.getModuleBaseURL() + "stockPrices?q=";
+```
+
+*  Eclipse flags GWT.
 2.  Include the import declarations.
-        *  <pre class="code">
-import com.google.gwt.core.client.GWT;</pre>
+
+```
+import com.google.gwt.core.client.GWT;
+```
+
 3.  Append the stock codes to the query URL and encode it.
-        *  Replace the existing refreshWatchList method with the following code.
-        *  <pre class="code">
-  private void refreshWatchList() {
-<span class="highlight">    if (stocks.size() == 0) {
+    *  Replace the existing refreshWatchList method with the following code.
+    *
+
+```
+private void refreshWatchList() {
+    if (stocks.size() == 0) {
       return;
     }
 
@@ -364,16 +372,19 @@ import com.google.gwt.core.client.GWT;</pre>
 
         url = URL.encode(url);
 
-        // TODO Send request to server and handle errors.</span>
+        // TODO Send request to server and handle errors.
 
       }
+```
+
    *  Eclipse flags Iterator and URL.
 4.  Include the import declarations.
-        *  <pre class="code">
+
+```
 import com.google.gwt.http.client.URL;
+import java.util.Iterator;
 
-    import java.util.Iterator;</pre>
-
+```
 ### Asynchronous HTTP
 
 To get the JSON text from the server, you'll use the HTTP client classes in the com.google.gwt.http.client package. These classes contain the functionality for making asynchronous HTTP requests.
@@ -381,20 +392,25 @@ To get the JSON text from the server, you'll use the HTTP client classes in the 
 The HTTP types are contained within separate GWT modules that StockWatcher needs to inherit.
 
 1.  To inherit other GWT modules, edit the module XML file.
-        *  In StockWatcher.gwt.xml, add &lt;inherits&gt; tags and specify the HTTP module.
-        *  <pre class="code">
-  &lt;!-- Other module inherits --&gt;
-  &lt;inherits name="com.google.gwt.http.HTTP" /&gt;
-        </pre>
+    *  In StockWatcher.gwt.xml, add `<inherits>` tags and specify the HTTP module.
+
+```
+<!-- Other module inherits -->
+  <inherits name="com.google.gwt.http.HTTP" />
+
+```
 2.
-        *  Open StockWatcher.java and include the following import declarations. Declare the imports for the following Java types.
-        *  <pre class="code">
+    *  Open StockWatcher.java and include the following import declarations. Declare the imports for the following Java types.
+
+```
+
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.http.client.RequestCallback;
 import com.google.gwt.http.client.RequestException;
-import com.google.gwt.http.client.Response;</pre>
+import com.google.gwt.http.client.Response;
 
+```
 ### Building a custom HTTP request
 
 To send a request, you'll create an instance of the RequestBuilder object.
@@ -408,30 +424,32 @@ If the call fails (for example, if the HTTP server is not responding), the onErr
 The RequestCallback interface is analogous to the AsyncCallback interface in GWT remote procedure calls.
 
 1.  Make the HTTP request and parse the JSON response.
-        *  In the refreshWatchList method, replace the TODO comments with the following code  .
+    *  In the refreshWatchList method, replace the TODO comments with the following code  .
 
-            *  <pre class="code">
+    ```
+    
     // Send request to server and catch any errors.
-    RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
-
-        try {
-      Request request = builder.sendRequest(null, new RequestCallback() {
-        public void onError(Request request, Throwable exception) {
+        RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
+    
+            try {
+          Request request = builder.sendRequest(null, new RequestCallback() {
+            public void onError(Request request, Throwable exception) {
+              displayError("Couldn't retrieve JSON");
+            }
+    
+                public void onResponseReceived(Request request, Response response) {
+              if (200 == response.getStatusCode()) {
+                updateTable(JsonUtils.<JsArray<StockData>>safeEval(response.getText()));
+              } else {
+                displayError("Couldn't retrieve JSON (" + response.getStatusText()
+                    + ")");
+              }
+            }
+          });
+        } catch (RequestException e) {
           displayError("Couldn't retrieve JSON");
         }
-
-            public void onResponseReceived(Request request, Response response) {
-          if (200 == response.getStatusCode()) {
-            updateTable(JsonUtils.&lt;JsArray&lt;StockData>>safeEval(response.getText()));
-          } else {
-            displayError("Couldn't retrieve JSON (" + response.getStatusText()
-                + ")");
-          }
-        }
-      });
-    } catch (RequestException e) {
-      displayError("Couldn't retrieve JSON");
-    }</pre>
+    ```
       *  This is where we use `JsonUtils.safeEval()` to convert the JSON string into JavaScript objects.
 2.  You receive two compile errors which you will resolve in a minute.
 
@@ -440,7 +458,7 @@ The RequestCallback interface is analogous to the AsyncCallback interface in GWT
 To fix the compile errors, modify the updateTable method.
 
     <li>Change: StockPrice[] prices
- To: JsArray&lt;StockData&gt; prices</li>
+ To: JsArray<StockData> prices</li>
     <li>Change: prices.length
  To: prices.length()</li>
     <li>Change: prices[i]
@@ -448,31 +466,24 @@ To fix the compile errors, modify the updateTable method.
 </ul>
 
 1.
-        *  Replace the existing update updateTable(StockPrice[]) method with the following code.
-        *  <pre class="code">
-  /**
-       * Update the Price and Change fields for all rows in the stock table.
-   *
-       * @param prices Stock data for all rows.
-   */
-  private void updateTable(<span class="highlight">JsArray&lt;StockData&gt;</span> prices) {
-    for (int i = 0; i &lt; <span class="highlight">prices.length()</span>; i++) {
-      updateTable(<span class="highlight">prices.get(i)</span>);
-    }
+    *  Replace the existing update updateTable(StockPrice[]) method with the following code.
 
-        // Display timestamp showing last refresh.
-    lastUpdatedLabel.setText("Last update : "
-        + DateTimeFormat.getMediumDateTimeFormat().format(new Date()));
-  }</pre>
-        *  Eclipse flags JsArray.
+```
+import com.google.gwt.core.client.JsArray;
+```
+
+*  Eclipse flags JsArray.
 2.  Declare the import.
-        *  <pre class="code">
-<span class="highlight">import com.google.gwt.core.client.JsArray;</span></pre>
+
+```
+import com.google.gwt.core.client.JsArray;
+```
 
 4.  Make a corresponding change in the updateTable(StockPrice price) method.
-        *  Change the reference to the StockPrice class to StockData class.
-        *  <pre class="code">
-  private void updateTable(<span class="highlight">StockData</span> price) {
+    *  Change the reference to the StockPrice class to StockData class.
+
+```
+private void updateTable(StockData price) {
     // Make sure the stock is still in the stock table.
     if (!stocks.contains(price.getSymbol())) {
       return;
@@ -481,19 +492,18 @@ To fix the compile errors, modify the updateTable method.
         ...
 
       }
-</pre>
 
-<a name="errors"></a>
+```
 
-##  Handling GET errors
+##  Handling GET errors <a id="errors"></a>
 
-<p>
 If something breaks along the way (for example, if the server is offline, or the JSON is malformed), you'll trap the error and display a message to the user. To do this you'll create a Label widget and write a new method, displayError(String).
 
 1.  Clear the compiler error by creating a stub method in the StockWatcher class.
-        *  Set the text for the error message and make the Label widget visible.
-        *  <pre class="code">
-  /**
+    *  Set the text for the error message and make the Label widget visible.
+
+```
+/**
        * If can't get JSON, display error message.
        * @param error
    */
@@ -501,14 +511,17 @@ If something breaks along the way (for example, if the server is offline, or the
     errorMsgLabel.setText("Error: " + error);
     errorMsgLabel.setVisible(true);
   }
-</pre>
+
+```
+
 2.  Eclipse flags errorMsgLabel.
       *  Ignore the compile errors for a moment; you'll implement a Label widget to display the error text in the next step.
 3.  If the error is corrected, hide the Label widget.
-        *  In the updateTable(JsArray&lt;StockData&gt; prices) method, clear any error messages.
-        *  <pre class="code">
-  private void updateTable(JsArray&lt;StockData&gt; prices) {
-    for (int i=0; i &lt; prices.length(); i++) {
+    *  In the updateTable(JsArray<StockData> prices) method, clear any error messages.
+
+```
+private void updateTable(JsArray<StockData> prices) {
+    for (int i=0; i < prices.length(); i++) {
       updateTable(prices.get(i));
     }
 
@@ -516,51 +529,57 @@ If something breaks along the way (for example, if the server is offline, or the
     lastUpdatedLabel.setText("Last update : " +
         DateTimeFormat.getMediumDateTimeFormat().format(new Date()));
 
-    <span class="highlight">    // Clear any errors.
-    errorMsgLabel.setVisible(false);</span>
+        // Clear any errors.
+    errorMsgLabel.setVisible(false);
   }
-</pre>
 
-
+```
 
 #### Displaying error messages
 
 In order to display the error, you will need a new UI component; you'll implement a Label widget.
 
 1.  Define a style for the error message so that it will attract the user's attention.
-        *  In StockWatcher.css, create a style rule that applies to any element with a class attribute of errorMessage.
-        *  <pre class="code">
+    *  In StockWatcher.css, create a style rule that applies to any element with a class attribute of errorMessage.
+
+```
 .negativeChange {
   color: red;
 }
 
-    <span class="highlight">.errorMessage {
+    .errorMessage {
   color: red;
-}</span></pre>
-2.  To hold the text of the error message, add a Label widget.
-        *  In StockWatcher.java, add the following instance field.
-        *  <pre class="code">
-  private ArrayList&lt;String&gt; stocks = new ArrayList&lt;String&gt;();
-<span class="highlight">  private Label errorMsgLabel = new Label();</span></pre>
-3.  Initialize the errorMsgLabel when StockWatcher launches.
-        *  In the onModuleLoad method, add a secondary class attribute to errorMsgLabel and do not display it when StockWatcher loads.
-        *  Add the error message to the Main panel above the stocksFlexTable.
+}
+```
 
-            *  <pre class="code">
-    // Assemble Add Stock panel.
+2.  To hold the text of the error message, add a Label widget.
+    *  In StockWatcher.java, add the following instance field.
+
+```
+private ArrayList<String> stocks = new ArrayList<String>();
+  private Label errorMsgLabel = new Label();
+```
+
+3.  Initialize the errorMsgLabel when StockWatcher launches.
+    *  In the onModuleLoad method, add a secondary class attribute to errorMsgLabel and do not display it when StockWatcher loads.
+    *  Add the error message to the Main panel above the stocksFlexTable.
+
+```
+// Assemble Add Stock panel.
     addPanel.add(newSymbolTextBox);
     addPanel.add(addButton);
     addPanel.addStyleName("addPanel");
 
         // Assemble Main panel.
-<span class="highlight">    errorMsgLabel.setStyleName("errorMessage");
+    errorMsgLabel.setStyleName("errorMessage");
     errorMsgLabel.setVisible(false);
 
-        mainPanel.add(errorMsgLabel);</span>
+        mainPanel.add(errorMsgLabel);
     mainPanel.add(stocksFlexTable);
     mainPanel.add(addPanel);
     mainPanel.add(lastUpdatedLabel);
-</pre>
+
+```
 
 ### Test the HTTP request and error handling
 
@@ -568,8 +587,8 @@ In order to display the error, you will need a new UI component; you'll implemen
 2.  Enter several stock codes.
         <div class="client">StockWatcher should display Price and Change data for each stock. Rather than being generated from within the program the stock data is coming from you local server in JSON format.
 3.  Test the HTTP error messages by calling an invalid URL.
-        *  In StockWatcher,java, edit the URL.
-        *
+    *  In StockWatcher,java, edit the URL.
+    *
 Change: `private static final String JSON_URL = GWT.getModuleBaseURL()
       + "stockPrices?q=";`
 
@@ -577,12 +596,12 @@ Change: `private static final String JSON_URL = GWT.getModuleBaseURL()
       + "BADURL?q=";`
 4.  Refresh StockWatcher in development mode.
 5.  Enter a stock code.
-        *  StockWatcher displays a red error message. Valid stock code data stops being refreshed.
-        *  ![screenshot: JSON error message](images/JSONerrormessage.png)
+    *  StockWatcher displays a red error message. Valid stock code data stops being refreshed.
+    *  ![screenshot: JSON error message](images/JSONerrormessage.png)
 6.  In StockWatcher,java, correct the URL.
 7.  Refresh StockWatcher in development mode.
-        *  Enter several stock codes.
-        *  StockWatcher should display Price and Change data for each stock again.
+    *  Enter several stock codes.
+    *  StockWatcher should display Price and Change data for each stock again.
 
 ## More about JSON, JSNI, Overlay types, and HTTP <a id="more"></a>
 

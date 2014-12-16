@@ -44,7 +44,7 @@ GWT release candidates are not bundled with The Google Plugin For Eclipse. If yo
 
 ## Create a Web Application<a id="creating"></a>
 
-To create a Web Application, select **File &gt; New &gt; Web Application Project** from the Eclipse menu.
+To create a Web Application, select **File > New > Web Application Project** from the Eclipse menu.
 
 In the **New Web Application Project** wizard, enter a name for your project
 and a java package name, e.g., `com.mycompany.mywebapp` If you
@@ -61,7 +61,7 @@ Congratulations, you now have a GWT enabled web application. The plugin has crea
 
 <h2 id="running">Run locally in Development Mode</h2>
 
-Right-click on your web application project and select **Debug As &gt; Web
+Right-click on your web application project and select **Debug As > Web
 Application** from the popup menu.
 
 This creates a **Web Application** launch configuration for
@@ -107,21 +107,23 @@ Look inside the
 
 file in the client package. Line 40 constructs the send button.
 
-<pre class="code">final Button sendButton = new Button(&quot;Send&quot;);</pre>
+```
+final Button sendButton = new Button("Send");
+```
 
-Change the text from &quot;Send&quot; to &quot;Send to Server&quot;.
+Change the text from "Send" to "Send to Server".
 
-<pre class="code">final Button sendButton = new Button(&quot;Send to Server&quot;);</pre>
+```
+final Button sendButton = new Button("Send to Server");
+```
 
-Now, save the file and simply click "Refresh" back in your browser to see your change. The button should now say &quot;Send to Server&quot; instead of &quot;Send&quot;.
+Now, save the file and simply click "Refresh" back in your browser to see your change. The button should now say "Send to Server" instead of "Send".
 
 At this point, you can also set breakpoints, inspect variables and modify code as you would normally expect from a Java Eclipse debugging session.
 
-<a name="compiling"></a>
+## Compile and run in Production Mode <a id="compiling"></a>
 
-## Compile and run in Production Mode
-
-To run the application as JavaScript in what GWT calls "production mode", compile the application by right-clicking the project and choosing **Google** &gt; **GWT Compile**.
+To run the application as JavaScript in what GWT calls "production mode", compile the application by right-clicking the project and choosing **Google** > **GWT Compile**.
 
 This command invokes the GWT compiler which generates a number of JavaScript and HTML files from the MyWebApp Java source code in the
 
@@ -143,13 +145,13 @@ directory from your web servers.
 
 ## Deploy to App Engine<a id="deploying"></a>
 
-Using the plugin, you can also easily deploy GWT projects to Google App Engine. If you installed the App Engine for Java SDK when you installed the plugin, you can now right-click on the project and App Engine "enable" it by choosing **Google** &gt; **App Engine Settings**. Check the box marked **Use Google App Engine**. This will add the necessary configuration files to your project.
+Using the plugin, you can also easily deploy GWT projects to Google App Engine. If you installed the App Engine for Java SDK when you installed the plugin, you can now right-click on the project and App Engine "enable" it by choosing **Google** > **App Engine Settings**. Check the box marked **Use Google App Engine**. This will add the necessary configuration files to your project.
 
 To deploy your project to App Engine, you first need to create an application ID from the [App Engine Administration Console](https://appengine.google.com/).
 
-Once you have an application ID, right-click on your project, and select **Google &gt; App Engine Settings...** from the context menu. Enter your application ID into the **Application ID** text box. Click **OK**.
+Once you have an application ID, right-click on your project, and select **Google > App Engine Settings...** from the context menu. Enter your application ID into the **Application ID** text box. Click **OK**.
 
-Right-click on your project and select **Google &gt; Deploy to App Engine**. In the resulting **Deploy Project to Google App Engine** dialog, enter your Google Account email and password.
+Right-click on your project and select **Google > Deploy to App Engine**. In the resulting **Deploy Project to Google App Engine** dialog, enter your Google Account email and password.
 
 Click **Deploy**.
 

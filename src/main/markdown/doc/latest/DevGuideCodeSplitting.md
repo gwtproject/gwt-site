@@ -40,7 +40,7 @@ for execution to proceed.
 
 For example, here is the initial, unsplit Hello sample that comes with GWT:
 
-<pre class="prettyprint">
+```
 public class Hello implements EntryPoint {
   public void onModuleLoad() {
     Button b = new Button("Click me", new ClickHandler() {
@@ -52,12 +52,12 @@ public class Hello implements EntryPoint {
     RootPanel.get().add(b);
   }
 }
-</pre>
+```
 
 Suppose you wanted to split out the `Window.alert` call into
 a separate code download.  The following code accomplishes this:
 
-<pre class="prettyprint">
+```
 public class Hello implements EntryPoint {
   public void onModuleLoad() {
     Button b = new Button("Click me", new ClickHandler() {
@@ -77,7 +77,7 @@ public class Hello implements EntryPoint {
     RootPanel.get().add(b);
   }
 }
-</pre>
+```
 
 In the place the code used to call `Window.alert`, there is
 now a call to `GWT.runAsync`.  The argument
@@ -261,11 +261,11 @@ specify a list of those names in your module file.
 To give a name to a `runAsync` call, add a class literal as
 the first argument to the call to `runAsync`, like this:
 
-<pre class="prettyprint">
-  GWT.runAsync(SomeClass.class, new RunAsyncCallback() {
+```
+GWT.runAsync(SomeClass.class, new RunAsyncCallback() {
     // ... callback class's body ...
   }
-</pre>
+```
 
 This first argument must be a class literal, and it is ignored
 except to be used as a name for the call.  Any class literal can be
@@ -275,10 +275,10 @@ appears in.
 Once you have named your calls, you can specify an initial load sequence
 with lines like the following:
 
-<pre class="prettyprint">
-  &lt;extend-configuration-property name="compiler.splitpoint.initial.sequence"
+```
+<extend-configuration-property name="compiler.splitpoint.initial.sequence"
     value="com.yourcompany.yourprogram.SomeClass"/>
-</pre>
+```
 
 The `value` part of the line specifies a split point.  It is
 interpreted as a fully qualified class name that must match a literal
@@ -290,14 +290,14 @@ continue extending the initial load sequence by adding more lines to
 the configuration property.  For example, here is module code to
 specify an initial load sequence of three split points.
 
-<pre class="prettyprint">
-  &lt;extend-configuration-property name="compiler.splitpoint.initial.sequence"
+```
+<extend-configuration-property name="compiler.splitpoint.initial.sequence"
     value="com.yourcompany.yourprogram.SomeClass"/>
-  &lt;extend-configuration-property name="compiler.splitpoint.initial.sequence"
+  <extend-configuration-property name="compiler.splitpoint.initial.sequence"
     value="com.yourcompany.yourprogram.AnotherClassClass"/>
-  &lt;extend-configuration-property name="compiler.splitpoint.initial.sequence"
+  <extend-configuration-property name="compiler.splitpoint.initial.sequence"
     value="com.yourcompany.yourprogram.YetAnotherClass"/>
-</pre>
+```
 
 The down side to specifying an initial load sequence is that if the
 split points are reached in a different order than specified, then
@@ -343,7 +343,7 @@ be within a `runAsync`.
 
 The overall pattern looks as follows.
 
-<pre class="prettyprint">
+```
 public class Module {
   // public APIs
   public doSomething() { /* ... */ }
@@ -378,7 +378,7 @@ public class Module {
     });
   }
 }
-</pre>
+```
 
 Whenever you access the module from code that possibly loads before
 the module, go through the static Module.createAsync method.  This
@@ -415,7 +415,7 @@ You might have a split point just before showing information about
 that contact.  A prefetchable way to wrap that code would be as
 follows:
 
-<pre class="prettyprint">
+```
 public void showContact(final String contactId) {
   GWT.runAsync(new RunAsyncCallback() {
       public void onFailure(Throwable caught) {
@@ -432,7 +432,7 @@ public void showContact(final String contactId) {
       }
   });
 }
-</pre>
+```
 
 Here, if `showContact` is called with an actual contact ID,
 then the callback displays the information about that contact.  If,

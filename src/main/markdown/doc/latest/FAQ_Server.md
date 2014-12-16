@@ -38,13 +38,13 @@ application so as not to break the SOP. In GWT 1.4 and later, this is no longer 
 
 Typically, the bootstrap process will load the GWT application files from the same web server that is serving the HTML host page. That is, supposing the host HTML file was
 located at `http://mydomain.com/index.html`, the GWT application files would also be in the same directory (or a subdirectory) as the index.html file. To load the GWT
-application, the `&lt;`module`&gt;`.nocache.js file would be bootstrapped by having the index.html file include a `&lt;`script`&gt;` tag referencing
-the `&lt;`module`&gt;`.nocache.js file. This is the standard bootstrap process to load a GWT application. The `&lt;`script`&gt;` tag that needs to be
+application, the `<`module`>`.nocache.js file would be bootstrapped by having the index.html file include a `<`script`>` tag referencing
+the `<`module`>`.nocache.js file. This is the standard bootstrap process to load a GWT application. The `<`script`>` tag that needs to be
 included in the main host HTML page is shown below:
 
-<pre class="prettyprint">
-&lt;script language=&quot;JavaScript&quot; src=&quot;http://mydomain.com/&lt;module&gt;.nocache.js&quot;&gt;&lt;/script&gt;
-</pre>
+```
+<script language="JavaScript" src="http://mydomain.com/<module>.nocache.js"></script>
+```
 
 However, many organizations setup their deployment platform in such a way that their main host HTML page is served up from [http://mydomain.com/](http://mydomain.com/), but any other resources such as images and JavaScript files are served up from a separate static server under
 `http://static.mydomain.com/`. In older versions of GWT, this configuration would not be possible as the SOP prevented the GWT bootstrap process from allowing script from
@@ -54,20 +54,20 @@ GWT 2.1, you should however rather use the cross-site iframe linker (xsiframe-li
 sandboxes the GWT code inside an iframe, like the standard linker but contrary to the cross-site linker.
 
 When using the cross-site linker or cross-site iframe linker, the compiler will still generate a
-&lt;module>.nocache.js that you will want to reference within your index.html. The
-difference though, is that the &lt;module>.nocache.js produced by the cross-site
+`<module>.nocache.js` that you will want to reference within your index.html. The
+difference though, is that the `<module>.nocache.js` produced by the cross-site
 linkers will link in a cache.js file for each of your permutations rather than
 a cache.html file.
 
 To enable the cross-site linking simply add the following to your
-&lt;module>.gwt.xml and include a reference to your &lt;module>.nocache.js in your
+`<module>.gwt.xml` and include a reference to your `<module>.nocache.js` in your
 index.html as you normally would.
 
-<pre class="prettyprint">
-&lt;add-linker name="xsiframe"/&gt;
-</pre>
+```
+<add-linker name="xsiframe"/>
+```
 
-For more details on the GWT bootstrap process, see &quot;What's with all the cache/nocache stuff and weird filenames?&quot;
+For more details on the GWT bootstrap process, see "What's with all the cache/nocache stuff and weird filenames?"
 
 ### SOP, GWT, and XMLHTTPRequest Calls<a id="SOP,_GWT,_and_XMLHTTPRequest_Calls"></a>
 
@@ -80,7 +80,7 @@ impossible, prevented by the SOP.
 This limitation affects all forms of calls to the server, whether JSON, XML-RPC, or GWT's own RPC library. Generally, you must either run your CGI environment on the same
 server as the GWT application, or implement a more sophisticated solution such as round-robin DNS load balancing or a reverse-proxy mechanism for your application's CGI calls.
 
-In certain cases, it is possible to work around this limitation. For an example, see &quot;How can I dynamically fetch JSON feeds from other web domains?&quot;
+In certain cases, it is possible to work around this limitation. For an example, see "How can I dynamically fetch JSON feeds from other web domains?"
 
 ### SOP and GWT Development Mode<a id="SOP_and_GWT_Hosted_Mode"></a>
 
@@ -92,7 +92,7 @@ do I use my own server in development mode instead of GWT's built-in Jetty insta
 
 ## How do I make a call to the server if I am not using GWT RPC?<a id="How_do_I_make_a_call_to_the_server_if_I_am_not_using_GWT_RPC?"></a>
 
-The heart of AJAX is making data read/write calls to a server from the JavaScript application running in the browser. GWT is &quot;RPC agnostic&quot; and has no particular requirements
+The heart of AJAX is making data read/write calls to a server from the JavaScript application running in the browser. GWT is "RPC agnostic" and has no particular requirements
 about what protocol is used to issue RPC requests, or even what language the server code is written in. Although GWT provides a library of classes that makes the RPC
 communications with a J2EE server extremely easy, you are not required to use them. Instead you can build custom HTTP requests to retrieve, for example, JSON or XML-formatted
 data.
@@ -120,9 +120,9 @@ You should definitely use `RequestBuilder` instead.
 
 If you are attempting to use the RequestBuilder class and are having problems, first check your module XML file to make sure that the HTTP module is inherited, as follows:
 
-<pre class="prettyprint">
-    &lt;inherits name=&quot;com.google.gwt.http.HTTP&quot;/&gt;
-</pre>
+```
+<inherits name="com.google.gwt.http.HTTP"/>
+```
 
 ### Learn more<a id="Learn_more"></a>
 
@@ -134,7 +134,7 @@ If you are attempting to use the RequestBuilder class and are having problems, f
 
 The GWT RPC system does support the use of `java.io.Serializable`, however only under a certain condition.
 
-Previous to 1.4, the GWT RPC mechanism used an &quot;IsSerializable&quot; marker interface for denoting classes that can be serialized. Many users expressed the wish to reuse code with
+Previous to 1.4, the GWT RPC mechanism used an "IsSerializable" marker interface for denoting classes that can be serialized. Many users expressed the wish to reuse code with
 GWT that they have already written that used the standard `java.io.Serializable` marker interface. Since both interfaces are empty marker interfaces, there is no technical
 reason why GWT's RPC mechanism could not use the standard `java.io.Serializable`. However, there are good reasons to choose not to do so:
 
@@ -164,8 +164,14 @@ is an important point to keep in mind if your application uses GWT RPC.
 
 ## How can I dynamically fetch JSON feeds from other web domains?<a id="How_can_I_dynamically_fetch_JSON_feeds_from_other_web_domains?"></a>
 
-Like all AJAX tools, GWT's HTTP client and RPC libraries are restricted to only accessing data from the same site where your application was loaded, due to the browser Same
+Like all AJAX tools, GWT's HTTP client and RPC libraries are restricted to only accessing data from 
+the same site where your application was loaded, due to the browser Same
 Origin Policy. If you are using JSON, you can work around this limitation using a
-`<script>` tag (aka JSON-P).</a>
+`<script>` tag (aka JSON-P).
 
-First, you need an external JSON service which can invoke user defined callback functions with the JSON data as argument. An example of such a service is [GData's &quot;alt=json-in-script&amp;callback=myCallback&quot; support](https://developers.google.com/gdata/docs/json). Then, you can use [JsonpRequestBuilder](/javadoc/latest/com/google/gwt/jsonp/client/JsonpRequestBuilder.html) to make your call, ini a way similar to a <code>RequestBuilder</a> when you're not making a cross-site request.
+First, you need an external JSON service which can invoke user defined callback functions with 
+the JSON data as argument. An example of such a service is [GData's "alt=json-in-script&amp;
+callback=myCallback" support](https://developers.google.com/gdata/docs/json). Then, you can 
+use [JsonpRequestBuilder](/javadoc/latest/com/google/gwt/jsonp/client/JsonpRequestBuilder.html) 
+to make your call, in a way similar to a `RequestBuilder` when you're not making a cross-site 
+request.

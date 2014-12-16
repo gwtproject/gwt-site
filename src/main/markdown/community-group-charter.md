@@ -33,7 +33,7 @@ GWT community to join us in accepting nothing less. Being
 courteous does not mean we can't constructively disagree with
 each other, but it does mean that we must be polite when we do so.
 There's **never** a reason to be antagonistic or
-dismissive toward anyone;&nbsp; if you think there is, you should think again before you post.
+dismissive toward anyone; if you think there is, you should think again before you post.
 
     Sure, web development is serious business and all that, but it's
 also a lot of fun. Let's keep it that way. Let's strive to be one of the
@@ -43,16 +43,16 @@ friendliest communities in all of open source.
 
     Most topics are technical discussions of GWT or users helping each other,
 but this Group is intended for discussion of everything under the Sun
-in the world of GWT.&nbsp; That means we also welcome announcements and
+in the world of GWT. That means we also welcome announcements and
 discussion of products, libraries, publications, and other interesting
-GWT-related news.&nbsp; We even welcome (polite!) discussion of
+GWT-related news. We even welcome (polite!) discussion of
 articles and ideas critical of GWT -- after all, we can't improve if we
-don't listen.&nbsp; There are no restrictions on the subject matter,
+don't listen. There are no restrictions on the subject matter,
 and we don't exclude commercial products from our discussion, if users
-are interested in talking about them.&nbsp;</p>
+are interested in talking about them. </p>
 
     However, we hate spam almost as passionately as we love courtesy and respect, so we
-reserve the right to limit discussions that amount to spam.&nbsp;
+reserve the right to limit discussions that amount to spam.
 Outright spam, of course, will result in that user being immediately
 and permanently banned from the list.
 

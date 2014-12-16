@@ -31,9 +31,9 @@ that is designed to perform local sorting of a java.util.List.
 
 **Code Example** - The example below adds column sorting support to a CellTable backed by a ListDataProvider.
 
-<pre class="prettyprint">
+```
 /**
- * Entry point classes define &lt;code&gt;onModuleLoad()&lt;/code&gt;.
+ * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class CellTableExample implements EntryPoint {
   // A simple data type that represents a contact.
@@ -48,17 +48,17 @@ public class CellTableExample implements EntryPoint {
   }
 
   // The list of data to display.
-  private static List&lt;Contact&gt; CONTACTS = Arrays.asList(new Contact("John",
+  private static List<Contact> CONTACTS = Arrays.asList(new Contact("John",
       "123 Fourth Road"), new Contact("Mary", "222 Lancer Lane"), new Contact(
       "Zander", "94 Road Street"));
 
   public void onModuleLoad() {
 
     // Create a CellTable.
-    CellTable&lt;Contact&gt; table = new CellTable&lt;Contact&gt;();
+    CellTable<Contact> table = new CellTable<Contact>();
 
     // Create name column.
-    TextColumn&lt;Contact&gt; nameColumn = new TextColumn&lt;Contact&gt;() {
+    TextColumn<Contact> nameColumn = new TextColumn<Contact>() {
       @Override
       public String getValue(Contact contact) {
         return contact.name;
@@ -69,7 +69,7 @@ public class CellTableExample implements EntryPoint {
     nameColumn.setSortable(true);
 
     // Create address column.
-    TextColumn&lt;Contact&gt; addressColumn = new TextColumn&lt;Contact&gt;() {
+    TextColumn<Contact> addressColumn = new TextColumn<Contact>() {
       @Override
       public String getValue(Contact contact) {
         return contact.address;
@@ -81,24 +81,24 @@ public class CellTableExample implements EntryPoint {
     table.addColumn(addressColumn, "Address");
 
     // Create a data provider.
-    ListDataProvider&lt;Contact&gt; dataProvider = new ListDataProvider&lt;Contact&gt;();
+    ListDataProvider<Contact> dataProvider = new ListDataProvider<Contact>();
 
     // Connect the table to the data provider.
     dataProvider.addDataDisplay(table);
 
     // Add the data to the data provider, which automatically pushes it to the
     // widget.
-    List&lt;Contact&gt; list = dataProvider.getList();
+    List<Contact> list = dataProvider.getList();
     for (Contact contact : CONTACTS) {
       list.add(contact);
     }
 
     // Add a ColumnSortEvent.ListHandler to connect sorting to the
     // java.util.List.
-    ListHandler&lt;Contact&gt; columnSortHandler = new ListHandler&lt;Tester.Contact&gt;(
+    ListHandler<Contact> columnSortHandler = new ListHandler<Tester.Contact>(
         list);
     columnSortHandler.setComparator(nameColumn,
-        new Comparator&lt;Tester.Contact&gt;() {
+        new Comparator<Tester.Contact>() {
           public int compare(Contact o1, Contact o2) {
             if (o1 == o2) {
               return 0;
@@ -120,7 +120,7 @@ public class CellTableExample implements EntryPoint {
     RootPanel.get().add(table);
   }
 }
-</pre>
+```
 
 ### ColumnSorting with AsyncDataProvider
 
@@ -133,9 +133,9 @@ which triggers a RangeChangeEvent to the AsyncDataProvider.
 
 **Code Example** - The example below adds column sorting support to a CellTable backed by an AsyncDataProvider.
 
-<pre class="prettyprint">
+```
 /**
- * Entry point classes define &lt;code&gt;onModuleLoad()&lt;/code&gt;.
+ * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class CellTableExample implements EntryPoint {
 
@@ -151,17 +151,17 @@ public class CellTableExample implements EntryPoint {
   }
 
   // The list of data to display.
-  private static List&lt;Contact&gt; CONTACTS = Arrays.asList(new Contact("John",
+  private static List<Contact> CONTACTS = Arrays.asList(new Contact("John",
       "123 Fourth Road"), new Contact("Mary", "222 Lancer Lane"), new Contact(
       "Zander", "94 Road Street"));
 
   public void onModuleLoad() {
 
     // Create a CellTable.
-    final CellTable&lt;Contact&gt; table = new CellTable&lt;Contact&gt;();
+    final CellTable<Contact> table = new CellTable<Contact>();
 
     // Create name column.
-    TextColumn&lt;Contact&gt; nameColumn = new TextColumn&lt;Contact&gt;() {
+    TextColumn<Contact> nameColumn = new TextColumn<Contact>() {
       @Override
       public String getValue(Contact contact) {
         return contact.name;
@@ -172,7 +172,7 @@ public class CellTableExample implements EntryPoint {
     nameColumn.setSortable(true);
 
     // Create address column.
-    TextColumn&lt;Contact&gt; addressColumn = new TextColumn&lt;Contact&gt;() {
+    TextColumn<Contact> addressColumn = new TextColumn<Contact>() {
       @Override
       public String getValue(Contact contact) {
         return contact.address;
@@ -192,9 +192,9 @@ public class CellTableExample implements EntryPoint {
     table.setVisibleRange(0, 3);
 
     // Create a data provider.
-    AsyncDataProvider&lt;Contact&gt; dataProvider = new AsyncDataProvider&lt;Contact&gt;() {
+    AsyncDataProvider<Contact> dataProvider = new AsyncDataProvider<Contact>() {
       @Override
-      protected void onRangeChanged(HasData&lt;Contact&gt; display) {
+      protected void onRangeChanged(HasData<Contact> display) {
         final Range range = display.getVisibleRange();
 
         // Get the ColumnSortInfo from the table.
@@ -210,7 +210,7 @@ public class CellTableExample implements EntryPoint {
             int end = start + range.getLength();
             // This sorting code is here so the example works. In practice, you
             // would sort on the server.
-            Collections.sort(CONTACTS, new Comparator&lt;Tester.Contact&gt;() {
+            Collections.sort(CONTACTS, new Comparator<Tester.Contact>() {
               public int compare(Contact o1, Contact o2) {
                 if (o1 == o2) {
                   return 0;
@@ -224,7 +224,7 @@ public class CellTableExample implements EntryPoint {
                 return sortList.get(0).isAscending() ? diff : -diff;
               }
             });
-            List&lt;Contact&gt; dataInRange = CONTACTS.subList(start, end);
+            List<Contact> dataInRange = CONTACTS.subList(start, end);
 
             // Push the data back into the list.
             table.setRowData(start, dataInRange);
@@ -248,7 +248,7 @@ public class CellTableExample implements EntryPoint {
     RootPanel.get().add(table);
   }
 }
-</pre>
+```
 
 ## Controlling Column Widths<a id="columnWidths"></a>
 
@@ -263,9 +263,9 @@ recipes for achieving various effects.
 
 **Code Example** - The example below creates a CellTable with fixed-width columns that expand to fill the available space.
 
-<pre class="prettyprint">
+```
 /**
- * Entry point classes define &lt;code&gt;onModuleLoad()&lt;/code&gt;.
+ * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class Tester implements EntryPoint {
   // A simple data type that represents a contact.
@@ -280,16 +280,16 @@ public class Tester implements EntryPoint {
   }
 
   // The list of data to display.
-  private static List&lt;Contact&gt; CONTACTS = Arrays.asList(new Contact("John",
+  private static List<Contact> CONTACTS = Arrays.asList(new Contact("John",
       "123 Fourth Road"), new Contact("Mary", "222 Lancer Lane"));
 
   public void onModuleLoad() {
 
     // Create a CellTable.
-    CellTable&lt;Contact&gt; table = new CellTable&lt;Contact&gt;();
+    CellTable<Contact> table = new CellTable<Contact>();
 
     // Create name column.
-    TextColumn&lt;Contact&gt; nameColumn = new TextColumn&lt;Contact&gt;() {
+    TextColumn<Contact> nameColumn = new TextColumn<Contact>() {
       @Override
       public String getValue(Contact contact) {
         return contact.name;
@@ -297,7 +297,7 @@ public class Tester implements EntryPoint {
     };
 
     // Create address column.
-    TextColumn&lt;Contact&gt; addressColumn = new TextColumn&lt;Contact&gt;() {
+    TextColumn<Contact> addressColumn = new TextColumn<Contact>() {
       @Override
       public String getValue(Contact contact) {
         return contact.address;
@@ -326,7 +326,7 @@ public class Tester implements EntryPoint {
     RootPanel.get().add(table);
   }
 }
-</pre>
+```
 
 ### Specify Exact Width of All Columns
 
@@ -337,13 +337,13 @@ table width to "auto" and assign an absolute width to every column.
 set the width of a column, the column will not be visible. Columns default to
 a width of 0.
 
-<pre class="prettyprint">
-    table.setWidth("auto", true);
+```
+table.setWidth("auto", true);
     table.setColumnWidth(col0, 100.0, Unit.PX);
     table.setColumnWidth(col1, 150.0, Unit.PX);
     table.setColumnWidth(col2, 250.0, Unit.PX);
     table.setColumnWidth(col3, 100.0, Unit.PX);
-</pre>
+```
 
 ### Specify Relative Width of All Columns
 
@@ -355,13 +355,13 @@ Column in percentages.
 percentages, the percentages should add up to 100%. Failure to do so may result
 in unintended layout issues.
 
-<pre class="prettyprint">
-    table.setWidth("100%", true);
+```
+table.setWidth("100%", true);
     table.setColumnWidth(col0, 10.0, Unit.PCT);
     table.setColumnWidth(col1, 25.0, Unit.PCT);
     table.setColumnWidth(col2, 25.0, Unit.PCT);
     table.setColumnWidth(col3, 40.0, Unit.PCT);
-</pre>
+```
 
 ### Mix Fixed and Relative Column Widths
 
@@ -380,9 +380,10 @@ columns in pixels.
 add up to 100%. If they do not, then columns specified in pixels will also resize
 with the table in an unpredictable way.
 
-<pre class="prettyprint">
-    table.setWidth("100%", true);
+```
+table.setWidth("100%", true);
     table.setColumnWidth(checkboxCol, 10.0, Unit.PX);
     table.setColumnWidth(nameCol, 35.0, Unit.PCT);
     table.setColumnWidth(descriptionCol, 65.0, Unit.PCT);
-</pre>
+```
+

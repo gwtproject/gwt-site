@@ -29,7 +29,7 @@ Below is a list of articles (most recent first) that have been published about G
 
 *   [Testing Methodologies Using GWT](testing_methodologies_using_gwt.html) - _March 2009_
 
-     An article adapted from Daniel Wellman's &quot;GWT: Writing Ajax Applications Test-First&quot; (BetterSoftware magazine) that illustrates test-driven design for GWT applications.
+     An article adapted from Daniel Wellman's "GWT: Writing Ajax Applications Test-First" (BetterSoftware magazine) that illustrates test-driven design for GWT applications.
 
 *   [DOM Events, Memory Leaks, and You](dom_events_memory_leaks_and_you.html) - _January 2009_
 

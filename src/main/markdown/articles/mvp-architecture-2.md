@@ -24,7 +24,7 @@ To start things out, let's take a look at the code that constructs our main
 ContactList view. Previously we programmatically setup the UI within the
 ContactsView constructor:
 
-<pre class="prettyprint">
+```
 public class ContactsView extends Composite implements ContactsPresenter.Display {
   ...
   public ContactsView() {
@@ -64,7 +64,7 @@ public class ContactsView extends Composite implements ContactsPresenter.Display
   }
   ...
 }
-</pre>
+```
 
 The first step towards a UiBinder-way of doing things is to move this code
 into a Contacts.ui.xml file and perform the associated transformations. As
@@ -72,14 +72,14 @@ mentioned in previous chapters, constructing UiBinder-based UIs allows you to
 do so in a declarative way that resembles HTML more than straight Java code.
 To that extent, the result is the following:
 
-<pre style="color:#008">
+```
 ContactsView.ui.xml
 
-&lt;ui:UiBinder
+<ui:UiBinder
   xmlns:ui="urn:ui:com.google.gwt.uibinder"
   xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
-  &lt;ui:style>
+  <ui:style>
     .contactsViewButtonHPanel {
       margin: 5px 0px 0x 5px;
     }
@@ -87,29 +87,29 @@ ContactsView.ui.xml
       margin: 5px 0px 5px 0px;
     }
 
-  &lt;/ui:style>
+  </ui:style>
 
-  &lt;g:DecoratorPanel>
-    &lt;g:VerticalPanel>
-      &lt;g:HorizontalPanel addStyleNames="{style.contactsViewButtonHPanel}">
-        &lt;g:Button ui:field="addButton">Add&lt;/g:Button>
-        &lt;g:Button ui:field="deleteButton">Delete&lt;/g:Button>
-      &lt;/g:HorizontalPanel>
-      &lt;g:FlexTable ui:field="contactsTable" addStyleNames="{style.contactsViewContactsFlexTable}"/>
-    &lt;/g:VerticalPanel>
-  &lt;/g:DecoratorPanel>
-&lt;/ui:UiBinder>
-</pre>
+  <g:DecoratorPanel>
+    <g:VerticalPanel>
+      <g:HorizontalPanel addStyleNames="{style.contactsViewButtonHPanel}">
+        <g:Button ui:field="addButton">Add</g:Button>
+        <g:Button ui:field="deleteButton">Delete</g:Button>
+      </g:HorizontalPanel>
+      <g:FlexTable ui:field="contactsTable" addStyleNames="{style.contactsViewContactsFlexTable}"/>
+    </g:VerticalPanel>
+  </g:DecoratorPanel>
+</ui:UiBinder>
+```
 
 Here we've laid out a VerticalPanel that wraps our Add/Delete buttons and
 FlexTable that contains the list of contacts. This is then wrapped by a
-DecoratorPanel for a bit of style. The &lt;ui:style> element declares a small
+DecoratorPanel for a bit of style. The `<ui:style>` element declares a small
 amount of margin so that things aren't placed too close together.
 The ContactsView constructor and members are then reduced to the
 following:
 
-<pre class="prettyprint">
-public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
+```
+public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
   ...
   @UiTemplate("ContactsView.ui.xml")
   interface ContactsViewUiBinder extends UiBinder<Widget, ContactsViewImpl> {}
@@ -125,7 +125,7 @@ public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt
   }
   ...
 }
-</pre>
+```
 
 We'll get to why it's templatized, why it's an "impl" class, and why we use
 the UiTemplate annotation later on when we discuss "Complex UIs - Dumb Views".
@@ -145,14 +145,14 @@ Presenter interface that allows our ContactsView to callback into the presenter
 when it receives a click, select or other event. The Presenter interface defines
 the following:
 
-<pre class="prettyprint">
-  public interface Presenter&lt;T> {
+```
+public interface Presenter<T> {
     void onAddButtonClicked();
     void onDeleteButtonClicked();
     void onItemClicked(T clickedItem);
     void onItemSelected(T selectedItem);
   }
-</pre>
+```
 
 Again, templatizing the interface will be covered in the next section, but
 with this interface in place you can start to see how the ContactsView is going
@@ -161,18 +161,18 @@ up is to have our ContactsPresenter implement the Presenter interface, and then
 register itself with the underlying view. To register itself, we'll need our
 ContactsView to expose a setPresenter() method:
 
-<pre class="prettyprint">
-  private Presenter&lt;T> presenter;
-  public void setPresenter(Presenter&lt;T> presenter) {
+```
+private Presenter<T> presenter;
+  public void setPresenter(Presenter<T> presenter) {
     this.presenter = presenter;
   }
-</pre>
+```
 
 Now we can take a look at how we'll wire up the UI interactions within the
 ContactsView via the UiHandler annotation:
 
-<pre class="prettyprint">
-public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
+```
+public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
   ...
   @UiHandler("addButton")
   void onAddButtonClicked(ClickEvent event) {
@@ -207,14 +207,14 @@ public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt
   }
   ...
 }
-</pre>
+```
 
 Using this technique, we've provided the UiBinder generator the corresponding
 methods that should be called when a Widget has a "ui:field" attribute set to
 "addButton", "deleteButton", and "contactsTable". On the ContactsPresenter side
 of the fence we end up with the following:
 
-<pre class="prettyprint">
+```
 public class ContactsPresenter implements Presenter {
   ...
   public void onAddButtonClicked() {
@@ -239,7 +239,7 @@ public class ContactsPresenter implements Presenter {
   }
   ...
 }
-</pre>
+```
 
 The resulting method implementations are the same as the non-UiBinder sample,
 with the exception of the onItemClicked() and onItemSelected() methods. And
@@ -254,14 +254,14 @@ the model to our views. In the case of our ContactsView, the presenter takes a
 list of DTOs (Data Transfer Objects) and constructs a list of Strings that it
 then passes to the view.
 
-<pre class="prettyprint">
+```
 public ContactsPresenter implements Presenter {
   ...
-  public void onSuccess(ArrayList&lt;ContactDetails> result) {
+  public void onSuccess(ArrayList<ContactDetails> result) {
     contactDetails = result;
     sortContactDetails();
-    List&lt;String> data = new ArrayList&lt;String>();
-    for (int i = 0; i &lt; result.size(); ++i) {
+    List<String> data = new ArrayList<String>();
+    for (int i = 0; i < result.size(); ++i) {
       data.add(contactDetails.get(i).getDisplayName());
     }
 
@@ -269,7 +269,7 @@ public ContactsPresenter implements Presenter {
   }
   ...
 }
-</pre>
+```
 
 The "data" object that is passed to the view is a very (and I mean very)
 simplistic ViewModel &mdash; basically a representation of a more complex data model
@@ -286,8 +286,8 @@ homogeneous within column borders. Doing so allows us to define a
 ColumnDefinition abstract class that houses the any type-specific code (this is
 the third party mentioned above).
 
-<pre class="prettyprint">
-  public abstract class ColumnDefinition&lt;T> {
+```
+public abstract class ColumnDefinition<T> {
     public abstract Widget render(T t);
 
     public boolean isClickable() {
@@ -298,20 +298,20 @@ the third party mentioned above).
       return false;
     }
   }
-</pre>
+```
 
 By stringing together a list of these classes, and providing the necessary
 render() implementations and isClickable()/isSelectable() overrides, you can
 start see how we would define our layout. Let's take a look at how we would
 make this work with our Contacts sample.
 
-<pre class="prettyprint">
-  public class ContactsViewColumnDefinitions&lt;ContactDetails> {
-    List&lt;ColumnDefinition&lt;ContactDetails>> columnDefinitions =
-      new ArrayList&lt;ColumnDefinition&lt;ContactDetails>>();
+```
+public class ContactsViewColumnDefinitions<ContactDetails> {
+    List<ColumnDefinition<ContactDetails>> columnDefinitions =
+      new ArrayList<ColumnDefinition<ContactDetails>>();
 
     private ContactsViewColumnDefinitions() {
-      columnDefinitions.add(new ColumnDefinition&lt;ContactDetails>() {
+      columnDefinitions.add(new ColumnDefinition<ContactDetails>() {
         public Widget render(ContactDetails c) {
           return new CheckBox();
         }
@@ -321,7 +321,7 @@ make this work with our Contacts sample.
         }
       });
 
-      columnDefinitions.add(new ColumnDefinition&lt;ContactDetails>() {
+      columnDefinitions.add(new ColumnDefinition<ContactDetails>() {
         public Widget render(ContactDetails c) {
           return new HTML(c.getDisplayName());
         }
@@ -332,11 +332,11 @@ make this work with our Contacts sample.
       });
     }
 
-    public List&lt;ColumnDefinition&lt;ContactDetails>> getColumnDefnitions() {
+    public List<ColumnDefinition<ContactDetails>> getColumnDefnitions() {
       return columnDefinitions;
     }
   }
-</pre>
+```
 
 These ColumnDefinition(s) would be created outside of the presenter so that
 we can reuse its logic regardless of what view we've attached ourself to (be it
@@ -345,27 +345,27 @@ platform-specific ContactsViewColumnDefinitions class that is loaded (or
 injected using GIN) on a per-permutation basis. Regardless of the technique,
 we'll need to update our views such that we can set their ColumnDefinition(s).
 
-<pre class="prettyprint">
-  public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
+```
+public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
     ...
-    private List&lt;ColumnDefinition&lt;T>> columnDefinitions;
+    private List<ColumnDefinition<T>> columnDefinitions;
     public void setColumnDefinitions(
-        List&lt;ColumnDefinition&lt;T>> columnDefinitions) {
+        List<ColumnDefinition<T>> columnDefinitions) {
       this.columnDefinitions = columnDefinitions;
     }
     ...
   }
-</pre>
+```
 
-Note that our ContactsView is now ContactsViewImpl&lt;T> and implements
-ContactsView&lt;T>. This is so that we can pass in a mocked ContactsView instance
+Note that our ContactsView is now ContactsViewImpl<T> and implements
+ContactsView<T>. This is so that we can pass in a mocked ContactsView instance
 when testing our ContactsPresenter. Now in our AppController, when we create the
 ContactsView, we can initialize it with the necessary ColumnDefinition(s).
 
-<pre class="prettyprint">
-  public class AppController implements Presenter, ValueChangeHandler&lt;String> {
+```
+public class AppController implements Presenter, ValueChangeHandler<String> {
     ...
-    public void onValueChange(ValueChangeEvent&lt;String> event) {
+    public void onValueChange(ValueChangeEvent<String> event) {
       String token = event.getValue();
       if (token != null) {
         Presenter presenter = null;
@@ -373,7 +373,7 @@ ContactsView, we can initialize it with the necessary ColumnDefinition(s).
           // lazily initialize our views, and keep them around to be reused
           //
           if (contactsView == null) {
-            contactsView = new ContactsViewImpl&lt;ContactDetails>();
+            contactsView = new ContactsViewImpl<ContactDetails>();
             if (contactsViewColumnDefinitions == null) {
               contcactsViewColumnDefinitions = new ContactsViewColumnDefinitions().getColumnDefinitions();
             }
@@ -386,19 +386,19 @@ ContactsView, we can initialize it with the necessary ColumnDefinition(s).
     }
     ...
   }
-</pre>
+```
 
 With the ColumnDefinition(s) in place, we will start to see the fruits of our
 labor. Mainly in the way we pass model data to the view. As mentioned above we
 were previously dumbing down the model into a list of Strings. With our
 ColumnDefinition(s) we can pass the model untouched.
 
-<pre class="prettyprint">
-  public class ContactsPresenter implements Presenter,
+```
+public class ContactsPresenter implements Presenter,
     ...
     private void fetchContactDetails() {
-      rpcService.getContactDetails(new AsyncCallback&lt;ArrayList&lt;ContactDetails>>() {
-        public void onSuccess(ArrayList&lt;ContactDetails> result) {
+      rpcService.getContactDetails(new AsyncCallback<ArrayList<ContactDetails>>() {
+        public void onSuccess(ArrayList<ContactDetails> result) {
             contactDetails = result;
             sortContactDetails();
             view.setRowData(contactDetails);
@@ -408,28 +408,28 @@ ColumnDefinition(s) we can pass the model untouched.
     }
     ...
   }
-</pre>
+```
 
 And our ContactsViewImpl has the following setRowData() implementation:
 
-<pre class="prettyprint">
-  public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
+```
+public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
     ...
-    public void setRowData(List&lt;T> rowData) {
+    public void setRowData(List<T> rowData) {
       contactsTable.removeAllRows();
       this.rowData = rowData;
 
-      for (int i = 0; i &lt; rowData.size(); ++i) {
+      for (int i = 0; i < rowData.size(); ++i) {
         T t = rowData.get(i);
-        for (int j = 0; j &lt; columnDefinitions.size(); ++j) {
-          ColumnDefinition&lt;T> columnDefinition = columnDefinitions.get(j);
+        for (int j = 0; j < columnDefinitions.size(); ++j) {
+          ColumnDefinition<T> columnDefinition = columnDefinitions.get(j);
           contactsTable.setWidget(i, j, columnDefinition.render(t));
         }
       }
     }
     ...
   }
-</pre>
+```
 
 A definite improvement; the presenter can pass the model untouched and the
 view has no rendering code that we would otherwise need to test. And the fun
@@ -437,8 +437,8 @@ doesn't stop there. Remember the isClickable() and isSelectable() methods? Well,
 let's take a look at how they work in conjunction with ClickEvents that are
 received within the view.
 
-<pre class="prettyprint">
-  public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
+```
+public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
     ...
     @UiHandler("contactsTable")
     void onTableClicked(ClickEvent event) {
@@ -461,7 +461,7 @@ received within the view.
       boolean shouldFireClickEvent = false;
 
       if (cell != null) {
-        ColumnDefinition&lt;T> columnDefinition =
+        ColumnDefinition<T> columnDefinition =
           columnDefinitions.get(cell.getCellIndex());
 
         if (columnDefinition != null) {
@@ -476,7 +476,7 @@ received within the view.
       boolean shouldFireSelectEvent = false;
 
       if (cell != null) {
-        ColumnDefinition&lt;T> columnDefinition =
+        ColumnDefinition<T> columnDefinition =
           columnDefinitions.get(cell.getCellIndex());
 
         if (columnDefinition != null) {
@@ -488,7 +488,7 @@ received within the view.
     }
     ...
   }
-</pre>
+```
 
 The notion here is that you'll want to respond to user interaction in
 different ways based upon the cell type that was clicked. Given that our
@@ -502,11 +502,11 @@ getSelectedRows() with a SelectionModel that the presenter holds on to. The
 SelectionModel is nothing more than a wrapper around a list of model
 objects.
 
-<pre class="prettyprint">
-  public class SelectionModel&lt;T> {
-    List&lt;T> selectedItems = new ArrayList&lt;T>();
+```
+public class SelectionModel<T> {
+    List<T> selectedItems = new ArrayList<T>();
 
-    public List&lt;T> getSelectedItems() {
+    public List<T> getSelectedItems() {
       return selectedItems;
     }
 
@@ -522,13 +522,13 @@ objects.
       return selectedItems.contains(item);
     }
   }
-</pre>
+```
 
 The ContactsPresenter holds on to an instance of this class and updates it
 accordingly, based on calls to onItemSelected().
 
-<pre class="prettyprint">
-  public class ContactsPresenter implements Presenter,
+```
+public class ContactsPresenter implements Presenter,
     ...
     public void onItemSelected(ContactDetails contactDetails) {
       if (selectionModel.isSelected(contactDetails)) {
@@ -541,13 +541,13 @@ accordingly, based on calls to onItemSelected().
     }
     ...
   }
-</pre>
+```
 
 When it needs to grab the list of selected items, for example when the user
 clicks the "Delete" button, it has them right at its disposal.
 
-<pre class="prettyprint">
-  public class ContactsPresenter implements Presenter,
+```
+public class ContactsPresenter implements Presenter,
     ...
 
     public void onDeleteButtonClicked() {
@@ -555,15 +555,15 @@ clicks the "Delete" button, it has them right at its disposal.
     }
 
     private void deleteSelectedContacts() {
-      List&lt;ContactDetails> selectedContacts = selectionModel.getSelectedItems();
-      ArrayList&lt;String> ids = new ArrayList&lt;String>();
+      List<ContactDetails> selectedContacts = selectionModel.getSelectedItems();
+      ArrayList<String> ids = new ArrayList<String>();
 
-      for (int i = 0; i &lt; selectedContacts.size(); ++i) {
+      for (int i = 0; i < selectedContacts.size(); ++i) {
         ids.add(selectedContacts.get(i).getId());
       }
 
-      rpcService.deleteContacts(ids, new AsyncCallback&lt;ArrayList&lt;ContactDetails>>() {
-        public void onSuccess(ArrayList&lt;ContactDetails> result) {
+      rpcService.deleteContacts(ids, new AsyncCallback<ArrayList<ContactDetails>>() {
+        public void onSuccess(ArrayList<ContactDetails> result) {
            ...
         }
         ...
@@ -571,7 +571,7 @@ clicks the "Delete" button, it has them right at its disposal.
     }
     ...
   }
-</pre>
+```
 
 Alright, so that was a fair amount to digest, and describing it in code
 snippets might lead to some being "lost in translation". If that's the case,
@@ -600,52 +600,52 @@ a single call.
 *   Reduce the event overhead by sinking events on the HTML widget, rather than
 the individual cells.
 
-<p>The changes are encompassed within our ContactsView.ui.xml file, as well as
+The changes are encompassed within our ContactsView.ui.xml file, as well as
 our setRowData() and onTableClicked() methods. First we'll need to update our
 ContactsView.ui.xml file to use a HTML widget rather than a FlexTable widget.
 
-<pre style="color:#008">
-&lt;ui:UiBinder>
+```
+<ui:UiBinder>
   ...
-  &lt;g:DecoratorPanel>
-    &lt;g:VerticalPanel>
-      &lt;g:HorizontalPanel addStyleNames="{style.contactsViewButtonHPanel}">
-        &lt;g:Button ui:field="addButton">Add&lt;/g:Button>
-        &lt;g:Button ui:field="deleteButton">Delete&lt;/g:Button>
-      &lt;/g:HorizontalPanel>
-      &lt;g:HTML ui:field="contactsTable">&lt;/g:HTML>
-    &lt;/g:VerticalPanel>
-  &lt;/g:DecoratorPanel>
-&lt;/ui:UiBinder>
-</pre>
+  <g:DecoratorPanel>
+    <g:VerticalPanel>
+      <g:HorizontalPanel addStyleNames="{style.contactsViewButtonHPanel}">
+        <g:Button ui:field="addButton">Add</g:Button>
+        <g:Button ui:field="deleteButton">Delete</g:Button>
+      </g:HorizontalPanel>
+      <g:HTML ui:field="contactsTable"></g:HTML>
+    </g:VerticalPanel>
+  </g:DecoratorPanel>
+</ui:UiBinder>
+```
 
 We'll also need to change the widget that we reference within our
 ContactsViewImpl class.
 
-<pre class="prettyprint">
-public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
+```
+public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
   ...
   @UiField HTML contactsTable;
   ...
-</pre>
+```
 
 Next we'll make the necessary changes to our setRowData() method.
 
-<pre class="prettyprint">
-public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
+```
+public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
   ...
-  public void setRowData(List&lt;T> rowData) {
+  public void setRowData(List<T> rowData) {
     this.rowData = rowData;
 
     TableElement table = Document.get().createTableElement();
     TableSectionElement tbody = Document.get().createTBodyElement();
     table.appendChild(tbody);
 
-    for (int i = 0; i &lt; rowData.size(); ++i) {
+    for (int i = 0; i < rowData.size(); ++i) {
       TableRowElement row = tbody.insertRow(-1);
       T t = rowData.get(i);
 
-      for (int j = 0; j &lt; columnDefinitions.size(); ++j) {
+      for (int j = 0; j < columnDefinitions.size(); ++j) {
         TableCellElement cell = row.insertCell(-1);
         StringBuilder sb = new StringBuilder();
         columnDefinitions.get(j).render(t, sb);
@@ -663,7 +663,7 @@ public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt
   }
   ...
 }
-</pre>
+```
 
 The above code is similar to our original setRowData() method, we iterate
 through the rowData and for each item ask our column definitions to render
@@ -675,8 +675,8 @@ as your tables start to grow.
 
 Now let's take a look at the code used to sink events on the table.
 
-<pre class="prettyprint">
-public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
+```
+public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
   ...
   @UiHandler("contactsTable")
   void onTableClicked(ClickEvent event) {
@@ -701,7 +701,7 @@ public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt
       }
   ...
 }
-</pre>
+```
 
 Here our onTableClicked() code gets a bit more complicated, but nothing that
 would raise a red flag when compared to the rest of our application. To
@@ -716,14 +716,14 @@ The other tweak we need to make is to update our shouldFirdClickEvent() and
 shouldFireSelectEvent() to take as a parameter a TableCellElement rather than
 a HTMLTable.Cell. The implementation remains the same, as you can see below.
 
-<pre class="prettyprint">
-public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt;T> {
+```
+public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
   ...
   private boolean shouldFireClickEvent(TableCellElement cell) {
     boolean shouldFireClickEvent = false;
 
     if (cell != null) {
-      ColumnDefinition&lt;T> columnDefinition =
+      ColumnDefinition<T> columnDefinition =
         columnDefinitions.get(cell.getCellIndex());
 
       if (columnDefinition != null) {
@@ -738,7 +738,7 @@ public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt
     boolean shouldFireSelectEvent = false;
 
     if (cell != null) {
-      ColumnDefinition&lt;T> columnDefinition =
+      ColumnDefinition<T> columnDefinition =
         columnDefinitions.get(cell.getCellIndex());
 
       if (columnDefinition != null) {
@@ -750,9 +750,9 @@ public class ContactsViewImpl&lt;T> extends Composite implements ContactsView&lt
   }
   ...
  }
-</pre>
+```
 
-## Code Splitting &ndash; Only the relevant parts please <a id="code_splitting"></a>
+## Code Splitting -- Only the relevant parts please <a id="code_splitting"></a>
 
 Up to this point we've discussed how code maintainability and testing are
 benefits of an MVP-based application. One other benefit that may go overlooked
@@ -774,8 +774,8 @@ the user even logs in? Not really. It would be nice if we could simply grab the
 login code, and leave the rest for when we actually need it (e.g. after the user
 has logged in). Well we can, and here's how.
 
-<pre class="prettyprint">
-  public void onValueChange(ValueChangeEvent&lt;String> event) {
+```
+public void onValueChange(ValueChangeEvent<String> event) {
     String token = event.getValue();
 
     if (token != null) {
@@ -786,7 +786,7 @@ has logged in). Well we can, and here's how.
             // lazily initialize our views, and keep them around to be reused
             //
             if (contactsView == null) {
-              contactsView = new ContactsViewImpl&lt;ContactDetails>();
+              contactsView = new ContactsViewImpl<ContactDetails>();
             }
             new ContactsPresenter(rpcService, eventBus, contactsView).go(container);
           }
@@ -794,7 +794,7 @@ has logged in). Well we can, and here's how.
       }
       ...
    }
-</pre>
+```
 
 Here, all we've done is wrap the code that creates the ContactsView and
 ContactsPresenter in a runAsync() call, and as a result it won't be downloaded

@@ -28,10 +28,12 @@ text. The basic principles are the same in either case.
 
 **Code Example**
 
-ColorCell is a custom Cell that extends AbstractCell&lt;String&gt; and generates a single `div` containing the name of a color, styled
-with specified color as the text color. The generated HTML for each rendered value is `<div style="color: value">value</div>`,
-where value is the color of the cell. In the example below, ColorCell is passed into a CellList to render various colors. The first row contains
-the string "red" colored red, the second is "green" colored green, and so forth, as seen below.
+ColorCell is a custom Cell that extends `AbstractCell<String>` and generates a single `div`
+containing the name of a color, styled with specified color as the text color. The generated HTML
+for each rendered value is `<div style="color: value">value</div>`, where value is the color of
+the cell. In the example below, ColorCell is passed into a CellList to render various colors.
+The first row contains the string "red" colored red, the second is "green" colored green, and so
+forth, as seen below.
 
 > ![img](images/CustomCells-BasicRender.png)
 
@@ -57,7 +59,7 @@ When implementing a render method, you should follow these steps:
 
 You can download this example at [CellExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cell/CellExample.java).
 
-<pre class="prettyprint">
+```
 /**
  * Example of creating a custom {@link Cell}.
  */
@@ -67,7 +69,7 @@ public class CellExample implements EntryPoint {
    * A custom {@link Cell} used to render a string that contains the name of a
    * color.
    */
-  static class ColorCell extends AbstractCell&lt;String&gt; {
+  static class ColorCell extends AbstractCell<String> {
 
     /**
      * The HTML templates used to render the cell.
@@ -83,7 +85,7 @@ public class CellExample implements EntryPoint {
        *          case the value would be escaped.
        * @return a {@link SafeHtml} instance
        */
-      @SafeHtmlTemplates.Template("&lt;div style=\"{0}\"&gt;{1}&lt;/div&gt;")
+      @SafeHtmlTemplates.Template("<div style=\"{0}\">{1}</div>")
       SafeHtml cell(SafeStyles styles, SafeHtml value);
     }
 
@@ -116,7 +118,7 @@ public class CellExample implements EntryPoint {
   /**
    * The list of data to display.
    */
-  private static final List&lt;String&gt; COLORS = Arrays.asList("red", "green", "blue", "violet",
+  private static final List<String> COLORS = Arrays.asList("red", "green", "blue", "violet",
       "black", "gray");
 
   @Override
@@ -125,7 +127,7 @@ public class CellExample implements EntryPoint {
     ColorCell cell = new ColorCell();
 
     // Use the cell in a CellList.
-    CellList&lt;String&gt; cellList = new CellList&lt;String&gt;(cell);
+    CellList<String> cellList = new CellList<String>(cell);
 
     // Push the data into the widget.
     cellList.setRowData(0, COLORS);
@@ -134,7 +136,7 @@ public class CellExample implements EntryPoint {
     RootPanel.get().add(cellList);
   }
 }
-</pre>
+```
 
 ## Handling events from Cells<a id="cell-onBrowserEvent"></a>
 
@@ -187,7 +189,7 @@ The process for adding event support is as follows:
     to indicate that the value of the cell has been modified. For example, you might call the `update()` method if the user types a new value in a text
     box, or if the user clicks on a button.
 
-<pre class="prettyprint">
+```
 /**
  * Example of creating a custom {@link Cell} that responds to events.
  */
@@ -197,7 +199,7 @@ public class CellWithEventsExample implements EntryPoint {
    * A custom {@link Cell} used to render a string that contains the name of a
    * color.
    */
-  static class ColorCell extends AbstractCell&lt;String&gt; {
+  static class ColorCell extends AbstractCell<String> {
 
     /**
      * The HTML templates used to render the cell.
@@ -213,7 +215,7 @@ public class CellWithEventsExample implements EntryPoint {
        *          case the value would be escaped.
        * @return a {@link SafeHtml} instance
        */
-      @SafeHtmlTemplates.Template("&lt;div style=\"{0}\"&gt;{1}&lt;/div&gt;")
+      @SafeHtmlTemplates.Template("<div style=\"{0}\">{1}</div>")
       SafeHtml cell(SafeStyles styles, SafeHtml value);
     }
 
@@ -239,7 +241,7 @@ public class CellWithEventsExample implements EntryPoint {
      */
     @Override
     public void onBrowserEvent(Context context, Element parent, String value, NativeEvent event,
-        ValueUpdater&lt;String&gt; valueUpdater) {
+        ValueUpdater<String> valueUpdater) {
       // Let AbstractCell handle the keydown event.
       super.onBrowserEvent(context, parent, value, event, valueUpdater);
 
@@ -280,11 +282,11 @@ public class CellWithEventsExample implements EntryPoint {
      */
     @Override
     protected void onEnterKeyDown(Context context, Element parent, String value, NativeEvent event,
-        ValueUpdater&lt;String&gt; valueUpdater) {
+        ValueUpdater<String> valueUpdater) {
       doAction(value, valueUpdater);
     }
 
-    private void doAction(String value, ValueUpdater&lt;String&gt; valueUpdater) {
+    private void doAction(String value, ValueUpdater<String> valueUpdater) {
       // Alert the user that they selected a value.
       Window.alert("You selected the color " + value);
 
@@ -298,7 +300,7 @@ public class CellWithEventsExample implements EntryPoint {
   /**
    * The list of data to display.
    */
-  private static final List&lt;String&gt; COLORS = Arrays.asList("red", "green", "blue", "violet",
+  private static final List<String> COLORS = Arrays.asList("red", "green", "blue", "violet",
       "black", "gray");
 
   @Override
@@ -307,7 +309,7 @@ public class CellWithEventsExample implements EntryPoint {
     ColorCell cell = new ColorCell();
 
     // Use the cell in a CellList.
-    CellList&lt;String&gt; cellList = new CellList&lt;String&gt;(cell);
+    CellList<String> cellList = new CellList<String>(cell);
 
     // Push the data into the widget.
     cellList.setRowData(0, COLORS);
@@ -316,4 +318,5 @@ public class CellWithEventsExample implements EntryPoint {
     RootPanel.get().add(cellList);
   }
 }
-</pre>
+```
+

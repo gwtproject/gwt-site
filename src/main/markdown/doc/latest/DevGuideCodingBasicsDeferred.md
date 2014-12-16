@@ -4,7 +4,7 @@ Deferred
 Deferred binding is a feature of the GWT compiler that works by generating many versions of code at compile time, only one of which needs to be loaded by a particular client
 during bootstrapping at runtime. Each version is generated on a per browser basis, along with any other axis that your application defines or uses. For example, if you were to
 internationalize your application using [GWT's Internationalization module](DevGuideI18n.html), the GWT compiler would generate
-various versions of your application per browser environment, such as &quot;Firefox in English&quot;, &quot;Firefox in French&quot;, &quot;Internet Explorer in English&quot;, etc... As a result, the deployed
+various versions of your application per browser environment, such as "Firefox in English", "Firefox in French", "Internet Explorer in English", etc... As a result, the deployed
 JavaScript code is compact and quicker to download than hand coded JavaScript, containing only the code and resources it needs for a particular browser environment.
 
 1.  [Deferred Binding Benefits](#benefits)
@@ -51,14 +51,15 @@ There are two ways in which types can be replaced via deferred binding:
 ## Directives in Module XML files<a id="directives"></a>
 
 The deferred binding mechanism is completely configurable and does not require editing the GWT distributed source code. Deferred binding is configured through the
-`&lt;replace-with&gt;` and `&lt;generate-with&gt;` elements in the [module XML files](DevGuideOrganizingProjects.html#DevGuideModuleXml). The deferred binding
-rules are pulled into the module build through `&lt;inherits&gt;` elements.
+`<replace-with>` and `<generate-with>` elements in the [module XML files](DevGuideOrganizingProjects.html#DevGuideModuleXml). The deferred binding
+rules are pulled into the module build through `<inherits>` elements.
 
 For example, the following configuration invokes deferred binding for the [PopupPanel](/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html) widget:
 
-*   Top level _&lt;module&gt;_.gwt.xml _**inherits**_ [com.google.gwt.user.User](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml)
+*   Top level `<module>.gwt.xml` _**inherits**_
+[com.google.gwt.user.User](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml)
 *   [com/google/gwt/user/User.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml) _**inherits**_ [com.google.gwt.user.Popup](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/Popup.gwt.xml)
-*   [com/google/gwt/user/Popup.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/Popup.gwt.xml) _**contains**_ `&lt;replace-with&gt;` elements to define deferred binding rules for the [PopupPanel](/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html) class.
+*   [com/google/gwt/user/Popup.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/Popup.gwt.xml) _**contains**_ `<replace-with>` elements to define deferred binding rules for the [PopupPanel](/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html) class.
 
 Inside the [PopupPanel](/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html) module XML file, there
 happens to be some rules defined for deferred binding. In this case, we're using a replacement rule.
@@ -68,35 +69,35 @@ happens to be some rules defined for deferred binding. In this case, we're using
 The first type of deferred binding uses _replacement_.
 Replacement means overriding the implementation of one java class with another that is determined at compile time.
 For example, this technique is used to conditionalize the implementation of some widgets, such as the [PopupPanel](/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html).
-The use of `&lt;inherits&gt;` for the `PopupPanel` class is shown in the previous section describing the deferred binding rules.
+The use of `<inherits>` for the `PopupPanel` class is shown in the previous section describing the deferred binding rules.
 The actual replacement rules are specified in `Popup.gwt.xml`, as shown below:
 
-<pre class="prettyprint">
-&lt;module&gt;
+```
+<module>
 
-  &lt;!--  ... other configuration omitted ... --&gt;
+  <!--  ... other configuration omitted ... -->
 
-  &lt;!-- Fall through to this rule is the browser isn't IE or Mozilla --&gt;
-  &lt;replace-with class=&quot;com.google.gwt.user.client.ui.impl.PopupImpl&quot;&gt;
-    &lt;when-type-is class=&quot;com.google.gwt.user.client.ui.impl.PopupImpl&quot;/&gt;
-  &lt;/replace-with&gt;
+  <!-- Fall through to this rule is the browser isn't IE or Mozilla -->
+  <replace-with class="com.google.gwt.user.client.ui.impl.PopupImpl">
+    <when-type-is class="com.google.gwt.user.client.ui.impl.PopupImpl"/>
+  </replace-with>
 
-  &lt;!-- Mozilla needs a different implementation due to issue #410 --&gt;
-  &lt;replace-with class=&quot;com.google.gwt.user.client.ui.impl.PopupImplMozilla&quot;&gt;
-    &lt;when-type-is class=&quot;com.google.gwt.user.client.ui.impl.PopupImpl&quot; /&gt;
-    &lt;any&gt;
-      &lt;when-property-is name=&quot;user.agent&quot; value=&quot;gecko&quot;/&gt;
-      &lt;when-property-is name=&quot;user.agent&quot; value=&quot;gecko1_8&quot; /&gt;
-    &lt;/any&gt;
-  &lt;/replace-with&gt;
+  <!-- Mozilla needs a different implementation due to issue #410 -->
+  <replace-with class="com.google.gwt.user.client.ui.impl.PopupImplMozilla">
+    <when-type-is class="com.google.gwt.user.client.ui.impl.PopupImpl" />
+    <any>
+      <when-property-is name="user.agent" value="gecko"/>
+      <when-property-is name="user.agent" value="gecko1_8" />
+    </any>
+  </replace-with>
 
-  &lt;!-- IE has a completely different popup implementation --&gt;
-  &lt;replace-with class=&quot;com.google.gwt.user.client.ui.impl.PopupImplIE6&quot;&gt;
-    &lt;when-type-is class=&quot;com.google.gwt.user.client.ui.impl.PopupImpl&quot;/&gt;
-    &lt;when-property-is name=&quot;user.agent&quot; value=&quot;ie6&quot; /&gt;
-  &lt;/replace-with&gt;
-&lt;/module&gt;
-</pre>
+  <!-- IE has a completely different popup implementation -->
+  <replace-with class="com.google.gwt.user.client.ui.impl.PopupImplIE6">
+    <when-type-is class="com.google.gwt.user.client.ui.impl.PopupImpl"/>
+    <when-property-is name="user.agent" value="ie6" />
+  </replace-with>
+</module>
+```
 
 These directives tell the GWT compiler to swap out the `PopupImpl` class code with different class implementations according to the `user.agent` property. The
 `Popup.gwt.xml` file specifies a default implementation for the `PopupImpl` class, an overide for the Mozilla browser (`PopupImplMozilla` is substituted for
@@ -109,33 +110,33 @@ under the hood to instruct the compiler to use deferred binding.
 To see how this is used when designing a widget, we will examine the case of the `PopupPanel` widget further. The `PopupPanel` class implements the user visible
 API and contains logic that is common to all browsers. It also instantiates the proper implementation specific logic using the [GWT.create(Class)](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)) as follows:
 
-<pre class="prettyprint">
-  private static final PopupImpl impl = GWT.create(PopupImpl.class);
-</pre>
+```
+private static final PopupImpl impl = GWT.create(PopupImpl.class);
+```
 
 The two classes PopupImplMozilla and PopupImplIE6 extend the PopupImpl class and override some `PopupImpl`'s methods to implement browser specific behavior.
 
 Then, when the `PopupPanel` class needs to switch to some browser dependent code, it accesses a member function inside the `PopupImpl` class:
 
-<pre class="prettyprint">
-  public void setVisible(boolean visible) {
+```
+public void setVisible(boolean visible) {
     // ... common code for all implementations of PopupPanel ...
 
     // If the PopupImpl creates an iframe shim, it's also necessary to hide it
     // as well.
     impl.setVisible(getElement(), visible);
   }
-</pre>
+```
 
 The default implementation of `PopupImpl.setVisible()` is empty, but `PopupImplIE6` has some special logic implemented as a [JSNI](DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface) method:
 
-<pre class="prettyprint">
-  public native void setVisible(Element popup, boolean visible) /*-{
+```
+public native void setVisible(Element popup, boolean visible) /*-{
     if (popup.__frame) {
       popup.__frame.style.visibility = visible ? 'visible' : 'hidden';
     }
   }-*/;{
-</pre>
+```
 
 After the GWT compiler runs, it prunes out any unused code. If your application references the `PopupPanel` class, the compiler will create a separate JavaScript output
 file for each browser, each containing only one of the implementations: `PopupImpl`, `PopupImplIE6` or `PopupImplMozilla`. This means that each browser only
@@ -150,28 +151,28 @@ client will download based on its browser environment.
 The following is an example of how a deferred binding generator is specified to the compiler in the [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml)
 hierarchy for the `RemoteService` class - used for GWT-RPC:
 
-*   Top level _&lt;module&gt;_.gwt.xml _**inherits**_ [com.google.gwt.user.User](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml)
+*   Top level `<module>.gwt.xml` _**inherits**_ [com.google.gwt.user.User](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml)
 *   [com/google/gwt/user/User.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml) _**inherits**_ [com.googl.gwt.user.RemoteService](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/RemoteService.gwt.xml)
-*   [com/google/gwt/user/RemoteService.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/RemoteService.gwt.xml) _**contains**_ `&lt;generates-with&gt;` elements to define deferred binding rules for the `RemoteService` class.
+*   [com/google/gwt/user/RemoteService.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/RemoteService.gwt.xml) _**contains**_ `<generates-with>` elements to define deferred binding rules for the `RemoteService` class.
 
 ## Generator Configuration in Module XML<a id="generator"></a>
 
-The XML element `&lt;generate-with&gt;` tells the compiler to use a `Generator` class. Here are the contents of the `RemoteService.gwt.xml` file relevant
+The XML element `<generate-with>` tells the compiler to use a `Generator` class. Here are the contents of the `RemoteService.gwt.xml` file relevant
 to deferred binding:
 
-<pre class="prettyprint">
-&lt;module&gt;
+```
+<module>
 
- &lt;!--  ... other configuration omitted ... --&gt;
+ <!--  ... other configuration omitted ... -->
 
- &lt;!-- Default warning for non-static, final fields enabled --&gt;
- &lt;set-property name=&quot;gwt.suppressNonStaticFinalFieldWarnings&quot; value=&quot;false&quot; /&gt;
+ <!-- Default warning for non-static, final fields enabled -->
+ <set-property name="gwt.suppressNonStaticFinalFieldWarnings" value="false" />
 
- &lt;generate-with class=&quot;com.google.gwt.user.rebind.rpc.ServiceInterfaceProxyGenerator&quot;&gt;
-   &lt;when-type-assignable class=&quot;com.google.gwt.user.client.rpc.RemoteService&quot; /&gt;
- &lt;/generate-with&gt;
-&lt;/module&gt;
-</pre>
+ <generate-with class="com.google.gwt.user.rebind.rpc.ServiceInterfaceProxyGenerator">
+   <when-type-assignable class="com.google.gwt.user.client.rpc.RemoteService" />
+ </generate-with>
+</module>
+```
 
 These directives instruct the GWT compiler to invoke methods in a [Generator](/javadoc/latest/com/google/gwt/core/ext/Generator.html) subclass (`ServiceInterfaceProxyGenerator`) in order to generate special code when the deferred binding mechanism [GWT.create()](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)) is encountered while
 compiling. In this case, if the [GWT.create()](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)) call references an instance of `RemoteService` or one of its subclasses, the `ServiceInterfaceProxyGenerator`'s generate() method
@@ -185,7 +186,7 @@ string.
 
 The following code shows the `Generator` that is responsible for deferred binding of a `RemoteService` interface:
 
-<pre class="prettyprint">
+```
 /**
  * Generator for producing the asynchronous version of a
  * {@link com.google.gwt.user.client.rpc.RemoteService RemoteService} interface.
@@ -194,11 +195,11 @@ public class ServiceInterfaceProxyGenerator extends Generator {
 
   /**
    * Generate a default constructible subclass of the requested type. The
-   * generator throws &lt;code&gt;UnableToCompleteException&lt;/code&gt; if for any reason
+   * generator throws <code>UnableToCompleteException</code> if for any reason
    * it cannot provide a substitute class
    *
    * @return the name of a subclass to substitute for the requested class, or
-   *         return &lt;code&gt;null&lt;/code&gt; to cause the requested type itself to be
+   *         return <code>null</code> to cause the requested type itself to be
    *         used
    *
    */
@@ -210,27 +211,27 @@ public class ServiceInterfaceProxyGenerator extends Generator {
 
     JClassType remoteService = typeOracle.findType(requestedClass);
     if (remoteService == null) {
-      logger.log(TreeLogger.ERROR, &quot;Unable to find metadata for type '&quot;
-          + requestedClass + &quot;'&quot;, null);
+      logger.log(TreeLogger.ERROR, "Unable to find metadata for type '"
+          + requestedClass + "'", null);
       throw new UnableToCompleteException();
     }
 
     if (remoteService.isInterface() == null) {
       logger.log(TreeLogger.ERROR, remoteService.getQualifiedSourceName()
-          + &quot; is not an interface&quot;, null);
+          + " is not an interface", null);
       throw new UnableToCompleteException();
     }
 
     ProxyCreator proxyCreator = new ProxyCreator(remoteService);
 
     TreeLogger proxyLogger = logger.branch(TreeLogger.DEBUG,
-        &quot;Generating client proxy for remote service interface '&quot;
-            + remoteService.getQualifiedSourceName() + &quot;'&quot;, null);
+        "Generating client proxy for remote service interface '"
+            + remoteService.getQualifiedSourceName() + "'", null);
 
     return proxyCreator.create(proxyLogger, ctx);
   }
 }
-</pre>
+```
 
 The `typeOracle` is an object that contains information about the Java code that has already been parsed that the generator may need to consult. In this case, the
 `generate()` method checks it arguments and the passes off the bulk of the work to another class (`ProxyCreator`).

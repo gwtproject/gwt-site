@@ -17,6 +17,7 @@ import com.google.gwt.site.markdown.fs.MDNode;
 import com.google.gwt.site.markdown.fs.MDParent;
 import com.google.gwt.site.markdown.toc.TocCreator;
 
+import org.pegdown.Extensions;
 import org.pegdown.PegDownProcessor;
 
 import java.io.File;
@@ -24,8 +25,11 @@ import java.io.IOException;
 import java.util.List;
 
 public class MDTranslater {
+  private static final int PEG_DOWN_FLAGS = Extensions.SMARTYPANTS | Extensions.AUTOLINKS | 
+      Extensions.FENCED_CODE_BLOCKS;
 
-  private PegDownProcessor pegDownProcessor = new PegDownProcessor(Long.MAX_VALUE);
+  private PegDownProcessor pegDownProcessor = new PegDownProcessor(PEG_DOWN_FLAGS, Long
+      .MAX_VALUE);
 
   private final TocCreator tocCreator;
 

@@ -134,7 +134,7 @@ general flow, as shown in the following code, is:
 [presenters](#presenter) and supplying a [view](#view)
 that the presenter will drive.
 
-<pre class="prettyprint">
+```
 public class Contacts implements EntryPoint {
 
   public void onModuleLoad() {
@@ -143,7 +143,8 @@ public class Contacts implements EntryPoint {
     AppController appViewer = new AppController(rpcService, eventBus);
     appViewer.go(RootPanel.get());
   }
-}</pre>
+}
+```
 
 ## Binding presenters and views <a id="binding"></a>
 
@@ -167,19 +168,21 @@ something meaningful, the [presenter](#presenter) is going to need to:
 In the case of our ContactsPresenter, we define the Display interface
 as such:
 
-<pre class="prettyprint">
+```
+
 public class ContactsPresenter implements Presenter {
   ...
-  public interface Display extends HasValue&lt;List&lt;String>> {
+  public interface Display extends HasValue<List<String>> {
     HasClickHandlers getAddButton();
     HasClickHandlers getDeleteButton();
     HasClickHandlers getList();
-    void setData(List&lt;String> data);
+    void setData(List<String> data);
     int getClickedRow(ClickEvent event);
-    List&lt;Integer> getSelectedRows();
+    List<Integer> getSelectedRows();
     Widget asWidget();
   }
-}</pre>
+}
+```
 
 While the ContactsView implements the above interface using Buttons and a
 FlexTable, the ContactsPresenter is none the wiser. In addition, if we
@@ -200,16 +203,16 @@ made without updating the view code.
 To show you how this works, let's look at the code that is executed upon
 receiving the list of Contacts from the server:
 
-<pre class="prettyprint">
+```
 public class ContactsPresenter implements Presenter {
   ...
   private void fetchContactDetails() {
-    rpcService.getContactDetails(new AsyncCallback&lt;ArrayList&lt;ContactDetails>>() {
-      public void onSuccess(ArrayList&lt;ContactDetails> result) {
+    rpcService.getContactDetails(new AsyncCallback<ArrayList<ContactDetails>>() {
+      public void onSuccess(ArrayList<ContactDetails> result) {
           contacts = result;
-          List&lt;String> data = new ArrayList&lt;String>();
+          List<String> data = new ArrayList<String>();
 
-          for (int i = 0; i &lt; result.size(); ++i) {
+          for (int i = 0; i < result.size(); ++i) {
             data.add(contacts.get(i).getDisplayName());
           }
 
@@ -221,11 +224,13 @@ public class ContactsPresenter implements Presenter {
       }
     });
   }
-}</pre>
+}
+```
 
 To listen for UI events we have the following:
 
-<pre class="prettyprint">
+```
+
 public class ContactsPresenter implements Presenter {
   ...
   public void bind() {
@@ -252,28 +257,29 @@ public class ContactsPresenter implements Presenter {
       }
     });
   }
-}</pre>
+}
+```
 
 To respond to UI events, such as the user deleting a list of selected
 contacts, we have the following:
 
-<pre class="prettyprint">
+```
 public class ContactsPresenter implements Presenter {
   ...
   private void deleteSelectedContacts() {
-    List&lt;Integer> selectedRows = display.getSelectedRows();
-    ArrayList&lt;String> ids = new ArrayList&lt;String>();
+    List<Integer> selectedRows = display.getSelectedRows();
+    ArrayList<String> ids = new ArrayList<String>();
 
-    for (int i = 0; i &lt; selectedRows.size(); ++i) {
+    for (int i = 0; i < selectedRows.size(); ++i) {
       ids.add(contactDetails.get(selectedRows.get(i)).getId());
     }
 
-    rpcService.deleteContacts(ids, new AsyncCallback&lt;ArrayList&lt;ContactDetails>>() {
-      public void onSuccess(ArrayList&lt;ContactDetails> result) {
+    rpcService.deleteContacts(ids, new AsyncCallback<ArrayList<ContactDetails>>() {
+      public void onSuccess(ArrayList<ContactDetails> result) {
         contactDetails = result;
-        List&lt;String> data = new ArrayList&lt;String>();
+        List<String> data = new ArrayList<String>();
 
-        for (int i = 0; i &lt; result.size(); ++i) {
+        for (int i = 0; i < result.size(); ++i) {
           data.add(contactDetails.get(i).getDisplayName());
         }
 
@@ -285,15 +291,16 @@ public class ContactsPresenter implements Presenter {
       }
     });
   }
-}</pre>
+}
+```
 
-</p>Again, in order to reap the benefits of the MVP model, the
+Again, in order to reap the benefits of the MVP model, the
 [presenter](#presenter) should have no knowledge of any widget-based
 code. So long as we wrap a view in a display interface that can be mocked and
 our JRE tests never call `asWidget()`, all is grand. That's how
 you can have your cake and eat it too: minimize the GWT ties to allow
 a non-GWTTestCase to be useful, but still have the ability to slap a Display
-instance into a panel.</p>
+instance into a panel.
 
 ## Events and the Event Bus <a id="events"></a>
 
@@ -343,7 +350,7 @@ and pass in the [GwtEvent.Type](/javadoc/latest/com/google/gwt/event/shared/GwtE
 as well as the handler that should be called when the event is fired. The code below
 shows how the AppController registers to receive EditContactEvents.
 
-<pre class="prettyprint">
+```
 public class AppController implements ValueChangeHandler {
   ...
   eventBus.addHandler(EditContactEvent.TYPE,
@@ -353,7 +360,8 @@ public class AppController implements ValueChangeHandler {
         }
       });
   ...
-}</pre>
+}
+```
 
 Here the AppController has an instance of the [HandlerManager](/javadoc/latest/com/google/gwt/event/shared/HandlerManager.html),
 called eventBus, and is registering a new EditContactEventHandler. This handler will
@@ -372,7 +380,8 @@ we'll notify the rest of the app by calling the HandlerManager.fireEvent()
 method with a EditContactEvent() class that is initialized with the id of the
 contacts to be edited.
 
-<pre class="prettyprint">
+```
+
 public class ContactsPresenter {
   ...
   display.getList().addClickHandler(new ClickHandler() {
@@ -386,7 +395,8 @@ public class ContactsPresenter {
     }
   });
   ...
-}</pre>
+}
+```
 
 View transition is a proactive event flow, where the event source lets
 the rest of the app know, "Hey a view transition is about to take place, so if
@@ -399,7 +409,7 @@ which is the case after the RPC has returned.
 Below is an example of the event that is fired upon successfully updating a
 contact.
 
-<pre class="prettyprint">
+```
 public class EditContactPresenter {
   ...
   private void doSave() {
@@ -407,7 +417,7 @@ public class EditContactPresenter {
     contact.setLastName(display.getLastName().getValue());
     contact.setEmailAddress(display.getEmailAddress().getValue());
 
-    rpcService.updateContact(contact, new AsyncCallback&lt;Contact>() {
+    rpcService.updateContact(contact, new AsyncCallback<Contact>() {
         public void onSuccess(Contact result) {
           eventBus.fireEvent(new ContactUpdatedEvent(result));
         }
@@ -417,7 +427,8 @@ public class EditContactPresenter {
     });
   }
   ...
-}</pre>
+}
+```
 
 ## History and view transitions <a id="history"></a>
 
@@ -433,7 +444,7 @@ back on the "Contact List" view, and to do so you would push the initial state
 will be popped off of the stack and the current history token will be the
 "Contact List" view.
 
-<p>Now that we have the flow straight, we need to decide where to put the code.
+Now that we have the flow straight, we need to decide where to put the code.
 Given that history is not specific to a particular view, it
 makes sense to add it to the AppController class.
 
@@ -442,26 +453,29 @@ and declare its own [onValueChange()](/javadoc/latest/com/google/gwt/event/logic
 method. The interface and parameter are of type String because the History
 events are simply the tokens that are pushed onto the stack.
 
-<pre class="prettyprint">
-public class AppController implements ValueChangeHandler&lt;String> {
+```
+
+public class AppController implements ValueChangeHandler<String> {
   ...
-  public void onValueChange(ValueChangeEvent&lt;String> event) {
+  public void onValueChange(ValueChangeEvent<String> event) {
     String token = event.getValue();
     ...
   }
-}</pre>
+}
+```
 
 Next we'll need to register to receive History events, much like we
 registered for events coming off of the EventBus.
 
-<pre class="prettyprint">
-public class AppController implements ValueChangeHandler&lt;String> {
+```
+public class AppController implements ValueChangeHandler<String> {
   ...
   private void bind() {
     History.addValueChangeHandler(this);
     ...
   }
-}</pre>
+}
+```
 
 In the example above, where the user navigates from the "Contact List" view
 to the "Add Contact" view, we mentioned setting an initial state. This is
@@ -471,8 +485,9 @@ user bookmarked a specific state within your app) and route the user to the
 appropriate view. The AppController's go() method, which is called after
 everything has been wired up, is where we'll add this logic.
 
-<pre class="prettyprint">
-public class AppController implements ValueChangeHandler&lt;String> {
+```
+
+public class AppController implements ValueChangeHandler<String> {
   ...
   public void go(final HasWidgets container) {
     this.container = container;
@@ -484,17 +499,18 @@ public class AppController implements ValueChangeHandler&lt;String> {
       History.fireCurrentHistoryState();
     }
   }
-}</pre>
+}
+```
 
 With the above plumbing in place, we need to do something
 meaningful within the onValueChange() method that is called whenever the user
 clicks the "Back" or "Forward" button. Using the getValue() of the event, we'll
 decide which view to show next.
 
-<pre class="prettyprint">
-public class AppController implements ValueChangeHandler&lt;String> {
+```
+public class AppController implements ValueChangeHandler<String> {
   ...
-  public void onValueChange(ValueChangeEvent&lt;String> event) {
+  public void onValueChange(ValueChangeEvent<String> event) {
     String token = event.getValue();
 
     if (token != null) {
@@ -514,7 +530,8 @@ public class AppController implements ValueChangeHandler&lt;String> {
         presenter.go(container);
       }
     }
-}</pre>
+}
+```
 
 Now when the user clicks the back button from the "Add Contact" view, GWT's
 History mechanism will call the onValueChange() method with the previous history
@@ -535,7 +552,8 @@ Below is an example of how you can hook up the ContactsPresenter to the "Add
 Contact" button, fire the associated event upon receiving the click, and
 transition to the "Add Contact" view as a result.
 
-<pre class="prettyprint">
+```
+
 public class ContactsPresenter implements Presenter {
   ...
   public void bind() {
@@ -545,10 +563,11 @@ public class ContactsPresenter implements Presenter {
       }
     });
   }
-}</pre>
+}
+```
 
-<pre class="prettyprint">
-public class AppController implements ValueChangeHandler&lt;String> {
+```
+public class AppController implements ValueChangeHandler<String> {
   ...
   private void bind() {
     ...
@@ -563,7 +582,8 @@ public class AppController implements ValueChangeHandler&lt;String> {
   private void doAddNewContact() {
     History.newItem("add");
   }
-}</pre>
+}
+```
 
 Since the view transition logic is already built into the
 onValueChange() method, this provides a centralized, reusable way of navigating
@@ -591,7 +611,7 @@ app is encompassed within a presenter, and that presenter relies strictly on
 JRE-based components, you can build the majority of your test cases as
 efficient, vanilla JUnit tests.
 
-<p>To demonstrate the benefits of using the MVP model to drive JRE-based unit
+To demonstrate the benefits of using the MVP model to drive JRE-based unit
 tests, rather than those based on GWTTestCase, we've added the following tests
 to our Contacts app.
 
@@ -603,7 +623,8 @@ Each example is set up to test adding a list of ContactDetails, sorting those
 ContactDetails, and then verifying that the sorted list is correct. Taking a
 look at the ExampleJRETest, we have the following code.
 
-<pre class="prettyprint">
+```
+
 public class ExampleJRETest extends TestCase {
   private ContactsPresenter contactsPresenter;
   private ContactsServiceAsync mockRpcService;
@@ -618,7 +639,7 @@ public class ExampleJRETest extends TestCase {
   }
 
   public void testContactSort(){
-    List&lt;ContactDetails> contactDetails = new ArrayList&lt;ContactDetails>();
+    List<ContactDetails> contactDetails = new ArrayList<ContactDetails>();
     contactDetails.add(new ContactDetails("0", "c_contact"));
     contactDetails.add(new ContactDetails("1", "b_contact"));
     contactDetails.add(new ContactDetails("2", "a_contact"));
@@ -628,7 +649,8 @@ public class ExampleJRETest extends TestCase {
     assertTrue(contactsPresenter.getContactDetail(1).getDisplayName().equals("b_contact"));
     assertTrue(contactsPresenter.getContactDetail(2).getDisplayName().equals("c_contact"));
   }
-}</pre>
+}
+```
 
 Because we have structured the view behind a Display interface, we're able to
 mock it out (using EasyMock in this example), remove the need for access to the
@@ -637,7 +659,7 @@ our tests on GWTTestCase.
 
 We then created the same test using GWTTestCase.
 
-<pre class="prettyprint">
+```
 public class ExampleGWTTest extends GWTTestCase {
   private ContactsPresenter contactsPresenter;
   private ContactsServiceAsync rpcService;
@@ -656,7 +678,7 @@ public class ExampleGWTTest extends GWTTestCase {
   }
 
   public void testContactSort(){
-    List&lt;ContactDetails> contactDetails = new ArrayList&lt;ContactDetails>();
+    List<ContactDetails> contactDetails = new ArrayList<ContactDetails>();
     contactDetails.add(new ContactDetails("0", "c_contact"));
     contactDetails.add(new ContactDetails("1", "b_contact"));
     contactDetails.add(new ContactDetails("2", "a_contact"));
@@ -666,7 +688,8 @@ public class ExampleGWTTest extends GWTTestCase {
     assertTrue(contactsPresenter.getContactDetail(1).getDisplayName().equals("b_contact"));
     assertTrue(contactsPresenter.getContactDetail(2).getDisplayName().equals("c_contact"));
   }
-}</pre>
+}
+```
 
 Given that our app was designed using the MVP model, it realistically makes no
 sense to structure your tests like this. But that's not the point. The

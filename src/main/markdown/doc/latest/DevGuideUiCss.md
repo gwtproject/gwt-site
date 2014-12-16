@@ -11,14 +11,14 @@ Like most web applications, GWT applications use cascading style sheets (CSS) fo
 GWT widgets rely on cascading style sheets (CSS) for visual styling.
 
 In GWT, each class of widget has an associated style name that binds it to a CSS rule. Furthermore, you can assign an id to a particular component to create a CSS rule that
-applies just to that one component. By default, the class name for each component is `gwt-&lt;classname&gt;`. For example, the [Button widget](/javadoc/latest/com/google/gwt/user/client/ui/Button.html) has a default style of
+applies just to that one component. By default, the class name for each component is `gwt-<classname>`. For example, the [Button widget](/javadoc/latest/com/google/gwt/user/client/ui/Button.html) has a default style of
 `gwt-Button`.
 
 In order to give all buttons a larger font, you could put the following rule in your application's CSS file:
 
-<pre>
-  .gwt-Button { font-size: 150%; }
-</pre>
+```
+.gwt-Button { font-size: 150%; }
+```
 
 All of the widgets created with the GWT toolkit will have a default class name, but a widget's style name can be set using [setStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)).
 Static elements can have their class set in the HTML source code for your application.
@@ -26,31 +26,31 @@ Static elements can have their class set in the HTML source code for your applic
 Another way to use style sheets is to refer to a single widget. For that, you would need to know the value of the `id` attribute for the widget or DOM element.
 
 By default, neither the browser nor GWT creates default `id` attributes for widgets. You must explicitly create an `id` for the elements you want to refer to in
-this manner, and you must insure that each &quot;id&quot; value is unique. A common way to do this is to set them on static elements in your [HTML host page](DevGuideOrganizingProjects.html#DevGuideHostPage)
+this manner, and you must insure that each "id" value is unique. A common way to do this is to set them on static elements in your [HTML host page](DevGuideOrganizingProjects.html#DevGuideHostPage)
 
-<pre class="prettyprint">
-  &lt;div id=&quot;my-button-id&quot;/&gt;
-</pre>
+```
+<div id="my-button-id"/>
+```
 
 To set the id for a GWT widget, retrieve its DOM Element and then set the `id` attribute as follows:
 
-<pre class="prettyprint">
-  Button b = new Button();
-  DOM.setElementAttribute(b.getElement(), &quot;id&quot;, &quot;my-button-id&quot;)
-</pre>
+```
+Button b = new Button();
+  DOM.setElementAttribute(b.getElement(), "id", "my-button-id")
+```
 
 This would allow you to reference a specific widget in a style sheet as follows:
 
-<pre>
-  #my-button-id { font-size: 100%; }
-</pre>
+```
+#my-button-id { font-size: 100%; }
+```
 
 ## Complex Styles<a id="complex"></a>
 
 Some widgets have multiple styles associated with them. [MenuBar](/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html), for example, has the following styles:
 
-<pre>
-   .gwt-MenuBar { 
+```
+.gwt-MenuBar { 
        /* properties applying to the menu bar itself */ 
    }
    .gwt-MenuBar .gwt-MenuItem { 
@@ -59,10 +59,10 @@ Some widgets have multiple styles associated with them. [MenuBar](/javadoc/lates
    .gwt-MenuBar .gwt-MenuItem-selected { 
        /* properties applying to the menu bar's selected menu items */
    }
-</pre>
+```
 
 In the above style sheet code, there are two style rules that apply to menu items. The first applies to all menu items (both selected and unselected), while the second (with
-the -selected suffix) applies only to selected menu items. A selected menu item's style name will be set to `&quot;gwt-MenuItem gwt-MenuItem-selected&quot;`, specifying that both
+the -selected suffix) applies only to selected menu items. A selected menu item's style name will be set to `"gwt-MenuItem gwt-MenuItem-selected"`, specifying that both
 style rules will be applied. The most common way of doing this is to use [setStyleName](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)) to set
 the base style name, then [addStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#addStyleName(java.lang.String)) and [removeStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#removeStyleName(java.lang.String))
 to add and remove the second style name.
@@ -71,36 +71,37 @@ to add and remove the second style name.
 
 There are multiple approaches for associating CSS files with your module:
 
-*   Using a `&lt;link&gt;` tag in the [host HTML page](DevGuideOrganizingProjects.html#DevGuideHostPage).
-*   Using the `&lt;stylesheet&gt;` element in the [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml).
-*   Using a `[CssResource](DevGuideClientBundle.html#CssResource)` contained within a `[ClientBundle](DevGuideClientBundle.html)`.
-*   Using an inline `[&lt;ui:style&gt;](DevGuideUiBinder.html#Hello_Stylish_World)` element in a UiBinder template.
+*   Using a `<link>` tag in the [host HTML page](DevGuideOrganizingProjects.html#DevGuideHostPage).
+*   Using the `<stylesheet>` element in the [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml).
+*   Using a [CssResource](DevGuideClientBundle.html#CssResource) contained within a [ClientBundle](DevGuideClientBundle.html).
+*   Using an inline [`<ui:style>`](DevGuideUiBinder.html#Hello_Stylish_World) element in a
+UiBinder template.
 
 Modern GWT applications typically use a combination of `CssResource` and UiBinder. Older applications should use only one of the first two choices.
 
 ### Including Style sheets in the HTML Host Page (Deprecated)
 
 Typically, style sheets are placed in a package that is part of your module's [public path](DevGuideOrganizingProjects.html#DevGuideModules). All you need to do to reference
-them is simply include a `&lt;link&gt;` to the style sheet in your [host page](DevGuideOrganizingProjects.html#DevGuideHostPage), such as:
+them is simply include a `<link>` to the style sheet in your [host page](DevGuideOrganizingProjects.html#DevGuideHostPage), such as:
 
-<pre class="prettyprint">
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;mystyles.css&quot; type=&quot;text/css&quot;/&gt;
-</pre>
+```
+<link rel="stylesheet" href="mystyles.css" type="text/css"/>
+```
 
 ### Including Style sheets in the Module XML file (Deprecated)
 
-Another way to include your style sheet within your module is to use the `&lt;stylesheet&gt;` element in your [module
+Another way to include your style sheet within your module is to use the `<stylesheet>` element in your [module
 XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml). This uses [automatic resource inclusion](DevGuideOrganizingProjects.html#DevGuideAutomaticResourceInclusion) to bundle the `.css` file with your
 module.
 
-The difference between using a `&lt;link&gt;` tag in HTML and the `&lt;stylesheet&gt;` element in your module XML file is that with the mdoule XML file approach,
+The difference between using a `<link>` tag in HTML and the `<stylesheet>` element in your module XML file is that with the mdoule XML file approach,
 the style sheet will always follow your module, no matter which host HTML page you deploy it from.
 
 Why does this matter? Because if you create and share a module, it does not include a host page and therefore, you cannot guarantee the style sheet's availability. Automatic
 Resource Inclusion solves this problem. If you do not care about sharing or re-using your module then you can just use the standard HTML link rel stuff in the host page.
 
-**Tip:** Use a unique name for the .css file with included resources to avoid collisions. If you automatically include &quot;styles.css&quot; and share your module and someone
-puts it on a page that already has &quot;styles.css&quot; there will be problems.
+**Tip:** Use a unique name for the .css file with included resources to avoid collisions. If you automatically include "styles.css" and share your module and someone
+puts it on a page that already has "styles.css" there will be problems.
 
 ## GWT Visual Themes<a id="themes"></a>
 
@@ -112,21 +113,21 @@ time on application development and less time on styling your application.
 By default, new GWT applications use the standard theme, but you can select any one of the themes mentioned above. Open your module XML file (gwt.xml) and uncomment the line
 that inherits the theme of your choice.
 
-<pre class="prettyprint">
-&lt;!-- Inherit the default GWT style sheet. You can change       --&gt;
-&lt;!-- the theme of your GWT application by uncommenting          --&gt;
-&lt;!-- any one of the following lines.                           --&gt;
-&lt;!-- &lt;inherits name='com.google.gwt.user.theme.standard.Standard'/&gt; --&gt;
-&lt;!-- &lt;inherits name=&quot;com.google.gwt.user.theme.chrome.Chrome&quot;/&gt; --&gt;
-&lt;inherits name=&quot;com.google.gwt.user.theme.dark.Dark&quot;/&gt;
-</pre>
+```
+<!-- Inherit the default GWT style sheet. You can change       -->
+<!-- the theme of your GWT application by uncommenting          -->
+<!-- any one of the following lines.                           -->
+<!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
+<!-- <inherits name="com.google.gwt.user.theme.chrome.Chrome"/> -->
+<inherits name="com.google.gwt.user.theme.dark.Dark"/>
+```
 
 GWT visual themes also come in RTL (right-to-left) versions if you are designing a website for a language that is written right-to-left, such as Arabic. You can include the RTL
 version by adding RTL to the end of the module name:
 
-<pre class="prettyprint">
-&lt;inherits name=&quot;com.google.gwt.user.theme.dark.DarkRTL&quot;/&gt;
-</pre>
+```
+<inherits name="com.google.gwt.user.theme.dark.DarkRTL"/>
+```
 
 ### Bandwidth Sensitive Applications
 
@@ -134,11 +135,11 @@ If you are program a bandwidth sensitive application, such as a phone applicatio
 favorite theme (about 27k). Alternatively, you can create your own stripped down version of the style sheet that only defines the styles applicable to your application. To do
 this, first include the public resources associated with one of the themes by adding the following line to your `gwt.xml` file:
 
-<pre class="prettyprint">
-&lt;inherits name='com.google.gwt.user.theme.standard.StandardResources'/&gt;
-</pre>
+```
+<inherits name='com.google.gwt.user.theme.standard.StandardResources'/>
+```
 
-Each theme has a &quot;Resources&quot; version that only includes the public resources associated with the theme, but does not inject a style sheet into the page. You will need to create
+Each theme has a "Resources" version that only includes the public resources associated with the theme, but does not inject a style sheet into the page. You will need to create
 a new style sheet and inject it into the page as described in the sections above.
 
 Finally, copy the contents of the file `public/gwt/standard/standard.css` style sheet located in the package `com.google.gwt.user.theme.standard` into your new

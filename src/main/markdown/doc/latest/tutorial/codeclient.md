@@ -26,7 +26,8 @@ You need a data structure to hold the list of stock symbols the user has entered
 
 1.  Create a data structure.
     *  In StockWatcher.java, in the StockWatcher class, create a new instance of a Java ArrayList.
-    *  <pre class="code">
+
+```
 public class StockWatcher implements EntryPoint {
 
       private VerticalPanel mainPanel = new VerticalPanel();
@@ -34,31 +35,42 @@ public class StockWatcher implements EntryPoint {
   private HorizontalPanel addPanel = new HorizontalPanel();
   private TextBox newSymbolTextBox = new TextBox();
   private Button addStockButton = new Button("Add");
-  private Label lastUpdatedLabel = new Label();<span class="highlight">
-  private ArrayList&lt;String&gt; stocks = new ArrayList&lt;String&gt;();</span>
-    </pre>
+  private Label lastUpdatedLabel = new Label();
+  private ArrayList<String> stocks = new ArrayList<String>
+    
+```
+
 2.  Eclipse flags ArrayList and suggests you include the import declaration.
 3.  Include the import declaration.
-    *  <pre class="code"><span class="highlight">import java.util.ArrayList;</span></pre>
+
+```
+import java.util.ArrayList;
+```
 
 ### B. Add rows to the flex table
 
 After the user enters a stock code, first check to make sure it's not a duplicate. If the stock code doesn't exist, add a new row to the FlexTable and populate the cell in the first column (column 0) with the stock symbol that the user entered. To add text to a cell in the FlexTable, call the setText method.
 
 1.  Check the stock to see if it exists and if it does, don't add it again.
-        *  In the addStock method, replace the TODO comment with this code.
-        *  <pre class="code">
-<span class="highlight">    // Don't add the stock if it's already in the table.
+    *  In the addStock method, replace the TODO comment with this code.
+
+```
+// Don't add the stock if it's already in the table.
     if (stocks.contains(symbol))
-      return;</span></pre>
+      return;
+```
+
 2.  If the stock doesn't exist, add it.
-        *  In the addStock method, replace the TODO comment with this code.
-        *  <pre class="code">
-<span class="highlight">    // Add the stock to the table.
+    *  In the addStock method, replace the TODO comment with this code.
+
+```
+// Add the stock to the table.
     int row = stocksFlexTable.getRowCount();
     stocks.add(symbol);
-    stocksFlexTable.setText(row, 0, symbol);</span></pre>
-        *  When you call the setText method, the FlexTable automatically creates new cells as needed; therefore, you don't need to resize the table explicitly.
+    stocksFlexTable.setText(row, 0, symbol);
+```
+
+*  When you call the setText method, the FlexTable automatically creates new cells as needed; therefore, you don't need to resize the table explicitly.
 
 ### C. Add a button to remove stocks from the stock list
 
@@ -66,8 +78,9 @@ So that users can delete a specific stock from the list, insert a Remove button 
 
 1.  Add the button for deleting the stock from the list.
     *  In the addStock method, replace the TODO comment with this code.
-    *  <pre class="code">
-<span class="highlight">    // Add a button to remove this stock from the table.
+
+```
+// Add a button to remove this stock from the table.
     Button removeStockButton = new Button("x");
     removeStockButton.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent event) {
@@ -75,7 +88,8 @@ So that users can delete a specific stock from the list, insert a Remove button 
         stocks.remove(removedIndex);        stocksFlexTable.removeRow(removedIndex + 1);
       }
     });
-    stocksFlexTable.setWidget(row, 3, removeStockButton);</span></pre>
+    stocksFlexTable.setWidget(row, 3, removeStockButton);
+```
 
 ### D. Test Add/Remove Stock Functionality
 
@@ -84,16 +98,16 @@ You have one more TODO to code: get the stock price. But first do a quick check 
 At this point when you enter a stock code, StockWatcher should add it to the stock table. Try it and see.
 
 1.  Run StockWatcher in development mode.
-        *  Press Refresh in the already open browser.
+    *  Press Refresh in the already open browser.
 2.  Add a stock.
-        *  Enter stock codes in the input box.
-        *  StockWatcher should add the stock to the table. The table resizes to hold the new data. However, the Price and Change fields are still empty. If you enter a stock code in lowercase, it converts the letters to uppercase.
+    *  Enter stock codes in the input box.
+    *  StockWatcher should add the stock to the table. The table resizes to hold the new data. However, the Price and Change fields are still empty. If you enter a stock code in lowercase, it converts the letters to uppercase.
 3.  Verify that you can't add duplicate stocks to the table.
-        *  Add a stock code that already exist in the table.
-        *  StockWatcher should clear the input box but not add the same stock code again.
+    *  Add a stock code that already exist in the table.
+    *  StockWatcher should clear the input box but not add the same stock code again.
 4.  Delete a stock.
-        *  Click the Remove button.
-        *  The stock is deleted from the table and the table resizes.
+    *  Click the Remove button.
+    *  The stock is deleted from the table and the table resizes.
 
 ![StockWatcher, Add/Remove Functionality](images/CodeClientAddStock.png)
 
@@ -101,7 +115,13 @@ Now you'll tackle that last TODO: get the stock price.
 
 ##  Refreshing the Price and Change fields <a id="refreshPrice"></a>
 
-The most important feature of StockWatcher is updating the prices of the stocks the users are watching. If you were writing StockWatcher using traditional web development techniques, you would have to rely on full page reloads every time you wanted to update the prices. You could accomplish this either manually (making the user click the browser's Refresh button) or automatically (for example, using a &lt;meta http-equiv="refresh" content="5"&gt; tag in the HTML header). But in this age of Web 2.0, that's simply not efficient enough. StockWatcher's users want their stock price updates and they want them now...without waiting for a full page refresh.
+The most important feature of StockWatcher is updating the prices of the stocks the users are
+watching. If you were writing StockWatcher using traditional web development techniques, you would
+have to rely on full page reloads every time you wanted to update the prices. You could accomplish
+this either manually (making the user click the browser's Refresh button) or automatically
+(for example, using a `<meta http-equiv="refresh" content="5">` tag in the HTML header). But
+in this age of Web 2.0, that's simply not efficient enough. StockWatcher's users want their stock
+price updates and they want them now...without waiting for a full page refresh.
 
 In this section, you'll:
 
@@ -120,44 +140,54 @@ Timer is a single-threaded, browser-safe timer class. It enables you to schedule
 When a Timer fires, the run method executes. For StockWatcher you'll override the run method with a call to the refreshWatchList method which refreshes the Price and Change fields. For now, just put in a stub for the refreshWatchList method; later in this section, you'll implement it.
 
 1.  Implement the timer.
-        *  Modify the onModuleLoad method to create a new instance of Timer, as follows:
-        <pre class="code">
-  public void onModuleLoad() {
+    *  Modify the onModuleLoad method to create a new instance of Timer, as follows:
+
+```
+public void onModuleLoad() {
 
         ...
 
         // Move cursor focus to the text box.
     newSymbolTextBox.setFocus(true);
 
-    <span class="highlight">    // Setup timer to refresh list automatically.
+        // Setup timer to refresh list automatically.
     Timer refreshTimer = new Timer() {
       @Override
       public void run() {
         refreshWatchList();
       }
     };
-    refreshTimer.scheduleRepeating(REFRESH_INTERVAL);</span>
+    refreshTimer.scheduleRepeating(REFRESH_INTERVAL);
 
         ...
 
-      }</pre>
+      }
+```
         Eclipse flags Timer, REFRESH_INTERVAL and refreshWatchList.
 2.  Declare the import for Timer.
     *  If you are using Eclipse shortcuts, be sure to select the GWT Timer.
-    *  <pre class="code"><span class="highlight">import com.google.gwt.user.client.Timer;</span></pre>
+
+```
+
+import com.google.gwt.user.client.Timer;
+```
 3.  Specify the refresh rate.
     *  If you are using Eclipse shortcuts, select `Create constant 'REFRESH_INTERVAL'` then specify the refresh interval in milliseconds, `5000`.
     *  Otherwise, just cut and paste from the highlighted code below.
-    *  <pre class="code">
-public class StockWatcher implements EntryPoint {<span class="highlight">
+    *
 
-      private static final int REFRESH_INTERVAL = 5000; // ms</span>
+```
+public class StockWatcher implements EntryPoint {
+
+      private static final int REFRESH_INTERVAL = 5000; // ms
   private VerticalPanel mainPanel = new VerticalPanel();
-    </pre>
+```
+
 4.  Populate the price and change values as soon as a new stock is added.
     *  In the addStock method, replace the TODO comment with the highlighted code.
-    *  <pre class="code">
-  private void addStock() {
+
+```
+private void addStock() {
 
         ...
 
@@ -172,19 +202,23 @@ public class StockWatcher implements EntryPoint {<span class="highlight">
     });
     stocksFlexTable.setWidget(row, 3, removeStockButton);
 
-    <span class="highlight">    // Get the stock price.
-    refreshWatchList();</span>
+        // Get the stock price.
+    refreshWatchList();
 
       }
-    </pre>
-        Eclipse flags refreshWatchList.
+    
+```
+
+Eclipse flags refreshWatchList.
 
 5.  In the StockWatcher class, create a stub for the refreshWatchList method.
-        *  <pre class="code">
-<span class="highlight">  private void refreshWatchList() {
+
+```
+private void refreshWatchList() {
     // TODO Auto-generated method stub
 
-      }</span></pre>
+      }
+```
 
 ### B. Encapsulate stock price data
 
@@ -197,27 +231,31 @@ One of the primary ways GWT speeds AJAX development is by allowing you to write 
 For StockWatcher, you'll take advantage of this capability by factoring stock price data into its own class.
 
 1.  Create a new Java class named StockPrice.
-        *  In Eclipse, in the Package Explorer pane, select the package `com.google.gwt.sample.stockwatcher.client`
-        *  From the Eclipse menu bar, select `File > New > Class`
-        *  Eclipse opens a New Java Class window.
+    *  In Eclipse, in the Package Explorer pane, select the package `com.google.gwt.sample.stockwatcher.client`
+    *  From the Eclipse menu bar, select `File > New > Class`
+    *  Eclipse opens a New Java Class window.
 2.  Fill in the New Class Window.
-        *  At Name enter `StockPrice`
-        *  Accept the defaults for the other fields.
-        *  Press `Finish`
+    *  At Name enter `StockPrice`
+    *  Accept the defaults for the other fields.
+    *  Press `Finish`
 3.  Eclipse creates stub code for the StockPrice class.
-        *  <pre class="code">
-<span class="highlight">package com.google.gwt.sample.stockwatcher.client;
 
-    public class StockPrice {
-
-    }</span></pre>
-4.  Replace the stub with following code.
-        *  <pre class="code">
+```
 package com.google.gwt.sample.stockwatcher.client;
 
     public class StockPrice {
 
-    <span class="highlight">  private String symbol;
+    }
+```
+
+4.  Replace the stub with following code.
+
+```
+package com.google.gwt.sample.stockwatcher.client;
+
+    public class StockPrice {
+
+      private String symbol;
   private double price;
   private double change;
 
@@ -256,8 +294,9 @@ package com.google.gwt.sample.stockwatcher.client;
 
       public void setChange(double change) {
     this.change = change;
-  }</span>
-}</pre>
+  }
+}
+```
 
 ### C. Generate the stock data
 
@@ -268,17 +307,18 @@ Now that you have a StockPrice class to encapsulate stock price data, you can ge
 In lieu of retrieving real-time stock prices from an online data source, you'll create pseudo-random price and change values. To do this, use the GWT Random class. Then populate an array of StockPrice objects with these values and pass them on to the updateTable method.
 
 1.  Generate random stock prices.
-        *  In the StockWatcher class, replace the stub refreshWatchList method with the following code.
-        *  <pre class="code">
-<span class="highlight">  /**
+    *  In the StockWatcher class, replace the stub refreshWatchList method with the following code.
+
+```
+/**
        * Generate random stock prices.
-   */</span>
+   */
   private void refreshWatchList() {
-<span class="highlight">    final double MAX_PRICE = 100.0; // $100.00
+    final double MAX_PRICE = 100.0; // $100.00
     final double MAX_PRICE_CHANGE = 0.02; // +/- 2%
 
         StockPrice[] prices = new StockPrice[stocks.size()];
-    for (int i = 0; i &lt; stocks.size(); i++) {
+    for (int i = 0; i < stocks.size(); i++) {
       double price = Random.nextDouble() * MAX_PRICE;
       double change = price * MAX_PRICE_CHANGE
               * (Random.nextDouble() * 2.0 - 1.0);
@@ -286,18 +326,27 @@ In lieu of retrieving real-time stock prices from an online data source, you'll 
           prices[i] = new StockPrice(stocks.get(i), price, change);
     }
 
-        updateTable(prices);</span>
-  }</pre>
-        *  Eclipse flags Random and updateTable.
+        updateTable(prices);
+  }
+```
+    *  Eclipse flags Random and updateTable.
 2.  Include the import declaration.
-        *  <pre class="code"><span class="highlight">import com.google.gwt.user.client.Random;</span></pre>
+
+```
+
+import com.google.gwt.user.client.Random;
+
+```
 3.  Create a stub for the updateTable(StockPrice[]) method.
-        *  <pre class="code">
-<span class="highlight">  private void updateTable(StockPrice[] prices) {
+
+```
+
+private void updateTable(StockPrice[] prices) {
     // TODO Auto-generated method stub
 
-      }</span></pre>
+      }
 
+```
 ### D. Populate the Price and Change fields
 
 Finally, load the randomly generated price and change data into the StockWatcher table. For each stock, format the Price and Change columns, then load the data. To do this you'll implement two methods in the StockWatcher class.
@@ -306,26 +355,32 @@ Finally, load the randomly generated price and change data into the StockWatcher
 *   Prefix the values in the Change field with a sign (+/-).
 
 1.  Implement the method updateTable(StockPrices[]).
-        *  Replace the stub with the following code.
-        *  <pre class="code">
-<span class="highlight">  /**
-       * Update the Price and Change fields all the rows in the stock table.
-   *
-       * @param prices Stock data for all rows.
-   */</span>
-  private void updateTable(StockPrice[] prices) {
-<span class="highlight">    for (int i = 0; i &lt; prices.length; i++) {
-      updateTable(prices[i]);
-    }</span>
+    *  Replace the stub with the following code.
 
-      }</pre>
-        Eclipse flags updateTable.
-        *  Create a stub for the updateTable(StockPrice) method.
+    ```
+    /**
+           * Update the Price and Change fields all the rows in the stock table.
+       *
+           * @param prices Stock data for all rows.
+       */
+      private void updateTable(StockPrice[] prices) {
+        for (int i = 0; i < prices.length; i++) {
+          updateTable(prices[i]);
+        }
+    
+          }
+    
+    ```
+
+    Eclipse flags updateTable.
+    *  Create a stub for the updateTable(StockPrice) method.
 
 2.  Implement the method updateTable(StockPrice).
-        *  Replace the stub with the following code.
-        *  <pre class="code">
-<span class="highlight">  /**
+    *  Replace the stub with the following code.
+
+```
+
+/**
        * Update a single row in the stock table.
    *
        * @param price Stock data for a single row.
@@ -349,53 +404,64 @@ Finally, load the randomly generated price and change data into the StockWatcher
     stocksFlexTable.setText(row, 1, priceText);
     stocksFlexTable.setText(row, 2, changeText + " (" + changePercentText
         + "%)");
-  }</span></pre>
-    *  Eclipse flags NumberFormat.
-3.  Include the import declaration.
-        *  <pre class="code">
-<span class="highlight">import com.google.gwt.i18n.client.NumberFormat;</span></pre>
+  }
 
+```
+*  Eclipse flags NumberFormat.
+3.  Include the import declaration.
+
+```
+
+import com.google.gwt.i18n.client.NumberFormat;
+
+```
 ### E. Test the random generation of stock prices and change values
 
 At this point, the Price and Change fields should be populated with the stock data you randomly generated. Try it and see.
 
 1.  Run StockWatcher in development mode.
 2.  Add a stock.
-        *  The Price and Change fields should have data.
-        *  Every 5 seconds, the data should refresh.
+    *  The Price and Change fields should have data.
+    *  Every 5 seconds, the data should refresh.
 
 ##  Adding the timestamp <a id="timestamp"></a>
 
 The final piece of functionality you need to implement is the timestamp. You used a Label widget, lastUpdatedLabel, to create the timestamp in the UI. Now set the text for the Label widget. Add this code to the updateTable(StockPrice[]) method.
 
 1.  Implement the timestamp.
-        *  In the updateTable(StockPrice[]) method, copy and paste the highlighted code.
-        *  <pre class="code">
-  /**
-       * Update the Price and Change fields all the rows in the stock table.
-   *
-       * @param prices Stock data for all rows.
-   */
-  private void updateTable(StockPrice[] prices) {
-    for (int i = 0; i &lt; prices.length; i++) {
-      updateTable(prices[i]);
-    }
+    *  In the updateTable(StockPrice[]) method, copy and paste the highlighted code.
 
-    <span class="highlight">    // Display timestamp showing last refresh.
-    lastUpdatedLabel.setText("Last update : "
-        + DateTimeFormat.getMediumDateTimeFormat().format(new Date()));</span>
+    ```
+        /**
+          * Update the Price and Change fields all the rows in the stock table.
+          *
+          * @param prices Stock data for all rows.
+        */
+      private void updateTable(StockPrice[] prices) {
+        for (int i = 0; i < prices.length; i++) {
+          updateTable(prices[i]);
+        }
 
-      }</pre>
-        *  Eclipse flags DateTimeFormat and Date.
+        // Display timestamp showing last refresh.
+        lastUpdatedLabel.setText("Last update : "
+            + DateTimeFormat.getMediumDateTimeFormat().format(new Date()));
+
+          }
+
+    ```
+
+    *  Eclipse flags DateTimeFormat and Date.
+
 2.  Include the imports.
-        *  <pre class="code">
-<span class="highlight">import com.google.gwt.i18n.client.DateTimeFormat;
 
-    import java.util.Date;</span>
-        </pre>
+```
+import com.google.gwt.i18n.client.DateTimeFormat;
+import java.util.Date;
+```
+
 3.  Test the timestamp.
-        *  Save your changes. In the browser, press Refresh to load the changes.
-        *  The timestamp label should be displayed beneath the stock table. As the Price and Change fields refresh, the timestamp should display the date and time of the last update.
+    *  Save your changes. In the browser, press Refresh to load the changes.
+    *  The timestamp label should be displayed beneath the stock table. As the Price and Change fields refresh, the timestamp should display the date and time of the last update.
 
 **Implementation Note:** You may have noticed that the classes DateTimeFormat and NumberFormat live in a subpackage of com.google.gwt.i18n, which suggest that they deal with internationalization in some way. And indeed they do: both classes will automatically use your application's locale setting when formatting numbers and dates. You'll learn more about localizing and translating your GWT application into other languages in the tutorial [Internationalizing a GWT Application](i18n.html).
 

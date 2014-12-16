@@ -73,18 +73,18 @@ For the StockWatcher project, you will run webAppCreator with the following para
     *  At the command line, run webAppCreator.
     *  Enter the command below on a **single** line. (The example is shown on multiple lines only to improve readability.)
     *  Replace the junit.jar path name (highlighted in the example below) with the fully-qualified path name of junit.jar on your system.
-    *  <pre class="code">
-webAppCreator -out StockWatcher
-              -junit "<span class="highlight">C:\eclipse\plugins\org.junit_3.8.2.v200706111738\junit.jar</span>"
-              com.google.gwt.sample.stockwatcher.StockWatcher
-</pre>
+
+        webAppCreator -out StockWatcher
+                      -junit "C:\eclipse\plugins\org.junit_3.8.2.v200706111738\junit.jar"
+                      com.google.gwt.sample.stockwatcher.StockWatcher
 
     **Note:** The _-junit_ argument is optional.  If you do not have junit installed on your system or do not wish to use junit in your application, you can leave it out.
 
     **Tip:** If you include the GWT command-line tools in your PATH environment variable, you won't have to invoke them by specifying their full path.
 
 2.  GWT webAppCreator generates the project subdirectories and files you need to get started.
-    *  <pre class="code">
+
+```
 Created directory StockWatcher/src
 Created directory StockWatcher/war
 Created directory StockWatcher/war/WEB-INF
@@ -110,8 +110,8 @@ Created file StockWatcher/StockWatcher.launch
 Created file StockWatcher/StockWatcherTest-dev.launch
 Created file StockWatcher/StockWatcherTest-prod.launch
 Created file StockWatcher/war/WEB-INF/lib/gwt-servlet.jar
-</pre>
 
+```
 
 ### Directories Created
 
@@ -185,8 +185,10 @@ webAppCreator creates an ant build file with a target for running the applicatio
 
 1.  From the command line, change to the StockWatcher directory
 2.  Execute:
-        <pre class="<code">ant devmode</pre>
-        *  
+
+```
+ant devmode
+```
 
 **Tip:** If you include the Ant command-line tools in your PATH environment variable, you won't have to invoke them by specifying their full path.
 
@@ -223,28 +225,29 @@ Open the module XML file, StockWatcher/src/com/google/gwt/sample/stockwatcher/St
 
 It contains the definition of the GWT module, the collection of resources that comprise a GWT application or a shared package. By default, StockWatcher inherits the core GWT functionality required for every project. Optionally, you can specify other GWT modules to inherit from.
 
-<pre class="code">
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;module rename-to='stockwatcher'&gt;
-  &lt;!-- Inherit the core Web Toolkit stuff.                        --&gt;
-  &lt;inherits name='com.google.gwt.user.User'/&gt;
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='stockwatcher'>
+  <!-- Inherit the core Web Toolkit stuff.                        -->
+  <inherits name='com.google.gwt.user.User'/>
 
-  &lt;!-- Inherit the default GWT style sheet.  You can change       --&gt;
-  &lt;!-- the theme of your GWT application by uncommenting          --&gt;
-  &lt;!-- any one of the following lines.                            --&gt;
-  &lt;inherits name='com.google.gwt.user.theme.standard.Standard'/&gt;
-  &lt;!-- &lt;inherits name="com.google.gwt.user.theme.chrome.Chrome"/&gt; --&gt;
-  &lt;!-- &lt;inherits name="com.google.gwt.user.theme.dark.Dark"/&gt;     --&gt;
+  <!-- Inherit the default GWT style sheet.  You can change       -->
+  <!-- the theme of your GWT application by uncommenting          -->
+  <!-- any one of the following lines.                            -->
+  <inherits name='com.google.gwt.user.theme.standard.Standard'/>
+  <!-- <inherits name="com.google.gwt.user.theme.chrome.Chrome"/> -->
+  <!-- <inherits name="com.google.gwt.user.theme.dark.Dark"/>     -->
 
-  &lt;!-- Other module inherits                                      --&gt;
+  <!-- Other module inherits                                      -->
 
-  &lt;!-- Specify the app entry point class.                         --&gt;
-  &lt;entry-point class='com.google.gwt.sample.stockwatcher.client.StockWatcher'/&gt;
+  <!-- Specify the app entry point class.                         -->
+  <entry-point class='com.google.gwt.sample.stockwatcher.client.StockWatcher'/>
 
-  &lt;!-- Specify the paths for translatable code                    --&gt;
-  &lt;source path='client'/&gt;
+  <!-- Specify the paths for translatable code                    -->
+  <source path='client'/>
 
-&lt;/module&gt;</pre>
+</module>
+```
 
 In the module XML file, you specify your application's entry point class.
 In order to compile, a GWT module must specify an entry point. If a GWT module has no entry point, then it can only be inherited by other modules.
@@ -260,7 +263,7 @@ The code for a web application executes within an HTML document. In GWT, we call
 
 The host page references the application style sheet, StockWatcher.css.
 
-The host page references the path of JavaScript source code (generated by GWT) responsible for the dynamic elements on the page. The contents of the entire body element can be generated dynamically, for example, as it is with starter application. However, when you implement the StockWatcher application, you will use a mix of static and dynamic elements. You'll create an HTML &lt;div&gt; element to use as placeholder for the dynamically generated portions of the page.
+The host page references the path of JavaScript source code (generated by GWT) responsible for the dynamic elements on the page. The contents of the entire body element can be generated dynamically, for example, as it is with starter application. However, when you implement the StockWatcher application, you will use a mix of static and dynamic elements. You'll create an HTML `<div> element to use as placeholder for the dynamically generated portions of the page.
 
 #### Selecting Quirks Mode vs. Standards Mode
 

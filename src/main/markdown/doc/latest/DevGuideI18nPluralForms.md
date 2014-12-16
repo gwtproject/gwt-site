@@ -12,10 +12,10 @@ i18n Plural Forms
 Most languages alter the form of a word being counted based on the count.
 For example, in English:
 
-<pre class="prettyprint">
+```
 You have 1 tree.
 You have 2 trees.
-</pre>
+```
 
 Other languages have different rules:
 
@@ -31,14 +31,14 @@ something at runtime, using the [`Messages`](DevGuideI18nMessages.html) interfac
 
 First, an example `Messages` interface:
 
-<pre class="prettyprint">
+```
 @DefaultLocale("en") // not required since this is the default
 public interface MyMessages extends Messages {
   @DefaultMessage("There are {0,number} items in your cart.")
   @AlternateMessage({"one", "There is 1 item in your cart."})
   String cartItems(@PluralCount int itemCount);
 }
-</pre>
+```
 
 Note that the parameter which controls which plural form is used is marked
 with the [`@PluralCount`](/javadoc/latest/com/google/gwt/i18n/client/Messages.PluralCount.html)
@@ -56,25 +56,25 @@ annotations).  _Note: I am using English in these "translations" for
 
 `MyMessages_fr.properties`
 
-<pre class="prettyprint">
+```
 cartItems=There are {0,number} items in your cart.
 cartItems[one]=There is {0,number} item in your cart.
-</pre>
+```
 
-Note that the `&quot;one&quot;` plural form in French is used for
+Note that the `"one"` plural form in French is used for
 both 0 and 1, so you can't hard-code the count in the string like you can
 for English.
 
 `MyMessages_ar.properties`
 
-<pre class="prettyprint">
+```
 cartItems=There are {0,number} items in your cart.
 cartItems[none]=There are no items in your cart.
 cartItems[one]=There is one item in your cart.
 cartItems[two]=There are two items in your cart.
 cartItems[few]=There are {0,number} items in your cart, which are few.
 cartItems[many]=There are {0,number} items in your cart, which are many.
-</pre>
+```
 
 The Arabic plural rules that GWT uses are:
 
@@ -99,7 +99,7 @@ something like `"You have no messages"` rather than `"You have 0
 messages"`.  You can specify that using a plural form `"=N"`, such
 as:
 
-<pre class="prettyprint">
+```
 public interface MyMessages extends Messages {
   @DefaultMessage("There are {0,number} items in your cart.")
   @AlternateMessage({
@@ -108,13 +108,13 @@ public interface MyMessages extends Messages {
   })
   String cartItems(@PluralCount int itemCount);
 }
-</pre>
+```
 
 and the properties file entry would look like:
 
-<pre class="prettyprint">
+```
 cartItems[\=0]=Your cart is empty.
-</pre>
+```
 
 Note the escaping of the equals sign, since that separates the key from the
 value in a properties file.
@@ -130,7 +130,7 @@ code subtracting that and choosing different messages based on the number of
 people, but it is much easier and likely to get better translations by keeping
 all the different messages together.  You can do it like this:
 
-<pre class="prettyprint">
+```
 public interface MyMessages extends Messages {
   @DefaultMessage("{1}, {2} and {0} others are here.")
   @AlternateMessage({
@@ -146,9 +146,9 @@ public interface MyMessages extends Messages {
 ...
 
 String[] names;
-alert(peopleHere(names, names.length &gt; 0 ? names[0] : null,
-    names.length &gt; 1 ? names[1] : null));
-</pre>
+alert(peopleHere(names, names.length > 0 ? names[0] : null,
+    names.length > 1 ? names[1] : null));
+```
 
 Note that you can pass in an array for a `@PluralCount` parameter --
 its length is used for the count (`java.util.List` implementations work
@@ -168,16 +168,16 @@ from the placeholders, where you could simply call `peopleHere(names)`.
 This is slightly off-topic for plurals, but it is related.  GWT supports
 formatting lists, using the locale-appropriate separators.  For example:
 
-<pre class="prettyprint">
+```
 public interface MyMessages extends Messages {
   @DefaultMessage("Orders {0,list,number} are ready for pickup.")
   @AlternateMessage({
       "=0", "No orders are ready for pickup.",
       "one", "Order {0,list,number} is ready for pickup."
   })
-  String ordersReady(@PluralCount List&lt;Integer&gt; orders);
+  String ordersReady(@PluralCount List<Integer> orders);
 }
-</pre>
+```
 
 The format specifier `{0,list,number}` says that argument 0 is to be
 formatted as a list, with each element formatted as a number.  The same format
@@ -188,10 +188,10 @@ requirements of types for formatting remain the same as if it weren't a list.
 
 In English, the results would be:
 
-*   `ordersReady(Arrays.asList())` =&gt; `"No orders are ready for pickup."`
-*   `ordersReady(Arrays.asList(14)})` =&gt; `"Order 14 is ready for pickup."`
-*   `ordersReady(Arrays.asList(14, 17))` =&gt; `"Orders 14 and 17 are ready for pickup."`
-*   `ordersReady(Arrays.asList(14, 17, 21))` =&gt; `"Orders 14, 17, and 21 are ready for pickup."`
+*   `ordersReady(Arrays.asList())` => `"No orders are ready for pickup."`
+*   `ordersReady(Arrays.asList(14)})` => `"Order 14 is ready for pickup."`
+*   `ordersReady(Arrays.asList(14, 17))` => `"Orders 14 and 17 are ready for pickup."`
+*   `ordersReady(Arrays.asList(14, 17, 21))` => `"Orders 14, 17, and 21 are ready for pickup."`
 
 Note that GWT only knows about the default list separators used for a
 language, and that while you might want to say something like `"a, b, or

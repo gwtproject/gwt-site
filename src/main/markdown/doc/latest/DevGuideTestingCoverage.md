@@ -13,22 +13,28 @@ We offer two ways of measuring code coverage: (i) using the EclEmma plugin in Ec
 
 As a running example, let us say we create a project with the provided `webAppCreator` and `junitCreator` tools as:
 
-<pre>./webAppCreator -out myapp  
+```
+./webAppCreator -out myapp  
                      -junit ../../../../gwt-tools/lib/junit/junit-3.8.1.jar 
                      com.example.myapp.MyApp
-</pre>
+```
 
 Add the following `computeFactorial()` method to MyApp.java and the dummy `testFactorial()` method to MyAppTest.java
 
-<pre>int computeFactorial(int number) {
+```
+int computeFactorial(int number) {
   if (number &le; 1) {
     return 1;
   }
   return number * computeFactorial(number - 1);
-}</pre>
+}
+```
 
-<pre>public void testFactorial() {
-}</pre>
+```
+
+public void testFactorial() {
+}
+```
 
 This example is used in the following sections.
 
@@ -60,16 +66,20 @@ This result is expected because, by default, the MyAppTest.java file does not ex
 
 Augment the MyAppTest.java by creating the testFactorial method:
 
-<pre>public void testFactorial() {
+```
+public void testFactorial() {
   assertEquals(1, new MyApp().computeFactorial(0));
-}</pre>
+}
+```
 
 On running coverage, now we see that out of 13 instructions in the method `computeFactorial` (the figure below shows the total instructions in the `computeFactorial` method), 5 instructions are covered. (Note that these instructions are bytecode instructions.) Let us add another statement to testFactorial() for testing the factorial computation for numbers greater than `0` such that the method becomes:
 
-<pre>public void testFactorial() {
+```
+public void testFactorial() {
   assertEquals(1, new MyApp().computeFactorial(0));
   assertEquals(2, new MyApp().computeFactorial(2));
-}</pre>
+}
+```
  
 On running coverage, now we see that coverage for the `computeFactorial()` method is indeed 100% as expected. The following screenshot of the Eclipse window shows the final coverage information. You can drill down on the individual class and methods to find the coverage information at the desired granularity. You can also export the coverage data to html or xml formats to keep track of your code coverage over time.
 
@@ -85,7 +95,7 @@ Since GWT requires a patched version of EMMA, use the [EMMA jar from GWT's downl
 
 (The yellow text is the output of the tool. For convenience, we copied the patched EMMA jar as emma.jar in the current directory.)
 
-<pre><strong>cd myapp </strong>
+```
 
 # step i: generate the class files
 <strong>ant devmode</strong>
@@ -112,6 +122,7 @@ EMMA: runtime coverage data merged into [PARENT_DIR/samples/com/example/myapp/co
 
 <span style="background: #FD5;">EMMA: processing input files ...
 EMMA: 2 file(s) read and merged in 13 ms
-EMMA: writing [html] report to [PARENT_DIR/samples/com/example/myapp/coverage/index.html] ...</span></pre>
+EMMA: writing [html] report to [PARENT_DIR/samples/com/example/myapp/coverage/index.html] ...</span>
+```
 
 Follow [Step 4](#improving) of the EclEmma section to improve coverage. As you add more tests, you can see your coverage increasing.

@@ -29,7 +29,7 @@ The following is a sample of presentations that have been given at various confe
 <hr class="divider">
 
 <div class="preso-detail">
-<a name="GDD2007"></a>
+<a id="GDD2007"></a>
 <strong>Fast, Easy, Beautiful: Pick Three - Building User Interfaces with GWT</strong>
 <br/>
 May  2007, Google Developer Day 2007 (in Mountain View)
@@ -42,12 +42,12 @@ no learning  curve. After a short introduction to GWT, we will dive quickly into
 procedure calls,  and integration with existing web applications.
 </blockquote>
 <a href="http://google-web-toolkit.googlecode.com/files/Fast-Easy-Beautiful-Pick-Three-GDD-2007.pdf">Slides (PDF)</a>
-&nbsp;-&nbsp;
-<a href="http://www.youtube.com/watch?v=NvRa-CxkpZI">Presentation (Video)</a></p>
+ -
+<a href="http://www.youtube.com/watch?v=NvRa-CxkpZI">Presentation (Video)</a>
 </div>
 
 <div class="preso-detail">
-<a name="GDDFireside2007"></a>
+<a id="GDDFireside2007"></a>
 <strong>GWT Fireside Chat: Common Questions</strong>
 <br/>
 May  2007, Google Developer Day 2007 (in Mountain View)
@@ -61,7 +61,7 @@ we have heard regarding usage of GWT. We used these slides to kick-off the conve
 </div>
 
 <div class="preso-detail">
-<a name="TSSJS2007"></a>
+<a id="TSSJS2007"></a>
 <strong>Writing Big Apps with GWT</strong>
 <br/>
 March 2007, TheServerSide Java Symposium
@@ -75,7 +75,7 @@ practices for building large, multi-page AJAX applications.
 </div>
 
 <div class="preso-detail">
-<a name="EclipseCon2007"></a>
+<a id="EclipseCon2007"></a>
 <strong>GWT: Quick relief of AJAX pain (tutorial)</strong>
 <br/>
 March 2007, EclipseCon 2007
@@ -89,12 +89,12 @@ and demonstrate how the GWT relieves the nervous twitching troubling AJAX develo
 engineering using Java and Eclipse and still end up with fast, light-weight JavaScript applications.
 </blockquote>
 <a href="http://google-web-toolkit.googlecode.com/files/For-Quick-Relief-of-AJAX-Pain-EclipseCon-2007.pdf">Slides (PDF)</a>
-&nbsp;-&nbsp;
-<a href="http://code.google.com/p/gwt-eclipsecon-chat/">Source Code</a></p>
+ -
+<a href="http://code.google.com/p/gwt-eclipsecon-chat/">Source Code</a>
 </div>
 
 <div class="preso-detail">
-<a name="JAOO2006"></a>
+<a id="JAOO2006"></a>
 <strong>A Business Case for Ajax with GWT</strong>
 <br/>
 October 2006, JAOO 2006
@@ -119,7 +119,7 @@ code base you're glad to have.
 </div>
 
 <div class="preso-detail">
-<a name="JavaZone2006"></a>
+<a id="JavaZone2006"></a>
 <strong>GWT: What, Why, and How</strong>
 <br/>
 September 2006, JavaZone 2006
@@ -132,6 +132,6 @@ learning curve. After a short introduction to GWT, we will dive quickly into a d
 building large, multi-page AJAX applications.
 </blockquote>
 <a href="http://google-web-toolkit.googlecode.com/files/Google-Web-Toolkit-What-Why-and-How-JavaZone-2006.pdf">Slides (PDF)</a>
-&nbsp;-&nbsp;
-<a href="http://www.infoq.com/presentations/gwt">Presentation (Video)</a></p>
+ -
+<a href="http://www.infoq.com/presentations/gwt">Presentation (Video)</a>
 </div>

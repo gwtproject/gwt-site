@@ -21,7 +21,7 @@ Let's start out with a simple example. Suppose we're developing an online music 
 
 **Record.java**
 
-<pre class="code">
+```
 public class Record implements Serializable {
   private Long id;
   private String title;
@@ -37,16 +37,17 @@ public class Record implements Serializable {
 
   // Along with corresponding getters + setters.
 }
-</pre>
+
+```
 
 **Account.java**
 
-<pre class="code">
+```
 public class Account implements Serializable {
   Long id;
   String name;
   String password;
-  Set&lt;Record&gt; records;
+  Set<Record> records;
 
   public Account() {
   }
@@ -57,7 +58,7 @@ public class Account implements Serializable {
 
   public void addRecord(Record record) {
     if (records == null) {
-      records = new HashSet&lt;Record&gt;();
+      records = new HashSet<Record>();
     }
     records.add(record);
   }
@@ -71,44 +72,47 @@ public class Account implements Serializable {
 
   // Along with corresponding getters + setters.
 }
-</pre>
+
+```
 
 Then we need to create the corresponding Hibernate mapping files for each of these persisted types, like so:
 
 **Record.hbm.xml**
 
-<pre class="code">
-&lt;hibernate-mapping&gt;
-  &lt;class name=&quot;com.google.musicstore.domain.Record&quot; table=&quot;RECORD&quot;&gt;
-    &lt;id name=&quot;id&quot; column=&quot;RECORD_ID&quot;&gt;
-      &lt;generator class=&quot;native&gt;/&gt;
-    &lt;/id&gt;
-    &lt;property name=&quot;title&quot;/&gt;
-    &lt;property name=&quot;year&quot;/&gt;
-    &lt;property name=&quot;price&quot;/&gt;
+```
+<hibernate-mapping>
+  <class name="com.google.musicstore.domain.Record" table="RECORD">
+    <id name="id" column="RECORD_ID">
+      <generator class="native>/>
+    </id>
+    <property name="title"/>
+    <property name="year"/>
+    <property name="price"/>
 
-  &lt;/class&gt;
-&lt;/hibernate-mapping&gt;
-</pre>
+  </class>
+</hibernate-mapping>
+
+```
 
 **Account.hbm.xml**
 
-<pre class="code">
-&lt;hibernate-mapping&gt;
-  &lt;class name=&quot;com.google.musicstore.domain.Account&quot; table=&quot;ACCOUNT&quot;&gt;
-    &lt;id name=&quot;id&quot; column=&quot;ACCOUNT_ID&quot;&gt;
-      &lt;generator class=&quot;native&quot;/&gt;
-    &lt;/id&gt;
-    &lt;property name=&quot;name&quot;/&gt;
-    &lt;property name=&quot;password&quot;/&gt;
+```
+<hibernate-mapping>
+  <class name="com.google.musicstore.domain.Account" table="ACCOUNT">
+    <id name="id" column="ACCOUNT_ID">
+      <generator class="native"/>
+    </id>
+    <property name="name"/>
+    <property name="password"/>
 
-    &lt;set name=&quot;records&quot; table=&quot;ACCOUNT_RECORD&quot; lazy=&quot;true&quot;&gt;
-      &lt;key column=&quot;ACCOUNT_ID&quot;/&gt;
-      &lt;many-to-many column=&quot;RECORD_ID&quot; class=&quot;com.google.musicstore.domain.Record&quot;/&gt;
-    &lt;/set&gt;
-  &lt;/class&gt;
-&lt;/hibernate-mapping&gt;
-</pre>
+    <set name="records" table="ACCOUNT_RECORD" lazy="true">
+      <key column="ACCOUNT_ID"/>
+      <many-to-many column="RECORD_ID" class="com.google.musicstore.domain.Record"/>
+    </set>
+  </class>
+</hibernate-mapping>
+
+```
 
 Now that we've created our persistent classes, let's create a bare bones UI that will allow us to enter new accounts and records, as well as the GWT RPC services that will persist them on the server-side. Let's start with the RPC services.
 
@@ -118,12 +122,12 @@ First, we create the client-side service interfaces. If you'd like to avoid the 
 
 **MusicStoreService.java**
 
-<pre class="code">
-@RemoteServiceRelativePath(&quot;musicservice&quot;)
+```
+@RemoteServiceRelativePath("musicservice")
 public interface MusicStoreService extends RemoteService {
-  public List&lt;Account&gt; getAccounts();
+  public List<Account> getAccounts();
 
-  public List&lt;Record&gt; getRecords();
+  public List<Record> getRecords();
 
   public Long saveAccount(Account account);
 
@@ -131,47 +135,49 @@ public interface MusicStoreService extends RemoteService {
 
   public void saveRecordToAccount(Account account, Record record);
 }
-</pre>
+
+```
 
 **MusicStoreServiceAsync.java**
 
-<pre class="code">
+```
 public interface MusicStoreServiceAsync {
-  public void getAccounts(AsyncCallback&lt;List&lt;Account&gt;&gt; callback);
+  public void getAccounts(AsyncCallback<List<Account>> callback);
 
-  public void getRecords(AsyncCallback&lt;List&lt;Record&gt;&gt; callback);
+  public void getRecords(AsyncCallback<List<Record>> callback);
 
-  public void saveAccount(Account accountDTO, AsyncCallback&lt;Long&gt; callback);
+  public void saveAccount(Account accountDTO, AsyncCallback<Long> callback);
 
-  public void saveRecord(Record record, AsyncCallback&lt;Long&gt; callback);
+  public void saveRecord(Record record, AsyncCallback<Long> callback);
 
   public void saveRecordToAccount(Account accountDTO, Record recordDTO,
-AsyncCallback&lt;Void&gt; callback);
+AsyncCallback<Void> callback);
 }
-</pre>
+
+```
 
 Finally, we create the service implementation class on the server-side.
 
 **MusicStoreServiceImpl.java**
 
-<pre class="code">
+```
 public class MusicStoreServiceImpl extends RemoteServiceServlet implements
 MusicStoreService {
 
   @Override
-  public List&lt;Account&gt; getAccounts() {
+  public List<Account> getAccounts() {
     Session session = HibernateUtil.getSessionFactory().getCurrentSession();
     session.beginTransaction();
-    List&lt;Account&gt; accounts = new ArrayList&lt;Account&gt;(session.createQuery("from Account").list());
+    List<Account> accounts = new ArrayList<Account>(session.createQuery("from Account").list());
     session.getTransaction().commit();
     return accounts;
   }
 
   @Override
-  public List&lt;Record&gt; getRecords() {
+  public List<Record> getRecords() {
     Session session = HibernateUtil.getSessionFactory().getCurrentSession();
     session.beginTransaction();
-    List&lt;Record&gt; records = new ArrayList&lt;Record&gt;(session.createQuery("from Record").list());
+    List<Record> records = new ArrayList<Record>(session.createQuery("from Record").list());
     session.getTransaction().commit();
     return records;
   }
@@ -205,11 +211,12 @@ MusicStoreService {
     session.getTransaction().commit();
   }
 }
-</pre>
+
+```
 
 You may have noticed some `HibernateUtil` calls in the `MusicStoreServiceImpl`  method implementations in the code snippet above. This is actually a custom class that was created as a helper utility to retrieve and use the Hibernate session factory, exactly as is done in the Hibernate tutorial mentioned earlier. For convenience, here is the `HibernateUtil` code pasted below so you can follow along. If you want to learn more details about what the `HibernateUtil` class is doing, I strongly advise checking out the tutorial for a full explanation.
 
-<pre class="code">
+```
 public class HibernateUtil {
 
   private static final SessionFactory sessionFactory;
@@ -229,39 +236,45 @@ public class HibernateUtil {
     return sessionFactory;
   }
 }
-</pre>
+
+```
 
 Finally, our server-side GWT RPC services are ready to [CRUD](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) our Hibernate objects (actually, we skipped the Delete functionality).  Now we just need an interface to actually make the RPC calls. I've created a sample application with a UI that will allow us to add records, add accounts, add records to accounts and of course view all existing accounts and their associated records. The sample code is not representative of best practices, just a quick and dirty implementation to get us up and running. The sample also includes the server-side RPC and Hibernate code we've worked on up to this point. You can download the sample [here](http://google-web-toolkit.googlecode.com/files/gwt_hibernate_base.zip).
 
 In the example source code, you'll find a `build.xml` file and a `build.properties` file in the root directory. After properly configuring the `gwt.home` and `gwt.dev.jar` properties for your machine,  you can use [Ant](http://ant.apache.org/) to build the project, as well as start up hosted mode to see the UI and our Hibernate instance setup in the embedded Jetty server. Just run the following from command line:
 
-<pre class="code">ant build hosted</pre>
+```
+ant build hosted
+```
 
 Before doing that, though, we'll need to have our in-memory HSQLDB up and running so we can persist our Hibernate objects. In the example project you downloaded, you should find '`data`' folder under the project root directory. You'll also find the `hsqldb.jar` in the `lib` folder. All we need to do to start up the in-memory HSQLDB is invoke the `org.hsqldb.Server` class contained in the `hsqldb.jar` file, while in the '`data`' directory to host the HSQLDB properties and log output. You can do this by running the following from command line (while in the '`data`' directory):
 
-<pre class="code">java -cp ../lib/hsqldb.jar org.hsqldb.Server</pre>
+```
+java -cp ../lib/hsqldb.jar org.hsqldb.Server
+```
 
-Now that we have our persistence layer ready, let's compile and run our application in hosted mode using the ant command above. Once both `build` and `hosted` ant tasks have completed, you should see the hosted mode browser startup, with the &quot;Add Accounts / Records&quot; tab displayed. Finally, we can start persisting our records (from the GWT client-side to the Hibernate database, using our Hibernate objects!). Go ahead and try adding an account and a a record to our in-memory Hibernate to get our data set started.
+Now that we have our persistence layer ready, let's compile and run our application in hosted mode using the ant command above. Once both `build` and `hosted` ant tasks have completed, you should see the hosted mode browser startup, with the "Add Accounts / Records" tab displayed. Finally, we can start persisting our records (from the GWT client-side to the Hibernate database, using our Hibernate objects!). Go ahead and try adding an account and a a record to our in-memory Hibernate to get our data set started.
 
-Next, try selecting the &quot;Add Records To Account&quot; panel to add our newly created record to the also newly created account. Chances are, you'll get an error message along the lines of the screenshot below.
+Next, try selecting the "Add Records To Account" panel to add our newly created record to the also newly created account. Chances are, you'll get an error message along the lines of the screenshot below.
 
 ![img](../images/hosted_hibernate_error.png)
 
 ### Why Hibernate objects can't be understood when they reach the browser world
 
-So what went wrong? Looking at the hosted mode console, you'll notice the warning message &quot;Exception while dispatching incoming RPC call&quot; was logged to the console. Selecting the warning message, the lower pane will display a rather long stack trace.
+So what went wrong? Looking at the hosted mode console, you'll notice the warning message "Exception while dispatching incoming RPC call" was logged to the console. Selecting the warning message, the lower pane will display a rather long stack trace.
 
 This is the part to pay attention to:
 
-<pre class="code">
+```
 Caused by: com.google.gwt.user.client.rpc.SerializationException: Type 'org.hibernate.collection.PersistentSet' was not included in the set of types which can be serialized by this SerializationPolicy or its Class object could not be loaded. For security purposes, this type will not be serialized.
 at com.google.gwt.user.server.rpc.impl.StandardSerializationPolicy.validateSerialize(StandardSerializationPolicy.java:83)
 at com.google.gwt.user.server.rpc.impl.ServerSerializationStreamWriter.serialize(ServerSerializationStreamWriter.java:591)
-</pre>
+
+```
 
 The key here is the `SerializationException` that was thrown when we tried to load up and retrieve accounts.
 
-So what exactly went wrong? Well, as you may have read in the [GWT RPC docs](../doc/latest/DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls), a [`SerializationException`](/javadoc/latest/com/google/gwt/user/client/rpc/SerializationException.html) is thrown whenever a type transferred over RPC is not &quot;serializable&quot;. The definition of serializable here means that the GWT RPC mechanism knows how to serialize and deserialize the type from bytecode to JSON and vice-versa. To declare a type as serializable to the GWT compiler, you can either make the type to be transferred over RPC implement the `IsSerializable` interface, especially created for this purpose, or implement the standard `java.io.Serializable` interface, provided that its members and methods consist of types that are also serializable.
+So what exactly went wrong? Well, as you may have read in the [GWT RPC docs](../doc/latest/DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls), a [`SerializationException`](/javadoc/latest/com/google/gwt/user/client/rpc/SerializationException.html) is thrown whenever a type transferred over RPC is not "serializable". The definition of serializable here means that the GWT RPC mechanism knows how to serialize and deserialize the type from bytecode to JSON and vice-versa. To declare a type as serializable to the GWT compiler, you can either make the type to be transferred over RPC implement the `IsSerializable` interface, especially created for this purpose, or implement the standard `java.io.Serializable` interface, provided that its members and methods consist of types that are also serializable.
 
 In the case of the `Account` and `Record` Hibernate objects, we are implementing the `Serializable` interface, so these should work, shouldn't they?. As it turns out, the devil is in the details.
 
@@ -289,7 +302,7 @@ Applying this to our example, we get the following two DTOs:
 
 **AccountDTO.java**
 
-<pre class="code">
+```
 package com.google.musicstore.client.dto;
 
 import java.io.Serializable;
@@ -299,7 +312,7 @@ public class AccountDTO implements Serializable {
   private Long id;
   private String name;
   private String password;
-  private Set&lt;RecordDTO&gt; records;
+  private Set<RecordDTO> records;
 
   public AccountDTO() {
   }
@@ -309,7 +322,7 @@ public class AccountDTO implements Serializable {
   }
 
   public AccountDTO(Long id, String name, String password,
-      Set&lt;RecordDTO&gt; records) {
+      Set<RecordDTO> records) {
     this.id = id;
     this.name = name;
     this.password = password;
@@ -318,11 +331,12 @@ public class AccountDTO implements Serializable {
 
   // Along with corresponding getters + setters.
 }
-</pre>
+
+```
 
 **RecordDTO.java**
 
-<pre class="code">
+```
 package com.google.musicstore.client.dto;
 
 import java.io.Serializable;
@@ -349,49 +363,52 @@ public class RecordDTO implements Serializable {
 
   // Along with corresponding getters + setters.
 }
-</pre>
+
+```
 
 Next, let's add constructors that take these new DTOs as arguments to their Hibernate object counterparts:
 
 **Account.java**
 
-<pre class="code">
+```
 public Account(AccountDTO accountDTO) {
   id = accountDTO.getId();
   name = accountDTO.getName();
   password = accountDTO.getPassword();
-  Set&lt;RecordDTO&gt; recordDTOs = accountDTO.getRecords();
+  Set<RecordDTO> recordDTOs = accountDTO.getRecords();
   if (recordDTOs != null) {
-    Set&lt;Record&gt; records = new HashSet&lt;Record&gt;(recordDTOs.size());
+    Set<Record> records = new HashSet<Record>(recordDTOs.size());
     for (RecordDTO recordDTO : recordDTOs) {
       records.add(new Record(recordDTO));
     }
     this.records = records;
   }
 }
-</pre>
+
+```
 
 **Record.java**
 
-<pre class="code">
+```
 public Record(RecordDTO record) {
   id = record.getId();
   title = record.getTitle();
   year = record.getYear();
   price = record.getPrice();
 }
-</pre>
+
+```
 
 And finally, we need to modify the existing GWT RPC components to take the DTO counterparts as arguments:
 
 **MusicStoreService.java**
 
-<pre class="code">
-@RemoteServiceRelativePath(&quot;musicservice&quot;)
+```
+@RemoteServiceRelativePath("musicservice")
 public interface MusicStoreService extends RemoteService {
-  public List&lt;AccountDTO&gt; getAccounts();
+  public List<AccountDTO> getAccounts();
 
-  public List&lt;RecordDTO&gt; getRecords();
+  public List<RecordDTO> getRecords();
 
   public Long saveAccount(AccountDTO accountDTO);
 
@@ -399,42 +416,44 @@ public interface MusicStoreService extends RemoteService {
 
   public void saveRecordToAccount(AccountDTO accountDTO, RecordDTO recordDTO);
 
-  public List&lt;AccountDTO&gt; getAllAccountRecords();
+  public List<AccountDTO> getAllAccountRecords();
 }
-</pre>
+
+```
 
 **MusicStoreServiceAsync.java**
 
-<pre class="code">
+```
 public interface MusicStoreServiceAsync {
-  public void getAccounts(AsyncCallback&lt;List&lt;AccountDTO&gt;&gt; callback);
+  public void getAccounts(AsyncCallback<List<AccountDTO>> callback);
 
-  public void getRecords(AsyncCallback&lt;List&lt;RecordDTO&gt;&gt; callback);
+  public void getRecords(AsyncCallback<List<RecordDTO>> callback);
 
-  public void saveAccount(AccountDTO accountDTO, AsyncCallback&lt;Long&gt; callback);
+  public void saveAccount(AccountDTO accountDTO, AsyncCallback<Long> callback);
 
-  public void saveRecord(RecordDTO record, AsyncCallback&lt;Long&gt; callback);
+  public void saveRecord(RecordDTO record, AsyncCallback<Long> callback);
 
-  public void saveRecordToAccount(AccountDTO accountDTO, RecordDTO recordDTO, AsyncCallback&lt;Void&gt; callback);
+  public void saveRecordToAccount(AccountDTO accountDTO, RecordDTO recordDTO, AsyncCallback<Void> callback);
 
-  public void getAllAccountRecords(AsyncCallback&lt;List&lt;AccountDTO&gt;&gt; callback);
+  public void getAllAccountRecords(AsyncCallback<List<AccountDTO>> callback);
 }
-</pre>
+
+```
 
 And now we modify the `MusicStoreServiceImpl.java` class.
 
 **MusicStoreServiceImpl.java**
 
-<pre class="code">
+```
 public class MusicStoreServiceImpl extends RemoteServiceServlet implements
 MusicStoreService {
 
   @Override
-  public List&lt;AccountDTO&gt; getAccounts() {
+  public List<AccountDTO> getAccounts() {
     Session session = HibernateUtil.getSessionFactory().getCurrentSession();
     session.beginTransaction();
-    List&lt;Account&gt; accounts = new ArrayList&lt;Account&gt;(session.createQuery("from Account").list());
-    List&lt;AccountDTO&gt; accountDTOs = new ArrayList&lt;AccountDTO&gt;(
+    List<Account> accounts = new ArrayList<Account>(session.createQuery("from Account").list());
+    List<AccountDTO> accountDTOs = new ArrayList<AccountDTO>(
     accounts != null ? accounts.size() : 0);
     if (accounts != null) {
       for (Account account : accounts) {
@@ -446,11 +465,11 @@ MusicStoreService {
   }
 
   @Override
-  public List&lt;RecordDTO&gt; getRecords() {
+  public List<RecordDTO> getRecords() {
     Session session = HibernateUtil.getSessionFactory().getCurrentSession();
     session.beginTransaction();
-    List&lt;Record&gt; records = new ArrayList&lt;Record&gt;(session.createQuery("from Record").list());
-    List&lt;RecordDTO&gt; recordDTOs = new ArrayList&lt;RecordDTO&gt;(records != null ? records.size() : 0);
+    List<Record> records = new ArrayList<Record>(session.createQuery("from Record").list());
+    List<RecordDTO> recordDTOs = new ArrayList<RecordDTO>(records != null ? records.size() : 0);
     if (records != null) {
       for (Record record : records) {
         recordDTOs.add(createRecordDTO(record));
@@ -492,11 +511,11 @@ MusicStoreService {
   }
 
   @Override
-  public List&lt;AccountDTO&gt; getAllAccountRecords() {
+  public List<AccountDTO> getAllAccountRecords() {
     Session session = HibernateUtil.getSessionFactory().getCurrentSession();
     session.beginTransaction();
-    List&lt;Account&gt; accounts = new ArrayList&lt;Account&gt;(session.createQuery("from Account").list());
-    List&lt;AccountDTO&gt; accountDTOs = new ArrayList&lt;AccountDTO&gt;(accounts != null ? accounts.size() : 0);
+    List<Account> accounts = new ArrayList<Account>(session.createQuery("from Account").list());
+    List<AccountDTO> accountDTOs = new ArrayList<AccountDTO>(accounts != null ? accounts.size() : 0);
     if (accounts != null) {
       for (Account account : accounts) {
         accountDTOs.add(createAccountDTO(account));
@@ -507,8 +526,8 @@ MusicStoreService {
   }
 
   private AccountDTO createAccountDTO(Account account) {
-    Set&lt;Record&gt; records = account.getRecords();
-    Set&lt;RecordDTO&gt; recordDTOs = new HashSet&lt;RecordDTO&gt;(records != null ? records.size() : 0);
+    Set<Record> records = account.getRecords();
+    Set<RecordDTO> recordDTOs = new HashSet<RecordDTO>(records != null ? records.size() : 0);
     if (records != null) {
       for (Record record : records) {
         recordDTOs.add(createRecordDTO(record));
@@ -521,7 +540,8 @@ MusicStoreService {
     return new RecordDTO(record.getId(), record.getTitle(), record.getYear(), record.getPrice());
   }
 }
-</pre>
+
+```
 
 And lastly, we need to update the RPC service interface calls from the `MusicStore` entry point class to use the new DTO parametrized method signatures.
 
@@ -529,10 +549,11 @@ We now have the domain package containing the `Account` and `Record` classes whe
 
 **MusicStore.gwt.xml**
 
-<pre class="code">
-&lt;!-- Remove the line below --&gt;
-&lt;source path="domain"/&gt;
-</pre>
+```
+<!-- Remove the line below -->
+<source path="domain"/>
+
+```
 
 Notice that not much changes here. The only thing we need to do after retrieving the Hibernate objects from the database is copy them into their DTO equivalents, add those DTOs to a list and return them back in the client-side callback. However, there is one thing that we'll need to watch out for, and that's the process by which we copy these objects to our DTOs.
 
@@ -540,10 +561,10 @@ We created the `createAccountDTO(Account account)` method, which contains the lo
 
 **createAccountDTO(Account account)**
 
-<pre class="code">
+```
 private AccountDTO createAccountDTO(Account account) {
-  Set&lt;Record&gt; records = account.getRecords();
-  Set&lt;RecordDTO&gt; recordDTOs = new HashSet&lt;RecordDTO&gt;(records != null ? records.size() : 0);
+  Set<Record> records = account.getRecords();
+  Set<RecordDTO> recordDTOs = new HashSet<RecordDTO>(records != null ? records.size() : 0);
   if (records != null) {
     for (Record record : records) {
       recordDTOs.add(createRecordDTO(record));
@@ -551,17 +572,19 @@ private AccountDTO createAccountDTO(Account account) {
   }
   return new AccountDTO(account.getId(), account.getName(), account.getPassword(), recordDTOs);
 }
-</pre>
+
+```
 
 You'll also notice that we're making a call to another copy method called `createRecordDTO(Record record)`. As you might imagine, much like we needed to transform Account objects into their DTO equivalents, we need to do the same directional transformation for the Record object.
 
 **createRecordDTO(Record record)**
 
-<pre class="code">
+```
 private RecordDTO createRecordDTO(Record record) {
   return new RecordDTO(record.getId(), record.getTitle(), record.getYear(), record.getPrice());
 }
-</pre>
+
+```
 
 With the DTO solution implemented, try running: `ant clean build hosted` from command line once more to see the solution in action (all while making sure that the HSQL in-memory DB is still running).
 
@@ -585,44 +608,47 @@ First, a little bit of background about how Dozer works. Dozer is based on the J
 
 As mentioned before, Dozer permits us to use XML mappings to tell it which properties to copy to a new DTO instance, as well as which properties to exclude. When Dozer reads these mapping files and copies objects to DTOs, it does so implicitly, meaning that you can expect that any property that hasn't been specifically excluded in the mapping file will be included. This helps keep the Dozer mapping file short and to the point:
 
-<pre class="code">
-&lt;mappings&gt;
-  &lt;mapping&gt;
-    &lt;class-a&gt;com.google.musicstore.domain.Account&lt;/class-a&gt;
-    &lt;class-b&gt;com.google.musicstore.dto.AccountDTO&lt;/class-a&gt;
-  &lt;/mapping&gt;
-&lt;/mappings&gt;
-</pre>
+```
+<mappings>
+  <mapping>
+    <class-a>com.google.musicstore.domain.Account</class-a>
+    <class-b>com.google.musicstore.dto.AccountDTO</class-a>
+  </mapping>
+</mappings>
+
+```
 
 Now that we know how Dozer mappings work, let's see how they apply to Hibernate objects. The idea is to simply copy all the properties over to our DTOs while removing any properties marked with `lazy="true"`. Dozer will take care of replacing these originally lazily loaded persistent collections by plain collections, which can be transferred and serialized through RPC.
 
-<pre class="code">
-&lt;mappings&gt;
-  &lt;mapping&gt;
-    &lt;class-a&gt;com.google.musicstore.domain.Account&lt;/class-a&gt;
-    &lt;class-b&gt;com.google.musicstore.dto.AccountDTO&lt;/class-b&gt;
-    &lt;field-exclude&gt;
-      &lt;a&gt;records&lt;/a&gt;
-      &lt;b&gt;records&lt;/b&gt;
-    &lt;/field-exclude&gt;
-  &lt;/mapping&gt;
+```
+<mappings>
+  <mapping>
+    <class-a>com.google.musicstore.domain.Account</class-a>
+    <class-b>com.google.musicstore.dto.AccountDTO</class-b>
+    <field-exclude>
+      <a>records</a>
+      <b>records</b>
+    </field-exclude>
+  </mapping>
 
-  &lt;mapping&gt;
-    &lt;class-a&gt;com.google.musicstore.domain.Record&lt;/class-a&gt;
-    &lt;class-b&gt;com.google.musicstore.dto.RecordDTO&lt;/class-b&gt;
-  &lt;/mapping&gt;
-&lt;/mappings&gt;
-</pre>
+  <mapping>
+    <class-a>com.google.musicstore.domain.Record</class-a>
+    <class-b>com.google.musicstore.dto.RecordDTO</class-b>
+  </mapping>
+</mappings>
+
+```
 
 One of the nice things about Dozer is that it automatically takes care of copying data between two classes for properties that exist in both classes that have the same field type and name. Since the `Account` / `Record` objects and their DTO equivalents both use the same property names, we're already done with our Dozer mappings as configured above. Save this mapping file to `dozerBeanMapping.xml`, and place it on the project classpath. Now all we need to have our previous DTO solution use Dozer is remove the copy logic we added as it is no longer needed, and use the Dozer mappings to copy our Hibernate data to our DTOs, and send them over the wire.
 
 The method signatures for all three GWT RPC `MusicStore` service components remain the same. What changes is simply the copy logic from Hibernate object to DTO in the `MusicStoreServiceImpl` method implementations. Anywhere we would have had `createAccountDTO()` or `createRecordDTO()` calls, we will now have:
 
-<pre class="code">
+```
 DozerBeanMapperSingletonWrapper.getInstance().map(account, AccountDTO.class));
 // or
 DozerBeanMapperSingletonWrapper.getInstance().map(record, RecordDTO.class));
-</pre>
+
+```
 
 And similarly the other way around when we need to create a Hibernate object from an incoming DTO.
 
@@ -658,7 +684,7 @@ In the simplest case, integration between GWT and Hibernate can be realized by f
 2.  Making your remote RPC services extend `[PersistentRemoteService](http://gilead.svn.sourceforge.net/viewvc/gilead/gilead/branches/1.2/adapter4gwt/src/net/sf/gilead/gwt/PersistentRemoteService.java?revision=896&view=markup)` instead of `[RemoteServiceServlet](/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html)`.
 3.  Configuring your beanManager for your GWT RPC service as shown in the code snippet below (see [Gilead documentation](http://noon.gilead.free.fr/gilead/index.php?page=documentation) for more on configuring bean managers):
 
-    <pre class="code">
+```
 public class UserRemoteImpl extends PersistentRemoteService implements UserRemote {
   ...
 
@@ -673,7 +699,8 @@ public class UserRemoteImpl extends PersistentRemoteService implements UserRemot
         setBeanManager(persistentBeanManager);
   }
 }
-</pre>
+
+```
 
 Once this configuration is in place, our Hibernate entities are automatically converted into types that can be transferred over RPC and used in client-side GWT code, without any other coding or mapping needing to be defined on our part.
 
@@ -683,41 +710,44 @@ Applying these three changes to the base MusicStore application would lead to th
 
 **Account.java**
 
-<pre class="code">
+```
 import net.sf.gilead.pojo.java5.LightEntity;
 
 public class Account extends LightEntity implements Serializable {
   // ...
 }
-</pre>
+
+```
 
 **Record.java**
 
-<pre class="code">
+```
 import net.sf.gilead.pojo.java5.LightEntity;
 
 public class Account extends LightEntity implements Serializable {
   // ...
 }
-</pre>
+
+```
 
 2) Making your remote RPC service extend `PersistentRemoteService`
 
 **MusicStoreServiceImpl.java**
 
-<pre class="code">
+```
 import net.sf.gilead.gwt.PersistentRemoteService;
 
 public class MusicStoreServiceImpl extends PersistentRemoteService implements MusicStoreService {
   // ...
 }
-</pre> 
+
+```
 
 3) Configure your `beanManager` for your GWT RPC service as shown in the code snippet above
 
 **MusicStoreServiceImpl.java**
 
-<pre class="code">
+```
 import net.sf.gilead.core.PersistentBeanManager;
 import net.sf.gilead.core.hibernate.HibernateUtil;
 import net.sf.gilead.core.store.stateless.StatelessProxyStore;
@@ -739,13 +769,16 @@ public class MusicStoreServiceImpl extends PersistentRemoteService implements Mu
     setBeanManager(persistentBeanManager);
   }
 }
-</pre>
+
+```
 
 There is a change to note here, aside from the new constructor that sets up the bean manager. We're now using `net.sf.gilead.core.hibernate.HibernateUtil` in addition to the `HibernateUtil` class we defined in the util package. This is required to setup Gilead appropriately.
 
 And that's all there is to it. We're ready to go with the original calls we made from our GWT RPC service interfaces on the client-side referring the `Account` and `Record` objects. Try executing the command below to compile the application with the Gilead approach and see it running in hosted mode:
 
-<pre class="code">ant clean build hosted</pre>
+```
+ant clean build hosted
+```
 
 Once more, you can download a version of the sample application we've been building with the Gilead solution fully implemented [here](http://google-web-toolkit.googlecode.com/files/gwt_hibernate_gilead.zip).
 

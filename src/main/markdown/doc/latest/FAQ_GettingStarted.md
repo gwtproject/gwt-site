@@ -75,8 +75,7 @@ If you are working on a project, you may notice problems compiling and running y
 GWT compiler internal errors, or you may see odd runtime errors you've never seen before.
 
 Before you file a bug, try stopping development mode and erasing your
-compiler output (usually in the directory `www/`_&lt;package
-  name&gt;_. Then, restart development mode.
+compiler output (usually in the directory `www/_<package>_`. Then, restart development mode.
 If you're still having problems, though, we definitely want to hear about it!
 
 ## Licensing<a id="Licensing"></a>
@@ -113,7 +112,7 @@ it isn't there, you might want to first suggest it to the [GWT developer discuss
 group](http://groups.google.com/group/Google-Web-Toolkit).
 
 You can submit requests for enhancements at the [GWT Issue Tracker](http://code.google.com/p/google-web-toolkit/issues/list). When you
-save your report, it will be labeled as a &quot;Defect&quot; even though you want to submit an RFE (Request for Enhancement). Don't worry! We review each item submitted to our Issue
+save your report, it will be labeled as a "Defect" even though you want to submit an RFE (Request for Enhancement). Don't worry! We review each item submitted to our Issue
 Tracker, and will mark enhancement requests appropriately when we receive them.
 
 ### Where can I find the GWT source code? Can I submit a patch?<a id="Where_can_I_find_the_GWT_source_code?_Can_I_submit_a_patch?"></a>

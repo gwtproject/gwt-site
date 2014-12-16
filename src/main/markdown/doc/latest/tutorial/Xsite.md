@@ -24,16 +24,14 @@ This tutorial builds on the GWT concepts and the StockWatcher application create
 3.  Import the project into Eclipse
 
         1.  From the `File` menu, select the  `Import...` menu option.
-    2.  Select the import source General &gt; Existing Projects into Workspace. Click the `Next` button.
+    2.  Select the import source General > Existing Projects into Workspace. Click the `Next` button.
     3.  For the root directory, browse to and select the StockWatcher directory (from the unzipped file). Click the `Finish` button.
 
 If you are using ant, edit the `gwt.sdk` property in StockWatcher/build.xml to point to where you unzipped GWT.
 
 In order to actually run this tutorial, you will need either access to a server other than where StockWatcher is running, one that can run a PHP script, or be able to run a Python script on your machine.
 
-<a name="design"></a>
-
-##  Reviewing the requirements and design
+##  Reviewing the requirements and design <a id="design"></a>
 
 As you modify the current implementation of StockWatcher to access data on a remote server, there are two issues to address:
 
@@ -55,7 +53,7 @@ For a more detailed description of SOP and its effect on GWT, read [What is the 
 There are two options for working around SOP security:
 
 *   Proxy on your own server
-*   Load the JSON response into a &lt;script&gt; tag
+*   Load the JSON response into a `<script>` tag
 
 ##### Proxy on your own server
 
@@ -69,11 +67,11 @@ You could then use any mechanism we want for retrieving the data from the local 
 One downside to this approach is that it requires additional server-side code.
 Another is that the extra HTTP call increases the latency of remote calls and adds to the workload on our web server.
 
-##### Load the JSON response into a &lt;script&gt; tag
+##### Load the JSON response into a `<script>` tag
 
-Another option is to dynamically load JavaScript into a &lt;script&gt; tag.
-Client-side JavaScript can manipulate &lt;script&gt; tags, just like any other element in the HTML Document Object Model (DOM).
-Client-side code can set the src attribute of a &lt;script&gt; tag to automatically download and execute new JavaScript into the page.
+Another option is to dynamically load JavaScript into a `<script>` tag.
+Client-side JavaScript can manipulate `<script>` tags, just like any other element in the HTML Document Object Model (DOM).
+Client-side code can set the src attribute of a `<script>` tag to automatically download and execute new JavaScript into the page.
 
 This strategy is not subject to SOP restrictions. So you can effectively use it to load JavaScript (and therefore JSON) from remote servers.
 
@@ -81,22 +79,23 @@ This is the strategy you'll use to get the JSON-formatted stock data from a remo
 
 ### Asynchronous Communication
 
-Dynamically loading the JavaScript into a &lt;script&gt; tag solves the SOP issue but introduces another.
+Dynamically loading the JavaScript into a `<script>` tag solves the SOP issue but introduces another.
 When you use this method to load JavaScript, although the browser retrieves the code asynchronously, it doesn't notify you when it's finished.
 Instead, it simply executes the new JavaScript.
 However, by definition, JSON cannot contain executable code.
-Put the two together and you'll realize that you can't load plain JSON data using a &lt;script&gt; tag.
+Put the two together and you'll realize that you can't load plain JSON data using a `<script>` tag.
 
 #### JSON with Padding (JSONP)
 
 To resolve the callback issue, you can specify the name of a callback function as an input argument of the call itself.
 The web server will then wrap the JSON response in a call to that function.
 This technique is called JSON with Padding (JSONP).
-When the browser finishes downloading the new contents of the &lt;script&gt; tag, the callback function executes.
+When the browser finishes downloading the new contents of the `<script>` tag, the callback function executes.
 
-<pre class="code">
+```
 callback125([{"symbol":"DDD","price":10.610339195026,"change":0.053085447454327}]);
-</pre>
+
+```
 
 Google Data APIs support this technique.
 
@@ -139,9 +138,7 @@ Now that you understand the SOP issues surrounding cross-site requests, compare 
     </tr>
 </table>
 
-<a name="server"></a>
-
-##  Creating a data a source
+##  Creating a data a source <a id="server"></a>
 
 In this tutorial, you have two options for setting up the stock data so that StockWatcher encounters SOP restrictions.
 
@@ -153,9 +150,10 @@ In this tutorial, you have two options for setting up the stock data so that Sto
 If you have access to a web server, then you can use the following PHP script to return the JSONP.
 
 1.  Create a text file and name it `stockPrices.php`
-        *
-        *  <pre class="code">
-&lt;?php
+    *
+
+```
+<?php
 
       header('Content-Type: text/javascript');
   header('Cache-Control: no-cache');
@@ -172,7 +170,7 @@ If you have access to a web server, then you can use the following PHP script to
   if ($q) {
     $symbols = explode(' ', $q);
 
-        for ($i=0; $i&lt;count($symbols); $i++) {
+        for ($i=0; $i<count($symbols); $i++) {
       $price = lcg_value() * MAX_PRICE;
       $change = $price * MAX_PRICE_CHANGE * (lcg_value() * 2.0 - 1.0);
 
@@ -182,25 +180,26 @@ If you have access to a web server, then you can use the following PHP script to
       echo "\"change\":$change";
       echo '}';
 
-          if ($i &lt; (count($symbols) - 1)) {
+          if ($i < (count($symbols) - 1)) {
         echo ',';
       }
     }
   }
 
       echo ']);';
-?&gt;
-</pre>
+?>`
+```
+
 2.  Copy the PHP script to another server.
 3.  Open a browser and make a request for the JSON data.
-        *  `http://_[www.myStockServerDomain.com]_/stockPrices.php?q=ABC`
+    *  `http://_[www.myStockServerDomain.com]_/stockPrices.php?q=ABC`
 4.  The JSON string is returned.
-        *  `[{"symbol":"ABC","price":81.284083,"change":-0.007986}]`
-        *  However, as you'll see in the next section, the StockWatcher application will not be able to make this request from its client-side code.
+    *  `[{"symbol":"ABC","price":81.284083,"change":-0.007986}]`
+    *  However, as you'll see in the next section, the StockWatcher application will not be able to make this request from its client-side code.
 5.  Make a request for the JSONP by appending the name of a callback function.
-        *  `http://_[www.myStockServerDomain.com]_/stockPrices.php?q=ABC&callback=callback125`
+    *  `http://_[www.myStockServerDomain.com]_/stockPrices.php?q=ABC&callback=callback125`
 6.  The JSON is returned embedded in the callback function.
-        *  `callback125([{"symbol":"ABC","price":53.554212,"change":0.584011}]);
+    *  `callback125([{"symbol":"ABC","price":53.554212,"change":0.584011}]);
 `
 
 ### Simulating a second server
@@ -213,7 +212,9 @@ Notice in the BaseHTTPServer.HTTPServer constructor that it will be running on p
 Also notice that the script supports the callback query string parameter.
 
 1.  Create a Python script and save it as `quoteServer.py`
-        *  <pre class="code">
+    *
+
+```
 #!/usr/bin/env python2.4
 #
 # Copyright 2007 Google Inc. All Rights Reserved.
@@ -230,7 +231,7 @@ Also notice that the script supports the callback query string parameter.
 
       def do_GET(self):
     form = {}
-    if self.path.find('?') &gt; -1:
+    if self.path.find('?') > -1:
       queryStr = self.path.split('?')[1]
       form = dict([queryParam.split('=') for queryParam in queryStr.split('&amp;')])
 
@@ -249,8 +250,8 @@ Also notice that the script supports the callback query string parameter.
 
         body += ']'
 
-    <span class="highlight">    if 'callback' in form:
-      body = ('%s(%s);' % (form['callback'], body))</span>
+        if 'callback' in form:
+      body = ('%s(%s);' % (form['callback'], body))
 
         self.send_response(200)
     self.send_header('Content-Type', 'text/javascript')
@@ -264,29 +265,28 @@ Also notice that the script supports the callback query string parameter.
     self.wfile.flush()
     self.connection.shutdown(1)
 
-    <span class="highlight">bhs = BaseHTTPServer.HTTPServer(('', 8000), MyHandler)</span>
+    bhs = BaseHTTPServer.HTTPServer(('', 8000), MyHandler)
 bhs.serve_forever()
-</pre>
+```
+
 2.  Save the script to the main StockWatcher directory.
-        *
+    *
 3.  Make sure the Python interpreter is on your PATH.
 4.  Launch the script.
-        *  From the command shell, enter `python quoteServer.py`
-        *  The server will start, although you won't see any output immediately. (It will log each HTTP request).
+    *  From the command shell, enter `python quoteServer.py`
+    *  The server will start, although you won't see any output immediately. (It will log each HTTP request).
 5.  Open a browser and make a request for the JSON data.
-        *  `http://localhost:8000/?q=ABC`
+    *  `http://localhost:8000/?q=ABC`
 6.  The JSON string is returned.
-        *  `[{"symbol":"ABC","price":81.284083,"change":-0.007986}]`
-        *  However, as you'll see in the next section, the StockWatcher application will not be able to make this request from its client-side code.
+    *  `[{"symbol":"ABC","price":81.284083,"change":-0.007986}]`
+    *  However, as you'll see in the next section, the StockWatcher application will not be able to make this request from its client-side code.
 7.  Make a request for the JSONP by appending the name of a callback function.
-        *  `http://localhost:8000/?q=ABC&callback=callback125`
+    *  `http://localhost:8000/?q=ABC&callback=callback125`
 8.  The JSON is returned embedded in the callback function.
-        *  `callback125([{"symbol":"ABC","price":53.554212,"change":0.584011}]);
+    *  `callback125([{"symbol":"ABC","price":53.554212,"change":0.584011}]);
 `
 
-<a name="request"></a>
-
-##  Requesting the data from the remote server
+##  Requesting the data from the remote server <a id="request"></a>
 
 Now that you've verified that the server is returning stock data either as a JSON string or as JSONP, you can update StockWatcher to request and then handle the JSONP.
 
@@ -294,25 +294,39 @@ The RequestBuilder code is replaced by a call to JsonpRequestBuilder.
 
 1.  In the StockWatcher class, change the JSON_URL constant as follows:
 
-        *
-        *  Change: <pre class="code">
-  private static final String JSON_URL = GWT.getModuleBaseURL() + "stockPrices?q=";</pre>
-        *  If your stock data is being served from a different port (the Python script), change JSON_URL to: <pre class="code">
-  private static final String JSON_URL = "http://localhost:8000/?q=";</pre>
-        *  If your stock data is being served from a different domain (the PHP script), specify the domain and full path to the stockPrices.php script: <pre class="code">
-  private static final String JSON_URL = "http://_www.myStockServerDomain.com_/stockPrices.php?q=";</pre>
+    *
+    *  Change:
+
+```
+private static final String JSON_URL = GWT.getModuleBaseURL() + "stockPrices?q=";
+```
+
+*  If your stock data is being served from a different port (the Python script), change JSON_URL to:
+
+```
+private static final String JSON_URL = "http://localhost:8000/?q=";
+```
+
+*  If your stock data is being served from a different domain (the PHP script), specify the domain and full path to the stockPrices.php script:
+
+```
+private static final String JSON_URL = "http://_www.myStockServerDomain.com_/stockPrices.php?q=";
+```
+
 2.  Try to retrieve plain JSON data from the remote server.
-        *  Debug StockWatcher in development mode.
-        *  Enter a stock code.
+    *  Debug StockWatcher in development mode.
+    *  Enter a stock code.
 3.  StockWatcher displays the error message: Couldn't retrieve JSON.
-        *  To fix the SOP error, in the next step you'll use JsonpRequestBuilder.
+    *  To fix the SOP error, in the next step you'll use JsonpRequestBuilder.
 
 ### Update the refreshWatchList method
 
 1.
-        *  Update the refreshWatchList method.
-        *  <pre class="code">
-  /**
+    *  Update the refreshWatchList method.
+    *
+
+```
+/**
        * Generate random stock prices.
    */
   private void refreshWatchList() {
@@ -323,7 +337,7 @@ The RequestBuilder code is replaced by a call to JsonpRequestBuilder.
         String url = JSON_URL;
 
         // Append watch list stock symbols to query URL.
-    Iterator&lt;String&gt; iter = stocks.iterator();
+    Iterator<String> iter = stocks.iterator();
     while (iter.hasNext()) {
         url += iter.next();
         if (iter.hasNext()) {
@@ -333,22 +347,23 @@ The RequestBuilder code is replaced by a call to JsonpRequestBuilder.
 
         url = URL.encode(url);
 
-    <span class="highlight">    JsonpRequestBuilder builder = new JsonpRequestBuilder();
-    builder.requestObject(url, new AsyncCallback&lt;JsArray&lt;StockData>>() {
+        JsonpRequestBuilder builder = new JsonpRequestBuilder();
+    builder.requestObject(url, new AsyncCallback<JsArray<StockData>>() {
       public void onFailure(Throwable caught) {
         displayError("Couldn't retrieve JSON");
       }
-      public void onSuccess(JsArray&lt;StockData> data) {
+      public void onSuccess(JsArray<StockData> data) {
         // TODO handle JSON response
       }
     });
   }
-</pre>
+```
 
 2.  If you haven't already, delete the RequestBuilder code.
-        *  The RequestBuilder code is replaced by a call to JsonpRequestBuilder. So you no longer need the following code in the refreshWatchList method:
-        *  <pre class="code">
-    // Send request to server and catch any errors.
+    *  The RequestBuilder code is replaced by a call to JsonpRequestBuilder. So you no longer need the following code in the refreshWatchList method:
+
+```
+// Send request to server and catch any errors.
     RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
 
         try {
@@ -369,7 +384,8 @@ The RequestBuilder code is replaced by a call to JsonpRequestBuilder.
     } catch (RequestException e) {
       displayError("Couldn't retrieve JSON");
     }
-</pre>
+
+```
 
 #### Implement the onSuccess method
 
@@ -378,18 +394,18 @@ If you receive a response from the server, then call the updateTable method to p
 If a response does not come back from the server, you display a message. You can use the same displayError method and Label widget you created in the same-site implementation.
 
 1.  To the onSuccess method, replace the TODO comments with the following code.
-        *  <pre class="code">
-    if (data == null) {
+
+```
+if (data == null) {
       displayError("Couldn't retrieve JSON");
       return;
     }
 
         updateTable(data);
-</pre>
 
-<a name="test"></a>
+```
 
-##  Testing
+##  Testing <a id="test"></a>
 
 Whether you chose to serve the JSON-formatted stock data from a different domain or a different port, the new StockWatcher implementation should work around any SOP access restrictions and be able to retrieve the stock data.
 
@@ -398,28 +414,28 @@ Whether you chose to serve the JSON-formatted stock data from a different domain
 #### Stock Data served from a different port
 
 1.  Make sure the Python server is running.
-        *  If it's not, at the command line, enter `python quoteServer.py`
+    *  If it's not, at the command line, enter `python quoteServer.py`
 2.  In the browser running in development mode, refresh StockWatcher.
 3.  Add a stock code.
-        *  StockWatcher displays the Price and Change data. The information is now coming from a different port.
+    *  StockWatcher displays the Price and Change data. The information is now coming from a different port.
 4.  Shutdown the Python server.
-        *  StockWatcher displays the error: Couldn't retrieve JSON
+    *  StockWatcher displays the error: Couldn't retrieve JSON
 5.  Restart the Python server.
-        *  StockWatcher clears the error and continues displaying Price and Change updates.
+    *  StockWatcher clears the error and continues displaying Price and Change updates.
 
 #### Stock Data served from a different domain
 
 1.  In the browser running in development mode, refresh StockWatcher.
 2.  Add a stock code.
-        *  StockWatcher displays the Price and Change data. The information is now coming from a remote server.
+    *  StockWatcher displays the Price and Change data. The information is now coming from a remote server.
 3.  In StockWatcher.java, change the JSON_URL so that it is not correct.
 4.  In the browser running in development mode, refresh StockWatcher.
-        *  Add a stock code.
-        *  StockWatcher displays the error: Couldn't retrieve JSON
+    *  Add a stock code.
+    *  StockWatcher displays the error: Couldn't retrieve JSON
 5.  In StockWatcher.java, correct the JSON_URL.
 6.  In the browser running in development mode, refresh StockWatcher.
-        *  Add a stock code.
-        *  StockWatcher clears the error and continues displaying Price and Change updates.
+    *  Add a stock code.
+    *  StockWatcher clears the error and continues displaying Price and Change updates.
 
 ## What's Next
 

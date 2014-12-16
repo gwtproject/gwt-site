@@ -69,16 +69,16 @@ implemented by most Widgets as well as Composite. It is useful for views
 to extend IsWidget if they do in fact provide a Widget. Here is a simple
 view from our sample app.
 
-<pre class="prettyprint">
+```
 public interface GoodbyeView extends IsWidget {
     void setName(String goodbyeName);
 }
-</pre>
+```
 
 The corresponding view implementation extends Composite, which keeps
 dependencies on a particular Widget from leaking out.
 
-<pre class="prettyprint">
+```
 public class GoodbyeViewImpl extends Composite implements GoodbyeView {
     SimplePanel viewPanel = new SimplePanel();
     Element nameSpan = DOM.createSpan();
@@ -90,15 +90,15 @@ public class GoodbyeViewImpl extends Composite implements GoodbyeView {
 
     @Override
     public void setName(String name) {
-        nameSpan.setInnerText(&quot;Good-bye, &quot; + name);
+        nameSpan.setInnerText("Good-bye, " + name);
     }
 }
-</pre>
+```
 
 Here is a slightly more complicated view that additionally
 defines an interface for its corresponding presenter (activity).
 
-<pre class="prettyprint">
+```
 public interface HelloView extends IsWidget {
     void setName(String helloName);
     void setPresenter(Presenter presenter);
@@ -107,7 +107,7 @@ public interface HelloView extends IsWidget {
         void goTo(Place place);
     }
 }
-</pre>
+```
 
 The Presenter interface and setPresenter method allow for
 bi-directional communication between view and presenter, which
@@ -119,62 +119,62 @@ The HelloView implementation uses
 [UiBinder](DevGuideUiBinder.html)
 and a template.
 
-<pre class="prettyprint">
+```
 public class HelloViewImpl extends Composite implements HelloView {
-	private static HelloViewImplUiBinder uiBinder = GWT
-			.create(HelloViewImplUiBinder.class);
+    private static HelloViewImplUiBinder uiBinder = GWT
+            .create(HelloViewImplUiBinder.class);
 
-	interface HelloViewImplUiBinder extends UiBinder<Widget, HelloViewImpl> {
-	}
+    interface HelloViewImplUiBinder extends UiBinder<Widget, HelloViewImpl> {
+    }
 
-	@UiField
-	SpanElement nameSpan;
-	@UiField
-	Anchor goodbyeLink;
-	private Presenter presenter;
-	private String name;
+    @UiField
+    SpanElement nameSpan;
+    @UiField
+    Anchor goodbyeLink;
+    private Presenter presenter;
+    private String name;
 
-	public HelloViewImpl() {
-		initWidget(uiBinder.createAndBindUi(this));
-	}
+    public HelloViewImpl() {
+        initWidget(uiBinder.createAndBindUi(this));
+    }
 
-	@Override
-	public void setName(String name) {
-		this.name = name;
-		nameSpan.setInnerText(name);
-	}
+    @Override
+    public void setName(String name) {
+        this.name = name;
+        nameSpan.setInnerText(name);
+    }
 
-	@UiHandler("goodbyeLink")
-	void onClickGoodbye(ClickEvent e) {
-		presenter.goTo(new GoodbyePlace(name));
-	}
+    @UiHandler("goodbyeLink")
+    void onClickGoodbye(ClickEvent e) {
+        presenter.goTo(new GoodbyePlace(name));
+    }
 
-	@Override
-	public void setPresenter(Presenter presenter) {
-		this.presenter = presenter;
-	}
+    @Override
+    public void setPresenter(Presenter presenter) {
+        this.presenter = presenter;
+    }
 }
-</pre>
+```
 
 Note the use of @UiHandler that delegates to the presenter.
 Here is the corresponding template:
 
-<pre class="prettyprint">
-&lt;!DOCTYPE ui:UiBinder SYSTEM &quot;http://dl.google.com/gwt/DTD/xhtml.ent&quot;&gt;
-&lt;ui:UiBinder xmlns:ui=&quot;urn:ui:com.google.gwt.uibinder&quot;
-			 xmlns:g=&quot;urn:import:com.google.gwt.user.client.ui&quot;&gt;
-	&lt;ui:style&gt;
-		.important {
-			font-weight: bold;
-		}
-	&lt;/ui:style&gt;
-	&lt;g:HTMLPanel&gt;
-		Hello,
-		&lt;span class=&quot;{style.important}&quot; ui:field=&quot;nameSpan&quot; /&gt;
-		&lt;g:Anchor ui:field=&quot;goodbyeLink&quot; text=&quot;Say good-bye&quot;&gt;&lt;/g:Anchor&gt;
-	&lt;/g:HTMLPanel&gt;
-&lt;/ui:UiBinder&gt;
-</pre>
+```
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+    <ui:style>
+        .important {
+            font-weight: bold;
+        }
+    </ui:style>
+    <g:HTMLPanel>
+        Hello,
+        <span class="{style.important}" ui:field="nameSpan" />
+        <g:Anchor ui:field="goodbyeLink" text="Say good-bye"></g:Anchor>
+    </g:HTMLPanel>
+</ui:UiBinder>
+```
 
 Because Widget creation involves DOM operations, views are
 relatively expensive to create. It is therefore good practice to make
@@ -189,14 +189,14 @@ to obtain references to objects needed throughout your application like
 the event bus. Our example uses a ClientFactory to provide an EventBus,
 GWT PlaceController, and view implementations.
 
-<pre class="prettyprint">
+```
 public interface ClientFactory {
     EventBus getEventBus();
     PlaceController getPlaceController();
     HelloView getHelloView();
     GoodbyeView getGoodbyeView();
 }
-</pre>
+```
 
 Another advantage of using a ClientFactory is that you can use it
 with GWT deferred binding to use different implementation classes based
@@ -205,20 +205,20 @@ MobileClientFactory to provide different view implementations than the
 default DesktopClientFactory. To do this, instantiate your ClientFactory
 with GWT.create in onModuleLoad(), like this:
 
-<pre class="prettyprint">
-    ClientFactory clientFactory = GWT.create(ClientFactory.class);
-</pre>
+```
+ClientFactory clientFactory = GWT.create(ClientFactory.class);
+```
 
 Specify the implementation class in .gwt.xml:
 
-<pre class="prettyprint">
-    &lt;!-- Use ClientFactoryImpl by default --&gt;
-    &lt;replace-with class="com.hellomvp.client.ClientFactoryImpl"&gt;
-    &lt;when-type-is class="com.hellomvp.client.ClientFactory"/&gt;
-    &lt;/replace-with&gt;
-</pre>
+```
+<!-- Use ClientFactoryImpl by default -->
+    <replace-with class="com.hellomvp.client.ClientFactoryImpl">
+    <when-type-is class="com.hellomvp.client.ClientFactory"/>
+    </replace-with>
+```
 
-You can use &lt;when-property-is&gt; to specify different
+You can use `<when-property-is>` to specify different
 implementations based on user.agent, locale, or other properties you
 define. The [mobilewebapp](https://gwt.googlesource.com/gwt/+/master/samples/mobilewebapp/)
 sample application defines a "formfactor" property used to 
@@ -226,7 +226,7 @@ select a different view implementations for mobile, tablet, and desktop devices.
 
 Here is a default implementation of ClientFactory for the sample app:
 
-<pre class="prettyprint">
+```
 public class ClientFactoryImpl implements ClientFactory {
     private final EventBus eventBus = new SimpleEventBus();
     private final PlaceController placeController = new PlaceController(eventBus);
@@ -239,7 +239,7 @@ public class ClientFactoryImpl implements ClientFactory {
     }
     ...
 }
-</pre>
+```
 
 ## Activities<a id="Activities"></a>
 
@@ -248,12 +248,12 @@ convenience, you can extend AbstractActivity, which provides default
 (null) implementations of all required methods. Here is a HelloActivity,
 which simply says hello to a named user:
 
-<pre class="prettyprint">
+```
 public class HelloActivity extends AbstractActivity implements HelloView.Presenter {
     // Used to obtain views, eventBus, placeController
     // Alternatively, could be injected via GIN
     private ClientFactory clientFactory;
-    // Name that will be appended to &quot;Hello,&quot;
+    // Name that will be appended to "Hello,"
     private String name;
 
     public HelloActivity(HelloPlace place, ClientFactory clientFactory) {
@@ -277,7 +277,7 @@ public class HelloActivity extends AbstractActivity implements HelloView.Present
      */
     @Override
     public String mayStop() {
-        return &quot;Please hold on. This activity is stopping.&quot;;
+        return "Please hold on. This activity is stopping.";
     }
 
     /**
@@ -287,7 +287,7 @@ public class HelloActivity extends AbstractActivity implements HelloView.Present
         clientFactory.getPlaceController().goTo(place);
     }
 }
-</pre>
+```
 
 The first thing to notice is that HelloActivity makes reference
 to HelloView, which is a view interface, not an implementation. One style
@@ -336,7 +336,7 @@ Place's state to a URL token. By default, the URL consists of the
 Place's simple class name (like "HelloPlace") followed by a colon (:)
 and the token returned by the PlaceTokenizer.
 
-<pre class="prettyprint">
+```
 public class HelloPlace extends Place {
     private String helloName;
 
@@ -348,7 +348,7 @@ public class HelloPlace extends Place {
         return helloName;
     }
 
-    public static class Tokenizer implements PlaceTokenizer&lt;HelloPlace&gt; {
+    public static class Tokenizer implements PlaceTokenizer<HelloPlace> {
         @Override
         public String getToken(HelloPlace place) {
             return place.getHelloName();
@@ -360,7 +360,7 @@ public class HelloPlace extends Place {
         }
     }
 }
-</pre>
+```
 
 It is convenient (though not required) to declare the
 PlaceTokenizer as a static class inside the corresponding Place.
@@ -376,12 +376,12 @@ You create an interface that extends PlaceHistoryMapper and uses the
 annotation @WithTokenizers to list each of your tokenizer classes. Here
 is the PlaceHistoryMapper in our sample:
 
-<pre class="prettyprint">
+```
 @WithTokenizers({HelloPlace.Tokenizer.class, GoodbyePlace.Tokenizer.class})
 public interface AppPlaceHistoryMapper extends PlaceHistoryMapper
 {
 }
-</pre>
+```
 
 At GWT compile time, GWT generates (see
 PlaceHistoryMapperGenerator) a class based on your interface that
@@ -403,7 +403,7 @@ likely have lots of code like "if (place instanceof SomePlace) return
 new SomeActivity(place)". Here is the ActivityMapper for our
 sample app:
 
-<pre class="prettyprint">
+```
 public class AppActivityMapper implements ActivityMapper {
     private ClientFactory clientFactory;
 
@@ -421,7 +421,7 @@ public class AppActivityMapper implements ActivityMapper {
         return null;
     }
 }
-</pre>
+```
 
 Note that our ActivityMapper must know about the ClientFactory so it can provide
 it to activities as needed.
@@ -430,9 +430,9 @@ it to activities as needed.
 
 Here's how all the pieces come together in onModuleLoad():
 
-<pre class="prettyprint">
+```
 public class HelloMVP implements EntryPoint {
-    private Place defaultPlace = new HelloPlace(&quot;World!&quot;);
+    private Place defaultPlace = new HelloPlace("World!");
     private SimplePanel appWidget = new SimplePanel();
 
     public void onModuleLoad() {
@@ -455,7 +455,7 @@ public class HelloMVP implements EntryPoint {
         historyHandler.handleCurrentHistory();
     }
 }
-</pre>
+```
 
 ## How it all works<a id="How_it_all_works"></a>
 
@@ -509,6 +509,6 @@ further examples, see the resources below.
 ## Related resources<a id="resources"></a>
 
 *   [High-Performance GWT](http://www.google.com/events/io/2011/sessions/high-performance-gwt-best-practices-for-writing-smaller-faster-apps.html)
-		(starting at 18:12, slides 23-41)
+        (starting at 18:12, slides 23-41)
 *   [Using GWT and Eclipse to Build Great Mobile Web Apps](http://www.google.com/events/io/2011/sessions/using-gwt-and-eclipse-to-build-great-mobile-web-apps.html)
-		(form factor discussion starting at 3:56, slides 6-20)
+        (form factor discussion starting at 3:56, slides 6-20)

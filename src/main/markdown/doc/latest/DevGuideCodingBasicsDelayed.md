@@ -23,16 +23,16 @@ the future.
 
 To create a timer, create a new instance of the Timer class and then override the run() method entry point.
 
-<pre class="prettyprint">
-   Timer timer = new Timer() {
+```
+Timer timer = new Timer() {
       public void run() {
-        Window.alert (&quot;Timer expired!&quot;);
+        Window.alert ("Timer expired!");
       }
     };
 
     // Execute the timer to expire 2 seconds in the future
     timer.schedule(2000);
-</pre>
+```
 
 Notice that the timer will not have a chance to execute the run() method until after control returns to the JavaScript event loop.
 
@@ -47,7 +47,7 @@ One typical use for a timer is to timeout a long running command. There are a fe
 
 Below is a an example of using a timeout with a [Remote Procedure Call](DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls) (RPC).
 
-<pre class="prettyprint">
+```
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -68,14 +68,14 @@ public class Foo {
 
     // Check to make sure the timer isn't already running.
     if (timeoutTimer != null) {
-        Window.alert(&quot;Command is already running!&quot;);
+        Window.alert("Command is already running!");
         return;
     }
 
     // Create a timer to abort if the RPC takes too long
     timeoutTimer = new Timer() {
       public void run() {
-        Window.alert(&quot;Timeout expired.&quot;);
+        Window.alert("Timeout expired.");
         timeoutTimer = null;
         abortFlag = true;
       }
@@ -89,7 +89,7 @@ public class Foo {
     myService.myRpcMethod(arg, new AsyncCallback() {
 
       public void onFailure(Throwable caught) {
-         Window.alert(&quot;RPC Failed:&quot; + caught);
+         Window.alert("RPC Failed:" + caught);
          cancelTimer();
       }
 
@@ -99,7 +99,7 @@ public class Foo {
            // Timeout already occurred. discard result
            return;
          }
-         Window.alert (&quot;RPC returned: &quot;+ (String)result);
+         Window.alert ("RPC returned: "+ (String)result);
       }
     }
   }
@@ -112,7 +112,7 @@ public class Foo {
     }
   }
 }
-</pre>
+```
 
 ### Periodically Running Logic<a id="running"></a>
 
@@ -120,7 +120,7 @@ In order to keep a user interface up to date, you sometimes want to perform an u
 some sort of animation on the screen. In this case, use the Timer class
 [scheduleRepeating()](/javadoc/latest/com/google/gwt/user/client/Timer.html#scheduleRepeating(int)) method:
 
-<pre class="prettyprint">
+```
 public class Foo {
 
   // A timer to update the elapsed time count
@@ -152,11 +152,11 @@ public class Foo {
    */
   private void showElapsed () {
     double elapsedTime = (System.currentTimeMillis() - startTime) / 1000.0;
-    NumberFormat n = NumberFormat.getFormat(&quot;#,##0.000&quot;);
-    elapsedLabel.setText(&quot;Elapsed: &quot; + n.format(elapsedTime));
+    NumberFormat n = NumberFormat.getFormat("#,##0.000");
+    elapsedLabel.setText("Elapsed: " + n.format(elapsedTime));
   }
 }
-</pre>
+```
 
 ## Deferring some logic into the immediate future: the Scheduler class<a id="deferred"></a>
 
@@ -166,9 +166,8 @@ The logic that you pass to `Scheduler` will run at some point in the future, aft
 interface a chance to process some user events or initialize other code. To use the `Scheduler` class in its simplest form, you create a subclass of the [Command](/javadoc/latest/com/google/gwt/user/client/Command.html) class, overriding the execute() method and pass
 it to [Scheduler.scheduleDeferred](/javadoc/latest/com/google/gwt/core/client/Scheduler.html#scheduleDeferred(Command))
 
-<pre class="prettyprint">
-
-  TextBox dataEntry;
+```
+TextBox dataEntry;
 
   // Set the focus on the widget after setup completes.
   Scheduler.get().scheduleDeferred(new Command() {
@@ -178,12 +177,12 @@ it to [Scheduler.scheduleDeferred](/javadoc/latest/com/google/gwt/core/client/Sc
   });
 
   dataEntry = new TextBox();
-</pre>
+```
 
 ## Avoiding Slow Script Warnings: the IncrementalCommand class<a id="incremental"></a>
 
 AJAX developers need to be aware of keeping the browser responsive to the user. When JavaScript code is running, user interface components like buttons and text areas will not
-respond to user input. If the browser were to allow this to continue, the user might think the browser is &quot;hung&quot; and be tempted to restart it. But browsers have a built-in defense
+respond to user input. If the browser were to allow this to continue, the user might think the browser is "hung" and be tempted to restart it. But browsers have a built-in defense
 mechanism, the _unresponsive script warning_.
 
 ![img](images/UnresponsiveScriptDialog.png)
@@ -197,7 +196,7 @@ class that helps perform long running calculations. It works by repeatedly calli
 
 The following example is an outline of how to use the IncrementalCommand class to do some computation in a way that allows the browser's user interface to be responsive:
 
-<pre class="prettyprint">
+```
 public class IncrementalCommandTest implements EntryPoint {
 
   // Number of times doWork() is called
@@ -214,7 +213,7 @@ public class IncrementalCommandTest implements EntryPoint {
   Button button;
 
   public void onModuleLoad() {
-    button = new Button(&quot;Start Computation&quot;);
+    button = new Button("Start Computation");
 
     button.addClickHandler(new ClickHandler () {
       public void onClick(ClickEvent event) {
@@ -236,7 +235,7 @@ public class IncrementalCommandTest implements EntryPoint {
       int counter = 0;
 
       public boolean execute() {
-        for (int i=0;i&lt;WORK_CHUNK;i++) {
+        for (int i=0;i<WORK_CHUNK;i++) {
           counter++;
 
           result += doWork();
@@ -274,4 +273,5 @@ public class IncrementalCommandTest implements EntryPoint {
 
     return result;
   }
-</pre>
+```
+

@@ -20,14 +20,14 @@ parameters matching those specified in the format string.
 
 Here is an example Messages property value:
 
-<pre>
+```
 permissionDenied = Error {0}: User {1} Permission denied.
-</pre>
+```
 
 The following code implements an alert dialog by substituting values into the message:
 
-<pre class="prettyprint">
- public interface ErrorMessages extends Messages {
+```
+public interface ErrorMessages extends Messages {
    String permissionDenied(int errorCode, String username);
  }
  ErrorMessages msgs = GWT.create(ErrorMessages.class)
@@ -35,7 +35,7 @@ The following code implements an alert dialog by substituting values into the me
  void permissionDenied(int errorVal, String loginId) {
    Window.alert(msgs.permissionDenied(errorVal, loginId));
  }
-</pre>
+```
 
 **Caution:** Be advised that the rules for using quotes may be a bit confusing. Refer to the [MessageFormat](http://java.sun.com/j2se/1.5.0/docs/api/java/text/MessageFormat.html) javadoc for more details.
 
@@ -72,15 +72,17 @@ arguments supplied by the calling code against the message template defined in
 a properties file. For example, attempting to use the following interface and
 .properties files results in a compile-time error:
 
-<pre class="prettyprint">
+```
 public interface ErrorMessages extends Messages {
   String permissionDenied(int errorCode, String username);
 }
-</pre>
+```
 
-<pre>
+
+
+```
 permissionDenied = Error {0}: User {1} does not have permission to access {2}
-</pre>
+```
 
 An error is returned because the message template in the properties file expects three arguments, while the `permissionDenied` method can only supply two.
 
@@ -97,9 +99,9 @@ in translation output as if it were a placeholder named `name`.
 useful to keep non-translated code out of what the translator sees, for example
 HTML markup:
 
-<pre class="prettyprint">
-@DefaultMessage("Welcome back, {startBold,&lt;b&gt;}{0}{endBold,&lt;/b&gt;}")
-</pre>
+```
+@DefaultMessage("Welcome back, {startBold,<b>}{0}{endBold,</b>}")
+```
 
 <dt>`{0,list}` or `{0,list,format...}`
 <dd>Format a `List` or array using locale-specific punctuation.  For
@@ -224,25 +226,25 @@ The `Messages` interface also supports the use of plural forms.  In
 English, you want to adjust the word being counted based on whether the count
 is 1 or not.  For example:
 
-<pre class="prettyprint">
+```
 You have one tree.
 You have 2 trees.
-</pre>
+```
 
 Other languages may have far more complex plural forms.  Fortunately,
 GWT allows you to easily handle this problem as follows:
 
-<pre class="prettyprint">
+```
 public interface MyMessages extends Messages {
   @DefaultMessage("You have {0} trees.")
   @AlternateMessage({"one", "You have one tree."})
   String treeCount(@PluralCount int count);
 }
-</pre>
+```
 
-Then, `myMessages.treeCount(1)` returns `&quot;You have one
-tree.&quot;` while `myMessages.treeCount(2)` returns `&quot;You
-have 2 trees.&quot;`
+Then, `myMessages.treeCount(1)` returns `"You have one
+tree."` while `myMessages.treeCount(2)` returns `"You
+have 2 trees."`
 
 See the [details for using plural forms](DevGuideI18nPluralForms.html).
 
@@ -254,7 +256,7 @@ referenced in the message (`"{0} gave you her credits"`), or you might
 want to support abbreviated and full versions of a message based on user
 preference.
 
-<pre class="prettyprint">
+```
 public enum Gender {
   MALE,
   FEMALE,
@@ -269,7 +271,7 @@ public interface MyMessages extends Messages {
   })
   String gaveCredits(String name, @Select Gender gender);
 }
-</pre>
+```
 
 The default message is used if no form matches, in this case if `gender`
 is `null` or `UNKNOWN`. `@Select` parameters may be
@@ -285,11 +287,11 @@ application is vulnerable to Cross-Site-Scripting (XSS) attacks.
 
 To avoid XSS vulnerabilities due to the use of messages in HTML contexts,
 you can declare methods in your Messages interfaces with a return type of
-`SafeHtml`: 
+`SafeHtml`:
 
-<pre class="prettyprint">
- public interface ErrorMessages extends Messages {
-   @DefaultMessage("A &lt;strong&gt;{0} error&lt;/strong&gt; has occurred: {1}.")
+```
+public interface ErrorMessages extends Messages {
+   @DefaultMessage("A <strong>{0} error</strong> has occurred: {1}.")
    SafeHtml errorHtml(String error, SafeHtml details);
  }
  ErrorMessages msgs = GWT.create(ErrorMessages.class)
@@ -298,7 +300,7 @@ you can declare methods in your Messages interfaces with a return type of
    errorBar.setHTML(msgs.errorHtml(error, details));
    errorBar.setVisible(true);
  }
-</pre>
+```
 
 For SafeHtml messages, the code generator generates code that is guaranteed
 to produce values that satisfy the [SafeHtml type
@@ -318,9 +320,9 @@ of an HTML tag.  For example, the following is not a valid SafeHml message
 format, because the `{0}` parameter appears inside a tag's
 attribute:
 
-<pre>
-errorHtmlWithClass = A &lt;span class="{0}"&gt;{1} error&lt;/span&gt; has occurred.
-</pre>
+```
+errorHtmlWithClass = A <span class="{0}">{1} error</span> has occurred.
+```
 
 For more information on working with SafeHtml values, see the [SafeHtml
   Developer's Guide](DevGuideSecuritySafeHtml.html).

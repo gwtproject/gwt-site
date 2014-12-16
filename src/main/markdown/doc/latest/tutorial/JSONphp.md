@@ -4,11 +4,12 @@ JSON php
 If you have a web server (Apache, IIS, etc.) installed locally and PHP installed, you can write a PHP script to generate stock data and make the call to your local server. What's important for this example is that the stock data is JSON-encoded and that the server is local.
 
    1. Create a PHP script.
-        *  In the Eclipse Package Explorer, select the `StockWatcher/war` folder.
-        *  From the Eclipse menu bar, select File &gt; New &gt; File.
-        *  In the New File window, enter the file name `stockPrices.php`
-        *  <pre class="code">
-&lt;?php
+    *  In the Eclipse Package Explorer, select the `StockWatcher/war` folder.
+    *  From the Eclipse menu bar, select File > New > File.
+    *  In the New File window, enter the file name `stockPrices.php`
+
+```
+<?php
 
   header('Content-Type: text/javascript');
   header('Cache-Control: no-cache');
@@ -23,7 +24,7 @@ If you have a web server (Apache, IIS, etc.) installed locally and PHP installed
   if ($q) {
     $symbols = explode(' ', $q);
 
-    for ($i=0; $i&lt;count($symbols); $i++) {
+    for ($i=0; $i<count($symbols); $i++) {
       $price = lcg_value() * MAX_PRICE;
       $change = $price * MAX_PRICE_CHANGE * (lcg_value() * 2.0 - 1.0);
 
@@ -33,26 +34,30 @@ If you have a web server (Apache, IIS, etc.) installed locally and PHP installed
       echo "\"change\":$change";
       echo '}';
 
-      if ($i &lt; (count($symbols) - 1)) {
+      if ($i < (count($symbols) - 1)) {
         echo ',';
       }
     }
   }
 
   echo ']';
-?&gt;</pre>
-   2.  Compile StockWatcher.
-        *  Click the GWT Compile Project button in the toolbar ![icon](images/GWTCompileProject.png) or run the `ant build` script to create the production mode files for the application (which will now include stockPrices.php).
-        *  ![screenshot: Package Explorer php file](images/JSONstockPricesphp.png)
+?>
+```
+
+2.  Compile StockWatcher.
+    *  Click the GWT Compile Project button in the toolbar ![icon](images/GWTCompileProject.png) or run the `ant build` script to create the production mode files for the application (which will now include stockPrices.php).
+    *  ![screenshot: Package Explorer php file](images/JSONstockPricesphp.png)
 
    3.  Move the compiled StockWatcher files in the StockWatcher/war directory to a /StockWatcher
    directory in whatever web server (Apache, IIS, etc.) you have installed locally which supports PHP.  If you are not using Java servlets (e.g. GWT RPC), you will not have to move over the files in StockWatcher/war/WEB-INF
    4.  Test the stock quote server.
        *  In a web browser, navigate to `http://localhost/StockWatcher/stockPrices.php?q=ABC+DEF`
-       *  StockPrice data is returned in JSON format.</code>
-       *  <pre class="code">
-   [{"symbol":"ABC","price":40.485578668179,"change":-0.53944918844604},
-    {"symbol":"DEF","price":1.3606576154209,"change":0.0051755221198266}]</pre>
+       *  StockPrice data is returned in JSON format
 
-   Now that you can retrieve JSON-encoded stock data from the server, continue with the next step in the JSON tutorial, [Manipulating JSON data in the client-side code.](JSON.html#client)
+```
+[{"symbol":"ABC","price":40.485578668179,"change":-0.53944918844604},
+    {"symbol":"DEF","price":1.3606576154209,"change":0.0051755221198266}]
+```
+
+Now that you can retrieve JSON-encoded stock data from the server, continue with the next step in the JSON tutorial, [Manipulating JSON data in the client-side code.](JSON.html#client)
 

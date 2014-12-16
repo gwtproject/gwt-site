@@ -46,11 +46,11 @@ JavaScript method from Java will result in the callee receiving the arguments in
 
 Here is a simple example of how to code a JSNI method that puts up a JavaScript alert dialog:
 
-<pre class="prettyprint">
+```
 public static native void alert(String msg) /*-{
   $wnd.alert(msg);
 }-*/;
-</pre>
+```
 
 Note that the code did not reference the JavaScript `window` object directly inside the method. When accessing the browser's window and document objects from JSNI, you
 must reference them as `$wnd` and `$doc`, respectively. Your compiled script runs in a nested frame, and `$wnd` and `$doc` are automatically
@@ -58,27 +58,27 @@ initialized to correctly refer to the host page's window and document.
 
 Here is another example with a problem:
 
-<pre class="prettyprint">
+```
 public static native int badExample() /*-{
-  return &quot;Not A Number&quot;;
+  return "Not A Number";
 }-*/;
 
  public void onClick () {
    try {
       int myValue = badExample();
-      GWT.log(&quot;Got value &quot; + myValue, null);
+      GWT.log("Got value " + myValue, null);
    } catch (Exception e) {
-      GWT.log(&quot;JSNI method badExample() threw an exception:&quot;, e);
+      GWT.log("JSNI method badExample() threw an exception:", e);
    }
  }
-</pre>
+```
 
 This example compiles as Java, and its syntax is verified by the GWT compiler
 as valid JavaScript. But when you run the example code in [development mode](DevGuideCompilingAndDebugging.html#DevGuideDevMode),
 it returns an exception. Click on the line in the log window to display the exception in the message
 area below:
 
-<pre>
+```
 com.google.gwt.dev.shell.HostedModeException: invokeNativeInteger(@com.example.client.GWTObjectNotifyTest::badExample()): JS value of type string, expected int
     at com.google.gwt.dev.shell.JsValueGlue.getIntRange(JsValueGlue.java:343)
     at com.google.gwt.dev.shell.JsValueGlue.get(JsValueGlue.java:179)
@@ -87,7 +87,7 @@ com.google.gwt.dev.shell.HostedModeException: invokeNativeInteger(@com.example.c
     at com.example.client.GWTObjectNotifyTest.badExample(GWTObjectNotifyTest.java:29)
     at com.example.client.GWTObjectNotifyTest$1.onClick(GWTObjectNotifyTest.java:52)
     ...
-</pre>
+```
 
 In this case, neither the Java IDE nor the GWT compiler could tell that there was a type mismatch between the code inside the JSNI method and the Java declaration. The GWT
 generated interface code caught the problem at runtime in development mode. When
@@ -113,9 +113,9 @@ typing, you must use a special syntax.
 Calling Java methods from JavaScript is somewhat similar to calling Java methods from C code in [JNI](http://download.oracle.com/javase/1.5.0/docs/guide/jni/index.html). In particular, JSNI borrows the JNI mangled method signature approach to distinguish among overloaded methods. JavaScript calls into Java methods are of
 the following form:
 
-<pre>
+```
 [instance-expr.]@class-name::method-name(param-signature)(arguments)
-</pre>
+```
 
 *   **instance-expr.** : must be present when calling an instance method and must be absent when calling a static method
 *   **class-name** : is the fully-qualified name of the class in which the method is declared (or a subclass thereof)
@@ -128,7 +128,7 @@ Calling Java constructors from JavaScript is identical to the above use case, ex
 
 Given the following Java classes:
 
-<pre class="prettyprint">
+```
 package pkg;
 class TopLevel {
   public TopLevel() { ... }
@@ -142,7 +142,7 @@ class TopLevel {
     public InstanceInner(int i) { ... }
   }
 }
-</pre>
+```
 
 We compare the Java expression versus the JSNI expression:
 
@@ -156,15 +156,15 @@ class is, it only needs a reference to an instance of its immediately-enclosing 
 
 Static and instance fields can be accessed from handwritten JavaScript. Field references are of the form
 
-<pre>
+```
 [instance-expr.]@class-name::field-name
-</pre>
+```
 
 #### Example<a id="example-fields"></a>
 
 Here's an example of accessing static and instance fields from JSNI.
 
-<pre class="prettyprint">
+```
 public class JSNIExample {
 
   String myInstanceField;
@@ -192,14 +192,14 @@ public class JSNIExample {
     var val = this.@com.google.gwt.examples.JSNIExample::myInstanceField;
 
     // Write instance field on x
-    x.@com.google.gwt.examples.JSNIExample::myInstanceField = val + &quot; and stuff&quot;;
+    x.@com.google.gwt.examples.JSNIExample::myInstanceField = val + " and stuff";
 
     // Read static field (no qualifier)
-    @com.google.gwt.examples.JSNIExample::myStaticField = val + &quot; and stuff&quot;;
+    @com.google.gwt.examples.JSNIExample::myStaticField = val + " and stuff";
   }-*/;
 
 }
-</pre>
+```
 
 > _Tip: As of the GWT 1.5 release, the Java varargs construct is supported. The GWT compiler will translate varargs calls between two pieces of Java code, however,
 > calling a varargs Java method from JSNI will require the JavaScript caller to pass an array of the appropriate type._
@@ -213,7 +213,7 @@ JavaScript directly.
 A way to make this kind of relationship work is to assign the method via JSNI to an external, globally visible JavaScript name that can be referenced by your hand-crafted
 JavaScript code.
 
-<pre class="prettyprint">
+```
 package mypackage;
 
 public MyUtilityClass
@@ -225,7 +225,7 @@ public MyUtilityClass
           $entry(@mypackage.MyUtilityClass::computeLoanInterest(IFI));
     }-*/;
 }
-</pre>
+```
 
 Notice that the reference to the exported method has been wrapped in a call to the `$entry` function. This implicitly-defined function ensures that the Java-derived method is executed with the uncaught exception handler installed and pumps a number of other utility services.  The `$entry` function is reentrant-safe and should be used anywhere that GWT-derived JavaScript may be called into from a non-GWT context.
 
@@ -321,7 +321,7 @@ These rules must be followed whether the values enter and leave through normal J
 
 <tr>
 <td>`String` </td>
-<td>JavaScript string, as in `return &quot;boo&quot;;` </td>
+<td>JavaScript string, as in `return "boo";` </td>
 </tr>
 
 <tr>
@@ -341,13 +341,13 @@ These rules must be followed whether the values enter and leave through normal J
 
 <tr>
 <td><a href="/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> </td>
-<td>native JavaScript object, as in `return document.createElement(&quot;div&quot;)` (see notes)</td>
+<td>native JavaScript object, as in `return document.createElement("div")` (see notes)</td>
 </tr>
 
 <tr>
 <td>any other Java `Object` (including arrays)</td>
-<td>Java `Object` of the correct type that must have originated in Java code; Java objects cannot be constructed from &quot;thin
-air&quot; in JavaScript</td>
+<td>Java `Object` of the correct type that must have originated in Java code; Java objects cannot be constructed from "thin
+air" in JavaScript</td>
 </tr>
 </table>
 

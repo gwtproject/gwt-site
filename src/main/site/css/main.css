@@ -332,15 +332,6 @@ pre ins {
   text-decoration: none;
 }
 
-.highlight {
-  background-color: #ffc;
-}
-
-.strike {
-  text-decoration: line-through;
-  color: red;
-}
-
 .header {
   margin-top: 1.5ex;
 }

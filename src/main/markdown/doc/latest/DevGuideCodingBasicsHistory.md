@@ -16,26 +16,26 @@ application to support this use case. Thankfully, GWT's history mechanism makes 
 ## The GWT History Mechanism<a id="mechanism"></a>
 
 GWT's History mechanism has a lot in common with other Ajax history implementations, such as [RSH (Really
-Simple History)](http://code.google.com/p/reallysimplehistory). The basic premise is to keep track of the application's &quot;internal state&quot; in the url fragment identifier. This works because updating the fragment doesn't
+Simple History)](http://code.google.com/p/reallysimplehistory). The basic premise is to keep track of the application's "internal state" in the url fragment identifier. This works because updating the fragment doesn't
 typically cause the page to be reloaded.
 
 This approach has several benefits:
 
 *   It's about the only way to control the browser's history reliably.
 *   It provides good feedback to the user.
-*   It's &quot;bookmarkable&quot;. I.e., the user can create a bookmark to the current state and save it, email it, et cetera.
+*   It's "bookmarkable". I.e., the user can create a bookmark to the current state and save it, email it, et cetera.
 
 ## History Tokens<a id="tokens"></a>
 
 GWT includes a mechanism to help Ajax developers activate browser history. For each page that is to be navigable in the history, the application should generate a unique
 history token. A token is simply a string that the application can parse to return to a particular state. This token will be saved in browser history as a URL fragment (in the
-location bar, after the &quot;#&quot;), and this fragment is passed back to the application when the user goes back or forward in history, or follows a link.
+location bar, after the "#"), and this fragment is passed back to the application when the user goes back or forward in history, or follows a link.
 
-For example, a history token named &quot;page1&quot; would be added to a URL as follows:
+For example, a history token named "page1" would be added to a URL as follows:
 
-<pre class="prettyprint">
+```
 http://www.example.com/com.example.gwt.HistoryExample/HistoryExample.html#page1
-</pre>
+```
 
 When the application wants to push a placeholder onto the browser's history stack, it simply invokes [History.newItem(token)](/javadoc/latest/com/google/gwt/user/client/History.html#newItem(java.lang.String)). When
 the user uses the back button, a call will be made to any object that was added as a handler with [History.addValueChangeHandler()](/javadoc/latest/com/google/gwt/user/client/History.html#addValueChangeHandler(com.google.gwt.event.logical.shared.ValueChangeHandler)). It is up to the application to restore the state according to the value of the new token.
@@ -44,11 +44,11 @@ the user uses the back button, a call will be made to any object that was added 
 
 To use GWT History support, you must first embed an iframe into your [host HTML page](DevGuideOrganizingProjects.html#DevGuideHostPage).
 
-<pre class="prettyprint">
-  &lt;iframe src=&quot;javascript:''&quot;
-          id=&quot;__gwt_historyFrame&quot;
-          style=&quot;position:absolute;width:0;height:0;border:0&quot;&gt;&lt;/iframe&gt;
-</pre>
+```
+<iframe src="javascript:''"
+          id="__gwt_historyFrame"
+          style="position:absolute;width:0;height:0;border:0"></iframe>
+```
 
 Then, in your GWT application, perform the following steps:
 
@@ -57,7 +57,7 @@ Then, in your GWT application, perform the following steps:
 
 The following short example shows how to add a history event each time the user selects a new tab in a [TabPanel](/javadoc/latest/com/google/gwt/user/client/ui/TabPanel.html).
 
-<pre class="prettyprint">
+```
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.logical.shared.SelectionEvent;
 import com.google.gwt.event.logical.shared.SelectionHandler;
@@ -69,7 +69,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TabPanel;
 
 /**
- * Entry point classes define &lt;code&gt;onModuleLoad()&lt;/code&gt;.
+ * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class BrowserHistoryExample implements EntryPoint {
 
@@ -80,22 +80,22 @@ public class BrowserHistoryExample implements EntryPoint {
   public void onModuleLoad() {
     tabPanel = new TabPanel();
 
-    tabPanel.add(new HTML(&quot;&lt;h1&gt;Page 0 Content: Llamas&lt;/h1&gt;&quot;), &quot; Page 0 &quot;);
-    tabPanel.add(new HTML(&quot;&lt;h1&gt;Page 1 Content: Alpacas&lt;/h1&gt;&quot;), &quot; Page 1 &quot;);
-    tabPanel.add(new HTML(&quot;&lt;h1&gt;Page 2 Content: Camels&lt;/h1&gt;&quot;), &quot; Page 2 &quot;);
+    tabPanel.add(new HTML("<h1>Page 0 Content: Llamas</h1>"), " Page 0 ");
+    tabPanel.add(new HTML("<h1>Page 1 Content: Alpacas</h1>"), " Page 1 ");
+    tabPanel.add(new HTML("<h1>Page 2 Content: Camels</h1>"), " Page 2 ");
 
-    tabPanel.addSelectionHandler(new SelectionHandler&lt;Integer&gt;(){
-      public void onSelection(SelectionEvent&lt;Integer&gt; event) {
-        History.newItem(&quot;page&quot; + event.getSelectedItem());
+    tabPanel.addSelectionHandler(new SelectionHandler<Integer>(){
+      public void onSelection(SelectionEvent<Integer> event) {
+        History.newItem("page" + event.getSelectedItem());
      );
 
-    History.addValueChangeHandler(new ValueChangeHandler&lt;String&gt;() {
-      public void onValueChange(ValueChangeEvent&lt;String&gt; event) {
+    History.addValueChangeHandler(new ValueChangeHandler<String>() {
+      public void onValueChange(ValueChangeEvent<String> event) {
         String historyToken = event.getValue();
 
         // Parse the history token
         try {
-          if (historyToken.substring(0, 4).equals(&quot;page&quot;)) {
+          if (historyToken.substring(0, 4).equals("page")) {
             String tabIndexToken = historyToken.substring(4, 5);
             int tabIndex = Integer.parseInt(tabIndexToken);
             // Select the specified tab panel
@@ -114,7 +114,7 @@ public class BrowserHistoryExample implements EntryPoint {
     RootPanel.get().add(tabPanel);
   }
 }
-</pre>
+```
 
 ## Hyperlink Widgets<a id="widgets"></a>
 
@@ -138,38 +138,39 @@ implementing the history callback. When returning to a page using a token, some 
 </tr>
 
 <tr>
-<td style="border: 1px solid #aaa; padding: 5px;">&quot;info&quot;</td>
+<td style="border: 1px solid #aaa; padding: 5px;">"info"</td>
 <td style="border: 1px solid #aaa; padding: 5px;">Navigate to page where user enters biographic info. Restore previously entered data</td>
 </tr>
 
 <tr>
-<td style="border: 1px solid #aaa; padding: 5px;">&quot;page1&quot;</td>
+<td style="border: 1px solid #aaa; padding: 5px;">"page1"</td>
 <td style="border: 1px solid #aaa; padding: 5px;">Navigate to page 1 in the questionnaire. Restore previous answers.</td>
 </tr>
 
 <tr>
-<td style="border: 1px solid #aaa; padding: 5px;">&quot;page2&quot;</td>
+<td style="border: 1px solid #aaa; padding: 5px;">"page2"</td>
 <td style="border: 1px solid #aaa; padding: 5px;">Navigate to page 2 in the questionnaire. Restore previous answers.</td>
 </tr>
 
 <tr>
-<td style="border: 1px solid #aaa; padding: 5px;">&quot;page&quot;
+<td style="border: 1px solid #aaa; padding: 5px;">"page"
 
-<pre>
-<span class="error">&lt;n&gt;</span>
-</pre>
+```
+<span class="error"><n></span>
+```
+
 </td>
 <td style="border: 1px solid #aaa; padding: 5px;">Navigate to page
 
-<pre>
-<span class="error">&lt;n&gt;</span>
-</pre>
+```
+<span class="error"><n></span>
+```
 
 ...</td>
 </tr>
 
 <tr>
-<td style="border: 1px solid #aaa; padding: 5px;">&quot;end&quot;</td>
+<td style="border: 1px solid #aaa; padding: 5px;">"end"</td>
 <td style="border: 1px solid #aaa; padding: 5px;">Navigate to the end of the questionnaire. Validate that all questions were answered. Make sure not to re-submit the
 questionnaire.</td>
 </tr>
@@ -178,11 +179,11 @@ questionnaire.</td>
 In the above case, navigating back to a page would be possible, but there isn't enough information in the history token to restore the user's previous answers. A better
 encoding for the token would be a syntax such as:
 
-<pre class="prettyprint">
-  page=&lt;pagename&gt;;session=&lt;sessionname&gt;
-</pre>
+```
+page=<pagename>;session=<sessionname>
+```
 
-Where `&lt;pagename&gt;` tells the application which page to go to and `&lt;sessionname&gt;` is a key to finding the user's previously entered data in a
+Where `<pagename>` tells the application which page to go to and `<sessionname>` is a key to finding the user's previously entered data in a
 database.
 
 ## Handling an onValueChange() callback<a id="onvaluechange"></a>

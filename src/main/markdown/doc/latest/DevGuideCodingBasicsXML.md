@@ -10,57 +10,57 @@ data and is encoded as plain text, making it both flexible and easy to work with
 
 ## XML types<a id="types"></a>
 
-The XML types provided by GWT can be found in the [com.google.gwt.xml.client](/javadoc/latest/com/google/gwt/xml/client/package-summary.html) package. In order to use these in your application, you'll need to add the following `&lt;inherits&gt;` tag to your [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml):
+The XML types provided by GWT can be found in the [com.google.gwt.xml.client](/javadoc/latest/com/google/gwt/xml/client/package-summary.html) package. In order to use these in your application, you'll need to add the following `<inherits>` tag to your [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml):
 
-<pre class="prettyprint">
-&lt;inherits name=&quot;com.google.gwt.xml.XML&quot; /&gt;
-</pre>
+```
+<inherits name="com.google.gwt.xml.XML" />
+```
 
 ## Parsing XML<a id="parsing"></a>
 
 To demonstrate how to parse XML with GWT, we'll use the following XML document that contains an email message:
 
-<pre class="prettyprint">
-&lt;?xml version=&quot;1.0&quot; ?&gt;
-&lt;message&gt;
-  &lt;header&gt;
-    &lt;to displayName=&quot;Richard&quot; address=&quot;rick@school.edu&quot; /&gt;
-    &lt;from displayName=&quot;Joyce&quot; address=&quot;joyce@website.com&quot; /&gt;
-    &lt;sent&gt;2007-05-12T12:03:55Z&lt;/sent&gt;
-    &lt;subject&gt;Re: Flight info&lt;/subject&gt;
-  &lt;/header&gt;
-  &lt;body&gt;I'll pick you up at the airport at 8:30.  See you then!&lt;/body&gt;
-&lt;/message&gt;
-</pre>
+```
+<?xml version="1.0" ?>
+<message>
+  <header>
+    <to displayName="Richard" address="rick@school.edu" />
+    <from displayName="Joyce" address="joyce@website.com" />
+    <sent>2007-05-12T12:03:55Z</sent>
+    <subject>Re: Flight info</subject>
+  </header>
+  <body>I'll pick you up at the airport at 8:30.  See you then!</body>
+</message>
+```
 
 Suppose that you're writing an email application and need to extract the name of the sender, the subject line, and the message body from the XML. Here is sample code that will
 do just that (we'll explain the code in just a bit):
 
-<pre class="prettyprint">
+```
 private void parseMessage(String messageXml) {
   try {
     // parse the XML document into a DOM
     Document messageDom = XMLParser.parse(messageXml);
 
-    // find the sender's display name in an attribute of the &lt;from&gt; tag
-    Node fromNode = messageDom.getElementsByTagName(&quot;from&quot;).item(0);
-    String from = ((Element)fromNode).getAttribute(&quot;displayName&quot;);
+    // find the sender's display name in an attribute of the <from> tag
+    Node fromNode = messageDom.getElementsByTagName("from").item(0);
+    String from = ((Element)fromNode).getAttribute("displayName");
     fromLabel.setText(from);
 
     // get the subject using Node's getNodeValue() function
-    String subject = messageDom.getElementsByTagName(&quot;subject&quot;).item(0).getFirstChild().getNodeValue();
+    String subject = messageDom.getElementsByTagName("subject").item(0).getFirstChild().getNodeValue();
     subjectLabel.setText(subject);
 
     // get the message body by explicitly casting to a Text node
-    Text bodyNode = (Text)messageDom.getElementsByTagName(&quot;body&quot;).item(0).getFirstChild();
+    Text bodyNode = (Text)messageDom.getElementsByTagName("body").item(0).getFirstChild();
     String body = bodyNode.getData();
     bodyLabel.setText(body);
 
   } catch (DOMException e) {
-    Window.alert(&quot;Could not parse XML document.&quot;);
+    Window.alert("Could not parse XML document.");
   }
 }
-</pre>
+```
 
 The first step is to parse the raw XML text into an [XML DOM](http://www.w3schools.com/dom/default.asp) structure we can use to navigate the data.
 GWT's XML parser is contained in the [XMLParser](/javadoc/latest/com/google/gwt/xml/client/XMLParser.html)
@@ -70,13 +70,13 @@ example, if the XML is not [well-formed](http://en.wikipedia.org/wiki/Well-forme
 If parsing succeeds, the Document object we receive represents the XML document in memory. It is a tree composed of generic [Node](/javadoc/latest/com/google/gwt/xml/client/Node.html) objects. A node in the XML DOM is the basic unit of
 data in an XML document. GWT contains several subinterfaces of Node which provide specialized methods for processing the various types of nodes:
 
-*   [Element](/javadoc/latest/com/google/gwt/xml/client/Element.html) - represents DOM elements, which are specified by tags in XML: `&lt;someElement&gt;&lt;/someElement&gt;`.
+*   [Element](/javadoc/latest/com/google/gwt/xml/client/Element.html) - represents DOM elements, which are specified by tags in XML: `<someElement></someElement>`.
 
-*   [Text](/javadoc/latest/com/google/gwt/xml/client/Text.html) - represents the text between the opening and closing tag of an element: `&lt;someElement&gt;Here is some text.&lt;/someElement&gt;`.
+*   [Text](/javadoc/latest/com/google/gwt/xml/client/Text.html) - represents the text between the opening and closing tag of an element: `<someElement>Here is some text.</someElement>`.
 
-*   [Comment](/javadoc/latest/com/google/gwt/xml/client/Comment.html) - represents an XML comment: `&lt;!-- notes about this data --&gt;`.
+*   [Comment](/javadoc/latest/com/google/gwt/xml/client/Comment.html) - represents an XML comment: `<!-- notes about this data -->`.
 
-*   [Attr](/javadoc/latest/com/google/gwt/xml/client/Attr.html) - represents an attribute of an element: `&lt;someElement myAttribute=&quot;123&quot; /&gt;`.
+*   [Attr](/javadoc/latest/com/google/gwt/xml/client/Attr.html) - represents an attribute of an element: `<someElement myAttribute="123" />`.
 
 Refer to the documentation for the [Node](/javadoc/latest/com/google/gwt/xml/client/Node.html) interface for
 a complete list of types that derive from Node.
@@ -92,9 +92,9 @@ an attribute named `id` will not work). The getElementsByTagName(String) method 
 of elements will be returned in the form of a [NodeList](/javadoc/latest/com/google/gwt/xml/client/NodeList.html) object, which can be iterated over to get the individual Nodes it contains.
 
 In the example code, we use the getElementsByTagName(String) method to retrieve the necessary elements from the XML containing the email message. The sender's name is stored as
-an attribute of the `&lt;from&gt;` tag, so we use [getAttribute(String)](/javadoc/latest/com/google/gwt/xml/client/Element.html#getAttribute(java.lang.String)). The
-subject line is stored as text inside the `&lt;subject&gt;` tag, so we first find the subject element, and then retrieve its first (and only) child node and call [getNodeValue()](/javadoc/latest/com/google/gwt/xml/client/Node.html#getNodeValue()) on it to get the text.
-Finally, the message body is stored in the same way (text within the `&lt;body&gt;` tag), but this time we explicitly cast the [Node](/javadoc/latest/com/google/gwt/xml/client/Node.html) to a [Text](/javadoc/latest/com/google/gwt/xml/client/Text.html) object and extract the text using [getData()](/javadoc/latest/com/google/gwt/xml/client/CharacterData.html#getData()).
+an attribute of the `<from>` tag, so we use [getAttribute(String)](/javadoc/latest/com/google/gwt/xml/client/Element.html#getAttribute(java.lang.String)). The
+subject line is stored as text inside the `<subject>` tag, so we first find the subject element, and then retrieve its first (and only) child node and call [getNodeValue()](/javadoc/latest/com/google/gwt/xml/client/Node.html#getNodeValue()) on it to get the text.
+Finally, the message body is stored in the same way (text within the `<body>` tag), but this time we explicitly cast the [Node](/javadoc/latest/com/google/gwt/xml/client/Node.html) to a [Text](/javadoc/latest/com/google/gwt/xml/client/Text.html) object and extract the text using [getData()](/javadoc/latest/com/google/gwt/xml/client/CharacterData.html#getData()).
 
 ## Building an XML document<a id="building"></a>
 

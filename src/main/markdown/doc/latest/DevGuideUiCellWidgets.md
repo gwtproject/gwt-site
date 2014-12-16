@@ -12,7 +12,10 @@ This design follows the flyweight pattern where data is accessed and cached only
 flyweight Cell objects. A cell widget can accept data from any type of data source.  The data model handles
 asynchronous updates as well as push updates. When you change the data, the view is automatically updated.
 
-Cells are the basic blocks of a user interface and come in a variety of [available cell types](#available).  They render views of data, interpret browser events and can be selected.  A Cell has a type based on the data that the cell represents;  for example, DatePickerCell is a Cell&lt;Date&gt; that represents a Date and allows the user to select a new Date.  Cells must implement a render method that renders the typed value as an HTML string. In addition, cells can override onBrowserEvent to act as a flyweight that handles events that are fired on elements that were rendered by the cell. 
+Cells are the basic blocks of a user interface and come in a variety of [available cell types]
+(#available).  They render views of data, interpret browser events and can be selected.  A Cell has
+a type based on the data that the cell represents;  for example, DatePickerCell is a `Cell<Date>`
+that represents a Date and allows the user to select a new Date.  Cells must implement a render method that renders the typed value as an HTML string. In addition, cells can override onBrowserEvent to act as a flyweight that handles events that are fired on elements that were rendered by the cell.
 
 For example, in the [CellList example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) of the Showcase, every selectable data record is rendered by a single Cell instance. Notice that the data that a single cell represents can be a composition of different data fields from the data source. In this example, the cell holds data of type ContactInfo, which represents a contact, including name, address and picture.
 
@@ -54,9 +57,15 @@ These files are referenced, where appropriate, in the sections below.
 
 ### Creating a CellList and Setting Data<a id="celllist"></a>
 
-CellList is the simplest cell widget, where data is rendered using cells of the same type in a list.  For instance, you can create a CellList&lt;String&gt; that uses a Cell&lt;String&gt; to render a list of Strings. For a fancier list view, you can create a custom cell, described at [Creating a Custom Cell](#custom-cell).
+CellList is the simplest cell widget, where data is rendered using cells of the same type in a
+list.  For instance, you can create a `CellList<String>` that uses a `Cell<String>` to render
+a list of Strings. For a fancier list view, you can create a custom cell, described at
+[Creating a Custom Cell](#custom-cell).
 
-**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) shows a CellList&lt;ContactInfo&gt; (on the left). Each list item is a custom type ContactCell&lt;ContactInfo&gt;.  The right-hand widget is a normal Composite widget that renders the data for a selected contact.
+**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase
+.html#!CwCellList) shows a `CellList<ContactInfo>` (on the left). Each list item is a custom
+type `ContactCell<ContactInfo>`.  The right-hand widget is a normal Composite widget that
+renders the data for a selected contact.
 
 **To Create a CellList:**
 
@@ -71,14 +80,14 @@ The data inserted in the last step is updated by the data provider ([ListDataPro
 
 The following code is a very simple example that creates a CellList widget containing a single TextCell and sets data from the data source.  The list shows names.
 
-<pre class="prettyprint">
+```
 /**
  * Example of {@link CellList}. This example shows a list of the days of the week.
  */
 public class CellListExample implements EntryPoint {
 
   // The list of data to display.
-  private static final List&lt;String&gt; DAYS = Arrays.asList("Sunday", "Monday",
+  private static final List<String> DAYS = Arrays.asList("Sunday", "Monday",
       "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
 
   public void onModuleLoad() {
@@ -86,7 +95,7 @@ public class CellListExample implements EntryPoint {
     TextCell textCell = new TextCell();
 
     // Create a CellList that uses the cell.
-    CellList&lt;String&gt; cellList = new CellList&lt;String&gt;(textCell);
+    CellList<String> cellList = new CellList<String>(textCell);
 
     // Set the total row count. This isn't strictly necessary, but it affects
     // paging calculations, so its good habit to keep the row count up to date.
@@ -99,7 +108,7 @@ public class CellListExample implements EntryPoint {
     RootPanel.get().add(cellList);
   }
 }
-</pre>
+```
 
 You can add a SelectionModel to a CellList, as shown in the [SelectionModel example](#selection) below.
 
@@ -110,7 +119,9 @@ You can add a SelectionModel to a CellList, as shown in the [SelectionModel exam
 A Header represents either a header or a footer in a table. A table can have a header and footer for each column.
 A Header can span multiple columns if adjacent headers are equal (==) to each other.
 
-**Demo** - [CwCellTable example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable) shows a CellTable&lt;ContactInfo&gt;. Each row item has 5 columns rendered respectively as a CheckboxCell, EditTextCell, EditTextCell, SelectionCell and TextCell.
+**Demo** - [CwCellTable example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable)
+shows a `CellTable<ContactInfo>`. Each row item has 5 columns rendered
+respectively as a CheckboxCell, EditTextCell, EditTextCell, SelectionCell and TextCell.
 
 **To Create a CellTable:**
 
@@ -127,7 +138,7 @@ information about CellTable-specific features, such as column sorting.
 
 **Code Example** - The example below is a pared-down version of [CellTableExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTableExample.java)
 
-<pre class="prettyprint">
+```
 /**
  * Example of {@link CellTable} of contacts having a name and address.
  */
@@ -145,17 +156,17 @@ public class CellTableExample implements EntryPoint {
   }
 
   // The list of data to display.
-  private static List&lt;Contact&gt; CONTACTS = Arrays.asList(
+  private static List<Contact> CONTACTS = Arrays.asList(
     new Contact("John", "123 Fourth Road"),
     new Contact("Mary", "222 Lancer Lane"));
 
   public void onModuleLoad() {
 
     // Create a CellTable.
-    CellTable&lt;Contact&gt; table = new CellTable&lt;Contact&gt;();
+    CellTable<Contact> table = new CellTable<Contact>();
 
     // Create name column.
-    TextColumn&lt;Contact&gt; nameColumn = new TextColumn&lt;Contact&gt;() {
+    TextColumn<Contact> nameColumn = new TextColumn<Contact>() {
       @Override
       public String getValue(Contact contact) {
         return contact.name;
@@ -163,7 +174,7 @@ public class CellTableExample implements EntryPoint {
     };
 
     // Create address column.
-    TextColumn&lt;Contact&gt; addressColumn = new TextColumn&lt;Contact&gt;() {
+    TextColumn<Contact> addressColumn = new TextColumn<Contact>() {
       @Override
       public String getValue(Contact contact) {
         return contact.address;
@@ -185,7 +196,7 @@ public class CellTableExample implements EntryPoint {
     RootPanel.get().add(table);
   }
 }
-</pre>
+```
 
 You can add a SelectionModel to a CellTable, as shown in the [SelectionModel example](#selection) below.
 
@@ -214,7 +225,7 @@ A CellTree can have its own CSS styles and its own resources, such as images tha
 
 **Code Example #2** - For a real-world example of CellTree, see [CellTreeExample2.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample2.java).
 
-<pre class="prettyprint">
+```
 /**
  * Example of {@link CellTree}.  Shows a Tree consisting of strings.
  */
@@ -224,22 +235,22 @@ public class CellTreeExample implements EntryPoint {
   private static class CustomTreeModel implements TreeViewModel {
 
     // Get the NodeInfo that provides the children of the specified value.
-    public &lt;T&gt; NodeInfo&lt;?&gt; getNodeInfo(T value) {
+    public <T> NodeInfo<?> getNodeInfo(T value) {
 
       // Create some data in a data provider. Use the parent value as a prefix for the next level.
-      ListDataProvider&lt;String&gt; dataProvider = new ListDataProvider&lt;String&gt;();
-      for (int i = 0; i &lt; 2; i++) {
+      ListDataProvider<String> dataProvider = new ListDataProvider<String>();
+      for (int i = 0; i < 2; i++) {
         dataProvider.getList().add(value + "." + String.valueOf(i));
       }
 
       // Return a node info that pairs the data with a cell.
-      return new DefaultNodeInfo&lt;String&gt;(dataProvider, new TextCell());
+      return new DefaultNodeInfo<String>(dataProvider, new TextCell());
     }
 
     // Check if the specified value represents a leaf node. Leaf nodes cannot be opened.
     public boolean isLeaf(Object value) {
       // The maximum length of a value is ten characters.
-      return value.toString().length() &gt; 10;
+      return value.toString().length() > 10;
     }
   }
 
@@ -255,7 +266,7 @@ public class CellTreeExample implements EntryPoint {
     RootLayoutPanel.get().add(tree);
   }
 }
-</pre>
+```
 
 When you instantiate a CellTree, you must pass in an instance of a concrete class that implements interface [TreeViewModel](/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html).  This concrete class gets and organizes the data into a hierarchy in the implementation of method getNodeInfo(value).  When a tree node is opened, the tree calls [getNodeInfo(value)](/javadoc/latest/com/google/gwt/view/client/TreeViewModel.html#getNodeInfo(T)) to get the data provider and Cell used to render the child nodes.
 
@@ -271,10 +282,10 @@ CellBrowser is similar to a CellTree but displays the node levels side-by-side. 
 
 *   Follow the above procedure for CellTree, but change the CellTree constructor to CellBrowser, as follows:
 
-<pre class="prettyprint">
-    // Create the browser using the model.
+```
+// Create the browser using the model.
     CellBrowser browser = new CellBrowser(model, "Item 1");
-</pre>
+```
 
 **Code Example #1** - For a simple example of CellBrowser, see [CellBrowerExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample.java). 
 
@@ -311,7 +322,7 @@ GWT offers a number of concrete Cell implementations that you can use immediatel
 </dt>
 
 <dd>
-[ActionCell&lt;C&gt;](/javadoc/latest/com/google/gwt/cell/client/ActionCell.html) - A button that takes a delegate to perform actions on mouseUp
+[ActionCell](/javadoc/latest/com/google/gwt/cell/client/ActionCell.html) - A button that takes a delegate to perform actions on mouseUp
 </dd>
 
 <dd>
@@ -367,7 +378,7 @@ GWT offers a number of concrete Cell implementations that you can use immediatel
 </dt>
 
 <dd>
-[CompositeCell&lt;C&gt;](/javadoc/latest/com/google/gwt/cell/client/CompositeCell.html) - A composition of multiple Cells.
+[CompositeCell](/javadoc/latest/com/google/gwt/cell/client/CompositeCell.html) - A composition of multiple Cells.
 </dd>
 
 <dt id="decorator-cells">
@@ -375,7 +386,7 @@ GWT offers a number of concrete Cell implementations that you can use immediatel
 </dt>
 
 <dd>
-[IconCellDecorator&lt;C&gt;](/javadoc/latest/com/google/gwt/cell/client/IconCellDecorator.html) - A decorator that adds an icon to another Cell
+[IconCellDecorator](/javadoc/latest/com/google/gwt/cell/client/IconCellDecorator.html) - A decorator that adds an icon to another Cell
 </dd>
 
 </dl>
@@ -385,7 +396,10 @@ GWT offers a number of concrete Cell implementations that you can use immediatel
 If you want more control, you can subclass AbstractCell, or you can implement the Cell interface directly to define how your Cell is rendered and how it responds to events.  See
 the instructions in the [Creating Custom Cells Dev Guide](DevGuideUiCustomCells.html) for detailed information.
 
-**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) shows a CellList&lt;ContactInfo&gt; (on the left). Each list item is a custom type ContactCell&lt;ContactInfo&gt;.  The right-hand widget is a normal Composite widget that renders the data for a selected contact.
+**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase
+.html#!CwCellList) shows a `CellList<ContactInfo>`(on the left). Each list item is a custom
+type `ContactCell<ContactInfo>`.  The right-hand widget is a normal Composite widget that
+renders the data for a selected contact.
 
 ## Selection, Data and Paging<a id="Selection_Data_Paging"></a>
 
@@ -413,14 +427,14 @@ By using a subscription model, we can link selection across multiple views. If m
 
 **Code Example** - The example of SelectionModel below is available at [CellListExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java).
 
-<pre class="prettyprint">
+```
 /**
  * Example of {@link CellList}. This example shows a list of the days of the week.
  */
 public class CellListExample implements EntryPoint {
 
   // The list of data to display.
-  private static final List&lt;String&gt; DAYS = Arrays.asList("Sunday", "Monday",
+  private static final List<String> DAYS = Arrays.asList("Sunday", "Monday",
       "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
 
   public void onModuleLoad() {
@@ -428,11 +442,11 @@ public class CellListExample implements EntryPoint {
     TextCell textCell = new TextCell();
 
     // Create a CellList that uses the cell.
-    CellList&lt;String&gt; cellList = new CellList&lt;String&gt;(textCell);
+    CellList<String> cellList = new CellList<String>(textCell);
     cellList.setKeyboardSelectionPolicy(KeyboardSelectionPolicy.ENABLED);
 
     // Add a selection model to handle user selection.
-    final SingleSelectionModel&lt;String&gt; selectionModel = new SingleSelectionModel&lt;String&gt;();
+    final SingleSelectionModel<String> selectionModel = new SingleSelectionModel<String>();
     cellList.setSelectionModel(selectionModel);
     selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
       public void onSelectionChange(SelectionChangeEvent event) {
@@ -454,7 +468,7 @@ public class CellListExample implements EntryPoint {
     RootPanel.get().add(cellList);
   }
 }
-</pre>
+```
 
 **Keys**
 
@@ -464,7 +478,7 @@ Keys allow us to associate ViewData, such as selection state and validation info
 
 **Code Example** - The example of KeyProvider below is available at [KeyProviderExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/view/KeyProviderExample.java).
 
-<pre class="prettyprint">
+```
 /**
   * Example of using a {@link ProvidesKey}.
   */
@@ -539,7 +553,7 @@ public class KeyProviderExample implements EntryPoint {
     RootPanel.get().add(cellList);
   }
 }
-</pre>
+```
 
 ### Providing Dynamic Data<a id="data-provider"></a>
 
@@ -568,13 +582,13 @@ of the views.
 
 **Code Example** - The example below updates the view through a ListDataProvider.
 
-<pre class="prettyprint">
+```
 /**
- * Entry point classes define &lt;code&gt;onModuleLoad()&lt;/code&gt;.
+ * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class CellListExample implements EntryPoint {
   // The list of data to display.
-  private static final List&lt;String&gt; DAYS = Arrays.asList("Sunday", "Monday",
+  private static final List<String> DAYS = Arrays.asList("Sunday", "Monday",
       "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
 
   public void onModuleLoad() {
@@ -582,14 +596,14 @@ public class CellListExample implements EntryPoint {
     TextCell textCell = new TextCell();
 
     // Create a CellList that uses the cell.
-    CellList&lt;String&gt; cellList = new CellList&lt;String&gt;(textCell);
+    CellList<String> cellList = new CellList<String>(textCell);
 
     // Set the range to display. In this case, our visible range is smaller than
     // the data set.
     cellList.setVisibleRange(1, 3);
 
     // Create a data provider.
-    ListDataProvider&lt;String&gt; dataProvider = new ListDataProvider&lt;String&gt;();
+    ListDataProvider<String> dataProvider = new ListDataProvider<String>();
     
     // Connect the list to the data provider.
     dataProvider.addDataDisplay(cellList);
@@ -597,7 +611,7 @@ public class CellListExample implements EntryPoint {
     // Add the data to the data provider, which automatically pushes it to the
     // widget. Our data provider will have seven values, but it will only push
     // the four that are in range to the list.
-    List&lt;String&gt; list = dataProvider.getList();
+    List<String> list = dataProvider.getList();
     for (String day : DAYS) {
       list.add(day);
     }
@@ -606,7 +620,7 @@ public class CellListExample implements EntryPoint {
     RootPanel.get().add(cellList);
   }
 }
-</pre>
+```
 
 ### AsyncDataProvider<a id="async-data-provider"></a>
 
@@ -625,13 +639,13 @@ and/or updateRowData() to push the data to the widgets.
 
 **Code Example** - The example below updates the view through a AsyncDataProvider.
 
-<pre class="prettyprint">
+```
 /**
- * Entry point classes define &lt;code&gt;onModuleLoad()&lt;/code&gt;.
+ * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class CellListExample implements EntryPoint {
   // The list of data to display.
-  private static final List&lt;String&gt; DAYS = Arrays.asList("Sunday", "Monday",
+  private static final List<String> DAYS = Arrays.asList("Sunday", "Monday",
       "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
 
   public void onModuleLoad() {
@@ -639,7 +653,7 @@ public class CellListExample implements EntryPoint {
     TextCell textCell = new TextCell();
 
     // Create a CellList that uses the cell.
-    final CellList&lt;String&gt; cellList = new CellList&lt;String&gt;(textCell);
+    final CellList<String> cellList = new CellList<String>(textCell);
 
     // Set the total row count. You might send an RPC request to determine the
     // total row count.
@@ -650,9 +664,9 @@ public class CellListExample implements EntryPoint {
     cellList.setVisibleRange(1, 3);
 
     // Create a data provider.
-    AsyncDataProvider&lt;String&gt; dataProvider = new AsyncDataProvider&lt;String&gt;() {
+    AsyncDataProvider<String> dataProvider = new AsyncDataProvider<String>() {
       @Override
-      protected void onRangeChanged(HasData&lt;String&gt; display) {
+      protected void onRangeChanged(HasData<String> display) {
         final Range range = display.getVisibleRange();
 
         // This timer is here to illustrate the asynchronous nature of this data
@@ -663,7 +677,7 @@ public class CellListExample implements EntryPoint {
           public void run() {
             int start = range.getStart();
             int end = start + range.getLength();
-            List&lt;String&gt; dataInRange = DAYS.subList(start, end);
+            List<String> dataInRange = DAYS.subList(start, end);
 
             // Push the data back into the list.
             cellList.setRowData(start, dataInRange);
@@ -679,7 +693,7 @@ public class CellListExample implements EntryPoint {
     RootPanel.get().add(cellList);
   }
 }
-</pre>
+```
 
 ### Custom Data Source<a id="custom-data-provider"></a>
 
@@ -690,7 +704,7 @@ you are writing a presenter class for your cell widget.
 
 **Code Example** - The example below handlers RangeChangeEvents from the view and pushes new data based on the new range.
 
-<pre class="prettyprint">
+```
 /**
  * Example of using a {@link RangeChangeEvent.Handler} to push data into a
  * {@link CellList} when the range changes.
@@ -736,7 +750,7 @@ public class RangeChangeHandlerExample implements EntryPoint {
     RootPanel.get().add(vPanel);
   }
 }
-</pre>
+```
 
 ## Adding Paging Controls<a id="paging"></a>
 
@@ -754,7 +768,7 @@ Two procedures follow &mdash; one for adding a standard SimplePager to a cell wi
 2.  Assign the SimplePager to the cell widget you want to control using [setDisplay(HasRows)](/javadoc/latest/com/google/gwt/user/cellview/client/SimplePager.html#setDisplay(com.google.gwt.view.client.HasRows)).
 3.  Add the SimplePager instance to the panel.
 
-<pre class="prettyprint">
+```
 /**
  * Example of {@link SimplePager}.
  */
@@ -762,12 +776,12 @@ public class SimplePagerExample implements EntryPoint {
 
   public void onModuleLoad() {
     // Create a CellList.
-    CellList&lt;String> cellList = new CellList&lt;String>(new TextCell());
+    CellList<String> cellList = new CellList<String>(new TextCell());
 
     // Add a cellList to a data provider.
-    ListDataProvider&lt;String> dataProvider = new ListDataProvider&lt;String>();
-    List&lt;String> data = dataProvider.getList();
-    for (int i = 0; i &lt; 200; i++) {
+    ListDataProvider<String> dataProvider = new ListDataProvider<String>();
+    List<String> data = dataProvider.getList();
+    for (int i = 0; i < 200; i++) {
       data.add("Item " + i);
     }
     dataProvider.addDataDisplay(cellList);
@@ -784,7 +798,8 @@ public class SimplePagerExample implements EntryPoint {
     vPanel.add(cellList);
     RootPanel.get().add(vPanel);
   }
-}</pre>
+}
+```
 
 **To Add Custom Paging Controls to a Cell Widget:**
 
@@ -799,7 +814,7 @@ public class SimplePagerExample implements EntryPoint {
 In most applications, the user takes actions in the user interface that should update the application's current state or send data back to the database (or data source).  These user actions might be clicking a checkbox, pressing a button, or entering text into a field and pressing "Save". 
 
 This process varies slightly for a CellList, CellTree,
-<!-- <span style="color: red;">doog3: how does it work for CellTree?</span> --> and CellTable, as described below.
+<!-- <span style="color: red;">doog3: how does it work for CellTree? --> and CellTable, as described below.
 
 NOTE: In the case of ButtonCell, the value (the button text) doesn't actually change.  Instead, ValueUpdater serves the purpose of informing external code of a change or an important action, such as a click.
 
@@ -820,7 +835,8 @@ When the user makes the change to the data, the Cell receives an event in its [o
 
 **Code Example - ValueUpdater**
 
-<pre class="prettyprint">
+```
+
 /**
  * Example of using a {@link ValueUpdater} with a {@link CellList}.
  */
@@ -829,7 +845,7 @@ public class CellListValueUpdaterExample implements EntryPoint {
   /**
    * The list of data to display.
    */
-  private static final List&lt;String&gt; DAYS = Arrays.asList("Sunday", "Monday",
+  private static final List<String> DAYS = Arrays.asList("Sunday", "Monday",
       "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
 
   public void onModuleLoad() {
@@ -837,10 +853,10 @@ public class CellListValueUpdaterExample implements EntryPoint {
     TextInputCell inputCell = new TextInputCell();
 
     // Create a CellList that uses the cell.
-    CellList&lt;String&gt; cellList = new CellList&lt;String&gt;(inputCell);
+    CellList<String> cellList = new CellList<String>(inputCell);
 
     // Create a value updater that will be called when the value in a cell changes.
-    ValueUpdater&lt;String&gt; valueUpdater = new ValueUpdater&lt;String&gt;() {
+    ValueUpdater<String> valueUpdater = new ValueUpdater<String>() {
       public void update(String newValue) {
         Window.alert("You typed: " + newValue);
       }
@@ -860,7 +876,7 @@ public class CellListValueUpdaterExample implements EntryPoint {
     RootPanel.get().add(cellList);
   }
 }
-</pre>
+```
 
 #### Updating a Database From a CellTable<a id="updating-from-celltable"></a>
 
@@ -874,7 +890,7 @@ Use a [FieldUpdater](/javadoc/latest/com/google/gwt/cell/client/FieldUpdater.htm
 
 **Code Example** - An example is available at [CellTableFieldUpdaterExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTableFieldUpdaterExample.java).
 
-<pre class="prettyprint">
+```
 /**
  * Example of using a {@link FieldUpdater} with a {@link CellTable}.
  */
@@ -953,4 +969,4 @@ public class CellTableFieldUpdaterExample implements EntryPoint {
     RootPanel.get().add(table);
   }
 }
-</pre>
+```

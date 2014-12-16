@@ -104,13 +104,14 @@ See the section on [date and number formatting](DevGuideCodingBasics.html#DevGui
 The GWT internationalization types reside in the com.google.gwt.i18n package. To use any of these types, your module must inherit from the I18N module
 (com.google.gwt.i18n.I18N).
 
-<pre class="prettyprint">
-&lt;module&gt;
-  &lt;inherits name=&quot;com.google.gwt.i18n.I18N&quot;/&gt;
-&lt;/module&gt;
-</pre>
+```
+<module>
+  <inherits name="com.google.gwt.i18n.I18N"/>
+</module>
+```
 
-As of GWT 1.5, the User module (com.google.gwt.user.User) inherits the I18N module. So if your project's module XML file inherits the User module (which generally it does), it
+As of GWT 1.5, the User module (com.google.gwt.user.User) inherits the I18N module. So
+if your project's module XML file inherits the User module (which generally it does), it
 does not need to specify explicitly an inherit for the I18N module.
 
 ## Locales in GWT<a id="DevGuideLocale"></a>
@@ -128,7 +129,7 @@ For details on configuring locales in your GWT application, see the
 ## Static String Internationalization<a id="DevGuideStaticStringInternationalization"></a>
 
 Static string internationalization is the most efficient way to localize your application for different locales in terms of runtime performance. This approach is called
-&quot;static&quot; because it refers to creating tags that are matched up with human readable strings at compile time. At compile time, mappings between tags and strings are created for all
+"static" because it refers to creating tags that are matched up with human readable strings at compile time. At compile time, mappings between tags and strings are created for all
 languages defined in the module. The module startup sequence maps the appropriate implementation based on the locale setting using [deferred binding](DevGuideCodingBasics.html#DevGuideDeferredBinding).
 
 Static string localization relies on code generation from standard Java [properties files](DevGuideI18n.html#DevGuidePropertiesFiles) or
@@ -152,7 +153,7 @@ properties files follows the specification in Java [MessageFormat](http://java.s
 The interface you create will contain a Java
 method with parameters matching those specified in the format string.
 
-<p>In addition, the `Messages` interface supports [Plural Forms](DevGuideI18nPluralForms.html) to allow your application
+In addition, the `Messages` interface supports [Plural Forms](DevGuideI18nPluralForms.html) to allow your application
 to accurately reflect text changes based on the count of something.
 
 ### Which Interface to Use?
@@ -323,11 +324,12 @@ translating tags into localized values. These files may be placed into the same 
 
 **Tip:** Use the i18nCreator script to get started.
 
-<pre class="prettyprint"> $ i18nCreator -eclipse Foo com.example.foo.client.FooConstants
+```
+$ i18nCreator -eclipse Foo com.example.foo.client.FooConstants
  Created file src/com/example/foo/client/FooConstants.properties
  Created file FooConstants-i18n.launch
  Created file FooConstants-i18n
-</pre>
+```
 
 Both [Constants](/javadoc/latest/com/google/gwt/i18n/client/Constants.html) and [Messages](/javadoc/latest/com/google/gwt/i18n/client/Messages.html) use traditional Java properties files, with
 one notable difference: properties files used with GWT should be encoded as UTF-8 and may contain Unicode characters directly, avoiding the need for `native2ascii`. See the
@@ -336,8 +338,8 @@ solving the problem of reading UTF-8 properties files in Tapestry's `LocalizedPr
 
 In order to use internationalized characters, make sure that your host HTML file contains the `charset=utf8` content type in the meta tag in the header:
 
-<pre class="prettyprint">
-&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot; /&gt;
-</pre>
+```
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+```
 
 You must also ensure that all relevant source and `.properties` files are set to be in the UTF-8 charset in your IDE.

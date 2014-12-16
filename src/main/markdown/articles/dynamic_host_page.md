@@ -20,21 +20,21 @@ service in the onModuleLoad() method of your EntryPoint class to check
 if the user is logged in. This initiates a GWT-RPC request as soon as
 the GWT module loads.
 
-<pre class="prettyprint">
+```
 public void onModuleLoad() {
   // loginService is a GWT-RPC service that checks if the user is logged in
-  loginService.checkLoggedIn(new AsyncCallback&lt;Boolean&gt; {
+  loginService.checkLoggedIn(new AsyncCallback<Boolean> {
     public void onSuccess(Boolean loggedIn) {
       if (loggedIn) {
         showApp();
       } else {
-        Window.Location.assign(&quot;/login&quot;);
+        Window.Location.assign("/login");
       }
     }
     // ...onFailure()
   }
 }
-</pre>
+```
 
 Let's examine everything that happens here if the user isn't logged in:
 
@@ -70,23 +70,23 @@ for custom authentication schemes and the ability to vary the content of
 the host page based on the user. Here's an example of a simple host page
 written as a servlet:
 
-<pre class="prettyprint">
+```
 public class GwtHostingServlet extends HttpServlet {
 
  @Override
  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-   resp.setContentType(&quot;text/html&quot;);
-   resp.setCharacterEncoding(&quot;UTF-8&quot;);
+   resp.setContentType("text/html");
+   resp.setCharacterEncoding("UTF-8");
 
-   // Print a simple HTML page including a &lt;script&gt; tag referencing your GWT module as the response
+   // Print a simple HTML page including a <script> tag referencing your GWT module as the response
    PrintWriter writer = resp.getWriter();
-   writer.append(&quot;&lt;html&gt;&lt;head&gt;&quot;)
-       .append(&quot;&lt;script type=\&quot;text/javascript\&quot; src=\&quot;sample/sample.nocache.js\&quot;&gt;&lt;/script&gt;&quot;)
-       .append(&quot;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Hello, world!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;);
+   writer.append("<html><head>")
+       .append("<script type=\"text/javascript\" src=\"sample/sample.nocache.js\"></script>")
+       .append("</head><body><p>Hello, world!</p></body></html>");
   }
 }
-</pre>
+```
 
 The response this servlet sends will load and execute your GWT
 code just as if it had been referenced in a static HTML host page. But
@@ -99,25 +99,25 @@ The following example uses the App Engine
 user is logged in. Even if you're not using App Engine, you can imagine
 how the code would look slightly different in your servlet environment.
 
-<pre class="prettyprint">
+```
 // In GwtHostingServlet's doGet() method...
 PrintWriter writer = resp.getWriter();
-writer.append(&quot;&lt;html&gt;&lt;head&gt;&quot;);
+writer.append("<html><head>");
 
 UserService userService = UserServiceFactory.getUserService();
 if (userService.isUserLoggedIn()) {
-  // Add a &lt;script&gt; tag to serve your app's generated JS code
-  writer.append(&quot;&lt;script type=\&quot;text/javascript\&quot; src=\&quot;sample/sample.nocache.js\&quot;&gt;&lt;/script&gt;&quot;);
-  writer.append(&quot;&lt;/head&gt;&lt;body&gt;&quot;);
+  // Add a <script> tag to serve your app's generated JS code
+  writer.append("<script type=\"text/javascript\" src=\"sample/sample.nocache.js\"></script>");
+  writer.append("</head><body>");
   // Add a link to log out
-  writer.append(&quot;&lt;a href=\&quot;&quot; + userService.createLogoutURL(&quot;/&quot;) + &quot;\&quot;&gt;Log out&lt;/a&gt;&quot;);
+  writer.append("<a href=\"" + userService.createLogoutURL("/") + "\">Log out</a>");
 } else {
-  writer.append(&quot;&lt;/head&gt;&lt;body&gt;&quot;);
+  writer.append("</head><body>");
   // Add a link to log in
-  writer.append(&quot;&lt;a href=\&quot;&quot; + userService.createLoginURL(&quot;/&quot;) + &quot;\&quot;&gt;Log in&lt;/a&gt;&quot;);
+  writer.append("<a href=\"" + userService.createLoginURL("/") + "\">Log in</a>");
 }
-writer.append(&quot;&lt;/body&gt;&lt;/html&gt;&quot;);
-</pre>
+writer.append("</body></html>");
+```
 
 This servlet will now serve your GWT code only to logged-in
 users, and will show a link on the page to log in or out.
@@ -133,47 +133,47 @@ GWT module, then immediately making another request to get this data. A
 more efficient way is to write the initial data as a Javascript variable
 into the host page itself.
 
-<pre class="prettyprint">
+```
 // In GwtHostingServlet's doGet() method...
-writer.append(&quot;&lt;html&gt;&lt;head&gt;&quot;);
-writer.append(&quot;&lt;script type=\&quot;text/javascript\&quot; src=\&quot;sample/sample.nocache.js\&quot;&gt;&lt;/script&gt;&quot;);
+writer.append("<html><head>");
+writer.append("<script type=\"text/javascript\" src=\"sample/sample.nocache.js\"></script>");
 
-// Open a second &lt;script&gt; tag where we will define some extra data
-writer.append(&quot;&lt;script type=\&quot;text/javascript\&quot;&gt;&quot;);
+// Open a second <script> tag where we will define some extra data
+writer.append("<script type=\"text/javascript\">");
 
-// Define a global JSON object called &quot;info&quot; which can contain some simple key/value pairs
-writer.append(&quot;var info = { &quot;);
+// Define a global JSON object called "info" which can contain some simple key/value pairs
+writer.append("var info = { ");
 
-// Include the user's email with the key &quot;email&quot;
-writer.append(&quot;\&quot;email\&quot; : \&quot;&quot; + userService.getCurrentUser().getEmail() + &quot;\&quot;&quot;);
+// Include the user's email with the key "email"
+writer.append("\"email\" : \"" + userService.getCurrentUser().getEmail() + "\"");
 
 // End the JSON object definition
-writer.append(&quot; };&quot;);
+writer.append(" };");
 
-// End the &lt;script&gt; tag
-writer.append(&quot;&lt;/script&gt;&quot;);
-writer.append(&quot;&lt;/head&gt;&lt;body&gt;Hello, world!&lt;/body&gt;&lt;/html&gt;&quot;);
-</pre>
+// End the <script> tag
+writer.append("</script>");
+writer.append("</head><body>Hello, world!</body></html>");
+```
 
 Now your GWT code can access the data using JSNI, like so:
 
-<pre class="prettyprint">
+```
 public native String getEmail() /*-{
   return $wnd.info['email'];
 }-*/;
-</pre>
+```
 
 Alternatively, you can take advantage of GWT's
 [Dictionary](/javadoc/latest/com/google/gwt/i18n/client/Dictionary.html) class:
 
-<pre class="prettyprint">
+```
 public void onModuleLoad() {
-  // Looks for a JS variable called &quot;info&quot; in the global scope
-  Dictionary info = Dictionary.getDictionary(&quot;info&quot;);
-  String email = info.get(&quot;email&quot;);
-  Window.alert(&quot;Welcome, &quot; + email + &quot;!&quot;);
+  // Looks for a JS variable called "info" in the global scope
+  Dictionary info = Dictionary.getDictionary("info");
+  String email = info.get("email");
+  Window.alert("Welcome, " + email + "!");
 }
-</pre>
+```
 
 ## Template-based host page <a id="template"></a>
 
@@ -182,41 +182,41 @@ worthwhile to consider using a templating language like JSP to make your
 code more readable. Here's our example as a JSP page instead of a
 servlet:
 
-<pre class="prettyprint">
-&lt;!-- gwt-hosting.jsp --&gt;
-&lt;html&gt;
- &lt;head&gt;
-&lt;%
+```
+<!-- gwt-hosting.jsp -->
+<html>
+ <head>
+<%
    UserService userService = UserServiceFactory.getUserService();
    if (userService.isUserLoggedIn()) {
-%&gt;
-    &lt;script type=&quot;text/javascript&quot; src=&quot;sample/sample.nocache.js&quot;&gt;&lt;/script&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
-      var info = { &quot;email&quot; : &quot;&lt;%= userService.getCurrentUser().getEmail() %&gt;&quot; };
-    &lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-  &lt;a href=&quot;&lt;%= userService.createLogoutURL(request.getRequestURI()) %&gt;&quot;&gt;Log out&lt;/a&gt;
-&lt;%
+%>
+    <script type="text/javascript" src="sample/sample.nocache.js"></script>
+    <script type="text/javascript">
+      var info = { "email" : "<%= userService.getCurrentUser().getEmail() %>" };
+    </script>
+  </head>
+  <body>
+  <a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">Log out</a>
+<%
    } else {
-%&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;a href=&quot;&lt;%= userService.createLoginURL(request.getRequestURI()) %&gt;&quot;&gt;Log in&lt;/a&gt;
-&lt;%
+%>
+  </head>
+  <body>
+    <a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Log in</a>
+<%
    }
-%&gt;
- &lt;/body&gt;
-&lt;/html&gt;
-</pre>
+%>
+ </body>
+</html>
+```
 
 You can make this JSP page your welcome file by specifying it in your web.xml file:
 
-<pre class="prettyprint">
-&lt;welcome-file-list&gt;
-  &lt;welcome-file&gt;gwt-hosting.jsp&lt;/welcome-file&gt;
-&lt;/welcome-file-list&gt;
-</pre>
+```
+<welcome-file-list>
+  <welcome-file>gwt-hosting.jsp</welcome-file>
+</welcome-file-list>
+```
 
 These are some basic examples of how to minimize HTTP requests by
 hosting your GWT app dynamically. With these techniques, you should be

@@ -15,7 +15,7 @@ This document explains how developers can protect GWT RPCs against XSRF
 attacking using GWT's builtin XSRF protection introduced in GWT 2.3
 
 1.  [Overview](#Overview)
-2.  [Server-side changes</code>](#ServerSide)
+2.  [Server-side changes](#ServerSide)
 3.  [Client-side changes](#ClientSide)
 
 ## Overview<a id="Overview"></a>
@@ -39,30 +39,30 @@ Client-side code will obtain XSRF tokens by calling
 [`XsrfTokenService.getNewXsrfToken()`](/javadoc/latest/com/google/gwt/user/client/rpc/XsrfTokenService.html) server-side implementation
 configured in `web.xml`:
 
-<pre class="prettyprint">
-&lt;servlet&gt;
-  &lt;servlet-name&gt;xsrf&lt;/servlet-name&gt;
-  &lt;servlet-class&gt;
+```
+<servlet>
+  <servlet-name>xsrf</servlet-name>
+  <servlet-class>
     com.google.gwt.user.server.rpc.XsrfTokenServiceServlet
-  &lt;/servlet-class&gt;
-&lt;/servlet&gt;
-&lt;servlet-mapping&gt;
-  &lt;servlet-name&gt;xsrf&lt;/servlet-name&gt;
-  &lt;url-pattern&gt;/gwt/xsrf&lt;/url-pattern&gt;
-&lt;/servlet-mapping&gt;
-</pre>
+  </servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>xsrf</servlet-name>
+  <url-pattern>/gwt/xsrf</url-pattern>
+</servlet-mapping>
+```
 
 Since XSRF token is tied to an authentication session cookie, the name of that
 cookie must be passed to the `XsrfTokenServiceServlet` as well as
 all XSRF-protected RPC service servlets. This is done via context parameter in
 `web.xml`:
 
-<pre class="prettyprint">
-&lt;context-param&gt;
-  &lt;param-name&gt;gwt.xsrf.session_cookie_name&lt;/param-name&gt;
-  &lt;param-value>JSESSIONID&lt;/param-value&gt;
-&lt;/context-param&gt;
-</pre>
+```
+<context-param>
+  <param-name>gwt.xsrf.session_cookie_name</param-name>
+  <param-value>JSESSIONID</param-value>
+</context-param>
+```
 
 **Note:** Servlet initialization parameter
 (`<init-param>`) can also be used to pass the name of the
@@ -72,7 +72,7 @@ session cookie to each servlet individually.
 
 All server-side implementations of RPC services must extend [`XsrfProtectedServiceServlet`](/javadoc/latest/com/google/gwt/user/server/rpc/XsrfProtectedServiceServlet.html):
 
-<pre class="prettyprint">
+```
 package com.example.foo.server;
 
 import com.google.gwt.user.server.rpc.XsrfProtectedServiceServlet; 
@@ -87,7 +87,7 @@ public class MyServiceImpl extends XsrfProtectedServiceServlet implements
     return s;
   }
 }
-</pre>
+```
 
 ## Client-side changes<a id="ClientSide"></a>
 
@@ -97,20 +97,23 @@ Client-side RPC interfaces can be marked as XSRF protected using one of the foll
 
 *   by extending [`XsrfProtectedService`](/javadoc/latest/com/google/gwt/user/client/rpc/XsrfProtectedService.html), in which case all methods calls will
   require `XsrfToken`:
-  <pre class="prettyprint">
-  package com.example.foo.client;
+
+```
+package com.example.foo.client;
 
   import com.google.gwt.user.client.rpc.XsrfProtectedService;
 
   public interface MyService extends XsrfProtectedService {
     public String myMethod(String s);
   }
-  </pre>
+```
+
 *   by explicitly annotating interface or methods with [`@XsrfProtect`](/javadoc/latest/com/google/gwt/user/server/rpc/XsrfProtect.html) annotation. 
 [`@NoXsrfProtect`](/javadoc/latest/com/google/gwt/user/server/rpc/NoXsrfProtect.html) annotation can be used to disable XSRF
 protection on a method or service to disable XSRF protection:
-  <pre class="prettyprint">
-  package com.example.foo.client;
+
+```
+package com.example.foo.client;
 
   import com.google.gwt.user.client.rpc.RemoteService;
   import com.google.gwt.user.server.rpc.XsrfProtect
@@ -119,8 +122,9 @@ protection on a method or service to disable XSRF protection:
   public interface MyService extends RemoteService {
     public String myMethod(String s);
   }
-  </pre>
-  Method level annotations override RPC interface level annoatations. If no
+```
+
+Method level annotations override RPC interface level annoatations. If no
   annotations are present and the RPC interface contains a method that returns
   [`RpcToken`](/javadoc/latest/com/google/gwt/user/client/rpc/RpcToken.html) or its implementation, then XSRF token validation is
   performed on all methods of that interface except for the method returning
@@ -134,17 +138,17 @@ To make a call to an XSRF protected service client must obtain a valid
 `XsrfToken` and set it on the service endpoint by casting the 
 service's asynchronous interface to [`HasRpcToken`](/javadoc/latest/com/google/gwt/user/client/rpc/HasRpcToken.html) and calling `setRpcToken()` method:
 
-<pre class="prettyprint">
+```
 XsrfTokenServiceAsync xsrf = (XsrfTokenServiceAsync)GWT.create(XsrfTokenService.class);
 ((ServiceDefTarget)xsrf).setServiceEntryPoint(GWT.getModuleBaseURL() + "xsrf");
-xsrf.getNewXsrfToken(new AsyncCallback&lt;XsrfToken&gt;() {
+xsrf.getNewXsrfToken(new AsyncCallback<XsrfToken>() {
 
   public void onSuccess(XsrfToken token) {
     MyServiceAsync rpc = (MyServiceAsync)GWT.create(MyService.class);
     ((HasRpcToken) rpc).setRpcToken(token);
 
     // make XSRF protected RPC call
-    rpc.doStuff(new AsyncCallback&lt;Void&gt;() {
+    rpc.doStuff(new AsyncCallback<Void>() {
       // ...
     });
   }
@@ -162,7 +166,7 @@ xsrf.getNewXsrfToken(new AsyncCallback&lt;XsrfToken&gt;() {
       // unexpected
     }
 });
-</pre>
+```
 
 **Tip:** If you would like to register a special handler for exceptions generated during
 `XsrfToken` validation use [`HasRpcToken.setRpcTokenExceptionHandler()`](/javadoc/latest/com/google/gwt/user/client/rpc/HasRpcToken.html#setRpcTokenExceptionHandler(com.google.gwt.user.client.rpc.RpcTokenExceptionHandler))

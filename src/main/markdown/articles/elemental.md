@@ -28,11 +28,12 @@ overhead. It does this by using only
 the collection classes map directly to underlying JavaScript collections with no overhead.
 
 ## Example Usage <a id="Example"></a>
-<p> Elemental uses Java interfaces to hide most of the generated overlay types it uses. JS APIs instances
+
+Elemental uses Java interfaces to hide most of the generated overlay types it uses. JS APIs instances
 can be obtained by the `Window` or `Document` interfaces. Here is a simple example to play a sound using
 the Web Audio API.
 
-<pre class="prettyprint">
+```
 package com.myapp;
 import elemental.client.*;
 import elemental.dom.*;
@@ -49,9 +50,9 @@ public class ElementalExample implements EntryPoint {
     osc.noteOn(0);
   }  
 }
-</pre>
+```
 
-<p> In general, HTML elements can be constructed by invoking methods starting with the pattern
+In general, HTML elements can be constructed by invoking methods starting with the pattern
 `Document.createXXXElement` where XXX could be elements like `Select`,
 or `Video`. JS APIs which allow the `new` keyword to construct instances
 are found on `Window.newXXX` where XXX represents the underlying Javascript 
@@ -59,16 +60,13 @@ constructor name.
 
 ## Caveats <a id="Caveats"></a>
 
-<p>
 Elemental is a work in progress. Due to the nature of it being auto-generated from IDL specifications,
 and those specifications for HTML5 changing rapidly over time, there are no unit tests for
 generated code, and usage of bleeding edge HTML5 are untested and may break.
 
-<p>
 Elemental also introduces a new set of native JS collections which are not interoperable with Java
 Collections. 
 
-<p>
 Currently, Elemental is generated from the WebKit IDL files and contains many references to
 vendor-prefixed browser extensions. Using these draft-spec extensions may result in code that doesn't 
 work on Firefox, Opera, or IE. Later versions of Elemental will include shim-generation

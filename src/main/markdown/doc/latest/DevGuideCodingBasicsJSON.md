@@ -8,20 +8,20 @@ The JSON format is based on the syntax and data types of the JavaScript language
 into arrays and objects. JSON objects are simply unordered sets of name/value pairs, where the name is always a string and the value is any other valid JSON type (even another
 object). Here's an example of encoding product data in JSON:
 
-<pre class="prettyprint">
+```
 {
-  &quot;product&quot;: {
-    &quot;name&quot;: &quot;Widget&quot;,
-    &quot;company&quot;: &quot;ACME, Inc&quot;,
-    &quot;partNumber&quot;: &quot;7402-129&quot;,
-    &quot;prices&quot;: [
-      { &quot;minQty&quot;: 1, &quot;price&quot;: 12.49 },
-      { &quot;minQty&quot;: 10, &quot;price&quot;: 9.99 },
-      { &quot;minQty&quot;: 50, &quot;price&quot;: 7.99 }
+  "product": {
+    "name": "Widget",
+    "company": "ACME, Inc",
+    "partNumber": "7402-129",
+    "prices": [
+      { "minQty": 1, "price": 12.49 },
+      { "minQty": 10, "price": 9.99 },
+      { "minQty": 50, "price": 7.99 }
     ]
   }
 }
-</pre>
+```
 
 See [json.org/example.html](http://www.json.org/example.html) for more JSON examples.
 
@@ -32,17 +32,17 @@ See [json.org/example.html](http://www.json.org/example.html) for more JSON exam
 
 You can parse JSON Strings and convert them to a [JavaScriptObject](/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html) using [JsonUtils](http://www.gwtproject.org/javadoc/latest/com/google/gwt/core/client/JsonUtils.html).
 
-<pre class="prettyprint">
+```
 /*
  * Takes in a JSON String and evals it.
  * @param JSON String that you trust
  * @return JavaScriptObject that you can cast to an Overlay Type
  */
-public static &lt;T extends JavaScriptObject&gt T parseJson(String jsonStr)
+public static <T extends JavaScriptObject&gt T parseJson(String jsonStr)
 {
   return JsonUtils.safeEval(jsonStr);
 }
-</pre>
+```
 
 Typically, you will receive JSON data as the response text of an [HTTP request](DevGuideServerCommunication.html#DevGuideHttpRequests). Thus, you'll first have to convert
 that `String` into a Object that you can work with using a method like the one shown above. The recommended way for interacting with [JavaScriptObjects](/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html) is to use [JavaScript Overlay Types](DevGuideCodingBasicsOverlay.html).

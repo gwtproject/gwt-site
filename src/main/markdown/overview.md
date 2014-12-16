@@ -92,9 +92,7 @@ div.diagram img {
   </tr>
 </table>
 
-<a name="how"></a>
-
-## Developing with GWT
+## Developing with GWT <a id="how"></a>
 
 <div>
   <img src="images/flow1-sm.png" class="flow-img"/>

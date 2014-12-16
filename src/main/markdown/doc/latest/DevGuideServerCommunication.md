@@ -51,8 +51,8 @@ forth over HTTP. When used properly, RPCs give you the opportunity to move all o
 reduced web server load, and a pleasantly fluid user experience.
 
 The [server-side](DevGuideServerCommunication.html#DevGuideServerSide) code that gets invoked from the client is often referred to as a _service_, so the act of making a
-remote procedure call is sometimes referred to as invoking a service. To be clear, though, the term _service_ in this context is not the same as the more general &quot;web
-service&quot; concept. In particular, GWT services are not related to the Simple Object Access Protocol (SOAP).
+remote procedure call is sometimes referred to as invoking a service. To be clear, though, the term _service_ in this context is not the same as the more general "web
+service" concept. In particular, GWT services are not related to the Simple Object Access Protocol (SOAP).
 
 ## RPC Plumbing Diagram<a id="DevGuidePlumbingDiagram"></a>
 
@@ -74,7 +74,7 @@ interface you created above.
 
 To begin developing a new service interface, create a [client-side](DevGuideCodingBasics.html#DevGuideClientSide) Java interface that extends the [RemoteService](/javadoc/latest/com/google/gwt/user/client/rpc/RemoteService.html) tag interface.
 
-<pre class="prettyprint">
+```
 package com.example.foo.client;
 
 import com.google.gwt.user.client.rpc.RemoteService;
@@ -82,11 +82,11 @@ import com.google.gwt.user.client.rpc.RemoteService;
 public interface MyService extends RemoteService {
   public String myMethod(String s);
 }
-</pre>
+```
 
 This synchronous interface is the definitive version of your service's specification. Any implementation of this service on the [server-side](DevGuideServerCommunication.html#DevGuideServerSide) must extend [RemoteServiceServlet](/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html) and implement this service interface.
 
-<pre class="prettyprint">
+```
 package com.example.foo.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
@@ -101,7 +101,7 @@ public class MyServiceImpl extends RemoteServiceServlet implements
     return s;
   }
 }
-</pre>
+```
 
 **Tip:** It is not possible to call this version of the RPC directly from the client. You must create an asynchronous interface to all your services as shown
 below.
@@ -111,13 +111,13 @@ below.
 Before you can actually attempt to make a remote call from the client, you must create another client interface, an asynchronous one, based on your original service interface.
 Continuing with the example above, create a new interface in the client subpackage:
 
-<pre class="prettyprint">
+```
 package com.example.foo.client;
 
 interface MyServiceAsync {
-  public void myMethod(String s, AsyncCallback&lt;String&gt; callback);
+  public void myMethod(String s, AsyncCallback<String> callback);
 }
-</pre>
+```
 
 The nature of asynchronous method calls requires the caller to pass in a callback object that can be notified when an asynchronous call completes, since by definition the
 caller cannot be blocked until the call completes. For the same reason, asynchronous methods do not have return types; they generally return void. Should you wish to have more
@@ -153,22 +153,22 @@ client-side code when your run your application in development mode using a Java
 `web.xml`.
 
 For example, suppose you have a module `com.example.foo.Foo`, and you define an RPC interface `com.example.foo.client.MyService`, annotated with
-`@RemoteServiceRelativePath(&quot;myService&quot;)`. You then implement a servlet for the interface you created for `com.example.foo.client.MyService` with the class
+`@RemoteServiceRelativePath("myService")`. You then implement a servlet for the interface you created for `com.example.foo.client.MyService` with the class
 `com.example.foo.server.MyServiceImpl` which extends `RemoteServiceServlet`. Finally, you add the following lines to your `web.xml`:
 
-<pre class="prettyprint">
-&lt;!-- Example servlet loaded into servlet container --&gt;
-&lt;servlet&gt;
-  &lt;servlet-name&gt;myServiceImpl&lt;/servlet-name&gt;
-  &lt;servlet-class&gt;
+```
+<!-- Example servlet loaded into servlet container -->
+<servlet>
+  <servlet-name>myServiceImpl</servlet-name>
+  <servlet-class>
     com.example.foo.server.MyServiceImpl
-  &lt;/servlet-class&gt;
-&lt;/servlet&gt;
-&lt;servlet-mapping&gt;
-  &lt;servlet-name&gt;myServiceImpl&lt;/servlet-name&gt;
-  &lt;url-pattern&gt;/com.example.foo.Foo/myService&lt;/url-pattern&gt;
-&lt;/servlet-mapping&gt;
-</pre>
+  </servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>myServiceImpl</servlet-name>
+  <url-pattern>/com.example.foo.Foo/myService</url-pattern>
+</servlet-mapping>
+```
 
 Take a look at the value in `url-pattern`. The first part must match the name of your GWT module. If your module has a `rename-to` attribute, you would use the
 renamed value instead; either way it must match the actual subdirectory within your war directory where your GWT module lives (the module base URL). The second part must match the
@@ -190,7 +190,7 @@ should do this for you automatically. Later on, if you need additional server-si
 also.
 *   When running your RPC call, development mode displays an excaption `NoServiceEntryPointSpecifiedException: Service implementation URL not specified`. This error means that
 you did not specify a `@RemoteServiceRelativePath` in your service interface, and you also did not manually set target path by calling [ServiceDefTarget.setServiceEntryPoint()](/javadoc/latest/com/google/gwt/user/client/rpc/ServiceDefTarget.html#setServiceEntryPoint(java.lang.String)).
-*   If invoking your RPC call fails with a 404 [StatusCodeException](/javadoc/latest/com/google/gwt/user/client/rpc/StatusCodeException.html), your web.xml may be misconfigured. Make sure you specified a `@RemoteServiceRelativePath` and that the `&lt;url-pattern&gt;`
+*   If invoking your RPC call fails with a 404 [StatusCodeException](/javadoc/latest/com/google/gwt/user/client/rpc/StatusCodeException.html), your web.xml may be misconfigured. Make sure you specified a `@RemoteServiceRelativePath` and that the `<url-pattern>`
 specified in your `web.xml` matches this value, prepended with the location of your GWT output directory within the war directory.
 
 ### Deploying Services Into Production
@@ -214,26 +214,26 @@ The process of making an RPC from the client always involves the same steps:
 
 Suppose you want to call a method on a service interface defined as follows:
 
-<pre class="prettyprint">
+```
 // The RemoteServiceRelativePath annotation automatically calls setServiceEntryPoint()
-@RemoteServiceRelativePath(&quot;email&quot;)
+@RemoteServiceRelativePath("email")
 public interface MyEmailService extends RemoteService {
   void emptyMyInbox(String username, String password);
 }
-</pre>
+```
 
 Its corresponding asynchronous interface will look like this:
 
-<pre class="prettyprint">
+```
 public interface MyEmailServiceAsync {
   void emptyMyInbox(String username, String password,
-      AsyncCallback&lt;Void&gt; callback);
+      AsyncCallback<Void> callback);
 }
-</pre>
+```
 
 The client-side call will look like this:
 
-<pre class="prettyprint">
+```
 public void menuCommandEmptyInbox() {
   // (1) Create the client proxy. Note that although you are creating the
   // service interface proper, you cast the result to the asynchronous
@@ -259,13 +259,13 @@ public void menuCommandEmptyInbox() {
   //
   emailService.emptyMyInbox(fUsername, fPassword, callback);
 }
-</pre>
+```
 
 It is safe to cache the instantiated service proxy to avoid creating it for subsequent calls. For example, you can instantiate the service proxy in the module's
 `onModuleLoad()` method and save the resulting instance as a class member.
 
-<pre class="prettyprint">
-    public class Foo implements EntryPoint {
+```
+public class Foo implements EntryPoint {
       private MyEmailServiceAsync myEmailService = (MyEmailServiceAsync) GWT.create(MyEmailService.class);
 
       public void onModuleLoad() {
@@ -277,10 +277,10 @@ It is safe to cache the instantiated service proxy to avoid creating it for subs
        * was initalized when the module started up.
        */
       void sendEmail (String message) {
-          myEmailService.sendEmail(message, new AsyncCallback&lt;String&gt;() {
+          myEmailService.sendEmail(message, new AsyncCallback<String>() {
 
             public void onFailure(Throwable caught) {
-              Window.alert(&quot;RPC to sendEmail() failed.&quot;);
+              Window.alert("RPC to sendEmail() failed.");
             }
 
             public void onSuccess(String result) {
@@ -289,7 +289,7 @@ It is safe to cache the instantiated service proxy to avoid creating it for subs
           });
       }
     }
-</pre>
+```
 
 ## Serializable Types<a id="DevGuideSerializableTypes"></a>
 
@@ -301,7 +301,7 @@ Serializable types must conform to certain restrictions. GWT tries really hard t
 subtle, in practice the behavior becomes intuitive very quickly.
 
 **Tip:**
-Although the terminology is very similar, GWT's concept of &quot;serializable&quot; is slightly different than serialization based on the standard Java interface [Serializable](http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html). All references to serialization are referring to the GWT concept.
+Although the terminology is very similar, GWT's concept of "serializable" is slightly different than serialization based on the standard Java interface [Serializable](http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html). All references to serialization are referring to the GWT concept.
 For some background, see the FAQ topic [Does the GWT RPC system support the use of java.io.Serializable?](FAQ_Server.html#Does_the_GWT_RPC_system_support_the_use_of_java.io.Serializable)
 
 A type is serializable and can be used in a service interface if one of the following is true:
@@ -349,7 +349,7 @@ Collection classes such as `java.util.Set` and
 `java.util.List` are tricky because they operate in terms of
 `Object` instances. To make collections serializable, you should
 specify the particular type of objects they are expected to contain through
-normal type parameters (for example, `Map&lt;Foo,Bar&gt;` rather than
+normal type parameters (for example, `Map<Foo,Bar>` rather than
 just `Map`).  If you use raw collections or maps you will get bloated
 code and be vulnerable to denial of service attacks.
 
@@ -400,9 +400,10 @@ Custom field serializers should extend the
 CustomFieldSerializer<T>](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html)` class, with the class that is being
 serialized as the type parameter. For example:
 
-<pre class="code">
-public final class HashMap_CustomFieldSerializer extends CustomFieldSerializer&lt;HashMap&gt;
-</pre>
+```
+public final class HashMap_CustomFieldSerializer extends CustomFieldSerializer<HashMap>
+
+```
 
 All custom field serializer classes must implement the 
 `[serializeInstance](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#serializeInstance(com.google.gwt.user.client.rpc.SerializationStreamWriter, T))` and
@@ -426,8 +427,8 @@ protect against parameter substitution attacks.
 
 To support type checking, server-specific versions of custom field serializers
 must be provided. The custom serializer class must be in a server package with
-the same qualified name as the client serializer, with &quot;client&quot;
-replaced by &quot;server&quot;. The actual serializer class for `Foo`
+the same qualified name as the client serializer, with "client"
+replaced by "server". The actual serializer class for `Foo`
 must be named `Foo_ServerCustomFieldSerializer`.
 As an example, the client serializer for the method
 `test.com.google.gwt.user.client.rpc.TypeCheckedGenericClass` is
@@ -440,9 +441,10 @@ Server custom field serializers should extend the
 ServerCustomFieldSerializer<T>](/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html)` class, with the class that is being
 serialized as the type parameter. For example:
 
-<pre class="code">
-public final class HashMap_ServerCustomFieldSerializer extends ServerCustomFieldSerializer&lt;HashMap&gt;
-</pre>
+```
+public final class HashMap_ServerCustomFieldSerializer extends ServerCustomFieldSerializer<HashMap>
+
+```
 
 All server custom field serializer classes must implement the
 client-side
@@ -491,14 +493,14 @@ When the client code receives an [IncompatibleRemoteServiceException](/javadoc/l
 ## Architectural Perspectives<a id="DevGuideArchitecturalPerspectives"></a>
 
 There are various ways to approach services within your application architecture. Understand first of all that [GWT RPC services](DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls) are not intended to replace J2EE servers, nor are they intended to provide a public web service
-(e.g. SOAP) layer for your application. GWT RPCs, fundamentally, are simply a method of &quot;getting from the client to the server.&quot; In other words, you use RPCs to accomplish tasks
+(e.g. SOAP) layer for your application. GWT RPCs, fundamentally, are simply a method of "getting from the client to the server." In other words, you use RPCs to accomplish tasks
 that are part of your application but that cannot be done on the client computer.
 
 Architecturally, you can make use of RPC two alternative ways. The difference is a matter of taste and of the architectural needs of your application.
 
 ### Simple Client/Server Deployment
 
-The first and most straightforward way to think of service definitions is to treat them as your application's entire back end. From this perspective, [client-side code](DevGuideCodingBasics.html#DevGuideClientSide) is your &quot;front end&quot; and all service code that runs on the server is &quot;back end.&quot; If you take this approach,
+The first and most straightforward way to think of service definitions is to treat them as your application's entire back end. From this perspective, [client-side code](DevGuideCodingBasics.html#DevGuideClientSide) is your "front end" and all service code that runs on the server is "back end." If you take this approach,
 your service implementations would tend to be more general-purpose APIs that are not tightly coupled to one specific application. Your service definitions would likely directly
 access databases through JDBC or Hibernate or even files in the server's file system. For many applications, this view is appropriate, and it can be very efficient because it
 reduces the number of tiers.
@@ -506,8 +508,8 @@ reduces the number of tiers.
 ### Multi-Tier Deployment
 
 In more complex, multi-tiered architectures, your GWT service definitions could simply be lightweight gateways that call through to back-end server environments such as J2EE
-servers. From this perspective, your services can be viewed as the &quot;server half&quot; of your application's user interface. Instead of being general-purpose, services are created for
-the specific needs of your user interface. Your services become the &quot;front end&quot; to the &quot;back end&quot; classes that are written by stitching together calls to a more general-purpose
+servers. From this perspective, your services can be viewed as the "server half" of your application's user interface. Instead of being general-purpose, services are created for
+the specific needs of your user interface. Your services become the "front end" to the "back end" classes that are written by stitching together calls to a more general-purpose
 back-end layer of services, implemented, for example, as a cluster of J2EE servers. This kind of architecture is appropriate if you require your back-end services to run on a
 physically separate computer from your HTTP server.
 
@@ -547,11 +549,11 @@ can simply run `ant war` in your project directory. The Ant `build.xml` file sho
 Now just copy your `.war` file into Tomcat's `/webapps` folder. If you have default configuration settings it should automatically unzip the .war file.
 
 If Tomcat is in its default configuration to run on port 8080, you should be able to run your application by entering the url
-`http://&lt;hostname&gt;:8080/MyApp/MyApp.html` into your web browser.
+`http://<hostname>:8080/MyApp/MyApp.html` into your web browser.
 
 If you encounter any problems, take look in the Tomcat log file, which can be found in the `logs` directory of your Tomcat installation. If your web pages display but
 the RPC calls don't seem to be going through, try turning on access logging on Tomcat. You may find that the URL used by the client side has not been registered by Tomcat, or that
-there is a misconfiguration between the URL path set in the `setServiceEntryPoint(URL)` call when declaring your RPC service and the `&lt;url-pattern&gt;` URL
+there is a misconfiguration between the URL path set in the `setServiceEntryPoint(URL)` call when declaring your RPC service and the `<url-pattern>` URL
 mapping the `web.xml` file.
 
 ### Using Tomcat with Apache HTTPD and a proxy
@@ -583,34 +585,35 @@ used for service calls. For this example, assume that:
 
 *   Your Apache server is running on `www.example.com`
 *   Your Tomcat server is running on `servlet.example.com:8080`
-*   Your GWT module has a `&lt;rename-to=&quot;myapp&quot;&gt;`
+*   Your GWT module has a `<rename-to="myapp">`
 *   You have one RPC servlet, mapped into `/myapp/myService`
 
 The idea is to have Apache proxy requests to the servlet to the other server such that:
 
-`http://www.example.com/MyApp/myapp/myService --&gt; http://servlet.example.com:8080/MyApp/myapp/myService`
+`http://www.example.com/MyApp/myapp/myService --> http://servlet.example.com:8080/MyApp/myapp/myService`
 
 The following Apache configuration sets up such a rule using a Proxy:
 
-<pre class="prettyprint">
+```
 ProxyPass        /MyApp/myapp/myService  http://servlet.example.com:8080/MyApp/myapp/myService
 ProxyPassReverse /MyApp/myapp/myService  http://servlet.example.com:8080/MyApp/myapp/myService
-</pre>
+```
 
 To verify this is working, use a web browser to hit both `http://www.example.com/MyApp/myapp/myService` and
 `http://servlet.example.com:8080/MyApp/myapp/myService`. You should get the same result in both cases (typically a `405: HTTP method GET is not supported by this
 URL`, which is good). If you get something different hitting the second URL, you may have a configuration issue.
 
 *   If you get a 404, there is most likely an error in the left hand side of your URL mapping.
-*   If you get a &quot;Bad Gateway&quot;, there is most likely an error in the right hand side of your URL mapping.
-*   If you get a 403 permission error, check the Apache configuration files to for `&lt;Proxy&gt;` tags to see if the permissions are wrong. You may need to add a section
+*   If you get a "Bad Gateway", there is most likely an error in the right hand side of your URL mapping.
+*   If you get a 403 permission error, check the Apache configuration files to for `<Proxy>` tags to see if the permissions are wrong. You may need to add a section
 like this:
-<pre class="prettyprint">
-   &lt;Proxy \*&gt;
+
+```
+<Proxy \*>
      Order deny,allow
      Allow from all
-   &lt;/Proxy&gt;
-</pre>
+   </Proxy>
+```
 
 ### Other Deployment Methods
 
@@ -638,7 +641,7 @@ that allow your application to make generic HTTP requests.
 Making HTTP requests in GWT works much like it does in any language or framework, but there are a couple of important differences you should be aware of.
 
 First, because of the single-threaded execution model of most web browsers, long synchronous operations such as server calls can cause a JavaScript application's interface (and
-sometimes the browser itself) to become unresponsive. To prevent network or server communication problems from making the browser &quot;hang&quot;, GWT allows only _asynchronous_
+sometimes the browser itself) to become unresponsive. To prevent network or server communication problems from making the browser "hang", GWT allows only _asynchronous_
 server calls. When sending an HTTP request, the client code must register a callback method that will handle the response (or the error, if the call fails). For more information
 about the exclusion of synchronous server connections, you may want to check out this [FAQ article](FAQ_Server.html#Why_doesn).
 
@@ -648,11 +651,11 @@ websites. In particular, SOP makes it difficult (although not impossible) to sen
 ### HTTP client types
 
 To use the [HTTP types](/javadoc/latest/com/google/gwt/http/client/package-summary.html) in your application,
-you'll need to first inherit the GWT HTTP module by adding the following `&lt;inherits&gt;` tag to your [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml):
+you'll need to first inherit the GWT HTTP module by adding the following `<inherits>` tag to your [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml):
 
-<pre>
-&lt;inherits name=&quot;com.google.gwt.http.HTTP&quot; /&gt;
-</pre>
+```
+<inherits name="com.google.gwt.http.HTTP" />
+```
 
 [RequestBuilder](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html) is the core class you'll
 need for constructing and sending HTTP requests. Its [constructor](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#RequestBuilder(com.google.gwt.http.client.RequestBuilder.Method,%20java.lang.String)) has parameters for specifying the HTTP method of the request (GET, POST, etc.) and the URL (the [URL](/javadoc/latest/com/google/gwt/http/client/URL.html) utility class is handy for escaping invalid characters).
@@ -669,11 +672,11 @@ the call, and [cancel it](/javadoc/latest/com/google/gwt/http/client/Request.htm
 
 Here's a brief example of making an HTTP request to a server:
 
-<pre class="prettyprint">
+```
 import com.google.gwt.http.client.*;
 ...
 
-String url = &quot;http://www.myserver.com/getData?type=3&quot;;
+String url = "http://www.myserver.com/getData?type=3";
 RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, URL.encode(url));
 
 try {
@@ -693,7 +696,7 @@ try {
 } catch (RequestException e) {
   // Couldn't connect to server
 }
-</pre>
+```
 
 ### Processing the response
 
@@ -736,8 +739,8 @@ the following implementation of an asynchronous call adapted from the Dynamic Ta
 application. It uses a slightly different syntax to define the required interface for the [AsyncCallback](/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html) object that is the last
 parameter to the `getPeople` RPC call:
 
-<pre class="prettyprint">
- // This code is called before the RPC starts
+```
+// This code is called before the RPC starts
  //
   if (startRow == lastStartRow) {
     ...
@@ -745,11 +748,11 @@ parameter to the `getPeople` RPC call:
 
   // Invoke the RPC call, implementing the callback methods inline:
   //
-  calService.getPeople(startRow, maxRows, new AsyncCallback&lt;Person[]&gt;() {
+  calService.getPeople(startRow, maxRows, new AsyncCallback<Person[]>() {
 
     // When the RPC returns, this code will be called if the RPC fails
     public void onFailure(Throwable caught) {
-       statusLabel.setText(&quot;Query failed: &quot; + caught.getMessage());
+       statusLabel.setText("Query failed: " + caught.getMessage());
        acceptor.failed(caught);
     }
 
@@ -759,7 +762,7 @@ parameter to the `getPeople` RPC call:
       lastMaxRows = maxRows;
       lastPeople = result;
       pushResults(acceptor, startRow, result);
-      statusLabel.setText(&quot;Query reutrned &quot; + result.length + &quot; rows.&quot;);
+      statusLabel.setText("Query reutrned " + result.length + " rows.");
     }
   });
 
@@ -767,9 +770,9 @@ parameter to the `getPeople` RPC call:
   // The following code will execute while the RPC is in progress,
   // before either of onFailure() or onSuccess() are executed.
   //
-  statusLabel.setText(&quot;Query in progress...&quot;);
+  statusLabel.setText("Query in progress...");
   ...
-</pre>
+```
 
 The important issue to understand is that that the code that follows the RPC call invocation will be executed while the actual round trip to the server is still in progress.
 Although the code inside the `onSuccess()` method is defined inline with the call, it will not be executed until both the calling code returns back to the JavaScript main

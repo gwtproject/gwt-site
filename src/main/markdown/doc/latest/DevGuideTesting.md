@@ -56,8 +56,8 @@ The webAppCreator that GWT includes can generate a starter test case for you, pl
 For example, to create a starter application along with test cases in the directory `fooApp`, where module name is
 `com.example.foo.Foo`:
 
-<pre>
- ~/Foo&gt; webAppCreator -out fooApp 
+```
+~/Foo> webAppCreator -out fooApp
         -junit /opt/eclipse/plugins/org.junit_3.8.1/junit.jar
         com.example.foo.Foo
 Created directory fooApp/src
@@ -85,7 +85,7 @@ Created file fooApp/Foo.launch
 Created file fooApp/FooTest-dev.launch
 Created file fooApp/FooTest-prod.launch
 Created file fooApp/war/WEB-INF/lib/gwt-servlet.jar
-</pre>
+```
 
 Follow the instructions in the generated fooApp/README.txt file. You have
 two ways to run your tests: using ant or using Eclipse. There are ant targets
@@ -102,7 +102,7 @@ tests.
 
 If you prefer not to use webAppCreator, you may create a test case suite by hand by following the instructions below:
 
-1.  **Define a class that extends [GWTTestCase](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html).** Make sure your test class is on the module source path (e.g. in the `client` subpackage of your module.) You can add new source paths by editing the [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml) and adding a `&lt;source&gt;` element.
+1.  **Define a class that extends [GWTTestCase](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html).** Make sure your test class is on the module source path (e.g. in the `client` subpackage of your module.) You can add new source paths by editing the [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml) and adding a `<source>` element.
 2.  **If you do not have a GWT module yet, create a [module](DevGuideOrganizingProjects.html#DevGuideModules) that causes the source for your test case to be included.** If you are adding a test case to an existing GWT app, you can just use the existing module.
 3.  **Implement the method [GWTTestCase.getModuleName()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#getModuleName()) to return the fully-qualified name of the module.** This is the glue that tells the JUnit test case which module to instantiate.
 4.  **Compile your test case class to bytecode.** You can use the Java compiler directly using [javac](http://java.sun.com/j2se/1.5.0/docs/tooldocs/windows/javac.html) or a Java IDE such as [Eclipse](http://eclipse.org).
@@ -115,28 +115,30 @@ If you prefer not to use webAppCreator, you may create a test case suite by hand
 
 ### Client side Example
 
-<p>First of all, you will need a valid GWT module to host your test case class. Usually, you do not need to create a new [module
-XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml) - you can just use the one you have already created to develop your GWT module. But if you did not already have a module, you might create one like this:
+First of all, you will need a valid GWT module to host your test case class. Usually, you do not
+need to create a new [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml) - you
+can just use the one you have already created to develop your GWT module. But if you did not
+already have a module, you might create one like this:
 
-<pre class="prettyprint">
-&lt;module&gt;
-  &lt;!-- Module com.example.foo.Foo --&gt;
+```
+<module>
+  <!-- Module com.example.foo.Foo -->
 
-  &lt;!-- Standard inherit.                                           --&gt;
-  &lt;inherits name='com.google.gwt.user.User'/&gt;
+  <!-- Standard inherit.                                           -->
+  <inherits name='com.google.gwt.user.User'/>
 
-  &lt;!-- implicitly includes com.example.foo.client package          --&gt;
+  <!-- implicitly includes com.example.foo.client package          -->
 
-  &lt;!-- OPTIONAL STUFF FOLLOWS --&gt;
+  <!-- OPTIONAL STUFF FOLLOWS -->
 
-  &lt;!-- It's okay for your module to declare an entry point.        --&gt;
-  &lt;!-- This gets ignored when running under JUnit.                 --&gt;
-  &lt;entry-point class='com.example.foo.FooModule'/&gt;
+  <!-- It's okay for your module to declare an entry point.        -->
+  <!-- This gets ignored when running under JUnit.                 -->
+  <entry-point class='com.example.foo.FooModule'/>
 
-  &lt;!-- You can also test remote services during a JUnit run.       --&gt;
-  &lt;servlet path='/foo' class='com.example.foo.server.FooServiceImpl'/&gt;
-&lt;/module&gt;
-</pre>
+  <!-- You can also test remote services during a JUnit run.       -->
+  <servlet path='/foo' class='com.example.foo.server.FooServiceImpl'/>
+</module>
+```
 
 **Tip:** You do not need to create a
 separate module for every test case, and in fact will pay a startup penalty
@@ -148,7 +150,7 @@ Suppose you had created a widget under the `foo` package,
 `UpperCasingLabel`, which ensures that the text it shows is all upper
 case. Here is how you might test it.
 
-<pre class="prettyprint">
+```
 package com.example.foo.client;
 import com.google.gwt.junit.client.GWTTestCase;
 
@@ -178,7 +180,7 @@ public class UpperCasingLabelTest extends GWTTestCase {
     assertEquals("BAZ", upperCasingLabel.getText());
   }
 }
-</pre>
+```
 
 Now, there are several ways to run your tests. Just look at the sample ant scripts or launch configs generated by webAppCreator, as in the previous subsection.
 
@@ -208,7 +210,7 @@ results when deployed.
 If you instead decide to run the JUnit TestRunner from command line, you must add some additional arguments to get your unit tests running in production mode. By
 default, tests run in [development mode](DevGuideCompilingAndDebugging.html#DevGuideDevMode) are run as normal Java bytecode in a JVM. To override this default behavior, you need to [pass arguments](#passingTestArguments) to `JUnitShell`
 
-<pre>-Dgwt.args="-prod"</pre>
+`-Dgwt.args="-prod"`
 
 ### Running your test in Manual Mode<a id="Manual_Mode"></a>
 
@@ -217,12 +219,17 @@ usual on a specified GWT module, but instead of running the test immediately, it
 
 For example, if you want to run a test in a single browser, you would use the following arguments:
 
-<pre class="prettyprint">-runStyle Manual:1</pre>
+```
+-runStyle Manual:1
+```
 
 GWT will then show a console message like the following:
 
-<pre class="prettyprint">Please navigate your browser to this URL:
-http://172.29.212.75:58339/com.google.gwt.user.User.JUnit/junit.html?gwt.codesvr=172.29.212.75:42899</pre>
+```
+
+Please navigate your browser to this URL:
+http://172.29.212.75:58339/com.google.gwt.user.User.JUnit/junit.html?gwt.codesvr=172.29.212.75:42899
+```
 
 Point your browser to the specified URL, and the test will run. You may be prompted by the GWT Developer Plugin to accept the connection the first time the test is run. 
 
@@ -263,7 +270,7 @@ event handler validates the event and then calls `finishTest()`.
 
 #### Example
 
-<pre class="prettyprint">
+```
 public void testTimer() {
   // Setup an asynchronous event handler.
   Timer timer = new Timer() {
@@ -282,7 +289,7 @@ public void testTimer() {
   // Schedule the event and return control to the test system.
   timer.schedule(100);
 }
-</pre>
+```
 
 The recommended pattern is to test one asynchronous event per test method. 
 If you need to test multiple events in the same method, here are a couple of techniques:
@@ -311,7 +318,7 @@ share a module are run back to back.
 Creating a suite is simple if you have already defined individual JUnit [TestCases](http://junit.sourceforge.net/junit3.8.1/javadoc/junit/framework/TestCase.html) or [GWTTestCases](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html).
 Here is an example:
 
-<pre class="prettyprint">
+```
 public class MapsTestSuite extends GWTTestSuite {
   public static Test suite() {
     TestSuite suite = new TestSuite("Test for a Maps Application");
@@ -321,13 +328,13 @@ public class MapsTestSuite extends GWTTestSuite {
     return suite;
   }
 }
-</pre>
+```
 
 The three test cases `MapTest`, `EventTest`, and `CopyTest` can now all run in the same instance of JUnitShell.
 
-<pre class="prettyprint">
+```
 java -Xmx256M -cp "./src:./test:./bin:./junit.jar:/gwt/gwt-user.jar:/gwt/gwt-dev.jar:/gwt/gwt-maps.jar" junit.textui.TestRunner com.example.MapsTestSuite
-</pre>
+```
 
 ## Setting up and tearing down JUnit test cases that use GWT code<a id="DevGuideJUnitSetUp"></a>
 
@@ -340,10 +347,10 @@ method in a test case.
 *   [gwtTearDown()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtTearDown()) runs after each
 test method in a test case.
 
-The following example shows how to defensively cleanup the DOM before the next test run using [gwtSetUp()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtSetUp()). It skips over `&lt;iframe&gt;` and `&lt;script&gt;` tags so that the GWT test infrastructure is not accidentally removed.
+The following example shows how to defensively cleanup the DOM before the next test run using [gwtSetUp()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtSetUp()). It skips over `<iframe>` and `<script>` tags so that the GWT test infrastructure is not accidentally removed.
 
-<pre class="prettyprint">
-  import com.google.gwt.junit.client.GWTTestCase;
+```
+import com.google.gwt.junit.client.GWTTestCase;
   import com.google.gwt.user.client.DOM;
   import com.google.gwt.user.client.Element;
 
@@ -357,8 +364,8 @@ The following example shows how to defensively cleanup the DOM before the next t
   public void gwtSetUp () {
     Element bodyElem = RootPanel.getBodyElement();
 
-    List&lt;Element&gt; toRemove = new ArrayList&lt;Element&gt;();
-    for (int i = 0, n = DOM.getChildCount(bodyElem); i &lt; n; ++i) {
+    List<Element> toRemove = new ArrayList<Element>();
+    for (int i = 0, n = DOM.getChildCount(bodyElem); i < n; ++i) {
       Element elem = DOM.getChild(bodyElem, i);
       String nodeName = getNodeName(elem);
       if (!"script".equals(nodeName) &amp;&amp; !"iframe".equals(nodeName)) {
@@ -366,11 +373,11 @@ The following example shows how to defensively cleanup the DOM before the next t
       }
     }
 
-    for (int i = 0, n = toRemove.size(); i &lt; n; ++i) {
+    for (int i = 0, n = toRemove.size(); i < n; ++i) {
       DOM.removeChild(bodyElem, toRemove.get(i));
     }
   }
-</pre>
+```
 
 ## Running Tests in Eclipse<a id="DevGuideRunningTestsInEclipse"></a>
 
@@ -381,7 +388,7 @@ by copying it and replacing the project name appropriately.
 
 Alternatively, one can also directly generate launch configurations. Create a
 normal JUnit run configuration by right-clicking on the Test file that extends
-`GWTTestCase` and selecting `Run as` &gt; `JUnit Test`. Though the
+`GWTTestCase` and selecting `Run as` > `JUnit Test`. Though the
 first run will fail, a new JUnit run configuration will be generated. 
 Modify the run configuration by adding the project's `src` and
 `test` directories to the classpath, like so:
@@ -396,4 +403,4 @@ Launch the run config to see the tests running in development mode.
 
 To run tests in production mode, copy the development mode launch
 configuration and pass VM arguments (by clicking the `Arguments` tab and
-adding to the VM arguments textarea) <pre>-Dgwt.args="-prod"</pre> 
+adding to the VM arguments textarea) `-Dgwt.args="-prod"` 

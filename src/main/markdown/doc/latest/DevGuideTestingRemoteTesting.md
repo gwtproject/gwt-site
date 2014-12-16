@@ -27,12 +27,17 @@ To use any of these run styles, you need to pass the `-runStyle` argument to the
 (see [Passing Arguments to the Test Infrastructure](DevGuideTesting.html#passingTestArguments)).  The format looks like this
 (see specific examples below):
 
-<pre class="prettyprint">-runStyle &lt;NameStartingWithCaps&gt;:arguments</pre>
+```
+-runStyle <NameStartingWithCaps>:arguments
+```
 
 If you are running a test from Eclipse, you would add something like the following to the VM arguments (Note that the run style name
 starts with a capital letter):
 
-<pre class="prettyprint">-Dgwt.args=&quot;-runStyle Selenium:myhost:4444/*firefox&quot;</pre>
+```
+
+-Dgwt.args="-runStyle Selenium:myhost:4444/*firefox"
+```
 
 ## Useful Arguments<a id="Useful_Arguments"></a>
 
@@ -50,14 +55,18 @@ system the first time you run the test, or ahead of time if possible.</font>
 Tests run in development mode by default. You can run a test in production mode by adding `-prod` to the GWT arguments. When
 running tests in production mode, you do not need to have the GWT Developer Plugin installed on the remote system.
 
-<pre class="prettyprint">-Dgwt.args=&quot;<strong>-prod</strong> -runStyle Selenium:myhost:4444/*firefox&quot;</pre>
+```
+-Dgwt.args="<strong>-prod</strong> -runStyle Selenium:myhost:4444/*firefox"
+```
 
 ### -userAgents<a id="-userAgents"></a>
 
 When running tests in production mode, GWT compiles the tests for all browsers, which can take a while. If you know which browsers your test
 will run in, you can limit the browser permutations (and reduce compile time), using the `-userAgents` argument:
 
-<pre class="prettyprint">-Dgwt.args=&quot;-prod <strong>-userAgents ie6,gecko1_8</strong> -runStyle Selenium:myhost:4444/*firefox&quot;</pre>
+```
+-Dgwt.args="-prod <strong>-userAgents ie6,gecko1_8</strong> -runStyle Selenium:myhost:4444/*firefox"
+```
 
 ## Run Styles<a id="Run_Styles"></a>
 
@@ -77,13 +86,15 @@ Selenium does not always open Internet Explorer successfully on newer versions o
 `-singleWindow` argument into Selenium.
 
 GWT can execute tests against a remote system running the [Selenium Remote Control](http://seleniumhq.org/projects/remote-control/).
-You do this using the following command: 
+You do this using the following command:
 
-<pre class="prettyprint">-Dgwt.args=&quot;-runStyle Selenium:myhost:4444/*firefox,myotherhost:4444/*firefox&quot;</pre>
+```
+-Dgwt.args="-runStyle Selenium:myhost:4444/*firefox,myotherhost:4444/*firefox"
+```
 
 In the above example, we are using the Selenium run style to execute a development mode test on Firefox against two remote systems (myhost and myotherhost).  
 
-<a name="SeleniumInternetExplorerNote"></a>
+<a id="SeleniumInternetExplorerNote"></a>
   **Note:** On newer versions of Windows, if you run Selenium as an Administrator, you will not run tests in development mode because the GWT
   Developer Plugin is installed for the current user only.
 
@@ -92,22 +103,25 @@ In the above example, we are using the Selenium run style to execute a developme
 By default, Selenium creates a new Firefox profile so it can prevent unnecessary popups that would otherwise mess up the test.  However, you will probably
 want to create your own Firefox profile that includes the GWT Developer Plugin.
 
-To do this, run Firefox from the command line and pass in the -ProfileManager argument to open the Profile Manager: 
+To do this, run Firefox from the command line and pass in the -ProfileManager argument to open the Profile Manager:
 
-<pre class="prettyprint">firefox.exe -ProfileManager</pre>
+```
+
+firefox.exe -ProfileManager
+```
 
 Create a new profile (remember the location), and open it. Setup the profile however you want, making sure to install the GWT Developer
 Plugin. On our test systems, we use the following settings: 
 
 *   Set a blank homepage
-    *   Edit -&gt; Preferences -&gt; Main
-    *   Set &quot;When Firefox Starts&quot; to &quot;Show a blank page&quot;
+    *   Edit -> Preferences -> Main
+    *   Set "When Firefox Starts" to "Show a blank page"
 *   Disable warnings
-    *   Edit -&gt; Preferences -&gt; Security
-    *   Under &quot;Warning Messages&quot; click &quot;Settings&quot;
+    *   Edit -> Preferences -> Security
+    *   Under "Warning Messages" click "Settings"
     *   Uncheck all warnings
 *   Disable auto update
-    *   Edit -&gt; Preferences -&gt; Advanced -&gt; Update
+    *   Edit -> Preferences -> Advanced -> Update
     *   Uncheck all automatic updates
 *   Disable session restore
     *   Type &#x27;about:config&#x27; in the browser bar 
@@ -117,14 +131,16 @@ Plugin. On our test systems, we use the following settings:
 *   Install the [GWT Developer Plugin](/missing-plugin/)
 *   Whitelist the hosts that will launch the development mode code server. Since Selenium copies the profile for each test, you must do this now.  If you do not, you will have to allow the remote connection for every test!
     *   Restart Firefox 
-    *   Tools -&gt; Addons 
+    *   Tools -> Addons
     *   Select GWT Developer Plugin for Firefox
-    *   Click &quot;Options&quot; 
+    *   Click "Options" 
     *   Add the <u>IP address</u> that you want to allow the plugin to connect to.
 
 When starting the selenium server, pass in the following argument to use your firefox profile as a template:
 
-<pre class="prettyprint">--firefoxProfileTemplate /path/to/profile</pre>
+```
+--firefoxProfileTemplate /path/to/profile
+```
 
 ### Remote Web<a id="Remote_Web"></a>
 
@@ -132,14 +148,22 @@ _Deprecated. Will be removed in GWT 2.7._
 
 The RemoteWeb run style allows you to run tests against systems running the BrowserManagerServer, a server that GWT provides. 
 
-First, you need to start the BrowserManagerServer on the remote test system using the following java command.  Note that gwt-user.jar and gwt-dev.jar are on the classpath. 
+First, you need to start the BrowserManagerServer on the remote test system using the following java command.  Note that gwt-user.jar and gwt-dev.jar are on the classpath.
 
-<pre class="prettyprint">java -cp gwt-user.jar;gwt-dev.jar com.google.gwt.junit.remote.BrowserManagerServer ie8 &quot;C:\Program Files\Internet Explorer\IEXPLORE.EXE&quot;</pre>
+```
 
-BrowserManagerServer takes commands in pairs. In the above example, we are associating the name &quot;ie8&quot; with the executable iexplore.exe. 
+java -cp gwt-user.jar;gwt-dev.jar com.google.gwt.junit.remote.BrowserManagerServer ie8 "C:\Program Files\Internet Explorer\IEXPLORE.EXE"
+```
 
-<pre class="prettyprint">&lt;browser name&gt; &lt;path/to/browser&gt;</pre>
+BrowserManagerServer takes commands in pairs. In the above example, we are associating the name "ie8" with the executable iexplore.exe.
+
+```
+<browser name> <path/to/browser>
+```
 
 To run a test against IE8, you would use the following argument:
 
-<pre class="prettyprint">-runStyle RemoteWeb:rmi://myhost/ie8</pre>
+```
+
+-runStyle RemoteWeb:rmi://myhost/ie8
+```

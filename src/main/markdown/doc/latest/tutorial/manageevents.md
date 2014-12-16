@@ -9,21 +9,21 @@ In this section, you'll wire up your widgets to listen for and handle mouse and 
 2.  [Listen for events.](#listening)
 3.  [Respond to events.](#responding)
 4.  [Test event handling.](#testing)
-<a name="requirements"></a>
 
-##  Reviewing the requirements for event handling
+
+##  Reviewing the requirements for event handling <a id="requirements"></a>
 
 Let's review the StockWatcher requirements to see what events occur.
 
-    <table>
-    <tr>
-        <th>Task</th>
-        <th>UI Event (Trigger mechanism)</th>
-        <th>Response</th>
-    </tr>
-    <tr>
-        <td>User enters a stock code.</td>
-        <td>Clicks the Add button
+<table>
+<tr>
+    <th>Task</th>
+    <th>UI Event (Trigger mechanism)</th>
+    <th>Response</th>
+</tr>
+<tr>
+    <td>User enters a stock code.</td>
+    <td>Clicks the Add button
 or presses return in the input box.</td>
         <td>
 
@@ -45,9 +45,7 @@ GWT provides a number of different event handler interfaces. To handle click eve
 
 Starting with GWT 1.6, the ClickHandler, KeyDownHandler, KeyPressHandler, and KeyUpHandler interfaces have replaced the now deprecated ClickListener and KeyBoardListener interfaces.
 
-<a name="listening"></a>
-
-##  Listening for events
+##  Listening for events <a id="listening"></a>
 
 ### Event Handler Interfaces
 
@@ -62,19 +60,20 @@ You'll handle the Add button's click event by passing it an object that implemen
 When the user clicks on the Add button, StockWatcher should respond by adding the stock to the stock table. So, to handle the click event, call the addStock method. You haven't written the addStock method yet; you'll create a stub and then code it in the next section.
 
 1.  Add an event handler to the Add button so it can receive click events.
-        *  In Stockwatcher.java, in the onModuleLoad method, cut and paste the code commented "Listen for mouse events on the Add button." that is highlighted below.
-        *  Eclipse flags ClickHandler and suggests you include the import declaration.
+    *  In Stockwatcher.java, in the onModuleLoad method, cut and paste the code commented "Listen for mouse events on the Add button." that is highlighted below.
+    *  Eclipse flags ClickHandler and suggests you include the import declaration.
 2.  Include the import declarations for ClickHandler and ClickEvent.
-        *  Eclipse flags addStock.
+    *  Eclipse flags addStock.
 3.  In StockWatcher.java, create the stub for the addStock method.
-        *  Select the Eclipse shortcut, `Create method addStock() in type 'StockWatcher'`. Or copy and paste from the code highlighted below.
-        *  **Note:** Depending on your Eclipse configuration, it might create the addStock method with an access modifier of protected. You aren't going to subclass StockWatcher, so later when you implement the addStock method, you'll change its access to private.
-*  <pre class="code">
+    *  Select the Eclipse shortcut, `Create method addStock() in type 'StockWatcher'`. Or copy and paste from the code highlighted below.
+    *  **Note:** Depending on your Eclipse configuration, it might create the addStock method with an access modifier of protected. You aren't going to subclass StockWatcher, so later when you implement the addStock method, you'll change its access to private.
+
+```
 package com.google.gwt.sample.stockwatcher.client;
 
     import com.google.gwt.core.client.EntryPoint;
-<span class="highlight">import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;</span>
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -117,54 +116,12 @@ import com.google.gwt.user.client.ui.VerticalPanel;
         // Move cursor focus to the input box.
     newSymbolTextBox.setFocus(true);
 
-    <span class="highlight">    // Listen for mouse events on the Add button.
-    addStockButton.addClickHandler(new ClickHandler() {
-      public void onClick(ClickEvent event) {
-        addStock();
-      }
-    });</span>
-
-      }
-
-    <span class="highlight">  /**
-       * Add stock to FlexTable. Executed when the user clicks the addStockButton or
-       * presses enter in the newSymbolTextBox.
-   */
-  private void addStock() {
-    // TODO Auto-generated method stub
-
-      }</span>
-
-    }</pre>
-
-**Implementation Note:**  For smaller applications, such as StockWatcher, that handle relatively few events, using anonymous inner classes gets the job done with minimal coding. However, if you have large number of event handlers subscribing to events, this approach can be inefficient because it could result in the creation of many separate event handler objects. In that case, it's better to have a class implement the event handler interface and handle events coming from multiple event publishers.  You can distinguish the source of the event by calling its getSource() method.  This makes better use of memory but requires slightly more code. For a code example, see the Developer's Guide, [Event Handlers](../DevGuideUiHandlers.html).
-
-### Handling Keyboard Events
-
-In addition to using the Add button, StockWatcher users can enter a stock code without taking their hands from the keyboard by pressing return in the input box.
-
-To subscribe to keyboard events, you can call the addKeyPressHandler(KeyPressHandler) method and pass it a KeyPressHandler.
-
-For the enter key, you however have to use either KeyDownHandler or KeyUpHandler as Firefox won't correctly populate the KeyPressEvent; see [issue 5003](https://code.google.com/p/google-web-toolkit/issues/detail?id=5003).
-
-1.  Hook up the keydown event handler for the input box, newSymbolTextBox.
-        *  In the onModuleLoad method, cut and paste the code commented "Listen for keyboard events in the input box." that is highlighted below.
-        *  <pre class="code">
-    // Listen for mouse events on the Add button.
+        // Listen for mouse events on the Add button.
     addStockButton.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent event) {
         addStock();
       }
     });
-
-    <span class="highlight">    // Listen for keyboard events in the input box.
-    newSymbolTextBox.addKeyDownHandler(new KeyDownHandler() {
-      public void onKeyDown(KeyDownEvent event) {
-        if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
-          addStock();
-        }
-      }
-    });</span>
 
       }
 
@@ -177,18 +134,66 @@ For the enter key, you however have to use either KeyDownHandler or KeyUpHandler
 
       }
 
-    }</pre>
-        *  Eclipse flags KeyDownHandler and suggests you include the import declaration.
+    }
+```
+
+**Implementation Note:**  For smaller applications, such as StockWatcher, that handle relatively few events, using anonymous inner classes gets the job done with minimal coding. However, if you have large number of event handlers subscribing to events, this approach can be inefficient because it could result in the creation of many separate event handler objects. In that case, it's better to have a class implement the event handler interface and handle events coming from multiple event publishers.  You can distinguish the source of the event by calling its getSource() method.  This makes better use of memory but requires slightly more code. For a code example, see the Developer's Guide, [Event Handlers](../DevGuideUiHandlers.html).
+
+### Handling Keyboard Events
+
+In addition to using the Add button, StockWatcher users can enter a stock code without taking their hands from the keyboard by pressing return in the input box.
+
+To subscribe to keyboard events, you can call the addKeyPressHandler(KeyPressHandler) method and pass it a KeyPressHandler.
+
+For the enter key, you however have to use either KeyDownHandler or KeyUpHandler as Firefox won't correctly populate the KeyPressEvent; see [issue 5003](https://code.google.com/p/google-web-toolkit/issues/detail?id=5003).
+
+1.  Hook up the keydown event handler for the input box, newSymbolTextBox.
+    *  In the onModuleLoad method, cut and paste the code commented "Listen for keyboard events in the input box." that is highlighted below.
+
+```
+// Listen for mouse events on the Add button.
+    addStockButton.addClickHandler(new ClickHandler() {
+      public void onClick(ClickEvent event) {
+        addStock();
+      }
+    });
+
+        // Listen for keyboard events in the input box.
+    newSymbolTextBox.addKeyDownHandler(new KeyDownHandler() {
+      public void onKeyDown(KeyDownEvent event) {
+        if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
+          addStock();
+        }
+      }
+    });
+
+      }
+
+      /**
+       * Add stock to FlexTable. Executed when the user clicks the addStockButton or
+       * presses enter in the newSymbolTextBox.
+   */
+  private void addStock() {
+    // TODO Auto-generated method stub
+
+      }
+
+    }
+```
+    *  Eclipse flags KeyDownHandler and suggests you include the import declaration.
+    
 2.  Include the import declarations.
-        *  <pre class="code"><span class="highlight">import com.google.gwt.event.dom.client.KeyCodes;
+
+```
+import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyDownEvent;
-import com.google.gwt.event.dom.client.KeyDownHandler;</span></pre>
+import com.google.gwt.event.dom.client.KeyDownHandler;
+
+```
 
 The event handlers are now wired up and ready for an event. Your next step is to fill out the stub addStock method.
 
-<a name="responding"></a>
-
-##  Responding to user events
+##  Responding to user events <a id="responding"></a>
 
 At this point, StockWatcher should be listening for user input, a mouse or keyboard event that signals the user has entered a stock code. So next you'll test whether or not the event handler interfaces are working by coding the response that StockWatcher should make when it detects an event: add the stock. StockWatcher responds on the client side without sending any requests back to server or reloading the HTML page.
 
@@ -218,47 +223,48 @@ If the input is valid, clear the text box so the user can add another stock code
 Finally, if the input is not valid, warn users via a dialog box.
 
 1.  Validate user input of the stock code.
-        *  In StockWatcher.java. replace the stub addStock method with following code.
-        *  <pre class="code">
-  private void addStock() {
-<span class="highlight">    final String symbol = newSymbolTextBox.getText().toUpperCase().trim();
+    *  In StockWatcher.java. replace the stub addStock method with following code.
+    
+```
+private void addStock() {
+    final String symbol = newSymbolTextBox.getText().toUpperCase().trim();
     newSymbolTextBox.setFocus(true);
-
-        // Stock code must be between 1 and 10 chars that are numbers, letters, or dots.
+    
+    // Stock code must be between 1 and 10 chars that are numbers, letters, or dots.
     if (!symbol.matches("^[0-9A-Z&#92;&#92;.]{1,10}$")) {
       Window.alert("'" + symbol + "' is not a valid symbol.");
       newSymbolTextBox.selectAll();
       return;
     }
 
-        newSymbolTextBox.setText("");
+    newSymbolTextBox.setText("");
 
-        // TODO Don't add the stock if it's already in the table.
+    // TODO Don't add the stock if it's already in the table.
+    // TODO Add the stock to the table
+    // TODO Add a button to remove this stock from the table.
+    // TODO Get the stock price.
 
-        // TODO Add the stock to the table.
+}
+```
+    *  Eclipse flags Window and suggests you include the import declaration.
 
-        // TODO Add a button to remove this stock from the table.
-
-        // TODO Get the stock price.</span>
-
-      }</pre>
-        *  Eclipse flags Window and suggests you include the import declaration.
 2.  Include the import declaration.
-        *  <pre class="code"><span class="highlight">import com.google.gwt.user.client.Window;</span></pre>
 
-<a name="testing"></a>
+```
+import com.google.gwt.user.client.Window;
+```
 
-##  Testing event handling
+##  Testing event handling<a id="testing"></a>
 
 At this point you should be able to enter text in the input box. If you use an illegal character, a dialog box should pop up and display a warning. Try it and see.
 
 1.  Test event handling in development mode.
-        *  Press Refresh in the already open browser.
+    *  Press Refresh in the already open browser.
 2.  Test that both event handler interfaces work.
-        *  Enter stock codes in the input box. Enter using both methods, by pressing return and by using the mouse to click on the Add button.
-        *  At this point, the stock is not added to the table. However, the input box should clear so that you can add another stock.
+    *  Enter stock codes in the input box. Enter using both methods, by pressing return and by using the mouse to click on the Add button.
+    *  At this point, the stock is not added to the table. However, the input box should clear so that you can add another stock.
 3.  Test the validity checking and error message.
-        *  Make some typos that include illegal characters.
+    *  Make some typos that include illegal characters.
 
 ![Validation Error Message](images/ManageEvents.png)
 

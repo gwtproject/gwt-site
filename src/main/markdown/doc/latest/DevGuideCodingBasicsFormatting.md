@@ -11,9 +11,9 @@ application.
 In order to use the `NumberFormat` or `DateTimeFormat` classes, you should update your [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml.html) with
 the following _inherits_ line:
 
-<pre class="prettyprint">
-  &lt;inherits name=&quot;com.google.gwt.i18n.I18N&quot;/&gt;
-</pre>
+```
+<inherits name="com.google.gwt.i18n.I18N"/>
+```
 
 See the [internationalization topic](DevGuideI18n.html) for more information about setting up locale.
 
@@ -25,39 +25,39 @@ See the [internationalization topic](DevGuideI18n.html) for more information abo
 When using the `NumberFormat` class, you do not instantiate it directly. Instead, you retrieve an instance by calling one of its static `get...Format()` methods.
 For most cases, you probably want to use the default decimal format:
 
-<pre class="prettyprint">
-    NumberFormat fmt = NumberFormat.getDecimalFormat();
+```
+NumberFormat fmt = NumberFormat.getDecimalFormat();
     double value = 12345.6789;
     String formatted = fmt.format(value);
     // Prints 1,2345.6789 in the default locale
-    GWT.log(&quot;Formatted string is&quot; + formatted, null);
-</pre>
+    GWT.log("Formatted string is" + formatted, null);
+```
 
 The class can also be used to convert a numeric string back into a double:
 
-<pre class="prettyprint">
-    double value = NumberFormat.getDecimalFormat().parse(&quot;12345.6789&quot;);
-    GWT.log(&quot;Parsed value is&quot; + value, null);
-</pre>
+```
+double value = NumberFormat.getDecimalFormat().parse("12345.6789");
+    GWT.log("Parsed value is" + value, null);
+```
 
 The `NumberFormat` class also provides defaults for scientific notation:
 
-<pre class="prettyprint">
-    double value = 12345.6789;
+```
+double value = 12345.6789;
     String formatted = NumberFormat.getScientificFormat().format(value);
     // prints 1.2345E4 in the default locale
-    GWT.log(&quot;Formatted string is&quot; + formatted, null);
-</pre>
+    GWT.log("Formatted string is" + formatted, null);
+```
 
 Note that you can also specify your own pattern for formatting numbers. In the example below, we want to show 6 digits of precision on the right hand side of the decimal and
 format the left hand side with zeroes up to the hundred thousands place:
 
-<pre class="prettyprint">
-    double value = 12345.6789;
-    String formatted = NumberFormat.getFormat(&quot;000000.000000&quot;).format(value);
+```
+double value = 12345.6789;
+    String formatted = NumberFormat.getFormat("000000.000000").format(value);
     // prints 012345.678900 in the default locale
-    GWT.log(&quot;Formatted string is&quot; + formatted, null);
-</pre>
+    GWT.log("Formatted string is" + formatted, null);
+```
 
 Here are the most commonly used pattern symbols for decimal formats:
 
@@ -106,8 +106,8 @@ replace the functionality of the `DateFormat` and `TimeFormat` classes from the 
 
 For the `DateTimeFormat` class, there are a large number of default formats defined.
 
-<pre class="prettyprint">
-    Date today = new Date();
+```
+Date today = new Date();
 
     // prints Tue Dec 18 12:01:26 GMT-500 2007 in the default locale.
     GWT.log(today.toString(), null);
@@ -126,7 +126,7 @@ For the `DateTimeFormat` class, there are a large number of default formats defi
 
     // prints Dec 18, 2007 12:01:26 PM in the default locale
     GWT.log(DateTimeFormat.getMediumDateTimeFormat().format(today), null);
-</pre>
+```
 
 Like the `NumberFormat` class, you can also use this class to parse a date from a `String` into a `Date` representation. You also have the option of using
 the default formats for date and time combinations, or you may build your own using a pattern string. See the [DateTimeFormat](/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.html) class documentation for specifics on how to create your own patterns.

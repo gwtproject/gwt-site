@@ -63,7 +63,7 @@ Books are order by release date. You can also jump on [Related frameworks](#rela
           </div>
         </div>
       </td>
-    </tr>                                            	                        
+    </tr>
     <tr>
       <td>
         <a href="http://www.informit.com/store/google-web-toolkit-solutions-more-cool-useful-stuff-9780132345347">
@@ -162,7 +162,7 @@ Books are order by release date. You can also jump on [Related frameworks](#rela
   </tbody>
 </table>
 
-<a name="related"></a>
+<a id="related"></a>
 ## Related frameworks<a id="prereqs"></a>
 
 <table class="columns" style="clear: left;">

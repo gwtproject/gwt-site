@@ -5,7 +5,7 @@ _Sumit Chandel, Google Developer Relations_
 
 _March 2009_
 
-This article is a direct adaptation of Daniel Wellman's excellent article, [&quot;GWT: Writing Ajax Applications Test-First&quot;](http://blog.danielwellman.com/2008/11/test-first-gwt-article-in-november-2008-better-software-magazine.html), published in Better Software magazine (November 2008).</i>
+This article is a direct adaptation of Daniel Wellman's excellent article, ["GWT: Writing Ajax Applications Test-First"](http://blog.danielwellman.com/2008/11/test-first-gwt-article-in-november-2008-better-software-magazine.html), published in Better Software magazine (November 2008).</i>
 
 One of the core features of GWT is testability, which means we can easily test our applications using a set of tried-and-true testing tools. Testability for GWT applications breaks down into the three following types of testing components:
 
@@ -19,7 +19,7 @@ Testing a GWT application might seem a little daunting at first, since GWT appli
 
 Since a GWT application is almost entirely written in the Java programming language, you can test a good part of it using standard JUnit TestCases. However, GWT also includes a special `TestCase` subclass, the `GWTTestCase` class, which can test code that requires JavaScript at runtime. While ultimately all of your client-side Java code will be cross-compiled to JavaScript, only some of it uses code directly implemented as JavaScript. For example, the following code is from the GWT `HTMLTable` class:
 
-<pre class="code">
+```
 public void setStylePrimaryName(int row, int column, String styleName) {
   UIObject.setStylePrimaryName(getCellElement(bodyElem, row, column), styleName);
 }
@@ -28,13 +28,14 @@ private native Element getCellElement(Element table, int row, int col) /*-{
   var out = table.rows[row].cells[col];
   return (out == null ? null : out);
 }-*/;
-</pre>
+
+```
 
 This code sample demonstrates a method written in Java (`setStylePrimaryName`) which relies on code implemented directly in JavaScript indicated by the `native` keyword (`getCellElement`). Many of the GWT libraries include some native code as demonstrated above; in particular, all widgets manipulate the DOM. This means that when you're running unit tests over components that execute JavaScript natively, they must be running in an environment supporting the JavaScript runtime, such as the one provided by the hosted mode browser.
 
 To test components that rely on JavaScript code natively, GWT provides a subclass of JUnit's `TestCase` called `GWTTestCase`. This base class allows you to implement your JUnit test case as you normally would; in fact, GWTTestCases look almost identical to the standard JUnit TestCase:
 
-<pre class="code">
+```
 public class MeetingSummaryLabelTest extends GWTTestCase {
   public String getModuleName() {
     return "com.danielwellman.booking.Booking";
@@ -42,13 +43,14 @@ public class MeetingSummaryLabelTest extends GWTTestCase {
 
   // Add tests here
 }
-</pre>
+
+```
 
 The only visible difference is that all GWTTestCases must override an abstract method called `getModuleName`, which returns a String containing the name of your GWT code module as defined in your application's module XML file.
 
-When you run your test, the GWT framework starts up an invisible (or &quot;headless&quot;) hosted mode browser and then evaluates your test case. What this means is that all the facilities of the hosted browser are available to your test case; you can run native JavaScript functions, render widgets, or invoke asynchronous remote procedure calls. Furthermore, you can run your tests either as a hybrid of Java and JavaScript code (in hosted mode), or compile and run all your GWT code as JavaScript (in web mode). All you need to do is declare and pass the `-Dgwt.args="-web"` Java runtime argument to the TestRunner process when running your test. It is highly recommended that you run your tests both in hosted mode and web mode, since there are some subtle [differences between Java and JavaScript](http://code.google.com/p/google-web-toolkit-doc-1-5/wiki/DevGuideJavaCompatibility) which could cause unexpected failures.
+When you run your test, the GWT framework starts up an invisible (or "headless") hosted mode browser and then evaluates your test case. What this means is that all the facilities of the hosted browser are available to your test case; you can run native JavaScript functions, render widgets, or invoke asynchronous remote procedure calls. Furthermore, you can run your tests either as a hybrid of Java and JavaScript code (in hosted mode), or compile and run all your GWT code as JavaScript (in web mode). All you need to do is declare and pass the `-Dgwt.args="-web"` Java runtime argument to the TestRunner process when running your test. It is highly recommended that you run your tests both in hosted mode and web mode, since there are some subtle [differences between Java and JavaScript](http://code.google.com/p/google-web-toolkit-doc-1-5/wiki/DevGuideJavaCompatibility) which could cause unexpected failures.
 
-Setting up the classpath to run these tests requires both the source and interim compiled Java classes for the test code be passed to the test runner. GWT provides a tool called [&quot;junitCreator&quot;](http://code.google.com/p/google-web-toolkit-doc-1-5/wiki/DevGuideJunitCreator) which will generate an empty GWTTestCase for you along with the required scripts to run the tests both in hosted and web mode.
+Setting up the classpath to run these tests requires both the source and interim compiled Java classes for the test code be passed to the test runner. GWT provides a tool called ["junitCreator"](http://code.google.com/p/google-web-toolkit-doc-1-5/wiki/DevGuideJunitCreator) which will generate an empty GWTTestCase for you along with the required scripts to run the tests both in hosted and web mode.
 
 Being able to test native JavaScript code in your JUnit tests is great, but there are some caveats and limitations. First, the normal browser event mechanisms do work as expected in test mode, but you would need to add somewhat adventitious code to do things like programmatically click a button and expect the corresponding event handlers to be fired. (e.g. `onClick`). The best approach to handle cases where you would like to test through event listeners is to write Selenium tests that run against the browser with all event mechanisms in place. There are also performance considerations; running the TestCase forces a compilation of the source code in your module, which incurs an initial startup delay. Furthermore, each individual test case requires starting up and shutting down the headless browser . which can take several seconds. One useful technique to use is to group your test cases into TestSuites, so that tests can run in a single suite and only incur a single compilation / hosted mode startup cost per suite.
 
@@ -86,7 +88,7 @@ The key to testing presenters is that they will be plain old Java code and can b
 
 Let's try to tackle a small slice of this functionality: the user enters a meeting capacity that cannot be scheduled. First, the view will notify the presenter that the user changed the value of the capacity text field. The presenter will then ask the RoomScheduler service if it can accept a new meeting with the specified capacity. Finally, the presenter will tell the view to disable the save button. Let's write a test for this scenario:
 
-<pre class="code">
+```
 import static org.easymock.EasyMock.*;
 
 public class PresenterTest extends TestCase {
@@ -112,27 +114,30 @@ public class PresenterTest extends TestCase {
    assertEquals("Should have updated the model's capacity", 225, meeting.getCapacity());
   }
 }
-</pre>
+
+```
 
 This test is an interaction-based test which uses EasyMock to provide test doubles for the View and the RoomScheduler. We stub out the scheduler to reply that it cannot accept capacity for the meeting, and expect our view to be told to disable the save button. Note here that the View ends up being fairly dumb; it does nothing but notify the presenter whenever the required capacity is changed.
 
 This code requires that we specify an interface for our view:
 
-<pre class="code">
+```
 public interface MeetingView {
   void disableSaveButton();
-}</pre>
+}
+```
 
 ... and for our service:
 
-<pre class="code">
+```
 public interface RoomScheduler {
   boolean canAcceptCapacityFor(Meeting meeting);
-}</pre>
+}
+```
 
 The code that passes this test is fairly simple:
 
-<pre class="code">
+```
 public class Presenter {
   private Meeting meeting;
   private MeetingView meetingView;
@@ -160,15 +165,16 @@ public class Presenter {
     return meeting;
   }
 }
-</pre>
+
+```
 
 The Presenter is responsible for orchestrating the call to the remote service and instructing the view to disable the save button. Note also that we're choosing to let the Presenter maintain the state of the Meeting object, so that all UI events ultimately modify this object.
 
-This is a very simple implementation, but it's far from the completed design. Our next test would probably check that setting an acceptable capacity enables the save button, and drive us to either make a new method &quot;`enableSaveButton`&quot; or a generalized &quot;`setSaveButtonAvailable`&quot; method on the view. We're still testing plain Java objects that don't require any JavaScript, so these tests run quickly.
+This is a very simple implementation, but it's far from the completed design. Our next test would probably check that setting an acceptable capacity enables the save button, and drive us to either make a new method "`enableSaveButton`" or a generalized "`setSaveButtonAvailable`" method on the view. We're still testing plain Java objects that don't require any JavaScript, so these tests run quickly.
 
 Note the argument to `requiredCapacityChanged` is of the type `HasText`. This turns out to be an interface that is part of the GWT libraries:
 
-<pre class="code">
+```
 package com.google.gwt.user.client.ui;
 
 public interface HasText {
@@ -185,11 +191,12 @@ public interface HasText {
   */
   void setText(String text);
 }
-</pre>
+
+```
 
 This simple interface is used by many GWT components and allows manipulation of a widget's text contents, including the TextBox in our example. This interface is extremely useful for testing because we don't need to pass in a real TextBox. Thus we avoid instantiating a text input in the DOM, requiring our test to extend GWTTestCase to run in a real browser. In this example, I've made a very simple fake implementation which wraps a String:
 
-<pre class="code">
+```
 public class FakeTextContainer implements HasText {
   private String text;
 
@@ -205,11 +212,12 @@ public class FakeTextContainer implements HasText {
     this.text = text;
   }
 }
-</pre>
+
+```
 
 Finally, let's take a look at our view implementation:
 
-<pre class="code">
+```
 public class MeetingViewWidget extends Composite implements MeetingView {
   private Button saveButton = new Button("Save");
   private TextBox capacityText = new TextBox();
@@ -242,11 +250,12 @@ public class MeetingViewWidget extends Composite implements MeetingView {
     saveButton.setEnabled(false);
   }
 }
-</pre>
+
+```
 
 And lastly, the Meeting class code, for completeness:
 
-<pre class="code">
+```
 public class Meeting {
   private Integer capacity;
 
@@ -255,10 +264,11 @@ public class Meeting {
   }
 
   public void setCapacity(int capacity) {
-    this.capacity = capacity; 
+    this.capacity = capacity;
   }
 }
-</pre>
+
+```
 
 As you can see, there's not much logic here. Most of the code is involved in setting up the event listeners and configuring the display widgets. So how do we test it in a GWTTestCase?
 

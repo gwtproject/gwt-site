@@ -38,39 +38,47 @@ The resources in a deployed GWT application can be roughly categorized into reso
 
 To use [ClientBundle](/javadoc/latest/index.html?com/google/gwt/resources/client/ClientBundle.html), add an `inherits` tag to your `gwt.xml` file:
 
-<pre class="prettyprint">&lt;inherits name=&quot;com.google.gwt.resources.Resources&quot; /&gt;</pre>
+```
+<inherits name="com.google.gwt.resources.Resources" />
+```
 
 If you write this interface:
 
-<pre class="prettyprint">public interface MyResources extends ClientBundle {
+```
+
+public interface MyResources extends ClientBundle {
   public static final MyResources INSTANCE =  GWT.create(MyResources.class);
 
-  @Source(&quot;my.css&quot;)
+  @Source("my.css")
   public CssResource css();
 
-  @Source(&quot;config.xml&quot;)
+  @Source("config.xml")
   public TextResource initialConfiguration();
 
-  @Source(&quot;manual.pdf&quot;)
+  @Source("manual.pdf")
   public DataResource ownersManual();
-}</pre>
+}
+```
 
 You can then say:
 
-<pre class="prettyprint">  // Inject the contents of the CSS file
+```  // Inject the contents of the CSS file
   MyResources.INSTANCE.css().ensureInjected();
 
   // Display the manual file in an iframe
-  new Frame(MyResources.INSTANCE.ownersManual().getSafeUri().asString());</pre>
+  new Frame(MyResources.INSTANCE.ownersManual().getSafeUri().asString());
+```
 
 ### I18N<a id="I18N"></a>
 
 `ClientBundle` is compatible with GWT's I18N module.
 
-Suppose you defined a resource: 
+Suppose you defined a resource:
 
-<pre class="prettyprint">@Source(&quot;default.txt&quot;)
-public TextResource defaultText();</pre>
+```
+@Source("default.txt")
+public TextResource defaultText();
+```
 
 For each possible value of the `locale` deferred-binding property, the `ClientBundle` generator will look for variations of the specified filename in a manner similar to that of Java's `ResourceBundle`.
 
@@ -116,7 +124,8 @@ These resource types are valid return types for methods defined in a ClientBundl
 
 A [DataResource](/javadoc/latest/index.html?com/google/gwt/resources/client/DataResource.html) is the simplest of the resource types, offering a URL by which the contents of a file can be retrieved at runtime.  The main optimization offered is to automatically rename files based on their contents in order to make the resulting URL strongly-cacheable by the browser.  Very small files may be converted into `data:` URLs on those browsers that support them.
 
-<pre class="prettyprint">interface Resources extends ClientBundle {
+```
+interface Resources extends ClientBundle {
   Resources INSTANCE = GWT.create(Resources.class);
 
   @Source("mycursor.cur")
@@ -125,7 +134,7 @@ A [DataResource](/javadoc/latest/index.html?com/google/gwt/resources/client/Data
 
 // Elsewhere
 someDiv.getStyle().setProperty("cursor", "url(" + Resources.INSTANCE.customCursor().getUrl() + ")");
-</pre>
+```
 
 Resources that are not appropriate for being inlined into the compiled JavaScript as `data:` URLs will be emitted into the compilation output with strong names, based on the contents of the file.  For example, `foo.pdf` will be given a name similar to `ABC1234.cache.pdf`.  The webserver should be configured to serve any files matching the `*.cache.*` glob with publicly-cacheable headers and a far-future `Expires` header.
 
@@ -133,7 +142,8 @@ Resources that are not appropriate for being inlined into the compiled JavaScrip
 
 The related resource types [TextResource](/javadoc/latest/index.html?com/google/gwt/resources/client/TextResource.html) and [ExternalTextResource](/javadoc/latest/index.html?com/google/gwt/resources/client/ExternalTextResource.html) provide access to static text content.  The main difference between these two types is that the former interns the text into the compiled JavaScript, while the latter bundles related text resources into a single file, which is accessed asynchronously.
 
-<pre class="prettyprint">interface Resources extends ClientBundle {
+```
+interface Resources extends ClientBundle {
   Resources INSTANCE = GWT.create(Resources.class);
 
   @Source("a.txt")
@@ -147,13 +157,13 @@ The related resource types [TextResource](/javadoc/latest/index.html?com/google/
 myTextArea.setInnerText(Resources.INSTANCE.synchronous().getText());
 
 // Using an ExternalTextResource
-Resources.INSTANCE.asynchronous().getText(new ResourceCallback&lt;TextResource&gt;() {
+Resources.INSTANCE.asynchronous().getText(new ResourceCallback<TextResource>() {
   public void onError(ResourceException e) { ... }
   public void onSuccess(TextResource r) {
     myTextArea.setInnerText(r.getText());
   }
 });
-</pre>
+```
 
 ## ImageResource<a id="ImageResource"></a>
 
@@ -179,21 +189,25 @@ This section describes how [ImageResource](/javadoc/latest/index.html?com/google
 For each accessor method, add an @Source annotation with the path of the new image you want to add to your program.
 The ClientBundle generator combines all of the images defined in your interface into a single, optimized image.
 
-<pre class="prettyprint">interface Resources extends ClientBundle {
+```
+interface Resources extends ClientBundle {
   @Source("logo.png")
   ImageResource logo();
 
   @Source("arrow.png")
   @ImageOptions(flipRtl = true)
   ImageResource pointer();
-}</pre>
+}
+```
 2.  Instantiate the `ClientBundle` via a call to `GWT.create()`. </li>
 3.  Instantiate one or more Image widget or use with the <a href="#Image_Sprites">CssResource @sprite</a> directive.
 
 For example, the code:
 
-<pre class="prettyprint">Resources resources = GWT.create(Resources.class);
-Image img = new Image(resources.logo());</pre>
+```
+Resources resources = GWT.create(Resources.class);
+Image img = new Image(resources.logo());
+```
 
 causes GWT to load the composite image generated for Resources and then creates an Image that is the correct subregion for just the logo image.</li>
 
@@ -223,22 +237,23 @@ Only minimal changes are required to convert existing code to use `ImageResource
 
 The [GwtCreateResource](/javadoc/latest/index.html?com/google/gwt/resources/client/GwtCreateResource.html) is a bridge type between `ClientBundle` and any other (resource) type that is default-instantiable. The instance of the `GwtCreateResource` acts as a factory for some other type.
 
-<pre class="prettyprint">interface Resources extends ClientBundle {
+```
+interface Resources extends ClientBundle {
   Resources INSTANCE = GWT.create(Resources.class);
 
   @ClassType(SomeClass.class)
-  GwtCreateResource&lt;ReturnType&gt; factory();
+  GwtCreateResource<ReturnType> factory();
 }
 
 // Elsewhere
 ReturnType obj = Resources.INSTANCE.factory().create();
-</pre>
+```
 
 While the above is equivalent to
 
-<pre class="prettyprint">
-ReturnType obj = GWT.&lt;ReturnType&gt; create(SomeClass.class);
-</pre>
+```
+ReturnType obj = GWT.<ReturnType> create(SomeClass.class);
+```
 
 it allows the consuming classes to be ignorant of the specific class literal passed into `GWT.create()`.  It is not necessary for there to be a specific deferred-binding rule in place for `SomeClass` as long as that type is default-instantiable.
 
@@ -277,11 +292,12 @@ See also the [CssResourceCookbook](#CssResourceCookbook) and [StyleInjector](/ja
 
 *   Primary
     *   Compatibility with non-GWT-aware CSS parsers (i.e. any extensions should be valid CSS syntax)
-        *   This does not imply that the stylesheet would necessarily make sense if you just displayed it in a browser
+    *   This does not imply that the stylesheet would necessarily make sense if you just displayed it in a browser
     *   Syntax validation
     *   Minification
     *   Leverage GWT compiler
-        *   Different CSS for different browsers, automatically*   Static evaluation of content
+        *   Different CSS for different browsers, automatically
+        *   Static evaluation of content
 *   Secondary
     *   Basic CSS Modularization
         *   Via dependency-injection API style
@@ -292,14 +308,14 @@ See also the [CssResourceCookbook](#CssResourceCookbook) and [StyleInjector](/ja
         *   Constants
         *   Simple expressions
 *   Tertiary
-        *   Runtime manipulation (StyleElement.setEnabled() handles many cases)
-        *   Compile-time class-name checking (Java/CSS)
-        *   Obfuscation
+    *   Runtime manipulation (StyleElement.setEnabled() handles many cases)
+    *   Compile-time class-name checking (Java/CSS)
+    *   Obfuscation
 
 #### Non-Goals
 
 *   Server-side manipulation
-        *   All features in CssResource must be implemented with compile-time and runtime code only.  No features may depend on runtime support from server-side code.
+    *   All features in CssResource must be implemented with compile-time and runtime code only.  No features may depend on runtime support from server-side code.
 
 ### Overview<a id="CssResource_Overview"></a>
 
@@ -307,18 +323,20 @@ See also the [CssResourceCookbook](#CssResourceCookbook) and [StyleInjector](/ja
 2.  If GWT-specific extensions are used, define a custom subtype of CssResource
 3.  Declare a method that returns CssResource or a subtype in an ClientBundle
 4.  When the bundle type is generated with `GWT.create()` a Java expression that evaluates to the contents of the stylesheets will be created
-        *   Except in the simplest case where the Java expression is a string literal, it is generally not the case that a CSS file could be generated into the module output
+    *   Except in the simplest case where the Java expression is a string literal, it is generally not the case that a CSS file could be generated into the module output
 5.  At runtime, call `CssResource.ensureInjected()` to inject the contents of the stylesheet
-        *   This method is safe to call multiple times, as subsequent invocations will be a no-op
-        *   The recommended pattern is to call `ensureInjected()` in the static initializer of your various widget types
+    *   This method is safe to call multiple times, as subsequent invocations will be a no-op
+    *   The recommended pattern is to call `ensureInjected()` in the static initializer of your various widget types
 
 ### Features<a id="Features"></a>
 
 #### Constants<a id="Constants"></a>
 
-<pre class="prettyprint">@def small 1px;
+```
+@def small 1px;
 @def black #000;
-border: small solid black;</pre>
+border: small solid black;
+```
 
 *   The parse rules make it difficult to use delimiting tokens for substitutions
 *   Redefining built-in sizes allows users to write plain CSS to draft a style and then tweak it.
@@ -326,24 +344,29 @@ border: small solid black;</pre>
 *   Any legal property value or expression may be used with `@def`
 *   `@def` rules that define a single numeric value may be accessed in a manner similar to obfuscated class names by defining an accessor method on the CssResource type that returns a primitive numeric value.
 
-<pre class="prettyprint">interface MyResources extends CssResource {
+```
+interface MyResources extends CssResource {
   int small();
-}</pre>
+}
+```
 
 *   Calling `small()` would return the value `1`.
 
 *   @def` rules can be accessed as a String as well.  You can retrieve the two definitions above with:
 
-<pre class="prettyprint">interface MyResources extends CssResource {
+```
+interface MyResources extends CssResource {
   String small();
   String black();
-}</pre>
+}
+```
 
 *   Calling `small()` returns "1px"
 *   Calling `black()` returns "#000"
 *   The Generator will not allow you to declare an `@def` rule with the same name as a class, unless you annotate method to retrieve the class with the `@ClassName` annotation.
 
-<pre class="prettyprint">@def myIdent 10px;
+```
+@def myIdent 10px;
 .myIdent {
   ...
 }
@@ -353,17 +376,20 @@ interface MyResources extends CssResource {
 
   @ClassName("myIdent")
   String myIdentClass();
-}</pre>
+}
+```
 
 *   Calling `myIdent()` returns @def value "10px"
 *   Calling `myIdentClass()` returns the obfuscated class name for .myIdent
 
 #### Runtime substitution<a id="Runtime_substitution"></a>
 
-<pre class="prettyprint">@eval userBackground com.module.UserPreferences.getUserBackground();
+```
+@eval userBackground com.module.UserPreferences.getUserBackground();
 div {
   background: userBackground;
-}</pre>
+}
+```
 
 *   Provides runtime support for evaluating static methods when the stylesheet is injected.  Triggered / dynamic updates could be added in the future if we allow programmatic manipulation of the style elements.
 
@@ -372,38 +398,46 @@ div {
 
 #### Value function<a id="Value_function"></a>
 
-<pre class="prettyprint">.myDiv {
+```
+
+.myDiv {
   offset-left: value('imageResource.getWidth', 'px');
-}</pre>
+}
+```
 
 *   The `value()` function takes a sequence of dot-separated identifiers and an optional suffix.  The identifiers are interpreted as zero-arg method invocations, using the interface passed to GWT.create() as the root namespace.  By only allowing zero-arg methods, there's no need to attempt to perform type checking in the Generator.  The only validation necessary is to ensure that the sequence of methods exists.  There may be arbitrarily many identifiers in the chain.
 *   The `value()` function may be combined with `@def`
 
-<pre class="prettyprint">@def SPRITE_WIDTH value('imageResource.getWidth', 'px')
+```
+@def SPRITE_WIDTH value('imageResource.getWidth', 'px')
 
 .selector {
   width: SPRITE_WIDTH;
-}</pre>
+}
+```
 
 #### Literal function<a id="Literal_function"></a>
 
 Some user agents make use of property values that do not conform to the CSS grammar. The `literal()` function exists to allow these non-standard property values to be used.
 
-<pre class="prettyprint">div-with-literal {
+```
+div-with-literal {
   top: literal("expression(document.compatMode==\"CSS1Compat\" ? documentElement.scrollTop : document.body.scrollTop \\ 2)");
-}</pre>
+}
+```
 
 Note that it is necessary to escape the backslash (`\`) and double-quote (`"`) characters.
 
 #### Conditional CSS<a id="Conditional_CSS"></a>
 
-<pre class="prettyprint">/* Runtime evaluation in a static context */
+```
+/* Runtime evaluation in a static context */
 @if (com.module.Foo.staticBooleanFunction()) {
   ... css rules ...
 }
 
 /* Compile-time evaluation */
-@if &lt;deferred-binding-property&gt; &lt;space-separated list of values&gt; {
+@if <deferred-binding-property> <space-separated list of values> {
   ... css rules ...
 }
 @if user.agent safari gecko1_8 { ... }
@@ -418,7 +452,8 @@ Note that it is necessary to escape the backslash (`\`) and double-quote (`"`) c
 @if (true) {
 } @elif (false) {
 } @else {
-}</pre>
+}
+```
 
 *   This allows for more advanced skinning / theming / browser quirk handling by allowing for structural changes in the CSS.
 *   The contents of an @if block can be anything that would be a top-level rule in a CSS stylesheet.
@@ -428,7 +463,9 @@ Note that it is necessary to escape the backslash (`\`) and double-quote (`"`) c
 
 #### Image Sprites<a id="Image_Sprites"></a>
 
-<pre class="prettyprint">@sprite .mySpriteClass {gwt-image: "imageAccessor"; other: property;} =&gt; generates =&gt;
+```
+
+@sprite .mySpriteClass {gwt-image: "imageAccessor"; other: property;} => generates =>
 
   .mySpriteClass {
     background-image: url(gen.png);
@@ -436,9 +473,11 @@ Note that it is necessary to escape the backslash (`\`) and double-quote (`"`) c
     width: 27px;
     height: 42px;
     other: property;
-  }</pre>
+  }
+```
 
-<pre class="prettyprint">interface MyCssResource extends CssResource {
+```
+interface MyCssResource extends CssResource {
   String mySpriteClass();
 }
 
@@ -452,7 +491,8 @@ class MyResources extends ClientBundle {
   @Source("some.png")
   @ImageOptions(repeatStyle=RepeatStyle.Horizontal)
   ImageResource repeatingImage();
-}</pre>
+}
+```
 
 *   @sprite is sensitive to the FooBundle in which the CSSResource is declared; a sibling [ImageResource](/javadoc/latest/index.html?com/google/gwt/resources/client/ImageResource.html) method named in the @sprite declaration will be used to compose the background sprite.
 *   @sprite entries will be expanded to static CSS rules, possibly with data: urls.
@@ -462,20 +502,24 @@ class MyResources extends ClientBundle {
 
 #### References to Data Resources<a id="References_to_Data_Resources"></a>
 
-<pre class="prettyprint">/* @url &lt;constant name&gt; &lt;DataResource method name&gt; */
+```
+/* @url <constant name> <DataResource method name> */
 @url myCursorUrl fancyCursorResource;
 
 .myClass {
   cursor: myCursorUrl, pointer;
-}</pre>
+}
+```
 
-<pre class="prettyprint">interface MyResources extends ClientBundle {
+```
+interface MyResources extends ClientBundle {
   @Source("myCursor.cur")
   DataResource fancyCursorResource();
 
   @Source("my.css")
   CssResource css();
-}</pre>
+}
+```
 
 *   The identifier will be expanded to `url('some_url')` based on the return value of `DataResource.getUrl()`.
 
@@ -493,37 +537,47 @@ class MyResources extends ClientBundle {
     *   When the cursor property has an `resize` value, it will be flipped: `ne-resize` becomes `nw-resize`
 *   Sections of CSS can be exempted from automatic flipping by enclosing it in a `@noflip` block:
 
-<pre class="prettyprint">@noflip {
+```
+@noflip {
   .selector {
     left: 10;
   }
-}</pre>
+}
+```
 
 *   A `background` property value that uses pixel-based offsets, such as `background-position: 4px 10px;` will not be transformed automatically.
     *   The four-valued CSS3 `background-position` property will be automatically flipped by the RTL support
 
-    <pre class="prettyprint">background-position: left 4px top 10px;</pre>
+```
+background-position: left 4px top 10px;
+```
 
     *   For CSS2 browsers, it will be necessary to use an `@sprite` rule:
 
-    <pre class="prettyprint">@sprite .bgImage {
+```
+@sprite .bgImage {
         gwt-image: 'background-image';
         position: absolute;
         left: 4px;
         top: 10px;
-    }</pre>
+    }
+```
 
 *   `ImageResources` can be automatically flipped in RTL contexts via the use of the `@ImageOptions` annotation:
 
-<pre class="prettyprint">@Source("icon128.png")
+```
+@Source("icon128.png")
 @ImageOptions(flipRtl = true)
-ImageResource logo();</pre>
+ImageResource logo();
+```
 
 *   [Current auto-RTL test cases](https://gwt.googlesource.com/gwt/+/master/user/test/com/google/gwt/resources/rg)
 
 #### Selector obfuscation<a id="Selector_obfuscation"></a>
 
-<pre class="prettyprint">java:
+```
+
+java:
     class Resources {
       MyCSSResource myCSSResource();
     }
@@ -539,55 +593,69 @@ css:
     .someOtherClass {
       /* ... */
     }
-    .hookClass{} /* Empty and stripped, but left for future expansion */</pre>
+    .hookClass{} /* Empty and stripped, but left for future expansion */
+```
 
 *   The function just returns the CSS class name, but verifies that the CSS class exists in the stylesheet.
 *   Accessing class names through the interface ensures that there can be no typos in code that consumes the `CssResource`.
 *   For obfuscation, we'll use a Adler32 checksum of the source css file expressed in base36 as a prefix (7 chars). The developer can override this with the `CssResource.obfuscationPrefix` deferred-binding property.
 
-*   `&lt;set-configuration-property name="CssResource.obfuscationPrefix" value="empty" /&gt;` can be used for minimal-length selector names, but this is only recommended when the GWT module has total control over the page.
+*   `<set-configuration-property name="CssResource.obfuscationPrefix" value="empty" />` can be used for minimal-length selector names, but this is only recommended when the GWT module has total control over the page.
 *   The `@external` at-rule can be used to selectively disable obfuscation for named selectors; see [external and legacy scopes](#External_and_legacy_scopes) for additional detail.
 
 ### Optimizations<a id="Optimizations"></a>
 
 #### Basic minification<a id="Basic_minification"></a>
 
-Basic minification of the CSS input results in the minimum number of bytes required to retain the original structure of the input.  In general, this means that comments, unnecessary whitespace, and empty rules are removed. 
+Basic minification of the CSS input results in the minimum number of bytes required to retain the original structure of the input.  In general, this means that comments, unnecessary whitespace, and empty rules are removed.
 
-<pre class="prettyprint">.div {
+```
+.div {
   /* This is the default background color */
   background: blue;
 }
-.empty {}</pre>
+.empty {}
+```
 
-would be transformed into 
+would be transformed into
 
-<pre class="prettyprint">.div{background:blue;}</pre>
+```
+
+.div{background:blue;}
+```
 
 #### Selector merging<a id="Selector_merging"></a>
 
-Rules with identical selectors can be merged together. 
+Rules with identical selectors can be merged together.
 
-<pre class="prettyprint">.div {prop: value;}
-.div {foo: bar;}</pre>
+```
+.div {prop: value;}
+.div {foo: bar;}
+```
 
-becomes 
+becomes
 
-<pre class="prettyprint">.div {prop:value;foo:bar;} </pre>
+```
+
+.div {prop:value;foo:bar;}
+```
 
 However, it is necessary that the original semantic ordering of the properties within the CSS is preserved.  To ensure that all selector merges are correct, we impose the restriction that <strong>no rule can be promoted over another if the two rules define a common property</strong>.  We consider `border` and `border-top` to be equivalent properties, however `padding-left` and `padding-right` are not equivalent.
 
-Thus 
+Thus
 
-<pre class="prettyprint">.a {background: green;}
+```
+.a {background: green;}
 .b {border: thin solid blue;}
-.a {border-top: thin solid red;}</pre>
+.a {border-top: thin solid red;}
+```
 
 cannot be merged because an element whose CSS class matches both `.a` and `.b` would be rendered differently based on the exactly order of the CSS rules.
 
 When working with `@if` statements, it is preferable to work with the form that operates on deferred-binding properties because the CSS compiler can evaluate these rules statically, before the merge optimizations.  Consider the following:
 
-<pre class="prettyprint">.a {
+```
+.a {
   background: red;
 }
 
@@ -599,20 +667,25 @@ When working with `@if` statements, it is preferable to work with the form that 
   .a {
     background: url('picture_of_border.png');
   }
-}</pre>
+}
+```
 
 In the safari permutation, the rule becomes `.a{background:red;\-webkit-border-radius:5px;}` while in other permutations, the `background` property is merged.
 
 #### Property merging<a id="Property_merging"></a>
 
-Rules with identical properties can be merged together. 
+Rules with identical properties can be merged together.
 
-<pre class="prettyprint">.a {background: blue;}
-.b {background: blue;}</pre>
+```
+.a {background: blue;}
+.b {background: blue;}
+```
 
-can be transformed into 
+can be transformed into
 
-<pre class="prettyprint">.a,.b{background:blue;}</pre>
+```
+.a,.b{background:blue;}
+```
 
 Promotion of rules follows the previously-established rule of not promoting a rule over other rules with common properties.
 
@@ -628,7 +701,8 @@ Promotion of rules follows the previously-established rule of not promoting a ru
 
 In the normal case, any class selectors that do not match String accessor functions is an error.  This behavior can be disabled by adding a `@NotStrict` annotation to the CSS accessor method.  Enabling `@NotStrict` behavior is only recommended for applications that are transitioning from external CSS files to `CssResource`.
 
-<pre class="prettyprint">interface MyCssResource extends CssResource {
+```
+interface MyCssResource extends CssResource {
   String foo();
 }
 
@@ -636,19 +710,23 @@ interface Resources {
   @Source("my.css")
   @CssResource.NotStrict
   MyCssResource css();
-}</pre>
+}
+```
 
-<pre class="prettyprint">/* This is ok */
+```
+/* This is ok */
 .foo {}
 
 /* This would normally generate a compile error in strict mode */
-.other {}</pre>
+.other {}
+```
 
 #### Scope<a id="Scope"></a>
 
 Scoping of obfuscated class names is defined by the return type of the `CssResource` accessor method in the resource bundle.  Each distinct return type will return a wholly separate collection of values for String accessor methods.
 
-<pre class="prettyprint">interface A extends CssResource {
+```
+interface A extends CssResource {
   String foo();
 }
 
@@ -670,7 +748,8 @@ interface Resources {
   B b();
   C c();
   D d();
-  D d2();</pre>
+  D d2();
+```
 
 It will be true that a().foo() != b().foo() != c().foo() != d().foo().  However, a().foo() == a2().foo() and d().foo() == d2().foo(). 
 
@@ -678,8 +757,7 @@ It will be true that a().foo() != b().foo() != c().foo() != d().foo().  However,
 
 In the case of "stateful" CSS classes like `focused` or `enabled`, it is convenient to allow for certain String accessor functions to return the same value, regardless of the `CssResource` type returned from the accessor method.
 
-<pre class="prettyprint">
-
+```
 @Shared
 interface FocusCss extends CssResource {
   String focused();
@@ -703,7 +781,8 @@ interface Resources {
   B b();
   C c();
   FocusCss f();
-}</pre>
+}
+```
 
 In this example, a().focused() == b().focused() == c().focused == f().focused().  However, a().widget() != b().widget != c.widget(), as in the previous example.
 
@@ -713,7 +792,8 @@ The short version is that if distinct CSS types need to share obfuscated class n
 
 The Java type system can be somewhat ambiguous when it comes to multiple inheritance of interfaces that define methods with identical signatures, although there exist a number of cases where it is necessary to refer to multiple, unrelated `CssResource` types.  Consider the case of a Tree that contains Checkboxes.
 
-<pre class="prettyprint">@ImportedWithPrefix("tree")
+```
+@ImportedWithPrefix("tree")
 interface TreeCss extends CssResource {
   String widget();
 }
@@ -730,16 +810,19 @@ interface MyCss extends CssResource {
 interface Resources extends ClientBundle {
   @Import({TreeCss.class, CbCss.class})
   MyCss css();
-}</pre>
+}
+```
 
-<pre class="prettyprint">/* Now we can write a descendant selector using the prefixes defined on the CssResource types */
+```
+/* Now we can write a descendant selector using the prefixes defined on the CssResource types */
 .tree-widget .checkbox-widget {
   color: red;
 }
 
 .other {
   something: else;
-}</pre>
+}
+```
 
 Composing a "TreeCbCss" interface would be insufficient because consumers of the TreeCss interface and CbCss interface would receive the same value from the widget method.  Moreover, the use of just `.widget` in the associated CSS file would also be insufficient without the use of some kind of class selector prefix.  The prefix is defined on the `CssResource` type (instead of on the `CssResource` accessor method) In the interest of uniformity across all CSS files that import a given scope.  It is a compile-time error to import multiple classes that have the same prefix or simple name.
 
@@ -749,7 +832,8 @@ The case of shared scopes could be handled solely with importing scopes, however
 
 This is a use-case that is currently impossible to style correctly in GWT.
 
-<pre class="prettyprint">// Assume this interface is provided by the UI library
+```
+// Assume this interface is provided by the UI library
 interface StackPanelCss extends CssResource {
   String widget();
   // and many more class names
@@ -773,28 +857,34 @@ interface Resources {
   @Import(StackPanelInner.class)
   @Source("stackPanel.css", "outer.css")
   StackPanelOuter outer();
-}</pre>
+}
+```
 
 The file `stackPanel.css` defines the basic structure of any given stackPanel:
 
-<pre class="prettyprint">.widget .title {}
+```
+.widget .title {}
 .widget .content {}
-/* Other stuff to make a StackPanel work */</pre>
+/* Other stuff to make a StackPanel work */
+```
 
 The `outer()` method can continue to use the base `stackPanel.css` file, because the accessor methods defined in `StackPanelCss` are mapped into the default (no-prefix) namespace.  The inner StackPanel's style members are also available, but in the `inner` prefix.  Here's what `outer.css` might contain:
 
-<pre class="prettyprint">.widget {color: red;}
+```
+.widget {color: red;}
 
 .inner-widget {
   color: blue;
   font-size: smaller;
-}</pre>
+}
+```
 
 External and legacy scopes<a id="External_and_legacy_scopes"></a>
 
 In many cases, newly-developed CSS will need to be combined with external or legacy CSS. The `@external` at-rule can be used to suppress selector obfuscation while still allowing programmatic access to the selector name.
 
-<pre class="prettyprint">interface MyCssResource extends CssResource {
+```
+interface MyCssResource extends CssResource {
   String obfuscated();
   String legacySelectorA();
 }
@@ -802,11 +892,14 @@ In many cases, newly-developed CSS will need to be combined with external or leg
 interface Resource extends ClientBundle {
   @Source("my.css")
   MyCssResource css();
-}</pre>
+}
+```
 
-<pre class="prettyprint">@external legacySelectorA, legacySelectorB;
+```
+@external legacySelectorA, legacySelectorB;
 .obfuscated .legacySelectorA { .... }
-.obfuscated .legacySelectorB { .... }</pre>
+.obfuscated .legacySelectorB { .... }
+```
 
 In the above example, the `.obfuscated` class selector will be obfuscated, and the `obfuscated()` method will return the replaced name. Neither of the legacy selectors will be obfuscated and the `legacySelectorA()` method will return the unobfuscated value.  Furthermore, because the `legacySelectorB` is explicitly defined in the `@external` declaration, the inaccessible class name will not trigger an error.
 
@@ -814,8 +907,10 @@ In the above example, the `.obfuscated` class selector will be obfuscated, and t
 
 A utility is included in the GWT distribution which will analyze a `CssResource`-compatible CSS file and create a corresponding Java interface for accessing the classnames used in the file.
 
-<pre class="prettyprint">java -cp gwt-dev.jar:gwt-user.jar com.google.gwt.resources.css.InterfaceGenerator \
-  -standalone -typeName some.package.MyCssResource -css input.css</pre>
+```
+java -cp gwt-dev.jar:gwt-user.jar com.google.gwt.resources.css.InterfaceGenerator \
+  -standalone -typeName some.package.MyCssResource -css input.css
+```
 
 The generated interface will be emitted to `System.out`. The `-standalone` option will add the necessary `package` and `import` statements to the output so that it can be used as part of a build process.
 
@@ -825,7 +920,8 @@ This section contains examples showing how to use [CssResource](#CssResource).
 
 ### Browser-specific css<a id="Browser-specific_css"></a>
 
-<pre class="prettyprint">.foo {
+```
+.foo {
   background: green;
 }
 
@@ -842,53 +938,64 @@ This section contains examples showing how to use [CssResource](#CssResource).
   .foo {
     font-size: x-large;
   }
-}</pre>
+}
+```
 
 
 ### Obfuscated CSS class names<a id="Obfuscated_CSS_class_names"></a>
 
 `CssResource` will use method names as CSS class names to obfuscate at runtime.
 
-<pre class="prettyprint">interface MyCss extends CssResource {
+```
+interface MyCss extends CssResource {
   String className();
 }
 
 interface MyResources extends ClientBundle {
   @Source("my.css")
   MyCss css();
-}</pre>
+}
+```
 
 All instances of a selector with `.className` will be replaced with an obfuscated symbol when the CSS is compiled.  To use the obfuscated name:
 
-<pre class="prettyprint">MyResources resources = GWT.create(MyResources.class);
+```
+MyResources resources = GWT.create(MyResources.class);
 Label l = new Label("Some text");
-l.addStyleName(resources.css().className());</pre>
+l.addStyleName(resources.css().className());
+```
 
 If you have class names in your css file that are not legal Java identifiers, you can use the `@ClassName` annotation on the accessor method:
 
-<pre class="prettyprint">interface MyCss extends CssResource {
+```
+interface MyCss extends CssResource {
   @ClassName("some-other-name")
   String someOtherName();
-}</pre>
+}
+```
 
 
 ### Background images / Sprites<a id="Background_images_/_Sprites"></a>
 
 `CssResource` reuses the `ImageResource` bundling techniques and applies them to CSS background images.  This is generally known as "spriting" and a special `@sprite` rule is used in `CssResource`.
 
-<pre class="prettyprint">interface MyResources extends ClientBundle {
+```
+interface MyResources extends ClientBundle {
   @Source("image.png")
   ImageResource image();
 
   @Source("my.css");
   CssResource css();
-}</pre>
+}
+```
 
 In `my.css`, sprites are defined using the `@sprite` keyword, followed by an arbitrary CSS selector, and the rule block must include a `gwt-image` property.  The `gwt-image` property should name the `ImageResource` accessor function.
 
-<pre class="prettyprint">@sprite .myImage {
+```
+@sprite .myImage {
   gwt-image: 'image';
-}</pre>
+}
+```
 
 The elements that match the given selection will display the named image and have their heights and widths automatically set to that of the image.
 
@@ -896,11 +1003,13 @@ The elements that match the given selection will display the named image and hav
 
 If the `ImageResource` is decorated with an `@ImageOptions` annotation, the source image can be tiled along the X- or Y-axis.  This allows you to use 1-pixel wide (or tall) images to define borders, while still taking advantage of the image bundling optimizations afforded by `ImageResource`.
 
-<pre class="prettyprint">interface MyResources extends ClientBundle {
+```
+interface MyResources extends ClientBundle {
   @ImageOptions(repeatStyle = RepeatStyle.Horizontal)
   @Source("image.png")
   ImageResource image();
-}</pre>
+}
+```
 
 The elements that match the `@sprite`'s selector will only have their height or width set, based on the direction in which the image is to be repeated.
 
@@ -908,7 +1017,8 @@ The elements that match the `@sprite`'s selector will only have their height or 
 
 In order to make the content area of a 9-box have the correct size, the height and widths of the border images must be taken into account.  Instead of hard-coding the image widths into your CSS file, you can use the `value()` CSS function to insert the height or width from the associated `ImageResource`.
 
-<pre class="prettyprint">  public interface Resources extends ClientBundle {
+```
+public interface Resources extends ClientBundle {
     Resources INSTANCE = GWT.create(Resources.class);
 
     @Source("bt.png")
@@ -941,9 +1051,11 @@ In order to make the content area of a 9-box have the correct size, the height a
 
     @Source("tbr.png")
     ImageResource topRightBorder();
-  }</pre>
+  }
+```
 
-<pre class="prettyprint">.contentArea {
+```
+.contentArea {
   padding: value('topBorder.getHeight', 'px') value('rightBorder.getWidth', 'px')
       value('bottomBorder.getHeight', 'px') value('leftBorder.getWidth', 'px');
 }
@@ -1006,17 +1118,20 @@ In order to make the content area of a 9-box have the correct size, the height a
   top: 0;
   right: 0;
   height: 100%;
-}</pre>
+}
+```
 
-<pre class="prettyprint">&lt;div class="contentArea"&gt;
+```
+<div class="contentArea">
 
-&lt;div class="contentAreaTopLeftBorder"&gt;&lt;/div&gt;
-&lt;div class="contentAreaTopBorder"&gt;&lt;/div&gt;
-&lt;div class="contentAreaTopRightBorder"&gt;&lt;/div&gt;
-&lt;div class="contentAreaBottomLeftBorder"&gt;&lt;/div&gt;
-&lt;div class="contentAreaBottomBorder"&gt;&lt;/div&gt;
+<div class="contentAreaTopLeftBorder"></div>
+<div class="contentAreaTopBorder"></div>
+<div class="contentAreaTopRightBorder"></div>
+<div class="contentAreaBottomLeftBorder"></div>
+<div class="contentAreaBottomBorder"></div>
 
-&lt;div class="contentAreaBottomRightBorder"&gt;&lt;/div&gt;
-&lt;div class="contentAreaLeftBorder"&gt;&lt;/div&gt;
-&lt;div class="contentAreaRightBorder"&gt;&lt;/div&gt;
-&lt;/div&gt;</pre>
+<div class="contentAreaBottomRightBorder"></div>
+<div class="contentAreaLeftBorder"></div>
+<div class="contentAreaRightBorder"></div>
+</div>
+```

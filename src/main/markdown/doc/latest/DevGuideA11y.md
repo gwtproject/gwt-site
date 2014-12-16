@@ -44,7 +44,7 @@ Adding accessibility support to GWT widgets involves adding the relevant propert
 
 An ARIA `role` attribute is added to HTML elements to define widgets and page structure elements that can be interpreted by a reader application/device, and therefore describes the way the widget should behave. A role is static and does not change over the lifetime of a widget. Some examples of ARIA roles: `tree`, `menubar`, `menuitem`, and `tab`. The ARIA role of a widget is expressed as a DOM attribute named `role` with its value set to one of the ARIA role strings.
 
-There are also ARIA properties and states. ARIA states supply information about the changes in the web page that can be used for alerts, notification, navigation assistance. The state is changed as a result of an user interaction and developers should consider changing the widget state when handling user actions. For example, a checkbox widget could be in the states &quot;checked&quot; or &quot;unchecked&quot;. A state is dynamic and should be updated during user interaction. Some examples of ARIA states: `aria-disabled`, `aria-pressed` and `aria-expanded`. An ARIA property is a characteristic feature of a widget that can change over time but more rarely than the ARIA state, and is often not changed as a result of user action. Examples of properties are `aria-haspopup`, `aria-label` and `aria-level`, which are semantic information about the interactivity between the page layout and a particular widget. ARIA states and properties are DOM attributes themselves &mdash; for example, to express that a toggle button widget has been pressed, we need to add the attribute `aria-pressed = 'true'` to the widgets HTML element. As another example,  a textarea widget that has a popup attached when in focus will have the attribute `aria-haspopup = 'true'`.
+There are also ARIA properties and states. ARIA states supply information about the changes in the web page that can be used for alerts, notification, navigation assistance. The state is changed as a result of an user interaction and developers should consider changing the widget state when handling user actions. For example, a checkbox widget could be in the states "checked" or "unchecked". A state is dynamic and should be updated during user interaction. Some examples of ARIA states: `aria-disabled`, `aria-pressed` and `aria-expanded`. An ARIA property is a characteristic feature of a widget that can change over time but more rarely than the ARIA state, and is often not changed as a result of user action. Examples of properties are `aria-haspopup`, `aria-label` and `aria-level`, which are semantic information about the interactivity between the page layout and a particular widget. ARIA states and properties are DOM attributes themselves &mdash; for example, to express that a toggle button widget has been pressed, we need to add the attribute `aria-pressed = 'true'` to the widgets HTML element. As another example,  a textarea widget that has a popup attached when in focus will have the attribute `aria-haspopup = 'true'`.
 
 The role of a widget determines the set of states and properties that it supports. A widget with the role of `list`, for example, would not expose the `aria-pressed` state but will have the `aria-expanded` state.
 
@@ -93,14 +93,14 @@ The following is an example taken from the <a href="/javadoc/latest/com/google/g
 Adding the `button` role indicates to an assistive technology that the widget will behave like a
 button.
 
-<pre class="prettyprint">
-  protected CustomButton() {
+```
+protected CustomButton() {
     ...
     // Add a11y role "button"
     Roles.getButtonRole().set(getElement());
     ...
   }
-</pre>
+```
 
 ## Adding ARIA Properties and States<a id="ariaPropertiesAndStates"></a>
 
@@ -128,14 +128,14 @@ Once a specific ARIA role has been associated with a widget, it is important to 
 
 In the CustomButton widget, the `aria-pressed` and `aria-disabled` ARIA state is initialized as follows:
 
-<pre class="prettyprint">
-  protected CustomButton() {
+```
+protected CustomButton() {
     ...
-    // Add a11y state &quot;aria-pressed&quot; and &quot;aria-disabled&quot;
+    // Add a11y state "aria-pressed" and "aria-disabled"
     Roles.getButtonRole().setAriaPressedState(getElement(), PressedValue.of(false));
     Roles.getButtonRole().setAriaDiabledState(getElement(), false);
   }
-</pre>
+```
 
 #### Updating States During User Interaction
 
@@ -144,28 +144,27 @@ The [CustomButton](/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.ht
 the case with the CustomButton subclass [ToggleButton](/javadoc/latest/com/google/gwt/user/client/ui/ToggleButton.html). Event handlers attached
 to the underlying DOM element update the button faces when the button is pressed. We need to toggle the ARIA state `aria-pressed` as shown below.
 
-<pre class="prettyprint">
-  void toggleDown() {
-    // Update a11y state &quot;aria-pressed&quot;
+```
+void toggleDown() {
+    // Update a11y state "aria-pressed"
     Roles.getButtonRole().setAriaPressedState(getElement(), PressedValue.of(true));
   }
 
   void toggleUp() {
-    // Update a11y state &quot;aria-pressed&quot;
+    // Update a11y state "aria-pressed"
     Roles.getButtonRole().setAriaPressedState(getElement(), PressedValue.of(false));
   }
 
   void setInactive() {
-    // Update a11y state &quot;aria-disabled&quot;
+    // Update a11y state "aria-disabled"
     Roles.getButtonRole().setAriaDiabledState(getElement(), false);
   }
 
   void setActive() {
-    // Update a11y state &quot;aria-disabled&quot;
+    // Update a11y state "aria-disabled"
     Roles.getButtonRole().setAriaDiabledState(getElement(), true);
   }
-
-</pre>
+```
 
 It is important to make sure that all event handlers that change the state of the widget also change the ARIA state.
 
@@ -187,12 +186,12 @@ enable them to receive keyboard focus. Setting `tabIndex = -1`, while removing t
 still allows the element to receive keyboard focus programmatically. Tabindex support can be added for any role by
 setting the `tabindex` ARIA attribute. The code below shows how to add the heading element to the natural tab
 order of the page.  You might want to do this if you want to allow further interaction with the heading (e.g. for some type of
-clickable heading). 
+clickable heading).
 
-<pre class="prettyprint">
-  // Set tab index for a heading element
+```
+// Set tab index for a heading element
   Roles.getHeadingRole().setTabindexExtraAttribute(heading.getElement(), 0);
-</pre>
+```
 
 In GWT, any widget that extends the [FocusWidget](/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html) abstract class will be keyboard focusable by default. The FocusWidget abstract class includes a
 [setFocus(boolean)](/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html#setFocus(boolean)) method that
@@ -224,8 +223,8 @@ widgets.
 
 First, we set roles on the Tree's root element and its focusable element:
 
-<pre class="prettyprint">
-  // Called from Tree(...) constructor
+```
+// Called from Tree(...) constructor
   private void init(TreeImages images, boolean useLeafImages) {
 
     ...
@@ -241,7 +240,7 @@ First, we set roles on the Tree's root element and its focusable element:
     ...
 
     // Hide element and append it to root div
-    DOM.setIntStyleAttribute(focusable, &quot;zIndex&quot;, -1);
+    DOM.setIntStyleAttribute(focusable, "zIndex", -1);
     DOM.appendChild(getElement(), focusable);
 
     // Listen for key events on the root element
@@ -252,12 +251,12 @@ First, we set roles on the Tree's root element and its focusable element:
     // Add a11y role "tree" to the focusable element
     Roles.getTreeRole().set(focusable);
  }
-</pre>
+```
 
 Whenever an item selection changes, the value of the `aria-activedescendant` property is set on the focusable element, and the ARIA states and properties of the currently-selected item are set:
 
-<pre class="prettyprint">
-  // Called after a new item has been selected
+```
+// Called after a new item has been selected
   private void updateAriaAttributes() {
 
     // Get the element which contains the text (or widget) content within
@@ -279,7 +278,7 @@ Whenever an item selection changes, the value of the `aria-activedescendant` pro
     Roles.getTreeRole().setAriaActivedescendantProperty(focusable,
         IdReference.of(DOM.getElementAttribute(curSelectionContentElem, "id")));
   }
-</pre>
+```
 
 Though it is not shown in this code snippet, when TreeItems are created, they are constructed out of several divs, only one of which contains the content that we wish to be
 interpreted by the screen reader. This div is assigned a unique DOM id (which is generated using the [DOM.createUniqueId()](/javadoc/latest/com/google/gwt/user/client/DOM.html#createUniqueId()) method), and a role of `treeitem`. These attributes are not set on the root TreeItem div because it contains a child image, which we do not want to be read.
@@ -316,44 +315,44 @@ how to implement this technique for an auto-complete widget:
 
 The ARIA role `region` is added when instantiating the relevant DOM nodes in the AutoCompleteWidget constructor:
 
-<pre class="prettyprint">
-  public AutoCompleteWidget() {
+```
+public AutoCompleteWidget() {
     ...
     // Create a hidden div where we store the current item text for a
     // screen reader to speak
     ariaElement = DOM.createDiv();
-    DOM.setStyleAttribute(ariaElement, &quot;display&quot;, &quot;none&quot;);
+    DOM.setStyleAttribute(ariaElement, "display", "none");
     Roles.getRegionRole(ariaElement);
     Roles.getRegionRole().getAriaLiveProperty(ariaElement, LiveValue.ASSERTIVE);
     DOM.appendChild(getElement(), ariaElement);
   }
-</pre>
+```
 
 Here, we have created a hidden div element that holds the content to be spoken. We've declared it to have `role = 'region'` and `live = 'assertive'`; the latter setting specifies that updates to this content have the highest priority. Next, we set up the needed associations so that the set of suggestions returned as the user types into the AutoCompleteWidget's text box are put in hidden div:
 
-<pre class="prettyprint">
-    // This method is called via a keyboard event handler
+```
+// This method is called via a keyboard event handler
     private void showSuggestions(Collection suggestions) {
-      if (suggestions.size() &gt; 0) {
+      if (suggestions.size() > 0) {
 
         // Popupulate the visible suggestion pop-up widget with the new selections
         // and show them
         ....
         // Generate the hidden div content based on the suggestions
-        String hiddenDivText = &quot;Suggestions &quot;;
+        String hiddenDivText = "Suggestions ";
 
         for (Suggestion curSuggestion : suggestions) {
-          hiddenDivText += &quot; &quot; + curSuggestion.getDisplayString();
+          hiddenDivText += " " + curSuggestion.getDisplayString();
         }
 
         DOM.setInnerText(ariaElement, hiddenDivText);
       }
     }
-</pre>
+```
 
 #### Problems with this Approach
 
-With this technique, the developer has complete control over the text that is spoken by the screen reader. While this seems like a good thing for the developer, it's not great for users of screen readers. Taking this approach, developers of AutoComplete widgets may decide on different text that the screen reader should read. For example, another screen reader might prefix each suggestion with the &quot;Suggestion x&quot;, where x is the index of the suggestion in the list. This leads to an inconsistent experience across applications. If both developers were able to make use of ARIA roles, properties and states, then a more consistent experience would result, in accordance with the ARIA specification.
+With this technique, the developer has complete control over the text that is spoken by the screen reader. While this seems like a good thing for the developer, it's not great for users of screen readers. Taking this approach, developers of AutoComplete widgets may decide on different text that the screen reader should read. For example, another screen reader might prefix each suggestion with the "Suggestion x", where x is the index of the suggestion in the list. This leads to an inconsistent experience across applications. If both developers were able to make use of ARIA roles, properties and states, then a more consistent experience would result, in accordance with the ARIA specification.
 
 A more direct problem with this approach is internationalization. Most developers would realize that the list of suggestions needs to be translated into different languages;
 this list is directly displayed on the screen. However, the word 'Suggestions', which is the first word on the live region, could easily be missed, since it is never visually
