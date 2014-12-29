@@ -674,7 +674,7 @@ Therefore, if your project counts many Hibernate objects that need to be transfe
 
 The first principle to Gilead is the automatic replacement of uninitialized proxies by null and persistent collections by basic collections present in the emulated JRE. These replacements are both done without requiring any specific mappings to be defined. Gilead also stores the information necessary to recreate the Hibernate proxy or persistent collection in either the server-side object or the cloned object, making it possible to recreate these objects without needing to make calls to the database.
 
-<div class="screenshot" align="center" width="80%">![img](../images/gilead_diagram.png)</div>
+![img](../images/gilead_diagram.png)
 
 Gilead also provides a dedicated adapter for Hibernate and GWT to make their integration painless.
 
