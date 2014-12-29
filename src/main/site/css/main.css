@@ -229,7 +229,7 @@ body {
 
 #gwt-footer {
   clear: both;
-  padding-top: 20px 0;
+  padding: 10px 0;
   background-color: #d5f0f6;
   border-bottom: 10px solid #606060;
   position: absolute;
