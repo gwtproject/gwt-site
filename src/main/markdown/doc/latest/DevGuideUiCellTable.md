@@ -17,7 +17,7 @@ before continuing.
 ## Column Sorting<a id="columnSorting"></a>
 
 CellTable has built-in support for column sorting. Use
-[Column.setSortable(boolean)](/javadoc/latest/com/google/gwt/user/cellview/client/Column.html#setSortable(boolean))
+[Column.setSortable(boolean)](/javadoc/latest/com/google/gwt/user/cellview/client/Column.html#setSortable\(boolean\))
 to make a column sortable. Users will then be able to click on the column header and trigger a
 [ColumnSortEvent](/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.html).
 How you handle the event depends on how you push data into your CellTable.
@@ -128,7 +128,7 @@ GWT provides a default implementation of
 [ColumnSortEvent.Handler](/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.Handler.html)
 called [ColumnSortEvent.AsyncHandler](/javadoc/latest/com/google/gwt/user/cellview/client/ColumnSortEvent.AsyncHandler.html)
 that helps with asynchronous (server-side) column sorting. When the user sorts a Column, AsyncHandler calls
-[HasData.setVisibleRangeAndClearData(Range, boolean)](/javadoc/latest/com/google/gwt/view/client/HasData.html#setVisibleRangeAndClearData(Range, boolean)),
+[HasData.setVisibleRangeAndClearData(Range, boolean)](/javadoc/latest/com/google/gwt/view/client/HasData.html#setVisibleRangeAndClearData\(Range, boolean\)),
 which triggers a RangeChangeEvent to the AsyncDataProvider.
 
 **Code Example** - The example below adds column sorting support to a CellTable backed by an AsyncDataProvider.
@@ -257,7 +257,7 @@ if the content changes due to paging or user interaction, the columns might chan
 provides an API that gives you fine grain control of how the available width is distributed between columns.
 
 In order to gain fine-grain control over the width of columns, you must set the table layout to "fixed" by passing `true` into
-[CellTable.setWidth(String, boolean)](/javadoc/latest/com/google/gwt/user/cellview/client/CellTable.html#setWidth(java.lang.String, boolean)).
+[CellTable.setWidth(String, boolean)](/javadoc/latest/com/google/gwt/user/cellview/client/CellTable.html#setWidth\(java.lang.String, boolean\)).
 Once in fixed-width mode, tables behave differently than they normally would. The following sections describe
 recipes for achieving various effects.
 

@@ -169,4 +169,4 @@ xsrf.getNewXsrfToken(new AsyncCallback<XsrfToken>() {
 ```
 
 **Tip:** If you would like to register a special handler for exceptions generated during
-`XsrfToken` validation use [`HasRpcToken.setRpcTokenExceptionHandler()`](/javadoc/latest/com/google/gwt/user/client/rpc/HasRpcToken.html#setRpcTokenExceptionHandler(com.google.gwt.user.client.rpc.RpcTokenExceptionHandler))
+`XsrfToken` validation use [`HasRpcToken.setRpcTokenExceptionHandler()`](/javadoc/latest/com/google/gwt/user/client/rpc/HasRpcToken.html#setRpcTokenExceptionHandler\(com.google.gwt.user.client.rpc.RpcTokenExceptionHandler\))

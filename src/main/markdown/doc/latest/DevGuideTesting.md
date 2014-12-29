@@ -104,7 +104,7 @@ If you prefer not to use webAppCreator, you may create a test case suite by hand
 
 1.  **Define a class that extends [GWTTestCase](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html).** Make sure your test class is on the module source path (e.g. in the `client` subpackage of your module.) You can add new source paths by editing the [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml) and adding a `<source>` element.
 2.  **If you do not have a GWT module yet, create a [module](DevGuideOrganizingProjects.html#DevGuideModules) that causes the source for your test case to be included.** If you are adding a test case to an existing GWT app, you can just use the existing module.
-3.  **Implement the method [GWTTestCase.getModuleName()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#getModuleName()) to return the fully-qualified name of the module.** This is the glue that tells the JUnit test case which module to instantiate.
+3.  **Implement the method [GWTTestCase.getModuleName()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#getModuleName\(\)) to return the fully-qualified name of the module.** This is the glue that tells the JUnit test case which module to instantiate.
 4.  **Compile your test case class to bytecode.** You can use the Java compiler directly using [javac](http://java.sun.com/j2se/1.5.0/docs/tooldocs/windows/javac.html) or a Java IDE such as [Eclipse](http://eclipse.org).
 5.  **Run your test case.** Use the class `junit.textui.TestRunner` as your main class and pass the full name of your test class as the command line argument, e.g. `com.example.foo.client.FooTest`. When running the test case, make sure your classpath includes:
 6.  *   Your project's `src` directory
@@ -256,7 +256,7 @@ your application's server-side code. That said, you may want both GWTTestCase an
 GWT's [JUnit](http://www.junit.org) integration provides special support for testing functionality that cannot be executed in straight-line code. For
 example, you might want to make an [RPC](DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls) call to a server and then validate the response. However, in a normal
 JUnit test run, the test stops as soon as the test method returns control to the caller, and GWT does not support multiple threads or blocking. To support this use case, [GWTTestCase](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html) has extended the `TestCase` API.
-The two key methods are [GWTTestCase.delayTestFinish(int)](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#delayTestFinish(int)) and [GWTTestCase.finishTest()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#finishTest()). Calling
+The two key methods are [GWTTestCase.delayTestFinish(int)](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#delayTestFinish\(int\)) and [GWTTestCase.finishTest()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#finishTest\(\)). Calling
 `delayTestFinish()` during a test method's execution puts that test in asynchronous mode, which means the test will not finish when the test method returns control to the
 caller. Instead, a _delay period_ begins, which lasts the amount of time specified in the call to `delayTestFinish()`. During the delay period, the test system will
 wait for one of three things to happen:
@@ -310,7 +310,7 @@ Ideally you should group your tests into as few modules as is
 practical, and should avoid having tests in a particular module run by
 more than one suite. (Tests are in the same module if they return
 the same value
-from [getModuleName()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#getModuleName()).)
+from [getModuleName()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#getModuleName\(\)).)
 
 GWTTestSuite class re-orders the test cases so that all cases that
 share a module are run back to back.
@@ -342,12 +342,12 @@ When using a test method in a JUnit [TestCase](http://junit.sourceforge.net/juni
 leaves a reference to will remain active. This could interfere with future test methods. You can override two new methods to prepare for and/or clean up
 after each test method.
 
-*   [gwtSetUp()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtSetUp()) runs before each test
+*   [gwtSetUp()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtSetUp\(\)) runs before each test
 method in a test case.
-*   [gwtTearDown()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtTearDown()) runs after each
+*   [gwtTearDown()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtTearDown\(\)) runs after each
 test method in a test case.
 
-The following example shows how to defensively cleanup the DOM before the next test run using [gwtSetUp()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtSetUp()). It skips over `<iframe>` and `<script>` tags so that the GWT test infrastructure is not accidentally removed.
+The following example shows how to defensively cleanup the DOM before the next test run using [gwtSetUp()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtSetUp\(\)). It skips over `<iframe>` and `<script>` tags so that the GWT test infrastructure is not accidentally removed.
 
 ```
 import com.google.gwt.junit.client.GWTTestCase;

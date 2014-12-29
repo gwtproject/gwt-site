@@ -317,7 +317,7 @@ recommended that they appear in the root package of a [standard project layout](
 
 ### Entry-Point Classes
 
-A module entry-point is any class that is assignable to [EntryPoint](/javadoc/latest/com/google/gwt/core/client/EntryPoint.html) and that can be constructed without parameters. When a module is loaded, every entry point class is instantiated and its [EntryPoint.onModuleLoad()](/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad()) method gets
+A module entry-point is any class that is assignable to [EntryPoint](/javadoc/latest/com/google/gwt/core/client/EntryPoint.html) and that can be constructed without parameters. When a module is loaded, every entry point class is instantiated and its [EntryPoint.onModuleLoad()](/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad\(\)) method gets
 called.
 
 ### Source Path
@@ -685,7 +685,7 @@ loaded into the [host page](DevGuideOrganizingProjects.html#DevGuideHostPage) be
 ```
 
 The script is loaded into the namespace of the [host page](DevGuideOrganizingProjects.html#DevGuideHostPage) as if you had included it explicitly using the HTML
-`<script>` element. The script will be loaded before your [onModuleLoad()](/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad()) is called.
+`<script>` element. The script will be loaded before your [onModuleLoad()](/javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad\(\)) is called.
 
 > _Versions of GWT prior to 1.4 required a script-ready function to determine when an included script was loaded. This is no longer required; all included scripts will
 > be loaded when your application starts, in the order in which they are declared._

@@ -20,7 +20,7 @@ cross-browser abstraction.
 
 ## Using the DOM to manipulate a widget
 
-Each widget and panel has an underlying DOM element that you can access with the [getElement()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#getElement()) method. You can use the
+Each widget and panel has an underlying DOM element that you can access with the [getElement()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#getElement\(\)) method. You can use the
 getElement() method to get the underlying element from the DOM.
 
 The following example shows how to set a style attribute to change a widget's background color.
@@ -38,7 +38,7 @@ Here, the getElement() method derived from the `Widget` superclass returns a DOM
 structure and adds a style attribute to it.
 
 This is an example where using the DOM isn't absolutely necessary. An alternative approach is to use [style sheets](DevGuideUiCss.html) and
-associate different style classes to the widget using the [setStylePrimaryName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(java.lang.String)) or [setStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)) method
+associate different style classes to the widget using the [setStylePrimaryName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName\(java.lang.String\)) or [setStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName\(java.lang.String\)) method
 instead.
 
 ## Finding an element in the DOM
@@ -99,7 +99,7 @@ private void rewriteLink(Element element, sitename) {
 }
 ```
 
-The JSNI method sets an ID on each element which we then used as an argument to [Document.getElementById(id)](/javadoc/latest/com/google/gwt/dom/client/Document.html#getElementById(java.lang.String)) to
+The JSNI method sets an ID on each element which we then used as an argument to [Document.getElementById(id)](/javadoc/latest/com/google/gwt/dom/client/Document.html#getElementById\(java.lang.String\)) to
 fetch the `Element` in Java.
 
 ## Using the DOM to capture a browser event

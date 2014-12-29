@@ -47,7 +47,7 @@ real effect. Synchronization-related library methods are not available, includin
 will ignore the synchronized keyword but will refuse to compile your code if the `Object`'s related synchronization methods are invoked.
 
 *   **Reflection**: For maximum efficiency, GWT compiles your Java source into a monolithic script, and does not support subsequent dynamic loading of classes. This
-and other optimizations preclude general support for reflection. However, it is possible to query an object for its class name using Object.getClass().[getName()](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html#getName()).
+and other optimizations preclude general support for reflection. However, it is possible to query an object for its class name using Object.getClass().[getName()](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Class.html#getName\(\)).
 
 *   **Finalization**: JavaScript does not support object
 finalization during garbage collection, so GWT is not able to be honor Java
@@ -73,7 +73,7 @@ Some specific areas in which GWT emulation differs from the standard Java runtim
 
 *   **Regular Expressions**: The syntax of [Java regular expressions](http://java.sun.com/j2se/1.5.0/docs/api/java/util/regex/Pattern.html)
 is similar, but not identical, to [JavaScript regular expressions](http://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
-For example, the [replaceAll](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html#replaceAll(java.lang.String,%20java.lang.String)) and [split](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html#split(java.lang.String)) methods use regular expressions. So, you will probably want
+For example, the [replaceAll](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html#replaceAll\(java.lang.String,%20java.lang.String\)) and [split](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/String.html#split\(java.lang.String\)) methods use regular expressions. So, you will probably want
 to be careful to only use Java regular expressions that have the same meaning in JavaScript.
 
 *   **Serialization**: Java serialization relies on a few mechanisms that are not available in compiled JavaScript, such as dynamic class loading and reflection. As a

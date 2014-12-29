@@ -189,7 +189,7 @@ error. This most likely means you forgot to copy `gwt-servlet.jar` into `war/WEB
 should do this for you automatically. Later on, if you need additional server-side libraries, you will need to add copies of those libraries into `war/WEB-INF/lib`
 also.
 *   When running your RPC call, development mode displays an excaption `NoServiceEntryPointSpecifiedException: Service implementation URL not specified`. This error means that
-you did not specify a `@RemoteServiceRelativePath` in your service interface, and you also did not manually set target path by calling [ServiceDefTarget.setServiceEntryPoint()](/javadoc/latest/com/google/gwt/user/client/rpc/ServiceDefTarget.html#setServiceEntryPoint(java.lang.String)).
+you did not specify a `@RemoteServiceRelativePath` in your service interface, and you also did not manually set target path by calling [ServiceDefTarget.setServiceEntryPoint()](/javadoc/latest/com/google/gwt/user/client/rpc/ServiceDefTarget.html#setServiceEntryPoint\(java.lang.String\)).
 *   If invoking your RPC call fails with a 404 [StatusCodeException](/javadoc/latest/com/google/gwt/user/client/rpc/StatusCodeException.html), your web.xml may be misconfigured. Make sure you specified a `@RemoteServiceRelativePath` and that the `<url-pattern>`
 specified in your `web.xml` matches this value, prepended with the location of your GWT output directory within the war directory.
 
@@ -206,7 +206,7 @@ container.
 
 The process of making an RPC from the client always involves the same steps:
 
-1.  Instantiate the service interface using [GWT.create()](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)).
+1.  Instantiate the service interface using [GWT.create()](/javadoc/latest/com/google/gwt/core/client/GWT.html#create\(java.lang.Class\)).
 2.  Create an asynchronous callback object to be notified when the RPC has completed.
 3.  Make the call.
 
@@ -406,12 +406,12 @@ public final class HashMap_CustomFieldSerializer extends CustomFieldSerializer<H
 ```
 
 All custom field serializer classes must implement the 
-`[serializeInstance](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#serializeInstance(com.google.gwt.user.client.rpc.SerializationStreamWriter, T))` and
-`[deserializeInstance](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#deserializeInstance(com.google.gwt.user.client.rpc.SerializationStreamReader, T))`
+[serializeInstance](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#serializeInstance\(com.google.gwt.user.client.rpc.SerializationStreamWriter, T\)) and
+[deserializeInstance](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#deserializeInstance/(com.google.gwt.user.client.rpc.SerializationStreamReader, T\))
 methods. Optionally, a class may override the default
-`[instantiateInstance](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#instantiateInstance(com.google.gwt.user.client.rpc.SerializationStreamReader))`
+[instantiateInstance](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#instantiateInstance\(com.google.gwt.user.client.rpc.SerializationStreamReader\))
 and
-`[hasCustomInstantiateInstance](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#hasCustomInstantiateInstance())`
+[hasCustomInstantiateInstance](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html#hasCustomInstantiateInstance\(\))
 methods if it cannot use default instantiation (for example, it does not have a
 default constructor) or wants custom instantiation (for example, to instantiate
 an immutable object). See the built-in custom serializers for examples of these methods.
@@ -448,12 +448,10 @@ public final class HashMap_ServerCustomFieldSerializer extends ServerCustomField
 
 All server custom field serializer classes must implement the
 client-side
-`[
-CustomFieldSerializer<T>](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html)` methods, the additional
-`[deserializeInstance](/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html#deserializeInstance(com.google.gwt.user.server.rpc.impl.ServerSerializationStreamReader,
-T, java.lang.reflect.Type[], com.google.gwt.user.server.rpc.impl.DequeMap))` method. Furthermore, a class must override the default
-`[instantiateInstance](/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html#instantiateInstance(com.google.gwt.user.server.rpc.impl.ServerSerializationStreamReader,
-java.lang.reflect.Type[], com.google.gwt.user.server.rpc.impl.DequeMap))`
+[CustomFieldSerializer<T>](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html) methods, the additional
+[deserializeInstance](/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html#deserializeInstance\(com.google.gwt.user.server.rpc.impl.ServerSerializationStreamReader,T, java.lang.reflect.Type[], com.google.gwt.user.server.rpc.impl.DequeMap\)) method.
+Furthermore, a class must override the default
+[instantiateInstance](/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html#instantiateInstance\(com.google.gwt.user.server.rpc.impl.ServerSerializationStreamReader,java.lang.reflect.Type[], com.google.gwt.user.server.rpc.impl.DequeMap\))
 method when the client code overrides it.
 
 See the existing serializers, such as `HashMap_ServerCustomFieldSerializer`, for examples of type checking.
@@ -468,7 +466,7 @@ Keep in mind that any custom exceptions that you want to define, like any other 
 ### Checked Exceptions
 
 [Service interface](DevGuideServerCommunication.html#DevGuideCreatingServices) methods support `throws` declarations to indicate which exceptions may be thrown back to
-the client from a service implementation. Callers should implement [AsyncCallback.onFailure(Throwable)](/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html#onFailure(java.lang.Throwable)) to check for any exceptions specified in the service interface.
+the client from a service implementation. Callers should implement [AsyncCallback.onFailure(Throwable)](/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html#onFailure\(java.lang.Throwable\)) to check for any exceptions specified in the service interface.
 
 ### Unexpected Exceptions
 
@@ -476,7 +474,7 @@ the client from a service implementation. Callers should implement [AsyncCallbac
 
 An RPC may not reach the [service implementation](DevGuideServerCommunication.html#DevGuideImplementingServices) at all. This can happen for many reasons: the network may be
 disconnected, a DNS server might not be available, the HTTP server might not be listening, and so on. In this case, an [InvocationException](/javadoc/latest/com/google/gwt/user/client/rpc/InvocationException.html) is passed to your
-implementation of [AsyncCallback.onFailure(Throwable)](/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html#onFailure(java.lang.Throwable)). The class is called `InvocationException` because the problem was with the invocation attempt itself rather than with
+implementation of [AsyncCallback.onFailure(Throwable)](/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html#onFailure\(java.lang.Throwable\)). The class is called `InvocationException` because the problem was with the invocation attempt itself rather than with
 the service implementation.
 
 An RPC can also fail with an invocation exception if the call does reach the server, but an undeclared exception occurs during normal processing of the call. There are many
@@ -571,7 +569,7 @@ Once you've built your web application, copy the contents of the war directory _
 will call that directory `/var/www/doc/MyApp` and the resulting URL is `http://www.example.com/MyApp/MyApp.html`. (An easier method might be to just copy the entire
 war contents and then delete `WEB-INF/` out of the destination.)
 
-To setup your Tomcat server, just deploy the entire war, including both kinds of content. The reason for including static content is that servlets may need to use [ServletContext.getResource()](http://java.sun.com/products/servlet/2.3/javadoc/javax/servlet/ServletContext.html#getResource(java.lang.String)) to access
+To setup your Tomcat server, just deploy the entire war, including both kinds of content. The reason for including static content is that servlets may need to use [ServletContext.getResource()](http://java.sun.com/products/servlet/2.3/javadoc/javax/servlet/ServletContext.html#getResource\(java.lang.String\)) to access
 static content programmatically. This is always true for GWT RPC servlets, which need to load a generated serialization policy file.
 
 #### Example
@@ -658,17 +656,17 @@ you'll need to first inherit the GWT HTTP module by adding the following `<inher
 ```
 
 [RequestBuilder](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html) is the core class you'll
-need for constructing and sending HTTP requests. Its [constructor](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#RequestBuilder(com.google.gwt.http.client.RequestBuilder.Method,%20java.lang.String)) has parameters for specifying the HTTP method of the request (GET, POST, etc.) and the URL (the [URL](/javadoc/latest/com/google/gwt/http/client/URL.html) utility class is handy for escaping invalid characters).
-Once you have a RequestBuilder object, you can use its methods to set the [username](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setUser(java.lang.String)), [password](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setPassword(java.lang.String)), and [timeout interval](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setTimeoutMillis(int)). You can
-also set any number of [headers](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setHeader(java.lang.String,%20java.lang.String)) in the HTTP request.
+need for constructing and sending HTTP requests. Its [constructor](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#RequestBuilder\(com.google.gwt.http.client.RequestBuilder.Method,%20java.lang.String\)) has parameters for specifying the HTTP method of the request (GET, POST, etc.) and the URL (the [URL](/javadoc/latest/com/google/gwt/http/client/URL.html) utility class is handy for escaping invalid characters).
+Once you have a RequestBuilder object, you can use its methods to set the [username](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setUser\(java.lang.String\)), [password](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setPassword\(java.lang.String\)), and [timeout interval](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setTimeoutMillis\(int\)). You can
+also set any number of [headers](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#setHeader\(java.lang.String,%20java.lang.String\)) in the HTTP request.
 
-Once the HTTP request is ready, call the server using the [sendRequest(String, RequestCallback)](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#sendRequest(java.lang.String,%20com.google.gwt.http.client.RequestCallback)) method. The [RequestCallback](/javadoc/latest/com/google/gwt/http/client/RequestCallback.html) argument you pass will handle
-the response or the error that results. When a request completes normally, your [onResponseReceived(Request, Response)](/javadoc/latest/com/google/gwt/http/client/RequestCallback.html#onResponseReceived(com.google.gwt.http.client.Request,%20com.google.gwt.http.client.Response)) method is invoked. Details of the response (for example, [status code](/javadoc/latest/com/google/gwt/http/client/Response.html#getStatusCode()), [HTTP headers](/javadoc/latest/com/google/gwt/http/client/Response.html#getHeaders()), and [response text](/javadoc/latest/com/google/gwt/http/client/Response.html#getText())) can be retrieved from the [Response](/javadoc/latest/com/google/gwt/http/client/Response.html) argument. Note that the
-onResponseReceived(Request, Response) method is called even if the HTTP status code is something other than 200 (success). If the call _does not_ complete normally, the [onError(Request, Throwable)](/javadoc/latest/com/google/gwt/http/client/RequestCallback.html#onError(com.google.gwt.http.client.Request,%20java.lang.Throwable)) method gets called, with the second parameter describing the type error that occurred.
+Once the HTTP request is ready, call the server using the [sendRequest(String, RequestCallback)](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#sendRequest\(java.lang.String,%20com.google.gwt.http.client.RequestCallback\)) method. The [RequestCallback](/javadoc/latest/com/google/gwt/http/client/RequestCallback.html) argument you pass will handle
+the response or the error that results. When a request completes normally, your [onResponseReceived(Request, Response)](/javadoc/latest/com/google/gwt/http/client/RequestCallback.html#onResponseReceived\(com.google.gwt.http.client.Request,%20com.google.gwt.http.client.Response\)) method is invoked. Details of the response (for example, [status code](/javadoc/latest/com/google/gwt/http/client/Response.html#getStatusCode\(\)), [HTTP headers](/javadoc/latest/com/google/gwt/http/client/Response.html#getHeaders\(\)), and [response text](/javadoc/latest/com/google/gwt/http/client/Response.html#getText\(\))) can be retrieved from the [Response](/javadoc/latest/com/google/gwt/http/client/Response.html) argument. Note that the
+onResponseReceived(Request, Response) method is called even if the HTTP status code is something other than 200 (success). If the call _does not_ complete normally, the [onError(Request, Throwable)](/javadoc/latest/com/google/gwt/http/client/RequestCallback.html#onError\(com.google.gwt.http.client.Request,%20java.lang.Throwable\)) method gets called, with the second parameter describing the type error that occurred.
 
-As noted before, all HTTP calls in GWT are asynchronous, so the code following the call to [sendRequest(String, RequestCallback)](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#sendRequest(java.lang.String,%20com.google.gwt.http.client.RequestCallback)) will be executed immediately, _not_ after the server responds to the HTTP request. You can use the [Request](/javadoc/latest/com/google/gwt/http/client/Request.html) object that is returned from sendRequest(String,
-RequestCallback) to [monitor the status](/javadoc/latest/com/google/gwt/http/client/Request.html#isPending()) of
-the call, and [cancel it](/javadoc/latest/com/google/gwt/http/client/Request.html#cancel()) if necessary.
+As noted before, all HTTP calls in GWT are asynchronous, so the code following the call to [sendRequest(String, RequestCallback)](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html#sendRequest\(java.lang.String,%20com.google.gwt.http.client.RequestCallback\)) will be executed immediately, _not_ after the server responds to the HTTP request. You can use the [Request](/javadoc/latest/com/google/gwt/http/client/Request.html) object that is returned from sendRequest(String,
+RequestCallback) to [monitor the status](/javadoc/latest/com/google/gwt/http/client/Request.html#isPending\(\)) of
+the call, and [cancel it](/javadoc/latest/com/google/gwt/http/client/Request.html#cancel\(\)) if necessary.
 
 Here's a brief example of making an HTTP request to a server:
 
@@ -700,7 +698,7 @@ try {
 
 ### Processing the response
 
-Once you receive the response from the server using [Response.getText()](/javadoc/latest/com/google/gwt/http/client/Response.html#getText()), it's up to you to process it. If your response is encoded in XML or JSON, you can use the [XML library](DevGuideCodingBasics.html#DevGuideXML) and the [JSON library](DevGuideCodingBasics.html#DevGuideJSON) or [overlay types](DevGuideCodingBasics.html#DevGuideOverlayTypes), respectively, to process it.
+Once you receive the response from the server using [Response.getText()](/javadoc/latest/com/google/gwt/http/client/Response.html#getText\(\)), it's up to you to process it. If your response is encoded in XML or JSON, you can use the [XML library](DevGuideCodingBasics.html#DevGuideXML) and the [JSON library](DevGuideCodingBasics.html#DevGuideJSON) or [overlay types](DevGuideCodingBasics.html#DevGuideOverlayTypes), respectively, to process it.
 
 ## Getting Used to Asynchronous Calls<a id="DevGuideGettingUsedToAsyncCalls"></a>
 

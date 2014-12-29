@@ -43,7 +43,7 @@ public interface MyConstants extends Constants {
 maintain the `.properties` files. It also works for `ConstantsWithLookup` and `Messages` classes.
 
 Note that `MyConstants` is declared as an interface, so you cannot instantiate it directly with `new`. To use the internationalized constants, you create a Java
-instance of `MyConstants` using the [GWT.create(Class)](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)) facility:
+instance of `MyConstants` using the [GWT.create(Class)](/javadoc/latest/com/google/gwt/core/client/GWT.html#create\(java.lang.Class\)) facility:
 
 ```
 public void useMyConstants() {

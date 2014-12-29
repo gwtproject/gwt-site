@@ -64,9 +64,9 @@ There are a number of ways developers try to deal with this issue. One of the mo
 
 When designing GWT, we decided that leaks were simply unacceptable. You wouldn't tolerate egregious memory leaks in a desktop application, and a browser application should be no different. This raises some interesting problems, though. In order to avoid ever creating leaks, any widget that **might** need to get garbage collected must not be involved in a reference cycle with a native element. There's no way to find out "when a widget would have been collected had it not been involved in a reference cycle". So in GWT terms, a widget must not be involved in a cycle when it is detached from the DOM.
 
-How do we enforce this? Each widget has a single "root" element. Whenever the widget becomes attached, we create exactly one "back reference" from the element to the widget (that is, `elem.__listener = widget`, performed in [DOM.setEventListener()](/javadoc/latest/com/google/gwt/user/client/DOM.html#setEventListener(com.google.gwt.user.client.Element,%20com.google.gwt.user.client.EventListener))). This is set whenever the widget is attached, and cleared whenever it is detached.
+How do we enforce this? Each widget has a single "root" element. Whenever the widget becomes attached, we create exactly one "back reference" from the element to the widget (that is, `elem.__listener = widget`, performed in [DOM.setEventListener()](/javadoc/latest/com/google/gwt/user/client/DOM.html#setEventListener\(com.google.gwt.user.client.Element,%20com.google.gwt.user.client.EventListener\))). This is set whenever the widget is attached, and cleared whenever it is detached.
 
-Which brings is back to that odd bitfield used in the sinkEvents() method. If you look at the implementation of [DOM.sinkEvents()](/javadoc/latest/com/google/gwt/user/client/DOM.html#sinkEvents(com.google.gwt.user.client.Element,%20int)), you'll see that it does something like this:
+Which brings is back to that odd bitfield used in the sinkEvents() method. If you look at the implementation of [DOM.sinkEvents()](/javadoc/latest/com/google/gwt/user/client/DOM.html#sinkEvents\(com.google.gwt.user.client.Element,%20int\)), you'll see that it does something like this:
 
 ```
 elem.onclick = (bits & 0x00001) ? $wnd.__dispatchEvent : null;

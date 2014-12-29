@@ -573,9 +573,10 @@ JUnit module. Despite the fix, this is not recommended.
 #### Compiler and Linkers
 
 *   Minor optimization improvements.
-<li>Optimization bugfixes: [[5739](https://code.google.com/p/google-web-toolkit/issues/detail?id=5739),
+<li>Optimization bugfixes: (
+[5739](https://code.google.com/p/google-web-toolkit/issues/detail?id=5739),
 [7818](https://code.google.com/p/google-web-toolkit/issues/detail?id=7818),
-[7683](https://code.google.com/p/google-web-toolkit/issues/detail?id=7683)].
+[7683](https://code.google.com/p/google-web-toolkit/issues/detail?id=7683)).
 *   Apps built with DirectInstallLinker should work in a page
 where inline scripts are forbidden (e.g. a Chrome extension)
 
@@ -602,55 +603,55 @@ modifies the Array prototype.
 after a call to window.history.pushState
 *   Added an option to ScriptInjector that removes the `<script>` tag from the page when done.
 *   Added RequestBuilder.withCredentials().
-*   Fixed a performance issue in RepeatingCommand [[7307](https://code.google.com/p/google-web-toolkit/issues/detail?id=7307)]
-*   Fixed stack trace deobfuscation on iOS [[7902](https://code.google.com/p/google-web-toolkit/issues/detail?id=7902)]
+*   Fixed a performance issue in RepeatingCommand ([7307](https://code.google.com/p/google-web-toolkit/issues/detail?id=7307))
+*   Fixed stack trace deobfuscation on iOS ([7902](https://code.google.com/p/google-web-toolkit/issues/detail?id=7902))
 *   Added the "webApiUsage" property. The default setting is
 "modern". If set to "stable", GWT libraries will avoid using prefixed
 web API's. Currently, the only difference is that animation will use a
-timer. [[7895](https://code.google.com/p/google-web-toolkit/issues/detail?id=7895)]
+timer. ([7895](https://code.google.com/p/google-web-toolkit/issues/detail?id=7895))
 *   Fixed Double.parseDouble() when called with Nan, Infinity, and
-leading zeros [[7713](https://code.google.com/p/google-web-toolkit/issues/detail?id=7713),
-[7834](https://code.google.com/p/google-web-toolkit/issues/detail?id=7834)]
-*   Fixed Long.parseLong when called with MIN_VALUE [[7308](https://code.google.com/p/google-web-toolkit/issues/detail?id=7308)]
-*   Fixed a bug in AbstractMap.remove [[7856](https://code.google.com/p/google-web-toolkit/issues/detail?id=7856)]
+leading zeros ([7713](https://code.google.com/p/google-web-toolkit/issues/detail?id=7713),
+[7834](https://code.google.com/p/google-web-toolkit/issues/detail?id=7834))
+*   Fixed Long.parseLong when called with MIN_VALUE ([7308](https://code.google.com/p/google-web-toolkit/issues/detail?id=7308))
+*   Fixed a bug in AbstractMap.remove ([7856](https://code.google.com/p/google-web-toolkit/issues/detail?id=7856))
 
 #### HTML, CSS, resource files
 
 *   Element's addClassName and removeClassName methods now return
 a boolean.
-*   Bugfix for getBodyOffsetLeft and Top: [(patch)](https://code.google.com/p/google-web-toolkit/source/detail?r=11432)
-*   Added CSS support for media types [[4911](https://code.google.com/p/google-web-toolkit/issues/detail?id=4911)]
-*   Added "debug" obfuscation style for CSS [(change)](https://code.google.com/p/google-web-toolkit/source/detail?r=11442)
-*   Improved the quality of resized image resources [[7193](https://code.google.com/p/google-web-toolkit/issues/detail?id=7193)]
+*   Bugfix for getBodyOffsetLeft and Top: [(patch))(https://code.google.com/p/google-web-toolkit/source/detail?r=11432)
+*   Added CSS support for media types ([4911](https://code.google.com/p/google-web-toolkit/issues/detail?id=4911))
+*   Added "debug" obfuscation style for CSS [(change))(https://code.google.com/p/google-web-toolkit/source/detail?r=11442)
+*   Improved the quality of resized image resources ([7193](https://code.google.com/p/google-web-toolkit/issues/detail?id=7193))
 
 #### Widgets and Editors
 
-*   Added Tree.setScrollIntoViewEnabled [[2467](https://code.google.com/p/google-web-toolkit/issues/detail?id=2467)]
-*   Fixed a bug in SplitLayoutPanel.setWidgetHidden [[7715](https://code.google.com/p/google-web-toolkit/issues/detail?id=7715)]
-*   Improved click handling in CellTable [[7508](https://code.google.com/p/google-web-toolkit/issues/detail?id=7508)]
-*   Editor framework bugfixes: [[5589](https://code.google.com/p/google-web-toolkit/issues/detail?id=5589),
-[6959](https://code.google.com/p/google-web-toolkit/issues/detail?id=6959)]
+*   Added Tree.setScrollIntoViewEnabled ([2467](https://code.google.com/p/google-web-toolkit/issues/detail?id=2467))
+*   Fixed a bug in SplitLayoutPanel.setWidgetHidden ([7715](https://code.google.com/p/google-web-toolkit/issues/detail?id=7715))
+*   Improved click handling in CellTable ([7508](https://code.google.com/p/google-web-toolkit/issues/detail?id=7508))
+*   Editor framework bugfixes: ([5589](https://code.google.com/p/google-web-toolkit/issues/detail?id=5589),
+[6959](https://code.google.com/p/google-web-toolkit/issues/detail?id=6959))
 
 #### Internationalization
 
 *   Upgrades for [ICU4J](https://code.google.com/p/google-web-toolkit/source/detail?r=11474)
 and [CLDR](https://code.google.com/p/google-web-toolkit/source/detail?r=11412)
-*   Fixed a bug in DateTimeFormat.parse() [[7823](https://code.google.com/p/google-web-toolkit/issues/detail?id=7823)]
+*   Fixed a bug in DateTimeFormat.parse() ([7823](https://code.google.com/p/google-web-toolkit/issues/detail?id=7823))
 
 #### RPC and server-side Java
 
 *   Fixed incorrect GWT-RPC deserialization when an app is
-deployed after changing an enum and nothing else. [[7836](https://code.google.com/p/google-web-toolkit/issues/detail?id=7836)]
+deployed after changing an enum and nothing else. ([7836](https://code.google.com/p/google-web-toolkit/issues/detail?id=7836))
 *   Fixed a GWT-RPC generator bug that can cause too many policy
 files to be generated, resulting in excessive server-side memory
-usage. [[7791](https://code.google.com/p/google-web-toolkit/issues/detail?id=7791)]
+usage. ([7791](https://code.google.com/p/google-web-toolkit/issues/detail?id=7791))
 *   Fixed an infinite loop in server-side GWT-RPC when
-deserializing complicated generic types. [[7779](https://code.google.com/p/google-web-toolkit/issues/detail?id=7779)]
-*   RequestFactory bug fix: [[7900](https://code.google.com/p/google-web-toolkit/issues/detail?id=7900)]
+deserializing complicated generic types. ([7779](https://code.google.com/p/google-web-toolkit/issues/detail?id=7779))
+*   RequestFactory bug fix: ([7900](https://code.google.com/p/google-web-toolkit/issues/detail?id=7900))
 *   Added a constructor option to StackTraceDeobfuscator for
 conserving server memory.
 *   Fixed an exception when using shared code that uses GWTBridge
-on the server [[7527](https://code.google.com/p/google-web-toolkit/issues/detail?id=7527)]
+on the server ([7527](https://code.google.com/p/google-web-toolkit/issues/detail?id=7527))
 
 ## Release Notes for 2.5.0
 
@@ -1414,7 +1415,7 @@ browser. Development mode is supported through the use of a
 native-code plugin called the _GWT Developer Plugin_ for many
 popular browsers. In other words, you can use development mode
 directly from Safari, Firefox, Internet Explorer, and Chrome.
-*   Code Splitting: Developer-guided code splitting with [GWT.runAsync()](/javadoc/latest/com/google/gwt/core/client/GWT.html#runAsync(com.google.gwt.core.client.RunAsyncCallback))
+*   Code Splitting: Developer-guided code splitting with [GWT.runAsync()](/javadoc/latest/com/google/gwt/core/client/GWT.html#runAsync\(com.google.gwt.core.client.RunAsyncCallback\))
 allows you to chunk your GWT code into multiple fragments for faster
 startup. Imagine having to download a whole movie before being able to
 watch it. Well, that's what you have to do with most Ajax apps these
@@ -1465,8 +1466,7 @@ switch to the new `DevMode` entry point.
 *   Also due to the "development mode" terminology change, the
 name of the ant build target produced by `webAppCreator`
 has changed from `hosted` to `devmode`. In other
-words, to start development mode from the command-line, type <code>ant
-devmode`.
+words, to start development mode from the command-line, type `ant devmode`.
 *   HtmlUnit does not attempt to emulate authentic browser layout.
 Consequently, tests that are sensitive to browser layout are very
 likely to fail. However, since `GWTTestCase` supports other
@@ -1525,8 +1525,7 @@ property. If you have deferred binding rules (i.e. `<replace-with>`
 or `<generate-with>`) or property providers that are
 sensitive to `user.agent`, you may need to update them to
 account for the `ie8` value. For more information, see the
-[technical
-notes](http://code.google.com/p/google-web-toolkit/wiki/IE8Support).
+[technical notes](http://code.google.com/p/google-web-toolkit/wiki/IE8Support).
 
 ### Fixed Issues
 
@@ -1541,8 +1540,7 @@ set a stack size ([#3510](https://code.google.com/p/google-web-toolkit/issues/de
 *   Mouse wheel in FF3 ([#2902](https://code.google.com/p/google-web-toolkit/issues/detail?id=2902))
 *   GWT outputs expressions too long for WebKit ([#3455](https://code.google.com/p/google-web-toolkit/issues/detail?id=3455))
 *   java.sql.Date.valueOf error ([#3731](https://code.google.com/p/google-web-toolkit/issues/detail?id=3731))
-*   Added a workaround for Firefox 3.5 regression ([bugzilla
-#497780](https://bugzilla.mozilla.org/show_bug.cgi?id=497780))
+*   Added a workaround for Firefox 3.5 regression ([bugzilla #497780](https://bugzilla.mozilla.org/show_bug.cgi?id=497780))
 
 * * *
 
@@ -1559,16 +1557,15 @@ updated to refer to `/war/WEB-INF/classes` rather than `/bin`.
 
 ### Fixed Issues
 
-*   Various [servlet
-classpath issues](https://code.google.com/p/google-web-toolkit/issues/detail?id=3496) introduced in 1.6.2 are resolved.
+*   Various [servlet classpath issues](https://code.google.com/p/google-web-toolkit/issues/detail?id=3496)
+introduced in 1.6.2 are resolved.
 *   JSP compilation should work out of the box in hosted mode.
 
 * * *
 
 ## Release Notes for 1.6.2 (RC)
 
-Please see [What's new in
-GWT 1.6?](doc/1.6/ReleaseNotes_1_6.html) (online)
+Please see [What's new in GWT 1.6?](doc/1.6/ReleaseNotes_1_6.html) (online)
 
 * * *
 
@@ -1747,10 +1744,10 @@ the [release notes for 1.4.10](#Release_Notes_1_4_10) first.
 
 ### New Features
 
-*   [DOM.eventGetCurrentEvent()](doc/html/com.google.gwt.user.client.DOM#eventGetCurrentEvent())
+*   [DOM.eventGetCurrentEvent()](doc/html/com.google.gwt.user.client.DOM#eventGetCurrentEvent\(\))
 now provides global access to the current Event object. ([#1309](https://code.google.com/p/google-web-toolkit/issues/detail?id=1309))
 *   [PopupPanel.setPopupPositionAndShow(PopupCallback
-callback)](doc/html/com.google.gwt.user.client.ui.PopupPanel#setPopupPositionAndShow(com.google.gwt.user.client.ui.PopupPanel.PositionCallback)) now provides now provides a simpler and bulletproof way to
+callback)](doc/html/com.google.gwt.user.client.ui.PopupPanel#setPopupPositionAndShow\(com.google.gwt.user.client.ui.PopupPanel.PositionCallback\)) now provides now provides a simpler and bulletproof way to
 control the layout of popups. ([#1120](https://code.google.com/p/google-web-toolkit/issues/detail?id=1120),
 [#1243](https://code.google.com/p/google-web-toolkit/issues/detail?id=1243))
 *   The [SuggestionHandler](doc/html/com.google.gwt.user.client.ui.SuggestionHandler)
@@ -1764,7 +1761,7 @@ Gears](http://gears.google.com/) is now accessible in hosted mode (Windows only)
 
 ### General Changes
 
-*   Startup is now faster and more reliable. In particular, [onModuleLoad()](doc/html/com.google.gwt.core.client.EntryPoint#onModuleLoad())
+*   Startup is now faster and more reliable. In particular, [onModuleLoad()](doc/html/com.google.gwt.core.client.EntryPoint#onModuleLoad\(\))
 is now called as soon as the DOM is ready, which will generally be
 before the page's body.onload() event is fired. This allows your
 application to startup before certain resources (such as images) are
@@ -1775,7 +1772,7 @@ fully loaded.
 *   An important discussion of HTTP headers, caching, and HTTPS
 has been added to the [ImageBundle](doc/html/com.google.gwt.user.client.ui.ImageBundle)
 documentation. ([#1172](https://code.google.com/p/google-web-toolkit/issues/detail?id=1172))
-*   [PopupPanel.center()](doc/html/com.google.gwt.user.client.ui.PopupPanel#center())
+*   [PopupPanel.center()](doc/html/com.google.gwt.user.client.ui.PopupPanel#center\(\))
 now causes the popup to be shown as well as centered. ([#1120](https://code.google.com/p/google-web-toolkit/issues/detail?id=1120))
 *   [RichTextArea](doc/html/com.google.gwt.user.client.ui.RichTextArea)
 underwent number of bugfixes and should be stable now. ([#1130](https://code.google.com/p/google-web-toolkit/issues/detail?id=1130),
@@ -1799,10 +1796,10 @@ properly, RPC will run in 1.3.3 compatibility mode and refuse to
 serialize types implementing [Serializable](doc/html/java.io.Serializable).
 ([#1297](https://code.google.com/p/google-web-toolkit/issues/detail?id=1297))
 *   [Panel.adopt(Widget,
-Element)](doc/html/com.google.gwt.user.client.ui.Panel#adopt(com.google.gwt.user.client.ui.Widget,%20com.google.gwt.user.client.Element)) and [Panel.disown(Widget)](doc/html/com.google.gwt.user.client.ui.Panel#disown(com.google.gwt.user.client.ui.Widget))
+Element)](doc/html/com.google.gwt.user.client.ui.Panel#adopt\(com.google.gwt.user.client.ui.Widget,%20com.google.gwt.user.client.Element\)) and [Panel.disown(Widget)](doc/html/com.google.gwt.user.client.ui.Panel#disown\(com.google.gwt.user.client.ui.Widget\))
 have been deprecated. If you have subclassed Panel, please carefully
-review the new documentation for [Panel.add(Widget)](doc/html/com.google.gwt.user.client.ui.Panel#add(com.google.gwt.user.client.ui.Widget))
-and [Panel.remove(Widget)](doc/html/com.google.gwt.user.client.ui.Panel#remove(com.google.gwt.user.client.ui.Widget))
+review the new documentation for [Panel.add(Widget)](doc/html/com.google.gwt.user.client.ui.Panel#add\(com.google.gwt.user.client.ui.Widget\))
+and [Panel.remove(Widget)](doc/html/com.google.gwt.user.client.ui.Panel#remove\(com.google.gwt.user.client.ui.Widget\))
 for details on the correct way to add and remove Widgets from Panels.
 ([#1121](https://code.google.com/p/google-web-toolkit/issues/detail?id=1121))
 *   The benchmark viewer application is now faster, prettier, and
@@ -1810,7 +1807,7 @@ a bit more user friendly.
 
 ### Retractions from 1.4.10
 
-*   Breaking changes to the semantics of [UIObject.setStyleName()](doc/html/com.google.gwt.user.client.ui.UIObject#setStyleName(java.lang.String))
+*   Breaking changes to the semantics of [UIObject.setStyleName()](doc/html/com.google.gwt.user.client.ui.UIObject#setStyleName\(java.lang.String\))
 have been backed out. All changes relative to 1.3.3 should now be
 backwards-compatible. ([#1079](https://code.google.com/p/google-web-toolkit/issues/detail?id=1079))
 *   The linux distribution of 1.4.10 bundled Mozilla 1.7.13
@@ -1898,7 +1895,7 @@ runtime.
     RPC has never actually serialized `final` instance fields,
 but now it explicitly warns about the existence of such fields unless
 they are also `transient`. Thus, the warning can be
-addressed by making `final` instance fields <code>transient`
+addressed by making `final` instance fields `transient`
 as well, or it can be suppressed via a module property.
 *   **Warn about local and non-static nested types that
 implement IsSerializable or Serializable**
@@ -2075,13 +2072,9 @@ below.
 
 ### Fixed Issues
 
-*   [Issue
-#319 - Calling native super method in implementation class results in
-infinite loop in web mode](https://code.google.com/p/google-web-toolkit/issues/detail?id=319)
-*   [Issue
-#496 - gwt.js in gwt-user.jar lacks Apache 2.0 license header](https://code.google.com/p/google-web-toolkit/issues/detail?id=496)
-*   [Issue
-#497 - Unexpected internal compiler error - Analyzing permutation #1](https://code.google.com/p/google-web-toolkit/issues/detail?id=497)
+*   [Issue #319 - Calling native super method in implementation class results in infinite loop in web mode](https://code.google.com/p/google-web-toolkit/issues/detail?id=319)
+*   [Issue #496 - gwt.js in gwt-user.jar lacks Apache 2.0 license header](https://code.google.com/p/google-web-toolkit/issues/detail?id=496)
+*   [Issue #497 - Unexpected internal compiler error - Analyzing permutation #1](https://code.google.com/p/google-web-toolkit/issues/detail?id=497)
 
 * * *
 
@@ -2102,12 +2095,12 @@ we've convinced ourselves it's reliable.
 is our new GWT open source charter that describes how we plan to
 operate the project and how you can access the GWT source, compile it
 yourself, and contribute.
-*   **[The
-GWT Issue Tracker](https://code.google.com/p/google-web-toolkit/issues/list)**Please report any bugs in 1.3 RC that
+*   **[The GWT Issue Tracker](https://code.google.com/p/google-web-toolkit/issues/list)**Please
+report any bugs in 1.3 RC that
 weren't in 1.2.22 in the GWT issue tracker. These would be likely
 related to the new build, and we want to know ASAP so we can fix them.
-*   **[The
-GWT Subversion Repository](http://google-web-toolkit.googlecode.com/svn/)**Visit the online repository to
+*   **[The GWT Subversion Repository](http://google-web-toolkit.googlecode.com/svn/)**Visit the
+online repository to
 browse the GWT source without a Subversion client.
 
 * * *
@@ -2125,12 +2118,9 @@ later.
 
 ### Useful Links
 
-*   **[Changes
-included in GWT 1.2 since the RC](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_Final)**Also see the GWT Blog for
-a discussion of the [noteworthy
-issues related to 1.2 RC](http://googlewebtoolkit.blogspot.com/2006/11/wrapping-up-gwt-12-soon.html)
-*   **[New
-features and bug fixes in GWT 1.2 RC](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_RC)**
+*   **[Changes included in GWT 1.2 since the RC](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_Final)**Also see the GWT Blog for
+a discussion of the [noteworthy issues related to 1.2 RC](http://googlewebtoolkit.blogspot.com/2006/11/wrapping-up-gwt-12-soon.html)
+*   **[New features and bug fixes in GWT 1.2 RC](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_RC)**
 
 ### Breaking API Changes
 
@@ -2155,25 +2145,22 @@ This is the Release Candidate for GWT 1.2. Between this build and
 the subsequent GWT 1.2 official release, changes are limited to issues
 unique to GWT 1.2 RC.
 
-See the GWT issue tracker for [the
-complete list of enhancements and bug fixes](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_RC) in this release.
+See the GWT issue tracker for [the complete list of enhancements and bug fixes](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_RC) in this release.
 
 ### New Features
 
-*   **[Full
-support for OS X development](https://code.google.com/p/google-web-toolkit/issues/detail?id=91)**Develop with GWT on OS X as
+*   **[Full support for OS X development](https://code.google.com/p/google-web-toolkit/issues/detail?id=91)**Develop with GWT on OS X as
 easily as on Linux and Windows
-*   **[Much
-faster hosted mode](https://code.google.com/p/google-web-toolkit/issues/detail?id=93)**Hosted mode startup time has improved
-significantly, but, even better, refreshes are now lightning fast
-&mdash; even when your source changes
-*   **[New
-HTTP request module](https://code.google.com/p/google-web-toolkit/issues/detail?id=52)**The HTTP functionality that GWT users
+*   **[Much faster hosted mode](https://code.google.com/p/google-web-toolkit/issues/detail?id=93)**Hosted mode startup time has improved
+significantly, but, even better, refreshes are now lightning fast &mdash; even when your source
+changes
+*   **[New HTTP request module](https://code.google.com/p/google-web-toolkit/issues/detail?id=52)
+**The HTTP functionality that GWT users
 have been asking for (custom headers, status code, timeouts, and
 more), all wrapped up in an API that's easier to use than the
 JavaScript XMLHttpRequest object
-*   **[Widgets
-in TreeItems](https://code.google.com/p/google-web-toolkit/issues/detail?id=10)**Tree items can now contain arbitrary
+*   **[Widgets in TreeItems](https://code.google.com/p/google-web-toolkit/issues/detail?id=10)
+**Tree items can now contain arbitrary
 widgets...finally, you can easily create trees with checkboxes :-)
 
 * * *
@@ -2183,53 +2170,52 @@ widgets...finally, you can easily create trees with checkboxes :-)
 ### Fixed Issues
 
 *   Normalized behavior of GWT.getModuleBaseURL() with respect to
-hosted mode, web mode, RPC, and automatic resource injection [[post
-#1](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/6c2b23e90008b6b9), [post
-#2](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/1bb47f2cff671ef0), [post
-#3](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/3408c38464c57d4a)]
+hosted mode, web mode, RPC, and automatic resource injection (
+[post #1](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/6c2b23e90008b6b9),
+[post #2](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/1bb47f2cff671ef0),
+[post #3](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/3408c38464c57d4a))
 *   Clarified message in Grid class related to row/column out of
-bounds error [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/e5e130cba766d126)]
-*   i18nCreator fixed to work with Java 5.0 [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/3b6452a068ebec63)]
+bounds error ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/e5e130cba766d126))
+*   i18nCreator fixed to work with Java 5.0 ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/3b6452a068ebec63))
 *   I18NSync (and therefore -i18n scripts) changed to replace dots
-with underscores when generating method names [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/6a4e05beb094a5a2)]
-*   Additional character escaping in JSON strings [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/5f437d12ba83fff0)]
-*   Fixed bug calling toString() on nested JSON objects [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/ee81aa5411dece71)]
+with underscores when generating method names ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/6a4e05beb094a5a2))
+*   Additional character escaping in JSON strings ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/5f437d12ba83fff0))
+*   Fixed bug calling toString() on nested JSON objects ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/ee81aa5411dece71))
 *   Fixed bug that caused the default font size of text in a
-FocusPanel to be zero [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/2f5abf147c5550c4)]
-*   Fixed TabPanel.insert() with asHTML argument [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/8f427dbe76ce2c49/)]
+FocusPanel to be zero [post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/2f5abf147c5550c4)
+*   Fixed TabPanel.insert() with asHTML argument ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/8f427dbe76ce2c49/))
 *   Popups and DialogBoxes no longer underlap lists and combos in
-IE6 [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/6815ec29d2c404e2)]
+IE6 ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/6815ec29d2c404e2))
 *   DialogBoxes can no longer be dragged beoynd the upper left
-corner of the browser window [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/28390f32c42f7940)]
+corner of the browser window ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/28390f32c42f7940))
 *   Buttons inside of FormPanels no longer automatically submit on
-Firefox; this is still a problem some versions of Safari and Opera [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/72bea3a6d4feeaeb)]
+Firefox; this is still a problem some versions of Safari and Opera ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/72bea3a6d4feeaeb))
 *   TabPanel now sets the height of the internal DeckPanel to 100%
-to ensure all available space is used [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/4cd09f04bc515696)]
+to ensure all available space is used ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/4cd09f04bc515696))
 *   Fixed bug in Mozilla that was causing
-DialogBox.onKeyPressPreview() to see key as 0 [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/8147b4b219a8fbc7)]
+DialogBox.onKeyPressPreview() to see key as 0 ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/8147b4b219a8fbc7))
 *   DockPanel no longer lays out with a DeferredCommand; this
-makes it possible to correctly measure the size of PopupPanel [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/7bbb89e4c97ae1e6)]
+makes it possible to correctly measure the size of PopupPanel ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/7bbb89e4c97ae1e6))
 *   SimplePanel is no longer abstract
-*   Double click now fires correctly on IE6 [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/2d16242dc7fb830f)]
+*   Double click now fires correctly on IE6 ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/2d16242dc7fb830f))
 *   Fixed RPC bug that caused deserialization errors or infinite
-loops with self-referential object graphs [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/2a8658e93e2a8de3)]
+loops with self-referential object graphs ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/2a8658e93e2a8de3))
 *   Fixed RPC bug that caused deserialization to fail on character
-arrays containing null characters [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/f60f5d5552a3d26b)]
+arrays containing null characters ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/f60f5d5552a3d26b))
 *   Serializable classes whose superclass is serialized by a
 custom field serializer are now correctly deserialized on the server
 *   Fixed bug related to FocusPanel that sometimes manifested
-during RPC async responses [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/edd16ede4f891db8)]
+during RPC async responses ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/edd16ede4f891db8))
 *   Fixed bug in JUnit assertEquals() for floating point values
-(delta was not honored correctly) [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/b0e06cc253915b86)]
+(delta was not honored correctly) ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/b0e06cc253915b86))
 *   Fixed internal compiler errors related to nested local
 subclasses, empty for loop expressions, and no-op unary plus operator.
-[[post
-#1](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/d8ecf70acc4e5b0e), [post
-#2](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/4da8dcbab9479a80), [post
-#3](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/a9f17bf30d0116b)]
-*   Fixed infinite loop in Integer.toHexString() [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/3f9c3f4df08fb523)]
+([post #1](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/d8ecf70acc4e5b0e),
+[post #2](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/4da8dcbab9479a80),
+[post #3](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/a9f17bf30d0116b))
+*   Fixed infinite loop in Integer.toHexString() ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/3f9c3f4df08fb523))
 *   Compiler now handling filesystem symbolic links in project
-structure [[post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/1597c73888d1acd9)]
+structure ([post](http://groups.google.com/group/Google-Web-Toolkit/browse_thread/thread/1597c73888d1acd9))
 *   Fixed rare JVM crash in Windows hosted mode related to JSNI
 function pointers
 
@@ -2283,35 +2269,25 @@ want to catch you off guard.
 
 ### Fixed Issues
 
-*   [Issue
-#4794724 - Servlet container problems due to gwt-user.jar including
-javax.servlet classes](http://code.google.com/webtoolkit/issues/4794724.html)
-*   [Issue
-#1676686 - Hosted mode problems in Windows 2000](http://code.google.com/webtoolkit/issues/1676686.html)
-*   [Issue
-#6606675 - ListBox and Image widgets are missing CSS style names](http://code.google.com/webtoolkit/issues/6606675.html)
-*   [Issue
-#5922226 - Casts from interface types to concrete class types can
+*   [Issue #4794724 - Servlet container problems due to gwt-user.jar including javax.servlet
+classes](http://code.google.com/webtoolkit/issues/4794724.html)
+*   [Issue #1676686 - Hosted mode problems in Windows 2000](http://code.google.com/webtoolkit/issues/1676686.html)
+*   [Issue #6606675 - ListBox and Image widgets are missing CSS style names](http://code.google.com/webtoolkit/issues/6606675.html)
+*   [Issue #5922226 - Casts from interface types to concrete class types can
 fail](http://code.google.com/webtoolkit/issues/5922226.html)
-*   [Issue
-#4137736 - Referencing an outer local from a field initializer causes
+*   [Issue #4137736 - Referencing an outer local from a field initializer causes
 NullPointerException](http://code.google.com/webtoolkit/issues/4137736.html)
-*   [Issue
-#2518888 - Problem with "return" statements in constructors](http://code.google.com/webtoolkit/issues/2518888.html)
-*   [Issue
-#9984353 - Hosted Mode server throws IllegalArgumentException when
-system is set to non-english locale](http://code.google.com/webtoolkit/issues/9984353.html)
-*   [Issue
-#3733199 - Shrinking Grid via resizeRows() leads to inconsistent
+*   [Issue #2518888 - Problem with "return" statements in
+constructors](http://code.google.com/webtoolkit/issues/2518888.html)
+*   [Issue #9984353 - Hosted Mode server throws IllegalArgumentException when system is set to
+non-english locale](http://code.google.com/webtoolkit/issues/9984353.html)
+*   [Issue #3733199 - Shrinking Grid via resizeRows() leads to inconsistent
 state](http://code.google.com/webtoolkit/issues/3733199.html)
-*   [Issue
-#7659250 - Hosted mode on default Fedora Core 5 complains of missing
+*   [Issue #7659250 - Hosted mode on default Fedora Core 5 complains of missing
 libstdc++.so.5](http://code.google.com/webtoolkit/issues/7659250.html)
-*   [Issue
-#6531240 - Empty if, while, do, and for statements cause Compiler
+*   [Issue #6531240 - Empty if, while, do, and for statements cause Compiler
 Error](http://code.google.com/webtoolkit/issues/6531240.html)
-*   [Issue
-#4927592 - Multiple initializations in for loop initializer causes
+*   [Issue #4927592 - Multiple initializations in for loop initializer causes
 internal compiler error.](http://code.google.com/webtoolkit/issues/4927592.html)
 
 See the [appendix of fixed issues](#Appendix) for the
@@ -2521,7 +2497,5 @@ fails to cause a side effect.
 * * *
 
 ## Release Notes for 1.0.21
-
-<p />
 
 ### Fixed Issues

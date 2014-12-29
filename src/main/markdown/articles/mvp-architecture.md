@@ -345,7 +345,7 @@ each of our events.
 
 To demonstrate how these pieces fit together let's look at what takes
 place when a user chooses to edit a contact. First we'll need the AppController
-to register for the EditContactEvent. To do so, we call [HandlerManager.addHandler()](/javadoc/latest/com/google/gwt/event/shared/HandlerManager.html#addHandler(com.google.gwt.event.shared.GwtEvent.Type,%20H))
+to register for the EditContactEvent. To do so, we call [HandlerManager.addHandler()](/javadoc/latest/com/google/gwt/event/shared/HandlerManager.html#addHandler\(com.google.gwt.event.shared.GwtEvent.Type,%20H\))
 and pass in the [GwtEvent.Type](/javadoc/latest/com/google/gwt/event/shared/GwtEvent.Type.html)
 as well as the handler that should be called when the event is fired. The code below
 shows how the AppController registers to receive EditContactEvents.
@@ -368,7 +368,7 @@ called eventBus, and is registering a new EditContactEventHandler. This handler 
 grab the id of the contact to be edited, and pass it to the
 doEditContact() method whenever an event of EditContactEvent.getAssociatedType()
 is fired. Multiple components can be listening for a single event, so when an
-event is fired using the [HandlerManager.fireEvent()](/javadoc/latest/com/google/gwt/event/shared/HandlerManager.html#fireEvent(com.google.gwt.event.shared.GwtEvent)), the HandlerManager
+event is fired using the [HandlerManager.fireEvent()](/javadoc/latest/com/google/gwt/event/shared/HandlerManager.html#fireEvent\(com.google.gwt.event.shared.GwtEvent\)), the HandlerManager
 looks for any component that has added a handler for event.getAssociatedType().
 For each component that has a handler, the HandlerManager calls event.dispatch()
 with that component's EventHandler interface.
@@ -449,7 +449,7 @@ Given that history is not specific to a particular view, it
 makes sense to add it to the AppController class.
 
 To start with, we'll need to have the AppController implement [ValueChangeHandler](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeHandler.html)
-and declare its own [onValueChange()](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeHandler.html#onValueChange(com.google.gwt.event.logical.shared.ValueChangeEvent))
+and declare its own [onValueChange()](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeHandler.html#onValueChange\(com.google.gwt.event.logical.shared.ValueChangeEvent\))
 method. The interface and parameter are of type String because the History
 events are simply the tokens that are pushed onto the stack.
 

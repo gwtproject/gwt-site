@@ -20,7 +20,7 @@ before continuing.
 ## Implementing the render() Method<a id="cell-render"></a>
 
 The core method that all Cells must implement is the
-[Cell#render(Context, C value, SafeHtmlBuilder)](/javadoc/latest/com/google/gwt/cell/client/Cell.html#render(com.google.gwt.cell.client.Cell.Context, C, com.google.gwt.safehtml.shared.SafeHtmlBuilder))
+[Cell#render(Context, C value, SafeHtmlBuilder)](/javadoc/latest/com/google/gwt/cell/client/Cell.html#render\(com.google.gwt.cell.client.Cell.Context, C, com.google.gwt.safehtml.shared.SafeHtmlBuilder\))
 method, which renders the parameterized `value` into the `SafeHtmlBuilder`.  In some cases, you will only need to render
 simple HTML, such as a single `div` with some content.  In other cases, you might need to render a complex HTML structure, such as the one
 in the [CellList](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) example, which contains an image and two lines of
@@ -141,7 +141,7 @@ public class CellExample implements EntryPoint {
 ## Handling events from Cells<a id="cell-onBrowserEvent"></a>
 
 The other core method to implement (if you want to handle events in the Cell) is
-[Cell#onBrowserEvent(Context, Element, C value, NativeEvent, ValueUpdater)](/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent(com.google.gwt.cell.client.Cell.Context, com.google.gwt.dom.client.Element, C, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater)).  `onBrowserEvent` is called when an event occurs on any DOM instance created with the
+[Cell#onBrowserEvent(Context, Element, C value, NativeEvent, ValueUpdater)](/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent\(com.google.gwt.cell.client.Cell.Context, com.google.gwt.dom.client.Element, C, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater\)).  `onBrowserEvent` is called when an event occurs on any DOM instance created with the
 HTML output of this Cell.  Since Cells are flyweights that handle events from multiple instances, contextual information about the instance is passed into the method.
 For example, the Context tells you where the Cell is located (row and column indexes) in its containing CellTable.
 
@@ -152,13 +152,13 @@ are not required to have only one outer most element.  For example TextCell does
 
 Cells must declare which event types they want to handle, and the Cell Widget that contains the Cell is responsible for ensuring that only those events are passed to the Cell.
 In order to specify which events your cell will handle, you pass the event types into the
-[AbstractCell(String...)](/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html#AbstractCell(java.lang.String...))
+[AbstractCell(String...)](/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html#AbstractCell\(java.lang.String...\))
 constructor. AbstractCell will return the events to the Cell Widget when
-[Cell#getConsumedEvents()](/javadoc/latest/com/google/gwt/cell/client/Cell.html#getConsumedEvents())
+[Cell#getConsumedEvents()](/javadoc/latest/com/google/gwt/cell/client/Cell.html#getConsumedEvents\(\))
 is called.
 
 Alternatively, you can override 
-[Cell#getConsumedEvents()](/javadoc/latest/com/google/gwt/cell/client/Cell.html#getConsumedEvents())
+[Cell#getConsumedEvents()](/javadoc/latest/com/google/gwt/cell/client/Cell.html#getConsumedEvents\(\))
 directly. For example, if you are extending an existing Cell that does not expose the event type constructor, you can override `getConsumedEvents()` to return the
 events that your subclass uses.
 
@@ -175,17 +175,17 @@ show an alert box that tells us which color we selected.
 The process for adding event support is as follows:
 
 1.  Specify the events that you want to handle by passing them into the
-    [AbstractCell(String...)](/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html#AbstractCell(java.lang.String...))
+    [AbstractCell(String...)](/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html#AbstractCell\(java.lang.String...\))
     constructor. See the note about the `keydown` event below.
 2.  Override the
-    [Cell#onBrowserEvent()](/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent(com.google.gwt.cell.client.Cell.Context, com.google.gwt.dom.client.Element, C, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater)) method to handle the event. For some events, you may want to look at the event target before deciding how to handle the event.
+    [Cell#onBrowserEvent()](/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent\(com.google.gwt.cell.client.Cell.Context, com.google.gwt.dom.client.Element, C, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater\)) method to handle the event. For some events, you may want to look at the event target before deciding how to handle the event.
     In the example below, we only respond to click events that actually occur on the rendered div.
 3.  As described in the example comments below, the `onEnterKeyDown()` method is a special case convience method in AbstractCell that helps to provide
     a unified user experience, such that all Cells that respond to events can be activated by selecting the Cell with the keyboard and pressing enter.  Otherwise,
     users would not be able to interact with the Cell without using the mouse. The convention followed by GWT cells is to toggle editing when the enter key is
     pressed, but you are free to define the behavior for your app. Your cell's getConsumedEvents() method must include "keydown" in order for AbstractCell to call
     `onEnterKeyDown()`.
-4.  Optionally call    [ValueUpdater#update(C)](/javadoc/latest/com/google/gwt/cell/client/ValueUpdater.html#update(C))
+4.  Optionally call    [ValueUpdater#update(C)](/javadoc/latest/com/google/gwt/cell/client/ValueUpdater.html#update\(C\))
     to indicate that the value of the cell has been modified. For example, you might call the `update()` method if the user types a new value in a text
     box, or if the user clicks on a button.
 

@@ -187,10 +187,9 @@ and `MessageFormat` rolled into a single mechanism.
 
 ### Properties Files
 
-All of the types above use properties files based on the traditional [Java
-properties file format](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)), although GWT uses [an enhanced properties file
-format](DevGuideI18n.html#DevGuidePropertiesFiles) that allows for UTF-8 and therefore allows properties files to
-contain Unicode characters directly.
+All of the types above use properties files based on the traditional [Java properties file format](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load\(java.io.InputStream\)),
+although GWT uses [an enhanced properties file format](DevGuideI18n.html#DevGuidePropertiesFiles)
+that allows for UTF-8 and therefore allows properties files to contain Unicode characters directly.
 
 ## Dynamic String Internationalization<a id="DevGuideDynamicStringInternationalization"></a>
 

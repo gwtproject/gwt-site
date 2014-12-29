@@ -148,7 +148,7 @@ the client.
 
 Debugging messages are displayed within the Development Mode log window.
 Some of these messages are from GWT. However, you can generate your own debug
-messages by using calls to [GWT.log()](/javadoc/latest/com/google/gwt/core/client/GWT.html#log(java.lang.String,%20java.lang.Throwable)).
+messages by using calls to [GWT.log()](/javadoc/latest/com/google/gwt/core/client/GWT.html#log\(java.lang.String,%20java.lang.Throwable\)).
 
 For example, modifying the standard project to emit a debug message inside
 the [ClickHandler](/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html)
@@ -497,7 +497,7 @@ The host HTML page references this file so that clients visiting your page first
 
 The `<md5>.cache.html` files generated in the `war/<app_name>` directory, along with the bootstrap script, are the most important part of the generated fileset. They represent one version of your application tailored to a specific browser (or locale). These are the application files that the bootstrap script selects after it determines which browser it's running on.
 
-Another generated application file that isn't strictly necessary to deploy your GWT application, but required if you're using GWT RPC and the support for the Serializable interface for types transferred through RPC, is the `<md5>.gwt.rpc` file. The serialization policy file must be accessible by your RPC [RemoteServiceServlet](/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html) via the [ServletContext.getResource()](http://java.sun.com/products/servlet/2.3/javadoc/javax/servlet/ServletContext.html#getResource(java.lang.String)) call.
+Another generated application file that isn't strictly necessary to deploy your GWT application, but required if you're using GWT RPC and the support for the Serializable interface for types transferred through RPC, is the `<md5>.gwt.rpc` file. The serialization policy file must be accessible by your RPC [RemoteServiceServlet](/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html) via the [ServletContext.getResource()](http://java.sun.com/products/servlet/2.3/javadoc/javax/servlet/ServletContext.html#getResource\(java.lang.String\)) call.
 
 ### Public Resources<a id="public_resources"></a>
 

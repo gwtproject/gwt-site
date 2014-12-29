@@ -58,7 +58,7 @@ The lib folder contains the various libraries (typically JAR and class files) th
 
 ### The serialization policy file
 
-If you're using [GWT RPC](DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls), the GWT compiler will have emitted an `<md5>.gwt.rpc` serialization policy file after compilation. This file must be deployed on your servlet container in order for the GWT RPC mechanism to determine whether it's safe to serialize types passed into your GWT RPC services. The serialization policy file can live anywhere in your webapp application directory, as long as it is retrievable via the [ServletContext.getResource()](http://java.sun.com/products/servlet/2.3/javadoc/javax/servlet/ServletContext.html#getContext(java.lang.String)) call in your RPC service.
+If you're using [GWT RPC](DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls), the GWT compiler will have emitted an `<md5>.gwt.rpc` serialization policy file after compilation. This file must be deployed on your servlet container in order for the GWT RPC mechanism to determine whether it's safe to serialize types passed into your GWT RPC services. The serialization policy file can live anywhere in your webapp application directory, as long as it is retrievable via the [ServletContext.getResource()](http://java.sun.com/products/servlet/2.3/javadoc/javax/servlet/ServletContext.html#getContext\(java.lang.String\)) call in your RPC service.
 
 If you're using GWT RPC in your application, you can check out documentation on [deploying RPC services](DevGuideServerCommunication.html#DevGuideRPCDeployment) for more details.
 

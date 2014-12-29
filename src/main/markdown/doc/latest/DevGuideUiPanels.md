@@ -21,8 +21,8 @@ the user interface in the browser.
 ### [RootPanel](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html)
 
 A [RootPanel](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html) is the top-most panel to which all other widgets are ultimately
-attached. [RootPanel.get()](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html#get()) gets a singleton panel that wraps the HTML document's
-`<body>` element. Use [RootPanel.get(String id)](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html#get(java.lang.String)) to get a panel for any other
+attached. [RootPanel.get()](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html#get\(\)) gets a singleton panel that wraps the HTML document's
+`<body>` element. Use [RootPanel.get(String id)](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html#get\(java.lang.String\)) to get a panel for any other
 element on the page.
 
 ### [FlowPanel](/javadoc/latest/com/google/gwt/user/client/ui/FlowPanel.html)
@@ -162,7 +162,7 @@ p.add(new HTML("the other content"), new HTML("the other"), 4);
 ![StackLayoutPanel example](images/StackLayoutPanel.png)
 
 Note that, as with [DockLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html), only a single unit type may be used on a
-given panel. The length value provided to the [add()](/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html#add(com.google.gwt.user.client.ui.Widget))
+given panel. The length value provided to the [add()](/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html#add\(com.google.gwt.user.client.ui.Widget\))
 method specifies the size of the header widget, which must be of a fixed size.
 
 ### TabLayoutPanel
@@ -201,7 +201,7 @@ Panels that implement [AnimatedLayout](/javadoc/latest/com/google/gwt/user/clien
 [DockLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html), and [SplitLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html), can animate their child widgets from
 one set of constraints to another. Typically this is done by setting up the
 state towards which you wish to animate, then calling
-[animate()](/javadoc/latest/com/google/gwt/user/client/ui/AnimatedLayout.html#animate(int)). See ["Recipes"](#recipes)
+[animate()](/javadoc/latest/com/google/gwt/user/client/ui/AnimatedLayout.html#animate\(int\)). See ["Recipes"](#recipes)
 below for specific examples.
 
 ## RequiresResize and ProvidesResize<a id="Resize"></a>
@@ -211,7 +211,7 @@ and [ProvidesResize](/javadoc/latest/com/google/gwt/user/client/ui/ProvidesResiz
 throughout the widget hierarchy.
 
 [RequiresResize](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html) provides a single method,
-[onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize()), which is called by the widget's parent
+[onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize\(\)), which is called by the widget's parent
 whenever the child's size has changed. [ProvidesResize](/javadoc/latest/com/google/gwt/user/client/ui/ProvidesResize.html) is simply a tag
 interface indicating that a parent widget will honor this contract. The purpose
 of these two interfaces is to form an unbroken hierarchy between all widgets
@@ -219,7 +219,7 @@ that implement RequiresResize and the [RootLayoutPanel](/javadoc/latest/com/goog
 changes (such as the browser window resizing) that could affect the size of
 widgets in the hierarchy.
 
-### When to use [onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize())
+### When to use [onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize\(\))
 
 Most widgets should _not_ need to know when they've been resized, as the
 browser's layout engine should be doing most of the work. However, there are
@@ -227,13 +227,13 @@ times when a widget _does_ need to know. This comes up, for example, when a
 widget contains a dynamic list of items depending upon how much room is
 available to display them. Because it's almost always faster to let the layout
 engine do its work than to run code, you should not lean upon
-[onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize()) unless you have no alternative.
+[onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize\(\)) unless you have no alternative.
 
 ### When and how to implement ProvidesResize
 
 A panel that implements ProvidesResize is expected to propagate resize events
 to any of its child widgets that implement RequiresResize. For a canonical
-example of this, see the implementation of [LayoutPanel.onResize()](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#onResize()). Most
+example of this, see the implementation of [LayoutPanel.onResize()](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#onResize\(\)). Most
 custom widgets will want to composite an existing layout panel using
 [ResizeComposite](/javadoc/latest/com/google/gwt/user/client/ui/ResizeComposite.html), however, as described next.
 
@@ -431,7 +431,7 @@ specified in `EM` units.
 To use animation with a [LayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html), you must first create an initial set of
 constraints, then animate to a target set of constraints. In the following
 example, we start with a child widget positioned at the top, but with no height
-so that it is effectively hidden. Calling [LayoutPanel.forceLayout()](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#forceLayout()) "fixes"
+so that it is effectively hidden. Calling [LayoutPanel.forceLayout()](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#forceLayout\(\)) "fixes"
 the initial constraints.
 
 ```
@@ -451,7 +451,7 @@ This will work with any constraints and any number of children.
 
 ### Implementing a Composite that RequiresResize
 
-Widgets that implement [RequiresResize](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html) expect [RequiresResize.onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize()) to
+Widgets that implement [RequiresResize](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html) expect [RequiresResize.onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize\(\)) to
 be called whenever the widget's size changes. If you are wrapping such a widget
 in a [Composite](/javadoc/latest/com/google/gwt/user/client/ui/Composite.html), you'll need to use [ResizeComposite](/javadoc/latest/com/google/gwt/user/client/ui/ResizeComposite.html) instead to ensure that
 this call is propagated correctly, like so:
@@ -470,13 +470,13 @@ class MyWidget extends ResizeComposite {
 
 The [Layout](/javadoc/latest/com/google/gwt/layout/client/Layout.html) class has to wrap each of its child elements in a "container"
 element in order to work properly. One implication of this is that, when you
-call [UIObject.setVisible(boolean)](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setVisible(boolean)) on a widget within a [LayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html), it
+call [UIObject.setVisible(boolean)](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setVisible\(boolean\)) on a widget within a [LayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html), it
 won't behave quite as expected: the widget will indeed be made invisible, but
 it will tend to consume mouse events (actually, it's the container element that
 is doing so).
 
 To work around this, you can get the container element directly using
-[LayoutPanel.getWidgetContainerElement(Widget)](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#getWidgetContainerElement(com.google.gwt.user.client.ui.Widget)), and set its visibility
+[LayoutPanel.getWidgetContainerElement(Widget)](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#getWidgetContainerElement\(com.google.gwt.user.client.ui.Widget\)), and set its visibility
 directly:
 
 ```

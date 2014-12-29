@@ -32,7 +32,7 @@ functions.
 
 Some parts of the toolkit make implicit use of deferred binding, that is, they use the technique as a part of their implementation, but it is not visible to the user of the
 API. For example, many [widgets and <a href="DevGuideUiPanels.html">panels](DevGuideUiWidgets.html) as well as the [DOM](/javadoc/latest/com/google/gwt/user/client/DOM.html) class use this technique to implement browser specific
-logic. Other GWT features require the API user to explicity invoke deferred binding by designing classes that follow specific rules and instantiating instances of the classes with [GWT.create(Class)](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)), including [GWT RPC](DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls) and [I18N](DevGuideI18n.html).
+logic. Other GWT features require the API user to explicity invoke deferred binding by designing classes that follow specific rules and instantiating instances of the classes with [GWT.create(Class)](/javadoc/latest/com/google/gwt/core/client/GWT.html#create\(java.lang.Class\)), including [GWT RPC](DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls) and [I18N](DevGuideI18n.html).
 
 As a user of the GWT, you may never need to create a new interface that uses deferred binding. If you follow the instructions in the guide for creating
 internationalized applications or GWT RPC calls you will be using deferred binding, but you will not have to actually write any browser dependent or locale dependent code.
@@ -102,13 +102,13 @@ The actual replacement rules are specified in `Popup.gwt.xml`, as shown below:
 These directives tell the GWT compiler to swap out the `PopupImpl` class code with different class implementations according to the `user.agent` property. The
 `Popup.gwt.xml` file specifies a default implementation for the `PopupImpl` class, an overide for the Mozilla browser (`PopupImplMozilla` is substituted for
 `PopupImpl`), and an override for Internet Explorer version 6 (`PopupImplIE6` is substituted for `PopupImpl`). Note that `PopupImpl` class or its
-derived classes cannot be instantiated directly. Instead, the `PopupPanel` class is used and the [GWT.create(Class)](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)) technique is used
+derived classes cannot be instantiated directly. Instead, the `PopupPanel` class is used and the [GWT.create(Class)](/javadoc/latest/com/google/gwt/core/client/GWT.html#create\(java.lang.Class\)) technique is used
 under the hood to instruct the compiler to use deferred binding.
 
 ## Example Class Hierarchy using Replacement<a id="example"></a>
 
 To see how this is used when designing a widget, we will examine the case of the `PopupPanel` widget further. The `PopupPanel` class implements the user visible
-API and contains logic that is common to all browsers. It also instantiates the proper implementation specific logic using the [GWT.create(Class)](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)) as follows:
+API and contains logic that is common to all browsers. It also instantiates the proper implementation specific logic using the [GWT.create(Class)](/javadoc/latest/com/google/gwt/core/client/GWT.html#create\(java.lang.Class\)) as follows:
 
 ```
 private static final PopupImpl impl = GWT.create(PopupImpl.class);
@@ -174,8 +174,8 @@ to deferred binding:
 </module>
 ```
 
-These directives instruct the GWT compiler to invoke methods in a [Generator](/javadoc/latest/com/google/gwt/core/ext/Generator.html) subclass (`ServiceInterfaceProxyGenerator`) in order to generate special code when the deferred binding mechanism [GWT.create()](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)) is encountered while
-compiling. In this case, if the [GWT.create()](/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)) call references an instance of `RemoteService` or one of its subclasses, the `ServiceInterfaceProxyGenerator`'s generate() method
+These directives instruct the GWT compiler to invoke methods in a [Generator](/javadoc/latest/com/google/gwt/core/ext/Generator.html) subclass (`ServiceInterfaceProxyGenerator`) in order to generate special code when the deferred binding mechanism [GWT.create()](/javadoc/latest/com/google/gwt/core/client/GWT.html#create\(java.lang.Class\)) is encountered while
+compiling. In this case, if the [GWT.create()](/javadoc/latest/com/google/gwt/core/client/GWT.html#create\(java.lang.Class\)) call references an instance of `RemoteService` or one of its subclasses, the `ServiceInterfaceProxyGenerator`'s generate() method
 will be invoked.
 
 ## Generator Implementation<a id="generator-implementation"></a>

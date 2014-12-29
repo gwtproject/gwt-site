@@ -179,7 +179,7 @@ automatically prefetch rows, such as the next page. This can increase the percei
 
 A [BulkTableRenderer](http://code.google.com/p/google-web-toolkit-incubator/wiki/BulkTableRenderers) will render all rows in a table at once.
 BulkTableRenderer has derived types for different purposes. As long as your table contents are not widgets, you provide a table model and the BulkRenderer creates the entire table
-rendered as a single HTML string and set with [setInnerHtml()](/javadoc/latest/com/google/gwt/dom/client/Element.html#setInnerHTML(java.lang.String)) which can
+rendered as a single HTML string and set with [setInnerHtml()](/javadoc/latest/com/google/gwt/dom/client/Element.html#setInnerHTML\(java.lang.String\)) which can
 be 2-10x faster.
 
 Note that after being loaded, widgets, cell spans, row spans etc. may be added to the table, but there will be no speed advantage for them.
@@ -191,7 +191,7 @@ impressions are important, you may want to try this trick.
 
 The underlying issue is that the images needed for the background, border, or animation are fetched from the server on demand. A solution is to pre-fetch the images so that
 they are sitting in the browser cache by the time the animation is actually invoked. Go through your CSS files for the images used in your styling that are running slowly, and use
-the [Image.prefetch()](/javadoc/latest/com/google/gwt/user/client/ui/Image.html#prefetch(java.lang.String))
+the [Image.prefetch()](/javadoc/latest/com/google/gwt/user/client/ui/Image.html#prefetch\(java.lang.String\))
 method.
 
 ```
