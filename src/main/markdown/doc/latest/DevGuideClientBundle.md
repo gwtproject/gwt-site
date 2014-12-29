@@ -175,7 +175,7 @@ This section describes how [ImageResource](/javadoc/latest/index.html?com/google
     *   [Supported formats](#Supported_formats)
 *   [Converting from ImageBundle](#Converting_from_ImageBundle)
 
-### Goal<aid="ImageResourceGoal"></a>
+### Goal<a id="ImageResourceGoal"></a>
 
 *   Provide access to image data at runtime in the most efficient way possible*   Do not bind the `ImageResource` API to a particular widget framework
 

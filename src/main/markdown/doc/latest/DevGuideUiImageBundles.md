@@ -22,7 +22,7 @@ application needs to do.
 
 The end result of sending out many separate requests and freshness checks is slow application startup.
 
-The GWT `[ImageResource](DevGuideClientBundle.html#ImageResource)` solves these problems. Multiple `ImageResources` are declared in a single `ClientBundle`, which is a composition of many images into a single image, along with an interface for accessing the individual
+The GWT [ImageResource](DevGuideClientBundle.html#ImageResource) solves these problems. Multiple `ImageResources` are declared in a single `ClientBundle`, which is a composition of many images into a single image, along with an interface for accessing the individual
 images from within the composite. Users can define a `ClientBundle` that contains the images used by their application, and GWT will automatically create the composite image and
 provide an implementation of the interface for accessing each individual image. Instead of a round trip to the server for each image, only one round trip to the server for the
 composite image is needed.
