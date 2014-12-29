@@ -605,6 +605,14 @@ The source code for this webpage will be found in *src/main/markdown*. You can e
 
 After that you can go to *target/generated-site* and see the generated site.
 
+You can also launch the embedded Jetty server with
+
+```
+mvn jetty:run
+```
+
+and point your browser to [http://localhost:8080](http://localhost:8080).
+
 If you think your change is ready to be published on gwtproject.org you can send us
 your changes for review by using gerrit. Note: you need to have signed a <a href="#clas">CLA Agreement</a>.
 
