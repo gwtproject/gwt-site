@@ -610,6 +610,10 @@ your changes for review by using gerrit. Note: you need to have signed a <a href
 
 This works the same way you would submit a code change to GWT. More information can be found [here](#submittingpatches).
 
+If you wish to contribute to the GWT code used on the site (to improve navigation), then you should
+
+`git clone https://gwt.googlesource.com/gwt-site-webapp`
+
 ### Global .gitignore<a id="global_gitignore"></a>
 
 Since our .gitignore files don't contain IDE or OS specific .gitignore entries you should setup your global .gitignore.
