@@ -11,4 +11,5 @@ to look. These  HTML5 features are supported by GWT:
 
 1.  [Client-side Storage](DevGuideHtml5Storage.html) -- Use LocalStorage, SessionStorage, and monitor StorageEvents
 2.  [Canvas](/javadoc/latest/index.html?com/google/gwt/canvas/dom/client/package-summary.html) -- Add visualizations using Canvas (Javadoc)
-3.  [Audio](/javadoc/latest/com/google/gwt/media/client/Audio.html) -- Use Audio widgets (Javadoc)4.  [Video](/javadoc/latest/com/google/gwt/media/client/Video.html) -- Use Video widgets (Javadoc)
+3.  [Audio](/javadoc/latest/com/google/gwt/media/client/Audio.html) -- Use Audio widgets (Javadoc)
+4.  [Video](/javadoc/latest/com/google/gwt/media/client/Video.html) -- Use Video widgets (Javadoc)

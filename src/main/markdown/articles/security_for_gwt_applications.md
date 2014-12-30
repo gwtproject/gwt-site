@@ -12,15 +12,15 @@ GWT's mission is to provide developers with the tools they need to build AJAX ap
 This article is a primer on JavaScript attacks, intended for GWT developers. The first portion describes the major classes of attacks against JavaScript in general terms that are applicable to any AJAX framework. After that background information on the attacks, the second portion describes how to secure your GWT applications against them.
 
 1.  [Part 1: JavaScript Vulnerabilities](#vulnerabilities)
-
-1.  [Leaking Data](#leaking)
-2.  [Cross-Site Scripting](#cross-site)
-3.  [Forging Requests](#forging)
-4.  [JSON and XSRF](#json-xsrf)2.  [Part 2: How GWT Developers Can Fight Back](#fight)
-
-1.  [XSS and GWT](#xss)
-2.  [XSRF and GWT](#xsrf)
-3.  [JSON and GWT](#json)3.  [Conclusion](#conclusion)
+    1.  [Leaking Data](#leaking)
+    2.  [Cross-Site Scripting](#cross-site)
+    3.  [Forging Requests](#forging)
+    4.  [JSON and XSRF](#json-xsrf)
+2.  [Part 2: How GWT Developers Can Fight Back](#fight)
+    1.  [XSS and GWT](#xss)
+    2.  [XSRF and GWT](#xsrf)
+    3.  [JSON and GWT](#json)
+3.  [Conclusion](#conclusion)
 
 ## Part 1: JavaScript Vulnerabilities <a id="vulnerabilities"></a>
 

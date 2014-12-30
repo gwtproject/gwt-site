@@ -886,7 +886,8 @@ Use a [FieldUpdater](/javadoc/latest/com/google/gwt/cell/client/FieldUpdater.htm
 
 **To Update the Database from a CellTable:**
 
-1.  Create a class that implements [FieldUpdater](/javadoc/latest/com/google/gwt/cell/client/FieldUpdater.html) to accept a new data value and send it to your database.2.  Set the FieldUpdater in the Column by calling  [column.setFieldUpdater(fieldUpdater)](/javadoc/latest/com/google/gwt/user/cellview/client/Column.html#setFieldUpdater\(com.google.gwt.cell.client.FieldUpdater\)).
+1.  Create a class that implements [FieldUpdater](/javadoc/latest/com/google/gwt/cell/client/FieldUpdater.html) to accept a new data value and send it to your database.
+2.  Set the FieldUpdater in the Column by calling  [column.setFieldUpdater(fieldUpdater)](/javadoc/latest/com/google/gwt/user/cellview/client/Column.html#setFieldUpdater\(com.google.gwt.cell.client.FieldUpdater\)).
 
 **Code Example** - An example is available at [CellTableFieldUpdaterExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTableFieldUpdaterExample.java).
 

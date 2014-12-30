@@ -47,9 +47,11 @@ untrusted string in native JavaScript.)
     1.  [Prefer Plain-Text Widgets](#Prefer_Plain_Text)
     2.  [Use UiBinder for Declarative Layout](#Avoid_ad_hoc_generation_of_HTML_)
     3.  [Use the SafeHtml Type to Represent XSS-Safe HTML](#Use_the_SafeHtml_type)
-    4.  [Creating SafeHtml Values](#Creating_SafeHtml_Values)3.  [Coding Guidelines for Widget Developers](#Coding_Guidelines_for_Widget_Developers)
-1.  [Provide SafeHtml Methods and Constructors](#Provide_SafeHtml)
-2.  ["Unwrap" SafeHtml Close to the Value's Use](#Unwrap_SafeHtml)4.  [Caveats and Limitations](#Caveats and Limitations)
+    4.  [Creating SafeHtml Values](#Creating_SafeHtml_Values)
+3.  [Coding Guidelines for Widget Developers](#Coding_Guidelines_for_Widget_Developers)
+    1.  [Provide SafeHtml Methods and Constructors](#Provide_SafeHtml)
+    2.  ["Unwrap" SafeHtml Close to the Value's Use](#Unwrap_SafeHtml)
+4.  [Caveats and Limitations](#Caveats_and_Limitations)
 
 ## Coding Guidelines<a id="Coding_guidelines"></a>
 
@@ -572,7 +574,7 @@ assigned safe HTML.  In a trivial example as the above this is quite
 straightforward, but in more complex, real-world code this a potentially time
 consuming and error prone process.  
 
-## Caveats and Limitations<a id="Caveats and Limitations"></a>
+## Caveats and Limitations<a id="Caveats_and_Limitations"></a>
 
 Comprehensive and consistent use of `SafeHtml` during development of
 a GWT application can substantially reduce the incidence of XSS vulnerabilities
