@@ -297,107 +297,37 @@ CellBrowser is similar to a CellTree but displays the node levels side-by-side. 
 
 GWT offers a number of concrete Cell implementations that you can use immediately. See the [Cell Sampler ](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellSampler)for examples.
 
-<dl>
-  <dt id="text-cells">
-    Text
-</dt>
-<dd>
-[TextCell](/javadoc/latest/com/google/gwt/cell/client/TextCell.html) - A non-editable cell that displays text
-</dd>
-
-<dd>
-[ClickableTextCell](/javadoc/latest/com/google/gwt/cell/client/ClickableTextCell.html) - A text field; clicking on the cell causes its ValueUpdater to be called
-</dd>
-
-<dd>
-[EditTextCell](/javadoc/latest/com/google/gwt/cell/client/EditTextCell.html) - A cell that initially displays text;  when clicked, the text becomes editable
-</dd>
-
-<dd>
-[TextInputCell](/javadoc/latest/com/google/gwt/cell/client/TextInputCell.html) - A field for entering text
-</dd>
-
-<dt id="button-cells">
-    Buttons, Checkboxes and Menus
-</dt>
-
-<dd>
-[ActionCell](/javadoc/latest/com/google/gwt/cell/client/ActionCell.html) - A button that takes a delegate to perform actions on mouseUp
-</dd>
-
-<dd>
-[ButtonCell](/javadoc/latest/com/google/gwt/cell/client/ButtonCell.html) - A button whose text is the data value
-</dd>
-
-<dd>
-[CheckboxCell](/javadoc/latest/com/google/gwt/cell/client/CheckboxCell.html) - A checkbox that can be checked or unchecked
-</dd>
-
-<dd>
-[SelectionCell](/javadoc/latest/com/google/gwt/cell/client/SelectionCell.html) - A drop-down menu for selecting one of many choices
-</dd>
-
-<dt id="date-cells">
-    Dates
-</dt>
-
-<dd>
-[DateCell](/javadoc/latest/com/google/gwt/cell/client/DateCell.html) - A date that conforms to a specified date format
-</dd>
-
-<dd>
-[DatePickerCell](/javadoc/latest/com/google/gwt/cell/client/DatePickerCell.html) - A date picker that displays a month calendar in which the user can select a date
-</dd>
-
-<dt id="image-cells">
-    Images
-</dt>
-
-<dd>
-[ImageCell](/javadoc/latest/com/google/gwt/cell/client/ImageCell.html) - A cell used to render an image URL
-</dd>
-
-<dd>
-[ImageResourceCell](/javadoc/latest/com/google/gwt/cell/client/ImageResourceCell.html)  - A cell used to render an ImageResource
-</dd>
-
-<dd>
-[ImageLoadingCell](/javadoc/latest/com/google/gwt/cell/client/ImageLoadingCell.html) - A cell used to render an image URL.  A loading indicator is initially displayed
-</dd>
-
-<dt id="number-cells">
-    Numbers
-</dt>
-
-<dd>
-[NumberCell](/javadoc/latest/com/google/gwt/cell/client/NumberCell.html) - A number that conforms to a specified number format
-</dd>
-
-<dt id="composition-cells">
-    Compositions
-</dt>
-
-<dd>
-[CompositeCell](/javadoc/latest/com/google/gwt/cell/client/CompositeCell.html) - A composition of multiple Cells.
-</dd>
-
-<dt id="decorator-cells">
-    Decorators
-</dt>
-
-<dd>
-[IconCellDecorator](/javadoc/latest/com/google/gwt/cell/client/IconCellDecorator.html) - A decorator that adds an icon to another Cell
-</dd>
-
-</dl>
+* Text <a id="text-cells"></a>
+    * [TextCell](/javadoc/latest/com/google/gwt/cell/client/TextCell.html) - A non-editable cell that displays text
+    * [ClickableTextCell](/javadoc/latest/com/google/gwt/cell/client/ClickableTextCell.html) - A text field; clicking on the cell causes its ValueUpdater to be called
+    * [EditTextCell](/javadoc/latest/com/google/gwt/cell/client/EditTextCell.html) - A cell that initially displays text;  when clicked, the text becomes editable
+    * [TextInputCell](/javadoc/latest/com/google/gwt/cell/client/TextInputCell.html) - A field for entering text
+* Buttons, Checkboxes and Menus <a id="button-cells"></a>
+    * [ActionCell](/javadoc/latest/com/google/gwt/cell/client/ActionCell.html) - A button that takes a delegate to perform actions on mouseUp
+    * [ButtonCell](/javadoc/latest/com/google/gwt/cell/client/ButtonCell.html) - A button whose text is the data value
+    * [CheckboxCell](/javadoc/latest/com/google/gwt/cell/client/CheckboxCell.html) - A checkbox that can be checked or unchecked
+    * [SelectionCell](/javadoc/latest/com/google/gwt/cell/client/SelectionCell.html) - A drop-down menu for selecting one of many choices
+* Dates <a id="date-cells"></a>
+    * [DateCell](/javadoc/latest/com/google/gwt/cell/client/DateCell.html) - A date that conforms to a specified date format
+    * [DatePickerCell](/javadoc/latest/com/google/gwt/cell/client/DatePickerCell.html) - A date picker that displays a month calendar in which the user can select a date
+* Images <a id="image-cells"></a>
+    * [ImageCell](/javadoc/latest/com/google/gwt/cell/client/ImageCell.html) - A cell used to render an image URL
+    * [ImageResourceCell](/javadoc/latest/com/google/gwt/cell/client/ImageResourceCell.html)  - A cell used to render an ImageResource
+    * [ImageLoadingCell](/javadoc/latest/com/google/gwt/cell/client/ImageLoadingCell.html) - A cell used to render an image URL.  A loading indicator is initially displayed
+* Numbers <a id="number-cells"></a>
+    * [NumberCell](/javadoc/latest/com/google/gwt/cell/client/NumberCell.html) - A number that conforms to a specified number format
+* Compositions <a id="composition-cells"></a>
+    * [CompositeCell](/javadoc/latest/com/google/gwt/cell/client/CompositeCell.html) - A composition of multiple Cells.
+* Decorators <a id="decorator-cells"></a>
+    * [IconCellDecorator](/javadoc/latest/com/google/gwt/cell/client/IconCellDecorator.html) - A decorator that adds an icon to another Cell
 
 ### Creating a Custom Cell<a id="custom-cell"></a>
 
 If you want more control, you can subclass AbstractCell, or you can implement the Cell interface directly to define how your Cell is rendered and how it responds to events.  See
 the instructions in the [Creating Custom Cells Dev Guide](DevGuideUiCustomCells.html) for detailed information.
 
-**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase
-.html#!CwCellList) shows a `CellList<ContactInfo>`(on the left). Each list item is a custom
+**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList)
+shows a `CellList<ContactInfo>` (on the left). Each list item is a custom
 type `ContactCell<ContactInfo>`.  The right-hand widget is a normal Composite widget that
 renders the data for a selected contact.
 
@@ -804,9 +734,9 @@ public class SimplePagerExample implements EntryPoint {
 **To Add Custom Paging Controls to a Cell Widget:**
 
 1.  Create a custom pager &mdash; extending [AbstractPager](/javadoc/latest/com/google/gwt/user/cellview/client/AbstractPager.html) works for most use cases.  AbstractPager provides many convenience methods that your pager will use to change the visible range, including a method to hook up the cell widget.
-    1.  AbstractPager is a Composite, so you need to define the Widget part of the pager and initialize AbstractPager by calling [initWidget(Widget)](/javadoc/latest/com/google/gwt/user/client/ui/Composite.html#initWidget\(com.google.gwt.user.client.ui.Widget\)).</li>
+    1.  AbstractPager is a Composite, so you need to define the Widget part of the pager and initialize AbstractPager by calling [initWidget(Widget)](/javadoc/latest/com/google/gwt/user/client/ui/Composite.html#initWidget\(com.google.gwt.user.client.ui.Widget\)).
     2.  You also need to override [onRangeOrRowCountChanged()](/javadoc/latest/com/google/gwt/user/cellview/client/AbstractPager.html#onRangeOrRowCountChanged\(\)) to update the widget when the visible range changes for any reason.
-2.  Assign the pager to the cell widget you want to control using [setDisplay(HasRows)](/javadoc/latest/com/google/gwt/user/cellview/client/SimplePager.html#setDisplay\(com.google.gwt.view.client.HasRows\))</li>
+2.  Assign the pager to the cell widget you want to control using [setDisplay(HasRows)](/javadoc/latest/com/google/gwt/user/cellview/client/SimplePager.html#setDisplay\(com.google.gwt.view.client.HasRows\))
 3.  Add the custom pager to a panel.
 
 ### Updating a Database from Changes in a Cell<a id="updating-database"></a>
