@@ -268,88 +268,28 @@ These rules must be followed whether the values enter and leave through normal J
 
 ## Passing Java values into JavaScript<a id="passing-java"></a>
 
-<table>
-<tr>
-<th width="30%">Incoming Java type</th>
-<th>How it appears to JavaScript code</th>
-</tr>
+| Incoming Java type                                                                   | How it appears to JavaScript code                                                                                                      |
+| ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| String                                                                               | JavaScript string, as in `var b = "foo";`                                                                                              |
+| boolean                                                                              | JavaScript boolean value, as in `var b = true;`                                                                                        |
+| long                                                                                 | disallowed (see notes)                                                                                                                 |
+| other numeric primitives                                                             | JavaScript numeric value, as in `var x = 42;`                                                                                          |
+| [JavaScriptObject](/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html) | `JavaScriptObject` that must have originated from JavaScript code, typically as the return value of some other JSNI method (see notes) |
+| Java array                                                                           | opaque value that can only be passed back into Java code                                                                               |
+| any other Java `Object`                                                              | opaque value accessible through special syntax                                                                                         |
 
-<tr>
-<td>`boolean` </td>
-<td>JavaScript string, as in `boolean` </td>
-</tr>
-
-<tr>
-<td>`boolean` </td>
-<td>JavaScript boolean value, as in `var b = true;` </td>
-</tr>
-
-<tr>
-<td>`long` </td>
-<td>disallowed (see notes)</td>
-</tr>
-
-<tr>
-<td>other numeric primitives</td>
-<td>JavaScript numeric value, as in `var x = 42;` </td>
-</tr>
-
-<tr>
-<td><a href="/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> </td>
-<td>`JavaScriptObject` that must have originated from JavaScript code, typically as the return value of some other JSNI method
-(see notes)</td>
-</tr>
-
-<tr>
-<td>Java array</td>
-<td>opaque value that can only be passed back into Java code</td>
-</tr>
-
-<tr>
-<td>any other Java `Object` </td>
-<td>opaque value accessible through special syntax</td>
-</tr>
-</table>
 
 ## Passing JavaScript values into Java code<a id="passing-javascript"></a>
 
-<table>
-<tr>
-<th width="30%">Outgoing Java type</th>
-<th>What must be passed</th>
-</tr>
+| Outgoing Java type                                                                   | What must be passed                                                                                                                        |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| String                                                                               | JavaScript string, as in `return "boo";`                                                                                                   |
+| boolean                                                                              | JavaScript boolean value, as in `return false;`                                                                                            |
+| long                                                                                 | disallowed (see notes)                                                                                                                     |
+| Java numeric primitive                                                               | JavaScript numeric value, as in `return 19;`                                                                                               |
+| [JavaScriptObject](/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html) | native JavaScript object, as in `return document.createElement("div")` (see notes)                                                         |
+| any other Java `Object` (including arrays)                                           | Java `Object` of the correct type that must have originated in Java code; Java objects cannot be constructed from "thin air" in JavaScript |
 
-<tr>
-<td>`String` </td>
-<td>JavaScript string, as in `return "boo";` </td>
-</tr>
-
-<tr>
-<td>`boolean` </td>
-<td>JavaScript boolean value, as in `return false;` </td>
-</tr>
-
-<tr>
-<td>`long` </td>
-<td>disallowed (see notes)</td>
-</tr>
-
-<tr>
-<td>Java numeric primitive</td>
-<td>JavaScript numeric value, as in `return 19;` </td>
-</tr>
-
-<tr>
-<td><a href="/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> </td>
-<td>native JavaScript object, as in `return document.createElement("div")` (see notes)</td>
-</tr>
-
-<tr>
-<td>any other Java `Object` (including arrays)</td>
-<td>Java `Object` of the correct type that must have originated in Java code; Java objects cannot be constructed from "thin
-air" in JavaScript</td>
-</tr>
-</table>
 
 ## Important Notes<a id="important"></a>
 

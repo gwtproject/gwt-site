@@ -152,30 +152,12 @@ If, after you compile StockWatcher, you look at the generated JavaScript for the
 
 In GWT, each class of widget has an associated style name (like gwt-Button) that binds it to a CSS style rule. This is the widget's primary style. Default values are defined for the primary style in the theme style sheet.
 
-<table>
-    <tr>
-        <th>Type of Element</th>
-        <th>HTML Tag</th>
-        <th>CSS Selector</th>
-    </tr>
-    <tr>
-        <td>Buttons in static HTML and
-GWT-generated buttons</td>
-        <td>`<button>` /td>
-        <td>button</td>
+| Type of Element                                  | HTML Tag                                | CSS Selector |
+| ------------------------------------------------ | --------------------------------------- | ------------ |
+| Buttons in static HTML and GWT-generated buttons | `<button>`                              | button |
+| Only GWT-generated buttons                       |`<button class="gwt-Button">`            | button.gwt-Button |
+| Only my special GWT-generated button             | `<button class="gwt-Button my-button">` | button.my-button |
 
-    </tr>
-    <tr>
-        <td>Only GWT-generated buttons</td>
-        <td>`<button class="gwt-Button">` /td>
-        <td>button.gwt-Button</td>
-    </tr>
-    <tr>
-        <td>Only my special GWT-generated button</td>
-        <td>`<button class="gwt-Button my-button">` /td>
-        <td>button.my-button</td>
-    </tr>
-</table>
 
 **Tip:** You can look up the name of the style rule (the CSS selector) for each widget by accessing the GWT API Reference via the [Widget Gallery](../RefWidgetGallery.html).
 

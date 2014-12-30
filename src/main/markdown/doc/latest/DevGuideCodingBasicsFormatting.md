@@ -61,37 +61,14 @@ double value = 12345.6789;
 
 Here are the most commonly used pattern symbols for decimal formats:
 
-<table>
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">Symbol</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Meaning</td>
-</tr>
+| Symbol | Meaning                                         |
+| ------ | ----------------------------------------------- |
+| 0      | Digit, zero forced                              |
+| #      | Digit, zero shows as absent                     |
+| .      | Decimal separator or monetary decimal separator |
+| \-     | Minus sign                                      |
+| ,      | Grouping separator                              |
 
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">0</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Digit, zero forced</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">#</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Digit, zero shows as absent</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">.</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Decimal separator or monetary decimal separator</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">-</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Minus sign</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">,</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Grouping separator</td>
-</tr>
-</table>
 
 Specifying an invalid pattern will cause the `NumberFormat.getFormat()` method to throw an `java.lang.IllegalArgumentException`. The `pattern`
 specification is very rich. Refer to the [class

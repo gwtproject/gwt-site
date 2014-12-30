@@ -91,84 +91,67 @@ An error is returned because the message template in the properties file expects
 In addition to the formatting supported by [MessageFormat](http://java.sun.com/j2se/1.5.0/docs/api/java/text/MessageFormat.html),
 GWT supports a number of extensions.
 
-<dl>
-<dt>`{name,text}`
-<dd>A "static argument", which is simply `text`, except that it appears
-in translation output as if it were a placeholder named `name`.
-`text` is always terminated by the next "}".  This is
-useful to keep non-translated code out of what the translator sees, for example
-HTML markup:
+`{name,text}`
+:    A "static argument", which is simply `text`, except that it appears
+     in translation output as if it were a placeholder named `name`.
+     `text` is always terminated by the next "}".  This is
+     useful to keep non-translated code out of what the translator sees, for example
+     HTML markup:
 
-```
-@DefaultMessage("Welcome back, {startBold,<b>}{0}{endBold,</b>}")
-```
+    ```
+    @DefaultMessage("Welcome back, {startBold,<b>}{0}{endBold,</b>}")
+    ```
 
-<dt>`{0,list}` or `{0,list,format...}`
-<dd>Format a `List` or array using locale-specific punctuation.  For
-example, in English, lists would be formatted like this:
+`{0,list}` or `{0,list,format...}`
+:   Format a `List` or array using locale-specific punctuation.  For
+    example, in English, lists would be formatted like this:
 
-<table>
-<tr><th># of Items</th><th>Sample Output</th></tr>
-<tr><td align="center">0</td><td><i>(empty string)</i></td></tr>
-<tr><td align="center">1</td><td>a</td></tr>
-<tr><td align="center">2</td><td>a and b</td></tr>
-<tr><td align="center">3</td><td>a, b, and c</td></tr>
-</table>
+:   | # of Items | Sample Output |
+    | :--------: | ------------- |
+    | 0          | _(empty string)_ |
+    | 1          | a |
+    | 2          | a and b |
+    | 3          | a, b, and c |
 
-Note that only the locale-default separator and the logical conjuctive form is
-supported -- there is currently no way to produce a list like "a; b; or c".
+:   Note that only the locale-default separator and the logical conjuctive form is
+    supported -- there is currently no way to produce a list like "a; b; or c".
+:   See the [plurals documentation](DevGuideI18nPluralForms.html#Lists) for how this interacts with plural support.
+    The format following the `list` tag, if any, describes how each list
+    element is formatted.  Ie, `{0,list}` means every element is formatted
+    as if by `{0}`, `{0,list,number,#,##}` as if by
+    `[0,number,#,##}`, etc.
 
-See the [plurals documentation](DevGuideI18nPluralForms.html#Lists) for how this interacts with plural support.
+`{0,localdatetime,skeleton}`
+:   Format a date/time in a locale-specific format using the supplied skeleton
+    pattern.  The order of the pattern characters doesn't matter, and spaces or other separators don't
+    matter.  The localized pattern will contain the same fields (but may change
+    `MMM` into `LLL` for example) and the same count of each.
+:   If one of the predefined formats are not sufficient, you will be much
+    better off using a skeleton pattern so you will include the items you want
+    but still get a localized format.
+:   For example, if you used `{0,date,MM/dd/yy}` to format a date, you
+    get exactly that pattern in every locale, which is going to cause confusion for
+    those users who expect `dd/MM/yy`.  Instead, you can use
+    `{0,localdatetime,MMddyy}` and you will get properly localized patterns
+    for each locale.
 
-The format following the `list` tag, if any, describes how each list
-element is formatted.  Ie, `{0,list}` means every element is formatted
-as if by `{0}`, `{0,list,number,#,##}` as if by
-`[0,number,#,##}`, etc.
+`{0,localdatetime,predef:PREDEF_NAME}`
+:   Use a locale-specific predefined format -- see [DateTimeFormat.PredefinedFormat](/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html)"
+    for possible values, example: `{0,localdatetime,predef:DATE_SHORT}`.
 
-<dt>`{0,localdatetime,skeleton}`
-<dd>Format a date/time in a locale-specific format using the supplied skeleton
-pattern.  The order of
-the pattern characters doesn't matter, and spaces or other separators don't
-matter.  The localized pattern will contain the same fields (but may change
-`MMM` into `LLL` for example) and the same count of each.
+extra formatter arguments
+:   Some formatters accept additional arguments.  These are added to the main format specification, separated by a colon -- for example:
+    `{0,list,number:curcode=USD,currency}` says to use the default currency format for list elements, but use USD (US Dollars) for the currency code.  You
+    can also supply a dynamic argument, such as `{0,localdatetime:tz=$tz,predef:DATE_FULL}`, which says the timezone to
+    use is supplied by a parameter `TimeZone tz` supplied to the method.
+    Where supported, multiple arguments can be supplied like `{0,format:arg1=val:arg2=val}`.
 
-If one of the predefined formats are not sufficient, you will be much
-better off using a skeleton pattern so you will include the items you want
-but still get a localized format.
+:   Currently supported arguments:
 
-For example, if you used `{0,date,MM/dd/yy}` to format a date, you
-get exactly that pattern in every locale, which is going to cause confusion for
-those users who expect `dd/MM/yy`.  Instead, you can use
-`{0,localdatetime,MMddyy}` and you will get properly localized patterns
-for each locale.
-
-<dt>`{0,localdatetime,predef:PREDEF_NAME}`
-<dd>Use a locale-specific predefined format -- see `<a
-href="/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html">DateTimeFormat.PredefinedFormat</a>`
-for possible values, example: `{0,localdatetime,predef:DATE_SHORT}`.
-
-<dt>extra formatter arguments
-<dd>Some formatters accept additional arguments.  These are added to the main format
-specification, separated by a colon -- for example:
-`{0,list,number:curcode=USD,currency}` says to use the default currency
-format for list elements, but use USD (US Dollars) for the currency code.  You
-can also supply a dynamic argument, such as
-`{0,localdatetime:tz=$tz,predef:DATE_FULL}`, which says the timezone to
-use is supplied by a parameter `TimeZone tz` supplied to the method.
-Where supported, multiple arguments can be supplied like `{0,format:arg1=val:arg2=val}`.
-
-Currently supported arguments:
-
-<table>
-<tr><th>Format</th><th>Argument Name</th><th>Argument Type</th><th>Description</th></tr>
-<tr><td>number</td><td>curcode</td><td>`String`</td><td>Currency code to
-use for currency formatting</td></tr>
-<tr><td>date, time, or
-localdatetime</td><td>tz</td><td>`TimeZone`</td><td>Time zone to
-use for date/time formatting</td></tr>
-</table>
-
-</dl>
+:   | Format                       | Argument Name | Argument Type | Description |
+    | ---------------------------- | ------------- | ------------- | ----------- |
+    | number                       | curcode       | `String`      | Currency code to use for currency formatting |
+    | date, time, or localdatetime | tz            | `TimeZone`    | Time zone to use for date/time formatting |
 
 ## Using Annotations<a id="MessagesAnnotations"></a>
 
@@ -180,16 +163,16 @@ page](DevGuideI18n.html#DevGuideAnnotations).
 
 The following annotations apply to methods in a `Messages` subtype:
 
-*   **`[@DefaultMessage(String
-message)](/javadoc/latest/com/google/gwt/i18n/client/Messages.DefaultMessage.html)`**
+*   **[@DefaultMessage(String
+message)](/javadoc/latest/com/google/gwt/i18n/client/Messages.DefaultMessage.html)**
     Specifies the message string to be used for the default locale for this
 method, with all of the options above.  If an `@AlternateMessage`
 annotation is present, this is the default text used when more specific forms
 do not apply &mdash; for count messages in English, this would be the plural
 form instead of the singular form.
 
-*   **`[@AlternateMessage({String
-form, String message, ...})](/javadoc/latest/com/google/gwt/i18n/client/Messages.AlternateMessage.html)`**
+*   **[@AlternateMessage({String
+form, String message, ...})](/javadoc/latest/com/google/gwt/i18n/client/Messages.AlternateMessage.html)**
     Specifies the text for alternate forms of the message.  The supplied array of
 strings must be in pairs, with the first entry the name of an alternate form
 appropriate for the default locale, and the second being the message to use for
@@ -203,18 +186,18 @@ The following annotations apply to parameters of methods in a
 
 `Messages` subtype:
 
-*   **`[@Example(String
-example)](/javadoc/latest/com/google/gwt/i18n/client/Messages.Example.html)`**
+*   **[@Example(String
+example)](/javadoc/latest/com/google/gwt/i18n/client/Messages.Example.html)**
     An example for this variable. Many translation tools will show this to the
 translator instead of the placeholder &mdash; i.e., `Hello {0}` with
 `@Example("John")` will show as `Hello John` with "John"
 highlighted to indicate it should not be translated.
-*   **`[@Optional
-](/javadoc/latest/com/google/gwt/i18n/client/Messages.Optional.html)`**
+*   **[@Optional
+](/javadoc/latest/com/google/gwt/i18n/client/Messages.Optional.html)**
     Indicates that this parameter need not be present in all translations. If this
 annotation is not supplied, it is a compile-time error if the translated string
 being compiled does not include the parameter.
-*   **`[@PluralCount](/javadoc/latest/com/google/gwt/i18n/client/Messages.PluralCount.html)`**
+*   **[@PluralCount](/javadoc/latest/com/google/gwt/i18n/client/Messages.PluralCount.html)**
 Indicates that this parameter is used to select which form of text to use (ie,
 1 widget vs. 2 widgets).<p/>
 The argument annotated must be int, short, an array, or a list (in the latter

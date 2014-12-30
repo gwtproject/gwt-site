@@ -60,40 +60,15 @@ element, it is a block-level element rather than an inline element.
 
 If you're interested in taking a peek at the API reference for the GWT widgets you'll use to build the StockWatcher interface, click on the links in the table below.
 
-<table>
-    <tr>
-        <th>UI element</th>
-        <th>GWT implementation</th>
-    </tr>
-    <tr>
-        <td>a table to hold the stock data</td>
-        <td>[FlexTable](/javadoc/latest/com/google/gwt/user/client/ui/FlexTable.html) widget</td>
-    </tr>
-    <tr>
-        <td>two buttons, one to add stocks and one to remove them</td>
-        <td>[Button](/javadoc/latest/com/google/gwt/user/client/ui/Button.html) widget</td>
-    </tr>
-    <tr>
-        <td>an input box to enter the stock code</td>
-        <td>[TextBox](/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html) widget</td>
-    </tr>
-    <tr>
-        <td>a timestamp to show the time and date of the last refresh</td>
-        <td>[Label](/javadoc/latest/com/google/gwt/user/client/ui/Label.html) widget</td>
-    </tr>
-    <tr>
-        <td>a logo</td>
-        <td>image file referenced from HTML host page</td>
-    </tr>
-    <tr>
-        <td>a header</td>
-        <td>static HTML in HTML host page</td>
-    </tr>
-    <tr>
-        <td>colors to indicate whether the change in price was positive or negative</td>
-        <td>dynamic CSS</td>
-    </tr>
-</table>
+| UI element                                                              | GWT implementation |
+|-------------------------------------------------------------------------|--------------------|
+| a table to hold the stock data                                          | [FlexTable](/javadoc/latest/com/google/gwt/user/client/ui/FlexTable.html) widget |
+| two buttons, one to add stocks and one to remove them                   | [Button](/javadoc/latest/com/google/gwt/user/client/ui/Button.html) widget |
+| an input box to enter the stock code                                    | [TextBox](/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html) widget |
+| a timestamp to show the time and date of the last refresh               | [Label](/javadoc/latest/com/google/gwt/user/client/ui/Label.html) widget |
+| a logo                                                                  | image file referenced from HTML host page |
+| a header                                                                | static HTML in HTML host page |
+| colors to indicate whether the change in price was positive or negative | dynamic CSS |
 
 **In Depth:** If you don't find a widget that meets the functional requirements of your application,
 you can create your own. For details on creating composite widgets or widgets from scratch using

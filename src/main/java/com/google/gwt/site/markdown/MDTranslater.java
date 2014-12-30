@@ -25,8 +25,8 @@ import java.io.IOException;
 import java.util.List;
 
 public class MDTranslater {
-  private static final int PEG_DOWN_FLAGS = Extensions.SMARTYPANTS | Extensions.AUTOLINKS | 
-      Extensions.FENCED_CODE_BLOCKS;
+  private static final int PEG_DOWN_FLAGS = Extensions.SMARTYPANTS | Extensions.AUTOLINKS |
+      Extensions.FENCED_CODE_BLOCKS | Extensions.TABLES | Extensions.DEFINITIONS;
 
   private PegDownProcessor pegDownProcessor = new PegDownProcessor(PEG_DOWN_FLAGS, Long
       .MAX_VALUE);

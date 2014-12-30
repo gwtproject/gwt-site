@@ -43,30 +43,10 @@ To use HTML5 storage features, you  need to know about lifespan (persistence) of
 
 HTML5 Web Storage defines two types of key-value storage types: sessionStorage and localStorage. The primary behavioral difference is how long the values persist and how they are shared. The following table shows the differences between the two types of storage.
 
-<table>
-<tr>
-<th>Storage Type</th>
-<th>Max Size</th>
-<th>Persistence</th>
-<th>Availability to other Windows/tabs</th>
-<th>Data Type Supported</th>
-</tr>
-<tr>
-<td>LocalStorage</td>
-<td>5MB per app per browser. According to the <a href="http://www.w3.org/TR/2009/WD-webstorage-20091222/#the-storage-interface">HTML5 spec</a>, this limit can be increased by the user when needed; however, only a few browsers support this</td>
-<td>On disk until deleted by user (delete cache) or by the app</td>
-<td>Shared across every window and tab of one browser running same web app</td>
-<td>String only, as key-value pairs</td>
-</tr>
-
-<tr>
-<td>SessionStorage</td>
-<td>Limited only by system memory</td>
-<td>Survives only as long as its originating window or tab</td>
-<td>Accessible only within the window or tab that created it</td>
-<td>String only, as key-value pairs</td>
-</tr>
-</table>
+| Storage Type   | Max Size                                                                                                                                                                                                                        | Persistence                                                | Availability to other Windows/tabs                                     | Data Type Supported             |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------- |
+| LocalStorage   | 5MB per app per browser. According to the [HTML5 spec](http://www.w3.org/TR/2009/WD-webstorage-20091222/#the-storage-interface), this limit can be increased by the user when needed; however, only a few browsers support this | On disk until deleted by user (delete cache) or by the app | Shared across every window and tab of one browser running same web app | String only, as key-value pairs |
+| SessionStorage | Limited only by system memory                                                                                                                                                                                                   | Survives only as long as its originating window or tab     | Accessible only within the window or tab that created it               | String only, as key-value pairs |
 
 ### How Local Storage Is Shared by the Browser
 
@@ -247,36 +227,13 @@ You can register storage event handlers with a storage object, and these are inv
 
 The storage event handlers get a storage event object that contains various useful information, such as the old value and the new value, in the case of an update to an existing key-value pair. The following can be obtained from the StorageEvent object:
 
-<table>
-<tr>
-<th>Method</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>getKey</td>
-<td>Returns the key being changed.</td>
-</tr>
-
-<tr>
-<td>getNewValue</td>
-<td>Returns the value of the key after the change, or null if not changed or if it is the result of a Storage.clear() operation.</td>
-</tr>
-
-<tr>
-<td>getOldValue</td>
-<td>Returns the value of the key before the change, or null if not changed or if it is the result of a Storage.clear() operation.</td>
-</tr>
-
-<tr>
-<td>getStorageArea</td>
-<td>Returns the SessionStorage or LocalStorage object where the event occurred.</td>
-</tr>
-
-<tr>
-<td>getURL</td>
-<td>The address of the document in which the change occurred.</td>
-</tr>
-</table>
+| Method         | Description                                                                                                                   |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| getKey         | Returns the key being changed.                                                                                                |
+| getNewValue    | Returns the value of the key after the change, or null if not changed or if it is the result of a Storage.clear() operation.  |
+| getOldValue    | Returns the value of the key before the change, or null if not changed or if it is the result of a Storage.clear() operation. |
+| getStorageArea | Returns the SessionStorage or LocalStorage object where the event occurred.                                                   |
+| getURL         | The address of the document in which the change occurred.                                                                     |
 
 The following snippet shows a sample event handler registered with a storage, where the changes from the incoming events are displayed in a UI label.
 

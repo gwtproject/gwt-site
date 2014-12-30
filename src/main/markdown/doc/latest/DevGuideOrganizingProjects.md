@@ -123,70 +123,18 @@ For example, all the files for the "DynaTable" sample are organized in a main pr
 
 The src directory contains an application's Java source files, the module definition, and external resource files.
 
-<table>
-<tr>
-<th>Package</th>
-<th>File</th>
-<th>Purpose</th>
-</tr>
+| Package                                  | File                             | Purpose |
+| ---------------------------------------- | -------------------------------- | ------- |
+| `com.google.gwt.sample.dynatable`        |                                  | The project root package contains module XML files. |
+| `com.google.gwt.sample.dynatable`        | `DynaTable.gwt.xml`              | Your application module. Inherits `com.google.gwt.user.User` and adds an entry point class, `com.google.gwt.sample.dynatable.client.DynaTable`. |
+| `com.google.gwt.sample.dynatable.public` |                                  | Static resources that are loaded programmatically by GWT code. Files in the public directory are copied into the same directory as the GWT compiler output. |
+| `com.google.gwt.sample.dynatable.public` | `logo.gif`                       | An image file available to the application code. You might load this file programmatically using this URL: `GWT.getModuleBaseForStaticFiles() + "logo.gif"`. |
+| `com.google.gwt.sample.dynatable.client` |                                  | Client-side source files and subpackages. |
+| `com.google.gwt.sample.dynatable.client` | `DynaTable.java`                 | Client-side Java source for the entry-point class. |
+| `com.google.gwt.sample.dynatable.client` | `SchoolCalendarService.java`     | An RPC service interface. |
+| `com.google.gwt.sample.dynatable.server` |                                  | Server-side code and subpackages. |
+| `com.google.gwt.sample.dynatable.server` | `SchoolCalendarServiceImpl.java` | Server-side Java source that implements the logic of the service. |
 
-<tr>
-<td>`com.google.gwt.sample.dynatable` </td>
-<td/>
-<td>The project root package contains module XML files.</td>
-</tr>
-
-<tr>
-<td>`com.google.gwt.sample.dynatable` </td>
-<td>`DynaTable.gwt.xml` </td>
-<td>Your application module. Inherits `com.google.gwt.user.User` and adds an entry point class,
-`com.google.gwt.sample.dynatable.client.DynaTable`.</td>
-</tr>
-
-<tr>
-<td>`com.google.gwt.sample.dynatable.public` </td>
-<td/>
-<td>Static resources that are loaded programmatically by GWT code. Files in the public directory are copied into the same directory
-as the GWT compiler output.</td>
-</tr>
-
-<tr>
-<td>`com.google.gwt.sample.dynatable.public` </td>
-<td>`logo.gif` </td>
-<td>An image file available to the application code. You might load this file programmatically using this URL:
-`GWT.getModuleBaseForStaticFiles() + "logo.gif"`.</td>
-</tr>
-
-<tr>
-<td>`com.google.gwt.sample.dynatable.client` </td>
-<td/>
-<td>Client-side source files and subpackages.</td>
-</tr>
-
-<tr>
-<td>`com.google.gwt.sample.dynatable.client` </td>
-<td>`DynaTable.java` </td>
-<td>Client-side Java source for the entry-point class.</td>
-</tr>
-
-<tr>
-<td>`com.google.gwt.sample.dynatable.client` </td>
-<td>`SchoolCalendarService.java` </td>
-<td>An RPC service interface.</td>
-</tr>
-
-<tr>
-<td>`com.google.gwt.sample.dynatable.server` </td>
-<td/>
-<td>Server-side code and subpackages.</td>
-</tr>
-
-<tr>
-<td>`com.google.gwt.sample.dynatable.server` </td>
-<td>`SchoolCalendarServiceImpl.java` </td>
-<td>Server-side Java source that implements the logic of the service.</td>
-</tr>
-</table>
 
 #### The war directory
 
@@ -200,107 +148,30 @@ Jetty, and other J2EE servlet containers. It contains a variety of resources:
 
 A detailed description of the war format is beyond the scope of this document, but here are the basic pieces you will want to know about:
 
-<table>
-<tr>
-<th>Directory</th>
-<th>File</th>
-<th>Purpose</th>
-</tr>
+| Directory                       | File                    | Purpose |
+| ------------------------------- | ----------------------- | ------- |
+| `DynaTable/war/`                | `DynaTable.html`        | A host HTML page that loads the DynaTable app. |
+| `DynaTable/war/`                | `DynaTable.css`         | A static style sheet that styles the DynaTable app. |
+| `DynaTable/war/dynatable/`      |                         | The DynaTable module directory where the GWT compiler writes output and files on the public path are copied. NOTE: by default this directory would be the long, fully-qualified module name `com.google.gwt.sample.dynatable.DynaTable`. However, in our GWT module XML file we used the `rename-to="dynatable"` attribute to shorten it to a nice name. |
+| `DynaTable/war/dynatable/`      | `dynatable.nocache.js`  | The "selection script" for DynaTable. This is the script that must be loaded from the host HTMLto load the GWT module into the page. |
+| `DynaTable/war/WEB-INF`         |                         | All non-public resources live here, see the servlet specification for more detail. |
+| `DynaTable/war/WEB-INF`         | `web.xml`               | Configures your web app and any servlets. |
+| `DynaTable/war/WEB-INF/classes` |                         | Java compiled class files live here to implement server-side functionality. If you're using an IDE set the output directory to this folder. |
+| `DynaTable/war/WEB-INF/lib`     |                         | Any library dependencies your server code needs goes here. |
+| `DynaTable/war/WEB-INF/lib`     | `gwt-servlet.jar`       | If you have any servlets using GWT RPC, you will need to place a copy of `gwt-servlet.jar` here. |
 
-<tr>
-<td><nobr>`DynaTable/war/`</nobr></td>
-<td>`DynaTable.html`</td>
-<td>A host HTML page that loads the DynaTable app.</td>
-</tr>
-
-<tr>
-<td><nobr>`DynaTable/war/`</nobr></td>
-<td>`DynaTable.css`</td>
-<td>A static style sheet that styles the DynaTable app.</td>
-</tr>
-
-<tr>
-<td><nobr>`DynaTable/war/dynatable/`</nobr></td>
-<td/>
-<td>The DynaTable module directory where the GWT compiler writes output and files on the public path are copied. NOTE: by default
-this directory would be the long, fully-qualified module name `com.google.gwt.sample.dynatable.DynaTable`. However, in our GWT module XML file we used the
-`rename-to="dynatable"` attribute to shorten it to a nice name.</td>
-</tr>
-
-<tr>
-<td><nobr>`DynaTable/war/dynatable/`</nobr></td>
-<td>`dynatable.nocache.js` </td>
-<td>The "selection script" for DynaTable. This is the script that must be loaded from the host HTMLto load the GWT module into the
-page.</td>
-</tr>
-
-<tr>
-<td><nobr>`DynaTable/war/WEB-INF`</nobr></td>
-<td/>
-<td>All non-public resources live here, see the servlet specification for more detail.</td>
-</tr>
-
-<tr>
-<td><nobr>`DynaTable/war/WEB-INF`</nobr></td>
-<td>`web.xml` </td>
-<td>Configures your web app and any servlets.</td>
-</tr>
-
-<tr>
-<td><nobr>`DynaTable/war/WEB-INF/classes`</nobr></td>
-<td/>
-<td>Java compiled class files live here to implement server-side functionality. If you're using an IDE set the output directory to
-this folder.</td>
-</tr>
-
-<tr>
-<td><nobr>`DynaTable/war/WEB-INF/lib`</nobr></td>
-<td/>
-<td>Any library dependencies your server code needs goes here.</td>
-</tr>
-
-<tr>
-<td><nobr>`DynaTable/war/WEB-INF/lib`</nobr></td>
-<td>`gwt-servlet.jar` </td>
-<td>If you have any servlets using GWT RPC, you will need to place a copy of `gwt-servlet.jar` here.</td>
-</tr>
-</table>
 
 #### The test directory
 
 The test directory contains the source files for any JUnit tests.
 
-<table>
-<tr>
-<th>Package</th>
-<th>File</th>
-<th>Purpose</th>
-</tr>
+| Package                                   | File                                  | Purpose |
+| ----------------------------------------- | ------------------------------------- | ------- |
+| `com.google.gwt.sample.dynatable.client`  |                                       | Client-side test files and subpackages. |
+| `com.google.gwt.sample.dynatable.client`  | `DynaTableTest.java`                  | Test cases for the entry-point class. |
+| `com.google.gwt.sample.dynatable.server`  |                                       | Server-side test files and subpackages. |
+| `com.google.gwt.sample.dynatable.server`  | `SchoolCalendarServiceImplTest.java`  | Test cases for server classes. |
 
-<tr>
-<td>`com.google.gwt.sample.dynatable.client` </td>
-<td/>
-<td>Client-side test files and subpackages.</td>
-</tr>
-
-<tr>
-<td>`com.google.gwt.sample.dynatable.client` </td>
-<td>`DynaTableTest.java` </td>
-<td>Test cases for the entry-point class.</td>
-</tr>
-
-<tr>
-<td>`com.google.gwt.sample.dynatable.server` </td>
-<td/>
-<td>Server-side test files and subpackages.</td>
-</tr>
-
-<tr>
-<td>`com.google.gwt.sample.dynatable.server` </td>
-<td>`SchoolCalendarServiceImplTest.java` </td>
-<td>Test cases for server classes.</td>
-</tr>
-</table>
 
 ## Modules: Units of configuration<a id="DevGuideModules"></a>
 
@@ -580,84 +451,26 @@ reusable UI components (widgets and panels) and support for the History feature,
 
 ### Standard Modules GWT 1.5
 
-<table>
-<tr>
-<td><strong>Module</strong> </td>
-<td><strong>Logical Name</strong> </td>
-<td><strong>Module Definition</strong> </td>
-<td><strong>Contents</strong> </td>
-</tr>
+| Module | Logical Name               | Module Definition | Contents |
+| ------ | -------------------------- | ----------------- | -------- |
+| User   | com.google.gwt.user.User   | User.gwt.xml      | Core GWT functionality |
+| HTTP   | com.google.gwt.http.HTTP   | HTTP.gwt.xml      | Low-level HTTP communications library |
+| JSON   | com.google.gwt.json.JSON   | JSON.gwt.xml      | JSON creation and parsing |
+| JUnit  | com.google.gwt.junit.JUnit | JUnit.gwt.xml     | JUnit testing framework integration |
+| XML    | com.google.gwt.xml.XML     | XML.gwt.xml       | XML document creation and parsing |
 
-<tr>
-<td>User</td>
-<td>com.google.gwt.user.User</td>
-<td>User.gwt.xml</td>
-<td>Core GWT functionality</td>
-</tr>
-
-<tr>
-<td>HTTP</td>
-<td>com.google.gwt.http.HTTP</td>
-<td>HTTP.gwt.xml</td>
-<td>Low-level HTTP communications library</td>
-</tr>
-
-<tr>
-<td>JSON</td>
-<td>com.google.gwt.json.JSON</td>
-<td>JSON.gwt.xml</td>
-<td>JSON creation and parsing</td>
-</tr>
-
-<tr>
-<td>JUnit</td>
-<td>com.google.gwt.junit.JUnit</td>
-<td>JUnit.gwt.xml</td>
-<td>JUnit testing framework integration</td>
-</tr>
-
-<tr>
-<td>XML</td>
-<td>com.google.gwt.xml.XML</td>
-<td>XML.gwt.xml</td>
-<td>XML document creation and parsing</td>
-</tr>
-</table>
 
 GWT 1.5 also provides several _theme_ modules which contain default styles for widgets and panels. You can specify one theme in your project's module XML file to use as a
 starting point for styling your application, but you are not required to use any of them.
 
 ### Themes
 
-<table>
-<tr>
-<td><strong>Module</strong> </td>
-<td><strong>Logical Name</strong> </td>
-<td><strong>Module Definition</strong> </td>
-<td><strong>Contents</strong> </td>
-</tr>
+| Module   | Logical Name                                | Module Definition       | Contents  |
+| -------- | ------------------------------------------- | ----------------------- | --------- |
+| Chrome   | com.google.gwt.user.theme.chrome.Chrome     | Chrome.gwt.xml          | Style sheet and images for the Chrome theme. |
+| Dark     | com.google.gwt.user.theme.dark.Dark         | Dark.gwt.xml            | Style sheet and images for the Dark theme. |
+| Standard | com.google.gwt.user.theme.standard.Standard | Standard.gwt.xml        | Style sheet and images for the Standard theme. |
 
-<tr>
-<td>Chrome</td>
-<td>com.google.gwt.user.theme.chrome.Chrome</td>
-<td>Chrome.gwt.xml</td>
-<td>Style sheet and images for the Chrome theme.</td>
-</tr>
-
-<tr>
-<td>Dark</td>
-<td>com.google.gwt.user.theme.dark.Dark</td>
-<td>Dark.gwt.xml</td>
-<td>Style sheet and images for the Dark theme.</td>
-</tr>
-
-<tr>
-<td>Standard</td>
-<td>com.google.gwt.user.theme.standard.Standard</td>
-<td>Standard.gwt.xml</td>
-<td>Style sheet and images for the Standard theme.</td>
-</tr>
-</table>
 
 ### How To
 

@@ -37,37 +37,11 @@ Starting with GWT 1.6, the former command-line tools projectCreator and applicat
 
 For the StockWatcher project, you will run webAppCreator with the following parameters.
 
-<table>
-    <tr>
-        <td>Parameter</td>
-        <td>Definition</td>
-        <td>Example</td>
-    </tr>
-    <tr>
-        <td>-out</td>
-        <td>The directory to place the generated files.</td>
-        <td>StockWatcher</td>
-    </tr>
-    <tr>
-        <td>-junit</td>
-        <td>
-
-            The fully-qualified path name to junit.jar on your system.
-            You can download JUnit at their [sourceforge](http://junit.sourceforge.net/) project page, or you can use the version that ships with Eclipse.
-
-        </td>
-        <td>
-            <ul>
-            <li>(PC) C:\eclipse\plugins\org.junit_3.8.2.v200706111738\junit.jar</li>
-            <li>(Mac) /Users/myname/eclipse/plugins/org.junit_3.8.2.v200706111738/junit.jar</li>
-        </td>
-    </tr>
-    <tr>
-        <td>moduleName</td>
-        <td>The name of the GWT module you want to create.</td>
-        <td>com.google.gwt.sample.stockwatcher.StockWatcher</td>
-    </tr>
-</table>
+| Parameter  | Definition                                                                                                                                                                                                | Example |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| -out       | The directory to place the generated files.                                                                                                                                                               | StockWatcher |
+| -junit     | The fully-qualified path name to junit.jar on your system. You can download JUnit at their [sourceforge](http://junit.sourceforge.net/) project page, or you can use the version that ships with Eclipse. | <ul><li>(PC) C:\eclipse\plugins\org.junit_3.8.2.v200706111738\junit.jar</li><li>(Mac) /Users/myname/eclipse/plugins/org.junit_3.8.2.v200706111738/junit.jar</li> |
+| moduleName | The name of the GWT module you want to create.                                                                                                                                                            | com.google.gwt.sample.stockwatcher.StockWatcher |
 
 1.  Create the StockWatcher application.
     *  At the command line, run webAppCreator.

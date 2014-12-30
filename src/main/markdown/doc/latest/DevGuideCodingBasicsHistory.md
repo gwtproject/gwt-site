@@ -131,50 +131,13 @@ As an example, an application that presents a multi-page questionnaire could enc
 questionnaire is presented, a history token is added to the history stack. Note that with stateful applications, such as a questionnaire, some careful thought needs to be given to
 implementing the history callback. When returning to a page using a token, some logic needs to restore the previous state.
 
-<table>
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">Token</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Action</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">"info"</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Navigate to page where user enters biographic info. Restore previously entered data</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">"page1"</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Navigate to page 1 in the questionnaire. Restore previous answers.</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">"page2"</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Navigate to page 2 in the questionnaire. Restore previous answers.</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">"page"
-
-```
-<span class="error"><n></span>
-```
-
-</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Navigate to page
-
-```
-<span class="error"><n></span>
-```
-
-...</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">"end"</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Navigate to the end of the questionnaire. Validate that all questions were answered. Make sure not to re-submit the
-questionnaire.</td>
-</tr>
-</table>
+| Token | Action                                                                                                                              |
+| ------| ----------------------------------------------------------------------------------------------------------------------------------- |
+| info  | Navigate to page where user enters biographic info. Restore previously entered data                                                 |
+| page1 | Navigate to page 1 in the questionnaire. Restore previous answers.                                                                  |
+| page2 | Navigate to page 2 in the questionnaire. Restore previous answers.                                                                  |
+| pageN | Navigate to page _N_ ...                                                                                                            |
+| end   | Navigate to the end of the questionnaire. Validate that all questions were answered. Make sure not to re-submit the questionnaire.  |
 
 In the above case, navigating back to a page would be possible, but there isn't enough information in the history token to restore the user's previous answers. A better
 encoding for the token would be a syntax such as:

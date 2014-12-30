@@ -15,31 +15,10 @@ In this section, you'll wire up your widgets to listen for and handle mouse and 
 
 Let's review the StockWatcher requirements to see what events occur.
 
-<table>
-<tr>
-    <th>Task</th>
-    <th>UI Event (Trigger mechanism)</th>
-    <th>Response</th>
-</tr>
-<tr>
-    <td>User enters a stock code.</td>
-    <td>Clicks the Add button
-or presses return in the input box.</td>
-        <td>
-
-*   Verify input.
-*   Check if stock already exists.
-*   Add a new row.
-*   Create a delete button.</td>
-    </tr>
-    <tr>
-        <td>User deletes stock from the table.</td>
-        <td>Presses the Remove button.</td>
-        <td>
-
-*   Remove row from table.</td>
-    </tr>
-</table>
+| Task                               | UI Event (Trigger mechanism)                              | Response |
+| ---------------------------------- | --------------------------------------------------------- | -------- |
+| User enters a stock code.          | Clicks the Add button or presses return in the input box. | Create a delete button. |
+| User deletes stock from the table. | Presses the Remove button.                                | Remove row from table. |
 
 GWT provides a number of different event handler interfaces. To handle click events on the Add and Remove buttons, you'll use the [ClickHandler](/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html) interface. To handle keyboard events in the input box, you'll use the [KeyPressHandler](/javadoc/latest/com/google/gwt/event/dom/client/KeyPressHandler.html) interface.
 

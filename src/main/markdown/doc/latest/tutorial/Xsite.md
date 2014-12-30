@@ -105,38 +105,13 @@ For StockWatcher, the additional requirement in the client-side code is that you
 
 Now that you understand the SOP issues surrounding cross-site requests, compare this implementation to the implementation for getting JSON data from a local server. You'll have to change some of the existing implementation but you'll be able to reuse some components as well. Most of the work will be in writing the new method, getJSON, which makes the call to the remote server.
 
-<table>
-    <tr>
-        <th>Task</th>
-        <th>Same-Site Implementation</th>
-        <th>Cross-Site Implementation</th>
-    </tr>
-    <tr>
-        <td>Making the call</td>
-        <td>HTTP with Request Builder</td>
-        <td>JSON-P with Jsonp Request Builder.</td>
-    </tr>
-    <tr>
-        <td>Server-side code</td>
-        <td>Returns JSON string</td>
-        <td>Returns a JavaScript callback function with the JSON string</td>
-    </tr>
-    <tr>
-        <td>Handling the response</td>
-        <td>Use `JsonUtils.safeEval()` to turn JSON string into JavaScript object</td>
-        <td>Already a JavaScript object; cast it as a StockData array</td>
-    </tr>
-    <tr>
-        <td>Data objects</td>
-        <td>Create an overlay type: StockData</td>
-        <td>Reuse the overlay type</td>
-    </tr>
-    <tr>
-        <td>Handle Errors</td>
-        <td>Create a Label widget to display error messages</td>
-        <td>Reuse the Label widget</td>
-    </tr>
-</table>
+| Task                  | Same-Site Implementation                                              | Cross-Site Implementation |
+| --------------------- | --------------------------------------------------------------------- | ------------------------- |
+| Making the call       | HTTP with Request Builder                                             | JSON-P with Jsonp Request Builder. |
+| Server-side code      | Returns JSON string                                                   | Returns a JavaScript callback function with the JSON string |
+| Handling the response | Use `JsonUtils.safeEval()` to turn JSON string into JavaScript object | Already a JavaScript object; cast it as a StockData array |
+| Data objects          | Create an overlay type: StockData                                     | Reuse the overlay type |
+| Handle Errors         | Create a Label widget to display error messages                       | Reuse the Label widget |
 
 ##  Creating a data a source <a id="server"></a>
 
