@@ -35,7 +35,6 @@
     <title>GWT Project</title>
   </head>
   <body>
-
 <div id="gwt-header1">
   <div class="gwt-wrap">
     <div class="first"></div>
@@ -73,6 +72,7 @@
     $toc
   </div>
   <div id="gwt-content">
+    <div id="editLink">$editLink</div>
     <div>
     $content
     </div>

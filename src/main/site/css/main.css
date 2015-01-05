@@ -269,7 +269,7 @@ th,td {
 }
 
 /* markdown table */
-thead th, tbody td {
+#gwt-content thead th, #gwt-content tbody td {
   padding: 6px 13px;
   border: 1px solid rgb(255, 255, 255);
 }
@@ -824,6 +824,21 @@ iframe[name='StockWatcher'] {
 
 #gwt-toc, #gwt-content, .gwt-wrap, .first, .second, .gwtcreate, img {
    transition: all 0.4s linear;
+}
+
+#editLink {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+#editLink > a {
+  background: rgb(245, 88, 55);
+  padding: 0.5em;
+  color: white;
+  border-radius: 2px;
+  border: 1px solid rgb(229, 72, 39);
+  float: right;
+  margin-bottom: 15px;
 }
 
 /* tablet */

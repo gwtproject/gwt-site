@@ -74,19 +74,35 @@ public class MDTranslater {
           adjustRelativePath(template, relativePath),
           htmlMarkDown,
           adjustRelativePath(toc, relativePath),
-          adjustRelativePath(head, relativePath));
+          adjustRelativePath(head, relativePath),
+          getEditUrl(node.getPath()));
 
       writer.writeHTML(node, html);
     }
 
   }
 
+  private String getEditUrl(String path) {
+    // TODO you should support more than one template
+    if (path.endsWith("markdown/index.md")) {
+      return "";
+    }
+
+    int index = path.indexOf("/src/");
+    return  "<a href=\"https://github.com/gwtproject/gwt-site/edit/master/" + path.substring(index + 1) + "\">Edit Me on " +
+        "github!</a>";
+  }
+
   private String createHeadForNode(MDNode node) {
     return "<link href='css/main.css' rel='stylesheet' type='text/css'>";
   }
 
-  private String fillTemplate(String template, String html, String toc, String head) {
-    return template.replace("$content", html).replace("$toc", toc).replace("$head", head);
+  private String fillTemplate(String template, String html, String toc, String head, String editUrl) {
+    return template
+        .replace("$content", html)
+        .replace("$toc", toc)
+        .replace("$head", head)
+        .replace("$editLink", editUrl);
   }
 
   protected String adjustRelativePath(String html, String relativePath) {
