@@ -1,6 +1,8 @@
 Coding Client side
 ===
 
+It's now so easy to edit a page !
+
 At this point, you've built the user interface from GWT widgets and panels and wired in the event handlers. StockWatcher accepts input but it doesn't yet add the stock to the stock table or update any stock data.
 
 In this section, you'll finish implementing all of StockWatcher's client-side functionality. Specifically, you'll write the code to the following:
