@@ -294,7 +294,7 @@ public class Foo implements EntryPoint {
 ## Serializable Types<a id="DevGuideSerializableTypes"></a>
 
 GWT supports the concept of _serialization_, which means allowing the contents of a data object to be moved out of one piece of running code and either transmitted to
-another application or stored outside the appliation for later use. GWT RPC method parameters and return types must be transmitted across a network between client and server
+another application or stored outside the application for later use. GWT RPC method parameters and return types must be transmitted across a network between client and server
 applications and therefore they must be _serializable_.
 
 Serializable types must conform to certain restrictions. GWT tries really hard to make serialization as painless as possible. While the rules regarding serialization are
