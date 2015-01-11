@@ -595,9 +595,12 @@ This webpage and the documentation hosted on it are completly written in markdow
 
 Here is how it works:
 
-All the code is stored inside a git repository. You can clone it like this:
+All the code is stored on github and can be directly edited on the web by pressing the
+"Edit me on Github" button. This is the easiest way to make a change, but if you are
+planing to make bigger changes to the website and want to test these locally first,
+you can clone the repository:
 
-`git clone https://gwt.googlesource.com/gwt-site`
+`git clone https://github/gwtproject/gwt-site`
 
 The source code for this webpage will be found in *src/main/markdown*. You can edit existing files and add new ones. If you want to see your changes you will need to run:
 
@@ -614,9 +617,7 @@ mvn jetty:run
 and point your browser to [http://localhost:8080](http://localhost:8080).
 
 If you think your change is ready to be published on gwtproject.org you can send us
-your changes for review by using gerrit. Note: you need to have signed a <a href="#clas">CLA Agreement</a>.
-
-This works the same way you would submit a code change to GWT. More information can be found [here](#submittingpatches).
+your changes with a pull request to http://github.com/gwtproject/gwt-site.
 
 If you wish to contribute to the GWT code used on the site (to improve navigation), then you should
 
