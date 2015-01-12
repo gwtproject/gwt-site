@@ -22,9 +22,7 @@ If you do not already have Eclipse, you may download it from the [Eclipse Websit
 <img src="https://developers.google.com/eclipse/images/google-plugin.png" style="float: left; width: 40px;
 margin-right: 15px;"/>
 
-Install the Google Plugin for Eclipse following instruction on this page:
-
-`https://developers.google.com/eclipse/docs/download`
+Install the Google Plugin for Eclipse following [these instructions](https://developers.google.com/eclipse/docs/download)
 
 In the Install dialog, you will see an option to install the Plugin as well
 as the GWT and App Engine SDKs. Choosing the SDK options will install a GWT
