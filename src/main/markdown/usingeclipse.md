@@ -15,21 +15,14 @@ GWT even easier.
 
 ## Download Eclipse<a id="eclipse"></a>
 
-If you do not already have Eclipse, you may download it from the [Eclipse Website](http://www.eclipse.org/downloads/). We suggest downloading Eclipse 4.3 (Kepler).
+If you do not already have Eclipse, you may download it from the [Eclipse Website](http://www.eclipse.org/downloads/). 
 
 ## Install the Plugin<a id="installing"></a>
 
 <img src="https://developers.google.com/eclipse/images/google-plugin.png" style="float: left; width: 40px;
 margin-right: 15px;"/>
 
-Install the Google Plugin for Eclipse 4.3 by using the following update site:
-
-`http://dl.google.com/eclipse/plugin/4.3`
-
-If you are using an earlier version of Eclipse, replace the 4.3 version number
-with your version (4.2 or 3.7). For detailed instructions on installing plugins
-in Eclipse, see instructions for [Eclipse 4.3](//developers.google.com/eclipse/docs/install-eclipse-4.3),
-[Eclipse 3.8/4.2](https://developers.google.com/eclipse/docs/install-eclipse-4.2)
+Install the Google Plugin for Eclipse following [these instructions](https://developers.google.com/eclipse/docs/download)
 
 In the Install dialog, you will see an option to install the Plugin as well
 as the GWT and App Engine SDKs. Choosing the SDK options will install a GWT
