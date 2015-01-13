@@ -1,3 +1,4 @@
+# AutoBean Framework
 
 The GWT AutoBean framework provides automatically-generated implementations of bean-like interfaces and a low-level serialization mechanism for those interfaces.
 AutoBeans can be used in *both client and server code* to improve code re-use.  For example, the [RequestFactory](./DevGuideRequestFactory.html) system uses AutoBeans extensively in both the client and server code.
