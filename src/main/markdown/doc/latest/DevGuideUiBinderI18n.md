@@ -1,3 +1,6 @@
+i18n UIBinder
+===
+
 This document explores the internationalization features of <a href="/javadoc/latest/com/google/gwt/uibinder/client/UiBinder.html">UiBinder</a>
 templates. More general information about UiBinder can be found in <a href="DevGuideUiBinder.html">Declarative Layout with UiBinder</a>. 
 
