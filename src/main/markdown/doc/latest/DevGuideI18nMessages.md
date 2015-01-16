@@ -14,20 +14,20 @@ The [Messages](/javadoc/latest/com/google/gwt/i18n/client/Messages.html)
 interface allows you to substitute parameters into messages and even to
 re-order those parameters for different locales as needed. The format of the
 messages in the properties files follows the specification in Java [MessageFormat](http://java.sun.com/j2se/1.5.0/docs/api/java/text/MessageFormat.html)
-(note that the <tt>choice</tt> format type
+(note that the `choice` format type
 is not supported with some extensions). The interface you create will contain a Java method with
 parameters matching those specified in the format string.
 
 Here is an example Messages property value:
 
-<pre>
+```
 permissionDenied = Error {0}: User {1} Permission denied.
-</pre>
+```
 
 The following code implements an alert dialog by substituting values into the message:
 
-<pre class="prettyprint">
- public interface ErrorMessages extends Messages {
+```
+public interface ErrorMessages extends Messages {
    String permissionDenied(int errorCode, String username);
  }
  ErrorMessages msgs = GWT.create(ErrorMessages.class)
@@ -35,7 +35,7 @@ The following code implements an alert dialog by substituting values into the me
  void permissionDenied(int errorVal, String loginId) {
    Window.alert(msgs.permissionDenied(errorVal, loginId));
  }
-</pre>
+```
 
 **Caution:** Be advised that the rules for using quotes may be a bit confusing. Refer to the [MessageFormat](http://java.sun.com/j2se/1.5.0/docs/api/java/text/MessageFormat.html) javadoc for more details.
 
@@ -46,15 +46,15 @@ javadoc, you can do more formatting with
 values besides just inserting the value into the string.  If no format type
 is supplied, the value is just appended to the output string at the proper
 position.  If you want it formatted as a number, you can use
-<tt>{0,number}</tt> which will use the locale's default number format, or
-<tt>{0,number,currency}</tt> to use the locale's default currency format
+`{0,number}` which will use the locale's default number format, or
+`{0,number,currency}` to use the locale's default currency format
 (be careful about which currency you are using though), or create your
-own pattern like <tt>{0,number,#,###.0}</tt>.  Dates can be
-formatted with <tt>{0,date,medium}</tt> etc., and likewise with times:
-<tt>{0,time,full}</tt>.
+own pattern like `{0,number,#,###.0}`.  Dates can be
+formatted with `{0,date,medium}` etc., and likewise with times:
+`{0,time,full}`.
 
 Note that supplying your own format pattern means you are now responsible
-for localizing that pattern &mdash; if you do <tt>{0,date,MM/DD/YY}</tt> for
+for localizing that pattern &mdash; if you do `{0,date,MM/DD/YY}` for
 example, this pattern will be used for all locales and some of them will likely
 be confused by the month coming before the day.
 
@@ -72,122 +72,107 @@ arguments supplied by the calling code against the message template defined in
 a properties file. For example, attempting to use the following interface and
 .properties files results in a compile-time error:
 
-<pre class="prettyprint">
+```
 public interface ErrorMessages extends Messages {
   String permissionDenied(int errorCode, String username);
 }
-</pre>
+```
 
-<pre>
+
+
+```
 permissionDenied = Error {0}: User {1} does not have permission to access {2}
-</pre>
+```
 
-An error is returned because the message template in the properties file expects three arguments, while the <tt>permissionDenied</tt> method can only supply two.
+An error is returned because the message template in the properties file expects three arguments, while the `permissionDenied` method can only supply two.
 
 ## GWT-specific formats<a id="GwtFormats"></a>
 
 In addition to the formatting supported by [MessageFormat](http://java.sun.com/j2se/1.5.0/docs/api/java/text/MessageFormat.html),
 GWT supports a number of extensions.
 
-<dl>
-<dt><tt>{name,text}</tt>
-<dd>A "static argument", which is simply <tt>text</tt>, except that it appears
-in translation output as if it were a placeholder named <tt>name</tt>.
-<tt>text</tt> is always terminated by the next "}".  This is
-useful to keep non-translated code out of what the translator sees, for example
-HTML markup:
+`{name,text}`
+:    A "static argument", which is simply `text`, except that it appears
+     in translation output as if it were a placeholder named `name`.
+     `text` is always terminated by the next "}".  This is
+     useful to keep non-translated code out of what the translator sees, for example
+     HTML markup:
 
-<pre class="prettyprint">
-@DefaultMessage("Welcome back, {startBold,&lt;b&gt;}{0}{endBold,&lt;/b&gt;}")
-</pre>
+    ```
+    @DefaultMessage("Welcome back, {startBold,<b>}{0}{endBold,</b>}")
+    ```
 
-<dt><tt>{0,list}</tt> or <tt>{0,list,format...}</tt>
-<dd>Format a <tt>List</tt> or array using locale-specific punctuation.  For
-example, in English, lists would be formatted like this:
+`{0,list}` or `{0,list,format...}`
+:   Format a `List` or array using locale-specific punctuation.  For
+    example, in English, lists would be formatted like this:
 
-<table>
-<tr><th># of Items</th><th>Sample Output</th></tr>
-<tr><td align="center">0</td><td><i>(empty string)</i></td></tr>
-<tr><td align="center">1</td><td>a</td></tr>
-<tr><td align="center">2</td><td>a and b</td></tr>
-<tr><td align="center">3</td><td>a, b, and c</td></tr>
-</table>
+:   | # of Items | Sample Output |
+    | :--------: | ------------- |
+    | 0          | _(empty string)_ |
+    | 1          | a |
+    | 2          | a and b |
+    | 3          | a, b, and c |
 
-Note that only the locale-default separator and the logical conjuctive form is
-supported -- there is currently no way to produce a list like "a; b; or c".
+:   Note that only the locale-default separator and the logical conjuctive form is
+    supported -- there is currently no way to produce a list like "a; b; or c".
+:   See the [plurals documentation](DevGuideI18nPluralForms.html#Lists) for how this interacts with plural support.
+    The format following the `list` tag, if any, describes how each list
+    element is formatted.  Ie, `{0,list}` means every element is formatted
+    as if by `{0}`, `{0,list,number,#,##}` as if by
+    `[0,number,#,##}`, etc.
 
-See the [plurals documentation](DevGuideI18nPluralForms.html#Lists) for how this interacts with plural support.
+`{0,localdatetime,skeleton}`
+:   Format a date/time in a locale-specific format using the supplied skeleton
+    pattern.  The order of the pattern characters doesn't matter, and spaces or other separators don't
+    matter.  The localized pattern will contain the same fields (but may change
+    `MMM` into `LLL` for example) and the same count of each.
+:   If one of the predefined formats are not sufficient, you will be much
+    better off using a skeleton pattern so you will include the items you want
+    but still get a localized format.
+:   For example, if you used `{0,date,MM/dd/yy}` to format a date, you
+    get exactly that pattern in every locale, which is going to cause confusion for
+    those users who expect `dd/MM/yy`.  Instead, you can use
+    `{0,localdatetime,MMddyy}` and you will get properly localized patterns
+    for each locale.
 
-The format following the <tt>list</tt> tag, if any, describes how each list
-element is formatted.  Ie, <tt>{0,list}</tt> means every element is formatted
-as if by <tt>{0}</tt>, <tt>{0,list,number,#,##}</tt> as if by
-<tt>[0,number,#,##}</tt>, etc.
+`{0,localdatetime,predef:PREDEF_NAME}`
+:   Use a locale-specific predefined format -- see [DateTimeFormat.PredefinedFormat](/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html)"
+    for possible values, example: `{0,localdatetime,predef:DATE_SHORT}`.
 
-<dt><tt>{0,localdatetime,skeleton}</tt>
-<dd>Format a date/time in a locale-specific format using the supplied skeleton
-pattern.  The order of
-the pattern characters doesn't matter, and spaces or other separators don't
-matter.  The localized pattern will contain the same fields (but may change
-<tt>MMM</tt> into <tt>LLL</tt> for example) and the same count of each.
+extra formatter arguments
+:   Some formatters accept additional arguments.  These are added to the main format specification, separated by a colon -- for example:
+    `{0,list,number:curcode=USD,currency}` says to use the default currency format for list elements, but use USD (US Dollars) for the currency code.  You
+    can also supply a dynamic argument, such as `{0,localdatetime:tz=$tz,predef:DATE_FULL}`, which says the timezone to
+    use is supplied by a parameter `TimeZone tz` supplied to the method.
+    Where supported, multiple arguments can be supplied like `{0,format:arg1=val:arg2=val}`.
 
-If one of the predefined formats are not sufficient, you will be much
-better off using a skeleton pattern so you will include the items you want
-but still get a localized format.
+:   Currently supported arguments:
 
-For example, if you used <tt>{0,date,MM/dd/yy}</tt> to format a date, you
-get exactly that pattern in every locale, which is going to cause confusion for
-those users who expect <tt>dd/MM/yy</tt>.  Instead, you can use
-<tt>{0,localdatetime,MMddyy}</tt> and you will get properly localized patterns
-for each locale.
-
-<dt><tt>{0,localdatetime,predef:PREDEF_NAME}</tt>
-<dd>Use a locale-specific predefined format -- see <tt><a
-href="/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html">DateTimeFormat.PredefinedFormat</a></tt>
-for possible values, example: <tt>{0,localdatetime,predef:DATE_SHORT}</tt>.
-
-<dt>extra formatter arguments
-<dd>Some formatters accept additional arguments.  These are added to the main format
-specification, separated by a colon -- for example:
-<tt>{0,list,number:curcode=USD,currency}</tt> says to use the default currency
-format for list elements, but use USD (US Dollars) for the currency code.  You
-can also supply a dynamic argument, such as
-<tt>{0,localdatetime:tz=$tz,predef:DATE_FULL}</tt>, which says the timezone to
-use is supplied by a parameter <tt>TimeZone tz</tt> supplied to the method.
-Where supported, multiple arguments can be supplied like <tt>{0,format:arg1=val:arg2=val}</tt>.
-
-Currently supported arguments:
-
-<table>
-<tr><th>Format</th><th>Argument Name</th><th>Argument Type</th><th>Description</th></tr>
-<tr><td>number</td><td>curcode</td><td><tt>String</tt></td><td>Currency code to
-use for currency formatting</td></tr>
-<tr><td>date, time, or
-localdatetime</td><td>tz</td><td><tt>TimeZone</tt></td><td>Time zone to
-use for date/time formatting</td></tr>
-</table>
-
-</dl>
+:   | Format                       | Argument Name | Argument Type | Description |
+    | ---------------------------- | ------------- | ------------- | ----------- |
+    | number                       | curcode       | `String`      | Currency code to use for currency formatting |
+    | date, time, or localdatetime | tz            | `TimeZone`    | Time zone to use for date/time formatting |
 
 ## Using Annotations<a id="MessagesAnnotations"></a>
 
-The annotations discussed here are the ones specific to <tt>Messages</tt> &mdash;
+The annotations discussed here are the ones specific to `Messages` &mdash;
 for shared annotations see the [main Internationalization
 page](DevGuideI18n.html#DevGuideAnnotations).
 
 ### Method Annotations
 
-The following annotations apply to methods in a <tt>Messages</tt> subtype:
+The following annotations apply to methods in a `Messages` subtype:
 
-*   **<tt>[@DefaultMessage(String
-message)](/javadoc/latest/com/google/gwt/i18n/client/Messages.DefaultMessage.html)</tt>**
+*   **[@DefaultMessage(String
+message)](/javadoc/latest/com/google/gwt/i18n/client/Messages.DefaultMessage.html)**
     Specifies the message string to be used for the default locale for this
-method, with all of the options above.  If an <tt>@AlternateMessage</tt>
+method, with all of the options above.  If an `@AlternateMessage`
 annotation is present, this is the default text used when more specific forms
 do not apply &mdash; for count messages in English, this would be the plural
 form instead of the singular form.
 
-*   **<tt>[@AlternateMessage({String
-form, String message, ...})](/javadoc/latest/com/google/gwt/i18n/client/Messages.AlternateMessage.html)</tt>**
+*   **[@AlternateMessage({String
+form, String message, ...})](/javadoc/latest/com/google/gwt/i18n/client/Messages.AlternateMessage.html)**
     Specifies the text for alternate forms of the message.  The supplied array of
 strings must be in pairs, with the first entry the name of an alternate form
 appropriate for the default locale, and the second being the message to use for
@@ -199,20 +184,20 @@ Forms](#SelectForm) examples below.
 
 The following annotations apply to parameters of methods in a
 
-<tt>Messages</tt> subtype:
+`Messages` subtype:
 
-*   **<tt>[@Example(String
-example)](/javadoc/latest/com/google/gwt/i18n/client/Messages.Example.html)</tt>**
+*   **[@Example(String
+example)](/javadoc/latest/com/google/gwt/i18n/client/Messages.Example.html)**
     An example for this variable. Many translation tools will show this to the
-translator instead of the placeholder &mdash; i.e., <tt>Hello {0}</tt> with
-<tt>@Example("John")</tt> will show as </tt>Hello John</tt> with "John"
+translator instead of the placeholder &mdash; i.e., `Hello {0}` with
+`@Example("John")` will show as `Hello John` with "John"
 highlighted to indicate it should not be translated.
-*   **<tt>[@Optional
-](/javadoc/latest/com/google/gwt/i18n/client/Messages.Optional.html)</tt>**
+*   **[@Optional
+](/javadoc/latest/com/google/gwt/i18n/client/Messages.Optional.html)**
     Indicates that this parameter need not be present in all translations. If this
 annotation is not supplied, it is a compile-time error if the translated string
 being compiled does not include the parameter.
-*   **<tt>[@PluralCount](/javadoc/latest/com/google/gwt/i18n/client/Messages.PluralCount.html)</tt>**
+*   **[@PluralCount](/javadoc/latest/com/google/gwt/i18n/client/Messages.PluralCount.html)**
 Indicates that this parameter is used to select which form of text to use (ie,
 1 widget vs. 2 widgets).<p/>
 The argument annotated must be int, short, an array, or a list (in the latter
@@ -220,29 +205,29 @@ cases the size of the list is used as the count).
 
 ## Plural Forms<a id="PluralForms"></a>
 
-The <tt>Messages</tt> interface also supports the use of plural forms.  In
+The `Messages` interface also supports the use of plural forms.  In
 English, you want to adjust the word being counted based on whether the count
 is 1 or not.  For example:
 
-<pre class="prettyprint">
+```
 You have one tree.
 You have 2 trees.
-</pre>
+```
 
 Other languages may have far more complex plural forms.  Fortunately,
 GWT allows you to easily handle this problem as follows:
 
-<pre class="prettyprint">
+```
 public interface MyMessages extends Messages {
   @DefaultMessage("You have {0} trees.")
   @AlternateMessage({"one", "You have one tree."})
   String treeCount(@PluralCount int count);
 }
-</pre>
+```
 
-Then, <tt>myMessages.treeCount(1)</tt> returns <tt>&quot;You have one
-tree.&quot;</tt> while <tt>myMessages.treeCount(2)</tt> returns <tt>&quot;You
-have 2 trees.&quot;</tt> 
+Then, `myMessages.treeCount(1)` returns `"You have one
+tree."` while `myMessages.treeCount(2)` returns `"You
+have 2 trees."`
 
 See the [details for using plural forms](DevGuideI18nPluralForms.html).
 
@@ -250,11 +235,11 @@ See the [details for using plural forms](DevGuideI18nPluralForms.html).
 
 Similar to plural forms above, you might need to choose messages based on
 something besides a count.  For example, you might know the gender of a person
-referenced in the message (<tt>"{0} gave you her credits"</tt>), or you might
+referenced in the message (`"{0} gave you her credits"`), or you might
 want to support abbreviated and full versions of a message based on user
 preference.
 
-<pre class="prettyprint">
+```
 public enum Gender {
   MALE,
   FEMALE,
@@ -269,10 +254,10 @@ public interface MyMessages extends Messages {
   })
   String gaveCredits(String name, @Select Gender gender);
 }
-</pre>
+```
 
-The default message is used if no form matches, in this case if <tt>gender</tt>
-is <tt>null</tt> or <tt>UNKNOWN</tt>. <tt>@Select</tt> parameters may be
+The default message is used if no form matches, in this case if `gender`
+is `null` or `UNKNOWN`. `@Select` parameters may be
 integral primitives, Stings, booleans, or enums.
 
 ## SafeHtml Messages<a id="SafeHtmlMessages"></a>
@@ -285,11 +270,11 @@ application is vulnerable to Cross-Site-Scripting (XSS) attacks.
 
 To avoid XSS vulnerabilities due to the use of messages in HTML contexts,
 you can declare methods in your Messages interfaces with a return type of
-`SafeHtml`: 
+`SafeHtml`:
 
-<pre class="prettyprint">
- public interface ErrorMessages extends Messages {
-   @DefaultMessage("A &lt;strong&gt;{0} error&lt;/strong&gt; has occurred: {1}.")
+```
+public interface ErrorMessages extends Messages {
+   @DefaultMessage("A <strong>{0} error</strong> has occurred: {1}.")
    SafeHtml errorHtml(String error, SafeHtml details);
  }
  ErrorMessages msgs = GWT.create(ErrorMessages.class)
@@ -298,7 +283,7 @@ you can declare methods in your Messages interfaces with a return type of
    errorBar.setHTML(msgs.errorHtml(error, details));
    errorBar.setVisible(true);
  }
-</pre>
+```
 
 For SafeHtml messages, the code generator generates code that is guaranteed
 to produce values that satisfy the [SafeHtml type
@@ -318,10 +303,9 @@ of an HTML tag.  For example, the following is not a valid SafeHml message
 format, because the `{0}` parameter appears inside a tag's
 attribute:
 
-<pre>
-errorHtmlWithClass = A &lt;span class="{0}"&gt;{1} error&lt;/span&gt; has occurred.
-</pre>
+```
+errorHtmlWithClass = A <span class="{0}">{1} error</span> has occurred.
+```
 
 For more information on working with SafeHtml values, see the [SafeHtml
   Developer's Guide](DevGuideSecuritySafeHtml.html).
-  

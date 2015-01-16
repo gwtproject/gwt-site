@@ -33,10 +33,10 @@ FAQ - Troubleshooting
 
 After upgrading to GWT 1.5, you might see this exception:
 
-<pre>
+```
 [ERROR] Uncaught exception escaped
 java.lang.AssertionError: Element may only be set once
-</pre>
+```
 
 The message indicates that some widget is calling the setElement() method more than once. Trying to call the setElement() method on a widget after it's already been initialized
 is illegal.
@@ -53,47 +53,47 @@ again from the subclass constructor). Thus the message generally reveals an actu
 Rather than write a new widget from scratch, here's a shortcut for constructing a widget from an existing DOM element.
 
 First subclass [AbsolutePanel](/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html). Then use
-the protected [AbsolutePanel(Element)](/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html#AbsolutePanel(com.google.gwt.user.client.Element)) constructor to change the underlying element.
+the protected [AbsolutePanel(Element)](/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html#AbsolutePanel\(com.google.gwt.user.client.Element\)) constructor to change the underlying element.
 
 ### The import cannot be resolved<a id="The_import_cannot_be_resolved"></a>
 
 Although you have successfully compiled the project class files in an IDE, when invoking the GWT compiler for the first time on a new project using one of the APIs provided
 with the GWT Google API, you come across an error similar to the following:
 
-<pre>
+```
 $ ./gearsTest-compile
 Analyzing source in module 'com.example.gearsTest'
    [ERROR] Errors in '/Users/zundel/Documents/workspace2/galgwt-issue3/src/com/example/client/gearsTest.java'
       [ERROR] Line 9:  The import com.google.gwt.gears cannot be resolved
       [ERROR] Line 26:  Gears cannot be resolved
-</pre>
+```
 
-The problem is that there is no package <tt>com.google.gwt.gears</tt> on the module source path.
+The problem is that there is no package `com.google.gwt.gears` on the module source path.
 
 #### Workaround
 
 This can be resolved by updating the module XML file (.gwt.xml) in either of two ways.
 
-*   Add a <tt>&lt;</tt>source<tt>&gt;</tt> tag that adds the package to the module source path.
-*   If your third party library provides one, add an <tt>&lt;</tt>inherits<tt>&gt;</tt> tag.
+*   Add a `<`source`>` tag that adds the package to the module source path.
+*   If your third party library provides one, add an `<`inherits`>` tag.
 
-For using the Gears package in GWT Google API, the appropriate line is: 
+For using the Gears package in GWT Google API, the appropriate line is:
 
-<pre class="prettyprint">
-   &lt;inherits name='com.google.gwt.gears.Gears'&gt;
-</pre>
+```
+<inherits name='com.google.gwt.gears.Gears'>
+```
 
 ### InternalError: Can't connect to X11 window<a id="InternalError_:_Can't_connect_to_X11_window"></a>
 
-Does the GWT compiler need an X11 Window in Linux? No, the GWT compiler can run &quot;headless&quot; (that is, accessing the AWT library without needing to load a Graphics Environment
+Does the GWT compiler need an X11 Window in Linux? No, the GWT compiler can run "headless" (that is, accessing the AWT library without needing to load a Graphics Environment
 Window).
 
 You might run into the problem in the first place because the [ImageBundle](DevGuideUiImageBundles.html) feature triggers the GWT compiler to
 connect to an X11 Graphics Environment Window at compile time. If you don't have a DISPLAY environment variable set, it will issue the following error message:
 
-<pre>
+```
 java.lang.InternalError: Can't connect to X11 window server using ':0.0' as the value of the DISPLAY variable.
-</pre>
+```
 
 Even if you are not using the ImageBundle explicitly in your client code, you may still encounter this error message because GWT uses the ImageBundle internally for widgets
 (like the Tree widget) to further optimize the number of HTTP roundtrips for images and speed up your web application. This means if you're using any widgets that use ImageBundle
@@ -103,17 +103,17 @@ in their underlying implementations, the GWT compiler will search for the DISPLA
 
 To avoid this error message, run the GWT compiler with the headless AWT option.
 
-<pre>
+```
 -Djava.awt.headless=true
-</pre>
+```
 
 ##### Examples
 
-**Ant.** To the GWT compilation build target, add the element: <tt>&lt;jvmarg value=&quot;-Djava.awt.headless=true&quot;/&gt;</tt>
+**Ant.** To the GWT compilation build target, add the element: `<jvmarg value="-Djava.awt.headless=true"/>`
 
-**Command-line.** Pass in the argument: <tt>-Djava.awt.headless=true</tt>
+**Command-line.** Pass in the argument: `-Djava.awt.headless=true`
 
-**Eclipse.** In your Run Configuration window, select the Arguments tab and in the VM arguments section, enter: <tt>-Djava.awt.headless=true</tt>
+**Eclipse.** In your Run Configuration window, select the Arguments tab and in the VM arguments section, enter: `-Djava.awt.headless=true`
 
 If you use a custom build process, you can also set the AWT headless option there.
 
@@ -121,14 +121,14 @@ If you use a custom build process, you can also set the AWT headless option ther
 
 When compiling a project in GWT 1.5 or later, you may encounter problems with running out of memory.
 
-<pre>
+```
 Compiling permutations
    Analyzing permutation #1
       [ERROR] An internal compiler exception occurred
 com.google.gwt.dev.jjs.InternalCompilerException: Unexpected error during visit.
         at ...
 Caused by: java.lang.OutOfMemoryError: Java heap space
-</pre>
+```
 
 GWT 1.5 provides a larger library (in gwt-user.jar) that must be analyzed during compilation and a number of compiler optimizations that require more memory and processing
 power. Thus, the GWT compiler and development mode use more memory internally. This can cause the compiler to exceed the default JVM heap size.
@@ -137,7 +137,7 @@ Some projects need to increase JVM max memory to successfully compile; others ma
 
 #### Workaround
 
-Increase the Java heap limit using the Java VM argument -Xmx and specifying the amount of memory in megabytes. For example, <tt>java -Xmx512M -cp [args...]</tt> would set the
+Increase the Java heap limit using the Java VM argument -Xmx and specifying the amount of memory in megabytes. For example, `java -Xmx512M -cp [args...]` would set the
 heap max to 512 megabytes.
 
 ### Undefined DISPLAY errors<a id="Undefined_DISPLAY_errors"></a>
@@ -145,7 +145,7 @@ heap max to 512 megabytes.
 You might receive undefined DISPLAY errors when compiling or testing in a console or headless environment.
 
 In a UNIX environment, GWT tests (and in some cases the GWT compiler) require an X display. If the continuous build is being run from a cron job, the running process may not
-have access to a &quot;real&quot; display.
+have access to a "real" display.
 
 #### Workaround
 
@@ -156,26 +156,28 @@ To provide a virtual display:
 1.  Install Xvfb.
 2.  Start the Xvfb server and set the environment variable DISPLAY to use it.
 
-<pre>
+```
 export DISPLAY=:2
+```
 
 # Run Xvfb without access control on display :2  
 
 # This command will only start Xvfb if it is not already started.
 # Any GWT compiles and tests should set DISPLAY=:2 to use the virtual frame buffer.
-ps -ef | grep Xvfb | grep -v grep &gt;&gt; /dev/null || Xvfb :2 -ac &amp;
-</pre>
+``
+ps -ef | grep Xvfb | grep -v grep >> /dev/null || Xvfb :2 -ac &amp;
+```
 
 ## RPC<a id="RPC"></a>
 
 ### Resource not found<a id="Resource_not_found"></a>
 
-When testing a new RPC interface in development mode, receive a &quot;resource not found&quot; error.
+When testing a new RPC interface in development mode, receive a "resource not found" error.
 
-<pre>
+```
 The development shell servlet received a request for 'rpcs/myService' in module 'com.example.RPCExample' 
    Resource not found: rpcs/myService
-</pre>
+```
 
 The servlet engine could not find the server-side definition of your RPC method.
 
@@ -187,10 +189,12 @@ The servlet engine could not find the server-side definition of your RPC method.
 > structure.](DevGuideOrganizingProjects.html#DevGuideDirectoriesPackageConventions)
 
 *   Is the server code path listed in the module XML file (_myApp_.gwt.xml)?
-*   <pre class="prettyprint">
-&lt;!-- Example servlet loaded into development mode web server       --&gt;
-&lt;servlet path=&quot;/myService&quot; class=&quot;com.example.server.MyServiceImpl&quot; /&gt;
-</pre>
+*
+
+```
+<!-- Example servlet loaded into development mode web server       -->
+<servlet path="/myService" class="com.example.server.MyServiceImpl" />
+```
 
 *   Have you compiled the server-side code?
 
@@ -206,16 +210,16 @@ The servlet engine could not find the server-side definition of your RPC method.
 
 If you are using GWT RPC and upgrading from GWT 1.4 to GWT 1.5, you may see a stack trace similar to the following:
 
-<pre>
+```
 javax.servlet.ServletException: Content-Type must be 'text/plain' with 'charset=utf-8' (or unspecified charset)
         at com.google.gwt.user.server.rpc.RemoteServiceServlet.readPayloadAsUtf8(RemoteServiceServlet.java: 119)
         at com.google.gwt.user.server.rpc.RemoteServiceServlet.doPost(RemoteServiceServlet.java: 178)
         at javax.servlet.http.HttpServlet.service(HttpServlet.java: 738)
         at javax.servlet.http.HttpServlet.service(HttpServlet.java: 831)
         ...
-</pre>
+```
 
-In GWT 1.5, the RPC content type was switched from &quot;text/plain&quot; to &quot;text/x-gwt-rpc&quot;.
+In GWT 1.5, the RPC content type was switched from "text/plain" to "text/x-gwt-rpc".
 
 If you receive this exception, then your server is still using a GWT 1.4 gwt-servlet.jar.
 
@@ -243,7 +247,7 @@ So, hold on to your hats! History support for Safari will work properly when Saf
 
 ### Failed to getGlobalExecState<a id="Failed_to_getGlobalExecState"></a>
 
-On Mac when launching development mode, receive the error &quot;Failed to getGlobalExecState&quot;.
+On Mac when launching development mode, receive the error "Failed to getGlobalExecState".
 
 This problem is related to the Google Gears enabler.
 
@@ -255,27 +259,27 @@ Check the /Library/InputManagers folder. If there is a file named GearsEnabler.b
 
 When launching the GWT compiler or development mode, you may see the following exception.
 
-<pre>
-Exception in thread &quot;main&quot; java.lang.ExceptionInInitializerError
+```
+Exception in thread "main" java.lang.ExceptionInInitializerError
 Caused by: java.lang.RuntimeException: Installation problem detected, please reinstall GWT
     at com.google.gwt.util.tools.Utility.computeInstallationPath(Utility.java:322)
     at com.google.gwt.util.tools.Utility.getInstallPath(Utility.java:223)
-    at com.google.gwt.util.tools.ToolBase.&lt;clinit&gt;(ToolBase.java:55)
+    at com.google.gwt.util.tools.ToolBase.<clinit>(ToolBase.java:55)
 Caused by: java.io.IOException: Cannot determine installation directory; apparently not running from a jar
     at com.google.gwt.util.tools.Utility.computeInstallationPath(Utility.java:307)
   ...
-</pre>
+```
 
 This message occurs when the runtime binary installation of GWT cannot be located. In general, the runtime binary installation path is expected to be in the same directory
-where the gwt-dev-<tt>&lt;</tt>platform<tt>&gt;</tt>.jar file is located.
+where the gwt-dev-`<`platform`>`.jar file is located.
 
 The GWT installation path is embedded in the scripts (created from applicationCreator and projectCreator) as the path specified to the
-gwt-dev-<tt>&lt;</tt>platform<tt>&gt;</tt>.jar file. If you look in this directory, it should contain not only the gwt-user.jar and gwt-dev-<tt>&lt;</tt>platform<tt>&gt;</tt>.jar
+gwt-dev-`<`platform`>`.jar file. If you look in this directory, it should contain not only the gwt-user.jar and gwt-dev-`<`platform`>`.jar
 files, but also the platform-specific shared library files, such as libgwt_ll.so or libgwt_ll.jnilib.
 
 #### Workaround
 
-Make sure that the path specified to the gwt-dev-<tt>&lt;</tt>platform<tt>&gt;</tt>.jar file on the Java classpath still contains the shared libraries. If not, you may need to
+Make sure that the path specified to the gwt-dev-`<`platform`>`.jar file on the Java classpath still contains the shared libraries. If not, you may need to
 re-download and unpack the GWT distribution, making sure your download is complete.
 
 ##### Note to contributors<a id="Note_to_contributors"></a>
@@ -291,14 +295,14 @@ Make sure you have:
 
 When running in development mode, receive the error: Unable to find type 'com.foo.client.MyApp'.
 
-<pre>
+```
 Starting HTTP on port 8888
 Finding entry point classes
   Unable to find type 'com.google.gwt.sample.stockwatcher.client.StockWatcher'
     Hint: Check that the type name 'com.google.gwt.sample.stockwatcher.client.StockWatcher' is really what you meant
     Hint: Check that your classpath includes all required source roots
-Failure to load module 'com.google.gwt.sample.stockwatcher.StockWatcher'   
-</pre>
+Failure to load module 'com.google.gwt.sample.stockwatcher.StockWatcher'
+```
 
 This problem is most often seen when creating a launch configuration manually.  The [Google Plugin for Eclipse](//developers.google.com/eclipse) handles adding source roots to the classpath automatically.
 
@@ -307,9 +311,9 @@ source code to build your application, and both use the Java classpath to find t
 
 #### Workaround
 
-If you are using Eclipse, open the launch configuration, navigate to the Classpath tab, and use the Advanced button to add the <tt>src</tt> folders to the classpath.
+If you are using Eclipse, open the launch configuration, navigate to the Classpath tab, and use the Advanced button to add the `src` folders to the classpath.
 
-If you are launching from the command line, add the <tt>src</tt> folders to the list of paths following the <tt>-cp</tt> argument to the Java command.
+If you are launching from the command line, add the `src` folders to the list of paths following the `-cp` argument to the Java command.
 
 ### Invalid memory access of location 00000000 rip=01160767, or similar<a id="Invalid_memory_access_of_location"></a>
 
@@ -327,13 +331,13 @@ Some developers have experienced this issue running GWT 1.6 hosted mode on Windo
 
 #### Workaround
 
-If you take a peek at your <tt>C:\Windows\System32\drivers\etc\hosts</tt> file, you will notice the endpoint <tt>::1 localhost</tt> defined in the hosts file. To have localhost working in the IPv4 case, which is used in hosted mode, simply change this line to read <tt>127.0.0.1 localhost</tt>.
+If you take a peek at your `C:\Windows\System32\drivers\etc\hosts` file, you will notice the endpoint `::1 localhost` defined in the hosts file. To have localhost working in the IPv4 case, which is used in hosted mode, simply change this line to read `127.0.0.1 localhost`.
 
 ### java.security.AccessControlException: access denied<a id="AccessControlException_access_denied"></a>
 
 If you created your application using the [Google Plugin for Eclipse](https://developers.google.com/eclipse), you may have encountered the following stack trace:
 
-<pre class="code">
+```
 WARNING: Nested in java.lang.ExceptionInInitializerError:
 java.security.AccessControlException: access denied
 (java.lang.RuntimePermission modifyThreadGroup)
@@ -341,7 +345,8 @@ java.security.AccessControlException: access denied
        at java.security.AccessController.checkPermission(AccessController.java:546)
        at java.lang.SecurityManager.checkPermission(SecurityManager.java:532)
        at com.google.appengine.tools.development.DevAppServerFactory
-</pre>
+
+```
 
 The problem occurs if you mistakenly enabled the [Google App Engine](https://developers.google.com/appengine) feature for your project when you created the project, or at a later time during development, and have server-side libraries or classes packaged with your GWT application war folder that violate the [Java App Engine sandbox](//developers.google.com/appengine/docs/whatisgoogleappengine).
 
@@ -349,7 +354,7 @@ The problem occurs if you mistakenly enabled the [Google App Engine](https://dev
 
 If you don't intend on using Google App Engine for your project, simply remove the Google App Engine functionality from it following the steps below:
 
-1.  In Eclipse, right-click on your project and select **Google &gt; App Engine Settings...**
+1.  In Eclipse, right-click on your project and select **Google > App Engine Settings...**
 2.  In the App Engine property menu, deselect the **Use Google App Engine** checkbox.
 3.  Click **OK**.
 
@@ -366,8 +371,8 @@ ImageBundle images show up in Firefox, Opera and Safari, but aren't showing up i
 The first thing to verify is whether or not your web application uses HTTPS, or if any of the images included in the generated image bundle file are under a security
 constraint.
 
-If that is the case, you may be running into a problem rooted in your web server setting certain response headers (such <tt>Pragma: No-cache, Expires: Thu, 1 Jan 1970
-00:00:00,</tt> ...) and Internet Explorer respecting those headers when when using the HTTPS protocol.
+If that is the case, you may be running into a problem rooted in your web server setting certain response headers (such `Pragma: No-cache, Expires: Thu, 1 Jan 1970
+00:00:00,` ...) and Internet Explorer respecting those headers when when using the HTTPS protocol.
 
 ##### Workaround
 
@@ -399,11 +404,11 @@ files as UTF-8. Thus your source files are not properly encoded in UTF-8.
 *   Check your editor to see if it is capable of saving files as UTF-8 and that it is currently configured to do so.
 *   If you have embedded international characters directly into your Java source files, check to see if they are saved in UTF-8 format.
 *   Check any associated Java properties files (or other files where you've stored translations) to see if they are saved in UTF-8 format.
-*   Check the HTML host page. If your web page content contains localized data, encode it as UTF-8 by adding the following tag to the <tt>&lt;</tt>head<tt>&gt;</tt> element.
+*   Check the HTML host page. If your web page content contains localized data, encode it as UTF-8 by adding the following tag to the `<`head`>` element.
 
-<pre class="prettyprint">
-&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot; /&gt;`
-</pre>
+```
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />`
+```
 
 ## JUnit Testing<a id="JUnit_Testing"></a>
 
@@ -417,8 +422,8 @@ _(0,0)_.
 
 #### Workaround
 
-To work around this problem, pass the <tt>-notHeadless</tt> argument in the <tt>-Dgwt.args=</tt> system property setting. Note: When using the ant build, this argument is
+To work around this problem, pass the `-notHeadless` argument in the `-Dgwt.args=` system property setting. Note: When using the ant build, this argument is
 enabled by default as of the GWT 1.5 release.
 
-When <tt>-notHeadless</tt> is specified for running unit tests, the log window and hosted mode browser will pop up on the screen while the test is running. Dismissing or
+When `-notHeadless` is specified for running unit tests, the log window and hosted mode browser will pop up on the screen while the test is running. Dismissing or
 manipulating the elements in these windows may cause the unit tests to fail.

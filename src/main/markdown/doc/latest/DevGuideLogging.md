@@ -26,14 +26,14 @@ Unlike java.util.logging, GWT logging is configured using .gwt.xml files.  You c
 
 Adding GWT logging is really quite simple, as simple as the following code example. However &mdash; understanding how logging works, and how to correctly configure it is important, so please do take the time to read the rest of this document.
 
-<pre class="prettyprint">
-    # In your .gwt.xml file
-    &lt;inherits name="com.google.gwt.logging.Logging"/&gt;
+```
+# In your .gwt.xml file
+    <inherits name="com.google.gwt.logging.Logging"/>
 
     # In your .java file
     Logger logger = Logger.getLogger("NameOfYourLogger");
     logger.log(Level.SEVERE, "this message should get logged");
-</pre>
+```
 
 **Warning about inheriting logging:** If you do not inherit `com.google.gwt.logging.Logging`, then logging will technically work, since the emulation of the Java code is always present. However, you will not get any default Handlers, or any ability to configure the Root Logger (as discussed in this document).  Not inheriting Logging is sometimes done by libraries that want to log errors or information but do not want to control how a customer application would display that information (they don't want to configure or turn on logging, but they do want to make logging information available if a user of the library does turn on logging).
 
@@ -54,17 +54,19 @@ When you log a message to a logger, if the Level of the message is high enough, 
 
 If you open [`LogExample.java`](https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java) you can see that we've created 3 loggers:
 
-<pre class="prettyprint">// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java">LogExample.java</a>
+```
+// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java">LogExample.java</a>
 
   private static Logger childLogger = Logger.getLogger("ParentLogger.Child");
   private static Logger parentLogger = Logger.getLogger("ParentLogger");
   private static Logger rootLogger = Logger.getLogger("");
-</pre>
+```
 
 We've passed these 3 loggers into [`LoggerController`](https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/LoggerController.java), which in turn, creates an instance of
 [`OneLoggerController`](https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/OneLoggerController.java) for each of them.  In `OneLoggerController.java` you can see example code for changing the Level of the logger, logging to the logger, and logging an exception to the logger.
 
-<pre class="prettyprint">// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/OneLoggerController.java">OneLoggerController</a>
+```
+// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/OneLoggerController.java">OneLoggerController</a>
 
   // Change the level of the logger
   @UiHandler("levelTextBox")
@@ -94,7 +96,7 @@ We've passed these 3 loggers into [`LoggerController`](https://gwt.googlesource.
       <b>logger.log(Level.SEVERE, "Null Exception Hit", ex);</b>
     }
   }
-</pre>
+```
 
 You can play around with these 3 loggers. For now, the easiest place to look for log messages is the popup created in LogExample.java on the web page <!-- doog: add a link --> (different Handlers are discussed in the next section).
 
@@ -106,13 +108,13 @@ The simplest item you can configure is the Level of the Root Logger.  You can do
 
 The other way to configure GWT logging is through a .gwt.xml file as follows:
 
-<pre class="prettyprint">
+```
 # LogExample.gwt.xml
 
-    &lt;set-property name="gwt.logging.logLevel" value="SEVERE"/&gt;          # To change the default logLevel
-    &lt;set-property name="gwt.logging.enabled" value="FALSE"/&gt;            # To disable logging
-    &lt;set-property name="gwt.logging.consoleHandler" value="DISABLED"/&gt;  # To disable a default Handler
-</pre>
+    <set-property name="gwt.logging.logLevel" value="SEVERE"/>          # To change the  default logLevel
+    <set-property name="gwt.logging.enabled" value="FALSE"/>            # To disable logging
+    <set-property name="gwt.logging.consoleHandler" value="DISABLED"/>  # To disable a default Handler
+```
 
 You can experiment with configuring logging in the provided LogExample.gwt.xml file.
 
@@ -122,7 +124,8 @@ GWT logging comes with a set of Handlers already defined and (by default) attach
 
 Here's an example of how a checkbox adds or removes a handler:
 
-<pre class="prettyprint">// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/HandlerController.java">HandlerController.java</a>
+```
+// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/HandlerController.java">HandlerController.java</a>
 
     public void onValueChange(ValueChangeEvent<Boolean> event) {
       if (checkbox.getValue()) {
@@ -131,7 +134,7 @@ Here's an example of how a checkbox adds or removes a handler:
         <b>logger.removeHandler(handler);</b>
       }
     }
-</pre>
+```
 
 Most of the default Handlers are very straightforward
 
@@ -154,7 +157,8 @@ and supports multiple `add()` calls can be used).
 Once we have one of these widgets, we simply pass it into the constructor
 of a `HasWidgetsLogHandler` and add that Handler to a logger.
 
-<pre class="prettyprint">// <a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/client/ui/VerticalPanel.java">VerticalPanel.java</a>
+```
+// <a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/client/ui/VerticalPanel.java">VerticalPanel.java</a>
 
     VerticalPanel customLogArea;
 
@@ -163,7 +167,7 @@ of a `HasWidgetsLogHandler` and add that Handler to a logger.
     //  with it, and add that handler to a logger. In this case, we add it to a particular logger in order
     //  to demonstrate how the logger hierarchy works, but adding it to the root logger would be fine.
     logger.addHandler(new HasWidgetsLogHandler(customLogArea));
-</pre>
+```
 
 ## Client vs. Server-side Logging<a id="Client_vs_Server_side_Logging"></a>
 
@@ -177,11 +181,11 @@ In [`ServerLoggingArea.java`](https://gwt.googlesource.com/gwt/+/master/samples/
 
 In order for events that are logged by client-side code to be stored on the server side, you need to use a `RemoteLogHandler`.  This handler will send log messages to the server, where they will be logged using the server-side logging mechanism. GWT currently contains a `SimpleRemoteLogHandler` which will do this in the simplest possible way (using GWT-RPC) and no intelligent batching, exponential backoffs in case of failure, and so forth.  This logger is disabled by default, but you can enable it in the .gwt.xml file (see the section on Handlers above for more details on configuring the default Handlers).
 
-<pre class="prettyprint">
+```
 # <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/LogExample.gwt.xml">LogExample.gwt.xml</a>
 
-  &lt;set-property name="gwt.logging.simpleRemoteHandler" value="ENABLED" /&gt;
-</pre>
+  <set-property name="gwt.logging.simpleRemoteHandler" value="ENABLED" />
+```
 
 You will also need to serve the remoteLoggingServlet.
 
@@ -189,23 +193,26 @@ You will also need to serve the remoteLoggingServlet.
 
 When logging is disabled, the compiler will used Deferred Binding to substitute Null implementations for the Logger and Level classes. Since these implementations just return Null, and do nothing, they will generally get trimmed by the GWT compiler (which does a pretty good job of removing useless code).  However, it is not guaranteed that other code you write related to logging will compile out.  If you want to guarantee that some chunk of code is removed when logging is disabled, you can use the `LogConfiguration.loggingIsEnabled()` method:
 
-<pre class="prettyprint">
-  if (LogConfiguration.loggingIsEnabled()) {
+```
+if (LogConfiguration.loggingIsEnabled()) {
     String logMessage = doSomethingExpensiveThatDoesNotNormallyCompileOut();
     logger.severe(logMessage);
-  }</pre>
+  }
+```
 
 Code that normally compiles out will still be present in Development mode.  You can  use the same condition as above to hide code from Development Mode, as shown here:
 
-<pre class="prettyprint">// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/CustomLogArea.java">VerticalPanel.java</a>
+```
+
+// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/CustomLogArea.java">VerticalPanel.java</a>
 
     // Although this code will compile out without this check in web mode, the guard will ensure
     // that the handler does not show up in development mode.
     if (LogConfiguration.loggingIsEnabled()) {
       logger.addHandler(new HasWidgetsLogHandler(customLogArea));
     }
-</pre>
 
+```
 ## Emulated and Non-Emulated Classes<a id="Emulated_And_Non_Emulated"></a>
 
 The GWT logging framework does not emulate all parts of java.util.logging.
@@ -213,12 +220,14 @@ See [JRE Emulation Reference](RefJreEmulation.html#Package_java_util_logging) fo
 
 The following Handlers and Formatters are provided:
 
-<pre>
-  HTMLFormatter
+```
+
+HTMLFormatter
   TextFormatter
   SystemLogHandler
   ConsoleLogHandler
   FirebugLogHandler
   DevelopmentModeLogHandler
   HasWidgetsLogHandler (and LoggingPopup to use with it)
-</pre>
+```
+

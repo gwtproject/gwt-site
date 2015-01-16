@@ -67,8 +67,8 @@
     }
 </style>
 
-Exemples
-===
+Examples
+==
 
 If you're like us, the first thing you want to do is see examples of what you can do with GWT.
 
@@ -133,7 +133,7 @@ Please note that the applications linked from this page are provided by third-pa
     </div>
 
     <br>
-    The source for these examples as well as others can be found in your GWT distribution under the <code>samples/</code> directory. If you haven't downloaded GWT yet, you can download it <a href="download.html">here</a>.
+    The source for these examples as well as others can be found in your GWT distribution under the `samples/` directory. If you haven't downloaded GWT yet, you can download it <a href="download.html">here</a>.
 
   </div>
 </div>

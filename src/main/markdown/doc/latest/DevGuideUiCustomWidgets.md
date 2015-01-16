@@ -27,7 +27,7 @@ would inherit from its Panel superclass.
 The following code snippet shows how to create a composite widget composed of a [TextBox](/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html) widget and a
 [CheckBox](/javadoc/latest/com/google/gwt/user/client/ui/CheckBox.html) widget laid out in a [VerticalPanel](/javadoc/latest/com/google/gwt/user/client/ui/VerticalPanel.html).
 
-<pre class="prettyprint">
+```
 package com.google.gwt.examples;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -70,7 +70,7 @@ public class CompositeExample implements EntryPoint {
       initWidget(panel);
 
       // Give the overall composite a style name.
-      setStyleName(&quot;example-OptionalCheckBox&quot;);
+      setStyleName("example-OptionalCheckBox");
     }
 
     public void onClick(ClickEvent event) {
@@ -104,11 +104,11 @@ public class CompositeExample implements EntryPoint {
 
   public void onModuleLoad() {
     // Create an optional text box and add it to the root panel.
-    OptionalTextBox otb = new OptionalTextBox(&quot;Check this to enable me&quot;);
+    OptionalTextBox otb = new OptionalTextBox("Check this to enable me");
     RootPanel.get().add(otb);
   }
 }
-</pre>
+```
 
 ## From Scratch in Java Code<a id="new"></a>
 

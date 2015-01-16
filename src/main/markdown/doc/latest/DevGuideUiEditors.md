@@ -35,7 +35,8 @@ The GWT Editor framework allows data stored in an object graph to be mapped onto
 
 Import the `com.google.gwt.editor.Editor` module in your `gwt.xml` file.
 
-<pre class="prettyprint">// Regular POJO, no special types needed
+```
+// Regular POJO, no special types needed
 public class Person {
   Address getAddress();
   Person getManager();
@@ -46,7 +47,7 @@ public class Person {
  
 // Sub-editors are retrieved from package-protected fields, usually initialized with UiBinder.
 // Many Editors have no interesting logic in them
-public class PersonEditor extends Dialog implements Editor&lt;Person&gt; {
+public class PersonEditor extends Dialog implements Editor<Person> {
   // Many GWT Widgets are already compatible with the Editor framework
   Label nameEditor;
   // Building Editors is usually just composition work
@@ -61,13 +62,13 @@ public class PersonEditor extends Dialog implements Editor&lt;Person&gt; {
 // A simple demonstration of the overall wiring
 public class EditPersonWorkflow{
   // Empty interface declaration, similar to UiBinder
-  interface Driver extends SimpleBeanEditorDriver&lt;Person, PersonEditor&gt; {}
+  interface Driver extends SimpleBeanEditorDriver<Person, PersonEditor> {}
  
   // Create the Driver
   Driver driver = GWT.create(Driver.class);
  
   void edit(Person p) {
-    // PersonEditor is a DialogBox that extends Editor&lt;Person&gt;
+    // PersonEditor is a DialogBox that extends Editor<Person>
     PersonEditor editor = new PersonEditor();
     // Initialize the driver with the top-level editor
     driver.initialize(editor);
@@ -85,15 +86,16 @@ public class EditPersonWorkflow{
     }
     doSomethingWithEditedPerson(edited);
   }
-}</pre>
+}
+```
 
 ## Definitions<a id="Definitions"></a>
 
-*   _Bean-like object_: (henceforth &quot;bean&quot;) An object that supports retrieval of properties through strongly-typed `Foo getFoo()` methods with optional `void setFoo(Foo foo);` methods.
+*   _Bean-like object_: (henceforth "bean") An object that supports retrieval of properties through strongly-typed `Foo getFoo()` methods with optional `void setFoo(Foo foo);` methods.
 *   _Editor_: An object that supports editing zero or more properties of a bean.
 *   An Editor may be composed of an arbitrary number of sub-Editors that edit the properties of a bean.
-*   Most Editors are Widgets, but the framework does not require this.  It is possible to create &quot;headless&quot; Editors that perform solely programmatically-driven changes.*   _Driver_: The &quot;top-level&quot; controller used to attach a bean to an Editor.  The driver is responsible for descending into the Editor hierarchy to propagate data.  Examples include the `SimpleBeanEditorDriver` and the `RequestFactoryEditorDriver`.
-*   _Adapter_: One of a number of provided types that provide &quot;canned&quot; behaviors for the Editor framework.
+*   Most Editors are Widgets, but the framework does not require this.  It is possible to create "headless" Editors that perform solely programmatically-driven changes.*   _Driver_: The "top-level" controller used to attach a bean to an Editor.  The driver is responsible for descending into the Editor hierarchy to propagate data.  Examples include the `SimpleBeanEditorDriver` and the `RequestFactoryEditorDriver`.
+*   _Adapter_: One of a number of provided types that provide "canned" behaviors for the Editor framework.
 
 ## General workflow<a id="General_workflow"></a>
 
@@ -112,25 +114,34 @@ public class EditPersonWorkflow{
 The basic `Editor` type is simply a parameterized marker interface that indicates that a type conforms to the editor contract or informal protocol.  The only expected behavior of an `Editor` is that it will provide access to its sub-Editors via one or more of the following mechanisms: 
 
 *   An instance field with at least package visibility whose name exactly the property that will be edited or `propertyNameEditor`.  For example:
-    <pre class="prettyprint">class MyEditor implements Editor&lt;Foo&gt; {
+
+```
+class MyEditor implements Editor<Foo> {
   // Edits the Foo.getBar() property
   BarEditor bar;
   // Edits the Foo.getBaz() property
   BazEditor bazEditor;
-}</pre>
+}
+```
 *   A no-arg method with at least package visibility whose name exactly is the property that will be edited or `propertyNameEditor`.  This allows the use of interfaces for defining the Editor hierarchy. For example:
-    <pre class="prettyprint">interface FooEditor extends Editor&lt;Foo&gt; {
+
+```
+interface FooEditor extends Editor<Foo> {
   // Edits the Foo.getBar() property
   BarEditor bar();
   // Edits the Foo.getBaz() property
   BazEditor bazEditor();
-}</pre>
+}
+```
 *   The `@Path` annotation may be used on the field or accessor method to specify a dotted property path or to bypass the implicit naming convention.  For example:
-    <pre class="prettyprint">class PersonEditor implements Editor&lt;Person&gt; {
+
+```
+class PersonEditor implements Editor<Person> {
   // Corresponds to person.getManager().getName()
-  @Path(&quot;manager.name&quot;);
+  @Path("manager.name");
   Label managerName;
-}</pre>
+}
+```
 *   The `@Ignore` annotation may be used on a field or accessor method to make the Editor framework ignore something that otherwise appears to be a sub-Editor.
 *   Sub-Editors may be null. In this case, the Editor framework will ignore these sub-editors.
 
@@ -219,7 +230,8 @@ The GWT Editor framework provides the following top-level drivers:
 
 The `IsEditor` interface is intended to be used when a view type is reusing an Editor behavior provided by an external type.  For instance, a `LabelDecorator` type would implement `IsEditor` because it re-uses its Label's existing Editor behavior:
 
-<pre class="prettyprint">class LabelDecorator extends Composite implements IsEditor&lt;LeafValueEditor&lt;String&gt;&gt; {
+```
+class LabelDecorator extends Composite implements IsEditor<LeafValueEditor<String>> {
   private final Label wrapped = new Label();
  
   public LabelDecorator() {
@@ -227,42 +239,47 @@ The `IsEditor` interface is intended to be used when a view type is reusing an E
     initWidget(prettyContents);
   }
  
-  public LeafValueEditor&lt;String&gt; asEditor() {
+  public LeafValueEditor<String> asEditor() {
     return wrapped.asEditor();
   }
-}</pre>
+}
+```
 
 Similarly a `WorkgroupMembershipEditor` might implement `IsEditor<ListEditor<Person, PersonNameLabel>>`.
 
-### <a name="Read-only_Editors"></a>Read-only Editors
+### <a id="Read-only_Editors"></a>Read-only Editors
 
 **Q:** Can I use Editors to view read-only data?
 
 **A:** Yes, just don't call the `flush()` method on the driver type.   `RequestFactoryEditorDriver` has a convenience `display()` method as well.
 
-### <a name="Very_large_objects"></a>Very large objects
+### <a id="Very_large_objects"></a>Very large objects
 
 **Q:** How can I edit objects with a large number of properties?
 
 **A:** An Editor doesn't have to edit all of the properties of its peer domain object. If you had a `BagOfState` type with many properties, it might make sense to write several Editor types that edit conceptually-related subsets of the properties:
 
-<pre class="prettyprint">
-class BagOfStateBiographicalEditor implements Editor&lt;BagOfState&gt; {
+```
+class BagOfStateBiographicalEditor implements Editor<BagOfState> {
   AddressEditor address;
   Label name; 
 }
  
-class BagOfStateUserPreferencesEditor implements Editor&lt;BagOfState&gt; {
+class BagOfStateUserPreferencesEditor implements Editor<BagOfState> {
   CheckBox likesCats;
   CheckBox likesDogs;
-}</pre>
+}
+```
 
 Whether or not these editors are displayed all at the same time or sequentially is a user experience issue.  The Editor framework allows multiple Editors to edit the same object:
 
-<pre class="prettyprint">class HasBagOfStateEditor implements Editor&lt;HasBagOfState&gt; {
- @Editor.Path(&quot;state&quot;)
+```
+
+class HasBagOfStateEditor implements Editor<HasBagOfState> {
+ @Editor.Path("state")
  BagOfStateBiographicalEditor bio;
  
- @Editor.Path(&quot;state&quot;)
+ @Editor.Path("state")
  BagOfStateUserPreferencesEditor prefs;
-}</pre>
+}
+```

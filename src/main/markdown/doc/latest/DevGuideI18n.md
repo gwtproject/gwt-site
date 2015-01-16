@@ -104,13 +104,14 @@ See the section on [date and number formatting](DevGuideCodingBasics.html#DevGui
 The GWT internationalization types reside in the com.google.gwt.i18n package. To use any of these types, your module must inherit from the I18N module
 (com.google.gwt.i18n.I18N).
 
-<pre class="prettyprint">
-&lt;module&gt;
-  &lt;inherits name=&quot;com.google.gwt.i18n.I18N&quot;/&gt;
-&lt;/module&gt;
-</pre>
+```
+<module>
+  <inherits name="com.google.gwt.i18n.I18N"/>
+</module>
+```
 
-As of GWT 1.5, the User module (com.google.gwt.user.User) inherits the I18N module. So if your project's module XML file inherits the User module (which generally it does), it
+As of GWT 1.5, the User module (com.google.gwt.user.User) inherits the I18N module. So
+if your project's module XML file inherits the User module (which generally it does), it
 does not need to specify explicitly an inherit for the I18N module.
 
 ## Locales in GWT<a id="DevGuideLocale"></a>
@@ -128,7 +129,7 @@ For details on configuring locales in your GWT application, see the
 ## Static String Internationalization<a id="DevGuideStaticStringInternationalization"></a>
 
 Static string internationalization is the most efficient way to localize your application for different locales in terms of runtime performance. This approach is called
-&quot;static&quot; because it refers to creating tags that are matched up with human readable strings at compile time. At compile time, mappings between tags and strings are created for all
+"static" because it refers to creating tags that are matched up with human readable strings at compile time. At compile time, mappings between tags and strings are created for all
 languages defined in the module. The module startup sequence maps the appropriate implementation based on the locale setting using [deferred binding](DevGuideCodingBasics.html#DevGuideDeferredBinding).
 
 Static string localization relies on code generation from standard Java [properties files](DevGuideI18n.html#DevGuidePropertiesFiles) or
@@ -138,21 +139,21 @@ and a code generation library to generate implementations of those interfaces.
 
 ### Extending the Constants Interface
 
-The [<tt>Constants</tt>](DevGuideI18nConstants.html) interface
+The [`Constants`](DevGuideI18nConstants.html) interface
 allows you to localize constant values in a type-safe manner, all resolved
 at compile time.  At some cost of runtime overhead, you can also allow runtime
-lookup by key names with the <tt>ConstantsWithLookup</tt> interface.
+lookup by key names with the `ConstantsWithLookup` interface.
 
 ### Using the Messages Interface
 
-The [<tt>Messages</tt>](DevGuideI18nMessages.html) interface
+The [`Messages`](DevGuideI18nMessages.html) interface
 allows you to substitute parameters into messages and to even re-order those
 parameters for different locales as needed. The format of the messages in the
 properties files follows the specification in Java [MessageFormat](http://java.sun.com/j2se/1.5.0/docs/api/java/text/MessageFormat.html).
 The interface you create will contain a Java
 method with parameters matching those specified in the format string.
 
-<p>In addition, the <tt>Messages</tt> interface supports [Plural Forms](DevGuideI18nPluralForms.html) to allow your application
+In addition, the `Messages` interface supports [Plural Forms](DevGuideI18nPluralForms.html) to allow your application
 to accurately reflect text changes based on the count of something.
 
 ### Which Interface to Use?
@@ -166,34 +167,33 @@ Constant accessors may return a variety of types, including strings, numbers,
 booleans, and even maps. A compile-time check is done to ensure that the value
 in a properties file matches the return type declared by its corresponding
 constant accessor. In other words, if a constant accessor is declared to
-return an <tt>int</tt>, its associated property is guaranteed to be a valid
-<tt>int</tt> value &mdash; avoiding a potential source of runtime errors.
+return an `int`, its associated property is guaranteed to be a valid
+`int` value &mdash; avoiding a potential source of runtime errors.
 
 *   The [ConstantsWithLookup](/javadoc/latest/com/google/gwt/i18n/client/ConstantsWithLookup.html)
-interface is identical to <tt>Constants</tt> except that the interface also
+interface is identical to `Constants` except that the interface also
 includes a method to look up values by property name, which facilitates
-dynamic binding to constants by name at runtime. <tt>ConstantsWithLookup</tt>
+dynamic binding to constants by name at runtime. `ConstantsWithLookup`
 can sometimes be useful in highly data-driven applications. One caveat:
-<tt>ConstantsWithLookup</tt> is less efficient than <tt>Constants</tt>
+`ConstantsWithLookup` is less efficient than `Constants`
 because the compiler cannot discard unused constant methods, resulting in
 larger applications and the lookup cannot be resolved at compile-time.
 
 *   Extend [Messages](/javadoc/latest/com/google/gwt/i18n/client/Messages.html) to create a collection of
 formatted messages that can accept parameters. You might think of the
-<tt>Messages</tt> interface as a statically verifiable equivalent of the
-traditional Java combination of <tt>Properties</tt>, <tt>ResourceBundle</tt>,
-and <tt>MessageFormat</tt> rolled into a single mechanism.
+`Messages` interface as a statically verifiable equivalent of the
+traditional Java combination of `Properties`, `ResourceBundle`,
+and `MessageFormat` rolled into a single mechanism.
 
 ### Properties Files
 
-All of the types above use properties files based on the traditional [Java
-properties file format](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load(java.io.InputStream)), although GWT uses [an enhanced properties file
-format](DevGuideI18n.html#DevGuidePropertiesFiles) that allows for UTF-8 and therefore allows properties files to
-contain Unicode characters directly.
+All of the types above use properties files based on the traditional [Java properties file format](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Properties.html#load\(java.io.InputStream\)),
+although GWT uses [an enhanced properties file format](DevGuideI18n.html#DevGuidePropertiesFiles)
+that allows for UTF-8 and therefore allows properties files to contain Unicode characters directly.
 
 ## Dynamic String Internationalization<a id="DevGuideDynamicStringInternationalization"></a>
 
-For existing applications that may not support the GWT <tt>locale</tt>
+For existing applications that may not support the GWT `locale`
 client property, GWT offers dynamic string internationalization to easily
 integrate GWT internationalization.
 
@@ -210,14 +210,14 @@ Dynamic string localization allows you to look up localized strings defined in a
 string-based keys. This approach is typically slower and larger than the static string approach, but does not require application code to be recompiled when messages are altered
 or the set of locales changes.
 
-**Tip:** The <tt>Dictionary</tt> class is completely dynamic, so it provides no static type checking, and invalid keys cannot be checked by the compiler. This is
+**Tip:** The `Dictionary` class is completely dynamic, so it provides no static type checking, and invalid keys cannot be checked by the compiler. This is
 another reason we recommend using [static string internationalization](DevGuideI18n.html#DevGuideStaticStringInternationalization) where
 possible.
 
 ## Java Annotations<a id="DevGuideAnnotations"></a>
 
 The recommended approach for specifying the default values for
-<tt>Constants</tt> or <tt>Messages</tt> interfaces is using Java annotations.
+`Constants` or `Messages` interfaces is using Java annotations.
 The advantage of this approach is that you can keep the values with the
 source, so when refactoring the interface or creating new methods in your IDE
 it is easier to keep things up to date.  Also, if you are using a
@@ -225,8 +225,8 @@ custom key generator or generating output files for translation, you
 need to use annotations.
 
 The annotations that apply everywhere are discussed here &mdash; for annotations
-that are only used on [<tt>Constants</tt>](DevGuideI18nConstants.html#ConstantsAnnotations)
-and [<tt>Messages</tt>](DevGuideI18nMessages.html#MessagesAnnotations) are
+that are only used on [`Constants`](DevGuideI18nConstants.html#ConstantsAnnotations)
+and [`Messages`](DevGuideI18nMessages.html#MessagesAnnotations) are
 discussed there.
 
 ### Class Annotations
@@ -234,28 +234,28 @@ discussed there.
 The following annotations apply to classes or interfaces:
 
 <ul>
-<li><strong><tt><a
+<li><strong>`<a
 href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.DefaultLocale.html">@DefaultLocale(String
-localeName)</a></tt></strong><br/>
+localeName)</a>`</strong><br/>
 Specifies that text contained in this file is of the specified locale.  If not
-specified, the default is <tt>en</tt>.</li>
-<li><strong><tt><a
+specified, the default is `en`.</li>
+<li><strong>`<a
 href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.GeneratedFrom.html">@GeneratedFrom(String
-fileName)</a></tt></strong><br/>
+fileName)</a>`</strong><br/>
 Indicates that this file was generated from the supplied file. Note that it
 is not required that this file name be resolvable at compile time, as this
 file may have been generated on a different machine, etc. &mdash; if the generator
 does check the source file, such as for staleness, it must not give any
 warning if the file is not present or if the name is not resolvable.</li>
-<li><strong><tt><a
+<li><strong>`<a
 href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.GenerateKeys.html">@GenerateKeys(String
-generatorFQCN)</a></tt></strong><br/>
+generatorFQCN)</a>`</strong><br/>
 Requests that the keys for each method be generated with the specified
 generator (see below). If this annotation is not supplied, keys will be the
 name of the method, and if specified without a parameter it will default to
 the MD5 implementation. The specified generator class must implement the
-<tt><a
-href="/javadoc/latest/com/google/gwt/i18n/rebind/keygen/KeyGenerator.html">KeyGenerator</a></tt> interface. By
+`<a
+href="/javadoc/latest/com/google/gwt/i18n/rebind/keygen/KeyGenerator.html">KeyGenerator</a>` interface. By
 specifying a fully-qualified class name,
 this will be extensible to other formats not in the GWT namespace &mdash; the
 user just has to make sure the specified class is on the class path at
@@ -268,22 +268,22 @@ class literal because the key generation algorithm is likely to pull in code
 that is not translatable, so cannot be seen directly in client code.<p/>
 If this annotation is not supplied, the key will be the simple name of the
 method.
-<li><strong><tt><a
+<li><strong>`<a
 href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Generate.html">@Generate(String[]
-formatFQCN, String filename, String[] locales)</a></tt></strong><br/>
+formatFQCN, String filename, String[] locales)</a>`</strong><br/>
 Requests that a message catalog file is generated during the compilation
 process. If the filename is not supplied, a default name based on the
 interface name is used. The output file is created under the -out directory.
 The format names are the fully-qualified class names which implement the <a
-href="/javadoc/latest/com/google/gwt/i18n/rebind/format/MessageCatalogFormat.html"><tt>MessageCatalogFormat</tt></a>
+href="/javadoc/latest/com/google/gwt/i18n/rebind/format/MessageCatalogFormat.html">`MessageCatalogFormat`</a>
 interface. For example, this could generate an
 XLIFF or properties file based on the information contained in this file.
-Specific <tt>MessageCatalogFormat</tt> implementations may define additional
+Specific `MessageCatalogFormat` implementations may define additional
 annotations for additional parameters needed for that
-<tt>MessageCatalogFormat</tt>.<p/>
+`MessageCatalogFormat`.<p/>
 If any locales are specified, only the listed
 locales are generated. If exactly one locale is listed, the filename supplied
-(or generated) will be used exactly; otherwise </tt>_<i>locale</i></tt> will
+(or generated) will be used exactly; otherwise `_<i>locale</i>` will
 be added before the file extension.<p/>
 A string containing the fully-qualified class name is used instead of a
 class literal because the message catalog implementation is likely to pull in
@@ -293,21 +293,21 @@ code that is not translatable, so cannot be seen directly in client code.
 <h3>Method Annotations</h3>
 <p>The following annotations apply to methods:
 <ul>
-<li><strong><tt><a
+<li><strong>`<a
 href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Key.html">@Key(String
-key)</a></tt></strong><br/>
+key)</a>`</strong><br/>
 Specifies the key to use in the external format for this particular method.
-If not supplied, it will be generated based on the <tt>@GenerateKeys</tt>
+If not supplied, it will be generated based on the `@GenerateKeys`
 annotation, discussed above.</li>
-<li><strong><tt><a
+<li><strong>`<a
 href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Description.html">@Description(String
-desc)</a></tt></strong><br/>
+desc)</a>`</strong><br/>
 A description of the text. Note that this is not included in a hash of the
 text and depending on the file format may not be included in a way visible to
 a translator.</li>
-<li><strong><tt><a
+<li><strong>`<a
 href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Meaning.html">@Meaning(String
-meaning)</a></tt></strong><br/>
+meaning)</a>`</strong><br/>
 Supplies a meaning associated with this text. This information is provided to
 the translator to distinguish between different possible translations &mdash;
 for example, orange might have meaning supplied as "the fruit" or "the color".
@@ -317,27 +317,28 @@ different keys, as they may be translated differently.</li>
 
 ## Localized Properties Files<a id="DevGuidePropertiesFiles"></a>
 
-[Static string internationalization](DevGuideI18n.html#DevGuideStaticStringInternationalization) uses traditional Java <tt>.properties</tt> files to manage
+[Static string internationalization](DevGuideI18n.html#DevGuideStaticStringInternationalization) uses traditional Java `.properties` files to manage
 translating tags into localized values. These files may be placed into the same package as your main module class. They must be placed in the same package as their corresponding
-<tt>Constants</tt>/<tt>Messages</tt> subinterface definition file.
+`Constants`/`Messages` subinterface definition file.
 
 **Tip:** Use the i18nCreator script to get started.
 
-<pre class="prettyprint"> $ i18nCreator -eclipse Foo com.example.foo.client.FooConstants
+```
+$ i18nCreator -eclipse Foo com.example.foo.client.FooConstants
  Created file src/com/example/foo/client/FooConstants.properties
  Created file FooConstants-i18n.launch
  Created file FooConstants-i18n
-</pre>
+```
 
 Both [Constants](/javadoc/latest/com/google/gwt/i18n/client/Constants.html) and [Messages](/javadoc/latest/com/google/gwt/i18n/client/Messages.html) use traditional Java properties files, with
-one notable difference: properties files used with GWT should be encoded as UTF-8 and may contain Unicode characters directly, avoiding the need for <tt>native2ascii</tt>. See the
+one notable difference: properties files used with GWT should be encoded as UTF-8 and may contain Unicode characters directly, avoiding the need for `native2ascii`. See the
 API documentation for the above interfaces for examples and formatting details. Many thanks to the [Tapestry](http://tapestry.apache.org/) project for
-solving the problem of reading UTF-8 properties files in Tapestry's <tt>LocalizedProperties</tt> class.
+solving the problem of reading UTF-8 properties files in Tapestry's `LocalizedProperties` class.
 
-In order to use internationalized characters, make sure that your host HTML file contains the <tt>charset=utf8</tt> content type in the meta tag in the header:
+In order to use internationalized characters, make sure that your host HTML file contains the `charset=utf8` content type in the meta tag in the header:
 
-<pre class="prettyprint">
-&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot; /&gt;
-</pre>
+```
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+```
 
-You must also ensure that all relevant source and <tt>.properties</tt> files are set to be in the UTF-8 charset in your IDE.
+You must also ensure that all relevant source and `.properties` files are set to be in the UTF-8 charset in your IDE.

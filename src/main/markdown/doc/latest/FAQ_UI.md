@@ -24,22 +24,22 @@ When you are working with complex layouts, it is sometimes difficult to understa
 As an example, suppose you were trying to create a layout with two buttons, one on the left side of the browser, and the other on the right side of the browser. Here's some
 code that attempts to do that:
 
-<pre class="prettyprint">
-    VerticalPanel vertPanel = new VerticalPanel();
+```
+VerticalPanel vertPanel = new VerticalPanel();
 
     DockPanel dockPanel = new DockPanel();
-    dockPanel.setWidth(&quot;100%&quot;);
-    dockPanel.add(new Button(&quot;leftButton&quot;), DockPanel.WEST);
-    dockPanel.add(new Button(&quot;rightButton&quot;), DockPanel.EAST);
+    dockPanel.setWidth("100%");
+    dockPanel.add(new Button("leftButton"), DockPanel.WEST);
+    dockPanel.add(new Button("rightButton"), DockPanel.EAST);
 
     vertPanel.add(dockPanel);
 
     RootPanel.get().add(vertPanel);
-</pre>
+```
 
 And here is how the screen ends up:
 
-> ![](images/FAQ_UILayout1.png)
+> ![img](images/FAQ_UILayout1.png)
 
 What went wrong? We set the Dock Panel to fill up 100% of the space, and then each button to the left or right of the screen. At this point, it can be helpful to probe and see
 what the boundaries of your widgets are, because they may not be where you think.
@@ -48,57 +48,57 @@ The first technique is to use a DOM inspection tool, such as [Firebug](http://ww
 
 Another technique you can use is to modify your GWT code to turn on borders on your panels (or other widgets.)
 
-<pre class="prettyprint">
+```
 VerticalPanel vertPanel = new VerticalPanel();
 
     DockPanel dockPanel = new DockPanel();
-    dockPanel.setWidth(&quot;100%&quot;);
-    dockPanel.add(new Button(&quot;leftButton&quot;), DockPanel.WEST);
-    dockPanel.add(new Button(&quot;rightButton&quot;), DockPanel.EAST);
-    dockPanel.setStylePrimaryName(&quot;dockPanel&quot;);
+    dockPanel.setWidth("100%");
+    dockPanel.add(new Button("leftButton"), DockPanel.WEST);
+    dockPanel.add(new Button("rightButton"), DockPanel.EAST);
+    dockPanel.setStylePrimaryName("dockPanel");
     dockPanel.setBorderWidth(5);
 
     vertPanel.add(dockPanel);
-    vertPanel.setStylePrimaryName(&quot;vertPanel&quot;);
+    vertPanel.setStylePrimaryName("vertPanel");
     vertPanel.setBorderWidth(5);
 
     RootPanel.get().add(vertPanel);
-</pre>
+```
 
 You can also use the associated CSS stylesheet to change the border properties. In this case, the stylesheet changes the colors of the borders to make them easier to tell
 apart:
 
-<pre>
+```
 .dockPanel {
     border-color: orange;
 }
 .vertPanel {
     border-color: blue;
 }
-</pre>
+```
 
 Now you can see clearly where the outlines of each panel are:
 
-> ![](images/FAQ_UILayout2.png)
+> ![img](images/FAQ_UILayout2.png)
 
 In this case, the outermost panel needs to be 100% width as well, so we
 change the code, hit _Refresh_ in the browser window:
 
-<pre class="prettyprint">
-    vertPanel.setWidth(&quot;100%&quot;);
-</pre>
+```
+vertPanel.setWidth("100%");
+```
 
-> ![](images/FAQ_UILayout3.png)
+> ![img](images/FAQ_UILayout3.png)
 
 This is closer to what we want, but it still isn't right. Now we need to change the cell alignment in the [DockPanel](/javadoc/latest/com/google/gwt/user/client/ui/DockPanel.html) instance:
 
-<pre class="prettyprint">
-    Button rightButton = new Button(&quot;rightButton&quot;);
+```
+Button rightButton = new Button("rightButton");
     dockPanel.add(rightButton, DockPanel.EAST);
     dockPanel.setCellHorizontalAlignment(rightButton, HasHorizontalAlignment.ALIGN_RIGHT);
-</pre>
+```
 
-> ![](images/FAQ_UILayout4.png)
+> ![img](images/FAQ_UILayout4.png)
 
 (Don't forget to turn off these styles when you are finished!)
 
@@ -118,21 +118,21 @@ See the Developer's Guide on [Layout Panels](DevGuideUiPanels.html#LayoutPanels)
 In some cases, the Widget.setHeight() and Widget.setSize() methods do not seem to work with sizes expressed as percentages. The GWT widgets do not do any calculations with
 these values. These methods set the widget's CSS height and/or and width properties and depend on the behavior of the enclosing widget.
 
-In standards mode, if an element (such as a <tt>&lt;</tt>div<tt>&gt;</tt>) is inside a table cell <tt>&lt;</tt>td<tt>&gt;</tt>, you cannot set the <tt>&lt;</tt>div<tt>&gt;</tt>
-height and width attributes as percentages. They are ignored. For example, the styles in the <tt>&lt;</tt>div<tt>&gt;</tt> element below is ignored in standards mode:
+In standards mode, if an element (such as a `<`div`>`) is inside a table cell `<`td`>`, you cannot set the `<`div`>`
+height and width attributes as percentages. They are ignored. For example, the styles in the `<`div`>` element below is ignored in standards mode:
 
-<pre class="prettyprint">
-    &lt;td&gt;
-      &lt;div style=&quot;height:100%;width:100%;&gt;test&lt;/div&gt;
-    &lt;/td&gt;
-</pre>
+```
+<td>
+      <div style="height:100%;width:100%;>test</div>
+    </td>
+```
 
 Workarounds include
 
-*   Try changing the enclosing outer widget to a different type. For example, VerticalPanel is implemented with an HTML <tt>&lt;</tt>table<tt>&gt;</tt> element and might behave
-differently than AbsolutePanel which is implemented with an HTML <tt>&lt;</tt>div<tt>&gt;</tt> element.
-*   If the <tt>&lt;</tt>DOCTYPE...<tt>&gt;</tt> declaration in the HTML host page is set to standards mode (such as HTML 4.01 Transitional), try removing the <tt>&lt;</tt>DOCTYPE
-...<tt>&gt;</tt> declaration or changing it to put the browser rendering engine into quirks mode.
+*   Try changing the enclosing outer widget to a different type. For example, VerticalPanel is implemented with an HTML `<`table`>` element and might behave
+differently than AbsolutePanel which is implemented with an HTML `<`div`>` element.
+*   If the `<`DOCTYPE...`>` declaration in the HTML host page is set to standards mode (such as HTML 4.01 Transitional), try removing the `<`DOCTYPE
+...`>` declaration or changing it to put the browser rendering engine into quirks mode.
 
 ### Does GWT support standards mode?<a id="Does_GWT_support_standards_mode?"></a>
 
@@ -179,7 +179,7 @@ automatically prefetch rows, such as the next page. This can increase the percei
 
 A [BulkTableRenderer](http://code.google.com/p/google-web-toolkit-incubator/wiki/BulkTableRenderers) will render all rows in a table at once.
 BulkTableRenderer has derived types for different purposes. As long as your table contents are not widgets, you provide a table model and the BulkRenderer creates the entire table
-rendered as a single HTML string and set with [setInnerHtml()](/javadoc/latest/com/google/gwt/dom/client/Element.html#setInnerHTML(java.lang.String)) which can
+rendered as a single HTML string and set with [setInnerHtml()](/javadoc/latest/com/google/gwt/dom/client/Element.html#setInnerHTML\(java.lang.String\)) which can
 be 2-10x faster.
 
 Note that after being loaded, widgets, cell spans, row spans etc. may be added to the table, but there will be no speed advantage for them.
@@ -191,15 +191,15 @@ impressions are important, you may want to try this trick.
 
 The underlying issue is that the images needed for the background, border, or animation are fetched from the server on demand. A solution is to pre-fetch the images so that
 they are sitting in the browser cache by the time the animation is actually invoked. Go through your CSS files for the images used in your styling that are running slowly, and use
-the [Image.prefetch()](/javadoc/latest/com/google/gwt/user/client/ui/Image.html#prefetch(java.lang.String))
+the [Image.prefetch()](/javadoc/latest/com/google/gwt/user/client/ui/Image.html#prefetch\(java.lang.String\))
 method.
 
-<pre class="prettyprint">
-    Image.prefetch(&quot;images/corner-bl.png&quot;);
-    Image.prefetch(&quot;images/corner-br.png&quot;);
-    Image.prefetch(&quot;images/corner-tl.png&quot;);
-    Image.prefetch(&quot;images/corner-tr.png&quot;);
-</pre>
+```
+Image.prefetch("images/corner-bl.png");
+    Image.prefetch("images/corner-br.png");
+    Image.prefetch("images/corner-tl.png");
+    Image.prefetch("images/corner-tr.png");
+```
 
 ### Why do I see poor performance when using a one pixel tall background image?<a id="Why_do_I_see_poor_performance_when_using_a_one_pixel_tall_backgr"></a>
 
@@ -211,36 +211,36 @@ sized image, you might try a 20 x 100 image. The tradeoff here is that the brows
 
 ### As the application grows, event handlers seem to fire more slowly<a id="As_the_application_grows,_event_handlers_seem_to_fire_more_slowl"></a>
 
-If you are creating an interface with many widgets that need to respond to events, such as <tt>click</tt> events, you may find that the application handles events more and more
+If you are creating an interface with many widgets that need to respond to events, such as `click` events, you may find that the application handles events more and more
 slowly. One example of this might be having a list of widgets in a table.
 
 One contributor to poor performance can be the overhead of managing many click handler instances. Consider a common way of handling click events:
 
-<pre class="prettyprint">
-  Button newButton = new Button(titleText);
+```
+Button newButton = new Button(titleText);
   newButton.addClickHandler(new ClickHandler() {
     public void onClick(ClickEvent event) {
       dialogBox.hide();
     }
   });
-</pre>
+```
 
 Each widget has its own click handler instance created by adding an anonymous inner class when the widget is created. This construct is convenient and causes no performance
 issues for most cases, but when creating many widgets that need event handling, consider creating a single click handler and sharing it between multiple widgets:
 
-<pre class="prettyprint">
- class MyApp implements EntryPoint, ClickHandler {
+```
+class MyApp implements EntryPoint, ClickHandler {
 
    /* Be careful with saving UI components in datastructures like this:
     * if you remove a button from the app, make sure you also remove
     * its reference from buttonMap HashMap to avoid memory leaks.
     */
-   Map buttonMap&lt;Button, Integer&gt; = new HashMap&lt;Button,Integer&gt;();
+   Map buttonMap<Button, Integer> = new HashMap<Button,Integer>();
 
    public void onModuleLoad() {
      FlowPanel panel = new FlowPanel();
-     for (int i = 1; i &lt; 100; ++i) {
-        Button newButton = new Button(&quot;Option &quot; + i);
+     for (int i = 1; i < 100; ++i) {
+        Button newButton = new Button("Option " + i);
         newButton.addClickHandler(this);
         panel.add(newButton);
         buttonmap.add(newButton, Integer.valueOf(i));
@@ -260,7 +260,7 @@ issues for most cases, but when creating many widgets that need event handling, 
      }
    }
  }
-</pre>
+```
 
 ### How can I efficiently handle events from many interior Widgets?<a id="How_can_I_efficiently_handle_events_from_many_interior_Widgets?"></a>
 

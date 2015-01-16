@@ -33,8 +33,8 @@ application or the size of certain fragments.
 ## Client Bundle
 
 The resources in a deployed GWT application can be roughly categorized
-into resources to never cache (<tt>.nocache.js</tt>), to cache forever
-(<tt>.cache.html</tt>), and everything else (<tt>myapp.css</tt>).
+into resources to never cache (`.nocache.js`), to cache forever
+(`.cache.html`), and everything else (`myapp.css`).
 [Client Bundles](DevGuideClientBundle.html) allow you to
 move resources from the everything-else category into the
 cache-forever category.

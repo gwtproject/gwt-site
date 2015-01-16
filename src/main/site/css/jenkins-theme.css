@@ -1,0 +1,97 @@
+/*
+* Used in the GWT Jenkins instance by the simple-theme plugin.
+* The plugin needs a external url with the .css file.
+*/
+#side-panel, #main-panel {
+  margin-bottom: 33px;
+}
+#a-side-panel {
+  background-color: #efefef;
+}
+#breadcrumbBar,.top-sticker-inner {
+  background-color: #d5f0f6;
+}
+#right-top-nav {
+  display: none;
+}
+#footer-container {
+  background-color: #d5f0f6;
+  border-bottom: 8px solid #606060;
+  padding-top: 7px;
+  height: 7px;
+}
+#l10n-footer {
+ width: 0px;
+ overflow: hidden;
+}
+#header {
+  background: #f55837;
+  background: #E86348;
+  border-top: 8px solid #606060;
+}
+#header .login a, #header .login span {
+  color: #972108 !important;
+}
+#header .login a {
+  line-height: 15px;
+  padding: 10px;
+}
+#header .login a:HOVER {
+  background-color: #e54827;
+  color: white !important;
+}
+#header .login a:LINK {
+  text-decoration: none;
+}
+#header #jenkins-home-link img {
+  display: none;
+}
+#header .logo {
+  background-color: #e54827;
+  background-image: url(../images/logo-wire.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 100%;
+}
+#header #jenkins-home-link,
+#header #jenkins-home-link:visited,
+#header #jenkins-home-link:link {
+  font-family: Verdana;
+  font-size: 32px;
+  color: white;
+  text-decoration: none;
+  line-height: 50px;
+  padding-left: 65px;
+  white-space: nowrap;
+}
+#jenkins-home-link:before {
+  content: 'GWT';
+}
+#jenkins-home-link:after {
+  content: 'continuous integration';
+  font-size: 14px;
+  padding-left: 35px;
+}
+@media (max-width: 980px) {
+  #jenkins-home-link:after {
+    content: '';
+  }
+}
+@media (max-width: 480px) {
+  #jenkins-home-link:before {
+    content: '';
+  }
+  #header .logo {
+    width: 60px;
+  }
+}
+#search-box {
+  border: solid 1px #e54827;
+  border-radius: 0px;
+}
+#description {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+}

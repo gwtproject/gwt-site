@@ -7,47 +7,47 @@ can view a code example of each widget in the [Showcase](http://samples.gwtproje
 **Widgets:**
 
 <div style="font-size: 80%;">
-  <a href="#button">Button</a>&nbsp;
-  <a href="#pushbutton">PushButton</a>&nbsp;
-  <a href="#radiobutton">RadioButton</a>&nbsp;
-  <a href="#checkbox">CheckBox</a>&nbsp;
-  <a href="#datepicker">DatePicker</a>&nbsp;
-  <a href="#togglebutton">ToggleButton</a>&nbsp;
-  <a href="#textbox">TextBox</a>&nbsp;
-  <a href="#passwordtextbox">PasswordTextBox</a>&nbsp;
-  <a href="#textarea">TextArea</a>&nbsp;
-  <a href="#hyperlink">Hyperlink</a>&nbsp;
-  <a href="#listbox">ListBox</a>&nbsp;
-  <a href="#celllist">CellList</a>&nbsp;
-  <a href="#menubar">MenuBar</a>&nbsp;
-  <a href="#tree">Tree</a>&nbsp;
-  <a href="#tree">CellTree</a>&nbsp;
-  <a href="#suggestbox">SuggestBox</a>&nbsp;
-  <a href="#richtextarea">RichTextArea</a>&nbsp;
-  <a href="#flextable">FlexTable</a>&nbsp;
-  <a href="#flextable">Grid</a>&nbsp;
-  <a href="#flextable">CellTable</a>&nbsp;
-  <a href="#cellbrowser">CellBrowser</a>&nbsp;
-  <a href="#tabbar">TabBar</a>&nbsp;
+  <a href="#button">Button</a>
+  <a href="#pushbutton">PushButton</a>
+  <a href="#radiobutton">RadioButton</a>
+  <a href="#checkbox">CheckBox</a>
+  <a href="#datepicker">DatePicker</a>
+  <a href="#togglebutton">ToggleButton</a>
+  <a href="#textbox">TextBox</a>
+  <a href="#passwordtextbox">PasswordTextBox</a>
+  <a href="#textarea">TextArea</a>
+  <a href="#hyperlink">Hyperlink</a>
+  <a href="#listbox">ListBox</a>
+  <a href="#celllist">CellList</a>
+  <a href="#menubar">MenuBar</a>
+  <a href="#tree">Tree</a>
+  <a href="#tree">CellTree</a>
+  <a href="#suggestbox">SuggestBox</a>
+  <a href="#richtextarea">RichTextArea</a>
+  <a href="#flextable">FlexTable</a>
+  <a href="#flextable">Grid</a>
+  <a href="#flextable">CellTable</a>
+  <a href="#cellbrowser">CellBrowser</a>
+  <a href="#tabbar">TabBar</a>
   <a href="#dialogbox">DialogBox</a>
 </div>
 
 **Panels:**
 
 <div style="font-size: 80%;">
-  <a href="#popuppanel">PopupPanel</a>&nbsp;
-  <a href="#stackpanel">StackPanel</a>&nbsp;
-  <a href="#stackpanel">StackLayoutPanel</a>&nbsp;
-  <a href="#horizontalpanel">HorizontalPanel</a>&nbsp;
-  <a href="#verticalpanel">VerticalPanel</a>&nbsp;
-  <a href="#flowpanel">FlowPanel</a>&nbsp;
-  <a href="#verticalsplitpanel">VerticalSplitPanel</a>&nbsp;
-  <a href="#horizontalsplitpanel">HorizontalSplitPanel</a>&nbsp;
-  <a href="#splitlayoutpanel">SplitLayoutPanel</a>&nbsp;
-  <a href="#dockpanel">DockPanel</a>&nbsp;
-  <a href="#dockpanel">DockLayoutPanel</a>&nbsp;
-  <a href="#tabpanel">TabPanel</a>&nbsp;
-  <a href="#tabpanel">TabLayoutPanel</a>&nbsp;
+  <a href="#popuppanel">PopupPanel</a>
+  <a href="#stackpanel">StackPanel</a>
+  <a href="#stackpanel">StackLayoutPanel</a>
+  <a href="#horizontalpanel">HorizontalPanel</a>
+  <a href="#verticalpanel">VerticalPanel</a>
+  <a href="#flowpanel">FlowPanel</a>
+  <a href="#verticalsplitpanel">VerticalSplitPanel</a>
+  <a href="#horizontalsplitpanel">HorizontalSplitPanel</a>
+  <a href="#splitlayoutpanel">SplitLayoutPanel</a>
+  <a href="#dockpanel">DockPanel</a>
+  <a href="#dockpanel">DockLayoutPanel</a>
+  <a href="#tabpanel">TabPanel</a>
+  <a href="#tabpanel">TabLayoutPanel</a>
   <a href="#disclosurepanel">DisclosurePanel</a>
 </div>
 
@@ -166,7 +166,7 @@ can view a code example of each widget in the [Showcase](http://samples.gwtproje
   <dd><img src="images/DisclosurePanel.png"/></dd>
 </dl>
 
-<a name="LayoutPanelNote"></a>
+<a id="LayoutPanelNote"></a>
 
 *Layout panels are a collection of new panels, introduced in GWT 2.0, which together form a stable basis for fast and predictable application-level layout.
 Read the Developer's Guide on <a href="DevGuideUiPanels.html#LayoutPanels">Layout Using Panels</a> for more information.*

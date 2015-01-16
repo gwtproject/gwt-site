@@ -14,7 +14,7 @@ To begin writing a GWT module, subclass the [EntryPoint](/javadoc/latest/com/goo
 
 **Tip:** GWT applicationCreator creates a starter application for you with a sample EntryPoint subclass defined.
 
-<pre class="prettyprint">
+```
 package com.example.foo.client;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -31,10 +31,10 @@ public class Foo implements EntryPoint {
   public void onModuleLoad() {
 
     // Writes Hello World to the module log window.
-    GWT.log(&quot;Hello World!&quot;, null);
+    GWT.log("Hello World!", null);
   }
 }
-</pre>
+```
 
 ### Writing the entry point method
 
@@ -50,12 +50,12 @@ If you try to run this example application in production mode, you won't see any
 
 ## Hello World Example<a id="hello"></a>
 
-Included with the GWT distribution is a sample &quot;Hello World&quot;
+Included with the GWT distribution is a sample "Hello World"
 program that looks like this when run in development mode:
 
-![](images/HelloWorld.png)
+![img](images/HelloWorld.png)
 
-<pre class="prettyprint">
+```
 package com.google.gwt.sample.hello.client;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -72,20 +72,20 @@ import com.google.gwt.user.client.ui.Widget;
 public class Hello implements EntryPoint {
 
   public void onModuleLoad() {
-    Button b = new Button(&quot;Click me&quot;, new ClickHandler() {
+    Button b = new Button("Click me", new ClickHandler() {
       public void onClick(ClickEvent event) {
-        Window.alert(&quot;Hello, AJAX&quot;);
+        Window.alert("Hello, AJAX");
       }
     });
 
     RootPanel.get().add(b);
   }
 }
-</pre>
+```
 
 In the entry point method for the Hello World application, the following actions were taken:
 
-*   a new Button widget was created with the text &quot;Click me&quot;
+*   a new Button widget was created with the text "Click me"
 *   a handler was created to respond to the user clicking the button
 *   the handler pops up an Alert dialog
 *   the button is added to the [Root panel](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html)

@@ -1,603 +1,723 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!-- NewPage -->
-<html lang="fr">
-<head>
-<title>DefaultSelectionEventManager (GWT Javadoc)</title>
-<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
-</head>
-<body>
-<script type="text/javascript"><!--
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+DefaultSelectionEventManager (GWT Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
     if (location.href.indexOf('is-external=true') == -1) {
         parent.document.title="DefaultSelectionEventManager (GWT Javadoc)";
     }
-//-->
-</script>
-<noscript>
-<div>JavaScript is disabled on your browser.</div>
-</noscript>
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
 <!-- ========= START OF TOP NAVBAR ======= -->
-<div class="topNav"><a name="navbar_top">
-<!--   -->
-</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
-<!--   -->
-</a>
-<ul class="navList" title="Navigation">
-<li><a href="../../../../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Package</a></li>
-<li class="navBarCell1Rev">Class</li>
-<li><a href="class-use/DefaultSelectionEventManager.html">Use</a></li>
-<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../help-doc.html">Help</a></li>
-</ul>
-<div class="aboutLanguage"><em>GWT 2.6.1</em></div>
-</div>
-<div class="subNav">
-<ul class="navList">
-<li><a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html" title="interface in com.google.gwt.view.client"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="class in com.google.gwt.view.client"><span class="strong">Next Class</span></a></li>
-</ul>
-<ul class="navList">
-<li><a href="../../../../../index.html?com/google/gwt/view/client/DefaultSelectionEventManager.html" target="_top">Frames</a></li>
-<li><a href="DefaultSelectionEventManager.html" target="_top">No Frames</a></li>
-</ul>
-<ul class="navList" id="allclasses_navbar_top">
-<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
-</ul>
-<div>
-<script type="text/javascript"><!--
-  allClassesLink = document.getElementById("allclasses_navbar_top");
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/DefaultSelectionEventManager.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.7.0</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html" title="interface in com.google.gwt.view.client"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="class in com.google.gwt.view.client"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/google/gwt/view/client/DefaultSelectionEventManager.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="DefaultSelectionEventManager.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
   if(window==top) {
-    allClassesLink.style.display = "block";
-  }
-  else {
-    allClassesLink.style.display = "none";
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
   }
   //-->
-</script>
-</div>
-<div>
-<ul class="subNavList">
-<li>Summary:&nbsp;</li>
-<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
-</ul>
-<ul class="subNavList">
-<li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
-</ul>
-</div>
-<a name="skip-navbar_top">
-<!--   -->
-</a></div>
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
 <!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
 <!-- ======== START OF CLASS DATA ======== -->
-<div class="header">
-<div class="subTitle">com.google.gwt.view.client</div>
-<h2 title="Class DefaultSelectionEventManager" class="title">Class DefaultSelectionEventManager&lt;T&gt;</h2>
-</div>
-<div class="contentContainer">
-<ul class="inheritance">
-<li>java.lang.Object</li>
-<li>
-<ul class="inheritance">
-<li>com.google.gwt.view.client.DefaultSelectionEventManager&lt;T&gt;</li>
-</ul>
-</li>
-</ul>
-<div class="description">
-<ul class="blockList">
-<li class="blockList">
-<dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - the data type of records in the list</dd></dl>
-<dl>
-<dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../../com/google/gwt/event/shared/EventHandler.html" title="interface in com.google.gwt.event.shared">EventHandler</a>, <a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html" title="interface in com.google.gwt.view.client">CellPreviewEvent.Handler</a>&lt;T&gt;</dd>
-</dl>
-<hr>
-<br>
-<pre>public class <span class="strong">DefaultSelectionEventManager&lt;T&gt;</span>
-extends java.lang.Object
-implements <a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html" title="interface in com.google.gwt.view.client">CellPreviewEvent.Handler</a>&lt;T&gt;</pre>
-<div class="block">An implementation of <a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html" title="interface in com.google.gwt.view.client"><code>CellPreviewEvent.Handler</code></a> that adds selection
+<H2>
+<FONT SIZE="-1">
+com.google.gwt.view.client</FONT>
+<BR>
+Class DefaultSelectionEventManager&lt;T&gt;</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.gwt.view.client.DefaultSelectionEventManager&lt;T&gt;</B>
+</PRE>
+<DL>
+<DT><DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the data type of records in the list</DL>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../com/google/gwt/event/shared/EventHandler.html" title="interface in com.google.gwt.event.shared">EventHandler</A>, <A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html" title="interface in com.google.gwt.view.client">CellPreviewEvent.Handler</A>&lt;T&gt;</DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public class <B>DefaultSelectionEventManager&lt;T&gt;</B><DT>extends java.lang.Object<DT>implements <A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html" title="interface in com.google.gwt.view.client">CellPreviewEvent.Handler</A>&lt;T&gt;</DL>
+</PRE>
+
+<P>
+An implementation of <A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html" title="interface in com.google.gwt.view.client"><CODE>CellPreviewEvent.Handler</CODE></A> that adds selection
  support via the spacebar and mouse clicks and handles the control key.
  
  <p>
- If the <a href="../../../../../com/google/gwt/view/client/HasData.html" title="interface in com.google.gwt.view.client"><code>HasData</code></a> source of the selection event uses a
- <a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client"><code>MultiSelectionModel</code></a>, this manager additionally provides support for
- shift key to select a range of values. For all other <a href="../../../../../com/google/gwt/view/client/SelectionModel.html" title="interface in com.google.gwt.view.client"><code>SelectionModel</code></a>s,
+ If the <A HREF="../../../../../com/google/gwt/view/client/HasData.html" title="interface in com.google.gwt.view.client"><CODE>HasData</CODE></A> source of the selection event uses a
+ <A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client"><CODE>MultiSelectionModel</CODE></A>, this manager additionally provides support for
+ shift key to select a range of values. For all other <A HREF="../../../../../com/google/gwt/view/client/SelectionModel.html" title="interface in com.google.gwt.view.client"><CODE>SelectionModel</CODE></A>s,
  only the control key is supported.
- </p></div>
-</li>
-</ul>
-</div>
-<div class="summary">
-<ul class="blockList">
-<li class="blockList">
+ </p>
+<P>
+
+<P>
+<HR>
+
+<P>
 <!-- ======== NESTED CLASS SUMMARY ======== -->
-<ul class="blockList">
-<li class="blockList"><a name="nested_class_summary">
-<!--   -->
-</a>
-<h3>Nested Class Summary</h3>
-<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
-<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Class and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager.BlacklistEventTranslator</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="type parameter in DefaultSelectionEventManager.BlacklistEventTranslator">T</a>&gt;</strong></code>
-<div class="block">An event translator that disables selection for the specified blacklisted
- columns.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.CheckboxEventTranslator.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager.CheckboxEventTranslator</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.CheckboxEventTranslator.html" title="type parameter in DefaultSelectionEventManager.CheckboxEventTranslator">T</a>&gt;</strong></code>
-<div class="block">Implementation of <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client"><code>DefaultSelectionEventManager.EventTranslator</code></a> that only triggers selection when
- any checkbox is selected.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static interface&nbsp;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client">DefaultSelectionEventManager.EventTranslator</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="type parameter in DefaultSelectionEventManager.EventTranslator">T</a>&gt;</strong></code>
-<div class="block">Translates <a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client"><code>CellPreviewEvent</code></a>s into <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client"><code>DefaultSelectionEventManager.SelectAction</code></a>s.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</a></strong></code>
-<div class="block">The action that controls how selection is handled.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.WhitelistEventTranslator.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager.WhitelistEventTranslator</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.WhitelistEventTranslator.html" title="type parameter in DefaultSelectionEventManager.WhitelistEventTranslator">T</a>&gt;</strong></code>
-<div class="block">An event translator that allows selection only for the specified
- whitelisted columns.</div>
-</td>
-</tr>
-</table>
-</li>
-</ul>
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;class</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager.BlacklistEventTranslator</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="type parameter in DefaultSelectionEventManager.BlacklistEventTranslator">T</A>&gt;</B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An event translator that disables selection for the specified blacklisted
+ columns.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;class</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.CheckboxEventTranslator.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager.CheckboxEventTranslator</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.CheckboxEventTranslator.html" title="type parameter in DefaultSelectionEventManager.CheckboxEventTranslator">T</A>&gt;</B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Implementation of <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager.BlacklistEventTranslator</CODE></A> that only triggers selection when
+ any checkbox is selected.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;interface</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client">DefaultSelectionEventManager.EventTranslator</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="type parameter in DefaultSelectionEventManager.EventTranslator">T</A>&gt;</B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Translates <A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client"><CODE>CellPreviewEvent</CODE></A>s into <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager.SelectAction</CODE></A>s.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;class</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The action that controls how selection is handled.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;class</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.WhitelistEventTranslator.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager.WhitelistEventTranslator</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.WhitelistEventTranslator.html" title="type parameter in DefaultSelectionEventManager.WhitelistEventTranslator">T</A>&gt;</B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An event translator that allows selection only for the specified
+ whitelisted columns.</TD>
+</TR>
+</TABLE>
+&nbsp;
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<ul class="blockList">
-<li class="blockList"><a name="constructor_summary">
-<!--   -->
-</a>
-<h3>Constructor Summary</h3>
-<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
-<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier</th>
-<th class="colLast" scope="col">Constructor and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected </code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#DefaultSelectionEventManager(com.google.gwt.view.client.DefaultSelectionEventManager.EventTranslator)">DefaultSelectionEventManager</a></strong>(<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client">DefaultSelectionEventManager.EventTranslator</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;translator)</code>
-<div class="block">Construct a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> using the specified
- <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client"><code>DefaultSelectionEventManager.EventTranslator</code></a> to control which <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client"><code>DefaultSelectionEventManager.SelectAction</code></a> to take for
- each event.</div>
-</td>
-</tr>
-</table>
-</li>
-</ul>
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected </CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#DefaultSelectionEventManager(com.google.gwt.view.client.DefaultSelectionEventManager.EventTranslator)">DefaultSelectionEventManager</A></B>(<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client">DefaultSelectionEventManager.EventTranslator</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;translator)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> using the specified
+ <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager.BlacklistEventTranslator</CODE></A> to control which <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager.SelectAction</CODE></A> to take for
+ each event.</TD>
+</TR>
+</TABLE>
+&nbsp;
 <!-- ========== METHOD SUMMARY =========== -->
-<ul class="blockList">
-<li class="blockList"><a name="method_summary">
-<!--   -->
-</a>
-<h3>Method Summary</h3>
-<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Method and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#clearSelection(com.google.gwt.view.client.MultiSelectionModel)">clearSelection</a></strong>(<a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</a>&lt;? super <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;selectionModel)</code>
-<div class="block">Removes all items from the selection.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</a>&lt;T&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#createBlacklistManager(int...)">createBlacklistManager</a></strong>(int...&nbsp;blacklistedColumns)</code>
-<div class="block">Construct a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> that ignores selection
- for the columns in the specified blacklist.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</a>&lt;T&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#createCheckboxManager()">createCheckboxManager</a></strong>()</code>
-<div class="block">Construct a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> that triggers
- selection when any checkbox in any column is clicked.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</a>&lt;T&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#createCheckboxManager(int)">createCheckboxManager</a></strong>(int&nbsp;column)</code>
-<div class="block">Construct a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> that triggers
- selection when a checkbox in the specified column is clicked.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</a>&lt;T&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#createCustomManager(com.google.gwt.view.client.DefaultSelectionEventManager.EventTranslator)">createCustomManager</a></strong>(<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client">DefaultSelectionEventManager.EventTranslator</a>&lt;T&gt;&nbsp;translator)</code>
-<div class="block">Create a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> using the specified
- <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client"><code>DefaultSelectionEventManager.EventTranslator</code></a> to control which <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client"><code>DefaultSelectionEventManager.SelectAction</code></a> to take for
- each event.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</a>&lt;T&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#createDefaultManager()">createDefaultManager</a></strong>()</code>
-<div class="block">Create a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> that handles selection
- via user interactions.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</a>&lt;T&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#createWhitelistManager(int...)">createWhitelistManager</a></strong>(int...&nbsp;whitelistedColumns)</code>
-<div class="block">Construct a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> that allows selection
- only for the columns in the specified whitelist.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#doMultiSelection(com.google.gwt.view.client.MultiSelectionModel, com.google.gwt.view.client.HasData, int, T, com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction, boolean, boolean)">doMultiSelection</a></strong>(<a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</a>&lt;? super <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;selectionModel,
-                <a href="../../../../../com/google/gwt/view/client/HasData.html" title="interface in com.google.gwt.view.client">HasData</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;display,
-                int&nbsp;row,
-                <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&nbsp;rowValue,
-                <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</a>&nbsp;action,
-                boolean&nbsp;selectRange,
-                boolean&nbsp;clearOthers)</code>
-<div class="block">Update the selection model based on a user selection event.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#handleMultiSelectionEvent(com.google.gwt.view.client.CellPreviewEvent, com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction, com.google.gwt.view.client.MultiSelectionModel)">handleMultiSelectionEvent</a></strong>(<a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client">CellPreviewEvent</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;event,
-                         <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</a>&nbsp;action,
-                         <a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</a>&lt;? super <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;selectionModel)</code>
-<div class="block">Handle an event that could cause a value to be selected for a
- <a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client"><code>MultiSelectionModel</code></a>.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#handleSelectionEvent(com.google.gwt.view.client.CellPreviewEvent, com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction, com.google.gwt.view.client.SelectionModel)">handleSelectionEvent</a></strong>(<a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client">CellPreviewEvent</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;event,
-                    <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</a>&nbsp;action,
-                    <a href="../../../../../com/google/gwt/view/client/SelectionModel.html" title="interface in com.google.gwt.view.client">SelectionModel</a>&lt;? super <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;selectionModel)</code>
-<div class="block">Handle an event that could cause a value to be selected.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#onCellPreview(com.google.gwt.view.client.CellPreviewEvent)">onCellPreview</a></strong>(<a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client">CellPreviewEvent</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;event)</code>
-<div class="block">Called when <a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client"><code>CellPreviewEvent</code></a> is fired.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#selectOne(com.google.gwt.view.client.MultiSelectionModel, T, boolean, boolean)">selectOne</a></strong>(<a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</a>&lt;? super <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;selectionModel,
-         <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&nbsp;target,
-         boolean&nbsp;selected,
-         boolean&nbsp;clearOthers)</code>
-<div class="block">Selects the given item, optionally clearing any prior selection.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#setRangeSelection(com.google.gwt.view.client.MultiSelectionModel, com.google.gwt.view.client.HasData, com.google.gwt.view.client.Range, boolean, boolean)">setRangeSelection</a></strong>(<a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</a>&lt;? super <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;selectionModel,
-                 <a href="../../../../../com/google/gwt/view/client/HasData.html" title="interface in com.google.gwt.view.client">HasData</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;display,
-                 <a href="../../../../../com/google/gwt/view/client/Range.html" title="class in com.google.gwt.view.client">Range</a>&nbsp;range,
-                 boolean&nbsp;addToSelection,
-                 boolean&nbsp;clearOthers)</code>
-<div class="block">Select or deselect a range of row indexes, optionally deselecting all other
- values.</div>
-</td>
-</tr>
-</table>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="details">
-<ul class="blockList">
-<li class="blockList">
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#clearSelection(com.google.gwt.view.client.MultiSelectionModel)">clearSelection</A></B>(<A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</A>&lt;? super <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;selectionModel)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Removes all items from the selection.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T&gt; <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</A>&lt;T&gt;</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#createBlacklistManager(int...)">createBlacklistManager</A></B>(int...&nbsp;blacklistedColumns)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> that ignores selection
+ for the columns in the specified blacklist.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T&gt; <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</A>&lt;T&gt;</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#createCheckboxManager()">createCheckboxManager</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> that triggers
+ selection when any checkbox in any column is clicked.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T&gt; <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</A>&lt;T&gt;</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#createCheckboxManager(int)">createCheckboxManager</A></B>(int&nbsp;column)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> that triggers
+ selection when a checkbox in the specified column is clicked.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T&gt; <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</A>&lt;T&gt;</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#createCustomManager(com.google.gwt.view.client.DefaultSelectionEventManager.EventTranslator)">createCustomManager</A></B>(<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client">DefaultSelectionEventManager.EventTranslator</A>&lt;T&gt;&nbsp;translator)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> using the specified
+ <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager.BlacklistEventTranslator</CODE></A> to control which <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager.SelectAction</CODE></A> to take for
+ each event.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T&gt; <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</A>&lt;T&gt;</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#createDefaultManager()">createDefaultManager</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> that handles selection
+ via user interactions.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T&gt; <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</A>&lt;T&gt;</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#createWhitelistManager(int...)">createWhitelistManager</A></B>(int...&nbsp;whitelistedColumns)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> that allows selection
+ only for the columns in the specified whitelist.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#doMultiSelection(com.google.gwt.view.client.MultiSelectionModel, com.google.gwt.view.client.HasData, int, T, com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction, boolean, boolean)">doMultiSelection</A></B>(<A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</A>&lt;? super <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;selectionModel,
+                 <A HREF="../../../../../com/google/gwt/view/client/HasData.html" title="interface in com.google.gwt.view.client">HasData</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;display,
+                 int&nbsp;row,
+                 <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&nbsp;rowValue,
+                 <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</A>&nbsp;action,
+                 boolean&nbsp;selectRange,
+                 boolean&nbsp;clearOthers)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update the selection model based on a user selection event.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#handleMultiSelectionEvent(com.google.gwt.view.client.CellPreviewEvent, com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction, com.google.gwt.view.client.MultiSelectionModel)">handleMultiSelectionEvent</A></B>(<A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client">CellPreviewEvent</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;event,
+                          <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</A>&nbsp;action,
+                          <A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</A>&lt;? super <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;selectionModel)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Handle an event that could cause a value to be selected for a
+ <A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client"><CODE>MultiSelectionModel</CODE></A>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#handleSelectionEvent(com.google.gwt.view.client.CellPreviewEvent, com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction, com.google.gwt.view.client.SelectionModel)">handleSelectionEvent</A></B>(<A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client">CellPreviewEvent</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;event,
+                     <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</A>&nbsp;action,
+                     <A HREF="../../../../../com/google/gwt/view/client/SelectionModel.html" title="interface in com.google.gwt.view.client">SelectionModel</A>&lt;? super <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;selectionModel)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Handle an event that could cause a value to be selected.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#onCellPreview(com.google.gwt.view.client.CellPreviewEvent)">onCellPreview</A></B>(<A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client">CellPreviewEvent</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;event)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Called when <A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client"><CODE>CellPreviewEvent</CODE></A> is fired.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#selectOne(com.google.gwt.view.client.MultiSelectionModel, T, boolean, boolean)">selectOne</A></B>(<A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</A>&lt;? super <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;selectionModel,
+          <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&nbsp;target,
+          boolean&nbsp;selected,
+          boolean&nbsp;clearOthers)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Selects the given item, optionally clearing any prior selection.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html#setRangeSelection(com.google.gwt.view.client.MultiSelectionModel, com.google.gwt.view.client.HasData, com.google.gwt.view.client.Range, boolean, boolean)">setRangeSelection</A></B>(<A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</A>&lt;? super <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;selectionModel,
+                  <A HREF="../../../../../com/google/gwt/view/client/HasData.html" title="interface in com.google.gwt.view.client">HasData</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;display,
+                  <A HREF="../../../../../com/google/gwt/view/client/Range.html" title="class in com.google.gwt.view.client">Range</A>&nbsp;range,
+                  boolean&nbsp;addToSelection,
+                  boolean&nbsp;clearOthers)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select or deselect a range of row indexes, optionally deselecting all other
+ values.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
-<ul class="blockList">
-<li class="blockList"><a name="constructor_detail">
-<!--   -->
-</a>
-<h3>Constructor Detail</h3>
-<a name="DefaultSelectionEventManager(com.google.gwt.view.client.DefaultSelectionEventManager.EventTranslator)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>DefaultSelectionEventManager</h4>
-<pre>protected&nbsp;DefaultSelectionEventManager(<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client">DefaultSelectionEventManager.EventTranslator</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;translator)</pre>
-<div class="block">Construct a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> using the specified
- <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client"><code>DefaultSelectionEventManager.EventTranslator</code></a> to control which <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client"><code>DefaultSelectionEventManager.SelectAction</code></a> to take for
- each event.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>translator</code> - the <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client"><code>DefaultSelectionEventManager.EventTranslator</code></a> to use</dd></dl>
-</li>
-</ul>
-</li>
-</ul>
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="DefaultSelectionEventManager(com.google.gwt.view.client.DefaultSelectionEventManager.EventTranslator)"><!-- --></A><H3>
+DefaultSelectionEventManager</H3>
+<PRE>
+protected <B>DefaultSelectionEventManager</B>(<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client">DefaultSelectionEventManager.EventTranslator</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;translator)</PRE>
+<DL>
+<DD>Construct a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> using the specified
+ <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager.BlacklistEventTranslator</CODE></A> to control which <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager.SelectAction</CODE></A> to take for
+ each event.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>translator</CODE> - the <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager.BlacklistEventTranslator</CODE></A> to use</DL>
+</DL>
+
 <!-- ============ METHOD DETAIL ========== -->
-<ul class="blockList">
-<li class="blockList"><a name="method_detail">
-<!--   -->
-</a>
-<h3>Method Detail</h3>
-<a name="createBlacklistManager(int...)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createBlacklistManager</h4>
-<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</a>&lt;T&gt;&nbsp;createBlacklistManager(int...&nbsp;blacklistedColumns)</pre>
-<div class="block">Construct a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> that ignores selection
- for the columns in the specified blacklist.</div>
-<dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - the data type of the display</dd><dt><span class="strong">Parameters:</span></dt><dd><code>blacklistedColumns</code> - the columns to include in the blacklist</dd>
-<dt><span class="strong">Returns:</span></dt><dd>a <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> instance</dd></dl>
-</li>
-</ul>
-<a name="createCheckboxManager()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createCheckboxManager</h4>
-<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</a>&lt;T&gt;&nbsp;createCheckboxManager()</pre>
-<div class="block">Construct a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> that triggers
- selection when any checkbox in any column is clicked.</div>
-<dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - the data type of the display</dd>
-<dt><span class="strong">Returns:</span></dt><dd>a <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> instance</dd></dl>
-</li>
-</ul>
-<a name="createCheckboxManager(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createCheckboxManager</h4>
-<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</a>&lt;T&gt;&nbsp;createCheckboxManager(int&nbsp;column)</pre>
-<div class="block">Construct a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> that triggers
- selection when a checkbox in the specified column is clicked.</div>
-<dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - the data type of the display</dd><dt><span class="strong">Parameters:</span></dt><dd><code>column</code> - the column to handle</dd>
-<dt><span class="strong">Returns:</span></dt><dd>a <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> instance</dd></dl>
-</li>
-</ul>
-<a name="createCustomManager(com.google.gwt.view.client.DefaultSelectionEventManager.EventTranslator)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createCustomManager</h4>
-<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</a>&lt;T&gt;&nbsp;createCustomManager(<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client">DefaultSelectionEventManager.EventTranslator</a>&lt;T&gt;&nbsp;translator)</pre>
-<div class="block">Create a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> using the specified
- <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client"><code>DefaultSelectionEventManager.EventTranslator</code></a> to control which <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client"><code>DefaultSelectionEventManager.SelectAction</code></a> to take for
- each event.</div>
-<dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - the data type of the display</dd><dt><span class="strong">Parameters:</span></dt><dd><code>translator</code> - the <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client"><code>DefaultSelectionEventManager.EventTranslator</code></a> to use</dd>
-<dt><span class="strong">Returns:</span></dt><dd>a <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> instance</dd></dl>
-</li>
-</ul>
-<a name="createDefaultManager()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createDefaultManager</h4>
-<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</a>&lt;T&gt;&nbsp;createDefaultManager()</pre>
-<div class="block">Create a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> that handles selection
- via user interactions.</div>
-<dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - the data type of the display</dd>
-<dt><span class="strong">Returns:</span></dt><dd>a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> instance</dd></dl>
-</li>
-</ul>
-<a name="createWhitelistManager(int...)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createWhitelistManager</h4>
-<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</a>&lt;T&gt;&nbsp;createWhitelistManager(int...&nbsp;whitelistedColumns)</pre>
-<div class="block">Construct a new <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> that allows selection
- only for the columns in the specified whitelist.</div>
-<dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - the data type of the display</dd><dt><span class="strong">Parameters:</span></dt><dd><code>whitelistedColumns</code> - the columns to include in the whitelist</dd>
-<dt><span class="strong">Returns:</span></dt><dd>a <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><code>DefaultSelectionEventManager</code></a> instance</dd></dl>
-</li>
-</ul>
-<a name="doMultiSelection(com.google.gwt.view.client.MultiSelectionModel,com.google.gwt.view.client.HasData,int,java.lang.Object,com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction,boolean,boolean)">
-<!--   -->
-</a><a name="doMultiSelection(com.google.gwt.view.client.MultiSelectionModel, com.google.gwt.view.client.HasData, int, T, com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction, boolean, boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>doMultiSelection</h4>
-<pre>public&nbsp;void&nbsp;doMultiSelection(<a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</a>&lt;? super <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;selectionModel,
-                    <a href="../../../../../com/google/gwt/view/client/HasData.html" title="interface in com.google.gwt.view.client">HasData</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;display,
-                    int&nbsp;row,
-                    <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&nbsp;rowValue,
-                    <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</a>&nbsp;action,
-                    boolean&nbsp;selectRange,
-                    boolean&nbsp;clearOthers)</pre>
-<div class="block">Update the selection model based on a user selection event.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>selectionModel</code> - the selection model to update</dd><dd><code>row</code> - the absolute index of the selected row</dd><dd><code>rowValue</code> - the selected row value</dd><dd><code>action</code> - the <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client"><code>DefaultSelectionEventManager.SelectAction</code></a> to apply</dd><dd><code>selectRange</code> - true to select the range from the last selected row</dd><dd><code>clearOthers</code> - true to clear the current selection</dd></dl>
-</li>
-</ul>
-<a name="onCellPreview(com.google.gwt.view.client.CellPreviewEvent)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>onCellPreview</h4>
-<pre>public&nbsp;void&nbsp;onCellPreview(<a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client">CellPreviewEvent</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;event)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html#onCellPreview(com.google.gwt.view.client.CellPreviewEvent)">CellPreviewEvent.Handler</a></code></strong></div>
-<div class="block">Called when <a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client"><code>CellPreviewEvent</code></a> is fired.</div>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html#onCellPreview(com.google.gwt.view.client.CellPreviewEvent)">onCellPreview</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html" title="interface in com.google.gwt.view.client">CellPreviewEvent.Handler</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;</code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>event</code> - the <a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client"><code>CellPreviewEvent</code></a> that was fired</dd></dl>
-</li>
-</ul>
-<a name="clearSelection(com.google.gwt.view.client.MultiSelectionModel)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>clearSelection</h4>
-<pre>protected&nbsp;void&nbsp;clearSelection(<a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</a>&lt;? super <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;selectionModel)</pre>
-<div class="block">Removes all items from the selection.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>selectionModel</code> - the <a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client"><code>MultiSelectionModel</code></a> to clear</dd></dl>
-</li>
-</ul>
-<a name="handleMultiSelectionEvent(com.google.gwt.view.client.CellPreviewEvent, com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction, com.google.gwt.view.client.MultiSelectionModel)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>handleMultiSelectionEvent</h4>
-<pre>protected&nbsp;void&nbsp;handleMultiSelectionEvent(<a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client">CellPreviewEvent</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;event,
-                             <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</a>&nbsp;action,
-                             <a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</a>&lt;? super <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;selectionModel)</pre>
-<div class="block">Handle an event that could cause a value to be selected for a
- <a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client"><code>MultiSelectionModel</code></a>. This overloaded method adds support for both
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="createBlacklistManager(int...)"><!-- --></A><H3>
+createBlacklistManager</H3>
+<PRE>
+public static &lt;T&gt; <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</A>&lt;T&gt; <B>createBlacklistManager</B>(int...&nbsp;blacklistedColumns)</PRE>
+<DL>
+<DD>Construct a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> that ignores selection
+ for the columns in the specified blacklist.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the data type of the display<DT><B>Parameters:</B><DD><CODE>blacklistedColumns</CODE> - the columns to include in the blacklist
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createCheckboxManager()"><!-- --></A><H3>
+createCheckboxManager</H3>
+<PRE>
+public static &lt;T&gt; <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</A>&lt;T&gt; <B>createCheckboxManager</B>()</PRE>
+<DL>
+<DD>Construct a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> that triggers
+ selection when any checkbox in any column is clicked.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the data type of the display
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createCheckboxManager(int)"><!-- --></A><H3>
+createCheckboxManager</H3>
+<PRE>
+public static &lt;T&gt; <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</A>&lt;T&gt; <B>createCheckboxManager</B>(int&nbsp;column)</PRE>
+<DL>
+<DD>Construct a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> that triggers
+ selection when a checkbox in the specified column is clicked.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the data type of the display<DT><B>Parameters:</B><DD><CODE>column</CODE> - the column to handle
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createCustomManager(com.google.gwt.view.client.DefaultSelectionEventManager.EventTranslator)"><!-- --></A><H3>
+createCustomManager</H3>
+<PRE>
+public static &lt;T&gt; <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</A>&lt;T&gt; <B>createCustomManager</B>(<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.EventTranslator.html" title="interface in com.google.gwt.view.client">DefaultSelectionEventManager.EventTranslator</A>&lt;T&gt;&nbsp;translator)</PRE>
+<DL>
+<DD>Create a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> using the specified
+ <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager.BlacklistEventTranslator</CODE></A> to control which <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager.SelectAction</CODE></A> to take for
+ each event.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the data type of the display<DT><B>Parameters:</B><DD><CODE>translator</CODE> - the <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager.BlacklistEventTranslator</CODE></A> to use
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createDefaultManager()"><!-- --></A><H3>
+createDefaultManager</H3>
+<PRE>
+public static &lt;T&gt; <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</A>&lt;T&gt; <B>createDefaultManager</B>()</PRE>
+<DL>
+<DD>Create a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> that handles selection
+ via user interactions.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the data type of the display
+<DT><B>Returns:</B><DD>a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createWhitelistManager(int...)"><!-- --></A><H3>
+createWhitelistManager</H3>
+<PRE>
+public static &lt;T&gt; <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client">DefaultSelectionEventManager</A>&lt;T&gt; <B>createWhitelistManager</B>(int...&nbsp;whitelistedColumns)</PRE>
+<DL>
+<DD>Construct a new <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> that allows selection
+ only for the columns in the specified whitelist.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the data type of the display<DT><B>Parameters:</B><DD><CODE>whitelistedColumns</CODE> - the columns to include in the whitelist
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="class in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager</CODE></A> instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doMultiSelection(com.google.gwt.view.client.MultiSelectionModel,com.google.gwt.view.client.HasData,int,java.lang.Object,com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction,boolean,boolean)"><!-- --></A><A NAME="doMultiSelection(com.google.gwt.view.client.MultiSelectionModel, com.google.gwt.view.client.HasData, int, T, com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction, boolean, boolean)"><!-- --></A><H3>
+doMultiSelection</H3>
+<PRE>
+public void <B>doMultiSelection</B>(<A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</A>&lt;? super <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;selectionModel,
+                             <A HREF="../../../../../com/google/gwt/view/client/HasData.html" title="interface in com.google.gwt.view.client">HasData</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;display,
+                             int&nbsp;row,
+                             <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&nbsp;rowValue,
+                             <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</A>&nbsp;action,
+                             boolean&nbsp;selectRange,
+                             boolean&nbsp;clearOthers)</PRE>
+<DL>
+<DD>Update the selection model based on a user selection event.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>selectionModel</CODE> - the selection model to update<DD><CODE>row</CODE> - the absolute index of the selected row<DD><CODE>rowValue</CODE> - the selected row value<DD><CODE>action</CODE> - the <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client"><CODE>DefaultSelectionEventManager.SelectAction</CODE></A> to apply<DD><CODE>selectRange</CODE> - true to select the range from the last selected row<DD><CODE>clearOthers</CODE> - true to clear the current selection</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="onCellPreview(com.google.gwt.view.client.CellPreviewEvent)"><!-- --></A><H3>
+onCellPreview</H3>
+<PRE>
+public void <B>onCellPreview</B>(<A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client">CellPreviewEvent</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;event)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html#onCellPreview(com.google.gwt.view.client.CellPreviewEvent)">CellPreviewEvent.Handler</A></CODE></B></DD>
+<DD>Called when <A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client"><CODE>CellPreviewEvent</CODE></A> is fired.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html#onCellPreview(com.google.gwt.view.client.CellPreviewEvent)">onCellPreview</A></CODE> in interface <CODE><A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html" title="interface in com.google.gwt.view.client">CellPreviewEvent.Handler</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>event</CODE> - the <A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client"><CODE>CellPreviewEvent</CODE></A> that was fired</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="clearSelection(com.google.gwt.view.client.MultiSelectionModel)"><!-- --></A><H3>
+clearSelection</H3>
+<PRE>
+protected void <B>clearSelection</B>(<A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</A>&lt;? super <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;selectionModel)</PRE>
+<DL>
+<DD>Removes all items from the selection.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>selectionModel</CODE> - the <A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client"><CODE>MultiSelectionModel</CODE></A> to clear</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="handleMultiSelectionEvent(com.google.gwt.view.client.CellPreviewEvent, com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction, com.google.gwt.view.client.MultiSelectionModel)"><!-- --></A><H3>
+handleMultiSelectionEvent</H3>
+<PRE>
+protected void <B>handleMultiSelectionEvent</B>(<A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client">CellPreviewEvent</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;event,
+                                         <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</A>&nbsp;action,
+                                         <A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</A>&lt;? super <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;selectionModel)</PRE>
+<DL>
+<DD>Handle an event that could cause a value to be selected for a
+ <A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client"><CODE>MultiSelectionModel</CODE></A>. This overloaded method adds support for both
  the control and shift keys. If the shift key is held down, all rows between
- the previous selected row and the current row are selected.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>event</code> - the <a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client"><code>CellPreviewEvent</code></a> that triggered selection</dd><dd><code>action</code> - the action to handle</dd><dd><code>selectionModel</code> - the <a href="../../../../../com/google/gwt/view/client/SelectionModel.html" title="interface in com.google.gwt.view.client"><code>SelectionModel</code></a> to update</dd></dl>
-</li>
-</ul>
-<a name="handleSelectionEvent(com.google.gwt.view.client.CellPreviewEvent, com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction, com.google.gwt.view.client.SelectionModel)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>handleSelectionEvent</h4>
-<pre>protected&nbsp;void&nbsp;handleSelectionEvent(<a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client">CellPreviewEvent</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;event,
-                        <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</a>&nbsp;action,
-                        <a href="../../../../../com/google/gwt/view/client/SelectionModel.html" title="interface in com.google.gwt.view.client">SelectionModel</a>&lt;? super <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;selectionModel)</pre>
-<div class="block">Handle an event that could cause a value to be selected. This method works
- for any <a href="../../../../../com/google/gwt/view/client/SelectionModel.html" title="interface in com.google.gwt.view.client"><code>SelectionModel</code></a>. Pressing the space bar or ctrl+click will
- toggle the selection state. Clicking selects the row if it is not selected.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>event</code> - the <a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client"><code>CellPreviewEvent</code></a> that triggered selection</dd><dd><code>action</code> - the action to handle</dd><dd><code>selectionModel</code> - the <a href="../../../../../com/google/gwt/view/client/SelectionModel.html" title="interface in com.google.gwt.view.client"><code>SelectionModel</code></a> to update</dd></dl>
-</li>
-</ul>
-<a name="selectOne(com.google.gwt.view.client.MultiSelectionModel,java.lang.Object,boolean,boolean)">
-<!--   -->
-</a><a name="selectOne(com.google.gwt.view.client.MultiSelectionModel, T, boolean, boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>selectOne</h4>
-<pre>protected&nbsp;void&nbsp;selectOne(<a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</a>&lt;? super <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;selectionModel,
-             <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&nbsp;target,
-             boolean&nbsp;selected,
-             boolean&nbsp;clearOthers)</pre>
-<div class="block">Selects the given item, optionally clearing any prior selection.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>selectionModel</code> - the <a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client"><code>MultiSelectionModel</code></a> to update</dd><dd><code>target</code> - the item to select</dd><dd><code>selected</code> - true to select, false to deselect</dd><dd><code>clearOthers</code> - true to clear all other selected items</dd></dl>
-</li>
-</ul>
-<a name="setRangeSelection(com.google.gwt.view.client.MultiSelectionModel, com.google.gwt.view.client.HasData, com.google.gwt.view.client.Range, boolean, boolean)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>setRangeSelection</h4>
-<pre>protected&nbsp;void&nbsp;setRangeSelection(<a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</a>&lt;? super <a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;selectionModel,
-                     <a href="../../../../../com/google/gwt/view/client/HasData.html" title="interface in com.google.gwt.view.client">HasData</a>&lt;<a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</a>&gt;&nbsp;display,
-                     <a href="../../../../../com/google/gwt/view/client/Range.html" title="class in com.google.gwt.view.client">Range</a>&nbsp;range,
-                     boolean&nbsp;addToSelection,
-                     boolean&nbsp;clearOthers)</pre>
-<div class="block">Select or deselect a range of row indexes, optionally deselecting all other
- values.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>selectionModel</code> - the <a href="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client"><code>MultiSelectionModel</code></a> to update</dd><dd><code>display</code> - the <a href="../../../../../com/google/gwt/view/client/HasData.html" title="interface in com.google.gwt.view.client"><code>HasData</code></a> source of the selection event</dd><dd><code>range</code> - the <a href="../../../../../com/google/gwt/view/client/Range.html" title="class in com.google.gwt.view.client"><code>Range</code></a> of rows to select or deselect</dd><dd><code>addToSelection</code> - true to select, false to deselect the range</dd><dd><code>clearOthers</code> - true to deselect rows not in the range</dd></dl>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+ the previous selected row and the current row are selected.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>event</CODE> - the <A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client"><CODE>CellPreviewEvent</CODE></A> that triggered selection<DD><CODE>action</CODE> - the action to handle<DD><CODE>selectionModel</CODE> - the <A HREF="../../../../../com/google/gwt/view/client/SelectionModel.html" title="interface in com.google.gwt.view.client"><CODE>SelectionModel</CODE></A> to update</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="handleSelectionEvent(com.google.gwt.view.client.CellPreviewEvent, com.google.gwt.view.client.DefaultSelectionEventManager.SelectAction, com.google.gwt.view.client.SelectionModel)"><!-- --></A><H3>
+handleSelectionEvent</H3>
+<PRE>
+protected void <B>handleSelectionEvent</B>(<A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client">CellPreviewEvent</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;event,
+                                    <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.SelectAction.html" title="enum in com.google.gwt.view.client">DefaultSelectionEventManager.SelectAction</A>&nbsp;action,
+                                    <A HREF="../../../../../com/google/gwt/view/client/SelectionModel.html" title="interface in com.google.gwt.view.client">SelectionModel</A>&lt;? super <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;selectionModel)</PRE>
+<DL>
+<DD>Handle an event that could cause a value to be selected. This method works
+ for any <A HREF="../../../../../com/google/gwt/view/client/SelectionModel.html" title="interface in com.google.gwt.view.client"><CODE>SelectionModel</CODE></A>. Pressing the space bar or ctrl+click will
+ toggle the selection state. Clicking selects the row if it is not selected.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>event</CODE> - the <A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.html" title="class in com.google.gwt.view.client"><CODE>CellPreviewEvent</CODE></A> that triggered selection<DD><CODE>action</CODE> - the action to handle<DD><CODE>selectionModel</CODE> - the <A HREF="../../../../../com/google/gwt/view/client/SelectionModel.html" title="interface in com.google.gwt.view.client"><CODE>SelectionModel</CODE></A> to update</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="selectOne(com.google.gwt.view.client.MultiSelectionModel,java.lang.Object,boolean,boolean)"><!-- --></A><A NAME="selectOne(com.google.gwt.view.client.MultiSelectionModel, T, boolean, boolean)"><!-- --></A><H3>
+selectOne</H3>
+<PRE>
+protected void <B>selectOne</B>(<A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</A>&lt;? super <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;selectionModel,
+                         <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&nbsp;target,
+                         boolean&nbsp;selected,
+                         boolean&nbsp;clearOthers)</PRE>
+<DL>
+<DD>Selects the given item, optionally clearing any prior selection.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>selectionModel</CODE> - the <A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client"><CODE>MultiSelectionModel</CODE></A> to update<DD><CODE>target</CODE> - the item to select<DD><CODE>selected</CODE> - true to select, false to deselect<DD><CODE>clearOthers</CODE> - true to clear all other selected items</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setRangeSelection(com.google.gwt.view.client.MultiSelectionModel, com.google.gwt.view.client.HasData, com.google.gwt.view.client.Range, boolean, boolean)"><!-- --></A><H3>
+setRangeSelection</H3>
+<PRE>
+protected void <B>setRangeSelection</B>(<A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client">MultiSelectionModel</A>&lt;? super <A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;selectionModel,
+                                 <A HREF="../../../../../com/google/gwt/view/client/HasData.html" title="interface in com.google.gwt.view.client">HasData</A>&lt;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.html" title="type parameter in DefaultSelectionEventManager">T</A>&gt;&nbsp;display,
+                                 <A HREF="../../../../../com/google/gwt/view/client/Range.html" title="class in com.google.gwt.view.client">Range</A>&nbsp;range,
+                                 boolean&nbsp;addToSelection,
+                                 boolean&nbsp;clearOthers)</PRE>
+<DL>
+<DD>Select or deselect a range of row indexes, optionally deselecting all other
+ values.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>selectionModel</CODE> - the <A HREF="../../../../../com/google/gwt/view/client/MultiSelectionModel.html" title="class in com.google.gwt.view.client"><CODE>MultiSelectionModel</CODE></A> to update<DD><CODE>display</CODE> - the <A HREF="../../../../../com/google/gwt/view/client/HasData.html" title="interface in com.google.gwt.view.client"><CODE>HasData</CODE></A> source of the selection event<DD><CODE>range</CODE> - the <A HREF="../../../../../com/google/gwt/view/client/Range.html" title="class in com.google.gwt.view.client"><CODE>Range</CODE></A> of rows to select or deselect<DD><CODE>addToSelection</CODE> - true to select, false to deselect the range<DD><CODE>clearOthers</CODE> - true to deselect rows not in the range</DL>
+</DD>
+</DL>
 <!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
-<div class="bottomNav"><a name="navbar_bottom">
-<!--   -->
-</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
-<!--   -->
-</a>
-<ul class="navList" title="Navigation">
-<li><a href="../../../../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Package</a></li>
-<li class="navBarCell1Rev">Class</li>
-<li><a href="class-use/DefaultSelectionEventManager.html">Use</a></li>
-<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../help-doc.html">Help</a></li>
-</ul>
-<div class="aboutLanguage"><em>GWT 2.6.1</em></div>
-</div>
-<div class="subNav">
-<ul class="navList">
-<li><a href="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html" title="interface in com.google.gwt.view.client"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="class in com.google.gwt.view.client"><span class="strong">Next Class</span></a></li>
-</ul>
-<ul class="navList">
-<li><a href="../../../../../index.html?com/google/gwt/view/client/DefaultSelectionEventManager.html" target="_top">Frames</a></li>
-<li><a href="DefaultSelectionEventManager.html" target="_top">No Frames</a></li>
-</ul>
-<ul class="navList" id="allclasses_navbar_bottom">
-<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
-</ul>
-<div>
-<script type="text/javascript"><!--
-  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/DefaultSelectionEventManager.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.7.0</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/google/gwt/view/client/CellPreviewEvent.Handler.html" title="interface in com.google.gwt.view.client"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/gwt/view/client/DefaultSelectionEventManager.BlacklistEventTranslator.html" title="class in com.google.gwt.view.client"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/google/gwt/view/client/DefaultSelectionEventManager.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="DefaultSelectionEventManager.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
   if(window==top) {
-    allClassesLink.style.display = "block";
-  }
-  else {
-    allClassesLink.style.display = "none";
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
   }
   //-->
-</script>
-</div>
-<div>
-<ul class="subNavList">
-<li>Summary:&nbsp;</li>
-<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
-</ul>
-<ul class="subNavList">
-<li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
-</ul>
-</div>
-<a name="skip-navbar_bottom">
-<!--   -->
-</a></div>
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-</body>
-</html>
+
+<HR>
+
+</BODY>
+</HTML>

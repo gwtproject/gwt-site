@@ -1,587 +1,658 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!-- NewPage -->
-<html lang="fr">
-<head>
-<title>LocatorServiceLayer (GWT Javadoc)</title>
-<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
-</head>
-<body>
-<script type="text/javascript"><!--
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+LocatorServiceLayer (GWT Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
     if (location.href.indexOf('is-external=true') == -1) {
         parent.document.title="LocatorServiceLayer (GWT Javadoc)";
     }
-//-->
-</script>
-<noscript>
-<div>JavaScript is disabled on your browser.</div>
-</noscript>
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
 <!-- ========= START OF TOP NAVBAR ======= -->
-<div class="topNav"><a name="navbar_top">
-<!--   -->
-</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
-<!--   -->
-</a>
-<ul class="navList" title="Navigation">
-<li><a href="../../../../../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Package</a></li>
-<li class="navBarCell1Rev">Class</li>
-<li><a href="class-use/LocatorServiceLayer.html">Use</a></li>
-<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../help-doc.html">Help</a></li>
-</ul>
-<div class="aboutLanguage"><em>GWT 2.6.1</em></div>
-</div>
-<div class="subNav">
-<ul class="navList">
-<li><a href="../../../../../../com/google/web/bindery/requestfactory/server/FindServiceLayer.html" title="class in com.google.web.bindery.requestfactory.server"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../../../com/google/web/bindery/requestfactory/server/Logging.html" title="class in com.google.web.bindery.requestfactory.server"><span class="strong">Next Class</span></a></li>
-</ul>
-<ul class="navList">
-<li><a href="../../../../../../index.html?com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html" target="_top">Frames</a></li>
-<li><a href="LocatorServiceLayer.html" target="_top">No Frames</a></li>
-</ul>
-<ul class="navList" id="allclasses_navbar_top">
-<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
-</ul>
-<div>
-<script type="text/javascript"><!--
-  allClassesLink = document.getElementById("allclasses_navbar_top");
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/LocatorServiceLayer.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.7.0</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/FindServiceLayer.html" title="class in com.google.web.bindery.requestfactory.server"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/Logging.html" title="class in com.google.web.bindery.requestfactory.server"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="LocatorServiceLayer.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
   if(window==top) {
-    allClassesLink.style.display = "block";
-  }
-  else {
-    allClassesLink.style.display = "none";
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
   }
   //-->
-</script>
-</div>
-<div>
-<ul class="subNavList">
-<li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#fields_inherited_from_class_com.google.web.bindery.requestfactory.server.ServiceLayerDecorator">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
-</ul>
-<ul class="subNavList">
-<li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
-</ul>
-</div>
-<a name="skip-navbar_top">
-<!--   -->
-</a></div>
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_com.google.web.bindery.requestfactory.server.ServiceLayerDecorator">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
 <!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
 <!-- ======== START OF CLASS DATA ======== -->
-<div class="header">
-<div class="subTitle">com.google.web.bindery.requestfactory.server</div>
-<h2 title="Class LocatorServiceLayer" class="title">Class LocatorServiceLayer</h2>
-</div>
-<div class="contentContainer">
-<ul class="inheritance">
-<li>java.lang.Object</li>
-<li>
-<ul class="inheritance">
-<li><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html" title="class in com.google.web.bindery.requestfactory.server">com.google.web.bindery.requestfactory.server.ServiceLayer</a></li>
-<li>
-<ul class="inheritance">
-<li><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">com.google.web.bindery.requestfactory.server.ServiceLayerDecorator</a></li>
-<li>
-<ul class="inheritance">
-<li>com.google.web.bindery.requestfactory.server.LocatorServiceLayer</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<div class="description">
-<ul class="blockList">
-<li class="blockList">
-<hr>
-<br>
-<pre>final class <span class="strong">LocatorServiceLayer</span>
-extends <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></pre>
-<div class="block">Adds support to the ServiceLayer chain for using <a href="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared"><code>Locator</code></a> and
- <a href="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared"><code>ServiceLocator</code></a> helper objects.</div>
-</li>
-</ul>
-</div>
-<div class="summary">
-<ul class="blockList">
-<li class="blockList">
+<H2>
+<FONT SIZE="-1">
+com.google.web.bindery.requestfactory.server</FONT>
+<BR>
+Class LocatorServiceLayer</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html" title="class in com.google.web.bindery.requestfactory.server">com.google.web.bindery.requestfactory.server.ServiceLayer</A>
+      <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">com.google.web.bindery.requestfactory.server.ServiceLayerDecorator</A>
+          <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.web.bindery.requestfactory.server.LocatorServiceLayer</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>final class <B>LocatorServiceLayer</B><DT>extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></DL>
+</PRE>
+
+<P>
+Adds support to the ServiceLayer chain for using <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared"><CODE>Locator</CODE></A> and
+ <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared"><CODE>ServiceLocator</CODE></A> helper objects.
+<P>
+
+<P>
+<HR>
+
+<P>
 <!-- =========== FIELD SUMMARY =========== -->
-<ul class="blockList">
-<li class="blockList"><a name="field_summary">
-<!--   -->
-</a>
-<h3>Field Summary</h3>
-<ul class="blockList">
-<li class="blockList"><a name="fields_inherited_from_class_com.google.web.bindery.requestfactory.server.ServiceLayerDecorator">
-<!--   -->
-</a>
-<h3>Fields inherited from class&nbsp;com.google.web.bindery.requestfactory.server.<a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></h3>
-<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#next">next</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="fields_inherited_from_class_com.google.web.bindery.requestfactory.server.ServiceLayer">
-<!--   -->
-</a>
-<h3>Fields inherited from class&nbsp;com.google.web.bindery.requestfactory.server.<a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayer</a></h3>
-<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#top">top</a></code></li>
-</ul>
-</li>
-</ul>
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.google.web.bindery.requestfactory.server.ServiceLayerDecorator"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.google.web.bindery.requestfactory.server.<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#next">next</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_com.google.web.bindery.requestfactory.server.ServiceLayer"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class com.google.web.bindery.requestfactory.server.<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayer</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#top">top</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<ul class="blockList">
-<li class="blockList"><a name="constructor_summary">
-<!--   -->
-</a>
-<h3>Constructor Summary</h3>
-<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
-<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colOne" scope="col">Constructor and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#LocatorServiceLayer()">LocatorServiceLayer</a></strong>()</code>&nbsp;</td>
-</tr>
-</table>
-</li>
-</ul>
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#LocatorServiceLayer()">LocatorServiceLayer</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
 <!-- ========== METHOD SUMMARY =========== -->
-<ul class="blockList">
-<li class="blockList"><a name="method_summary">
-<!--   -->
-</a>
-<h3>Method Summary</h3>
-<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Method and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#createDomainObject(java.lang.Class)">createDomainObject</a></strong>(java.lang.Class&lt;T&gt;&nbsp;clazz)</code>
-<div class="block">Create an instance of the requested domain type.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;T extends <a href="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared">Locator</a>&lt;?,?&gt;&gt;&nbsp;<br>T</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#createLocator(java.lang.Class)">createLocator</a></strong>(java.lang.Class&lt;T&gt;&nbsp;clazz)</code>
-<div class="block">Create an instance of the requested <a href="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared"><code>Locator</code></a> type.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>java.lang.Object</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#createServiceInstance(java.lang.Class)">createServiceInstance</a></strong>(java.lang.Class&lt;? extends <a href="../../../../../../com/google/web/bindery/requestfactory/shared/RequestContext.html" title="interface in com.google.web.bindery.requestfactory.shared">RequestContext</a>&gt;&nbsp;requestContext)</code>
-<div class="block">Create an instance of a service object that can be used as the target for
- the given method invocation.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;T extends <a href="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared">ServiceLocator</a>&gt;&nbsp;<br>T</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#createServiceLocator(java.lang.Class)">createServiceLocator</a></strong>(java.lang.Class&lt;T&gt;&nbsp;serviceLocatorType)</code>
-<div class="block">Create an instance of the requested <a href="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared"><code>ServiceLocator</code></a> type.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>java.lang.Object</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#getId(java.lang.Object)">getId</a></strong>(java.lang.Object&nbsp;domainObject)</code>
-<div class="block">Return the persistent id for a domain object.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>java.lang.Class&lt;?&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#getIdType(java.lang.Class)">getIdType</a></strong>(java.lang.Class&lt;?&gt;&nbsp;domainType)</code>
-<div class="block">Returns the type of object the domain type's <code>findFoo()</code> or
- <a href="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html#getId(T)"><code>Locator.getId()</code></a> expects to receive.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>java.lang.Object</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#getVersion(java.lang.Object)">getVersion</a></strong>(java.lang.Object&nbsp;domainObject)</code>
-<div class="block">May return <code>null</code> to indicate that the domain object has not been
- persisted.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#isLive(java.lang.Object)">isLive</a></strong>(java.lang.Object&nbsp;domainObject)</code>
-<div class="block">Returns <code>true</code> if the given domain object is still live (i.e. not
- deleted) in the backing store.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#loadDomainObject(java.lang.Class, java.lang.Object)">loadDomainObject</a></strong>(java.lang.Class&lt;T&gt;&nbsp;clazz,
-                java.lang.Object&nbsp;domainId)</code>
-<div class="block">Load an object from the backing store.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#requiresServiceLocator(java.lang.reflect.Method, java.lang.reflect.Method)">requiresServiceLocator</a></strong>(java.lang.reflect.Method&nbsp;contextMethod,
-                      java.lang.reflect.Method&nbsp;domainMethod)</code>
-<div class="block">Returns true if the context method returns a <a href="../../../../../../com/google/web/bindery/requestfactory/shared/Request.html" title="interface in com.google.web.bindery.requestfactory.shared"><code>Request</code></a> and the domain
- method is non-static.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>java.lang.Class&lt;? extends <a href="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared">Locator</a>&lt;?,?&gt;&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#resolveLocator(java.lang.Class)">resolveLocator</a></strong>(java.lang.Class&lt;?&gt;&nbsp;domainType)</code>
-<div class="block">Return the type of <a href="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared"><code>Locator</code></a> that should be used to access the given
- domain type.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>java.lang.Class&lt;? extends <a href="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared">ServiceLocator</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#resolveServiceLocator(java.lang.Class)">resolveServiceLocator</a></strong>(java.lang.Class&lt;? extends <a href="../../../../../../com/google/web/bindery/requestfactory/shared/RequestContext.html" title="interface in com.google.web.bindery.requestfactory.shared">RequestContext</a>&gt;&nbsp;requestContext)</code>
-<div class="block">Given a RequestContext method declaration, resolve the
- <a href="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared"><code>ServiceLocator</code></a> that should be used when invoking the domain method.</div>
-</td>
-</tr>
-</table>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_com.google.web.bindery.requestfactory.server.ServiceLayerDecorator">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;com.google.web.bindery.requestfactory.server.<a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></h3>
-<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#die(java.lang.Throwable, java.lang.String, java.lang.Object...)">die</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getDomainClassLoader()">getDomainClassLoader</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getGetter(java.lang.Class, java.lang.String)">getGetter</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getNext()">getNext</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getProperty(java.lang.Object, java.lang.String)">getProperty</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getRequestReturnType(java.lang.reflect.Method)">getRequestReturnType</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getSetter(java.lang.Class, java.lang.String)">getSetter</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getTop()">getTop</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#invoke(java.lang.reflect.Method, java.lang.Object...)">invoke</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#loadDomainObjects(java.util.List, java.util.List)">loadDomainObjects</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#report(java.lang.reflect.InvocationTargetException)">report</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#report(java.lang.String, java.lang.Object...)">report</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveClass(java.lang.String)">resolveClass</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveClientType(java.lang.Class, java.lang.Class, boolean)">resolveClientType</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveDomainClass(java.lang.Class)">resolveDomainClass</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveDomainMethod(java.lang.String)">resolveDomainMethod</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveRequestContext(java.lang.String)">resolveRequestContext</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveRequestContextMethod(java.lang.String)">resolveRequestContextMethod</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveRequestFactory(java.lang.String)">resolveRequestFactory</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveServiceClass(java.lang.Class)">resolveServiceClass</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveTypeToken(java.lang.Class)">resolveTypeToken</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#setProperty(java.lang.Object, java.lang.String, java.lang.Class, java.lang.Object)">setProperty</a>, <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#validate(T)">validate</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_com.google.web.bindery.requestfactory.server.ServiceLayer">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;com.google.web.bindery.requestfactory.server.<a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayer</a></h3>
-<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#create(com.google.web.bindery.requestfactory.server.ServiceLayerDecorator...)">create</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
-<!--   -->
-</a>
-<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="details">
-<ul class="blockList">
-<li class="blockList">
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T&gt; T</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#createDomainObject(java.lang.Class)">createDomainObject</A></B>(java.lang.Class&lt;T&gt;&nbsp;clazz)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create an instance of the requested domain type.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared">Locator</A>&lt;?,?&gt;&gt; 
+<BR>
+T</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#createLocator(java.lang.Class)">createLocator</A></B>(java.lang.Class&lt;T&gt;&nbsp;clazz)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create an instance of the requested <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared"><CODE>Locator</CODE></A> type.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.Object</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#createServiceInstance(java.lang.Class)">createServiceInstance</A></B>(java.lang.Class&lt;? extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/RequestContext.html" title="interface in com.google.web.bindery.requestfactory.shared">RequestContext</A>&gt;&nbsp;requestContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create an instance of a service object that can be used as the target for
+ the given method invocation.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared">ServiceLocator</A>&gt; 
+<BR>
+T</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#createServiceLocator(java.lang.Class)">createServiceLocator</A></B>(java.lang.Class&lt;T&gt;&nbsp;serviceLocatorType)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create an instance of the requested <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared"><CODE>ServiceLocator</CODE></A> type.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.Object</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#getId(java.lang.Object)">getId</A></B>(java.lang.Object&nbsp;domainObject)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the persistent id for a domain object.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.Class&lt;?&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#getIdType(java.lang.Class)">getIdType</A></B>(java.lang.Class&lt;?&gt;&nbsp;domainType)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the type of object the domain type's <code>findFoo()</code> or
+ <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html#getId(T)"><CODE>Locator.getId()</CODE></A> expects to receive.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.Object</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#getVersion(java.lang.Object)">getVersion</A></B>(java.lang.Object&nbsp;domainObject)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;May return <code>null</code> to indicate that the domain object has not been
+ persisted.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#isLive(java.lang.Object)">isLive</A></B>(java.lang.Object&nbsp;domainObject)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns <code>true</code> if the given domain object is still live (i.e.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T&gt; T</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#loadDomainObject(java.lang.Class, java.lang.Object)">loadDomainObject</A></B>(java.lang.Class&lt;T&gt;&nbsp;clazz,
+                 java.lang.Object&nbsp;domainId)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load an object from the backing store.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#requiresServiceLocator(java.lang.reflect.Method, java.lang.reflect.Method)">requiresServiceLocator</A></B>(java.lang.reflect.Method&nbsp;contextMethod,
+                       java.lang.reflect.Method&nbsp;domainMethod)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns true if the context method returns a <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/Request.html" title="interface in com.google.web.bindery.requestfactory.shared"><CODE>Request</CODE></A> and the domain
+ method is non-static.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.Class&lt;? extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared">Locator</A>&lt;?,?&gt;&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#resolveLocator(java.lang.Class)">resolveLocator</A></B>(java.lang.Class&lt;?&gt;&nbsp;domainType)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the type of <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared"><CODE>Locator</CODE></A> that should be used to access the given
+ domain type.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.Class&lt;? extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared">ServiceLocator</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html#resolveServiceLocator(java.lang.Class)">resolveServiceLocator</A></B>(java.lang.Class&lt;? extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/RequestContext.html" title="interface in com.google.web.bindery.requestfactory.shared">RequestContext</A>&gt;&nbsp;requestContext)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Given a RequestContext method declaration, resolve the
+ <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared"><CODE>ServiceLocator</CODE></A> that should be used when invoking the domain method.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.google.web.bindery.requestfactory.server.ServiceLayerDecorator"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.google.web.bindery.requestfactory.server.<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#die(java.lang.Throwable, java.lang.String, java.lang.Object...)">die</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getDomainClassLoader()">getDomainClassLoader</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getGetter(java.lang.Class, java.lang.String)">getGetter</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getNext()">getNext</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getProperty(java.lang.Object, java.lang.String)">getProperty</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getRequestReturnType(java.lang.reflect.Method)">getRequestReturnType</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getSetter(java.lang.Class, java.lang.String)">getSetter</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getTop()">getTop</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#invoke(java.lang.reflect.Method, java.lang.Object...)">invoke</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#loadDomainObjects(java.util.List, java.util.List)">loadDomainObjects</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#report(java.lang.reflect.InvocationTargetException)">report</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#report(java.lang.String, java.lang.Object...)">report</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveClass(java.lang.String)">resolveClass</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveClientType(java.lang.Class, java.lang.Class, boolean)">resolveClientType</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveDomainClass(java.lang.Class)">resolveDomainClass</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveDomainMethod(java.lang.String)">resolveDomainMethod</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveRequestContext(java.lang.String)">resolveRequestContext</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveRequestContextMethod(java.lang.String)">resolveRequestContextMethod</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveRequestFactory(java.lang.String)">resolveRequestFactory</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveServiceClass(java.lang.Class)">resolveServiceClass</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveTypeToken(java.lang.Class)">resolveTypeToken</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#setProperty(java.lang.Object, java.lang.String, java.lang.Class, java.lang.Object)">setProperty</A>, <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#validate(T)">validate</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.google.web.bindery.requestfactory.server.ServiceLayer"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.google.web.bindery.requestfactory.server.<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayer</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#create(com.google.web.bindery.requestfactory.server.ServiceLayerDecorator...)">create</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
-<ul class="blockList">
-<li class="blockList"><a name="constructor_detail">
-<!--   -->
-</a>
-<h3>Constructor Detail</h3>
-<a name="LocatorServiceLayer()">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>LocatorServiceLayer</h4>
-<pre>LocatorServiceLayer()</pre>
-</li>
-</ul>
-</li>
-</ul>
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="LocatorServiceLayer()"><!-- --></A><H3>
+LocatorServiceLayer</H3>
+<PRE>
+<B>LocatorServiceLayer</B>()</PRE>
+<DL>
+</DL>
+
 <!-- ============ METHOD DETAIL ========== -->
-<ul class="blockList">
-<li class="blockList"><a name="method_detail">
-<!--   -->
-</a>
-<h3>Method Detail</h3>
-<a name="createDomainObject(java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createDomainObject</h4>
-<pre>public&nbsp;&lt;T&gt;&nbsp;T&nbsp;createDomainObject(java.lang.Class&lt;T&gt;&nbsp;clazz)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#createDomainObject(java.lang.Class)">ServiceLayer</a></code></strong></div>
-<div class="block">Create an instance of the requested domain type.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#createDomainObject(java.lang.Class)">createDomainObject</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></code></dd>
-<dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - the requested domain type</dd><dt><span class="strong">Parameters:</span></dt><dd><code>clazz</code> - the requested domain type</dd>
-<dt><span class="strong">Returns:</span></dt><dd>an instance of the requested domain type</dd></dl>
-</li>
-</ul>
-<a name="createLocator(java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createLocator</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared">Locator</a>&lt;?,?&gt;&gt;&nbsp;T&nbsp;createLocator(java.lang.Class&lt;T&gt;&nbsp;clazz)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#createLocator(java.lang.Class)">ServiceLayer</a></code></strong></div>
-<div class="block">Create an instance of the requested <a href="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared"><code>Locator</code></a> type.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#createLocator(java.lang.Class)">createLocator</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></code></dd>
-<dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - the requested Locator type</dd><dt><span class="strong">Parameters:</span></dt><dd><code>clazz</code> - the requested Locator type</dd>
-<dt><span class="strong">Returns:</span></dt><dd>an instance of the requested Locator type</dd></dl>
-</li>
-</ul>
-<a name="createServiceInstance(java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createServiceInstance</h4>
-<pre>public&nbsp;java.lang.Object&nbsp;createServiceInstance(java.lang.Class&lt;? extends <a href="../../../../../../com/google/web/bindery/requestfactory/shared/RequestContext.html" title="interface in com.google.web.bindery.requestfactory.shared">RequestContext</a>&gt;&nbsp;requestContext)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#createServiceInstance(java.lang.Class)">ServiceLayer</a></code></strong></div>
-<div class="block">Create an instance of a service object that can be used as the target for
- the given method invocation.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#createServiceInstance(java.lang.Class)">createServiceInstance</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>requestContext</code> - the RequestContext type for which a service object
-          must be instantiated.</dd>
-<dt><span class="strong">Returns:</span></dt><dd>an instance of the requested service object</dd></dl>
-</li>
-</ul>
-<a name="createServiceLocator(java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createServiceLocator</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared">ServiceLocator</a>&gt;&nbsp;T&nbsp;createServiceLocator(java.lang.Class&lt;T&gt;&nbsp;serviceLocatorType)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#createServiceLocator(java.lang.Class)">ServiceLayer</a></code></strong></div>
-<div class="block">Create an instance of the requested <a href="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared"><code>ServiceLocator</code></a> type.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#createServiceLocator(java.lang.Class)">createServiceLocator</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></code></dd>
-<dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - the requested ServiceLocator type</dd><dt><span class="strong">Parameters:</span></dt><dd><code>serviceLocatorType</code> - the requested ServiceLocator type</dd>
-<dt><span class="strong">Returns:</span></dt><dd>an instance of the requested ServiceLocator type</dd></dl>
-</li>
-</ul>
-<a name="getId(java.lang.Object)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getId</h4>
-<pre>public&nbsp;java.lang.Object&nbsp;getId(java.lang.Object&nbsp;domainObject)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#getId(java.lang.Object)">ServiceLayer</a></code></strong></div>
-<div class="block">Return the persistent id for a domain object. May return <code>null</code> to
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="createDomainObject(java.lang.Class)"><!-- --></A><H3>
+createDomainObject</H3>
+<PRE>
+public &lt;T&gt; T <B>createDomainObject</B>(java.lang.Class&lt;T&gt;&nbsp;clazz)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#createDomainObject(java.lang.Class)">ServiceLayer</A></CODE></B></DD>
+<DD>Create an instance of the requested domain type.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#createDomainObject(java.lang.Class)">createDomainObject</A></CODE> in class <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the requested domain type<DT><B>Parameters:</B><DD><CODE>clazz</CODE> - the requested domain type
+<DT><B>Returns:</B><DD>an instance of the requested domain type</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createLocator(java.lang.Class)"><!-- --></A><H3>
+createLocator</H3>
+<PRE>
+public &lt;T extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared">Locator</A>&lt;?,?&gt;&gt; T <B>createLocator</B>(java.lang.Class&lt;T&gt;&nbsp;clazz)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#createLocator(java.lang.Class)">ServiceLayer</A></CODE></B></DD>
+<DD>Create an instance of the requested <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared"><CODE>Locator</CODE></A> type.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#createLocator(java.lang.Class)">createLocator</A></CODE> in class <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the requested Locator type<DT><B>Parameters:</B><DD><CODE>clazz</CODE> - the requested Locator type
+<DT><B>Returns:</B><DD>an instance of the requested Locator type</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createServiceInstance(java.lang.Class)"><!-- --></A><H3>
+createServiceInstance</H3>
+<PRE>
+public java.lang.Object <B>createServiceInstance</B>(java.lang.Class&lt;? extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/RequestContext.html" title="interface in com.google.web.bindery.requestfactory.shared">RequestContext</A>&gt;&nbsp;requestContext)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#createServiceInstance(java.lang.Class)">ServiceLayer</A></CODE></B></DD>
+<DD>Create an instance of a service object that can be used as the target for
+ the given method invocation.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#createServiceInstance(java.lang.Class)">createServiceInstance</A></CODE> in class <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>requestContext</CODE> - the RequestContext type for which a service object
+          must be instantiated.
+<DT><B>Returns:</B><DD>an instance of the requested service object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createServiceLocator(java.lang.Class)"><!-- --></A><H3>
+createServiceLocator</H3>
+<PRE>
+public &lt;T extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared">ServiceLocator</A>&gt; T <B>createServiceLocator</B>(java.lang.Class&lt;T&gt;&nbsp;serviceLocatorType)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#createServiceLocator(java.lang.Class)">ServiceLayer</A></CODE></B></DD>
+<DD>Create an instance of the requested <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared"><CODE>ServiceLocator</CODE></A> type.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#createServiceLocator(java.lang.Class)">createServiceLocator</A></CODE> in class <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the requested ServiceLocator type<DT><B>Parameters:</B><DD><CODE>serviceLocatorType</CODE> - the requested ServiceLocator type
+<DT><B>Returns:</B><DD>an instance of the requested ServiceLocator type</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getId(java.lang.Object)"><!-- --></A><H3>
+getId</H3>
+<PRE>
+public java.lang.Object <B>getId</B>(java.lang.Object&nbsp;domainObject)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#getId(java.lang.Object)">ServiceLayer</A></CODE></B></DD>
+<DD>Return the persistent id for a domain object. May return <code>null</code> to
  indicate that the domain object has not been persisted. The value returned
  from this method must be a simple type (e.g. Integer, String) or a domain
  type for which a mapping to an EntityProxy or Value proxy exists.
  <p>
  The values returned from this method may be passed to
- <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#loadDomainObject(java.lang.Class, java.lang.Object)"><code>ServiceLayer.loadDomainObject(Class, Object)</code></a> in the future.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getId(java.lang.Object)">getId</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>domainObject</code> - a domain object</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the persistent id of the domain object or <code>null</code> if the
-         object is not persistent</dd></dl>
-</li>
-</ul>
-<a name="getIdType(java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getIdType</h4>
-<pre>public&nbsp;java.lang.Class&lt;?&gt;&nbsp;getIdType(java.lang.Class&lt;?&gt;&nbsp;domainType)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#getIdType(java.lang.Class)">ServiceLayer</a></code></strong></div>
-<div class="block">Returns the type of object the domain type's <code>findFoo()</code> or
- <a href="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html#getId(T)"><code>Locator.getId()</code></a> expects to receive.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getIdType(java.lang.Class)">getIdType</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>domainType</code> - a domain entity type</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the type of the persistent id value used to represent the domain
-         type</dd></dl>
-</li>
-</ul>
-<a name="getVersion(java.lang.Object)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getVersion</h4>
-<pre>public&nbsp;java.lang.Object&nbsp;getVersion(java.lang.Object&nbsp;domainObject)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#getVersion(java.lang.Object)">ServiceLayer</a></code></strong></div>
-<div class="block">May return <code>null</code> to indicate that the domain object has not been
+ <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#loadDomainObject(java.lang.Class, java.lang.Object)"><CODE>ServiceLayer.loadDomainObject(Class, Object)</CODE></A> in the future.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getId(java.lang.Object)">getId</A></CODE> in class <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>domainObject</CODE> - a domain object
+<DT><B>Returns:</B><DD>the persistent id of the domain object or <code>null</code> if the
+         object is not persistent</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getIdType(java.lang.Class)"><!-- --></A><H3>
+getIdType</H3>
+<PRE>
+public java.lang.Class&lt;?&gt; <B>getIdType</B>(java.lang.Class&lt;?&gt;&nbsp;domainType)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#getIdType(java.lang.Class)">ServiceLayer</A></CODE></B></DD>
+<DD>Returns the type of object the domain type's <code>findFoo()</code> or
+ <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html#getId(T)"><CODE>Locator.getId()</CODE></A> expects to receive.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getIdType(java.lang.Class)">getIdType</A></CODE> in class <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>domainType</CODE> - a domain entity type
+<DT><B>Returns:</B><DD>the type of the persistent id value used to represent the domain
+         type</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getVersion(java.lang.Object)"><!-- --></A><H3>
+getVersion</H3>
+<PRE>
+public java.lang.Object <B>getVersion</B>(java.lang.Object&nbsp;domainObject)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#getVersion(java.lang.Object)">ServiceLayer</A></CODE></B></DD>
+<DD>May return <code>null</code> to indicate that the domain object has not been
  persisted. The value returned from this method must be a simple type (e.g.
  Integer, String) or a domain type for which a mapping to an EntityProxy or
- Value proxy exists.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getVersion(java.lang.Object)">getVersion</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>domainObject</code> - a domain object</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the version of the domain object or <code>null</code> if the object is
-         not persistent</dd></dl>
-</li>
-</ul>
-<a name="isLive(java.lang.Object)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>isLive</h4>
-<pre>public&nbsp;boolean&nbsp;isLive(java.lang.Object&nbsp;domainObject)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#isLive(java.lang.Object)">ServiceLayer</a></code></strong></div>
-<div class="block">Returns <code>true</code> if the given domain object is still live (i.e. not
- deleted) in the backing store.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#isLive(java.lang.Object)">isLive</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>domainObject</code> - a domain entity</dd>
-<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if <code>domainObject</code> could be retrieved at a later
-         point in time</dd></dl>
-</li>
-</ul>
-<a name="loadDomainObject(java.lang.Class, java.lang.Object)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>loadDomainObject</h4>
-<pre>public&nbsp;&lt;T&gt;&nbsp;T&nbsp;loadDomainObject(java.lang.Class&lt;T&gt;&nbsp;clazz,
-                     java.lang.Object&nbsp;domainId)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#loadDomainObject(java.lang.Class, java.lang.Object)">ServiceLayer</a></code></strong></div>
-<div class="block">Load an object from the backing store. This method may return <code>null</code>
- to indicate that the requested object is no longer available.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#loadDomainObject(java.lang.Class, java.lang.Object)">loadDomainObject</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></code></dd>
-<dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - the type of object to load</dd><dt><span class="strong">Parameters:</span></dt><dd><code>clazz</code> - the type of object to load</dd><dd><code>domainId</code> - an id previously returned from <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#getId(java.lang.Object)"><code>ServiceLayer.getId(Object)</code></a></dd>
-<dt><span class="strong">Returns:</span></dt><dd>the requested object or <code>null</code> if it is irretrievable</dd></dl>
-</li>
-</ul>
-<a name="requiresServiceLocator(java.lang.reflect.Method, java.lang.reflect.Method)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>requiresServiceLocator</h4>
-<pre>public&nbsp;boolean&nbsp;requiresServiceLocator(java.lang.reflect.Method&nbsp;contextMethod,
-                             java.lang.reflect.Method&nbsp;domainMethod)</pre>
-<div class="block">Returns true if the context method returns a <a href="../../../../../../com/google/web/bindery/requestfactory/shared/Request.html" title="interface in com.google.web.bindery.requestfactory.shared"><code>Request</code></a> and the domain
- method is non-static.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#requiresServiceLocator(java.lang.reflect.Method, java.lang.reflect.Method)">requiresServiceLocator</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>contextMethod</code> - a method defined in a RequestContext</dd><dd><code>domainMethod</code> - a domain method</dd>
-<dt><span class="strong">Returns:</span></dt><dd><code>true</code> if a ServiceLocator is required</dd></dl>
-</li>
-</ul>
-<a name="resolveLocator(java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>resolveLocator</h4>
-<pre>public&nbsp;java.lang.Class&lt;? extends <a href="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared">Locator</a>&lt;?,?&gt;&gt;&nbsp;resolveLocator(java.lang.Class&lt;?&gt;&nbsp;domainType)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#resolveLocator(java.lang.Class)">ServiceLayer</a></code></strong></div>
-<div class="block">Return the type of <a href="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared"><code>Locator</code></a> that should be used to access the given
- domain type.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveLocator(java.lang.Class)">resolveLocator</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>domainType</code> - a domain (server-side) type</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the type of Locator to use, or <code>null</code> if the type conforms to
-         the RequestFactory entity protocol</dd></dl>
-</li>
-</ul>
-<a name="resolveServiceLocator(java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>resolveServiceLocator</h4>
-<pre>public&nbsp;java.lang.Class&lt;? extends <a href="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared">ServiceLocator</a>&gt;&nbsp;resolveServiceLocator(java.lang.Class&lt;? extends <a href="../../../../../../com/google/web/bindery/requestfactory/shared/RequestContext.html" title="interface in com.google.web.bindery.requestfactory.shared">RequestContext</a>&gt;&nbsp;requestContext)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#resolveServiceLocator(java.lang.Class)">ServiceLayer</a></code></strong></div>
-<div class="block">Given a RequestContext method declaration, resolve the
- <a href="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared"><code>ServiceLocator</code></a> that should be used when invoking the domain method.
+ Value proxy exists.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#getVersion(java.lang.Object)">getVersion</A></CODE> in class <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>domainObject</CODE> - a domain object
+<DT><B>Returns:</B><DD>the version of the domain object or <code>null</code> if the object is
+         not persistent</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isLive(java.lang.Object)"><!-- --></A><H3>
+isLive</H3>
+<PRE>
+public boolean <B>isLive</B>(java.lang.Object&nbsp;domainObject)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#isLive(java.lang.Object)">ServiceLayer</A></CODE></B></DD>
+<DD>Returns <code>true</code> if the given domain object is still live (i.e. not
+ deleted) in the backing store.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#isLive(java.lang.Object)">isLive</A></CODE> in class <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>domainObject</CODE> - a domain entity
+<DT><B>Returns:</B><DD><code>true</code> if <code>domainObject</code> could be retrieved at a later
+         point in time</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="loadDomainObject(java.lang.Class, java.lang.Object)"><!-- --></A><H3>
+loadDomainObject</H3>
+<PRE>
+public &lt;T&gt; T <B>loadDomainObject</B>(java.lang.Class&lt;T&gt;&nbsp;clazz,
+                              java.lang.Object&nbsp;domainId)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#loadDomainObject(java.lang.Class, java.lang.Object)">ServiceLayer</A></CODE></B></DD>
+<DD>Load an object from the backing store. This method may return <code>null</code>
+ to indicate that the requested object is no longer available.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#loadDomainObject(java.lang.Class, java.lang.Object)">loadDomainObject</A></CODE> in class <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the type of object to load<DT><B>Parameters:</B><DD><CODE>clazz</CODE> - the type of object to load<DD><CODE>domainId</CODE> - an id previously returned from <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#getId(java.lang.Object)"><CODE>ServiceLayer.getId(Object)</CODE></A>
+<DT><B>Returns:</B><DD>the requested object or <code>null</code> if it is irretrievable</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="requiresServiceLocator(java.lang.reflect.Method, java.lang.reflect.Method)"><!-- --></A><H3>
+requiresServiceLocator</H3>
+<PRE>
+public boolean <B>requiresServiceLocator</B>(java.lang.reflect.Method&nbsp;contextMethod,
+                                      java.lang.reflect.Method&nbsp;domainMethod)</PRE>
+<DL>
+<DD>Returns true if the context method returns a <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/Request.html" title="interface in com.google.web.bindery.requestfactory.shared"><CODE>Request</CODE></A> and the domain
+ method is non-static.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#requiresServiceLocator(java.lang.reflect.Method, java.lang.reflect.Method)">requiresServiceLocator</A></CODE> in class <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>contextMethod</CODE> - a method defined in a RequestContext<DD><CODE>domainMethod</CODE> - a domain method
+<DT><B>Returns:</B><DD><code>true</code> if a ServiceLocator is required</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="resolveLocator(java.lang.Class)"><!-- --></A><H3>
+resolveLocator</H3>
+<PRE>
+public java.lang.Class&lt;? extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared">Locator</A>&lt;?,?&gt;&gt; <B>resolveLocator</B>(java.lang.Class&lt;?&gt;&nbsp;domainType)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#resolveLocator(java.lang.Class)">ServiceLayer</A></CODE></B></DD>
+<DD>Return the type of <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/Locator.html" title="class in com.google.web.bindery.requestfactory.shared"><CODE>Locator</CODE></A> that should be used to access the given
+ domain type.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveLocator(java.lang.Class)">resolveLocator</A></CODE> in class <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>domainType</CODE> - a domain (server-side) type
+<DT><B>Returns:</B><DD>the type of Locator to use, or <code>null</code> if the type conforms to
+         the RequestFactory entity protocol</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="resolveServiceLocator(java.lang.Class)"><!-- --></A><H3>
+resolveServiceLocator</H3>
+<PRE>
+public java.lang.Class&lt;? extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared">ServiceLocator</A>&gt; <B>resolveServiceLocator</B>(java.lang.Class&lt;? extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/RequestContext.html" title="interface in com.google.web.bindery.requestfactory.shared">RequestContext</A>&gt;&nbsp;requestContext)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#resolveServiceLocator(java.lang.Class)">ServiceLayer</A></CODE></B></DD>
+<DD>Given a RequestContext method declaration, resolve the
+ <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/ServiceLocator.html" title="interface in com.google.web.bindery.requestfactory.shared"><CODE>ServiceLocator</CODE></A> that should be used when invoking the domain method.
  This method will only be called if
- <a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#requiresServiceLocator(java.lang.reflect.Method, java.lang.reflect.Method)"><code>ServiceLayer.requiresServiceLocator(Method, Method)</code></a> returned <code>true</code> for
- the associated domain method.</div>
-<dl>
-<dt><strong>Overrides:</strong></dt>
-<dd><code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveServiceLocator(java.lang.Class)">resolveServiceLocator</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>requestContext</code> - the RequestContext for which a ServiceLocator must be
-          located</dd>
-<dt><span class="strong">Returns:</span></dt><dd>the type of ServiceLocator to use</dd></dl>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+ <A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html#requiresServiceLocator(java.lang.reflect.Method, java.lang.reflect.Method)"><CODE>ServiceLayer.requiresServiceLocator(Method, Method)</CODE></A> returned <code>true</code> for
+ the associated domain method.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html#resolveServiceLocator(java.lang.Class)">resolveServiceLocator</A></CODE> in class <CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayerDecorator.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayerDecorator</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>requestContext</CODE> - the RequestContext for which a ServiceLocator must be
+          located
+<DT><B>Returns:</B><DD>the type of ServiceLocator to use</DL>
+</DD>
+</DL>
 <!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
-<div class="bottomNav"><a name="navbar_bottom">
-<!--   -->
-</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
-<!--   -->
-</a>
-<ul class="navList" title="Navigation">
-<li><a href="../../../../../../overview-summary.html">Overview</a></li>
-<li><a href="package-summary.html">Package</a></li>
-<li class="navBarCell1Rev">Class</li>
-<li><a href="class-use/LocatorServiceLayer.html">Use</a></li>
-<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
-<li><a href="../../../../../../help-doc.html">Help</a></li>
-</ul>
-<div class="aboutLanguage"><em>GWT 2.6.1</em></div>
-</div>
-<div class="subNav">
-<ul class="navList">
-<li><a href="../../../../../../com/google/web/bindery/requestfactory/server/FindServiceLayer.html" title="class in com.google.web.bindery.requestfactory.server"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../../../com/google/web/bindery/requestfactory/server/Logging.html" title="class in com.google.web.bindery.requestfactory.server"><span class="strong">Next Class</span></a></li>
-</ul>
-<ul class="navList">
-<li><a href="../../../../../../index.html?com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html" target="_top">Frames</a></li>
-<li><a href="LocatorServiceLayer.html" target="_top">No Frames</a></li>
-</ul>
-<ul class="navList" id="allclasses_navbar_bottom">
-<li><a href="../../../../../../allclasses-noframe.html">All Classes</a></li>
-</ul>
-<div>
-<script type="text/javascript"><!--
-  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/LocatorServiceLayer.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.7.0</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/FindServiceLayer.html" title="class in com.google.web.bindery.requestfactory.server"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/Logging.html" title="class in com.google.web.bindery.requestfactory.server"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/web/bindery/requestfactory/server/LocatorServiceLayer.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="LocatorServiceLayer.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
   if(window==top) {
-    allClassesLink.style.display = "block";
-  }
-  else {
-    allClassesLink.style.display = "none";
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
   }
   //-->
-</script>
-</div>
-<div>
-<ul class="subNavList">
-<li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#fields_inherited_from_class_com.google.web.bindery.requestfactory.server.ServiceLayerDecorator">Field</a>&nbsp;|&nbsp;</li>
-<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
-</ul>
-<ul class="subNavList">
-<li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
-</ul>
-</div>
-<a name="skip-navbar_bottom">
-<!--   -->
-</a></div>
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_com.google.web.bindery.requestfactory.server.ServiceLayerDecorator">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-</body>
-</html>
+
+<HR>
+
+</BODY>
+</HTML>

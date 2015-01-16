@@ -39,7 +39,7 @@ class of XSS bugs.
 
 Note that this document does not address other classes of XSS vulnerabilities
 that GWT applications may be vulnerable to, such as server-side XSS, as well as
-other classes of client-side XSS (for example, calling <code>eval()</code> on an
+other classes of client-side XSS (for example, calling `eval()` on an
 untrusted string in native JavaScript.)
 
 1.  [Coding Guidelines](#Coding_guidelines)
@@ -47,9 +47,11 @@ untrusted string in native JavaScript.)
     1.  [Prefer Plain-Text Widgets](#Prefer_Plain_Text)
     2.  [Use UiBinder for Declarative Layout](#Avoid_ad_hoc_generation_of_HTML_)
     3.  [Use the SafeHtml Type to Represent XSS-Safe HTML](#Use_the_SafeHtml_type)
-    4.  [Creating SafeHtml Values](#Creating_SafeHtml_Values)3.  [Coding Guidelines for Widget Developers](#Coding_Guidelines_for_Widget_Developers)
-1.  [Provide SafeHtml Methods and Constructors](#Provide_SafeHtml)
-2.  ["Unwrap" SafeHtml Close to the Value's Use](#Unwrap_SafeHtml)4.  [Caveats and Limitations](#Caveats and Limitations)
+    4.  [Creating SafeHtml Values](#Creating_SafeHtml_Values)
+3.  [Coding Guidelines for Widget Developers](#Coding_Guidelines_for_Widget_Developers)
+    1.  [Provide SafeHtml Methods and Constructors](#Provide_SafeHtml)
+    2.  ["Unwrap" SafeHtml Close to the Value's Use](#Unwrap_SafeHtml)
+4.  [Caveats and Limitations](#Caveats_and_Limitations)
 
 ## Coding Guidelines<a id="Coding_guidelines"></a>
 
@@ -91,15 +93,15 @@ interpret parameters as HTML unless strictly necessary.
 
 For example, it is not uncommon to see GWT application code such as:
 
-<pre class="prettyprint">
+```
 HTML widget = new HTML("Some text in the widget");
-</pre>
+```
 
 or
 
-<pre class="prettyprint">
+```
 widget.setHTML(someText);
-</pre>
+```
 
 In the first example, it's obvious that the value passed to the
 `HTML` constructor cannot result in an XSS vulnerability: The value
@@ -160,10 +162,10 @@ the [`HasHTML`](/javadoc/latest/com/google/gwt/user/client/ui/HasHTML.html) (or 
 implement the [`HasSafeHtml`](/javadoc/latest/com/google/gwt/safehtml/client/HasSafeHtml.html) (or [`HasDirectionalSafeHtml`](/javadoc/latest/com/google/gwt/user/client/ui/HasDirectionalSafeHtml.html), respectively)
 interface.  These interfaces define:
 
-<pre class="prettyprint">
+```
 public void setHTML(SafeHtml html);
 public void setHTML(SafeHtml html, Direction dir);
-</pre>
+```
 
 as safe alternatives to `setHTML(String)` and
 `setHTML(String, Direction)`.
@@ -171,7 +173,7 @@ as safe alternatives to `setHTML(String)` and
 For example, the [`HTML`](/javadoc/latest/com/google/gwt/user/client/ui/HTML.html) widget has been
 augmented with the following constructors and methods:
 
-<pre class="prettyprint">
+```
 public class HTML extends Label 
     implements HasDirectionalHtml, HasDirectionalSafeHtml {
   // ...
@@ -182,7 +184,7 @@ public class HTML extends Label
   @Override
   public void setHTML(SafeHtml html, Direction dir);
 }
-</pre>
+```
 
 A central aspect of these coding guidelines is that developers of GWT
 applications should not use constructors and methods with
@@ -226,15 +228,15 @@ appropriately escaped.
 
 Consider this usage example:
 
-<pre class="prettyprint">
-public void showItems(List&lt;String&gt; items) {
+```
+public void showItems(List<String> items) {
   SafeHtmlBuilder builder = new SafeHtmlBuilder();
   for (String item : items) {
-    builder.appendEscaped(item).appendHtmlConstant("&lt;br/&gt;");
+    builder.appendEscaped(item).appendHtmlConstant("<br/>");
   }
   itemsListHtml.setHTML(builder.toSafeHtml());
 }
-</pre>
+```
 
 `SafeHtmlBuilder`'s `appendHtmlConstant` method is used to
 append a constant snippet of HTML to the builder, without escaping the argument.
@@ -252,9 +254,9 @@ following use would be illegal because the argument of the first
 tag; the string ends in the context of the value of the `href`
 attribute of that tag:
 
-<pre class="prettyprint">
-builder.appendHtmlConstant("&lt;a href='").appendEscaped(url).appendHtmlConstant("'&gt;")
-</pre>
+```
+builder.appendHtmlConstant("<a href='").appendEscaped(url).appendHtmlConstant("'>")
+```
 
 The first rule is necessary to ensure that strings passed to
 `appendHtmlConstant` cannot possibly be under the control of an
@@ -282,11 +284,11 @@ To facilitate the creation of SafeHtml instances containing more complex HTML
 markup, the `safehtml` package provides a compile-time bound template
 mechanism which can be used as in this example:
 
-<pre class="prettyprint">
+```
 public class MyWidget ... {
 // ...
   public interface MyTemplates extends SafeHtmlTemplates {
-    @Template("&lt;span class=\"{3}\"&gt;{0}: &lt;a href=\"{1}\"&gt;{2}&lt;/a&gt;&lt;/span&gt;")
+    @Template("<span class=\"{3}\">{0}: <a href=\"{1}\">{2}</a></span>")
     SafeHtml messageWithLink(SafeHtml message, String url, String linkText,
         String style);
   }
@@ -304,7 +306,7 @@ public class MyWidget ... {
         TEMPLATES.messageWithLink(message, url, linkText, style));
     // ...
   }
-</pre>
+```
 
 Instantiating a [`SafeHtmlTemplates`](/javadoc/latest/com/google/gwt/safehtml/client/SafeHtmlTemplates.html) interface with
 `GWT.create()` returns an instance of an implementation that is
@@ -323,9 +325,11 @@ limitation of the current implementation):
 
 *   The template is parsed with a lenient HTML stream parser that accepts HTMLsimilar to what would typically be accepted by a web browser. The parser doesnot require that templates consist of balanced HTML tags. However, the parserand template code generator enforce the following constraints on inputtemplates: Template parameters may not appear in HTML comments,parameters may not appear in a Javascript context (e.g., inside a`<script>` tag, or in an `onclick`handler), parameters in HTML attributes can only appear in the value and must beenclosed in quotes (e.g., `<tag attribute="{0}">` would be allowed,`<tag {0} attribute={1}>` would not), and the template cannot end
 inside a tag or inside an attribute. For example, the following is not a validtemplate:
-<pre class="prettyprint">
-&lt;span&gt;&lt;{0} class="xyz" {1}="..."/&gt;&lt;/span&gt;
-</pre>
+
+```
+<span><{0} class="xyz" {1}="..."/></span>
+```
+
 *   The generated code passes actual template parameters through appropriate
 sanitizer and escaping methods depending on the HTML context that the template
 parameter appears in and the declared type of the corresponding template method
@@ -389,7 +393,7 @@ but not `{3}` in the example, are treated specially:
 
 *   Before HTML escaping, the parameter's value is sanitized to ensure it is safe to
 use as the value of a URI-valued HTML attribute. This sanitization is performed
-as follows (see [`UriUtils.sanitizeUri(String)`](/javadoc/latest/com/google/gwt/safehtml/shared/UriUtils.html#sanitizeUri(java.lang.String))):
+as follows (see [`UriUtils.sanitizeUri(String)`](/javadoc/latest/com/google/gwt/safehtml/shared/UriUtils.html#sanitizeUri\(java.lang.String\))):
     *   URIs that don't have a scheme are considered safe and are used as is.
     *   URIs whose scheme equals one of `http, https, ftp, mailto` are considered safe and are used as is.
     *   Any other URI is considered unsafe and discarded; instead the "void" URI "`#`" is inserted into the template.
@@ -404,21 +408,21 @@ The [`SafeHtmlUtils`](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUti
 number of convenience methods to create `SafeHtml` values from
 strings:
 
-*   **<tt>[SafeHtmlUtils.fromString(String s)](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromString(java.lang.String))</tt>**
+*   **[SafeHtmlUtils.fromString(String s)](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromString\(java.lang.String\))**
     HTML-escapes its argument and returns the result wrapped as a `SafeHtml`.
-*   **<tt>[SafeHtmlUtils.fromSafeConstant(String s)](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromSafeConstant(java.lang.String))</tt>**
+*   **[SafeHtmlUtils.fromSafeConstant(String s)](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromSafeConstant\(java.lang.String\))**
     Returns a compile-time constant string wrapped as a `SafeHtml`, without escaping the value. To allow `fromSafeConstant` to adhere to the `SafeHtml` contract, code using it **must** in turn adhere to the same constraints that apply to `SafeHtmlBuilder.appendHtmlConstant`:
     1.  The argument of `fromSafeConstant` must be a string literal (or, more generally, must be fully determined at compile time).
     2.  The string provided must not end within an HTML tag. For example, the following use would be illegal because the value passed to
 `fromSafeConstant` contains an incomplete `<a>`
 tag; the string ends in the context of the value of the `href`
 attribute of that tag:
-<pre class="prettyprint">
-SafeHtml safeHtml = SafeHtmlUtils.fromSafeConstant("&lt;a href='");
-</pre>
 
-*   **<tt>[SafeHtmlUtils.fromTrustedString(String
-    s)](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromTrustedString(java.lang.String))</tt>**
+```
+SafeHtml safeHtml = SafeHtmlUtils.fromSafeConstant("<a href='");
+```
+
+*   **[SafeHtmlUtils.fromTrustedString(Strings)](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromTrustedString\(java.lang.String\))**
     
     Returns its argument as a `SafeHtml`, without performing any form of
     validation or escaping.  It is the developer's responsibility to ensure that
@@ -431,7 +435,8 @@ SafeHtml safeHtml = SafeHtmlUtils.fromSafeConstant("&lt;a href='");
 
 #### SimpleHtmlSanitizer<a id="SimpleHtmlSanitizer"></a>
 
-[`SimpleHtmlSanitizer`](/javadoc/latest/com/google/gwt/safehtml/shared/SimpleHtmlSanitizer.html) produces instances of `SafeHtml`
+[SimpleHtmlSanitizer](/javadoc/latest/com/google/gwt/safehtml/shared/SimpleHtmlSanitizer.html)
+produces instances of `SafeHtml`
 from input strings by applying a simple sanitization algorithm at run-time.
 
 It is intended for scenarios where code receives strings containing simple HTML
@@ -448,33 +453,30 @@ third-party controlled and potentially malicious HTML markup. Instead, such
 strings can be wrapped as a `SafeHtml` by passing them through
 `SimpleHtmlSanitizer`, for example:
 
-<pre class="prettyprint">
+```
 SafeHtml snippetHtml = SimpleHtmlSanitizer.sanitizeHtml(snippet);
-</pre>
+```
 
 `SimpleHtmlSanitizer` uses a simple sanitization algorithm that
 accepts the following markup:
 
-*   A white-list of basic HTML tags without attributes, including <code>&lt;b&gt;,
-&lt;em&gt;, &lt;i&gt;, &lt;h1&gt;, ..., &lt;h5&gt;, &lt;hr&gt;, &lt;ul&gt;,
-&lt;ol&gt;, &lt;li&gt;</code> and the corresponding end tags.
-*   HTML entities and entity references, such as <code>&amp;#39;, &amp;#x2F;,
-&amp;amp;, &amp;quot;</code>, etc.
+*   A white-list of basic HTML tags without attributes, including `<b>,<em>, <i>, <h1>, ..., <h5>, <hr>, <ul>,<ol>, <li>` and the corresponding end tags.
+*   HTML entities and entity references, such as `&#39;, &#x2F;,&amp;, &quot;,`etc.
 
 HTML markup in this subset will not be escaped; HTML meta-characters that are not
 part of a sub-string in the above set will be escaped.
 
 For example, the string:
 
-<pre class="prettyprint">
-foo &lt; bar &amp;amp; that is &lt;em&gt;good&lt;/em&gt;, &lt;span style="foo: bar"&gt;...
-</pre>
+```
+foo < bar &amp; that is <em>good</em>, <span style="foo: bar">...
+```
 
 will be sanitized into:
 
-<pre class="prettyprint">
-foo &amp;lt; bar &amp;amp; that is &lt;em&gt;good&lt;/em&gt;, &amp;lt;span style=&amp;quot;foo: bar&amp;quot;&amp;gt;...
-</pre>
+```
+foo &amp;lt; bar &amp;amp; that is <em>good</em>, &amp;lt;span style=&amp;quot;foo: bar&amp;quot;&amp;gt;...
+```
 
 Note that `SimpleHtmlSanitizer` does not make any guarantees that the
 resulting HTML will be well-formed, and that, for example, all remaining tags in
@@ -519,15 +521,15 @@ close as possible to such a use.  For example, a `SafeHtml` value
 should be unwrapped immediately before it is assigned to `innerHTML`,
 and no earlier:
 
-<pre class="prettyprint">
+```
 element.setInnerHTML(safeHtml.asString());
-</pre>
+```
 
 Widgets that are composed of other widgets should _not_ unwrap
 `SafeHtml` values when initializing sub-widgets, and instead
 pass the `SafeHtml` to the sub-widget. For example, write:
 
-<pre class="prettyprint">
+```
 public class MyPanel extends HorizontalPanel {
   InlineHTML messageWidget;
   SafeHtml currentMessage;
@@ -541,11 +543,11 @@ public class MyPanel extends HorizontalPanel {
     messageWidget.setHTML(currentMessage);
   }
 }
-</pre>
+```
 
 instead of:
 
-<pre class="prettyprint">
+```
 public class MyPanel extends HorizontalPanel {
   InlineHTML messageWidget;
   String currentMessage;
@@ -560,7 +562,7 @@ public class MyPanel extends HorizontalPanel {
     messageWidget.setHTML(currentMessage);
   }
 }
-</pre>
+```
 
 While both implementations provide a safe external interface, the second
 implementation is not as obviously free from XSS vulnerabilities as the first:
@@ -572,7 +574,7 @@ assigned safe HTML.  In a trivial example as the above this is quite
 straightforward, but in more complex, real-world code this a potentially time
 consuming and error prone process.  
 
-## Caveats and Limitations<a id="Caveats and Limitations"></a>
+## Caveats and Limitations<a id="Caveats_and_Limitations"></a>
 
 Comprehensive and consistent use of `SafeHtml` during development of
 a GWT application can substantially reduce the incidence of XSS vulnerabilities
@@ -599,4 +601,3 @@ reasons, including the following:
 *   Application code may have XSS bugs that are not due the use of external
   inputs in HTML contexts, and are beyond the scope of the `SafeHtml`
   library and guidelines.
-  

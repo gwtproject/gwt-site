@@ -28,11 +28,11 @@ whether that linker supports code splitting.
 ## How to use it<a id="use"></a>
 
 To split your code, simply insert calls to the method
-<tt>GWT.runAsync</tt> at the places where you want the program to be
+`GWT.runAsync` at the places where you want the program to be
 able to pause for downloading more code.  These locations are
 called <em>split points</em>.
 
-A call to <tt>GWT.runAsync</tt> is just like a call to register any
+A call to `GWT.runAsync` is just like a call to register any
 other event handler.  The only difference is that the event being
 handled is somewhat unusual.  Instead of being a mouse-click event or
 key-press event, the event is that the necessary code has downloaded
@@ -40,7 +40,7 @@ for execution to proceed.
 
 For example, here is the initial, unsplit Hello sample that comes with GWT:
 
-<pre class="prettyprint">
+```
 public class Hello implements EntryPoint {
   public void onModuleLoad() {
     Button b = new Button("Click me", new ClickHandler() {
@@ -52,12 +52,12 @@ public class Hello implements EntryPoint {
     RootPanel.get().add(b);
   }
 }
-</pre>
+```
 
-Suppose you wanted to split out the <tt>Window.alert</tt> call into
+Suppose you wanted to split out the `Window.alert` call into
 a separate code download.  The following code accomplishes this:
 
-<pre class="prettyprint">
+```
 public class Hello implements EntryPoint {
   public void onModuleLoad() {
     Button b = new Button("Click me", new ClickHandler() {
@@ -77,47 +77,47 @@ public class Hello implements EntryPoint {
     RootPanel.get().add(b);
   }
 }
-</pre>
+```
 
-In the place the code used to call <tt>Window.alert</tt>, there is
-now a call to <tt>GWT.runAsync</tt>.  The argument
-to <tt>GWT.runAsync</tt> is a callback object that will be invoked
+In the place the code used to call `Window.alert`, there is
+now a call to `GWT.runAsync`.  The argument
+to `GWT.runAsync` is a callback object that will be invoked
 once the necessary code downloads.  Like with event handlers for GUI
-events, a <tt>runAsync</tt> callback is frequently an anonymous inner
+events, a `runAsync` callback is frequently an anonymous inner
 class.
 
-That class must implement <tt>RunAsyncCallback</tt>, an interface
-declaring two methods.  The first method is <tt>onFailure</tt>, which
+That class must implement `RunAsyncCallback`, an interface
+declaring two methods.  The first method is `onFailure`, which
 is called if any code fails to download.  The second method is
-<tt>onSuccess</tt>, which is called when the code successfully
-arrives.  In this case, the <tt>onSuccess</tt> method includes the
-call to <tt>Window.alert</tt>.
+`onSuccess`, which is called when the code successfully
+arrives.  In this case, the `onSuccess` method includes the
+call to `Window.alert`.
 
 With this modified version, the code initially downloaded does not
-include the string <code>"Hello, AJAX"</code> nor any code necessary
-to implement <tt>Window.alert</tt>.  Once the button is clicked, the
-call to <tt>GWT.runAsync</tt> will be reached, and that code will
+include the string `"Hello, AJAX"` nor any code necessary
+to implement `Window.alert`.  Once the button is clicked, the
+call to `GWT.runAsync` will be reached, and that code will
 start downloading.  Assuming it downloads successfully,
-the <tt>onSuccess</tt> method will be called; since the necessary code
+the `onSuccess` method will be called; since the necessary code
 has downloaded, that call will succeed.  If there is a failure to
-download the code, then <tt>onFailure</tt> will be invoked.
+download the code, then `onFailure` will be invoked.
 
 To see the difference in compilation, try compiling both versions
 and inspecting the output.  The first version will
-generate <tt>cache.html</tt> files that all include the
-string <code>"Hello, AJAX"</code>.  Thus, when the app starts up, this
+generate `cache.html` files that all include the
+string `"Hello, AJAX"`.  Thus, when the app starts up, this
 string will be downloaded immediately. The second version, however,
-will not include this string in the <tt>cache.html</tt>
-files. Instead, this string will be located in <tt>cache.js</tt> files
-underneath the <tt>deferredjs</tt> directory.  In the second version,
-the string is not loaded until the call to <tt>runAsync</tt> is
+will not include this string in the `cache.html`
+files. Instead, this string will be located in `cache.js` files
+underneath the `deferredjs` directory.  In the second version,
+the string is not loaded until the call to `runAsync` is
 reached.
 
 This one string is not a big deal for code size.  In fact, the
-overhead of the <tt>runAsync</tt> run-time support could overwhelm the
+overhead of the `runAsync` run-time support could overwhelm the
 savings.  However, you aren't limited to splitting out individual
 string literals.  You can put arbitrary code behind
-a <tt>runAsync</tt> split point, potentially leading to very large
+a `runAsync` split point, potentially leading to very large
 improvements in your application's initial download size.
 
 ## Code-splitting development tools<a id="splitting"></a>
@@ -149,7 +149,7 @@ load in.
 
 One very important fragment is the initial download. For the iframe
 linker, it is emitted as a file whose name ends
-with <tt>cache.html</tt>.  When the application starts up, the
+with `cache.html`.  When the application starts up, the
 initial-download fragment is loaded.  This fragment includes all the
 code necessary to run the application up, but not past, any split
 point.  When you start improving your code splitting, you should
@@ -159,8 +159,8 @@ quickly.
 
 There are a number of other code fragments generated in addition to
 this initial one.  For the iframe linker, they are located underneath
-a directory named <tt>deferredjs</tt>, and their filenames all end
-with <tt>cache.js</tt>.  Each split point in the program will have an
+a directory named `deferredjs`, and their filenames all end
+with `cache.js`.  Each split point in the program will have an
 associated code fragment.  In addition, there is a <i>leftovers</i>
 code fragment for code that is not associated with any specific split
 point.  In Figure 1, the leftovers fragment is number 6.
@@ -188,8 +188,8 @@ and they are all included in a _[Compile Report](DevGuideCompileReport.html)_.
 
 To obtain a compile report for your application, simply compile
 your application with the -compileReport option added.  Your
-application should then have an output directory named <tt>compileReport</tt>.
-Open <tt>index.html</tt> in that directory to view a Compile Report
+application should then have an output directory named `compileReport`.
+Open `index.html` in that directory to view a Compile Report
 for your application.
 
 <!-- TODO(spoon,kprobst,doog) It would help to have a link either to a
@@ -255,17 +255,17 @@ code can load.
 
 If you know which split point in your app will come first, you can
 improve the app's performance by specifying an initial load sequence.
-To do so, you need to name your <tt>runAsync</tt> calls and then
+To do so, you need to name your `runAsync` calls and then
 specify a list of those names in your module file.
 
-To give a name to a <tt>runAsync</tt> call, add a class literal as
-the first argument to the call to <tt>runAsync</tt>, like this:
+To give a name to a `runAsync` call, add a class literal as
+the first argument to the call to `runAsync`, like this:
 
-<pre class="prettyprint">
-  GWT.runAsync(SomeClass.class, new RunAsyncCallback() {
+```
+GWT.runAsync(SomeClass.class, new RunAsyncCallback() {
     // ... callback class's body ...
   }
-</pre>
+```
 
 This first argument must be a class literal, and it is ignored
 except to be used as a name for the call.  Any class literal can be
@@ -275,14 +275,14 @@ appears in.
 Once you have named your calls, you can specify an initial load sequence
 with lines like the following:
 
-<pre class="prettyprint">
-  &lt;extend-configuration-property name="compiler.splitpoint.initial.sequence"
+```
+<extend-configuration-property name="compiler.splitpoint.initial.sequence"
     value="com.yourcompany.yourprogram.SomeClass"/>
-</pre>
+```
 
-The <tt>value</tt> part of the line specifies a split point.  It is
+The `value` part of the line specifies a split point.  It is
 interpreted as a fully qualified class name that must match a literal
-used in exactly one <tt>runAsync</tt> call.
+used in exactly one `runAsync` call.
 
 For some applications, you will know not only the first split point
 reached, but also the second and maybe even the third.  You can
@@ -290,14 +290,14 @@ continue extending the initial load sequence by adding more lines to
 the configuration property.  For example, here is module code to
 specify an initial load sequence of three split points.
 
-<pre class="prettyprint">
-  &lt;extend-configuration-property name="compiler.splitpoint.initial.sequence"
+```
+<extend-configuration-property name="compiler.splitpoint.initial.sequence"
     value="com.yourcompany.yourprogram.SomeClass"/>
-  &lt;extend-configuration-property name="compiler.splitpoint.initial.sequence"
+  <extend-configuration-property name="compiler.splitpoint.initial.sequence"
     value="com.yourcompany.yourprogram.AnotherClassClass"/>
-  &lt;extend-configuration-property name="compiler.splitpoint.initial.sequence"
+  <extend-configuration-property name="compiler.splitpoint.initial.sequence"
     value="com.yourcompany.yourprogram.YetAnotherClass"/>
-</pre>
+```
 
 The down side to specifying an initial load sequence is that if the
 split points are reached in a different order than specified, then
@@ -339,11 +339,11 @@ A coding pattern that helps with this goal is to associate a class
 with the module and then to make sure that all code in the module is
 reachable only by calling instance methods on that class.  Then, you
 can arrange for the only instantiation of that class in the program to
-be within a <tt>runAsync</tt>.
+be within a `runAsync`.
 
 The overall pattern looks as follows.
 
-<pre class="prettyprint">
+```
 public class Module {
   // public APIs
   public doSomething() { /* ... */ }
@@ -378,7 +378,7 @@ public class Module {
     });
   }
 }
-</pre>
+```
 
 Whenever you access the module from code that possibly loads before
 the module, go through the static Module.createAsync method.  This
@@ -400,14 +400,14 @@ know a time in your application that there is likely to be little
 network activity, you might want to arrange to prefetch code.  That
 way, once the code is needed for real, it will be available.
 
-The way to force prefetching is simply to call a <tt>runAsync</tt>
+The way to force prefetching is simply to call a `runAsync`
 in a way that its callback doesn't actually do anything.  When the
-application later calls that <tt>runAsync</tt> for real, its code will
-be available.  The precise way to invoke a <tt>runAsync</tt> to have
+application later calls that `runAsync` for real, its code will
+be available.  The precise way to invoke a `runAsync` to have
 it do nothing will depend on the specific case.  That said, a common
 general technique is to extend the meaning of any method parameter
-that is already in scope around the call to <tt>runAsync</tt>.  If
-that argument is null, then the <tt>runAsync</tt> callback exits
+that is already in scope around the call to `runAsync`.  If
+that argument is null, then the `runAsync` callback exits
 early, doing nothing.
 
 For example, suppose you are implementing an online address book.
@@ -415,7 +415,7 @@ You might have a split point just before showing information about
 that contact.  A prefetchable way to wrap that code would be as
 follows:
 
-<pre class="prettyprint">
+```
 public void showContact(final String contactId) {
   GWT.runAsync(new RunAsyncCallback() {
       public void onFailure(Throwable caught) {
@@ -432,9 +432,9 @@ public void showContact(final String contactId) {
       }
   });
 }
-</pre>
+```
 
-Here, if <tt>showContact</tt> is called with an actual contact ID,
+Here, if `showContact` is called with an actual contact ID,
 then the callback displays the information about that contact.  If,
-however, it is called with <code>null</code>, then the same code will
+however, it is called with `null`, then the same code will
 be downloaded, but the callback won't actually do anything.

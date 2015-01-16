@@ -16,48 +16,48 @@ application to support this use case. Thankfully, GWT's history mechanism makes 
 ## The GWT History Mechanism<a id="mechanism"></a>
 
 GWT's History mechanism has a lot in common with other Ajax history implementations, such as [RSH (Really
-Simple History)](http://code.google.com/p/reallysimplehistory). The basic premise is to keep track of the application's &quot;internal state&quot; in the url fragment identifier. This works because updating the fragment doesn't
+Simple History)](http://code.google.com/p/reallysimplehistory). The basic premise is to keep track of the application's "internal state" in the url fragment identifier. This works because updating the fragment doesn't
 typically cause the page to be reloaded.
 
 This approach has several benefits:
 
 *   It's about the only way to control the browser's history reliably.
 *   It provides good feedback to the user.
-*   It's &quot;bookmarkable&quot;. I.e., the user can create a bookmark to the current state and save it, email it, et cetera.
+*   It's "bookmarkable". I.e., the user can create a bookmark to the current state and save it, email it, et cetera.
 
 ## History Tokens<a id="tokens"></a>
 
 GWT includes a mechanism to help Ajax developers activate browser history. For each page that is to be navigable in the history, the application should generate a unique
 history token. A token is simply a string that the application can parse to return to a particular state. This token will be saved in browser history as a URL fragment (in the
-location bar, after the &quot;#&quot;), and this fragment is passed back to the application when the user goes back or forward in history, or follows a link.
+location bar, after the "#"), and this fragment is passed back to the application when the user goes back or forward in history, or follows a link.
 
-For example, a history token named &quot;page1&quot; would be added to a URL as follows:
+For example, a history token named "page1" would be added to a URL as follows:
 
-<pre class="prettyprint">
+```
 http://www.example.com/com.example.gwt.HistoryExample/HistoryExample.html#page1
-</pre>
+```
 
-When the application wants to push a placeholder onto the browser's history stack, it simply invokes [History.newItem(token)](/javadoc/latest/com/google/gwt/user/client/History.html#newItem(java.lang.String)). When
-the user uses the back button, a call will be made to any object that was added as a handler with [History.addValueChangeHandler()](/javadoc/latest/com/google/gwt/user/client/History.html#addValueChangeHandler(com.google.gwt.event.logical.shared.ValueChangeHandler)). It is up to the application to restore the state according to the value of the new token.
+When the application wants to push a placeholder onto the browser's history stack, it simply invokes [History.newItem(token)](/javadoc/latest/com/google/gwt/user/client/History.html#newItem\(java.lang.String\)). When
+the user uses the back button, a call will be made to any object that was added as a handler with [History.addValueChangeHandler()](/javadoc/latest/com/google/gwt/user/client/History.html#addValueChangeHandler\(com.google.gwt.event.logical.shared.ValueChangeHandler\)). It is up to the application to restore the state according to the value of the new token.
 
 ## Example<a id="example"></a>
 
 To use GWT History support, you must first embed an iframe into your [host HTML page](DevGuideOrganizingProjects.html#DevGuideHostPage).
 
-<pre class="prettyprint">
-  &lt;iframe src=&quot;javascript:''&quot;
-          id=&quot;__gwt_historyFrame&quot;
-          style=&quot;position:absolute;width:0;height:0;border:0&quot;&gt;&lt;/iframe&gt;
-</pre>
+```
+<iframe src="javascript:''"
+          id="__gwt_historyFrame"
+          style="position:absolute;width:0;height:0;border:0"></iframe>
+```
 
 Then, in your GWT application, perform the following steps:
 
 *   Add a history token to the history stack when you want to enable a history event.
-*   Create an object that implements the [ValueChangeHandler](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeHandler.html) interface, parses the new token (available by calling [ValueChangeEvent.getValue()](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeEvent.html#getValue())) and changes the application state to match.
+*   Create an object that implements the [ValueChangeHandler](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeHandler.html) interface, parses the new token (available by calling [ValueChangeEvent.getValue()](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeEvent.html#getValue\(\))) and changes the application state to match.
 
 The following short example shows how to add a history event each time the user selects a new tab in a [TabPanel](/javadoc/latest/com/google/gwt/user/client/ui/TabPanel.html).
 
-<pre class="prettyprint">
+```
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.logical.shared.SelectionEvent;
 import com.google.gwt.event.logical.shared.SelectionHandler;
@@ -69,7 +69,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TabPanel;
 
 /**
- * Entry point classes define &lt;code&gt;onModuleLoad()&lt;/code&gt;.
+ * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class BrowserHistoryExample implements EntryPoint {
 
@@ -80,22 +80,22 @@ public class BrowserHistoryExample implements EntryPoint {
   public void onModuleLoad() {
     tabPanel = new TabPanel();
 
-    tabPanel.add(new HTML(&quot;&lt;h1&gt;Page 0 Content: Llamas&lt;/h1&gt;&quot;), &quot; Page 0 &quot;);
-    tabPanel.add(new HTML(&quot;&lt;h1&gt;Page 1 Content: Alpacas&lt;/h1&gt;&quot;), &quot; Page 1 &quot;);
-    tabPanel.add(new HTML(&quot;&lt;h1&gt;Page 2 Content: Camels&lt;/h1&gt;&quot;), &quot; Page 2 &quot;);
+    tabPanel.add(new HTML("<h1>Page 0 Content: Llamas</h1>"), " Page 0 ");
+    tabPanel.add(new HTML("<h1>Page 1 Content: Alpacas</h1>"), " Page 1 ");
+    tabPanel.add(new HTML("<h1>Page 2 Content: Camels</h1>"), " Page 2 ");
 
-    tabPanel.addSelectionHandler(new SelectionHandler&lt;Integer&gt;(){
-      public void onSelection(SelectionEvent&lt;Integer&gt; event) {
-        History.newItem(&quot;page&quot; + event.getSelectedItem());
+    tabPanel.addSelectionHandler(new SelectionHandler<Integer>(){
+      public void onSelection(SelectionEvent<Integer> event) {
+        History.newItem("page" + event.getSelectedItem());
      );
 
-    History.addValueChangeHandler(new ValueChangeHandler&lt;String&gt;() {
-      public void onValueChange(ValueChangeEvent&lt;String&gt; event) {
+    History.addValueChangeHandler(new ValueChangeHandler<String>() {
+      public void onValueChange(ValueChangeEvent<String> event) {
         String historyToken = event.getValue();
 
         // Parse the history token
         try {
-          if (historyToken.substring(0, 4).equals(&quot;page&quot;)) {
+          if (historyToken.substring(0, 4).equals("page")) {
             String tabIndexToken = historyToken.substring(4, 5);
             int tabIndex = Integer.parseInt(tabIndexToken);
             // Select the specified tab panel
@@ -114,13 +114,13 @@ public class BrowserHistoryExample implements EntryPoint {
     RootPanel.get().add(tabPanel);
   }
 }
-</pre>
+```
 
 ## Hyperlink Widgets<a id="widgets"></a>
 
 Hyperlinks are convenient to use to incorporate history support into an application. Hyperlink widgets are GWT widgets that look like regular HTML anchors. You can associate a
 history token with the [Hyperlink](/javadoc/latest/com/google/gwt/user/client/ui/Hyperlink.html), and when it is
-clicked, the history token is automatically added to the browser's history stack. The <tt>History.newItem(token)</tt> step is done automatically.
+clicked, the history token is automatically added to the browser's history stack. The `History.newItem(token)` step is done automatically.
 
 ## Stateful applications<a id="stateful"></a>
 
@@ -131,66 +131,30 @@ As an example, an application that presents a multi-page questionnaire could enc
 questionnaire is presented, a history token is added to the history stack. Note that with stateful applications, such as a questionnaire, some careful thought needs to be given to
 implementing the history callback. When returning to a page using a token, some logic needs to restore the previous state.
 
-<table>
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">Token</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Action</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">&quot;info&quot;</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Navigate to page where user enters biographic info. Restore previously entered data</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">&quot;page1&quot;</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Navigate to page 1 in the questionnaire. Restore previous answers.</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">&quot;page2&quot;</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Navigate to page 2 in the questionnaire. Restore previous answers.</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">&quot;page&quot;
-
-<pre>
-<span class="error">&lt;n&gt;</span>
-</pre>
-</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Navigate to page
-
-<pre>
-<span class="error">&lt;n&gt;</span>
-</pre>
-
-...</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">&quot;end&quot;</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Navigate to the end of the questionnaire. Validate that all questions were answered. Make sure not to re-submit the
-questionnaire.</td>
-</tr>
-</table>
+| Token | Action                                                                                                                              |
+| ------| ----------------------------------------------------------------------------------------------------------------------------------- |
+| info  | Navigate to page where user enters biographic info. Restore previously entered data                                                 |
+| page1 | Navigate to page 1 in the questionnaire. Restore previous answers.                                                                  |
+| page2 | Navigate to page 2 in the questionnaire. Restore previous answers.                                                                  |
+| pageN | Navigate to page _N_ ...                                                                                                            |
+| end   | Navigate to the end of the questionnaire. Validate that all questions were answered. Make sure not to re-submit the questionnaire.  |
 
 In the above case, navigating back to a page would be possible, but there isn't enough information in the history token to restore the user's previous answers. A better
 encoding for the token would be a syntax such as:
 
-<pre class="prettyprint">
-  page=&lt;pagename&gt;;session=&lt;sessionname&gt;
-</pre>
+```
+page=<pagename>;session=<sessionname>
+```
 
-Where <tt>&lt;pagename&gt;</tt> tells the application which page to go to and <tt>&lt;sessionname&gt;</tt> is a key to finding the user's previously entered data in a
+Where `<pagename>` tells the application which page to go to and `<sessionname>` is a key to finding the user's previously entered data in a
 database.
 
 ## Handling an onValueChange() callback<a id="onvaluechange"></a>
 
-The first step of handling the <tt>onValueChange()</tt> callback method in a <tt>ValueChangeHandler</tt> is to get the new history token with [ValueChangeEvent.getValue()](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeEvent.html#getValue()); you'll then want to parse the token. Keep in mind that your parsing needs to be robust! A user may type a URL by hand or have a URL
+The first step of handling the `onValueChange()` callback method in a `ValueChangeHandler` is to get the new history token with [ValueChangeEvent.getValue()](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeEvent.html#getValue\(\)); you'll then want to parse the token. Keep in mind that your parsing needs to be robust! A user may type a URL by hand or have a URL
 stored from an old version of your application. Once the token is parsed, you can reset the state of the application.
 
-When the <tt>onValueChange()</tt> method is invoked, your application must handle two cases:
+When the `onValueChange()` method is invoked, your application must handle two cases:
 
 1.  The application was just started and was passed a history token.
 2.  The application is already running and was passed a history token.

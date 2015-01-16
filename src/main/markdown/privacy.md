@@ -33,9 +33,8 @@ Further information about GWT is available [here](http://www.gwtproject.org).
 
 For more information about our privacy practices, go to the [full privacy policy](http://www.google.com/privacypolicy.html). If you have additional questions, please [contact us any time](http://www.google.com/support/bin/request.py?form_type=user&stage=fm&user_type=user&contact_type=privacy&hl=en). Or write to us at:
 
-<p>
-    Privacy Matters<br/>
-    c/o Google Inc.<br/>
-    1600 Amphitheatre Parkway<br/>
-    Mountain View CA 94043 (USA)<br/> 
-</p>
+Privacy Matters
+c/o Google Inc.
+1600 Amphitheatre Parkway
+Mountain View CA 94043 (USA)
+

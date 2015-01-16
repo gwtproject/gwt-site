@@ -43,30 +43,10 @@ To use HTML5 storage features, you  need to know about lifespan (persistence) of
 
 HTML5 Web Storage defines two types of key-value storage types: sessionStorage and localStorage. The primary behavioral difference is how long the values persist and how they are shared. The following table shows the differences between the two types of storage.
 
-<table>
-<tr>
-<th>Storage Type</th>
-<th>Max Size</th>
-<th>Persistence</th>
-<th>Availability to other Windows/tabs</th>
-<th>Data Type Supported</th>
-</tr>
-<tr>
-<td>LocalStorage</td>
-<td>5MB per app per browser. According to the <a href="http://www.w3.org/TR/2009/WD-webstorage-20091222/#the-storage-interface">HTML5 spec</a>, this limit can be increased by the user when needed; however, only a few browsers support this</td>
-<td>On disk until deleted by user (delete cache) or by the app</td>
-<td>Shared across every window and tab of one browser running same web app</td>
-<td>String only, as key-value pairs</td>
-</tr>
-
-<tr>
-<td>SessionStorage</td>
-<td>Limited only by system memory</td>
-<td>Survives only as long as its originating window or tab</td>
-<td>Accessible only within the window or tab that created it</td>
-<td>String only, as key-value pairs</td>
-</tr>
-</table>
+| Storage Type   | Max Size                                                                                                                                                                                                                        | Persistence                                                | Availability to other Windows/tabs                                     | Data Type Supported             |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------- |
+| LocalStorage   | 5MB per app per browser. According to the [HTML5 spec](http://www.w3.org/TR/2009/WD-webstorage-20091222/#the-storage-interface), this limit can be increased by the user when needed; however, only a few browsers support this | On disk until deleted by user (delete cache) or by the app | Shared across every window and tab of one browser running same web app | String only, as key-value pairs |
+| SessionStorage | Limited only by system memory                                                                                                                                                                                                   | Survives only as long as its originating window or tab     | Accessible only within the window or tab that created it               | String only, as key-value pairs |
 
 ### How Local Storage Is Shared by the Browser
 
@@ -122,11 +102,11 @@ If the storage feature is supported, you get the storage object and then write d
 
 GWT provides a simple way to determine whether the browser supports HTML5 storage--a built-in check when you get the storage object. You use Storage.getLocalStorageIfSupported() or Storage.getSessionStorageIfSupported(), depending on which type of storage you want to use. The storage object is returned if the feature is supported, or, if not, null is returned.
 
-<pre class='prettyprint'>
-  import com.google.gwt.storage.client.Storage;
+```
+import com.google.gwt.storage.client.Storage;
   private Storage stockStore = null;
   stockStore = Storage.getLocalStorageIfSupported();
-</pre>
+```
 
 ### Getting the Storage Object<a id='GetStorage'></a>
 
@@ -134,11 +114,11 @@ If the browser supports HTML5 storage, the Storage.getLocalStorageIfSupported me
 
 Getting the storage object and checking for browser suppport of HTML5 storage are done at the same time, so the code snippet for doing this should look familiar:
 
-<pre class='prettyprint'>
-  import com.google.gwt.storage.client.Storage;
+```
+import com.google.gwt.storage.client.Storage;
   private Storage stockStore = null;
   stockStore = Storage.getLocalStorageIfSupported();
-</pre>
+```
 
 ### Reading Data from Storage<a id='ReadStorage'></a>
 
@@ -146,7 +126,7 @@ Data is stored as key-value string pairs, so you need to use the key to get the 
 
 The following snippet shows an iteration through the contents of storage, with each item in storage then being written to a separate row in a FlexTable. For simplicity, this assumes all of storage is used only for that FlexTable.
 
-<pre class='prettyprint'>
+```
 import com.google.gwt.storage.client.Storage;
 
 private FlexTable stocksFlexTable = new FlexTable();
@@ -154,13 +134,13 @@ private Storage stockstore = null;
 
 stockStore = Storage.getLocalStorageIfSupported();
 if (stockStore != null){
-  for (int i = 0; i &lt; stockStore.getLength(); i++){
+  for (int i = 0; i < stockStore.getLength(); i++){
     String key = stockStore.key(i);
     stocksFlexTable.setText(i+1, 0, stockStore.getItem(key));
     stocksFlexTable.setWidget(i+1, 2, new Label());
   }
 }
-</pre>
+```
 
 #### Using StorageMap to do a Quick Check for Specific Key or Value
 
@@ -168,7 +148,7 @@ If you want to quickly check whether a specific key or a specific value is prese
 
 In the following snippet, we use a StorageMap to see if a certain value is already in the storage, and if it is not yet stored, we write the data to storage.
 
-<pre class='prettyprint'>
+```
 stockStore = Storage.getLocalStorageIfSupported();
 if (stockStore != null) {
   stockMap = new StorageMap(stockStore);
@@ -176,7 +156,7 @@ if (stockStore != null) {
     int numStocks = stockStore.getLength();
     stockStore.setItem("Stock."+numStocks, symbol);
 }
-</pre>
+```
 
 ### Writing Data to Storage<a id='WriteStorage'></a>
 
@@ -184,8 +164,9 @@ To write data, you supply a key name and the string value you wish to save. You 
 
 Judicious use of naming conventions can help with processing storage data. For example, in a web app named MyWebApp,  key-value data associated with rows in a  UI table named Stock could have key names prefixed with MyWebApp.Stock.
 
-<p>In the following snippet, which is part of an Add button click handler, a text value is read from a textbox and saved, with the key name concatenated from a prefix and the current number of items in the storage.</p>
-<pre class='prettyprint'>
+In the following snippet, which is part of an Add button click handler, a text value is read from a textbox and saved, with the key name concatenated from a prefix and the current number of items in the storage.
+
+```
 import com.google.gwt.storage.client.Storage;
 
 final String symbol = newSymbolTextBox.getText().toUpperCase().trim();
@@ -194,7 +175,7 @@ if (stockStore != null) {
   int numStocks = stockStore.getLength();
   stockStore.setItem("Stock."+numStocks, symbol);
 }
-</pre>
+```
 
 ### Deleting Data from Storage<a id='DelStorage'></a>
 
@@ -212,7 +193,7 @@ To clear the storage used by your web app, invoke the `clear()` method, like thi
 
 The following sample snippet provides an example of one way to integrate this method with a UI, in this case a FlexTable that displays items from the storage. The user clears the UI and the storage by clicking on a Clear All button. In the button-click handler we just use the count of items in the storage to iterate through and remove rows from the UI, and when that is done, we delete all the storage data. (To keep things simple, we used the storage only for populating the FlexTable.)
 
-<pre class='prettyprint'>
+```
 import com.google.gwt.storage.client.Storage;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -238,7 +219,7 @@ clearAllButton.addClickHandler(new ClickHandler() {
     }
   } // if sender is the clear all button
 });
-</pre>
+```
 
 ### Handling Storage Events<a id='HandleEvents'></a>
 
@@ -246,40 +227,17 @@ You can register storage event handlers with a storage object, and these are inv
 
 The storage event handlers get a storage event object that contains various useful information, such as the old value and the new value, in the case of an update to an existing key-value pair. The following can be obtained from the StorageEvent object:
 
-<table>
-<tr>
-<th>Method</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>getKey</td>
-<td>Returns the key being changed.</td>
-</tr>
-
-<tr>
-<td>getNewValue</td>
-<td>Returns the value of the key after the change, or null if not changed or if it is the result of a Storage.clear() operation.</td>
-</tr>
-
-<tr>
-<td>getOldValue</td>
-<td>Returns the value of the key before the change, or null if not changed or if it is the result of a Storage.clear() operation.</td>
-</tr>
-
-<tr>
-<td>getStorageArea</td>
-<td>Returns the SessionStorage or LocalStorage object where the event occurred.</td>
-</tr>
-
-<tr>
-<td>getURL</td>
-<td>The address of the document in which the change occurred.</td>
-</tr>
-</table>
+| Method         | Description                                                                                                                   |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| getKey         | Returns the key being changed.                                                                                                |
+| getNewValue    | Returns the value of the key after the change, or null if not changed or if it is the result of a Storage.clear() operation.  |
+| getOldValue    | Returns the value of the key before the change, or null if not changed or if it is the result of a Storage.clear() operation. |
+| getStorageArea | Returns the SessionStorage or LocalStorage object where the event occurred.                                                   |
+| getURL         | The address of the document in which the change occurred.                                                                     |
 
 The following snippet shows a sample event handler registered with a storage, where the changes from the incoming events are displayed in a UI label.
 
-<pre class='prettyprint'>
+```
 import com.google.gwt.storage.client.Storage;
 import com.google.gwt.storage.client.StorageEvent;
 private Storage stockstore = null;
@@ -290,4 +248,5 @@ if (stockStore != null) {
     lastStockLabel.setText("Last Update: "+event.getNewValue() +": " +event.getOldValue() +": " +event.getUrl());
   }
 });
-</pre>
+```
+

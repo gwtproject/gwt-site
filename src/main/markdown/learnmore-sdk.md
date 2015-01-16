@@ -48,9 +48,7 @@ Writing web apps for multiple browsers can be a tedious and error-prone process.
 
 GWT (GWT) eases this burden by allowing developers to quickly build and maintain complex yet highly performant JavaScript front-end applications in the Java programming language.
 
-<a name="how"></a>
-
-## How the SDK works
+## How the SDK works <a id="how"></a>
 
 <div>
 <object width="560" height="340"><param name="movie" value="https://www.youtube.com/v/ShkYDPN5Knc&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="https://www.youtube.com/v/ShkYDPN5Knc&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object>
@@ -58,7 +56,7 @@ GWT (GWT) eases this burden by allowing developers to quickly build and maintain
 
 With the GWT SDK, you write your AJAX front-end in the Java programming language which GWT then cross-compiles into optimized JavaScript that automatically works across all major browsers. During development, you can iterate quickly in the same "edit - refresh - view" cycle you're accustomed to with JavaScript, with the added benefit of being able to debug and step through your Java code line by line. When you're ready to deploy, the GWT compiler compiles your Java source code into optimized, standalone JavaScript files.
 
-<a name="write"></a>
+<a id="write"></a>
 
 #### Write AJAX apps in the Java language, then compile to optimized JavaScript
 

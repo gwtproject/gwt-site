@@ -38,9 +38,6 @@ div.diagram img {
 }
 </style>
 
-Overview
-===
-
 <img src="images/gwt-sm.png" style="float: left;" height="80" width="80" />
 
 <div style="margin-left: 112px; ">
@@ -54,7 +51,7 @@ Overview
   </div>
   <br/>
   <div>
-    <a href="doc/latest/ReleaseNotes.html">What's New in GWT 2.6.1</a>
+    <a href="doc/latest/ReleaseNotes.html">What's New in GWT 2.7.0</a>
   </div>
 </div>
 
@@ -95,9 +92,7 @@ Overview
   </tr>
 </table>
 
-<a name="how"></a>
-
-## Developing with GWT
+## Developing with GWT <a id="how"></a>
 
 <div>
   <img src="images/flow1-sm.png" class="flow-img"/>
@@ -180,6 +175,6 @@ Overview
 
 ## Ready to get started?
 
-[![](images/arrow-md.png)](gettingstarted.html)
+[![img](images/arrow-md.png)](gettingstarted.html)
 
 [Download the SDK](gettingstarted.html) and get a simple web application up and running. From there, work through the fundamentals of GWT development with the in-depth [tutorials](doc/latest/tutorial/index.html).

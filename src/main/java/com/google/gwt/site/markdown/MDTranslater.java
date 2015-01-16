@@ -17,6 +17,7 @@ import com.google.gwt.site.markdown.fs.MDNode;
 import com.google.gwt.site.markdown.fs.MDParent;
 import com.google.gwt.site.markdown.toc.TocCreator;
 
+import org.pegdown.Extensions;
 import org.pegdown.PegDownProcessor;
 
 import java.io.File;
@@ -24,8 +25,11 @@ import java.io.IOException;
 import java.util.List;
 
 public class MDTranslater {
+  private static final int PEG_DOWN_FLAGS = Extensions.SMARTYPANTS | Extensions.AUTOLINKS |
+      Extensions.FENCED_CODE_BLOCKS | Extensions.TABLES | Extensions.DEFINITIONS;
 
-  private PegDownProcessor pegDownProcessor = new PegDownProcessor(Long.MAX_VALUE);
+  private PegDownProcessor pegDownProcessor = new PegDownProcessor(PEG_DOWN_FLAGS, Long
+      .MAX_VALUE);
 
   private final TocCreator tocCreator;
 
@@ -70,19 +74,35 @@ public class MDTranslater {
           adjustRelativePath(template, relativePath),
           htmlMarkDown,
           adjustRelativePath(toc, relativePath),
-          adjustRelativePath(head, relativePath));
+          adjustRelativePath(head, relativePath),
+          getEditUrl(node.getPath()));
 
       writer.writeHTML(node, html);
     }
 
   }
 
+  private String getEditUrl(String path) {
+    // TODO you should support more than one template
+    if (path.endsWith("markdown/index.md")) {
+      return "";
+    }
+
+    int index = path.indexOf("/src/");
+    return  "<a href=\"https://github.com/gwtproject/gwt-site/edit/master/" + path.substring(index + 1) + "\">Edit Me on " +
+        "github!</a>";
+  }
+
   private String createHeadForNode(MDNode node) {
     return "<link href='css/main.css' rel='stylesheet' type='text/css'>";
   }
 
-  private String fillTemplate(String template, String html, String toc, String head) {
-    return template.replace("$content", html).replace("$toc", toc).replace("$head", head);
+  private String fillTemplate(String template, String html, String toc, String head, String editUrl) {
+    return template
+        .replace("$content", html)
+        .replace("$toc", toc)
+        .replace("$head", head)
+        .replace("$editLink", editUrl);
   }
 
   protected String adjustRelativePath(String html, String relativePath) {

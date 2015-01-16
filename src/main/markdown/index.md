@@ -1,7 +1,8 @@
 GWT
 ===
-
 GWT (pronounced 'gwit') is the official open source project for GWT releases 2.5 and onwards. This site houses links to the documentation, source code repository, issues list and information related to GWT roadmap and release. It is intended for developers interested in contributing to GWT, and for keeping people informed on new and upcoming changes to GWT, GWT related events and other news.
+
+GWT (pronounced 'gwit') is the official open source project for GWT releases 2.7 and onwards. This site houses links to the documentation, source code repository, issues list and information related to GWT roadmap and release. It is intended for developers interested in contributing to GWT, and for keeping people informed on new and upcoming changes to GWT, GWT related events and other news.
 
   <div style="font-size: 140%; font-weight: bold">Productivity for developers, performance for users</div>
   <div style="padding-top: 12px; line-height: 125%;">

@@ -31,8 +31,8 @@ We think of JSNI as the web equivalent of inline assembly code. You can use it i
 
 ## Writing Native JavaScript Methods<a id="writing"></a>
 
-JSNI methods are declared <tt>native</tt> and contain JavaScript code in a specially formatted comment block between the end of the parameter list and the trailing semicolon. A
-JSNI comment block begins with the exact token <tt>/*-{</tt> and ends with the exact token <tt>}-*/</tt>. JSNI methods are called just like any normal Java method. They can be
+JSNI methods are declared `native` and contain JavaScript code in a specially formatted comment block between the end of the parameter list and the trailing semicolon. A
+JSNI comment block begins with the exact token `/*-{` and ends with the exact token `}-*/`. JSNI methods are called just like any normal Java method. They can be
 static or instance methods.
 
 The JSNI syntax is a directive to the Java-to-JavaScript Compiler to accept any text between the comment statements as valid JS code and inject it inline in the generated GWT
@@ -46,39 +46,39 @@ JavaScript method from Java will result in the callee receiving the arguments in
 
 Here is a simple example of how to code a JSNI method that puts up a JavaScript alert dialog:
 
-<pre class="prettyprint">
+```
 public static native void alert(String msg) /*-{
   $wnd.alert(msg);
 }-*/;
-</pre>
+```
 
-Note that the code did not reference the JavaScript <tt>window</tt> object directly inside the method. When accessing the browser's window and document objects from JSNI, you
-must reference them as <tt>$wnd</tt> and <tt>$doc</tt>, respectively. Your compiled script runs in a nested frame, and <tt>$wnd</tt> and <tt>$doc</tt> are automatically
+Note that the code did not reference the JavaScript `window` object directly inside the method. When accessing the browser's window and document objects from JSNI, you
+must reference them as `$wnd` and `$doc`, respectively. Your compiled script runs in a nested frame, and `$wnd` and `$doc` are automatically
 initialized to correctly refer to the host page's window and document.
 
 Here is another example with a problem:
 
-<pre class="prettyprint">
+```
 public static native int badExample() /*-{
-  return &quot;Not A Number&quot;;
+  return "Not A Number";
 }-*/;
 
  public void onClick () {
    try {
       int myValue = badExample();
-      GWT.log(&quot;Got value &quot; + myValue, null);
+      GWT.log("Got value " + myValue, null);
    } catch (Exception e) {
-      GWT.log(&quot;JSNI method badExample() threw an exception:&quot;, e);
+      GWT.log("JSNI method badExample() threw an exception:", e);
    }
  }
-</pre>
+```
 
 This example compiles as Java, and its syntax is verified by the GWT compiler
 as valid JavaScript. But when you run the example code in [development mode](DevGuideCompilingAndDebugging.html#DevGuideDevMode),
 it returns an exception. Click on the line in the log window to display the exception in the message
 area below:
 
-<pre>
+```
 com.google.gwt.dev.shell.HostedModeException: invokeNativeInteger(@com.example.client.GWTObjectNotifyTest::badExample()): JS value of type string, expected int
     at com.google.gwt.dev.shell.JsValueGlue.getIntRange(JsValueGlue.java:343)
     at com.google.gwt.dev.shell.JsValueGlue.get(JsValueGlue.java:179)
@@ -87,7 +87,7 @@ com.google.gwt.dev.shell.HostedModeException: invokeNativeInteger(@com.example.c
     at com.example.client.GWTObjectNotifyTest.badExample(GWTObjectNotifyTest.java:29)
     at com.example.client.GWTObjectNotifyTest$1.onClick(GWTObjectNotifyTest.java:52)
     ...
-</pre>
+```
 
 In this case, neither the Java IDE nor the GWT compiler could tell that there was a type mismatch between the code inside the JSNI method and the Java declaration. The GWT
 generated interface code caught the problem at runtime in development mode. When
@@ -113,9 +113,9 @@ typing, you must use a special syntax.
 Calling Java methods from JavaScript is somewhat similar to calling Java methods from C code in [JNI](http://download.oracle.com/javase/1.5.0/docs/guide/jni/index.html). In particular, JSNI borrows the JNI mangled method signature approach to distinguish among overloaded methods. JavaScript calls into Java methods are of
 the following form:
 
-<pre>
+```
 [instance-expr.]@class-name::method-name(param-signature)(arguments)
-</pre>
+```
 
 *   **instance-expr.** : must be present when calling an instance method and must be absent when calling a static method
 *   **class-name** : is the fully-qualified name of the class in which the method is declared (or a subclass thereof)
@@ -128,7 +128,7 @@ Calling Java constructors from JavaScript is identical to the above use case, ex
 
 Given the following Java classes:
 
-<pre class="prettyprint">
+```
 package pkg;
 class TopLevel {
   public TopLevel() { ... }
@@ -142,13 +142,13 @@ class TopLevel {
     public InstanceInner(int i) { ... }
   }
 }
-</pre>
+```
 
 We compare the Java expression versus the JSNI expression:
 
-*   <tt>new TopLevel()</tt> becomes <tt>@pkg.TopLevel::new()()</tt>
-*   <tt>new StaticInner()</tt> becomes <tt>@pkg.TopLevel.StaticInner::new()()</tt>
-*   <tt>someTopLevelInstance.new InstanceInner(123)</tt> becomes <tt>@pkg.TopLevel.InstanceInner::new(Lpkg/TopLevel;I)(someTopLevelInstance, 123)</tt>
+*   `new TopLevel()` becomes `@pkg.TopLevel::new()()`
+*   `new StaticInner()` becomes `@pkg.TopLevel.StaticInner::new()()`
+*   `someTopLevelInstance.new InstanceInner(123)` becomes `@pkg.TopLevel.InstanceInner::new(Lpkg/TopLevel;I)(someTopLevelInstance, 123)`
     *   The enclosing instance of a non-static class is implicitly defined as the first parameter for constructors of a non-static class. Regardless of how deeply-nested a non-static
 class is, it only needs a reference to an instance of its immediately-enclosing type.
 
@@ -156,15 +156,15 @@ class is, it only needs a reference to an instance of its immediately-enclosing 
 
 Static and instance fields can be accessed from handwritten JavaScript. Field references are of the form
 
-<pre>
+```
 [instance-expr.]@class-name::field-name
-</pre>
+```
 
 #### Example<a id="example-fields"></a>
 
 Here's an example of accessing static and instance fields from JSNI.
 
-<pre class="prettyprint">
+```
 public class JSNIExample {
 
   String myInstanceField;
@@ -192,14 +192,14 @@ public class JSNIExample {
     var val = this.@com.google.gwt.examples.JSNIExample::myInstanceField;
 
     // Write instance field on x
-    x.@com.google.gwt.examples.JSNIExample::myInstanceField = val + &quot; and stuff&quot;;
+    x.@com.google.gwt.examples.JSNIExample::myInstanceField = val + " and stuff";
 
     // Read static field (no qualifier)
-    @com.google.gwt.examples.JSNIExample::myStaticField = val + &quot; and stuff&quot;;
+    @com.google.gwt.examples.JSNIExample::myStaticField = val + " and stuff";
   }-*/;
 
 }
-</pre>
+```
 
 > _Tip: As of the GWT 1.5 release, the Java varargs construct is supported. The GWT compiler will translate varargs calls between two pieces of Java code, however,
 > calling a varargs Java method from JSNI will require the JavaScript caller to pass an array of the appropriate type._
@@ -213,7 +213,7 @@ JavaScript directly.
 A way to make this kind of relationship work is to assign the method via JSNI to an external, globally visible JavaScript name that can be referenced by your hand-crafted
 JavaScript code.
 
-<pre class="prettyprint">
+```
 package mypackage;
 
 public MyUtilityClass
@@ -225,116 +225,85 @@ public MyUtilityClass
           $entry(@mypackage.MyUtilityClass::computeLoanInterest(IFI));
     }-*/;
 }
-</pre>
+```
 
-Notice that the reference to the exported method has been wrapped in a call to the <tt>$entry</tt> function. This implicitly-defined function ensures that the Java-derived method is executed with the uncaught exception handler installed and pumps a number of other utility services.  The <tt>$entry</tt> function is reentrant-safe and should be used anywhere that GWT-derived JavaScript may be called into from a non-GWT context.
+Notice that the reference to the exported method has been wrapped in a call to the `$entry` function. This implicitly-defined function ensures that the Java-derived method is executed with the uncaught exception handler installed and pumps a number of other utility services.  The `$entry` function is reentrant-safe and should be used anywhere that GWT-derived JavaScript may be called into from a non-GWT context.
 
-On application initialization, call <tt>MyUtilityClass.exportStaticMethod()</tt> (e.g. from your GWT Entry Point). This will assign the function to a variable in the window
-object called <tt>computeLoanInterest</tt>.
+On application initialization, call `MyUtilityClass.exportStaticMethod()` (e.g. from your GWT Entry Point). This will assign the function to a variable in the window
+object called `computeLoanInterest`.
 
+If you want to export an instance method, and correctly use it from JS, then you need to do something like:
 ## Sharing objects between Java source and JavaScript<a id="sharing"></a>
+
+```
+package mypackage;
+
+public class Account {
+    private int balance = 0;
+    public int add(int amt) {
+      balance += amt;
+    }
+
+    public native void exportAdd() /*-{
+        var that = this;
+        $wnd.add = $entry(function(amt) {
+          that.@mypackage.Account::add(I)(amt);
+        });
+    }-*/;
+}
+```
+
+Then you can call it in JS using
+
+```
+$wnd.add(5);
+```
+
+The above code might look strange for Java developers but is needed because `this` in JavaScript can act differently than `this` in Java. If you are interested, a good introduction to `this` in JavaScript can be found [here](https://justin.harmonize.fm/development/2009/09/26/an-introduction-to-javascripts-this.html) or [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this).
+
+## Sharing objects between Java source and JavaScript <a id="sharing"></a>
 
 Parameters and return types in JSNI methods are declared as Java types. There are very specific rules for how values passing in and out of JavaScript code must be treated.
 These rules must be followed whether the values enter and leave through normal Java method call semantics or through the special syntax by which Java methods are invoked from JSNI code.
 
 ## Passing Java values into JavaScript<a id="passing-java"></a>
 
-<table>
-<tr>
-<th width="30%">Incoming Java type</th>
-<th>How it appears to JavaScript code</th>
-</tr>
+| Incoming Java type                                                                   | How it appears to JavaScript code                                                                                                      |
+| ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| String                                                                               | JavaScript string, as in `var b = "foo";`                                                                                              |
+| boolean                                                                              | JavaScript boolean value, as in `var b = true;`                                                                                        |
+| long                                                                                 | disallowed (see notes)                                                                                                                 |
+| other numeric primitives                                                             | JavaScript numeric value, as in `var x = 42;`                                                                                          |
+| [JavaScriptObject](/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html) | `JavaScriptObject` that must have originated from JavaScript code, typically as the return value of some other JSNI method (see notes) |
+| Java array                                                                           | opaque value that can only be passed back into Java code                                                                               |
+| any other Java `Object`                                                              | opaque value accessible through special syntax                                                                                         |
 
-<tr>
-<td><code>String</code> </td>
-<td>JavaScript string, as in <code>var s = &quot;my string&quot;;</code> </td>
-</tr>
-
-<tr>
-<td><code>boolean</code> </td>
-<td>JavaScript boolean value, as in <code>var b = true;</code> </td>
-</tr>
-
-<tr>
-<td><code>long</code> </td>
-<td>disallowed (see notes)</td>
-</tr>
-
-<tr>
-<td>other numeric primitives</td>
-<td>JavaScript numeric value, as in <code>var x = 42;</code> </td>
-</tr>
-
-<tr>
-<td><a href="/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> </td>
-<td><code>JavaScriptObject</code> that must have originated from JavaScript code, typically as the return value of some other JSNI method
-(see notes)</td>
-</tr>
-
-<tr>
-<td>Java array</td>
-<td>opaque value that can only be passed back into Java code</td>
-</tr>
-
-<tr>
-<td>any other Java <code>Object</code> </td>
-<td>opaque value accessible through special syntax</td>
-</tr>
-</table>
 
 ## Passing JavaScript values into Java code<a id="passing-javascript"></a>
 
-<table>
-<tr>
-<th width="30%">Outgoing Java type</th>
-<th>What must be passed</th>
-</tr>
+| Outgoing Java type                                                                   | What must be passed                                                                                                                        |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| String                                                                               | JavaScript string, as in `return "boo";`                                                                                                   |
+| boolean                                                                              | JavaScript boolean value, as in `return false;`                                                                                            |
+| long                                                                                 | disallowed (see notes)                                                                                                                     |
+| Java numeric primitive                                                               | JavaScript numeric value, as in `return 19;`                                                                                               |
+| [JavaScriptObject](/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html) | native JavaScript object, as in `return document.createElement("div")` (see notes)                                                         |
+| any other Java `Object` (including arrays)                                           | Java `Object` of the correct type that must have originated in Java code; Java objects cannot be constructed from "thin air" in JavaScript |
 
-<tr>
-<td><code>String</code> </td>
-<td>JavaScript string, as in <code>return &quot;boo&quot;;</code> </td>
-</tr>
-
-<tr>
-<td><code>boolean</code> </td>
-<td>JavaScript boolean value, as in <code>return false;</code> </td>
-</tr>
-
-<tr>
-<td><code>long</code> </td>
-<td>disallowed (see notes)</td>
-</tr>
-
-<tr>
-<td>Java numeric primitive</td>
-<td>JavaScript numeric value, as in <code>return 19;</code> </td>
-</tr>
-
-<tr>
-<td><a href="/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html">JavaScriptObject</a> </td>
-<td>native JavaScript object, as in <code>return document.createElement(&quot;div&quot;)</code> (see notes)</td>
-</tr>
-
-<tr>
-<td>any other Java <code>Object</code> (including arrays)</td>
-<td>Java <code>Object</code> of the correct type that must have originated in Java code; Java objects cannot be constructed from &quot;thin
-air&quot; in JavaScript</td>
-</tr>
-</table>
 
 ## Important Notes<a id="important"></a>
 
-*   The Java <tt>long</tt> type cannot be represented in JavaScript as a numeric type, so GWT emulates it using an opaque data structure. This means that JSNI methods cannot
-process a <tt>long</tt> as a numeric type. The compiler therefore disallows, by default, directly accessing a <tt>long</tt> from JSNI: JSNI methods cannot have <tt>long</tt> as a
-parameter type or a return type, and they cannot access a <tt>long</tt> using a [JSNI reference](DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface). If you find
-yourself wanting to pass a <tt>long</tt> into or out of a JSNI method, here are some options:
-    1.  For numbers that fit into type <tt>double</tt>, use type <tt>double</tt> instead of type <tt>long</tt>.
-    2.  For computations that require the full <tt>long</tt> semantics, rearrange the code so that the computations happen in Java instead of in JavaScript. That way they will use the <tt>long</tt> emulation.</li>
-    3.  For values meant to be passed through unchanged to Java code, wrap the value in a <tt>Long</tt>. There are no restrictions on type <tt>Long</tt> with JSNI methods.
-    4.  If you are sure you know what you are doing, you can add the annotation <tt>com.google.gwt.core.client.UnsafeNativeLong</tt> to the method. The compiler will then allow you to pass a <tt>long</tt> into and out of JavaScript. It will still be an opaque data type, however, so the only thing you will be able to do with it will be to pass it back to Java.
+*   The Java `long` type cannot be represented in JavaScript as a numeric type, so GWT emulates it using an opaque data structure. This means that JSNI methods cannot
+process a `long` as a numeric type. The compiler therefore disallows, by default, directly accessing a `long` from JSNI: JSNI methods cannot have `long` as a
+parameter type or a return type, and they cannot access a `long` using a [JSNI reference](DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface). If you find
+yourself wanting to pass a `long` into or out of a JSNI method, here are some options:
+    1.  For numbers that fit into type `double`, use type `double` instead of type `long`.
+    2.  For computations that require the full `long` semantics, rearrange the code so that the computations happen in Java instead of in JavaScript. That way they will use the `long` emulation.</li>
+    3.  For values meant to be passed through unchanged to Java code, wrap the value in a `Long`. There are no restrictions on type `Long` with JSNI methods.
+    4.  If you are sure you know what you are doing, you can add the annotation `com.google.gwt.core.client.UnsafeNativeLong` to the method. The compiler will then allow you to pass a `long` into and out of JavaScript. It will still be an opaque data type, however, so the only thing you will be able to do with it will be to pass it back to Java.
 
 *   Violating any of these marshaling rules in [development mode](DevGuideCompilingAndDebugging.html#DevGuideDevMode) will generate a
-<tt>com.google.gwt.dev.shell.HostedModeException</tt> detailing the problem. This exception is not [translatable](DevGuideCodingBasics.html#DevGuideClientSide)
+`com.google.gwt.dev.shell.HostedModeException` detailing the problem. This exception is not [translatable](DevGuideCodingBasics.html#DevGuideClientSide)
 and never thrown in [production mode](DevGuideCompilingAndDebugging.html#DevGuideProdMode).
 
 *   [JavaScriptObject](/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html) gets special treatment
@@ -342,9 +311,9 @@ from the GWT compiler and development mode. Its purpose is to provide an opaque 
 
 *   Although Java arrays are not directly usable in JavaScript, there are some helper classes that efficiently achieve a similar effect: [JsArray](/javadoc/latest/com/google/gwt/core/client/JsArray.html), [JsArrayBoolean](/javadoc/latest/com/google/gwt/core/client/JsArrayBoolean.html), [JsArrayInteger](/javadoc/latest/com/google/gwt/core/client/JsArrayInteger.html), [JsArrayNumber](/javadoc/latest/com/google/gwt/core/client/JsArrayNumber.html), and [JsArrayString](/javadoc/latest/com/google/gwt/core/client/JsArrayString.html). These classes are wrappers around a native JavaScript array.
 
-*   Java <tt>null</tt> and JavaScript <tt>null</tt> are identical and always legal values for any non-primitive Java type. JavaScript <tt>undefined</tt> is also considered equal
-to <tt>null</tt> when passed into Java code (the rules of JavaScript dictate that in JavaScript code, <tt>null == undefined</tt> is <tt>true</tt> but <tt>null === undefined</tt>
-is <tt>false</tt>). In previous versions of GWT, <tt>undefined</tt> was not a legal value to pass into Java.
+*   Java `null` and JavaScript `null` are identical and always legal values for any non-primitive Java type. JavaScript `undefined` is also considered equal
+to `null` when passed into Java code (the rules of JavaScript dictate that in JavaScript code, `null == undefined` is `true` but `null === undefined`
+is `false`). In previous versions of GWT, `undefined` was not a legal value to pass into Java.
 
 ## Exceptions and JSNI<a id="exceptions"></a>
 
@@ -357,9 +326,9 @@ A Java exception can safely retain identity while propagating through a JSNI met
 
 For example,
 
-1.  Java method <tt>doFoo()</tt> calls JSNI method <tt>nativeFoo()</tt>
-2.  <tt>nativeFoo()</tt> internally calls Java method <tt>fooImpl()</tt>
-3.  <tt>fooImpl()</tt> throws an exception
+1.  Java method `doFoo()` calls JSNI method `nativeFoo()`
+2.  `nativeFoo()` internally calls Java method `fooImpl()`
+3.  `fooImpl()` throws an exception
 
-The exception thrown from <tt>fooImpl()</tt> will propagate through <tt>nativeFoo()</tt> and can be caught in <tt>doFoo()</tt>. The exception will retain its type and
+The exception thrown from `fooImpl()` will propagate through `nativeFoo()` and can be caught in `doFoo()`. The exception will retain its type and
 identity.

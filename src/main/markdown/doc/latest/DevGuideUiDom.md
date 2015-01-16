@@ -20,25 +20,25 @@ cross-browser abstraction.
 
 ## Using the DOM to manipulate a widget
 
-Each widget and panel has an underlying DOM element that you can access with the [getElement()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#getElement()) method. You can use the
+Each widget and panel has an underlying DOM element that you can access with the [getElement()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#getElement\(\)) method. You can use the
 getElement() method to get the underlying element from the DOM.
 
 The following example shows how to set a style attribute to change a widget's background color.
 
-<pre class="prettyprint">
+```
 private HTML htmlWidget;
 
 // Other code to instantiate the widget...
 
 // Change the description background color.
 htmlWidget.getElement().getStyle().setBackgroundColor("#ffee80");
-</pre>
+```
 
-Here, the getElement() method derived from the <tt>Widget</tt> superclass returns a DOM [Element](/javadoc/latest/com/google/gwt/dom/client/Element.html) object representing a node in the DOM tree
+Here, the getElement() method derived from the `Widget` superclass returns a DOM [Element](/javadoc/latest/com/google/gwt/dom/client/Element.html) object representing a node in the DOM tree
 structure and adds a style attribute to it.
 
 This is an example where using the DOM isn't absolutely necessary. An alternative approach is to use [style sheets](DevGuideUiCss.html) and
-associate different style classes to the widget using the [setStylePrimaryName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName(java.lang.String)) or [setStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)) method
+associate different style classes to the widget using the [setStylePrimaryName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStylePrimaryName\(java.lang.String\)) or [setStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName\(java.lang.String\)) method
 instead.
 
 ## Finding an element in the DOM
@@ -46,61 +46,61 @@ instead.
 The following example shows how to combine a JSNI method with Java code to manipulate the DOM. First, we have a JSNI routine that will retrieve all the child elements that are
 Anchor tags. The element objects are assigned a unique ID for easy access from Java:
 
-<pre class="prettyprint">
+```
 /**
  * Find all child elements that are anchor tags,
  * assign a unique id to them, and return a list of
  * the unique ids to the caller.
  */
-private native void putElementLinkIDsInList(Element elt, ArrayList&lt;String&gt; list) /*-{
-  var links = elt.getElementsByTagName(&quot;a&quot;);
+private native void putElementLinkIDsInList(Element elt, ArrayList<String> list) /*-{
+  var links = elt.getElementsByTagName("a");
 
-  for (var i = 0; i &lt; links.length; i++ ) {
+  for (var i = 0; i < links.length; i++ ) {
     var link = links.item(i);
-    link.id = (&quot;uid-a-&quot; + i);
+    link.id = ("uid-a-" + i);
     list.@java.util.ArrayList::add(Ljava/lang/Object;) (link.id);
   }
 }-*/;
-</pre>
+```
 
 And what could you possibly do with a DOM element once you have found it? This code iterates through all the anchor tags returned from the above method and then rewrites where
 it points to:
 
-<pre class="prettyprint">
+```
 /**
  * Find all anchor tags and if any point outside the site, 
- * redirect them to a &quot;blocked&quot; page.
+ * redirect them to a "blocked" page.
  */
  private void rewriteLinksIterative() {
-   ArrayList&lt;String&gt; links = new ArrayList&lt;String>();
+   ArrayList<String> links = new ArrayList<String>();
    putElementLinkIDsInList(this.getElement(), links);
-   for (int i = 0; i &lt; links.size(); i++) {
+   for (int i = 0; i < links.size(); i++) {
      Element elt = Document.get().getElementById(links.get(i));
-     rewriteLink(elt, &quot;www.example.com&quot;);
+     rewriteLink(elt, "www.example.com");
    }
  }
 
 /**
  * Block all accesses out of the website that don't match 'sitename'
  * @param element An anchor link element
- * @param sitename name of the website to check.  e.g. &quot;www.example.com&quot;
+ * @param sitename name of the website to check.  e.g. "www.example.com"
  */
 private void rewriteLink(Element element, sitename) {
-  String href = element.getPropertyString(&quot;href&quot;);
+  String href = element.getPropertyString("href");
   if (null == href) {
     return;
   }
 
   // We want to re-write absolute URLs that go outside of this site
-  if (href.startsWith(&quot;http://&quot;) &amp;&amp;
-      !href.startsWith(&quot;http://&quot;+sitename+&quot;/&quot;) {
-    element.setPropertyString(&quot;href&quot;, &quot;http://&quot;+sitename+&quot;/Blocked.html&quot;);
+  if (href.startsWith("http://") &amp;&amp;
+      !href.startsWith("http://"+sitename+"/") {
+    element.setPropertyString("href", "http://"+sitename+"/Blocked.html");
   }
 }
-</pre>
+```
 
-The JSNI method sets an ID on each element which we then used as an argument to [Document.getElementById(id)](/javadoc/latest/com/google/gwt/dom/client/Document.html#getElementById(java.lang.String)) to
-fetch the <tt>Element</tt> in Java.
+The JSNI method sets an ID on each element which we then used as an argument to [Document.getElementById(id)](/javadoc/latest/com/google/gwt/dom/client/Document.html#getElementById\(java.lang.String\)) to
+fetch the `Element` in Java.
 
 ## Using the DOM to capture a browser event
 
@@ -109,8 +109,8 @@ native DOM Event.
 
 This example shows how to use the DOM methods to catch a keyboard event for particular elements and handle them before the [event](DevGuideUiHandlers.html) gets dispatched:
 
-<pre class="prettyprint">
-private ArrayList&lt;Element&gt; keyboardEventReceivers = new ArrayList&lt;Element&gt;();
+```
+private ArrayList<Element> keyboardEventReceivers = new ArrayList<Element>();
 
 /**
  * Widgets can register their DOM element object if they would like to be a
@@ -143,14 +143,14 @@ private void setupKeyboardShortcuts() {
       boolean shift = event.getShiftKey();
       boolean alt = event.getAltKey();
       boolean meta = event.getMetaKey();
-      if (event.getType().equalsIgnoreCase(&quot;keypress&quot;) || ctrl || shift
+      if (event.getType().equalsIgnoreCase("keypress") || ctrl || shift
           || alt || meta || keyboardEventReceivers.contains(elt)
           || !isInterestingKeycode(keycode)) {
         // Tell the event handler to continue processing this event.
         return;
       }
 
-      GWT.log(&quot;Processing Keycode&quot; + keycode, null);
+      GWT.log("Processing Keycode" + keycode, null);
       handleKeycode(keycode);
 
       // Tell the event handler that this event has been consumed
@@ -167,4 +167,5 @@ private void handleKeycode(int keycode) {
   // ...
   }
 }
-</pre>
+```
+

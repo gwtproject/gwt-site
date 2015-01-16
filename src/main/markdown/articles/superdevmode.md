@@ -1,180 +1,210 @@
-<i>Brian Slesinsky, Senior Software Engineer</i>
-<br>
-<i>Updated June 2012</i>
+Super Dev Mode
+===
 
-<p> Super Dev Mode is an experimental replacement for GWT's
-<a href="../doc/latest/DevGuideCompilingAndDebugging.html#dev_mode">Development Mode</a>.
-Like its predecessor (which I'll call <i>classic</i> Dev Mode), Super Dev Mode allows GWT
-developers to quickly recompile their code and see the results in a browser. It also allows
-developers to use a debugger to inspect a running GWT application. However, it works differently.
-</p>
+*Revised November 4, 2014 for GWT 2.7*
 
-<h2 id="HowItWorks">How it works</h2>
+## Introduction <a id="Introduction"></a>
 
-<p> Super Dev Mode runs the GWT compiler in a web server, which is an ordinary Java application
-that developers can run from the command line. After the server starts up, it prints its URL:
-</p>
+Super Dev Mode replaces the internals of
+<a href="../doc/latest/DevGuideCompilingAndDebugging.html#dev_mode">Dev Mode</a> with
+a different approach that works better in modern browsers. Like its predecessor
+(which I'll call <i>classic</i> Dev Mode), Super Dev Mode allows GWT
+developers to quickly recompile their code and see the results in a browser.
+It also allows developers to use a debugger to inspect a running GWT application.
+However, it works differently.
 
-<blockquote><pre>
-The code server is ready.
-Next, visit: http://localhost:9876/
-</pre></blockquote>
+## Prerequisites <a id="Prerequisites"></a>
 
-<p> This web server provides the user interface for interacting with Super Dev Mode and
-also serves the GWT compiler's output. When a developer presses the "Compile" button for a
-GWT module, the code server runs the GWT compiler in draft mode (with most optimizations turned
-off) and makes the compiler's output available at a URL that looks something like this:
-</p>
+Super Dev Mode requires the xsiframe linker.
 
-<blockquote><pre>
-http://localhost:9876/hello/hello.nocache.js
-</pre></blockquote>
+To enable Super Dev Mode for your application, you will need to add these settings to your
+module.xml file:
 
-<p> That's nice, but how do we use it on an HTML page? One possibility would be to
-temporarily edit the &lt;script&gt; tag in an HTML page that runs a GWT application. But this can be
-inconvenient when the HTML page is on a server that's shared with other users, or when
-modifying the HTML can only be done via a slow server restart. We could also use a browser plugin
-like "classic" Dev Mode, but the GWT team has learned that browser plugins are often hard to
-maintain.
-</p>
+*   GWT 2.5.1
 
-<p> Instead, Super Dev Mode provides another way to change the GWT application's URL, using
-the "Dev Mode On" bookmarklet. Clicking the bookmarklet shows a dialog that lists the GWT
-applications on the current page and allows you to compile them:
-</p>
+        <add-linker name="xsiframe"/>
+        <set-configuration-property name="devModeRedirectEnabled" value="true"/>
+        <set-property name="compiler.useSourceMaps" value="true"/>
+
+*   GWT 2.6.1
+
+        <add-linker name="xsiframe"/>
+
+*   GWT 2.7
+
+    In 2.7, the xsiframe linker is the default.
+
+## Launching Super Dev Mode <a id="Launch"></a>
+
+### Via Dev Mode <a id="LaunchDevMode"></a>
+
+Starting with GWT 2.7, Dev Mode launches Super Dev Mode automatically. Just
+[start Dev Mode](../doc/latest/DevGuideCompilingAndDebugging.html#launching_in_dev_mode)
+and reload the page, and it will recompile automatically when necessary.
+
+#### How it works <a id="HowItWorksWithDevMode"></a>
+
+At startup, Dev Mode overwrites the GWT application's nocache.js files
+with stub files that automatically recompile the GWT application if necessary.
+
+The GWT application itself is loaded from a separate web server running
+on a different port (9876 by default).
+
+### Without Dev Mode <a id="Starting"></a>
+
+You can also run Super Dev Mode without Dev Mode.
+This is required in older versions of GWT and may also be useful
+when debugging a GWT application running a different server.
+
+If you are not using Dev Mode, first you need to compile the GWT
+application and launch a web server that serves its output files.
+Then launch the Super Dev Mode code server as a separate process.
+
+The code server is an ordinary Java program that you can run from
+the command line. Here are some details you'll need to start it:
+
+* The jar file is gwt-codeserver.jar
+
+* You will also need gwt-dev.jar in your classpath, along with anything else
+needed to compile your GWT app (most likely gwt-user.jar).
+
+* The main method is in com.google.gwt.dev.codeserver.CodeServer
+
+If you run CodeServer without any arguments, it will print out its
+command line arguments. For 2.7, here is the output:
+
+    CodeServer [-[no]allowMissingSrc] [-bindAddress address] [-[no]compileTest] [-compileTestRecompiles count] [-[no]failOnError] [-[no]precompile] [-port port] [-src dir] [-X[no]enforceStrictResources] [-workDir dir] [-launcherDir] [-[no]incremental] [-sourceLevel [auto, 1.6, 1.7]] [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-XjsInteropMode (NONE|JS|CLOSURE)] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [module]
+
+    where
+      -[no]allowMissingSrc          Allows -src flags to reference missing directories. (defaults to OFF)
+      -bindAddress                  The ip address of the code server. Defaults to 127.0.0.1.
+      -[no]compileTest              Exits after compiling the modules. The exit code will be 0 if the compile succeeded. (defaults to OFF)
+      -compileTestRecompiles        The number of times to recompile (after the first one) during a compile test.
+      -[no]failOnError              Stop compiling if a module has a Java file with a compile error, even if unused. (defaults to OFF)
+      -[no]precompile               Precompile modules. (defaults to ON)
+      -port                         The port where the code server will run.
+      -src                          A directory containing GWT source to be prepended to the classpath for compiling.
+      -X[no]enforceStrictResources  EXPERIMENTAL: Don't implicitly depend on "client" and "public" when a module doesn't define any dependencies. (defaults to OFF)
+      -workDir                      The root of the directory tree where the code server willwrite compiler output. If not supplied, a temporary directorywill be used.
+      -launcherDir                  An output directory where files for launching Super Dev Mode will be written. (Optional.)
+      -[no]incremental              Compiles faster by reusing data from the previous compile. (defaults to ON)
+      -sourceLevel                  Specifies Java source level (defaults to auto:1.7)
+      -logLevel                     The level of logging detail: ERROR, WARN, INFO, TRACE, DEBUG, SPAM or ALL (defaults to INFO)
+      -XjsInteropMode               EXPERIMENTAL: Specifies JsInterop mode: NONE, JS or CLOSURE (defaults to NONE)
+      -XmethodNameDisplayMode       EXPERIMENTAL: Specifies method display name mode for chrome devtools: NONE, ONLY_METHOD_NAME, ABBREVIATED or FULL (defaults to NONE)
+    and
+      module                        The GWT modules that the code server should compile. (Example: com.example.MyApp)
+
+At a minimum, you need to give it the name of the GWT module to compile.
+
+After the server starts up, it prints its URL:
+
+    The code server is ready.
+    Next, visit: http://localhost:9876/
+
+Load this URL in a browser. It provides two bookmarklets that you can drag and drop
+to the browser's bookmarklet bar.
+
+Then go to the web page containing the GWT application you want to debug.
+(You should start this server if needed; it isn't provided for you.)
+
+Click the `Dev Mode On` bookmarklet and it will show the a dialog:
 
 <img src="../images/superdevmode_dialog.png"/>
 
-<p> Pressing the "Compile" button recompiles the GWT App, sets a special value in
-<a href="https://developer.mozilla.org/en/DOM/Storage">session storage</a>, and reloads the page.
-</p>
+You can then click `Compile` for the application that you want to recompile,
+and it will recompile and then reload the page.
 
-<p> Here's what the session storage variable looks like:
-</p>
+Tip: each `Compile` button is also a bookmarklet, so you can drag it the toolbar
+if you like.
 
-<blockquote><pre>
-> window.sessionStorage["__gwtDevModeHook:hello"]
-  "http://localhost:9876/hello/hello.nocache.js"
-</pre></blockquote>
+#### How the bookmarklet works <a id="HowItWorks"></a>
 
-<p> The hello.nocache.js script will look for this special key (with the same module name)
-in session storage and automatically redirect to the provided URL.
-</p>
+Pressing the "Compile" button sends a request to recompile the GWT application
+to the code server.
 
-<p> However, since Super Dev Mode is still an experimental feature, the redirect is not enabled by
-default. To enable Super Dev Mode for a GWT application, you must currently add the following lines
-to its module.xml file:
-</p>
+The code server runs the GWT compiler in draft mode (with most optimizations turned
+off) and makes the compiler's output available at a URL that looks something like this:
 
-<blockquote><pre>
-&lt;add-linker name="xsiframe"/&gt;
-&lt;set-configuration-property name="devModeRedirectEnabled" value="true"/&gt;
-</pre></blockquote>
+    http://localhost:9876/hello/hello.nocache.js
 
-(Currently, only the xsiframe linker supports Super Dev Mode.)
+ and then sets a special value in
+[session storage](https://developer.mozilla.org/en/DOM/Storage) and reloads the page.
 
-<h2 id="Debugging">Debugging</h2>
+Here's what the session storage variable looks like:
 
-<p> Super Dev Mode compiles entire GWT applications to JavaScript, similar to production mode. This
-means we can't use a normal Java debugger like in classic Dev Mode. However, there is an emerging
-web standard called "Source Maps" that will allow developers to see Java (and other languages) in
-the browser's debugger instead. In Chrome, you must enable Source Maps in the debugger settings:
-</p>
+    > window.sessionStorage["__gwtDevModeHook:hello"]
+      "http://localhost:9876/hello/hello.nocache.js"
+
+After reloading the page, the original hello.nocache.js script will look for this special key
+(with the same module name) in session storage and automatically redirect to the
+provided URL.
+
+## Debugging <a id="Debugging"></a>
+
+Super Dev Mode compiles entire GWT applications to JavaScript, similar to production mode. This
+means we can't use a normal Java debugger like in classic Dev Mode. Instead, we will use the
+browser's debugger. (I recommend using Chrome for now.)
+
+Browser debuggers are designed for debugging JavaScript. However, the
+[SourceMaps standard](https://docs.google.com/a/google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit)
+allows the debugger to display source code for Java (and other languages) instead of
+JavaScript files.
+
+In Chrome, you might need to turn on Source Maps in the debugger settings:
 
 <img src="../images/superdevmode_enablesourcemaps.png"/>
 
-<p>Once this setting is on, you will be able to browse all the Java source in your GWT app in
-the "Scripts" panel in Chrome's developer tools.</p>
+Once this setting is on, you should be able to browse all the Java source in your GWT app in
+the "Sources" panel in Chrome's developer tools. (You can also press Control-P to search for
+a source file.)
 
-<p>Here's how it works: when using Super Dev Mode, the browser's debugger will download Java files
-from the code server. Although this isn't a practical way to browse your source code, you can
-actually view a source file directly by going to the code server in a browser. Here's an example
-URL:</p>
+#### How Sourcemap-based debugging works <a id="HowSourceMapsWork"></a>
 
-<blockquote><pre>
-http://localhost:9876/sourcemaps/hello/com/google/gwt/core/client/GWT.java
-</pre></blockquote>
+When using Super Dev Mode, the browser's debugger will download Java files
+from the code server. Here's an example URL that a browser debugger might use to download a file:
 
-<p>To avoid inadvertently exposing source code to the Internet, the code server runs on localhost
-by default, so that the code server is only reachable from a browser running on the same machine.
-You should only change this if you're behind a firewall and you don't mind that other people on the
-same network might look at the source code.</p>
+    http://localhost:9876/sourcemaps/hello/com/google/gwt/core/client/GWT.java
 
-<h2 id="Differences">Differences</h2>
+## Differences <a id="Differences"></a>
 
-<p> Compared to classic Dev Mode, Super Dev Mode's approach has some advantages:
-</p>
+Compared to classic Dev Mode, Super Dev Mode's approach has some advantages:
 
-<ul>
-  <li>No browser plugins required. This will make it much easier to support more browsers,
-  particularly browsers on mobile phones.</li>
-  <li>Performance is much faster for GWT code that calls JavaScript frequently, because it no longer
-    requires a network round trip.</li>
-  <li>Super Dev Mode doesn't automatically recompile after every page reload, making it easier to
-  debug multi-page apps.</li>
-  <li>Super Dev Mode doesn't suffer from bugs in browser extension API's.</li>
-  <li>Developers can debug Java, JavaScript, and possibly other client-side languages in the same
-    debugging session. This is especially useful when calling JavaScript libraries from GWT.</li>
-  <li>Browser debuggers have advanced features (such as DOM breakpoints) that can be useful for
-    debugging GWT code.</li>
-</ul>
+* It supports mobile browsers. (No browser plugins are needed.)
 
-<p>However, there are also some disadvantages you should be aware of:
-</p>
+* GWT applications run faster, because calls between Java and JavaScript no longer
+require a network round trip.
 
-<ul>
-  <li>Work to secure Super Dev Mode is incomplete. In the meantime, we recommend only running
-    the code server on localhost or behind a firewall. Also, as a safety measure, Super Dev Mode
-    should be disabled in production apps. (That is, set devModeRedirectEnabled to false.)</li>
-  <li>We expect that Super Dev Mode will be able to support any modern browser, but for
-    now, we have only tested it on Chrome and Firefox.</li>
-  <li>Currently, Super Dev Mode doesn't work on some very large GWT apps where classic
-    Dev Mode works.</li>
-  <li>Only one GWT linker supports Super Dev Mode</li>
-  <li>Currently, only the Chrome debugger supports Source Maps. We hope browser support will
-    improve so that you can easily debug problems that only happen in other browsers, but in the
-    meantime, you'll have to resort to other debugging tricks, such as adding logging
-    statements and recompiling.</li>
-  <li>Many features of Java debuggers aren't available when using Super Dev Mode. For example,
-    when inspecting variables in the Chrome debugger, the field names and values are JavaScript,
-    not Java.</li>
-  <li>Currently, Super Dev Mode doesn't support running Java web apps (war files) like classic Dev
-    Mode. The workaround is to run them on a separate server.</li>
-  <li>Since Super Dev Mode doesn't run GWT applications in a JVM, some runtime checks don't
-  happen. For example, there won't be any IndexOutOfBoundsException when an array index
-  is out of range.</li>
-</ul>
+* Developers can debug Java, JavaScript, and possibly other client-side languages in the
+same debugging session. This is especially useful when calling JavaScript libraries from GWT.
 
-<p>For these reasons, Super Dev Mode is still considered experimental. We hope that early adopters
-will enjoy using it and contribute improvements, so that eventually Super Dev Mode can replace
-classic Dev Mode.
-</p>
+* Browser debuggers have advanced features (such as DOM breakpoints) that can be useful for
+debugging GWT code.
 
-<h2 id="Starting">Starting the code server</h2>
+However, there are also some disadvantages you should be aware of:
 
-<p> If that hasn't scared you off, here are some details you'll need for starting Super Dev Mode:
-</p>
+* The code server has no authentication. It also serves all your Java source code to any user who
+asks. Therefore, we recommend only running it on localhost or behind a firewall. (It uses localhost
+by default.)
 
- <ul>
-   <li>The jar file is gwt-codeserver.jar</li>
-   <li>You will also need gwt-dev.jar in your classpath, along with anything else needed
-   to compile your GWT app (most likely gwt-user.jar).</li>
-   <li>The main method is in com.google.gwt.dev.codeserver.CodeServer</li>
- </ul>
+* https is not supported. See
+[issue 7538](https://code.google.com/p/google-web-toolkit/issues/detail?id=7538)
+for updates.
 
- Here are the command line arguments that CodeServer currently supports:
+* Although all modern browser have some support for sourcemaps, sourcemap-based debugging currently
+works best in Chrome. We hope browser support will improve, but for now you'll have to rely on other
+debugging tricks for some browsers. For example, you can use `GWT.log` and `java.util.logging` to log a
+message to the browser console add a call in the Java code to `GWT.debugger` to add a breakpoint.
 
-<pre>
-CodeServer [-bindAddress address] [-port port] [-workDir dir] [-src dir] [module]
+* When inspecting variables in the Chrome debugger, the field names and values are JavaScript,
+not Java.
 
-where
-  -bindAddress  The ip address of the code server. Defaults to 127.0.0.1.
-  -port         The port where the code server will run.
-  -workDir      The root of the directory tree where the code server will write compiler output. If not supplied, a temporary directory will be used.
-  -src          A directory containing GWT source to be prepended to the classpath for compiling.
-and
-  module        The GWT modules that the code server should compile. (Example: com.example.MyApp)
-</pre>
+* Super Dev Mode doesn't support running Java web apps (war files) like Dev Mode. In 2.7,
+you can use Dev Mode and it will automatically start Super Dev Mode, or else you need to
+run a separate Java servlet engine.
 
-<p>Happy hacking!</p>
+* Since Super Dev Mode doesn't run GWT applications in a JVM, some runtime checks don't
+happen. For example, there won't be any IndexOutOfBoundsException when an array index
+is out of range.
 
+Happy hacking!
