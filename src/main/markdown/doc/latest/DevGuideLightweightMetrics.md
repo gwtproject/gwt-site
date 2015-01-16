@@ -23,21 +23,21 @@ The Lightweight Metrics system is composed of sets of events that you're interes
 
 For example, when loading a GWT application, the steps involved in the process consist of bootstrapping the application, loading external references, and starting up the GWT module. Each of these steps further break down into dowloading the bootstrap script, selecting the right permutation of your application to load, fetching the permutation, and so on. This is illustrated in the [Lightweight Metrics design doc](http://code.google.com/p/google-web-toolkit/wiki/LightweightMetricsDesign) (see GWT Startup Process diagram). Each of the smaller steps, like selecting the correct permutation of the application to load, can be represented as events you would like to measure in the overall application load time. The events themselves are standard JSON objects that contain the following information:
 
-<pre class="prettyprint">
+```
 { 
-  moduleName : &lt;Module name&gt;,
-  subSystem : &lt;Subsystem name&gt;,
-  evtGroup : &lt;Event group&gt;,
-  millis : &lt;Current time in millis&gt;,
-  type : &lt;Event type&gt;
+  moduleName : <Module name>,
+  subSystem : <Subsystem name>,
+  evtGroup : <Event group>,
+  millis : <Current time in millis>,
+  type : <Event type>
 }
-</pre>
+```
 
 The `moduleName` is the name of your [GWT module](DevGuideOrganizingProjects.html#DevGuideModules). The `subSystem` refers to the specific component that is emitting these events in your GWT application (for example, the GWT RPC subsystem). The `evtGroup` is analogous to a grouping of related events that can be assumed to follow a serial order. The `millis` field contains the timestamp when the event was emitted, and the `type` field indicates the actual method or step that was run and emitted the event. Each `(moduleName, subSystem, evtGroup, type)` tuple can be interpreted as a checkpoint in an event group.
 
 In the GWT Startup Process, the event for selecting a permutation might look something like:
 
-<pre class="prettyprint">
+```
 { 
   moduleName : 'Showcase',
   subSystem : 'startup',
@@ -45,7 +45,7 @@ In the GWT Startup Process, the event for selecting a permutation might look som
   millis : new Date().getTime();
   type : 'selectingPermutation'
 }
-</pre>
+```
 
 ### Global Collector Function
 
@@ -53,11 +53,11 @@ The global collector function, named `__gwtStatsEvent()`, is called whenever you
 
 Here's an example of what the `__gwtStatsEvent()` function might look like if you wanted to log all the events you have timed in your GWT application:
 
-<pre class="prettyprint">
-&lt;head&gt;
-  &lt;title&gt;Hello&lt;/title&gt;
+```
+<head>
+  <title>Hello</title>
 
-  &lt;script language='javascript'&gt;
+  <script language='javascript'>
     function eventToString(event) {
       // return some string representation of this event
       return event.evtGroup + " | " + event.moduleName + " | " + event.subSystem + " | " + event.type + " | " + event.millis;
@@ -74,7 +74,7 @@ Here's an example of what the `__gwtStatsEvent()` function might look like if yo
       } else {
         if (this.buffer) {
         // We have some data that was reported before the div was connected
-          for (var i = 0; i &lt; buffer.length; i++) {
+          for (var i = 0; i < buffer.length; i++) {
             // print it all to the div
             var bufferedEvent = buffer[i];
             var logline = document.createElement("div");
@@ -93,14 +93,14 @@ Here's an example of what the `__gwtStatsEvent()` function might look like if yo
       // The collector function should indicate success
       return true;
     }
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div id="log"&gt;&lt;h3&gt;Statistics for Events Logged&lt;/h3&gt;&lt;/div&gt;
-  &lt;script type="text/javascript" language="javascript" src="hello/hello.nocache.js"&gt;&lt;/script&gt;
-  &lt;iframe src="javascript:''" id="__gwt_historyFrame" style="position:absolute;width:0;height:0;border:0"&gt;&lt;/iframe&gt;
-&lt;/body&gt;
-</pre>
+  </script>
+</head>
+<body>
+  <div id="log"><h3>Statistics for Events Logged</h3></div>
+  <script type="text/javascript" language="javascript" src="hello/hello.nocache.js"></script>
+  <iframe src="javascript:''" id="__gwt_historyFrame" style="position:absolute;width:0;height:0;border:0"></iframe>
+</body>
+```
 
 ## Measurable events already in-place<a id="already"></a>
 
@@ -110,7 +110,7 @@ The GWT bootstrap sequence and the GWT RPC mechanism are already instrumented. Y
 
 You can use the Lightweight Metrics system to measure important events that are specific to your own application. For example, suppose you have a potentially expensive method call somewhere in your entry point `onModuleLoad()` called `createWidget()`. Create the following method that calls the global stats collector function to measure the time it takes for `createWidget()` to execute:
 
-<pre class="prettyprint">
+```
 public class StatsEventLogger {
   public static native void logEvent(String moduleName, String subSystem,
       String eventGroup, double millis, String type) /*-{
@@ -123,11 +123,11 @@ public class StatsEventLogger {
     });
   }-*/;
 }
-</pre>
+```
 
 Next, add calls before and after the code you want to profile in the createWidget() method, as shown below:
 
-<pre class="prettyprint">
+```
 public FlexTable createWidget() {
   FlexTable listings = new FlexTable();
   double startTime = Duration.currentTimeMillis();
@@ -137,7 +137,7 @@ public FlexTable createWidget() {
   StatsEventLogger.logEvent(GWT.getModuleName(), "listings", "loadListings", endTime, "end");
   return listings;
 }
-</pre>
+```
 
 ## Measuring multiple modules simultaneously<a id="multiple"></a>
 

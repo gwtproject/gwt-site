@@ -12,18 +12,18 @@ Widgets define your applications input and output with the user. Examples of wid
 
 *   [Button](/javadoc/latest/com/google/gwt/user/client/ui/Button.html) A user clicks the mouse button to
 activate the button.
-*   > ![](images/Button.png)
+*   > ![img](images/Button.png)
 
 *   [TextBox](/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html) The application can display text and
 the user can type in the text box.
-*   > ![](images/TextBox.png)
+*   > ![img](images/TextBox.png)
 
 *   [Tree](/javadoc/latest/com/google/gwt/user/client/ui/Tree.html) A collapsible hierarchy of widgets.
-*   > ![](images/Tree.png)
+*   > ![img](images/Tree.png)
 
 *   [RichTextArea](/javadoc/latest/com/google/gwt/user/client/ui/RichTextArea.html) A text editor that allows
 users to apply rich formatting of the text.
-*   > ![](images/RichTextArea.png)
+*   > ![img](images/RichTextArea.png)
 
 For the complete list of GWT UI elements, see [Widget Gallery](RefWidgetGallery.html).
 

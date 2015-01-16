@@ -37,62 +37,62 @@ requests from the HTTP server to fetch all the pieces. Previous to GWT 1.4, this
 application so as not to break the SOP. In GWT 1.4 and later, this is no longer an issue thanks to the new cross-site script inclusion bootstrap process mode.
 
 Typically, the bootstrap process will load the GWT application files from the same web server that is serving the HTML host page. That is, supposing the host HTML file was
-located at <tt>http://mydomain.com/index.html</tt>, the GWT application files would also be in the same directory (or a subdirectory) as the index.html file. To load the GWT
-application, the <tt>&lt;</tt>module<tt>&gt;</tt>.nocache.js file would be bootstrapped by having the index.html file include a <tt>&lt;</tt>script<tt>&gt;</tt> tag referencing
-the <tt>&lt;</tt>module<tt>&gt;</tt>.nocache.js file. This is the standard bootstrap process to load a GWT application. The <tt>&lt;</tt>script<tt>&gt;</tt> tag that needs to be
+located at `http://mydomain.com/index.html`, the GWT application files would also be in the same directory (or a subdirectory) as the index.html file. To load the GWT
+application, the `<`module`>`.nocache.js file would be bootstrapped by having the index.html file include a `<`script`>` tag referencing
+the `<`module`>`.nocache.js file. This is the standard bootstrap process to load a GWT application. The `<`script`>` tag that needs to be
 included in the main host HTML page is shown below:
 
-<pre class="prettyprint">
-&lt;script language=&quot;JavaScript&quot; src=&quot;http://mydomain.com/&lt;module&gt;.nocache.js&quot;&gt;&lt;/script&gt;
-</pre>
+```
+<script language="JavaScript" src="http://mydomain.com/<module>.nocache.js"></script>
+```
 
 However, many organizations setup their deployment platform in such a way that their main host HTML page is served up from [http://mydomain.com/](http://mydomain.com/), but any other resources such as images and JavaScript files are served up from a separate static server under
-<tt>http://static.mydomain.com/</tt>. In older versions of GWT, this configuration would not be possible as the SOP prevented the GWT bootstrap process from allowing script from
+`http://static.mydomain.com/`. In older versions of GWT, this configuration would not be possible as the SOP prevented the GWT bootstrap process from allowing script from
 files that were added from a different server to access the iframe in the main host HTML page. As of GWT 1.5, the bootstrap model now provides support for this kind of server
 configuration via the cross-site linker (xs-linker). As of
 GWT 2.1, you should however rather use the cross-site iframe linker (xsiframe-linker) which
 sandboxes the GWT code inside an iframe, like the standard linker but contrary to the cross-site linker.
 
 When using the cross-site linker or cross-site iframe linker, the compiler will still generate a
-&lt;module>.nocache.js that you will want to reference within your index.html. The
-difference though, is that the &lt;module>.nocache.js produced by the cross-site
+`<module>.nocache.js` that you will want to reference within your index.html. The
+difference though, is that the `<module>.nocache.js` produced by the cross-site
 linkers will link in a cache.js file for each of your permutations rather than
 a cache.html file.
 
 To enable the cross-site linking simply add the following to your
-&lt;module>.gwt.xml and include a reference to your &lt;module>.nocache.js in your
+`<module>.gwt.xml` and include a reference to your `<module>.nocache.js` in your
 index.html as you normally would.
 
-<pre class="prettyprint">
-&lt;add-linker name="xsiframe"/&gt;
-</pre>
+```
+<add-linker name="xsiframe"/>
+```
 
-For more details on the GWT bootstrap process, see &quot;What's with all the cache/nocache stuff and weird filenames?&quot;
+For more details on the GWT bootstrap process, see "What's with all the cache/nocache stuff and weird filenames?"
 
 ### SOP, GWT, and XMLHTTPRequest Calls<a id="SOP,_GWT,_and_XMLHTTPRequest_Calls"></a>
 
 The second area where the SOP is most likely to affect GWT users is the use of XMLHTTPRequest -- the heart of AJAX. The SOP limits the XMLHTTPRequest browser call to URLs on
 the same server from which the host page was loaded. This means that it is impossible to make any kind of AJAX-style request to a different site than the one from which the page
-was loaded. For example, you might want to have your GWT application served up from <tt>http://pages.mydomain.com/</tt> but have it make requests for data to
-<tt>http://data.mydomain.com/</tt>, or even a different port on the same server, such as <tt>http://pages.mydomain.com:8888/</tt>. Unfortunately, both these scenarios are
+was loaded. For example, you might want to have your GWT application served up from `http://pages.mydomain.com/` but have it make requests for data to
+`http://data.mydomain.com/`, or even a different port on the same server, such as `http://pages.mydomain.com:8888/`. Unfortunately, both these scenarios are
 impossible, prevented by the SOP.
 
 This limitation affects all forms of calls to the server, whether JSON, XML-RPC, or GWT's own RPC library. Generally, you must either run your CGI environment on the same
 server as the GWT application, or implement a more sophisticated solution such as round-robin DNS load balancing or a reverse-proxy mechanism for your application's CGI calls.
 
-In certain cases, it is possible to work around this limitation. For an example, see &quot;How can I dynamically fetch JSON feeds from other web domains?&quot;
+In certain cases, it is possible to work around this limitation. For an example, see "How can I dynamically fetch JSON feeds from other web domains?"
 
 ### SOP and GWT Development Mode<a id="SOP_and_GWT_Hosted_Mode"></a>
 
 The SOP applies to all GWT applications, whether running in web (compiled) mode on a web server, or in development mode.
 
 This can cause problems if you are attempting to develop a GWT application that uses server-side technologies not supported by the GWT development mode, such as EJBs or Python code.
-In such cases, you can use the <tt>-noserver</tt> argument for development mode to launch your GWT application from the server technology of your choice. For more information, see [How
+In such cases, you can use the `-noserver` argument for development mode to launch your GWT application from the server technology of your choice. For more information, see [How
 do I use my own server in development mode instead of GWT's built-in Jetty instance?](DevGuideCompilingAndDebugging.html#How_do_I_use_my_own_server_in_development_mode_instead_of_GWT) Even if you choose to use this feature, however, remember that the SOP still applies.
 
 ## How do I make a call to the server if I am not using GWT RPC?<a id="How_do_I_make_a_call_to_the_server_if_I_am_not_using_GWT_RPC?"></a>
 
-The heart of AJAX is making data read/write calls to a server from the JavaScript application running in the browser. GWT is &quot;RPC agnostic&quot; and has no particular requirements
+The heart of AJAX is making data read/write calls to a server from the JavaScript application running in the browser. GWT is "RPC agnostic" and has no particular requirements
 about what protocol is used to issue RPC requests, or even what language the server code is written in. Although GWT provides a library of classes that makes the RPC
 communications with a J2EE server extremely easy, you are not required to use them. Instead you can build custom HTTP requests to retrieve, for example, JSON or XML-formatted
 data.
@@ -109,10 +109,10 @@ You must use an asynchronous server connection.
 
 GWT provides a library to largely (though not completely) automate the steps necessary to communicate with the server via HTTP requests. GWT application developers should use
 the [RequestBuilder](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html) class and other classes in
-the <tt>com.google.gwt.http.client.html</tt> package, which contains a clean asynchronous server request callback implementation.
+the `com.google.gwt.http.client.html` package, which contains a clean asynchronous server request callback implementation.
 
 **Note:** 
-New users frequently notice the <tt>com.google.gwt.user.client.HTTPRequest</tt> class and attempt to use it. 
+New users frequently notice the `com.google.gwt.user.client.HTTPRequest` class and attempt to use it.
 However, the HTTPRequest class is deprecated and will be removed at some point in the future.
 You should definitely use `RequestBuilder` instead.
 
@@ -120,9 +120,9 @@ You should definitely use `RequestBuilder` instead.
 
 If you are attempting to use the RequestBuilder class and are having problems, first check your module XML file to make sure that the HTTP module is inherited, as follows:
 
-<pre class="prettyprint">
-    &lt;inherits name=&quot;com.google.gwt.http.HTTP&quot;/&gt;
-</pre>
+```
+<inherits name="com.google.gwt.http.HTTP"/>
+```
 
 ### Learn more<a id="Learn_more"></a>
 
@@ -132,40 +132,46 @@ If you are attempting to use the RequestBuilder class and are having problems, f
 
 ## Does GWT RPC support java.io.Serializable?<a id="Does_the_GWT_RPC_system_support_the_use_of_java.io.Serializable"></a>
 
-The GWT RPC system does support the use of <tt>java.io.Serializable</tt>, however only under a certain condition.
+The GWT RPC system does support the use of `java.io.Serializable`, however only under a certain condition.
 
-Previous to 1.4, the GWT RPC mechanism used an &quot;IsSerializable&quot; marker interface for denoting classes that can be serialized. Many users expressed the wish to reuse code with
-GWT that they have already written that used the standard <tt>java.io.Serializable</tt> marker interface. Since both interfaces are empty marker interfaces, there is no technical
-reason why GWT's RPC mechanism could not use the standard <tt>java.io.Serializable</tt>. However, there are good reasons to choose not to do so:
+Previous to 1.4, the GWT RPC mechanism used an "IsSerializable" marker interface for denoting classes that can be serialized. Many users expressed the wish to reuse code with
+GWT that they have already written that used the standard `java.io.Serializable` marker interface. Since both interfaces are empty marker interfaces, there is no technical
+reason why GWT's RPC mechanism could not use the standard `java.io.Serializable`. However, there are good reasons to choose not to do so:
 
-*   The semantics of GWT's serialization are much less sophisticated than standard Java serialization, and so to use <tt>java.io.Serializable</tt> as the marker interface would imply that GWT's serialization system is capable of more than it actually is.
-*   Conversely, GWT's serialization mechanism is simpler than standard Java's, and so to use <tt>java.io.Serializable</tt> would imply that users have more to worry about (such as serialization version IDs) than they actually do.
-*   GWT implements only a subset of the full Java JRE classes, and specifically implements nothing in <tt>java.io</tt>. To use <tt>java.io.Serializable</tt> as the GWT RPC serialization marker interface dilutes the message that <tt>java.io</tt> is not usable within a GWT application.
+*   The semantics of GWT's serialization are much less sophisticated than standard Java serialization, and so to use `java.io.Serializable` as the marker interface would imply that GWT's serialization system is capable of more than it actually is.
+*   Conversely, GWT's serialization mechanism is simpler than standard Java's, and so to use `java.io.Serializable` would imply that users have more to worry about (such as serialization version IDs) than they actually do.
+*   GWT implements only a subset of the full Java JRE classes, and specifically implements nothing in `java.io`. To use `java.io.Serializable` as the GWT RPC serialization marker interface dilutes the message that `java.io` is not usable within a GWT application.
 
 While each of the points above still hold, the GWT Team felt that the community was generally aware of these issues but preferred the convenience of being able to use the
-standard <tt>java.io.Serializable</tt> interface rather than to have their classes implement the <tt>isSerializable</tt> marker interface, although both marker interfaces to
-denote serializable classes are supported in GWT 1.4 and later. Considering this, the GWT Team made changes to the GWT RPC system to support the use of <tt>java.io.Serializable</tt> for
-data transfer objects (commonly referred to as DTOs) that would be transferred over the wire. However, there is one condition to enable support for <tt>java.io.Serializable</tt>
+standard `java.io.Serializable` interface rather than to have their classes implement the `isSerializable` marker interface, although both marker interfaces to
+denote serializable classes are supported in GWT 1.4 and later. Considering this, the GWT Team made changes to the GWT RPC system to support the use of `java.io.Serializable` for
+data transfer objects (commonly referred to as DTOs) that would be transferred over the wire. However, there is one condition to enable support for `java.io.Serializable`
 in the new GWT RPC system.
 
 RPC now generates a serialization policy file during GWT compilation. The serialization policy file contains a whitelist of allowed types which may be serialized. Its name is a
-strong hash name followed by .gwt.rpc. In order to enable support for <tt>java.io.Serializable</tt>, the types that your application will send over the wire must be included in
-the serialization policy whitelist. Also, the serialization policy file must be deployed to your web server as a public resource, accessible from a <tt>RemoteServiceServlet</tt>
-via <tt>ServletContext.getResource()</tt>. If it is not deployed properly, RPC will run in 1.3.3 compatibility mode and refuse to serialize types implementing
-<tt>java.io.Serializable</tt>.
+strong hash name followed by .gwt.rpc. In order to enable support for `java.io.Serializable`, the types that your application will send over the wire must be included in
+the serialization policy whitelist. Also, the serialization policy file must be deployed to your web server as a public resource, accessible from a `RemoteServiceServlet`
+via `ServletContext.getResource()`. If it is not deployed properly, RPC will run in 1.3.3 compatibility mode and refuse to serialize types implementing
+`java.io.Serializable`.
 
-Another important point to note is that none of the classes that implement <tt>java.io.Serializable</tt> in the full Java JRE implement <tt>java.io.Serializable</tt> in GWT's
-emulated JRE. What this means is that types that implement <tt>java.io.Serializable</tt> in the JRE like <tt>Throwable</tt>, or <tt>StackTraceElement</tt> won't be able to
-transfer across the wire through GWT RPC since the client won't be able to serialize/deserialize them. However, this isn't an issue for other types like <tt>String</tt>,
-<tt>Number</tt>, etc... that don't implement <tt>java.io.Serializable</tt> in the emulated JRE but have custom field serializers so that they can be properly serialized.
+Another important point to note is that none of the classes that implement `java.io.Serializable` in the full Java JRE implement `java.io.Serializable` in GWT's
+emulated JRE. What this means is that types that implement `java.io.Serializable` in the JRE like `Throwable`, or `StackTraceElement` won't be able to
+transfer across the wire through GWT RPC since the client won't be able to serialize/deserialize them. However, this isn't an issue for other types like `String`,
+`Number`, etc... that don't implement `java.io.Serializable` in the emulated JRE but have custom field serializers so that they can be properly serialized.
 
-These differences between types that implement <tt>java.io.Serializable</tt> in the real and emulated JREs may be reconciled in a future version of GWT, but for the time this
+These differences between types that implement `java.io.Serializable` in the real and emulated JREs may be reconciled in a future version of GWT, but for the time this
 is an important point to keep in mind if your application uses GWT RPC.
 
 ## How can I dynamically fetch JSON feeds from other web domains?<a id="How_can_I_dynamically_fetch_JSON_feeds_from_other_web_domains?"></a>
 
-Like all AJAX tools, GWT's HTTP client and RPC libraries are restricted to only accessing data from the same site where your application was loaded, due to the browser Same
+Like all AJAX tools, GWT's HTTP client and RPC libraries are restricted to only accessing data from 
+the same site where your application was loaded, due to the browser Same
 Origin Policy. If you are using JSON, you can work around this limitation using a
-`<script>` tag (aka JSON-P).</a>
+`<script>` tag (aka JSON-P).
 
-First, you need an external JSON service which can invoke user defined callback functions with the JSON data as argument. An example of such a service is [GData's &quot;alt=json-in-script&amp;callback=myCallback&quot; support](https://developers.google.com/gdata/docs/json). Then, you can use [JsonpRequestBuilder](/javadoc/latest/com/google/gwt/jsonp/client/JsonpRequestBuilder.html) to make your call, ini a way similar to a <code>RequestBuilder</a> when you're not making a cross-site request.
+First, you need an external JSON service which can invoke user defined callback functions with 
+the JSON data as argument. An example of such a service is [GData's "alt=json-in-script&amp;
+callback=myCallback" support](https://developers.google.com/gdata/docs/json). Then, you can 
+use [JsonpRequestBuilder](/javadoc/latest/com/google/gwt/jsonp/client/JsonpRequestBuilder.html) 
+to make your call, in a way similar to a `RequestBuilder` when you're not making a cross-site 
+request.

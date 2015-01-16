@@ -1,6 +1,3 @@
-UiBinder
-===
-
 This document explains how to build Widget and DOM structures from XML markup using UiBinder, introduced with GWT 2.0. It does not cover binder's localization features&mdash;read about them in <a href="DevGuideUiBinderI18n.html">Internationalization - UiBinder</a>.
 
 1.  [Overview](#Overview)
@@ -34,7 +31,7 @@ throughout them.
 Besides being a more natural and concise way to build your UI than
 doing it through code, UiBinder can also make your app more
 efficient. Browsers are better at building DOM structures by cramming
-big strings of HTML into <code>innerHTML</code> attributes than by a
+big strings of HTML into `innerHTML` attributes than by a
 bunch of API calls. UiBinder naturally takes advantage of this, and
 the result is that the most pleasant way to build your app is also the
 best way to build it.
@@ -74,13 +71,15 @@ sample, because it isn't a terribly typical way to manage your UI in
 GWT. But it shows us the bare nuts and bolts, and reminds us that you
 aren't forced to pay the widget tax just to have templates.
 
-<pre class="prettyprint">&lt;!-- HelloWorld.ui.xml -->
+```
+<!-- HelloWorld.ui.xml -->
 
-&lt;ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
-  &lt;div>
-    Hello, &lt;span ui:field='nameSpan'/>.
-  &lt;/div>
-&lt;/ui:UiBinder></pre>
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
+  <div>
+    Hello, <span ui:field='nameSpan'/>.
+  </div>
+</ui:UiBinder>
+```
 
 Now suppose you need to programatically read and write the text in the
 span (the one with the `ui:field='nameSpan'` attribute) above. You'd
@@ -89,8 +88,9 @@ UiBinder templates have an associated owner class that allows
 programmatic access to the UI constructs declared in the template. An
 owner class for the above template might look like this:
 
-<pre class="prettyprint">public class HelloWorld {
-  interface MyUiBinder extends UiBinder&lt;DivElement, HelloWorld> {}
+```
+public class HelloWorld {
+  interface MyUiBinder extends UiBinder<DivElement, HelloWorld> {}
   private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   @UiField SpanElement nameSpan;
@@ -106,16 +106,20 @@ owner class for the above template might look like this:
   }
 
   public void setName(String name) { nameSpan.setInnerText(name); }
-}</pre>
+}
+```
 
 You then instantiate and use the owner class as you would any other
 chunk of UI code. We'll see examples later that demonstrate how to use
 widgets with UiBinder, but this example uses direct DOM manipulation:
 
-<pre class='prettyprint'>HelloWorld helloWorld = new HelloWorld();
+```
+
+HelloWorld helloWorld = new HelloWorld();
 // Don't forget, this is DOM only; will not work with GWT widgets
 Document.get().getBody().appendChild(helloWorld.getElement());
-helloWorld.setName("World");</pre>
+helloWorld.setName("World");
+```
 
 UiBinder instances are factories that generate a UI structure
 and glue it to an owning Java class. The  `UiBinder<U, O>` interface declares
@@ -126,13 +130,13 @@ file, returned by the `createAndBindUi` call
 *   `O` is the owner type whose `@UiField`s are to be
 filled in.
 
-(In this example <tt>U</tt> is DivElement and <tt>O</tt>
+(In this example `U` is DivElement and `O`
 is HelloWorld.)
 
 Any object declared in the ui.xml file, including any DOM elements,
 can be made available to the owning Java class through its field
 name. Here, a `<span>` element in the markup is given
-a `ui:field` attribute set to <tt>nameSpan</tt>.  In the
+a `ui:field` attribute set to `nameSpan`.  In the
 Java code, a field with the same name is marked with
 the `@UiField`
 annotation. When `uiBinder.createAndBindUi(this)` is run,
@@ -149,20 +153,24 @@ by a binder, they cannot be private.
 
 Here's an example of a UiBinder template that uses widgets:
 
-<pre class="prettyprint">&lt;!-- HelloWidgetWorld.ui.xml -->
+```
+<!-- HelloWidgetWorld.ui.xml -->
 
-&lt;ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
     xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
-  &lt;g:HTMLPanel>
-    Hello, &lt;g:ListBox ui:field='listBox' visibleItemCount='1'/>.
-  &lt;/g:HTMLPanel>
+  <g:HTMLPanel>
+    Hello, <g:ListBox ui:field='listBox' visibleItemCount='1'/>.
+  </g:HTMLPanel>
 
-&lt;/ui:UiBinder></pre>
+</ui:UiBinder>
+```
 
-<pre class="prettyprint">public class HelloWidgetWorld extends Composite {
+```
 
-  interface MyUiBinder extends UiBinder&lt;Widget, HelloWidgetWorld> {}
+public class HelloWidgetWorld extends Composite {
+
+  interface MyUiBinder extends UiBinder<Widget, HelloWidgetWorld> {}
   private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   @UiField ListBox listBox;
@@ -179,22 +187,23 @@ Here's an example of a UiBinder template that uses widgets:
 // Use:
 
 HelloWidgetWorld helloWorld =
-  new HelloWidgetWorld("able", "baker", "charlie");</pre>
+  new HelloWidgetWorld("able", "baker", "charlie");
+```
 
 Note that we're using widgets, and also creating a widget. The
 HelloWorldWidget can be added to any panel class.
 
 In order to use a set of widgets in a ui.xml template file, you need to
 tie their package to an XML namespace prefix. That's what's happening
-in this attribute of the root <tt>&lt;ui:uibinder></tt>
+in this attribute of the root `<ui:uibinder>`
 element: `xmlns:g='urn:import:com.google.gwt.user.client.ui'`. This
-says that every class in the <tt>com.google.gwt.user.client.ui</tt>
-package can be used as an element with prefix <tt>g</tt> and a tag
+says that every class in the `com.google.gwt.user.client.ui`
+package can be used as an element with prefix `g` and a tag
 name matching its Java class name, like `<g:ListBox>`.
 
-See how the <tt>g:ListBox</tt> element has
+See how the `g:ListBox` element has
 a `visibleItemCount='1'` attribute? That becomes a call
-to [ListBox#setVisibleItemCount(int)](/javadoc/latest/com/google/gwt/user/client/ui/ListBox.html#setVisibleItemCount(int)). Every
+to [ListBox#setVisibleItemCount(int)](/javadoc/latest/com/google/gwt/user/client/ui/ListBox.html#setVisibleItemCount\(int\)). Every
 one of the widget's methods that follow JavaBean-style conventions for
 setting a property can be used this way.
 
@@ -211,43 +220,47 @@ or the [HTML Widget](/javadoc/latest/com/google/gwt/user/client/ui/HTML.html).
 Any panel (in theory, anything that implements the [HasWidgets](/javadoc/latest/com/google/gwt/user/client/ui/HasWidgets.html) interface) can be used
 in a template file, and can have other panels inside of it.
 
-<pre class="prettyprint">&lt;ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+```
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
     xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
-  &lt;g:HorizontalPanel>
-    &lt;g:Label>Keep your ducks&lt;/g:Label>
-    &lt;g:Label>in a row&lt;/g:Label>
-  &lt;/g:HorizontalPanel>
+  <g:HorizontalPanel>
+    <g:Label>Keep your ducks</g:Label>
+    <g:Label>in a row</g:Label>
+  </g:HorizontalPanel>
 
-&lt;/ui:UiBinder></pre>
+</ui:UiBinder>
+```
 
 Some stock GWT widgets require special markup, which you'll find described in
 their javadoc. Here's how  [DockLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html) works:
 
-<pre class="prettyprint">&lt;g:DockLayoutPanel unit='EM'>
-  &lt;g:north size='5'>
-    &lt;g:Label>Top&lt;/g:Label>
-  &lt;/g:north>
-  &lt;g:center>
-    &lt;g:Label>Body&lt;/g:Label>
-  &lt;/g:center>
-  &lt;g:west size='10'>
-    &lt;g:HTML>
-      &lt;ul>
-        &lt;li>Sidebar&lt;/li>
-        &lt;li>Sidebar&lt;/li>
-        &lt;li>Sidebar&lt;/li>
-      &lt;/ul>
-    &lt;/g:HTML>
-  &lt;/g:west>
-&lt;/g:DockLayoutPanel>
-</pre>
+```
+
+<g:DockLayoutPanel unit='EM'>
+  <g:north size='5'>
+    <g:Label>Top</g:Label>
+  </g:north>
+  <g:center>
+    <g:Label>Body</g:Label>
+  </g:center>
+  <g:west size='10'>
+    <g:HTML>
+      <ul>
+        <li>Sidebar</li>
+        <li>Sidebar</li>
+        <li>Sidebar</li>
+      </ul>
+    </g:HTML>
+  </g:west>
+</g:DockLayoutPanel>
+```
 
 The DockLayoutPanel's children are gathered in organizational
 elements like `<g:north>`
 and `<g:center>`. Unlike almost everything else that
 appears in the template, they do not represent runtime objects. You
-can't give them <tt>ui:field</tt> attributes, because there would be
+can't give them `ui:field` attributes, because there would be
 nothing to put in the field in your Java class. This is why their
 names are not capitalized, to give you a clue that they're not
 "real". You'll find that other special non-runtime elements follow the
@@ -258,17 +271,19 @@ most panels, but only in widgets that know what to do with HTML,
 specifically, [HTMLPanel](/javadoc/latest/com/google/gwt/user/client/ui/HTMLPanel.html),
 and widgets that
 implement the [HasHTML](/javadoc/latest/com/google/gwt/user/client/ui/HasHTML.html) interface (such as
-the sidebar under <tt>&lt;g:west></tt>). Future releases of GWT will probably drop this restriction, but in the meantime it's up to you to place your HTML into HTML-savvy widgets.
+the sidebar under `<g:west>`). Future releases of GWT will probably drop this restriction, but in the meantime it's up to you to place your HTML into HTML-savvy widgets.
 
 ## HTML entities<a id="HTML_entities"></a>
 
 UiBinder templates are XML files, and XML doesn't understand
-entities like <tt>&amp;nbsp;</tt>. When you need such characters, you have
+entities like `&amp;nbsp;`. When you need such characters, you have
 to define them yourself. As a convenience, we provide a set of
-definitions that you can import by setting your <tt>DOCTYPE</tt>
-appropriately: 
+definitions that you can import by setting your `DOCTYPE`
+appropriately:
 
-<pre class="prettyprint">&lt;!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent"></pre>
+```
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+```
 
 Note that the GWT compiler won't actually visit this URL to fetch
 the file, because a copy of it is baked into the compiler. However, your IDE may fetch it.
@@ -278,7 +293,9 @@ the file, because a copy of it is baked into the compiler. However, your IDE may
 One of UiBinder's goals is to reduce the tedium of building user
 interfaces in Java code, and few things in Java require more mind-numbing boilerplate than event handlers. How many times have you written something like this?
 
-<pre class="prettyprint">public class MyFoo extends Composite {
+```
+
+public class MyFoo extends Composite {
   Button button = new Button();
 
   public MyFoo() {
@@ -293,12 +310,14 @@ interfaces in Java code, and few things in Java require more mind-numbing boiler
   void handleClick() {
     Window.alert("Hello, AJAX");
   }
-}</pre>
+}
+```
 
 In a UiBinder owner class, you can use the `@UiHandler` annotation
 to have all of that anonymous class nonsense written for you.
 
-<pre class="prettyprint">public class MyFoo extends Composite {
+```
+public class MyFoo extends Composite {
   @UiField Button button;
 
   public MyFoo() {
@@ -309,65 +328,74 @@ to have all of that anonymous class nonsense written for you.
   void handleClick(ClickEvent e) {
     Window.alert("Hello, AJAX");
   }
-}</pre>
+}
+```
 
 However, there is one limitation (at least for now): you can only
-use <tt>@UiHandler</tt> with events thrown by widget objects, not DOM
-elements. That is, <tt>&lt;g:Button></tt>, not <tt>&lt;button></tt>.
+use `@UiHandler` with events thrown by widget objects, not DOM
+elements. That is, `<g:Button>`, not `<button>`.
 
 ## Using a widget that requires constructor args<a id="Using_a_widget"></a>
 
 Every widget that is declared in a template is created by a call
-to <tt>[GWT.create](/javadoc/latest/com/google/gwt/core/client/GWT.html#create%28java.lang.Class%29)()</tt>. In
+to `[GWT.create](/javadoc/latest/com/google/gwt/core/client/GWT.html#create%28java.lang.Class%29)()`. In
 most cases this means that they must be default instantiable; that is,
 they must provide a zero-argument constructor. However, there are a few ways to
-get around that. In addition to the <tt>@UiFactory</tt> and
-<tt>@UiField(provided = true)</tt> mechanisms described
+get around that. In addition to the `@UiFactory` and
+`@UiField(provided = true)` mechanisms described
 under [Shared resource instances](#Share_resource_instances), you can mark 
 your own widgets with the `@UiConstructor` annotation.
 
 Suppose you have an existing widget that needs constructor arguments:
 
-<pre class="prettyprint">public CricketScores(String... teamNames) {...} </pre>
+```
+public CricketScores(String... teamNames) {...}
+```
 
 You use it in a template:
 
-<pre class="prettyprint">&lt;!-- UserDashboard.ui.xml -->
+```
+<!-- UserDashboard.ui.xml -->
 
-&lt;ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
     xmlns:g='urn:import:com.google.gwt.user.client.ui'
     xmlns:my='urn:import:com.my.app.widgets' >
 
-  &lt;g:HTMLPanel>
-    &lt;my:WeatherReport ui:field='weather'/>
+  <g:HTMLPanel>
+    <my:WeatherReport ui:field='weather'/>
 
-    &lt;my:Stocks ui:field='stocks'/>
-    &lt;my:CricketScores ui:field='scores' />
-  &lt;/g:HTMLPanel>
-&lt;/ui:UiBinder></pre>
+    <my:Stocks ui:field='stocks'/>
+    <my:CricketScores ui:field='scores' />
+  </g:HTMLPanel>
+</ui:UiBinder>
+```
 
-<pre class="prettyprint">public class UserDashboard extends Composite {
-  interface MyUiBinder extends UiBinder&lt;Widget, UserDashboard> {}
+```
+
+public class UserDashboard extends Composite {
+  interface MyUiBinder extends UiBinder<Widget, UserDashboard> {}
   private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   public UserDashboard() {
     initWidget(uiBinder.createAndBindUi(this));
   }
-}</pre>
+}
+```
 
 An error results:
 
-<pre>
+```
 [ERROR] com.my.app.widgets.CricketScores has no default (zero args)
 constructor. To fix this, you can define a @UiFactory method on the
 UiBinder's owner, or annotate a constructor of CricketScores with
 @UiConstructor.
-</pre>
+```
 
 So you either make the @UiFactory method...
 
-<pre class="prettyprint">public class UserDashboard extends Composite {
-  interface MyUiBinder extends UiBinder&lt;Widget, UserDashboard>;
+```
+public class UserDashboard extends Composite {
+  interface MyUiBinder extends UiBinder<Widget, UserDashboard>;
   private static final MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   private final String[] teamNames;
@@ -381,30 +409,37 @@ So you either make the @UiFactory method...
   @UiFactory CricketScores makeCricketScores() { // method name is insignificant
     return new CricketScores(teamNames);
   }
-}</pre>
+}
+```
 
 ...annotate a constructor...
 
-<pre class="prettyprint">public @UiConstructor CricketScores(String teamNames) {
+```
+
+public @UiConstructor CricketScores(String teamNames) {
   this(teamNames.split("[, ]+"));
 }
-</pre>
 
-<pre class="prettyprint">&lt;!-- UserDashboard.ui.xml -->
-&lt;g:HTMLPanel xmlns:ui='urn:ui:com.google.gwt.uibinder'
+```
+```
+
+<!-- UserDashboard.ui.xml -->
+<g:HTMLPanel xmlns:ui='urn:ui:com.google.gwt.uibinder'
   xmlns:g='urn:import:com.google.gwt.user.client.ui'
   xmlns:my='urn:import:com.my.app.widgets' >
 
-  &lt;my:WeatherReport ui:field='weather'/>
-  &lt;my:Stocks ui:field='stocks'/>
-  &lt;my:CricketScores ui:field='scores' teamNames='AUS, SAF, WA, QLD, VIC'/>
+  <my:WeatherReport ui:field='weather'/>
+  <my:Stocks ui:field='stocks'/>
+  <my:CricketScores ui:field='scores' teamNames='AUS, SAF, WA, QLD, VIC'/>
 
-&lt;/g:HTMLPanel></pre>
+</g:HTMLPanel>
+```
 
-...or fill in a field marked with <tt>@UiField(provided=true)</tt>
+...or fill in a field marked with `@UiField(provided=true)`
 
-<pre class="prettyprint">public class UserDashboard extends Composite {
-  interface MyUiBinder extends UiBinder&lt;Widget, UserDashboard>;
+```
+public class UserDashboard extends Composite {
+  interface MyUiBinder extends UiBinder<Widget, UserDashboard>;
   private static final MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   @UiField(provided=true)
@@ -415,76 +450,85 @@ So you either make the @UiFactory method...
     this.cricketScores = cricketScores;
     initWidget(uiBinder.createAndBindUi(this));
   }
-}</pre>
+}
+```
 
 ## Hello Stylish World<a id="Hello_Stylish_World"></a>
 
-With the <tt>&lt;ui:style></tt> element, you can define the CSS for your UI right where you need it.
+With the `<ui:style>` element, you can define the CSS for your UI right where you need it.
 
-**Note**: &lt;ui:style> elements must be direct children of the root element. The same is true of the other resource elements (&lt;ui:image> and &lt;ui:data>).
+**Note**: `<ui:style>` elements must be direct children of the root element. The same is true
+of the other resource elements (`<ui:image>` and `<ui:data>`).
 
-<pre class="prettyprint">&lt;ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
+```
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
 
-  &lt;ui:style>
+  <ui:style>
     .pretty { background-color: Skyblue; }
-  &lt;/ui:style>
+  </ui:style>
 
-  &lt;div class='{style.pretty}'>
-    Hello, &lt;span ui:field='nameSpan'/>.
-  &lt;/div>
+  <div class='{style.pretty}'>
+    Hello, <span ui:field='nameSpan'/>.
+  </div>
 
-&lt;/ui:UiBinder></pre>
+</ui:UiBinder>
+```
 
-A [CssResource](/javadoc/latest/com/google/gwt/resources/client/CssResource.html) interface is generated for you, along with a [ClientBundle](/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html). This means that the compiler will warn you if you misspell the class name when you try to use it (e.g. <tt>{style.prettty}</tt>). Also, your CSS class name will be obfuscated, thus protecting it from collision with like class names in other CSS blocks&mdash;no more global CSS namespace!  
+A [CssResource](/javadoc/latest/com/google/gwt/resources/client/CssResource.html) interface is generated for you, along with a [ClientBundle](/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html). This means that the compiler will warn you if you misspell the class name when you try to use it (e.g. `{style.prettty}`). Also, your CSS class name will be obfuscated, thus protecting it from collision with like class names in other CSS blocks&mdash;no more global CSS namespace!
 
-In fact, you can take advantage of this within a single template: 
+In fact, you can take advantage of this within a single template:
 
-<pre class="prettyprint">&lt;ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
-  &lt;ui:style>
+```
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
+  <ui:style>
     .pretty { background-color: Skyblue; }
-  &lt;/ui:style>
+  </ui:style>
 
-  &lt;ui:style field='otherStyle'>
+  <ui:style field='otherStyle'>
     .pretty { background-color: Orange; }
-  &lt;/ui:style>
+  </ui:style>
 
-  &lt;div class='{style.pretty}'>
-    Hello, &lt;span class='{otherStyle.pretty}' ui:field='nameSpan'/>.
-  &lt;/div>
+  <div class='{style.pretty}'>
+    Hello, <span class='{otherStyle.pretty}' ui:field='nameSpan'/>.
+  </div>
 
-&lt;/ui:UiBinder></pre>
+</ui:UiBinder>
+```
 
-Finally, you don't have to have your CSS inside your <tt>ui.xml</tt> file. Most real world projects will probably keep their CSS in a separate file. In the example given below, the <code>src</code> values are relative to the location of the <tt>ui.xml</tt> file.
+Finally, you don't have to have your CSS inside your `ui.xml` file. Most real world projects will probably keep their CSS in a separate file. In the example given below, the `src` values are relative to the location of the `ui.xml` file.
 
-<pre class="prettyprint">&lt;ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
-  &lt;ui:style src="MyUi.css" />
-  &lt;ui:style field='otherStyle' src="MyUiOtherStyle.css">
+```
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
+  <ui:style src="MyUi.css" />
+  <ui:style field='otherStyle' src="MyUiOtherStyle.css">
 
-  &lt;div class='{style.pretty}'>
-    Hello, &lt;span class='{otherStyle.pretty}' ui:field='nameSpan'/>.
-  &lt;/div>
-&lt;/ui:UiBinder></pre>
+  <div class='{style.pretty}'>
+    Hello, <span class='{otherStyle.pretty}' ui:field='nameSpan'/>.
+  </div>
+</ui:UiBinder>
+```
 
 And you can set style on a widget, not just HTML.  Use the
 `styleName` attribute to override whatever CSS styling the widget
-defaults to (just like calling [setStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName(java.lang.String)) in code).  Or, to add class names without
+defaults to (just like calling [setStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName\(java.lang.String\)) in code).  Or, to add class names without
 clobbering the widget's baked in style settings, use the special
 `addStyleNames` attribute:
 
-<pre class="prettyprint">&lt;ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+```
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
       xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-  &lt;ui:style>
+  <ui:style>
     .hot { color: magenta; }
     .pretty { background-color: Skyblue; }
-  &lt;/ui:style>
+  </ui:style>
 
-  &lt;g:PushButton styleName='{style.pretty}'>This button doesn't look like one&lt;/g:PushButton>
-  &lt;g:PushButton addStyleNames='{style.pretty} {style.hot}'>Push my hot button!&lt;/g:PushButton>
+  <g:PushButton styleName='{style.pretty}'>This button doesn't look like one</g:PushButton>
+  <g:PushButton addStyleNames='{style.pretty} {style.hot}'>Push my hot button!</g:PushButton>
 
-&lt;/ui:UiBinder>
-</pre>
+</ui:UiBinder>
+```
 
-Note that <tt>addStyleNames</tt> is plural.
+Note that `addStyleNames` is plural.
 
 ## Programmatic access to inline Styles<a id="Programmatic_access"></a>
 
@@ -492,19 +536,23 @@ Your code will need access to at least some of the styles
 your template uses. For example, suppose your widget needs to change color
 when it's enabled or disabled:
 
-<pre class="prettyprint">&lt;ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
+```
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
 
-  &lt;ui:style type='com.my.app.MyFoo.MyStyle'>
+  <ui:style type='com.my.app.MyFoo.MyStyle'>
     .redBox { background-color:pink; border: 1px solid red; }
     .enabled { color:black; }
     .disabled { color:gray; }
-  &lt;/ui:style>
+  </ui:style>
 
-  &lt;div class='{style.redBox} {style.enabled}'>I'm a red box widget.&lt;/div>
+  <div class='{style.redBox} {style.enabled}'>I'm a red box widget.</div>
 
-&lt;/ui:UiBinder></pre>
+</ui:UiBinder>
+```
 
-<pre class="prettyprint">public class MyFoo extends Widget {
+```
+
+public class MyFoo extends Widget {
   interface MyStyle extends CssResource {
     String enabled();
     String disabled();
@@ -518,17 +566,18 @@ when it's enabled or disabled:
     getElement().addClassName(enabled ? style.enabled() : style.disabled());
     getElement().removeClassName(enabled ? style.disabled() : style.enabled());
   }
-}</pre>
+}
+```
 
-The <tt>&lt;ui:style></tt> element has a new
+The `<ui:style>` element has a new
 attribute, `type='com.my.app.MyFoo.MyStyle'`.  That means
 that it needs to implement that interface (defined in the Java source
 for the MyFoo widget above) and provide the two CSS classes it calls
-for, <tt>enabled</tt> and <tt>disabled</tt>.
+for, `enabled` and `disabled`.
 
 Now look at the `@UiField MyStyle style;` field in MyFoo.java.
 That gives the code access to the CssResource generated for the
-<tt>&lt;ui:style></tt> block. The <tt>setEnabled</tt> method uses
+`<ui:style>` block. The `setEnabled` method uses
 that field to apply the enabled and disabled styles as the widget
 is turned on and off.
 
@@ -542,28 +591,32 @@ Sometimes your template will need to work with styles or other
 objects that come from outside of your template. Use
 the `<ui:with>` element to make them available.
 
-<pre class="prettyprint">&lt;ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+```
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
     xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
-  &lt;ui:with field='res' type='com.my.app.widgets.logoname.Resources'/>
+  <ui:with field='res' type='com.my.app.widgets.logoname.Resources'/>
 
-  &lt;g:HTMLPanel>
+  <g:HTMLPanel>
 
-    &lt;g:Image resource='{res.logo}'/>
+    <g:Image resource='{res.logo}'/>
 
-    &lt;div class='{res.style.mainBlock}'>
-      &lt;div class='{res.style.userPictureSprite}'/>
+    <div class='{res.style.mainBlock}'>
+      <div class='{res.style.userPictureSprite}'/>
 
-      &lt;div>
+      <div>
         Well hello there
-        &lt;span class='{res.style.nameSpan}' ui:field='nameSpan'/>
-      &lt;/div>
-    &lt;/div>
+        <span class='{res.style.nameSpan}' ui:field='nameSpan'/>
+      </div>
+    </div>
 
-  &lt;/g:HTMLPanel>
-&lt;/ui:UiBinder></pre>
+  </g:HTMLPanel>
+</ui:UiBinder>
+```
 
-<pre class="prettyprint">/**
+```
+
+/**
  * Resources used by the entire application.
  */
 public interface Resources extends ClientBundle {
@@ -578,22 +631,25 @@ public interface Resources extends ClientBundle {
     String nameSpan();
     Sprite userPictureSprite();
   }
-}</pre>
+}
+```
 
-<pre class="prettyprint">// Within the owner class for the UiBinder template
+```
+// Within the owner class for the UiBinder template
 @UiField Resources res;
 
 ...
 
-res.style().ensureInjected();</pre>
+res.style().ensureInjected();
+```
 
-The "<tt>with</tt>" element declares a field holding a resource
+The "`with`" element declares a field holding a resource
 object whose methods can be called to fill in attribute values.  In
 this case it will be instantiated via a call
-to <tt>[GWT.create](/javadoc/latest/com/google/gwt/core/client/GWT.html#create%28java.lang.Class%29)(Resources.class)</tt>. (Read on to see how pass an instance in instead
+to `[GWT.create](/javadoc/latest/com/google/gwt/core/client/GWT.html#create%28java.lang.Class%29)(Resources.class)`. (Read on to see how pass an instance in instead
 of having it created for you.)
 
-<p>Note that there is no requirement that a <tt>ui:with</tt> resource implement the [ClientBundle](/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html) interface; this is just an example. 
+Note that there is no requirement that a `ui:with` resource implement the [ClientBundle](/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html) interface; this is just an example.
 
 If you need more flexibility with a resource, you can set
 parameters on it with a `<ui:attributes>` element. Any
@@ -602,7 +658,8 @@ this way, just as for any other object in the template. In the example
 below, note how the FancyResources object accepts a reference to the
 Resource declared in the previous example.
 
-<pre class="prettyprint">public class FancyResources {
+```
+public class FancyResources {
   enum Style {
     MOBILE, DESKTOP
   }
@@ -615,28 +672,33 @@ Resource declared in the previous example.
     this.baseResources = baseResources;
     this.style = style;
   }
-}</pre>
+}
+```
 
-<pre class="prettyprint">&lt;ui:with field='fancyRes' type='com.my.app.widgets.logoname.FancyResources'>
-  &lt;ui:attributes style="MOBILE" baseResources="{res}"/>
-&lt;/ui:with></pre>
+```
+
+<ui:with field='fancyRes' type='com.my.app.widgets.logoname.FancyResources'>
+  <ui:attributes style="MOBILE" baseResources="{res}"/>
+</ui:with>
+```
 
 ## Share resource instances<a id="Share_resource_instances"></a>
 
 You can make resources available to your template via
-the <tt>&lt;ui:with></tt> element, but at the cost of having them
+the `<ui:with>` element, but at the cost of having them
 instantiated for you. If instead you want your code to be in charge of
 finding or creating that resource, you have two means to take
 control. You can mark a factory method with `@UiFactory`,
 or you can fill in a field yourself and annotate it
 as `@UiField(provided = true)`.
 
-Here's how to use <tt>@UiFactory</tt> to provide the
+Here's how to use `@UiFactory` to provide the
 Resources instance needed by the template in the
 [previous example](#Using_an_external_resource).
 
-<pre class="prettyprint">public class LogoNamePanel extends Composite {
-  interface MyUiBinder extend UiBinder&lt;Widget, LogoNamePanel> {}
+```
+public class LogoNamePanel extends Composite {
+  interface MyUiBinder extend UiBinder<Widget, LogoNamePanel> {}
   private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   @UiField SpanElement nameSpan;
@@ -655,17 +717,19 @@ Resources instance needed by the template in the
   public Resources getResources() {
     return resources;
   }
-}</pre>
+}
+```
 
 Any field in the template that is of type Resources will
-be instantiated by a call to <tt>getResources</tt>.  If your factory
+be instantiated by a call to `getResources`.  If your factory
 method needs arguments, those will be required as attributes.
 
 You can make things more concise, and have finer control, by using
-<tt>@UiField(provided = true)</tt>.
+`@UiField(provided = true)`.
 
-<pre class="prettyprint">public class LogoNamePanel extends Composite {
-  interface MyUiBinder extends UiBinder&lt;Widget, LogoNamePanel> {}
+```
+public class LogoNamePanel extends Composite {
+  interface MyUiBinder extends UiBinder<Widget, LogoNamePanel> {}
   private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   @UiField SpanElement nameSpan;
@@ -681,7 +745,8 @@ You can make things more concise, and have finer control, by using
   public void setUserName(String userName) {
     nameSpan.setInnerText(userName);
   }
-}</pre>
+}
+```
 
 ## Hello Text Resources<a id="Hello_Text_Resources"></a>
 
@@ -692,11 +757,13 @@ kind of cumbersome, especially if you're never going to change
 it. Instead, use `<ui:text>` to stitch it right into the
 template.
 
-<pre class="prettyprint">&lt;ui:with field='res' type='com.my.app.widgets.logoname.Resources'/>
+```
+<ui:with field='res' type='com.my.app.widgets.logoname.Resources'/>
 
-&lt;div>
-  Hello, &lt;ui:text from='{res.userName}'/>.
-&lt;/div></pre>
+<div>
+  Hello, <ui:text from='{res.userName}'/>.
+</div>
+```
 
 **Optimization Note**: If that resource is coming
 from a method that the GWT compiler recognizes as doing nothing more
@@ -713,34 +780,40 @@ use `<ui:safehtml>` to stitch
 any [SafeHtml](DevGuideSecuritySafeHtml.html)
 into any HTML context.
 
-<pre class="prettyprint">&lt;ui:with field='res' type='com.my.app.widgets.logoname.Resources'/>
+```
+<ui:with field='res' type='com.my.app.widgets.logoname.Resources'/>
 
-&lt;div>
-  Hello, &lt;ui:safehtml from='{res.fancyUserName}'/>.
-&lt;/div></pre>
+<div>
+  Hello, <ui:safehtml from='{res.fancyUserName}'/>.
+</div>
+```
 
 You also have another option with HTML. Any SafeHtml class can be
 used directly, much the same as a widget.
 
-<pre class="prettyprint">&lt;div>
-  Hello, &lt;my:FancyUserNameRenderer style="MOBILE">World&lt;/my:FancyUserNameRenderer>.
-&lt;/div></pre>
+```
+
+<div>
+  Hello, <my:FancyUserNameRenderer style="MOBILE">World</my:FancyUserNameRenderer>.
+</div>
+```
 
  You might implement such a renderer this way. (Note the only
 slightly contrived use here of
 [SafeHtmlTemplates](/javadoc/latest/com/google/gwt/safehtml/client/SafeHtmlTemplates.html)
 to guard against XSS attacks.)
 
-<pre class="prettyprint">public class FancyUserNameRenderer implements SafeHtml, HasText {
+```
+public class FancyUserNameRenderer implements SafeHtml, HasText {
   enum Style {
     MOBILE, DESKTOP
   }
 
   interface Templates extends SafeHtmlTemplates {
-    @SafeHtmlTemplates.Template("&lt;span class=\"mobile\">{0}&lt;/span>")
+    @SafeHtmlTemplates.Template("<span class=\"mobile\">{0}</span>")
     SafeHtml mobile(String name);
 
-    @SafeHtmlTemplates.Template("&lt;div class=\"desktop\">{0}&lt;/div>")
+    @SafeHtmlTemplates.Template("<div class=\"desktop\">{0}</div>")
     SafeHtml desktop(String name);
   }
   private static final Templates TEMPLATES = GWT.create(Templates.class);
@@ -764,7 +837,8 @@ to guard against XSS attacks.)
     }
     return Style.DESKTOP: return TEMPLATES.desktop(name);
   }
-}</pre>
+}
+```
 
 While this is a great technique, it's limited. Objects used this
 way are kind of a
@@ -783,7 +857,8 @@ demonstration of using different ui.xml files with the same code. It
 is not a proven pattern for implementing themes in an application, and
 may or may not be the best way to do that.
 
-<pre class="prettyprint">public class FooPickerController {
+```
+public class FooPickerController {
   public interface Display {
     HasText getTitleField();
     SourcesChangeEvents getPickerSelect();
@@ -796,11 +871,11 @@ public class FooPickerDisplay extends Composite
     implements FooPickerController.Display {
 
   @UiTemplate("RedFooPicker.ui.xml")
-  interface RedBinder extends UiBinder&lt;Widget, FooPickerDisplay> {}
+  interface RedBinder extends UiBinder<Widget, FooPickerDisplay> {}
   private static RedBinder redBinder = GWT.create(RedBinder.class);
 
   @UiTemplate("BlueFooPicker.ui.xml")
-  interface BlueBinder extends UiBinder&lt;Widget, FooPickerDisplay> {}
+  interface BlueBinder extends UiBinder<Widget, FooPickerDisplay> {}
   private static BlueBinder blueBinder = GWT.create(BlueBinder.class);
 
   @UiField HasText titleField;
@@ -813,8 +888,8 @@ public class FooPickerDisplay extends Composite
     return pickerSelect;
   }
 
-  protected FooPickerDisplay(UiBinder&lt;Widget, FooPickerDisplay> binder) {
-    initWidget(uiBinder.createAndBindUi(this));
+  protected FooPickerDisplay(UiBinder<Widget, FooPickerDisplay> binder) {
+    initWidget(binder.createAndBindUi(this));
   }
 
   public static FooPickerDisplay createRedPicker() {
@@ -824,7 +899,8 @@ public class FooPickerDisplay extends Composite
   public static FooPickerDisplay createBluePicker() {
     return new FooPickerDisplay(blueBinder);
   }
-}</pre>
+}
+```
 
 ## LazyPanel and LazyDomElement<a id="Lazy"></a>
 
@@ -836,27 +912,29 @@ want to take advantage of
 you're feeling lazy yourself: it's abstract, and you really don't want
 to deal with extending.
 
-<pre class="prettyprint">&lt;gwt:TabLayoutPanel barUnit='EM' barHeight='1.5'>
-  &lt;gwt:tab>
-    &lt;gwt:header>Summary&lt;/gwt:header>
-    &lt;gwt:LazyPanel>
-      &lt;my:SummaryPanel/>
-    &lt;/gwt:LazyPanel>
-  &lt;/gwt:tab>
-  &lt;gwt:tab>
-    &lt;gwt:header>Profile&lt;/gwt:header>
-    &lt;gwt:LazyPanel>
-      &lt;my:ProfilePanel/>
-    &lt;/gwt:LazyPanel>
-  &lt;/gwt:tab>
-  &lt;gwt:tab>
-    &lt;gwt:header>Reports&lt;/gwt:header>
-    &lt;gwt:LazyPanel>
-      &lt;my:ReportsPanel/>
-    &lt;/gwt:LazyPanel>
-  &lt;/gwt:tab>
-&lt;/gwt:TabLayoutPanel>
-</pre>
+```
+
+<gwt:TabLayoutPanel barUnit='EM' barHeight='1.5'>
+  <gwt:tab>
+    <gwt:header>Summary</gwt:header>
+    <gwt:LazyPanel>
+      <my:SummaryPanel/>
+    </gwt:LazyPanel>
+  </gwt:tab>
+  <gwt:tab>
+    <gwt:header>Profile</gwt:header>
+    <gwt:LazyPanel>
+      <my:ProfilePanel/>
+    </gwt:LazyPanel>
+  </gwt:tab>
+  <gwt:tab>
+    <gwt:header>Reports</gwt:header>
+    <gwt:LazyPanel>
+      <my:ReportsPanel/>
+    </gwt:LazyPanel>
+  </gwt:tab>
+</gwt:TabLayoutPanel>
+```
 
 That helped, but there is more you can do.
 
@@ -868,11 +946,12 @@ them. In a large page, that can add up. By using
 you can defer those calls until they're actually needed &mdash; if
 they ever are.
 
-<pre class="prettyprint">public class HelloWorld extends UIObject { // Could extend Widget instead
-  interface MyUiBinder extends UiBinder&lt;DivElement, HelloWorld> {}
+```
+public class HelloWorld extends UIObject { // Could extend Widget instead
+  interface MyUiBinder extends UiBinder<DivElement, HelloWorld> {}
   private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
-  @UiField LazyDomElement&lt;SpanElement> nameSpan;
+  @UiField LazyDomElement<SpanElement> nameSpan;
 
   public HelloWorld() {
     // createAndBindUi initializes this.nameSpan
@@ -880,7 +959,8 @@ they ever are.
   }
 
   public void setName(String name) { nameSpan.get().setInnerText(name); }
-}</pre>
+}
+```
 
 ## Rendering HTML for Cells<a id="Rendering_HTML_for_Cells"></a>
 
@@ -889,15 +969,18 @@ the generation of HTML strings, but writing the code to concatenate strings to
 form proper HTML quickly gets old. UiBinder lets you use the same templates to
 render that HTML.
 
-<pre class="prettyprint">&lt;!-- HelloWorldCell.ui.xml -->
+```
 
-&lt;ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
-  &lt;ui:with field='name' type='java.lang.String'/>
+<!-- HelloWorldCell.ui.xml -->
 
-  &lt;div>
-    Hello, &lt;span>&lt;ui:text from='{name}'/>&lt;/span>.
-  &lt;/div>
-&lt;/ui:UiBinder></pre>
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
+  <ui:with field='name' type='java.lang.String'/>
+
+  <div>
+    Hello, <span><ui:text from='{name}'/></span>.
+  </div>
+</ui:UiBinder>
+```
 
 The `<ui:with>` tag defines fields to use as data to render the
 template. These templates can only contain HTML elements, no widgets or panels.
@@ -906,7 +989,8 @@ Now, define a `HelloWorldCell` widget. Add an interface that extends the
 [UiRenderer](/javadoc/latest/com/google/gwt/uibinder/client/UiRenderer.html)
 interface (instead of `UiBinder`).
 
-<pre class="prettyprint">public class HelloWorldCell extends AbstractCell<String> {
+```
+public class HelloWorldCell extends AbstractCell<String> {
   interface MyUiRenderer extends UiRenderer {
     void render(SafeHtmlBuilder sb, String name);
   }
@@ -916,7 +1000,8 @@ interface (instead of `UiBinder`).
   public void render(Context context, String value, SafeHtmlBuilder builder) {
     renderer.render(builder, value);
   }
-}</pre>
+}
+```
 
 UiBinder uses the names of the parameters in
 `MyUiRenderer.render()` to match the fields defined
@@ -936,9 +1021,11 @@ First, add a `ui:field` attribute to the `<span>`. This
 allows the generated code to distinguish the span element from the other
 elements in the template.
 
-<pre class="prettyprint">&lt;div>
-  Hello, &lt;span ui:field='nameSpan'>&lt;ui:text from='{name}'/>&lt;/span>.
-&lt;/div></pre>
+```
+<div>
+  Hello, <span ui:field='nameSpan'><ui:text from='{name}'/></span>.
+</div>
+```
 
 Add a `onBrowserEvent` method
 to `MyUiRenderer`. The `onBrowserEvent` in the renderer
@@ -947,34 +1034,42 @@ arguments after that are for your convenience, and will be passed verbatim to
 the handlers. The first argument is what UiRenderer uses to dispatch events
 from `onBrowserEvent` to methods in a Cell Widget object.
 
-<pre class="prettyprint">interface MyUiRenderer extends UiRenderer {
+```
+interface MyUiRenderer extends UiRenderer {
   void render(SafeHtmlBuilder sb, String name);
   onBrowserEvent(HelloWorldCell o, NativeEvent e, Element p, String n);
-}</pre>
+}
+```
 
 Let the [AbstractCell](/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html) know that you will handle `click` events.
 
-<pre class="prettyprint">public HelloWorldCell() {
+```
+public HelloWorldCell() {
   super("click");
-}</pre>
+}
+```
 
 Let the Cell `onBrowserEvent` delegate the handling to the `renderer`.
 
-<pre class="prettyprint">@Override
+```
+@Override
 public void onBrowserEvent(Context context, Element parent, String value,
-    NativeEvent event, ValueUpdater&lt;String> updater) {
+    NativeEvent event, ValueUpdater<String> updater) {
   renderer.onBrowserEvent(this, event, parent, value);
-}</pre>
+}
+```
 
 Finally, add the handler method to `HelloWorldCell`, and tag it
 with `@UiHandler({"nameSpan"})`. The type of the first parameter,
 [ClickEvent](/javadoc/latest/com/google/gwt/event/dom/client/ClickEvent.html),
 will determine the type of event handled.
 
-<pre class="prettyprint">@UiHandler({"nameSpan"})
+```
+@UiHandler({"nameSpan"})
 void onNameGotPressed(ClickEvent event, Element parent, String name) {
   Window.alert(name + " was pressed!");
-}</pre>
+}
+```
 
 ## Getting rendered elements<a id="UiRenderer_getting_rendered_elements"></a>
 
@@ -982,11 +1077,13 @@ Once a cell is rendered it is possible to retrieve and operate on elements
 marked with `ui:field`. This is useful when you need to manipulate
 the DOM elements.
 
-<pre class="prettyprint">interface MyUiRenderer extends UiRenderer {
+```
+interface MyUiRenderer extends UiRenderer {
   // ... snip ...
   SpanElement getNameSpan(Element parent);
   // ... snip ...
-}</pre>
+}
+```
 
 Use the getter by passing the parent element received by the Cell
 widget. The name of these getters must match the `ui:field`
@@ -994,10 +1091,12 @@ tags placed on the template, prepended with "get". That is, for a
 `ui:field` named `someName`, the getter should
 be `getSomeName(Element parent)`.
 
-<pre class="prettyprint">@UiHandler({"nameSpan"})
+```
+@UiHandler({"nameSpan"})
 void onNameGotPressed(ClickEvent event, Element parent, String name) {
   renderer.getNameSpan(parent).setInnerText(name + ", dude!");
-}</pre>
+}
+```
 
 ## Access to styles with UiRenderers<a id="UiRenderer_styles"></a>
 
@@ -1005,39 +1104,49 @@ UiRenderer lets you define getters to retrieve styles defined in the
 template. Just define a getter with no parameters matching the style name and
 returning the style type.
 
-<pre class="prettyprint">&lt;ui:style field="myStyle" type="com.my.app.AStyle">
+```
+
+<ui:style field="myStyle" type="com.my.app.AStyle">
   .red {color:#900;}
   .normal {color:#000;}
-&lt;/ui:style>
+</ui:style>
 
-&lt;div>
-  Hello, &lt;span ui:field="nameSpan" class="{myStyle.normal}">
-    &lt;ui:text from="{name}"/>&lt;/span>.
-&lt;/div></pre>
+<div>
+  Hello, <span ui:field="nameSpan" class="{myStyle.normal}">
+    <ui:text from="{name}"/></span>.
+</div>
+```
 
 Define the style interface:
 
-<pre class="prettyprint">public interface AStyle extends CssResource {
+```
+public interface AStyle extends CssResource {
   String normal();
   String red();
-}</pre>
+}
+```
 
 Define the style getter in the UiRenderer interface, prepending the
 style name with "get":
 
-<pre class="prettyprint">interface MyUiRenderer extends UiRenderer {
+```
+
+interface MyUiRenderer extends UiRenderer {
   // ... snip ...
   AStyle getMyStyle();
   // ... snip ...
-}</pre>
+}
+```
 
 Then use the style wherever you need it. Notice that you need to get the style
 name using the `red()` accessor method. The GWT compiler obfuscates the actual name
 of the style to prevent collisions with other similarly named styles in your
 application.
 
-<pre class="prettyprint">@UiHandler({"nameSpan"})
+```
+@UiHandler({"nameSpan"})
 void onNameGotPressed(ClickEvent event, Element parent, String name) {
   String redStyle = renderer.getMyStyle().red();
   renderer.getNameSpan(parent).replaceClass(redStyle);
-}</pre>
+}
+```

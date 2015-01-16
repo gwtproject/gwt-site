@@ -229,7 +229,7 @@ body {
 
 #gwt-footer {
   clear: both;
-  padding-top: 20px 0;
+  padding: 10px 0;
   background-color: #d5f0f6;
   border-bottom: 10px solid #606060;
   position: absolute;
@@ -253,18 +253,29 @@ body {
 
 img {
   border: 0;
-  max-width: 800px;
+  max-width: 100%;
   height: auto;
 }
 
 table {
   border-collapse: collapse;
+
 }
 
 th,td {
   padding: 0;
   vertical-align: top;
   text-align: left;
+}
+
+/* markdown table */
+#gwt-content thead th, #gwt-content tbody td {
+  padding: 6px 13px;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+tbody tr:nth-child(2n) {
+  background-color: rgb(248, 248, 248);
 }
 
 a:link {
@@ -308,9 +319,9 @@ li {
   margin-bottom: 0.25em;
 }
 
-pre,code {
+pre,code,.code {
   color: #007000;
-  font-family: "bogus font here", monospace;
+  font-family: Courier, 'Courier New', monospace;;
   font-size: 80%;
 }
 
@@ -322,10 +333,22 @@ pre {
   margin-left: 2em;
 }
 
+pre code {
+  font-size: 100% !important;
+}
+
 pre ins {
   color: #cc0000;
   font-weight: bold;
   text-decoration: none;
+}
+
+.header {
+  margin-top: 1.5ex;
+}
+
+.details {
+  margin-top: 1ex;
 }
 
 .newmark {
@@ -801,6 +824,21 @@ iframe[name='StockWatcher'] {
 
 #gwt-toc, #gwt-content, .gwt-wrap, .first, .second, .gwtcreate, img {
    transition: all 0.4s linear;
+}
+
+#editLink {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+#editLink > a {
+  background: rgb(245, 88, 55);
+  padding: 0.5em;
+  color: white;
+  border-radius: 2px;
+  border: 1px solid rgb(229, 72, 39);
+  float: right;
+  margin-bottom: 15px;
 }
 
 /* tablet */

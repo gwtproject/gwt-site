@@ -21,8 +21,8 @@ the user interface in the browser.
 ### [RootPanel](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html)
 
 A [RootPanel](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html) is the top-most panel to which all other widgets are ultimately
-attached. [RootPanel.get()](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html#get()) gets a singleton panel that wraps the HTML document's
-`<body>` element. Use [RootPanel.get(String id)](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html#get(java.lang.String)) to get a panel for any other
+attached. [RootPanel.get()](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html#get\(\)) gets a singleton panel that wraps the HTML document's
+`<body>` element. Use [RootPanel.get(String id)](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html#get\(java.lang.String\)) to get a panel for any other
 element on the page.
 
 ### [FlowPanel](/javadoc/latest/com/google/gwt/user/client/ui/FlowPanel.html)
@@ -81,9 +81,10 @@ You most commonly use [RootLayoutPanel](/javadoc/latest/com/google/gwt/user/clie
 the following snippet, which causes a [DockLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html) to fill the browser's
 client area:
 
-<pre class='prettyprint'>DockLayoutPanel appPanel = new DockLayoutPanel(Unit.EM);
+```
+DockLayoutPanel appPanel = new DockLayoutPanel(Unit.EM);
 RootLayoutPanel.get().add(appPanel);
-</pre>
+```
 
 ### [LayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html)
 
@@ -92,7 +93,8 @@ which other layouts are built. Its closest analog is [AbsolutePanel](/javadoc/la
 significantly more general in that it allows its children to be positioned
 using arbitrary constraints, as in the following example:
 
-<pre class='prettyprint'>Widget child0, child1, child2;
+```
+Widget child0, child1, child2;
 LayoutPanel p = new LayoutPanel();
 p.add(child0); p.add(child1); p.add(child2);
 
@@ -101,7 +103,7 @@ p.setWidgetRightWidth(child1, 0, PCT, 50, PCT); // Right panel
 
 p.setWidgetLeftRight(child2, 5, EM, 5, EM);     // Center panel
 p.setWidgetTopBottom(child2, 5, EM, 5, EM);
-</pre>
+```
 
 ![LayoutPanel example](images/LayoutPanel.png)
 
@@ -112,12 +114,13 @@ except that it uses the layout system to achieve this structure without using
 tables, and in a predictable manner. You would often use to build
 application-level structure, as in the following example:
 
-<pre class='prettyprint'>DockLayoutPanel p = new DockLayoutPanel(Unit.EM);
+```
+DockLayoutPanel p = new DockLayoutPanel(Unit.EM);
 p.addNorth(new HTML("header"), 2);
 p.addSouth(new HTML("footer"), 2);
 p.addWest(new HTML("navigation"), 10);
 p.add(new HTML(content));
-</pre>
+```
 
 ![DockLayoutPanel example](images/DockLayoutPanel.png)
 
@@ -133,11 +136,12 @@ extends it), except that it automatically creates a user-draggable splitter
 between each pair of child widgets. It also supports only the use of pixel
 units. Use this instead of [HorizontalSplitPanel](/javadoc/latest/com/google/gwt/user/client/ui/HorizontalSplitPanel.html) and [VerticalSplitPanel](/javadoc/latest/com/google/gwt/user/client/ui/VerticalSplitPanel.html).
 
-<pre class='prettyprint'>SplitLayoutPanel p = new SplitLayoutPanel();
+```
+SplitLayoutPanel p = new SplitLayoutPanel();
 p.addWest(new HTML("navigation"), 128);
 p.addNorth(new HTML("list"), 384);
 p.add(new HTML("details"));
-</pre>
+```
 
 ![SplitLayoutPanel example](images/SplitLayoutPanel.png)
 
@@ -148,16 +152,17 @@ well in standards mode). It displays one child widget at a time, each of which i
 associated with a single "header" widget. Clicking on a header widget shows its
 associated child widget.
 
-<pre class='prettyprint'>StackLayoutPanel p = new StackLayoutPanel(Unit.EM);
+```
+StackLayoutPanel p = new StackLayoutPanel(Unit.EM);
 p.add(new HTML("this content"), new HTML("this"), 4);
 p.add(new HTML("that content"), new HTML("that"), 4);
 p.add(new HTML("the other content"), new HTML("the other"), 4);
-</pre>
+```
 
 ![StackLayoutPanel example](images/StackLayoutPanel.png)
 
 Note that, as with [DockLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html), only a single unit type may be used on a
-given panel. The length value provided to the [add()](/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html#add(com.google.gwt.user.client.ui.Widget))
+given panel. The length value provided to the [add()](/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html#add\(com.google.gwt.user.client.ui.Widget\))
 method specifies the size of the header widget, which must be of a fixed size.
 
 ### TabLayoutPanel
@@ -166,11 +171,12 @@ As with the existing [TabPanel](/javadoc/latest/com/google/gwt/user/client/ui/Ta
 tabs. Each tab is associated with another child widget, which is shown when a
 user clicks on the tab.
 
-<pre class='prettyprint'>TabLayoutPanel p = new TabLayoutPanel(1.5, Unit.EM);
+```
+TabLayoutPanel p = new TabLayoutPanel(1.5, Unit.EM);
 p.add(new HTML("this content"), "this");
 p.add(new HTML("that content"), "that");
 p.add(new HTML("the other content"), "the other");
-</pre>
+```
 
 ![TabLayoutPanel example](images/TabLayoutPanel.png)
 
@@ -195,7 +201,7 @@ Panels that implement [AnimatedLayout](/javadoc/latest/com/google/gwt/user/clien
 [DockLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html), and [SplitLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html), can animate their child widgets from
 one set of constraints to another. Typically this is done by setting up the
 state towards which you wish to animate, then calling
-[animate()](/javadoc/latest/com/google/gwt/user/client/ui/AnimatedLayout.html#animate(int)). See ["Recipes"](#recipes)
+[animate()](/javadoc/latest/com/google/gwt/user/client/ui/AnimatedLayout.html#animate\(int\)). See ["Recipes"](#recipes)
 below for specific examples.
 
 ## RequiresResize and ProvidesResize<a id="Resize"></a>
@@ -205,7 +211,7 @@ and [ProvidesResize](/javadoc/latest/com/google/gwt/user/client/ui/ProvidesResiz
 throughout the widget hierarchy.
 
 [RequiresResize](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html) provides a single method,
-[onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize()), which is called by the widget's parent
+[onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize\(\)), which is called by the widget's parent
 whenever the child's size has changed. [ProvidesResize](/javadoc/latest/com/google/gwt/user/client/ui/ProvidesResize.html) is simply a tag
 interface indicating that a parent widget will honor this contract. The purpose
 of these two interfaces is to form an unbroken hierarchy between all widgets
@@ -213,7 +219,7 @@ that implement RequiresResize and the [RootLayoutPanel](/javadoc/latest/com/goog
 changes (such as the browser window resizing) that could affect the size of
 widgets in the hierarchy.
 
-### When to use [onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize())
+### When to use [onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize\(\))
 
 Most widgets should _not_ need to know when they've been resized, as the
 browser's layout engine should be doing most of the work. However, there are
@@ -221,13 +227,13 @@ times when a widget _does_ need to know. This comes up, for example, when a
 widget contains a dynamic list of items depending upon how much room is
 available to display them. Because it's almost always faster to let the layout
 engine do its work than to run code, you should not lean upon
-[onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize()) unless you have no alternative.
+[onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize\(\)) unless you have no alternative.
 
 ### When and how to implement ProvidesResize
 
 A panel that implements ProvidesResize is expected to propagate resize events
 to any of its child widgets that implement RequiresResize. For a canonical
-example of this, see the implementation of [LayoutPanel.onResize()](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#onResize()). Most
+example of this, see the implementation of [LayoutPanel.onResize()](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#onResize\(\)). Most
 custom widgets will want to composite an existing layout panel using
 [ResizeComposite](/javadoc/latest/com/google/gwt/user/client/ui/ResizeComposite.html), however, as described next.
 
@@ -331,14 +337,15 @@ exists natively in CSS. This uses the properties `left`, `top`, `width`,
 properties, it is less well-known that they can be combined in various ways to
 form a simple constraint system. Take the following CSS example:
 
-<pre class='prettyprint'>.parent {
+```
+.parent {
   position: relative; /* to establish positioning context */
 }
 
 .child {
   position: absolute; left:1em; top:1em; right:1em; bottom:1em;
 }
-</pre>
+```
 
 In this example, the child will automatically consume the parent's entire
 space, minus 1em of space around the edge. Any two of these properties (on each
@@ -357,34 +364,36 @@ in terms of [UiBinder](DevGuideUiBinder.html) templates.
 The following sample shows a simple application-style layout with a header, a
 navigation area on the left edge, and a scrollable content area.
 
-<pre class='prettyprint'>&lt;g:DockLayoutPanel unit='EM'&gt;
-  &lt;g:north size='4'&gt;
-    &lt;g:Label&gt;Header&lt;/g:Label&gt;
-  &lt;/g:north&gt;
+```
+<g:DockLayoutPanel unit='EM'>
+  <g:north size='4'>
+    <g:Label>Header</g:Label>
+  </g:north>
 
-  &lt;g:west size='16'&gt;
-    &lt;g:Label&gt;Navigation&lt;/g:Label&gt;
-  &lt;/g:west&gt;
+  <g:west size='16'>
+    <g:Label>Navigation</g:Label>
+  </g:west>
 
-  &lt;g:center&gt;
-    &lt;g:ScrollPanel&gt;
-      &lt;g:Label&gt;Content Area&lt;/g:Label&gt;
-    &lt;/g:ScrollPanel&gt;
-  &lt;/g:center&gt;
-&lt;/g:DockLayoutPanel&gt;
-</pre>
+  <g:center>
+    <g:ScrollPanel>
+      <g:Label>Content Area</g:Label>
+    </g:ScrollPanel>
+  </g:center>
+</g:DockLayoutPanel>
+```
 
 You must place this structure in a container that implements [ProvidesResize](/javadoc/latest/com/google/gwt/user/client/ui/ProvidesResize.html),
 which is most commonly [RootLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/RootLayoutPanel.html). The following code demonstrates how
 to do this:
 
-<pre class='prettyprint'>interface Binder extends UiBinder&lt;Widget, BasicApp&gt; { }
+```
+interface Binder extends UiBinder<Widget, BasicApp> { }
 private static final Binder binder = GWT.create(Binder.class);
 
 public void onModuleLoad() {
   RootLayoutPanel.get().add(binder.createAndBindUi());
 }
-</pre>
+```
 
 ### Splitters
 
@@ -392,26 +401,27 @@ public void onModuleLoad() {
 supports pixel units. The basic application structure above can be given a
 splitter between the navigation and content areas like so:
 
-<pre class='prettyprint'>&lt;g:DockLayoutPanel unit='EM'&gt;
-  &lt;g:north size='4'&gt;
-    &lt;g:Label&gt;Header&lt;/g:Label&gt;
-  &lt;/g:north&gt;
+```
+<g:DockLayoutPanel unit='EM'>
+  <g:north size='4'>
+    <g:Label>Header</g:Label>
+  </g:north>
 
-  &lt;g:center&gt;
-    &lt;g:SplitLayoutPanel&gt;
-      &lt;g:west size='128'&gt;
-        &lt;g:Label&gt;Navigation&lt;/g:Label&gt;
-      &lt;/g:west&gt;
+  <g:center>
+    <g:SplitLayoutPanel>
+      <g:west size='128'>
+        <g:Label>Navigation</g:Label>
+      </g:west>
 
-      &lt;g:center&gt;
-        &lt;g:ScrollPanel&gt;
-          &lt;g:Label&gt;Content Area&lt;/g:Label&gt;
-        &lt;/g:ScrollPanel&gt;
-      &lt;/g:center&gt;
-    &lt;/g:SplitLayoutPanel&gt;
-  &lt;/g:center&gt;
-&lt;/g:DockLayoutPanel&gt;
-</pre>
+      <g:center>
+        <g:ScrollPanel>
+          <g:Label>Content Area</g:Label>
+        </g:ScrollPanel>
+      </g:center>
+    </g:SplitLayoutPanel>
+  </g:center>
+</g:DockLayoutPanel>
+```
 
 Note how we mix the dock and split panels, so that the header's size can be
 specified in `EM` units.
@@ -421,56 +431,60 @@ specified in `EM` units.
 To use animation with a [LayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html), you must first create an initial set of
 constraints, then animate to a target set of constraints. In the following
 example, we start with a child widget positioned at the top, but with no height
-so that it is effectively hidden. Calling [LayoutPanel.forceLayout()](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#forceLayout()) "fixes"
+so that it is effectively hidden. Calling [LayoutPanel.forceLayout()](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#forceLayout\(\)) "fixes"
 the initial constraints.
 
-<pre class='prettyprint'>panel.setWidgetTopHeight(child, 0, PX, 0, PX);
+```
+panel.setWidgetTopHeight(child, 0, PX, 0, PX);
 panel.forceLayout();
-</pre>
+```
 
 Now we give the widget a height of 2em and explicitly call
 LayoutPanel.animate(int) to cause it to resize over 500 ms.
 
-<pre class='prettyprint'>panel.setWidgetTopHeight(child, 0, PX, 2, EM);
+```
+panel.setWidgetTopHeight(child, 0, PX, 2, EM);
 panel.animate(500);
-</pre>
+```
 
 This will work with any constraints and any number of children.
 
 ### Implementing a Composite that RequiresResize
 
-Widgets that implement [RequiresResize](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html) expect [RequiresResize.onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize()) to
+Widgets that implement [RequiresResize](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html) expect [RequiresResize.onResize()](/javadoc/latest/com/google/gwt/user/client/ui/RequiresResize.html#onResize\(\)) to
 be called whenever the widget's size changes. If you are wrapping such a widget
 in a [Composite](/javadoc/latest/com/google/gwt/user/client/ui/Composite.html), you'll need to use [ResizeComposite](/javadoc/latest/com/google/gwt/user/client/ui/ResizeComposite.html) instead to ensure that
 this call is propagated correctly, like so:
 
-<pre class='prettyprint'>class MyWidget extends ResizeComposite {
+```
+class MyWidget extends ResizeComposite {
   private LayoutPanel p = new LayoutPanel();
 
   public MyWidget() {
     initWidget(p);
   }
 }
-</pre>
+```
 
 ### Child widget visibility
 
 The [Layout](/javadoc/latest/com/google/gwt/layout/client/Layout.html) class has to wrap each of its child elements in a "container"
 element in order to work properly. One implication of this is that, when you
-call [UIObject.setVisible(boolean)](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setVisible(boolean)) on a widget within a [LayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html), it
+call [UIObject.setVisible(boolean)](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setVisible\(boolean\)) on a widget within a [LayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html), it
 won't behave quite as expected: the widget will indeed be made invisible, but
 it will tend to consume mouse events (actually, it's the container element that
 is doing so).
 
 To work around this, you can get the container element directly using
-[LayoutPanel.getWidgetContainerElement(Widget)](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#getWidgetContainerElement(com.google.gwt.user.client.ui.Widget)), and set its visibility
+[LayoutPanel.getWidgetContainerElement(Widget)](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#getWidgetContainerElement\(com.google.gwt.user.client.ui.Widget\)), and set its visibility
 directly:
 
-<pre class='prettyprint'>LayoutPanel panel = ...;
+```
+LayoutPanel panel = ...;
 Widget child;
 panel.add(child);
 UIObject.setVisible(panel.getWidgetContainerElement(child), false);
-</pre>
+```
 
 ### Using a LayoutPanel without RootLayoutPanel
 
@@ -482,10 +496,11 @@ There are, however, instances where you need to use a layout panel within a
 normal widget (e.g., [FlowPanel](/javadoc/latest/com/google/gwt/user/client/ui/FlowPanel.html) or [RootPanel](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html)). In these cases, you will need
 to set the panel's size explicitly, as in the following example:
 
-<pre class='prettyprint'>LayoutPanel panel = new LayoutPanel();
+```
+LayoutPanel panel = new LayoutPanel();
 RootPanel.get("someId").add(panel);
 panel.setSize("20em", "10em");
-</pre>
+```
 
 Note that [RootLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/RootLayoutPanel.html) provides no
 mechanism for wrapping an arbitrary element like [RootPanel](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html)
@@ -496,7 +511,8 @@ This also applies to layout panels used in [PopupPanel](/javadoc/latest/com/goog
 [DialogBox](/javadoc/latest/com/google/gwt/user/client/ui/DialogBox.html). The following example shows the use of a [SplitLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html) in a
 [DialogBox](/javadoc/latest/com/google/gwt/user/client/ui/DialogBox.html):
 
-<pre class='prettyprint'>SplitLayoutPanel split = new SplitLayoutPanel();
+```
+SplitLayoutPanel split = new SplitLayoutPanel();
 split.addWest(new HTML("west"), 128);
 split.add(new HTML("center"));
 split.setSize("20em", "10em");
@@ -505,28 +521,30 @@ DialogBox dialog = new DialogBox();
 dialog.setText("caption");
 dialog.add(split);
 dialog.show();
-</pre>
+```
 
 ### Tables and Frames
 
-Widgets that are implemented using &lt;table&gt; or &lt;frame&gt; elements do not
+Widgets that are implemented using `<table>` or `<frame>` elements do not
 automatically fill the space provided by the layout. In order to fix this, you
 will need to explicitly set these widgets `width` and `height` to `100%`. The
-following example shows this with a [RichTextArea](/javadoc/latest/com/google/gwt/user/client/ui/RichTextArea.html), which is implemented using
-an &lt;iframe&gt; element.
+following example shows this with a
+[RichTextArea](/javadoc/latest/com/google/gwt/user/client/ui/RichTextArea.html),
+which is implemented using an `<iframe>` element.
 
-<pre style='prettyprint'>
-&lt;g:DockLayoutPanel unit='EM'&gt;
-  &lt;g:north size='2'&gt;
-    &lt;g:HTML&gt;Header&lt;/g:HTML&gt;
-  &lt;/g:north&gt;
+```
+<g:DockLayoutPanel unit='EM'>
+  <g:north size='2'>
+    <g:HTML>Header</g:HTML>
+  </g:north>
 
-  &lt;g:south size='2'&gt;
-    &lt;g:HTML&gt;Footer&lt;/g:HTML&gt;
-  &lt;/g:south&gt;
+  <g:south size='2'>
+    <g:HTML>Footer</g:HTML>
+  </g:south>
 
-  &lt;g:center&gt;
-    &lt;g:RichTextArea width='100%' height='100%'/&gt;
-  &lt;/g:center&gt;
-&lt;/g:DockLayoutPanel&gt;
-</pre>
+  <g:center>
+    <g:RichTextArea width='100%' height='100%'/>
+  </g:center>
+</g:DockLayoutPanel>
+```
+

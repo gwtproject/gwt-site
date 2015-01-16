@@ -8,12 +8,12 @@ The major difference between the standard Java classes and the GWT classes is th
 GWT, the [deferred binding](DevGuideCodingBasics.html#DevGuideDeferredBinding) mechanism is used to load only the logic needed for the current locale into the
 application.
 
-In order to use the <tt>NumberFormat</tt> or <tt>DateTimeFormat</tt> classes, you should update your [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml.html) with
+In order to use the `NumberFormat` or `DateTimeFormat` classes, you should update your [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml.html) with
 the following _inherits_ line:
 
-<pre class="prettyprint">
-  &lt;inherits name=&quot;com.google.gwt.i18n.I18N&quot;/&gt;
-</pre>
+```
+<inherits name="com.google.gwt.i18n.I18N"/>
+```
 
 See the [internationalization topic](DevGuideI18n.html) for more information about setting up locale.
 
@@ -22,92 +22,69 @@ See the [internationalization topic](DevGuideI18n.html) for more information abo
 
 ## Using NumberFormat<a id="numberformat"></a>
 
-When using the <tt>NumberFormat</tt> class, you do not instantiate it directly. Instead, you retrieve an instance by calling one of its static <tt>get...Format()</tt> methods.
+When using the `NumberFormat` class, you do not instantiate it directly. Instead, you retrieve an instance by calling one of its static `get...Format()` methods.
 For most cases, you probably want to use the default decimal format:
 
-<pre class="prettyprint">
-    NumberFormat fmt = NumberFormat.getDecimalFormat();
+```
+NumberFormat fmt = NumberFormat.getDecimalFormat();
     double value = 12345.6789;
     String formatted = fmt.format(value);
     // Prints 1,2345.6789 in the default locale
-    GWT.log(&quot;Formatted string is&quot; + formatted, null);
-</pre>
+    GWT.log("Formatted string is" + formatted, null);
+```
 
 The class can also be used to convert a numeric string back into a double:
 
-<pre class="prettyprint">
-    double value = NumberFormat.getDecimalFormat().parse(&quot;12345.6789&quot;);
-    GWT.log(&quot;Parsed value is&quot; + value, null);
-</pre>
+```
+double value = NumberFormat.getDecimalFormat().parse("12345.6789");
+    GWT.log("Parsed value is" + value, null);
+```
 
-The <tt>NumberFormat</tt> class also provides defaults for scientific notation:
+The `NumberFormat` class also provides defaults for scientific notation:
 
-<pre class="prettyprint">
-    double value = 12345.6789;
+```
+double value = 12345.6789;
     String formatted = NumberFormat.getScientificFormat().format(value);
     // prints 1.2345E4 in the default locale
-    GWT.log(&quot;Formatted string is&quot; + formatted, null);
-</pre>
+    GWT.log("Formatted string is" + formatted, null);
+```
 
 Note that you can also specify your own pattern for formatting numbers. In the example below, we want to show 6 digits of precision on the right hand side of the decimal and
 format the left hand side with zeroes up to the hundred thousands place:
 
-<pre class="prettyprint">
-    double value = 12345.6789;
-    String formatted = NumberFormat.getFormat(&quot;000000.000000&quot;).format(value);
+```
+double value = 12345.6789;
+    String formatted = NumberFormat.getFormat("000000.000000").format(value);
     // prints 012345.678900 in the default locale
-    GWT.log(&quot;Formatted string is&quot; + formatted, null);
-</pre>
+    GWT.log("Formatted string is" + formatted, null);
+```
 
 Here are the most commonly used pattern symbols for decimal formats:
 
-<table>
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">Symbol</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Meaning</td>
-</tr>
+| Symbol | Meaning                                         |
+| ------ | ----------------------------------------------- |
+| 0      | Digit, zero forced                              |
+| #      | Digit, zero shows as absent                     |
+| .      | Decimal separator or monetary decimal separator |
+| \-     | Minus sign                                      |
+| ,      | Grouping separator                              |
 
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">0</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Digit, zero forced</td>
-</tr>
 
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">#</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Digit, zero shows as absent</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">.</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Decimal separator or monetary decimal separator</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">-</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Minus sign</td>
-</tr>
-
-<tr>
-<td style="border: 1px solid #aaa; padding: 5px;">,</td>
-<td style="border: 1px solid #aaa; padding: 5px;">Grouping separator</td>
-</tr>
-</table>
-
-Specifying an invalid pattern will cause the <tt>NumberFormat.getFormat()</tt> method to throw an <tt>java.lang.IllegalArgumentException</tt>. The <tt>pattern</tt>
+Specifying an invalid pattern will cause the `NumberFormat.getFormat()` method to throw an `java.lang.IllegalArgumentException`. The `pattern`
 specification is very rich. Refer to the [class
 documentation](/javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html) for the full set of features.
 
-If you will be using the same number format pattern more than once, it is most efficient to cache the format handle returned from [NumberFormat.getFormat(pattern)](/javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html#getFormat(java.lang.String)).
+If you will be using the same number format pattern more than once, it is most efficient to cache the format handle returned from [NumberFormat.getFormat(pattern)](/javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html#getFormat\(java.lang.String\)).
 
 ## Using DateTimeFormat<a id="datetimeformat"></a>
 
 GWT provides the [DateTimeFormat](/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.html) class to
-replace the functionality of the <tt>DateFormat</tt> and <tt>TimeFormat</tt> classes from the JRE.
+replace the functionality of the `DateFormat` and `TimeFormat` classes from the JRE.
 
-For the <tt>DateTimeFormat</tt> class, there are a large number of default formats defined.
+For the `DateTimeFormat` class, there are a large number of default formats defined.
 
-<pre class="prettyprint">
-    Date today = new Date();
+```
+Date today = new Date();
 
     // prints Tue Dec 18 12:01:26 GMT-500 2007 in the default locale.
     GWT.log(today.toString(), null);
@@ -126,15 +103,15 @@ For the <tt>DateTimeFormat</tt> class, there are a large number of default forma
 
     // prints Dec 18, 2007 12:01:26 PM in the default locale
     GWT.log(DateTimeFormat.getMediumDateTimeFormat().format(today), null);
-</pre>
+```
 
-Like the <tt>NumberFormat</tt> class, you can also use this class to parse a date from a <tt>String</tt> into a <tt>Date</tt> representation. You also have the option of using
+Like the `NumberFormat` class, you can also use this class to parse a date from a `String` into a `Date` representation. You also have the option of using
 the default formats for date and time combinations, or you may build your own using a pattern string. See the [DateTimeFormat](/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.html) class documentation for specifics on how to create your own patterns.
 
 Be cautious when straying from the default formats and defining your own patterns. Displaying dates and times incorrectly can be extremely aggravating to international users.
 Consider the date:
 
-> <tt>12/04/07</tt>
+> `12/04/07`
 
 In some countries this is understood to mean the date December 4th, 2007 in others, it would be April 12th, 2007, in yet another locale, it might mean April 7th, 2012. For
 displaying in a common format such as this, use the default formats and let the localization mechanism in the DateTimeFormat do the work for you.

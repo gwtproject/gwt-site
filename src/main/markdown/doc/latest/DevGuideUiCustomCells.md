@@ -20,7 +20,7 @@ before continuing.
 ## Implementing the render() Method<a id="cell-render"></a>
 
 The core method that all Cells must implement is the
-[Cell#render(Context, C value, SafeHtmlBuilder)](/javadoc/latest/com/google/gwt/cell/client/Cell.html#render(com.google.gwt.cell.client.Cell.Context, C, com.google.gwt.safehtml.shared.SafeHtmlBuilder))
+[Cell#render(Context, C value, SafeHtmlBuilder)](/javadoc/latest/com/google/gwt/cell/client/Cell.html#render\(com.google.gwt.cell.client.Cell.Context, C, com.google.gwt.safehtml.shared.SafeHtmlBuilder\))
 method, which renders the parameterized `value` into the `SafeHtmlBuilder`.  In some cases, you will only need to render
 simple HTML, such as a single `div` with some content.  In other cases, you might need to render a complex HTML structure, such as the one
 in the [CellList](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) example, which contains an image and two lines of
@@ -28,12 +28,14 @@ text. The basic principles are the same in either case.
 
 **Code Example**
 
-ColorCell is a custom Cell that extends AbstractCell&lt;String&gt; and generates a single `div` containing the name of a color, styled
-with specified color as the text color. The generated HTML for each rendered value is `<div style="color: value">value</div>`,
-where value is the color of the cell. In the example below, ColorCell is passed into a CellList to render various colors. The first row contains
-the string "red" colored red, the second is "green" colored green, and so forth, as seen below.
+ColorCell is a custom Cell that extends `AbstractCell<String>` and generates a single `div`
+containing the name of a color, styled with specified color as the text color. The generated HTML
+for each rendered value is `<div style="color: value">value</div>`, where value is the color of
+the cell. In the example below, ColorCell is passed into a CellList to render various colors.
+The first row contains the string "red" colored red, the second is "green" colored green, and so
+forth, as seen below.
 
-> ![](images/CustomCells-BasicRender.png)
+> ![img](images/CustomCells-BasicRender.png)
 
 When implementing a render method, you should follow these steps:
 
@@ -57,7 +59,7 @@ When implementing a render method, you should follow these steps:
 
 You can download this example at [CellExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cell/CellExample.java).
 
-<pre class="prettyprint">
+```
 /**
  * Example of creating a custom {@link Cell}.
  */
@@ -67,7 +69,7 @@ public class CellExample implements EntryPoint {
    * A custom {@link Cell} used to render a string that contains the name of a
    * color.
    */
-  static class ColorCell extends AbstractCell&lt;String&gt; {
+  static class ColorCell extends AbstractCell<String> {
 
     /**
      * The HTML templates used to render the cell.
@@ -83,7 +85,7 @@ public class CellExample implements EntryPoint {
        *          case the value would be escaped.
        * @return a {@link SafeHtml} instance
        */
-      @SafeHtmlTemplates.Template("&lt;div style=\"{0}\"&gt;{1}&lt;/div&gt;")
+      @SafeHtmlTemplates.Template("<div style=\"{0}\">{1}</div>")
       SafeHtml cell(SafeStyles styles, SafeHtml value);
     }
 
@@ -116,7 +118,7 @@ public class CellExample implements EntryPoint {
   /**
    * The list of data to display.
    */
-  private static final List&lt;String&gt; COLORS = Arrays.asList("red", "green", "blue", "violet",
+  private static final List<String> COLORS = Arrays.asList("red", "green", "blue", "violet",
       "black", "gray");
 
   @Override
@@ -125,7 +127,7 @@ public class CellExample implements EntryPoint {
     ColorCell cell = new ColorCell();
 
     // Use the cell in a CellList.
-    CellList&lt;String&gt; cellList = new CellList&lt;String&gt;(cell);
+    CellList<String> cellList = new CellList<String>(cell);
 
     // Push the data into the widget.
     cellList.setRowData(0, COLORS);
@@ -134,12 +136,12 @@ public class CellExample implements EntryPoint {
     RootPanel.get().add(cellList);
   }
 }
-</pre>
+```
 
 ## Handling events from Cells<a id="cell-onBrowserEvent"></a>
 
 The other core method to implement (if you want to handle events in the Cell) is
-[Cell#onBrowserEvent(Context, Element, C value, NativeEvent, ValueUpdater)](/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent(com.google.gwt.cell.client.Cell.Context, com.google.gwt.dom.client.Element, C, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater)).  `onBrowserEvent` is called when an event occurs on any DOM instance created with the
+[Cell#onBrowserEvent(Context, Element, C value, NativeEvent, ValueUpdater)](/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent\(com.google.gwt.cell.client.Cell.Context, com.google.gwt.dom.client.Element, C, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater\)).  `onBrowserEvent` is called when an event occurs on any DOM instance created with the
 HTML output of this Cell.  Since Cells are flyweights that handle events from multiple instances, contextual information about the instance is passed into the method.
 For example, the Context tells you where the Cell is located (row and column indexes) in its containing CellTable.
 
@@ -150,13 +152,13 @@ are not required to have only one outer most element.  For example TextCell does
 
 Cells must declare which event types they want to handle, and the Cell Widget that contains the Cell is responsible for ensuring that only those events are passed to the Cell.
 In order to specify which events your cell will handle, you pass the event types into the
-[AbstractCell(String...)](/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html#AbstractCell(java.lang.String...))
+[AbstractCell(String...)](/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html#AbstractCell\(java.lang.String...\))
 constructor. AbstractCell will return the events to the Cell Widget when
-[Cell#getConsumedEvents()](/javadoc/latest/com/google/gwt/cell/client/Cell.html#getConsumedEvents())
+[Cell#getConsumedEvents()](/javadoc/latest/com/google/gwt/cell/client/Cell.html#getConsumedEvents\(\))
 is called.
 
 Alternatively, you can override 
-[Cell#getConsumedEvents()](/javadoc/latest/com/google/gwt/cell/client/Cell.html#getConsumedEvents())
+[Cell#getConsumedEvents()](/javadoc/latest/com/google/gwt/cell/client/Cell.html#getConsumedEvents\(\))
 directly. For example, if you are extending an existing Cell that does not expose the event type constructor, you can override `getConsumedEvents()` to return the
 events that your subclass uses.
 
@@ -168,26 +170,26 @@ method once, when the Cell is first added.
 The code example below extends ColorCell to add support for handling `click` and `keydown` events. If the user clicks on the Cell, we
 show an alert box that tells us which color we selected.
 
-> ![](images/CustomCells-HandlingEvents.png)
+> ![img](images/CustomCells-HandlingEvents.png)
 
 The process for adding event support is as follows:
 
 1.  Specify the events that you want to handle by passing them into the
-    [AbstractCell(String...)](/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html#AbstractCell(java.lang.String...))
+    [AbstractCell(String...)](/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html#AbstractCell\(java.lang.String...\))
     constructor. See the note about the `keydown` event below.
 2.  Override the
-    [Cell#onBrowserEvent()](/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent(com.google.gwt.cell.client.Cell.Context, com.google.gwt.dom.client.Element, C, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater)) method to handle the event. For some events, you may want to look at the event target before deciding how to handle the event.
+    [Cell#onBrowserEvent()](/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent\(com.google.gwt.cell.client.Cell.Context, com.google.gwt.dom.client.Element, C, com.google.gwt.dom.client.NativeEvent, com.google.gwt.cell.client.ValueUpdater\)) method to handle the event. For some events, you may want to look at the event target before deciding how to handle the event.
     In the example below, we only respond to click events that actually occur on the rendered div.
 3.  As described in the example comments below, the `onEnterKeyDown()` method is a special case convience method in AbstractCell that helps to provide
     a unified user experience, such that all Cells that respond to events can be activated by selecting the Cell with the keyboard and pressing enter.  Otherwise,
     users would not be able to interact with the Cell without using the mouse. The convention followed by GWT cells is to toggle editing when the enter key is
     pressed, but you are free to define the behavior for your app. Your cell's getConsumedEvents() method must include "keydown" in order for AbstractCell to call
     `onEnterKeyDown()`.
-4.  Optionally call    [ValueUpdater#update(C)](/javadoc/latest/com/google/gwt/cell/client/ValueUpdater.html#update(C))
+4.  Optionally call    [ValueUpdater#update(C)](/javadoc/latest/com/google/gwt/cell/client/ValueUpdater.html#update\(C\))
     to indicate that the value of the cell has been modified. For example, you might call the `update()` method if the user types a new value in a text
     box, or if the user clicks on a button.
 
-<pre class="prettyprint">
+```
 /**
  * Example of creating a custom {@link Cell} that responds to events.
  */
@@ -197,7 +199,7 @@ public class CellWithEventsExample implements EntryPoint {
    * A custom {@link Cell} used to render a string that contains the name of a
    * color.
    */
-  static class ColorCell extends AbstractCell&lt;String&gt; {
+  static class ColorCell extends AbstractCell<String> {
 
     /**
      * The HTML templates used to render the cell.
@@ -213,7 +215,7 @@ public class CellWithEventsExample implements EntryPoint {
        *          case the value would be escaped.
        * @return a {@link SafeHtml} instance
        */
-      @SafeHtmlTemplates.Template("&lt;div style=\"{0}\"&gt;{1}&lt;/div&gt;")
+      @SafeHtmlTemplates.Template("<div style=\"{0}\">{1}</div>")
       SafeHtml cell(SafeStyles styles, SafeHtml value);
     }
 
@@ -239,7 +241,7 @@ public class CellWithEventsExample implements EntryPoint {
      */
     @Override
     public void onBrowserEvent(Context context, Element parent, String value, NativeEvent event,
-        ValueUpdater&lt;String&gt; valueUpdater) {
+        ValueUpdater<String> valueUpdater) {
       // Let AbstractCell handle the keydown event.
       super.onBrowserEvent(context, parent, value, event, valueUpdater);
 
@@ -280,11 +282,11 @@ public class CellWithEventsExample implements EntryPoint {
      */
     @Override
     protected void onEnterKeyDown(Context context, Element parent, String value, NativeEvent event,
-        ValueUpdater&lt;String&gt; valueUpdater) {
+        ValueUpdater<String> valueUpdater) {
       doAction(value, valueUpdater);
     }
 
-    private void doAction(String value, ValueUpdater&lt;String&gt; valueUpdater) {
+    private void doAction(String value, ValueUpdater<String> valueUpdater) {
       // Alert the user that they selected a value.
       Window.alert("You selected the color " + value);
 
@@ -298,7 +300,7 @@ public class CellWithEventsExample implements EntryPoint {
   /**
    * The list of data to display.
    */
-  private static final List&lt;String&gt; COLORS = Arrays.asList("red", "green", "blue", "violet",
+  private static final List<String> COLORS = Arrays.asList("red", "green", "blue", "violet",
       "black", "gray");
 
   @Override
@@ -307,7 +309,7 @@ public class CellWithEventsExample implements EntryPoint {
     ColorCell cell = new ColorCell();
 
     // Use the cell in a CellList.
-    CellList&lt;String&gt; cellList = new CellList&lt;String&gt;(cell);
+    CellList<String> cellList = new CellList<String>(cell);
 
     // Push the data into the widget.
     cellList.setRowData(0, COLORS);
@@ -316,4 +318,5 @@ public class CellWithEventsExample implements EntryPoint {
     RootPanel.get().add(cellList);
   }
 }
-</pre>
+```
+

@@ -35,21 +35,21 @@ It is important to understand how compatibility mode works before you release
 a new version of your app. If you are using X-UA-compatible tag, test on older
 browsers as well.
 
-In short, whenever possible, use standards mode by adding &lt;!DOCTYPE html> as
-the first element in your html file; and add &lt;meta http-equiv="X-UA-Compatible"
-content="IE=9" > to &lt;head> to future proof your app. Avoid using 'edge' unless
+In short, whenever possible, use standards mode by adding `<!DOCTYPE html>` as
+the first element in your html file; and add `< meta http-equiv="X-UA-Compatible"
+content="IE=9">` to `<head>` to future proof your app. Avoid using 'edge' unless
 you are sure what you are doing.
 
-<pre class="prettyprint">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta http-equiv="X-UA-Compatible" content="IE=9"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;script language='javascript'&gt;
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+</head>
+<body>
+<script language='javascript'>
 ..
-</pre>
+```
 
 More information can be found here: [http://msdn.microsoft.com/en-us/library/cc288325%28v=vs.85%29.aspx](http://msdn.microsoft.com/en-us/library/cc288325%28v=vs.85%29.aspx)
 
@@ -79,8 +79,8 @@ that is not implemented for IE9, the compiler will automatically use the IE8
 implementation. A warning will be raised during compilation (see below), and
 it's suggested that you verify the implementation works as expected in IE9.
 
-_Could not find an exact match rule. Using 'closest' rule &lt;replace-with
-class='com.google.gwt.widget.client.impl.MySuperDuperWidgetIE6'/> based on fall
+_Could not find an exact match rule. Using 'closest' rule `<replace-with
+class='com.google.gwt.widget.client.impl.MySuperDuperWidgetIE6'/>` based on fall
 back values. You may need to implement a specific binding in case the fall back
 behavior does not replace the missing binding_
 

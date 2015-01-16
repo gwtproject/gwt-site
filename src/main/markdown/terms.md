@@ -1,5 +1,4 @@
-Terms of Service
-===
+<h1>Terms of Service</h1>
 
 Google is a member of the GWT Open Source Project and operates this GWT website as a contribution to GWT. The [Google Terms of Service](http://www.google.com/intl/en/policies/terms/) apply to Google's operation of this website.
 
@@ -15,7 +14,7 @@ Version 2.0, January 2004
 
 [http://www.apache.org/licenses/](http://www.apache.org/licenses/)
 
-**<a name="definitions">1. Definitions</a>**
+**<a id="definitions">1. Definitions</a>**
 
 "License" shall mean the terms and conditions for use, reproduction,
 and distribution as defined by Sections 1 through 9 of this document.
@@ -74,7 +73,7 @@ designated in writing by the copyright owner as "Not a Contribution."
 on behalf of whom a Contribution has been received by Licensor and
 subsequently incorporated within the Work.
 
-**<a name="copyright">2. Grant of Copyright License</a>**
+**<a id="copyright">2. Grant of Copyright License</a>**
 
 Subject to the terms and conditions of
 this License, each Contributor hereby grants to You a perpetual,
@@ -83,7 +82,7 @@ copyright license to reproduce, prepare Derivative Works of,
 publicly display, publicly perform, sublicense, and distribute the
 Work and such Derivative Works in Source or Object form.
 
-**<a name="patent">3. Grant of Patent License</a>**
+**<a id="patent">3. Grant of Patent License</a>**
 
 Subject to the terms and conditions of
 this License, each Contributor hereby grants to You a perpetual,
@@ -101,7 +100,7 @@ or contributory patent infringement, then any patent licenses
 granted to You under this License for that Work shall terminate
 as of the date such litigation is filed.
 
-**<a name="redistribution">4. Redistribution</a>**
+**<a id="redistribution">4. Redistribution</a>**
 
 You may reproduce and distribute copies of the
 Work or Derivative Works thereof in any medium, with or without
@@ -148,7 +147,7 @@ for any such Derivative Works as a whole, provided Your use,
 reproduction, and distribution of the Work otherwise complies with
 the conditions stated in this License.
 
-**<a name="contributions">5. Submission of Contributions</a>**
+**<a id="contributions">5. Submission of Contributions</a>**
 
 Unless You explicitly state otherwise,
 any Contribution intentionally submitted for inclusion in the Work
@@ -158,14 +157,14 @@ Notwithstanding the above, nothing herein shall supersede or modify
 the terms of any separate license agreement you may have executed
 with Licensor regarding such Contributions.
 
-**<a name="trademarks">6. Trademarks</a>**
+**<a id="trademarks">6. Trademarks</a>**
 
 This License does not grant permission to use the trade
 names, trademarks, service marks, or product names of the Licensor,
 except as required for reasonable and customary use in describing the
 origin of the Work and reproducing the content of the NOTICE file.
 
-**<a name="no-warranty">7. Disclaimer of Warranty</a>**
+**<a id="no-warranty">7. Disclaimer of Warranty</a>**
 
 Unless required by applicable law or
 agreed to in writing, Licensor provides the Work (and each
@@ -177,7 +176,7 @@ PARTICULAR PURPOSE. You are solely responsible for determining the
 appropriateness of using or redistributing the Work and assume any
 risks associated with Your exercise of permissions under this License.
 
-**<a name="no-liability">8. Limitation of Liability</a>**
+**<a id="no-liability">8. Limitation of Liability</a>**
 
 In no event and under no legal theory,
 whether in tort (including negligence), contract, or otherwise,
@@ -191,7 +190,7 @@ work stoppage, computer failure or malfunction, or any and all
 other commercial damages or losses), even if such Contributor
 has been advised of the possibility of such damages.
 
-**<a name="additional">9. Accepting Warranty or Additional Liability</a>**
+**<a id="additional">9. Accepting Warranty or Additional Liability</a>**
 
 While redistributing
 the Work or Derivative Works thereof, You may choose to offer,
@@ -204,74 +203,23 @@ defend, and hold each Contributor harmless for any liability
 incurred by, or claims asserted against, such Contributor by reason
 of your accepting any such warranty or additional liability.
 
-<a name="licenses"></a>
-
-## License Information regarding Bundled Third-Party Software
+## License Information regarding Bundled Third-Party Software <a id="licenses"></a>
 
 The following third party software is distributed with GWT
 and is provided under other licenses and/or has source available
 from other locations. (Please note that gwt-servlet.jar is not derived from any third-party
 libraries and is licensed under the Apache License, Version 2.0 above.)
 
-<table>
-  <tbody>
-      <tr>
-        <th>Package</th>
-        <th>License</th>
-        <th>Source Code Availability</th>
-      </tr>
-      <tr>
-        <td class="package">Apache Tomcat</td>
-        <td class="license">Apache License v. 2.0 (above)</td>
-        <td class="location"><a href="http://tomcat.apache.org/">tomcat.apache.org</a>; modifications are at org/apache/tomcat within gwt-dev.jar</td>
-      </tr>
-      <tr class="even">
-        <td class="package">Browser Detect v2.1.6</td>
-        <td class="license"><a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons Attribution 1.0</a></td>
-        <td class="location">google-web-toolkit.googlecode.com; transliterated into Java source</td>
-      </tr>
-      <tr>
-        <td class="package">Eclipse Java Development Tools (JDT)</td>
-        <td class="license"><a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License v. 1.0</a></td>
-        <td class="location"><a href="http://archive.eclipse.org/eclipse/downloads/drops/R-3.1.1-200509290840/download.php?dropFile=eclipse-JDT-SDK-3.1.1.zip">eclipse.org</a></td>
-      </tr>
-      <tr class="even">
-        <td class="package">Eclipse Standard Widget Toolkit (SWT)</td>
-        <td class="license"><a href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License v. 1.0</a></td>
-        <td class="location">
-        modifications are at org/eclipse/swt within gwt-dev.jar
-        </td>
-      </tr>
-      <tr>
-        <td class="package">HtmlUnit</td>
-        <td class="license">Apache License v. 2.0 (above)</td>
-        <td class="location"><a href="http://htmlunit.sourceforge.net/">htmlunit.sourceforge.net</a></td>
-      </tr>
-      <tr class="even">
-        <td class="package">JFreeChart</td>
-        <td class="license"><a href="http://www.gnu.org/licenses/lgpl.html">GNU Lesser General Public License v. 2.1</a></td>
-        <td class="location"><a href="http://jfree.org/jfreechart/download.html">jfree.org</a></td>
-      </tr>
-      <tr>
-        <td class="package">Mozilla Rhino</td>
-        <td class="license"><a href="http://www.mozilla.org/MPL/MPL-1.1.txt">Mozilla Public License v. 1.1</a></td>
-        <td class="location">com/google/gwt/dev/js/rhino/ within gwt-dev.jar</td>
-      </tr>
-      <tr class="even">
-        <td class="package">Mozilla 1.7.12 (Linux only)</td>
-        <td class="license"><a href="http://www.mozilla.org/MPL/MPL-1.1.txt">Mozilla Public License v. 1.1</a></td>
-        <td class="location"><a href="http://developer.mozilla.org/en/docs/Download_Mozilla_Source_Code">mozilla.org</a></td>
-      </tr>
-      <tr >
-        <td class="package">Protocol Buffers</td>
-        <td class="license"><a
-      href="http://www.opensource.org/licenses/bsd-license.php">New BSD License</a></td>
-        <td class="location"><a href="http://code.google.com/p/protobuf/">code.google.com/p/protobuf</a></td>
-      </tr>
-      <tr class="even">
-        <td class="package">WebKit 418.9 (Mac only)</td>
-        <td class="license"><a href="http://www.gnu.org/licenses/lgpl.html">GNU Lesser General Public License v. 2.1</a></td>
-        <td class="location"><a href="http://webkit.org/building/checkout.html">webkit.org</a></td>
-      </tr>
-  </tbody>
-</table>
+| Package                               | License                                                                           | Source Code Availability                                                                                                               |
+| ------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Apache Tomcat                         | Apache License v. 2.0 (above)                                                     | [tomcat.apache.org](http://tomcat.apache.org/) modifications are at org/apache/tomcat within gwt-dev.jar                               |
+| Browser Detect v2.1.6                 | [Creative Commons Attribution 1.0](http://creativecommons.org/licenses/by/1.0/)   | [google-web-toolkit.googlecode.com](http://google-web-toolkit.googlecode.com/) transliterated into Java source                         |
+| Eclipse Java Development Tools (JDT)  | [Eclipse Public License v. 1.0](http://www.eclipse.org/legal/epl-v10.html)        | [eclipse.org](http://archive.eclipse.org/eclipse/downloads/drops/R-3.1.1-200509290840/download.php?dropFile=eclipse-JDT-SDK-3.1.1.zip) |
+| Eclipse Standard Widget Toolkit (SWT) | [Eclipse Public License v. 1.0](http://www.eclipse.org/legal/epl-v10.html)        | modifications are at org/eclipse/swt within gwt-dev.jar                                                                                |
+| HtmlUnit                              | Apache License v. 2.0 (above)                                                     | [htmlunit.sourceforge.net](http://htmlunit.sourceforge.net/)                                                                           |
+| JFreeChart                            | [GNU Lesser General Public License v. 2.1](http://www.gnu.org/licenses/lgpl.html) | [jfree.org](http://jfree.org/jfreechart/download.html)                                                                                 |
+| Mozilla Rhino                         | [Mozilla Public License v. 1.1](http://www.mozilla.org/MPL/MPL-1.1.txt)           | com/google/gwt/dev/js/rhino/ within gwt-dev.jar                                                                                        |
+| Mozilla 1.7.12 (Linux only)           | [Mozilla Public License v. 1.1](http://www.mozilla.org/MPL/MPL-1.1.txt)           | [mozilla.org](http://developer.mozilla.org/en/docs/Download_Mozilla_Source_Code)                                                       |
+| Protocol Buffers                      | [New BSD License](http://www.opensource.org/licenses/bsd-license.php)             | [code.google.com/p/protobuf](http://code.google.com/p/protobuf/)                                                                       |
+| WebKit 418.9 (Mac only)               | [GNU Lesser General Public License v. 2.1](http://www.gnu.org/licenses/lgpl.html) | [webkit.org](http://webkit.org/building/checkout.html)                                                                                 |
+

@@ -1,13 +1,13 @@
 Getting Started
 ===
 
-- [Prerequisites](#prereqs)
-- [Download and Install GWT](#download)
-- [Create your first web application](#create)
-- [Run locally in development mode](#run)
-- [Make a few changes](#change)
-- [Compile and run in production mode](#compile)
-- [Set up an IDE](#setup)
+*  [Prerequisites](#prereqs)
+*  [Download and Install GWT](#download)
+*  [Create your first web application](#create)
+*  [Run locally in development mode](#run)
+*  [Make a few changes](#change)
+*  [Compile and run in production mode](#compile)
+*  [Set up an IDE](#setup)
 
 ## Prerequisites<a id="prereqs"></a>
 
@@ -45,9 +45,11 @@ $JDK_HOME environment variable with export JDK_HOME="/Library/Java/Home"
   </tr>
 </tbody></table>
 
-On Windows, extract the files from the compressed folder <code>gwt-2.6.1.zip</code>.  On Mac or Linux, you can unpack the package with a command like:
+On Windows, extract the files from the compressed folder `gwt-2.7.0.zip`.  On Mac or Linux, you can unpack the package with a command like:
 
-<pre class="code">unzip gwt-2.6.1.zip</pre>
+```
+unzip gwt-2.7.0.zip
+```
 
 The GWT SDK doesn't have an installer application.  All the files you  need to
 run and use the SDK are located in the extracted directory.
@@ -60,24 +62,24 @@ You can create a new demo application in a new MyWebApp directory by running `we
 
 *   **Windows**
 
-<pre class="code">
-cd gwt-2.6.1
+```
+cd gwt-2.7.0
 
 webAppCreator -out MyWebApp com.mycompany.mywebapp.MyWebApp
-</pre>
+```
 
-* **Mac or Linux<** - you may need to make the script executable:
+*   **Mac or Linux** - you may need to make the script executable:
 
-<pre class="code">
-cd gwt-2.6.1
+```
+cd gwt-2.7.0
 
 chmod u+x webAppCreator
 
 ./webAppCreator -out MyWebApp com.mycompany.mywebapp.MyWebApp
-</pre>
+```
 
 The `webAppCreator` script will generate a number of files in
-`MyWebApp/`, including some basic &quot;Hello, world&quot;
+`MyWebApp/`, including some basic "Hello, world"
 functionality in the class
 `MyWebApp/src/com/mycompany/mywebapp/client/MyWebApp.java`.  The
 script also generates an Ant build script `MyWebApp/build.xml`.
@@ -86,11 +88,11 @@ script also generates an Ant build script `MyWebApp/build.xml`.
 
 To run your newly created application in development mode:
 
-<pre class="code">
+```
 cd MyWebApp/
 
 ant devmode
-</pre>
+```
 
 This command starts GWT's development mode server, a local server used for development and debugging, as follows:
 
@@ -118,19 +120,25 @@ the project above. You'll see two packages,
 
 Look inside `com/mycompany/mywebapp/client/MyWebApp.java`. Line 41 constructs the "Send" button.
 
-<pre class="code">final Button sendButton = new Button(&quot;Send&quot;);</pre>
+```
+final Button sendButton = new Button("Send");
+```
 
-Change the text from &quot;Send&quot; to &quot;Send to Server&quot;.
+Change the text from "Send" to "Send to Server".
 
-<pre class="code">final Button sendButton = new Button(&quot;Send to Server&quot;);</pre>
+```
+final Button sendButton = new Button("Send to Server");
+```
 
-Now, save the file and simply click "Refresh" in your browser to see your change. The button should now say &quot;Send to Server&quot; instead of &quot;Send&quot;:
+Now, save the file and simply click "Refresh" in your browser to see your change. The button should now say "Send to Server" instead of "Send":
 
 ## Compile and run in production mode<a id="compile"></a>
 
 To run the application as JavaScript in what GWT calls "production mode", compile the application by executing:
 
-<pre class="code">ant build</pre>
+```
+ant build
+```
 
 The "build" Ant target invokes the GWT compiler which generates a number of
 JavaScript and HTML files from the MyWebApp Java source code in the
@@ -152,5 +160,5 @@ set up Eclipse to use the GWT SDK:
 
 [Set up Eclipse](usingeclipse.html)
 
-If you are going to stick with the command line, check out Speed Tracer	 and then
+If you are going to stick with the command line, check out Speed Tracer     and then
 head over to [Build a Sample GWT App](doc/latest/tutorial/gettingstarted.html).

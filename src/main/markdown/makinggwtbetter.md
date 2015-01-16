@@ -195,7 +195,7 @@ Checking out the GWT source is most useful if you plan to compile GWT yourself. 
 
 GWT is hosted at [gwt.googlesource.com](https://gwt.googlesource.com/), so you check out the source for GWT using a [Git](http://git-scm.com/) client as you would for any other Git project:
 
-<pre>git clone https://gwt.googlesource.com/gwt trunk</pre>
+`git clone https://gwt.googlesource.com/gwt trunk`
 
 ### Compiling from Source<a id="compiling"></a>
 
@@ -208,10 +208,12 @@ know that's unusual. But the source and makefiles are all there... it's
 just a pain to doc all that and make it build in a cross-platform way.)
 
 1.  Install [Apache Ant 1.7.0](http://ant.apache.org/bindownload.cgi) or later. We'll assume that the `ant` command is in your path.
-2.  Check out the GWT prerequisite tools and third-party libraries: <pre>~/gwt$ svn checkout http://google-web-toolkit.googlecode.com/svn/tools/ tools</pre>
-3.  Check out the GWT source: <pre>~/gwt$ git clone https://gwt.googlesource.com/gwt trunk</pre>
-4.  Optionally, set an environment variable that contains the full path to the directory into which you just checked out the tools. (If the `tools` directory is a sibling of the GWT source directory, you don't have to specify `GWT_TOOLS`.) In this example, you executed the previous command from the directory `~/gwt`, so you'd type:<pre>~/gwt$ export GWT_TOOLS=~/gwt/tools</pre>
-5.  Switch to the directory into which you checked out the GWT source. Let's assume you checked it out into `~/gwt/trunk`. Make sure you're in that directory... <pre>~/gwt$ cd ~/gwt/trunk</pre> then just invoke Ant <pre>ant</pre>
+2.  Check out the GWT prerequisite tools and third-party libraries: `~/gwt$ git clone https://gwt.googlesource.com/gwt trunk`
+3.  Check out the GWT source: `~/gwt$ git clone https://gwt.googlesource.com/gwt trunk`
+4.  Optionally, set an environment variable that contains the full path to the directory into which you just checked out the tools. (If the `tools` directory is a sibling of the GWT source directory, you don't have to specify `GWT_TOOLS`.) In this example, you executed the previous command from the directory `~/gwt`, so you'd type:`~/gwt$ export GWT_TOOLS=~/gwt/tools`
+5.  Switch to the directory into which you checked out the GWT source. Let's assume you checked 
+it out into `~/gwt/trunk`. Make sure you're in that directory... `~/gwt$ cd ~/gwt/trunk` then 
+just invoke Ant `ant`
 6.  The GWT build creates each binary distribution in the `build/dist` subdirectory of the source root directory. In this example, the distributions would be in `~/gwt/trunk/build`.
 
 ### Testing<a id="testing"></a>
@@ -248,7 +250,7 @@ addressed during code review.
 
 To make it easier to format your GWT code correctly, use the
 [GWT style formatter](https://gwt.googlesource.com/gwt/+/master/eclipse/settings/code-style/gwt-format.xml)
-for Eclipse (Preferences | Java &gt; Code Style &gt; Formatter | Import...).
+for Eclipse (Preferences | Java > Code Style > Formatter | Import...).
 
 In general, the GWT style is based on [the
 standard Java conventions](http://java.sun.com/docs/codeconv/html/CodeConvTOC.doc.html), except for the differences spelled out below.
@@ -267,7 +269,7 @@ statements should follow, each block separated by a blank line. Next is
 the class or interface declaration. In the Javadoc comments, describe
 what the class or interface does.
 
-<pre>
+```
 /*
  * Copyright 2006 Google Inc.
  * 
@@ -296,8 +298,8 @@ import java.sql.SQLException;
  */
 public class Foo {
   ...
-} 
-</pre>
+}
+```
 
 #### Class Structure and Member Sort Order
 
@@ -324,7 +326,7 @@ All methods should be sorted alphabetically. Sorting is optional
 but recommended for fields. For example, the following class excerpt is
 correctly sorted:
 
-<pre>
+```
 public abstract class Foo {
   // Type declarations.
   public class FooBaz {
@@ -402,7 +404,7 @@ public abstract class Foo {
   private void g() {
   }
 }
-</pre>
+```
 
 #### Indentation
 
@@ -412,17 +414,17 @@ We use 4-space indents after line wraps, including function calls
 and assignments. For example, this is correct (4 spaces after the
 newline):
 
-<pre>
+```
 Instrument i =
     new Instrument();
-</pre>
+```
 
 and this is not correct (2 spaces after the newline):
 
-<pre>
+```
 Instrument i =
   new Instrument();
-</pre>
+```
 
 #### Imports
 
@@ -457,12 +459,12 @@ Treat acronyms and abbreviations as words. The names are much more readable:
     <th>Bad</th>
   </tr>
   <tr>
-    <td><code>XmlHttpRequest</code></td>
-    <td><code>XMLHTTPRequest</code></td>
+    <td>`XmlHttpRequest`</td>
+    <td>`XMLHTTPRequest`</td>
   </tr>
   <tr>
-    <td><code>getCustomerId</code></td>
-    <td><code>getCustomerID</code></td>
+    <td>`getCustomerId`</td>
+    <td>`getCustomerID`</td>
   </tr>
 </table>
 
@@ -474,16 +476,16 @@ This style rule also applies when an acronym or abbreviation is the entire name:
     <th>Bad</th>
   </tr>
   <tr>
-    <td><code>class Html</code></td>
-    <td><code>class HTML</code></td>
+    <td>`class Html`</td>
+    <td>`class HTML`</td>
   </tr>
   <tr>
-    <td><code>String url;</code></td>
-    <td><code>String URL;</code></td>
+    <td>`String url;`</td>
+    <td>`String URL;`</td>
   </tr>
   <tr>
-    <td><code>long id;</code></td>
-    <td><code>long ID;</code></td>
+    <td>`long id;`</td>
+    <td>`long ID;`</td>
   </tr>
 </table>
 
@@ -500,7 +502,7 @@ Item 56 (Item 38 in 1st edition) and Java Puzzlers Number 68.
 Parameterized type names should be one capital letter. However, if
 readability demands longer names (particularly due to having multiple
 parameters), the name should be capitalized and have suffix "T". In a
-nutshell, prefer &lt;T> or &lt;K, V>, and devolve to &lt;KeyT, ValueT> if
+nutshell, prefer `<T>` or `<K, V>`, and devolve to `<KeyT, ValueT>` if
 necessary.
 
 <table style="margin-left: 2em">
@@ -510,17 +512,17 @@ necessary.
     <th>Tolerable</th>
   </tr>
   <tr>
-    <td><code>Foo&lt;T></code></td>
-    <td><code>Foo&lt;FooClientType></code></td>
+    <td>`Foo<T>`</td>
+    <td>`Foo<FooClientType>`</td>
   </tr>
   <tr>
-    <td><code>Bar&lt;K, V></code></td>
-    <td><code>Bar&lt;KeyType, ValueType></code></td>
+    <td>`Bar<K, V>`</td>
+    <td>`Bar<KeyType, ValueType>`</td>
   </tr>
   <tr>
-    <td><code>Baz&lt;V, E, X></code></td>
-    <td><code>Baz&lt;EventType, ErrorType, ExpressionType></code></td>
-    <td><code>Baz&lt;EventT, ErrorT, ExpressionT></code></td>
+    <td>`Baz<V, E, X>`</td>
+    <td>`Baz<EventType, ErrorType, ExpressionType>`</td>
+    <td>`Baz<EventT, ErrorT, ExpressionT>`</td>
   </tr>
 </table>
 
@@ -532,10 +534,10 @@ Tests for Java classes should be placed in a parallel source tree
 under `test` and the test class name should be suffixed with
 `Test`. For example:
 
-<pre>
+```
 src/com/google/gwt/core/client/EntryPoint.java
 test/com/google/gwt/core/client/EntryPointTest.java
-</pre>
+```
 
 The use of the parallel test tree has two major advantages:
 
@@ -555,7 +557,7 @@ Please do submit code. Here's what you need to do:
 5.  Sign in to [GWT's Gerrit service](https://gwt-review.googlesource.com) and sign the [Contributor License Agreement](https://gwt-review.googlesource.com/#/settings/agreements).
 6.  Push your changes to Gerrit for review. The first time you will need to do some [initial setup](#gerritsetup). Follow Gerrit's documentation to create a change and upload it for review.
 7.  After setting up gerrit on your system, you can push your changes for review using:
-  	<pre>git push origin HEAD:refs/for/master</pre>
+      `git push origin HEAD:refs/for/master`
 
 ### Gerrit setup<a id="gerritsetup"></a>
 
@@ -565,12 +567,12 @@ Finally, to actually create an issue is slightly more involved, but most of the 
    Go to Settings in Gerrit. Under Settings you will find "HTTP Password" and click "Obtain Password"
    and follow the steps to get your HTTP Password and/or to setup your .netrc file.
 2. Setup your Gerrit commit-msg hook (optional, but recommended): 
-   Gerrit provides a commit hook at <pre>https://gwt-review.googlesource.com/tools/hooks/commit-msg</pre> 
+   Gerrit provides a commit hook at `https://gwt-review.googlesource.com/tools/hooks/commit-msg` 
    to automatically add Change-Id lines to your commits.  
    Download this and add it to your checkout's .git/hooks directory: 
-   <pre>curl -o .git/hooks/commit-msg https://gwt-review.googlesource.com/tools/hooks/commit-msg && chmod +x .git/hooks/commit-msg</pre>
+   `curl -o .git/hooks/commit-msg https://gwt-review.googlesource.com/tools/hooks/commit-msg && chmod +x .git/hooks/commit-msg`
 3. Make a change and commit it locally using git (e.g., edit a file foo and then run `git commit -m "my first change" foofile`).
-   Push the commit to Gerrit for review: <pre>git push origin HEAD:refs/for/master</pre>.
+   Push the commit to Gerrit for review: `git push origin HEAD:refs/for/master`.
 
 If you have any problems you might want to consult the gerrit documentation on [Uploading Changes](https://gerrit-review.googlesource.com/Documentation/user-upload.html) 
 
@@ -593,20 +595,33 @@ This webpage and the documentation hosted on it are completly written in markdow
 
 Here is how it works:
 
-All the code is stored inside a git repository. You can clone it like this:
+All the code is stored on github and can be directly edited on the web by pressing the
+"Edit me on Github" button. This is the easiest way to make a change, but if you are
+planing to make bigger changes to the website and want to test these locally first,
+you can clone the repository:
 
-<pre>git clone https://gwt.googlesource.com/gwt-site</pre>
+`git clone https://github/gwtproject/gwt-site`
 
 The source code for this webpage will be found in *src/main/markdown*. You can edit existing files and add new ones. If you want to see your changes you will need to run:
 
-<pre>mvn clean install</pre>
+`mvn clean install`
 
 After that you can go to *target/generated-site* and see the generated site.
 
-If you think your change is ready to be published on gwtproject.org you can send us
-your changes for review by using gerrit. Note: you need to have signed a <a href="#clas">CLA Agreement</a>.
+You can also launch the embedded Jetty server with
 
-This works the same way you would submit a code change to GWT. More information can be found [here](#submittingpatches).
+```
+mvn jetty:run
+```
+
+and point your browser to [http://localhost:8080](http://localhost:8080).
+
+If you think your change is ready to be published on gwtproject.org you can send us
+your changes with a pull request to http://github.com/gwtproject/gwt-site.
+
+If you wish to contribute to the GWT code used on the site (to improve navigation), then you should
+
+`git clone https://gwt.googlesource.com/gwt-site-webapp`
 
 ### Global .gitignore<a id="global_gitignore"></a>
 
