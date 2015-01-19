@@ -932,16 +932,52 @@ textarea {
 ul,
 ol {
   list-style-position: outside;
-  margin-left: 1.5em;
+  margin-left: 1.3em;
   padding-left: 0;
 }
-code {
-  margin-bottom: 1em;
+ul {
+  margin-left: 0.7em;
 }
-p > code {
+ul > li {
+  list-style-type: none;
+}
+ul > li::before {
+  content: "";
+  background-color: #f93535;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: -10px;
+  margin-right: 4px;
+  position: relative;
+  top: -3px;
+}
+ul > li ul li::before {
+  color: #000;
+}
+ol {
+  counter-reset: item;
+}
+ol > li {
+  list-style-type: none;
+}
+ol > li::before {
+  content: counter(item) " | ";
+  counter-increment: item;
+  color: #9c1421;
+  margin-left: -20px;
+}
+ol ol li::before {
+  color: #000;
+}
+code {
   background-color: #fff;
+  display: inline;
+}
+pre > code {
   display: block;
   padding: 10px;
+  margin-bottom: 1em;
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
