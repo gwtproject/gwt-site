@@ -21,6 +21,7 @@
         <include>**/*.svg</include>
         <include>**/*.ttf</include>
         <include>**/*.woff</include>
+        <include>**/*.woff2</include>
       </includes>
       <outputDirectory></outputDirectory>
     </fileSet>
