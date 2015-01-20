@@ -1,109 +1,121 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-        <title>GWT Project</title>
+    <title>GWT Project</title>
 
-        <link rel="stylesheet" href="assets/build/css/style.css">
-        <link rel="stylesheet" href="assets/build/fonts/icons/icons.css">
-        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="assets/build/css/style.css">
+    <link rel="stylesheet" href="assets/build/fonts/icons/icons.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
 
-        <script src="https://use.typekit.net/wwv3dxt.js"></script>
-        <script>try{Typekit.load();}catch(e){}</script>
+    <script src="https://use.typekit.net/wwv3dxt.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
 
-        <script type="text/javascript" src="/gwtproject/gwtproject.nocache.js"></script>
-        <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-40673139-1']);
-            _gaq.push(['_setDomainName', 'gwtproject.org']);
-            _gaq.push(['_setAllowLinker', true]);
-            _gaq.push(['_trackPageview']);
+    <script type="text/javascript" src="/gwtproject/gwtproject.nocache.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-40673139-1']);
+        _gaq.push(['_setDomainName', 'gwtproject.org']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
 
-            (function () {
-                var ga = document.createElement('script');
-                ga.type = 'text/javascript';
-                ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(ga, s);
-            })();
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src =
+            ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
+            + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
 
-        </script>
-        <script>
-            (function () {
-                var cx = '008698606704604874043:or32ypbnrfu';
-                var gcse = document.createElement('script');
-                gcse.type = 'text/javascript';
-                gcse.async = true;
-                gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                        '//www.google.com/cse/cse.js?cx=' + cx;
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(gcse, s);
-            })();
-        </script>
-    </head>
+    </script>
+    <script>
+        (function () {
+            var cx = '008698606704604874043:or32ypbnrfu';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                       '//www.google.com/cse/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+        })();
+    </script>
+</head>
 
-    <body>
+<body>
 
-        <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a
+        href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
 
-        <nav role="navigation" id="nav" class="alwaysOpen">
-            <div class="wrapper">
-                <ul>
-                    <li class="logo"><a href="/">GWT homepage</a></li>
-                    <li><a href="overview.html"><i class="icon_overview"></i>Overview</a></li>
-                    <li class="sep"><a href="gettingstarted.html"><i class="icon_arrow"></i>Get started</a></li>
-                    <li><a href="doc/latest/tutorial/index.html" class="active"><i class="icon_tutorials"></i>Tutorials</a></li>
-                    <li><a href="doc/latest/DevGuide.html"><i class="icon_doc"></i>Docs</a></li>
-                    <li><a href="examples.html"><i class="icon_ressources"></i>Ressources</a></li>
-                    <li><a href="makinggwtbetter.html"><i class="icon_getstarted"></i>Make GWT Better</a></li>
-                    <li class="sep"><a href="terms.html"><i class="icon_terms"></i>Terms</a></li>
-                    <li class="btn"><a href="download.html"><i class="icon_download"></i>Download</a></li>
-                    <li class="btn"><a href="#"><i class="icon_jd"></i>Java Doc</a></li>
-                </ul>
-                <div id="social">
-                    <a class="googleplus" href="#"><i
-                            class="icon_google"></i><span>Access our Google+ community</span></a>
-                    <a class="twitter" href="#"><i class="icon_twitter"></i><span>Join us on Twitter</span></a>
-                </div>
-                <a id="cc" href="#">Creative Commons Attribution 3.0 License.</a>
-            </div>
-        </nav>
+<nav role="navigation" id="nav" class="alwaysOpen">
+    <div class="wrapper">
+        <ul>
+            <li class="logo"><a href="/">GWT homepage</a></li>
+            <li><a href="overview.html"><i class="icon_overview"></i>Overview</a></li>
+            <li class="sep"><a href="gettingstarted.html"><i class="icon_arrow"></i>Get started</a>
+            </li>
+            <li><a href="doc/latest/tutorial/index.html" class="active"><i
+                    class="icon_tutorials"></i>Tutorials</a></li>
+            <li><a href="doc/latest/DevGuide.html"><i class="icon_doc"></i>Docs</a></li>
+            <li><a href="examples.html"><i class="icon_ressources"></i>Ressources</a></li>
+            <li><a href="makinggwtbetter.html"><i class="icon_getstarted"></i>Make GWT Better</a>
+            </li>
+            <li class="sep"><a href="terms.html"><i class="icon_terms"></i>Terms</a></li>
+            <li class="btn"><a href="download.html"><i class="icon_download"></i>Download</a></li>
+            <li class="btn"><a href="#"><i class="icon_jd"></i>Java Doc</a></li>
+        </ul>
+        <div id="social">
+            <a class="googleplus" href="#"><i
+                    class="icon_google"></i><span>Access our Google+ community</span></a>
+            <a class="twitter" href="#"><i class="icon_twitter"></i><span>Join us on Twitter</span></a>
+        </div>
+        <a id="cc" href="#">Creative Commons Attribution 3.0 License.</a>
+    </div>
+</nav>
 
-        <div id="content" class="home" role="main">
+<div class="holder">
+    <aside id="submenu">
+    </aside>
 
-            <a id="logo-mobile" href="#"><span>>Back to GWT homepage</span></a>
+    <a id="logo-mobile" href="#"><span>>Back to GWT homepage</span></a>
 
-            <div class="menu-button">Menu</div>
+    <div class="menu-button">Menu</div>
 
-            <nav id="nav-mobile" class="flexnav">
-                $toc
-            </nav>
+    <nav id="nav-mobile" class="flexnav">
+    </nav>
 
-            <div id="search">
-                <form action="#">
-                    <input type="text"/>
-                    <button type="submit"><i class="icon_search"></i> <span>Search</span></button>
-                </form>
-            </div>
+    <div id="search">
+        <form action="#">
+            <input type="text"/>
+            <button type="submit"><i class="icon_search"></i> <span>Search</span></button>
+        </form>
+    </div>
 
+    <div id="content" class="home" role="main">
+        <div>
             <section id="intro">
                 <div class="container">
                     <div class="row clearfix">
 
                         <div class="col col-full">
-                            <h1>Productivity <span>for developers, </span>performance for users</h1>
+                            <h1>Productivity <span>for developers, </span>performance for users
+                            </h1>
                         </div>
 
                         <div class="col col-2_3">
 
-                            <p>GWT is used by many products at Google, including Google AdWords and Google Wallet.
-                                It's open source, completely free, and used by thousands of enthusiastic developers
+                            <p>GWT is used by many products at Google, including Google AdWords
+                                and Google Wallet.
+                                It's open source, completely free, and used by thousands of
+                                enthusiastic developers
                                 around the world.</p>
 
                         </div>
@@ -123,13 +135,17 @@
 
                         <div class="col col-2_3">
 
-                            <p>GWT is the official open source project for GWT releases 2.5 and onwards.</p>
+                            <p>GWT is the official open source project for GWT releases 2.5 and
+                                onwards.</p>
 
-                            <p>This site houses links to the documentation, source code repository, issues list and
+                            <p>This site houses links to the documentation, source code
+                                repository, issues list and
                                 information related to GWT roadmap and release.</p>
 
-                            <p>It is intended for developers interested in contributing to GWT, and for keeping people
-                                informed on new and upcoming changes to GWT, GWT related events and other news.</p>
+                            <p>It is intended for developers interested in contributing to GWT,
+                                and for keeping people
+                                informed on new and upcoming changes to GWT, GWT related events
+                                and other news.</p>
 
                         </div>
 
@@ -149,8 +165,11 @@
                         <div class="col col-1_4 col-t1_2 col-mfull">
                             <a href="overview.html">
                                 <i class="icon_overview"></i>
+
                                 <h2>Learn about GWT</h2>
-                                <p>The features and tools it offers, and how you can quickly develop performance AJAX
+
+                                <p>The features and tools it offers, and how you can quickly
+                                    develop performance AJAX
                                     applications across all major browsers.</p>
                             </a>
                         </div>
@@ -158,8 +177,11 @@
                         <div class="col col-1_4 col-t1_2 col-mfull">
                             <a href="download.html">
                                 <i class="icon_download"></i>
+
                                 <h2>Download</h2>
-                                <p>Download and install the tools in GWT, including the SDK, Speed Tracer, and the Google Plugin for Eclipse.</p>
+
+                                <p>Download and install the tools in GWT, including the SDK,
+                                    Speed Tracer, and the Google Plugin for Eclipse.</p>
                             </a>
                         </div>
 
@@ -168,16 +190,23 @@
                         <div class="col col-1_4 col-t1_2 col-mfull">
                             <a href="gettingstarted.html">
                                 <i class="icon_arrow"></i>
+
                                 <h2>Get started</h2>
-                                <p>Walk through the first steps needed to get a web application up and running.</p>
-                                <p>Download and install the tools in GWT, including the SDK, Speed Tracer, and the Google Plugin for Eclipse.</p>
+
+                                <p>Walk through the first steps needed to get a web application
+                                    up and running.</p>
+
+                                <p>Download and install the tools in GWT, including the SDK,
+                                    Speed Tracer, and the Google Plugin for Eclipse.</p>
                             </a>
                         </div>
 
                         <div class="col col-1_4 col-t1_2 col-mfull">
                             <a href="doc/latest/DevGuide.html">
                                 <i class="icon_doc"></i>
+
                                 <h2>Docs</h2>
+
                                 <p>Everything you need to know about how to use GWT.</p>
                             </a>
                         </div>
@@ -191,14 +220,16 @@
                 <a href="#gwt"></a>
                 <a href="#letsbegin"></a>
             </div>
-
         </div>
+    </div>
+</div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="assets/build/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery
+        || document.write('<script src="assets/build/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
-        <script src="/assets/build/js/vendor/jquery.flexnav.js"></script>
-        <script src="/assets/build/js/global.min.js"></script>
+<script src="/assets/build/js/vendor/jquery.flexnav.js"></script>
+<script src="/assets/build/js/global.min.js"></script>
 
-    </body>
+</body>
 </html>
