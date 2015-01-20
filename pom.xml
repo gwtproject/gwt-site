@@ -70,6 +70,7 @@
             </goals>
             <configuration>
               <nonFilteredFileExtensions>
+                <nonFilteredFileExtension>woff2</nonFilteredFileExtension>
                 <nonFilteredFileExtension>woff</nonFilteredFileExtension>
                 <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
                 <nonFilteredFileExtension>eot</nonFilteredFileExtension>
