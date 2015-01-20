@@ -89,8 +89,7 @@ public class MDTranslater {
     }
 
     int index = path.indexOf("/src/");
-    return  "<a href=\"https://github.com/gwtproject/gwt-site/edit/master/" + path.substring(index + 1) + "\">Edit Me on " +
-        "github!</a>";
+    return  "<a id=\"editLink\" class=\"icon_editGithub\" href=\"https://github.com/gwtproject/gwt-site/edit/master/" + path.substring(index + 1) + "\" title=\"Edit this page on GitHub\"></a>";
   }
 
   private String createHeadForNode(MDNode node) {

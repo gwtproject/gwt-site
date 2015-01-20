@@ -99,7 +99,7 @@
 
             <div id="content" role="main">
                 <div class="container">
-
+                    $editLink
                     $content
 
                 </div>
