@@ -6,7 +6,6 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 src: [
-                    //'js/libs/*.js',
                     'src/main/site/assets/js/global.js'
                 ],
                 dest: 'src/main/site/assets/build/js/global.js'
@@ -87,7 +86,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', 'watch');
+    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'less', 'watch']);
     grunt.registerTask('imgs', 'imagemin');
-
 };
