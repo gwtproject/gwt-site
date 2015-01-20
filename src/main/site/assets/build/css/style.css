@@ -1489,7 +1489,7 @@ a {
 }
 #nav li.logo a::after {
   content: "\e601";
-  font-family: "icons";
+  font-family: "iconsregular";
   font-size: 30px;
   font-size: 3rem;
   display: block;
@@ -1690,10 +1690,10 @@ aside#submenu ul ul ul a {
 }
 aside#submenu nav > ul a:before {
   content: "\e809";
-  font-family: "icons";
-  margin-left: 4px;
-  position: relative;
-  float: right;
+  font-family: "iconsregular";
+  position: absolute;
+  top: 4px;
+  left: 7px;
 }
 aside#submenu nav > ul li > ul a:before {
   content: "";
