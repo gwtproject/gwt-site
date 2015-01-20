@@ -1398,6 +1398,9 @@ a {
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
+#nav.alwaysOpen + .holder #submenu {
+  display: none;
+}
 #nav .wrapper {
   width: 260px;
 }
