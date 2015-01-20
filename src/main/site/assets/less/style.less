@@ -66,6 +66,7 @@
       display: inline-block;
       width: 100%;
       padding: 3px 35px 4px;
+      outline: 0;
 
       .box-sizing();
       .transition();
@@ -277,6 +278,7 @@ aside#submenu {
     display: inline-block;
     width: 100%;
     padding: 6px 25px;
+    outline: 0;
 
     position: relative;
 
@@ -303,6 +305,16 @@ aside#submenu {
         a{
           padding-left: 55px;
         }
+      }
+    }
+
+    li {
+      &.active > a {
+        font-weight: bold;
+      }
+
+      a.active {
+        background-color: @c-background;
       }
     }
   }
