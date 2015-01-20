@@ -90,10 +90,14 @@
     </nav>
 
     <div id="search">
-        <form action="#">
+        <form onsubmit="javascript:void(0)">
             <input type="text"/>
             <button type="submit"><i class="icon_search"></i> <span>Search</span></button>
         </form>
+    </div>
+
+    <div style="visibility:hidden">
+        <gcse:searchresults-only gname="searchresults"></gcse:searchresults-only>
     </div>
 
     <div id="content" class="home" role="main">

@@ -91,10 +91,14 @@
             </nav>
 
             <div id="search">
-                <form action="#">
+                <form onsubmit="javascript:void(0)">
                     <input type="text"/>
                     <button type="submit"><i class="icon_search"></i> <span>Search</span></button>
                 </form>
+            </div>
+
+            <div style="visibility:hidden">
+                <gcse:searchresults-only gname="searchresults"></gcse:searchresults-only>
             </div>
 
             <div id="content" role="main">
@@ -107,7 +111,7 @@
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="assets/build/js/vendor/jquery-1.11.0.min.js"></script>')</script>
+        <script>window.jQuery || document.write("<script src='assets/build/js/vendor/jquery-1.11.0.min.js'><\/script>")</script>
 
         <script src="/assets/build/js/vendor/jquery.flexnav.js"></script>
         <script src="/assets/build/js/global.min.js"></script>
