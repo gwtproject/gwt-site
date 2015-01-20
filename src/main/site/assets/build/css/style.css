@@ -1482,6 +1482,9 @@ a {
   position: relative;
   top: 3px;
 }
+#nav li::before {
+  display: none;
+}
 #nav li.logo a {
   background: url('../img/navLogoBig.png') no-repeat;
   text-align: center;
