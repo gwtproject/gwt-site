@@ -1398,6 +1398,9 @@ a {
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
+#nav.alwaysOpen + .holder #submenu {
+  display: none;
+}
 #nav .wrapper {
   width: 260px;
 }
@@ -1419,6 +1422,7 @@ a {
   display: inline-block;
   width: 100%;
   padding: 3px 35px 4px;
+  outline: 0;
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1623,6 +1627,7 @@ aside#submenu a {
   display: inline-block;
   width: 100%;
   padding: 6px 25px;
+  outline: 0;
   position: relative;
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1646,6 +1651,12 @@ aside#submenu ul ul a {
 }
 aside#submenu ul ul ul a {
   padding-left: 55px;
+}
+aside#submenu ul li.active > a {
+  font-weight: bold;
+}
+aside#submenu ul li a.active {
+  background-color: #f2f2f2;
 }
 @media (max-width: 649px) {
   aside#submenu {
