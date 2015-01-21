@@ -89,6 +89,13 @@ h1 {
 
     .rounded(10px);
   }
+
+  a {
+    color: #000;
+
+    margin-left: 8px;
+    vertical-align: middle;
+  }
 }
 
 h2 {
@@ -119,6 +126,12 @@ h3 {
   font-size: 1.8rem;
 
   margin: 0.2em 0 0.9em;
+
+  i {
+    font-size: 300%;
+
+    margin-right: 5px;
+  }
 }
 
 h4 {
@@ -214,7 +227,7 @@ ul {
       width: 6px;
       height: 6px;
       margin-left: -10px;
-      margin-right: 4px;
+      margin-right: 6px;
 
       position: relative;
       top: -3px;
@@ -261,8 +274,39 @@ pre > code {
 }
 
 a {
-  color: @c-primary-dark;
+  color: @c-primary;
   text-decoration: none;
+}
+
+table {
+  width: 100%;
+
+  tr {
+    th,
+    td {
+      text-align: left;
+
+      padding: 12px 15px;
+      border-color: @c-background;
+      border-style: solid;
+      border-right-width: 5px;
+      border-bottom-width: 5px;
+    }
+
+    th:last-of-type,
+    td:last-of-type {
+      border-right-width: 0;
+    }
+
+    th {
+      font-weight: bold;
+      background-color: @c-secondary;
+    }
+
+    td {
+      background-color: #fff;
+    }
+  }
 }
 
 // -- Browse Happy --------------------------------------
