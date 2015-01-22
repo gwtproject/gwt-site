@@ -12,7 +12,8 @@
 
 ##Building
 
-* simply run: `mvn clean install`
+* build the assets using Grunt: `grunt`
+* then run: `mvn clean install`
 * after that you will find the generated documentation in `target/generated-site/`.
 
 ###Running locally
