@@ -12,8 +12,13 @@
 
 ##Building
 
+If you have Grunt installed :
 * build the assets using Grunt: `grunt`
 * then run: `mvn clean install`
+* after that you will find the generated documentation in `target/generated-site/`.
+
+If you don't have Grunt installer :
+* build the assets using Maven and Grunt plugin: `mvn clean install -Pgrunt`
 * after that you will find the generated documentation in `target/generated-site/`.
 
 ###Running locally
