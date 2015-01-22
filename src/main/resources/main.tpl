@@ -75,7 +75,7 @@
             </div>
         </nav>
 
-        <div class="holder">
+        <div class="holder" style="display:none">
             <aside id="submenu">
                 <nav>
                     $toc
