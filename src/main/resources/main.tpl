@@ -103,7 +103,9 @@
 
             <div id="content" role="main">
                 <div class="container">
-                    $editLink
+                    <span id="editLink" title="Edit this page on GitHub">
+                        $editLink
+                    </span>
                     $content
 
                 </div>

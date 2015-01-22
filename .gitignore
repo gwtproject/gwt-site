@@ -2,6 +2,8 @@ target/
 .idea/
 gwt-site.iml
 .DS_Store
+npm-debug.log
+node/
 node_modules/
 src/main/site/assets/build/css/
 src/main/site/assets/build/img/
