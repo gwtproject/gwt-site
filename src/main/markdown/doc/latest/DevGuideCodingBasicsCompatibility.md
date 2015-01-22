@@ -1,4 +1,4 @@
-Comptability
+Compatibility
 ===
 
 1.  [Language support](#language)
