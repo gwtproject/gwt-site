@@ -710,11 +710,7 @@ nav#nav-mobile {
       opacity: 1;
       visibility: visible;
 
-      -webkit-transform: translateX(10px);
-      -moz-transform: translateX(10px);
-      -ms-transform: translateX(10px);
-      -o-transform: translateX(10px);
-      transform: translateX(10px);
+      .translate(10);
     }
   }
 
@@ -727,41 +723,35 @@ nav#nav-mobile {
     opacity: 0;
     z-index: 999999;
 
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+    .box-sizing(content-box);
 
-    -webkit-transition: all 0.1s linear;
-    -moz-transition: all 0.1s linear;
-    -o-transition: all 0.1s linear;
-    -ms-transition: all 0.1s linear;
-    transition: all 0.1s linear;
+    .transition(.1s, linear)
   }
 
   &:before {
-    border: 6px solid transparent;
-    border-right-color: @c-primary;
-    bottom: 50%;
-
     content: '';
 
+    border: 6px solid transparent;
+    border-right-color: @c-primary;
     margin-bottom: -10px;
     margin-left: -10px;
+
+    bottom: 50%;
   }
 
   &:after {
+    content: attr(title);
+    font-size: 13px;
+    color: #ecf0f1;
+    background-color: @c-primary;
+    line-height: 11px;
+
     height: 22px;
     padding: 11px 11px 0 11px;
-    font-size: 13px;
-    line-height: 11px;
-    content: attr(title);
-    white-space: nowrap;
-
     margin-top: 4px;
     margin-left: 2px;
 
-    background-color: @c-primary;
-    color: #ecf0f1;
+    white-space: nowrap;
   }
 }
 
