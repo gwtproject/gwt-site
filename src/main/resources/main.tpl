@@ -104,7 +104,7 @@
             <div id="content" role="main">
                 <div class="container">
                     <span id="editLink" title="Edit this page on GitHub">
-                        <a class="icon_editGithub" href="$editLink"></a>
+                        $editLink
                     </span>
                     $content
 
