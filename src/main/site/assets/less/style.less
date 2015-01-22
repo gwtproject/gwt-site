@@ -106,7 +106,7 @@
 
       &::after {
         content: "\e601";
-        font-family: "iconsregular";
+        font-family: 'iconsregular';
         font-size: 30px;
         font-size: 3rem;
 
@@ -258,19 +258,25 @@
 aside#submenu {
   background-color: @c-secondary-dark;
 
-  display: table-cell;
-  width: 240px;
+  width: 280px;
   height: 100%;
-  padding: 174px 0 0 40px;
+  padding: 174px 0 5px 40px;
 
-  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+
+  overflow-y: scroll;
+
+  .box-sizing();
 
   @media(@tablet) {
     width: 200px;
   }
 
   @media(@mobile) {
-    display: block;
+    display: none !important;
   }
 
   a {
@@ -289,6 +295,10 @@ aside#submenu {
     .box-sizing();
     .transition();
 
+    @media(@tablet) {
+      padding-right: 15px;
+    }
+
     &:hover {
       background-color: @c-background;
     }
@@ -300,15 +310,31 @@ aside#submenu {
 
     position: relative;
 
-    ul {
-      a {
-        padding-left: 40px;
-      }
+    li::before {
+      display: none;
+    }
 
-      ul {
-        a{
-          padding-left: 55px;
-        }
+    ul a {
+      padding-left: 40px;
+
+      @media(@tablet) {
+        padding-left: 23px;
+      }
+    }
+
+    ul ul a{
+      padding-left: 50px;
+
+      @media(@tablet) {
+        padding-left: 33px;
+      }
+    }
+
+    ul ul ul a {
+      padding-left: 60px;
+
+      @media(@tablet) {
+        padding-left: 43px;
       }
     }
 
@@ -328,17 +354,33 @@ aside#submenu {
   }
 }
 
-aside#submenu nav > ul a:before {
+aside#submenu li.folder > a::before {
   content: "\e809";
   font-family: "iconsregular";
 
   position: absolute;
-  top: 4px;
-  left: 7px;
+  top: 5px;
+  left: 14px;
+
+  .rotation(-90deg);
+  .transition();
+
+  @media(@tablet) {
+    top: 6px;
+    left: 6px;
+  }
 }
 
-aside#submenu nav > ul li > ul a:before {
-  content: "";
+aside#submenu li.folder li.folder > a::before {
+  left: 24px;
+
+  @media(@tablet) {
+    left: 15px;
+  }
+}
+
+aside#submenu li.folder.open > a::before {
+  .rotation(0deg)
 }
 
 a#logo-mobile {
@@ -423,12 +465,15 @@ nav#nav-mobile {
 }
 
 #content {
-  padding: 8em 0 3em;
-  display: table-cell;
+  padding: 8em 3em 2em 300px;
+
+  @media(@tablet) {
+    padding: 8em 3em 2em 230px;
+  }
 
   @media(@mobile) {
     display: block;
-    padding-top: 3em;
+    padding: 3em 1em 2em;
   }
 
   &.home {
