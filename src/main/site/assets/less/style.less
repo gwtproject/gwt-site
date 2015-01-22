@@ -132,7 +132,7 @@
 
       position: relative;
 
-      &::after{
+      &::after {
         content: "";
 
         display: block;
@@ -153,7 +153,7 @@
       margin-bottom: 10px;
       margin-left: 0;
 
-      a{
+      a {
         background-color: @c-primary;
         color: #fff;
         font-size: 14px;
@@ -162,7 +162,7 @@
         .rounded(8px);
         .transition();
 
-        &:hover{
+        &:hover {
           background-color: @c-primary-dark;
         }
       }
@@ -213,7 +213,7 @@
     a {
       padding-left: 14px;
 
-      @media(@tablet) {
+      @media (@tablet) {
         padding-left: 15px;
       }
     }
@@ -243,14 +243,14 @@
         margin-left: -122px;
         height: 30px;
 
-        @media(@tablet) {
+        @media (@tablet) {
           margin-left: -123px;
         }
       }
     }
   }
 
-  @media(@mobile) {
+  @media (@mobile) {
     display: none;
   }
 }
@@ -271,11 +271,11 @@ aside#submenu {
 
   .box-sizing();
 
-  @media(@tablet) {
+  @media (@tablet) {
     width: 200px;
   }
 
-  @media(@mobile) {
+  @media (@mobile) {
     display: none !important;
   }
 
@@ -295,7 +295,7 @@ aside#submenu {
     .box-sizing();
     .transition();
 
-    @media(@tablet) {
+    @media (@tablet) {
       padding-right: 15px;
     }
 
@@ -303,7 +303,7 @@ aside#submenu {
       background-color: @c-background;
     }
   }
-  
+
   ul {
     margin: 0;
     padding: 0;
@@ -317,15 +317,15 @@ aside#submenu {
     ul a {
       padding-left: 40px;
 
-      @media(@tablet) {
+      @media (@tablet) {
         padding-left: 23px;
       }
     }
 
-    ul ul a{
+    ul ul a {
       padding-left: 50px;
 
-      @media(@tablet) {
+      @media (@tablet) {
         padding-left: 33px;
       }
     }
@@ -333,7 +333,7 @@ aside#submenu {
     ul ul ul a {
       padding-left: 60px;
 
-      @media(@tablet) {
+      @media (@tablet) {
         padding-left: 43px;
       }
     }
@@ -349,7 +349,7 @@ aside#submenu {
     }
   }
 
-  @media(@mobile) {
+  @media (@mobile) {
     display: none;
   }
 }
@@ -365,7 +365,7 @@ aside#submenu li.folder > a::before {
   .rotation(-90deg);
   .transition();
 
-  @media(@tablet) {
+  @media (@tablet) {
     top: 6px;
     left: 6px;
   }
@@ -374,7 +374,7 @@ aside#submenu li.folder > a::before {
 aside#submenu li.folder li.folder > a::before {
   left: 24px;
 
-  @media(@tablet) {
+  @media (@tablet) {
     left: 15px;
   }
 }
@@ -386,7 +386,7 @@ aside#submenu li.folder.open > a::before {
 a#logo-mobile {
   display: none;
 
-  @media(@mobile) {
+  @media (@mobile) {
     background: url('../img/navLogoBig.png') no-repeat;
     -webkit-background-size: contain;
     background-size: contain;
@@ -409,7 +409,7 @@ a#logo-mobile {
 nav#nav-mobile {
   display: none;
 
-  @media(@mobile) {
+  @media (@mobile) {
     display: block;
 
     position: relative;
@@ -437,7 +437,7 @@ nav#nav-mobile {
 
     .border-radius(0, 0, 3px, 0);
 
-    @media(@mobile) {
+    @media (@mobile) {
       display: inline-block;
     }
   }
@@ -467,11 +467,11 @@ nav#nav-mobile {
 #content {
   padding: 8em 3em 2em 300px;
 
-  @media(@tablet) {
+  @media (@tablet) {
     padding: 8em 3em 2em 230px;
   }
 
-  @media(@mobile) {
+  @media (@mobile) {
     display: block;
     padding: 3em 1em 2em;
   }
@@ -485,12 +485,12 @@ nav#nav-mobile {
 
       margin: 0 0 0.5em;
 
-      @media(@tablet) {
-        font-size:70px;
+      @media (@tablet) {
+        font-size: 70px;
         font-size: 7rem;
       }
 
-      @media(@mobile) {
+      @media (@mobile) {
         font-size: 40px;
         font-size: 4rem;
       }
@@ -499,7 +499,7 @@ nav#nav-mobile {
         display: inline-block;
       }
 
-      strong{
+      strong {
         font-size: 150px;
         font-size: 15rem;
         font-weight: 800;
@@ -507,12 +507,12 @@ nav#nav-mobile {
 
         display: block;
 
-        @media(@tablet) {
+        @media (@tablet) {
           font-size: 120px;
           font-size: 12rem;
         }
 
-        @media(mobile) {
+        @media (mobile) {
           font-size: 100px;
           font-size: 10rem;
         }
@@ -530,7 +530,7 @@ nav#nav-mobile {
 
       margin: 0.2em 0 0.9em;
 
-      @media(@mobile) {
+      @media (@mobile) {
         font-size: 24px;
         font-size: 2.4rem;
       }
@@ -553,7 +553,7 @@ nav#nav-mobile {
       left: 50%;
       z-index: 9900;
 
-      @media(@mobile) {
+      @media (@mobile) {
         margin-left: -10px;
       }
 
@@ -601,7 +601,7 @@ nav#nav-mobile {
         color: #fff;
 
         position: relative;
-        
+
         h1 strong {
           color: #000;
         }
@@ -624,7 +624,7 @@ nav#nav-mobile {
           right: 35px;
           z-index: 1000;
 
-          @media(@mobile) {
+          @media (@mobile) {
             display: none;
           }
         }
@@ -645,7 +645,7 @@ nav#nav-mobile {
           font-size: 14px;
           font-size: 1.4rem;
 
-          @media(@tablet) {
+          @media (@tablet) {
             font-size: 16px;
             font-size: 1.6rem;
           }
@@ -669,7 +669,7 @@ nav#nav-mobile {
   right: 10px;
   z-index: 9999;
 
-  @media(@mobile) {
+  @media (@mobile) {
     display: none;
   }
 
@@ -690,8 +690,74 @@ nav#nav-mobile {
 }
 
 .nodesktop {
-  @media(@desktop) {
+  @media (@desktop) {
     display: none;
+  }
+}
+
+#editLink {
+  position: relative;
+
+  &:hover {
+    background-color: transparent;
+
+    &:before,
+    &:after {
+      opacity: 1;
+      visibility: visible;
+
+      -webkit-transform: translateX(10px);
+      -moz-transform: translateX(10px);
+      -ms-transform: translateX(10px);
+      -o-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+  }
+
+  &:before,
+  &:after {
+    left: 100%;
+    position: absolute;
+
+    visibility: hidden;
+    opacity: 0;
+    z-index: 999999;
+
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+  }
+
+  &:before {
+    border: 6px solid transparent;
+    border-right-color: @c-primary;
+    bottom: 50%;
+
+    content: '';
+
+    margin-bottom: -10px;
+    margin-left: -10px;
+  }
+
+  &:after {
+    height: 22px;
+    padding: 11px 11px 0 11px;
+    font-size: 13px;
+    line-height: 11px;
+    content: attr(title);
+    white-space: nowrap;
+
+    margin-top: 4px;
+    margin-left: 2px;
+
+    background-color: @c-primary;
+    color: #ecf0f1;
   }
 }
 
