@@ -16,7 +16,7 @@ common code.
 ![img](../images/fragment_merging_before.jpg)
 
  As shown in this diagram, the GWT compiler creates an exclusive fragment for each split
-point and adds any shared code to the leftovers fragment. The result is that the project’s
+point and adds any shared code to the leftovers fragment. The result is that the project's
 leftovers fragment gradually gets bigger as developers add more split points. While this has
 no effect in the initial loading time of the project, the latency of the first requested
 split point usually suffers.
