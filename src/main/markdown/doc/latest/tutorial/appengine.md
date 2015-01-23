@@ -45,129 +45,115 @@ If you initially created your StockWatcher Eclipse project using the Google Plug
 2.  Complete the [Build a Sample GWT Application](gettingstarted.html) tutorial,  using webAppCreator to create a GWT application.  Alternatively, If you would like to skip the Build a Sample GWT Application tutorial, then download and unzip [this file](http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-GettingStarted-2.1.zip).  Edit the gwt.sdk property in the StockWatcher/build.xml, then proceed with the modifications below.
 3.  App Engine requires its own web application deployment descriptor.  Create a file StockWatcher/war/WEB-INF/appengine-web.xml with these contents:
 
-```
-<?xml version="1.0" encoding="utf-8"?>
-    <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-        <application><!-- Your App Engine application ID goes here --></application>
-        <version>1</version>
-    </appengine-web-app>
-```
+        <?xml version="1.0" encoding="utf-8"?>
+        <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+          <application><!-- Your App Engine application ID goes here --></application>
+          <version>1</version>
+        </appengine-web-app>
 
-Substitute your App Engine application ID on the second line.  Read more about
+    Substitute your App Engine application ID on the second line. Read more about
 [appengine-web.xml](//developers.google.com/appengine/docs/java/config/appconfig).
 
 4.  As we will be using [Java Data Objects (JDO)](//developers.google.com/appengine/docs/java/gettingstarted/usingdatastore) later for storing data, create a file StockWatcher/src/META-INF/jdoconfig.xml with these contents:
 
-```
-<?xml version="1.0" encoding="utf-8"?>
-    <jdoconfig xmlns="http://java.sun.com/xml/ns/jdo/jdoconfig"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:noNamespaceSchemaLocation="http://java.sun.com/xml/ns/jdo/jdoconfig">
-      <persistence-manager-factory name="transactions-optional">
-        <property name="javax.jdo.PersistenceManagerFactoryClass" value="org.datanucleus.store.appengine.jdo.DatastoreJDOPersistenceManagerFactory"/>
-        <property name="javax.jdo.option.ConnectionURL" value="appengine"/>
-        <property name="javax.jdo.option.NontransactionalRead" value="true"/>
-        <property name="javax.jdo.option.NontransactionalWrite" value="true"/>
-        <property name="javax.jdo.option.RetainValues" value="true"/>
-        <property name="datanucleus.appengine.autoCreateDatastoreTxns" value="true"/>
-      </persistence-manager-factory>
-    </jdoconfig>
-```
+        <?xml version="1.0" encoding="utf-8"?>
+        <jdoconfig xmlns="http://java.sun.com/xml/ns/jdo/jdoconfig"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://java.sun.com/xml/ns/jdo/jdoconfig">
+          <persistence-manager-factory name="transactions-optional">
+            <property name="javax.jdo.PersistenceManagerFactoryClass" value="org.datanucleus.store.appengine.jdo.DatastoreJDOPersistenceManagerFactory"/>
+            <property name="javax.jdo.option.ConnectionURL" value="appengine"/>
+            <property name="javax.jdo.option.NontransactionalRead" value="true"/>
+            <property name="javax.jdo.option.NontransactionalWrite" value="true"/>
+            <property name="javax.jdo.option.RetainValues" value="true"/>
+            <property name="datanucleus.appengine.autoCreateDatastoreTxns" value="true"/>
+          </persistence-manager-factory>
+        </jdoconfig>
 
-You will reference this configuration later by its name "transactions-optional".  Read more
-    about [jdoconfig.xml](//developers.google.com/appengine/docs/java/datastore/usingjdo).
+    You will reference this configuration later by its name "transactions-optional". Read more about
+[jdoconfig.xml](//developers.google.com/appengine/docs/java/datastore/usingjdo).
 
 5.  The GWT ant build file needs to be modified to support DataNucleus JDO compilation and use of the App Engine development server.  Edit StockWatcher/build.xml and add the following:
 
 6.  Add a property for the App Engine SDK directory.
 
-```
-<!-- Configure path to GWT SDK -->
-    <property name="gwt.sdk" location="_Path to GWT_" />
-    <!-- Configure path to App Engine SDK -->
-    <property name="appengine.sdk" location="_Path to App Engine SDK_" />
-```
+        <!-- Configure path to GWT SDK -->
+        <property name="gwt.sdk" location="_Path to GWT_" />
+        <!-- Configure path to App Engine SDK -->
+        <property name="appengine.sdk" location="_Path to App Engine SDK_" />
 
 7.  Add a property for a App Engine tools class path.
 
         <path id="project.class.path">
-        <pathelement location="war/WEB-INF/classes"/>
-        <pathelement location="${gwt.sdk}/gwt-user.jar"/>
-        <fileset dir="${gwt.sdk}" includes="gwt-dev*.jar"/>
-        <!-- Add any additional non-server libs (such as JUnit) -->
-        <fileset dir="war/WEB-INF/lib" includes="**/*.jar"/>
+          <pathelement location="war/WEB-INF/classes"/>
+          <pathelement location="${gwt.sdk}/gwt-user.jar"/>
+          <fileset dir="${gwt.sdk}" includes="gwt-dev*.jar"/>
+            <!-- Add any additional non-server libs (such as JUnit) -->
+          <fileset dir="war/WEB-INF/lib" includes="**/*.jar"/>
         </path>
 
         <path id="tools.class.path">
-        <path refid="project.class.path"/>
-        <pathelement location="${appengine.sdk}/lib/appengine-tools-api.jar"/>
-        <fileset dir="${appengine.sdk}/lib/tools">
-          <include name="**/asm-*.jar"/>
-          <include name="**/datanucleus-enhancer-*.jar"/>
-        </fileset>
+          <path refid="project.class.path"/>
+          <pathelement location="${appengine.sdk}/lib/appengine-tools-api.jar"/>
+          <fileset dir="${appengine.sdk}/lib/tools">
+            <include name="**/asm-*.jar"/>
+            <include name="**/datanucleus-enhancer-*.jar"/>
+          </fileset>
         </path>
 
 8.  Modify the "libs" ant target so that the required jar files are copied to WEB-INF/lib.
 
-```
-<target name="libs" description="Copy libs to WEB-INF/lib">
-        <mkdir dir="war/WEB-INF/lib" />
-        <copy todir="war/WEB-INF/lib" file="${gwt.sdk}/gwt-servlet.jar" />
-        <!-- Add any additional server libs that need to be copied -->
-        <copy todir="war/WEB-INF/lib" flatten="true">
-          <fileset dir="${appengine.sdk}/lib/user" includes="**/*.jar"/>
-        </copy>
-      </target>
-```
+        <target name="libs" description="Copy libs to WEB-INF/lib">
+          <mkdir dir="war/WEB-INF/lib" />
+          <copy todir="war/WEB-INF/lib" file="${gwt.sdk}/gwt-servlet.jar" />
+          <!-- Add any additional server libs that need to be copied -->
+          <copy todir="war/WEB-INF/lib" flatten="true">
+            <fileset dir="${appengine.sdk}/lib/user" includes="**/*.jar"/>
+          </copy>
+        </target>
 
 9.  JDO is implemented with DataNucleus Java byte-code enhancement.  Modify the "javac" ant
 target to add byte-code enhancement.
 
-```
-<target name="javac" depends="libs" description="Compile java source">
-        <mkdir dir="war/WEB-INF/classes"/>
-        <javac srcdir="src" includes="**" encoding="utf-8"
-            destdir="war/WEB-INF/classes"
-            source="1.5" target="1.5" nowarn="true"
-            debug="true" debuglevel="lines,vars,source">
-          <classpath refid="project.class.path"/>
-        </javac>
-        <copy todir="war/WEB-INF/classes">
-          <fileset dir="src" excludes="**/*.java"/>
-        </copy>
-        <taskdef
-           name="datanucleusenhancer"
-           classpathref="tools.class.path"
-           classname="org.datanucleus.enhancer.tools.EnhancerTask" />
-        <datanucleusenhancer
-           classpathref="tools.class.path"
-           failonerror="true">
-          <fileset dir="war/WEB-INF/classes" includes="**/*.class" />
-        </datanucleusenhancer>
-      </target>
-```
+        <target name="javac" depends="libs" description="Compile java source">
+          <mkdir dir="war/WEB-INF/classes"/>
+          <javac srcdir="src" includes="**" encoding="utf-8"
+              destdir="war/WEB-INF/classes"
+              source="1.5" target="1.5" nowarn="true"
+              debug="true" debuglevel="lines,vars,source">
+            <classpath refid="project.class.path"/>
+          </javac>
+          <copy todir="war/WEB-INF/classes">
+            <fileset dir="src" excludes="**/*.java"/>
+          </copy>
+          <taskdef name="datanucleusenhancer"
+              classpathref="tools.class.path"
+              classname="org.datanucleus.enhancer.tools.EnhancerTask" />
+          <datanucleusenhancer classpathref="tools.class.path"
+              failonerror="true">
+            <fileset dir="war/WEB-INF/classes" includes="**/*.class" />
+          </datanucleusenhancer>
+        </target>
 
 10.  Modify the "devmode" ant target to use the App Engine development server instead of the
 servlet container which comes with GWT.
 
-```
-<target name="devmode" depends="javac" description="Run development mode"">
-        <java failonerror="true" fork="true" classname="com.google.gwt.dev.DevMode"">
-          <classpath>
-            <pathelement location="src"/>
-            <path refid="project.class.path"/>
-            <path refid="tools.class.path"/>
-          </classpath>
-          <jvmarg value="-Xmx256M"/>
-          <arg value="-startupUrl"/>
-          <arg value="StockWatcher.html"/>
-          <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
-          <arg value="-server"/>
-          <arg value="com.google.appengine.tools.development.gwt.AppEngineLauncher"/>
-          <arg value="com.google.gwt.sample.stockwatcher.StockWatcher"/>
-        </java>
-      </target>
-```
+        <target name="devmode" depends="javac" description="Run development mode"">
+          <java failonerror="true" fork="true" classname="com.google.gwt.dev.DevMode"">
+            <classpath>
+              <pathelement location="src"/>
+              <path refid="project.class.path"/>
+              <path refid="tools.class.path"/>
+            </classpath>
+            <jvmarg value="-Xmx256M"/>
+            <arg value="-startupUrl"/>
+            <arg value="StockWatcher.html"/>
+            <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+            <arg value="-server"/>
+            <arg value="com.google.appengine.tools.development.gwt.AppEngineLauncher"/>
+            <arg value="com.google.gwt.sample.stockwatcher.StockWatcher"/>
+          </java>
+        </target>
 
 ### Test locally
 
