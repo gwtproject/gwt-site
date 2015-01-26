@@ -591,7 +591,7 @@ You can sign either CLA through [GWT's Gerrit service](https://gwt-review.google
 
 ### Contributing to webpage and Documentation<a id="webpage"></a>
 
-This webpage and the documentation hosted on it are completly written in markdown. If you find an error, want to make an improvement, write an article or do something to the webpage feel free to do so.
+This webpage and the documentation hosted on it are completely written in markdown. If you find an error, want to make an improvement, write an article or do something to the webpage feel free to do so.
 
 Here is how it works:
 

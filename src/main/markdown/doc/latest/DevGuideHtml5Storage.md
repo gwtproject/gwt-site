@@ -112,7 +112,7 @@ import com.google.gwt.storage.client.Storage;
 
 If the browser supports HTML5 storage, the Storage.getLocalStorageIfSupported method creates the storage object if it doesn't exist yet, and returns the object. If the storage object already exists, it simply returns the already-existing object. If the browser doesn't support HTML5 storage, this returns null. The Storage.getSessionStorageIfSupported() method works in the same way. 
 
-Getting the storage object and checking for browser suppport of HTML5 storage are done at the same time, so the code snippet for doing this should look familiar:
+Getting the storage object and checking for browser support of HTML5 storage are done at the same time, so the code snippet for doing this should look familiar:
 
 ```
 import com.google.gwt.storage.client.Storage;

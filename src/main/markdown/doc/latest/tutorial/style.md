@@ -220,7 +220,7 @@ public void onModuleLoad() {
 ```
 
 2.  Save your changes to StockWatcher.java and then press Refresh in the browser running development mode to see them.
-    *  The the header row in the flex table displays white italic headings against a blue background.
+    *  The header row in the flex table displays white italic headings against a blue background.
 
 ### Implementing the Remaining Secondary Style Changes for StockWatcher
 
