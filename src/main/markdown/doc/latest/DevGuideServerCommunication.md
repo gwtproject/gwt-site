@@ -31,7 +31,7 @@ Everything that happens within your web server is referred to as _server-side_ p
 server (for example, to load or save data), it makes an HTTP request across the network using a [remote procedure
 call (RPC)](DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls). While processing an RPC, your server is executing server-side code.
 
-GWT provides an RPC mechanism based on Java Servlets to provide access to server-side resources. This mechanism includes generation of efficent client-side and server-side code to
+GWT provides an RPC mechanism based on Java Servlets to provide access to server-side resources. This mechanism includes generation of efficient client-side and server-side code to
 [serialize](DevGuideServerCommunication.html#DevGuideSerializableTypes) objects across the network using [deferred
 binding](DevGuideCodingBasics.html#DevGuideDeferredBinding).
 
@@ -130,7 +130,7 @@ asynchronous counterpart must follow certain naming standards. The GWT compiler 
 
 *   A service interface must have a corresponding asynchronous interface with the same package and name with the Async suffix appended. For example, if a service interface is
 named `com.example.cal.client.SpellingService`, then the asynchronous interface must be called `com.example.cal.client.SpellingServiceAsync`.
-*   Each method in the synchronous service interface must have a coresponding method in the asynchronous service interface with an extra [AsyncCallback](/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html) parameter as the last
+*   Each method in the synchronous service interface must have a corresponding method in the asynchronous service interface with an extra [AsyncCallback](/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html) parameter as the last
 argument.
 
 See [AsyncCallback](/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html) for additional details
@@ -274,7 +274,7 @@ public class Foo implements EntryPoint {
 
       /**
        * Make a GWT-RPC call to the server.  The myEmailService class member
-       * was initalized when the module started up.
+       * was initialized when the module started up.
        */
       void sendEmail (String message) {
           myEmailService.sendEmail(message, new AsyncCallback<String>() {
@@ -558,7 +558,7 @@ mapping the `web.xml` file.
 
 The above example is a good way to test your application from client to server, but may not be the best production setup. For one, the Jakarta/Tomcat server is not the fastest
 web server for static files. Also, you may already have a web infrastructure setup for serving static content that you would like to leverage. The following example will show you
-how to split the web engine deployment from from the static content.
+how to split the web engine deployment from the static content.
 
 If you look at the war directory of a built web application, you'll notice two kinds of files:
 
