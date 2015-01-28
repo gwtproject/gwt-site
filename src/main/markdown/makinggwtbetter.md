@@ -557,7 +557,23 @@ Please do submit code. Here's what you need to do:
 5.  Sign in to [GWT's Gerrit service](https://gwt-review.googlesource.com) and sign the [Contributor License Agreement](https://gwt-review.googlesource.com/#/settings/agreements).
 6.  Push your changes to Gerrit for review. The first time you will need to do some [initial setup](#gerritsetup). Follow Gerrit's documentation to create a change and upload it for review.
 7.  After setting up gerrit on your system, you can push your changes for review using:
-      `git push origin HEAD:refs/for/master`
+      `git push origin HEAD:refs/for/master` . You will be prompted to enter a username and password. If you haven't already, you will need to [generate a new password at](https://gwt.googlesource.com/new-password) or you will see an error.
+If everything went well it will look like this:
+
+        $ git push origin HEAD:refs/for/master
+        Counting objects: 12, done.
+        Delta compression using up to 8 threads.
+        Compressing objects: 100% (2/2), done.
+        Writing objects: 100% (2/2), 303 bytes | 0 bytes/s, done.
+        Total 2 (delta 1), reused 0 (delta 0)
+        remote: Resolving deltas: 100% (1/1)
+        remote: Processing changes: new: 1, done    
+        remote: 
+        remote: New Changes:
+        remote:   https://gwt-review.googlesource.com/11344 test commit
+        remote: 
+        To https://gwt.googlesource.com/gwt
+         * [new branch]      HEAD -> refs/for/master
 
 ### Gerrit setup<a id="gerritsetup"></a>
 
