@@ -38,7 +38,7 @@ You can parse JSON Strings and convert them to a [JavaScriptObject](/javadoc/lat
  * @param JSON String that you trust
  * @return JavaScriptObject that you can cast to an Overlay Type
  */
-public static <T extends JavaScriptObject&gt T parseJson(String jsonStr)
+public static <T extends JavaScriptObject> T parseJson(String jsonStr)
 {
   return JsonUtils.safeEval(jsonStr);
 }
