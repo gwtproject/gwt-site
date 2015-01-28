@@ -365,7 +365,7 @@ Running in production mode is a good way to test:
 <dd>
 Development mode uses a special engine to run your app as a mix of both Java
 bytecode and native JavaScript. If your code makes many calls back and forth
-between Java and and JavaScript, your code may seem slower in development mode
+between Java and JavaScript, your code may seem slower in development mode
 than it will actually be in production mode. This can be particularly true of
 UI code. On the other hand, intense algorithmic pure Java code will tend to
 run faster in development mode, since the JVM outperforms most JavaScript
@@ -404,7 +404,7 @@ You can run the compiler with the name of the module you want to compile in one 
 *   If you used the webAppCreator script to create your project, you can use Ant to run the generated `build.xml`.
 *   If you are using the Google Plugin for Eclipse, you can compile your application by clicking GWT Compile Project button ![icon](tutorial/images/GWTCompileProject.png).
 
-Once compilation completes sucessfully, directories will be created containing the JavaScript implementation of your project. The compiler will create one directory for each
+Once compilation completes successfully, directories will be created containing the JavaScript implementation of your project. The compiler will create one directory for each
 module it compiles.
 
 ```

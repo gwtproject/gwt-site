@@ -208,7 +208,7 @@ know that's unusual. But the source and makefiles are all there... it's
 just a pain to doc all that and make it build in a cross-platform way.)
 
 1.  Install [Apache Ant 1.7.0](http://ant.apache.org/bindownload.cgi) or later. We'll assume that the `ant` command is in your path.
-2.  Check out the GWT prerequisite tools and third-party libraries: `~/gwt$ git clone https://gwt.googlesource.com/gwt trunk`
+2.  Check out the GWT prerequisite tools and third-party libraries: `~/gwt$ svn checkout http://google-web-toolkit.googlecode.com/svn/tools/ tools`
 3.  Check out the GWT source: `~/gwt$ git clone https://gwt.googlesource.com/gwt trunk`
 4.  Optionally, set an environment variable that contains the full path to the directory into which you just checked out the tools. (If the `tools` directory is a sibling of the GWT source directory, you don't have to specify `GWT_TOOLS`.) In this example, you executed the previous command from the directory `~/gwt`, so you'd type:`~/gwt$ export GWT_TOOLS=~/gwt/tools`
 5.  Switch to the directory into which you checked out the GWT source. Let's assume you checked 
@@ -591,7 +591,7 @@ You can sign either CLA through [GWT's Gerrit service](https://gwt-review.google
 
 ### Contributing to webpage and Documentation<a id="webpage"></a>
 
-This webpage and the documentation hosted on it are completly written in markdown. If you find an error, want to make an improvement, write an article or do something to the webpage feel free to do so.
+This webpage and the documentation hosted on it are completely written in markdown. If you find an error, want to make an improvement, write an article or do something to the webpage feel free to do so.
 
 Here is how it works:
 
