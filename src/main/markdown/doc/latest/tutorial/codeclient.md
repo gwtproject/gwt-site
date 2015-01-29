@@ -36,7 +36,7 @@ public class StockWatcher implements EntryPoint {
   private TextBox newSymbolTextBox = new TextBox();
   private Button addStockButton = new Button("Add");
   private Label lastUpdatedLabel = new Label();
-  private ArrayList<String> stocks = new ArrayList<String>
+  private ArrayList<String> stocks = new ArrayList<String>();
     
 ```
 
