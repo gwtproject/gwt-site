@@ -21,7 +21,7 @@ In the Widget Gallery the widgets have a default style and so they
 don't look exactly as they will in the final implementation of
 StockWatcher. Don't worry about that now. First you'll focus on
 getting the widgets working. Later, you will change their appearance
-with CSS in the [Applying Syles](style.html) section.
+with CSS in the [Applying Styles](style.html) section.
 
 ### Stock Data Table
 
