@@ -600,7 +600,7 @@ All the code is stored on github and can be directly edited on the web by pressi
 planing to make bigger changes to the website and want to test these locally first,
 you can clone the repository:
 
-`git clone https://github/gwtproject/gwt-site`
+`git clone https://github.com/gwtproject/gwt-site`
 
 The source code for this webpage will be found in *src/main/markdown*. You can edit existing files and add new ones. If you want to see your changes you will need to run:
 
