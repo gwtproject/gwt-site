@@ -51,7 +51,7 @@ div.diagram img {
   </div>
   <br/>
   <div>
-    <a href="doc/latest/ReleaseNotes.html">What's New in GWT 2.7.0</a>
+    <a href="release-notes.html#Release_Notes_2_7_0">What's New in GWT 2.7.0</a>
   </div>
 </div>
 
