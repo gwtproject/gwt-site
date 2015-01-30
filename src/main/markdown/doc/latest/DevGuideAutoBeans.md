@@ -201,7 +201,7 @@ Creates a shallow copy of the properties in the AutoBean.  Modifying the structu
 
 The AutoBean framework can be used as a JSON interoperability layer to provide a Java typesystem wrapper around an existing JSON api or to create JSON payloads to interact with a remote service.  This is accomplished by designing the Java APIs according to the JSON schema.  The `@PropertyName` annotation can be applied to  getters and setters where the Java naming convention does not align with the JSON schema.
 
-Generally speaking, the serialized form of an object emitted by AutoBeanCodex mirrors the interface declaration.  For instance, the example Person interface described in the quckstart section of this document might be serialized as:
+Generally speaking, the serialized form of an object emitted by AutoBeanCodex mirrors the interface declaration.  For instance, the example Person interface described in the quickstart section of this document might be serialized as:
 
     // Whitespace added for clarity
     { "name" : "John Doe", "address" : { "street" : "1234 Maple St", "city" : "Nowhere" } }`
