@@ -85,7 +85,8 @@ So that users can delete a specific stock from the list, insert a Remove button 
     removeStockButton.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent event) {
         int removedIndex = stocks.indexOf(symbol);
-        stocks.remove(removedIndex);        stocksFlexTable.removeRow(removedIndex + 1);
+        stocks.remove(removedIndex);
+        stocksFlexTable.removeRow(removedIndex + 1);
       }
     });
     stocksFlexTable.setWidget(row, 3, removeStockButton);
@@ -147,7 +148,7 @@ public void onModuleLoad() {
 
         ...
 
-        // Move cursor focus to the text box.
+        // Move cursor focus to the input box.
     newSymbolTextBox.setFocus(true);
 
         // Setup timer to refresh list automatically.
