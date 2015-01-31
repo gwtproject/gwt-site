@@ -24,6 +24,7 @@ The GWT Release Notes
 * [2.1.0 (M3)](#Release_Notes_2_1_0_M3)
 * [2.1.0 (M2)](#Release_Notes_2_1_0_M2)
 * [2.1.0 (M1)](#Release_Notes_2_1_0_M1)
+* [2.0.4](#Release_Notes_2_0_4)
 * [2.0.3](#Release_Notes_2_0_3)
 * [2.0.2](#Release_Notes_2_0_2)
 * [2.0.1](#Release_Notes_2_0_1)
@@ -54,7 +55,9 @@ The GWT Release Notes
 
 * * *
 
-## Release Notes for 2.7.0
+
+
+## <a id="Release_Notes_2_7_0"></a> Release Notes for 2.7.0
 
 This release fixes issues found while testing RC1.
 
@@ -68,7 +71,7 @@ production mode. See
 [issue 9004](https://code.google.com/p/google-web-toolkit/issues/detail?id=9004)
 for workarounds.
 
-## Release Notes for 2.7.0 (RC1)
+## <a id="Release_Notes_2_7_0_RC1"></a> Release Notes for 2.7.0 (RC1)
 
 ### Highlights
 
@@ -256,7 +259,7 @@ For even more detail, see the [Issue Tracker.]
 
 <a id="Release_Notes_Current"></a>
 
-## Release Notes for 2.6.1
+## <a id="Release_Notes_2_6_1"></a> Release Notes for 2.6.1
 
 This release contains bug fixes for
 [GWT 2.6.0](#Release_Notes_2_6_0).
@@ -277,31 +280,31 @@ This release contains bug fixes for
 A complete list of changes can be found
 [here](https://gwt.googlesource.com/gwt/+log/2.6.0..2.6.1).
 
-## Release Notes for 2.6.0
+## <a id="Release_Notes_2_6_0"></a> Release Notes for 2.6.0
 
 This release includes minor updates to silence unnecessary debugging warnings.
 See the release notes for [2.6.0 (RC1)](#Release_Notes_2_6_0_RC1)
 for the full list of features and bugs fixes included in the GWT 2.6.0 release.
 
-## Release Notes for 2.6.0 (RC4)
+## <a id="Release_Notes_2_6_0_RC4"></a> Release Notes for 2.6.0 (RC4)
 
 This release enabled the Super Dev Mode hook by default, updated the sample
 Maven POMs, included a Firefox memory leak fix for Dev Mode, and a few other
 minor regressions noted during release candidate testing.
 
-## Release Notes for 2.6.0 (RC3)
+## <a id="Release_Notes_2_6_0_RC3"></a> Release Notes for 2.6.0 (RC3)
 
 This release fixed an incompatibility with the Google Plugin for Eclipse,
 improved uncaught exception handling, and reverted some backwards-incompatible
 changes made since GWT 2.5.1.
 
-## Release Notes for 2.6.0 (RC2)
+## <a id="Release_Notes_2_6_0_RC2"></a> Release Notes for 2.6.0 (RC2)
 
 This release disabled the Opera permutation, added a more maintainable
 DOM event dispatch mechanism, and fixed a few GWT-RPC and IE11 issues
 raised during release candidate testing.
 
-## Release Notes for 2.6.0 (RC1)
+## <a id="Release_Notes_2_6_0_RC1"></a> Release Notes for 2.6.0 (RC1)
 
 ### Highlights
 
@@ -550,14 +553,14 @@ conflicts when testing code that calls GWT.setUncaughtExceptionHandler.
 For even more detail, see [Changelists up to 2.6.0-rc1](https://gwt.googlesource.com/gwt/+log/2.5.1..2.6.0-rc1)
 and the [issue tracker](https://code.google.com/p/google-web-toolkit/issues/list?q=Milestone%3D2_6).
 
-## Release Notes for 2.5.1
+## <a id="Release_Notes_2_5_1"></a> Release Notes for 2.5.1
 
 This release includes an update to the sample application's Maven POM
 files. See the release notes for [2.5.1
 (RC1)](#Release_Notes_2_5_1_RC1) for the full list of features and bugs fixes included in the GWT
 2.5.1 release.
 
-## Release Notes for 2.5.1 (RC1)
+## <a id="Release_Notes_2_5_1_RC1"></a> Release Notes for 2.5.1 (RC1)
 
 GWT 2.5.1 is a maintenance release including many bugfixes and
 minor improvements since GWT 2.5.
@@ -653,7 +656,7 @@ conserving server memory.
 *   Fixed an exception when using shared code that uses GWTBridge
 on the server ([7527](https://code.google.com/p/google-web-toolkit/issues/detail?id=7527))
 
-## Release Notes for 2.5.0
+## <a id="Release_Notes_2_5_0"></a> Release Notes for 2.5.0
 
 This release includes some minor bug fixes found in the release
 candidate. See [What's New in
@@ -670,7 +673,7 @@ the 2.5 GA release. If you have an app that's been built with GWT 2.4
 or one of the 2.5 RCs, then you'll need to get the latest 2.5 release,
 recompile your app, and redeploy.
 
-## Release Notes for 2.5.0 (RC2)
+## <a id="Release_Notes_2_5_0_RC2"></a> Release Notes for 2.5.0 (RC2)
 
 This is release candidate 2 of GWT 2.5. See the [What's new in GWT 2.5](doc/latest/ReleaseNotes.html) page as
 well as release notes below for the full list of features and bugfixes
@@ -687,7 +690,7 @@ is improved, documented, and no longer considered experimental.
 *   Other fixes; see the [issue
 tracker](https://code.google.com/p/google-web-toolkit/issues/list?q=FixedIn2_5RC2) for more.
 
-## Release Notes for 2.5.0 (RC1)
+## <a id="Release_Notes_2_5_0_RC1"></a> Release Notes for 2.5.0 (RC1)
 
 This is release candidate 1 of GWT 2.5. See the [What's new in GWT 2.5](doc/latest/ReleaseNotes.html) page as
 well as release notes below for the full list of features and bugfixes
@@ -820,7 +823,7 @@ GWT applications.
 
 * * *
 
-## Release Notes for 2.4.0
+## <a id="Release_Notes_2_4_0"></a> Release Notes for 2.4.0
 
 This is the General Availability release of GWT 2.4. See the release notes below for the full list of features and bug
 fixes included in this release.
@@ -902,7 +905,7 @@ line.
 
 * * *
 
-## Release Notes for 2.3.0
+## <a id="Release_Notes_2_3_0"></a> Release Notes for 2.3.0
 
 This is the General Availability release of GWT 2.3. See the
 release notes below for the full list of features and bug fixes
@@ -941,7 +944,7 @@ tracker.
 
 * * *
 
-## Release Notes for 2.3.0 (M1)
+## <a id="Release_Notes_2_3_0_M1"></a> Release Notes for 2.3.0 (M1)
 
 This is milestone 1 of GWT 2.3.
 
@@ -974,7 +977,7 @@ issue tracker.
 
 * * *
 
-## Release Notes for 2.2.0
+## <a id="Release_Notes_2_2_0"></a> Release Notes for 2.2.0
 
 The 2.2 release of GWT contains an integrated UI designer (part
 of the Google Plugin for Eclipse), support for HTML5 functionality,
@@ -1015,7 +1018,7 @@ final release](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=
 
 * * *
 
-## Release Notes for 2.1.1
+## <a id="Release_Notes_2_1_1"></a> Release Notes for 2.1.1
 
 ### General Enhancements
 
@@ -1034,7 +1037,7 @@ in this release.
 
 * * *
 
-## Release Notes for 2.1.0
+## <a id="Release_Notes_2_1_0"></a> Release Notes for 2.1.0
 
 This release includes some minor bug fixes found in the release
 candidate. See [What's New in
@@ -1044,7 +1047,7 @@ GWT 2.1](doc/2.1/ReleaseNotes.html) plus the release notes for [2.1.0
 
 * * *
 
-## Release Notes for 2.1.0 (RC1)
+## <a id="Release_Notes_2_1_0_RC1"></a> Release Notes for 2.1.0 (RC1)
 
 This is release candidate 1 of GWT 2.1.
 
@@ -1100,7 +1103,7 @@ OperationRegistry [(5425)](https://code.google.com/p/google-web-toolkit/issues/d
 
 * * *
 
-## Release Notes for 2.1.0 (M3)
+## <a id="Release_Notes_2_1_0_M3"></a> Release Notes for 2.1.0 (M3)
 
 This is milestone 3 release of 2.1.
 
@@ -1137,13 +1140,13 @@ occurring in onModuleLoad() ([#1617](https://code.google.com/p/google-web-toolki
 
 * * *
 
-## Release Notes for 2.1.0 (M2)
+## <a id="Release_Notes_2_1_0_M2"></a> Release Notes for 2.1.0 (M2)
 
 This is milestone 2 release of 2.1.
 
 * * *
 
-## Release Notes for 2.1.0 (M1)
+## <a id="Release_Notes_2_1_0_M1"></a> Release Notes for 2.1.0 (M1)
 
 This is a preview release of 2.1, that contains a new set of Cell
 Widgets and an app framework that make it easier to build large scale
@@ -1202,7 +1205,7 @@ if bundle is used on the server side as well ([#4797](https://code.google.com/p/
 
 * * *
 
-## Release Notes for 2.0.4
+## <a id="Release_Notes_2_0_4"></a> Release Notes for 2.0.4
 
 This 2.0.4 release contains fixes that were not included in the
 2.0.3 release.
@@ -1218,7 +1221,7 @@ interface ([#4993](https://code.google.com/p/google-web-toolkit/issues/detail?id
 
 * * *
 
-## Release Notes for 2.0.3
+## <a id="Release_Notes_2_0_3"></a> Release Notes for 2.0.3
 
 This 2.0.3 release contains fixes that were not included in the
 2.0.2 release.
@@ -1231,7 +1234,7 @@ IFrame throws a NullPointerException ([#4584](https://code.google.com/p/google-w
 
 * * *
 
-## Release Notes for 2.0.2
+## <a id="Release_Notes_2_0_2"></a> Release Notes for 2.0.2
 
 This 2.0.2 release contains a fix that was not included in the
 2.0.1 release.
@@ -1242,7 +1245,7 @@ This 2.0.2 release contains a fix that was not included in the
 
 * * *
 
-## Release Notes for 2.0.1
+## <a id="Release_Notes_2_0_1"></a> Release Notes for 2.0.1
 
 This 2.0.1 release contains fixes for bugs found in the 2.0.0
 release.
@@ -1293,7 +1296,7 @@ the complete list of bug fixes and enhancements](https://code.google.com/p/googl
 
 * * *
 
-## Release Notes for 2.0.0
+## <a id="Release_Notes_2_0_0"></a> Release Notes for 2.0.0
 
 This release includes some minor bug fixes found in the release
 candidate. See [What's New
@@ -1302,7 +1305,7 @@ features and bugs fixes included in the GWT 2.0.0 release.
 
 * * *
 
-## Release Notes for 2.0.0 (RC2)
+## <a id="Release_Notes_2_0_0_rc2"></a> Release Notes for 2.0.0 (RC2)
 
 ### New Features
 
@@ -1383,7 +1386,7 @@ RuntimeException in ProdMode ([#4237](https://code.google.com/p/google-web-toolk
 
 * * *
 
-## Release Notes for 2.0.0 (RC1)
+## <a id="Release_Notes_2_0_0_rc1"></a> Release Notes for 2.0.0 (RC1)
 
 This release contains big changes to improve developer
 productivity, make cross-browser development easier, and produce faster
@@ -1490,7 +1493,7 @@ make some changes.
 
 * * *
 
-## Release Notes for 1.7.1
+## <a id="Release_Notes_1_7_1"></a> Release Notes for 1.7.1
 
 This release adds support for Mac OS X version 10.6 (Snow
 Leopard) by allowing hosted mode to run with a 1.6 JRE in 32-bit mode
@@ -1503,7 +1506,7 @@ Leopard) by allowing hosted mode to run with a 1.6 JRE in 32-bit mode
 
 * * *
 
-## Release Notes for 1.7.0
+## <a id="Release_Notes_1_7_0"></a> Release Notes for 1.7.0
 
 This release adds explicit support for Internet Explorer 8,
 Firefox 3.5, and Safari 4 as well as a few high-priority bug fixes. In
@@ -1544,7 +1547,7 @@ set a stack size ([#3510](https://code.google.com/p/google-web-toolkit/issues/de
 
 * * *
 
-## Release Notes for 1.6.4
+## <a id="Release_Notes_1_6_4"></a> Release Notes for 1.6.4
 
 ### Fixed Issues
 
@@ -1553,7 +1556,7 @@ updated to refer to `/war/WEB-INF/classes` rather than `/bin`.
 
 * * *
 
-## Release Notes for 1.6.3 (RC2)
+## <a id="Release_Notes_1_6_3"></a> Release Notes for 1.6.3 (RC2)
 
 ### Fixed Issues
 
@@ -1563,13 +1566,13 @@ introduced in 1.6.2 are resolved.
 
 * * *
 
-## Release Notes for 1.6.2 (RC)
+## <a id="Release_Notes_1_6_2"></a> Release Notes for 1.6.2 (RC)
 
 Please see [What's new in GWT 1.6?](doc/1.6/ReleaseNotes_1_6.html) (online)
 
 * * *
 
-## Release Notes for 1.5.3
+## <a id="Release_Notes_1_5_3"></a> Release Notes for 1.5.3
 
 ### Fixed Issues
 
@@ -1593,7 +1596,7 @@ the complete list of bug fixes and enhancements](https://code.google.com/p/googl
 
 * * *
 
-## Release Notes for 1.5.2
+## <a id="Release_Notes_1_5_2"></a> Release Notes for 1.5.2
 
 ### Potentially breaking changes and fixes
 
@@ -1636,7 +1639,7 @@ the complete list of bug fixes and enhancements](https://code.google.com/p/googl
 
 * * *
 
-## Release Notes for 1.5.1 (RC2)
+## <a id="Release_Notes_1_5_1"></a> Release Notes for 1.5.1 (RC2)
 
 ### Support for Standards Mode
 
@@ -1711,7 +1714,7 @@ the complete list of bug fixes and enhancements](https://code.google.com/p/googl
 
 * * *
 
-## Release Notes for 1.5.0 (RC)
+## <a id="Release_Notes_1_5_0"></a> Release Notes for 1.5.0 (RC)
 
 This release candidate is, in a word, huge. Rather than including all
 the details here, please see [What's
@@ -1722,7 +1725,7 @@ because there's a lot of great stuff!
 
 * * *
 
-## Release Notes for 1.4.60
+## <a id="Release_Notes_1_4_60"></a> Release Notes for 1.4.60
 
 This release has only a couple of minor changes from [1.4.59](#Release_Notes_1_4_59).
 
@@ -1736,7 +1739,7 @@ browsers would display this content to end users.
 
 * * *
 
-## Release Notes for 1.4.59 (RC2)
+## <a id="Release_Notes_1_4_59"></a> Release Notes for 1.4.59 (RC2)
 
 This release includes numerous bugfixes and a few important changes. If
 you are upgrading from GWT 1.3.3, you are strongly encouraged to read
@@ -1833,7 +1836,7 @@ complete list of bug fixes](https://code.google.com/p/google-web-toolkit/issues/
 
 * * *
 
-## Release Notes for 1.4.10 (RC)
+## <a id="Release_Notes_1_4_10"></a> Release Notes for 1.4.10 (RC)
 
 This is the Release Candidate for GWT 1.4, the first GWT release
 developed with major participation from GWT open source contributors.
@@ -2065,7 +2068,7 @@ complete list of bug fixes](https://code.google.com/p/google-web-toolkit/issues/
 
 * * *
 
-## Release Notes for 1.3.3
+## <a id="Release_Notes_1_3_3"></a> Release Notes for 1.3.3
 
 This version has only minor functional changes from 1.3.1, listed
 below.
@@ -2078,7 +2081,7 @@ below.
 
 * * *
 
-## Release Notes for 1.3.1 (RC)
+## <a id="Release_Notes_1_3_1"></a> Release Notes for 1.3.1 (RC)
 
 This is the Release Candidate for GWT 1.3, the first completely
 open source version of GWT. This version has no new functionality, but
@@ -2105,7 +2108,7 @@ browse the GWT source without a Subversion client.
 
 * * *
 
-## Release Notes for 1.2.22
+## <a id="Release_Notes_1_2_22"></a> Release Notes for 1.2.22
 
 This is the official GWT 1.2 release, the follow up to the [GWT 1.2 Release Candidate](#Release_Notes_1_2_11). It
 includes all of the enhancements and bug fixes from GWT 1.2 RC as well
@@ -2139,7 +2142,7 @@ change if you are using the new HTTP functionality available as of build
 
 * * *
 
-## Release Notes for 1.2.11 (RC)
+## <a id="Release_Notes_1_2_11"></a> Release Notes for 1.2.11 (RC)
 
 This is the Release Candidate for GWT 1.2. Between this build and
 the subsequent GWT 1.2 official release, changes are limited to issues
@@ -2165,7 +2168,7 @@ widgets...finally, you can easily create trees with checkboxes :-)
 
 * * *
 
-## Release Notes for 1.1.10
+## <a id="Release_Notes_1_1_10"></a> Release Notes for 1.1.10
 
 ### Fixed Issues
 
@@ -2221,7 +2224,7 @@ function pointers
 
 * * *
 
-## Release Notes for 1.1.0 (RC)
+## <a id="Release_Notes_1_1_0"></a> Release Notes for 1.1.0 (RC)
 
 <p />
 
@@ -2496,6 +2499,6 @@ fails to cause a side effect.
 
 * * *
 
-## Release Notes for 1.0.21
+## <a id="Release_Notes_1_0_21"></a> Release Notes for 1.0.21
 
 ### Fixed Issues

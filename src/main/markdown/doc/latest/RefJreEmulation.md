@@ -1,4 +1,4 @@
-Jre Emulation
+JRE Emulation
 ===
 
 GWT includes a library that emulates a subset of the Java runtime library. 
