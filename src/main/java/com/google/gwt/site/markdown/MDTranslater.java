@@ -105,6 +105,7 @@ public class MDTranslater {
     return template
         .replace("$content", html)
         .replace("$toc", toc)
+        .replace("$toc", toc)
         .replace("$head", head)
         .replace("$editLink", editUrl);
   }
