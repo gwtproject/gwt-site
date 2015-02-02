@@ -582,7 +582,6 @@ You've already applied an HTML class attribute to the cell element to right-alig
 ```
 // Populate the Price and Change fields with new data.
     stocksFlexTable.setText(row, 1, priceText);
-    <span class="strike">stocksFlexTable.setText(row, 2, changeText + " (" + changePercentText + "%)");
     Label changeWidget = (Label)stocksFlexTable.getWidget(row, 2);
     changeWidget.setText(changeText + " (" + changePercentText + "%)");
 ```
