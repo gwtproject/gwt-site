@@ -139,7 +139,7 @@ public class Contacts implements EntryPoint {
 
   public void onModuleLoad() {
     ContactsServiceAsync rpcService = GWT.create(ContactsService.class);
-    HandlerManager eventBus = new HandlerManager(null);
+    EventBus eventBus = new SimpleEventBus();
     AppController appViewer = new AppController(rpcService, eventBus);
     appViewer.go(RootPanel.get());
   }
@@ -307,7 +307,8 @@ instance into a panel.
 Once you have [presenters](#presenter) sinking events that are
 sourced by widgets within [views](#view), you'll want to take some
 action on these events. To do so, you'll want to rely on an Event Bus that is
-built on top of GWT's [HandlerManager](/javadoc/latest/com/google/gwt/event/shared/HandlerManager.html).
+built on top of GWT's [EventBus](/javadoc/latest/com/google/web/bindery/event/shared/SimpleEventBus.html)
+such as [SimpleEventBus](/javadoc/latest/com/google/web/bindery/event/shared/EventBus.html).
 The Event Bus is a mechanism for a) passing events and b) registering to be
 notified of some subset of these events.
 
@@ -345,8 +346,8 @@ each of our events.
 
 To demonstrate how these pieces fit together let's look at what takes
 place when a user chooses to edit a contact. First we'll need the AppController
-to register for the EditContactEvent. To do so, we call [HandlerManager.addHandler()](/javadoc/latest/com/google/gwt/event/shared/HandlerManager.html#addHandler\(com.google.gwt.event.shared.GwtEvent.Type,%20H\))
-and pass in the [GwtEvent.Type](/javadoc/latest/com/google/gwt/event/shared/GwtEvent.Type.html)
+to register for the EditContactEvent. To do so, we call [EventBus.addHandler()](/javadoc/latest/com/google/web/bindery/event/shared/EventBus.html#addHandler\(com.google.web.bindery.event.shared.GwtEvent.Type,%20H\))
+and pass in the [GwtEvent.Type](/javadoc/latest/com/google/web/bindery/event/shared/GwtEvent.Type.html)
 as well as the handler that should be called when the event is fired. The code below
 shows how the AppController registers to receive EditContactEvents.
 
@@ -363,20 +364,20 @@ public class AppController implements ValueChangeHandler {
 }
 ```
 
-Here the AppController has an instance of the [HandlerManager](/javadoc/latest/com/google/gwt/event/shared/HandlerManager.html),
+Here the AppController has an instance of the [EventBus](/javadoc/latest/com/google/web/bindery/event/shared/EventBus.html),
 called eventBus, and is registering a new EditContactEventHandler. This handler will
 grab the id of the contact to be edited, and pass it to the
 doEditContact() method whenever an event of EditContactEvent.getAssociatedType()
 is fired. Multiple components can be listening for a single event, so when an
-event is fired using the [HandlerManager.fireEvent()](/javadoc/latest/com/google/gwt/event/shared/HandlerManager.html#fireEvent\(com.google.gwt.event.shared.GwtEvent\)), the HandlerManager
+event is fired using the [EventBus.fireEvent()](/javadoc/latestcom/google/web/bindery/event/shared/EventBus.html#fireEvent\(com.google.web.bindery.shared.GwtEvent\)), the EventBus
 looks for any component that has added a handler for event.getAssociatedType().
-For each component that has a handler, the HandlerManager calls event.dispatch()
+For each component that has a handler, the EventBus calls event.dispatch()
 with that component's EventHandler interface.
 
 To see how an event is fired, let's take a look at the code that sources the
 EditContactEvent. As mentioned above, we've added ourselves as a click handler
 on the ListContactView's list. Now when a user clicks on the contacts list,
-we'll notify the rest of the app by calling the HandlerManager.fireEvent()
+we'll notify the rest of the app by calling the EventBus.fireEvent()
 method with a EditContactEvent() class that is initialized with the id of the
 contacts to be edited.
 
@@ -628,12 +629,12 @@ look at the ExampleJRETest, we have the following code.
 public class ExampleJRETest extends TestCase {
   private ContactsPresenter contactsPresenter;
   private ContactsServiceAsync mockRpcService;
-  private HandlerManager eventBus;
+  private EventBus eventBus;
   private ContactsPresenter.Display mockDisplay;
 
   protected void setUp() {
     mockRpcService = createStrictMock(ContactsServiceAsync.class);
-    eventBus = new HandlerManager(null);
+    eventBus = new SimpleEventBus();
     mockDisplay = createStrictMock(ContactsPresenter.Display.class);
     contactsPresenter = new ContactsPresenter(mockRpcService, eventBus, mockDisplay);
   }
@@ -663,7 +664,7 @@ We then created the same test using GWTTestCase.
 public class ExampleGWTTest extends GWTTestCase {
   private ContactsPresenter contactsPresenter;
   private ContactsServiceAsync rpcService;
-  private HandlerManager eventBus;
+  private EventBus eventBus;
   private ContactsPresenter.Display display;
 
   public String getModuleName() {
@@ -672,7 +673,7 @@ public class ExampleGWTTest extends GWTTestCase {
 
   public void gwtSetUp() {
     rpcService = GWT.create(ContactsService.class);
-    eventBus = new HandlerManager(null);
+    eventBus = new SimpleEventBus();
     display = new ContactsView();
     contactsPresenter = new ContactsPresenter(rpcService, eventBus, display);
   }
