@@ -159,7 +159,7 @@ The `CssResource.enableGss` configuration property turns on GSS support.
 [Closure Stylesheet](https://code.google.com/p/closure-stylesheets/).
 
 - When enabled, GSS can be used in a UiBinder file by setting
-`gss=true` on a `ui:style` tag.
+`gss="true"` on a `ui:style` tag.
 
 - If the `CssResource.legacy` configuration property is set,
 .css resources and `ui:style` tags without `gss=true` will first be converted to GSS
