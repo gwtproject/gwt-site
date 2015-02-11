@@ -37,6 +37,7 @@ the result is that the most pleasant way to build your app is also the
 best way to build it.
 
 UiBinder:
+
 *   helps productivity and maintainability &mdash; it's easy to create UI from scratch or copy/paste across templates;
 *   makes it easier to collaborate with UI designers who are more comfortable with XML, HTML and CSS than Java source code;
 *   provides a gradual transition during development from HTML mocks to real, interactive UI;
