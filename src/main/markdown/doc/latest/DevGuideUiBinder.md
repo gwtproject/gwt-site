@@ -37,13 +37,13 @@ the result is that the most pleasant way to build your app is also the
 best way to build it.
 
 UiBinder:
-*   helps productivity and maintainability &mdash; it's easy to create UI from scratch or copy/paste across templates;
-*   makes it easier to collaborate with UI designers who are more comfortable with XML, HTML and CSS than Java source code;
-*   provides a gradual transition during development from HTML mocks to real, interactive UI;
-*   encourages a clean separation of the aesthetics of your UI (a declarative XML template) from its programmatic behavior (a Java class);
-*   performs thorough compile-time checking of cross-references from Java source to XML and vice-versa;
-*   offers direct support for internationalization that works well with GWT's [i18n facility](DevGuideI18n.html); and
-*   encourages more efficient use of browser resources by making it convenient to use lightweight HTML elements rather than heavier-weight widgets and panels.
+* helps productivity and maintainability &mdash; it's easy to create UI from scratch or copy/paste across templates;
+*  makes it easier to collaborate with UI designers who are more comfortable with XML, HTML and CSS than Java source code;
+* provides a gradual transition during development from HTML mocks to real, interactive UI;
+* encourages a clean separation of the aesthetics of your UI (a declarative XML template) from its programmatic behavior (a Java class);
+* performs thorough compile-time checking of cross-references from Java source to XML and vice-versa;
+* offers direct support for internationalization that works well with GWT's [i18n facility](DevGuideI18n.html); and
+* encourages more efficient use of browser resources by making it convenient to use lightweight HTML elements rather than heavier-weight widgets and panels.
 
 But as you learn what UiBinder is, you should also understand what it
 is not.  It is not a renderer, or at any rate that is not its
