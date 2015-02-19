@@ -15,7 +15,7 @@ Before you begin these tutorials, we assume that you've done the following:
     *  In these tutorials, we use [Eclipse](http://www.eclipse.org/) because it is open source. However, GWT does not tie you to Eclipse. You can use [IntelliJ](http://www.jetbrains.com/idea/), [NetBeans](http://www.netbeans.org/) or any Java IDE you prefer. If you use a Java IDE other than Eclipse, the screenshots and some of the specific instructions in the tutorial will be different, but the basic GWT concepts will be the same.
     *  If your Java IDE does not include Apache Ant support, you can download and unzip [Ant](http://ant.apache.org) to easily compile and run GWT applications.
 *   Installed the Google Plugin for Eclipse.
-    *  The [Google Plugin for Eclipse](//developers.google.com/appengine/docs/java/tools/eclipse) adds functionality to Eclipse for creating and developing GWT applications.
+    *  The [Google Plugin for Eclipse](http://developers.google.com/appengine/docs/java/tools/eclipse) adds functionality to Eclipse for creating and developing GWT applications.
 *   Downloaded Google Web Toolkit.
     *  Google Web Toolkit can be downloaded with the Google Plugin for Eclipse.  Alternatively, download the most recent distribution of [Google Web Toolkit](../../../download.html) for your operating system.
 *   Unzipped the GWT distribution in directory you want to run it in.
@@ -24,7 +24,7 @@ Before you begin these tutorials, we assume that you've done the following:
 You may also optionally do the following:
 
 *   Install the Google App Engine SDK.
-    *  Google App Engine allows you to run Java web applications, including GWT applications, on Google's infrastructure.  The App Engine SDK can be downloaded with the Google Plugin for Eclipse.  Alternatively, download the [App Engine SDK](//developers.google.com/appengine/downloads) for Java separately.
+    *  Google App Engine allows you to run Java web applications, including GWT applications, on Google's infrastructure.  The App Engine SDK can be downloaded with the Google Plugin for Eclipse.  Alternatively, download the [App Engine SDK](http://developers.google.com/appengine/downloads) for Java separately.
 *   [Create and run your first web application](../../../gettingstarted.html#create) - A few, simple steps to familiarize you with the command line commands.
 
 ## GWT Tutorials <a id="gwt_tutorials"></a>
@@ -56,4 +56,4 @@ You may also optionally do the following:
 ### Deploying to Google App Engine
 
 *   [Deploying to Google App Engine](appengine.html)
-    *  Deploy a GWT application to [App Engine](//developers.google.com/appengine).
+    *  Deploy a GWT application to [App Engine](http://developers.google.com/appengine).

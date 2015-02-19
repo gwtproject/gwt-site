@@ -3,7 +3,7 @@ Deploy to GAE
 
 At this point, you've created the initial implementation of the StockWatcher application, simulating stock data in the client-side code.
 
-In this section, you'll deploy this application on [Google App Engine](//developers.google.com/appengine).  Also, you'll learn about some of the App Engine service APIs and use them to personalize the StockWatcher application so that users can log into their Google Account and retrieve their list of stocks.
+In this section, you'll deploy this application on [Google App Engine](http://developers.google.com/appengine).  Also, you'll learn about some of the App Engine service APIs and use them to personalize the StockWatcher application so that users can log into their Google Account and retrieve their list of stocks.
 
 1.  [Get started with App Engine](#intro)
 2.  [Deploy the application to App Engine](#deploy)
@@ -22,7 +22,7 @@ This tutorial builds on the GWT concepts and the StockWatcher application create
 
 ### Download the App Engine SDK
 
-If you plan to use Eclipse, you can download the App Engine SDK with the [Google Plugin for Eclipse](//developers.google.com/appengine/docs/java/tools/eclipse). Or [download](//developers.google.com/appengine/downloads) the App Engine SDK for Java separately.
+If you plan to use Eclipse, you can download the App Engine SDK with the [Google Plugin for Eclipse](http://developers.google.com/appengine/docs/java/tools/eclipse). Or [download](http://developers.google.com/appengine/downloads) the App Engine SDK for Java separately.
 
 
 ### Set up a project
@@ -31,7 +31,7 @@ If you plan to use Eclipse, you can download the App Engine SDK with the [Google
 
 If you initially created your StockWatcher Eclipse project using the Google Plugin for Eclipse with both GWT and Google App Engine enabled, your project is already ready to run on App Engine.  If not:
 
-1.  If you haven't yet, install the [Google Plugin for Eclipse](//developers.google.com/appengine/docs/java/tools/eclipse) with both GWT and App Engine SDK and restart Eclipse.
+1.  If you haven't yet, install the [Google Plugin for Eclipse](http://developers.google.com/appengine/docs/java/tools/eclipse) with both GWT and App Engine SDK and restart Eclipse.
 2.  Complete the [Build a Sample GWT Application](gettingstarted.html) tutorial, making sure to create a project with both GWT and Google App Engine enabled.  Alternatively, if you would like to skip the Build a Sample GWT Application tutorial, then [download](http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-GettingStartedAppEngine-2.1.zip), unzip and import the StockWatcher Eclipse project.  To import the project:
 
     1.  In the File menu, select the Import... menu option.
@@ -41,7 +41,7 @@ If you initially created your StockWatcher Eclipse project using the Google Plug
 
 #### Set up a project (without Eclipse)
 
-1.  If you haven't yet, download the [App Engine SDK](//developers.google.com/appengine/downloads) for Java.
+1.  If you haven't yet, download the [App Engine SDK](http://developers.google.com/appengine/downloads) for Java.
 2.  Complete the [Build a Sample GWT Application](gettingstarted.html) tutorial,  using webAppCreator to create a GWT application.  Alternatively, If you would like to skip the Build a Sample GWT Application tutorial, then download and unzip [this file](http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-GettingStarted-2.1.zip).  Edit the gwt.sdk property in the StockWatcher/build.xml, then proceed with the modifications below.
 3.  App Engine requires its own web application deployment descriptor.  Create a file StockWatcher/war/WEB-INF/appengine-web.xml with these contents:
 
@@ -52,9 +52,9 @@ If you initially created your StockWatcher Eclipse project using the Google Plug
         </appengine-web-app>
 
     Substitute your App Engine application ID on the second line. Read more about
-[appengine-web.xml](//developers.google.com/appengine/docs/java/config/appconfig).
+[appengine-web.xml](http://developers.google.com/appengine/docs/java/config/appconfig).
 
-4.  As we will be using [Java Data Objects (JDO)](//developers.google.com/appengine/docs/java/gettingstarted/usingdatastore) later for storing data, create a file StockWatcher/src/META-INF/jdoconfig.xml with these contents:
+4.  As we will be using [Java Data Objects (JDO)](http://developers.google.com/appengine/docs/java/gettingstarted/usingdatastore) later for storing data, create a file StockWatcher/src/META-INF/jdoconfig.xml with these contents:
 
         <?xml version="1.0" encoding="utf-8"?>
         <jdoconfig xmlns="http://java.sun.com/xml/ns/jdo/jdoconfig"
@@ -71,7 +71,7 @@ If you initially created your StockWatcher Eclipse project using the Google Plug
         </jdoconfig>
 
     You will reference this configuration later by its name "transactions-optional". Read more about
-[jdoconfig.xml](//developers.google.com/appengine/docs/java/datastore/usingjdo).
+[jdoconfig.xml](http://developers.google.com/appengine/docs/java/datastore/usingjdo).
 
 5.  The GWT ant build file needs to be modified to support DataNucleus JDO compilation and use of the App Engine development server.  Edit StockWatcher/build.xml and add the following:
 
@@ -509,7 +509,7 @@ If you run the application in development mode with the App Engine development s
 
 ### Overview
 
-The datastore service available to the App Engine Java runtime is the same service available to the Python runtime.  To access this service in Java, you may use the low-level [datastore API](//developers.google.com/appengine/docs/java/javadoc/com/google/appengine/api/datastore/package-summary), [Java Data Objects (JDO)](//developers.google.com/appengine/docs/java/datastore/usingjdo), or [Java Persistence API (JPA)](//developers.google.com/appengine/docs/java/datastore/usingjpa).  For this sample we will use JDO.
+The datastore service available to the App Engine Java runtime is the same service available to the Python runtime.  To access this service in Java, you may use the low-level [datastore API](http://developers.google.com/appengine/docs/java/javadoc/com/google/appengine/api/datastore/package-summary), [Java Data Objects (JDO)](http://developers.google.com/appengine/docs/java/datastore/usingjdo), or [Java Persistence API (JPA)](http://developers.google.com/appengine/docs/java/datastore/usingjpa).  For this sample we will use JDO.
 
 ### Define the Stock RPC service
 
@@ -1085,6 +1085,6 @@ Users can now sign in to Google Account and manage their own stock lists in the 
 
 ### Learn more about App Engine
 
-The App Engine [Java Getting Started tutorial](//developers.google.com/appengine/docs/java/gettingstarted) gives more details on building an App Engine application including topics such as creating a project from scratch, using JSPs, managing different application versions, and more details on the web application descriptor files.
+The App Engine [Java Getting Started tutorial](http://developers.google.com/appengine/docs/java/gettingstarted) gives more details on building an App Engine application including topics such as creating a project from scratch, using JSPs, managing different application versions, and more details on the web application descriptor files.
 
-The App Engine [Java documentation](//developers.google.com/appengine/docs/java) covers the User service and datastore service in greater detail.  In particular, it documents how to use JPA to access the datastore service.  Other services documented include Memcache, HTTP client, and, Java Mail.  The limitations of the App Engine Java runtime are also itemized.
+The App Engine [Java documentation](http://developers.google.com/appengine/docs/java) covers the User service and datastore service in greater detail.  In particular, it documents how to use JPA to access the datastore service.  Other services documented include Memcache, HTTP client, and, Java Mail.  The limitations of the App Engine Java runtime are also itemized.

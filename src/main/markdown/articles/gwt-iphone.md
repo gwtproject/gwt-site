@@ -14,7 +14,7 @@ code, we decided to write an application that we would find useful and that
 shows off the cool features of the iPhone. The result is the
 GWT Feed Reader, an RSS feed reader that uses the
 [Google
-AJAX Feed API](//developers.google.com/feed/) with a user interface optimized for the iPhone. This article
+AJAX Feed API](http://developers.google.com/feed/) with a user interface optimized for the iPhone. This article
 will discuss what we've learned from writing this RSS reader.
 
 The good news is that writing a GWT application that
@@ -180,7 +180,7 @@ two HTTP round-trips.
 The Feed Reader needs to get its feed data from somewhere. Enough
 of the
 [Google
-AJAX Feed API](//developers.google.com/feed/) was imported with Java bindings using the
+AJAX Feed API](http://developers.google.com/feed/) was imported with Java bindings using the
 [GWT
 JavaScript Interop](http://code.google.com/p/gwt-api-interop) project. This eliminated the need to hand-write
 JSNI calls to the underlying JavaScript API by declaring the binding with a

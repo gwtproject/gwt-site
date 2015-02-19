@@ -304,7 +304,7 @@ Finding entry point classes
 Failure to load module 'com.google.gwt.sample.stockwatcher.StockWatcher'
 ```
 
-This problem is most often seen when creating a launch configuration manually.  The [Google Plugin for Eclipse](//developers.google.com/eclipse) handles adding source roots to the classpath automatically.
+This problem is most often seen when creating a launch configuration manually.  The [Google Plugin for Eclipse](http://developers.google.com/eclipse) handles adding source roots to the classpath automatically.
 
 One of the most common problems when creating launch configurations manually in GWT is to omit the application source code path from the Java classpath. The [GWT compiler](DevGuideCompilingAndDebugging.html#DevGuideJavaToJavaScriptCompiler) and [development mode](DevGuideCompilingAndDebugging.html#DevGuideDevMode) shell rely on the module
 source code to build your application, and both use the Java classpath to find the .java source files.
@@ -348,7 +348,7 @@ java.security.AccessControlException: access denied
 
 ```
 
-The problem occurs if you mistakenly enabled the [Google App Engine](https://developers.google.com/appengine) feature for your project when you created the project, or at a later time during development, and have server-side libraries or classes packaged with your GWT application war folder that violate the [Java App Engine sandbox](//developers.google.com/appengine/docs/whatisgoogleappengine).
+The problem occurs if you mistakenly enabled the [Google App Engine](https://developers.google.com/appengine) feature for your project when you created the project, or at a later time during development, and have server-side libraries or classes packaged with your GWT application war folder that violate the [Java App Engine sandbox](http://developers.google.com/appengine/docs/whatisgoogleappengine).
 
 #### Workaround
 
@@ -358,7 +358,7 @@ If you don't intend on using Google App Engine for your project, simply remove t
 2.  In the App Engine property menu, deselect the **Use Google App Engine** checkbox.
 3.  Click **OK**.
 
-If you intend to use Google App Engine, you will need to remove any use of server-side libraries that are violating the security constraints of the App Engine sandbox from your project. For more information on the support available in the App Engine sandbox, check out the [App Engine documentation.](//developers.google.com/appengine/docs)
+If you intend to use Google App Engine, you will need to remove any use of server-side libraries that are violating the security constraints of the App Engine sandbox from your project. For more information on the support available in the App Engine sandbox, check out the [App Engine documentation.](http://developers.google.com/appengine/docs)
 
 ## Image Bundles<a id="Image_Bundles"></a>
 
