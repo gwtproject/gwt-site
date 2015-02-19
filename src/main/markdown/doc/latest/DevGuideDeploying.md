@@ -80,4 +80,4 @@ and then deploy your application from the war output directory by invoking the a
 <appengine_home_dir>/appcfg.sh update war
 ```
 
-You will need to have your appengine-web.xml properly configured beforehand, as well as ensure that you have created a Google App Engine account and an application space for your GWT application. You can read the [App Engine docs](http://developers.google.com/appengine/docs/java/gettingstarted/) for more information.
+You will need to have your appengine-web.xml properly configured beforehand, as well as ensure that you have created a Google App Engine account and an application space for your GWT application. You can read the [App Engine docs](https://developers.google.com/appengine/docs/java/gettingstarted/) for more information.

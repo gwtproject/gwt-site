@@ -231,7 +231,7 @@ At this point, you should be ready to go. That is, of course, if you're planning
 
 ## Does the new WAR output directory layout require me to use Java on the server-side?<a id="Does_the_new_war_output_directory_layout_require_java_on_the_server"></a>
 
-Like in previous versions of GWT, you can always use the server-side of your choice to deploy your GWT application. The new WAR output directory structure that the GWT compiler uses to generate output was introduced in GWT 1.6 to make it easier for developers who use Java on the server-side to deploy their applications directly from the generated output, as is the case for the [Google Plugin for Eclipse.](http://developers.google.com/eclipse/)
+Like in previous versions of GWT, you can always use the server-side of your choice to deploy your GWT application. The new WAR output directory structure that the GWT compiler uses to generate output was introduced in GWT 1.6 to make it easier for developers who use Java on the server-side to deploy their applications directly from the generated output, as is the case for the [Google Plugin for Eclipse.](https://developers.google.com/eclipse/)
 
 All you need to do to deploy your GWT application your custom web server is to extract the
 important files generated during the GWT compilation and place them on your web server.
