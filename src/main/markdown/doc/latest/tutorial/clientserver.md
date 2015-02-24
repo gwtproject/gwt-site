@@ -34,7 +34,7 @@ If you're creating a mashup application that needs to use data from one or more 
 
 To try this out, see the tutorial, [Making Cross-Site Requests](Xsite.html).
 
-Note: There is a variety of public sources of JSON-formatted data you can practice with, including [Google Data APIs](//developers.google.com/gdata/) and [Yahoo! Web Services](http://developer.yahoo.com/).
+Note: There is a variety of public sources of JSON-formatted data you can practice with, including [Google Data APIs](https://developers.google.com/gdata/) and [Yahoo! Web Services](http://developer.yahoo.com/).
 
 ## Making Asynchronous Calls
 

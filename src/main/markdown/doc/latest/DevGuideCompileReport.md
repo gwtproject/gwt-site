@@ -61,7 +61,7 @@ _Figure 3: Package breakdown_
 
 This overview breakdown can be particularly useful, for example, to learn how much of the code size is caused by JRE code. For example, if you see that your use of java.util.HashSet causes your application to grow too big, you may find a way to do without java.util.HashSet in your code.
 
-### Dependencie
+### Dependencies
 
 At some point you will try to get something moved out of the initial download fragment, but the GWT compiler will put it there anyway. Sometimes you can quickly figure out why, but other times it will not be obvious at all. The way to find out is to look through the dependencies that are reported in the Compile Report.
 The most common example is that you expected something (say, a class) to be left out of the initial download, but it was not. To find out why, browse to that class via the "initial download" code subset (from the Overview, click on the relevant permutation, then click on the "Report" link below "Initial download size".  Then click on the class's package). Once you click on the class, you can look at a chain of dependencies leading back to the application's main entry point. This is the chain of dependencies that causes GWT to think the item must be in the initial download. Try to rearrange the code to break one of the links in that chain.

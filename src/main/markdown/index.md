@@ -24,7 +24,7 @@ GWT (pronounced 'gwit') is the official open source project for GWT releases 2.7
         <div style="margin-left: 112px; margin-bottom: 10px;">
           <div style="font-size: 120%; font-weight: bold;"><a href="overview.html">Learn More</a></div>
           <div style="padding-top: 5px; line-height: 125%;">
-            Learn about GWT, the features and tools it offers, and how you can quickly develop performance AJAX applications across all major browsers.<br /><br />
+            Learn about GWT, the features and tools it offers, and how you can quickly develop high-performance AJAX applications across all major browsers.<br /><br />
           </div>
         </div>
       </td>

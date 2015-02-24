@@ -72,7 +72,7 @@ Examples
 
 If you're like us, the first thing you want to do is see examples of what you can do with GWT.
 
-*   [Samples](#samples) are included in the SDK for you to play around with and build off of. A few are below. Some are from the [App Engine SDK](//developers.google.com/appengine/) that use GWT for their front end.
+*   [Samples](#samples) are included in the SDK for you to play around with and build off of. A few are below. Some are from the [App Engine SDK](https://developers.google.com/appengine/) that use GWT for their front end.
 *   [Real world projects](#real-world-projects) let you see the real power of GWT, with complex applications that developers are building.
 
 If you'd like to see who else is using GWT, check out the [GWT Gallery](http://gwtgallery.appspot.com). You'll be able to find other applications and libraries built with GWT, comment on them, rate them, and search for them by tag or by name. You can also [submit your own entry](http://gwtgallery.appspot.com/submit) if you have a project that  you want to share.
