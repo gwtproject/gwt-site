@@ -144,13 +144,51 @@ GWT is being used by tens of thousands of projects around the world. Take a look
 
 <div class="project">
   <div class="screenshot">
-    <a href="http://www.google.com/moderator" target="_blank"><img src="images/moderator.jpg" alt="Google Moderator"/></a>
+    <a href="http://www.google.com/inbox" target="_blank"><img src="images/inbox.png" alt="Google Inbox"/></a>
   </div>
   <div class="info">
-    <div class="name"><a href="http://www.google.com/moderator" target="_blank">Google Moderator</a></div>
-    <div class="snippet">Google Moderator is a tool that allows distributed communities to submit and vote on questions for talks, 
-presentations and events. Suggested questions as well as user votes are seen in real-time. Google Moderator's front-end is built
-using GWT and runs on top of Google's App Engine.</div>
+    <div class="name"><a href="http://www.google.com/inbox" target="_blank">Google Inbox</a></div>
+    <div class="snippet">Google Inbox is a fresh start that goes beyond email to help you get back to what matters. 
+	It is the first Google service that is using the new approach to delivering multiplatform native applications using common code base. GWT is used to deliver the Web version.
+	<p>Google is using GWT in number of other public services, including:
+		<a href="https://docs.google.com/spreadsheets" target="_blank">Spreadsheets</a>,
+		<a href="http://www.google.com/groups" target="_blank">Groups</a>,
+		<a href="http://adwords.google.com " target="_blank">AdWords</a>,
+		<a href="https://www.google.com/webmasters/tools/home" target="_blank">Webmaster Tools</a>,
+		<a href="http://www.google.com/moderator/" target="_blank">Moderator</a>,
+		<a href="http://www.google.com/blogger" target="_blank">Blooger&nbsp;Admin</a>,
+		<a href="https://www.google.com/wallet/" target="_blank">Wallet</a>,
+		<a href="http://www.google.com/webfonts" target="_blank">WebFonts</a>,
+		<a href="http://www.google.com/script/" target="_blank">Apps&nbsp;Script</a>,
+		<a href="https://www.google.com/producer" target="_blank">Currents&nbsp;Producer</a>,
+		<a href="http://www.google.com/flights" target="_blank">Flights</a>,
+		<a href="https://www.google.com/fusiontables/DataSource?dsrcid=2049253" target="_blank">Fusion&nbsp;Tables</a>,
+		<a href="http://www.google.com/hotelfinder" target="_blank">Hotel&nbsp;Finder</a>
+	</p>
+ </div>
+  </div>
+</div>
+
+<div class="project">
+  <div class="screenshot">
+    <a href="https://ruxit.com" target="_blank"><img src="images/ruxit.png" alt="ruxit"/></a>
+  </div>
+  <div class="info">
+    <div class="name"><a href="https://ruxit.com" target="_blank">ruxit</a></div>
+    <div class="snippet">ruxit is a cloud-based application performance management solution that offers unified monitoring of 
+user experience, servers, applications, infrastructure and networks &ndash; all with simple auto-configuration. The entire product UI 
+was built using GWT. Use the free trial to see it in action.</div>
+  </div>
+</div>
+
+<div class="project">
+  <div class="screenshot">
+    <a href="https://www.cloudorado.com" target="_blank"><img src="images/cloudorado.png" alt="cloudorado"/></a>
+  </div>
+  <div class="info">
+    <div class="name"><a href="https://www.cloudorado.com" target="_blank">Cloudorado</a></div>
+    <div class="snippet">Cloudorado is a free cloud computing comparison tool, which makes cloud provider selection a quick and easy task. 
+	The interactive comparison is done fully client-side and it is written in GWT. No login required &ndash; just go and try it.</div>
   </div>
 </div>
 
