@@ -149,7 +149,9 @@ GWT is being used by tens of thousands of projects around the world. Take a look
   <div class="info">
     <div class="name"><a href="http://www.google.com/inbox" target="_blank">Google Inbox</a></div>
     <div class="snippet">Google Inbox is a fresh start that goes beyond email to help you get back to what matters. 
-	It is the first Google service that is using the new approach to delivering multiplatform native applications using common code base. GWT is used to deliver the Web version.
+	Inbox is using a new approach to 
+	<a href="https://www.youtube.com/watch?feature=player_embedded&v=KdCs85jqcH0#t=747">delivering multiplatform native applications</a> 
+	using common code base. GWT is used to deliver the Web version.
 	<p>Google is using GWT in number of other public services, including:
 		<a href="https://docs.google.com/spreadsheets" target="_blank">Spreadsheets</a>,
 		<a href="https://groups.google.com/forum/" target="_blank">Groups</a>,
