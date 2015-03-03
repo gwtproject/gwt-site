@@ -152,18 +152,18 @@ GWT is being used by tens of thousands of projects around the world. Take a look
 	It is the first Google service that is using the new approach to delivering multiplatform native applications using common code base. GWT is used to deliver the Web version.
 	<p>Google is using GWT in number of other public services, including:
 		<a href="https://docs.google.com/spreadsheets" target="_blank">Spreadsheets</a>,
-		<a href="http://www.google.com/groups" target="_blank">Groups</a>,
-		<a href="http://adwords.google.com " target="_blank">AdWords</a>,
+		<a href="https://groups.google.com/forum/" target="_blank">Groups</a>,
+		<a href="https://adwords.google.com " target="_blank">AdWords</a>,
 		<a href="https://www.google.com/webmasters/tools/home" target="_blank">Webmaster Tools</a>,
-		<a href="http://www.google.com/moderator/" target="_blank">Moderator</a>,
-		<a href="http://www.google.com/blogger" target="_blank">Blooger&nbsp;Admin</a>,
+		<a href="https://www.google.com/moderator/" target="_blank">Moderator</a>,
+		<a href="https://www.blogger.com/" target="_blank">Blogger&nbsp;Admin</a>,
 		<a href="https://www.google.com/wallet/" target="_blank">Wallet</a>,
-		<a href="http://www.google.com/webfonts" target="_blank">WebFonts</a>,
-		<a href="http://www.google.com/script/" target="_blank">Apps&nbsp;Script</a>,
-		<a href="https://www.google.com/producer" target="_blank">Currents&nbsp;Producer</a>,
-		<a href="http://www.google.com/flights" target="_blank">Flights</a>,
+		<a href="https://www.google.com/fonts/" target="_blank">WebFonts</a>,
+		<a href="https://www.google.com/script/" target="_blank">Apps&nbsp;Script</a>,
+		<a href="https://www.google.com/producer/" target="_blank">Currents&nbsp;Producer</a>,
+		<a href="https://www.google.com/flights/" target="_blank">Flights</a>,
 		<a href="https://www.google.com/fusiontables/DataSource?dsrcid=2049253" target="_blank">Fusion&nbsp;Tables</a>,
-		<a href="http://www.google.com/hotelfinder" target="_blank">Hotel&nbsp;Finder</a>
+		<a href="https://www.google.com/hotels/" target="_blank">Hotel&nbsp;Finder</a>.
 	</p>
  </div>
   </div>
