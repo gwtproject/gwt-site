@@ -1,0 +1,129 @@
+@font-face {
+	font-family: 'iconsregular';
+	src: url('icons.eot');
+	src: url('icons.eot?#iefix') format('embedded-opentype'),
+	url('icons.woff2') format('woff2'),
+	url('icons.woff') format('woff'),
+	url('icons.ttf') format('truetype'),
+	url('icons.svg#iconsregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon_"], [class*=" icon_"] {
+	font-family: 'iconsregular';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon_arrowUp:before {
+	content: "\e602";
+}
+
+.icon_download:before {
+	content: "\e603";
+}
+
+.icon_editGithub:before {
+	content: "\e604";
+}
+
+.icon_getstarted:before {
+	content: "\e605";
+}
+
+.icon_debug:before {
+	content: "\e606";
+}
+
+.icon_doc:before {
+	content: "\e607";
+}
+
+.icon_makeGWTBetter:before {
+	content: "\e608";
+}
+
+.icon_optimise:before {
+	content: "\e609";
+}
+
+.icon_overview:before {
+	content: "\e60a";
+}
+
+.icon_ressources:before {
+	content: "\e60b";
+}
+
+.icon_run:before {
+	content: "\e60c";
+}
+
+.icon_terms:before {
+	content: "\e60d";
+}
+
+.icon_tutorials:before {
+	content: "\e60e";
+}
+
+.icon_write:before {
+	content: "\e60f";
+}
+
+.icon_gwt:before {
+	content: "\e600";
+}
+
+.icon_gwtSymbol:before {
+	content: "\e601";
+}
+
+.icon_arrowTail:before {
+	content: "\e802";
+}
+
+.icon_arrowSimple:before {
+	content: "\e803";
+}
+
+.icon_arrow:before {
+	content: "\e804";
+}
+
+.icon_google:before {
+	content: "\e806";
+}
+
+.icon_jd:before {
+	content: "\e807";
+}
+
+.icon_langage:before {
+	content: "\e808";
+}
+
+.icon_minifleche:before {
+	content: "\e809";
+}
+
+.icon_search:before {
+	content: "\e80c";
+}
+
+.icon_terms2:before {
+	content: "\e80d";
+}
+
+.icon_twitter:before {
+	content: "\e80f";
+}

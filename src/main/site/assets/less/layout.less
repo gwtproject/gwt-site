@@ -1,0 +1,381 @@
+/**
+ * LAYOUT
+ * Website main style
+ * Created by @jasonlemay
+ */
+
+// -- Init -----------------------------------------------
+
+html {
+  font-size: 62.5%;
+  line-height: 1.4;
+
+  @media(@tablet) {
+    font-size: 55%;
+  }
+
+  @media(mobile) {
+    font-size: 51%;
+  }
+}
+
+body {
+  font-family: "soleil", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  background-color: @c-background;
+  color: @c-text;
+
+  padding: 0;
+}
+
+.holder {
+  display: table;
+}
+
+.container {
+  margin: 0;
+  padding: 0 50px 0 50px;
+  max-width: 980px;
+
+  position: relative;
+
+  &.full {
+    max-width: 100%;
+    padding-right: 25px;
+  }
+
+  @media(@tablet) {
+    padding: 0 40px 0 40px;
+    max-width: 750px;
+  }
+
+  @media(@mobile) {
+    padding: 0 2%;
+    width: 96%;
+  }
+}
+
+.home .container {
+  padding: 0 45px 0 285px;
+
+  @media(@mobile) {
+    padding: 0;
+  }
+}
+
+// -- Headings -------------------------------------------
+
+h1 {
+  font-size: 40px;
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1em;
+
+  margin: 0 0 1em;
+
+  &::after {
+    content: "";
+    background-color: @c-text;
+
+    display: block;
+    width: 22px;
+    height: 3px;
+
+    position: relative;
+    left: -18px;
+    bottom: -20px;
+
+    .rounded(10px);
+  }
+
+  a {
+    color: #000;
+
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+}
+
+h2 {
+  color: @c-primary;
+  font-size: 28px;
+  font-size: 2.8rem;
+
+  margin: 1em 0 0.9em;
+
+  &::after {
+    content: "";
+    background-color: @c-primary;
+
+    display: block;
+    width: 22px;
+    height: 3px;
+
+    position: relative;
+    left: -18px;
+    bottom: -11px;
+
+    .rounded(10px);
+  }
+}
+
+h3 {
+  font-size: 18px;
+  font-size: 1.8rem;
+
+  margin: 0.2em 0 0.9em;
+
+  i {
+    font-size: 300%;
+
+    margin-right: 5px;
+  }
+}
+
+h4 {
+  font-size: 16px;
+  font-size: 1.6rem;
+
+  margin: 0.2em 0 0.9em;
+
+  strong,
+  code {
+    color: @c-primary;
+  }
+}
+
+// -- Elements -------------------------------------------
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+p {
+  line-height: 1.4em;
+  margin-bottom: 0.8em;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+
+  max-width: 100%;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+ul,
+ol {
+  list-style-position: outside;
+
+  margin-left: 1.3em;
+  padding-left: 0;
+}
+
+ul {
+  margin-left: 0.7em;
+
+  & > li {
+    list-style-type: none;
+
+    &::before {
+      content: "";
+      background-color: @c-primary;
+
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-left: -10px;
+      margin-right: 6px;
+
+      position: relative;
+      top: -3px;
+    }
+
+    ul li::before {
+      color: #000;
+    }
+  }
+}
+
+ol {
+  counter-reset: item;
+
+  & > li {
+    list-style-type: none;
+
+    &::before{
+      content: counter(item) " | ";
+      counter-increment: item;
+      color: @c-primary-dark;
+
+      margin-left: -20px;
+    }
+  }
+
+  ol li::before {
+    color: #000;
+  }
+}
+
+code {
+  background-color: #fff;
+
+  display: inline;
+}
+
+pre > code {
+  display: block;
+  padding: 10px;
+  margin-bottom: 1em;
+
+  .box-sizing();
+}
+
+a {
+  color: @c-primary;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+
+  tr {
+    th,
+    td {
+      text-align: left;
+
+      padding: 12px 15px;
+      border-color: @c-background;
+      border-style: solid;
+      border-right-width: 5px;
+      border-bottom-width: 5px;
+    }
+
+    th:last-of-type,
+    td:last-of-type {
+      border-right-width: 0;
+    }
+
+    th {
+      font-weight: bold;
+      background-color: @c-secondary;
+    }
+
+    td {
+      background-color: #fff;
+    }
+  }
+}
+
+// -- Browse Happy --------------------------------------
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+// -- Classes -------------------------------------------
+
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  *text-indent: -9999px;
+}
+
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}

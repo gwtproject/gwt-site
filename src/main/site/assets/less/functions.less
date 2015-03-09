@@ -1,0 +1,222 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------
+
+  - Gradient background
+  - Drop shadow
+  - Inner shadow
+  - Rounded
+  - Border radius
+  - Opacity
+  - Transition
+  - Transition duration
+  - Rotation
+  - Scale
+  - Translate
+  - Box sizing
+
+ */
+
+/* - Gradient background
+ *
+ * First color is the background color to use for browsers 
+ * that don't support gradients. The second two colors are 
+ * the start and stop colors, going from bottom to top. 
+ */
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, @start),
+                               color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom,
+                                  @start,
+                                  @stop);
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+  background: -o-linear-gradient(@stop,
+                                 @start);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+/* - Drop shadow
+ *
+ * Adds a box-shadow that is a semi-transparent black. The 
+ * first two values control the x and y axis position, the 
+ * third controls blur (how big the shadow is), and the final 
+ * value is the opacity (0 is fully transparent, 1 is opaque).
+ */
+
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+
+/* - Inner shadow
+ *
+ * Sets the inner shadow. The first two numbers are the x and y
+ * coordinates, the third is the blur and the last one is the 
+ * strength of the shadow.
+ */
+
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+
+/* - Box shadow
+ */
+
+.box-shadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+
+/* - Rounded
+ *
+ * Sets a border-radius for all 4 corners. If you want to set 
+ * border-radius for individual corners use: .border-radius
+ */
+
+.rounded(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+/* - Border radius
+ *
+ * Sets a border-radius for each of the 4 corners individually. 
+ * The values go in a clockwise rotation: top right, bottom right, 
+ * bottom left, top left.
+ */
+
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+  .background-clip(padding-box);
+}
+
+/* - Opacity
+ *
+ * Sets the opacity. 0 is fully transparent, 1 is opaque.
+ */
+
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+  @opperc: @opacity * 100;
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+  filter: ~"alpha(opacity=@{opperc})";
+}
+
+/* - Transition
+ *
+ * Sets the transition duration and effect to use for any 
+ * transitions (e.g. hover effects), unlike transition-duration 
+ * which only sets the duration.
+ */
+
+.transition(@duration:0.2s, @ease:ease-out) {
+  -webkit-transition: all @duration @ease;
+  -moz-transition: all @duration @ease;
+  -o-transition: all @duration @ease;
+  transition: all @duration @ease;
+}
+
+/* - Transition duration
+ *
+ * Sets a transition-duration (time it takes to do things like 
+ * hover effects). The value provides a time in seconds.
+ */
+
+.transition-duration(@duration: 0.2s) {
+  -moz-transition-duration: @duration;
+  -webkit-transition-duration: @duration;
+  -o-transition-duration: @duration;
+  transition-duration: @duration;
+}
+
+/* - Transform
+ */
+
+.transform(...) {
+  -webkit-transform: @arguments;
+  -moz-transform: @arguments;
+  -o-transform: @arguments;
+  -ms-transform: @arguments;
+  transform: @arguments;
+}
+
+/* - Rotation
+ *
+ * Rotates the item by a number of degrees clockwise.
+ */
+
+.rotation(@deg:5deg){
+  .transform(rotate(@deg));
+}
+/* - Scale
+ *
+ * Scales the item by the ratio provided. The example makes the 
+ * item 2 times larger.
+ */
+
+.scale(@ratio:1.5){
+  .transform(scale(@ratio));
+}
+
+/* - Translate
+ *
+ * Translates an element using the given coordinates. The values 
+ * are x and y offset coordinates, so the above example moves the
+ * element right 10 pixels and up 20 pixels.
+ */
+
+.translate(@x:0, @y:0) {
+  .transform(translate(@x, @y));
+}
+
+/* - Boox sizing
+ *
+ * Allows you to alter the CSS box model. For example, by setting 
+ * this to 'border-box' the width and height properties will 
+ * include the padding and border values.
+ */
+
+.box-sizing(@sizing: border-box) {
+  -ms-box-sizing: @sizing;
+  -moz-box-sizing: @sizing;
+  -webkit-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
+
+/* - Background clip
+ */
+
+.background-clip(@argument: padding-box) {
+  -moz-background-clip: @argument;
+  -webkit-background-clip: @argument;
+  background-clip: @argument;
+}

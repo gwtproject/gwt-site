@@ -17,16 +17,20 @@ import com.google.gwt.site.markdown.fs.MDNode;
 import com.google.gwt.site.markdown.fs.MDParent;
 import com.google.gwt.site.markdown.toc.TocCreator;
 
+import org.apache.commons.io.FileUtils;
 import org.pegdown.Extensions;
 import org.pegdown.PegDownProcessor;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
 import java.util.List;
 
 public class MDTranslater {
   private static final int PEG_DOWN_FLAGS = Extensions.SMARTYPANTS | Extensions.AUTOLINKS |
       Extensions.FENCED_CODE_BLOCKS | Extensions.TABLES | Extensions.DEFINITIONS;
+  private static final String SEPARATOR = File.separator;
 
   private PegDownProcessor pegDownProcessor = new PegDownProcessor(PEG_DOWN_FLAGS, Long
       .MAX_VALUE);
@@ -88,9 +92,9 @@ public class MDTranslater {
       return "";
     }
 
-    int index = path.indexOf("/src/");
-    return  "<a href=\"https://github.com/gwtproject/gwt-site/edit/master/" + path.substring(index + 1) + "\">Edit Me on " +
-        "github!</a>";
+    int index = path.indexOf(SEPARATOR + "src" + SEPARATOR);
+    return "<a class=\"icon_editGithub\" href=\"https://github.com/gwtproject/gwt-site/edit/master/"
+           + path.substring(index + 1).replace(SEPARATOR, "/") + "\"></a>";
   }
 
   private String createHeadForNode(MDNode node) {
@@ -100,6 +104,7 @@ public class MDTranslater {
   private String fillTemplate(String template, String html, String toc, String head, String editUrl) {
     return template
         .replace("$content", html)
+        .replace("$toc", toc)
         .replace("$toc", toc)
         .replace("$head", head)
         .replace("$editLink", editUrl);
