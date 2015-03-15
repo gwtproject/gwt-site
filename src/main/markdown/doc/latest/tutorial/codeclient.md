@@ -162,7 +162,6 @@ When a Timer fires, the run method executes. For StockWatcher you'll override th
 3.  Specify the refresh rate.
     *  If you are using Eclipse shortcuts, select `Create constant 'REFRESH_INTERVAL'` then specify the refresh interval in milliseconds, `5000`.
     *  Otherwise, just cut and paste from the highlighted code below.
-    *
 
             public class StockWatcher implements EntryPoint {
 
