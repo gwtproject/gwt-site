@@ -401,9 +401,10 @@ The final piece of functionality you need to implement is the timestamp. You use
               }
 
               // Display timestamp showing last refresh.
-              lastUpdatedLabel.setText("Last update : "
-                + DateTimeFormat.getMediumDateTimeFormat().format(new Date()));
-
+              DateTimeFormat dateFormat = DateTimeFormat.getFormat(
+                DateTimeFormat.PredefinedFormat.DATE_TIME_MEDIUM);
+              lastUpdatedLabel.setText("Last update : " 
+                + dateFormat.format(new Date()));
             }
     
     *  Eclipse flags DateTimeFormat and Date.
