@@ -93,8 +93,9 @@ public class EditPersonWorkflow{
 
 *   _Bean-like object_: (henceforth "bean") An object that supports retrieval of properties through strongly-typed `Foo getFoo()` methods with optional `void setFoo(Foo foo);` methods.
 *   _Editor_: An object that supports editing zero or more properties of a bean.
-*   An Editor may be composed of an arbitrary number of sub-Editors that edit the properties of a bean.
-*   Most Editors are Widgets, but the framework does not require this.  It is possible to create "headless" Editors that perform solely programmatically-driven changes.*   _Driver_: The "top-level" controller used to attach a bean to an Editor.  The driver is responsible for descending into the Editor hierarchy to propagate data.  Examples include the `SimpleBeanEditorDriver` and the `RequestFactoryEditorDriver`.
+    *   An Editor may be composed of an arbitrary number of sub-Editors that edit the properties of a bean.
+    *   Most Editors are Widgets, but the framework does not require this.  It is possible to create "headless" Editors that perform solely programmatically-driven changes.
+*   _Driver_: The "top-level" controller used to attach a bean to an Editor.  The driver is responsible for descending into the Editor hierarchy to propagate data.  Examples include the `SimpleBeanEditorDriver` and the `RequestFactoryEditorDriver`.
 *   _Adapter_: One of a number of provided types that provide "canned" behaviors for the Editor framework.
 
 ## General workflow<a id="General_workflow"></a>
