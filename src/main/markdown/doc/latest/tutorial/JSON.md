@@ -469,7 +469,7 @@ To fix the compile errors, modify the updateTable method.
     *  Replace the existing update updateTable(StockPrice[]) method with the following code.
 
 ```
-import com.google.gwt.core.client.JsArray;
+updateTable(JsArray<StockData> prices)
 ```
 
 *  Eclipse flags JsArray.
