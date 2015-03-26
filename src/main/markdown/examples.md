@@ -189,8 +189,19 @@ was built using GWT. Use the free trial to see it in action.</div>
   </div>
   <div class="info">
     <div class="name"><a href="https://www.cloudorado.com" target="_blank">Cloudorado</a></div>
-    <div class="snippet">Cloudorado is a free cloud computing comparison tool, which makes cloud provider selection a quick and easy task. 
+    <div class="snippet">Cloudorado is a free cloud computing comparison tool, which makes cloud provider selection a quick and easy task.
 	The interactive comparison is done fully client-side and it is written in GWT. No login required &ndash; just go and try it.</div>
+  </div>
+</div>
+
+<div class="project">
+  <div class="screenshot">
+    <a href="http://gaestudio.arcbees.com" target="_blank"><img src="images/gaestudio.png" alt="Gae-Studio"/></a>
+  </div>
+  <div class="info">
+    <div class="name"><a href="http://gaestudio.arcbees.com" target="_blank">Gae-Studio</a></div>
+    <div class="snippet">GAE Studio helps you optimize applications hosted on Google App Engine. GAE Studio
+    allows datastore exploration, modification, deletion, import and export. Think of it as your swiss army knife for developing GAE applications!</div>
   </div>
 </div>
 
