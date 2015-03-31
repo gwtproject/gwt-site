@@ -512,17 +512,17 @@ necessary.
     <th>Tolerable</th>
   </tr>
   <tr>
-    <td>`Foo<T>`</td>
-    <td>`Foo<FooClientType>`</td>
+    <td>`Foo&lt;T&gt;`</td>
+    <td>`Foo&lt;FooClientType&gt;`</td>
   </tr>
   <tr>
-    <td>`Bar<K, V>`</td>
-    <td>`Bar<KeyType, ValueType>`</td>
+    <td>`Bar&lt;K, V&gt;`</td>
+    <td>`Bar&lt;KeyType, ValueType&gt;`</td>
   </tr>
   <tr>
-    <td>`Baz<V, E, X>`</td>
-    <td>`Baz<EventType, ErrorType, ExpressionType>`</td>
-    <td>`Baz<EventT, ErrorT, ExpressionT>`</td>
+    <td>`Baz&lt;V, E, X&gt;`</td>
+    <td>`Baz&lt;EventType, ErrorType, ExpressionType&gt;`</td>
+    <td>`Baz&lt;EventT, ErrorT, ExpressionT&gt;`</td>
   </tr>
 </table>
 
