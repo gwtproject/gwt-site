@@ -96,4 +96,4 @@ GWT Logo use
 
 6.  When you use GWT logo, you must follow the [graphical guidelines](https://drive.google.com/open?id=0B7xWXqwxUXt4T08yRW03ZDh2SEk) for logo use.
 
-7. All versions of the logo can be found [here](https://drive.google.com/open?id=0B7xWXqwxUXt4LXJtcXZFbmtUVDQ)  
+7. You can download [the logo from Google Drive](https://drive.google.com/open?id=0B7xWXqwxUXt4LXJtcXZFbmtUVDQ) in various formats.
