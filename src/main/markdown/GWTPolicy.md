@@ -94,4 +94,6 @@ GWT Logo use
     changing the colors or shape of the logo. However, you may create GWT User Group X logo by
     adding a text "GWT User Group X" under the logo as showcased in the graphical guidelines below.*
 
-6.  When you use GWT logo, you must follow the graphical guidelines for logo use.
+6.  When you use GWT logo, you must follow the [graphical guidelines](https://drive.google.com/open?id=0B7xWXqwxUXt4T08yRW03ZDh2SEk) for logo use.
+
+7. All versions of the logo can be found [here](https://drive.google.com/open?id=0B7xWXqwxUXt4LXJtcXZFbmtUVDQ)  
