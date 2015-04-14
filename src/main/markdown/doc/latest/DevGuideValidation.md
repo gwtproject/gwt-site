@@ -203,7 +203,7 @@ if (!violations.isEmpty()) {
 }
 ```
 
-## Unsupported Features<a id="Unsupported></a>
+## Unsupported Features<a id="Unsupported"></a>
 
 The following features are not supported in GWT validation:
 
