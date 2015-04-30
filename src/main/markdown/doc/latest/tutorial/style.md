@@ -32,55 +32,39 @@ When you used webAppCreator to create StockWatcher, it created the application s
 
 1.  Open the GWT module, StockWatcher/src/com/google/gwt/sample/stockwatcher/StockWatcher.gwt.xml.  Notice that the Standard theme is being used by default.
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<module rename-to='stockwatcher'>
-  <!-- Inherit the core Web Toolkit stuff.                        -->
-  <inherits name='com.google.gwt.user.User'/>
-
-      <!-- Inherit the default GWT style sheet.  You can change       -->
-  <!-- the theme of your GWT application by uncommenting          -->
-  <!-- any one of the following lines.                            -->
-  <inherits name='com.google.gwt.user.theme.standard.Standard'/>
-  <!-- <inherits name="com.google.gwt.user.theme.chrome.Chrome"/> -->
-  <!-- <inherits name="com.google.gwt.user.theme.dark.Dark"/>     -->
-
-      <!-- Other module inherits                                      -->
-
-      <!-- Specify the app entry point class.                         -->
-  <entry-point class='com.google.gwt.sample.stockwatcher.client.StockWatcher'/>
-</module>
-```
+        <?xml version="1.0" encoding="UTF-8"?>
+        <module rename-to='stockwatcher'>
+          <!-- Inherit the core Web Toolkit stuff.                        -->
+          <inherits name='com.google.gwt.user.User'/>
+        
+          <!-- Inherit the default GWT style sheet.  You can change       -->
+          <!-- the theme of your GWT application by uncommenting          -->
+          <!-- any one of the following lines.                            -->
+          <inherits name='com.google.gwt.user.theme.standard.Standard'/>
+          <!-- <inherits name="com.google.gwt.user.theme.chrome.Chrome"/> -->
+          <!-- <inherits name="com.google.gwt.user.theme.dark.Dark"/>     -->
+        
+          <!-- Other module inherits                                      -->
+        
+          <!-- Specify the app entry point class.                         -->
+          <entry-point class='com.google.gwt.sample.stockwatcher.client.StockWatcher'/>
+        </module>
 
 2.  Open StockWatcher/war/StockWatcher.html.  Notice that the application style sheet is StockWatcher.css.
-    *
 
-```
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
-    <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
-        <link type="text/css" rel="stylesheet" href="StockWatcher.css">
-
-        <title>StockWatcher</title>
-
-        <script type="text/javascript" language="javascript" src="stockwatcher/stockwatcher.nocache.js"></script>
-  </head>
-
-      <body>
-
-        <h1>StockWatcher</h1>
-
-        <div id="stockList"></div>
-
-        <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1'
-style="position:absolute;width:0;height:0;border:0"></iframe>
-
-      </body>
-</html>
-```
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+            <link type="text/css" rel="stylesheet" href="StockWatcher.css">
+            <title>StockWatcher</title>
+            <script src="stockwatcher/stockwatcher.nocache.js"></script>
+          </head>
+          <body>
+            <h1>StockWatcher</h1>
+            <div id="stockList"></div>
+          </body>
+        </html>
 
 #### Automatic Resource Inclusion
 
@@ -108,14 +92,12 @@ Change the theme from Standard to Dark.
 2.  Uncomment the line referencing the Dark theme.
     *  Eclipse shortcut: Source > Toggle Comment.
 
-```
-<!-- Inherit the default GWT style sheet.  You can change       -->
-  <!-- the theme of your GWT application by uncommenting          -->
-  <!-- any one of the following lines.                            -->
-  <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
-  <!-- <inherits name="com.google.gwt.user.theme.chrome.Chrome"/> -->
-  <inherits name="com.google.gwt.user.theme.dark.Dark"/>
-```
+        <!-- Inherit the default GWT style sheet.  You can change       -->
+        <!-- the theme of your GWT application by uncommenting          -->
+        <!-- any one of the following lines.                            -->
+        <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
+        <!-- <inherits name="com.google.gwt.user.theme.chrome.Chrome"/> -->
+        <inherits name="com.google.gwt.user.theme.dark.Dark"/>
 
 3.  Test the change.
     *  Save your changes to the StockWatcher.gwt.xml file.
@@ -181,20 +163,17 @@ When you created the StockWatcher application, webAppCreator generated the appli
 2.  For any HTML element with the class attribute of watchListHeader, set the color and text properties.
     *  Replace the contents of StockWatcher.css with the following style rules.
 
-```
-/* Formatting specific to the StockWatcher application */
-
-    body {
-  padding: 10px;
-}
-
-    /* stock list header row */
-.watchListHeader {
-  background-color: #2062B8;
-  color: white;
-  font-style: italic;
-}
-```
+        /* Formatting specific to the StockWatcher application */
+        body {
+          padding: 10px;
+        }
+        
+        /* stock list header row */
+        .watchListHeader {
+          background-color: #2062B8;
+          color: white;
+          font-style: italic;
+        }
 
 3.  Save your changes to StockWatcher.css.
 
@@ -207,17 +186,15 @@ However, GWT elements are created dynamically at runtime. So you'll set the HTML
 
 1.  In StockWatcher.java, in the onModuleLoad method, add a secondary style to the header row in the stock table.
 
-```
-public void onModuleLoad() {
-    // Create table for stock data.
-    stocksFlexTable.setText(0, 0, "Symbol");
-    stocksFlexTable.setText(0, 1, "Price");
-    stocksFlexTable.setText(0, 2, "Change");
-    stocksFlexTable.setText(0, 3, "Remove");
+        public void onModuleLoad() {
+          // Create table for stock data.
+          stocksFlexTable.setText(0, 0, "Symbol");
+          stocksFlexTable.setText(0, 1, "Price");
+          stocksFlexTable.setText(0, 2, "Change");
+          stocksFlexTable.setText(0, 3, "Remove");
 
-        // Add styles to elements in the stock list table.
-    stocksFlexTable.getRowFormatter().addStyleName(0, "watchListHeader");
-```
+          // Add styles to elements in the stock list table.
+          stocksFlexTable.getRowFormatter().addStyleName(0, "watchListHeader");
 
 2.  Save your changes to StockWatcher.java and then press Refresh in the browser running development mode to see them.
     *  The header row in the flex table displays white italic headings against a blue background.
@@ -236,30 +213,26 @@ Each of the changes we will make by creating a secondary style is outlined below
 1.  Define the style.
     *  In StockWatcher.css, create a style rule for HTML elements with a class attribute of watchList.
 
-```
-/* stock list header row */
-.watchListHeader {
-  background-color: #2062B8;
-  color: white;
-  font-style: italic;
-}
-
-    /* stock list flex table */
-.watchList {
-  border: 1px solid silver;
-  padding: 2px;
-  margin-bottom:6px;
-}
-```
+        /* stock list header row */
+        .watchListHeader {
+          background-color: #2062B8;
+          color: white;
+          font-style: italic;
+        }
+        
+        /* stock list flex table */
+        .watchList {
+          border: 1px solid silver;
+          padding: 2px;
+          margin-bottom:6px;
+        }
 
 2.  Apply the style.
     *  In StockWatcher.java, add a secondary class attribute to the stock flex table.
 
-```
-// Add styles to elements in the stock list table.
-    stocksFlexTable.getRowFormatter().addStyleName(0, "watchListHeader");
-    stocksFlexTable.addStyleName("watchList");
-```
+        // Add styles to elements in the stock list table.
+        stocksFlexTable.getRowFormatter().addStyleName(0, "watchListHeader");
+        stocksFlexTable.addStyleName("watchList");
 
 3.  Save your changes and then press Refresh in the browser running development mode to see them.
     *  The stock list table has a silver border.
@@ -271,31 +244,27 @@ First, you'll format the text in the stock table's header row, which loads when 
 1.  Define the style.
     *  In StockWatcher.css, create a style rule that will right-align the columns that contain the Price and Change fields.
 
-```
-/* stock list flex table */
-.watchList {
-  border: 1px solid silver;
-  padding: 2px;
-  margin-bottom:6px;
-}
-
-    /* stock list Price and Change fields */
-.watchListNumericColumn {
-  text-align: right;
-  width:8em;
-}
-```
+        /* stock list flex table */
+        .watchList {
+          border: 1px solid silver;
+          padding: 2px;
+          margin-bottom:6px;
+        }
+        
+        /* stock list Price and Change fields */
+        .watchListNumericColumn {
+          text-align: right;
+          width:8em;
+        }
 
 2.  Apply the style.
     *  In StockWatcher.java, add a secondary class attribute to both the Price and Change fields.
 
-```
-// Add styles to elements in the stock list table.
-    stocksFlexTable.getRowFormatter().addStyleName(0, "watchListHeader");
-    stocksFlexTable.addStyleName("watchList");
-    stocksFlexTable.getCellFormatter().addStyleName(0, 1, "watchListNumericColumn");
-    stocksFlexTable.getCellFormatter().addStyleName(0, 2, "watchListNumericColumn");
-```
+        // Add styles to elements in the stock list table.
+        stocksFlexTable.getRowFormatter().addStyleName(0, "watchListHeader");
+        stocksFlexTable.addStyleName("watchList");
+        stocksFlexTable.getCellFormatter().addStyleName(0, 1, "watchListNumericColumn");
+        stocksFlexTable.getCellFormatter().addStyleName(0, 2, "watchListNumericColumn");
 
 3.  Save your changes and then press Refresh in the browser running development mode to see them.
     *  The Price and Change columns have a set width and the text in the header row is right-aligned.
@@ -305,30 +274,26 @@ First, you'll format the text in the stock table's header row, which loads when 
 1.  Define the style.
     *  In StockWatcher.css, create a style rule that will center the text in the column that contains the Remove button.
 
-```
-/* stock list Price and Change fields */
-.watchListNumericColumn {
-  text-align: right;
-  width:8em;
-}
-
-    /* stock list Remove column */
-.watchListRemoveColumn {
-  text-align: center;
-}
-```
+        /* stock list Price and Change fields */
+        .watchListNumericColumn {
+          text-align: right;
+          width:8em;
+        }
+        
+        /* stock list Remove column */
+        .watchListRemoveColumn {
+          text-align: center;
+        }
 
 2.  Apply the style.
     *  In StockWatcher.java, add a secondary class attribute to the Remove field.
 
-```
-// Add styles to elements in the stock list table.
-    stocksFlexTable.getRowFormatter().addStyleName(0, "watchListHeader");
-    stocksFlexTable.addStyleName("watchList");
-    stocksFlexTable.getCellFormatter().addStyleName(0, 1, "watchListNumericColumn");
-    stocksFlexTable.getCellFormatter().addStyleName(0, 2, "watchListNumericColumn");
-    stocksFlexTable.getCellFormatter().addStyleName(0, 3, "watchListRemoveColumn");
-```
+        // Add styles to elements in the stock list table.
+        stocksFlexTable.getRowFormatter().addStyleName(0, "watchListHeader");
+        stocksFlexTable.addStyleName("watchList");
+        stocksFlexTable.getCellFormatter().addStyleName(0, 1, "watchListNumericColumn");
+        stocksFlexTable.getCellFormatter().addStyleName(0, 2, "watchListNumericColumn");
+        stocksFlexTable.getCellFormatter().addStyleName(0, 3, "watchListRemoveColumn");
 
 3.  Save your changes and then press Refresh in the browser running development mode to see them.
     *  The caption takes up the entire width of the field. You'll be able to see that the buttons are centered in the Remove column after you format the data rows in the next step.
@@ -341,15 +306,13 @@ You've formatted the header row of the flex table, which is displayed when Stock
 2.  Apply the style.
     *  In StockWatcher.java, in the addStock method, add secondary class attribute to the table cells in the Price, Change, and Remove columns.
 
-```
-// Add the stock to the table.
-    int row = stocksFlexTable.getRowCount();
-    stocks.add(symbol);
-    stocksFlexTable.setText(row, 0, symbol);
-    stocksFlexTable.getCellFormatter().addStyleName(row, 1, "watchListNumericColumn");
-    stocksFlexTable.getCellFormatter().addStyleName(row, 2, "watchListNumericColumn");
-    stocksFlexTable.getCellFormatter().addStyleName(row, 3, "watchListRemoveColumn");
-```
+        // Add the stock to the table.
+        int row = stocksFlexTable.getRowCount();
+        stocks.add(symbol);
+        stocksFlexTable.setText(row, 0, symbol);
+        stocksFlexTable.getCellFormatter().addStyleName(row, 1, "watchListNumericColumn");
+        stocksFlexTable.getCellFormatter().addStyleName(row, 2, "watchListNumericColumn");
+        stocksFlexTable.getCellFormatter().addStyleName(row, 3, "watchListRemoveColumn");
 
 3.  Save your changes and then press Refresh in the browser running development mode to see them.
     *  Add stocks to the list. The Price and Change data is right-aligned. The Remove button is centered.
@@ -361,27 +324,23 @@ Add  whitespace around the text box and Add button in the Add Stock panel.
 1.  Define the style.
     *  In StockWatcher.css, create a style rule to widen the margins around the Add Stock panel.
 
-```
-/* stock list Remove column */
-.watchListRemoveColumn {
-  text-align: center;
-}
-
-    /* Add Stock panel */
-.addPanel {
-  margin: 10px 0px 15px 0px;
-}
-```
+        /* stock list Remove column */
+        .watchListRemoveColumn {
+          text-align: center;
+        }
+        
+        /* Add Stock panel */
+        .addPanel {
+          margin: 10px 0px 15px 0px;
+        }
 
 2.  Apply the style.
     *  In StockWatcher.java, in the onModuleLoad method add a secondary class attribute to the addPanel.
 
-```
-// Assemble Add Stock panel.
-    addPanel.add(newSymbolTextBox);
-    addPanel.add(addStockButton);
-    addPanel.addStyleName("addPanel");
-```
+        // Assemble Add Stock panel.
+        addPanel.add(newSymbolTextBox);
+        addPanel.add(addStockButton);
+        addPanel.addStyleName("addPanel");
 
 3.  Save your changes and then press Refresh in the browser running development mode to see them.
     *  The margin between the stock table and the Add Stock panel has increased.
@@ -394,7 +353,7 @@ Here the summary of the changes we've done so far.
 
 ##### Changes to StockWatcher.css
 
-```
+```css
 /* Formatting specific to the StockWatcher application */
 
 body {
@@ -434,54 +393,54 @@ body {
 
 ##### Changes to StockWatcher.java, onModuleLoad
 
-```
+```java
 public void onModuleLoad() {
-    // Create table for stock data.
-    stocksFlexTable.setText(0, 0, "Symbol");
-    stocksFlexTable.setText(0, 1, "Price");
-    stocksFlexTable.setText(0, 2, "Change");
-    stocksFlexTable.setText(0, 3, "Remove");
+  // Create table for stock data.
+  stocksFlexTable.setText(0, 0, "Symbol");
+  stocksFlexTable.setText(0, 1, "Price");
+  stocksFlexTable.setText(0, 2, "Change");
+  stocksFlexTable.setText(0, 3, "Remove");
 
-    // Add styles to elements in the stock list table.
-    stocksFlexTable.getRowFormatter().addStyleName(0, "watchListHeader");
-    stocksFlexTable.addStyleName("watchList");
-    stocksFlexTable.getCellFormatter().addStyleName(0, 1, "watchListNumericColumn");
-    stocksFlexTable.getCellFormatter().addStyleName(0, 2, "watchListNumericColumn");
-    stocksFlexTable.getCellFormatter().addStyleName(0, 3, "watchListRemoveColumn");
+  // Add styles to elements in the stock list table.
+  stocksFlexTable.getRowFormatter().addStyleName(0, "watchListHeader");
+  stocksFlexTable.addStyleName("watchList");
+  stocksFlexTable.getCellFormatter().addStyleName(0, 1, "watchListNumericColumn");
+  stocksFlexTable.getCellFormatter().addStyleName(0, 2, "watchListNumericColumn");
+  stocksFlexTable.getCellFormatter().addStyleName(0, 3, "watchListRemoveColumn");
 
-    // Assemble the Add Stock panel
-    addPanel.add(newSymbolTextBox);
-    addPanel.add(addStockButton);
-    addPanel.addStyleName("addPanel");
-    .
-    .
-    .
-  }
+  // Assemble the Add Stock panel
+  addPanel.add(newSymbolTextBox);
+  addPanel.add(addStockButton);
+  addPanel.addStyleName("addPanel");
+  .
+  .
+  .
+}
 ```
 
 ##### Changes to StockWatcher.java, addStock
 
-```
+```java
 // Add the stock to the table.
-    int row = stocksFlexTable.getRowCount();
-    stocks.add(symbol);
-    stocksFlexTable.setText(row, 0, symbol);
-    stocksFlexTable.getCellFormatter().addStyleName(row, 1, "watchListNumericColumn");
-    stocksFlexTable.getCellFormatter().addStyleName(row, 2, "watchListNumericColumn");
-    stocksFlexTable.getCellFormatter().addStyleName(row, 3, "watchListRemoveColumn");
+int row = stocksFlexTable.getRowCount();
+stocks.add(symbol);
+stocksFlexTable.setText(row, 0, symbol);
+stocksFlexTable.getCellFormatter().addStyleName(row, 1, "watchListNumericColumn");
+stocksFlexTable.getCellFormatter().addStyleName(row, 2, "watchListNumericColumn");
+stocksFlexTable.getCellFormatter().addStyleName(row, 3, "watchListRemoveColumn");
 ```
 
 ##  Creating secondary styles dependent on a primary style <a id="dependent"></a>
 
 Next you want to change the style of the Remove button. The Remove button inherits its style from the Button widget. Default styles for all GWT Button widgets are defined by GWT in standard.css.
 
-```
+```html
 <button class="gwt-Button" tabindex="0" type="button">x</button>
 ```
 
 
 
-```
+```css
 .gwt-Button {
     background:transparent url(images/hborder.png) repeat-x scroll 0px -27px;
     border:1px outset #CCCCCC;
@@ -498,36 +457,29 @@ For StockWatcher, you want your style change to apply only to the Remove button.
 To do this, you'll use the addStyleDependentName method instead of the addStyleName method.
 
 1.  Define the style rule.
-    *
 
-```
-/* Add Stock panel */
-.addPanel {
-  margin: 10px 0px 15px 0px;
-}
-
-    /* stock list, the Remove button */
-.gwt-Button-remove {
-  width: 50px;
-}
-```
+        /* Add Stock panel */
+        .addPanel {
+          margin: 10px 0px 15px 0px;
+        }
+        
+        /* stock list, the Remove button */
+        .gwt-Button-remove {
+          width: 50px;
+        }
 
 2.  Apply the style.
     *  In StockWatcher.java, use addStyleDependentName to add a secondary, dependent class attribute to the Remove button.
 
-```
-// Add a button to remove this stock from the table.
-    Button removeStockButton = new Button("x");
-    removeStockButton.addStyleDependentName("remove");
-```
+          // Add a button to remove this stock from the table.
+          Button removeStockButton = new Button("x");
+          removeStockButton.addStyleDependentName("remove");
 
 3.  Save your changes and then press Refresh in the browser running development mode to see them.
     *  The Remove button is wider than it is tall. The Add button is unaffected by this change.
 4.  Now the resulting generated HTML has two class attributes.
 
-```
-<button class="gwt-Button gwt-Button-remove" tabindex="0" type="button">x</button>
-```
+        <button class="gwt-Button gwt-Button-remove" tabindex="0" type="button">x</button>
 
 ##  Updating styles dynamically <a id="dynamic"></a>
 
@@ -538,75 +490,65 @@ You've already applied an HTML class attribute to the cell element to right-alig
 1.  *  Define the style.
     *  In StockWatcher.css, add these style rules.
 
-```
-/* stock list, the Remove button */
-.gwt-Button-remove {
-  width: 50px;
-}
-
-    /* Dynamic color changes for the Change field */
-.noChange {
-  color: black;
-}
-
-    .positiveChange {
-  color: green;
-}
-
-    .negativeChange {
-  color: red;
-}
-```
+        /* stock list, the Remove button */
+        .gwt-Button-remove {
+          width: 50px;
+        }
+        
+        /* Dynamic color changes for the Change field */
+        .noChange {
+          color: black;
+        }
+        
+        .positiveChange {
+          color: green;
+        }
+        
+        .negativeChange {
+          color: red;
+        }
 
 2.  Insert a Label widget in a table cell.
     *  In StockWatcher.java, in the addStock method, create a Label widget for every cell in column 2.
 
-```
-// Add the stock to the table.
-    int row = stocksFlexTable.getRowCount();
-    stocks.add(symbol);
-    stocksFlexTable.setText(row, 0, symbol);
-    stocksFlexTable.setWidget(row, 2, new Label());
-    stocksFlexTable.getCellFormatter().addStyleName(row, 1, "watchListNumericColumn");
-    stocksFlexTable.getCellFormatter().addStyleName(row, 2, "watchListNumericColumn");
-    stocksFlexTable.getCellFormatter().addStyleName(row, 3, "watchListRemoveColumn");
-```
+        // Add the stock to the table.
+        int row = stocksFlexTable.getRowCount();
+        stocks.add(symbol);
+        stocksFlexTable.setText(row, 0, symbol);
+        stocksFlexTable.setWidget(row, 2, new Label());
+        stocksFlexTable.getCellFormatter().addStyleName(row, 1, "watchListNumericColumn");
+        stocksFlexTable.getCellFormatter().addStyleName(row, 2, "watchListNumericColumn");
+        stocksFlexTable.getCellFormatter().addStyleName(row, 3, "watchListRemoveColumn");
 
 *  Instead of setting the text on the table cells, now you have to set the text for the Label widget.
 3.  Set text on the changeWidget.
     *  In the updateTable(StockPrice) method, delete the call to setText for the Change column (column 2).
     *  Create an instance of the Label widget and call it changeWidget.
     *  Set the text on changeWidget.
-    *
 
-```
-// Populate the Price and Change fields with new data.
-    stocksFlexTable.setText(row, 1, priceText);
-    <span class="strike">stocksFlexTable.setText(row, 2, changeText + " (" + changePercentText + "%)");
-    Label changeWidget = (Label)stocksFlexTable.getWidget(row, 2);
-    changeWidget.setText(changeText + " (" + changePercentText + "%)");
-```
+        // Populate the Price and Change fields with new data.
+        stocksFlexTable.setText(row, 1, priceText);
+        Label changeWidget = (Label)stocksFlexTable.getWidget(row, 2);
+        changeWidget.setText(changeText + " (" + changePercentText + "%)");
+
 4.  Change the color of each changeWidget based on its value.
 
-```
-
-// Populate the Price and Change fields with new data.
-    stocksFlexTable.setText(row, 1, priceText);
-    Label changeWidget = (Label)stocksFlexTable.getWidget(row, 2);
-    changeWidget.setText(changeText + " (" + changePercentText + "%)");
+        // Populate the Price and Change fields with new data.
+        stocksFlexTable.setText(row, 1, priceText);
+        Label changeWidget = (Label)stocksFlexTable.getWidget(row, 2);
+        changeWidget.setText(changeText + " (" + changePercentText + "%)");
 
         // Change the color of text in the Change field based on its value.
-    String changeStyleName = "noChange";
-    if (price.getChangePercent() < -0.1f) {
-      changeStyleName = "negativeChange";
-    }
-    else if (price.getChangePercent() > 0.1f) {
-      changeStyleName = "positiveChange";
-    }
+        String changeStyleName = "noChange";
+        if (price.getChangePercent() < -0.1f) {
+          changeStyleName = "negativeChange";
+        }
+        else if (price.getChangePercent() > 0.1f) {
+          changeStyleName = "positiveChange";
+        }
 
         changeWidget.setStyleName(changeStyleName);
 
-```
 5.  Save your changes and then press Refresh in the browser running development mode to see them.
     *  The color of the values in the Change field are red, green, or black depending on whether the change was negative, positive, or none.
 
@@ -619,19 +561,16 @@ In GWT, depending on the HTML element, you can set some attributes in the Java c
 1.  Specify the cellpadding for the stock table.
     *  In StockWatcher.java, in the onModuleLoad method, add the setCellPadding method.
 
-```
+        public void onModuleLoad() {
+          // Create table for stock data.
+          stocksFlexTable.setText(0, 0, "Symbol");
+          stocksFlexTable.setText(0, 1, "Price");
+          stocksFlexTable.setText(0, 2, "Change");
+          stocksFlexTable.setText(0, 3, "Remove");
 
-public void onModuleLoad() {
-    // Create table for stock data.
-    stocksFlexTable.setText(0, 0, "Symbol");
-    stocksFlexTable.setText(0, 1, "Price");
-    stocksFlexTable.setText(0, 2, "Change");
-    stocksFlexTable.setText(0, 3, "Remove");
+          // Add styles to elements in the stock list table.
+          stocksFlexTable.setCellPadding(6);
 
-        // Add styles to elements in the stock list table.
-    stocksFlexTable.setCellPadding(6);
-
-```
 2.  Save your changes and then press Refresh in the browser running development mode to see them.
 
 ##  Adding images or other static HTML elements <a id="staticResource"></a>
@@ -645,49 +584,28 @@ To include static images in the application.
 1.  Create an directory to hold the image files associated with this application.
     *  In the war directory, create an images directory.
 
-```
+        StockWatcher/war/images
 
-StockWatcher/war/images
-
-```
 2.  From this page, copy the image of the logo and paste it into the images directory.
 
-```
+        StockWatcher/war/images/GoogleCode.png
 
-StockWatcher/war/images/GoogleCode.png
+3.  In StockWatcher.html, insert an img tag pointing to the logo file.
 
-```
-3.  *  In StockWatcher.html, insert an img tag pointing to the logo file.
-    *
-
-```
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
-    <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
-        <link type="text/css" rel="stylesheet" href="StockWatcher.css">
-
-        <title>StockWatcher</title>
-
-        <script type="text/javascript" language="javascript" src="stockwatcher/stockwatcher.nocache.js"></script>
-  </head>
-
-      <body>
-
-        <img src="images/GoogleCode.png" />
-
-        <h1>StockWatcher</h1>
-
-        <div id="stockList"></div>
-
-        <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
-
-      </body>
-</html>
-```
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+            <link type="text/css" rel="stylesheet" href="StockWatcher.css">
+            <title>StockWatcher</title>
+            <script src="stockwatcher/stockwatcher.nocache.js"></script>
+          </head>
+          <body>
+            <img src="images/GoogleCode.png" />
+            <h1>StockWatcher</h1>
+            <div id="stockList"></div>
+          </body>
+        </html>
 
     **Note:** HTML comments have been omitted for brevity.
 
