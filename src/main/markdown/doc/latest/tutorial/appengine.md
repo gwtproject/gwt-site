@@ -921,7 +921,6 @@ private void addStock() {
     if (stocks.contains(symbol))
       return;
 
-    <span class="strike">displayStock(symbol);
     addStock(symbol);
   }
 
