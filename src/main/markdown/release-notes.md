@@ -77,7 +77,7 @@ for workarounds.
 
 - Super Dev Mode is now the default. DevMode automatically starts Super Dev Mode
 and reloading a web page automatically runs the compiler when necessary.
-(The -noSuperDevMode flag may be used to revert to the old behavior.)
+(The `-nosuperDevMode` flag may be used to revert to the old behavior.)
 
 - Compiling in Super Dev Mode is much faster after the first compile.
 
@@ -206,7 +206,7 @@ support for serializing final fields.
 
 #### Dev Mode
 
-- The `-noSuperDevMode` flag may be used to turn off Super Dev Mode and
+- The `-nosuperDevMode` flag may be used to turn off Super Dev Mode and
 revert to old Dev Mode. (However, most current browsers no longer support
 Dev Mode plugins.)
 
