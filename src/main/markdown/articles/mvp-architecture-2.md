@@ -712,7 +712,7 @@ going to get the Element that was clicked on and walk the DOM until we find a
 parent TableCellElement. From there we can determine the row, and thus the
 corresponding rowData.
 
-The other tweak we need to make is to update our shouldFirdClickEvent() and
+The other tweak we need to make is to update our shouldFireClickEvent() and
 shouldFireSelectEvent() to take as a parameter a TableCellElement rather than
 a HTMLTable.Cell. The implementation remains the same, as you can see below.
 
