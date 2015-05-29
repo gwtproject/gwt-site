@@ -55,7 +55,7 @@ JSON services across the web.
 
 **Externally hosted articles:**
 
-*   [GWT Tutorial](http://codedrops.in/gwt-tutorial/) - _contributed by Maithilish - July 2013_
+*   [GWT Tutorial](http://www.codetab.org/gwt-tutorial/) - _contributed by Maithilish - July 2013_
 
 **GWT Tutorial** is a step-by-step guide to a complete GWT project. It walks through a project to explain the essentials as well as some of the advanced concepts of GWT 2. Level - Beginner and Intermediate. 
 
