@@ -29,6 +29,7 @@ When setting up GWT RPC, you will focus on these three elements involved in call
 *   the service that runs on the server (the method you are calling)
 *   the client code that invokes the service
 *   the Java data objects that pass between the client and server
+
 Both the server and the client have the ability to serialize and deserialize data so the data objects can be passed between them as ordinary text.
 
 ![GWT RPC Plumbing](images/AnatomyOfServices.png)
@@ -366,7 +367,8 @@ Specifically, GWT RPC requires that all service method parameters and return typ
 A type is serializable and can be used in a service interface if one of the following is true:
 
 *   All primitive types (int, char, boolean, etc.) and their wrapper objects are serializable by default.
-*   An array of serializable types is serializable by extension.*   A class is serializable if it meets these three requirements:
+*   An array of serializable types is serializable by extension.
+*   A class is serializable if it meets these three requirements:
 
     *   It implements either Java [Serializable](http://java.sun.com/j2se/1.5.0/docs/api/java/io/Serializable.html) or GWT [IsSerializable](/javadoc/latest/com/google/gwt/user/client/rpc/IsSerializable.html) interface, either directly, or because it derives from a superclass that does.
     *   Its non-final, non-transient instance fields are themselves serializable, and
