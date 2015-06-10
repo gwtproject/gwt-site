@@ -1,7 +1,7 @@
 Life of an issue
 ===
 
-The GWT project maintains a [public issue tracker](https://github.com/gwtproject/gwt/issues/) where you can report bugs and request features for GWT.
+The GWT project maintains a [public issue tracker](https://github.com/gwtproject/gwt/issues) where you can report bugs and request features for GWT.
 
 1.  [Issue reporting guidelines](#guide)
 2.  [What happens when you submit an issue](#life)
