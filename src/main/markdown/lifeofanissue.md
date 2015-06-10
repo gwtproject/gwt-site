@@ -1,7 +1,7 @@
 Life of an issue
 ===
 
-The GWT project maintains a [public issue tracker](http://code.google.com/p/google-web-toolkit/issues) where you can report bugs and request features for GWT.
+The GWT project maintains a [public issue tracker](https://github.com/gwtproject/gwt/issues/) where you can report bugs and request features for GWT.
 
 1.  [Issue reporting guidelines](#guide)
 2.  [What happens when you submit an issue](#life)
@@ -12,9 +12,9 @@ One of the best ways you can help us improve GWT is to let us know about any pro
 
 Here's how to report issues:
 
-1.  [Search for your issue](http://code.google.com/p/google-web-toolkit/issues/advsearch) to see if anyone has already reported it.
+1.  [Search for your issue](https://github.com/gwtproject/gwt/issues) to see if anyone has already reported it.
 2.  If you find your issue and it's important to you, star it. That's how we know which issues are most important to fix, and you'll get notified of new activity on the issue.
-3.  If no one's reported your issue, [file it](http://code.google.com/p/google-web-toolkit/issues/entry). Please fill out the template completely. It is especially important to provide browser version(s) and a small code sample which can be used to reproduce the issue.
+3.  If no one's reported your issue, [file it](https://github.com/gwtproject/gwt/issues/new). Please fill out the template completely. It is especially important to provide browser version(s) and a small code sample which can be used to reproduce the issue.
 4.  For feature requests, file an issue using the standard developer defect report template. Under  "Found in GWT Release," put "FEATURE REQUEST." 
 
 To see what happens to your issue once you report it, keep reading.
@@ -26,7 +26,7 @@ Here's the Life of an Issue, in a nutshell:
 1.  An issue is filed and has the state "New".
 2.  A GWT contributor periodically reviews and triages issues. The GWT contributor attempts to verify the issue and assigns a status based on the results.
 3.  Once an issue has been verified, it may be marked Accepted, in which case the GWT team plans to fix it, or PatchesWelcome, which means that the GWT team likely won't be able to get to it, but would be happy to review patches from the community. To submit a patch, follow [these guidelines](makinggwtbetter.html#submittingpatches).
-4.  Once an issue has been fixed, its status will be updated to Fixed orFixedNotReleased, indicating whether the fix is available in the current numbered release or, more commonly, in SVN trunk for the next release.
+4.  Once an issue has been fixed, its status will be updated to Fixed or FixedNotReleased, indicating whether the fix is available in the current numbered release or, more commonly, in SVN trunk for the next release.
 
 The following tables provide detail on all issue status types.
 
