@@ -14,7 +14,7 @@ Here's how to report issues:
 
 1.  [Search for your issue](https://github.com/gwtproject/gwt/issues?q=is%3Aissue) to see if anyone has already reported it.
 2.  If you find your issue and it's important to you, star it. That's how we know which issues are most important to fix, and you'll get notified of new activity on the issue.
-3.  If no one's reported your issue, [file it](https://github.com/gwtproject/gwt/issues/new). Please provide the version of GWT, the browser(s), and platform(s) you're using. It is especially important to provide the browser version(s) and a small code sample which can be used to reproduce the issue. If the issue has been discussed in forums, please provide a link to the discussion too.
+3.  If no one's reported your issue, [file it](https://github.com/gwtproject/gwt/issues/new). Please provide the versions of GWT, the browser(s), and the platform(s) used. It is especially important to provide the browser version(s) and a small code sample which can be used to reproduce the issue. If the issue has been discussed in forums, please provide a link to the discussion too.
 4.  For feature requests, file an issue using the standard developer defect report template. Under  "Found in GWT Release," put "FEATURE REQUEST." 
 
 To see what happens to your issue once you report it, keep reading.
