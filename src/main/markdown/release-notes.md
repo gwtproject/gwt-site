@@ -255,7 +255,7 @@ running a test using HtmlUnit.
 tests are always run in an HTML page in standards mode.)
 
 For even more detail, see the [Issue Tracker.]
-(https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%3D2_7+status%3AFixed)
+(https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_7)
 
 <a id="Release_Notes_Current"></a>
 
@@ -551,7 +551,7 @@ conflicts when testing code that calls GWT.setUncaughtExceptionHandler.
 - Closure compiler 20131014
 
 For even more detail, see [Changelists up to 2.6.0-rc1](https://gwt.googlesource.com/gwt/+log/2.5.1..2.6.0-rc1)
-and the [issue tracker](https://code.google.com/p/google-web-toolkit/issues/list?q=Milestone%3D2_6).
+and the [issue tracker](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_6).
 
 ## <a id="Release_Notes_2_5_1"></a> Release Notes for 2.5.1
 
@@ -688,7 +688,7 @@ up for release.
 *   Support for [validation](doc/latest/DevGuideValidation.html)
 is improved, documented, and no longer considered experimental.
 *   Other fixes; see the [issue
-tracker](https://code.google.com/p/google-web-toolkit/issues/list?q=FixedIn2_5RC2) for more.
+tracker](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AFixedIn2_5RC2) for more.
 
 ## <a id="Release_Notes_2_5_0_RC1"></a> Release Notes for 2.5.0 (RC1)
 
@@ -808,7 +808,7 @@ the -XcompilerMetrics flag.
 compiler.stackMode is what should be used instead.
 
 In addition to the items mentioned above, see [for
-a list of bug fixes and enhancements for 2.5.0](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%3A2_5+status%3AFixed) in the GWT issue
+a list of bug fixes and enhancements for 2.5.0](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_5) in the GWT issue
 tracker.
 
 ### Known Issues
@@ -872,11 +872,11 @@ RequestFactoryEditorDriver ([#6081](https://code.google.com/p/google-web-toolkit
 *   Editor framework does not support is / has methods ([#6040](https://code.google.com/p/google-web-toolkit/issues/detail?id=6040))
 
 See [the
-complete list of bug fixes and enhancements for 2.4.0](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%3A2_4+status%3AFixed) in the GWT issue
+complete list of bug fixes and enhancements for 2.4.0](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_4) in the GWT issue
 tracker.
 
 See [the
-complete list of breaking changes](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%3A2_4+ReleaseNote%3DBreakingChange+status%3AFixed) in the GWT issue tracker.
+complete list of breaking changes](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_4+label%3AReleaseNote-BreakingChange) in the GWT issue tracker.
 
 ### Security vulnerability in GWT 2.4
 
@@ -939,7 +939,7 @@ public bugs [6145](https://code.google.com/p/google-web-toolkit/issues/detail?id
 and [6198](https://code.google.com/p/google-web-toolkit/issues/detail?id=6198).
 
 See [the
-complete list of bug fixes and enhancements for 2.3.0](https://code.google.com/p/google-web-toolkit/issues/list?can=2&q=Milestone%3A2_3+status%3AFixedNotReleased) in the GWT issue
+complete list of bug fixes and enhancements for 2.3.0](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_3) in the GWT issue
 tracker.
 
 * * *
@@ -972,7 +972,7 @@ now works properly in Eclipse 3.6
 *   Fixed iFrame loading issues within Internet Explorer [(#1720)](https://code.google.com/p/google-web-toolkit/issues/detail?id=1720)
 
 See [the
-complete list of bug fixes and enhancements for 2.3.0 M1](https://code.google.com/p/google-web-toolkit/issues/list?can=2&q=Milestone%3A2_3+status%3AFixedNotReleased) in the GWT
+complete list of bug fixes and enhancements for 2.3.0 M1](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_3) in the GWT
 issue tracker.
 
 * * *
@@ -1014,7 +1014,7 @@ maven repository ([#5429](https://code.google.com/p/google-web-toolkit/issues/de
 
 See [the
 complete list of bug fixes and enhancements for 2.2.0 M1, RC1 and
-final release](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone%202_2%20status:Fixed,FixedNotReleased) in the GWT issue tracker.
+final release](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_2) in the GWT issue tracker.
 
 * * *
 
@@ -1032,7 +1032,7 @@ final release](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=
 CellTable ([#5623](https://code.google.com/p/google-web-toolkit/issues/detail?id=5632))
 
 See the GWT issue tracker for
-[the complete list of bug fixes and enhancements](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=Milestone=2_1_1%20status:Fixed&sort=type&colspec=ID%20Type%20Status%20Owner%20Milestone%20Summary%20Stars)
+[the complete list of bug fixes and enhancements](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone=2_1_1)
 in this release.
 
 * * *
@@ -1292,7 +1292,7 @@ gwt.args property for passing additional flags to the gwtc and devmode
 rules, such as `ant -Dgwt.args="-style PRETTY" gwtc`.
 
 See the GWT issue tracker for [
-the complete list of bug fixes and enhancements](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status:Fixed,FixedNotReleased%20milestone:2_0_1&num=1000) in this release.
+the complete list of bug fixes and enhancements](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_0_1) in this release.
 
 * * *
 
@@ -1592,7 +1592,7 @@ non-integral values
 or incorrectly accepts `"0xC:0xB:0xA"`.
 
 See the GWT issue tracker for [
-the complete list of bug fixes and enhancements](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%2CFixedNotReleased%20milestone%3A1_5_3&num=1000) in this release.
+the complete list of bug fixes and enhancements](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-1_5_3) in this release.
 
 * * *
 
@@ -1635,7 +1635,7 @@ systems.
 RichTextArea on IE.
 
 See the GWT issue tracker for [
-the complete list of bug fixes and enhancements](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%2CFixedNotReleased%20milestone%3A1_5_Final&num=1000) in this release.
+the complete list of bug fixes and enhancements](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-1_5_Final) in this release.
 
 * * *
 
@@ -1710,7 +1710,7 @@ the margin and border of the target element in Safari 3
 *   Fixed some bugs associated with history support
 
 See the GWT issue tracker for [
-the complete list of bug fixes and enhancements](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_5_RC2%20type%3Adefect&num=1000) in this release.
+the complete list of bug fixes and enhancements](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-1_5_RC2) in this release.
 
 * * *
 
@@ -1832,7 +1832,7 @@ been backed out in favor of the 1.3.3 behavior. ([#1159](https://code.google.com
 ### Fixed Issues
 
 See the GWT issue tracker for [the
-complete list of bug fixes](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_4_RC2%20type%3Adefect&num=1000) in this release.
+complete list of bug fixes](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-1_4_RC2) in this release.
 
 * * *
 
@@ -2059,12 +2059,12 @@ on the part of the GWT developer to keep up-to-date.
 section](doc/html/com.google.gwt.doc.DeveloperGuide.UserInterface.ImageBundles) for more details.
 
 See the GWT issue tracker for [the
-complete list of enhancements](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_4_RC%20type%3Aenhancement&num=1000) in this release.
+complete list of enhancements](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-1_4_RC) in this release.
 
 ### Fixed Issues
 
 See the GWT issue tracker for [the
-complete list of bug fixes](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_4_RC%20type%3Adefect&num=1000) in this release.
+complete list of bug fixes](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-1_4_RC) in this release.
 
 * * *
 
@@ -2094,17 +2094,17 @@ we've convinced ourselves it's reliable.
 
 ### Useful Links
 
-*   **[Making GWT Better](makinggwtbetter)**This
+*   **[Making GWT Better](makinggwtbetter.html)** This
 is our new GWT open source charter that describes how we plan to
 operate the project and how you can access the GWT source, compile it
 yourself, and contribute.
-*   **[The GWT Issue Tracker](https://code.google.com/p/google-web-toolkit/issues/list)**Please
+*   **[The GWT Issue Tracker](https://github.com/gwtproject/gwt/issues?q=is%3Aissue)** Please
 report any bugs in 1.3 RC that
 weren't in 1.2.22 in the GWT issue tracker. These would be likely
 related to the new build, and we want to know ASAP so we can fix them.
-*   **[The GWT Subversion Repository](http://google-web-toolkit.googlecode.com/svn/)**Visit the
+*   **[The GWT Git Repository](https://gwt.googlesource.com/gwt/)** Visit the
 online repository to
-browse the GWT source without a Subversion client.
+browse the GWT source without a Git client.
 
 * * *
 
@@ -2121,9 +2121,9 @@ later.
 
 ### Useful Links
 
-*   **[Changes included in GWT 1.2 since the RC](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_Final)**Also see the GWT Blog for
+*   **[Changes included in GWT 1.2 since the RC](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-1_2_Final)**Also see the GWT Blog for
 a discussion of the [noteworthy issues related to 1.2 RC](http://googlewebtoolkit.blogspot.com/2006/11/wrapping-up-gwt-12-soon.html)
-*   **[New features and bug fixes in GWT 1.2 RC](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_RC)**
+*   **[New features and bug fixes in GWT 1.2 RC](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-1_2_RC)**
 
 ### Breaking API Changes
 
@@ -2148,7 +2148,7 @@ This is the Release Candidate for GWT 1.2. Between this build and
 the subsequent GWT 1.2 official release, changes are limited to issues
 unique to GWT 1.2 RC.
 
-See the GWT issue tracker for [the complete list of enhancements and bug fixes](https://code.google.com/p/google-web-toolkit/issues/list?can=1&q=status%3AFixed%20milestone%3A1_2_RC) in this release.
+See the GWT issue tracker for [the complete list of enhancements and bug fixes](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-1_2_RC) in this release.
 
 ### New Features
 

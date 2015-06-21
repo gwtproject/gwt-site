@@ -13,7 +13,7 @@ Here are some important GWT resources:
 *   [The GWT Home Page](http://www.gwtproject.org "The GWT Home Page")
 *   The GWT Developer Documentation, including the [Overview](docs/latest/DevGuide.html "Overview"), the [Tutorials](doc/latest/tutorial/index.html "Tutorials"), and the [API Reference](doc/latest/RefGWTClassAPI.html "API Reference")
 *   [The Discussion Group Archives](http://groups.google.com/group/Google-Web-Toolkit/topics "Discussion Group Archives")
-*   [The GWT Issue Tracker](http://code.google.com/p/google-web-toolkit/issues/list "The GWT Issue Tracker") 
+*   [The GWT Issue Tracker](https://github.com/gwtproject/gwt/issues?q=is%3Aissue "The GWT Issue Tracker") 
 
 ## Audience
 

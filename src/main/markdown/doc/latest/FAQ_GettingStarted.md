@@ -101,17 +101,17 @@ Groups. The GWT engineering and operations team will participate in the group an
 
 ### Where should I report bugs?<a id="Where_should_I_report_bugs?"></a>
 
-You can file a bug in the [GWT Issue Tracker](http://code.google.com/p/google-web-toolkit/issues/list). Please be sure to search for
+You can file a bug in the [GWT Issue Tracker](https://github.com/gwtproject/gwt/issues?q=is%3Aissue). Please be sure to search for
 your problem before reporting a new issue, since someone else might have already reported it. If you would like to be notified about activities on your issue, star the report and
 you will receive emails at your account's email address.
 
 ### Where should I submit suggestions to improve GWT?<a id="Where_should_I_submit_suggestions_to_improve_GWT?"></a>
 
-If you have an idea for an enhancement to GWT, please search through the [Issue Tracker](http://code.google.com/p/google-web-toolkit/issues/list). If
+If you have an idea for an enhancement to GWT, please search through the [Issue Tracker](https://github.com/gwtproject/gwt/issues?q=is%3Aissue). If
 it isn't there, you might want to first suggest it to the [GWT developer discussion
 group](http://groups.google.com/group/Google-Web-Toolkit).
 
-You can submit requests for enhancements at the [GWT Issue Tracker](http://code.google.com/p/google-web-toolkit/issues/list). When you
+You can submit requests for enhancements at the [GWT Issue Tracker](https://github.com/gwtproject/gwt/issues?q=is%3Aissue). When you
 save your report, it will be labeled as a "Defect" even though you want to submit an RFE (Request for Enhancement). Don't worry! We review each item submitted to our Issue
 Tracker, and will mark enhancement requests appropriately when we receive them.
 
