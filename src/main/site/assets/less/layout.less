@@ -211,8 +211,13 @@ ul,
 ol {
   list-style-position: outside;
 
+  margin-top: 0.8em;
   margin-left: 1.3em;
   padding-left: 0;
+
+  & > li > p:first-child {
+   display: inline;
+  }
 }
 
 ul {
@@ -220,7 +225,6 @@ ul {
 
   & > li {
     list-style-type: none;
-    margin-top: 0.8em;
 
     &::before {
       content: "";
@@ -239,10 +243,6 @@ ul {
     ul li::before {
       color: #000;
     }
-
-    & > p:first-child {
-     display: inline;
-    }
   }
 }
 
@@ -251,7 +251,6 @@ ol {
 
   & > li {
     list-style-type: none;
-    margin-top: 0.8em;
 
     &::before{
       content: counter(item) " | ";
@@ -261,10 +260,6 @@ ol {
       font-family: monospace;
       font-weight: bold;
       font-size: 120%;
-    }
-
-    & > p:first-child {
-     display: inline;
     }
   }
 
