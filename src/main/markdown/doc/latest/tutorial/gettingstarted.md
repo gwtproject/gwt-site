@@ -5,7 +5,8 @@ In this tutorial, you'll write this simple AJAX application, StockWatcher.
 
 Go ahead and try StockWatcher out. Add a few stock codes and see how it works.
 
-<iframe name="StockWatcher" src="gettingstarted/StockWatcher.html"></iframe>
+<iframe name="StockWatcher" src="gettingstarted/StockWatcher.html"
+        style="border: none; padding: 15px; width: 350px; height: 300px; background: white"></iframe>
 
 In the process of building StockWatcher, you'll learn how GWT provides the tools for you to:
 
