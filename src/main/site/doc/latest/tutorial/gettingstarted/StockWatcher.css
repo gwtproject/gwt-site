@@ -1,7 +1,7 @@
 /* Formatting specific to the StockWatcher application */
 
 body {
-  padding: 10px;
+  padding: 30px !important;
 }
 
 /* stock list header row */
@@ -49,5 +49,9 @@ body {
 }
 
 .negativeChange {
+  color: red;
+}
+
+.errorMessage {
   color: red;
 }
