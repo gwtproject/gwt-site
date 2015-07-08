@@ -67,8 +67,9 @@ In this chapter we will build a modern and good looking UI for the **TodoList** 
           </g:HTMLPanel>
         </ui:UiBinder>
 
-    _**Note** that in this step we have added the necessary imports for Paper and Iron packages.
-    [Here](https://elements.polymer-project.org/elements/paper-item?view=demo:demo/index.html) you can find demos and documentation if you are interested in details._
+    _**Note** that in this step we have added the necessary imports for Paper and Iron packages._
+
+    _**Tip**: If you are interested in widget details visit javadocs of [Iron](http://vaadin.github.io/gwt-polymer-elements/api/com/vaadin/polymer/iron/widget/package-summary.html) and [Paper](http://vaadin.github.io/gwt-polymer-elements/api/com/vaadin/polymer/paper/widget/package-summary.html) widgets_
 
 3.  Update the **entry point** to use our new screen.
 

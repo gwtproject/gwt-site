@@ -67,7 +67,7 @@ In this chapter we will build a modern and good looking UI for the **TodoList** 
             </g:HTMLPanel>
         </ui:UiBinder>
 
-    _**Note:** [Here](https://elements.polymer-project.org/elements/paper-item?view=demo:demo/index.html) you can find demos and documentation if you are interested in details._
+    _**Note:** Visit original [polymer elements](https://elements.polymer-project.org/browse?package=paper-elements) documentation to know details about each component and play with demos._
 
 3.  Update the **entry point** to use our new screen.
 
