@@ -249,7 +249,7 @@ At this point you should be able to enter text in the input box. If you use an i
 
 **Tip:** Changes made to your Java code are immediately shown in the browser after pressing refresh. If development mode is already running, you don't need to restart it. Just click the Refresh button in your browser to reload your updated GWT code.
 
-Although you have not compiled StockWatcher yet, you can test it in production mode here: [Run StockWatcher](manageevents/StockWatcher.html)
+Although you have not compiled StockWatcher yet, you can test it in production mode here: [Run StockWatcher](gettingstarted/StockWatcher.html)
 
 ## What's Next
 

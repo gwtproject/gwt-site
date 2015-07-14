@@ -168,7 +168,6 @@ textarea {
 
 p {
   line-height: 1.4em;
-  margin-bottom: 0.8em;
 }
 
 strong {
@@ -177,6 +176,7 @@ strong {
 
 em {
   font-style: italic;
+  font-size: 90%;
 }
 
 hr {
@@ -211,8 +211,13 @@ ul,
 ol {
   list-style-position: outside;
 
+  margin-top: 0.8em;
   margin-left: 1.3em;
   padding-left: 0;
+
+  & > li > p:first-child {
+   display: inline;
+  }
 }
 
 ul {
@@ -251,8 +256,10 @@ ol {
       content: counter(item) " | ";
       counter-increment: item;
       color: @c-primary-dark;
-
       margin-left: -20px;
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 120%;
     }
   }
 

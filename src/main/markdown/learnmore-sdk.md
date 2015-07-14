@@ -82,7 +82,7 @@ GWT creates a separate compiled version of your application that is optimized fo
 
 ### Reuse UI components across projects
 
-Create reusable Widgets by compositing other Widgets, then easily lay them out automatically in Panels.  Want to reuse your Widget in another project? Simple package it up for others to use in a JAR file.
+Create reusable Widgets by compositing other Widgets, then easily lay them out automatically in Panels.  Want to reuse your Widget in another project? Simply package it up for others to use in a JAR file.
 
 ### Use other JavaScript libraries and native JavaScript code
 
