@@ -103,7 +103,7 @@ The generated files are used as follows:
 *   `FooTest-prod.launch` is a launch configuration for Eclipse that will run the project's tests in production mode.
 *   The other files implement a small sample GWT application.
 
-You will notice that the `build.xml` file contains a number of rules to compile and deploy your application. These will help to resolve the libraries needed at compile-time and run-time to compile and deploy your application, respectively.
+You will notice that the `build.xml` file contains a number of rules to compile and deploy your application. These will help to resolve the libraries needed at compile-time and runtime to compile and deploy your application, respectively.
 
 Notice also that there are some properties that you might like to extract to a `build.properties` file, such as the `gwt.sdk` property, to make it easier to share the same build script with teammates who may have different configurations on their development machines. Also, this `build.xml` file serves as an excellent base to grow on as your project takes on more dependencies or requires more specific build targets (for example, unit testing targets).
 
