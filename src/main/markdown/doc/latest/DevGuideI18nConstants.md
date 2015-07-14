@@ -76,17 +76,17 @@ and must correspond to the return type of the method.  They provide a type-safe
 way to reference constants, and can include Java compile-time constant
 references.
 
-*   **`[@DefaultBooleanValue(boolean val)](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultBooleanValue.html)`** Sets the default value for a method which returns a `boolean`.
-*   **`[@DefaultDoubleValue(double val)](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultDoubleValue.html)`** Sets the default value for a method which returns a `double`.
-*   **`[@DefaultFloatValue(float val)](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultFloatValue.html)`** Sets the default value for a method which returns a `float`.
-*   **`[@DefaultIntValue(int val)](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultIntValue.html)`** Sets the default value for a method which returns a `int`.
-*   **`[@DefaultStringArrayValue({String str, ...})](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultStringArrayValue.html)`** Sets the default value for a method which returns a `String` array.
-*   **`[@DefaultStringMapValue({String key, String value, ...})](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultStringMapValue.html)`**
+*   **[`@DefaultBooleanValue(boolean val)`](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultBooleanValue.html)** Sets the default value for a method which returns a `boolean`.
+*   **[`@DefaultDoubleValue(double val)`](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultDoubleValue.html)** Sets the default value for a method which returns a `double`.
+*   **[`@DefaultFloatValue(float val)`](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultFloatValue.html)** Sets the default value for a method which returns a `float`.
+*   **[`@DefaultIntValue(int val)`](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultIntValue.html)** Sets the default value for a method which returns a `int`.
+*   **[`@DefaultStringArrayValue({String str, ...})`](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultStringArrayValue.html)** Sets the default value for a method which returns a `String` array.
+*   **[`@DefaultStringMapValue({String key, String value, ...})`](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultStringMapValue.html)**
     Sets the default value for a method which returns a
 `Map<String,String>` or a raw map (which will still be a
 `String=>String` map).  The number of supplied values must be even,
 and the first entry of each pair is the key and the second is the value.
-*   **`[@DefaultStringValue(String str)](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultStringValue.html)`** Sets the default value for a method which returns a `String`.
+*   **[`@DefaultStringValue(String str)`](/javadoc/latest/com/google/gwt/i18n/client/Constants.DefaultStringValue.html)** Sets the default value for a method which returns a `String`.
 
 ## Using Property Files<a id="ConstantsProperties"></a>
 
