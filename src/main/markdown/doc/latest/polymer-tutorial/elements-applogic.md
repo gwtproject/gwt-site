@@ -1,11 +1,11 @@
 Adding the Application Logic.
 ===
 
-At this point we have almost the UI of our **TodoList** application designed using `UiBinders` and Elements.
+Up till now, we’ve designed our UI using `UiBinders` and `Elements`.
 
-In this lesson we will learn how to add some logic to our UI and deal with native events in elements, and data.
+In this section, we’ll learn how to add logic to our UI. We’ll touch on very basic data modelling and how to handle native element events.
 
-1.  Create the *Add Item dialog* adding the following markup to the Main.ui.xml file:
+1.  Create the *Add Item dialog* by adding the following markup to the `Main.ui.xml` file:
 
         <g:HTMLPanel>
           ...
@@ -26,9 +26,9 @@ In this lesson we will learn how to add some logic to our UI and deal with nativ
           </paper-dialog>
         </g:HTMLPanel>
 
-     _**Tip**: You can use attributes to quick define certain polymer actions like `entry-animation='fade-in-animation'`._
+     _**Tip**: You can use attributes to quickly define certain polymer actions such as `entry-animation='fade-in-animation'`._
 
-2.  Add all fields defined in the `Main.ui.xml` file to the `Main.java` class.
+2.  Add all the fields defined in the `Main.ui.xml` file to the `Main.java` class.
 
         @UiField PaperDrawerPanelElement drawerPanel;
         @UiField HTMLElement content;
@@ -38,7 +38,7 @@ In this lesson we will learn how to add some logic to our UI and deal with nativ
         @UiField PaperTextareaElement descriptionInput;
         @UiField PaperButtonElement confirmAddButton;
 
-3.  Add the click handler to the floating action button in the `Main` constructor.
+3.  Add a click handler to the floating action button in the `Main` constructor.
 
         public Main() {
           initWidget(ourUiBinder.createAndBindUi(this));
@@ -51,11 +51,11 @@ In this lesson we will learn how to add some logic to our UI and deal with nativ
           });
         }
 
-      _**Note** that when using elements we cannot use `@UiHandler` annotations because elements don't have methods to handle GWT events. Thus we have to configure events in the constructor._
+      _**Note**: Because elements lack methods for handling GWT events, we cannot use `@UiHandler` annotations. Thus we have to configure events in the constructor._
 
 4.  Reload the application
 
-    Now you can open dialog by clicking on the round action button at the bottom right corner.
+    Now you can open the dialog by clicking on the floating action button in the bottom right corner.
 
     <img class='polymer-tutorial-screenshot' src='images/todo-list-07.png'>
 
@@ -91,7 +91,7 @@ In this lesson we will learn how to add some logic to our UI and deal with nativ
               </div>
             </ui:UiBinder>
 
-     * `Item.java`: For simplicity, we will use this class as the Item POJO
+     * `Item.java`: For simplicity, we will use this class as the item POJO.
 
             package org.gwtproject.tutorial.client;
 
@@ -156,7 +156,7 @@ In this lesson we will learn how to add some logic to our UI and deal with nativ
             }
 
 
-7.  Add the logic to create items when we click the save button.
+7.  Add the logic for creating items when we click the save button.
 
           ...
           private List<Item> items = new ArrayList<>();
@@ -230,7 +230,7 @@ In this lesson we will learn how to add some logic to our UI and deal with nativ
             }
           }
 
-    _**Note**: that the closeMenu() method is only useful if you open the application on a mobile device or make your browser window narrow enough to collapse the side menu. We have to hide menu after click._
+    _**Note**: The closeMenu() method is only useful if the application is viewed on a mobile device, or if your browser window is narrow enough for the side menu to collapse. Hence, we use this method to hide the menu after clicking on any menu item._
 
 10. The final `Main.java` should look like this
 
@@ -336,9 +336,9 @@ In this lesson we will learn how to add some logic to our UI and deal with nativ
 
 ## Summary
 
-In this chapter we have learnt:
+In this chapter we have learned how to:
 
-1. How to add more element based `UiBinder` widgets to our Application.
+1. Add more element-based `UiBinder` widgets to our Application.
 2. Add events handlers to Elements.
-3. Usage of advanced Polymer components like dialog and buttons.
-4. How to deal with a very basic Data Model in GWT.
+3. Use good looking Polymer-based components like Paper dialogs and buttons.
+4. Handle very basic Data Model in GWT.

@@ -1,11 +1,11 @@
 Adding the Application Logic.
 ===
 
-At this point we have almost the UI of our **TodoList** application designed using `UiBinders`.
+Up till now, we’ve designed our UI using UiBinders.
 
-In this lesson we will learn how to add the logic to our UI and deal with widget events and data.
+In this section, we’ll learn how to add logic to our UI. We’ll touch on very basic data modelling and how to handle widget events.
 
-1.  Create the **Add Item dialog** adding the following markup to the Main.ui.xml file:
+1.  Create the **Add Item dialog** by adding the following markup to the Main.ui.xml file:
 
         <g:HTMLPanel>
           ...
@@ -26,11 +26,11 @@ In this lesson we will learn how to add the logic to our UI and deal with widget
           </p:PaperDialog>
         </g:HTMLPanel>
 
-     _**Tip**: You can use widget attributes to quick define certain actions like `entryAnimation='fade-in-animation'`._
+     _**Tip**: You can use attributes to quickly define certain polymer actions such as `entry-animation='fade-in-animation'`._
 
-     _**Note**: When there are attributes in the component no mapped to a java method, you can use the `attributes` key, like we do in the `Cancel` and `OK` buttons. Visit [paper-dialog page](https://elements.polymer-project.org/elements/paper-dialog) and pay attention to behaviors in the API Reference section for additional details_
+     _**Note**: When there are attributes in the component no mapped to a Java method, you can use the `attributes` key, like we do in the `Cancel` and `OK` buttons. Visit [paper-dialog page](https://elements.polymer-project.org/elements/paper-dialog) page and check out API Reference section for more information_
 
-2.  Add all fields we already defined in the `Main.ui.xml` file to the `Main.java` class.
+2.  Add all the fields defined in the `Main.ui.xml` file to the `Main.java` class.
 
         @UiField PaperDrawerPanel drawerPanel;
         @UiField HTMLPanel content;
@@ -48,11 +48,11 @@ In this lesson we will learn how to add the logic to our UI and deal with widget
 
 4.  Reload the application
 
-    Now you can open dialog by clicking on the round action button at the bottom right corner.
+    Now you can open the dialog by clicking on the floating action button in the bottom right corner.
 
     <img class='polymer-tutorial-screenshot' src='images/todo-list-07.png'>
 
-6.  Create a widget for displaying items: `Item.ui.xml` and `Item.java`
+6.  Create a `UiBinder` widget for displaying items: `Item.ui.xml` and `Item.java`
 
      * `Item.ui.xml`
 
@@ -85,7 +85,7 @@ In this lesson we will learn how to add the logic to our UI and deal with widget
               </g:HTMLPanel>
             </ui:UiBinder>
 
-     * `Item.java`: For simplicity, we will use this class as the Item POJO
+     * `Item.java`: For simplicity, we will use this class as the item POJO
 
             package org.gwtproject.tutorial.client;
 
@@ -143,7 +143,7 @@ In this lesson we will learn how to add the logic to our UI and deal with widget
             }
 
 
-7.  Add the logic to create items when we click the save button.
+7.  Add the logic for creating items when we click the save button.
 
     At this point your `Main.java` should be like this:
 
@@ -228,7 +228,7 @@ In this lesson we will learn how to add the logic to our UI and deal with widget
           }
         }
 
-    _**Note**: that the closeMenu() method is only useful if you open the application on a mobile device or make your browser window narrow enough to collapse the side menu. We have to hide menu after click._
+    _**Note**: The closeMenu() method is only useful if the application is viewed on a mobile device, or if your browser window is narrow enough for the side menu to collapse. Hence, we use this method to hide the menu after clicking on any menu item._
 
 10. The final `Main.java` should look like this
 
@@ -318,9 +318,9 @@ In this lesson we will learn how to add the logic to our UI and deal with widget
 
 ## Summary
 
-In this chapter we learnt:
+In this chapter we have learned how to:
 
-1. How to add more widgets to our Application.
-2. Add events handlers to UiBinder components.
-3. Usage of advanced Polymer components like dialog and buttons.
-4. How to use a very basic Data Model in GWT.
+1. Add more widgets to our Application.
+2. Add event handlers to UiBinder components.
+3. Use good looking Polymer components like dialogs and buttons.
+4. Handle very basic Data Model in GWT.
