@@ -508,7 +508,7 @@ further examples, see the resources below.
 
 ## Related resources<a id="resources"></a>
 
-*   [High-Performance GWT](http://www.google.com/events/io/2011/sessions/high-performance-gwt-best-practices-for-writing-smaller-faster-apps.html)
+*   [High-Performance GWT](https://www.youtube.com/watch?v=0F5zc1UAt2Y)
         (starting at 18:12, slides 23-41)
-*   [Using GWT and Eclipse to Build Great Mobile Web Apps](http://www.google.com/events/io/2011/sessions/using-gwt-and-eclipse-to-build-great-mobile-web-apps.html)
+*   [Using GWT and Eclipse to Build Great Mobile Web Apps](https://www.youtube.com/watch?v=N1aCo5LvMf8)
         (form factor discussion starting at 3:56, slides 6-20)
