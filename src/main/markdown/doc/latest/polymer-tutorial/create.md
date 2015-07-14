@@ -38,6 +38,7 @@ For the **TodoList** project, we’ll need to run `webAppCreator` with the follo
 
      To check that the project was created correctly start the new app in SuperDevMode.
 
+        $ cd TodoListApp
         $ mvn gwt:run
 
       _**Tip**: Since the created project is built with Maven, you can import it in Eclipse, IDEA, etc._
@@ -46,7 +47,7 @@ For the **TodoList** project, we’ll need to run `webAppCreator` with the follo
 
     In the GWT developer window, press “Launch Default Browser” to launch the application. Alternatively, you can click “Copy to Clipboard” and paste the URL into any browser.
 
-    If you change something in the code, you can recompile the application by simply reloading the web page. If you change configuration files, e.g. pom.xml or static content in webapp, you might have to restart SuperDevMode. Ctrl+C and mvn gwt:run stops and starts the execution, respectively.
+    If you change something in the code, you can recompile the application by simply reloading the web page. If you change configuration files, e.g. pom.xml or static content in webapp, you might have to restart SuperDevMode. `Ctrl+C` and `mvn gwt:run` stops and starts the execution, respectively.
 
 ## Customizing your project
 
@@ -57,7 +58,7 @@ With the base project set up, we’ll now add the necessary external dependencie
 
         <dependency>
          <groupId>com.vaadin.polymer</groupId>
-         <artifactId>gwt-polymer-elements</artifactId>
+         <artifactId>vaadin-gwt-polymer-elements</artifactId>
          <version>${gwtPolymerVersion}</version>
          <scope>provided</scope>
         </dependency>
@@ -76,9 +77,9 @@ With the base project set up, we’ll now add the necessary external dependencie
           </configuration>
         </plugin>
 
-      _**Note**: JsInterop is an experimental flag in GWT-2.7.0 and you need to enable it explicitely. In future versions of GWT it will be enabled by default._
+      _**Note**: JsInterop is an experimental flag in GWT-2.7.0 and you need to enable it explicitly. In future versions of GWT it will be enabled by default._
 
-3. Update `Todo.gwt.xml` module file so that we can use the new gwt library.
+3. Update `TodoList.gwt.xml` module file so that we can use the new gwt library.
 
         <module rename-to="todolist">
           ...
@@ -95,7 +96,7 @@ With the base project set up, we’ll now add the necessary external dependencie
             <html>
             <head>
              <meta name="viewport"
-                 content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+               content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
              <script src="todo/bower_components/webcomponentsjs/webcomponents.js"></script>
              <script type="text/javascript" src="todo/todo.nocache.js"></script>
             </head>
@@ -111,10 +112,10 @@ With the base project set up, we’ll now add the necessary external dependencie
 6. Remove all unnecessary files.
 
     * Remove the folder and shared folders located in `src/main/java/org/gwtproject/tutorial`.
-    * Remove `GreetingService.java` and `GreetingServiceAsync.java` from the client package.
+    * Remove `GreetingService.java` and `GreetingServiceAsync.java` from the `client` package.
     * Remove the example tests in `src/main/test`.
 
-7. Update the **EntryPoint** method.
+7. Update the **EntryPoint**.
 
     Replace the content of `TodoList.java` with
 
@@ -139,7 +140,7 @@ With the base project set up, we’ll now add the necessary external dependencie
           }
         }
 
-    _**Note**: Note: The example above shows how to add a  `PaperButton` element using both the Widgets and Elements API._
+    _**Note**: The example above shows how to add a  `PaperButton` element using both the Widgets and Elements API._
 
 8. Run the application again.
 
@@ -151,7 +152,7 @@ With the base project set up, we’ll now add the necessary external dependencie
 
 In this lesson we learned how to:
 
-- Create a new GWT maven project fron scratch.
+- Create a new GWT maven project from scratch.
 - Run and debug our application in SuperDevMode
 - Add external dependencies to our project.
 - Configure our project to use the experimental `JsInterop` mode.
