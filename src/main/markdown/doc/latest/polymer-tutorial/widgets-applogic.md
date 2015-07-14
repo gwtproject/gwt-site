@@ -324,3 +324,5 @@ In this chapter we have learned how to:
 2. Add event handlers to UiBinder components.
 3. Use good looking Polymer components like dialogs and buttons.
 4. Handle very basic Data Model in GWT.
+
+[**DISCLAIMER**](introduction.html#pol-disclaimer)

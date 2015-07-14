@@ -424,5 +424,6 @@ If everything is OK, after reloading your app should look like this:
 3. We can deal with responsive layouts using paper panels and mixing them with conventional html elements in GWT.
 4. We know how to style elements in UiBinder XML files, using Polymer parsers.
 
-
 [Step 3: Add logic to the application](elements-applogic.html)
+
+[**DISCLAIMER**](introduction.html#pol-disclaimer)

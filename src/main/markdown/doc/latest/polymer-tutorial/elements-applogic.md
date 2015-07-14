@@ -342,3 +342,5 @@ In this chapter we have learned how to:
 2. Add events handlers to Elements.
 3. Use good looking Polymer-based components like Paper dialogs and buttons.
 4. Handle very basic Data Model in GWT.
+
+[**DISCLAIMER**](introduction.html#pol-disclaimer)

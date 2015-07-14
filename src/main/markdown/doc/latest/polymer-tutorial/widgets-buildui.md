@@ -433,3 +433,5 @@ If everything is OK, after reloading your app should look like this:
 4. We know how to style elements in UiBinder XML files, using GSS or Polymer parsers.
 
 [Step 3a: Add the event logic to the application](widgets-applogic.html)
+
+[**DISCLAIMER**](introduction.html#pol-disclaimer)

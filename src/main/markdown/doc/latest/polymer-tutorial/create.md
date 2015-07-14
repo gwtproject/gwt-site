@@ -162,3 +162,5 @@ We’re now prepared to design the UI of the **TodoList** application. There are
 [Step 2a: Building the User Interface using Widgets](widgets-buildui.html)
 
 [Step 2b: Building the User Interface using Elements](elements-buildui.html)
+
+[**DISCLAIMER**](introduction.html#pol-disclaimer)
