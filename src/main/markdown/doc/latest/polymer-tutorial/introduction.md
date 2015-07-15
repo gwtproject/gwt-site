@@ -17,6 +17,9 @@ In this case, we want to fulfil the [Material Design][2] specification. Therefor
 
 Before we start, you might want to try out the [TodoList][6] application to see what we are about to build.
 
+[<img class='polymer-tutorial-mobile' src='images/todo-list-01.png'>
+ <img class='polymer-tutorial-mobile' src='images/todo-list-02.png'>][6]
+
 [0]: https://www.polymer-project.org/1.0/
 [1]: https://en.wikipedia.org/wiki/Web_Components
 [2]: http://www.google.es/design/spec/material-design/introduction.html
