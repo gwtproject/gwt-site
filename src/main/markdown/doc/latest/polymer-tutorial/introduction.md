@@ -1,7 +1,7 @@
 # Building a modern GWT app using Polymer Elements:
 
 ## **Disclaimer** <a id="pol-disclaimer"></a>:
-This tutorial is based on the usage of three third-party **open-source** libraries, external to, and not managed by, the **gwtproject** organization_:
+_This tutorial is based on the usage of three third-party **open-source** libraries, external to, and not managed by, the **gwtproject** organization_:
 
 * _[**Polymer**][1]: a JavaScript library for building web applications with Web Components. Polymer is owned by **Google Inc**._
 * _[**Polymer Elements**][5]: a collection of widgets built in Polymer. Owned by **Google Inc**._
