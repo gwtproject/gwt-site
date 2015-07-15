@@ -1,9 +1,14 @@
 Tutorials: Overview
 ===
 
-These tutorials are intended for developers who wish to write rich AJAX applications using Google Web Toolkit. You might be a Java developer who would like to be able to apply the software engineering principles of object-oriented programming and leverage the tools in your Java IDE when writing applications for the web. Or you might be a JavaScript guru curious about GWT's ability to generate highly optimized JavaScript with permutations for multiple browsers.
+These tutorials are intended for developers who wish to write rich AJAX applications using Google Web Toolkit. You might be a Java developer who would like to be able to apply the software engineering principles of object-oriented programming and leverage the tools in your Java IDE when writing applications for the web. Or you might be a JavaScript guru curious about GWT's ability to generate highly optimized JavaScript.
 
 Although a knowledge of HTML, CSS, and Java is assumed, it is not required to run these tutorials.
+
+These tutorials are based on the development of two example applications, such that the user learns different GWT concepts in each step.
+
+* **StockWatcher** is an application for monitoring stock variations, and you can get the sources from [github](https://github.com/manolo/gwt-stockwatcher)
+* **TodoList** a web application to create and maintain a Todo checklist in browser. Sources are available at [github](https://github.com/manolo/gwt-polymer-todo-list) as well.
 
 ## Before You Begin <a id="prerequisites"></a>
 
@@ -58,3 +63,17 @@ You may also optionally do the following:
 
 1.   [Deploying to Google App Engine](appengine.html)
     *  Deploy a GWT application to [App Engine](https://developers.google.com/appengine).
+
+### Building Modern Apps with GWT & Polymer
+
+Write responsive GWT applications for mobile and desktop using [Polymer Elements](https://elements.polymer-project.org/) and JsInterop.
+
+   1. [Create](../polymer-tutorial/create.html) a GWT app.
+      * Get started wit GWT creating new maven projects from scratch, running and debugging them in SuperDevMode, and including external dependencies.
+   2. Design the UI
+      * Learn how to use classic [Widgets](../polymer-tutorial/widgets-buildui.html) in UiBinder to build your UI
+      * Or learn how to use [Elements](../polymer-tutorial/elements-buildui.html) in UiBinder which is the tendency in modern GWT apps.
+   3. Code the application logic
+      * Adding event handlers to [Widgets](../polymer-tutorial/widgets-applogic.html) using `@UiHandler` annotations.
+      * Or listening to DOM events in [Elements](../polymer-tutorial/elements-applogic.html) based UIs.
+
