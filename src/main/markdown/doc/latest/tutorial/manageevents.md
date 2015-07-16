@@ -129,37 +129,33 @@ For the enter key, you however have to use either KeyDownHandler or KeyUpHandler
 1.  Hook up the keydown event handler for the input box, newSymbolTextBox.
     *  In the onModuleLoad method, cut and paste the code commented "Listen for keyboard events in the input box." that is highlighted below.
 
-   ```
-       // Listen for mouse events on the Add button.
-       addStockButton.addClickHandler(new ClickHandler() {
-         public void onClick(ClickEvent event) {
-           addStock();
-         }
-       });
-   
-       // Listen for keyboard events in the input box.
-       newSymbolTextBox.addKeyDownHandler(new KeyDownHandler() {
-         public void onKeyDown(KeyDownEvent event) {
-           if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
-             addStock();
-           }
-         }
-       });
-   
-     }
-   
-     /**
-      * Add stock to FlexTable. Executed when the user clicks the addStockButton or
-      * presses enter in the newSymbolTextBox.
-      */
-     private void addStock() {
-       // TODO Auto-generated method stub
-   
-     }
-   
-   }
-   ```
-   
+              // Listen for mouse events on the Add button.
+              addStockButton.addClickHandler(new ClickHandler() {
+                public void onClick(ClickEvent event) {
+                  addStock();
+                }
+              });
+           
+              // Listen for keyboard events in the input box.
+              newSymbolTextBox.addKeyDownHandler(new KeyDownHandler() {
+                public void onKeyDown(KeyDownEvent event) {
+                  if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
+                    addStock();
+                  }
+                }
+              });
+            
+            }
+            
+            /**
+             * Add stock to FlexTable. Executed when the user clicks the addStockButton or
+             * presses enter in the newSymbolTextBox.
+             */
+            private void addStock() {
+              // TODO Auto-generated method stub
+            
+            }
+
     *  Eclipse flags KeyDownHandler and suggests you include the import declaration.
     
 2.  Include the import declarations.
@@ -204,28 +200,27 @@ Finally, if the input is not valid, warn users via a dialog box.
 
 1.  Validate user input of the stock code.
     *  In StockWatcher.java. replace the stub addStock method with following code.
-    
-   ```
-     private void addStock() {
-       final String symbol = newSymbolTextBox.getText().toUpperCase().trim();
-       newSymbolTextBox.setFocus(true);
-       
-       // Stock code must be between 1 and 10 chars that are numbers, letters, or dots.
-       if (!symbol.matches("^[0-9A-Z&#92;&#92;.]{1,10}$")) {
-         Window.alert("'" + symbol + "' is not a valid symbol.");
-         newSymbolTextBox.selectAll();
-         return;
-       }
-   
-       newSymbolTextBox.setText("");
-   
-       // TODO Don't add the stock if it's already in the table.
-       // TODO Add the stock to the table
-       // TODO Add a button to remove this stock from the table.
-       // TODO Get the stock price.
-   
-     }
-   ```
+
+            private void addStock() {
+              final String symbol = newSymbolTextBox.getText().toUpperCase().trim();
+              newSymbolTextBox.setFocus(true);
+              
+              // Stock code must be between 1 and 10 chars that are numbers, letters, or dots.
+              if (!symbol.matches("^[0-9A-Z&#92;&#92;.]{1,10}$")) {
+                Window.alert("'" + symbol + "' is not a valid symbol.");
+                newSymbolTextBox.selectAll();
+                return;
+              }
+              
+              newSymbolTextBox.setText("");
+              
+              // TODO Don't add the stock if it's already in the table.
+              // TODO Add the stock to the table
+              // TODO Add a button to remove this stock from the table.
+              // TODO Get the stock price.
+              
+            }
+
     *  Eclipse flags Window and suggests you include the import declaration.
 
 2.  Include the import declaration.
