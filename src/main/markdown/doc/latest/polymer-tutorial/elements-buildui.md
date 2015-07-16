@@ -1,6 +1,6 @@
 # Building the UI
 
-In this chapter we’ll build a modern looking UI for the **TodoList** application using the [Material Design](http://www.google.es/design/spec/material-design/introduction.html) specifications. We’ll be working with the Vaadin gwt-polymer-elements library, a wrapper for the Polymer Paper Elements collection.
+In this chapter we'll build a modern looking UI for the **TodoList** application using the [Material Design](http://www.google.es/design/spec/material-design/introduction.html) specifications. We'll be working with the Vaadin gwt-polymer-elements library, a wrapper for the Polymer Paper Elements collection.
 
 ## Main screen
 
@@ -98,11 +98,11 @@ In this chapter we’ll build a modern looking UI for the **TodoList** applicati
           }
         }
 
-    _**Tip**: to facilitate the usage of webcomponents gwt-polymer-elements maintains a couple of static constants: `Element.TAG` and `Element.SRC`, to avoid memorizing tag names and import paths respectively.
+    _**Tip**: to facilitate the usage of webcomponents gwt-polymer-elements maintains a couple of static constants: `Element.TAG` and `Element.SRC`, to avoid memorizing tag names and import paths respectively._
 
 4.  Run the application.
 
-    Reload the page in your browser, and you should see the four menu items. You'll probably notice that icons are missing. We’ll fix that in the next step.
+    Reload the page in your browser, and you should see the four menu items. You'll probably notice that icons are missing. We'll fix that in the next step.
 
     <img class='polymer-tutorial-screenshot' src='images/todo-list-03.png'>
 
@@ -110,7 +110,7 @@ In this chapter we’ll build a modern looking UI for the **TodoList** applicati
 
 1.  Import **icon collections**.
 
-    Polymer comes with several icon collections. Before a collection can be used, it has to be imported. In this example we’ll be using the Iron set. In the code below, we use the `Polymer.importHref` utility method, and wait for the set to load before we run the application.
+    Polymer comes with several icon collections. Before a collection can be used, it has to be imported. In this example we'll be using the Iron set. In the code below, we use the `Polymer.importHref` utility method, and wait for the set to load before we run the application.
 
         package org.gwtproject.tutorial.client;
 
@@ -148,7 +148,7 @@ In this chapter we’ll build a modern looking UI for the **TodoList** applicati
 
 3.  Add a **Ripple** effect
 
-    Feedback when interacting with UI elements is generally considered a positive. If you want, you can read more about Material Design’s philosophy regarding [responsive interaction](http://www.google.com.ua/design/spec/animation/responsive-interaction.html#responsive-interaction-radial-action).
+    Feedback when interacting with UI elements is generally considered a positive. If you want, you can read more about Material Design's philosophy regarding [responsive interaction](http://www.google.com.ua/design/spec/animation/responsive-interaction.html#responsive-interaction-radial-action).
 
     * Add `<paper-ripple/>` to each item in the `Main.ui.xml` file.
     * We need to add a few CSS style properties to the items, so that the ripple effect is constrained within the item area.
@@ -194,7 +194,7 @@ In this chapter we’ll build a modern looking UI for the **TodoList** applicati
 
 1.  Layout the application with a Paper **Draw Panel**.
 
-    The Paper elements collection includes a responsive drawer panel. It’s a layout component that can be used in modern applications to make sure they behave nicely on both desktop and mobile devices. For more information, check out the paper-drawer-panel [demo](https://elements.polymer-project.org/elements/paper-drawer-panel?view=demo:demo/index.html).
+    The Paper elements collection includes a responsive drawer panel. It's a layout component that can be used in modern applications to make sure they behave nicely on both desktop and mobile devices. For more information, check out the paper-drawer-panel [demo](https://elements.polymer-project.org/elements/paper-drawer-panel?view=demo:demo/index.html).
 
         <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
                      xmlns:g='urn:import:com.google.gwt.user.client.ui'>
@@ -281,7 +281,7 @@ We have two options:
 1.  Include your CSS in your hosting page (HTML file).
 2.  Utilize normal `<style>` tags in your `UiBinder` files.
 
-We’ll use the 2nd approach, but be aware that it will include a new `<style>` element in the DOM tree each time you create a new widget. In our case, we only have one instance of `Main.ui.xml` in our application, so this is not a problem.
+We'll use the 2nd approach, but be aware that it will include a new `<style>` element in the DOM tree each time you create a new widget. In our case, we only have one instance of `Main.ui.xml` in our application, so this is not a problem.
 
 -  Change color of the toolbar, style the header text and the content panel:
 

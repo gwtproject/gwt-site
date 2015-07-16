@@ -1,9 +1,9 @@
 Adding the Application Logic.
 ===
 
-Up till now, we’ve designed our UI using UiBinders.
+Up till now, we've designed our UI using UiBinders.
 
-In this section, we’ll learn how to add logic to our UI. We’ll touch on very basic data modelling and how to handle widget events.
+In this section, we'll learn how to add logic to our UI. We'll touch on very basic data modelling and how to handle widget events.
 
 1.  Create the **Add Item dialog** by adding the following markup to the Main.ui.xml file:
 
