@@ -45,7 +45,7 @@ For the **TodoList** project, we'll need to run `webAppCreator` with the followi
 
 3. Launch your Browser.
 
-    In the GWT developer window, press """Launch Default Browser""" to launch the application. Alternatively, you can click """Copy to Clipboard""" and paste the URL into any browser.
+    In the GWT developer window, press "Launch Default Browser" to launch the application. Alternatively, you can click "Copy to Clipboard" and paste the URL into any browser.
 
     If you change something in the code, you can recompile the application by simply reloading the web page. If you change configuration files, e.g. pom.xml or static content in webapp, you might have to restart SuperDevMode. `Ctrl+C` and `mvn gwt:run` stops and starts the execution, respectively.
 
