@@ -50,7 +50,7 @@ When the user clicks on the Add button, StockWatcher should respond by adding th
 ```
 package com.google.gwt.sample.stockwatcher.client;
 
-    import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
@@ -61,17 +61,17 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-    public class StockWatcher implements EntryPoint {
+public class StockWatcher implements EntryPoint {
 
-      private VerticalPanel mainPanel = new VerticalPanel();
+  private VerticalPanel mainPanel = new VerticalPanel();
   private FlexTable stocksFlexTable = new FlexTable();
   private HorizontalPanel addPanel = new HorizontalPanel();
   private TextBox newSymbolTextBox = new TextBox();
   private Button addStockButton = new Button("Add");
   private Label lastUpdatedLabel = new Label();
 
-      /**
-       * Entry point method.
+  /**
+   * Entry point method.
    */
   public void onModuleLoad() {
     // Create table for stock data.
@@ -80,40 +80,40 @@ import com.google.gwt.user.client.ui.VerticalPanel;
     stocksFlexTable.setText(0, 2, "Change");
     stocksFlexTable.setText(0, 3, "Remove");
 
-        // Assemble Add Stock panel.
+    // Assemble Add Stock panel.
     addPanel.add(newSymbolTextBox);
     addPanel.add(addStockButton);
 
-        // Assemble Main panel.
+    // Assemble Main panel.
     mainPanel.add(stocksFlexTable);
     mainPanel.add(addPanel);
     mainPanel.add(lastUpdatedLabel);
 
-        // Associate the Main panel with the HTML host page.
+    // Associate the Main panel with the HTML host page.
     RootPanel.get("stockList").add(mainPanel);
 
-        // Move cursor focus to the input box.
+    // Move cursor focus to the input box.
     newSymbolTextBox.setFocus(true);
 
-        // Listen for mouse events on the Add button.
+    // Listen for mouse events on the Add button.
     addStockButton.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent event) {
         addStock();
       }
     });
 
-      }
+  }
 
-      /**
-       * Add stock to FlexTable. Executed when the user clicks the addStockButton or
-       * presses enter in the newSymbolTextBox.
+  /**
+   * Add stock to FlexTable. Executed when the user clicks the addStockButton or
+   * presses enter in the newSymbolTextBox.
    */
   private void addStock() {
     // TODO Auto-generated method stub
 
-      }
+  }
 
-    }
+}
 ```
 
 **Implementation Note:**  For smaller applications, such as StockWatcher, that handle relatively few events, using anonymous inner classes gets the job done with minimal coding. However, if you have large number of event handlers subscribing to events, this approach can be inefficient because it could result in the creation of many separate event handler objects. In that case, it's better to have a class implement the event handler interface and handle events coming from multiple event publishers.  You can distinguish the source of the event by calling its getSource() method.  This makes better use of memory but requires slightly more code. For a code example, see the Developer's Guide, [Event Handlers](../DevGuideUiHandlers.html).
@@ -129,36 +129,37 @@ For the enter key, you however have to use either KeyDownHandler or KeyUpHandler
 1.  Hook up the keydown event handler for the input box, newSymbolTextBox.
     *  In the onModuleLoad method, cut and paste the code commented "Listen for keyboard events in the input box." that is highlighted below.
 
-```
-// Listen for mouse events on the Add button.
-    addStockButton.addClickHandler(new ClickHandler() {
-      public void onClick(ClickEvent event) {
-        addStock();
-      }
-    });
-
-        // Listen for keyboard events in the input box.
-    newSymbolTextBox.addKeyDownHandler(new KeyDownHandler() {
-      public void onKeyDown(KeyDownEvent event) {
-        if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
-          addStock();
-        }
-      }
-    });
-
-      }
-
-      /**
-       * Add stock to FlexTable. Executed when the user clicks the addStockButton or
-       * presses enter in the newSymbolTextBox.
-   */
-  private void addStock() {
-    // TODO Auto-generated method stub
-
-      }
-
-    }
-```
+   ```
+       // Listen for mouse events on the Add button.
+       addStockButton.addClickHandler(new ClickHandler() {
+         public void onClick(ClickEvent event) {
+           addStock();
+         }
+       });
+   
+       // Listen for keyboard events in the input box.
+       newSymbolTextBox.addKeyDownHandler(new KeyDownHandler() {
+         public void onKeyDown(KeyDownEvent event) {
+           if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
+             addStock();
+           }
+         }
+       });
+   
+     }
+   
+     /**
+      * Add stock to FlexTable. Executed when the user clicks the addStockButton or
+      * presses enter in the newSymbolTextBox.
+      */
+     private void addStock() {
+       // TODO Auto-generated method stub
+   
+     }
+   
+   }
+   ```
+   
     *  Eclipse flags KeyDownHandler and suggests you include the import declaration.
     
 2.  Include the import declarations.
@@ -204,27 +205,27 @@ Finally, if the input is not valid, warn users via a dialog box.
 1.  Validate user input of the stock code.
     *  In StockWatcher.java. replace the stub addStock method with following code.
     
-```
-private void addStock() {
-    final String symbol = newSymbolTextBox.getText().toUpperCase().trim();
-    newSymbolTextBox.setFocus(true);
-    
-    // Stock code must be between 1 and 10 chars that are numbers, letters, or dots.
-    if (!symbol.matches("^[0-9A-Z&#92;&#92;.]{1,10}$")) {
-      Window.alert("'" + symbol + "' is not a valid symbol.");
-      newSymbolTextBox.selectAll();
-      return;
-    }
-
-    newSymbolTextBox.setText("");
-
-    // TODO Don't add the stock if it's already in the table.
-    // TODO Add the stock to the table
-    // TODO Add a button to remove this stock from the table.
-    // TODO Get the stock price.
-
-}
-```
+   ```
+     private void addStock() {
+       final String symbol = newSymbolTextBox.getText().toUpperCase().trim();
+       newSymbolTextBox.setFocus(true);
+       
+       // Stock code must be between 1 and 10 chars that are numbers, letters, or dots.
+       if (!symbol.matches("^[0-9A-Z&#92;&#92;.]{1,10}$")) {
+         Window.alert("'" + symbol + "' is not a valid symbol.");
+         newSymbolTextBox.selectAll();
+         return;
+       }
+   
+       newSymbolTextBox.setText("");
+   
+       // TODO Don't add the stock if it's already in the table.
+       // TODO Add the stock to the table
+       // TODO Add a button to remove this stock from the table.
+       // TODO Get the stock price.
+   
+     }
+   ```
     *  Eclipse flags Window and suggests you include the import declaration.
 
 2.  Include the import declaration.
