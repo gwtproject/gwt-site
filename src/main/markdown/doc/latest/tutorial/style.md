@@ -487,49 +487,49 @@ The final style change you want to implement is changing the color of the price 
 
 You've already applied an HTML class attribute to the cell element to right-align the numeric values inside the cells. To keep the code simple, it would be nice if you could apply the HTML class attributes just to the text inside the cell. An easy way to do this would be to use a nested widget. In this case, you'll insert a Label widget inside every cell inside column 2.
 
-1.  *  Define the style.
+1.  Define the style.
     *  In StockWatcher.css, add these style rules.
 
-        /* stock list, the Remove button */
-        .gwt-Button-remove {
-          width: 50px;
-        }
-        
-        /* Dynamic color changes for the Change field */
-        .noChange {
-          color: black;
-        }
-        
-        .positiveChange {
-          color: green;
-        }
-        
-        .negativeChange {
-          color: red;
-        }
+            /* stock list, the Remove button */
+            .gwt-Button-remove {
+              width: 50px;
+            }
+            
+            /* Dynamic color changes for the Change field */
+            .noChange {
+              color: black;
+            }
+            
+            .positiveChange {
+              color: green;
+            }
+            
+            .negativeChange {
+              color: red;
+            }
 
 2.  Insert a Label widget in a table cell.
     *  In StockWatcher.java, in the addStock method, create a Label widget for every cell in column 2.
 
-        // Add the stock to the table.
-        int row = stocksFlexTable.getRowCount();
-        stocks.add(symbol);
-        stocksFlexTable.setText(row, 0, symbol);
-        stocksFlexTable.setWidget(row, 2, new Label());
-        stocksFlexTable.getCellFormatter().addStyleName(row, 1, "watchListNumericColumn");
-        stocksFlexTable.getCellFormatter().addStyleName(row, 2, "watchListNumericColumn");
-        stocksFlexTable.getCellFormatter().addStyleName(row, 3, "watchListRemoveColumn");
+            // Add the stock to the table.
+            int row = stocksFlexTable.getRowCount();
+            stocks.add(symbol);
+            stocksFlexTable.setText(row, 0, symbol);
+            stocksFlexTable.setWidget(row, 2, new Label());
+            stocksFlexTable.getCellFormatter().addStyleName(row, 1, "watchListNumericColumn");
+            stocksFlexTable.getCellFormatter().addStyleName(row, 2, "watchListNumericColumn");
+            stocksFlexTable.getCellFormatter().addStyleName(row, 3, "watchListRemoveColumn");
 
-*  Instead of setting the text on the table cells, now you have to set the text for the Label widget.
+    *  Instead of setting the text on the table cells, now you have to set the text for the Label widget.
 3.  Set text on the changeWidget.
     *  In the updateTable(StockPrice) method, delete the call to setText for the Change column (column 2).
     *  Create an instance of the Label widget and call it changeWidget.
     *  Set the text on changeWidget.
 
-        // Populate the Price and Change fields with new data.
-        stocksFlexTable.setText(row, 1, priceText);
-        Label changeWidget = (Label)stocksFlexTable.getWidget(row, 2);
-        changeWidget.setText(changeText + " (" + changePercentText + "%)");
+            // Populate the Price and Change fields with new data.
+            stocksFlexTable.setText(row, 1, priceText);
+            Label changeWidget = (Label)stocksFlexTable.getWidget(row, 2);
+            changeWidget.setText(changeText + " (" + changePercentText + "%)");
 
 4.  Change the color of each changeWidget based on its value.
 
