@@ -307,8 +307,8 @@ translating tags into localized values. These files may be placed into the same 
 Both [Constants](/javadoc/latest/com/google/gwt/i18n/client/Constants.html) and [Messages](/javadoc/latest/com/google/gwt/i18n/client/Messages.html) use traditional Java properties files, with one notable difference: properties files used with GWT should be encoded as UTF-8 and may contain Unicode characters directly, avoiding the need for `native2ascii`. See the
 API documentation for the above interfaces for examples and formatting details.
 
-In order to use internationalized characters, make sure that your host HTML file contains the `charset=utf8` content type in the meta tag in the header:
+In order to use internationalized characters, make sure that your host HTML page is served as UTF-8, the easiest way is to include a meta tag in the page's head:
 
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta charset="utf-8" />
 
 You must also ensure that all relevant source and `.properties` files are set to be in the UTF-8 charset in your IDE.
