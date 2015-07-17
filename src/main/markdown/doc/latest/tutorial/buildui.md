@@ -341,7 +341,7 @@ To lay out the  widgets, you'll assemble two panels, the Add Stock panel and the
 
 ###  Associate the Main panel with the Root panel
 
-In order for any GWT widget or panel to be embedded in the HTML host page, it must be contained within a Root panel. Associate the Root panel with Vertical panel assigned to mainPanel. The Root panel wraps the HTML element (in StockWatcher's host page) that has an id of "stocklist". In this case, it is a <div> element.
+In order for any GWT widget or panel to be embedded in the HTML host page, it must be contained within a Root panel. Associate the Root panel with Vertical panel assigned to mainPanel. The Root panel wraps the HTML element (in StockWatcher's host page) that has an id of "stocklist". In this case, it is a `<div>` element.
 
 1.  Associate the Main panel with the host page via the Root panel.
     *   In the onModuleLoad method, replace the TODO comment with the highlighted
