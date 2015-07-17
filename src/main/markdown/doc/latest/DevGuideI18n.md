@@ -4,7 +4,7 @@ i18n
 GWT includes a flexible set of tools to help you internationalize your applications and libraries. GWT internationalization support provides a variety of techniques to
 internationalize strings, typed values, and classes.
 
-**Note:** To run through the steps to internationalize a sample GWT app, see the tutorial [Internationalizing a GWT Application](tutorial/i18n.html).
+_**Note:** To run through the steps to internationalize a sample GWT app, see the tutorial [Internationalizing a GWT Application](tutorial/i18n.html)._
 
 1.  [Locales in GWT](#DevGuideLocale)
 2.  [Static String Internationalization](#DevGuideStaticStringInternationalization)
@@ -77,42 +77,29 @@ directly, although it is useful for implementing complex internationalized libra
 
 Core types related to internationalization:
 
-*   [LocaleInfo](/javadoc/latest/com/google/gwt/i18n/client/LocaleInfo.html)
+*   [`LocaleInfo`](/javadoc/latest/com/google/gwt/i18n/client/LocaleInfo.html)
 Provides information about the current locale.
 
-*   [Constants](/javadoc/latest/com/google/gwt/i18n/client/Constants.html) Useful for localizing typed constant
+*   [`Constants`](/javadoc/latest/com/google/gwt/i18n/client/Constants.html) Useful for localizing typed constant
 values
 
-*   [Messages](/javadoc/latest/com/google/gwt/i18n/client/Messages.html) Useful for localizing messages
+*   [`Messages`](/javadoc/latest/com/google/gwt/i18n/client/Messages.html) Useful for localizing messages
 requiring arguments
 
-*   [ConstantsWithLookup](/javadoc/latest/com/google/gwt/i18n/client/ConstantsWithLookup.html) Like [Constants](/javadoc/latest/com/google/gwt/i18n/client/Constants.html) but with extra lookup flexibility for highly
+*   [`ConstantsWithLookup`](/javadoc/latest/com/google/gwt/i18n/client/ConstantsWithLookup.html) Like [`Constants`](/javadoc/latest/com/google/gwt/i18n/client/Constants.html) but with extra lookup flexibility for highly
 data-driven applications
 
-*   [Dictionary](/javadoc/latest/com/google/gwt/i18n/client/Dictionary.html) Useful when adding a GWT module to
+*   [`Dictionary`](/javadoc/latest/com/google/gwt/i18n/client/Dictionary.html) Useful when adding a GWT module to
 existing localized web pages
 
-*   [Localizable](/javadoc/latest/com/google/gwt/i18n/client/Localizable.html) Useful for localizing algorithms
+*   [`Localizable`](/javadoc/latest/com/google/gwt/i18n/client/Localizable.html) Useful for localizing algorithms
 encapsulated in a class or when the classes above don't provide sufficient control
 
-*   [DateTimeFormat](/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.html) Formatting dates as
+*   [`DateTimeFormat`](/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.html) Formatting dates as
 strings. See the section on [date and number formatting](DevGuideCodingBasics.html#DevGuideDateAndNumberFormat).
 
-*   [NumberFormat](/javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html) Formatting numbers as strings.
+*   [`NumberFormat`](/javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html) Formatting numbers as strings.
 See the section on [date and number formatting](DevGuideCodingBasics.html#DevGuideDateAndNumberFormat).
-
-The GWT internationalization types reside in the com.google.gwt.i18n package. To use any of these types, your module must inherit from the I18N module
-(com.google.gwt.i18n.I18N).
-
-```
-<module>
-  <inherits name="com.google.gwt.i18n.I18N"/>
-</module>
-```
-
-As of GWT 1.5, the User module (com.google.gwt.user.User) inherits the I18N module. So
-if your project's module XML file inherits the User module (which generally it does), it
-does not need to specify explicitly an inherit for the I18N module.
 
 ## Locales in GWT<a id="DevGuideLocale"></a>
 
@@ -160,7 +147,7 @@ to accurately reflect text changes based on the count of something.
 
 Here are some guidelines to help choose the right interface for your application's needs:
 
-*   Extend [Constants](/javadoc/latest/com/google/gwt/i18n/client/Constants.html)
+*   Extend [`Constants`](/javadoc/latest/com/google/gwt/i18n/client/Constants.html)
 to create a collection of constant values of a variety of types that can be
 accessed by calling methods (called _constant accessors_) on an interface.
 Constant accessors may return a variety of types, including strings, numbers,
@@ -170,7 +157,7 @@ constant accessor. In other words, if a constant accessor is declared to
 return an `int`, its associated property is guaranteed to be a valid
 `int` value &mdash; avoiding a potential source of runtime errors.
 
-*   The [ConstantsWithLookup](/javadoc/latest/com/google/gwt/i18n/client/ConstantsWithLookup.html)
+*   The [`ConstantsWithLookup`](/javadoc/latest/com/google/gwt/i18n/client/ConstantsWithLookup.html)
 interface is identical to `Constants` except that the interface also
 includes a method to look up values by property name, which facilitates
 dynamic binding to constants by name at runtime. `ConstantsWithLookup`
@@ -179,7 +166,7 @@ can sometimes be useful in highly data-driven applications. One caveat:
 because the compiler cannot discard unused constant methods, resulting in
 larger applications and the lookup cannot be resolved at compile-time.
 
-*   Extend [Messages](/javadoc/latest/com/google/gwt/i18n/client/Messages.html) to create a collection of
+*   Extend [`Messages`](/javadoc/latest/com/google/gwt/i18n/client/Messages.html) to create a collection of
 formatted messages that can accept parameters. You might think of the
 `Messages` interface as a statically verifiable equivalent of the
 traditional Java combination of `Properties`, `ResourceBundle`,
@@ -197,12 +184,12 @@ For existing applications that may not support the GWT `locale`
 client property, GWT offers dynamic string internationalization to easily
 integrate GWT internationalization.
 
-The [Dictionary](/javadoc/latest/com/google/gwt/i18n/client/Dictionary.html) class lets your GWT application
+The [`Dictionary`](/javadoc/latest/com/google/gwt/i18n/client/Dictionary.html) class lets your GWT application
 consume strings supplied by the [host HTML page](DevGuideOrganizingProjects.html#DevGuideHostPage). This approach is convenient if your existing web server has a localization
 system that you do not wish to integrate with the [static string internationalization](DevGuideI18n.html#DevGuideStaticStringInternationalization) methods.
 Instead, simply print your strings within the body of your HTML page as a JavaScript structure, and your GWT application can reference and display them to end users. Since it
 binds directly to the key/value pairs in the host HTML, whatever they may be,
-the [Dictionary](/javadoc/latest/com/google/gwt/i18n/client/Dictionary.html)
+the [`Dictionary`](/javadoc/latest/com/google/gwt/i18n/client/Dictionary.html)
 class is not sensitive to the [GWT locale setting](DevGuideI18nLocale.html#LocaleSpecifying). Thus,
 the burden of generating localized strings is on your web server.
 
@@ -210,9 +197,9 @@ Dynamic string localization allows you to look up localized strings defined in a
 string-based keys. This approach is typically slower and larger than the static string approach, but does not require application code to be recompiled when messages are altered
 or the set of locales changes.
 
-**Tip:** The `Dictionary` class is completely dynamic, so it provides no static type checking, and invalid keys cannot be checked by the compiler. This is
+_**Tip:** The `Dictionary` class is completely dynamic, so it provides no static type checking, and invalid keys cannot be checked by the compiler. This is
 another reason we recommend using [static string internationalization](DevGuideI18n.html#DevGuideStaticStringInternationalization) where
-possible.
+possible._
 
 ## Java Annotations<a id="DevGuideAnnotations"></a>
 
@@ -233,87 +220,76 @@ discussed there.
 
 The following annotations apply to classes or interfaces:
 
-<ul>
-<li><strong>`<a
-href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.DefaultLocale.html">@DefaultLocale(String
-localeName)</a>`</strong><br/>
+
+* [`@DefaultLocale(String localeName)`](/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.DefaultLocale.html)
 Specifies that text contained in this file is of the specified locale.  If not
-specified, the default is `en`.</li>
-<li><strong>`<a
-href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.GeneratedFrom.html">@GeneratedFrom(String
-fileName)</a>`</strong><br/>
+specified, the default is `en`.
+
+* [`@GeneratedFrom(String fileName)`](/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.GeneratedFrom.html)
 Indicates that this file was generated from the supplied file. Note that it
 is not required that this file name be resolvable at compile time, as this
-file may have been generated on a different machine, etc. &mdash; if the generator
+file may have been generated on a different machine, etc. If the generator
 does check the source file, such as for staleness, it must not give any
-warning if the file is not present or if the name is not resolvable.</li>
-<li><strong>`<a
-href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.GenerateKeys.html">@GenerateKeys(String
-generatorFQCN)</a>`</strong><br/>
+warning if the file is not present or if the name is not resolvable.
+
+* [`@GenerateKeys(String generatorFQCN)`](/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.GenerateKeys.html)
 Requests that the keys for each method be generated with the specified
 generator (see below). If this annotation is not supplied, keys will be the
 name of the method, and if specified without a parameter it will default to
-the MD5 implementation. The specified generator class must implement the
-`<a
-href="/javadoc/latest/com/google/gwt/i18n/rebind/keygen/KeyGenerator.html">KeyGenerator</a>` interface. By
-specifying a fully-qualified class name,
-this will be extensible to other formats not in the GWT namespace &mdash; the
+the MD5 implementation.
+
+ The specified generator class must implement the
+[`KeyGenerator `](/javadoc/latest/com/google/gwt/i18n/rebind/keygen/KeyGenerator.html)interface. By specifying a fully-qualified class name,
+this will be extensible to other formats not in the GWT namespace. The
 user just has to make sure the specified class is on the class path at
-compilation time. This
-allows integration with non-standard or internal tools that may use their own
+compilation time. 
+This allows integration with non-standard or internal tools that may use their own
 hash functions to coalesce duplicate translation strings between multiple
-applications or otherwise needed for compatibility with external tools.<p/>
-A string containing the fully-qualified class name is used instead of a
+applications or otherwise needed for compatibility with external tools.
+
+ A string containing the fully-qualified class name is used instead of a
 class literal because the key generation algorithm is likely to pull in code
-that is not translatable, so cannot be seen directly in client code.<p/>
-If this annotation is not supplied, the key will be the simple name of the
+that is not translatable, so cannot be seen directly in client code.
+
+ If this annotation is not supplied, the key will be the simple name of the
 method.
-<li><strong>`<a
-href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Generate.html">@Generate(String[]
-formatFQCN, String filename, String[] locales)</a>`</strong><br/>
+
+* [`@Generate(String[] formatFQCN, String filename, String[] locales)`](/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Generate.html)
 Requests that a message catalog file is generated during the compilation
 process. If the filename is not supplied, a default name based on the
 interface name is used. The output file is created under the -out directory.
-The format names are the fully-qualified class names which implement the <a
-href="/javadoc/latest/com/google/gwt/i18n/rebind/format/MessageCatalogFormat.html">`MessageCatalogFormat`</a>
-interface. For example, this could generate an
+The format names are the fully-qualified class names which implement the [`MessageCatalogFormat`](/javadoc/latest/com/google/gwt/i18n/rebind/format/MessageCatalogFormat.html) interface. For example, this could generate an
 XLIFF or properties file based on the information contained in this file.
 Specific `MessageCatalogFormat` implementations may define additional
-annotations for additional parameters needed for that
-`MessageCatalogFormat`.<p/>
-If any locales are specified, only the listed
+annotations for additional parameters needed for that `MessageCatalogFormat`.
+
+ If any locales are specified, only the listed
 locales are generated. If exactly one locale is listed, the filename supplied
-(or generated) will be used exactly; otherwise `_<i>locale</i>` will
-be added before the file extension.<p/>
-A string containing the fully-qualified class name is used instead of a
+(or generated) will be used exactly; otherwise `locale` will
+be added before the file extension.
+
+ A string containing the fully-qualified class name is used instead of a
 class literal because the message catalog implementation is likely to pull in
 code that is not translatable, so cannot be seen directly in client code.
-</ul>
 
-<h3>Method Annotations</h3>
-<p>The following annotations apply to methods:
-<ul>
-<li><strong>`<a
-href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Key.html">@Key(String
-key)</a>`</strong><br/>
+
+### Method Annotations
+The following annotations apply to methods:
+
+* [`@Key(String key)`](/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Key.html)
 Specifies the key to use in the external format for this particular method.
 If not supplied, it will be generated based on the `@GenerateKeys`
-annotation, discussed above.</li>
-<li><strong>`<a
-href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Description.html">@Description(String
-desc)</a>`</strong><br/>
+annotation, discussed above.
+* [`@Description(String desc)`](/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Description.html)
 A description of the text. Note that this is not included in a hash of the
 text and depending on the file format may not be included in a way visible to
-a translator.</li>
-<li><strong>`<a
-href="/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Meaning.html">@Meaning(String
-meaning)</a>`</strong><br/>
+a translator.
+* [`@Meaning(String meaning)`](/javadoc/latest/com/google/gwt/i18n/client/LocalizableResource.Meaning.html)
 Supplies a meaning associated with this text. This information is provided to
 the translator to distinguish between different possible translations &mdash;
 for example, orange might have meaning supplied as "the fruit" or "the color".
 Note that two messages with identical text but different meanings should have
-different keys, as they may be translated differently.</li>
-</ul></p>
+different keys, as they may be translated differently.
 
 ## Localized Properties Files<a id="DevGuidePropertiesFiles"></a>
 
@@ -321,24 +297,18 @@ different keys, as they may be translated differently.</li>
 translating tags into localized values. These files may be placed into the same package as your main module class. They must be placed in the same package as their corresponding
 `Constants`/`Messages` subinterface definition file.
 
-**Tip:** Use the i18nCreator script to get started.
+**Tip:** Use the [i18nCreator](RefCommandLineTools.html#i18nCreator) script to get started.
 
-```
-$ i18nCreator -eclipse Foo com.example.foo.client.FooConstants
- Created file src/com/example/foo/client/FooConstants.properties
- Created file FooConstants-i18n.launch
- Created file FooConstants-i18n
-```
+    $ i18nCreator -eclipse Foo com.example.foo.client.FooConstants
+      Created file src/com/example/foo/client/FooConstants.properties
+      Created file FooConstants-i18n.launch
+      Created file FooConstants-i18n
 
-Both [Constants](/javadoc/latest/com/google/gwt/i18n/client/Constants.html) and [Messages](/javadoc/latest/com/google/gwt/i18n/client/Messages.html) use traditional Java properties files, with
-one notable difference: properties files used with GWT should be encoded as UTF-8 and may contain Unicode characters directly, avoiding the need for `native2ascii`. See the
-API documentation for the above interfaces for examples and formatting details. Many thanks to the [Tapestry](http://tapestry.apache.org/) project for
-solving the problem of reading UTF-8 properties files in Tapestry's `LocalizedProperties` class.
+Both [Constants](/javadoc/latest/com/google/gwt/i18n/client/Constants.html) and [Messages](/javadoc/latest/com/google/gwt/i18n/client/Messages.html) use traditional Java properties files, with one notable difference: properties files used with GWT should be encoded as UTF-8 and may contain Unicode characters directly, avoiding the need for `native2ascii`. See the
+API documentation for the above interfaces for examples and formatting details.
 
-In order to use internationalized characters, make sure that your host HTML file contains the `charset=utf8` content type in the meta tag in the header:
+In order to use internationalized characters, make sure that your host HTML page is served as UTF-8, the easiest way is to include a meta tag in the page's head:
 
-```
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-```
+    <meta charset="utf-8" />
 
 You must also ensure that all relevant source and `.properties` files are set to be in the UTF-8 charset in your IDE.
