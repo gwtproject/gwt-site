@@ -101,7 +101,6 @@ public class StockWatcher implements EntryPoint {
         addStock();
       }
     });
-
   }
 
   /**
@@ -110,7 +109,6 @@ public class StockWatcher implements EntryPoint {
    */
   private void addStock() {
     // TODO Auto-generated method stub
-
   }
 
 }
@@ -144,7 +142,6 @@ For the enter key, you however have to use either KeyDownHandler or KeyUpHandler
                   }
                 }
               });
-            
             }
             
             /**
@@ -153,7 +150,6 @@ For the enter key, you however have to use either KeyDownHandler or KeyUpHandler
              */
             private void addStock() {
               // TODO Auto-generated method stub
-            
             }
 
     *  Eclipse flags KeyDownHandler and suggests you include the import declaration.
@@ -218,7 +214,6 @@ Finally, if the input is not valid, warn users via a dialog box.
               // TODO Add the stock to the table
               // TODO Add a button to remove this stock from the table.
               // TODO Get the stock price.
-              
             }
 
     *  Eclipse flags Window and suggests you include the import declaration.
