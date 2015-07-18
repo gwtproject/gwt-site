@@ -41,7 +41,7 @@ Here's how to turn the feature on.
 
 ```
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-    ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+    ui:generateFormat='com.google.gwt.i18n.server.PropertyCatalogFactory'
     ui:generateKeys="com.google.gwt.i18n.server.keygen.MD5KeyGenerator"
     ui:generateLocales="default">
   <div><ui:msg description="Greeting">Hello, world.</ui:msg></div>
