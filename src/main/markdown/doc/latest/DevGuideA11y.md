@@ -38,9 +38,7 @@ easily imagine how this causes problems.
 
 ### ARIA
 
-[ARIA](http://www.w3.org/WAI/intro/aria) is a W3C specification for making rich Internet applications accessible via a
-standard set of DOM properties. It is still new but there exist helpful resources on the web. More information can be
-found at [Google accessibility site](http://www.google.com/accessibility/) and [Chrome accessibility extensions page](http://code.google.com/p/google-axs-chrome/).
+[ARIA](http://www.w3.org/WAI/intro/aria) is a W3C specification for making rich Internet applications accessible via a standard set of DOM properties. It is still new but there exist helpful resources on the web. More information can be found at [Google accessibility site](http://www.google.com/accessibility/) and [Chrome accessibility extensions page](http://code.google.com/p/google-axs-chrome/).
 
 Adding accessibility support to GWT widgets involves adding the relevant properties to DOM elements that can be used by browsers to raise events during user interaction. Screen readers can react to these events to represent the function of GWT widgets. The DOM properties specified by ARIA are classified into Roles with their Properties and States.
 
