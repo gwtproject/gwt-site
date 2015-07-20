@@ -149,7 +149,7 @@ invoking the intended method in your service implementation.
 ### Testing Services During Development
 
 GWT development mode includes an embedded version of Jetty which acts as a development-time servlet container for testing. This allows you to debug both server-side code and
-client-side code when your run your application in development mode using a Java debugger. To automatically load your service implementation, configure your servlet in your
+client-side code when you run your application in development mode using a Java debugger. To automatically load your service implementation, configure your servlet in your
 `web.xml`.
 
 For example, suppose you have a module `com.example.foo.Foo`, and you define an RPC interface `com.example.foo.client.MyService`, annotated with
@@ -525,8 +525,8 @@ are many different products available. The following lists just a few commercial
 *   [Oracle Application Server](http://www.oracle.com/appserver/index.html)
 
 In the examples below, we'll show how to deploy your server-side components to a production server using Apache HTTPD and Apache Tomcat as a web engine. Although there are many
-different implementations of web servers and servlet containers, the Servlet API Specifications
-define a standard structure for project directories which most web engines follow, and as of 1.6, GWT's native output format follows this specification.
+different implementations of web servers and servlet containers, the Servlet API Specification
+defines a standard structure for project directories which most web engines follow, and as of 1.6, GWT's native output format follows this specification.
 
 **Tip:** For the latest servlet specification documentation see the [Java Community Process](http://jcp.org/) website. It will describe the
 general workings of the servlet and the conventions used in configuring your servlets for deployment.
@@ -603,7 +603,7 @@ URL`, which is good). If you get something different hitting the second URL, you
 
 *   If you get a 404, there is most likely an error in the left hand side of your URL mapping.
 *   If you get a "Bad Gateway", there is most likely an error in the right hand side of your URL mapping.
-*   If you get a 403 permission error, check the Apache configuration files to for `<Proxy>` tags to see if the permissions are wrong. You may need to add a section
+*   If you get a 403 permission error, check the Apache configuration files for `<Proxy>` tags to see if the permissions are wrong. You may need to add a section
 like this:
 
 ```
@@ -644,7 +644,7 @@ server calls. When sending an HTTP request, the client code must register a call
 about the exclusion of synchronous server connections, you may want to check out this [FAQ article](FAQ_Server.html#Why_doesn).
 
 Second, because GWT applications run as JavaScript within a web page, they are subject to the browser's [same origin policy (SOP)](http://en.wikipedia.org/wiki/Same_origin_policy). SOP prevents client-side JavaScript code from interacting with untrusted (and potentially harmful) resources loaded from other
-websites. In particular, SOP makes it difficult (although not impossible) to send HTTP requests to servers other than the one that served the HTML host page into which your GWT module is laoded.
+websites. In particular, SOP makes it difficult (although not impossible) to send HTTP requests to servers other than the one that served the HTML host page into which your GWT module is loaded.
 
 ### HTTP client types
 
@@ -707,7 +707,7 @@ to many developers. Code is not necessarily executed sequentially, and it forces
 these seeming drawbacks, the designers of GWT felt it was an essential part of creating usable interfaces in AJAX for several reasons:
 
 *   The JavaScript engine in most browsers is singly threaded, meaning that:
-*   *   The JavaScript engine will hang while waiting for a synchronous RPC call to return.
+    *   The JavaScript engine will hang while waiting for a synchronous RPC call to return.
     *   Most browsers will popup a dialog if any JavaScript entry point takes longer than a few moments.
 *   A server could be inaccessible or otherwise non responsive. Without an asynchronous mechanism, the application could be left waiting on a server call to return indefinitely.
 *   Asynchronous mechanisms allow server calls to run in parallel with logic inside the application, shortening the overall response time to the user.

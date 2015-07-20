@@ -19,7 +19,7 @@ application to support this use case.  GWT's history mechanism makes history sup
 
 ## Number and Date Formatting<a id="DevGuideDateAndNumberFormat"></a>
 
-[Number and Date Formatting](DevGuideCodingBasicsFormatting.html) describes how to format numbers and dates in GWT.  GWT does not provide full emulation for the date and number formatting classes (such as java.text.DateFormat, java.text.DecimalFormat, java.text.NumberFormat, and java.TimeFormat). Instead, a subset of the functionality of the JRE classes is provided by com.google.gwt.i18n.client.NumberFormat and com.google.gwt.i18n.client.DateTimeFormat.  The major difference between the standard Java classes and the GWT classes is the ability to switch between different locales for formating dates and numbers at runtime. In GWT, the deferred binding mechanism is used to load only the logic needed for the current locale into the application.
+[Number and Date Formatting](DevGuideCodingBasicsFormatting.html) describes how to format numbers and dates in GWT.  GWT does not provide full emulation for the date and number formatting classes (such as java.text.DateFormat, java.text.DecimalFormat, java.text.NumberFormat, and java.TimeFormat). Instead, a subset of the functionality of the JRE classes is provided by com.google.gwt.i18n.client.NumberFormat and com.google.gwt.i18n.client.DateTimeFormat.  The major difference between the standard Java classes and the GWT classes is the ability to switch between different locales for formatting dates and numbers at runtime. In GWT, the deferred binding mechanism is used to load only the logic needed for the current locale into the application.
 
 ## Programming Delayed Logic<a id="DevGuideDeferredCommand"></a>
 
