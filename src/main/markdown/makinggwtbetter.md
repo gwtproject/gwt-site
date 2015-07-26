@@ -453,41 +453,18 @@ some exceptions:
 
 Treat acronyms and abbreviations as words. The names are much more readable:
 
-<table style="margin-left: 2em">
-  <tr>
-    <th style="width: 16em">Good</th>
-    <th>Bad</th>
-  </tr>
-  <tr>
-    <td><code>XmlHttpRequest</code></td>
-    <td><code>XMLHTTPRequest</code></td>
-  </tr>
-  <tr>
-    <td><code>getCustomerId</code></td>
-    <td><code>getCustomerID</code></td>
-  </tr>
-</table>
+|Good            |Bad             |
+|----------------|----------------|
+|`XmlHttpRequest`|`XMLHTTPRequest`|
+|`getCustomerId` |`getCustomerID` |
 
 This style rule also applies when an acronym or abbreviation is the entire name:
 
-<table style="margin-left: 2em">
-  <tr>
-    <th style="width: 16em">Good</th>
-    <th>Bad</th>
-  </tr>
-  <tr>
-    <td><code>class Html</code></td>
-    <td><code>class HTML</code></td>
-  </tr>
-  <tr>
-    <td><code>String url;</code></td>
-    <td><code>String URL;</code></td>
-  </tr>
-  <tr>
-    <td><code>long id;</code></td>
-    <td><code>long ID;</code></td>
-  </tr>
-</table>
+|Good         |Bad          |
+|-------------|-------------|
+|`class Html` |`class HTML` |
+|`String url;`|`String URL;`|
+|`long id;`   |`long ID;`   |
 
 Note that this is a reversal of an earlier, regretted decision, and
 much code in GWT violates this rule. While it's not worth breaking
@@ -505,26 +482,11 @@ parameters), the name should be capitalized and have suffix "T". In a
 nutshell, prefer `<T>` or `<K, V>`, and devolve to `<KeyT, ValueT>` if
 necessary.
 
-<table style="margin-left: 2em">
-  <tr>
-    <th style="width: 16em">Good</th>
-    <th>Bad</th>
-    <th>Tolerable</th>
-  </tr>
-  <tr>
-    <td><code>Foo&lt;T&gt;</code></td>
-    <td><code>Foo&lt;FooClientType&gt;</code></td>
-  </tr>
-  <tr>
-    <td><code>Bar&lt;K, V&gt;</code></td>
-    <td><code>Bar&lt;KeyType, ValueType&gt;</code></td>
-  </tr>
-  <tr>
-    <td><code>Baz&lt;V, E, X&gt;</code></td>
-    <td><code>Baz&lt;EventType, ErrorType, ExpressionType&gt;</code></td>
-    <td><code>Baz&lt;EventT, ErrorT, ExpressionT&gt;</code></td>
-  </tr>
-</table>
+|Good          |Bad                                        |Tolerable                         |
+|--------------|-------------------------------------------|
+|`Foo<T>`      |`Foo<FooClientType>`                       |
+|`Bar<K, V>`   |`Bar<KeyType, ValueType>`                  |
+|`Baz<V, E, X>`|`Baz<EventType, ErrorType, ExpressionType>`|`Baz<EventT, ErrorT, ExpressionT>`|
 
 ### Unit Testing<a id="unittesting"></a>
 
