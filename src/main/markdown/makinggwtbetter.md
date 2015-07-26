@@ -459,12 +459,12 @@ Treat acronyms and abbreviations as words. The names are much more readable:
     <th>Bad</th>
   </tr>
   <tr>
-    <td>`XmlHttpRequest`</td>
-    <td>`XMLHTTPRequest`</td>
+    <td><code>XmlHttpRequest</code></td>
+    <td><code>XMLHTTPRequest</code></td>
   </tr>
   <tr>
-    <td>`getCustomerId`</td>
-    <td>`getCustomerID`</td>
+    <td><code>getCustomerId</code></td>
+    <td><code>getCustomerID</code></td>
   </tr>
 </table>
 
@@ -476,16 +476,16 @@ This style rule also applies when an acronym or abbreviation is the entire name:
     <th>Bad</th>
   </tr>
   <tr>
-    <td>`class Html`</td>
-    <td>`class HTML`</td>
+    <td><code>class Html</code></td>
+    <td><code>class HTML</code></td>
   </tr>
   <tr>
-    <td>`String url;`</td>
-    <td>`String URL;`</td>
+    <td><code>String url;</code></td>
+    <td><code>String URL;</code></td>
   </tr>
   <tr>
-    <td>`long id;`</td>
-    <td>`long ID;`</td>
+    <td><code>long id;</code></td>
+    <td><code>long ID;</code></td>
   </tr>
 </table>
 
@@ -512,17 +512,17 @@ necessary.
     <th>Tolerable</th>
   </tr>
   <tr>
-    <td>`Foo&lt;T&gt;`</td>
-    <td>`Foo&lt;FooClientType&gt;`</td>
+    <td><code>Foo&lt;T&gt;</code></td>
+    <td><code>Foo&lt;FooClientType&gt;</code></td>
   </tr>
   <tr>
-    <td>`Bar&lt;K, V&gt;`</td>
-    <td>`Bar&lt;KeyType, ValueType&gt;`</td>
+    <td><code>Bar&lt;K, V&gt;</code></td>
+    <td><code>Bar&lt;KeyType, ValueType&gt;</code></td>
   </tr>
   <tr>
-    <td>`Baz&lt;V, E, X&gt;`</td>
-    <td>`Baz&lt;EventType, ErrorType, ExpressionType&gt;`</td>
-    <td>`Baz&lt;EventT, ErrorT, ExpressionT&gt;`</td>
+    <td><code>Baz&lt;V, E, X&gt;</code></td>
+    <td><code>Baz&lt;EventType, ErrorType, ExpressionType&gt;</code></td>
+    <td><code>Baz&lt;EventT, ErrorT, ExpressionT&gt;</code></td>
   </tr>
 </table>
 
