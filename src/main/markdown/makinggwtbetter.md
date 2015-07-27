@@ -483,7 +483,7 @@ nutshell, prefer `<T>` or `<K, V>`, and devolve to `<KeyT, ValueT>` if
 necessary.
 
 |Good          |Bad                                        |Tolerable                         |
-|--------------|-------------------------------------------|                                  |
+|--------------|-------------------------------------------|----------------------------------|
 |`Foo<T>`      |`Foo<FooClientType>`                       |                                  |
 |`Bar<K, V>`   |`Bar<KeyType, ValueType>`                  |                                  |
 |`Baz<V, E, X>`|`Baz<EventType, ErrorType, ExpressionType>`|`Baz<EventT, ErrorT, ExpressionT>`|
