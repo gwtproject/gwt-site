@@ -23,7 +23,7 @@ As in the main <a href="DevGuideUiBinder.html">UiBinder
 page</a>, the rest of this page explains how to make your UI templates
 localizable through a series of typical use cases.
 
-**Note** You will see a lot of parallels to working with the [Messages](DevGuideI18nMessages.html) system, and with good reason: UiBinder's I18n features are implemented by generating a hidden `[com.google.gwt.i18n.client.Messages](/javadoc/latest/com/google/gwt/i18n/client/Messages.html)` interface for each template. Except for plural forms, anything you can do via Messages you should also be able to do in a template.
+**Note** You will see a lot of parallels to working with the [Messages](DevGuideI18nMessages.html) system, and with good reason: UiBinder's I18n features are implemented by generating a hidden [`com.google.gwt.i18n.client.Messages`](/javadoc/latest/com/google/gwt/i18n/client/Messages.html) interface for each template. Except for plural forms, anything you can do via Messages you should also be able to do in a template.
  
 ## Bonjour, Tout Le Monde<a id="Bonjour"></a>
 
@@ -147,7 +147,7 @@ default values.
 <dl>
   <dt>`ui:baseMessagesInterface`
   <dd>Sets the base interface to use for generated messages.  The value must
-  be the fully-qualified class name of an interface that extends `[Messages](/javadoc/latest/com/google/gwt/i18n/client/Messages.html)`.
+  be the fully-qualified class name of an interface that extends [`Messages`](/javadoc/latest/com/google/gwt/i18n/client/Messages.html).
   You can then put whatever annotations you want there, making it easy to have
   company or project-wide settings that can be changed in just one place.  You
   can still use the other attributes to override defaults inherited from that

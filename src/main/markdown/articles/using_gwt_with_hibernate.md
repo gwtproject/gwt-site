@@ -681,7 +681,7 @@ Gilead also provides a dedicated adapter for Hibernate and GWT to make their int
 In the simplest case, integration between GWT and Hibernate can be realized by following these steps:
 
 1.  Make your persistent classes inherit the `LightEntity` class (class used for stateless mode integration in the Gilead library).
-2.  Making your remote RPC services extend `[PersistentRemoteService](http://gilead.svn.sourceforge.net/viewvc/gilead/gilead/branches/1.2/adapter4gwt/src/net/sf/gilead/gwt/PersistentRemoteService.java?revision=896&view=markup)` instead of `[RemoteServiceServlet](/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html)`.
+2.  Making your remote RPC services extend [`PersistentRemoteService`](http://gilead.svn.sourceforge.net/viewvc/gilead/gilead/branches/1.2/adapter4gwt/src/net/sf/gilead/gwt/PersistentRemoteService.java?revision=896&view=markup) instead of [`RemoteServiceServlet`](/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html).
 3.  Configuring your beanManager for your GWT RPC service as shown in the code snippet below (see [Gilead documentation](http://noon.gilead.free.fr/gilead/index.php?page=documentation) for more on configuring bean managers):
 
 ```
