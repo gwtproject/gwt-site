@@ -92,17 +92,17 @@ This will work equally well with all resource types, which can allow you to prov
 
 ### Pluggable Resource Generation<a id="Pluggable_Resource_Generation"></a>
 
-Each subtype of `[ResourcePrototype](/javadoc/latest/index.html?com/google/gwt/resources/client/ResourcePrototype.html)` must define a `[@ResourceGeneratorType](/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGeneratorType.html)` annotation whose value is a concrete Java class that extends `[ResourceGenerator](/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGenerator.html)`.  The instance of the `ResourceGenerator` is responsible for accumulation (or bundling) of incoming resource data as well as a small degree of code generation to assemble the concrete implementation of the `ClientBundle` class.  Implementors of `ResourceGenerator` subclasses can expect that only one `ResourceGenerator` will be created for a given type of resource within a `ClientBundle` interface.
+Each subtype of [`ResourcePrototype`](/javadoc/latest/index.html?com/google/gwt/resources/client/ResourcePrototype.html) must define a [`@ResourceGeneratorType`](/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGeneratorType.html) annotation whose value is a concrete Java class that extends [`ResourceGenerator`](/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGenerator.html).  The instance of the `ResourceGenerator` is responsible for accumulation (or bundling) of incoming resource data as well as a small degree of code generation to assemble the concrete implementation of the `ClientBundle` class.  Implementors of `ResourceGenerator` subclasses can expect that only one `ResourceGenerator` will be created for a given type of resource within a `ClientBundle` interface.
 
 The methods on a `ResourceGenerator` are called in the following order
 
-1.  `init` to provide the `ResourceGenerator` with a `[ResourceContext](/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceContext.html)`
+1.  `init` to provide the `ResourceGenerator` with a [`ResourceContext`](/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceContext.html)
 2.  `prepare` is called for each `JMethod` the `ResourceGenerator` is expected to handle
 3.  `createFields` allows the `ResourceGenerator` to add code at the class level
 4.  `createAssignment` is called for each `JMethod`.  The generated code should be suitable for use as the right-hand side of an assignment expression.
 5.  `finish` is called after all assignments should have been written.
 
-`ResourceGenerators` are expected to make use of the `[ResourceGeneratorUtil](/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGeneratorUtil.html)` class.
+`ResourceGenerators` are expected to make use of the [`ResourceGeneratorUtil`](/javadoc/latest/index.html?com/google/gwt/resources/ext/ResourceGeneratorUtil.html) class.
 
 ### Levers and knobs<a id="Levers_and_knobs"></a>
 
