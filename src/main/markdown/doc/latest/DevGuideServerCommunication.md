@@ -396,8 +396,8 @@ For example, the custom field serializer for `java.util.HashMap` is
 `com.google.gwt.user.client.rpc.core.java.util.HashMap_CustomFieldSerializer`.
 
 Custom field serializers should extend the 
-`[
-CustomFieldSerializer<T>](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html)` class, with the class that is being
+[`
+CustomFieldSerializer<T>`](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html) class, with the class that is being
 serialized as the type parameter. For example:
 
 ```
@@ -437,8 +437,8 @@ and the server type-checked version is
 `test.com.google.gwt.user.server.rpc.TypeCheckedGenericClass_ServerCustomFieldSerializer`.
 
 Server custom field serializers should extend the 
-`[
-ServerCustomFieldSerializer<T>](/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html)` class, with the class that is being
+[`
+ServerCustomFieldSerializer<T>`](/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html) class, with the class that is being
 serialized as the type parameter. For example:
 
 ```

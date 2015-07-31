@@ -339,7 +339,7 @@ elements. That is, `<g:Button>`, not `<button>`.
 ## Using a widget that requires constructor args<a id="Using_a_widget"></a>
 
 Every widget that is declared in a template is created by a call
-to `[GWT.create](/javadoc/latest/com/google/gwt/core/client/GWT.html#create%28java.lang.Class%29)()`. In
+to [`GWT.create`](/javadoc/latest/com/google/gwt/core/client/GWT.html#create%28java.lang.Class%29)(). In
 most cases this means that they must be default instantiable; that is,
 they must provide a zero-argument constructor. However, there are a few ways to
 get around that. In addition to the `@UiFactory` and
@@ -647,10 +647,10 @@ res.style().ensureInjected();
 The "`with`" element declares a field holding a resource
 object whose methods can be called to fill in attribute values.  In
 this case it will be instantiated via a call
-to `[GWT.create](/javadoc/latest/com/google/gwt/core/client/GWT.html#create%28java.lang.Class%29)(Resources.class)`. (Read on to see how pass an instance in instead
+to [`GWT.create`](/javadoc/latest/com/google/gwt/core/client/GWT.html#create%28java.lang.Class%29)(Resources.class). (Read on to see how pass an instance in instead
 of having it created for you.)
 
-Note that there is no requirement that a `ui:with` resource implement the [ClientBundle](/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html) interface; this is just an example.
+Note that there is no requirement that a `ui:with` resource implement the [`ClientBundle`](/javadoc/latest/com/google/gwt/resources/client/ClientBundle.html) interface; this is just an example.
 
 If you need more flexibility with a resource, you can set
 parameters on it with a `<ui:attributes>` element. Any
