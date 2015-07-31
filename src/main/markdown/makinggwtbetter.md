@@ -453,41 +453,18 @@ some exceptions:
 
 Treat acronyms and abbreviations as words. The names are much more readable:
 
-<table style="margin-left: 2em">
-  <tr>
-    <th style="width: 16em">Good</th>
-    <th>Bad</th>
-  </tr>
-  <tr>
-    <td>`XmlHttpRequest`</td>
-    <td>`XMLHTTPRequest`</td>
-  </tr>
-  <tr>
-    <td>`getCustomerId`</td>
-    <td>`getCustomerID`</td>
-  </tr>
-</table>
+|Good            |Bad             |
+|----------------|----------------|
+|`XmlHttpRequest`|`XMLHTTPRequest`|
+|`getCustomerId` |`getCustomerID` |
 
 This style rule also applies when an acronym or abbreviation is the entire name:
 
-<table style="margin-left: 2em">
-  <tr>
-    <th style="width: 16em">Good</th>
-    <th>Bad</th>
-  </tr>
-  <tr>
-    <td>`class Html`</td>
-    <td>`class HTML`</td>
-  </tr>
-  <tr>
-    <td>`String url;`</td>
-    <td>`String URL;`</td>
-  </tr>
-  <tr>
-    <td>`long id;`</td>
-    <td>`long ID;`</td>
-  </tr>
-</table>
+|Good         |Bad          |
+|-------------|-------------|
+|`class Html` |`class HTML` |
+|`String url;`|`String URL;`|
+|`long id;`   |`long ID;`   |
 
 Note that this is a reversal of an earlier, regretted decision, and
 much code in GWT violates this rule. While it's not worth breaking
@@ -505,26 +482,11 @@ parameters), the name should be capitalized and have suffix "T". In a
 nutshell, prefer `<T>` or `<K, V>`, and devolve to `<KeyT, ValueT>` if
 necessary.
 
-<table style="margin-left: 2em">
-  <tr>
-    <th style="width: 16em">Good</th>
-    <th>Bad</th>
-    <th>Tolerable</th>
-  </tr>
-  <tr>
-    <td>`Foo<T>`</td>
-    <td>`Foo<FooClientType>`</td>
-  </tr>
-  <tr>
-    <td>`Bar<K, V>`</td>
-    <td>`Bar<KeyType, ValueType>`</td>
-  </tr>
-  <tr>
-    <td>`Baz<V, E, X>`</td>
-    <td>`Baz<EventType, ErrorType, ExpressionType>`</td>
-    <td>`Baz<EventT, ErrorT, ExpressionT>`</td>
-  </tr>
-</table>
+|Good          |Bad                                        |Tolerable                         |
+|--------------|-------------------------------------------|----------------------------------|
+|`Foo<T>`      |`Foo<FooClientType>`                       |                                  |
+|`Bar<K, V>`   |`Bar<KeyType, ValueType>`                  |                                  |
+|`Baz<V, E, X>`|`Baz<EventType, ErrorType, ExpressionType>`|`Baz<EventT, ErrorT, ExpressionT>`|
 
 ### Unit Testing<a id="unittesting"></a>
 
