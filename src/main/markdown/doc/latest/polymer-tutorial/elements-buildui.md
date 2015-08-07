@@ -77,6 +77,10 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
         import com.google.gwt.user.client.ui.RootPanel;
         import com.vaadin.polymer.Polymer;
         import com.vaadin.polymer.elemental.Function;
+        import com.vaadin.polymer.iron.element.IronIconElement;
+        import com.vaadin.polymer.paper.element.PaperIconItemElement;
+
+        import java.util.Arrays;
 
         public class TodoList implements EntryPoint {
 
@@ -186,7 +190,38 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
             </g:HTMLPanel>
         </ui:UiBinder>
 
-4.  Reload the application to see the ripple effect in action.
+4.  Don't forget to import the ripple effect in `TodoList.java`.
+
+        package org.gwtproject.tutorial.client;
+
+        import com.google.gwt.core.client.EntryPoint;
+        import com.google.gwt.user.client.ui.RootPanel;
+        import com.vaadin.polymer.Polymer;
+        import com.vaadin.polymer.elemental.Function;
+
+        public class TodoList implements EntryPoint {
+
+          public void onModuleLoad() {
+            // We have to load icon sets before run application
+            Polymer.importHref(Arrays.asList(
+                  "iron-icons/iron-icons.html",
+                   PaperIconItemElement.SRC,
+                   IronIconElement.SRC,
+                   PaperRippleElement.SRC), new Function() {
+              public Object call(Object arg) {
+                // The app is executed when all imports succeed.
+                startApplication();
+                return null;
+              }
+            });
+          }
+
+          private void startApplication() {
+            RootPanel.get().add(new Main());
+          }
+        }
+
+5.  Reload the application to see the ripple effect in action.
 
     Compare click reactions before and after adding `PaperRipple` effects.
 
@@ -264,7 +299,9 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
                ...
             </g:HTMLPanel>
 
-3. Reload the application
+3. Add the neccessary HTML imports `PaperDrawerPanelElement.SRC, PaperHeaderPanelElement.SRC, PaperToolbarElement.SRC` in `TodoList.java`. 
+
+4. Reload the application
 
     The application should now sport a modern look and be responsive. If you resize the browser window so that its width is below 640px the drawer panel should hide the menu.
 
@@ -410,6 +447,44 @@ Finally your `Main.gwt.xml` file should look like:
             </paper-drawer-panel>
         </g:HTMLPanel>
     </ui:UiBinder>
+
+Your `TodoList.java` should look like this:
+
+    package org.gwtproject.tutorial.client;
+
+        import com.google.gwt.core.client.EntryPoint;
+        import com.google.gwt.user.client.ui.RootPanel;
+        import com.vaadin.polymer.Polymer;
+        import com.vaadin.polymer.elemental.Function;
+        import com.vaadin.polymer.iron.element.IronIconElement;
+        import com.vaadin.polymer.paper.element.*;
+
+        import java.util.Arrays;
+
+        public class TodoList implements EntryPoint {
+
+            public void onModuleLoad() {
+                Polymer.importHref(Arrays.asList(
+                        "iron-icons/iron-icons.html",
+                        PaperIconItemElement.SRC,
+                        PaperRippleElement.SRC,
+                        IronIconElement.SRC,
+                        PaperDrawerPanelElement.SRC,
+                        PaperHeaderPanelElement.SRC,
+                        PaperToolbarElement.SRC,
+                        PaperFabElement.SRC
+                ), new Function() {
+                    public Object call(Object arg) {
+                        startApplication();
+                        return null;
+                    }
+                });
+            }
+
+            private void startApplication() {
+                RootPanel.get().add(new Main());
+            }
+        }    
 
 If everything is OK, after reloading your app should look like this:
 
