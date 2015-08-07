@@ -241,8 +241,8 @@ With the base project set up, we'll now add the necessary external dependencies.
             <head>
              <meta name="viewport"
                content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-             <script src="todo/bower_components/webcomponentsjs/webcomponents.js"></script>
-             <script type="text/javascript" src="todo/todo.nocache.js"></script>
+             <script src="todolist/bower_components/webcomponentsjs/webcomponents.js"></script>
+             <script type="text/javascript" src="todolist/todolist.nocache.js"></script>
             </head>
             <body>
             </body>
