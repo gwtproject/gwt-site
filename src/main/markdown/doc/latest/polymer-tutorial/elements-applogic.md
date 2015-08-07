@@ -33,6 +33,7 @@ In this section, we'll learn how to add logic to our UI. We'll touch on very bas
         @UiField PaperDrawerPanelElement drawerPanel;
         @UiField HTMLElement content;
 
+        @UiField PaperFabElement addButton;
         @UiField PaperDialogElement addItemDialog;
         @UiField PaperInputElement titleInput;
         @UiField PaperTextareaElement descriptionInput;
@@ -327,7 +328,50 @@ In this section, we'll learn how to add logic to our UI. We'll touch on very bas
           }
         }
 
-11. Reload the application
+11. Your `TodoList.java` should look like this:
+
+        package org.gwtproject.tutorial.client;
+
+        import com.google.gwt.core.client.EntryPoint;
+        import com.google.gwt.user.client.ui.RootPanel;
+        import com.vaadin.polymer.Polymer;
+        import com.vaadin.polymer.elemental.Function;
+        import com.vaadin.polymer.iron.element.IronIconElement;
+        import com.vaadin.polymer.paper.element.*;
+
+        import java.util.Arrays;
+
+        public class TodoList implements EntryPoint {
+
+            public void onModuleLoad() {
+                Polymer.importHref(Arrays.asList(
+                        "iron-icons/iron-icons.html",
+                        PaperIconItemElement.SRC,
+                        PaperRippleElement.SRC,
+                        IronIconElement.SRC,
+                        PaperDrawerPanelElement.SRC,
+                        PaperHeaderPanelElement.SRC,
+                        PaperToolbarElement.SRC,
+                        PaperFabElement.SRC,
+                        PaperDialogElement.SRC,
+                        PaperTextareaElement.SRC,
+                        PaperInputElement.SRC,
+                        PaperButtonElement.SRC,
+                        PaperCheckboxElement.SRC
+                ), new Function() {
+                    public Object call(Object arg) {
+                        startApplication();
+                        return null;
+                    }
+                });
+
+            }
+
+            private void startApplication() {
+                RootPanel.get().add(new Main());
+            }
+
+12. Reload the application
 
     * Add several items
     * Mark some of them as done
