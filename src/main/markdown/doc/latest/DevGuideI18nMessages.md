@@ -258,7 +258,7 @@ public interface MyMessages extends Messages {
 
 The default message is used if no form matches, in this case if `gender`
 is `null` or `UNKNOWN`. `@Select` parameters may be
-integral primitives, Stings, booleans, or enums.
+integral primitives, Strings, booleans, or enums.
 
 ## SafeHtml Messages<a id="SafeHtmlMessages"></a>
 
