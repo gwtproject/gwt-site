@@ -116,22 +116,6 @@ Please note that the applications linked from this page are provided by third-pa
       </div>
     </div>
 
-    <div class="project">
-      <div class="screenshot">
-        <a href="http://sticky.appspot.com" target="_blank"><img src="images/sticky.png" alt="Screenshot"/></a>
-      </div>
-      <div class="info">
-        <div class="name"><a href="http://sticky.appspot.com" target="_blank">Sticky</a></div>
-        <div class="snippet">A sticky note application built using GWT and Google App Engine. The source for this sample is included
-          with the <a href="//developers.google.com/appengine/">App Engine SDK</a>. </div>
-        <div class="apis">
-          <div class="head">GWT features used:</div>
-          <div class="item"><a href="doc/latest/DevGuideUiWidgets.html">UI widgets</a></div>
-          <div class="item"><a href="doc/latest/DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">Polymorphic RPC</a></div>
-        </div>
-      </div>
-    </div>
-
     <br>
     The source for these examples as well as others can be found in your GWT distribution under the `samples/` directory. If you haven't downloaded GWT yet, you can download it <a href="download.html">here</a>.
 
