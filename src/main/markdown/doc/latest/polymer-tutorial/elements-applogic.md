@@ -33,6 +33,7 @@ In this section, we'll learn how to add logic to our UI. We'll touch on very bas
         @UiField PaperDrawerPanelElement drawerPanel;
         @UiField HTMLElement content;
 
+        @UiField PaperFabElement addButton;
         @UiField PaperDialogElement addItemDialog;
         @UiField PaperInputElement titleInput;
         @UiField PaperTextareaElement descriptionInput;
@@ -59,7 +60,7 @@ In this section, we'll learn how to add logic to our UI. We'll touch on very bas
 
     <img class='polymer-tutorial-screenshot' src='images/todo-list-07.png'>
 
-6.  Create a `UiBinder` widget for displaying items: `Item.ui.xml` and `Item.java`
+5.  Create a `UiBinder` widget for displaying items: `Item.ui.xml` and `Item.java`
 
      * `Item.ui.xml`
 
@@ -155,8 +156,7 @@ In this section, we'll learn how to add logic to our UI. We'll touch on very bas
               }
             }
 
-
-7.  Add the logic for creating items when we click the save button.
+6.  Add the logic for creating items when we click the save button.
 
           ...
           private List<Item> items = new ArrayList<>();
@@ -190,13 +190,13 @@ In this section, we'll learn how to add logic to our UI. We'll touch on very bas
           }
           ...
 
-8.  Reload the application
+7.  Reload the application
 
     Now you can add Todo items and mark them as done using checkboxes.
 
     <img class='polymer-tutorial-screenshot' src='images/todo-list-08.png'>
 
-9.  Add the **Clear All** and **Clear Done** menu item handlers in the constructor.
+8.  Add the **Clear All** and **Clear Done** menu item handlers in the constructor.
 
           public Main() {
             ...
@@ -232,7 +232,7 @@ In this section, we'll learn how to add logic to our UI. We'll touch on very bas
 
     _**Note**: The closeMenu() method is only useful if the application is viewed on a mobile device, or if your browser window is narrow enough for the side menu to collapse. Hence, we use this method to hide the menu after clicking on any menu item._
 
-10. The final `Main.java` should look like this
+9. The final `Main.java` should look like this
 
         package org.gwtproject.tutorial.client;
 
@@ -326,6 +326,49 @@ In this section, we'll learn how to add logic to our UI. We'll touch on very bas
             }
           }
         }
+
+10. Your `TodoList.java` should look like this:
+
+        package org.gwtproject.tutorial.client;
+
+        import com.google.gwt.core.client.EntryPoint;
+        import com.google.gwt.user.client.ui.RootPanel;
+        import com.vaadin.polymer.Polymer;
+        import com.vaadin.polymer.elemental.Function;
+        import com.vaadin.polymer.iron.element.IronIconElement;
+        import com.vaadin.polymer.paper.element.*;
+
+        import java.util.Arrays;
+
+        public class TodoList implements EntryPoint {
+
+            public void onModuleLoad() {
+                Polymer.importHref(Arrays.asList(
+                        "iron-icons/iron-icons.html",
+                        PaperIconItemElement.SRC,
+                        PaperRippleElement.SRC,
+                        IronIconElement.SRC,
+                        PaperDrawerPanelElement.SRC,
+                        PaperHeaderPanelElement.SRC,
+                        PaperToolbarElement.SRC,
+                        PaperFabElement.SRC,
+                        PaperDialogElement.SRC,
+                        PaperTextareaElement.SRC,
+                        PaperInputElement.SRC,
+                        PaperButtonElement.SRC,
+                        PaperCheckboxElement.SRC
+                ), new Function() {
+                    public Object call(Object arg) {
+                        startApplication();
+                        return null;
+                    }
+                });
+
+            }
+
+            private void startApplication() {
+                RootPanel.get().add(new Main());
+            }
 
 11. Reload the application
 

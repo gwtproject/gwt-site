@@ -33,12 +33,14 @@ For the **TodoList** project, we'll need to run `webAppCreator` with the followi
 
       _**Tip**: If you include the GWT SDK folder in your PATH environment variable, you won't have to specify the full path._
 
+      You may have to modify the `pom.xml` before you can run the application. Add `<type>pom</type>` to the gwt dependency, otherwise you will encounter an error. See the "Creating a `Maven` project" section in the [webAppCreator documentation](http://www.gwtproject.org/doc/latest/RefCommandLineTools.html#webAppCreator) for more information.
 
 2. Run the application in [SuperDevMode](articles/superdevmode.html).
 
      To check that the project was created correctly start the new app in SuperDevMode.
 
         $ cd TodoListApp
+        $ mvn war:exploded
         $ mvn gwt:run
 
       _**Tip**: Since the created project is built with Maven, you can import it in Eclipse, IDEA, etc._
@@ -63,7 +65,7 @@ With the base project set up, we'll now add the necessary external dependencies.
          <scope>provided</scope>
         </dependency>
 
-     _**Note**: Replace the `${gwtPolymerVersion}` placeholder with the current version or add the corresponding property in your pom.xml_
+     _**Note**: Replace the `${gwtPolymerVersion}` placeholder with the current version (as of this writing 1.0.2.0-alpha3) or add the corresponding property in your pom.xml_
 
 2. Update the gwt-maven-plugin configuration to support the experimental `JsInterop` feature.
 
@@ -97,8 +99,8 @@ With the base project set up, we'll now add the necessary external dependencies.
             <head>
              <meta name="viewport"
                content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-             <script src="todo/bower_components/webcomponentsjs/webcomponents.js"></script>
-             <script type="text/javascript" src="todo/todo.nocache.js"></script>
+             <script src="todolist/bower_components/webcomponentsjs/webcomponents.js"></script>
+             <script type="text/javascript" src="todolist/todolist.nocache.js"></script>
             </head>
             <body>
             </body>
@@ -119,7 +121,7 @@ With the base project set up, we'll now add the necessary external dependencies.
 
     Replace the content of `TodoList.java` with
 
-        package org.gwtproject.tutorial;
+        package org.gwtproject.tutorial.client;
 
         import com.google.gwt.core.client.EntryPoint;
         import com.google.gwt.user.client.ui.RootPanel;
@@ -131,22 +133,14 @@ With the base project set up, we'll now add the necessary external dependencies.
             PaperButton button = new PaperButton("Press me!");
             button.setRaised(true);
             RootPanel.get().add(button);
-
-            // Use the Element API to create a <paper-button>
-            PaperButtonElement buttonElement =
-               Polymer.createElement(PaperButtonElement.TAG);
-            buttonElement.setTextContent("Click me!");
-            Document.get().getBody().appendChild((Element)buttonElement);
           }
         }
 
-    _**Note**: The example above shows how to add a  `PaperButton` element using both the Widgets and Elements API._
+    _**Note**: The example above shows how to add a  `PaperButton` element using the Widgets API._
 
 8. Run the application again.
 
-    You should see a web page containing a few Material Design buttons.
-
-    _**Tip**: if you get a ClassCastException in the browser's console, make sure that you're using the `-XjsInteropMode JS` parameter_.
+    You should see a web page containing a Material Design button.
 
 ## What's next
 
