@@ -119,9 +119,7 @@ history management and is discussed in greater length below.
 
 At this point the overall hierarchy of our sample project should look like the following:
 
-<div class="screenshot">
-  ![screenshot](../images/contacts-project-hierarchy.png)
-</div>
+![screenshot](../images/contacts-project-hierarchy.png)
 
 With our component structure in place, and before we jump into wiring it all
 up, we'll want to take a look at the process that starts everything up. The
@@ -153,9 +151,7 @@ In order to bind the [presenter](#presenter) and associated
 defined within the presenter. Take for example the
 ContactsView:
 
-<div class="screenshot">
-  ![screenshot](../images/contact-list-view.png)
-</div>
+![screenshot](../images/contact-list-view.png)
 
 This view has 3 widgets: a table and two buttons. In order for the app to do
 something meaningful, the [presenter](#presenter) is going to need to:
@@ -616,9 +612,7 @@ To demonstrate the benefits of using the MVP model to drive JRE-based unit
 tests, rather than those based on GWTTestCase, we've added the following tests
 to our Contacts app.
 
-<div class="screenshot">
-  ![screenshot](../images/contacts-project-hierarchy-testing.png)
-</div>
+![screenshot](../images/contacts-project-hierarchy-testing.png)
 
 Each example is set up to test adding a list of ContactDetails, sorting those
 ContactDetails, and then verifying that the sorted list is correct. Taking a
