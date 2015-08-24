@@ -75,7 +75,7 @@ public class CompositeExample implements EntryPoint {
 
     public void onClick(ClickEvent event) {
       Object sender = event.getSource();
-      if (sender == checkBox) {
+      if (sender.equals(checkBox)) {
         // When the check box is clicked, update the text box's enabled state.
         textBox.setEnabled(checkBox.isChecked());
       }
