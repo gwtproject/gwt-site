@@ -87,7 +87,7 @@ about the default locale and fallback properties
 in [Locales in GWT](DevGuideI18nLocale.html).)
 </dl>
 
-When you compile your application, pass the -extras argument to 
+When you compile your application, pass the `-extra` argument to 
 the gwt compiler to tell it to generate its "extra" auxiliary files.
 A properties file will be generated for each template, containing
 an entry for each message tagged for localization, something like:
