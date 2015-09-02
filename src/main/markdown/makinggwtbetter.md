@@ -153,7 +153,7 @@ We adopted these on February 17, 2006.
     *   Widget classes available but not required (i.e. use DOM and/or JSNI)
     *   Application management available but not required (e.g. history support is optional)
     *   RPC available but not required
-    *   Java-to-JavaScript compiler is useful without the rest of the user libraries (implies JSNI and debugging aren't tangled with up gwt-user)
+    *   Java-to-JavaScript compiler is useful without the rest of the user libraries (implies JSNI and debugging aren't tangled up with gwt-user)
 *   Interoperate with existing web pages
     *   Other than RPC, components operate without a GWT-specific server
     *   Scriptable from JavaScript and vice-versa
