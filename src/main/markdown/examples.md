@@ -132,9 +132,9 @@ GWT is being used by tens of thousands of projects around the world. Take a look
   </div>
   <div class="info">
     <div class="name"><a href="http://www.google.com/inbox" target="_blank">Google Inbox</a></div>
-    <div class="snippet">Google Inbox is a fresh start that goes beyond email to help you get back to what matters. 
-	Inbox is using a new approach to 
-	<a href="https://www.youtube.com/watch?feature=player_embedded&v=KdCs85jqcH0#t=747">delivering multiplatform native applications</a> 
+    <div class="snippet">Google Inbox is a fresh start that goes beyond email to help you get back to what matters.
+	Inbox is using a new approach to
+	<a href="https://www.youtube.com/watch?feature=player_embedded&v=KdCs85jqcH0#t=747">delivering multiplatform native applications</a>
 	using common code base. GWT is used to deliver the Web version.
 	<p>Google is using GWT in number of other public services, including:
 		<a href="https://docs.google.com/spreadsheets" target="_blank">Spreadsheets</a>,
@@ -161,8 +161,8 @@ GWT is being used by tens of thousands of projects around the world. Take a look
   </div>
   <div class="info">
     <div class="name"><a href="https://ruxit.com" target="_blank">ruxit</a></div>
-    <div class="snippet">ruxit is a cloud-based application performance management solution that offers unified monitoring of 
-user experience, servers, applications, infrastructure and networks &ndash; all with simple auto-configuration. The entire product UI 
+    <div class="snippet">ruxit is a cloud-based application performance management solution that offers unified monitoring of
+user experience, servers, applications, infrastructure and networks &ndash; all with simple auto-configuration. The entire product UI
 was built using GWT. Use the free trial to see it in action.</div>
   </div>
 </div>
@@ -195,9 +195,10 @@ was built using GWT. Use the free trial to see it in action.</div>
   </div>
   <div class="info">
     <div class="name"><a href="https://getbookedin.com/?cid=256" target="_blank">BookedIN</a></div>
-    <div class="snippet">BookedIN is an online appointment booking, scheduling and payment system for small business. 
-      Customers can book and pay for appointments online, and the business owner can automate their internal booking 
-      process, reducing their administrative workload. BookedIN uses GWTP which has helped to simplify and accelerate development. </div>
+    <div class="snippet">BookedIN is an online appointment booking, scheduling and payment system for small business.
+      Customers can book and pay for appointments online, and the business owner can automate their internal booking
+      process, reducing their administrative workload. BookedIN uses <a href="https://gwtp.arcbees.com">GWTP</a>
+      which has helped to simplify and accelerate development. </div>
     </div>
 </div>
 
