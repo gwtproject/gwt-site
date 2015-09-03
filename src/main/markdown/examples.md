@@ -191,6 +191,18 @@ was built using GWT. Use the free trial to see it in action.</div>
 
 <div class="project">
   <div class="screenshot">
+    <a href="https://getbookedin.com/?cid=256" target="_blank"><img src="images/bookedin.png" alt="BookedIN"/></a>
+  </div>
+  <div class="info">
+    <div class="name"><a href="https://getbookedin.com/?cid=256" target="_blank">BookedIN</a></div>
+    <div class="snippet">BookedIN is an online appointment booking, scheduling and payment system for small business. 
+      Customers can book and pay for appointments online, and the business owner can automate their internal booking 
+      process, reducing their administrative workload. BookedIN uses GWTP which has helped to simplify and accelerate development. </div>
+    </div>
+</div>
+
+<div class="project">
+  <div class="screenshot">
     <a href="http://www.gogrid.com" target="_blank"><img src="images/go_grid.jpg" alt="Go Grid"/></a>
   </div>
   <div class="info">
