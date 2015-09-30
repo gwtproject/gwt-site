@@ -202,7 +202,7 @@ Finally, if the input is not valid, warn users via a dialog box.
               newSymbolTextBox.setFocus(true);
               
               // Stock code must be between 1 and 10 chars that are numbers, letters, or dots.
-              if (!symbol.matches("^[0-9A-Z&#92;&#92;.]{1,10}$")) {
+              if (!symbol.matches("^[0-9A-Z\\.]{1,10}$")) {
                 Window.alert("'" + symbol + "' is not a valid symbol.");
                 newSymbolTextBox.selectAll();
                 return;
