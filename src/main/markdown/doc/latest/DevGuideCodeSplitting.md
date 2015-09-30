@@ -45,7 +45,7 @@ public class Hello implements EntryPoint {
   public void onModuleLoad() {
     Button b = new Button("Click me", new ClickHandler() {
       public void onClick(ClickEvent event) {
-        <strong>Window.alert("Hello, AJAX");</strong>
+        Window.alert("Hello, AJAX");
       }
     });
 
@@ -62,7 +62,7 @@ public class Hello implements EntryPoint {
   public void onModuleLoad() {
     Button b = new Button("Click me", new ClickHandler() {
       public void onClick(ClickEvent event) {
-        <strong>GWT.runAsync(new RunAsyncCallback() {
+        GWT.runAsync(new RunAsyncCallback() {
           public void onFailure(Throwable caught) {
             Window.alert("Code download failed");
           }
@@ -70,7 +70,7 @@ public class Hello implements EntryPoint {
           public void onSuccess() {
             Window.alert("Hello, AJAX");
           }
-        });</strong>
+        });
       }
     });
 
