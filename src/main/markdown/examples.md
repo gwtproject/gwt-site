@@ -197,8 +197,7 @@ was built using GWT. Use the free trial to see it in action.</div>
     <div class="name"><a href="https://getbookedin.com/?cid=256" target="_blank">BookedIN</a></div>
     <div class="snippet">BookedIN is an online appointment booking, scheduling and payment system for small business.
       Customers can book and pay for appointments online, and the business owner can automate their internal booking
-      process, reducing their administrative workload. BookedIN uses <a href="https://gwtp.arcbees.com">GWTP</a>
-      which has helped to simplify and accelerate development. </div>
+      process, reducing their administrative workload. BookedIN uses <a href="https://gwtp.arcbees.com">GWTP</a>. </div>
     </div>
 </div>
 
