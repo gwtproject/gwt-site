@@ -116,22 +116,6 @@ Please note that the applications linked from this page are provided by third-pa
       </div>
     </div>
 
-    <div class="project">
-      <div class="screenshot">
-        <a href="http://sticky.appspot.com" target="_blank"><img src="images/sticky.png" alt="Screenshot"/></a>
-      </div>
-      <div class="info">
-        <div class="name"><a href="http://sticky.appspot.com" target="_blank">Sticky</a></div>
-        <div class="snippet">A sticky note application built using GWT and Google App Engine. The source for this sample is included
-          with the <a href="//developers.google.com/appengine/">App Engine SDK</a>. </div>
-        <div class="apis">
-          <div class="head">GWT features used:</div>
-          <div class="item"><a href="doc/latest/DevGuideUiWidgets.html">UI widgets</a></div>
-          <div class="item"><a href="doc/latest/DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">Polymorphic RPC</a></div>
-        </div>
-      </div>
-    </div>
-
     <br>
     The source for these examples as well as others can be found in your GWT distribution under the `samples/` directory. If you haven't downloaded GWT yet, you can download it <a href="download.html">here</a>.
 
@@ -148,9 +132,9 @@ GWT is being used by tens of thousands of projects around the world. Take a look
   </div>
   <div class="info">
     <div class="name"><a href="http://www.google.com/inbox" target="_blank">Google Inbox</a></div>
-    <div class="snippet">Google Inbox is a fresh start that goes beyond email to help you get back to what matters. 
-	Inbox is using a new approach to 
-	<a href="https://www.youtube.com/watch?feature=player_embedded&v=KdCs85jqcH0#t=747">delivering multiplatform native applications</a> 
+    <div class="snippet">Google Inbox is a fresh start that goes beyond email to help you get back to what matters.
+	Inbox is using a new approach to
+	<a href="https://www.youtube.com/watch?feature=player_embedded&v=KdCs85jqcH0#t=747">delivering multiplatform native applications</a>
 	using common code base. GWT is used to deliver the Web version.
 	<p>Google is using GWT in number of other public services, including:
 		<a href="https://docs.google.com/spreadsheets" target="_blank">Spreadsheets</a>,
@@ -177,8 +161,8 @@ GWT is being used by tens of thousands of projects around the world. Take a look
   </div>
   <div class="info">
     <div class="name"><a href="https://ruxit.com" target="_blank">ruxit</a></div>
-    <div class="snippet">ruxit is a cloud-based application performance management solution that offers unified monitoring of 
-user experience, servers, applications, infrastructure and networks &ndash; all with simple auto-configuration. The entire product UI 
+    <div class="snippet">ruxit is a cloud-based application performance management solution that offers unified monitoring of
+user experience, servers, applications, infrastructure and networks &ndash; all with simple auto-configuration. The entire product UI
 was built using GWT. Use the free trial to see it in action.</div>
   </div>
 </div>
@@ -203,6 +187,18 @@ was built using GWT. Use the free trial to see it in action.</div>
     <div class="snippet">GAE Studio helps you optimize applications hosted on Google App Engine. GAE Studio
     allows datastore exploration, modification, deletion, import and export. Think of it as your swiss army knife for developing GAE applications!</div>
   </div>
+</div>
+
+<div class="project">
+  <div class="screenshot">
+    <a href="https://getbookedin.com/?cid=256" target="_blank"><img src="images/bookedin.png" alt="BookedIN"/></a>
+  </div>
+  <div class="info">
+    <div class="name"><a href="https://getbookedin.com/?cid=256" target="_blank">BookedIN</a></div>
+    <div class="snippet">BookedIN is an online appointment booking, scheduling and payment system for small business.
+      Customers can book and pay for appointments online, and the business owner can automate their internal booking
+      process, reducing their administrative workload. BookedIN uses <a href="https://gwtp.arcbees.com">GWTP</a>. </div>
+    </div>
 </div>
 
 <div class="project">
