@@ -19,8 +19,8 @@ and production mode (previously called "web mode") and explains how and when to 
     6.  [Using an IDE with Development Mode](#using_an_ide_with_dev_mode)
     7.  [An Example Launch](#an_example_launch)
     8.  [Language differences between production mode and development mode](#What_are_the_language_differences_between_production_mode_and_development_mo)
-    9.  [Using EJBs in development mode](#How_do_I_use_EJBs_in_development_mode?)
-    10.  [Using my own server in development mode instead of GWT's built-in Jetty instance](#How_do_I_use_my_own_server_in_development_mode_instead_of_GWT)
+    9.  [Using EJBs in development mode](#using_EJBs_in_development_mode)
+    10.  [Using my own server in development mode instead of GWT's built-in Jetty instance](#use_my_own_server_in_development_mode_instead_of_GWT)
     11.  [Development Mode Options](#What_options_can_be_passed_to_development_mode)
     12.  [Super Dev Mode](#SuperDevMode)
 *   [Running in Production Mode](#DevGuideProdMode)
@@ -86,7 +86,7 @@ project's war directory.
 
 You can disable this internal server by passing the `-noserver`
 option to development mode and instead run your own external server. See FAQ ["How do I use my own server in
-development mode instead of GWT's built-in server?"](#How_do_I_use_my_own_server_in_development_mode_instead_of_GWT)
+development mode instead of GWT's built-in server?"](#use_my_own_server_in_development_mode_instead_of_GWT)
 
 ### Launching a Browser<a id="launching_a_browser"></a>
 
@@ -265,14 +265,14 @@ subtle bugs to appear in production mode that don't appear in development mode. 
 
 A [full list of known language-related "gotchas"](DevGuideCodingBasicsCompatibility.html) is available in the GWT documentation.
 
-### Using EJBs in development mode<a id="How_do_I_use_EJBs_in_development_mode?"></a>
+### Using EJBs in development mode<a id="using_EJBs_in_development_mode"></a>
 
 GWT provides the `-noserver` option to the development mode shell script for this sort of thing.
 
 The `-noserver` option instructs development mode to not start the embedded Jetty instance. In its place, you would run the J2EE container of your choice and simply use that
 in place of the embedded Jetty instance.
 
-### Using my own server in development mode instead of GWT's built-in Jetty instance<a id="How_do_I_use_my_own_server_in_development_mode_instead_of_GWT's"></a>
+### Using my own server in development mode instead of GWT's built-in Jetty instance<a id="use_my_own_server_in_development_mode_instead_of_GWT"></a>
 
 If you do not need to use, or prefer not to use, the Jetty instance embedded in GWT's development mode to serve up your servlets for debugging, you can use the `-noserver`
 flag to prevent Jetty from starting, while still taking advantage of development mode for debugging your GWT client code.
