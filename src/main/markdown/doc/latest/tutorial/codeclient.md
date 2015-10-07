@@ -426,7 +426,7 @@ At this point you've built the interface components and coded all the underlying
 
 ![screenshot StockWatcher Bug](images/CodeClientBug.png)
 
-Although you have not compiled StockWatcher yet, you can test it in production mode here: Run StockWatcher
+Although you have not compiled StockWatcher yet, you can test it in production mode here: [Run StockWatcher](gettingstarted/StockWatcher.html)
 
 ### A Bug
 
