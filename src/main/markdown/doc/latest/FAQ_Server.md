@@ -88,7 +88,7 @@ The SOP applies to all GWT applications, whether running in web (compiled) mode 
 
 This can cause problems if you are attempting to develop a GWT application that uses server-side technologies not supported by the GWT development mode, such as EJBs or Python code.
 In such cases, you can use the `-noserver` argument for development mode to launch your GWT application from the server technology of your choice. For more information, see [How
-do I use my own server in development mode instead of GWT's built-in Jetty instance?](DevGuideCompilingAndDebugging.html#How_do_I_use_my_own_server_in_development_mode_instead_of_GWT) Even if you choose to use this feature, however, remember that the SOP still applies.
+do I use my own server in development mode instead of GWT's built-in Jetty instance?](DevGuideCompilingAndDebugging.html#use_my_own_server_in_development_mode_instead_of_GWT) Even if you choose to use this feature, however, remember that the SOP still applies.
 
 ## How do I make a call to the server if I am not using GWT RPC?<a id="How_do_I_make_a_call_to_the_server_if_I_am_not_using_GWT_RPC?"></a>
 
