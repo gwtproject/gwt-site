@@ -14,6 +14,9 @@ We've established a set of discussion groups/mailing lists to help you find answ
 *   **GWT Contributors** - If interested in contributing to the [GWT open source project](makinggwtbetter.html) this is your group. For more general questions not concerned with source code contribution, please use the general discussion forum.
     *   Go to the group: [google-web-toolkit-contributors](http://groups.google.com/group/google-web-toolkit-contributors)
     *   Subscribe via email: [google-web-toolkit-contributors-subscribe@googlegroups.com](mailto:google-web-toolkit-contributors-subscribe@googlegroups.com)
+*   **GWT Steering** - This is the place where the GWT Steering Committee talks in the open about the future of the project (roadmap, communication, etc.) and bureaucratic stuff. Your feedback is (more than) welcome, so do not hesitate to send it to the GWT Contributors group. 
+    *   Go to the group: [gwt-steering](http://groups.google.com/group/gwt-steering)
+    *   Subscribe via email: [google-web-toolkit-contributors-subscribe@googlegroups.com](mailto:gwt-steering-subscribe@googlegroups.com)
 *   **Speed Tracer** - If you are interested in hearing about new features, or in contributing to Speed Tracer.
     *   Go to the group: [speedtracer](https://groups.google.com/group/speedtracer)
     *   Visit the [codesite project](http://code.google.com/p/speedtracer).
