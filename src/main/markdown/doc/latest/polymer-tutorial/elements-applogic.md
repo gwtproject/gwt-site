@@ -27,6 +27,8 @@ In this section, we'll learn how to add logic to our UI. We'll touch on very bas
         </g:HTMLPanel>
 
      _**Tip**: You can use attributes to quickly define certain polymer actions such as `entry-animation='fade-in-animation'`._
+     
+     _**Note**: Don't forget to import all the new elements in the `Main.java` class._
 
 2.  Add all the fields defined in the `Main.ui.xml` file to the `Main.java` class.
 
