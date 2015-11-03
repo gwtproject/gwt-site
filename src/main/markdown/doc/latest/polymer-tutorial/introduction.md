@@ -25,7 +25,7 @@ Before we start, you might want to try out the [TodoList][6] application to see 
 [0]: https://www.polymer-project.org/1.0/
 [1]: https://en.wikipedia.org/wiki/Web_Components
 [2]: http://www.google.es/design/spec/material-design/introduction.html
-[3]: https://github.com/vaadin/gwt-polymer-elements
+[3]: https://vaadin.com/gwt
 [4]: https://github.com/vaadin/gwt-api-generator
 [5]: https://elements.polymer-project.org/
 [6]: http://manolo.github.io/gwt-polymer-todo-list/demo/TodoListWidgets.html
