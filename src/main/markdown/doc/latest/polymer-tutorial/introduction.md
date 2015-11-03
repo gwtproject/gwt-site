@@ -3,7 +3,7 @@
 ## **Disclaimer** <a id="pol-disclaimer"></a>:
 _This tutorial is based on the usage of three third-party **open-source** libraries, external to, and not managed by, the **gwtproject** organization_:
 
-* _[**Polymer**][1]: a JavaScript library for building web applications with Web Components. Polymer is owned by **Google Inc**._
+* _[**Polymer**][1]: a JavaScript library for building web applications with Web Components. Poylmer is the implementation of Google's Material Design. Polymer is owned by **Google Inc**._
 * _[**Polymer Elements**][5]: a collection of widgets built in Polymer. Owned by **Google Inc**._
 * _[**GWT-Polymer-Elements**][3]: a Java wrapper enabling Polymer Elements to be used in GWT projects. Owned by **Vaadin Ltd**._
 
