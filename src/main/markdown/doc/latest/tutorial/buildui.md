@@ -43,7 +43,7 @@ GWT provides several widgets to create fields that users can type in:
 *   TextArea widget, a multi-line text box
 *   SuggestBox, a text box that displays a pre-configured set of items
 
-StockWatcher users will type in a stock code which is single line of text; therefore,
+StockWatcher users will type in a stock code which is a single line of text; therefore,
 implement a [TextBox](../RefWidgetGallery.html#textbox) widget.
 
 ### Label
