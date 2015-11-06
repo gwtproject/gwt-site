@@ -1,6 +1,7 @@
 The GWT Release Notes
 =====================
 
+* [2.8.0 (Beta)](#Release_Notes_2_8_0_BETA)
 * [2.7.0](#Release_Notes_2_7_0)
 * [2.7.0 (RC1)](#Release_Notes_2_7_0_RC1)
 * [2.6.1](#Release_Notes_2_6_1)
@@ -54,6 +55,55 @@ The GWT Release Notes
 **Note** - M1 = first milestone, RC1 = first release candidate
 
 * * *
+<a id="Release_Notes_Current"></a>
+## <a id="Release_Notes_2_8_0_BETA"></a> Release Notes for 2.8.0 (Beta)
+
+### Highlights
+
+- Java 8 syntax supported. 
+
+- [JsInterop new specification](https://docs.google.com/document/d/10fmlEYIHcyead_4R1S5wKGs1t2I7Fnp_PaNaa7XTEk0) implemented.
+
+- GSS is not considered as experimental anynmore and old CssResource is now deprecated.
+
+### Deprecations
+
+- Old CssResource syntax is now deprecated.
+
+### Compiler changes
+
+- Java 8 syntax is now supported by the compiler.
+
+- Many bugfixes.
+
+### Library Changes
+
+#### JDK emulation
+
+
+#### Logging and Stack Traces
+
+
+#### GSS support
+
+GSS is not experimental anymore but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refers to [this document]()
+
+#### Internationalization
+
+#### Browser API changes
+
+#### Widgets
+
+### Developer Tool Changes
+
+#### Dev Mode
+
+#### Super Dev Mode
+
+#### Testing
+
+For even more detail, see the [Issue Tracker.]
+(https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_8)
 
 
 
@@ -256,8 +306,6 @@ tests are always run in an HTML page in standards mode.)
 
 For even more detail, see the [Issue Tracker.]
 (https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_7)
-
-<a id="Release_Notes_Current"></a>
 
 ## <a id="Release_Notes_2_6_1"></a> Release Notes for 2.6.1
 
