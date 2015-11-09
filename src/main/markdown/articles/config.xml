@@ -9,6 +9,7 @@
 			<entry name="articles" displayName="Overview" description="A summary of all articles"></entry>
 			<entry name="dom_events_memory_leaks_and_you" displayName="DOM Memory Leaks" description="How GWT tackles memory leaks"></entry>
 			<entry name="dynamic_host_page" displayName="Dynamic Host Page" description="Running GWT in dynamic host pages"></entry>
+			<entry name="gss_migration" displayName="GSS migration" description="Migrating from CssResource to GssResource"></entry>
 			<entry name="elemental" displayName="Elemental" description="Elemental"></entry>
 			<entry name="fragment_merging" displayName="Fragment Merging" description="Fragment Merging"></entry>
 			<entry name="gwt-iphone" displayName="GWT iPhone" description="GWT iPhone"></entry>
