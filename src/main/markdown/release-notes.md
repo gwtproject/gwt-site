@@ -86,7 +86,7 @@ The GWT Release Notes
 
 #### GSS support
 
-GSS is not experimental anymore but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refers to [this document]()
+GSS is not experimental anymore but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
 
 #### Internationalization
 
