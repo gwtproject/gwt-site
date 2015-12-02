@@ -73,13 +73,19 @@ The GWT Release Notes
 ### Compiler changes
 
 - Java 8 syntax is now supported by the compiler.
-
+- New optimizer framework that reruns the optimization process only on the part of the AST that were impacted by the changes since its last run. That speedup compilation of large application.
+-
 - Many bugfixes.
 
 ### Library Changes
+- Generic Accessor for GWT Properties. You can now use `System.getProperty()` to access the value of any configuration or binding property at compile time.
+- [Configurable Checks](https://docs.google.com/document/d/1AegOijkqg9ix6wtMMPYU0JeDBZXIzSgopDifPV7gH9E/edit?usp=sharing)
+
 
 #### JDK emulation
-
+- Put operations with HashMap are 2.8x faster.
+- Long Division are 5x faster.
+- Double/Boolean are not boxed anymore.
 
 #### Logging and Stack Traces
 
@@ -94,11 +100,10 @@ GSS is not experimental anymore but it's not enabled by default for easier and s
 
 #### Widgets
 
-### Developer Tool Changes
-
 #### Dev Mode
 
 #### Super Dev Mode
+ - SDM caches on disk the MinimalRebuildCache object, which speeds up the first SDM compile on a restart of the process.
 
 #### Testing
 
