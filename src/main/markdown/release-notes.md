@@ -1,7 +1,7 @@
 The GWT Release Notes
 =====================
 
-* [2.8.0 (Beta)](#Release_Notes_2_8_0_BETA)
+* [2.8.0 (RC1)](#Release_Notes_2_8_0_RC1)
 * [2.7.0](#Release_Notes_2_7_0)
 * [2.7.0 (RC1)](#Release_Notes_2_7_0_RC1)
 * [2.6.1](#Release_Notes_2_6_1)
@@ -56,7 +56,7 @@ The GWT Release Notes
 
 * * *
 <a id="Release_Notes_Current"></a>
-## <a id="Release_Notes_2_8_0_BETA"></a> Release Notes for 2.8.0 (Beta)
+## <a id="Release_Notes_2_8_0_RC1"></a> Release Notes for 2.8.0 (RC1)
 
 ### Highlights
 
@@ -91,8 +91,10 @@ The GWT Release Notes
 
 
 #### GSS support
-
-GSS is not experimental anymore but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
+- GSS is not longer experimental but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
+- "For loop support" added
+- a new function concat() is now available to concatenate variable and string literal.
+- @gen-webkit-keyframes annotation: generate automaticaly @-webkit-keyframes block 
 
 #### Internationalization
 
