@@ -64,7 +64,7 @@ The GWT Release Notes
 
 - [JsInterop new specification](https://docs.google.com/document/d/10fmlEYIHcyead_4R1S5wKGs1t2I7Fnp_PaNaa7XTEk0) implemented.
 
-- GSS is not considered as experimental anynmore and old CssResource is now deprecated.
+- GSS is not considered as experimental anymore and old /CssResource is now deprecated.
 
 ### Deprecations
 
