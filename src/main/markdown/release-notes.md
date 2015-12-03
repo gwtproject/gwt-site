@@ -1,7 +1,7 @@
 The GWT Release Notes
 =====================
 
-* [2.8.0 (RC1)](#Release_Notes_2_8_0_RC1)
+* [2.8.0 (RC1)](#Release_Notes_2_8_0_BETA1)
 * [2.7.0](#Release_Notes_2_7_0)
 * [2.7.0 (RC1)](#Release_Notes_2_7_0_RC1)
 * [2.6.1](#Release_Notes_2_6_1)
@@ -56,7 +56,7 @@ The GWT Release Notes
 
 * * *
 <a id="Release_Notes_Current"></a>
-## <a id="Release_Notes_2_8_0_RC1"></a> Release Notes for 2.8.0 (RC1)
+## <a id="Release_Notes_2_8_0_BETA1"></a> Release Notes for 2.8.0 (Beta1)
 
 ### Highlights
 
@@ -69,7 +69,7 @@ The GWT Release Notes
 ### Deprecations
 
 - Old CssResource syntax is now deprecated. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
-- Classic dev mode deprecated. (TODO add a link to instructions for switching back test cases temporarily)
+- Classic dev mode deprecated.You can switch back to dev mode for your test cases temporarily by passing gwt.args='-devMode'.
 
 ### Compiler changes
 
