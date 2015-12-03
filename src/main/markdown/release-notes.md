@@ -69,7 +69,7 @@ The GWT Release Notes
 ### Deprecations
 
 - Old CssResource syntax is now deprecated. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
-- Classic dev mode deprecated.You can switch back to dev mode for your test cases temporarily by passing gwt.args='-devMode'.
+<!-- (Will be enabled in RC1)- Classic dev mode deprecated.You can switch back to dev mode for your test cases temporarily by passing gwt.args='-devMode'.-->
 
 ### Compiler changes
 
