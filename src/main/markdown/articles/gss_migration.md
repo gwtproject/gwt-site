@@ -137,7 +137,7 @@ setting a configuration property:
 
 
 ```
-<set-configuration-property name="CssResource.<strong>gssDefaultInUiBinder</strong>" value="true" />
+<set-configuration-property name="CssResource.gssDefaultInUiBinder" value="true" />
 ```
 
 Note: This only applies of there is no gss attribute on the given style
