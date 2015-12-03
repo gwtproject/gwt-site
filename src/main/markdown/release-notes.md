@@ -1,6 +1,8 @@
 The GWT Release Notes
 =====================
 
+<!-- * [2.8.0 (RC1)](#Release_Notes_2_8_0_RC1)-->
+* [2.8.0 (Beta1)](#Release_Notes_2_8_0_BETA1)
 * [2.7.0](#Release_Notes_2_7_0)
 * [2.7.0 (RC1)](#Release_Notes_2_7_0_RC1)
 * [2.6.1](#Release_Notes_2_6_1)
@@ -54,6 +56,66 @@ The GWT Release Notes
 **Note** - M1 = first milestone, RC1 = first release candidate
 
 * * *
+<a id="Release_Notes_Current"></a>
+<!-- ## <a id="Release_Notes_2_8_0_RC1"></a> Release Notes for 2.8.0 (RC1)
+
+### Deprecations
+- Classic dev mode deprecated.You can switch back to dev mode for your test cases temporarily by passing gwt.args='-devMode'. -->
+
+## <a id="Release_Notes_2_8_0_BETA1"></a> Release Notes for 2.8.0 (Beta1)
+
+### Highlights
+
+- Java 8 syntax supported. 
+- JsInterop is graduated from eperimental. See [final JsInterop specification](https://docs.google.com/document/d/10fmlEYIHcyead_4R1S5wKGs1t2I7Fnp_PaNaa7XTEk0).
+- GSS is no longer considered as experimental and old CssResource is now deprecated.
+
+### Deprecations
+
+- Old CssResource syntax is now deprecated. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
+
+### Compiler changes
+
+- Java 8 syntax is now supported by the compiler.
+- New optimizer framework that reruns the optimization process only on the part of the AST that were impacted by the changes since its last run. That speedup compilation of large application.
+- Added better type specialization that enables better optimizations.
+- Many bugfixes.
+
+### Library Changes
+- Generic Accessor for GWT Properties. You can now use `System.getProperty()` to access the value of any configuration or binding property at compile time.
+- [Configurable Checks](https://docs.google.com/document/d/1AegOijkqg9ix6wtMMPYU0JeDBZXIzSgopDifPV7gH9E/edit?usp=sharing)
+- Added -setProperty flag
+
+#### JDK emulation
+- Started using ES6 Maps when available for HashMap/HashSet that yields up 3x performance improvements.
+- Switch to new long emulation with signification performance improvements (e.g. divisions 50x faster for smaller numbers)
+- Double/Boolean are not boxed anymore.
+
+#### Logging and Stack Traces
+- Improved logging and stack traces for superdev mode.
+
+#### GSS support
+- GSS is not longer experimental but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
+- "For loop support" added
+- a new function concat() is now available to concatenate variable and string literal.
+- @gen-webkit-keyframes annotation: generate automaticaly @-webkit-keyframes block 
+
+#### Internationalization
+
+#### Browser API changes
+
+#### Widgets
+
+#### Dev Mode
+- Dev Mode is now deprecated
+
+#### Super Dev Mode
+ - SDM caches on disk the MinimalRebuildCache object, which speeds up the first SDM compile on a restart of the process.
+
+#### Testing
+
+For even more detail, see the [Issue Tracker.]
+(https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_8)
 
 
 
@@ -256,8 +318,6 @@ tests are always run in an HTML page in standards mode.)
 
 For even more detail, see the [Issue Tracker.]
 (https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_7)
-
-<a id="Release_Notes_Current"></a>
 
 ## <a id="Release_Notes_2_6_1"></a> Release Notes for 2.6.1
 
