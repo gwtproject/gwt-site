@@ -19,16 +19,15 @@ want to use the Gradual migration path.
 
 # Configuration Properties
 
-## 
-Enable GSS
+## Enable GSS
 
 Enabling GSS will tell the GWT compiler to use GSS for all CssResource
 interfaces. This flag can either be “false” (default) or “true”.
 
 
-<pre class=prettyprint>
-&lt;set-configuration-property name="CssResource.enableGss" value="true" />
-</pre>
+```
+<set-configuration-property name="CssResource.enableGss" value="true" />
+```
 
 ## Enable Autoconversion
 
@@ -36,10 +35,9 @@ If GSS is enabled and the GWT compiler finds a .css file, it will first convert
 this file to gss and then feed it into GSS on the fly.
 
 
-<pre class=prettyprint>
-&lt;set-configuration-property name="CssResource.conversionMode" value="strict"
-/>
-</pre>
+```
+<set-configuration-property name="CssResource.conversionMode" value="strict" />
+```
 
 ## Autoconversion modes
 
@@ -62,18 +60,18 @@ All of Google’s application have been using GSS instead of CSS since mid 2015.
 <strong>This would be invalid:</strong>
 
 
-<pre class=prettyprint>
+```
 // Invalid use since css and gss are mixed one method
 @Source({"def.css", "converted.gss"})
 MyCssResource css();
-</pre>
+```
 
   * For base types in the SDK  every css file has a gss equivalent.
 
 # Gradual migration
 
-  1. [Run the conversion tool on a certain subdirectory of your app, this will create
-a .gss file for ](#heading=h.1dt9dd9gim7n)every .css file.
+  1. Run the conversion tool on a certain subdirectory of your app, this will create
+     a .gss file for every .css file.
   2. Change all extensions on ClientBundle to .gss to use the new files.
   3. Verify that this part of the app is not visually broken
   4. Submit your change
@@ -82,9 +80,9 @@ a .gss file for ](#heading=h.1dt9dd9gim7n)every .css file.
 turn off auto conversion:
 
 
-<pre class=prettyprint>
-&lt;set-configuration-property name="CssResource.conversionMode" value="off" />
-</pre>
+```
+<set-configuration-property name="CssResource.conversionMode" value="off" />
+```
 
   7. Remove all .css
   8. Live happily ever after in CSS3 land 
@@ -100,9 +98,9 @@ turn off auto conversion:
   6. Turn off auto conversion for app:
 
 
-<pre class=prettyprint>
-&lt;set-configuration-property name="CssResource.conversionMode" value="off" />
-</pre>
+```
+<set-configuration-property name="CssResource.conversionMode" value="off" />
+```
 
   7. Live happily ever after in CSS3 land
 
@@ -112,25 +110,25 @@ Since UiBinder has no notion of a file extension we extended UiBinder to allow
 for an extra attribute on the style tag. To use GSS in UiBinder you have to add <strong>gss=”true”</strong>.
 
 
-<pre class=prettyprint>
-&lt;ui:style gss="true" >
+```
+<ui:style gss="true" >
   /* In here you can now use GSS */
-&lt;/ui:style>
-</pre>
+</ui:style>
+```
 
 Note: Like on CssResource css and gss can not be mixed here. If you importing a
 .gss file in your UiBinder file you will need to enable gss and also write Gss
 inside of the style element:
 
 
-<pre class=prettyprint>
-&lt;ui:style gss="true" src="foo.gss">
+```
+<ui:style gss="true" src="foo.gss">
   /* Need to use GSS here now! */
-&lt;/ui:style>
+</ui:style>
 /* This is invalid! */
-&lt;ui:style gss="true" src="foo.css">
-&lt;/ui:style>
-</pre>
+<ui:style gss="true" src="foo.css">
+</ui:style>
+```
 
 ## Setting the default in UiBinder
 
@@ -138,9 +136,9 @@ You can also control the default for CSS / GSS in all UiBinder fields by
 setting a configuration property:
 
 
-<pre class=prettyprint>
-&lt;set-configuration-property name="CssResource.<strong>gssDefaultInUiBinder</strong>" value="true" />
-</pre>
+```
+<set-configuration-property name="CssResource.<strong>gssDefaultInUiBinder</strong>" value="true" />
+```
 
 Note: This only applies of there is no gss attribute on the given style
 element.
@@ -158,10 +156,10 @@ at all.
 You can run the tool like this:
 
 
-<pre class=prettyprint>
+```
 $ java -cp gwt-user.jar com.google.gwt.resources.converter.Css2Gss
 fileToConvert.css
-</pre>
+```
 
 ## Known conversion tool issues
 
@@ -181,10 +179,10 @@ In order to get around this limitation the converter allows you to specify a
 list of css files to be parsed for building up scope:
 
 
-<pre class=prettyprint>
-$ /google/src/head/depot/google3/third_party/java/gwt/bin/Css2Gss -scope
+```
+$ java -cp gwt-user.jar com.google.gwt.resources.converter.Css2Gss -scope
 foo.css,bar.css fileToConvert.css
-</pre>
+```
 
 ## Known issues with GSS
 
