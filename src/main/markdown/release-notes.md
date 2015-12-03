@@ -100,12 +100,6 @@ The GWT Release Notes
 - a new function concat() is now available to concatenate variable and string literal.
 - @gen-webkit-keyframes annotation: generate automaticaly @-webkit-keyframes block 
 
-#### Internationalization
-
-#### Browser API changes
-
-#### Widgets
-
 #### Dev Mode
 - Dev Mode is now deprecated
 
