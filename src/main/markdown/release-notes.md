@@ -62,33 +62,34 @@ The GWT Release Notes
 
 - Java 8 syntax supported. 
 
-- [JsInterop new specification](https://docs.google.com/document/d/10fmlEYIHcyead_4R1S5wKGs1t2I7Fnp_PaNaa7XTEk0) implemented.
+- JsInterop is graduated from eperimental. See [final JsInterop specification](https://docs.google.com/document/d/10fmlEYIHcyead_4R1S5wKGs1t2I7Fnp_PaNaa7XTEk0).
 
-- GSS is no longer considered as experimental and old /CssResource is now deprecated.
+- GSS is no longer considered as experimental and old CssResource is now deprecated.
 
 ### Deprecations
 
-- Old CssResource syntax is now deprecated.
+- Old CssResource syntax is now deprecated. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
+- Classic dev mode deprecated. (TODO add a link to instructions for switching back test cases temporarily)
 
 ### Compiler changes
 
 - Java 8 syntax is now supported by the compiler.
 - New optimizer framework that reruns the optimization process only on the part of the AST that were impacted by the changes since its last run. That speedup compilation of large application.
--
+- Added better type specialization that enables better optimizations.
 - Many bugfixes.
 
 ### Library Changes
 - Generic Accessor for GWT Properties. You can now use `System.getProperty()` to access the value of any configuration or binding property at compile time.
 - [Configurable Checks](https://docs.google.com/document/d/1AegOijkqg9ix6wtMMPYU0JeDBZXIzSgopDifPV7gH9E/edit?usp=sharing)
-
+- Added -setProperty flag
 
 #### JDK emulation
-- Put operations with HashMap are 2.8x faster.
-- Long Division are 5x faster.
+- Started using ES6 Maps when available for HashMap/HashSet that yields up 3x performance improvements.
+- Switch to new long emulation with signification performance improvements (e.g. divisions 50x faster for smaller numbers)
 - Double/Boolean are not boxed anymore.
 
 #### Logging and Stack Traces
-
+- Improved logging and stack traces for superdev mode.
 
 #### GSS support
 - GSS is not longer experimental but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
@@ -103,6 +104,7 @@ The GWT Release Notes
 #### Widgets
 
 #### Dev Mode
+- Dev Mode is now deprecated
 
 #### Super Dev Mode
  - SDM caches on disk the MinimalRebuildCache object, which speeds up the first SDM compile on a restart of the process.
