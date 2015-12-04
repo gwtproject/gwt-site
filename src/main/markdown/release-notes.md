@@ -56,7 +56,9 @@ The GWT Release Notes
 **Note** - M1 = first milestone, RC1 = first release candidate
 
 * * *
+
 <a id="Release_Notes_Current"></a>
+
 <!-- ## <a id="Release_Notes_2_8_0_RC1"></a> Release Notes for 2.8.0 (RC1)
 
 ### Deprecations
