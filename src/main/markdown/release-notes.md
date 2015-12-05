@@ -66,8 +66,8 @@ The GWT Release Notes
 
 ### Highlights
 
-- Java 8 syntax supported. 
-- JsInterop is graduated from eperimental. See [final JsInterop specification](https://docs.google.com/document/d/10fmlEYIHcyead_4R1S5wKGs1t2I7Fnp_PaNaa7XTEk0).
+- Java 8 syntax supported.
+- JsInterop has graduated from experimental. See [final JsInterop specification](https://docs.google.com/document/d/10fmlEYIHcyead_4R1S5wKGs1t2I7Fnp_PaNaa7XTEk0).
 - GSS is no longer considered as experimental and old CssResource is now deprecated.
 
 ### Deprecations
@@ -98,7 +98,7 @@ The GWT Release Notes
 - GSS is not longer experimental but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
 - "For loop support" added
 - a new function concat() is now available to concatenate variable and string literal.
-- @gen-webkit-keyframes annotation: generate automaticaly @-webkit-keyframes block 
+- @gen-webkit-keyframes annotation: generate automaticaly @-webkit-keyframes block
 
 #### Dev Mode
 - Dev Mode is now deprecated
@@ -362,7 +362,7 @@ raised during release candidate testing.
 
 ### Highlights
 
-- Java 7 is supported and is now the default. (This can be overridden using 
+- Java 7 is supported and is now the default. (This can be overridden using
 `-sourceLevel 6`)
 - GWT Development Mode will [no longer be available for Chrome](http://blog.chromium.org/2013/09/saying-goodbye-to-our-old-friend-npapi.html)
 sometime in 2014, so we improved alternate ways of debugging. There are improvements to Super Dev Mode, asserts,
@@ -385,7 +385,7 @@ compatibility.
 - Boolean flags can consistently be disabled using '-no'.
 - Experimental flags consistently start with '-X' or '-Xno' to disable.
 - The deprecated `-out` flags were removed
-- Added flags for turning specific optimizations on and off. 
+- Added flags for turning specific optimizations on and off.
 - The `-saveSource` and `-saveSourceOutput *dest*` options may be used to write source files used
 by the GWT app to an output directory. (Combined with the `includeSourceMapUrl` config property,
 it is possible to set up source-level debugging outside Super Dev Mode.)
@@ -1412,7 +1412,7 @@ generates `ant test` targets.
 *   When running development mode on on Chrome, any JavaScript
 objects that pass into Java code will be assigned a new property `__gwt_ObjectId`.
 This could break native code that looks iterates through the
-properties of such an object. To work around this issue, see this 
+properties of such an object. To work around this issue, see this
 [example](http://code.google.com/p/google-web-toolkit/source/diff?old=4807&r=7063&format=side&path=/trunk/user/src/com/google/gwt/json/client/JSONObject.java)
 of our changes to `JSONObject` (scroll to the bottom).
 *   Compile reports (formerly SOYC reports) are now generated with
@@ -1787,8 +1787,8 @@ This release has only a couple of minor changes from [1.4.59](#Release_Notes_1_4
 from showing up in reports.
 *   Fixed a bug in the hosted mode servlet context emulation where
 getResource() would fail to find a file in a module's public path.
-*   Compiler output files of the form `_module_.cache.html` used to contain html intended as a 
-helpful note to a developer. This message has now been removed because screen readers and some 
+*   Compiler output files of the form `_module_.cache.html` used to contain html intended as a
+helpful note to a developer. This message has now been removed because screen readers and some
 browsers would display this content to end users.
 
 * * *
@@ -1989,7 +1989,7 @@ This release also includes API changes that may require minor tweaks to
 existing code. Any such changes that affect you should only take a few
 minutes to rectify.
 
-#### 
+####
 [JavaScriptObject](doc/html/com.google.gwt.core.client.JavaScriptObject)
 
 *   Although subclassing JavaScriptObject is not supported, some
@@ -1999,7 +1999,7 @@ constructor. Read the source code for [Element](doc/html/com.google.gwt.user.cli
 example of how JavaScriptObject must be subclassed now (that is, if
 subclassing were supported...which, of course, it isn't).
 
-#### 
+####
 [DeferredCommand](doc/html/com.google.gwt.user.client.DeferredCommand)
 
 *   The add() method is deprecated in favor of addCommand() in
@@ -2008,7 +2008,7 @@ interface. Had we simply added a new method overload, existing code
 that passed in a null literal would have failed to compile.
 *   The new addPause() method should be used instead of add(null).
 
-#### 
+####
 [UIObject](doc/html/com.google.gwt.user.client.ui.UIObject)
 
 *   The intended use and behavior of style names has been
