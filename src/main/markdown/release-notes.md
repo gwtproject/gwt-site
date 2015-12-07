@@ -2,47 +2,47 @@ The GWT Release Notes
 =====================
 
 <!-- * [2.8.0 (RC1)](#Release_Notes_2_8_0_RC1)-->
-* [2.8.0 (Beta1)](#Release_Notes_2_8_0_BETA1)
-* [2.7.0](#Release_Notes_2_7_0)
-* [2.7.0 (RC1)](#Release_Notes_2_7_0_RC1)
-* [2.6.1](#Release_Notes_2_6_1)
-* [2.6.0](#Release_Notes_2_6_0)
-* [2.6.0 (RC4)](#Release_Notes_2_6_0_RC4)
-* [2.6.0 (RC3)](#Release_Notes_2_6_0_RC3)
-* [2.6.0 (RC2)](#Release_Notes_2_6_0_RC2)
-* [2.6.0 (RC1)](#Release_Notes_2_6_0_RC1)
-* [2.5.1](#Release_Notes_2_5_1)
-* [2.5.1 (RC1)](#Release_Notes_2_5_1_RC1)
-* [2.5.0](#Release_Notes_2_5_0)
-* [2.5.0 (RC2)](#Release_Notes_2_5_0_RC2)
-* [2.5.0 (RC1)](#Release_Notes_2_5_0_RC1)
-* [2.4.0](#Release_Notes_2_4_0)
-* [2.3.0](#Release_Notes_2_3_0)
-* [2.3.0 (M1)](#Release_Notes_2_3_0_M1)
-* [2.2.0](#Release_Notes_2_2_0)
-* [2.1.1](#Release_Notes_2_1_1)
-* [2.1.0](#Release_Notes_2_1_0)
-* [2.1.0 (RC1)](#Release_Notes_2_1_0_RC1)
-* [2.1.0 (M3)](#Release_Notes_2_1_0_M3)
-* [2.1.0 (M2)](#Release_Notes_2_1_0_M2)
-* [2.1.0 (M1)](#Release_Notes_2_1_0_M1)
-* [2.0.4](#Release_Notes_2_0_4)
-* [2.0.3](#Release_Notes_2_0_3)
-* [2.0.2](#Release_Notes_2_0_2)
-* [2.0.1](#Release_Notes_2_0_1)
-* [2.0.0](#Release_Notes_2_0_0)
-* [2.0.0 (RC2)](#Release_Notes_2_0_0_rc2)
-* [2.0.0 (RC1)](#Release_Notes_2_0_0_rc1)
-* [1.7.1](#Release_Notes_1_7_1)
-* [1.7.0](#Release_Notes_1_7_0)
-* [1.6.4](#Release_Notes_1_6_4)
-* [1.6.3](#Release_Notes_1_6_3)
-* [1.6.2](#Release_Notes_1_6_2)
-* [1.5.3](#Release_Notes_1_5_3)
-* [1.5.2](#Release_Notes_1_5_2)
-* [1.5.1 (RC2)](#Release_Notes_1_5_1)
-* [1.5.0 (RC)](#Release_Notes_1_5_0)
-* [1.4.60](#Release_Notes_1_4_60)
+* [2.8.0 (Beta1)](#Release_Notes_2_8_0_BETA1) December 3, 2015
+* [2.7.0](#Release_Notes_2_7_0) November 20, 2014
+* [2.7.0 (RC1)](#Release_Notes_2_7_0_RC1) October 30, 2014
+* [2.6.1](#Release_Notes_2_6_1) May 9, 2014
+* [2.6.0](#Release_Notes_2_6_0) January 23, 2014
+* [2.6.0 (RC4)](#Release_Notes_2_6_0_RC4) January 9, 2014
+* [2.6.0 (RC3)](#Release_Notes_2_6_0_RC3) December 5, 2013
+* [2.6.0 (RC2)](#Release_Notes_2_6_0_RC2) December 2, 2013
+* [2.6.0 (RC1)](#Release_Notes_2_6_0_RC1) November 7, 2013
+* [2.5.1](#Release_Notes_2_5_1) March 9, 2013
+* [2.5.1 (RC1)](#Release_Notes_2_5_1_RC1) February 5, 2013
+* [2.5.0](#Release_Notes_2_5_0) October 25, 2012
+* [2.5.0 (RC2)](#Release_Notes_2_5_0_RC2) October 4, 2012
+* [2.5.0 (RC1)](#Release_Notes_2_5_0_RC1) June 27, 2012
+* [2.4.0](#Release_Notes_2_4_0) September 7, 2011
+* [2.3.0](#Release_Notes_2_3_0) May 2, 2011
+* [2.3.0 (M1)](#Release_Notes_2_3_0_M1) April 2, 2011
+* [2.2.0](#Release_Notes_2_2_0) February 11, 2011
+* [2.1.1](#Release_Notes_2_1_1) December 17, 2010
+* [2.1.0](#Release_Notes_2_1_0) October 27, 2010
+* [2.1.0 (RC1)](#Release_Notes_2_1_0_RC1) October 12, 2010
+* [2.1.0 (M3)](#Release_Notes_2_1_0_M3) August 25, 2010
+* [2.1.0 (M2)](#Release_Notes_2_1_0_M2) July 2, 2010
+* [2.1.0 (M1)](#Release_Notes_2_1_0_M1) May 19, 2010
+* [2.0.4](#Release_Notes_2_0_4) June 30, 2010
+* [2.0.3](#Release_Notes_2_0_3) February 18, 2010
+* [2.0.2](#Release_Notes_2_0_2) February 12, 2010
+* [2.0.1](#Release_Notes_2_0_1) February 3, 2010
+* [2.0.0](#Release_Notes_2_0_0) December 9, 2009
+* [2.0.0 (RC2)](#Release_Notes_2_0_0_rc2) November 25, 2009	
+* [2.0.0 (RC1)](#Release_Notes_2_0_0_rc1) November 17, 2009
+* [1.7.1](#Release_Notes_1_7_1) September 22, 2009
+* [1.7.0](#Release_Notes_1_7_0) July 14, 2009
+* [1.6.4](#Release_Notes_1_6_4) April 7, 2009
+* [1.6.3](#Release_Notes_1_6_3) March 31, 2009
+* [1.6.2](#Release_Notes_1_6_2) March 18, 2009
+* [1.5.3](#Release_Notes_1_5_3) October 17, 2008
+* [1.5.2](#Release_Notes_1_5_2) August 28, 2008
+* [1.5.1 (RC2)](#Release_Notes_1_5_1) August 5, 2008
+* [1.5.0 (RC1)](#Release_Notes_1_5_0) May 27, 2008
+* [1.4.60](#Release_Notes_1_4_60) August 28, 2007
 * [1.4.59 (RC2)](#Release_Notes_1_4_59)
 * [1.4.10 (RC)](#Release_Notes_1_4_10)
 * [1.3.3](#Release_Notes_1_3_3)
