@@ -380,7 +380,7 @@ _**Tip**: Take a look at [paper-fab][1] documentation for available custom styli
 
 ## Summary
 
-Finally your `Main.gwt.xml` file should look like:
+Finally your `Main.ui.xml` file should look like:
 
     <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
                  xmlns:g='urn:import:com.google.gwt.user.client.ui'>
