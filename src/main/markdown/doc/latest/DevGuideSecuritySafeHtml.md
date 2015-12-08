@@ -168,7 +168,7 @@ public void setHTML(SafeHtml html, Direction dir);
 ```
 
 as safe alternatives to `setHTML(String)` and
-`setHTML(String, Direction)`.
+`setHTML(String, Direction)`.
 
 For example, the [`HTML`](/javadoc/latest/com/google/gwt/user/client/ui/HTML.html) widget has been
 augmented with the following constructors and methods:
@@ -323,8 +323,17 @@ accomplishes this guarantee by a combination of compile-time checks and run-time
 checks in the generated code (see however the note below with regards to a 
 limitation of the current implementation): 
 
-*   The template is parsed with a lenient HTML stream parser that accepts HTMLsimilar to what would typically be accepted by a web browser. The parser doesnot require that templates consist of balanced HTML tags. However, the parserand template code generator enforce the following constraints on inputtemplates: Template parameters may not appear in HTML comments,parameters may not appear in a Javascript context (e.g., inside a`<script>` tag, or in an `onclick`handler), parameters in HTML attributes can only appear in the value and must beenclosed in quotes (e.g., `<tag attribute="{0}">` would be allowed,`<tag {0} attribute={1}>` would not), and the template cannot end
-inside a tag or inside an attribute. For example, the following is not a validtemplate:
+*   The template is parsed with a lenient HTML stream parser that accepts HTML
+similar to what would typically be accepted by a web browser. The parser does
+not require that templates consist of balanced HTML tags. However, the parser
+and template code generator enforce the following constraints on input
+templates: Template parameters may not appear in HTML comments,
+parameters may not appear in a Javascript context (e.g., inside a`<script>` tag, or in an `onclick`
+handler), parameters in HTML attributes can only appear in the value and must been
+closed in quotes (e.g., `<tag attribute="{0}">` would be allowed,
+`<tag {0} attribute={1}>` would not), and the template cannot end
+inside a tag or inside an attribute. For example, the following is not a valid
+template:
 
 ```
 <span><{0} class="xyz" {1}="..."/></span>
@@ -357,7 +366,8 @@ follows:
 
 *   If the declared type of the corresponding template method parameter is
 `SafeHtml` (for example, parameter `message` in the
-MyWidget example), the parameter's actual value is emitted without furthervalidation or escaping.
+MyWidget example), the parameter's actual value is emitted without further
+validation or escaping.
 *   If the declared type is `String` (for example, parameter
 `linkText` in the example), the parameter's actual value is
 HTML-escaped at run-time before being emitted.
@@ -498,7 +508,7 @@ for a code reviewer to determine if a given use of the widget is safe.
 For example, a given instantiation of GWT's `HTML` widget cannot
 result in an XSS vulnerability as long as its use does not involve calls to the
 `HTML(String)` and related constructors, or the
-`HTML.setHTML(String)` or `HTML.setHTML(String, Direction)`
+`HTML.setHTML(String)` or `HTML.setHTML(String, Direction)`
 methods. Code that uses the equivalent `SafeHtml` constructors and
 methods is always safe.  
 
@@ -587,7 +597,8 @@ reasons, including the following:
 *   There may be a bug in code that creates `SafeHtml` values that
   causes it to sometimes produce values that violate the type contract. If such
   a value is used as HTML (for instance, assigned to a DOM element's
-  `innerHTML` property), an XSS vulnerability may be present.*   Application code may be incorrectly using
+  `innerHTML` property), an XSS vulnerability may be present.
+*   Application code may be incorrectly using
   `SafeHtmlBuilder.appendHtmlConstant` or
   `SafeHtmlUtils.fromSafeConstant`.  For example, if one of these
   methods is passed a value that is not program-controlled as required, but
