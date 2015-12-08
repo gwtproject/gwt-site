@@ -31,7 +31,7 @@ The GWT Release Notes
 * [2.0.2](#Release_Notes_2_0_2) February 12, 2010
 * [2.0.1](#Release_Notes_2_0_1) February 3, 2010
 * [2.0.0](#Release_Notes_2_0_0) December 9, 2009
-* [2.0.0 (RC2)](#Release_Notes_2_0_0_rc2) November 25, 2009	
+* [2.0.0 (RC2)](#Release_Notes_2_0_0_rc2) November 25, 2009
 * [2.0.0 (RC1)](#Release_Notes_2_0_0_rc1) November 17, 2009
 * [1.7.1](#Release_Notes_1_7_1) September 22, 2009
 * [1.7.0](#Release_Notes_1_7_0) July 14, 2009
@@ -43,9 +43,9 @@ The GWT Release Notes
 * [1.5.1 (RC2)](#Release_Notes_1_5_1) August 5, 2008
 * [1.5.0 (RC1)](#Release_Notes_1_5_0) May 27, 2008
 * [1.4.60](#Release_Notes_1_4_60) August 28, 2007
-* [1.4.59 (RC2)](#Release_Notes_1_4_59)
-* [1.4.10 (RC)](#Release_Notes_1_4_10)
-* [1.3.3](#Release_Notes_1_3_3)
+* [1.4.59 (RC2)](#Release_Notes_1_4_59) August 20, 2007
+* [1.4.10 (RC)](#Release_Notes_1_4_10) May 29, 2007
+* [1.3.3](#Release_Notes_1_3_3) January 18, 2007
 * [1.3.1 (RC)](#Release_Notes_1_3_1)
 * [1.2.22](#Release_Notes_1_2_22)
 * [1.2.21 (RC)](#Release_Notes_1_2_11)
