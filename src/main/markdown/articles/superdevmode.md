@@ -1,7 +1,7 @@
 Super Dev Mode
 ===
 
-*Revised November 4, 2014 for GWT 2.7*
+*Revised December 17, 2015 for GWT 2.8*
 
 ## Introduction <a id="Introduction"></a>
 
@@ -30,9 +30,9 @@ module.xml file:
 
         <add-linker name="xsiframe"/>
 
-*   GWT 2.7
+*   GWT 2.7 and above
 
-    In 2.7, the xsiframe linker is the default.
+    In 2.7 and above, the xsiframe linker is the default.
 
 ## Launching Super Dev Mode <a id="Launch"></a>
 
@@ -71,9 +71,9 @@ needed to compile your GWT app (most likely gwt-user.jar).
 * The main method is in com.google.gwt.dev.codeserver.CodeServer
 
 If you run CodeServer without any arguments, it will print out its
-command line arguments. For 2.7, here is the output:
+command line arguments. For 2.8.0-beta1, here is the output:
 
-    CodeServer [-[no]allowMissingSrc] [-bindAddress address] [-[no]compileTest] [-compileTestRecompiles count] [-[no]failOnError] [-[no]precompile] [-port port] [-src dir] [-X[no]enforceStrictResources] [-workDir dir] [-launcherDir] [-[no]incremental] [-sourceLevel [auto, 1.6, 1.7]] [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-XjsInteropMode (NONE|JS|CLOSURE)] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [module]
+    CodeServer [-[no]allowMissingSrc] [-bindAddress address] [-[no]compileTest] [-compileTestRecompiles count] [-[no]failOnError] [-[no]precompile] [-port port] [-src dir] [-workDir dir] [-launcherDir] [-style (DETAILED|OBFUSCATED|PRETTY)] [-setProperty name=value,value...] [-[no]incremental] [-sourceLevel [auto, 1.7, 1.8]] [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-XjsInteropMode (JS|JS_RC)] [-[no]generateJsInteropExports] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-X[no]closureFormattedOutput] [module]
 
     where
       -[no]allowMissingSrc          Allows -src flags to reference missing directories. (defaults to OFF)
@@ -84,13 +84,15 @@ command line arguments. For 2.7, here is the output:
       -[no]precompile               Precompile modules. (defaults to ON)
       -port                         The port where the code server will run.
       -src                          A directory containing GWT source to be prepended to the classpath for compiling.
-      -X[no]enforceStrictResources  EXPERIMENTAL: Don't implicitly depend on "client" and "public" when a module doesn't define any dependencies. (defaults to OFF)
       -workDir                      The root of the directory tree where the code server willwrite compiler output. If not supplied, a temporary directorywill be used.
       -launcherDir                  An output directory where files for launching Super Dev Mode will be written. (Optional.)
+      -style                        Script output style: DETAILED, OBFUSCATED or PRETTY
+      -setProperty                  Set the values of a property in the form of propertyName=value1[,value2...].
       -[no]incremental              Compiles faster by reusing data from the previous compile. (defaults to ON)
-      -sourceLevel                  Specifies Java source level (defaults to auto:1.7)
+      -sourceLevel                  Specifies Java source level (defaults to auto:1.8)
       -logLevel                     The level of logging detail: ERROR, WARN, INFO, TRACE, DEBUG, SPAM or ALL (defaults to INFO)
-      -XjsInteropMode               EXPERIMENTAL: Specifies JsInterop mode: NONE, JS or CLOSURE (defaults to NONE)
+      -XjsInteropMode               EXPERIMENTAL: DEPRECATED: Specifies JsInterop mode: JS or JS_RC
+      -[no]generateJsInteropExports Generate exports for JsInterop purposes (defaults to OFF)
       -XmethodNameDisplayMode       EXPERIMENTAL: Specifies method display name mode for chrome devtools: NONE, ONLY_METHOD_NAME, ABBREVIATED or FULL (defaults to NONE)
     and
       module                        The GWT modules that the code server should compile. (Example: com.example.MyApp)
@@ -199,7 +201,7 @@ message to the browser console add a call in the Java code to `GWT.debugger` to 
 * When inspecting variables in the Chrome debugger, the field names and values are JavaScript,
 not Java.
 
-* Super Dev Mode doesn't support running Java web apps (war files) like Dev Mode. In 2.7,
+* Super Dev Mode doesn't support running Java web apps (war files) like Dev Mode. In 2.7 and above,
 you can use Dev Mode and it will automatically start Super Dev Mode, or else you need to
 run a separate Java servlet engine.
 
