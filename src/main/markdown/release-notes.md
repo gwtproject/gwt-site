@@ -90,7 +90,7 @@ The GWT Release Notes
 
 #### JDK emulation
 - Started using ES6 Maps when available for HashMap/HashSet that yields up 3x performance improvements.
-- Switch to new long emulation with signification performance improvements (e.g. divisions 50x faster for smaller numbers)
+- Switch to new long emulation with significant performance improvements (e.g. divisions 50x faster for smaller numbers)
 - Double/Boolean are not boxed anymore.
 
 #### Logging and Stack Traces
