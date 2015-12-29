@@ -49,19 +49,19 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
 
             <g:HTMLPanel>
                 <paper-icon-item ui:field="menuClearAll">
-                    <iron-icon icon="delete"/>
+                    <iron-icon icon="delete" item-icon/>
                     <div>Clear All</div>
                 </paper-icon-item>
                 <paper-icon-item ui:field="menuClearDone">
-                    <iron-icon icon="clear"/>
+                    <iron-icon icon="clear" item-icon/>
                     <div>Clear Done</div>
                 </paper-icon-item>
                 <paper-icon-item ui:field="menuSettings">
-                    <iron-icon icon="settings"/>
+                    <iron-icon icon="settings" item-icon/>
                     <div>Settings</div>
                 </paper-icon-item>
                 <paper-icon-item ui:field="menuAbout">
-                    <iron-icon icon="help"/>
+                    <iron-icon icon="help" item-icon/>
                     <div>About</div>
                 </paper-icon-item>
             </g:HTMLPanel>
@@ -168,22 +168,22 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
                     }
                 </style>
                 <paper-icon-item ui:field="menuClearAll">
-                    <iron-icon icon="delete"/>
+                    <iron-icon icon="delete" item-icon/>
                     <div>Clear All</div>
                     <paper-ripple/>
                 </paper-icon-item>
                 <paper-icon-item ui:field="menuClearDone">
-                    <iron-icon icon="clear"/>
+                    <iron-icon icon="clear" item-icon/>
                     <div>Clear Done</div>
                     <paper-ripple/>
                 </paper-icon-item>
                 <paper-icon-item ui:field="menuSettings">
-                    <iron-icon icon="settings"/>
+                    <iron-icon icon="settings" item-icon/>
                     <div>Settings</div>
                     <paper-ripple/>
                 </paper-icon-item>
                 <paper-icon-item ui:field="menuAbout">
-                    <iron-icon icon="help"/>
+                    <iron-icon icon="help" item-icon/>
                     <div>About</div>
                     <paper-ripple/>
                 </paper-icon-item>
@@ -246,22 +246,22 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
                         <paper-header-panel mode="seamed">
                             <paper-toolbar/>
                             <paper-icon-item ui:field="menuClearAll">
-                                <iron-icon icon="delete"/>
+                                <iron-icon icon="delete" item-icon/>
                                 <div>Clear All</div>
                                 <paper-ripple/>
                             </paper-icon-item>
                             <paper-icon-item ui:field="menuClearDone">
-                                <iron-icon icon="clear"/>
+                                <iron-icon icon="clear" item-icon/>
                                 <div>Clear Done</div>
                                 <paper-ripple/>
                             </paper-icon-item>
                             <paper-icon-item ui:field="menuSettings">
-                                <iron-icon icon="settings"/>
+                                <iron-icon icon="settings" item-icon/>
                                 <div>Settings</div>
                                 <paper-ripple/>
                             </paper-icon-item>
                             <paper-icon-item ui:field="menuAbout">
-                                <iron-icon icon="help"/>
+                                <iron-icon icon="help" item-icon/>
                                 <div>About</div>
                                 <paper-ripple/>
                             </paper-icon-item>
@@ -413,22 +413,22 @@ Finally your `Main.ui.xml` file should look like:
                     <paper-header-panel mode="seamed">
                         <paper-toolbar class="toolbar"/>
                         <paper-icon-item ui:field="menuClearAll">
-                            <iron-icon icon="delete"/>
+                            <iron-icon icon="delete" item-icon/>
                             <div>Clear All</div>
                             <paper-ripple/>
                         </paper-icon-item>
                         <paper-icon-item ui:field="menuClearDone">
-                            <iron-icon icon="clear"/>
+                            <iron-icon icon="clear" item-icon/>
                             <div>Clear Done</div>
                             <paper-ripple/>
                         </paper-icon-item>
                         <paper-icon-item ui:field="menuSettings">
-                            <iron-icon icon="settings"/>
+                            <iron-icon icon="settings" item-icon/>
                             <div>Settings</div>
                             <paper-ripple/>
                         </paper-icon-item>
                         <paper-icon-item ui:field="menuAbout">
-                            <iron-icon icon="help"/>
+                            <iron-icon icon="help" item-icon/>
                             <div>About</div>
                             <paper-ripple/>
                         </paper-icon-item>
