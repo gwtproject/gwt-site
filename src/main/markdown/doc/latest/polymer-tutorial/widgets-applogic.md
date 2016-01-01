@@ -77,7 +77,7 @@ In this section, we'll learn how to add logic to our UI. We'll touch on very bas
                 </style>
                 <div class="vertical-section">
                   <h4>
-                    <p:PaperCheckbox ui:field="check"></p:PaperCheckbox>
+                    <p:PaperCheckbox ui:field="done"></p:PaperCheckbox>
                     <span ui:field="title" class='{style.title}'>Go to Google</span>
                   </h4>
                   <div ui:field="description" class='{style.description}'></div>
