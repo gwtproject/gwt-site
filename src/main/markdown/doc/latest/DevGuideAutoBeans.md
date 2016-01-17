@@ -31,6 +31,12 @@ AutoBeans can be used in *both client and server code* to improve code re-use.  
 
 ## Quickstart<a id='quick'></a>
 
+In your module.xml file, add
+
+    <inherits name="com.google.web.bindery.autobean.AutoBean"/>
+
+then in your sources:
+
     // Declare any bean-like interface with matching getters and setters, no base type is necessary
     interface Person {
       Address getAddress();
