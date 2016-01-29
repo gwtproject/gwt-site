@@ -7,6 +7,17 @@ In this section, we'll learn how to add logic to our UI. We'll touch on very bas
 
 1.  Create the **Add Item dialog** by adding the following markup to the Main.ui.xml file:
 
+        <ui:style>
+          ...
+          .content {
+                padding: 15px;
+          }
+           
+          .dialog {
+                min-width: 40%;
+          }
+        </ui:style>
+        
         <g:HTMLPanel>
           ...
           <p:PaperDialog ui:field="addItemDialog"
