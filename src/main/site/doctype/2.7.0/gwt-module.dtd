@@ -12,7 +12,6 @@
 <!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or        -->
 <!-- implied. License for the specific language governing permissions and   -->
 <!-- limitations under the License.                                         -->
-
 <!-- The module root element -->
 <!ELEMENT module (inherits | source | public | super-source | entry-point | 
   stylesheet | script | servlet | replace-with | generate-with |
@@ -64,13 +63,11 @@
 <!ATTLIST exclude
 	name CDATA #REQUIRED
 >
-
 <!-- Define a module entry point -->
 <!ELEMENT entry-point EMPTY>
 <!ATTLIST entry-point
 	class CDATA #REQUIRED
 >
-
 <!-- Preload a stylesheet before executing the GWT application -->
 <!ELEMENT stylesheet EMPTY>
 <!ATTLIST stylesheet
@@ -87,24 +84,20 @@
 	path CDATA #REQUIRED
 	class CDATA #REQUIRED
 >
-
 <!-- Adds a Linker to the compilation process -->
 <!ELEMENT add-linker EMPTY>
 <!-- A comma-separated list of linker names -->
 <!ATTLIST add-linker
 	name CDATA #REQUIRED
 >
-
 <!-- Defines a Linker type to package compiler output -->
 <!ELEMENT define-linker EMPTY>
 <!ATTLIST define-linker
 	class CDATA #REQUIRED
 	name CDATA #REQUIRED
 >
-
 <!--                 ^^^ Commonly-used elements ^^^                -->
 <!--                VVV Deferred binding elements VVV              -->
-
 <!-- All possible predicates -->
 <!ENTITY % predicates "when-property-is | when-type-assignable | when-type-is | all | any | none">
 <!-- Define a property and allowable values (comma-separated identifiers) -->
