@@ -92,7 +92,7 @@ owner class for the above template might look like this:
 ```
 public class HelloWorld {
   interface MyUiBinder extends UiBinder<DivElement, HelloWorld> {}
-  private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
+  private static final MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   @UiField SpanElement nameSpan;
 
@@ -172,7 +172,7 @@ Here's an example of a UiBinder template that uses widgets:
 public class HelloWidgetWorld extends Composite {
 
   interface MyUiBinder extends UiBinder<Widget, HelloWidgetWorld> {}
-  private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
+  private static final MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   @UiField ListBox listBox;
 
@@ -375,7 +375,7 @@ You use it in a template:
 
 public class UserDashboard extends Composite {
   interface MyUiBinder extends UiBinder<Widget, UserDashboard> {}
-  private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
+  private static final MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   public UserDashboard() {
     initWidget(uiBinder.createAndBindUi(this));
@@ -700,7 +700,7 @@ Resources instance needed by the template in the
 ```
 public class LogoNamePanel extends Composite {
   interface MyUiBinder extend UiBinder<Widget, LogoNamePanel> {}
-  private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
+  private static final MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   @UiField SpanElement nameSpan;
   final Resources resources;
@@ -731,7 +731,7 @@ You can make things more concise, and have finer control, by using
 ```
 public class LogoNamePanel extends Composite {
   interface MyUiBinder extends UiBinder<Widget, LogoNamePanel> {}
-  private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
+  private static final MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   @UiField SpanElement nameSpan;
 
@@ -950,7 +950,7 @@ they ever are.
 ```
 public class HelloWorld extends UIObject { // Could extend Widget instead
   interface MyUiBinder extends UiBinder<DivElement, HelloWorld> {}
-  private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
+  private static final MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
 
   @UiField LazyDomElement<SpanElement> nameSpan;
 
