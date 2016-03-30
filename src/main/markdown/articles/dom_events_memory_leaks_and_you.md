@@ -29,7 +29,7 @@ class MyWidget extends Widget {
 This may seem a bit obtuse, but there's a good reason for it. To understand this, you may first need to brush up on browser memory leaks. There are some good resources on the web:
 
 *   [http://www.quirksmode.org/blog/archives/2005/02/javascript_memo.html](http://www.quirksmode.org/blog/archives/2005/02/javascript_memo.html)
-*   [http://www-128.ibm.com/developerworks/web/library/wa-memleak/](http://www-128.ibm.com/developerworks/web/library/wa-memleak)
+*   [http://www.ibm.com/developerworks/library/wa-memleak/](http://www.ibm.com/developerworks/library/wa-memleak/)
 
 The upshot of all this is that in some browsers, any reference cycle that involves a JavaScript object and a DOM element (or other native object) has a nasty tendency to never get garbage-collected. The reason this is so insidious is that this is an extremely common pattern to create in JavaScript UI libraries.
 

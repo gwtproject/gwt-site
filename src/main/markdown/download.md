@@ -1,24 +1,21 @@
 <style type="text/css">
 .download-button {
-  background-color: #8c9cbf;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8c9cbf), color-stop(50%, #546a9e), color-stop(50%, #36518f), color-stop(100%, #3d5691));
-  background-image: -webkit-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
-  background-image: -moz-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
-  background-image: -ms-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
-  background-image: -o-linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
-  background-image: linear-gradient(top, #8c9cbf 0%, #546a9e 50%, #36518f 50%, #3d5691 100%);
-  border: 1px solid #172d6e;
-  border-bottom: 1px solid #0e1d45;
-  border-radius: 5px;
-  -webkit-box-shadow: inset 0 1px 0 0 #b1b9cb;
-  box-shadow: inset 0 1px 0 0 #b1b9cb;
-  color: #fff !important;
-  text-decoration: none;
-  text-align: center;
-  text-shadow: 0 -1px 1px #000f4d;
-  padding: 7px 15px 8px 15px;
-  font-size: 1.3em !important;
-  white-space: nowrap;
+ -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+   background: #f93535;
+   color: #fff !important;
+   text-decoration: none;
+   text-align: center;
+   padding: 7px 15px 8px 15px;
+   font-size: 1.3em !important;
+   white-space: nowrap;
+   font-family: "soleil", sans-serif;
+}
+
+.download-button:hover {
+  background-color: #9c1421;
+  
 }
 .download-icon {
   max-width: 15% !important;

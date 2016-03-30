@@ -7,6 +7,17 @@ In this section, we'll learn how to add logic to our UI. We'll touch on very bas
 
 1.  Create the **Add Item dialog** by adding the following markup to the Main.ui.xml file:
 
+        <ui:style>
+          ...
+          .content {
+                padding: 15px;
+          }
+           
+          .dialog {
+                min-width: 40%;
+          }
+        </ui:style>
+        
         <g:HTMLPanel>
           ...
           <p:PaperDialog ui:field="addItemDialog"
@@ -77,7 +88,7 @@ In this section, we'll learn how to add logic to our UI. We'll touch on very bas
                 </style>
                 <div class="vertical-section">
                   <h4>
-                    <p:PaperCheckbox ui:field="check"></p:PaperCheckbox>
+                    <p:PaperCheckbox ui:field="done"></p:PaperCheckbox>
                     <span ui:field="title" class='{style.title}'>Go to Google</span>
                   </h4>
                   <div ui:field="description" class='{style.description}'></div>

@@ -69,7 +69,7 @@ You may also optionally do the following:
 Write responsive GWT applications for mobile and desktop using [Polymer Elements](https://elements.polymer-project.org/) and JsInterop.
 
    1. [Create](../polymer-tutorial/create.html) a GWT app.
-      * Get started wit GWT creating new maven projects from scratch, running and debugging them in SuperDevMode, and including external dependencies.
+      * Get started with GWT creating new maven projects from scratch, running and debugging them in SuperDevMode, and including external dependencies.
    2. Design the UI
       * Learn how to use classic [Widgets](../polymer-tutorial/widgets-buildui.html) in UiBinder to build your UI
       * Or learn how to use [Elements](../polymer-tutorial/elements-buildui.html) in UiBinder which is the tendency in modern GWT apps.

@@ -2,50 +2,50 @@ The GWT Release Notes
 =====================
 
 <!-- * [2.8.0 (RC1)](#Release_Notes_2_8_0_RC1)-->
-* [2.8.0 (Beta1)](#Release_Notes_2_8_0_BETA1)
-* [2.7.0](#Release_Notes_2_7_0)
-* [2.7.0 (RC1)](#Release_Notes_2_7_0_RC1)
-* [2.6.1](#Release_Notes_2_6_1)
-* [2.6.0](#Release_Notes_2_6_0)
-* [2.6.0 (RC4)](#Release_Notes_2_6_0_RC4)
-* [2.6.0 (RC3)](#Release_Notes_2_6_0_RC3)
-* [2.6.0 (RC2)](#Release_Notes_2_6_0_RC2)
-* [2.6.0 (RC1)](#Release_Notes_2_6_0_RC1)
-* [2.5.1](#Release_Notes_2_5_1)
-* [2.5.1 (RC1)](#Release_Notes_2_5_1_RC1)
-* [2.5.0](#Release_Notes_2_5_0)
-* [2.5.0 (RC2)](#Release_Notes_2_5_0_RC2)
-* [2.5.0 (RC1)](#Release_Notes_2_5_0_RC1)
-* [2.4.0](#Release_Notes_2_4_0)
-* [2.3.0](#Release_Notes_2_3_0)
-* [2.3.0 (M1)](#Release_Notes_2_3_0_M1)
-* [2.2.0](#Release_Notes_2_2_0)
-* [2.1.1](#Release_Notes_2_1_1)
-* [2.1.0](#Release_Notes_2_1_0)
-* [2.1.0 (RC1)](#Release_Notes_2_1_0_RC1)
-* [2.1.0 (M3)](#Release_Notes_2_1_0_M3)
-* [2.1.0 (M2)](#Release_Notes_2_1_0_M2)
-* [2.1.0 (M1)](#Release_Notes_2_1_0_M1)
-* [2.0.4](#Release_Notes_2_0_4)
-* [2.0.3](#Release_Notes_2_0_3)
-* [2.0.2](#Release_Notes_2_0_2)
-* [2.0.1](#Release_Notes_2_0_1)
-* [2.0.0](#Release_Notes_2_0_0)
-* [2.0.0 (RC2)](#Release_Notes_2_0_0_rc2)
-* [2.0.0 (RC1)](#Release_Notes_2_0_0_rc1)
-* [1.7.1](#Release_Notes_1_7_1)
-* [1.7.0](#Release_Notes_1_7_0)
-* [1.6.4](#Release_Notes_1_6_4)
-* [1.6.3](#Release_Notes_1_6_3)
-* [1.6.2](#Release_Notes_1_6_2)
-* [1.5.3](#Release_Notes_1_5_3)
-* [1.5.2](#Release_Notes_1_5_2)
-* [1.5.1 (RC2)](#Release_Notes_1_5_1)
-* [1.5.0 (RC)](#Release_Notes_1_5_0)
-* [1.4.60](#Release_Notes_1_4_60)
-* [1.4.59 (RC2)](#Release_Notes_1_4_59)
-* [1.4.10 (RC)](#Release_Notes_1_4_10)
-* [1.3.3](#Release_Notes_1_3_3)
+* [2.8.0 (Beta1)](#Release_Notes_2_8_0_BETA1) December 3, 2015
+* [2.7.0](#Release_Notes_2_7_0) November 20, 2014
+* [2.7.0 (RC1)](#Release_Notes_2_7_0_RC1) October 30, 2014
+* [2.6.1](#Release_Notes_2_6_1) May 9, 2014
+* [2.6.0](#Release_Notes_2_6_0) January 23, 2014
+* [2.6.0 (RC4)](#Release_Notes_2_6_0_RC4) January 9, 2014
+* [2.6.0 (RC3)](#Release_Notes_2_6_0_RC3) December 5, 2013
+* [2.6.0 (RC2)](#Release_Notes_2_6_0_RC2) December 2, 2013
+* [2.6.0 (RC1)](#Release_Notes_2_6_0_RC1) November 7, 2013
+* [2.5.1](#Release_Notes_2_5_1) March 9, 2013
+* [2.5.1 (RC1)](#Release_Notes_2_5_1_RC1) February 5, 2013
+* [2.5.0](#Release_Notes_2_5_0) October 25, 2012
+* [2.5.0 (RC2)](#Release_Notes_2_5_0_RC2) October 4, 2012
+* [2.5.0 (RC1)](#Release_Notes_2_5_0_RC1) June 27, 2012
+* [2.4.0](#Release_Notes_2_4_0) September 7, 2011
+* [2.3.0](#Release_Notes_2_3_0) May 2, 2011
+* [2.3.0 (M1)](#Release_Notes_2_3_0_M1) April 2, 2011
+* [2.2.0](#Release_Notes_2_2_0) February 11, 2011
+* [2.1.1](#Release_Notes_2_1_1) December 17, 2010
+* [2.1.0](#Release_Notes_2_1_0) October 27, 2010
+* [2.1.0 (RC1)](#Release_Notes_2_1_0_RC1) October 12, 2010
+* [2.1.0 (M3)](#Release_Notes_2_1_0_M3) August 25, 2010
+* [2.1.0 (M2)](#Release_Notes_2_1_0_M2) July 2, 2010
+* [2.1.0 (M1)](#Release_Notes_2_1_0_M1) May 19, 2010
+* [2.0.4](#Release_Notes_2_0_4) June 30, 2010
+* [2.0.3](#Release_Notes_2_0_3) February 18, 2010
+* [2.0.2](#Release_Notes_2_0_2) February 12, 2010
+* [2.0.1](#Release_Notes_2_0_1) February 3, 2010
+* [2.0.0](#Release_Notes_2_0_0) December 9, 2009
+* [2.0.0 (RC2)](#Release_Notes_2_0_0_rc2) November 25, 2009
+* [2.0.0 (RC1)](#Release_Notes_2_0_0_rc1) November 17, 2009
+* [1.7.1](#Release_Notes_1_7_1) September 22, 2009
+* [1.7.0](#Release_Notes_1_7_0) July 14, 2009
+* [1.6.4](#Release_Notes_1_6_4) April 7, 2009
+* [1.6.3](#Release_Notes_1_6_3) March 31, 2009
+* [1.6.2](#Release_Notes_1_6_2) March 18, 2009
+* [1.5.3](#Release_Notes_1_5_3) October 17, 2008
+* [1.5.2](#Release_Notes_1_5_2) August 28, 2008
+* [1.5.1 (RC2)](#Release_Notes_1_5_1) August 5, 2008
+* [1.5.0 (RC1)](#Release_Notes_1_5_0) May 27, 2008
+* [1.4.60](#Release_Notes_1_4_60) August 28, 2007
+* [1.4.59 (RC2)](#Release_Notes_1_4_59) August 20, 2007
+* [1.4.10 (RC)](#Release_Notes_1_4_10) May 29, 2007
+* [1.3.3](#Release_Notes_1_3_3) January 18, 2007
 * [1.3.1 (RC)](#Release_Notes_1_3_1)
 * [1.2.22](#Release_Notes_1_2_22)
 * [1.2.21 (RC)](#Release_Notes_1_2_11)
@@ -56,7 +56,9 @@ The GWT Release Notes
 **Note** - M1 = first milestone, RC1 = first release candidate
 
 * * *
+
 <a id="Release_Notes_Current"></a>
+
 <!-- ## <a id="Release_Notes_2_8_0_RC1"></a> Release Notes for 2.8.0 (RC1)
 
 ### Deprecations
@@ -66,8 +68,8 @@ The GWT Release Notes
 
 ### Highlights
 
-- Java 8 syntax supported. 
-- JsInterop is graduated from eperimental. See [final JsInterop specification](https://docs.google.com/document/d/10fmlEYIHcyead_4R1S5wKGs1t2I7Fnp_PaNaa7XTEk0).
+- Java 8 syntax supported.
+- JsInterop has graduated from experimental. See [final JsInterop specification](https://docs.google.com/document/d/10fmlEYIHcyead_4R1S5wKGs1t2I7Fnp_PaNaa7XTEk0).
 - GSS is no longer considered as experimental and old CssResource is now deprecated.
 
 ### Deprecations
@@ -88,7 +90,7 @@ The GWT Release Notes
 
 #### JDK emulation
 - Started using ES6 Maps when available for HashMap/HashSet that yields up 3x performance improvements.
-- Switch to new long emulation with signification performance improvements (e.g. divisions 50x faster for smaller numbers)
+- Switch to new long emulation with significant performance improvements (e.g. divisions 50x faster for smaller numbers)
 - Double/Boolean are not boxed anymore.
 
 #### Logging and Stack Traces
@@ -98,7 +100,7 @@ The GWT Release Notes
 - GSS is not longer experimental but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
 - "For loop support" added
 - a new function concat() is now available to concatenate variable and string literal.
-- @gen-webkit-keyframes annotation: generate automaticaly @-webkit-keyframes block 
+- @gen-webkit-keyframes annotation: generate automaticaly @-webkit-keyframes block
 
 #### Dev Mode
 - Dev Mode is now deprecated
@@ -362,7 +364,7 @@ raised during release candidate testing.
 
 ### Highlights
 
-- Java 7 is supported and is now the default. (This can be overridden using 
+- Java 7 is supported and is now the default. (This can be overridden using
 `-sourceLevel 6`)
 - GWT Development Mode will [no longer be available for Chrome](http://blog.chromium.org/2013/09/saying-goodbye-to-our-old-friend-npapi.html)
 sometime in 2014, so we improved alternate ways of debugging. There are improvements to Super Dev Mode, asserts,
@@ -385,7 +387,7 @@ compatibility.
 - Boolean flags can consistently be disabled using '-no'.
 - Experimental flags consistently start with '-X' or '-Xno' to disable.
 - The deprecated `-out` flags were removed
-- Added flags for turning specific optimizations on and off. 
+- Added flags for turning specific optimizations on and off.
 - The `-saveSource` and `-saveSourceOutput *dest*` options may be used to write source files used
 by the GWT app to an output directory. (Combined with the `includeSourceMapUrl` config property,
 it is possible to set up source-level debugging outside Super Dev Mode.)
@@ -1412,7 +1414,7 @@ generates `ant test` targets.
 *   When running development mode on on Chrome, any JavaScript
 objects that pass into Java code will be assigned a new property `__gwt_ObjectId`.
 This could break native code that looks iterates through the
-properties of such an object. To work around this issue, see this 
+properties of such an object. To work around this issue, see this
 [example](http://code.google.com/p/google-web-toolkit/source/diff?old=4807&r=7063&format=side&path=/trunk/user/src/com/google/gwt/json/client/JSONObject.java)
 of our changes to `JSONObject` (scroll to the bottom).
 *   Compile reports (formerly SOYC reports) are now generated with
@@ -1787,8 +1789,8 @@ This release has only a couple of minor changes from [1.4.59](#Release_Notes_1_4
 from showing up in reports.
 *   Fixed a bug in the hosted mode servlet context emulation where
 getResource() would fail to find a file in a module's public path.
-*   Compiler output files of the form `_module_.cache.html` used to contain html intended as a 
-helpful note to a developer. This message has now been removed because screen readers and some 
+*   Compiler output files of the form `_module_.cache.html` used to contain html intended as a
+helpful note to a developer. This message has now been removed because screen readers and some
 browsers would display this content to end users.
 
 * * *
@@ -1989,7 +1991,7 @@ This release also includes API changes that may require minor tweaks to
 existing code. Any such changes that affect you should only take a few
 minutes to rectify.
 
-#### 
+####
 [JavaScriptObject](doc/html/com.google.gwt.core.client.JavaScriptObject)
 
 *   Although subclassing JavaScriptObject is not supported, some
@@ -1999,7 +2001,7 @@ constructor. Read the source code for [Element](doc/html/com.google.gwt.user.cli
 example of how JavaScriptObject must be subclassed now (that is, if
 subclassing were supported...which, of course, it isn't).
 
-#### 
+####
 [DeferredCommand](doc/html/com.google.gwt.user.client.DeferredCommand)
 
 *   The add() method is deprecated in favor of addCommand() in
@@ -2008,7 +2010,7 @@ interface. Had we simply added a new method overload, existing code
 that passed in a null literal would have failed to compile.
 *   The new addPause() method should be used instead of add(null).
 
-#### 
+####
 [UIObject](doc/html/com.google.gwt.user.client.ui.UIObject)
 
 *   The intended use and behavior of style names has been
