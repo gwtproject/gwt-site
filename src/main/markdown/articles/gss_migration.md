@@ -80,12 +80,12 @@ MyCssResource css();
 turn off auto conversion:
 
 
-    ```
-    <set-configuration-property name="CssResource.conversionMode" value="off" />
-    ```
+```
+<set-configuration-property name="CssResource.conversionMode" value="off" />
+```
 
   7. Remove all .css
-  8. Live happily ever after in CSS3 land 
+  8. Live happily ever after in CSS3 land
 
 ## One step migration
 
@@ -98,9 +98,9 @@ turn off auto conversion:
   6. Turn off auto conversion for app:
 
 
-    ```
-    <set-configuration-property name="CssResource.conversionMode" value="off" />
-    ```
+```
+<set-configuration-property name="CssResource.conversionMode" value="off" />
+```
 
   7. Live happily ever after in CSS3 land
 
