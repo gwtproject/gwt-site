@@ -190,7 +190,7 @@ asks. Therefore, we recommend only running it on localhost or behind a firewall.
 by default.)
 
 * https is not supported. See
-[issue 7538](https://code.google.com/p/google-web-toolkit/issues/detail?id=7538)
+[issue 7535](https://github.com/gwtproject/gwt/issues/7535)
 for updates.
 
 * Although all modern browser have some support for sourcemaps, sourcemap-based debugging currently
