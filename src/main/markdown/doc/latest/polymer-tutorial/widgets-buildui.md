@@ -52,19 +52,19 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
 
           <g:HTMLPanel>
             <p:PaperIconItem ui:field="menuClearAll">
-                <i:IronIcon icon="delete"/>
+                <i:IronIcon icon="delete" attributes="item-icon"/>
                 <div>Clear All</div>
             </p:PaperIconItem>
             <p:PaperIconItem ui:field="menuClearDone">
-                <i:IronIcon icon="clear"/>
+                <i:IronIcon icon="clear" attributes="item-icon"/>
                 <div>Clear Done</div>
             </p:PaperIconItem>
             <p:PaperIconItem ui:field="menuSettings">
-                <i:IronIcon icon="settings"/>
+                <i:IronIcon icon="settings" attributes="item-icon"/>
                 <div>Settings</div>
             </p:PaperIconItem>
             <p:PaperIconItem ui:field="menuAbout">
-                <i:IronIcon icon="help"/>
+                <i:IronIcon icon="help" attributes="item-icon"/>
                 <div>About</div>
             </p:PaperIconItem>
           </g:HTMLPanel>
@@ -152,22 +152,22 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
 
                 <g:HTMLPanel>
                   <p:PaperIconItem ui:field="menuClearAll">
-                    <i:IronIcon icon="delete"/>
+                    <i:IronIcon icon="delete" attributes="item-icon"/>
                     <div>Clear All</div>
                     <p:PaperRipple/>
                   </p:PaperIconItem>
                   <p:PaperIconItem ui:field="menuClearDone">
-                    <i:IronIcon icon="clear"/>
+                    <i:IronIcon icon="clear" attributes="item-icon"/>
                     <div>Clear Done</div>
                     <p:PaperRipple/>
                   </p:PaperIconItem>
                   <p:PaperIconItem ui:field="menuSettings">
-                    <i:IronIcon icon="settings"/>
+                    <i:IronIcon icon="settings" attributes="item-icon"/>
                     <div>Settings</div>
                     <p:PaperRipple/>
                   </p:PaperIconItem>
                   <p:PaperIconItem ui:field="menuAbout">
-                    <i:IronIcon icon="help"/>
+                    <i:IronIcon icon="help" attributes="item-icon"/>
                     <div>About</div>
                     <p:PaperRipple/>
                   </p:PaperIconItem>
@@ -202,22 +202,22 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
                     <p:PaperHeaderPanel mode="seamed">
                         <p:PaperToolbar/>
                         <p:PaperIconItem ui:field="menuClearAll">
-                            <i:IronIcon icon="delete"/>
+                            <i:IronIcon icon="delete" attributes="item-icon"/>
                             <div>Clear All</div>
                             <p:PaperRipple/>
                         </p:PaperIconItem>
                         <p:PaperIconItem ui:field="menuClearDone">
-                            <i:IronIcon icon="clear"/>
+                            <i:IronIcon icon="clear" attributes="item-icon"/>
                             <div>Clear Done</div>
                             <p:PaperRipple/>
                         </p:PaperIconItem>
                         <p:PaperIconItem ui:field="menuSettings">
-                            <i:IronIcon icon="settings"/>
+                            <i:IronIcon icon="settings" attributes="item-icon"/>
                             <div>Settings</div>
                             <p:PaperRipple/>
                         </p:PaperIconItem>
                         <p:PaperIconItem ui:field="menuAbout">
-                            <i:IronIcon icon="help"/>
+                            <i:IronIcon icon="help" attributes="item-icon"/>
                             <div>About</div>
                             <p:PaperRipple/>
                         </p:PaperIconItem>
@@ -380,22 +380,22 @@ Finally your `Main.ui.xml` file should look like:
               <p:PaperHeaderPanel mode="seamed">
                  <p:PaperToolbar addStyleNames="{style.toolbar}"/>
                  <p:PaperIconItem ui:field="menuClearAll">
-                   <i:IronIcon icon="delete"/>
+                   <i:IronIcon icon="delete" attributes="item-icon"/>
                    <div>Clear All</div>
                    <p:PaperRipple/>
                  </p:PaperIconItem>
                  <p:PaperIconItem ui:field="menuClearDone">
-                   <i:IronIcon icon="clear"/>
+                   <i:IronIcon icon="clear" attributes="item-icon"/>
                    <div>Clear Done</div>
                    <p:PaperRipple/>
                  </p:PaperIconItem>
                  <p:PaperIconItem ui:field="menuSettings">
-                   <i:IronIcon icon="settings"/>
+                   <i:IronIcon icon="settings" attributes="item-icon"/>
                    <div>Settings</div>
                    <p:PaperRipple/>
                  </p:PaperIconItem>
                  <p:PaperIconItem ui:field="menuAbout">
-                   <i:IronIcon icon="help"/>
+                   <i:IronIcon icon="help" attributes="item-icon"/>
                    <div>About</div>
                    <p:PaperRipple/>
                  </p:PaperIconItem>
