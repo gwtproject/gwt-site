@@ -83,7 +83,7 @@ Then we need to create the corresponding Hibernate mapping files for each of the
 <hibernate-mapping>
   <class name="com.google.musicstore.domain.Record" table="RECORD">
     <id name="id" column="RECORD_ID">
-      <generator class="native>/>
+      <generator class="native"/>
     </id>
     <property name="title"/>
     <property name="year"/>
@@ -534,7 +534,7 @@ MusicStoreService {
       }
     }
     return new AccountDTO(account.getId(), account.getName(), account.getPassword(), recordDTOs);
-  }  
+  }
 
   private RecordDTO createRecordDTO(Record record) {
     return new RecordDTO(record.getId(), record.getTitle(), record.getYear(), record.getPrice());
