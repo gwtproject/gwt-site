@@ -1,7 +1,7 @@
 The GWT Release Notes
 =====================
 
-<!-- * [2.8.0 (RC1)](#Release_Notes_2_8_0_RC1)-->
+* [2.8.0 (RC1)](#Release_Notes_2_8_0_RC1) June, 2016
 * [2.8.0 (Beta1)](#Release_Notes_2_8_0_BETA1) December 3, 2015
 * [2.7.0](#Release_Notes_2_7_0) November 20, 2014
 * [2.7.0 (RC1)](#Release_Notes_2_7_0_RC1) October 30, 2014
@@ -59,10 +59,71 @@ The GWT Release Notes
 
 <a id="Release_Notes_Current"></a>
 
-<!-- ## <a id="Release_Notes_2_8_0_RC1"></a> Release Notes for 2.8.0 (RC1)
+## <a id="Release_Notes_2_8_0_RC1"></a> Release Notes for 2.8.0 (RC1)
+
+### Highlights
+- Support for several Java 8 API added.
+- Fix memory leak with Java 8 compilation.
+- Source level set to Java 8 by default
 
 ### Deprecations
-- Classic dev mode deprecated.You can switch back to dev mode for your test cases temporarily by passing gwt.args='-devMode'. -->
+- Classic dev mode deprecated.You can switch back to dev mode for your test cases temporarily by passing gwt.args='-devMode'.
+- Deprecate c.g.g.validation
+
+### Compiler
+- Update JS reserved keywords to ES6.
+- Fix instanceof for primitives & string.
+- Make exceptions work across Java/JavaScript boundary
+- Fix some warnings for Closure integration.
+- Allow casting native arrays to Object[].
+- Use patched JDT to circumvent memory leak when compiling for Java 8.
+
+### JsInterop
+- Implement @JsOverlay with default methods in Java8.
+- Fix JAnalysisDecoratedType regarding JsInterop.
+- Split JsInterop annotations into their own JAR when deploying to Maven
+- Fix a bug with generateJsInteropExports flag and SDM
+- Disallow concrete @JsProperty on static methods.
+- Remove legacy JsInterop.
+- Add JsOptional annotation (disallowed on primitive typed parameters).
+- Allow @JsOverlay on effectively final methods.
+
+### UIBinder
+- Add support for JsType class in UIBinder.
+
+### JDK emulation
+- Migrate String, Math, Date to native JsType
+- Remove GwtIncompatible from EmulatedCharset.
+- Add java.io.UncheckedIOException
+- Emulate Optional<T> and its int, long, double variants
+- Emulate Objects.requireNonNull() with message Supplier
+- Emulate java.util.StringJoiner
+- Emulation of java.util.function
+- Fix Math.min/max(float/double) emulation behavior.
+- Emulate PrimitiveIterator, Iterator, Iterable Java 8 API.
+- Emulate Collections.shuffle
+- Emulate Java 8 API of BigInteger.
+- Emulate java.util.IntSummaryStatistics/LongSummaryStatistics/DoubleSummaryStatistics
+- Emulate Java 8 API of Comparator.
+- Emulate java.util.Spliterator
+- Emulate Character.isBmpCodePoint.
+- Add java.lang.SecurityException.
+- Emulate Java 8 API of Logger.
+- Emulate Java 8 API of java.util.Map.
+- Emulate Java 8 API of java.util.Arrays.
+- Emulate Java8 Collectors
+- Emulate Java 8 API of java.util.Collection, Lists and Queues.
+- Emulate Java 8 Streams.
+
+## GSS
+- Add CSS3 and GSS support in InterfaceGenerator
+
+### Miscellanous
+- Fixing up the Maven samples to work with GWT 2.8
+- Fixed spelling error when starting CodeServer
+- Update globals for Chrome 52.0.2743.24.
+- Update apache commons-collections to 3.2.2.
+- Update Guava to 19.0
 
 ## <a id="Release_Notes_2_8_0_BETA1"></a> Release Notes for 2.8.0 (Beta1)
 
