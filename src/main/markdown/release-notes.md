@@ -64,26 +64,27 @@ The GWT Release Notes
 ### Highlights
 - Support for several Java 8 API added.
 - Fix memory leak with Java 8 compilation.
-- Source level set to Java 8 by default
+- Source level set to Java 8.
 
 ### Deprecations
 - Classic dev mode deprecated.You can switch back to dev mode for your test cases temporarily by passing gwt.args='-devMode'.
-- Deprecate c.g.g.validation
+- Deprecate JSR 303 Bean Validation support (javax.validation, c.g.g.validation). The code hasn't been maintained for years.
 
 ### Compiler
 - Update JS reserved keywords to ES6.
 - Fix instanceof for primitives & string.
 - Make exceptions work across Java/JavaScript boundary
-- Fix some warnings for Closure integration.
 - Allow casting native arrays to Object[].
 - Use patched JDT to circumvent memory leak when compiling for Java 8.
 
 ### JsInterop
 - Implement @JsOverlay with default methods in Java8.
-- Fix JAnalysisDecoratedType regarding JsInterop.
-- Split JsInterop annotations into their own JAR when deploying to Maven
-- Fix a bug with generateJsInteropExports flag and SDM
-- Disallow concrete @JsProperty on static methods.
+- Split JsInterop annotations into their own JAR when deploying to Maven:
+      <dependency>
+          <groupId>com.google.jsinterop</groupId>
+          <artifactId>jsinterop-annotations</artifactId>
+      </dependency>
+- Disallow non-native @JsProperty on static methods.
 - Remove legacy JsInterop.
 - Add JsOptional annotation (disallowed on primitive typed parameters).
 - Allow @JsOverlay on effectively final methods.
@@ -93,7 +94,6 @@ The GWT Release Notes
 
 ### JDK emulation
 - Migrate String, Math, Date to native JsType
-- Remove GwtIncompatible from EmulatedCharset.
 - Add java.io.UncheckedIOException
 - Emulate Optional<T> and its int, long, double variants
 - Emulate Objects.requireNonNull() with message Supplier
@@ -123,7 +123,6 @@ The GWT Release Notes
 - Fixed spelling error when starting CodeServer
 - Update globals for Chrome 52.0.2743.24.
 - Update apache commons-collections to 3.2.2.
-- Update Guava to 19.0
 
 ## <a id="Release_Notes_2_8_0_BETA1"></a> Release Notes for 2.8.0 (Beta1)
 
