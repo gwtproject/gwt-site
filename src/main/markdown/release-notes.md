@@ -62,13 +62,17 @@ The GWT Release Notes
 ## <a id="Release_Notes_2_8_0_RC1"></a> Release Notes for 2.8.0 (RC1)
 
 ### Highlights
-- Support for several Java 8 API added.
+- Partial support for Java 8 standard library APIs (see below for full list).
 - Fix memory leak with Java 8 compilation.
 - Source level set to Java 8.
 
 ### Deprecations
 - Classic dev mode deprecated.You can switch back to dev mode for your test cases temporarily by passing gwt.args='-devMode'.
 - Deprecate JSR 303 Bean Validation support (javax.validation, c.g.g.validation). The code hasn't been maintained for years.
+
+### Breaking changes
+- GIN needs a workaround now: gwtproject/gwt#9311
+- JSNI disallows method references to Double, String, Boolean and its super types: gwtproject/gwt#9356
 
 ### Compiler
 - Update JS reserved keywords to ES6.
@@ -93,27 +97,27 @@ The GWT Release Notes
 - Add support for JsType class in UIBinder.
 
 ### JDK emulation
-- Migrate String, Math, Date to native JsType
-- Add java.io.UncheckedIOException
+- Emulate java.io.UncheckedIOException
 - Emulate Optional<T> and its int, long, double variants
 - Emulate Objects.requireNonNull() with message Supplier
-- Emulate java.util.StringJoiner
-- Emulation of java.util.function
 - Fix Math.min/max(float/double) emulation behavior.
-- Emulate PrimitiveIterator, Iterator, Iterable Java 8 API.
-- Emulate Collections.shuffle
-- Emulate Java 8 API of BigInteger.
-- Emulate java.util.IntSummaryStatistics/LongSummaryStatistics/DoubleSummaryStatistics
-- Emulate Java 8 API of Comparator.
-- Emulate java.util.Spliterator
 - Emulate Character.isBmpCodePoint.
 - Add java.lang.SecurityException.
-- Emulate Java 8 API of Logger.
-- Emulate Java 8 API of java.util.Map.
-- Emulate Java 8 API of java.util.Arrays.
-- Emulate Java8 Collectors
-- Emulate Java 8 API of java.util.Collection, Lists and Queues.
-- Emulate Java 8 Streams.
+- Emulate Java 8 API of 
+  - java.util.Arrays, 
+  - java.math.BigInteger, 
+  - java.util.Comparator,
+  - java.util.function,
+  - java.util.Iterator,
+  - java.lang.Iterable,
+  - java.util.IntSummaryStatistics/LongSummaryStatistics/DoubleSummaryStatistics
+  - java.util.Collection/Lists/Queues, 
+  - java.util.Map, 
+  - java.util.logging.Logger, 
+  - java.util.PrimitiveIterator,
+  - java.util.Spliterator,
+  - java.util.stream,
+  - java.util.StringJoiner
 
 ## GSS
 - Add CSS3 and GSS support in InterfaceGenerator
