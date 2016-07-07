@@ -127,6 +127,7 @@ The GWT Release Notes
 - Fixed spelling error when starting CodeServer
 - Update globals for Chrome 52.0.2743.24.
 - Update apache commons-collections to 3.2.2.
+- JsonValue is now serializable. This enables storing JsonValues in the HTTP session on the server.
 
 ## <a id="Release_Notes_2_8_0_BETA1"></a> Release Notes for 2.8.0 (Beta1)
 
