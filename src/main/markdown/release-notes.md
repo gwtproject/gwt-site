@@ -105,7 +105,9 @@ The GWT Release Notes
 - Add java.lang.SecurityException.
 - Emulate Java 8 API of 
   - java.util.Arrays, 
-  - java.math.BigInteger, 
+  - java.util.ArrayDeque,
+  - java.math.BigInteger,
+  - java.util.BitSet,
   - java.util.Comparator,
   - java.util.function,
   - java.util.Iterator,
