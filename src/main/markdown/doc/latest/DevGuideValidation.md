@@ -1,7 +1,7 @@
-Validation (DEPRECATED)
+Validation
 ===
 
-**Attention this API is deprecated in GWT 2.8 and will be removed in future versions**
+**CAUTION: Validation API is unmaintained and will be moved out of GWT SDK into a separate project after GWT 2.8.**
 
 1.  [Introduction](#ValidationIntro)
 2.  [Setup Instructions](#SetupInstructions)
