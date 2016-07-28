@@ -1,7 +1,7 @@
 The GWT Release Notes
 =====================
 
-* [2.8.0 (RC1)](#Release_Notes_2_8_0_RC1) June, 2016
+* [2.8.0 (RC1)](#Release_Notes_2_8_0_RC1) July 29, 2016
 * [2.8.0 (Beta1)](#Release_Notes_2_8_0_BETA1) December 3, 2015
 * [2.7.0](#Release_Notes_2_7_0) November 20, 2014
 * [2.7.0 (RC1)](#Release_Notes_2_7_0_RC1) October 30, 2014
@@ -65,6 +65,7 @@ The GWT Release Notes
 - Partial support for Java 8 standard library APIs (see below for full list).
 - Fix memory leak with Java 8 compilation.
 - Source level set to Java 8.
+- Static and default methods in interfaces aren't visible to generators. If you want to take advantage of those Java-8isms, you're encouraged to switch to an annotation processor. This could break existing build if an interface is changed to turn a non-default method into a default method.
 
 ### Deprecations
 - Classic dev mode deprecated.You can switch back to dev mode for your test cases temporarily by passing gwt.args='-devMode'.
