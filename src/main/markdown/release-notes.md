@@ -98,11 +98,12 @@ The GWT Release Notes
 - Add support for JsType class in UIBinder.
 
 ### JDK emulation
-- Emulate java.io.UncheckedIOException
-- Emulate Optional<T> and its int, long, double variants
-- Emulate Objects.requireNonNull() with message Supplier
+- Emulate java.io.UncheckedIOException.
+- Emulate Optional<T> and its int, long, double variants.
+- Emulate Objects.requireNonNull() with message Supplier.
 - Fix Math.min/max(float/double) emulation behavior.
 - Emulate Character.isBmpCodePoint.
+- Emulate CharSequence.chars().
 - Add java.lang.SecurityException.
 - Emulate Java 8 API of 
   - java.util.Arrays, 
