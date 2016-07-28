@@ -1,6 +1,8 @@
 Validation
 ===
 
+**CAUTION: Validation API is unmaintained and will be moved out of GWT SDK into a separate project after GWT 2.8.**
+
 1.  [Introduction](#ValidationIntro)
 2.  [Setup Instructions](#SetupInstructions)
 3.  [Getting Started with GWT Validation](#GettingStarted)

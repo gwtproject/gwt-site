@@ -74,9 +74,6 @@
   		<entry name="RefJreEmulation" displayName="Ref Jre Emulation" description="Ref Jre Emulation"></entry>
   		<entry name="RefWidgetGallery" displayName="Ref Widget Gallery" description="Ref Widget Gallery"></entry>
   		<entry name="ReleaseNotes" displayName="Release Notes" description="Release Notes"></entry>
-  		
   	</entries>
-  	
-  	
   </toc>
 </folder>
