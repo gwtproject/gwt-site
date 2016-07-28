@@ -72,8 +72,8 @@ The GWT Release Notes
 - Deprecate JSR 303 Bean Validation support (javax.validation, c.g.g.validation). The code hasn't been maintained for years.
 
 ### Breaking changes
-- GIN needs a workaround now: gwtproject/gwt#9311
-- JSNI disallows method references to Double, String, Boolean and its super types: gwtproject/gwt#9356
+- GIN needs a workaround now: https://github.com/gwtproject/gwt/issues/9311
+- JSNI disallows method references to Double, String, Boolean and its super types: https://github.com/gwtproject/gwt/issues/9356
 
 ### Compiler
 - Update JS reserved keywords to ES6.
@@ -83,45 +83,48 @@ The GWT Release Notes
 - Use patched JDT to circumvent memory leak when compiling for Java 8.
 
 ### JsInterop
-- Implement @JsOverlay with default methods in Java8.
-- Split JsInterop annotations into their own JAR when deploying to Maven:
-      <dependency>
-          <groupId>com.google.jsinterop</groupId>
-          <artifactId>jsinterop-annotations</artifactId>
-      </dependency>
-- Disallow non-native @JsProperty on static methods.
+- Implement `@JsOverlay` with default methods in Java8.
+- Disallow non-native `@JsProperty` on static methods.
 - Remove legacy JsInterop.
-- Add JsOptional annotation (disallowed on primitive typed parameters).
-- Allow @JsOverlay on effectively final methods.
+- Add `JsOptional` annotation (disallowed on primitive typed parameters).
+- Allow `@JsOverlay` on effectively final methods.
+- Split JsInterop annotations into their own JAR when deploying to Maven:
+
+```
+<dependency>
+  <groupId>com.google.jsinterop</groupId>
+  <artifactId>jsinterop-annotations</artifactId>
+</dependency>
+```
 
 ### UIBinder
-- Add support for JsType class in UIBinder.
+- Add support for `JsType` class in UIBinder.
 
 ### JDK emulation
-- Emulate java.io.UncheckedIOException.
-- Emulate Optional<T> and its int, long, double variants.
-- Emulate Objects.requireNonNull() with message Supplier.
+- Emulate `java.io.UncheckedIOException`.
+- Emulate `Optional<T>` and its int, long, double variants.
+- Emulate `Objects.requireNonNull()` with message Supplier.
 - Fix Math.min/max(float/double) emulation behavior.
-- Emulate Character.isBmpCodePoint.
-- Emulate CharSequence.chars().
-- Add java.lang.SecurityException.
+- Emulate `Character.isBmpCodePoint()`.
+- Emulate `CharSequence.chars()`.
+- Emulate `java.lang.SecurityException`.
 - Emulate Java 8 API of 
-  - java.util.Arrays, 
-  - java.util.ArrayDeque,
-  - java.math.BigInteger,
-  - java.util.BitSet,
-  - java.util.Comparator,
-  - java.util.function,
-  - java.util.Iterator,
-  - java.lang.Iterable,
-  - java.util.IntSummaryStatistics/LongSummaryStatistics/DoubleSummaryStatistics
-  - java.util.Collection/Lists/Queues, 
-  - java.util.Map, 
-  - java.util.logging.Logger, 
-  - java.util.PrimitiveIterator,
-  - java.util.Spliterator,
-  - java.util.stream,
-  - java.util.StringJoiner
+  - `java.util.Arrays`, 
+  - `java.util.ArrayDeque`,
+  - `java.math.BigInteger`,
+  - `java.util.BitSet`,
+  - `java.util.Comparator`,
+  - `java.util.function`,
+  - `java.util.Iterator`,
+  - `java.lang.Iterable`,
+  - `java.util.IntSummaryStatistics/LongSummaryStatistics/DoubleSummaryStatistics`
+  - `java.util.Collection/Lists/Queues`, 
+  - `java.util.Map`, 
+  - `java.util.logging.Logger`, 
+  - `java.util.PrimitiveIterator`,
+  - `java.util.Spliterator`,
+  - `java.util.stream`,
+  - `java.util.StringJoiner`
 
 ## GSS
 - Add CSS3 and GSS support in InterfaceGenerator
@@ -131,7 +134,7 @@ The GWT Release Notes
 - Fixed spelling error when starting CodeServer
 - Update globals for Chrome 52.0.2743.24.
 - Update apache commons-collections to 3.2.2.
-- JsonValue is now serializable. This enables storing JsonValues in the HTTP session on the server.
+- `elemental.json.JsonValue` is now serializable. This enables storing JsonValues in the HTTP session on the server.
 
 ## <a id="Release_Notes_2_8_0_BETA1"></a> Release Notes for 2.8.0 (Beta1)
 
@@ -181,7 +184,6 @@ The GWT Release Notes
 
 For even more detail, see the [Issue Tracker.]
 (https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-2_8)
-
 
 
 ## <a id="Release_Notes_2_7_0"></a> Release Notes for 2.7.0
