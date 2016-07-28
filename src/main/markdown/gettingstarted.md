@@ -100,14 +100,10 @@ This command starts GWT's development mode server, a local server used for devel
 
 Launch the local server in a browser by either 1) clicking "Launch Default Browser"
 or 2) clicking "Copy to Clipboard" (to copy its URL), then pasting into Firefox, Internet Explorer,
-Chrome, or Safari. Since this is your first time
-hitting the development mode server, it will prompt you to install the GWT
-Developer Plugin. Follow the instructions in the browser to install the plugin, which
-may require restarting the browser.
+Chrome, or Safari.
 
-Once the GWT Developer Plugin is installed in your browser, navigate to
-the URL again and the starter application will load in development mode, as follows:.
-  
+The starter application will load in Super Dev Mode as follows:
+
 <div class="screenshot"><a href="images/myapplication-browser.png"><img src="images/myapplication-browser.png" alt="Screenshot" width="35%"/></a></div>
 
 ## Make a few changes<a id="change"></a>

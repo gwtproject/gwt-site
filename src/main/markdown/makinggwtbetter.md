@@ -589,6 +589,6 @@ If you wish to contribute to the GWT code used on the site (to improve navigatio
 
 Since our .gitignore files don't contain IDE or OS specific .gitignore entries you should setup your global .gitignore.
 
-[This](https://help.github.com/articles/ignoring-files) is how you setup a global .gitingore.
+[This](https://help.github.com/articles/ignoring-files) is how you setup a global .gitignore.
 
 [Here](https://github.com/github/gitignore/tree/master/Global) you find a list of IDE specific global .gitignore files.

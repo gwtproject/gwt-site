@@ -122,8 +122,6 @@ Watch developers talk about their web applications and how they used GWT to buil
   </tr>
 </table>
 
-If you'd like to see who else is using GWT, check out the [GWT Gallery](http://gwtgallery.appspot.com). You'll be able to find other applications and libraries built with GWT, comment on them, rate them, and search for them by tag or by name. You can also [submit your own entry](http://gwtgallery.appspot.com/submit) if you have a project that you want to share.
-
-You can also find a wide variety of open source [projects related to GWT](http://code.google.com/hosting/search?q=GWT&btn=Search+Projects) hosted on Google Code.
+You can also find a wide variety of open source [projects related to GWT](https://github.com/search?q=GWT) hosted on Github.
 
 Please note that the applications linked from this page are provided by third-parties and are not endorsed by the GWT project or Google.
