@@ -50,7 +50,7 @@ Download
     Plugin for Eclipse instead.
   </p>
   <div class='moreinfo'>
-    <a class='download-button' href="http://goo.gl/MWkyRl">Download GWT SDK</a> <br />
+    <a class='download-button' href="http://goo.gl/V7cdJv">Download GWT SDK</a> <br />
     <p style='font-size: 85%;'>
       <a href="versions.html">[Old versions]</a>
     </p>
