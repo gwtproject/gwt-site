@@ -1,7 +1,7 @@
 Tutorials: Overview
 ===
 
-These tutorials are intended for developers who wish to write rich AJAX applications using Google Web Toolkit. You might be a Java developer who would like to be able to apply the software engineering principles of object-oriented programming and leverage the tools in your Java IDE when writing applications for the web. Or you might be a JavaScript guru curious about GWT's ability to generate highly optimized JavaScript.
+These tutorials are intended for developers who wish to write rich AJAX applications using GWT. You might be a Java developer who would like to be able to apply the software engineering principles of object-oriented programming and leverage the tools in your Java IDE when writing applications for the web. Or you might be a JavaScript guru curious about GWT's ability to generate highly optimized JavaScript.
 
 Although a knowledge of HTML, CSS, and Java is assumed, it is not required to run these tutorials.
 
@@ -15,14 +15,14 @@ These tutorials are based on the development of two example applications, such t
 Before you begin these tutorials, we assume that you've done the following:
 
 1.   Installed the Java SDK.
-    *  If you don't have a recent version of the Java SDK installed, download and install [Sun Java Standard Edition SDK](http://java.sun.com/javase/downloads/index.jsp).
+    *  If you don't have a recent version of the Java SDK installed, download and install [Java Standard Edition SDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 2.   Installed Eclipse or your favorite Java IDE.
     *  In these tutorials, we use [Eclipse](http://www.eclipse.org/) because it is open source. However, GWT does not tie you to Eclipse. You can use [IntelliJ](http://www.jetbrains.com/idea/), [NetBeans](http://www.netbeans.org/) or any Java IDE you prefer. If you use a Java IDE other than Eclipse, the screenshots and some of the specific instructions in the tutorial will be different, but the basic GWT concepts will be the same.
     *  If your Java IDE does not include Apache Ant support, you can download and unzip [Ant](http://ant.apache.org) to easily compile and run GWT applications.
 3.   Installed the Google Plugin for Eclipse.
-    *  The [Google Plugin for Eclipse](https://developers.google.com/appengine/docs/java/tools/eclipse) adds functionality to Eclipse for creating and developing GWT applications.
-4.   Downloaded Google Web Toolkit.
-    *  Google Web Toolkit can be downloaded with the Google Plugin for Eclipse.  Alternatively, download the most recent distribution of [Google Web Toolkit](../../../download.html) for your operating system.
+    *  The [Google Plugin for Eclipse](https://developers.google.com/eclipse/docs/getting_started) adds functionality to Eclipse for creating and developing GWT applications.
+4.   Downloaded GWT.
+    *  GWT can be downloaded with the Google Plugin for Eclipse.  Alternatively, download the most recent distribution of [GWT](../../../download.html) for your operating system.
 5.   Unzipped the GWT distribution in directory you want to run it in.
     *  GWT does not have an installation program. All the files you need to run and use GWT are located in the extracted directory.
 
@@ -38,7 +38,7 @@ You may also optionally do the following:
 ### Build a Sample GWT Application
 
 1.   [Build a Sample GWT Application](gettingstarted.html)
-   * Get started with Google Web Toolkit by developing the StockWatcher application from scratch. You'll learn to create a GWT project, build the UI with GWT wigdets and panels, code the client-side functionality in the Java language, debug in development mode, apply CSS styles, compile the Java into JavaScript, and run the application in production mode.
+   * Get started with GWT by developing the StockWatcher application from scratch. You'll learn to create a GWT project, build the UI with GWT wigdets and panels, code the client-side functionality in the Java language, debug in development mode, apply CSS styles, compile the Java into JavaScript, and run the application in production mode.
 
 ### Client-Server Communication
 
@@ -62,7 +62,7 @@ You may also optionally do the following:
 ### Deploying to Google App Engine
 
 1.   [Deploying to Google App Engine](appengine.html)
-    *  Deploy a GWT application to [App Engine](https://developers.google.com/appengine).
+    *  Deploy a GWT application to [App Engine](https://cloud.google.com/appengine/docs).
 
 ### Building Modern Apps with GWT & Polymer
 

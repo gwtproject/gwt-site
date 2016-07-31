@@ -1,6 +1,6 @@
 # Building the UI
 
-In this chapter we'll build a modern looking UI for the **TodoList** application using the [Material Design](http://www.google.es/design/spec/material-design/introduction.html) specifications. We'll be working with the Vaadin gwt-polymer-elements library, a wrapper for the Polymer Paper Elements collection.
+In this chapter we'll build a modern looking UI for the **TodoList** application using the [Material Design](https://material.google.com) specifications. We'll be working with the Vaadin gwt-polymer-elements library, a wrapper for the Polymer Paper Elements collection.
 
 ## Main screen
 

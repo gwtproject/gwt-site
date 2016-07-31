@@ -43,7 +43,7 @@ developer discussion group](http://groups.google.com/group/Google-Web-Toolkit).
 
 ### How do I install GWT?<a id="How_do_I_install_GWT?"></a>
 
-For step-by-step instructions, see Getting Started: Quick Start [Installing Google Web Toolkit](../../gettingstarted.html).
+For step-by-step instructions, see Getting Started: Quick Start [Installing GWT](../../gettingstarted.html).
 
 ### Is GWT available in my country? Does it work for my language?<a id="Is_GWT_available_in_my_country?_Does_it_work_for_my_language?"></a>
 
@@ -51,7 +51,7 @@ GWT is available in all countries and should work for most languages, though doc
 
 ### Does GWT cost anything?<a id="Does_GWT_cost_anything?"></a>
 
-No, GWT is completely free. In fact, all of [GWT's source code](http://code.google.com/p/google-web-toolkit/) is available under the [Apache 2.0 open source license](../../terms.html).
+No, GWT is completely free. In fact, all of [GWT's source code](https://github.com/gwtproject/gwt) is available under the [Apache 2.0 open source license](../../terms.html).
 
 ### What type of information will GWT collect?<a id="What_type_of_information_will_GWT_collect"></a>
 
@@ -117,7 +117,7 @@ Tracker, and will mark enhancement requests appropriately when we receive them.
 
 ### Where can I find the GWT source code? Can I submit a patch?<a id="Where_can_I_find_the_GWT_source_code?_Can_I_submit_a_patch?"></a>
 
-The GWT source code, licensed under Apache 2.0, is available [here](http://code.google.com/p/google-web-toolkit/). If you are interested in
+The GWT source code, licensed under Apache 2.0, is available [here](https://github.com/gwtproject/gwt). If you are interested in
 contributing a patch, please visit the [Making GWT Better](../../makinggwtbetter.html) guide.
 
 ## Browsers and Servers<a id="Browsers_and_Servers"></a>
