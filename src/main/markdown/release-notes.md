@@ -1,6 +1,7 @@
 The GWT Release Notes
 =====================
 
+* [2.8.0 (RC2)](#Release_Notes_2_8_0_RC2) Aug 11, 2016
 * [2.8.0 (RC1)](#Release_Notes_2_8_0_RC1) July 29, 2016
 * [2.8.0 (Beta1)](#Release_Notes_2_8_0_BETA1) December 3, 2015
 * [2.7.0](#Release_Notes_2_7_0) November 20, 2014
@@ -58,6 +59,15 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
+
+## <a id="Release_Notes_2_8_0_RC2"></a> Release Notes for 2.8.0 (RC2)
+
+### Bug fixes
+- Fix incorrect unusable-by-js warning.
+- Fix an issue around DevMode server (jetty) restart.
+- Fix an issue in super dev mode with changing compiler options not triggering full recompiles.
+- Added missing command line parameters to DevMode entry point
+- Fixed a performance regression in String.
 
 ## <a id="Release_Notes_2_8_0_RC1"></a> Release Notes for 2.8.0 (RC1)
 
