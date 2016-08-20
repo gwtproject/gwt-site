@@ -320,7 +320,7 @@ Here is an example:
 
 ```
 public class MapsTestSuite extends GWTTestSuite {
-  public static Test suite() {
+  public static junit.framework.Test suite() {
     TestSuite suite = new TestSuite("Test for a Maps Application");
     suite.addTestSuite(MapTest.class); 
     suite.addTestSuite(EventTest.class);
