@@ -1,0 +1,100 @@
+/* GWTCON 2016 BEGIN*/
+#gwtcon2016-closer, #gwtcon2016-closer + label {
+   position: fixed;
+   z-index: 991505;
+   opacity: 0;
+   animation-delay: 2s;   
+   animation-duration: 500ms;
+   animation-name: slidein-closer;
+   animation-fill-mode: forwards;
+   //opacity: 0;
+   bottom: 55px;
+   right: 262px;
+}
+
+#gwtcon2016-closer {
+   display:none;
+}
+
+#gwtcon2016-closer + label span {
+    display:inline-block;
+    width:10px;
+    height:10px;
+    opacity: 0.8;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzI1NkU3RkEyNTY3MTFFNEFDMUZDNTY3RDAyNjZFRDkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkY5Qjg1QzQyNTcyMTFFNEFDMUZDNTY3RDAyNjZFRDkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDMjU2RTdGODI1NjcxMUU0QUMxRkM1NjdEMDI2NkVEOSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDMjU2RTdGOTI1NjcxMUU0QUMxRkM1NjdEMDI2NkVEOSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Ppe14hsAAAFtSURBVHjaYty4cWP1mzdv1MPCwuK+fPnC8PHjR4YHDx4wsLCwMHBwcDC8e/fOSUREhJtJQkLi8v79+2OBGmaLioqCFfz794+Bh4eH4evXr07r1q3b++rVKwcWJSWlTcHBwbY7duw4DFTE4ezsHMvPz8/w4cMHuw0bNux1cXFZYG5uXswCskpQUPAIULHrypUrdzMyMt6Slpbevnbt2oO2trZzQkJCUp8/f87AePfuXYZr164xAN3B8Pv3b3mgyVefPn3KHRkZWWNnZ9cKdD/Dz58/GZgYgABoCgMM/P//nwEq9h9ZnAkkAXL458+fXRYsWPBAT0+vMzU11XTNmjWtq1evni0mJgb2IJOAgADD+/fvbYC+2w10+BKgZ5qBJp0Butn+6NGjKUAN8zk5ORlY7t275wd0+EYPDw+wwx8+fAgOSyEhoUNBQUEuy5Yt28PLy/uOcdOmTdXAcEIJcJBiWIC/ffvWCWg9N0CAAQA16qhurhKa0wAAAABJRU5ErkJggg==) left top no-repeat;
+}
+
+#gwtcon2016-closer + label span:hover {
+ opacity: 1;
+}
+
+.gwtcon2016 {
+   overflow: hidden;
+   position: fixed;
+   z-index: 991500;
+   width: 0px;
+   right: 2px;
+   bottom: 2px;
+   height: 68px;
+   //background-color: magenta;
+   border-top: 1px solid #dbdbdb;
+   border-left: 1px solid #dbdbdb;
+   border-right: 1px solid #dbdbdb;
+   border-bottom: 3px solid #e9323b;
+   background: url(/images/gwtcon2016_mini.png);
+   animation-delay: 1s;   
+   animation-duration: 1s;
+   animation-name: slidein;
+   animation-fill-mode: forwards;
+}
+
+#gwtcon2016-closer:checked + label span {
+  opacity: 0;			 
+  transition: all 2ms;
+}
+
+#gwtcon2016-closer:checked ~ .gwtcon2016 {
+   width: 270px;
+   opacity: 1;			   
+   animation-delay: 0s;
+   animation-duration: 1s;
+   animation-name: slideout;
+   animation-fill-mode: forwards;
+}
+
+@keyframes slidein {
+  from {
+    width: 0px; 
+    opacity: 0;
+  }  
+  50% {
+    opacity: 1;
+  }
+  to {
+    width: 270px;
+  }
+}
+
+@keyframes slideout {
+  from {
+    width: 270px;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    width: 0px; 
+    opacity: 0;
+  }
+}
+
+@keyframes slidein-closer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* GWTCON 2016 END */
