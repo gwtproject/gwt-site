@@ -192,25 +192,28 @@ class.  Arguments cannot be passed directly through the command-line because
 normal command-line arguments go directly to the JUnit runner. Instead, define
 the system property `gwt.args` to pass arguments to `JUnitShell`.
 
-For example, to run tests in production mode (that is, run the tests afer they
-have been compiled into JavaScript), declare
-`-Dgwt.args="-prod"` as a JVM argument when invoking JUnit. To
-get a full list of supported options, declare
+For example, to run tests in (legacy) development mode (that is, run the tests in Java in the JVM),
+declare `-Dgwt.args="-devMode"` as a JVM argument when invoking JUnit.
+To get a full list of supported options, declare
 `-Dgwt.args="-help"` (instead of running the test, help is
 printed to the console).
 
-### Running your test in Production Mode
+### Running your test in (legacy) Development Mode
 
 When using the webAppCreator tool, you get the ability to launch your tests
-in either development mode or production mode. Make sure you test in both modes
-- although rare, there are [some differences
-between Java and JavaScript](DevGuideCodingBasics.html#DevGuideJavaCompatibility) that could cause your code to produce different
-results when deployed.
+in either (legacy) development mode or production mode.
+By default, tests are run in [production mode](DevGuideCompilingAndDebugging.html#DevGuideProdMode),
+thus they're compiled to JavaScript before being executed.
 
-If you instead decide to run the JUnit TestRunner from command line, you must add some additional arguments to get your unit tests running in production mode. By
-default, tests run in [development mode](DevGuideCompilingAndDebugging.html#DevGuideDevMode) are run as normal Java bytecode in a JVM. To override this default behavior, you need to [pass arguments](#passingTestArguments) to `JUnitShell`
+Otherwise, in [(legacy) development mode](DevGuideCompilingAndDebugging.html#DevGuideDevMode) tests are run as normal Java bytecode in a JVM.
+While this makes it easier to debug them, note that, although rare,
+there are [some differences between Java and JavaScript](DevGuideCodingBasics.html#DevGuideJavaCompatibility)
+that could cause your code to produce different results when deployed.
 
-`-Dgwt.args="-prod"`
+If you instead decide to run the JUnit TestRunner from the command line,
+you need to [pass arguments](#passingTestArguments) to `JUnitShell` to get your unit tests running in (legacy) development mode
+
+`-Dgwt.args="-devMode"`
 
 ### Running your test in Manual Mode<a id="Manual_Mode"></a>
 
