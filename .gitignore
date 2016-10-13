@@ -9,3 +9,5 @@ src/main/site/assets/build/css/
 src/main/site/assets/build/img/
 src/main/site/assets/build/js/global.js
 src/main/site/assets/build/js/global.min.js
+.settings
+.project
