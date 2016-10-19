@@ -1,6 +1,7 @@
 The GWT Release Notes
 =====================
-
+* [2.8.0](#Release_Notes_2_8_0) Oct 20, 2016
+* [2.8.0 (RC3)](#Release_Notes_2_8_0_RC3) Sept 29, 2016
 * [2.8.0 (RC2)](#Release_Notes_2_8_0_RC2) Aug 11, 2016
 * [2.8.0 (RC1)](#Release_Notes_2_8_0_RC1) July 29, 2016
 * [2.8.0 (Beta1)](#Release_Notes_2_8_0_BETA1) December 3, 2015
@@ -59,6 +60,33 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
+## <a id="Release_Notes_2_8_0"></a> Release Notes for 2.8.0
+
+### JsInterop
+- Cleanup/update javadoc for jsinterop annotations.
+- Allow native classes implement native interfaces with overlays.
+
+## <a id="Release_Notes_2_8_0_RC3"></a> Release Notes for 2.8.0 (RC3)
+
+### Bug fixes
+- Fix erroneous constant propagation in JsProperty field.
+- Fix missing bridges for default methods and functionnal expressions.
+- Introduces special `<window>` namespace in JsInterop annotations in order to be able to reference the iframe top scope.
+- Fix ArrayDeque's bug when expanding capacity.
+- Fix missing declaratio/initialization of JsOverlay fields.
+- Fix missing error reporting in SDM that leads to NPE. 
+- Fix inconsistent naming pattern of method reference classes.
+- Fix NullPointerException in super dev mode due to Boolean/Double/String devirtualization.
+- Fix generation of methods to access GSS constant in InterfaceGenerator.
+- Fix incorrect property copying for native JsType subclasses.
+- Fix toString dispatch for subtypes of native JsTypes.
+
+### Miscellanous
+- Improve JsInterop error messages on native type fieds.
+- Update globals for Chrome 54.0.2840.16.
+
+### Deprecation
+- Deprecate RootPanel#clear.
 
 ## <a id="Release_Notes_2_8_0_RC2"></a> Release Notes for 2.8.0 (RC2)
 
