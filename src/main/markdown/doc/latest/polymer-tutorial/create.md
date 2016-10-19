@@ -41,7 +41,7 @@ For the **TodoList** project, we'll need to run `webAppCreator` with the followi
 
         $ cd TodoListApp
         $ mvn war:exploded
-        $ mvn gwt:run
+        $ mvn gwt:devmode
 
       _**Tip**: Since the created project is built with Maven, you can import it in Eclipse, IDEA, etc._
 
