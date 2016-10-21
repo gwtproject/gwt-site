@@ -71,11 +71,9 @@ The GWT Release Notes
 ### Bug fixes
 - Fix erroneous constant propagation in JsProperty field.
 - Fix missing bridges for default methods and functionnal expressions.
-- Introduces special `<window>` namespace in JsInterop annotations in order to be able to reference the iframe top scope.
 - Fix ArrayDeque's bug when expanding capacity.
-- Fix missing declaratio/initialization of JsOverlay fields.
+- Fix missing declaration/initialization of JsOverlay fields.
 - Fix missing error reporting in SDM that leads to NPE. 
-- Fix inconsistent naming pattern of method reference classes.
 - Fix NullPointerException in super dev mode due to Boolean/Double/String devirtualization.
 - Fix generation of methods to access GSS constant in InterfaceGenerator.
 - Fix incorrect property copying for native JsType subclasses.
@@ -86,7 +84,7 @@ The GWT Release Notes
 - Update globals for Chrome 54.0.2840.16.
 
 ### Deprecation
-- Deprecate RootPanel#clear.
+- Deprecate RootPanel#clear(boolean).
 
 ## <a id="Release_Notes_2_8_0_RC2"></a> Release Notes for 2.8.0 (RC2)
 
