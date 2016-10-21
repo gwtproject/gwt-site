@@ -84,7 +84,7 @@ The GWT Release Notes
 - Update globals for Chrome 54.0.2840.16.
 
 ### Deprecation
-- Deprecate RootPanel#clear(boolean).
+- Deprecate dangerous RootPanel#clear(boolean).
 
 ## <a id="Release_Notes_2_8_0_RC2"></a> Release Notes for 2.8.0 (RC2)
 
