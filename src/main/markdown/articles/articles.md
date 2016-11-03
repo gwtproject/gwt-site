@@ -3,6 +3,10 @@
 Below is a list of articles (most recent first) that have been published about GWT development. If you're interested in contributing an article on a specific GWT topic,
  please [drop us a line](http://groups.google.com/group/Google-Web-Toolkit/post?sendowner=1&_done=/group/Google-Web-Toolkit/about%3F&).
 
+*   [Migrating CssResources from CSS to GSS](gss_migration.html) - _December 2015_
+
+    Explains how to gradually transition your CssResources from CSS over to GSS.
+
 *   [Fragment Merging in the GWT Compiler](fragment_merging.html) - _June 2012_
 
      Explains a GWT compiler option for reducing latency in large GWT applications.
