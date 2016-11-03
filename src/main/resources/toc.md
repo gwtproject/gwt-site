@@ -117,6 +117,7 @@
       - [Presentations](presentations.html 'Different Presentations on GWT')
       - [Articles](#)
           - [Overview](articles/articles.html)
+          - [GSS Migration](articles/gss_migration.html 'Migrating CssResources from CSS to GSS')
           - [Fragment Merging](articles/fragment_merging.html)
           - [Super Dev Mode](articles/superdevmode.html)
           - [Elemental](articles/elemental.html)
