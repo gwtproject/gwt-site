@@ -229,7 +229,7 @@ Animated GIF files are supported by `ImageResource`.  While the image data will 
 Only minimal changes are required to convert existing code to use `ImageResource`.
 
 *   `ImageBundle` becomes `ClientBundle`
-*   `AbstractImageProtoype` becomes `ImageResource`
+*   `AbstractImagePrototype` becomes `ImageResource`
 *   `AbstractImagePrototype.createImage()` becomes `new Image(imageResource)`
 *   Other methods on `AbstractImagePrototype` can continue to be used by calling `AbstractImagePrototype.create(imageResource)` to provide an API wrapper.
 
