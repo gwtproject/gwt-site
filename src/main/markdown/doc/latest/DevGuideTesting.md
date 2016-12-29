@@ -32,7 +32,7 @@ your GWT app just as they would any other, perhaps even more than usual.
 
 For some tips along these lines take a look at
 the [Best
-Practices For Architecting Your GWT App](http://code.google.com/events/io/2009/sessions/GoogleWebToolkitBestPractices.html) talk given at Google I/O
+Practices For Architecting Your GWT App](https://www.youtube.com/watch?v=PDuhR18-EdM) talk given at Google I/O
 in May of 2009. And keep an eye on this site for more more articles in
 the same vein.
 
