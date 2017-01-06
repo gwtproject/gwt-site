@@ -31,9 +31,9 @@ separation of concerns, dependency injection and the like will benefit
 your GWT app just as they would any other, perhaps even more than usual.
 
 For some tips along these lines take a look at
-the [Best
-Practices For Architecting Your GWT App](https://www.youtube.com/watch?v=PDuhR18-EdM) talk given at Google I/O
-in May of 2009. And keep an eye on this site for more more articles in
+the *Best Practices For Architecting Your GWT App* 
+([video](https://www.youtube.com/watch?v=PDuhR18-EdM) or 
+[slides](http://dl.google.com/io/2009/pres/Th_0200_GoogleWebToolkitArchitecture-BestPracticesForArchitectingYourGWTApp.pdf)) given at Google I/O in May of 2009. And keep an eye on this site for more more articles in
 the same vein.
 
 ## Creating a Test Case<a id="DevGuideJUnitCreation"></a>
