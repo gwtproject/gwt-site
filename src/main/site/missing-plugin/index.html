@@ -193,7 +193,11 @@ var allDownloads = {
 
   "safari-mac-late": {
     "caption": "Sorry, there is currently no GWT Developer Plugin for Safari 5.1<br>" + "or later, due to major changes in the Safari plugin API. <br><br>" + "In the meantime, <a href='http://www.omnigroup.com/products/omniweb/'>OmniWeb 5.11<\/a> is similar to Safari 5.0 and <br>" + "known to work.",
-  }
+  },
+
+  "edge": {
+    "caption": "Sorry, Edge does not support plugins",
+  },
 };
 
 function leadingDigits(s) {
@@ -225,7 +229,9 @@ function isSafariLate(ua) {
 
 var ua = navigator.userAgent.toLowerCase();
 var id = 'unknown';
-if (ua.indexOf("webkit") != -1) {
+if (ua.indexOf("edge") != -1) {
+  id = 'edge';
+} else if (ua.indexOf("webkit") != -1) {
   if ((ua.indexOf("iphone") != -1) || (ua.indexOf("ipod") != -1)) {
     id = 'safari-iphone';
   } else if (ua.indexOf("android") != -1) {
