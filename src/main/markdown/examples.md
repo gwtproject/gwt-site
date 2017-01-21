@@ -155,6 +155,16 @@ GWT is being used by tens of thousands of projects around the world. Take a look
 
 <div class="project">
   <div class="screenshot">
+    <a href="https://github.com/gchq/stroom" target="_blank"><img src="https://github.com/gchq/stroom-docs/raw/master/resources/screen-shot-feed-tn.png" alt="ruxit"/></a>
+  </div>
+  <div class="info">
+    <div class="name"><a href="https://github.com/gchq/stroom" target="_blank">Stroom</a></div>
+    <div class="snippet">Stroom is a data processing, storage and analysis platform from the Government Communications Headquarters. It is scalable - just add more CPUs / servers for greater throughput. It is suitable for processing high volume data such as system logs, to provide valuable insights into IT performance and usage.</div>
+  </div>
+</div>
+
+<div class="project">
+  <div class="screenshot">
     <a href="https://ruxit.com" target="_blank"><img src="images/ruxit.png" alt="ruxit"/></a>
   </div>
   <div class="info">
