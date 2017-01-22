@@ -155,7 +155,7 @@ GWT is being used by tens of thousands of projects around the world. Take a look
 
 <div class="project">
   <div class="screenshot">
-    <a href="https://github.com/gchq/stroom" target="_blank"><img src="https://github.com/gchq/stroom-docs/raw/master/resources/screen-shot-feed-tn.png" alt="ruxit"/></a>
+    <a href="https://github.com/gchq/stroom" target="_blank"><img src="https://github.com/gchq/stroom-docs/raw/master/resources/screen-shot-feed-tn.png" alt="Stroom"/></a>
   </div>
   <div class="info">
     <div class="name"><a href="https://github.com/gchq/stroom" target="_blank">Stroom</a></div>
