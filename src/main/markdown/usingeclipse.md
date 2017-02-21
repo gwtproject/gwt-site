@@ -35,6 +35,10 @@ GWT release candidates are not bundled with The Google Plugin For Eclipse. If yo
   style="width: 385px; height: 100px;" alt="screenshot"/>
 </div>
 
+A beta version of the community GWT Plugin for Eclipse is available [here](https://gwt-plugins.github.io/documentation/gwt-eclipse-plugin/Download.html).  
+
+**DO NOT** attempt to use both versions of the plugin together.
+
 ## Create a Web Application<a id="creating"></a>
 
 To create a Web Application, select **File > New > Web Application Project** from the Eclipse menu.
