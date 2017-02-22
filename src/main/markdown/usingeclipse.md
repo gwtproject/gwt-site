@@ -22,22 +22,16 @@ If you do not already have Eclipse, you may download it from the [Eclipse Websit
 <img src="https://developers.google.com/eclipse/images/google-plugin.png" style="float: left; width: 40px;
 margin-right: 15px;"/>
 
-Install the Google Plugin for Eclipse following [these instructions](https://developers.google.com/eclipse/docs/download)
+Install the GWT Plugin for Eclipse following [these instructions](https://gwt-plugins.github.io/documentation/gwt-eclipse-plugin/Download.html)
 
-In the Install dialog, you will see an option to install the Plugin as well
-as the GWT and App Engine SDKs. Choosing the SDK options will install a GWT
-and/or App Engine SDK within your Eclipse plugin directory as a convenience.
+In the Install dialog, you will see an option to install the Plugin as well as the GWT SDKs. Choosing the SDK options will install a GWT  within your Eclipse plugin directory as a convenience.
 
-GWT release candidates are not bundled with The Google Plugin For Eclipse. If you're interested in using a GWT RC SDK, download and add it to your workspace as described [here](https://developers.google.com/eclipse/docs/using_sdks).
+GWT release candidates are not bundled with The GWT Plugin For Eclipse. If you're interested in using a GWT RC SDK, download and add it to your workspace as described [here](https://developers.google.com/eclipse/docs/using_sdks).
 
 <div class="screenshot">
   <img src="images/eclipse/eclipse-install-options.png"
   style="width: 385px; height: 100px;" alt="screenshot"/>
 </div>
-
-A beta version of the community GWT Plugin for Eclipse is available [here](https://gwt-plugins.github.io/documentation/gwt-eclipse-plugin/Download.html).  
-
-**DO NOT** attempt to use both versions of the plugin together.
 
 ## Create a Web Application<a id="creating"></a>
 
