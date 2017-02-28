@@ -105,9 +105,13 @@ h1 {
 
   <div class="yellowPane">
     <h1>
-      Development Mode requires the GWT Developer Plugin
+      DevMode requires the GWT Developer Plugin
     </h1>
 
+    <p>
+      Please note that DevMode is deprecated, use SuperDevMode instead,
+      which does not need browser plugins.
+    </p>
     <p>
       By downloading, you agree to the <a href="/terms.html">Terms of
       Service</a> and <a href="/privacy.html">Privacy Policy</a>.
@@ -156,13 +160,7 @@ var allDownloads = {
   },
 
   "chrome": {
-    "caption": "Download the GWT Developer Plugin<br>For Chrome",
-    "url": "https://chrome.google.com/webstore/detail/gwt-developer-plugin/jpjpnpmbddbjkfaccnmhnkdgjideieim",
-    "platforms": "Win x86, Mac x86",
-  },
-
-  "chrome-linux": {
-    "caption": "Sorry, the GWT Developer Plugin no longer works with Chrome on Linux",
+    "caption": "Sorry, the GWT Developer Plugin no longer works with Chrome",
   },
 
   "safari-win": {
@@ -195,7 +193,11 @@ var allDownloads = {
 
   "safari-mac-late": {
     "caption": "Sorry, there is currently no GWT Developer Plugin for Safari 5.1<br>" + "or later, due to major changes in the Safari plugin API. <br><br>" + "In the meantime, <a href='http://www.omnigroup.com/products/omniweb/'>OmniWeb 5.11<\/a> is similar to Safari 5.0 and <br>" + "known to work.",
-  }
+  },
+
+  "edge": {
+    "caption": "Sorry, Edge does not support plugins",
+  },
 };
 
 function leadingDigits(s) {
@@ -227,17 +229,15 @@ function isSafariLate(ua) {
 
 var ua = navigator.userAgent.toLowerCase();
 var id = 'unknown';
-if (ua.indexOf("webkit") != -1) {
+if (ua.indexOf("edge") != -1) {
+  id = 'edge';
+} else if (ua.indexOf("webkit") != -1) {
   if ((ua.indexOf("iphone") != -1) || (ua.indexOf("ipod") != -1)) {
     id = 'safari-iphone';
   } else if (ua.indexOf("android") != -1) {
     id = 'webkit-android';
   } else if (ua.indexOf("chrome") != -1) {
-    if (ua.indexOf('linux') != -1) {
-      id = 'chrome-linux';
-    } else {
-      id = 'chrome';
-    }
+    id = 'chrome';
   } else if (ua.indexOf("macintosh") != -1) {
     if (isSafariLate(ua)) {
       id = 'safari-mac-late';
@@ -247,7 +247,7 @@ if (ua.indexOf("webkit") != -1) {
   } else if (ua.indexOf("windows") != -1) {
     id = 'safari-win';
   }
-} else if (ua.indexOf("msie") != -1 || ua.indexOf("Trident") != -1) {
+} else if (ua.indexOf("msie") != -1 || ua.indexOf("trident") != -1) {
   id = (ua.indexOf("win64") == -1) ? 'ie' : 'ie-x64';
 } else if (ua.indexOf("opera") != -1) {
   id = 'opera';
