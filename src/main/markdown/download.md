@@ -46,8 +46,7 @@ Download
       this latest version</a>.
   </p>
   <p style="font-size: 90%;">
-    <b style="color: #444;">Note</b> - This download contains the standalone GWT SDK and tools only. If you're using Eclipse, we suggest that you download and install the Google
-    Plugin for Eclipse instead.
+    <b style="color: #444;">Note</b> - This download contains the standalone GWT SDK and tools only. If you're using Eclipse, we suggest that you download and install the GWT Eclipse Plugin instead.
   </p>
   <div class='moreinfo'>
     <a class='download-button' href="https://goo.gl/QWOlx0">Download GWT SDK</a> <br />
@@ -60,22 +59,20 @@ Download
   </div>
 </div>
 
-<img class='download-icon' src="https://developer.google.com/eclipse/images/google-plugin.png" />
+<img class='download-icon' src="http://gwt-plugins.github.io/documentation/gwt-eclipse-plugin/workspace/images/logo.png" />
 <div class='download-block'>
   <h3 style="margin-top: 0em;">
     Plugin for Eclipse <span style="font-weight: normal; font-size: 95%;"> (incl. SDKs)</span>
   </h3>
-  <p>The Google Plugin for Eclipse provides IDE support for the GWT and App Engine web projects.</p>
+  <p>The GWT Eclipse Plugin provides IDE support for GWT projects.</p>
   <p style="font-size: 90%;">
-    <b style="color: #444;">Note</b> - This download includes Eclipse tools as well as the option to install the GWT SDK and <a
-      href="https://developer.google.com/appengine/docs/whatisgoogleappengine">App Engine SDK</a>.
+    <b style="color: #444;">Note</b> - This download includes Eclipse tools as well as the option to install the GWT SDK.
   </p>
   <p style="margin-top: 0.5em; font-size: 90%">
-    <b style="color: #444;">Note</b> - GWT release candidates are not bundled with the Google Plugin For Eclipse. Download the SDK and add it to your workspace as described <a
-      href="https://developers.google.com/eclipse/docs/using_sdks">here</a>. The Google Plugin for Eclipse's version of GWT might also not always be up-to-date.
+    <b style="color: #444;">Note</b> - GWT release candidates are not bundled with the GWT Eclipse Plugin. The GWT Eclipse Plugin's version of GWT might also not always be up-to-date.
   </p>
   <div class='moreinfo'>
-    <a class='download-button' href="https://developer.google.com/eclipse/docs/download">Download Plugin &amp; SDKs</a>
+    <a class='download-button' href="http://gwt-plugins.github.io/documentation/gwt-eclipse-plugin/Download.html">Download Plugin &amp; SDKs</a>
     <p style='font-size: 90%;'>
       Next: Go to <a href="usingeclipse.html">Set up Eclipse</a>, then <a href="doc/latest/tutorial/gettingstarted.html">Build a Sample App</a>
     </p>
