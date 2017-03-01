@@ -12,9 +12,12 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.7</maven.compiler.source>
   </properties>
 
   <build>
+    <finalName>generated-site</finalName>
     <resources>
       <resource>
         <directory>src/main/markdown</directory>
@@ -27,16 +30,6 @@
       </resource>
     </resources>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <version>2.5.1</version>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
-
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
@@ -113,36 +106,6 @@
         </configuration>
       </plugin>
     </plugins>
-
-    <pluginManagement>
-      <plugins>
-        <!-- Run site locally: mvn jetty:run -->
-        <plugin>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>jetty-maven-plugin</artifactId>
-          <version>8.1.9.v20130131</version>
-          <configuration>
-            <webAppSourceDirectory>${project.build.directory}/generated-site</webAppSourceDirectory>
-          </configuration>
-        </plugin>
-        <!-- Work around a performance issue with Maven and Java 7: 
-          Maven has a dependency that does a getgrgid for each file.
-          This is very slow for large groups, and not cached.
-          See issue: http://jira.codehaus.org/browse/PLXCOMP-203
-        -->
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <dependencies>
-            <dependency>
-              <groupId>org.codehaus.plexus</groupId>
-              <artifactId>plexus-io</artifactId>
-              <version>2.0.5</version>
-            </dependency>
-          </dependencies>
-        </plugin>
-      </plugins>
-    </pluginManagement>
   </build>
 
   <dependencies>
@@ -175,7 +138,7 @@
           <plugin>
             <groupId>com.github.eirslett</groupId>
             <artifactId>frontend-maven-plugin</artifactId>
-            <version>0.0.20</version>
+            <version>1.3</version>
             <executions>
               <execution>
                 <id>install node and npm</id>
@@ -184,8 +147,8 @@
                   <goal>install-node-and-npm</goal>
                 </goals>
                 <configuration>
-                  <nodeVersion>v0.10.33</nodeVersion>
-                  <npmVersion>1.4.28</npmVersion>
+                  <nodeVersion>v7.6.0</nodeVersion>
+                  <npmVersion>4.3.0</npmVersion>
                 </configuration>
               </execution>
               <execution>

@@ -24,6 +24,6 @@ If you don't have Grunt installer :
 ###Running locally
 Run the site locally for easy visual testing
 
-* Run: `mvn install`
-* Run: `mvn jetty:run`
-* Goto: http://127.0.0.1:8080
+* Change to the `target/generated-site` folder.
+* Open the `index.html` file in your browser.
+* Additionally, you could run any local HTTP server in this folder.
