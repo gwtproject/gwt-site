@@ -66,20 +66,18 @@ Just glancing at the code, you can see that the value of the changePercentText v
 1.  Set a breakpoint on the lines of code you want to step into and where you want to examine variable values.
     *  In StockWatcher.java, in the updateTable(StockPrice price) method, set a breakpoints on these two lines
 
-```
-String changePercentText = changeFormat.format(price.getChangePercent());
-```
+    ```java
+    String changePercentText = changeFormat.format(price.getChangePercent());
+    ```
 
+    ```java
+    stocksFlexTable.setText(row, 1, priceText);
+    ```
 
-
-```
-stocksFlexTable.setText(row, 1, priceText);
-```
-
-*  Eclipse switches to Debug perspective.
     *  Run the code that has the error.
     *  To run the code in the updateTable method where you suspect the error, just add a stock to the stock list in the browser running in development mode.
     *  Execution will stop at the first breakpoint.
+    *  Eclipse switches to Debug perspective.
 
 2.  Check the values of the variables priceText and changeText.
     *  In the Eclipse Debug perspective, look at the Variables pane.
