@@ -1,16 +1,16 @@
-#GWT Documentation
+# GWT Documentation
 
 * GWT documentation is published under http://www.gwtproject.org/doc/latest/DevGuide.html
 
-##Reference
+## Reference
 
 * Markdown processor: https://github.com/sirthias/pegdown
 
-##Adding content
+## Adding content
 
 * See: http://www.gwtproject.org/makinggwtbetter.html#webpage
 
-##Building
+## Building
 
 If you have Grunt installed :
 * build the assets using Grunt: `grunt`
@@ -21,7 +21,7 @@ If you don't have Grunt installer :
 * build the assets using Maven and Grunt plugin: `mvn clean install -Pgrunt`
 * after that you will find the generated documentation in `target/generated-site/`.
 
-###Running locally
+### Running locally
 Run the site locally for easy visual testing
 
 * Change to the `target/generated-site` folder.
