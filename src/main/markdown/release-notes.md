@@ -1,5 +1,6 @@
 The GWT Release Notes
 =====================
+* [2.8.1](#Release_Notes_2_8_1) Apr 24, 2017
 * [2.8.0](#Release_Notes_2_8_0) Oct 20, 2016
 * [2.8.0 (RC3)](#Release_Notes_2_8_0_RC3) Sept 29, 2016
 * [2.8.0 (RC2)](#Release_Notes_2_8_0_RC2) Aug 11, 2016
@@ -60,6 +61,55 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
+## <a id="Release_Notes_2_8_1"></a> Release Notes for 2.8.1
+
+### Highlights
+
+- Elemental1's JSON parser now correctly throws an exception when a string, object,
+or array is not correctly ended
+
+- Support filtering JsInterop types for export, with whitelist/blacklist and
+wildcards. The `-generateJsInteropExport` flag is still used to enable the feature,
+but `-includeJsInteropExport` and `-excludeJsInteropExport` now exist to specify
+packages with optional `*` wildcards. Later arguments and patterns override earlier
+ones.
+
+- Support "`*`" (any) and "`?`" (unknown) types as a JsType native name. The
+"Unknown" type can be referred over Object if the type is unknown, while "any" is
+prefered supertype of any JS type, including primitives.
+
+### Bug fixes
+- Fix loading bug in waitForBodyLoaded.js
+- Fix NPE compiling code with a constructor reference (Type::new).
+- Fix bad rewriting of default methods.
+- Make native NativeRegExp to refer to the iframe instance.
+- Fix incorrect comparison of object arrays in Arrays.deepEquals.
+- Fixed NullPointerException in handling of Jetty arguments
+- Fixes a bug where JsOptional on override may fail
+- Clear persistent unit cache when relevant options change.
+- Rescue JSOs crossing JsInterop borders.
+- Rescue types represented as natives when supertypes cross JS boundaries.
+- Prevent errorneous floating point expression optimization.
+- Fix the implementation of Stream.anyMatch/allMatch/noneMatch to support streams with null elements.
+- Do not ignore return values of streams.
+- Fix ICE due to intersection types appearing as erasure casts.
+- Fix bad varargs conversion in method reference.
+- Fix: Add role attribute to last sortable column header
+- Properly preserve names in overrides of native methods.
+- Make Array.sort(float[]/double[]) JDK compliant
+
+### Miscellanous
+- Small optimization in String.subString
+- Specialize Objects.equals for strings.
+- Improve primitive cast optimizations.
+- Update global blacklist to chrome 57.0.2987.74.
+- Improvements for compliance with Strict CSP
+- Remove Characteristics manipulation in Collectors
+
+
+### Deprecation
+- Adds deprecation to @GwtScriptOnly
+
 ## <a id="Release_Notes_2_8_0"></a> Release Notes for 2.8.0
 
 ### JsInterop
@@ -205,7 +255,7 @@ The GWT Release Notes
 - Improved logging and stack traces for superdev mode.
 
 #### GSS support
-- GSS is not longer experimental but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
+- GSS is no longer experimental but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
 - "For loop support" added
 - a new function concat() is now available to concatenate variable and string literal.
 - @gen-webkit-keyframes annotation: generate automaticaly @-webkit-keyframes block
