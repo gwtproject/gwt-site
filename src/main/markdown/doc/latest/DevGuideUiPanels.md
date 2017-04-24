@@ -475,15 +475,14 @@ won't behave quite as expected: the widget will indeed be made invisible, but
 it will tend to consume mouse events (actually, it's the container element that
 is doing so).
 
-To work around this, you can get the container element directly using
-[LayoutPanel.getWidgetContainerElement(Widget)](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#getWidgetContainerElement\(com.google.gwt.user.client.ui.Widget\)), and set its visibility
-directly:
+To work around this, you need to use
+[LayoutPanel.setWidgetVisible(Widget,boolean)](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#setWidgetVisible-com.google.gwt.user.client.ui.Widget-boolean-):
 
 ```
 LayoutPanel panel = ...;
 Widget child;
 panel.add(child);
-UIObject.setVisible(panel.getWidgetContainerElement(child), false);
+panel.setWidgetVisible(child, false);
 ```
 
 ### Using a LayoutPanel without RootLayoutPanel
