@@ -3,6 +3,28 @@ Versions
 
 GWT is licensed under the [Apache 2.0 open source license](terms.html) (since version 1.3).
 
+
+### Version 2.8.1
+
+Build 2.8.1 - Apr 24, 2017 - [Release notes](release-notes.html#Release_Notes_2_8_1)
+
+  <table class="downloads" style="width:500px">
+    <tbody>
+      <tr>
+        <th>Platform</th>
+        <th>Package</th>
+        <th>Size</th>
+        <th>SHA1 Sum</th>
+      </tr>
+      <tr>
+        <td>Windows, Mac OS X, and Linux</td>
+        <td>[gwt-2.8.1.zip](https://goo.gl/TysXZl)</td>
+        <td>92 MB</td>
+        <td>c1d192851c6fa219d8dd0a63a147f14a70107371</td>
+      </tr>
+    </tbody>
+  </table>
+
 ### Version 2.8.0
 
 Build 2.8.0 - Oct 20, 2016 - [Release notes](release-notes.html#Release_Notes_2_8_0)
