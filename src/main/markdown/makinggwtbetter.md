@@ -445,7 +445,7 @@ Each line of text in your code should be at most 100 characters
 long. Use linefeed characters to break lines (Unix-style). There are
 some exceptions:
 
-*   Java identifiers referenced from within [JSNI methods](latest/DevGuideCodingBasicsJSNI.html#methods-fields) can get quite long and cannot be parsed if split across lines.
+*   Java identifiers referenced from within [JSNI methods](doc/latest/DevGuideCodingBasicsJSNI.html#methods-fields) can get quite long and cannot be parsed if split across lines.
 *   Exception: If a comment line contains an example command or a literal URL longer than 100 characters, that line may be longer than 100 characters for ease of cut and paste.
 *   Exception: Import lines can go over the limit because humans rarely see them. This also simplifies tool writing.
 
