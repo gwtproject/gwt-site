@@ -103,7 +103,7 @@ packages.
 2.  *   src folder - contains production Java source
     *   war folder - your web app; contains static resources as well as compiled output
     *   test folder - (optional) JUnit test code would go here
-3.  Within the src package, create a project root package and a client package.
+3.  Within the src package, create a project root package, and within that create a client package.
 4.  If you have server-side code, also create a server package to differentiate between the client-side code (which is translated into JavaScript) from the server-side code (which
 is not).
 5.  Within the project root package, place one or more module definitions.
