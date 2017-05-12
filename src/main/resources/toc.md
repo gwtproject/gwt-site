@@ -142,6 +142,7 @@
       - [Contributing](makinggwtbetter.html 'Learn how to contribute to GWT')
       - [Life of an Issue](lifeofanissue.html 'Learn about GWT and the issue tracker')
       - [Steering Committee](steering.html 'The GWT Steering Committee')
+          - [Meeting Notes](meetingnotes.html)
   - [Terms](terms.html)
       - [GWT License](terms.html)
       - [GWT Name Use Policy](GWTPolicy.html)
