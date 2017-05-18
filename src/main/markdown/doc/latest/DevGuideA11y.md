@@ -133,7 +133,7 @@ protected CustomButton() {
     ...
     // Add a11y state "aria-pressed" and "aria-disabled"
     Roles.getButtonRole().setAriaPressedState(getElement(), PressedValue.of(false));
-    Roles.getButtonRole().setAriaDiabledState(getElement(), false);
+    Roles.getButtonRole().setAriaDisabledState(getElement(), false);
   }
 ```
 
@@ -157,12 +157,12 @@ void toggleDown() {
 
   void setInactive() {
     // Update a11y state "aria-disabled"
-    Roles.getButtonRole().setAriaDiabledState(getElement(), false);
+    Roles.getButtonRole().setAriaDisabledState(getElement(), false);
   }
 
   void setActive() {
     // Update a11y state "aria-disabled"
-    Roles.getButtonRole().setAriaDiabledState(getElement(), true);
+    Roles.getButtonRole().setAriaDisabledState(getElement(), true);
   }
 ```
 
