@@ -323,7 +323,7 @@ public AutoCompleteWidget() {
     ariaElement = DOM.createDiv();
     DOM.setStyleAttribute(ariaElement, "display", "none");
     Roles.getRegionRole(ariaElement);
-    Roles.getRegionRole().getAriaLiveProperty(ariaElement, LiveValue.ASSERTIVE);
+    Roles.getRegionRole().setAriaLiveProperty(ariaElement, LiveValue.ASSERTIVE);
     DOM.appendChild(getElement(), ariaElement);
   }
 ```
