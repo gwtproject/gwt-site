@@ -10,14 +10,14 @@ The committee will lead the GWT project in major decisions by consensus and ensu
 The steering committee consists of the following members (no particular order):
 
 * Bhaskar Janakiraman, [Google](https://www.google.com/about/)
-* Artur Signell, [Vaadin](http://www.vaadin.com)
+* Artur Signell, [Vaadin](https://www.vaadin.com)
 * Justin Hickman
-* Colin Alworth, [RedCurrent](http://www.redcurrent.com)
-* Christian Sadilek, [RedHat](http://www.redhat.com)
+* Colin Alworth, [RedCurrent](https://www.redcurrent.com)
+* Christian Sadilek, [RedHat](https://www.redhat.com)
 * Thomas Broyer
 * Stephen Haberman, [LinkedIn](https://www.linkedin.com/about-us)
 * Daniel Kurka, [Google](https://www.google.com/about/)
-* Christian Goudreau, [Arcbees](http://www.arcbees.com)
-* Konstantin Solomatov, [Jetbrains](http://www.jetbrains.com)
+* Christian Goudreau, [Arcbees](https://www.arcbees.com)
+* Konstantin Solomatov, [Jetbrains](https://www.jetbrains.com)
 
 Affiliations are listed for identification purposes only; steering committee members do not represent their employers or academic institutions.
