@@ -114,7 +114,7 @@ public class EditPersonWorkflow{
 
 The basic `Editor` type is simply a parameterized marker interface that indicates that a type conforms to the editor contract or informal protocol.  The only expected behavior of an `Editor` is that it will provide access to its sub-Editors via one or more of the following mechanisms: 
 
-*   An instance field with at least package visibility whose name exactly the property that will be edited or `propertyNameEditor`.  For example:
+*   An instance field with at least package visibility whose name exactly is the property that will be edited or `propertyNameEditor`.  For example:
 
 ```
 class MyEditor implements Editor<Foo> {
