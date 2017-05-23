@@ -62,8 +62,7 @@ list.  For instance, you can create a `CellList<String>` that uses a `Cell<Strin
 a list of Strings. For a fancier list view, you can create a custom cell, described at
 [Creating a Custom Cell](#custom-cell).
 
-**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase
-.html#!CwCellList) shows a `CellList<ContactInfo>` (on the left). Each list item is a custom
+**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) shows a `CellList<ContactInfo>` (on the left). Each list item is a custom
 type `ContactCell<ContactInfo>`.  The right-hand widget is a normal Composite widget that
 renders the data for a selected contact.
 
