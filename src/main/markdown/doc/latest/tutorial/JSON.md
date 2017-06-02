@@ -455,7 +455,7 @@ The RequestCallback interface is analogous to the AsyncCallback interface in GWT
 #### Modify the updateTable method
 
 To fix the compile errors, modify the updateTable method.
-
+<ul>
     <li>Change: StockPrice[] prices
  To: JsArray<StockData> prices</li>
     <li>Change: prices.length
