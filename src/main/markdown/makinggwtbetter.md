@@ -564,7 +564,7 @@ you can clone the repository:
 
 `git clone https://github.com/gwtproject/gwt-site`
 
-The source code for this webpage will be found in *src/main/markdown*. You can edit existing files and add new ones. For [building](https://github.com/gwtproject/gwt-site#building) and [running](https://github.com/gwtproject/gwt-site#running-locally) the pages see https://github.com/gwtproject/gwt-site#building
+The source code is located in *src/main/markdown*. Instructions to test the changes locally can be found in the [README](https://github.com/gwtproject/gwt-site).
 
 If you think your change is ready to be published on gwtproject.org you can send us
 your changes with a pull request to https://github.com/gwtproject/gwt-site.
