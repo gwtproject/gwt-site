@@ -564,22 +564,10 @@ you can clone the repository:
 
 `git clone https://github.com/gwtproject/gwt-site`
 
-The source code for this webpage will be found in *src/main/markdown*. You can edit existing files and add new ones. If you want to see your changes you will need to run:
-
-`mvn clean install`
-
-After that you can go to *target/generated-site* and see the generated site.
-
-You can also launch the embedded Jetty server with
-
-```
-mvn jetty:run
-```
-
-and point your browser to [http://localhost:8080](http://localhost:8080).
+The source code is located in *src/main/markdown*. Instructions to test the changes locally can be found in the [README](https://github.com/gwtproject/gwt-site).
 
 If you think your change is ready to be published on gwtproject.org you can send us
-your changes with a pull request to http://github.com/gwtproject/gwt-site.
+your changes with a pull request to https://github.com/gwtproject/gwt-site.
 
 If you wish to contribute to the GWT code used on the site (to improve navigation), then you should
 
