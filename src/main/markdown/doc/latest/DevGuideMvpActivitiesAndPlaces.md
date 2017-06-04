@@ -35,7 +35,7 @@ by defining a PlaceTokenizer for each
 Place, and GWT's PlaceHistoryHandler automatically updates the browser URL
 corresponding to each Place in your app.
 
-You can download all of the code referenced here in [this sample app](http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-hellomvp-2.1.zip). The
+You can download all of the code referenced here in [this sample app](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/google-web-toolkit/Tutorial-hellomvp-2.1.zip). The
 sample app is a simple "Hello, World!" example demonstrating the use of 
 Activities and Places with MVP.
 
