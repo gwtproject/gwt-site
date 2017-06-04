@@ -51,7 +51,7 @@ We'll then look into how each of these components interact by digging into:
 ## Sample Project <a id="sample"></a>
 
 The sample project, referenced throughout this tutorial, can be found at
-[Tutorial-Contacts.zip](http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-Contacts.zip).
+[Tutorial-Contacts.zip](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/google-web-toolkit/Tutorial-Contacts.zip).
 
 ![diagram](../images/mvp_diagram.png)
 

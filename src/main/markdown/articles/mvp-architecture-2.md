@@ -6,7 +6,7 @@ _Chris Ramsdale, Google Developer Relations_
 _Updated March 2010_
 
 The sample project, referenced throughout this tutorial, can be downloaded at
-[Tutorial-Contacts2.zip](http://code.google.com/p/google-web-toolkit/downloads/detail?name=Tutorial-Contacts2.zip).
+[Tutorial-Contacts2.zip](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/google-web-toolkit/Tutorial-Contacts2.zip).
 
 With the foundation of our MVP-based app laid out, you may be asking 
 yourself, "Hey, why can't I use that fancy [UiBinder](#uibinder)
