@@ -194,7 +194,7 @@ clickable heading).
 ```
 
 In GWT, any widget that extends the [FocusWidget](/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html) abstract class will be keyboard focusable by default. The FocusWidget abstract class includes a
-[setFocus(boolean)](/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html#setFocus\(boolean\)) method that
+[setFocus(boolean)](/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html#setFocus-boolean-) method that
 can be used to programmatically set the focus or remove focus on the widget. FocusWidget also includes a
 [setTabIndex(int)](/javadoc/latest/com/google/gwt/user/client/ui/FocusWidget.html##setTabIndex\(int\)) method that allows the user to set the DOM property
 `tabIndex` for the widget.
@@ -281,7 +281,7 @@ Whenever an item selection changes, the value of the `aria-activedescendant` pro
 ```
 
 Though it is not shown in this code snippet, when TreeItems are created, they are constructed out of several divs, only one of which contains the content that we wish to be
-interpreted by the screen reader. This div is assigned a unique DOM id (which is generated using the [DOM.createUniqueId()](/javadoc/latest/com/google/gwt/user/client/DOM.html#createUniqueId\(\)) method), and a role of `treeitem`. These attributes are not set on the root TreeItem div because it contains a child image, which we do not want to be read.
+interpreted by the screen reader. This div is assigned a unique DOM id (which is generated using the [DOM.createUniqueId()](/javadoc/latest/com/google/gwt/user/client/DOM.html#createUniqueId--) method), and a role of `treeitem`. These attributes are not set on the root TreeItem div because it contains a child image, which we do not want to be read.
 
 #### Caveats with this Approach
 

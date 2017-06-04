@@ -1631,7 +1631,7 @@ browser. Development mode is supported through the use of a
 native-code plugin called the _GWT Developer Plugin_ for many
 popular browsers. In other words, you can use development mode
 directly from Safari, Firefox, Internet Explorer, and Chrome.
-*   Code Splitting: Developer-guided code splitting with [GWT.runAsync()](/javadoc/latest/com/google/gwt/core/client/GWT.html#runAsync\(com.google.gwt.core.client.RunAsyncCallback\))
+*   Code Splitting: Developer-guided code splitting with [GWT.runAsync()](/javadoc/latest/com/google/gwt/core/client/GWT.html#runAsync-com.google.gwt.core.client.RunAsyncCallback-)
 allows you to chunk your GWT code into multiple fragments for faster
 startup. Imagine having to download a whole movie before being able to
 watch it. Well, that's what you have to do with most Ajax apps these

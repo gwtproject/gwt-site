@@ -37,8 +37,8 @@ For example, a history token named "page1" would be added to a URL as follows:
 http://www.example.com/com.example.gwt.HistoryExample/HistoryExample.html#page1
 ```
 
-When the application wants to push a placeholder onto the browser's history stack, it simply invokes [History.newItem(token)](/javadoc/latest/com/google/gwt/user/client/History.html#newItem\(java.lang.String\)). When
-the user uses the back button, a call will be made to any object that was added as a handler with [History.addValueChangeHandler()](/javadoc/latest/com/google/gwt/user/client/History.html#addValueChangeHandler\(com.google.gwt.event.logical.shared.ValueChangeHandler\)). It is up to the application to restore the state according to the value of the new token.
+When the application wants to push a placeholder onto the browser's history stack, it simply invokes [History.newItem(token)](/javadoc/latest/com/google/gwt/user/client/History.html#newItem-java.lang.String-). When
+the user uses the back button, a call will be made to any object that was added as a handler with [History.addValueChangeHandler()](/javadoc/latest/com/google/gwt/user/client/History.html#addValueChangeHandler-com.google.gwt.event.logical.shared.ValueChangeHandler-). It is up to the application to restore the state according to the value of the new token.
 
 ## Example<a id="example"></a>
 
@@ -53,7 +53,7 @@ To use GWT History support, you must first embed an iframe into your [host HTML 
 Then, in your GWT application, perform the following steps:
 
 *   Add a history token to the history stack when you want to enable a history event.
-*   Create an object that implements the [ValueChangeHandler](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeHandler.html) interface, parses the new token (available by calling [ValueChangeEvent.getValue()](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeEvent.html#getValue\(\))) and changes the application state to match.
+*   Create an object that implements the [ValueChangeHandler](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeHandler.html) interface, parses the new token (available by calling [ValueChangeEvent.getValue()](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeEvent.html#getValue--)) and changes the application state to match.
 
 The following short example shows how to add a history event each time the user selects a new tab in a [TabPanel](/javadoc/latest/com/google/gwt/user/client/ui/TabPanel.html).
 
@@ -151,7 +151,7 @@ database.
 
 ## Handling an onValueChange() callback<a id="onvaluechange"></a>
 
-The first step of handling the `onValueChange()` callback method in a `ValueChangeHandler` is to get the new history token with [ValueChangeEvent.getValue()](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeEvent.html#getValue\(\)); you'll then want to parse the token. Keep in mind that your parsing needs to be robust! A user may type a URL by hand or have a URL
+The first step of handling the `onValueChange()` callback method in a `ValueChangeHandler` is to get the new history token with [ValueChangeEvent.getValue()](/javadoc/latest/com/google/gwt/event/logical/shared/ValueChangeEvent.html#getValue--); you'll then want to parse the token. Keep in mind that your parsing needs to be robust! A user may type a URL by hand or have a URL
 stored from an old version of your application. Once the token is parsed, you can reset the state of the application.
 
 When the `onValueChange()` method is invoked, your application must handle two cases:

@@ -118,7 +118,7 @@ public class Foo {
 
 In order to keep a user interface up to date, you sometimes want to perform an update periodically. You might want to run a poll to the server to check for new data, or update
 some sort of animation on the screen. In this case, use the Timer class
-[scheduleRepeating()](/javadoc/latest/com/google/gwt/user/client/Timer.html#scheduleRepeating\(int\)) method:
+[scheduleRepeating()](/javadoc/latest/com/google/gwt/user/client/Timer.html#scheduleRepeating-int-) method:
 
 ```
 public class Foo {
@@ -164,7 +164,7 @@ Sometimes you want to break up your logic loop so that the JavaScript event
 loop gets a chance to run between two pieces of code. The [Scheduler](/javadoc/latest/com/google/gwt/core/client/Scheduler.html) class will allow you to do that.
 The logic that you pass to `Scheduler` will run at some point in the future, after control has been returned to the JavaScript event loop. This little delay may give the
 interface a chance to process some user events or initialize other code. To use the `Scheduler` class in its simplest form, you create a subclass of the [Command](/javadoc/latest/com/google/gwt/user/client/Command.html) class, overriding the execute() method and pass
-it to [Scheduler.scheduleDeferred](/javadoc/latest/com/google/gwt/core/client/Scheduler.html#scheduleDeferred\(Command\))
+it to [Scheduler.scheduleDeferred](/javadoc/latest/com/google/gwt/core/client/Scheduler.html#scheduleDeferred-com.google.gwt.core.client.Scheduler.ScheduledCommand-)
 
 ```
 TextBox dataEntry;
