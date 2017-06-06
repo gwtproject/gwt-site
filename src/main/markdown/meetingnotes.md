@@ -1,7 +1,7 @@
 Steering Committee Meeting Notes
 ================================
 
-## 05/10/2017
+## <a id="05/10/2017"></a> 05/10/2017
 
 Present: Christian, Goktug, Julien, Justin, Leif, Thomas, Colin, Bhaskar
 
@@ -24,7 +24,7 @@ Present: Christian, Goktug, Julien, Justin, Leif, Thomas, Colin, Bhaskar
         * Forces substantal improvements to gwt-user to take place outside of the gwt repository, as we expect to be the default in gwt 3+
     * Discussion will continue
 
-## 04/12/2017
+## <a id="04/12/2017"></a> 04/12/2017
 
 Present: Leif, Colin, Maxime, Thomas, Bhaskar
 
@@ -32,11 +32,11 @@ Present: Leif, Colin, Maxime, Thomas, Bhaskar
 * Testing on jsinterop.base and elemental2 process unclear, Bhaskar will follow up
 * jsinterop.base vs annotations - possibly should be one project, probably external to GWT? more discussion next call
 
-## 03/08/2017
+## <a id="03/08/2017"></a> 03/08/2017
 
 Not enough members present.
 
-## 02/08/2017
+## <a id="02/08/2017"></a> 02/08/2017
 
 Present: Leif, Justin, Bhaskar, Daniel, Thomas, Colin
 
@@ -49,7 +49,7 @@ Present: Leif, Justin, Bhaskar, Daniel, Thomas, Colin
         * System.getProperty may not work correctly?
         * Stream NPE fix
 
-## 01/11/2017
+## <a id="01/11/2017"></a> 01/11/2017
 
 Present: Christian, Daniel, Leif, Stephen, Thomas, Colin
 
@@ -57,7 +57,7 @@ Present: Christian, Daniel, Leif, Stephen, Thomas, Colin
 * Elemental2 and generator: bugs remaining, then beta open source process will start
 * Patches coming in for GWT 2.8, will look at severity and plan release soon
 
-## 07/20/2016
+## <a id="07/20/2016"></a> 07/20/2016
 
 * GWT 2.8
     * Daniel did some pre-testing & smoke tests. 
@@ -71,7 +71,7 @@ Present: Christian, Daniel, Leif, Stephen, Thomas, Colin
     * Need additional releases: Gin & Guava, before we make it final. Need to add this in RC1 release notes.
     * Plan to freeze master after RC1, til final. 
 
-## 04/13/2016
+## <a id="04/13/2016"></a> 04/13/2016
  
 * Java8
     * Good progress in adding support. 
@@ -85,7 +85,7 @@ Present: Christian, Daniel, Leif, Stephen, Thomas, Colin
     * Check how much work is left to be done to get guava building before deciding on this.
     * If 2.8 RC1 doesn’t look imminent, put out a new beta.
  
-## 02/10/2016
+## <a id="02/10/2016"></a> 02/10/2016
 
 GWT 2.8 Status:
 
@@ -97,7 +97,7 @@ GWT 2.8 Status:
     * Daniel will cut 2.8 RC1 likely toward end of Feb.
     * Testing: Please test JsInterop to flush out further bugs.
     
-## 01/10/2016
+## <a id="01/10/2016"></a> 01/10/2016
 
 * No quorum, we only have 4 people show up. May want to plan a follow-up meeting. Bhaskar will ask SC members if they want one.
 * GWT 2.8
@@ -106,7 +106,7 @@ GWT 2.8 Status:
     * Memory problem with JDT, now down to 1.5x memory usage compared to earlier.
     * Plan to do RC1 once interop problems are fixed.
      
-## 10/28/2015
+## <a id="10/28/2015"></a> 10/28/2015
 
 * GWT 2.8
     * Plan to create an RC1 on Monday, Nov 2.
@@ -124,7 +124,7 @@ GWT 2.8 Status:
     * how are issues assigned to maintainers? We have many issues that are not being looked at.
     * Thomas: plan to write up a proposal , discuss with Bhaskar
     
-## 08/19/2015
+## <a id="08/19/2015"></a> 08/19/2015
 
 * Dev mode discussion
     * Daniel is migrating test cases to compile-mode, no more need to support dev-mode within Google.
@@ -141,7 +141,7 @@ GWT 2.8 Status:
     * Still working through compilation of Java features.
     * Plan is to have it capable of building complete apps by the end of the year.
     
-## 06/17/2015 
+## <a id="06/17/2015"></a> 06/17/2015
 
 Agenda:
 
@@ -173,7 +173,7 @@ Issues List:
     * Few other issues
     * Thomas: plan to write up a short policy for issues and circulate with SC.
     
-## 02/11/2015
+## <a id="02/11/2015"></a> 02/11/2015
 
 * GWT 2.8 release
     * Manuel and Julien will do the release. Julien will be the point person.
