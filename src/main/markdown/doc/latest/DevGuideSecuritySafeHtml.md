@@ -403,7 +403,7 @@ but not `{3}` in the example, are treated specially:
 
 *   Before HTML escaping, the parameter's value is sanitized to ensure it is safe to
 use as the value of a URI-valued HTML attribute. This sanitization is performed
-as follows (see [`UriUtils.sanitizeUri(String)`](/javadoc/latest/com/google/gwt/safehtml/shared/UriUtils.html#sanitizeUri\(java.lang.String\))):
+as follows (see [`UriUtils.sanitizeUri(String)`](/javadoc/latest/com/google/gwt/safehtml/shared/UriUtils.html#sanitizeUri-java.lang.String-)):
     *   URIs that don't have a scheme are considered safe and are used as is.
     *   URIs whose scheme equals one of `http, https, ftp, mailto` are considered safe and are used as is.
     *   Any other URI is considered unsafe and discarded; instead the "void" URI "`#`" is inserted into the template.
@@ -418,9 +418,9 @@ The [`SafeHtmlUtils`](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUti
 number of convenience methods to create `SafeHtml` values from
 strings:
 
-*   **[SafeHtmlUtils.fromString(String s)](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromString\(java.lang.String\))**
+*   **[SafeHtmlUtils.fromString(String s)](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromString-java.lang.String-)**
     HTML-escapes its argument and returns the result wrapped as a `SafeHtml`.
-*   **[SafeHtmlUtils.fromSafeConstant(String s)](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromSafeConstant\(java.lang.String\))**
+*   **[SafeHtmlUtils.fromSafeConstant(String s)](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromSafeConstant-java.lang.String-)**
     Returns a compile-time constant string wrapped as a `SafeHtml`, without escaping the value. To allow `fromSafeConstant` to adhere to the `SafeHtml` contract, code using it **must** in turn adhere to the same constraints that apply to `SafeHtmlBuilder.appendHtmlConstant`:
     1.  The argument of `fromSafeConstant` must be a string literal (or, more generally, must be fully determined at compile time).
     2.  The string provided must not end within an HTML tag. For example, the following use would be illegal because the value passed to
@@ -432,7 +432,7 @@ attribute of that tag:
 SafeHtml safeHtml = SafeHtmlUtils.fromSafeConstant("<a href='");
 ```
 
-*   **[SafeHtmlUtils.fromTrustedString(Strings)](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromTrustedString\(java.lang.String\))**
+*   **[SafeHtmlUtils.fromTrustedString(Strings)](/javadoc/latest/com/google/gwt/safehtml/shared/SafeHtmlUtils.html#fromTrustedString-java.lang.String-)**
     
     Returns its argument as a `SafeHtml`, without performing any form of
     validation or escaping.  It is the developer's responsibility to ensure that

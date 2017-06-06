@@ -23,7 +23,7 @@ full list of browsers supported by GWT.</dd>
 
 <dt>deferred binding</dt>
 <dd>A technique used by the GWT compiler to create or select a specific implementation of a class based on a set of environment parameters. The
-method <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create(java.lang.Class)">GWT.create()</a> triggers
+method <a href="/javadoc/latest/com/google/gwt/core/client/GWT.html#create-java.lang.Class-">GWT.create()</a> triggers
 deferred binding, allowing Java code to work with a declared Java interface. Some GWT features that use <a href="DevGuideCodingBasics.html#DevGuideDeferredBinding">deferred
 binding</a> include <a href="DevGuideI18n.html#DevGuideStaticStringInternationalization">static string internationalization</a>, ImageBundle localization as well as <a href="DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls">GWT-RPC</a>. For more details on deferred binding, check out the <a href="DevGuideCodingBasics.html#DevGuideDeferredBinding">deferred binding</a> chapter in the development guide.</dd>
 

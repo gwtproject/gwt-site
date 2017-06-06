@@ -11,7 +11,7 @@ operating systems. We like the native browser controls because they're fast, acc
 
 When it comes to styling web applications, [CSS](http://www.w3.org/Style/CSS/) is ideal. So, instead of attempting to encapsulate UI styling behind a
 wall of least-common-denominator APIs, GWT provides very few methods directly related to style. Rather, developers are encouraged to define styles in stylesheets that are linked
-to application code using [style names](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName\(java.lang.String\)). In addition to cleanly separating style from application logic, this division of labor helps applications load and render more quickly, consume
+to application code using [style names](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName-java.lang.String-). In addition to cleanly separating style from application logic, this division of labor helps applications load and render more quickly, consume
 less memory, and even makes them easier to tweak during edit/debug cycles since there's no need to recompile for style tweaks.
 
 **Tip:** If you find a need to implement a browser specific dependency, you can use a [JSNI](DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface)

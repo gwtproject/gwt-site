@@ -148,7 +148,7 @@ the client.
 
 Debugging messages are displayed within the Development Mode log window.
 Some of these messages are from GWT. However, you can generate your own debug
-messages by using calls to [GWT.log()](/javadoc/latest/com/google/gwt/core/client/GWT.html#log\(java.lang.String,%20java.lang.Throwable\)).
+messages by using calls to [GWT.log()](/javadoc/latest/com/google/gwt/core/client/GWT.html#log-java.lang.String-java.lang.Throwable-).
 
 For example, modifying the standard project to emit a debug message inside
 the [ClickHandler](/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.html)

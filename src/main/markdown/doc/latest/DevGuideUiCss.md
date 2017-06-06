@@ -20,7 +20,7 @@ In order to give all buttons a larger font, you could put the following rule in 
 .gwt-Button { font-size: 150%; }
 ```
 
-All of the widgets created with the GWT toolkit will have a default class name, but a widget's style name can be set using [setStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName\(java.lang.String\)).
+All of the widgets created with the GWT toolkit will have a default class name, but a widget's style name can be set using [setStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName-java.lang.String-).
 Static elements can have their class set in the HTML source code for your application.
 
 Another way to use style sheets is to refer to a single widget. For that, you would need to know the value of the `id` attribute for the widget or DOM element.
@@ -63,8 +63,8 @@ Some widgets have multiple styles associated with them. [MenuBar](/javadoc/lates
 
 In the above style sheet code, there are two style rules that apply to menu items. The first applies to all menu items (both selected and unselected), while the second (with
 the -selected suffix) applies only to selected menu items. A selected menu item's style name will be set to `"gwt-MenuItem gwt-MenuItem-selected"`, specifying that both
-style rules will be applied. The most common way of doing this is to use [setStyleName](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName\(java.lang.String\)) to set
-the base style name, then [addStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#addStyleName\(java.lang.String\)) and [removeStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#removeStyleName\(java.lang.String\))
+style rules will be applied. The most common way of doing this is to use [setStyleName](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName-java.lang.String-) to set
+the base style name, then [addStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#addStyleName-java.lang.String-) and [removeStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#removeStyleName-java.lang.String-)
 to add and remove the second style name.
 
 ## Associating CSS Files<a id="cssfiles"></a>

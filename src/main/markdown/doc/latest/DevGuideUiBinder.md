@@ -204,7 +204,7 @@ name matching its Java class name, like `<g:ListBox>`.
 
 See how the `g:ListBox` element has
 a `visibleItemCount='1'` attribute? That becomes a call
-to [ListBox#setVisibleItemCount(int)](/javadoc/latest/com/google/gwt/user/client/ui/ListBox.html#setVisibleItemCount\(int\)). Every
+to [ListBox#setVisibleItemCount(int)](/javadoc/latest/com/google/gwt/user/client/ui/ListBox.html#setVisibleItemCount-int-). Every
 one of the widget's methods that follow JavaBean-style conventions for
 setting a property can be used this way.
 
@@ -511,7 +511,7 @@ Finally, you don't have to have your CSS inside your `ui.xml` file. Most real wo
 
 And you can set style on a widget, not just HTML.  Use the
 `styleName` attribute to override whatever CSS styling the widget
-defaults to (just like calling [setStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName\(java.lang.String\)) in code).  Or, to add class names without
+defaults to (just like calling [setStyleName()](/javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName-java.lang.String-) in code).  Or, to add class names without
 clobbering the widget's baked in style settings, use the special
 `addStyleNames` attribute:
 

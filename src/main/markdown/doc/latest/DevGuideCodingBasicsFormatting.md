@@ -74,7 +74,7 @@ Specifying an invalid pattern will cause the `NumberFormat.getFormat()` method t
 specification is very rich. Refer to the [class
 documentation](/javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html) for the full set of features.
 
-If you will be using the same number format pattern more than once, it is most efficient to cache the format handle returned from [NumberFormat.getFormat(pattern)](/javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html#getFormat\(java.lang.String\)).
+If you will be using the same number format pattern more than once, it is most efficient to cache the format handle returned from [NumberFormat.getFormat(pattern)](/javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html#getFormat-java.lang.String-).
 
 ## Using DateTimeFormat<a id="datetimeformat"></a>
 

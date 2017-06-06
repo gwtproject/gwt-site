@@ -53,7 +53,7 @@ again from the subclass constructor). Thus the message generally reveals an actu
 Rather than write a new widget from scratch, here's a shortcut for constructing a widget from an existing DOM element.
 
 First subclass [AbsolutePanel](/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html). Then use
-the protected [AbsolutePanel(Element)](/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html#AbsolutePanel\(com.google.gwt.user.client.Element\)) constructor to change the underlying element.
+the protected [AbsolutePanel(Element)](/javadoc/latest/com/google/gwt/user/client/ui/AbsolutePanel.html#AbsolutePanel-com.google.gwt.user.client.Element-) constructor to change the underlying element.
 
 ### The import cannot be resolved<a id="The_import_cannot_be_resolved"></a>
 
