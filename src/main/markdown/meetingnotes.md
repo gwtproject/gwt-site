@@ -1,6 +1,62 @@
 Steering Committee Meeting Notes
 ================================
 
+## 05/10/2017
+
+Present: Christian, Goktug, Julien, Justin, Leif, Thomas, Colin, Bhaskar
+
+* Removing Sencha affiliation for Justin, no replacement from Sencha being considered at this time
+* Christian has moved on from RedHat
+    * nominated Max Barkley from RedHat to join the committee, agreed on by all present, Colin will reach out for the next meeting.
+* Julien: Elemental2 and generator
+    * in the process of being open sourced
+    * will be on the google github org
+    * jsinterop base/annotations will be managed together, removed from gwt codebase
+    * tentatively expected to be done by end of Q2
+* GWT 2.9 planning - topics will be followed up in gwt-contrib
+* Discussion around removing dev mode as part of 2.9
+    * For:
+        * while present, JsInterop cannot be used within gwt-user beyond jre emul
+        * in addition to never supporting jsinterop, dev mode will also not support new jre emul (e.g. Objects.equals)
+    * Against:
+        * We presently don't backport fixes - only latest GWT 2 will contain fixes, and removing dev mode may discourage projects from updating
+        * Maintenance costs are fairly minimal
+        * Forces substantal improvements to gwt-user to take place outside of the gwt repository, as we expect to be the default in gwt 3+
+    * Discussion will continue
+
+## 04/12/2017
+
+Present: Leif, Colin, Maxime, Thomas, Bhaskar
+
+* GWT 2.8.1 about to start release process
+* Testing on jsinterop.base and elemental2 process unclear, Bhaskar will follow up
+* jsinterop.base vs annotations - possibly should be one project, probably external to GWT? more discussion next call
+
+## 03/08/2017
+
+Not enough members present.
+
+## 02/08/2017
+
+Present: Leif, Justin, Bhaskar, Daniel, Thomas, Colin
+
+* Colin will take over as the next SC chair going forward
+* GWT 2.8.1:
+    * Colin will send an email to gwt-contrib, ask for more patches, volunteers for testing
+    * Tentative start date two weeks from now to start
+    * Known outstanding patches:
+        * jsinterop fixes from google, some still forthcoming
+        * System.getProperty may not work correctly?
+        * Stream NPE fix
+
+## 01/11/2017
+
+Present: Christian, Daniel, Leif, Stephen, Thomas, Colin
+
+* J2CL open source process started
+* Elemental2 and generator: bugs remaining, then beta open source process will start
+* Patches coming in for GWT 2.8, will look at severity and plan release soon
+
 ## 07/20/2016
 
 * GWT 2.8
