@@ -24,6 +24,10 @@ If you don't have Grunt installer :
 ### Running locally
 Run the site locally for easy visual testing
 
+Run without server:
 * Change to the `target/generated-site` folder.
 * Open the `index.html` file in your browser.
-* Additionally, you could run any local HTTP server in this folder.
+
+Run with Maven:
+* Run: `mvn jetty:run`
+* Open URL `http://localhost:9999` in your browser.
