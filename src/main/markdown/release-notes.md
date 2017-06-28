@@ -69,8 +69,8 @@ The GWT Release Notes
 or array is not correctly ended
 
 - Support filtering JsInterop types for export, with whitelist/blacklist and
-wildcards. The `-generateJsInteropExport` flag is still used to enable the feature,
-but `-includeJsInteropExport` and `-excludeJsInteropExport` now exist to specify
+wildcards. The `-generateJsInteropExports` flag is still used to enable the feature,
+but `-includeJsInteropExports` and `-excludeJsInteropExports` now exist to specify
 packages with optional `*` wildcards. Later arguments and patterns override earlier
 ones.
 
