@@ -538,6 +538,12 @@ Finally, to actually create an issue is slightly more involved, but most of the 
 
 If you have any problems you might want to consult the gerrit documentation on [Uploading Changes](https://gerrit-review.googlesource.com/Documentation/user-upload.html) 
 
+### Gerrit code review<a id="gerritcodereview"></a>
+
+Code review is an essential part of contribution workflow :
+
+Once your code is pushed to gerrit, notifications will be triggered to all reviewers,at this stage your code need jenkins precheck as well +2 in Code-Review to get merged with remote repository,If you are new contributor Jenkins precheck triggering will be followed by +2 in Code-Review by reviewers,whereas existing  contributors will be added to Jenkins Trusted group which allows the jenkins precheck without wait for code review.
+
 ### GWT Committers<a id="committers"></a>
 
 The current members of the GWT engineering team are the only committers at present. In the great tradition of eating one's own dogfood, we will be requiring each new GWT engineering team member to earn the right to become a committer by following the procedures in this document, writing consistently great code, and demonstrating repeatedly that he or she truly gets the zen of GWT.
