@@ -1,175 +1,122 @@
 JsInterop
 ===
 
-Starting from version 2.7, JsInterop was introduced in GWT as an experimental feature to replace JSNI. It is now one of the core features of GWT 2.8.x. As the name suggests, JsInterop is a way of interoperating Java with Javascript. it offers a better way of communication between the two using annotations instead of having to write JavaScript in your classes (using JSNI). JsInterop is defined by the following annotations: @JsType, @JsProperty, @JsMethod, @JsConstructor, @JsFunction, @JsOverlay.
+JsInterop is one of the core features of GWT 2.8.x. As the name suggests, JsInterop is a way of interoperating Java with javascript. It offers a better way of communication between the two using annotations instead of having to write javascript in your classes (using JSNI). More details about the annotations can be found in GWT javadoc page: http://www.gwtproject.org/javadoc/latest/jsinterop/annotations/package-summary.html
 
 
-## @JsType
+## Using a Java type in javascript:
 
-@JsType is equivalent to marking an object as a Javascript object. It can be used on classes only. It can be used in both ways: to export a Java type to be used from a javascript external script or to import a type from another script to be used in Java. 
+JsInterop can be used to expose a Java type  to be used externally from a javascript script. This can be achieved by annotating the type with `@JsType`. This annotation exposes all the fields and methods, and tells the GWT compiler that the type is to be exported as-is to a javascript type. Annotating a class with `@JsType` is equivalent to annotating all its methods with `@JsMethod` and all its properties with `@JsProperty`, so no need to add them explicity.  
 
-1. Exposing java classes to a javascript script :</p>
+Additionally, `@JsType` function can be fine tuned using the following properties:
+        - name: customizes the name of the type. The default is to keep the Java type name. 
+        - namespace: specifies the javascript namespace of the type. The default is the current package of the type. To make the type accessible globally, the `JsPackage.GLOBAL` constant can be used. 
+        - isNative: tells the GWT compiler wheter the type is to be treated as a native javascript type to be used from Java. The default is false. 
 
-```
+  The below example illustrates how `@JsType` can used to export a Java type.   
+
+
+```java
 package com.gwt.example;
 
 @JsType
-public class myClass {
+public class MyClass {
 
 public String name;
 
-public myClass(String name){
-this.name = name;
+public MyClass(String name){
+ this.name = name;
 }
+
 public void sayHello(){
 return 'Hello' + this.name;
 }
 }
 ```
+  From the js script, the object can be used as a js object :
 
-From the js script, the object can be used as a js object :
-
-```
-//the package name serves as JS namespace
-var aClass = new com.gwt.example.myClasse('World');
+```javascript
+//the package name serves as a JS namespace
+var aClass = new com.gwt.example.MyClass('World');
 
 console.log(aClass.sayHello());
 
 // result: 'Hello World'
 ```
 
-To customize the object's namespace, the namespace property can be used: `@JsType(namespace="yournamespace")`. For example, the global namespace can be used to make the object accessible globaly: 
-`@JsType(namespace=jsinterop.annotations.JsPackage.GLOBAL)`
-
-
-2. Importing a type from an external script :</p>
-
-To import a javascript native type, the isNative property needs to be marked as true: `@JsType(isNative=true)`. The names and namespaces have to match as well. For example, the following code snippet illustrates the import of the global JSON object:
-
-```
-@JsType(isNative=true, namespace=GLOBAL)
-public class JSON {
-  public native static String stringify(Object obj);
   
+
+
+## Importing a type from an external javascript script :
+
+  Another usage of Jsinterop annotations is to import a javascript native type. To achieve that, the isNative property needs to be marked as true: `@JsType(isNative=true)`. The names and namespaces have to match as well. For example, the following code snippet illustrates the import of the global JSON object:
+
+```java
+  @JsType(isNative=true, namespace=GLOBAL)
+public class JSON {
+ public native static String stringify(Object obj);
+    
   public native static Object parse(String obj);
 }
 ```
 
-additionally the name property can be used to export or import an object with a different name than the Java variable name. `@JsType(name="newName")`
-
-annotating a class @JsType is equivalent to annotating all its methods with @JsMethod and all its properties with @JsProperty, so no need to add them explicity.  
 
 <ul>Important notes: 
-    
-  <li> constructors of native imported objects should be empty and cannot contain any statement (checked at compile time)</li>
-  <li> native objects cannot have non native methods, unless annotated with @JsOverlay (checked at compile time)</li>
-  <li> native objects cannot have assigned properties, (int x = 10 should be int x) </li>
-  <li> @JsType is not transitive. Child objects need to be annotated as well. </li>
-</ul>
+      
+   <li>constructors of native imported objects must be empty and cannot contain any statement, except the call to the super class:  super() (checked at compile time)
+   </li>
+    <li> native objects cannot have non native methods, unless annotated with @JsOverlay (checked at compile time)
+    </li>
+    <li> @JsType is not transitive. If the child objects are to be exposed to javascript, they need to be annotated as well. 
+    </li>
+  </ul>
 
+## Consuming a javascript function with a callback argument:
 
-## @JsProperty:
-
-@JsProperty is used to annotate a static class property or a property whose class has a @JsConstructor annotation, to be exported/import to/from javascript, without having to expose all the object fields and methods (without @JsType)
-
+Jsinterop can also be used to map a javascript function to a java interface using `@JsFunction`. Unlike Java, methods can be used as arguments to other methods in javascript(known as callback argument). A javascript callback can be mapped to a Java functional interface (an inteface with only one method) annotated with `@JsFunction`. The example below is inspired from Elemental 2 source code:
 
 ```
-package com.gwt.example;
+@JsFunction
+public interface EventListenerCallback {
 
+    void callEvent(Object event);
+}
+```
+
+```
+@JsType(isNative = true)
+public class Element  {
+ //other methods
+
+  public native void addEventListener(String eventType, EventListenerCallback fn);
+}
+```
+
+```
+Element element = DomGlobal.document.createElement("button");
+//using java 8  syntax
+element.addEventListener("click", (event) -> {
   
-public class myClass {
-
-@Jsproperty
-public static String name = "foo";
-
-public myClass(String name){
-this.name = name;
-}
-
-}
+    GWT.log("clicked!");
+})
 ```
+is equivalent to the following javascript code:
 
-
-```
-//the package name serves as JS namespace
-com.gwt.example.myClasse.name;//foo
-```
-
-## @JsMethod:
-
-@JsMethod is used to annotate static methods that need to exposed to js without having to expose the object itself
-(without @JsType). 
-
-```
-package com.gwt.example;
-
-public class Record {
+```javascript
+var button = document.createElement("button");
+button.addEventListener("click", function(event){
   
-  
-  public Record() {
-    
-  }
-  
-  @JsMethod(namespace="hello.world")
-  public static int test(int i) {
-    
-    return i + 10;
-  }
-  
-}
-```
-```
-hello.world.test(20); //Results in 30
-
-var record = new com.gwt.example.Record(); 
-
-//throws error at run time
-Uncaught ReferenceError: com is not defined
-    at <anonymous>:1:18
-```
-
-If the method is not static then @JsMethod can work if the object can be instantiated from javascript. This can be achieved using @JsConstructor. 
-
-## @JsConstructor:
-
-`@JsConstructor` can be used to expose an object constructor. It can be used along with `@JsProperty` and `@JsMethod` to expose only certain fields or methods. For example: 
+ console.log("clicked!");
+});
 
 ```
-package com.gwt.example;
 
 
-public class myClass {
+## How to expose a function/method to JS with a callback argument:
 
-@JsProperty
-public String name;
+In the same fashion, if a java method is to be passed as a callback, `@JsFunction` is to be used. The implementation of the callback can done directly from javascript. For example:
 
-
-public String id = bar;
-
-@JsConstructor
-public myClass(String name){
-this.name = name;
-}
-
-@JsMethod
-public void sayHello(){
-return 'Hello' + this.name;
-}
-
-
-public void sayGoodbye(){
-return 'Bye ' + this.name;
-}
-}
-```
-
-This results in the method `sayHello()` and the property `name` to be exposed. The method `sayGoodbye()` and the property `id` will not be accessible from a javascript script. 
-
-## @JsFunction:
-
-`@JsFunction` allows mapping between a javascript anonymous function and a java interface. Javascript anonymous functions are usually passed as arguments or used as callbacks. `@JsFunction` should be used on a Java interface with one method only(which is know as a Funtional interface). 
-
-```
+```java
 // in Java
 package com.acme;
 
@@ -187,26 +134,22 @@ public class Bar {
     return (x) -> x + 2;
   }
 }
+```
 
+
+```javascript
 // in JavaScript
 
 com.acme.Bar.action1(function(x) { return x + 2; }); // will return 42!
 
 var fn = com.acme.Bar.action2();
 fn(40); // will return 42!
-```
+```  
 
-<ul>Important notes: 
-    
-  <li> A @JsFunction interface cannot extend other interfaces.</li>
-  <li> A @JsFunction interface can only have JsOverlay default methods.</li>
-  <li> A class that implements a @JsFunction type (directly or indirectly) cannot be a @JsType nor have JsConstructor/JsMethods/JsProperties. </li>
-  <li> A class cannot implement other interfaces while implementing @JsFunction interface. </li>
-</ul>
+## How to add additional utility methods to a native type:
 
-## @JsOverlay:
-
-`@JsOverlay` allows adding a method to a native javascript type (annotated with `@JsType(isNative=true)`). The `@JsOverlay` contract specifies that the methods annotated should be final and should not override any existing native method. The annotated methods will not be accessbile from javascript and can be used from Java only. `@JsOverlay` can be useful for adding utilities methods that may not be offered by the native type. For example:
+The Jsinterop contract specifies that a native type may contain only native methods except the ones annotated with `@JsOverlay`. 
+`@JsOverlay` allows adding a method to a native javascript type (annotated with `@JsType(isNative=true)` or on a default method of a `@JsFunction` annotated interface . The `@JsOverlay` contract specifies that the methods annotated should be final and should not override any existing native method. The annotated methods will not be accessbile from javascript and can be used from Java only. `@JsOverlay` can be useful for adding utilities methods that may not be offered by the native type. For example:
 
 ```
 @JsType(isNative=true)
@@ -221,8 +164,49 @@ public class FancyWidget {
 }
 ```
 
+## Example: using Leaflet from Java
+
+ Suppose we want to use Leaflet from our GWT project. [Leaflet](http://leafletjs.com/) is a JS library to manipulate maps . All we need to do is wrap the methods that we need using Jsinterop annotations:
+
+```
+@JsType(isNative=true, namespace=JsPackage.GLOBAL)
+public class L {
+ 
+ 
+public static native Map map(String id);
+ 
+}
+```
+```
+@JsType(isNative=true)
+public class Map {
+ 
+ 
+@JsMethod
+public native L setView(double[] center, int zoom);
+ 
+}
+```
+Please note that we used the same variable names as those in the source code of the Leaflet library. Class names, in our example L and Map, and method names are very important when wrapping native types in Jsinterop.
+
+Now we can initialize a Leafet map in our GWT application without handling any javascript code:
+
+```
+public class Leafletwrapper implements EntryPoint {
+ 
+double[] positions = {51.505, -0.09};
+ 
+public void onModuleLoad() {
+ 
+//it works
+L.map("map").setView(positions, 13);
+}
+}
+```
+The full example is available at : https://github.com/zak905/jsinterop-leaflet
+
 ## Links: 
 
-JsInterop specifications: 
+Jsinterop specifications: 
 https://docs.google.com/document/d/10fmlEYIHcyead_4R1S5wKGs1t2I7Fnp_PaNaa7XTEk0/edit#
-GWT 2.8.0 and JsInterop: http://www.luigibifulco.it/blog/en/blog/gwt-2-8-0-jsinterop
+GWT 2.8.0 and Jsinterop: http://www.luigibifulco.it/blog/en/blog/gwt-2-8-0-jsinterop
