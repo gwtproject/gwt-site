@@ -220,7 +220,7 @@ Application](tutorial/debug.html).
 
 Let's look behind the scenes when you launch your GWT application in
 development mode. To run development mode, you start a Java VM using the main
-class `com.google.com.gwt.dev.DevMode`. If you look inside a generated
+class `com.google.gwt.dev.DevMode`. If you look inside a generated
 ant `build.xml`, you'll find something like this:
 
 ```
