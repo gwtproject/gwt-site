@@ -46,6 +46,7 @@
           - [Working with JSON](doc/latest/DevGuideCodingBasicsJSON.html)
           - [Working with XML](doc/latest/DevGuideCodingBasicsXML.html)
           - [JavaScript: JSNI](doc/latest/DevGuideCodingBasicsJSNI.html 'JavaScript Native Interface')
+          - [JavaScript: JsInterop](doc/latest/DevGuideCodingBasicsJsInterop.html 'JsInterop')
           - [Overlay Types](doc/latest/DevGuideCodingBasicsOverlay.html)
           - [Deferred Binding](doc/latest/DevGuideCodingBasicsDeferred.html)
       - [Build User Interfaces](#)
