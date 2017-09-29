@@ -11,7 +11,7 @@ Getting Started
 
 ## Prerequisites<a id="prereqs"></a>
 
-1.  You will need the Java SDK version 1.6 or later. If necessary, <a
+1.  You will need the Java SDK version 1.8 or later. If necessary, <a
     href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" rel="nofollow">download and
     install the Java SE Development Kit (JDK)</a> for your platform. Mac users,
     see <a href="http://developer.apple.com/java/">Apple's Java developer
