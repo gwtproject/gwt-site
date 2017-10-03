@@ -577,7 +577,7 @@ The following principles are needed to understand the sequence of operations tha
 **asynchronously**.
 *   Once the GWT selection script has started, its `onModuleLoad()` can be called at any point after the outer document has been parsed.
 
-Applying these principles to the above example, we obtain the following sequence:
+Applying these principles to the above example, we obtain the following sequence (the order requests complete can vary greatly, this is only one way it could happen, as an example):
 
 1.  The HTML document is fetched and parsing begins.
 2.  Begin fetching `bigImageZero.jpg`.
@@ -586,8 +586,8 @@ Applying these principles to the above example, we obtain the following sequence
 5.  `externalScriptZero.js` completes.
 6.  Begin fetching `bigImageOne.jpg` and `reallyBigImageTwo.jpg` simultaneously.
 7.  `bigImageOne.jpg` completes (let's assume again). `myApp/myApp.nocache.js` begins fetching and evaluating.
-8.  `myApp/myApp.nocache.js` completes, and the compiled script (`<hashname>.cache.html`) begins fetching in a hidden `IFRAME` (this is non-blocking).
-9.  `<hashname>.cache.html` completes. `onModuleLoad()` is not called yet, as we're still waiting on `externalScriptOne.js` to complete before the document is considered 'ready'.
+8.  `myApp/myApp.nocache.js` completes, and the compiled script (`<hashname>.cache.js`) begins fetching in a hidden `IFRAME` (this is non-blocking).
+9.  `<hashname>.cache.js` completes. `onModuleLoad()` is not called yet, as we're still waiting on `externalScriptOne.js` to complete before the document is considered 'ready'.
 10.  `externalScriptOne.js` completes. The document is ready, so onModuleLoad() fires.
 11.  `reallyBigImageTwo.jpg` completes.
 12.  `body.onload()` fires, in this case showing an alert() box.
