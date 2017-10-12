@@ -1,7 +1,7 @@
 JSNI
 ===
 
-(INFO: For new implementations use [JsInterop](DevGuideCodingBasicsJsInterop.html) instead, to pofit from the benfits like type-safety in your Java Classes.) 
+(INFO: For new implementations use the future-proof [JsInterop](DevGuideCodingBasicsJsInterop.html) instead. JSNI will be removed with GWT 3.) 
 
 Often, you will need to integrate GWT with existing handwritten JavaScript or with a third-party JavaScript library. Occasionally you may need to access low-level browser
 functionality not exposed by the GWT class API's. The JavaScript Native Interface (JSNI) feature of GWT can
