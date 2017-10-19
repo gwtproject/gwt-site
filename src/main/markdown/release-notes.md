@@ -1,5 +1,6 @@
 The GWT Release Notes
 =====================
+* [2.8.2](#Release_Notes_2_8_2) Oct 18, 2017
 * [2.8.1](#Release_Notes_2_8_1) Apr 24, 2017
 * [2.8.0](#Release_Notes_2_8_0) Oct 20, 2016
 * [2.8.0 (RC3)](#Release_Notes_2_8_0_RC3) Sept 29, 2016
@@ -61,6 +62,39 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
+## <a id="Release_Notes_2_8_2"></a> Release Notes for 2.8.2
+
+### Highlights
+- Supports running in Java 9.
+
+- Chrome 61 removed functionality that had been used for reading the absolute
+top/left values. The internal implementation has been updated to reflect modern
+standards.
+
+### Bug fixes
+- LookupMethodCreator creates too large method
+- NativeRegExp should use iframe instance, fixing Edge JIT bug
+- JsProperty getter/setter sometimes were reported as incompatible
+- Instantiating native JsTypes from JSNI results in InternalCompilerException
+- Remove the SUBSIZED characteristic from filtered streams
+- Internal compiler exception when using native JsType varargs in a JsMethod
+- Regression in String.toLowerCase and toUpperCase
+- Missing bounds check in String.charAt
+- Fix AIOOBE when compiling method references involving varargs.
+- Apply HtmlUnit workaround ensuring that window.onerror is called correctly
+
+### Miscellanous
+- Migrated lang/jre emulation JSNI to JsInterop to share with J2CL
+- Added ErrorProne to gwt builds
+- Improved compliance with CSP
+- Uncaught Exception Handler now can receive window.onerror
+- Added emulation for java.io.Externalizable
+- Added emulation for java.lang.reflect.Array
+- JSO.equals/hashcode now can delegate to the JS object
+- Removed outdated or unused parts of project
+- Migrate guava JRE emulation to GWT
+- HtmlUnit tests are now run in batch mode
+
 ## <a id="Release_Notes_2_8_1"></a> Release Notes for 2.8.1
 
 ### Highlights
