@@ -49,7 +49,7 @@ Download
     <b style="color: #444;">Note</b> - This download contains the standalone GWT SDK and tools only. If you're using Eclipse, we suggest that you download and install the GWT Eclipse Plugin instead.
   </p>
   <div class='moreinfo'>
-    <a class='download-button' href="https://goo.gl/TysXZl">Download GWT SDK</a> <br />
+    <a class='download-button' href="https://goo.gl/pZZPXS">Download GWT SDK</a> <br />
     <p style='font-size: 85%;'>
       <a href="versions.html">[Old versions]</a>
     </p>
