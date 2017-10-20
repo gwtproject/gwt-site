@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -43,7 +43,7 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.8.1</div>
+<div class="aboutLanguage">GWT 2.8.2</div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -231,15 +231,27 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#eventToString-com.google.gwt.dom.client.NativeEvent-">eventToString</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
+<td class="colFirst"><code>(package private) <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#getDocumentScrollingElement-com.google.gwt.dom.client.Document-">getDocumentScrollingElement</a></span>(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#getInnerText-com.google.gwt.dom.client.Element-">getInnerText</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>(package private) <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#getLegacyDocumentScrollingElement-com.google.gwt.dom.client.Document-">getLegacyDocumentScrollingElement</a></span>(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>(package private) <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#getNativeDocumentScrollingElement-com.google.gwt.dom.client.Document-">getNativeDocumentScrollingElement</a></span>(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#isOrHasChild-com.google.gwt.dom.client.Node-com.google.gwt.dom.client.Node-">isOrHasChild</a></span>(<a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a>&nbsp;parent,
             <a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a>&nbsp;child)</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#setInnerText-com.google.gwt.dom.client.Element-java.lang.String-">setInnerText</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
             java.lang.String&nbsp;text)</code>&nbsp;</td>
@@ -469,7 +481,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <a name="setInnerText-com.google.gwt.dom.client.Element-java.lang.String-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setInnerText</h4>
 <pre>public&nbsp;void&nbsp;setInnerText(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
@@ -478,6 +490,37 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#setInnerText-com.google.gwt.dom.client.Element-java.lang.String-">setInnerText</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
 </dl>
+</li>
+</ul>
+<a name="getDocumentScrollingElement-com.google.gwt.dom.client.Document-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDocumentScrollingElement</h4>
+<pre><a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;getDocumentScrollingElement(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#getDocumentScrollingElement-com.google.gwt.dom.client.Document-">getDocumentScrollingElement</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getLegacyDocumentScrollingElement-com.google.gwt.dom.client.Document-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getLegacyDocumentScrollingElement</h4>
+<pre><a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;getLegacyDocumentScrollingElement(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</pre>
+</li>
+</ul>
+<a name="getNativeDocumentScrollingElement-com.google.gwt.dom.client.Document-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getNativeDocumentScrollingElement</h4>
+<pre>final&nbsp;<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;getNativeDocumentScrollingElement(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</pre>
 </li>
 </ul>
 </li>
@@ -503,7 +546,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.8.1</div>
+<div class="aboutLanguage">GWT 2.8.2</div>
 </div>
 <div class="subNav">
 <ul class="navList">
