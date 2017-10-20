@@ -43,7 +43,7 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.8.1</div>
+<div class="aboutLanguage">GWT 2.8.2</div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -192,14 +192,16 @@ extends java.lang.Object</pre>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#equals-java.lang.Object-">equals</a></span>(java.lang.Object&nbsp;other)</code>
-<div class="block">Returns <code>true</code> if the objects are JavaScript identical
+<div class="block">Calls a native JS <code>equals</code> method if any, otherwise
+ returns <code>true</code> if the objects are JavaScript identical
  (triple-equals).</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/core/client/JavaScriptObject.html#hashCode--">hashCode</a></span>()</code>
-<div class="block">Uses a monotonically increasing counter to assign a hash code to the
+<div class="block">Calls a native JS <code>hashCode</code> method if any, otherwise
+ uses a monotonically increasing counter to assign a hash code to the
  underlying JavaScript object.</div>
 </td>
 </tr>
@@ -325,7 +327,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>equals</h4>
 <pre>public final&nbsp;boolean&nbsp;equals(java.lang.Object&nbsp;other)</pre>
-<div class="block">Returns <code>true</code> if the objects are JavaScript identical
+<div class="block">Calls a native JS <code>equals</code> method if any, otherwise
+ returns <code>true</code> if the objects are JavaScript identical
  (triple-equals).</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
@@ -340,7 +343,8 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>hashCode</h4>
 <pre>public final&nbsp;int&nbsp;hashCode()</pre>
-<div class="block">Uses a monotonically increasing counter to assign a hash code to the
+<div class="block">Calls a native JS <code>hashCode</code> method if any, otherwise
+ uses a monotonically increasing counter to assign a hash code to the
  underlying JavaScript object. Do not call this method on non-modifiable
  JavaScript objects.</div>
 <dl>
@@ -403,7 +407,7 @@ extends java.lang.Object</pre>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.8.1</div>
+<div class="aboutLanguage">GWT 2.8.2</div>
 </div>
 <div class="subNav">
 <ul class="navList">

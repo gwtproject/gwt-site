@@ -6,14 +6,72 @@ The list below shows the set of JRE packages, types and methods that GWT can tra
 Note that in some cases, only a subset of methods is supported for a given type.
 
 <ol class="toc" id="pageToc">
+  <li><a href="#Package_java_beans">java.beans</a></li>
+  <li><a href="#Package_java_io">java.io</a></li>
   <li><a href="#Package_java_lang">java.lang</a></li>
   <li><a href="#Package_java_lang_annotation">java.lang.annotation</a></li>
+  <li><a href="#Package_java_lang_reflect">java.lang.reflect</a></li>
   <li><a href="#Package_java_math">java.math</a></li>
-  <li><a href="#Package_java_io">java.io</a></li>
+  <li><a href="#Package_java_nio_charset">java.nio.charset</a></li>
+  <li><a href="#Package_java_security">java.security</a></li>
   <li><a href="#Package_java_sql">java.sql</a></li>
+  <li><a href="#Package_java_text">java.text</a></li>
   <li><a href="#Package_java_util">java.util</a></li>
+  <li><a href="#Package_java_util_concurrent">java.util.concurrent</a></li>
+  <li><a href="#Package_java_util_concurrent_atomic">java.util.concurrent.atomic</a></li>
+  <li><a href="#Package_java_util_function">java.util.function</a></li>
   <li><a href="#Package_java_util_logging">java.util.logging</a></li>
+  <li><a href="#Package_java_util_stream">java.util.stream</a></li>
 </ol>
+
+<h2 id="Package_java_beans">Package java.beans</h2>
+<dl>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/beans/Beans.html">Beans</a></dt>
+  <dd>Beans(), isDesignTime()</dd>
+</dl>
+
+<h2 id="Package_java_io">Package java.io</h2>
+<dl>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/ByteArrayInputStream.html">ByteArrayInputStream</a></dt>
+  <dd>ByteArrayInputStream(byte[]), ByteArrayInputStream(byte[], int, int), available(), close(), mark(int), markSupported(), read(), read(byte[], int, int), reset(), skip(long)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/ByteArrayOutputStream.html">ByteArrayOutputStream</a></dt>
+  <dd>ByteArrayOutputStream(), ByteArrayOutputStream(int), close(), reset(), size(), toByteArray(), toString(), toString(int), toString(String), write(byte[], int, int), write(int), writeTo(OutputStream)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html">Closeable</a></dt>
+  <dd>close()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Externalizable.html">Externalizable</a></dt>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/FilterInputStream.html">FilterInputStream</a></dt>
+  <dd>available(), close(), mark(int), markSupported(), read(), read(byte[], int, int), reset(), skip(long)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/FilterOutputStream.html">FilterOutputStream</a></dt>
+  <dd>FilterOutputStream(OutputStream), close(), flush(), write(byte[], int, int), write(int)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Flushable.html">Flushable</a></dt>
+  <dd>flush()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html">IOException</a></dt>
+  <dd>IOException(), IOException(String), IOException(String, Throwable), IOException(Throwable)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a></dt>
+  <dd>InputStream(), available(), close(), mark(int), markSupported(), read(), read(byte[]), read(byte[], int, int), reset(), skip(long)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html">OutputStream</a></dt>
+  <dd>OutputStream(), close(), flush(), write(byte[]), write(byte[], int, int), write(int)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html">PrintStream</a></dt>
+  <dd>PrintStream(OutputStream), print(boolean), print(char), print(char[]), print(double), print(float), print(int), print(long), print(Object), print(String), println(), println(boolean), println(char), println(char[]), println(double), println(float), println(int), println(long), println(Object), println(String), flush()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html">Serializable</a></dt>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/UncheckedIOException.html">UncheckedIOException</a></dt>
+  <dd>UncheckedIOException(String, IOException), UncheckedIOException(IOException), getCause()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/UnsupportedEncodingException.html">UnsupportedEncodingException</a></dt>
+  <dd>UnsupportedEncodingException(), UnsupportedEncodingException(String)</dd>
+</dl>
 
 <h2 id="Package_java_lang">Package java.lang</h2>
 <dl>
@@ -44,7 +102,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>Byte(byte), Byte(String), compare(byte, byte), decode(String), hashCode(byte), parseByte(String), parseByte(String, int), toString(byte), valueOf(byte), valueOf(String), valueOf(String, int), byteValue(), compareTo(Byte), doubleValue(), equals(Object), floatValue(), hashCode(), intValue(), longValue(), shortValue(), toString()</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html">CharSequence</a></dt>
-  <dd>charAt(int), length(), subSequence(int, int), toString(), chars(), $isInstance(Object)</dd>
+  <dd>charAt(int), length(), subSequence(int, int), toString(), chars(), $isInstance(HasCharSequenceTypeMarker)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html">Character</a></dt>
   <dd style='margin-bottom: 0.5em;'>TYPE, MIN_RADIX, MAX_RADIX, MIN_VALUE, MAX_VALUE, MIN_SURROGATE, MAX_SURROGATE, MIN_LOW_SURROGATE, MAX_LOW_SURROGATE, MIN_HIGH_SURROGATE, MAX_HIGH_SURROGATE, MIN_SUPPLEMENTARY_CODE_POINT, MIN_CODE_POINT, MAX_CODE_POINT, SIZE, BYTES</dd>
@@ -62,7 +120,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Cloneable.html">Cloneable</a></dt>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html">Comparable</a></dt>
-  <dd>compareTo(T), $isInstance(Object)</dd>
+  <dd>compareTo(T), $isInstance(HasComparableTypeMarker)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html">Deprecated</a></dt>
 
@@ -97,6 +155,9 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a></dt>
   <dd style='margin-bottom: 0.5em;'>MAX_VALUE, MIN_VALUE, SIZE, BYTES, TYPE</dd>
   <dd>Integer(int), Integer(String), bitCount(int), compare(int, int), decode(String), hashCode(int), highestOneBit(int), lowestOneBit(int), max(int, int), min(int, int), numberOfLeadingZeros(int), numberOfTrailingZeros(int), parseInt(String), parseInt(String, int), reverse(int), reverseBytes(int), rotateLeft(int, int), rotateRight(int, int), signum(int), sum(int, int), toBinaryString(int), toHexString(int), toOctalString(int), toString(int), toString(int, int), valueOf(int), valueOf(String), valueOf(String, int), byteValue(), compareTo(Integer), doubleValue(), equals(Object), floatValue(), hashCode(), intValue(), longValue(), shortValue(), toString()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html">InterruptedException</a></dt>
+  <dd>InterruptedException(), InterruptedException(String)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html">Iterable</a></dt>
   <dd>iterator(), forEach(Consumer), spliterator()</dd>
@@ -168,6 +229,9 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd style='margin-bottom: 0.5em;'>err, out</dd>
   <dd>System(), arraycopy(Object, int, Object, int, int), currentTimeMillis(), gc(), getProperty(String), getProperty(String, String), identityHashCode(Object), setErr(PrintStream), setOut(PrintStream)</dd>
 
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ThreadLocal.html">ThreadLocal</a></dt>
+  <dd>ThreadLocal(), get(), set(T), remove(), withInitial(Supplier)</dd>
+
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html">Throwable</a></dt>
   <dd>Throwable(), Throwable(String), Throwable(String, Throwable), Throwable(Throwable), getBackingJsObject(), addSuppressed(Throwable), fillInStackTrace(), getCause(), getLocalizedMessage(), getMessage(), getStackTrace(), getSuppressed(), initCause(Throwable), printStackTrace(), printStackTrace(PrintStream), setStackTrace(StackTraceElement[]), toString(), of(Object)</dd>
 
@@ -217,6 +281,14 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>value()</dd>
 </dl>
 
+<h2 id="Package_java_lang_reflect">Package java.lang.reflect</h2>
+<dl>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Array.html">Array</a></dt>
+  <dd>get(Object, int), getBoolean(Object, int), getByte(Object, int), getChar(Object, int), getDouble(Object, int), getFloat(Object, int), getInt(Object, int), getLength(Object), getLong(Object, int), getShort(Object, int), set(Object, int, Object), setBoolean(Object, int, boolean), setByte(Object, int, byte), setChar(Object, int, char), setDouble(Object, int, double), setFloat(Object, int, float), setInt(Object, int, int), setLong(Object, int, long), setShort(Object, int, short)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Type.html">Type</a></dt>
+</dl>
+
 <h2 id="Package_java_math">Package java.math</h2>
 <dl>
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html">BigDecimal</a></dt>
@@ -236,45 +308,39 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>values(), valueOf(String), valueOf(int)</dd>
 </dl>
 
-<h2 id="Package_java_io">Package java.io</h2>
+<h2 id="Package_java_nio_charset">Package java.nio.charset</h2>
 <dl>
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/ByteArrayInputStream.html">ByteArrayInputStream</a></dt>
-  <dd>ByteArrayInputStream(byte[]), ByteArrayInputStream(byte[], int, int), available(), close(), mark(int), markSupported(), read(), read(byte[], int, int), reset(), skip(long)</dd>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html">Charset</a></dt>
+  <dd>availableCharsets(), forName(String), name(), compareTo(Charset), hashCode(), equals(Object), toString()</dd>
 
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/ByteArrayOutputStream.html">ByteArrayOutputStream</a></dt>
-  <dd>ByteArrayOutputStream(), ByteArrayOutputStream(int), close(), reset(), size(), toByteArray(), toString(), toString(int), toString(String), write(byte[], int, int), write(int), writeTo(OutputStream)</dd>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/IllegalCharsetNameException.html">IllegalCharsetNameException</a></dt>
+  <dd>IllegalCharsetNameException(String), getCharsetName()</dd>
 
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html">Closeable</a></dt>
-  <dd>close()</dd>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/StandardCharsets.html">StandardCharsets</a></dt>
+  <dd style='margin-bottom: 0.5em;'>ISO_8859_1, UTF_8</dd>
 
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/FilterInputStream.html">FilterInputStream</a></dt>
-  <dd>available(), close(), mark(int), markSupported(), read(), read(byte[], int, int), reset(), skip(long)</dd>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/UnsupportedCharsetException.html">UnsupportedCharsetException</a></dt>
+  <dd>UnsupportedCharsetException(String), getCharsetName()</dd>
+</dl>
 
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/FilterOutputStream.html">FilterOutputStream</a></dt>
-  <dd>FilterOutputStream(OutputStream), close(), flush(), write(byte[], int, int), write(int)</dd>
+<h2 id="Package_java_security">Package java.security</h2>
+<dl>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/security/DigestException.html">DigestException</a></dt>
+  <dd>DigestException(), DigestException(String)</dd>
 
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Flushable.html">Flushable</a></dt>
-  <dd>flush()</dd>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/security/GeneralSecurityException.html">GeneralSecurityException</a></dt>
+  <dd>GeneralSecurityException(), GeneralSecurityException(String)</dd>
 
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html">IOException</a></dt>
-  <dd>IOException(), IOException(String), IOException(String, Throwable), IOException(Throwable)</dd>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/security/MessageDigest.html">MessageDigest</a></dt>
+  <dd>getInstance(String), isEqual(byte[], byte[]), digest(), digest(byte[]), digest(byte[], int, int), getAlgorithm(), getDigestLength(), reset(), update(byte), update(byte[]), update(byte[], int, int)</dd>
 
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a></dt>
-  <dd>InputStream(), available(), close(), mark(int), markSupported(), read(), read(byte[]), read(byte[], int, int), reset(), skip(long)</dd>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/security/MessageDigestSpi.html">MessageDigestSpi</a></dt>
+  <dd>MessageDigestSpi()</dd>
 
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html">OutputStream</a></dt>
-  <dd>OutputStream(), close(), flush(), write(byte[]), write(byte[], int, int), write(int)</dd>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/security/NoSuchAlgorithmException.html">NoSuchAlgorithmException</a></dt>
+  <dd>NoSuchAlgorithmException(), NoSuchAlgorithmException(String)</dd>
 
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html">PrintStream</a></dt>
-  <dd>PrintStream(OutputStream), print(boolean), print(char), print(char[]), print(double), print(float), print(int), print(long), print(Object), print(String), println(), println(boolean), println(char), println(char[]), println(double), println(float), println(int), println(long), println(Object), println(String)</dd>
-
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html">Serializable</a></dt>
-
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/UncheckedIOException.html">UncheckedIOException</a></dt>
-  <dd>UncheckedIOException(String, IOException), UncheckedIOException(IOException), getCause()</dd>
-
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/UnsupportedEncodingException.html">UnsupportedEncodingException</a></dt>
-  <dd>UnsupportedEncodingException(), UnsupportedEncodingException(String)</dd>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/security/SHA256Digest.html">SHA256Digest</a></dt>
 </dl>
 
 <h2 id="Package_java_sql">Package java.sql</h2>
@@ -287,6 +353,12 @@ Note that in some cases, only a subset of methods is supported for a given type.
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/sql/Timestamp.html">Timestamp</a></dt>
   <dd>Timestamp(int, int, int, int, int, int, int), Timestamp(long), valueOf(String), after(Timestamp), before(Timestamp), compareTo(Date), compareTo(Timestamp), equals(Object), equals(Timestamp), getNanos(), getTime(), hashCode(), setNanos(int), setTime(long), toString()</dd>
+</dl>
+
+<h2 id="Package_java_text">Package java.text</h2>
+<dl>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/text/ParseException.html">ParseException</a></dt>
+  <dd>ParseException(String, int), getErrorOffset()</dd>
 </dl>
 
 <h2 id="Package_java_util">Package java.util</h2>
@@ -422,7 +494,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>NoSuchElementException(), NoSuchElementException(String)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Objects.html">Objects</a></dt>
-  <dd>compare(T, T, Comparator), deepEquals(Object, Object), equals(Object, Object), hashCode(Object), hash(Object[]), isNull(Object), nonNull(Object), requireNonNull(T), requireNonNull(T, String), requireNonNull(T, Supplier), toString(Object), toString(Object, String)</dd>
+  <dd>compare(T, T, Comparator), deepEquals(Object, Object), equals(Object, Object), equals(String, String), hashCode(Object), hash(Object[]), isNull(Object), nonNull(Object), requireNonNull(T), requireNonNull(T, String), requireNonNull(T, Supplier), toString(Object), toString(Object, String)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html">Optional</a></dt>
   <dd>empty(), of(T), ofNullable(T), isPresent(), get(), ifPresent(Consumer), filter(Predicate), map(Function), flatMap(Function), orElse(T), orElseGet(Supplier), orElseThrow(Supplier), equals(Object), hashCode(), toString()</dd>
@@ -449,7 +521,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>nextLong(), next(), forEachRemaining(LongConsumer), forEachRemaining(Consumer)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/PriorityQueue.html">PriorityQueue</a></dt>
-  <dd>PriorityQueue(), PriorityQueue(Collection), PriorityQueue(int), PriorityQueue(int, Comparator), PriorityQueue(Comparator), PriorityQueue(PriorityQueue), PriorityQueue(SortedSet), addAll(Collection), clear(), comparator(), contains(Object), containsAll(Collection), iterator(), offer(E), peek(), poll(), remove(Object), removeAll(Collection), retainAll(Collection), size(), spliterator(), toArray(), toArray(T[])</dd>
+  <dd>PriorityQueue(), PriorityQueue(Collection), PriorityQueue(int), PriorityQueue(int, Comparator), PriorityQueue(Comparator), PriorityQueue(PriorityQueue), PriorityQueue(SortedSet), addAll(Collection), clear(), comparator(), contains(Object), iterator(), offer(E), peek(), poll(), remove(Object), removeAll(Collection), retainAll(Collection), size(), spliterator(), toArray(), toArray(T[])</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html">Queue</a></dt>
   <dd>element(), offer(E), peek(), poll(), remove()</dd>
@@ -514,6 +586,197 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>Vector(), Vector(Collection), Vector(int), Vector(int, int), add(E), add(int, E), addAll(Collection), addAll(int, Collection), addElement(E), capacity(), clear(), clone(), contains(Object), containsAll(Collection), copyInto(Object[]), elementAt(int), elements(), ensureCapacity(int), firstElement(), forEach(Consumer), get(int), indexOf(Object), indexOf(Object, int), insertElementAt(E, int), isEmpty(), iterator(), lastElement(), lastIndexOf(Object), lastIndexOf(Object, int), remove(int), removeAll(Collection), removeAllElements(), removeElement(Object), removeElementAt(int), removeIf(Predicate), replaceAll(UnaryOperator), set(int, E), setElementAt(E, int), setSize(int), size(), sort(Comparator), subList(int, int), toArray(), toArray(T[]), toString(), trimToSize()</dd>
 </dl>
 
+<h2 id="Package_java_util_concurrent">Package java.util.concurrent</h2>
+<dl>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html">Callable</a></dt>
+  <dd>call()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CancellationException.html">CancellationException</a></dt>
+  <dd>CancellationException(), CancellationException(String)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html">ConcurrentHashMap</a></dt>
+  <dd>ConcurrentHashMap(), ConcurrentHashMap(int), ConcurrentHashMap(int, float), ConcurrentHashMap(Map), putIfAbsent(K, V), remove(Object, Object), replace(K, V, V), replace(K, V), containsKey(Object), get(Object), put(K, V), containsValue(Object), remove(Object), entrySet(), contains(Object), elements(), keys()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentMap.html">ConcurrentMap</a></dt>
+  <dd>putIfAbsent(K, V), remove(Object, Object), replace(K, V), replace(K, V, V)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Delayed.html">Delayed</a></dt>
+  <dd>getDelay(TimeUnit)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutionException.html">ExecutionException</a></dt>
+  <dd>ExecutionException(String, Throwable), ExecutionException(Throwable)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html">Executor</a></dt>
+  <dd>execute(Runnable)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executors.html">Executors</a></dt>
+  <dd>callable(Runnable, T), callable(Runnable)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html">Future</a></dt>
+  <dd>cancel(boolean), isCancelled(), isDone(), get(), get(long, TimeUnit)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/RejectedExecutionException.html">RejectedExecutionException</a></dt>
+  <dd>RejectedExecutionException(), RejectedExecutionException(String), RejectedExecutionException(String, Throwable), RejectedExecutionException(Throwable)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/RunnableFuture.html">RunnableFuture</a></dt>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledFuture.html">ScheduledFuture</a></dt>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html">TimeUnit</a></dt>
+  <dd style='margin-bottom: 0.5em;'>NANOSECONDS, MICROSECONDS, MILLISECONDS, SECONDS, MINUTES, HOURS, DAYS</dd>
+  <dd>values(), valueOf(String), convert(long, TimeUnit), toNanos(long), toMicros(long), toMillis(long), toSeconds(long), toMinutes(long), toHours(long), toDays(long)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeoutException.html">TimeoutException</a></dt>
+  <dd>TimeoutException(), TimeoutException(String)</dd>
+</dl>
+
+<h2 id="Package_java_util_concurrent_atomic">Package java.util.concurrent.atomic</h2>
+<dl>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/AtomicBoolean.html">AtomicBoolean</a></dt>
+  <dd>AtomicBoolean(boolean), AtomicBoolean(), get(), compareAndSet(boolean, boolean), weakCompareAndSet(boolean, boolean), set(boolean), lazySet(boolean), getAndSet(boolean), toString()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/AtomicInteger.html">AtomicInteger</a></dt>
+  <dd>AtomicInteger(int), AtomicInteger(), get(), set(int), lazySet(int), getAndSet(int), compareAndSet(int, int), getAndIncrement(), getAndDecrement(), getAndAdd(int), incrementAndGet(), decrementAndGet(), addAndGet(int), toString(), intValue(), longValue(), floatValue(), doubleValue()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/AtomicLong.html">AtomicLong</a></dt>
+  <dd>AtomicLong(long), AtomicLong(), get(), set(long), lazySet(long), getAndSet(long), compareAndSet(long, long), getAndIncrement(), getAndDecrement(), getAndAdd(long), incrementAndGet(), decrementAndGet(), addAndGet(long), toString(), intValue(), longValue(), floatValue(), doubleValue()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/AtomicReferenceArray.html">AtomicReferenceArray</a></dt>
+  <dd>AtomicReferenceArray(V[]), AtomicReferenceArray(int), compareAndSet(int, V, V), get(int), getAndSet(int, V), lazySet(int, V), length(), set(int, V), weakCompareAndSet(int, V, V), toString()</dd>
+</dl>
+
+<h2 id="Package_java_util_function">Package java.util.function</h2>
+<dl>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiConsumer.html">BiConsumer</a></dt>
+  <dd>accept(T, U), andThen(BiConsumer)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiFunction.html">BiFunction</a></dt>
+  <dd>apply(T, U), andThen(Function)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BiPredicate.html">BiPredicate</a></dt>
+  <dd>test(T, U), negate(), and(BiPredicate), or(BiPredicate)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BinaryOperator.html">BinaryOperator</a></dt>
+  <dd>maxBy(Comparator), minBy(Comparator)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/BooleanSupplier.html">BooleanSupplier</a></dt>
+  <dd>getAsBoolean()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html">Consumer</a></dt>
+  <dd>accept(T), andThen(Consumer)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleBinaryOperator.html">DoubleBinaryOperator</a></dt>
+  <dd>applyAsDouble(double, double)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleConsumer.html">DoubleConsumer</a></dt>
+  <dd>accept(double), andThen(DoubleConsumer)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleFunction.html">DoubleFunction</a></dt>
+  <dd>apply(double)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoublePredicate.html">DoublePredicate</a></dt>
+  <dd>test(double), negate(), and(DoublePredicate), or(DoublePredicate)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleSupplier.html">DoubleSupplier</a></dt>
+  <dd>getAsDouble()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleToIntFunction.html">DoubleToIntFunction</a></dt>
+  <dd>applyAsInt(double)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleToLongFunction.html">DoubleToLongFunction</a></dt>
+  <dd>applyAsLong(double)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html">DoubleUnaryOperator</a></dt>
+  <dd>identity(), applyAsDouble(double), andThen(DoubleUnaryOperator), compose(DoubleUnaryOperator)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html">Function</a></dt>
+  <dd>identity(), apply(T), andThen(Function), compose(Function)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/IntBinaryOperator.html">IntBinaryOperator</a></dt>
+  <dd>applyAsInt(int, int)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/IntConsumer.html">IntConsumer</a></dt>
+  <dd>accept(int), andThen(IntConsumer)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/IntFunction.html">IntFunction</a></dt>
+  <dd>apply(int)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/IntPredicate.html">IntPredicate</a></dt>
+  <dd>test(int), negate(), and(IntPredicate), or(IntPredicate)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/IntSupplier.html">IntSupplier</a></dt>
+  <dd>getAsInt()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/IntToDoubleFunction.html">IntToDoubleFunction</a></dt>
+  <dd>applyAsDouble(int)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/IntToLongFunction.html">IntToLongFunction</a></dt>
+  <dd>applyAsLong(int)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/IntUnaryOperator.html">IntUnaryOperator</a></dt>
+  <dd>identity(), applyAsInt(int), andThen(IntUnaryOperator), compose(IntUnaryOperator)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/LongBinaryOperator.html">LongBinaryOperator</a></dt>
+  <dd>applyAsLong(long, long)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/LongConsumer.html">LongConsumer</a></dt>
+  <dd>accept(long), andThen(LongConsumer)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/LongFunction.html">LongFunction</a></dt>
+  <dd>apply(long)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/LongPredicate.html">LongPredicate</a></dt>
+  <dd>test(long), negate(), and(LongPredicate), or(LongPredicate)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/LongSupplier.html">LongSupplier</a></dt>
+  <dd>getAsLong()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/LongToDoubleFunction.html">LongToDoubleFunction</a></dt>
+  <dd>applyAsDouble(long)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/LongToIntFunction.html">LongToIntFunction</a></dt>
+  <dd>applyAsInt(long)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/LongUnaryOperator.html">LongUnaryOperator</a></dt>
+  <dd>identity(), applyAsLong(long), andThen(LongUnaryOperator), compose(LongUnaryOperator)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ObjDoubleConsumer.html">ObjDoubleConsumer</a></dt>
+  <dd>accept(T, double)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ObjIntConsumer.html">ObjIntConsumer</a></dt>
+  <dd>accept(T, int)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ObjLongConsumer.html">ObjLongConsumer</a></dt>
+  <dd>accept(T, long)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html">Predicate</a></dt>
+  <dd>isEqual(Object), test(T), negate(), and(Predicate), or(Predicate)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html">Supplier</a></dt>
+  <dd>get()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ToDoubleBiFunction.html">ToDoubleBiFunction</a></dt>
+  <dd>applyAsDouble(T, U)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ToDoubleFunction.html">ToDoubleFunction</a></dt>
+  <dd>applyAsDouble(T)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ToIntBiFunction.html">ToIntBiFunction</a></dt>
+  <dd>applyAsInt(T, U)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ToIntFunction.html">ToIntFunction</a></dt>
+  <dd>applyAsInt(T)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ToLongBiFunction.html">ToLongBiFunction</a></dt>
+  <dd>applyAsLong(T, U)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ToLongFunction.html">ToLongFunction</a></dt>
+  <dd>applyAsLong(T)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/UnaryOperator.html">UnaryOperator</a></dt>
+  <dd>identity()</dd>
+</dl>
+
 <h2 id="Package_java_util_logging">Package java.util.logging</h2>
 <dl>
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/logging/Formatter.html">Formatter</a></dt>
@@ -535,5 +798,48 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/logging/Logger.html">Logger</a></dt>
   <dd style='margin-bottom: 0.5em;'>GLOBAL_LOGGER_NAME</dd>
   <dd>getGlobal(), getLogger(String), addHandler(Handler), config(String), config(Supplier), fine(String), fine(Supplier), finer(String), finer(Supplier), finest(String), finest(Supplier), info(String), info(Supplier), warning(String), warning(Supplier), severe(String), severe(Supplier), getHandlers(), getLevel(), getName(), getParent(), getUseParentHandlers(), isLoggable(Level), log(Level, String), log(Level, Supplier), log(Level, String, Throwable), log(Level, Throwable, Supplier), log(LogRecord), removeHandler(Handler), setLevel(Level), setParent(Logger), setUseParentHandlers(boolean)</dd>
+</dl>
+
+<h2 id="Package_java_util_stream">Package java.util.stream</h2>
+<dl>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/BaseStream.html">BaseStream</a></dt>
+  <dd>iterator(), spliterator(), isParallel(), sequential(), parallel(), unordered(), onClose(Runnable), close()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collector.html">Collector</a></dt>
+  <dd>of(Supplier, BiConsumer, BinaryOperator, Function, Collector.Characteristics[]), of(Supplier, BiConsumer, BinaryOperator, Collector.Characteristics[]), supplier(), accumulator(), characteristics(), combiner(), finisher()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collector.Characteristics.html">Collector.Characteristics</a></dt>
+  <dd style='margin-bottom: 0.5em;'>CONCURRENT, IDENTITY_FINISH, UNORDERED</dd>
+  <dd>values(), valueOf(String)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html">Collectors</a></dt>
+  <dd>averagingDouble(ToDoubleFunction), averagingInt(ToIntFunction), averagingLong(ToLongFunction), collectingAndThen(Collector, Function), counting(), groupingBy(Function), groupingBy(Function, Collector), groupingBy(Function, Supplier, Collector), joining(), joining(CharSequence), joining(CharSequence, CharSequence, CharSequence), mapping(Function, Collector), maxBy(Comparator), minBy(Comparator), partitioningBy(Predicate), partitioningBy(Predicate, Collector), reducing(BinaryOperator), reducing(T, BinaryOperator), reducing(U, Function, BinaryOperator), summarizingDouble(ToDoubleFunction), summarizingInt(ToIntFunction), summarizingLong(ToLongFunction), summingDouble(ToDoubleFunction), summingInt(ToIntFunction), summingLong(ToLongFunction), toCollection(Supplier), toList(), toMap(Function, Function), toMap(Function, Function, BinaryOperator), toMap(Function, Function, BinaryOperator, Supplier), toSet()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/DoubleStream.html">DoubleStream</a></dt>
+  <dd>builder(), concat(DoubleStream, DoubleStream), empty(), generate(DoubleSupplier), iterate(double, DoubleUnaryOperator), of(double[]), of(double), allMatch(DoublePredicate), anyMatch(DoublePredicate), average(), boxed(), collect(Supplier, ObjDoubleConsumer, BiConsumer), count(), distinct(), filter(DoublePredicate), findAny(), findFirst(), flatMap(DoubleFunction), forEach(DoubleConsumer), forEachOrdered(DoubleConsumer), iterator(), limit(long), map(DoubleUnaryOperator), mapToInt(DoubleToIntFunction), mapToLong(DoubleToLongFunction), mapToObj(DoubleFunction), max(), min(), noneMatch(DoublePredicate), parallel(), peek(DoubleConsumer), reduce(DoubleBinaryOperator), reduce(double, DoubleBinaryOperator), sequential(), skip(long), sorted(), spliterator(), sum(), summaryStatistics(), toArray()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/DoubleStream.Builder.html">DoubleStream.Builder</a></dt>
+  <dd>accept(double), add(double), build()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html">IntStream</a></dt>
+  <dd>builder(), concat(IntStream, IntStream), empty(), generate(IntSupplier), iterate(int, IntUnaryOperator), of(int[]), of(int), range(int, int), rangeClosed(int, int), allMatch(IntPredicate), anyMatch(IntPredicate), asDoubleStream(), asLongStream(), average(), boxed(), collect(Supplier, ObjIntConsumer, BiConsumer), count(), distinct(), filter(IntPredicate), findAny(), findFirst(), flatMap(IntFunction), forEach(IntConsumer), forEachOrdered(IntConsumer), iterator(), limit(long), map(IntUnaryOperator), mapToDouble(IntToDoubleFunction), mapToLong(IntToLongFunction), mapToObj(IntFunction), max(), min(), noneMatch(IntPredicate), parallel(), peek(IntConsumer), reduce(IntBinaryOperator), reduce(int, IntBinaryOperator), sequential(), skip(long), sorted(), spliterator(), sum(), summaryStatistics(), toArray()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.Builder.html">IntStream.Builder</a></dt>
+  <dd>accept(int), add(int), build()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/LongStream.html">LongStream</a></dt>
+  <dd>builder(), concat(LongStream, LongStream), empty(), generate(LongSupplier), iterate(long, LongUnaryOperator), of(long[]), of(long), range(long, long), rangeClosed(long, long), allMatch(LongPredicate), anyMatch(LongPredicate), asDoubleStream(), average(), boxed(), collect(Supplier, ObjLongConsumer, BiConsumer), count(), distinct(), filter(LongPredicate), findAny(), findFirst(), flatMap(LongFunction), forEach(LongConsumer), forEachOrdered(LongConsumer), iterator(), limit(long), map(LongUnaryOperator), mapToDouble(LongToDoubleFunction), mapToInt(LongToIntFunction), mapToObj(LongFunction), max(), min(), noneMatch(LongPredicate), parallel(), peek(LongConsumer), reduce(LongBinaryOperator), reduce(long, LongBinaryOperator), sequential(), skip(long), sorted(), spliterator(), sum(), summaryStatistics(), toArray()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/LongStream.Builder.html">LongStream.Builder</a></dt>
+  <dd>accept(long), add(long), build()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html">Stream</a></dt>
+  <dd>builder(), concat(Stream, Stream), empty(), generate(Supplier), iterate(T, UnaryOperator), of(T), of(T[]), allMatch(Predicate), anyMatch(Predicate), collect(Collector), collect(Supplier, BiConsumer, BiConsumer), count(), distinct(), filter(Predicate), findAny(), findFirst(), flatMap(Function), flatMapToDouble(Function), flatMapToInt(Function), flatMapToLong(Function), forEach(Consumer), forEachOrdered(Consumer), limit(long), map(Function), mapToDouble(ToDoubleFunction), mapToInt(ToIntFunction), mapToLong(ToLongFunction), max(Comparator), min(Comparator), noneMatch(Predicate), peek(Consumer), reduce(BinaryOperator), reduce(T, BinaryOperator), reduce(U, BiFunction, BinaryOperator), skip(long), sorted(), sorted(Comparator), toArray(), toArray(IntFunction)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.Builder.html">Stream.Builder</a></dt>
+  <dd>accept(T), add(T), build()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/StreamSupport.html">StreamSupport</a></dt>
+  <dd>doubleStream(Spliterator.OfDouble, boolean), doubleStream(Supplier, int, boolean), intStream(Spliterator.OfInt, boolean), intStream(Supplier, int, boolean), longStream(Spliterator.OfLong, boolean), longStream(Supplier, int, boolean), stream(Spliterator, boolean), stream(Supplier, int, boolean)</dd>
 </dl>
 
