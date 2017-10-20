@@ -13,6 +13,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <li><a href="#Package_java_sql">java.sql</a></li>
   <li><a href="#Package_java_util">java.util</a></li>
   <li><a href="#Package_java_util_logging">java.util.logging</a></li>
+  <li><a href="#Package_java_util_stream">java.util.stream</a></li>
 </ol>
 
 <h2 id="Package_java_lang">Package java.lang</h2>
@@ -537,3 +538,5 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>getGlobal(), getLogger(String), addHandler(Handler), config(String), config(Supplier), fine(String), fine(Supplier), finer(String), finer(Supplier), finest(String), finest(Supplier), info(String), info(Supplier), warning(String), warning(Supplier), severe(String), severe(Supplier), getHandlers(), getLevel(), getName(), getParent(), getUseParentHandlers(), isLoggable(Level), log(Level, String), log(Level, Supplier), log(Level, String, Throwable), log(Level, Throwable, Supplier), log(LogRecord), removeHandler(Handler), setLevel(Level), setParent(Logger), setUseParentHandlers(boolean)</dd>
 </dl>
 
+<h2 id="Package_java_util_stream">Package java.util.stream</h2>
+All supported
