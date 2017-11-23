@@ -113,16 +113,16 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
             // We have to load icon sets before run application
             Polymer.importHref("iron-icons/iron-icons.html", new Function() {
                 public Object call(Object arg) {
-                    // The app is executed when all imports succeed.
-                    startApplication();
                     return null;
                 }
             });
           }
-
-          private void startApplication() {
-            RootPanel.get().add(new Main());
-          }
+          
+          Polymer.whenReady(o -> {
+            // The app is executed when all imports succeed.
+			RootPanel.get().add(new Main());
+			return null;
+	      });
         }
 
 2.  Reload the application
