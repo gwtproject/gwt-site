@@ -222,7 +222,7 @@ Testing is very important to maintaining the quality of GWT. [Unit Tests](#unitt
 
 #### Ant JUnit Issues<a id="antjunit"></a>
 
-There is a problem, detailed at [ant.apache.org](http://ant.apache.org/manual/OptionalTasks/junit.html), where ant cannot find the JUnit classes.  The simple workaround is to either:
+There is a problem, detailed at [ant.apache.org](http://ant.apache.org/manual/Tasks/junit.html), where ant cannot find the JUnit classes.  The simple workaround is to either:
 
 *   Delete ant-junit.jar from the ant lib directory (for example, `/usr/share/ant/lib/`)
 *   Copy junit.jar into your ant lib directory
