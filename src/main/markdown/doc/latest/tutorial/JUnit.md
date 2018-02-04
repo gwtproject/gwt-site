@@ -28,7 +28,7 @@ This tutorial builds on the GWT concepts and the StockWatcher application create
 2.  Unzip the file.
 3.  Import the project into Eclipse
 
-        1.  From the `File` menu, select the  `Import...` menu option.
+    1.  From the `File` menu, select the  `Import...` menu option.
     2.  Select the import source General > Existing Projects into Workspace. Click the `Next` button.
     3.  For the root directory, browse to and select the StockWatcher directory (from the unzipped file). Click the `Finish` button.
 
@@ -61,33 +61,32 @@ This is where you will write the unit tests for StockWatcher.
 Currently it contains a single, simple test: the method testSimple.
 
 1.  Open the StockWatcherTest.java file.
-        *
 
 ```
 package com.google.gwt.sample.stockwatcher.client;
 
-    import com.google.gwt.junit.client.GWTTestCase;
+import com.google.gwt.junit.client.GWTTestCase;
 
-    /**
-     * GWT JUnit tests must extend GWTTestCase.
+/**
+ * GWT JUnit tests must extend GWTTestCase.
  */
 public class StockWatcherTest extends GWTTestCase {                       // <span style="color:black;">**(1)**</span>
 
-      /**
-       * Must refer to a valid module that sources this class.
+  /**
+   * Must refer to a valid module that sources this class.
    */
   public String getModuleName() {                                         // <span style="color:black;">**(2)**</span>
     return "com.google.gwt.sample.stockwatcher.StockWatcher";
   }
 
-      /**
-       * Add as many tests as you like.
+  /**
+   * Add as many tests as you like.
    */
   public void testSimple() {                                              // <span style="color:black;">**(3)**</span>
     assertTrue(true);
   }
 
-    }
+}
 ```
 
 #### Notes
@@ -134,8 +133,8 @@ with the path to junit on your system.
     *  The simpleTest executes without error.
 
 ```
-&#91;junit&#93; Running com.google.gwt.sample.stockwatcher.client.StockWatcherTest
-&#91;junit&#93; Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 15.851 sec
+[junit] Running com.google.gwt.sample.stockwatcher.client.StockWatcherTest
+[junit] Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 15.851 sec
 ```
 
 4.  Run the JUnit test in production mode.
@@ -144,8 +143,8 @@ with the path to junit on your system.
     *  The simpleTest executes without error.
 
 ```
-&#91;junit&#93; Running com.google.gwt.sample.stockwatcher.client.StockWatcherTest
-&#91;junit&#93; Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 37.042 sec
+[junit] Running com.google.gwt.sample.stockwatcher.client.StockWatcherTest
+[junit] Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 37.042 sec
 ```
 
 ### In Eclipse (using the Google Pluging for Eclipse)
@@ -206,7 +205,7 @@ However, to learn the process of setting up JUnit tests in GWT, in this tutorial
 
 ```
 /**
-     * Verify that the instance fields in the StockPrice class are set correctly.
+ * Verify that the instance fields in the StockPrice class are set correctly.
  */
 public void testStockPriceCtor() {
   String symbol = "XYZ";
@@ -214,7 +213,7 @@ public void testStockPriceCtor() {
   double change = 2.0;
   double changePercent = 100.0 * change / price;
 
-      StockPrice sp = new StockPrice(symbol, price, change);
+  StockPrice sp = new StockPrice(symbol, price, change);
   assertNotNull(sp);
   assertEquals(symbol, sp.getSymbol());
   assertEquals(price, sp.getPrice(), 0.001);
@@ -227,8 +226,8 @@ public void testStockPriceCtor() {
     *  Both tests should pass.
 
 ```
-&#91;junit&#93; Running com.google.gwt.sample.stockwatcher.client.StockWatcherTest
-&#91;junit&#93; Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 16.601 sec
+[junit] Running com.google.gwt.sample.stockwatcher.client.StockWatcherTest
+[junit] Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 16.601 sec
 ```
 
 ##  Resolving problems identified in unit tests <a id="resolve"></a>
@@ -240,9 +239,8 @@ To see what happens when a unit test fails, you'll reintroduce the arithmetic bu
 
 ```
 public double getChangePercent() {
-    return 10.0 * this.change / this.price;
-  }
-
+  return 10.0 * this.change / this.price;
+}
 ```
 
 2.  Run StockWatcherTest in development mode (either in Eclipse of from the command line).
@@ -256,7 +254,7 @@ public double getChangePercent() {
 Testsuite: com.google.gwt.sample.stockwatcher.client.StockWatcherTest
 Tests run: 2, Failures: 1, Errors: 0, Time elapsed: 16.443 sec
 
-    Testcase: testSimple took 16.238 sec
+Testcase: testSimple took 16.238 sec
 Testcase: testStockPriceCtor took 0.155 sec
   FAILED
 Remote test failed at 172.29.212.75 / Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.1) Gecko/2008070208 Firefox/3.0.1
@@ -276,8 +274,8 @@ tests and `reports/htmlunit.prod/` directory for production mode tests.
     *  Both the JUnit tests should complete successfully again.
 
 ```
-&#91;junit&#93; Running com.google.gwt.sample.stockwatcher.client.StockWatcherTest
-&#91;junit&#93; Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 16.114 sec
+[junit] Running com.google.gwt.sample.stockwatcher.client.StockWatcherTest
+[junit] Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 16.114 sec
 ```
 
 **Best Practices:** Because there can be subtle differences between the way GWT applications work when compiled to JavaScript and when running as Java bytecode, make sure you run your unit tests in both development and production modes as you develop your application. Be aware, though, that if your test cases fail when running in production mode, you won't get the full stack trace that you see in development mode.

@@ -23,7 +23,7 @@ This tutorial builds on the GWT concepts and the StockWatcher application create
 2.  Unzip the file.
 3.  Import the project into Eclipse
 
-        1.  From the `File` menu, select the  `Import...` menu option.
+    1.  From the `File` menu, select the  `Import...` menu option.
     2.  Select the import source General > Existing Projects into Workspace. Click the `Next` button.
     3.  For the root directory, browse to and select the StockWatcher directory (from the unzipped file). Click the `Finish` button.
 
@@ -94,7 +94,6 @@ When the browser finishes downloading the new contents of the `<script>` tag, th
 
 ```
 callback125([{"symbol":"DDD","price":10.610339195026,"change":0.053085447454327}]);
-
 ```
 
 Google Data APIs support this technique.
@@ -130,39 +129,39 @@ If you have access to a web server, then you can use the following PHP script to
 ```
 <?php
 
-      header('Content-Type: text/javascript');
+  header('Content-Type: text/javascript');
   header('Cache-Control: no-cache');
   header('Pragma: no-cache');
 
-      define("MAX_PRICE", 100.0); // $100.00
+  define("MAX_PRICE", 100.0); // $100.00
   define("MAX_PRICE_CHANGE", 0.02); // +/- 2%
 
-      $callback = trim($_GET['callback']);
+  $callback = trim($_GET['callback']);
   echo $callback;
   echo '([';
 
-      $q = trim($_GET['q']);
+  $q = trim($_GET['q']);
   if ($q) {
     $symbols = explode(' ', $q);
 
-        for ($i=0; $i<count($symbols); $i++) {
+    for ($i=0; $i<count($symbols); $i++) {
       $price = lcg_value() * MAX_PRICE;
       $change = $price * MAX_PRICE_CHANGE * (lcg_value() * 2.0 - 1.0);
 
-          echo '{';
+      echo '{';
       echo "\"symbol\":\"$symbols[$i]\",";
       echo "\"price\":$price,";
       echo "\"change\":$change";
       echo '}';
 
-          if ($i < (count($symbols) - 1)) {
+      if ($i < (count($symbols) - 1)) {
         echo ',';
       }
     }
   }
 
-      echo ']);';
-?>`
+  echo ']);';
+?>
 ```
 
 2.  Copy the PHP script to another server.
@@ -174,8 +173,7 @@ If you have access to a web server, then you can use the following PHP script to
 5.  Make a request for the JSONP by appending the name of a callback function.
     *  `http://_[www.myStockServerDomain.com]_/stockPrices.php?q=ABC&callback=callback125`
 6.  The JSON is returned embedded in the callback function.
-    *  `callback125([{"symbol":"ABC","price":53.554212,"change":0.584011}]);
-`
+    *  `callback125([{"symbol":"ABC","price":53.554212,"change":0.584011}]);`
 
 ### Simulating a second server
 
@@ -194,41 +192,41 @@ Also notice that the script supports the callback query string parameter.
 #
 # Copyright 2007 Google Inc. All Rights Reserved.
 
-    import BaseHTTPServer
-    import SimpleHTTPServer
-    import urllib
-    import random
+import BaseHTTPServer
+import SimpleHTTPServer
+import urllib
+import random
 
-    MAX_PRICE = 100.0
-    MAX_PRICE_CHANGE = 0.02
+MAX_PRICE = 100.0
+MAX_PRICE_CHANGE = 0.02
 
-    class MyHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
+class MyHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 
-      def do_GET(self):
+  def do_GET(self):
     form = {}
     if self.path.find('?') > -1:
       queryStr = self.path.split('?')[1]
       form = dict([queryParam.split('=') for queryParam in queryStr.split('&amp;')])
 
-        body = '['
+      body = '['
 
-        if 'q' in form:
-      quotes = []
+      if 'q' in form:
+        quotes = []
 
-          for symbol in urllib.unquote_plus(form['q']).split(' '):
-        price = random.random() * MAX_PRICE
-        change = price * MAX_PRICE_CHANGE * (random.random() * 2.0 - 1.0)
-        quotes.append(('{"symbol":"%s","price":%f,"change":%f}'
+        for symbol in urllib.unquote_plus(form['q']).split(' '):
+          price = random.random() * MAX_PRICE
+          change = price * MAX_PRICE_CHANGE * (random.random() * 2.0 - 1.0)
+          quotes.append(('{"symbol":"%s","price":%f,"change":%f}'
                        % (symbol, price, change)))
 
-          body += ','.join(quotes)
+        body += ','.join(quotes)
 
-        body += ']'
+      body += ']'
 
-        if 'callback' in form:
-      body = ('%s(%s);' % (form['callback'], body))
+      if 'callback' in form:
+        body = ('%s(%s);' % (form['callback'], body))
 
-        self.send_response(200)
+    self.send_response(200)
     self.send_header('Content-Type', 'text/javascript')
     self.send_header('Content-Length', len(body))
     self.send_header('Expires', '-1')
@@ -236,11 +234,11 @@ Also notice that the script supports the callback query string parameter.
     self.send_header('Pragma', 'no-cache')
     self.end_headers()
 
-        self.wfile.write(body)
+    self.wfile.write(body)
     self.wfile.flush()
     self.connection.shutdown(1)
 
-    bhs = BaseHTTPServer.HTTPServer(('', 8000), MyHandler)
+bhs = BaseHTTPServer.HTTPServer(('', 8000), MyHandler)
 bhs.serve_forever()
 ```
 
@@ -258,8 +256,7 @@ bhs.serve_forever()
 7.  Make a request for the JSONP by appending the name of a callback function.
     *  `http://localhost:8000/?q=ABC&callback=callback125`
 8.  The JSON is returned embedded in the callback function.
-    *  `callback125([{"symbol":"ABC","price":53.554212,"change":0.584011}]);
-`
+    *  `callback125([{"symbol":"ABC","price":53.554212,"change":0.584011}]);`
 
 ##  Requesting the data from the remote server <a id="request"></a>
 
@@ -301,28 +298,28 @@ private static final String JSON_URL = "http://_www.myStockServerDomain.com_/sto
     *
 
 ```
-/**
-       * Generate random stock prices.
+  /**
+   * Generate random stock prices.
    */
   private void refreshWatchList() {
     if (stocks.size() == 0) {
       return;
     }
 
-        String url = JSON_URL;
+    String url = JSON_URL;
 
-        // Append watch list stock symbols to query URL.
+    // Append watch list stock symbols to query URL.
     Iterator<String> iter = stocks.iterator();
     while (iter.hasNext()) {
-        url += iter.next();
-        if (iter.hasNext()) {
-            url += "+";
-        }
+      url += iter.next();
+      if (iter.hasNext()) {
+        url += "+";
+      }
     }
 
-        url = URL.encode(url);
+    url = URL.encode(url);
 
-        JsonpRequestBuilder builder = new JsonpRequestBuilder();
+    JsonpRequestBuilder builder = new JsonpRequestBuilder();
     builder.requestObject(url, new AsyncCallback<JsArray<StockData>>() {
       public void onFailure(Throwable caught) {
         displayError("Couldn't retrieve JSON");
@@ -338,16 +335,16 @@ private static final String JSON_URL = "http://_www.myStockServerDomain.com_/sto
     *  The RequestBuilder code is replaced by a call to JsonpRequestBuilder. So you no longer need the following code in the refreshWatchList method:
 
 ```
-// Send request to server and catch any errors.
+    // Send request to server and catch any errors.
     RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
 
-        try {
+    try {
       Request request = builder.sendRequest(null, new RequestCallback() {
         public void onError(Request request, Throwable exception) {
           displayError("Couldn't retrieve JSON");
         }
 
-            public void onResponseReceived(Request request, Response response) {
+        public void onResponseReceived(Request request, Response response) {
           if (200 == response.getStatusCode()) {
             updateTable(JsonUtils.safeEval(response.getText()));
           } else {
@@ -359,7 +356,6 @@ private static final String JSON_URL = "http://_www.myStockServerDomain.com_/sto
     } catch (RequestException e) {
       displayError("Couldn't retrieve JSON");
     }
-
 ```
 
 #### Implement the onSuccess method
@@ -372,12 +368,11 @@ If a response does not come back from the server, you display a message. You can
 
 ```
 if (data == null) {
-      displayError("Couldn't retrieve JSON");
-      return;
-    }
+  displayError("Couldn't retrieve JSON");
+  return;
+}
 
-        updateTable(data);
-
+updateTable(data);
 ```
 
 ##  Testing <a id="test"></a>
