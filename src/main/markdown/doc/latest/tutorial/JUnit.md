@@ -70,19 +70,19 @@ import com.google.gwt.junit.client.GWTTestCase;
 /**
  * GWT JUnit tests must extend GWTTestCase.
  */
-public class StockWatcherTest extends GWTTestCase {                       // <span style="color:black;">**(1)**</span>
+public class StockWatcherTest extends GWTTestCase {                       // (1)
 
   /**
    * Must refer to a valid module that sources this class.
    */
-  public String getModuleName() {                                         // <span style="color:black;">**(2)**</span>
+  public String getModuleName() {                                         // (2)
     return "com.google.gwt.sample.stockwatcher.StockWatcher";
   }
 
   /**
    * Add as many tests as you like.
    */
-  public void testSimple() {                                              // <span style="color:black;">**(3)**</span>
+  public void testSimple() {                                              // (3)
     assertTrue(true);
   }
 

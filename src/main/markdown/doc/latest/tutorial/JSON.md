@@ -223,7 +223,6 @@ First, you'll use [JsonUtils.safeEval()](/javadoc/latest/com/google/gwt/core/cli
   public final native String getSymbol() /*-{ return this.symbol; }-*/;
   public final native double getPrice() /*-{ return this.price; }-*/;
   public final native double getChange() /*-{ return this.change; }-*/;
-
 ```
 
 For the latter, you'll use JSNI. When the client-side code is compiled to JavaScript, the Java methods are replaced with the JavaScript exactly as you write it inside the tokens.
@@ -271,16 +270,16 @@ package com.google.gwt.sample.stockwatcher.client;
 
 import com.google.gwt.core.client.JavaScriptObject;
 
-class StockData extends JavaScriptObject {                              // <span style="color:black;">**(1)**</span>
+class StockData extends JavaScriptObject {                              // (1)
   // Overlay types always have protected, zero argument constructors.
-  protected StockData() {}                                              // <span style="color:black;">**(2)**</span>
+  protected StockData() {}                                              // (2)
 
   // JSNI methods to get stock data.
-  public final native String getSymbol() /*-{ return this.symbol; }-*/; // <span style="color:black;">**(3)**</span>
+  public final native String getSymbol() /*-{ return this.symbol; }-*/; // (3)
   public final native double getPrice() /*-{ return this.price; }-*/;
   public final native double getChange() /*-{ return this.change; }-*/;
 
-  // Non-JSNI method to return change percentage.                       // <span style="color:black;">**(4)**</span>
+  // Non-JSNI method to return change percentage.                       // (4)
   public final double getChangePercent() {
     return 100.0 * getChange() / getPrice();
   }
