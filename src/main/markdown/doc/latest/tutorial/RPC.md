@@ -102,7 +102,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 @RemoteServiceRelativePath("stockPrices")
 public interface StockPriceService extends RemoteService {
 
-      StockPrice[] getPrices(String[] symbols);
+  StockPrice[] getPrices(String[] symbols);
 }
 ```
 
@@ -143,10 +143,10 @@ The service implementation runs on the server as Java bytecode; it's not transla
 
         public class StockPriceServiceImpl extends RemoteServiceServlet implements StockPriceService {
 
-            public StockPrice[] getPrices(String[] symbols) {
-                // TODO Auto-generated method stub
-                return null;
-            }
+          public StockPrice[] getPrices(String[] symbols) {
+            // TODO Auto-generated method stub
+            return null;
+          }
         }
 
 ### Write the server-side implementation
@@ -161,17 +161,17 @@ Replace the client-side implementation that returns random stock prices.
 2.  Replace the TODO with the following code. Return prices rather than null.
 
         public StockPrice[] getPrices(String[] symbols) {
-            Random rnd = new Random();
+          Random rnd = new Random();
 
-            StockPrice[] prices = new StockPrice[symbols.length];
-            for (int i=0; i<symbols.length; i++) {
-              double price = rnd.nextDouble() * MAX_PRICE;
-              double change = price * MAX_PRICE_CHANGE * (rnd.nextDouble() * 2f - 1f);
+          StockPrice[] prices = new StockPrice[symbols.length];
+          for (int i=0; i<symbols.length; i++) {
+            double price = rnd.nextDouble() * MAX_PRICE;
+            double change = price * MAX_PRICE_CHANGE * (rnd.nextDouble() * 2f - 1f);
 
-              prices[i] = new StockPrice(symbols[i], price, change);
-            }
+            prices[i] = new StockPrice(symbols[i], price, change);
+          }
 
-            return prices;
+          return prices;
         }
 
     Eclipse flags Random and suggests you include the import declaration.
@@ -195,21 +195,21 @@ Replace the client-side implementation that returns random stock prices.
 
         public class StockPriceServiceImpl extends RemoteServiceServlet implements StockPriceService {
 
-            private static final double MAX_PRICE = 100.0; // $100.00
-            private static final double MAX_PRICE_CHANGE = 0.02; // +/- 2%
+          private static final double MAX_PRICE = 100.0; // $100.00
+          private static final double MAX_PRICE_CHANGE = 0.02; // +/- 2%
 
-            public StockPrice[] getPrices(String[] symbols) {
-                Random rnd = new Random();
+          public StockPrice[] getPrices(String[] symbols) {
+            Random rnd = new Random();
 
-                StockPrice[] prices = new StockPrice[symbols.length];
-                for (int i=0; i<symbols.length; i++) {
-                    double price = rnd.nextDouble() * MAX_PRICE;
-                    double change = price * MAX_PRICE_CHANGE * (rnd.nextDouble() * 2f - 1f);
+            StockPrice[] prices = new StockPrice[symbols.length];
+            for (int i=0; i<symbols.length; i++) {
+              double price = rnd.nextDouble() * MAX_PRICE;
+              double change = price * MAX_PRICE_CHANGE * (rnd.nextDouble() * 2f - 1f);
 
-                    prices[i] = new StockPrice(symbols[i], price, change);
-                }
+              prices[i] = new StockPrice(symbols[i], price, change);
+            }
 
-                return prices;
+            return prices;
           }
 
         }
@@ -281,7 +281,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public interface StockPriceServiceAsync {
 
-   void getPrices(String[] symbols, AsyncCallback<StockPrice[]> callback);
+  void getPrices(String[] symbols, AsyncCallback<StockPrice[]> callback);
 
 }
 ```
@@ -313,24 +313,24 @@ The AsyncCallback object contains two methods, one of which is called depending 
     Replace the existing refreshWatchList method with the following code.
 
         private void refreshWatchList() {
-            // Initialize the service proxy.
-            if (stockPriceSvc == null) {
-              stockPriceSvc = GWT.create(StockPriceService.class);
+          // Initialize the service proxy.
+          if (stockPriceSvc == null) {
+            stockPriceSvc = GWT.create(StockPriceService.class);
+          }
+
+          // Set up the callback object.
+          AsyncCallback<StockPrice[]> callback = new AsyncCallback<StockPrice[]>() {
+            public void onFailure(Throwable caught) {
+              // TODO: Do something with errors.
             }
 
-             // Set up the callback object.
-            AsyncCallback<StockPrice[]> callback = new AsyncCallback<StockPrice[]>() {
-              public void onFailure(Throwable caught) {
-                // TODO: Do something with errors.
-              }
+            public void onSuccess(StockPrice[] result) {
+              updateTable(result);
+            }
+          };
 
-              public void onSuccess(StockPrice[] result) {
-                updateTable(result);
-              }
-            };
-
-             // Make the call to the stock price service.
-            stockPriceSvc.getPrices(stocks.toArray(new String[0]), callback);
+          // Make the call to the stock price service.
+          stockPriceSvc.getPrices(stocks.toArray(new String[0]), callback);
         }
 
     Eclipse flags AsyncCallback.
@@ -403,7 +403,7 @@ public class StockPrice implements Serializable {
 2.  Add a stock.
 3.  StockWatcher adds the stock to the table; the Price and Change fields contain data and there are no errors.
 
-       *  Atlhough StockWatcher doesn't look any different on the surface, underneath it is now retrieving its stock price updates from the server-side StockPriceService servlet on the embedded servlet container instead of generating them on the client-side.
+       *  Although StockWatcher doesn't look any different on the surface, underneath it is now retrieving its stock price updates from the server-side StockPriceService servlet on the embedded servlet container instead of generating them on the client-side.
 
 At this point, the basic RPC mechanism is working. However, there is one TODO left. You need to code the error handling in case the callback fails.
 
@@ -446,18 +446,18 @@ import java.io.Serializable;
 
 public class DelistedException extends Exception implements Serializable {
 
-    private String symbol;
+  private String symbol;
 
-    public DelistedException() {
-    }
+  public DelistedException() {
+  }
 
-    public DelistedException(String symbol) {
-        this.symbol = symbol;
-    }
+  public DelistedException(String symbol) {
+    this.symbol = symbol;
+  }
 
-    public String getSymbol() {
-        return this.symbol;
-    }
+  public String getSymbol() {
+    return this.symbol;
+  }
 }
 ```
 
@@ -476,7 +476,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 @RemoteServiceRelativePath("stockPrices")
 public interface StockPriceService extends RemoteService {
 
-   StockPrice[] getPrices(String[] symbols) throws DelistedException;
+  StockPrice[] getPrices(String[] symbols) throws DelistedException;
 }
 ```
 
@@ -497,22 +497,22 @@ import com.google.gwt.sample.stockwatcher.client.DelistedException;
 ...
 
 public StockPrice[] getPrices(String[] symbols) throws DelistedException {
-    Random rnd = new Random();
+  Random rnd = new Random();
 
-    StockPrice[] prices = new StockPrice[symbols.length];
+  StockPrice[] prices = new StockPrice[symbols.length];
 
-    for (int i=0; i<symbols.length; i++) {
-        if (symbols[i].equals("ERR")) {
-            throw new DelistedException("ERR");
-        }
-
-        double price = rnd.nextDouble() * MAX_PRICE;
-        double change = price * MAX_PRICE_CHANGE * (rnd.nextDouble() * 2f - 1f);
-
-        prices[i] = new StockPrice(symbols[i], price, change);
+  for (int i=0; i<symbols.length; i++) {
+    if (symbols[i].equals("ERR")) {
+      throw new DelistedException("ERR");
     }
 
-    return prices;
+    double price = rnd.nextDouble() * MAX_PRICE;
+    double change = price * MAX_PRICE_CHANGE * (rnd.nextDouble() * 2f - 1f);
+
+    prices[i] = new StockPrice(symbols[i], price, change);
+  }
+
+  return prices;
 }
 ```
 
@@ -573,30 +573,30 @@ You will also want to hide the error message if the error is corrected (for exam
     *  In StockWatcher.java, in the refreshWatchList method, fill in the onFailure method as follows.
 
         public void onFailure(Throwable caught) {
-            // If the stock code is in the list of delisted codes, display an error message.
-            String details = caught.getMessage();
-            if (caught instanceof DelistedException) {
-              details = "Company '" + ((DelistedException)caught).getSymbol() + "' was delisted";
-            }
+          // If the stock code is in the list of delisted codes, display an error message.
+          String details = caught.getMessage();
+          if (caught instanceof DelistedException) {
+            details = "Company '" + ((DelistedException) caught).getSymbol() + "' was delisted";
+          }
 
-            errorMsgLabel.setText("Error: " + details);
-            errorMsgLabel.setVisible(true);
+          errorMsgLabel.setText("Error: " + details);
+          errorMsgLabel.setVisible(true);
         }
 
 2.  If the error is corrected, hide the error message widget.
     *  In the updateTable(StockPrice[] prices) method, clear any errors.
 
         private void updateTable(StockPrice[] prices) {
-            for (int i=0; i < prices.length; i++) {
-              updateTable(prices[i]);
-            }
+          for (int i=0; i < prices.length; i++) {
+            updateTable(prices[i]);
+          }
 
-            // Display timestamp showing last refresh.
-            lastUpdatedLabel.setText("Last update : " +
-            DateTimeFormat.getMediumDateTimeFormat().format(new Date()));
+          // Display timestamp showing last refresh.
+          lastUpdatedLabel.setText("Last update : " +
+              DateTimeFormat.getMediumDateTimeFormat().format(new Date()));
 
-            // Clear any errors.
-            errorMsgLabel.setVisible(false);
+          // Clear any errors.
+          errorMsgLabel.setVisible(false);
         }
 
 ### Test Exception Handling in RPC

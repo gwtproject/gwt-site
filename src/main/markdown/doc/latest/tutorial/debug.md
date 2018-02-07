@@ -32,7 +32,7 @@ Looking at the values in the Price and Change fields, you can see that, for some
 The values for the Change field are loaded by the updateTable(StockPrice) method.
 
 ```
-/**
+  /**
    * Update a single row in the stock table.
    *
    * @param price Stock data for a single row.
@@ -100,8 +100,8 @@ Now step into the code to see where and how the changePercentText is being calcu
 
 ```
 public double getChangePercent() {
-        return 10.0 * this.change / this.price;
-      }
+  return 10.0 * this.change / this.price;
+}
 ```
 
 Looking at the getChangePercent method, you can see the problem: it's multiplying the change percentage by 10 instead of 100. That corresponds exactly with the output you saw before: all of the change percentages were only 1/10 the size of the correct values.
@@ -113,8 +113,8 @@ Looking at the getChangePercent method, you can see the problem: it's multiplyin
 
 ```
 public double getChangePercent() {
-    return 100.0 * this.change / this.price;
-  }
+  return 100.0 * this.change / this.price;
+}
 ```
 
 **Tip:** In Eclipse, if you find it easier to edit in the Java perspective rather than the Debug perspective, you can switch back and forth while running StockWatcher in development mode.

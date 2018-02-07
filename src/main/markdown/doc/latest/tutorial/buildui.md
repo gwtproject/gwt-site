@@ -439,19 +439,19 @@ public class StockWatcher implements EntryPoint {
     stocksFlexTable.setText(0, 2, "Change");
     stocksFlexTable.setText(0, 3, "Remove");
 
-        // Assemble Add Stock panel.
+    // Assemble Add Stock panel.
     addPanel.add(newSymbolTextBox);
     addPanel.add(addStockButton);
 
-        // Assemble Main panel.
+    // Assemble Main panel.
     mainPanel.add(stocksFlexTable);
     mainPanel.add(addPanel);
     mainPanel.add(lastUpdatedLabel);
 
-        // Associate the Main panel with the HTML host page.
+    // Associate the Main panel with the HTML host page.
     RootPanel.get("stockList").add(mainPanel);
 
-        // Move cursor focus to the input box.
+    // Move cursor focus to the input box.
     newSymbolTextBox.setFocus(true);
 
   }
