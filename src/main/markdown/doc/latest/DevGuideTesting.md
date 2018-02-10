@@ -106,8 +106,10 @@ If you prefer not to use webAppCreator, you may create a test case suite by hand
 2.  **If you do not have a GWT module yet, create a [module](DevGuideOrganizingProjects.html#DevGuideModules) that causes the source for your test case to be included.** If you are adding a test case to an existing GWT app, you can just use the existing module.
 3.  **Implement the method [GWTTestCase.getModuleName()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#getModuleName--) to return the fully-qualified name of the module.** This is the glue that tells the JUnit test case which module to instantiate.
 4.  **Compile your test case class to bytecode.** You can use the Java compiler directly using [javac](http://java.sun.com/j2se/1.5.0/docs/tooldocs/windows/javac.html) or a Java IDE such as [Eclipse](http://eclipse.org).
-5.  **Run your test case.** Use the class `junit.textui.TestRunner` as your main class and pass the full name of your test class as the command line argument, e.g. `com.example.foo.client.FooTest`. When running the test case, make sure your classpath includes:
-6.  *   Your project's `src` directory
+5.  **Run your test case.** Use the class `junit.textui.TestRunner` as your main
+class and pass the full name of your test class as the command line argument,
+e.g. `com.example.foo.client.FooTest`. When running the test case, make sure your classpath includes:
+    *   Your project's `src` directory
     *   Your project's `bin` directory
     *   The `gwt-user.jar` library
     *   The `gwt-dev.jar` library
@@ -211,9 +213,11 @@ there are [some differences between Java and JavaScript](DevGuideCodingBasics.ht
 that could cause your code to produce different results when deployed.
 
 If you instead decide to run the JUnit TestRunner from the command line,
-you need to [pass arguments](#passingTestArguments) to `JUnitShell` to get your unit tests running in (legacy) development mode
+you need to [pass arguments](#passingTestArguments) to `JUnitShell` to get your unit tests running in (legacy) development mode:
 
-`-Dgwt.args="-devMode"`
+```
+-Dgwt.args="-devMode"
+```
 
 ### Running your test in Manual Mode<a id="Manual_Mode"></a>
 
@@ -229,7 +233,6 @@ For example, if you want to run a test in a single browser, you would use the fo
 GWT will then show a console message like the following:
 
 ```
-
 Please navigate your browser to this URL:
 http://172.29.212.75:58339/com.google.gwt.user.User.JUnit/junit.html?gwt.codesvr=172.29.212.75:42899
 ```
@@ -354,32 +357,32 @@ The following example shows how to defensively cleanup the DOM before the next t
 
 ```
 import com.google.gwt.junit.client.GWTTestCase;
-  import com.google.gwt.user.client.DOM;
-  import com.google.gwt.user.client.Element;
+import com.google.gwt.user.client.DOM;
+import com.google.gwt.user.client.Element;
 
-  private static native String getNodeName(Element elem) /*-{
-     return (elem.nodeName || "").toLowerCase();
-  }-*/;
+private static native String getNodeName(Element elem) /*-{
+  return (elem.nodeName || "").toLowerCase();
+}-*/;
 
-  /**
-   * Removes all elements in the body, except scripts and iframes.
-   */
-  public void gwtSetUp () {
-    Element bodyElem = RootPanel.getBodyElement();
+/**
+ * Removes all elements in the body, except scripts and iframes.
+ */
+public void gwtSetUp () {
+  Element bodyElem = RootPanel.getBodyElement();
 
-    List<Element> toRemove = new ArrayList<Element>();
-    for (int i = 0, n = DOM.getChildCount(bodyElem); i < n; ++i) {
-      Element elem = DOM.getChild(bodyElem, i);
-      String nodeName = getNodeName(elem);
-      if (!"script".equals(nodeName) &amp;&amp; !"iframe".equals(nodeName)) {
-        toRemove.add(elem);
-      }
-    }
-
-    for (int i = 0, n = toRemove.size(); i < n; ++i) {
-      DOM.removeChild(bodyElem, toRemove.get(i));
+  List<Element> toRemove = new ArrayList<Element>();
+  for (int i = 0, n = DOM.getChildCount(bodyElem); i < n; ++i) {
+    Element elem = DOM.getChild(bodyElem, i);
+    String nodeName = getNodeName(elem);
+    if (!"script".equals(nodeName) && !"iframe".equals(nodeName)) {
+      toRemove.add(elem);
     }
   }
+
+  for (int i = 0, n = toRemove.size(); i < n; ++i) {
+    DOM.removeChild(bodyElem, toRemove.get(i));
+  }
+}
 ```
 
 ## Running Tests in Eclipse<a id="DevGuideRunningTestsInEclipse"></a>

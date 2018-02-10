@@ -65,14 +65,14 @@ public static native int badExample() /*-{
   return "Not A Number";
 }-*/;
 
- public void onClick () {
-   try {
-      int myValue = badExample();
-      GWT.log("Got value " + myValue, null);
-   } catch (Exception e) {
-      GWT.log("JSNI method badExample() threw an exception:", e);
-   }
- }
+public void onClick() {
+  try {
+    int myValue = badExample();
+    GWT.log("Got value " + myValue, null);
+  } catch (Exception e) {
+    GWT.log("JSNI method badExample() threw an exception:", e);
+  }
+}
 ```
 
 This example compiles as Java, and its syntax is verified by the GWT compiler
@@ -208,7 +208,7 @@ public class JSNIExample {
 
 ## Calling a Java Method from Handwritten JavaScript<a id="calling"></a>
 
-Sometimes you need to access a method or constructor defined in GWT from outside JavaScript code. This code might be hand-written and included in another java script file, or
+Sometimes you need to access a method or constructor defined in GWT from outside JavaScript code. This code might be hand-written and included in another JavaScript file, or
 it could be a part of a third party library. In this case, the GWT compiler will not get a chance to build an interface between your JavaScript code and the GWT generated
 JavaScript directly.
 
@@ -218,14 +218,13 @@ JavaScript code.
 ```
 package mypackage;
 
-public MyUtilityClass
-{
-    public static int computeLoanInterest(int amt, float interestRate,
-                                          int term) { ... }
-    public static native void exportStaticMethod() /*-{
-       $wnd.computeLoanInterest =
-          $entry(@mypackage.MyUtilityClass::computeLoanInterest(IFI));
-    }-*/;
+public MyUtilityClass {
+  public static int computeLoanInterest(int amt, float interestRate,
+                                        int term) { ... }
+  public static native void exportStaticMethod() /*-{
+    $wnd.computeLoanInterest =
+        $entry(@mypackage.MyUtilityClass::computeLoanInterest(IFI));
+  }-*/;
 }
 ```
 
