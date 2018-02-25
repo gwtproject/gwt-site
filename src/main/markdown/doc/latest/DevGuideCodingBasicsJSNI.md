@@ -218,7 +218,7 @@ JavaScript code.
 ```
 package mypackage;
 
-public MyUtilityClass {
+public class MyUtilityClass {
   public static int computeLoanInterest(int amt, float interestRate,
                                         int term) { ... }
   public static native void exportStaticMethod() /*-{
