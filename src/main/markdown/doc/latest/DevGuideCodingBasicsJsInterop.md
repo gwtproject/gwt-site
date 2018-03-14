@@ -37,7 +37,10 @@ public class MyClass {
 From the JS script, the object can be used as a JS object:
 
 ```javascript
-//the package name serves as a JS namespace
+// Note that exporting of Java Objects to JavaScript to be accessed by their
+// namespace (e.g. this sample) requires -generateJsInteropExports flag.
+
+// the package name serves as a JS namespace
 var aClass = new com.gwt.example.MyClass('World');
 
 console.log(aClass.sayHello());
