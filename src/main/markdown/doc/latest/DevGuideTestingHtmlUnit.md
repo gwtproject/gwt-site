@@ -25,11 +25,11 @@ times.
 ## RunStyle HtmlUnit
 
 The HtmlUnit runstyle enables you to specify other browser emulations. By
-default, GWT runs HtmlUnit in the Firefox3 emulation mode. As of the 2.0
+default, GWT runs HtmlUnit in the Firefox 38 emulation mode. As of the 2.8
 release, GWT has not been extensively tested on the other emulations that
-HtmlUnit supports, namely FF2, IE6, IE7, and IE8. Still, to use them, you can
+HtmlUnit supports, namely Edge, Chrome, IE8, and IE11. Still, to use them, you can
 define the system property `gwt.args`, as explained before. For example,
-to cause tests to run both in FF3 and IE8 emulation mode, set
+to cause tests to run both in FF38 and IE11 emulation mode, set
 [`gwt.args`](DevGuideTesting.html#passingTestArguments) to:
 
-`-runStyle HtmlUnit:FF3,IE6`
+`-runStyle HtmlUnit:FF38,IE11`
