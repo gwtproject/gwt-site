@@ -59,7 +59,7 @@ Download
   </div>
 </div>
 
-<img class='download-icon' src="http://gwt-plugins.github.io/documentation/gwt-eclipse-plugin/workspace/images/logo.png" />
+<img class='download-icon' src="http://gwt-plugins.github.io/documentation/images/logo.png" />
 <div class='download-block'>
   <h3 style="margin-top: 0em;">
     Plugin for Eclipse <span style="font-weight: normal; font-size: 95%;"> (incl. SDKs)</span>
