@@ -17,12 +17,6 @@
   background-color: #9c1421;
   
 }
-.download-icon {
-  max-width: 15% !important;
-  width: 80px;
-  height: auto;
-  float: left;
-}
 .download-block {
   overflow: hidden;
 }
@@ -38,7 +32,6 @@
 Download
 ===
 
-<img class='download-icon' src="images/sdk-sm.png" />
 <div class='download-block'>
   <h3 style="margin-top: 0em;">GWT SDK</h3>
   <p>
@@ -59,7 +52,6 @@ Download
   </div>
 </div>
 
-<img class='download-icon' src="http://gwt-plugins.github.io/documentation/images/logo.png" />
 <div class='download-block'>
   <h3 style="margin-top: 0em;">
     Plugin for Eclipse <span style="font-weight: normal; font-size: 95%;"> (incl. SDKs)</span>
