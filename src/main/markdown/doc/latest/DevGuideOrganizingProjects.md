@@ -296,7 +296,7 @@ For more information, see [Linkers](DevGuideLinkers.html)
 
 ### Overriding one package implementation with another
 
-The `<super-source>` tag instructs the compiler to "re-root" a source path. This is useful for cases where you want to be re-use an existing Java API for a GWT
+The `<super-source>` tag instructs the compiler to "re-root" a source path. This is useful for cases where you want to re-use an existing Java API for a GWT
 project, but the original source is not available or not translatable. A common reason for this is to emulate part of the JRE not implemented by GWT.
 
 For example, suppose you want implement the UUID class provided by the JRE under `java.util`. Assume your project's module file is
