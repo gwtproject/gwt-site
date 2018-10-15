@@ -77,7 +77,10 @@ the following in your [module XML](DevGuideOrganizingProjects.html#DevGuideModul
 
 ```
 <set-property-fallback name="locale" value="en"/>
+<set-property name="locale" value="en"/>
 ```
+
+Note that there is an [open issue](https://github.com/gwtproject/gwt/issues/5768) related to this.
 
 ## Specifying the Locale to Load<a id="LocaleSpecifying"></a>
 
