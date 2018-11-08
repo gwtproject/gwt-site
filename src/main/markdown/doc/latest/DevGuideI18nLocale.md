@@ -76,11 +76,11 @@ are probably better off choosing some real language as a default, such as
 the following in your [module XML](DevGuideOrganizingProjects.html#DevGuideModuleXml):
 
 ```
-<set-property-fallback name="locale" value="en"/>
-<set-property name="locale" value="en"/>
+<set-property-fallback name="locale" value="en"/> <!-- 1. fallback locale -->
+<set-property name="locale" value="en"/> <!-- 2. full list of supported locales-->
 ```
 
-Note that there is an [open issue](https://github.com/gwtproject/gwt/issues/5768) related to this.
+Note that there is an open issue related to this that requires us to specify the full list of supported locales _after_ the fallback locale to prevent the inclusion of an unused `default` locale.
 
 ## Specifying the Locale to Load<a id="LocaleSpecifying"></a>
 
