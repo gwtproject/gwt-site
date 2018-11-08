@@ -76,9 +76,9 @@ are probably better off choosing some real language as a default, such as
 the following in your [module XML](DevGuideOrganizingProjects.html#DevGuideModuleXml):
 
 ```
-<extend-property name=locale" value"en" <!-- 1. ensure inclusion of fallback locale --> 
+<extend-property name=locale" value"es,de,fr,en,it" <!-- 1. full list of supported locales --> 
 <set-property-fallback name="locale" value="en"/> <!-- 2. fallback locale -->
-<set-property name="locale" value="es,de,fr,en,it"/> <!-- 3. full list of supported locales -->
+<set-property name="locale" value="es,de,fr,en,it"/> <!-- 3. full list of supported localesm again -->
 ```
 
 Note that there is an open issue related to this that requires us to specify the full list of supported locales _after_ the fallback locale to prevent the inclusion of an unused `default` locale.
