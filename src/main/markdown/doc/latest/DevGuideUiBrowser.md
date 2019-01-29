@@ -3,7 +3,7 @@ UiBrowser
 
 GWT shields you from worrying too much about cross-browser incompatibilities. If you stick to built-in [widgets](DevGuideUiWidgets.html)
 and [composites](DevGuideUiCustomWidgets.html), your applications will work similarly on the most recent versions of Internet Explorer,
-Firefox, Chrome, and Safari. (Opera, too, most of the time.) DHTML user interfaces are remarkably quirky, though, so make sure to test your applications thoroughly on every browser.
+Firefox, Chrome, and Safari. (Opera, too, most of the time.) HTML user interfaces are remarkably quirky, though, so make sure to test your applications thoroughly on every browser.
 
 Whenever possible, GWT defers to browsers' native user interface elements. For example, GWT's [Button](/javadoc/latest/com/google/gwt/user/client/ui/Button.html) widget is a true HTML `<button>`
 rather than a synthetic button-like widget built, say, from a `<div>`. That means that GWT buttons render appropriately in different browsers and on different client
