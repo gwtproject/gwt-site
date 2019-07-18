@@ -10,8 +10,7 @@ Compatibility
 
 GWT supports most of the core Java language syntax and semantics, but there are a few differences you will want to be aware of.
 
-> Note: As of GWT 1.5, GWT compiles the Java language syntax that is compatible with J2SE 1.5 or earlier. Versions of GWT prior to GWT 1.5 are limited to Java 1.4 source
-> compatibility. For example, GWT 2.0 supports generics, whereas GWT 1.4 does not.
+GWT 2.8+ supports Java 8 syntax. (Previous versions supported lower Java versions, see the [Release Notes](ReleaseNotes.html) for more information.)
 
 It is important to remember that the target language of your GWT application
 is ultimately JavaScript, so there are some differences between running your
