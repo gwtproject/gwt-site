@@ -28,7 +28,7 @@ public class MyClass {
         this.name = name;
     }
 
-    public void sayHello() {
+    public String sayHello() {
         return "Hello" + this.name;
     }
 }
