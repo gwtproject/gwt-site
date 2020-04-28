@@ -98,7 +98,7 @@ for Turkish
 - Fix AIOOBE when compiling method references involving varargs.
 - Apply HtmlUnit workaround ensuring that window.onerror is called correctly
 
-### Miscellanous
+### Miscellaneous
 - Migrated lang/jre emulation JSNI to JsInterop to share with J2CL
 - Added ErrorProne to gwt builds
 - Improved compliance with CSP
@@ -150,7 +150,7 @@ prefered supertype of any JS type, including primitives.
 - Properly preserve names in overrides of native methods.
 - Make Array.sort(float[]/double[]) JDK compliant
 
-### Miscellanous
+### Miscellaneous
 - Small optimization in String.subString
 - Specialize Objects.equals for strings.
 - Improve primitive cast optimizations.
@@ -181,7 +181,7 @@ prefered supertype of any JS type, including primitives.
 - Fix incorrect property copying for native JsType subclasses.
 - Fix toString dispatch for subtypes of native JsTypes.
 
-### Miscellanous
+### Miscellaneous
 - Improve JsInterop error messages on native type fieds.
 - Update globals for Chrome 54.0.2840.16.
 
@@ -267,7 +267,7 @@ prefered supertype of any JS type, including primitives.
 ## GSS
 - Add CSS3 and GSS support in InterfaceGenerator
 
-### Miscellanous
+### Miscellaneous
 - Fixing up the Maven samples to work with GWT 2.8
 - Fixed spelling error when starting CodeServer
 - Update globals for Chrome 52.0.2743.24.
