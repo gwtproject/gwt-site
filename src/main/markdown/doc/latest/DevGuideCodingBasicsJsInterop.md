@@ -6,7 +6,7 @@ JsInterop is one of the core features of GWT 2.8. As the name suggests, JsIntero
 
 ## Exporting a Java type to JavaScript
 
-JsInterop can be used to expose a Java type to be used externally from a JavaScript script (aka a non-native type). This can be achieved by annotating the type with `@JsType`. This annotation exposes all the public non-static fields and methods, and tells the GWT compiler that the type is to be exported to a JavaScript type. Annotating a class with `@JsType` is equivalent to annotating all its public non-static methods with `@JsMethod`, its constructor with `@JsConstructor` (only one `@JsConstructor` is allowed to exist, more details can be found [in the javadoc](http://www.gwtproject.org/javadoc/latest/jsinterop/annotations/JsConstructor.html)), and all its public non-static fields with `@JsProperty`, so no need to add them explicity.
+JsInterop can be used to expose a Java type to be used externally from a JavaScript script (aka a non-native type). This can be achieved by annotating the type with `@JsType`. This annotation exposes all the public non-static fields and methods, and tells the GWT compiler that the type is to be exported to a JavaScript type. Annotating a class with `@JsType` is equivalent to annotating all its public non-static methods with `@JsMethod`, its constructor with `@JsConstructor` (only one `@JsConstructor` is allowed to exist, more details can be found [in the javadoc](http://www.gwtproject.org/javadoc/latest/jsinterop/annotations/JsConstructor.html)), and all its public non-static fields with `@JsProperty`, so no need to add them explicitly.
 
 Additionally, `@JsType` can be fine-tuned using the following properties:
 
@@ -69,7 +69,7 @@ Important notes:
 
 ## Consuming a JavaScript function with a callback argument
 
-JsInterop can also be used to map a JavaScript function to a Java interface using `@JsFunction`. Unlike Java, methods can be used as arguments to other methods in JavaScript (known as callback argument). A JavaScript callback can be mapped to a Java functional interface (an inteface with only one method) annotated with `@JsFunction`. The example below is inspired from Elemental 2 source code:
+JsInterop can also be used to map a JavaScript function to a Java interface using `@JsFunction`. Unlike Java, methods can be used as arguments to other methods in JavaScript (known as callback argument). A JavaScript callback can be mapped to a Java functional interface (an interface with only one method) annotated with `@JsFunction`. The example below is inspired from Elemental 2 source code:
 
 ```java
 @JsFunction

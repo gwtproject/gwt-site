@@ -215,7 +215,7 @@ Test your uploaded application by opening a web browser to http://_application-i
 
 Now that the StockWatcher is deployed on App Engine, we can start using some of the available services to enrich the application. We'll start by persisting stock quote listings on a per user basis. This is possible due to the datastore service, which allows us to save application data, as well as the User Service, which allows us to have users login and save stock quote listings for each user. For persistence, we'll use the Java Data Objects (JDO) interface provided by the App Engine SDK.
 
-To implement login functionality we'll use the User Serivce. With this service in place, any user with a Google Account will be able to login using their account to access the StockWatcher application. In this section, you'll use the App Engine User API to add user login to the application.
+To implement login functionality we'll use the User Service. With this service in place, any user with a Google Account will be able to login using their account to access the StockWatcher application. In this section, you'll use the App Engine User API to add user login to the application.
 
 The App Engine User Service is very easy to use. First, you need to instantiate the UserService class, as shown in the code snippet below:
 
