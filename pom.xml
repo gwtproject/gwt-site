@@ -105,6 +105,20 @@
           </descriptors>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <version>9.4.28.v20200408</version>
+          <configuration>
+            <httpConnector>
+              <port>9999</port>
+            </httpConnector>
+            <supportedPackagings>
+              <supportedPackaging>jar</supportedPackaging>
+            </supportedPackagings>
+            <webAppSourceDirectory>${project.build.directory}/generated-site</webAppSourceDirectory>
+          </configuration>
+      </plugin>
     </plugins>
   </build>
 
