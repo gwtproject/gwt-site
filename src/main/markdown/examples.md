@@ -171,7 +171,7 @@ was built using GWT. Use the free trial to see it in action.</div>
   </div>
   <div class="info">
     <div class="name"><a href="http://www.sigmah.org" target="_blank">Sigmah</a></div>
-    <div class="snippet">Sigmah is open source software for the shared management of international aid projects. &ndash; The software is simple, flexible and intuitive and allows each organisation to organize its own work methods, and thereby improve the quality of its programmes. &ndash; Sigmah is a big web application built using GWT, and providing a full-web <strong>offline mode</strong> working in production environment with Mozilla Firefox.</div>
+    <div class="snippet">Sigmah is open source software for the shared management of international aid projects. &ndash; The software is simple, flexible and intuitive and allows each organisation to organize its own work methods, and thereby improve the quality of its programmers. &ndash; Sigmah is a big web application built using GWT, and providing a full-web <strong>offline mode</strong> working in production environment with Mozilla Firefox.</div>
   </div>
 </div>
 

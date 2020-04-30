@@ -299,7 +299,7 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
                ...
             </g:HTMLPanel>
 
-3. Add the neccessary HTML imports `PaperDrawerPanelElement.SRC, PaperHeaderPanelElement.SRC, PaperToolbarElement.SRC` in `TodoList.java`. 
+3. Add the necessary HTML imports `PaperDrawerPanelElement.SRC, PaperHeaderPanelElement.SRC, PaperToolbarElement.SRC` in `TodoList.java`. 
 
 4. Reload the application
 
