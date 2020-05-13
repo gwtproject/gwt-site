@@ -11,10 +11,11 @@ Getting Started
 
 ## Prerequisites<a id="prereqs"></a>
 
-1.  You will need the Java SDK version 1.8 or later (Note that 1.7 is supported to compile and run sources,
-    but may not work correctly in dev mode). If necessary, <a
-    href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" rel="nofollow">download and
-    install the Java SE Development Kit (JDK)</a> for your platform.
+1.  You will need the Java SDK version 1.8 or later. If necessary, download and
+    install the Java SE Development Kit (JDK) <a
+    href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" 
+    rel="nofollow">from Oracle</a> or <a href="https://adoptopenjdk.net/" 
+    rel="nofollow">from Adopt OpenJDK</a> for your platform.
 2.  Apache Ant is also necessary to run command line arguments in this sample. If
     you don't already have it, install <a href="http://ant.apache.org/" rel="nofollow">Apache Ant</a>.
 
@@ -43,10 +44,10 @@ $JDK_HOME environment variable with export JDK_HOME="/Library/Java/Home"
   </tr>
 </tbody></table>
 
-On Windows, extract the files from the compressed folder `gwt-2.8.2.zip`.  On Mac or Linux, you can unpack the package with a command like:
+On Windows, extract the files from the compressed folder `gwt-2.9.0.zip`.  On Mac or Linux, you can unpack the package with a command like:
 
 ```
-unzip gwt-2.8.2.zip
+unzip gwt-2.9.0.zip
 ```
 
 The GWT SDK doesn't have an installer application.  All the files you  need to
@@ -61,7 +62,7 @@ You can create a new demo application in a new MyWebApp directory by running `we
 *   **Windows**
 
 ```
-cd gwt-2.8.2
+cd gwt-2.9.0
 
 webAppCreator -out MyWebApp com.mycompany.mywebapp.MyWebApp
 ```
@@ -69,7 +70,7 @@ webAppCreator -out MyWebApp com.mycompany.mywebapp.MyWebApp
 *   **Mac or Linux** - you may need to make the script executable:
 
 ```
-cd gwt-2.8.2
+cd gwt-2.9.0
 
 chmod u+x webAppCreator
 

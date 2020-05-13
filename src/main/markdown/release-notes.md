@@ -1,5 +1,6 @@
 The GWT Release Notes
 =====================
+* [2.9.0](#Release_Notes_2_9_0) May 13, 2020
 * [2.8.2](#Release_Notes_2_8_2) Oct 19, 2017
 * [2.8.1](#Release_Notes_2_8_1) Apr 24, 2017
 * [2.8.0](#Release_Notes_2_8_0) Oct 20, 2016
@@ -62,6 +63,60 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
+## <a id="Release_Notes_2_9_0"></a> Release Notes for 2.9.0
+
+### Highlights
+- Able to compile projects with jsinterop-base 1.0.0, elemental2 1.0.0, and
+jsinterop-annotations 2.0.0. With the exception of @JsAsync and @JsEnum, this
+brings GWT2 to be compatible across these tools with J2CL.
+
+- Added support for Java language levels 9, 10, and 11.
+
+- Officially, support is dropped for running the GWT compiler or server-side
+tooling on Java 7. The GWT distribution is still compiled to run on Java 7
+for this release, but no guarantees are made about whether or not this will 
+work. Future versions will compile bytecode for Java 8+. The release was 
+tested and found to work cross platform when run with Java 8, 11, and 14.
+
+
+### Deprecations
+- Elemental has been officially deprecated - it is still included in this
+release, but may not appear in future releases. Instead, we encourage the use
+of the Elemental2 libraries, which are compatible with both GWT2 and J2CL.
+- Removed NoSuchMethodException emulation.
+
+### Bug fixes
+- Fixes Arrays.binarySearch semantics for float[] and double[]
+- Adds Support multi-line messages in errors/exceptions
+- Adds shutdown hook in DiskCache to clean up temp files
+- Cache Gecko version to lower CPU usage on FireFox
+- Do not assume that "this" is always non null.
+- Updates globals for Firefox version 60.0.2, Chrome 66.0.3359.45
+- Fixes String.regionMatches.
+- Native JsMethods allowed to coexist with implementations with the same name.
+- Make sure lambdas box, unbox and insert erasure casts when necessary.
+- Negative zero treated properly in Double/Float.compare()
+
+### Miscellaneous
+- Updates CLDR to version 34.
+- Arrays now implement Cloneable
+- Link backing errors together with a cause attribute, start tracking
+suppressed errors in addition to the cause in underlying error object.
+- Add AtomicReference to gwt/emul.
+- Propagate script nonces via ScriptInjector
+- Add partial emulation for ExecutorService and ScheduledExecutorService
+- Emulate java.util.concurrent.Flow
+- Emulate javax.annotation{,.processing}.Generated
+- Make sure "goog.global" is $wnd if not defined.
+- Add `when-linker-added` element definition
+- Add Reader and StringReader emulation.
+- Remove GWT version check.
+- Do not show "unusable-by-js" warning for synthetic methods.
+- Update unmodifiableList to throw on Java8 methods.
+- Disable DataflowOptimizer by default and emit a warning when used
+
+For more detail, see the [commit log](https://gwt.googlesource.com/gwt/+log/2.8.2..release/2.9.0).
+
 ## <a id="Release_Notes_2_8_2"></a> Release Notes for 2.8.2
 
 ### Highlights
