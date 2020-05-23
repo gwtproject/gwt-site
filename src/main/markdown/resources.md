@@ -20,6 +20,6 @@ GWT community information:
     This lively group is intended for discussions among developers using the GWT to build web apps. The engineering team is active on this group.
 *   [GWT Open Source Contributor Forum](http://groups.google.com/group/Google-Web-Toolkit-Contributors)
 
-    This forum is intended for engineering conversations that relate specifically to [Making GWT Better](makinggwtbetter.html).*   [Unofficial IRC channel on Freenode: ##gwt](http://freenode.net)
+    This forum is intended for engineering conversations that relate specifically to [Making GWT Better](makinggwtbetter.html).*   [Unofficial IRC channel on Freenode: ##gwt](https://freenode.net/)
 
     There is an unofficial IRC channel, ##gwt, on Freenode. If you'd like to join in the conversation, you can use [ChatZilla](http://www.mozilla.org/projects/rt-messaging/chatzilla/).
