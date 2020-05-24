@@ -2,7 +2,7 @@ FAQ
 ===
 
 This section includes often-asked and answered questions about GWT, organized by category. 
-If you can't find the answer to your question here, try searching in the [GWT Developer Forum](http://groups.google.com/group/Google-Web-Toolkit) or visit the [Google Plus Community](https://plus.google.com/communities/116543000751323604177). 
+If you can't find the answer to your question here, try searching in the [GWT Developer Forum](http://groups.google.com/group/Google-Web-Toolkit) or visit the [GWT Gitter Community](https://gitter.im/gwtproject/gwt). 
 If you still can't find the answer, don't be shy: join the group and post your question.
 People on the group are friendly and often surprisingly helpful.
 
