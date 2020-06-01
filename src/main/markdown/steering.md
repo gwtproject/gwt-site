@@ -9,14 +9,14 @@ The committee will lead the GWT project in major decisions by consensus and ensu
 
 The steering committee consists of the following members (no particular order):
 
-* Bhaskar Janakiraman, [Google](https://www.google.com/about/)
+* Goktug Gokdogan, [Google](https://www.google.com/about/)
 * Artur Signell, [Vaadin](https://www.vaadin.com)
 * Justin Hickman, [Vertispan](https://vertispan.com/)
 * Colin Alworth, [Vertispan](https://vertispan.com/)
 * Christian Sadilek, [RedHat](https://www.redhat.com)
 * Thomas Broyer
 * Stephen Haberman, [LinkedIn](https://www.linkedin.com/about-us)
-* Daniel Kurka, [Google](https://www.google.com/about/)
+* Julien Dramaix, [Google](https://www.google.com/about/)
 * Christian Goudreau, [Arcbees](https://www.arcbees.com)
 * Konstantin Solomatov, [Jetbrains](https://www.jetbrains.com)
 
