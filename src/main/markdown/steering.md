@@ -19,5 +19,6 @@ The steering committee consists of the following members (no particular order):
 * Julien Dramaix, [Google](https://www.google.com/about/)
 * Christian Goudreau, [Arcbees](https://www.arcbees.com)
 * Konstantin Solomatov, [Jetbrains](https://www.jetbrains.com)
+* Frank Hossfeld [Hossfeld Solutions GmbH](https://www.hossfeld-solutions.de/)
 
 Affiliations are listed for identification purposes only; steering committee members do not represent their employers or academic institutions.
