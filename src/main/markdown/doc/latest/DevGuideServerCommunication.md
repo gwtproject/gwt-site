@@ -90,7 +90,7 @@ This synchronous interface is the definitive version of your service's specifica
 package com.example.foo.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import com.example.client.MyService;
+import com.example.foo.client.MyService;
 
 
 public class MyServiceImpl extends RemoteServiceServlet implements
