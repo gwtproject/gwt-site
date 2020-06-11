@@ -16,7 +16,6 @@ The steering committee consists of the following members (no particular order):
 * Thomas Broyer
 * Stephen Haberman, [LinkedIn](https://www.linkedin.com/about-us)
 * Julien Dramaix, [Google](https://www.google.com/about/)
-* Christian Goudreau, [Arcbees](https://www.arcbees.com)
 * Konstantin Solomatov, [Jetbrains](https://www.jetbrains.com)
 * Frank Hossfeld [Hossfeld Solutions GmbH](https://www.hossfeld-solutions.de/)
 
