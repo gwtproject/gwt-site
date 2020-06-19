@@ -315,7 +315,7 @@ There are many options you can pass to the development mode process to control h
 $ java -cp gwt-dev.jar com.google.gwt.dev.DevMode
 Missing required argument 'module[s]'
 Google Web Toolkit 2.8.0
-DevMode [-[no]startServer] [-port port-number | "auto"] [-logdir directory] [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-gen dir] [-bindAddress host-name-or-address] [-codeServerPort port-number | "auto"] [-[no]superDevMode] [-server servletContainerLauncher[:args]] [-startupUrl url] [-war dir] [-deploy dir] [-extra dir] [-modulePathPrefix ] [-workDir dir] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-sourceLevel [auto, 1.8]] [-[no]generateJsInteropExports] [-[no]incremental] [-style (DETAILED|OBFUSCATED|PRETTY)] [-[no]failOnError] [-setProperty name=value,value...] module[s]
+DevMode [-[no]startServer] [-port port-number | "auto"] [-logdir directory] [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-gen dir] [-bindAddress host-name-or-address] [-codeServerPort port-number | "auto"] [-[no]superDevMode] [-server servletContainerLauncher[:args]] [-startupUrl url] [-war dir] [-deploy dir] [-extra dir] [-modulePathPrefix ] [-workDir dir] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-sourceLevel [1.8|1.9|1.10|1.11]] [-[no]generateJsInteropExports] [-[no]incremental] [-style (DETAILED|OBFUSCATED|PRETTY)] [-[no]failOnError] [-setProperty name=value,value...] module[s]
 
 where
   -[no]startServer               Starts a servlet container serving the directory specified by the -war flag. (defaults to ON)
@@ -542,7 +542,7 @@ There are many options you can pass to the GWT compiler process to control how y
 > java -cp gwt-dev.jar com.google.gwt.dev.Compiler
 Missing required argument 'module[s]'
 Google Web Toolkit 2.8.0
-Compiler [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-workDir dir] [-X[no]closureFormattedOutput] [-[no]compileReport] [-X[no]checkCasts] [-X[no]classMetadata] [-[no]draftCompile] [-[no]checkAssertions] [-XfragmentCount numFragments] [-XfragmentMerge numFragments] [-gen dir] [-[no]generateJsInteropExports] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-Xnamespace (NONE|PACKAGE)] [-optimize level] [-[no]saveSource] [-setProperty name=value,value...] [-style (DETAILED|OBFUSCATED|PRETTY)] [-[no]failOnError] [-[no]validateOnly] [-sourceLevel [auto, 1.8]] [-localWorkers count] [-[no]incremental] [-war dir] [-deploy dir] [-extra dir] [-saveSourceOutput dir] module[s]
+Compiler [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-workDir dir] [-X[no]closureFormattedOutput] [-[no]compileReport] [-X[no]checkCasts] [-X[no]classMetadata] [-[no]draftCompile] [-[no]checkAssertions] [-XfragmentCount numFragments] [-XfragmentMerge numFragments] [-gen dir] [-[no]generateJsInteropExports] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-Xnamespace (NONE|PACKAGE)] [-optimize level] [-[no]saveSource] [-setProperty name=value,value...] [-style (DETAILED|OBFUSCATED|PRETTY)] [-[no]failOnError] [-[no]validateOnly] [-sourceLevel [1.8|1.9|1.10|1.11]] [-localWorkers count] [-[no]incremental] [-war dir] [-deploy dir] [-extra dir] [-saveSourceOutput dir] module[s]
 
 where
   -logLevel                      The level of logging detail: ERROR, WARN, INFO, TRACE, DEBUG, SPAM or ALL (defaults to INFO)
