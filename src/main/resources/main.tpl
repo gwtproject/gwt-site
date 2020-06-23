@@ -68,7 +68,7 @@
                 </ul>
                 <div id="social">
                     <a href="https://gitter.im/gwtproject/gwt" target="_blank" title="Access our Gitter community">
-                        <img src="images/gitter-logo.svg" height="100%" alt="GWT Gitter community"></img>
+                        <img src="images/gitter-logo-mark-white.png" height="100%" alt="GWT Gitter community"></img>
                     </a>
                 </div>
                 <a id="cc" href="#">Creative Commons Attribution 3.0 License.</a>
