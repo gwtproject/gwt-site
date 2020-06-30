@@ -37,7 +37,7 @@
 <li><a href="../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.8.2</div>
+<div class="aboutLanguage">GWT 2.9.0</div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -105,9 +105,9 @@ public @interface <span class="memberNameLabel">JsType</span></pre>
  name collisions are:
 
  <ul>
- <li>having method or constructor overloads
- <li>using the same name for a method and a field
- <li>shadowing a field from parent
+   <li>having method or constructor overloads
+   <li>using the same name for a method and a field
+   <li>shadowing a field from parent
  </ul>
 
  <p>Name collisions must be avoided by providing custom names (e.g. <a href="../../jsinterop/annotations/JsProperty.html#name--"><code>JsProperty.name()</code></a>) or by
@@ -118,9 +118,8 @@ public @interface <span class="memberNameLabel">JsType</span></pre>
  members are considered <a href="../../jsinterop/annotations/JsProperty.html" title="annotation in jsinterop.annotations"><code>JsProperty</code></a>/<a href="../../jsinterop/annotations/JsMethod.html" title="annotation in jsinterop.annotations"><code>JsMethod</code></a>/<a href="../../jsinterop/annotations/JsConstructor.html" title="annotation in jsinterop.annotations"><code>JsConstructor</code></a> unless they are
  explicitly marked with <a href="../../jsinterop/annotations/JsOverlay.html" title="annotation in jsinterop.annotations"><code>JsOverlay</code></a>.
 
- <p> For native interfaces with no particular JavaScript type associated with them (e.g.
- structural types) it is recommeded to use <code>namespace = JsPackage.GLOBAL</code> and
- <code>name = '?'</code>.
+ <p>For native interfaces with no particular JavaScript type associated with them (e.g. structural
+ types) it is recommeded to use <code>namespace = JsPackage.GLOBAL</code> and <code>name = '?'</code>.
 
  <p><b>Instanceof and Castability:</b>
 
@@ -129,9 +128,9 @@ public @interface <span class="memberNameLabel">JsType</span></pre>
  <p>All non-native JsTypes will follow regular Java semantics in terms of castability.
 
  <ul>
- <li>For concrete native JsTypes, cast checks and instanceof checks will be delegated to the
-     native JavaScript instanceof operator.
- <li>For interface native JsTypes, instanceof is forbidden and casts to them always succeed.
+   <li>For concrete native JsTypes, cast checks and instanceof checks will be delegated to the
+       native JavaScript instanceof operator.
+   <li>For interface native JsTypes, instanceof is forbidden and casts to them always succeed.
  </ul></div>
 </li>
 </ul>
@@ -256,7 +255,7 @@ public @interface <span class="memberNameLabel">JsType</span></pre>
 <li><a href="../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.8.2</div>
+<div class="aboutLanguage">GWT 2.9.0</div>
 </div>
 <div class="subNav">
 <ul class="navList">
