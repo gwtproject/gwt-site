@@ -1,6 +1,6 @@
 # GWT Documentation
 
-* GWT documentation is published under http://www.gwtproject.org/doc/latest/DevGuide.html
+* GWT documentation is published under : http://www.gwtproject.org/doc/latest/DevGuide.html
 
 ## Reference
 
@@ -31,3 +31,5 @@ Run without server:
 Run with Maven:
 * Run: `mvn jetty:run`
 * Open URL `http://localhost:9999` in your browser.
+
+Happy Hacking :)
