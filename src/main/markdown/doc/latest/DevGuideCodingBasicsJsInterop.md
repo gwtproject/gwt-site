@@ -205,4 +205,4 @@ The full example is available at https://github.com/zak905/jsinterop-leaflet
 
 JsInterop specifications: 
 https://docs.google.com/document/d/10fmlEYIHcyead_4R1S5wKGs1t2I7Fnp_PaNaa7XTEk0/edit#
-GWT 2.8.0 and JsInterop: http://www.luigibifulco.it/blog/en/blog/gwt-2-8-0-jsinterop
+GWT 2.8.0 and JsInterop: http://web.archive.org/web/20200712185409/http://www.luigibifulco.it/blog/en/blog/gwt-2-8-0-jsinterop
