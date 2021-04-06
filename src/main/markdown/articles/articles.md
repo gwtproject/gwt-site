@@ -63,8 +63,7 @@ JSON services across the web.
 
 **GWT Tutorial** is a step-by-step guide to a complete GWT project. It walks through a project to explain the essentials as well as some of the advanced concepts of GWT 2. Level - Beginner and Intermediate. 
 
-*   [Exporting Libraries Developed in GWT to JavaScript](https://code.google
-.com/p/gwtchismes/wiki/Tutorial_ExportingGwtLibrariesToJavascript_en) - _Contributed by Manuel Carrasco Moñino_
+*   [Exporting Libraries Developed in GWT to JavaScript](https://code.google.com/p/gwtchismes/wiki/Tutorial_ExportingGwtLibrariesToJavascript_en) - _Contributed by Manuel Carrasco Moñino_
 
 This article describes how you can export GWT defined methods to the outside JavaScript world, allowing your GWT application to provide an API for external consumption. It covers both a manual technique which uses only the GWT core library, as well as an even easier technique which uses of the [GWT-Exporter library](https://code.google.com/p/gwt-exporter).
 
