@@ -126,7 +126,7 @@ the following form:
 
 ### Invoking Java constructors from JavaScript<a id="constructors"></a>
 
-Calling Java constructors from JavaScript is identical to the above use case, except that the method name is alway **new**.
+Calling Java constructors from JavaScript is identical to the above use case, except that the method name is always **new**.
 
 Given the following Java classes:
 

@@ -146,7 +146,7 @@ To check that all the project components were created, run the starter applicati
 ### Running the development mode code server (from Eclipse)
 
 1.  In the Package Explorer view, select the StockWatcher project.
-2.  In the toolbar, click the Run button (Run as Web Application). Note: When using a newer version of the chrome browser use 'Run as Web Application (GWT Super Dev Mode)' instead. The 'Google Web Toolkit Developer Plugin' needed for the default run mode doesen't work anymore with newer browsers.
+2.  In the toolbar, click the Run button (Run as Web Application). Note: When using a newer version of the chrome browser use 'Run as Web Application (GWT Super Dev Mode)' instead. The 'Google Web Toolkit Developer Plugin' needed for the default run mode doesn't work anymore with newer browsers.
 3.  When the development mode tab opens, right-click on the URL to copy it.
 
     ![img](images/DevModeTab.png)

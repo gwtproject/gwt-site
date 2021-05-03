@@ -55,7 +55,7 @@ No, GWT is completely free. In fact, all of [GWT's source code](https://github.c
 
 ### What type of information will GWT collect?<a id="What_type_of_information_will_GWT_collect"></a>
 
-When you use GWT's development mode server or compiler, the application periodically sends a unique timestamp ID and version number of your product back to Google's servers so that the application can notify you of new versions. The timestamp ID is generated the first time you use the complier or development mode server. As a part of this request, Google will log the timestamp ID and the version number.
+When you use GWT's development mode server or compiler, the application periodically sends a unique timestamp ID and version number of your product back to Google's servers so that the application can notify you of new versions. The timestamp ID is generated the first time you use the compiler or development mode server. As a part of this request, Google will log the timestamp ID and the version number.
 
 The GWT developer plugin checks for updates once a day or as configured on the respective browser, sending the current plugin version number. As a part of this request, Google will log the plugin version number.
 

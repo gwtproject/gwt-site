@@ -34,7 +34,7 @@ Before submitting your post, please try the following:
 
 ## Other communities
 
-There is a [GWT community over at Google+](https://plus.google.com/u/0/communities/116543000751323604177). There's also the IRC channel #gwt on the Freenode network.
+There is a [GWT Gitter Community](https://gitter.im/gwtproject/gwt). There's also the unofficial IRC channel ##gwt on the [Freenode network](https://freenode.net/).
 
 ## Contribute
 

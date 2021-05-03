@@ -216,7 +216,7 @@ List and Set properties are encoded as JSON lists. For example, a `List<Person>`
 
     [ { "name" : "John Doe" } , { "name" : "Jim Smith" } ]
 
-Maps are serialized in two forms based on wether or not the key type is a value or reference type.  Value maps are encoded as a typical JSON object.  For example, a `Map<Integer, Foo>` would be encoded as
+Maps are serialized in two forms based on whether or not the key type is a value or reference type.  Value maps are encoded as a typical JSON object.  For example, a `Map<Integer, Foo>` would be encoded as
 
     { "1" : { "property" : "value"}, "55" : { "property" : "value" } }
 

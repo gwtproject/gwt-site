@@ -67,8 +67,8 @@
                     <li class="btn"><a href="http://www.gwtproject.org/javadoc/latest/"><i class="icon_jd"></i>Java Doc</a></li>
                 </ul>
                 <div id="social">
-                    <a class="googleplus" href="https://plus.google.com/communities/116543000751323604177" target="_blank">
-                        <i class="icon_google"></i><span>Access our Google+ community</span>
+                    <a href="https://gitter.im/gwtproject/gwt" target="_blank" title="Access our Gitter community">
+                        <img src="images/gitter-logo-mark-white.png" height="100%" alt="GWT Gitter community"></img>
                     </a>
                 </div>
                 <a id="cc" href="#">Creative Commons Attribution 3.0 License.</a>

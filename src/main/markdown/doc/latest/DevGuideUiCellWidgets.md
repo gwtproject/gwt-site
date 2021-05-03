@@ -69,7 +69,7 @@ renders the data for a selected contact.
 **To Create a CellList:**
 
 1.  Create a [standard](#available) or [custom](#custom-cell) Cell to hold the list items.
-2.  Create a [CellList](/javadoc/latest/com/google/gwt/user/cellview/client/CellList.html), passing the cell into its contructor.
+2.  Create a [CellList](/javadoc/latest/com/google/gwt/user/cellview/client/CellList.html), passing the cell into its constructor.
 3.  Access the data to populate the list.
 4.  Call [setRowData](/javadoc/latest/com/google/gwt/user/cellview/client/AbstractHasData.html#setRowData-int-java.util.List-) on the CellList to add the data.
 

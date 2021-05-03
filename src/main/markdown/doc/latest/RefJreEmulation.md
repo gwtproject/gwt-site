@@ -64,7 +64,13 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html">PrintStream</a></dt>
   <dd>PrintStream(OutputStream), print(boolean), print(char), print(char[]), print(double), print(float), print(int), print(long), print(Object), print(String), println(), println(boolean), println(char), println(char[]), println(double), println(float), println(int), println(long), println(Object), println(String), flush()</dd>
 
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a></dt>
+  <dd>Reader(), close(), mark(int), markSupported(), read(), read(char[]), read(char[], int, int), ready(), reset(), skip(long)</dd>
+
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html">Serializable</a></dt>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/StringReader.html">StringReader</a></dt>
+  <dd>StringReader(String), close(), read(char[], int, int)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/UncheckedIOException.html">UncheckedIOException</a></dt>
   <dd>UncheckedIOException(String, IOException), UncheckedIOException(IOException), getCause()</dd>
@@ -102,7 +108,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>Byte(byte), Byte(String), compare(byte, byte), decode(String), hashCode(byte), parseByte(String), parseByte(String, int), toString(byte), valueOf(byte), valueOf(String), valueOf(String, int), byteValue(), compareTo(Byte), doubleValue(), equals(Object), floatValue(), hashCode(), intValue(), longValue(), shortValue(), toString()</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html">CharSequence</a></dt>
-  <dd>charAt(int), length(), subSequence(int, int), toString(), chars(), $isInstance(HasCharSequenceTypeMarker)</dd>
+  <dd>charAt(int), length(), subSequence(int, int), toString(), chars()</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html">Character</a></dt>
   <dd style='margin-bottom: 0.5em;'>TYPE, MIN_RADIX, MAX_RADIX, MIN_VALUE, MAX_VALUE, MIN_SURROGATE, MAX_SURROGATE, MIN_LOW_SURROGATE, MAX_LOW_SURROGATE, MIN_HIGH_SURROGATE, MAX_HIGH_SURROGATE, MIN_SUPPLEMENTARY_CODE_POINT, MIN_CODE_POINT, MAX_CODE_POINT, SIZE, BYTES</dd>
@@ -120,7 +126,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Cloneable.html">Cloneable</a></dt>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html">Comparable</a></dt>
-  <dd>compareTo(T), $isInstance(HasComparableTypeMarker)</dd>
+  <dd>compareTo(T)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html">Deprecated</a></dt>
 
@@ -174,9 +180,6 @@ Note that in some cases, only a subset of methods is supported for a given type.
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NegativeArraySizeException.html">NegativeArraySizeException</a></dt>
   <dd>NegativeArraySizeException(), NegativeArraySizeException(String)</dd>
-
-  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NoSuchMethodException.html">NoSuchMethodException</a></dt>
-  <dd>NoSuchMethodException(), NoSuchMethodException(String)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html">NullPointerException</a></dt>
   <dd>NullPointerException(), NullPointerException(String)</dd>
@@ -404,7 +407,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html">Collections</a></dt>
   <dd style='margin-bottom: 0.5em;'>EMPTY_LIST, EMPTY_MAP, EMPTY_SET</dd>
-  <dd>addAll(Collection, T[]), asLifoQueue(Deque), binarySearch(List, T), binarySearch(List, T, Comparator), copy(List, List), disjoint(Collection, Collection), emptyIterator(), emptyList(), emptyListIterator(), emptyMap(), emptySet(), enumeration(Collection), fill(List, T), frequency(Collection, Object), list(Enumeration), max(Collection), max(Collection, Comparator), min(Collection), min(Collection, Comparator), newSetFromMap(Map), nCopies(int, T), replaceAll(List, T, T), reverse(List), reverseOrder(), reverseOrder(Comparator), rotate(List, int), shuffle(List), shuffle(List, Random), singleton(T), singletonList(T), singletonMap(K, V), sort(List), sort(List, Comparator), swap(List, int, int), unmodifiableCollection(Collection), unmodifiableList(List), unmodifiableMap(Map), unmodifiableSet(Set), unmodifiableSortedMap(SortedMap), unmodifiableSortedSet(SortedSet)</dd>
+  <dd>synchronizedCollection(Collection), synchronizedList(List), synchronizedMap(Map), synchronizedNavigableMap(NavigableMap), synchronizedNavigableSet(NavigableSet), synchronizedSet(Set), synchronizedSortedMap(SortedMap), synchronizedSortedSet(SortedSet), addAll(Collection, T[]), asLifoQueue(Deque), binarySearch(List, T), binarySearch(List, T, Comparator), copy(List, List), disjoint(Collection, Collection), emptyIterator(), emptyList(), emptyListIterator(), emptyMap(), emptySet(), enumeration(Collection), fill(List, T), frequency(Collection, Object), list(Enumeration), max(Collection), max(Collection, Comparator), min(Collection), min(Collection, Comparator), newSetFromMap(Map), nCopies(int, T), replaceAll(List, T, T), reverse(List), reverseOrder(), reverseOrder(Comparator), rotate(List, int), shuffle(List), shuffle(List, Random), singleton(T), singletonList(T), singletonMap(K, V), sort(List), sort(List, Comparator), swap(List, int, int), unmodifiableCollection(Collection), unmodifiableList(List), unmodifiableMap(Map), unmodifiableSet(Set), unmodifiableSortedMap(SortedMap), unmodifiableSortedSet(SortedSet)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html">Comparator</a></dt>
   <dd>compare(T, T), equals(Object), reversed(), thenComparing(Comparator), thenComparing(Function, Comparator), thenComparing(Function), thenComparingInt(ToIntFunction), thenComparingLong(ToLongFunction), thenComparingDouble(ToDoubleFunction), comparing(Function, Comparator), comparing(Function), comparingDouble(ToDoubleFunction), comparingInt(ToIntFunction), comparingLong(ToLongFunction), naturalOrder(), nullsFirst(Comparator), nullsLast(Comparator), reverseOrder()</dd>
@@ -609,8 +612,25 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html">Executor</a></dt>
   <dd>execute(Runnable)</dd>
 
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html">ExecutorService</a></dt>
+  <dd>shutdown(), shutdownNow(), isShutdown(), isTerminated(), submit(Callable), submit(Runnable, T), submit(Runnable), invokeAll(Collection), invokeAll(Collection, long, TimeUnit), invokeAny(Collection), invokeAny(Collection, long, TimeUnit)</dd>
+
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executors.html">Executors</a></dt>
   <dd>callable(Runnable, T), callable(Runnable)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Flow.html">Flow</a></dt>
+  <dd>defaultBufferSize()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Flow.Processor.html">Flow.Processor</a></dt>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Flow.Publisher.html">Flow.Publisher</a></dt>
+  <dd>subscribe(Flow.Subscriber)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Flow.Subscriber.html">Flow.Subscriber</a></dt>
+  <dd>onSubscribe(Flow.Subscription), onNext(T), onError(Throwable), onComplete()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Flow.Subscription.html">Flow.Subscription</a></dt>
+  <dd>request(long), cancel()</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html">Future</a></dt>
   <dd>cancel(boolean), isCancelled(), isDone(), get(), get(long, TimeUnit)</dd>
@@ -619,6 +639,9 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>RejectedExecutionException(), RejectedExecutionException(String), RejectedExecutionException(String, Throwable), RejectedExecutionException(Throwable)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/RunnableFuture.html">RunnableFuture</a></dt>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html">ScheduledExecutorService</a></dt>
+  <dd>schedule(Runnable, long, TimeUnit), schedule(Callable, long, TimeUnit), scheduleAtFixedRate(Runnable, long, long, TimeUnit), scheduleWithFixedDelay(Runnable, long, long, TimeUnit)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledFuture.html">ScheduledFuture</a></dt>
 
@@ -640,6 +663,9 @@ Note that in some cases, only a subset of methods is supported for a given type.
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/AtomicLong.html">AtomicLong</a></dt>
   <dd>AtomicLong(long), AtomicLong(), get(), set(long), lazySet(long), getAndSet(long), compareAndSet(long, long), getAndIncrement(), getAndDecrement(), getAndAdd(long), incrementAndGet(), decrementAndGet(), addAndGet(long), toString(), intValue(), longValue(), floatValue(), doubleValue()</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/AtomicReference.html">AtomicReference</a></dt>
+  <dd>AtomicReference(), AtomicReference(V), compareAndSet(V, V), get(), getAndSet(V), lazySet(V), set(V), weakCompareAndSet(V, V), toString()</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/AtomicReferenceArray.html">AtomicReferenceArray</a></dt>
   <dd>AtomicReferenceArray(V[]), AtomicReferenceArray(int), compareAndSet(int, V, V), get(int), getAndSet(int, V), lazySet(int, V), length(), set(int, V), weakCompareAndSet(int, V, V), toString()</dd>

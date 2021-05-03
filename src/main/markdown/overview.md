@@ -1,9 +1,9 @@
 Overview
 ===
 
-GWT is a development toolkit for building and optimizing complex browser-based applications. Its goal is to enable productive development of high-performance web applications without the developer having to be an expert in browser quirks, XMLHttpRequest, and JavaScript. GWT is used by many products at Google, including AdWords, AdSense, Flights, Hotel Finder, Offers, Wallet, Blogger. It's open source, completely free, and used by thousands of developers around the world.
+GWT is a development toolkit for building and optimizing complex browser-based applications. Its goal is to enable productive development of high-performance web applications without the developer having to be an expert in browser quirks, XMLHttpRequest, and JavaScript. It's open source, completely free, and used by thousands of developers around the world.
 
-[What's New in GWT 2.8.0](release-notes.html#Release_Notes_2_8_0)
+[What's New in GWT 2.9.0](release-notes.html#Release_Notes_2_9_0)
 
 ## What's inside the toolbox?
 
