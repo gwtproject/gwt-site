@@ -591,12 +591,14 @@ You will also want to hide the error message if the error is corrected (for exam
             updateTable(prices[i]);
           }
 
-          // Display timestamp showing last refresh.
-          lastUpdatedLabel.setText("Last update : " +
-              DateTimeFormat.getMediumDateTimeFormat().format(new Date()));
+        // Display timestamp showing last refresh.
+        DateTimeFormat dateFormat = DateTimeFormat.getFormat(
+                DateTimeFormat.PredefinedFormat.DATE_TIME_MEDIUM);
+        lastUpdatedLabel.setText("Last update : "
+                + dateFormat.format(new Date()));
 
-          // Clear any errors.
-          errorMsgLabel.setVisible(false);
+        // Clear any errors.
+        errorMsgLabel.setVisible(false);
         }
 
 ### Test Exception Handling in RPC
