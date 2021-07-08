@@ -43,7 +43,6 @@ public class MeetingSummaryLabelTest extends GWTTestCase {
 
   // Add tests here
 }
-
 ```
 
 The only visible difference is that all GWTTestCases must override an abstract method called `getModuleName`, which returns a String containing the name of your GWT code module as defined in your application's module XML file.
@@ -111,7 +110,7 @@ public class PresenterTest extends TestCase {
      verify(scheduler);
      verify(view);
 
-   assertEquals("Should have updated the model's capacity", 225, meeting.getCapacity());
+     assertEquals("Should have updated the model's capacity", 225, meeting.getCapacity());
   }
 }
 
@@ -150,10 +149,10 @@ public class Presenter {
   }
 
   /**
-  * Callback when the view's capacity text box changes
-  *
-  * @param textField the capacity TextBox widget
-  */
+   * Callback when the view's capacity text box changes
+   *
+   * @param textField the capacity TextBox widget
+   */
   public void requiredCapacityChanged(HasText textField) {
     meeting.setCapacity(Integer.parseInt(textField.getText()));
     if (!roomScheduler.canAcceptCapacityFor(meeting)) {
@@ -180,18 +179,17 @@ package com.google.gwt.user.client.ui;
 public interface HasText {
 
   /**
-  * Gets this object's text.
-  */
+   * Gets this object's text.
+   */
   String getText();
 
   /**
-  * Sets this object's text.
-  *
-  * @param text the object's new text
-  */
+   * Sets this object's text.
+   *
+   * @param text the object's new text
+   */
   void setText(String text);
 }
-
 ```
 
 This simple interface is used by many GWT components and allows manipulation of a widget's text contents, including the TextBox in our example. This interface is extremely useful for testing because we don't need to pass in a real TextBox. Thus we avoid instantiating a text input in the DOM, requiring our test to extend GWTTestCase to run in a real browser. In this example, I've made a very simple fake implementation which wraps a String:
@@ -212,7 +210,6 @@ public class FakeTextContainer implements HasText {
     this.text = text;
   }
 }
-
 ```
 
 Finally, let's take a look at our view implementation:
@@ -250,7 +247,6 @@ public class MeetingViewWidget extends Composite implements MeetingView {
     saveButton.setEnabled(false);
   }
 }
-
 ```
 
 And lastly, the Meeting class code, for completeness:
@@ -267,7 +263,6 @@ public class Meeting {
     this.capacity = capacity;
   }
 }
-
 ```
 
 As you can see, there's not much logic here. Most of the code is involved in setting up the event listeners and configuring the display widgets. So how do we test it in a GWTTestCase?
