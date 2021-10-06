@@ -8,6 +8,7 @@ Getting Started
 *  [Make a few changes](#change)
 *  [Compile and run in production mode](#compile)
 *  [Set up an IDE](#setup)
+*  [Using Maven](#maven)
 
 ## Prerequisites<a id="prereqs"></a>
 
@@ -157,3 +158,18 @@ set up Eclipse to use the GWT SDK:
 
 If you are going to stick with the command line, check out Speed Tracer     and then
 head over to [Build a Sample GWT App](doc/latest/tutorial/gettingstarted.html).
+
+## Maven<a id="maven"></a>
+
+If you're aiming at building your app with Maven you can use [gwt-maven-plugin](http://mojo.codehaus.org/gwt-maven-plugin/). See the plugin documentation for more information.
+
+To get you started, here's how to generate a new project based on the archetype.
+
+```
+mvn archetype:generate \
+  -DarchetypeGroupId=org.codehaus.mojo \
+  -DarchetypeArtifactId=gwt-maven-plugin \
+  -DarchetypeVersion=2.7.0
+```
+
+You could also take a look at [gwt-maven-archetypes](https://github.com/tbroyer/gwt-maven-archetypes) and [gwt-maven-plugin](https://github.com/tbroyer/gwt-maven-plugin) (same name, but different).
