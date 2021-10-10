@@ -3,9 +3,10 @@ Testing
 
 Creating a battery of good unit test cases is an important part of ensuring
 the quality of your application over its lifecycle. To aid developers with
-their testing efforts, GWT provides integration with the popular [JUnit](http://www.junit.org) unit testing framework and
-[Emma](http://emma.sourceforge.net) code coverage
-tool. GWT allows JUnit test cases to run in either development mode or production mode.
+their testing efforts, GWT provides integration with the popular [JUnit](http://www.junit.org) unit testing framework.
+GWT allows JUnit test cases to run in either development mode or production mode.
+
+(There is also integration with the [Emma](http://emma.sourceforge.net) code coverage tool, last released in 2005 and not longer maintained.)
 
 **Note:** To run through the steps to add JUnit tests to a sample GWT app, see the tutorial [Unit Testing GWT Applications with JUnit](tutorial/JUnit.html).
 
