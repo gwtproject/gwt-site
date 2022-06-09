@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":42};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -43,12 +43,12 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.9.0</div>
+<div class="aboutLanguage">GWT 2.10.0</div>
 </div>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../com/google/gwt/http/client/Request.html" title="class in com.google.gwt.http.client"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../com/google/gwt/http/client/Request.RequestImplIE8And9.html" title="class in com.google.gwt.http.client"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../com/google/gwt/http/client/RequestBuilder.html" title="class in com.google.gwt.http.client"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?com/google/gwt/http/client/Request.RequestImpl.html" target="_top">Frames</a></li>
@@ -106,19 +106,19 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <dl>
-<dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../../com/google/gwt/http/client/Request.RequestImplIE8And9.html" title="class in com.google.gwt.http.client">Request.RequestImplIE8And9</a></dd>
-</dl>
-<dl>
 <dt>Enclosing class:</dt>
 <dd><a href="../../../../../com/google/gwt/http/client/Request.html" title="class in com.google.gwt.http.client">Request</a></dd>
 </dl>
 <hr>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <br>
-<pre>static class <span class="typeNameLabel">Request.RequestImpl</span>
+<pre>@Deprecated
+static class <span class="typeNameLabel">Request.RequestImpl</span>
 extends java.lang.Object</pre>
 <div class="block">Native implementation associated with <a href="../../../../../com/google/gwt/http/client/Request.html" title="class in com.google.gwt.http.client"><code>Request</code></a>. User classes should not use this class
- directly.</div>
+ directly.
+
+ <p>Deprecated, as the only implementation this may be removed in a future release.</p></div>
 </li>
 </ul>
 </div>
@@ -137,7 +137,9 @@ extends java.lang.Object</pre>
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/http/client/Request.RequestImpl.html#RequestImpl--">RequestImpl</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/http/client/Request.RequestImpl.html#RequestImpl--">RequestImpl</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -149,7 +151,7 @@ extends java.lang.Object</pre>
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -157,6 +159,7 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>(package private) <a href="../../../../../com/google/gwt/http/client/Response.html" title="class in com.google.gwt.http.client">Response</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/http/client/Request.RequestImpl.html#createResponse-com.google.gwt.xhr.client.XMLHttpRequest-">createResponse</a></span>(<a href="../../../../../com/google/gwt/xhr/client/XMLHttpRequest.html" title="class in com.google.gwt.xhr.client">XMLHttpRequest</a>&nbsp;xmlHttpRequest)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Creates a <a href="../../../../../com/google/gwt/http/client/Response.html" title="class in com.google.gwt.http.client"><code>Response</code></a> instance for the given JavaScript XmlHttpRequest object.</div>
 </td>
 </tr>
@@ -189,6 +192,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>RequestImpl</h4>
 <pre>RequestImpl()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -206,6 +210,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>createResponse</h4>
 <pre><a href="../../../../../com/google/gwt/http/client/Response.html" title="class in com.google.gwt.http.client">Response</a>&nbsp;createResponse(<a href="../../../../../com/google/gwt/xhr/client/XMLHttpRequest.html" title="class in com.google.gwt.xhr.client">XMLHttpRequest</a>&nbsp;xmlHttpRequest)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Creates a <a href="../../../../../com/google/gwt/http/client/Response.html" title="class in com.google.gwt.http.client"><code>Response</code></a> instance for the given JavaScript XmlHttpRequest object.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -238,12 +243,12 @@ extends java.lang.Object</pre>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.9.0</div>
+<div class="aboutLanguage">GWT 2.10.0</div>
 </div>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../com/google/gwt/http/client/Request.html" title="class in com.google.gwt.http.client"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../com/google/gwt/http/client/Request.RequestImplIE8And9.html" title="class in com.google.gwt.http.client"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../com/google/gwt/http/client/RequestBuilder.html" title="class in com.google.gwt.http.client"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?com/google/gwt/http/client/Request.RequestImpl.html" target="_top">Frames</a></li>

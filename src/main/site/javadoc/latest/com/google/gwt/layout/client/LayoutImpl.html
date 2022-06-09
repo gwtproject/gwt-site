@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":9,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":42,"i1":41,"i2":42,"i3":42,"i4":42,"i5":42,"i6":42,"i7":42,"i8":42,"i9":42};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -43,12 +43,12 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.9.0</div>
+<div class="aboutLanguage">GWT 2.10.0</div>
 </div>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../com/google/gwt/layout/client/Layout.Layer.html" title="class in com.google.gwt.layout.client"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../com/google/gwt/layout/client/LayoutImplIE8.html" title="class in com.google.gwt.layout.client"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?com/google/gwt/layout/client/LayoutImpl.html" target="_top">Frames</a></li>
@@ -105,20 +105,21 @@ var activeTableTab = "activeTableTab";
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
-<dl>
-<dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../../com/google/gwt/layout/client/LayoutImplIE8.html" title="class in com.google.gwt.layout.client">LayoutImplIE8</a></dd>
-</dl>
 <hr>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <br>
-<pre>class <span class="typeNameLabel">LayoutImpl</span>
+<pre>@Deprecated
+class <span class="typeNameLabel">LayoutImpl</span>
 extends java.lang.Object</pre>
 <div class="block">Default implementation, which works with all browsers except for IE6. It uses
  only the "top", "left", "bottom", "right", "width", and "height" CSS
  properties.
  
  Note: This implementation class has state, so <a href="../../../../../com/google/gwt/layout/client/Layout.html" title="class in com.google.gwt.layout.client"><code>Layout</code></a> must create a
- new instance for each layout-parent.</div>
+ new instance for each layout-parent.
+
+ <p>Deprecated, as this is the only implementation, it may be removed in a future
+ release.</p></div>
 </li>
 </ul>
 </div>
@@ -139,7 +140,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../../../com/google/gwt/dom/client/DivElement.html" title="class in com.google.gwt.dom.client">DivElement</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#relativeRuler">relativeRuler</a></span></code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#relativeRuler">relativeRuler</a></span></code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -156,7 +159,9 @@ extends java.lang.Object</pre>
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#LayoutImpl--">LayoutImpl</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#LayoutImpl--">LayoutImpl</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -168,7 +173,7 @@ extends java.lang.Object</pre>
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -177,47 +182,67 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code><a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#attachChild-com.google.gwt.dom.client.Element-com.google.gwt.dom.client.Element-com.google.gwt.dom.client.Element-">attachChild</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
            <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child,
-           <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;before)</code>&nbsp;</td>
+           <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;before)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>protected static <a href="../../../../../com/google/gwt/dom/client/DivElement.html" title="class in com.google.gwt.dom.client">DivElement</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#createRuler-com.google.gwt.dom.client.Style.Unit-com.google.gwt.dom.client.Style.Unit-">createRuler</a></span>(<a href="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</a>&nbsp;widthUnit,
-           <a href="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</a>&nbsp;heightUnit)</code>&nbsp;</td>
+           <a href="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</a>&nbsp;heightUnit)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#fillParent-com.google.gwt.dom.client.Element-">fillParent</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#fillParent-com.google.gwt.dom.client.Element-">fillParent</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#finalizeLayout-com.google.gwt.dom.client.Element-">finalizeLayout</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#finalizeLayout-com.google.gwt.dom.client.Element-">finalizeLayout</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#getUnitSizeInPixels-com.google.gwt.dom.client.Element-com.google.gwt.dom.client.Style.Unit-boolean-">getUnitSizeInPixels</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
                    <a href="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</a>&nbsp;unit,
-                   boolean&nbsp;vertical)</code>&nbsp;</td>
+                   boolean&nbsp;vertical)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#initParent-com.google.gwt.dom.client.Element-">initParent</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#initParent-com.google.gwt.dom.client.Element-">initParent</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#layout-com.google.gwt.layout.client.Layout.Layer-">layout</a></span>(<a href="../../../../../com/google/gwt/layout/client/Layout.Layer.html" title="class in com.google.gwt.layout.client">Layout.Layer</a>&nbsp;layer)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#layout-com.google.gwt.layout.client.Layout.Layer-">layout</a></span>(<a href="../../../../../com/google/gwt/layout/client/Layout.Layer.html" title="class in com.google.gwt.layout.client">Layout.Layer</a>&nbsp;layer)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#onAttach-com.google.gwt.dom.client.Element-">onAttach</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#onAttach-com.google.gwt.dom.client.Element-">onAttach</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#onDetach-com.google.gwt.dom.client.Element-">onDetach</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#onDetach-com.google.gwt.dom.client.Element-">onDetach</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/layout/client/LayoutImpl.html#removeChild-com.google.gwt.dom.client.Element-com.google.gwt.dom.client.Element-">removeChild</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;container,
-           <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child)</code>&nbsp;</td>
+           <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -248,6 +273,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>relativeRuler</h4>
 <pre>protected&nbsp;<a href="../../../../../com/google/gwt/dom/client/DivElement.html" title="class in com.google.gwt.dom.client">DivElement</a> relativeRuler</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -265,6 +291,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>LayoutImpl</h4>
 <pre>LayoutImpl()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -283,6 +310,7 @@ extends java.lang.Object</pre>
 <h4>createRuler</h4>
 <pre>protected static&nbsp;<a href="../../../../../com/google/gwt/dom/client/DivElement.html" title="class in com.google.gwt.dom.client">DivElement</a>&nbsp;createRuler(<a href="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</a>&nbsp;widthUnit,
                                         <a href="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</a>&nbsp;heightUnit)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="attachChild-com.google.gwt.dom.client.Element-com.google.gwt.dom.client.Element-com.google.gwt.dom.client.Element-">
@@ -294,6 +322,7 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;attachChild(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
                            <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child,
                            <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;before)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="fillParent-com.google.gwt.dom.client.Element-">
@@ -303,6 +332,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>fillParent</h4>
 <pre>public&nbsp;void&nbsp;fillParent(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="finalizeLayout-com.google.gwt.dom.client.Element-">
@@ -312,6 +342,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>finalizeLayout</h4>
 <pre>public&nbsp;void&nbsp;finalizeLayout(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>parent</code> - the parent element</dd>
@@ -327,6 +358,7 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;double&nbsp;getUnitSizeInPixels(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent,
                                   <a href="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</a>&nbsp;unit,
                                   boolean&nbsp;vertical)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="initParent-com.google.gwt.dom.client.Element-">
@@ -336,6 +368,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>initParent</h4>
 <pre>public&nbsp;void&nbsp;initParent(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="layout-com.google.gwt.layout.client.Layout.Layer-">
@@ -345,6 +378,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>layout</h4>
 <pre>public&nbsp;void&nbsp;layout(<a href="../../../../../com/google/gwt/layout/client/Layout.Layer.html" title="class in com.google.gwt.layout.client">Layout.Layer</a>&nbsp;layer)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="onAttach-com.google.gwt.dom.client.Element-">
@@ -354,6 +388,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>onAttach</h4>
 <pre>public&nbsp;void&nbsp;onAttach(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="onDetach-com.google.gwt.dom.client.Element-">
@@ -363,6 +398,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>onDetach</h4>
 <pre>public&nbsp;void&nbsp;onDetach(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;parent)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="removeChild-com.google.gwt.dom.client.Element-com.google.gwt.dom.client.Element-">
@@ -373,6 +409,7 @@ extends java.lang.Object</pre>
 <h4>removeChild</h4>
 <pre>public&nbsp;void&nbsp;removeChild(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;container,
                         <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;child)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -398,12 +435,12 @@ extends java.lang.Object</pre>
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.9.0</div>
+<div class="aboutLanguage">GWT 2.10.0</div>
 </div>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../com/google/gwt/layout/client/Layout.Layer.html" title="class in com.google.gwt.layout.client"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../com/google/gwt/layout/client/LayoutImplIE8.html" title="class in com.google.gwt.layout.client"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?com/google/gwt/layout/client/LayoutImpl.html" target="_top">Frames</a></li>
