@@ -1,5 +1,6 @@
 The GWT Release Notes
 =====================
+* [2.10.0](#Release_Notes_2_10_0) June 9, 2022
 * [2.9.0](#Release_Notes_2_9_0) May 13, 2020
 * [2.8.2](#Release_Notes_2_8_2) Oct 19, 2017
 * [2.8.1](#Release_Notes_2_8_1) Apr 24, 2017
@@ -63,6 +64,56 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
+<a id="Release_Notes_2_10_0"></a> Release Notes for 2.10.0
+
+### Highlights
+- Updated to HtmlUnit 2.55.0 and Jetty 9.4.44. With this newer HtmlUnit
+build comes support for Promise in unit tests, and the browser strings that
+can be specified when running tests are "FF", "Chrome", "IE" (for IE11), 
+"Edge", and "Safari".
+
+- Tested support for running on Java 17, dropped remaining support for
+running on Java 7.
+
+- Maven groupId is formally changed to `org.gwtproject`, projects should take
+care to ensure they are using either the old `com.google.gwt:gwt` BOM or the
+new `org.gwtproject:gwt` BOM to sure that Maven or Gradle correctly handle
+this change. This will be the last published version using the `com.google.gwt`
+groupId.
+
+- Dropped support for IE 8, 9, and 10.
+
+
+### Bug fixes
+- Correct Long.hashCode semantics
+- Support CLASSPATH environment variable when creating child processes, fixing
+  a bug where Windows could fail with a long list of arguments.
+- Use Function.name instead of displayName to support visible method names in 
+  Chrome 93+.
+- Allow stack traces to be available in Chrome when loading scripts from a remote
+  origin.
+
+### JRE Emulation
+- Added OutputStreamWriter emulation.
+- Support StringReader mark() and reset() methods.
+- Added StrictMath emulation.
+- Added BufferedWriter emulation.
+- Added incomplete PrintStream emulation.
+- Add Charset.defaultCharset() emulation.
+- Improve BigInteger emulated performance.
+- System.nanoTime() emulation with performance.now().
+- Added Optional.isEmpty emulation.
+- JRE Emulation improvements/simplifications to facilitate J2CL's WASM support.
+Note that these do not always offer specific improvements to GWT itself, but
+helps to keep the codebases consistent.
+
+### Miscellaneous
+- Add support to compile GWT itself in Java 9+.
+- Improve compiled code size for applications that never use streams, by
+  avoiding referencing streams from Throwable.
+
+For more detail, see the [commit log](https://github.com/gwtproject/gwt/compare/2.9.0...2.10.0).
+
 ## <a id="Release_Notes_2_9_0"></a> Release Notes for 2.9.0
 
 ### Highlights

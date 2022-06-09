@@ -44,10 +44,10 @@ $JDK_HOME environment variable with export JDK_HOME="/Library/Java/Home"
   </tr>
 </tbody></table>
 
-On Windows, extract the files from the compressed folder `gwt-2.9.0.zip`.  On Mac or Linux, you can unpack the package with a command like:
+On Windows, extract the files from the compressed folder `gwt-2.10.0.zip`.  On Mac or Linux, you can unpack the package with a command like:
 
 ```
-unzip gwt-2.9.0.zip
+unzip gwt-2.10.0.zip
 ```
 
 The GWT SDK doesn't have an installer application.  All the files you  need to
@@ -62,7 +62,7 @@ You can create a new demo application in a new MyWebApp directory by running `we
 *   **Windows**
 
 ```
-cd gwt-2.9.0
+cd gwt-2.10.0
 
 webAppCreator -out MyWebApp com.mycompany.mywebapp.MyWebApp
 ```
@@ -70,7 +70,7 @@ webAppCreator -out MyWebApp com.mycompany.mywebapp.MyWebApp
 *   **Mac or Linux** - you may need to make the script executable:
 
 ```
-cd gwt-2.9.0
+cd gwt-2.10.0
 
 chmod u+x webAppCreator
 
