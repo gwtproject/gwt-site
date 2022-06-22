@@ -76,7 +76,7 @@ can be specified when running tests are "FF", "Chrome", "IE" (for IE11),
 running on Java 7.
 
 - Maven groupId is formally changed to `org.gwtproject`, projects should take
-care to ensure they are using either the old `com.google.gwt:gwt` BOM or the
+care to make sure they are using either the old `com.google.gwt:gwt` BOM or the
 new `org.gwtproject:gwt` BOM to sure that Maven or Gradle correctly handle
 this change. This will be the last published version using the `com.google.gwt`
 groupId.
