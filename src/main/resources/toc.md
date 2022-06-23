@@ -138,7 +138,6 @@
           - [Community & Forums](community.html)
           - [Community Group](community-group-charter.html 'Community Group Charter')
           - [Developer Spotlight](developer_spotlight.html)
-      - [GWT surveys](gwt_surveys.html)
   - [Making GWT Better](makinggwtbetter.html)
       - [Contributing](makinggwtbetter.html 'Learn how to contribute to GWT')
       - [Life of an Issue](lifeofanissue.html 'Learn about GWT and the issue tracker')
