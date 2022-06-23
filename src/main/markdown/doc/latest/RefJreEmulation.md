@@ -32,6 +32,9 @@ Note that in some cases, only a subset of methods is supported for a given type.
 
 <h2 id="Package_java_io">Package java.io</h2>
 <dl>
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/BufferedWriter.html">BufferedWriter</a></dt>
+  <dd>BufferedWriter(Writer), BufferedWriter(Writer, int), close(), flush(), newLine(), write(char[], int, int), write(int), write(String, int, int)</dd>
+
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/ByteArrayInputStream.html">ByteArrayInputStream</a></dt>
   <dd>ByteArrayInputStream(byte[]), ByteArrayInputStream(byte[], int, int), available(), close(), mark(int), markSupported(), read(), read(byte[], int, int), reset(), skip(long)</dd>
 
@@ -61,8 +64,11 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html">OutputStream</a></dt>
   <dd>OutputStream(), close(), flush(), write(byte[]), write(byte[], int, int), write(int)</dd>
 
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/OutputStreamWriter.html">OutputStreamWriter</a></dt>
+  <dd>OutputStreamWriter(OutputStream, String), OutputStreamWriter(OutputStream, Charset), close(), flush(), getEncoding(), write(char[], int, int)</dd>
+
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html">PrintStream</a></dt>
-  <dd>PrintStream(OutputStream), print(boolean), print(char), print(char[]), print(double), print(float), print(int), print(long), print(Object), print(String), println(), println(boolean), println(char), println(char[]), println(double), println(float), println(int), println(long), println(Object), println(String), flush()</dd>
+  <dd>PrintStream(OutputStream), print(boolean), print(char), print(char[]), print(double), print(float), print(int), print(long), print(Object), print(String), println(), println(boolean), println(char), println(char[]), println(double), println(float), println(int), println(long), println(Object), println(String), flush(), close(), write(byte[], int, int), write(int), checkError()</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a></dt>
   <dd>Reader(), close(), mark(int), markSupported(), read(), read(char[]), read(char[], int, int), ready(), reset(), skip(long)</dd>
@@ -70,13 +76,16 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html">Serializable</a></dt>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/StringReader.html">StringReader</a></dt>
-  <dd>StringReader(String), close(), read(char[], int, int)</dd>
+  <dd>StringReader(String), close(), read(char[], int, int), markSupported(), mark(int), reset()</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/UncheckedIOException.html">UncheckedIOException</a></dt>
   <dd>UncheckedIOException(String, IOException), UncheckedIOException(IOException), getCause()</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/UnsupportedEncodingException.html">UnsupportedEncodingException</a></dt>
   <dd>UnsupportedEncodingException(), UnsupportedEncodingException(String)</dd>
+
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html">Writer</a></dt>
+  <dd>close(), flush(), write(char[]), write(char[], int, int), write(int), write(String), write(String, int, int), append(char), append(CharSequence), append(CharSequence, int, int)</dd>
 </dl>
 
 <h2 id="Package_java_lang">Package java.lang</h2>
@@ -112,7 +121,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html">Character</a></dt>
   <dd style='margin-bottom: 0.5em;'>TYPE, MIN_RADIX, MAX_RADIX, MIN_VALUE, MAX_VALUE, MIN_SURROGATE, MAX_SURROGATE, MIN_LOW_SURROGATE, MAX_LOW_SURROGATE, MIN_HIGH_SURROGATE, MAX_HIGH_SURROGATE, MIN_SUPPLEMENTARY_CODE_POINT, MIN_CODE_POINT, MAX_CODE_POINT, SIZE, BYTES</dd>
-  <dd>Character(char), charCount(int), codePointAt(char[], int), codePointAt(char[], int, int), codePointAt(CharSequence, int), codePointBefore(char[], int), codePointBefore(char[], int, int), codePointBefore(CharSequence, int), codePointCount(char[], int, int), codePointCount(CharSequence, int, int), compare(char, char), digit(char, int), forDigit(int, int), hashCode(char), isBmpCodePoint(int), isDigit(char), isHighSurrogate(char), isLetter(char), isLetterOrDigit(char), isLowerCase(char), isLowSurrogate(char), isSpace(char), isWhitespace(char), isWhitespace(int), isSupplementaryCodePoint(int), isSurrogatePair(char, char), isUpperCase(char), isValidCodePoint(int), offsetByCodePoints(char[], int, int, int, int), offsetByCodePoints(CharSequence, int, int), toChars(int), toChars(int, char[], int), toCodePoint(char, char), toLowerCase(char), toString(char), toUpperCase(char), valueOf(char), charValue(), compareTo(Character), equals(Object), hashCode(), toString()</dd>
+  <dd>Character(char), charCount(int), codePointAt(char[], int), codePointAt(char[], int, int), codePointAt(CharSequence, int), codePointBefore(char[], int), codePointBefore(char[], int, int), codePointBefore(CharSequence, int), codePointCount(char[], int, int), codePointCount(CharSequence, int, int), compare(char, char), digit(char, int), forDigit(int, int), hashCode(char), isBmpCodePoint(int), isDigit(char), isHighSurrogate(char), isLetter(char), isLetterOrDigit(char), isLowerCase(char), isLowSurrogate(char), isSpace(char), isWhitespace(char), isWhitespace(int), isSupplementaryCodePoint(int), isSurrogatePair(char, char), isTitleCase(char), isUpperCase(char), isValidCodePoint(int), offsetByCodePoints(char[], int, int, int, int), offsetByCodePoints(CharSequence, int, int), toChars(int), toChars(int, char[], int), toCodePoint(char, char), toLowerCase(char), toString(char), toUpperCase(char), valueOf(char), charValue(), compareTo(Character), equals(Object), hashCode(), toString()</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html">Class</a></dt>
   <dd>isClassMetadataEnabled(), desiredAssertionStatus(), getCanonicalName(), getComponentType(), getEnumConstants(), getName(), getSimpleName(), getSuperclass(), isArray(), isEnum(), isInterface(), isPrimitive(), toString()</dd>
@@ -212,6 +221,10 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StackTraceElement.html">StackTraceElement</a></dt>
   <dd>StackTraceElement(), StackTraceElement(String, String, String, int), getClassName(), getFileName(), getLineNumber(), getMethodName(), equals(Object), hashCode(), toString()</dd>
 
+  <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StrictMath.html">StrictMath</a></dt>
+  <dd style='margin-bottom: 0.5em;'>E, PI</dd>
+  <dd>StrictMath(), abs(double), abs(float), abs(int), acos(double), addExact(int, int), addExact(long, long), asin(double), atan(double), atan2(double, double), ceil(double), copySign(double, double), copySign(float, float), cos(double), cosh(double), exp(double), expm1(double), floor(double), floorDiv(int, int), floorDiv(long, long), floorMod(int, int), floorMod(long, long), hypot(double, double), log(double), log10(double), log1p(double), max(double, double), max(float, float), max(int, int), max(long, long), min(double, double), min(float, float), min(int, int), min(long, long), multiplyExact(int, int), multiplyExact(long, long), pow(double, double), random(), rint(double), round(double), round(float), scalb(double, int), scalb(float, int), signum(double), signum(float), sin(double), sinh(double), sqrt(double), subtractExact(int, int), subtractExact(long, long), tan(double), tanh(double), toDegrees(double), toIntExact(long), toRadians(double)</dd>
+
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></dt>
   <dd style='margin-bottom: 0.5em;'>CASE_INSENSITIVE_ORDER</dd>
   <dd>String(), String(byte[]), String(byte[], int, int), String(byte[], int, int, String), String(byte[], int, int, Charset), String(byte[], String), String(byte[], Charset), String(char[]), String(char[], int, int), String(int[], int, int), String(String), String(StringBuffer), String(StringBuilder), copyValueOf(char[]), copyValueOf(char[], int, int), join(CharSequence, CharSequence[]), join(CharSequence, Iterable), valueOf(boolean), valueOf(char), valueOf(char[], int, int), valueOf(char[]), valueOf(double), valueOf(float), valueOf(int), valueOf(long), valueOf(Object), charAt(int), codePointAt(int), codePointBefore(int), codePointCount(int, int), compareTo(String), compareToIgnoreCase(String), concat(String), contains(CharSequence), contentEquals(CharSequence), contentEquals(StringBuffer), endsWith(String), equals(Object), equalsIgnoreCase(String), getBytes(), getBytes(String), getBytes(Charset), getChars(int, int, char[], int), hashCode(), indexOf(int), indexOf(int, int), indexOf(String), indexOf(String, int), intern(), isEmpty(), lastIndexOf(int), lastIndexOf(int, int), lastIndexOf(String), lastIndexOf(String, int), length(), matches(String), offsetByCodePoints(int, int), regionMatches(boolean, int, String, int, int), regionMatches(int, String, int, int), replace(char, char), replace(CharSequence, CharSequence), replaceAll(String, String), replaceFirst(String, String), split(String), split(String, int), startsWith(String), startsWith(String, int), subSequence(int, int), substring(int), substring(int, int), toCharArray(), toLowerCase(), toLowerCase(Locale), toUpperCase(), toUpperCase(Locale), toString(), trim()</dd>
@@ -230,7 +243,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html">System</a></dt>
   <dd style='margin-bottom: 0.5em;'>err, out</dd>
-  <dd>System(), arraycopy(Object, int, Object, int, int), currentTimeMillis(), gc(), getProperty(String), getProperty(String, String), identityHashCode(Object), setErr(PrintStream), setOut(PrintStream)</dd>
+  <dd>System(), arraycopy(Object, int, Object, int, int), currentTimeMillis(), nanoTime(), gc(), getProperty(String), getProperty(String, String), identityHashCode(Object), setErr(PrintStream), setOut(PrintStream)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ThreadLocal.html">ThreadLocal</a></dt>
   <dd>ThreadLocal(), get(), set(T), remove(), withInitial(Supplier)</dd>
@@ -314,7 +327,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
 <h2 id="Package_java_nio_charset">Package java.nio.charset</h2>
 <dl>
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html">Charset</a></dt>
-  <dd>availableCharsets(), forName(String), name(), compareTo(Charset), hashCode(), equals(Object), toString()</dd>
+  <dd>availableCharsets(), defaultCharset(), forName(String), name(), compareTo(Charset), hashCode(), equals(Object), toString()</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/IllegalCharsetNameException.html">IllegalCharsetNameException</a></dt>
   <dd>IllegalCharsetNameException(String), getCharsetName()</dd>
@@ -391,7 +404,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>equals(Object), hashCode(), removeAll(Collection)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html">ArrayDeque</a></dt>
-  <dd>ArrayDeque(), ArrayDeque(Collection), ArrayDeque(int), add(E), addFirst(E), addLast(E), clear(), clone(), contains(Object), descendingIterator(), element(), getFirst(), getLast(), isEmpty(), iterator(), offer(E), offerFirst(E), offerLast(E), peek(), peekFirst(), peekLast(), poll(), pollFirst(), pollLast(), pop(), push(E), remove(), remove(Object), removeFirst(), removeFirstOccurrence(Object), removeLast(), removeLastOccurrence(Object), size(), spliterator(), toArray(T[])</dd>
+  <dd>ArrayDeque(), ArrayDeque(int), ArrayDeque(Collection), add(E), addFirst(E), addLast(E), clear(), clone(), contains(Object), descendingIterator(), element(), getFirst(), getLast(), isEmpty(), iterator(), offer(E), offerFirst(E), offerLast(E), peek(), peekFirst(), peekLast(), poll(), pollFirst(), pollLast(), pop(), push(E), remove(), remove(Object), removeFirst(), removeFirstOccurrence(Object), removeLast(), removeLastOccurrence(Object), size(), spliterator(), toArray(T[])</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a></dt>
   <dd>ArrayList(), ArrayList(Collection), ArrayList(int), add(E), add(int, E), addAll(Collection), addAll(int, Collection), clear(), clone(), contains(Object), ensureCapacity(int), get(int), indexOf(Object), iterator(), forEach(Consumer), isEmpty(), lastIndexOf(Object), remove(int), remove(Object), removeIf(Predicate), replaceAll(UnaryOperator), set(int, E), size(), sort(Comparator), toArray(), toArray(T[]), trimToSize()</dd>
@@ -500,7 +513,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>compare(T, T, Comparator), deepEquals(Object, Object), equals(Object, Object), equals(String, String), hashCode(Object), hash(Object[]), isNull(Object), nonNull(Object), requireNonNull(T), requireNonNull(T, String), requireNonNull(T, Supplier), toString(Object), toString(Object, String)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html">Optional</a></dt>
-  <dd>empty(), of(T), ofNullable(T), isPresent(), get(), ifPresent(Consumer), filter(Predicate), map(Function), flatMap(Function), orElse(T), orElseGet(Supplier), orElseThrow(Supplier), equals(Object), hashCode(), toString()</dd>
+  <dd>empty(), of(T), ofNullable(T), isPresent(), isEmpty(), get(), ifPresent(Consumer), filter(Predicate), map(Function), flatMap(Function), orElse(T), orElseGet(Supplier), orElseThrow(Supplier), equals(Object), hashCode(), toString()</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/OptionalDouble.html">OptionalDouble</a></dt>
   <dd>empty(), of(double), isPresent(), getAsDouble(), ifPresent(DoubleConsumer), orElse(double), orElseGet(DoubleSupplier), orElseThrow(Supplier), equals(Object), hashCode(), toString()</dd>
@@ -598,7 +611,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd>CancellationException(), CancellationException(String)</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html">ConcurrentHashMap</a></dt>
-  <dd>ConcurrentHashMap(), ConcurrentHashMap(int), ConcurrentHashMap(int, float), ConcurrentHashMap(Map), putIfAbsent(K, V), remove(Object, Object), replace(K, V, V), replace(K, V), containsKey(Object), get(Object), put(K, V), containsValue(Object), remove(Object), entrySet(), contains(Object), elements(), keys()</dd>
+  <dd>ConcurrentHashMap(), ConcurrentHashMap(int), ConcurrentHashMap(int, float), ConcurrentHashMap(Map), putIfAbsent(K, V), remove(Object, Object), replace(K, V, V), replace(K, V), containsKey(Object), get(Object), put(K, V), containsValue(Object), remove(Object), entrySet(), contains(Object), elements(), keys(), newKeySet()</dd>
 
   <dt><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentMap.html">ConcurrentMap</a></dt>
   <dd>putIfAbsent(K, V), remove(Object, Object), replace(K, V), replace(K, V, V)</dd>

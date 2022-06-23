@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":42,"i1":42,"i2":42,"i3":42,"i4":42,"i5":42,"i6":42,"i7":42,"i8":42,"i9":42,"i10":42,"i11":42,"i12":42,"i13":42,"i14":42,"i15":42};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -43,7 +43,7 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.9.0</div>
+<div class="aboutLanguage">GWT 2.10.0</div>
 </div>
 <div class="subNav">
 <ul class="navList">
@@ -115,12 +115,16 @@ var activeTableTab = "activeTableTab";
 <dd><a href="../../../../../com/google/gwt/dom/client/DOMImplMozilla.html" title="class in com.google.gwt.dom.client">DOMImplMozilla</a>, <a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html" title="class in com.google.gwt.dom.client">DOMImplStandardBase</a></dd>
 </dl>
 <hr>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <br>
-<pre>abstract class <span class="typeNameLabel">DOMImplStandard</span>
+<pre>@Deprecated
+abstract class <span class="typeNameLabel">DOMImplStandard</span>
 extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></pre>
 <div class="block">Base implementation of <code>DOMImpl</code> shared
  by those browsers that come a bit closer to supporting a common standard (ie,
- not IE).</div>
+ not IE).
+
+ <p>Deprecated, may be flattened into DOMImpl, as this is the only direct subclass.</p></div>
 </li>
 </ul>
 </div>
@@ -154,7 +158,9 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#DOMImplStandard--">DOMImplStandard</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#DOMImplStandard--">DOMImplStandard</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -166,7 +172,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -176,12 +182,16 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#createHtmlEvent-com.google.gwt.dom.client.Document-java.lang.String-boolean-boolean-">createHtmlEvent</a></span>(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc,
                java.lang.String&nbsp;type,
                boolean&nbsp;canBubble,
-               boolean&nbsp;cancelable)</code>&nbsp;</td>
+               boolean&nbsp;cancelable)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/google/gwt/dom/client/InputElement.html" title="class in com.google.gwt.dom.client">InputElement</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#createInputRadioElement-com.google.gwt.dom.client.Document-java.lang.String-">createInputRadioElement</a></span>(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc,
-                       java.lang.String&nbsp;name)</code>&nbsp;</td>
+                       java.lang.String&nbsp;name)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a></code></td>
@@ -199,62 +209,90 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
                 boolean&nbsp;shiftKey,
                 boolean&nbsp;metaKey,
                 int&nbsp;button,
-                <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;relatedTarget)</code>&nbsp;</td>
+                <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;relatedTarget)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#dispatchEvent-com.google.gwt.dom.client.Element-com.google.gwt.dom.client.NativeEvent-">dispatchEvent</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;target,
-             <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>&nbsp;</td>
+             <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#eventGetButton-com.google.gwt.dom.client.NativeEvent-">eventGetButton</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#eventGetButton-com.google.gwt.dom.client.NativeEvent-">eventGetButton</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#eventGetCharCode-com.google.gwt.dom.client.NativeEvent-">eventGetCharCode</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#eventGetCharCode-com.google.gwt.dom.client.NativeEvent-">eventGetCharCode</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/google/gwt/dom/client/EventTarget.html" title="class in com.google.gwt.dom.client">EventTarget</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#eventGetRelatedTarget-com.google.gwt.dom.client.NativeEvent-">eventGetRelatedTarget</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#eventGetRelatedTarget-com.google.gwt.dom.client.NativeEvent-">eventGetRelatedTarget</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/google/gwt/dom/client/EventTarget.html" title="class in com.google.gwt.dom.client">EventTarget</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#eventGetTarget-com.google.gwt.dom.client.NativeEvent-">eventGetTarget</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#eventGetTarget-com.google.gwt.dom.client.NativeEvent-">eventGetTarget</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#eventPreventDefault-com.google.gwt.dom.client.NativeEvent-">eventPreventDefault</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#eventPreventDefault-com.google.gwt.dom.client.NativeEvent-">eventPreventDefault</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#eventToString-com.google.gwt.dom.client.NativeEvent-">eventToString</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#eventToString-com.google.gwt.dom.client.NativeEvent-">eventToString</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>(package private) <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#getDocumentScrollingElement-com.google.gwt.dom.client.Document-">getDocumentScrollingElement</a></span>(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#getDocumentScrollingElement-com.google.gwt.dom.client.Document-">getDocumentScrollingElement</a></span>(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#getInnerText-com.google.gwt.dom.client.Element-">getInnerText</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#getInnerText-com.google.gwt.dom.client.Element-">getInnerText</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>(package private) <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#getLegacyDocumentScrollingElement-com.google.gwt.dom.client.Document-">getLegacyDocumentScrollingElement</a></span>(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#getLegacyDocumentScrollingElement-com.google.gwt.dom.client.Document-">getLegacyDocumentScrollingElement</a></span>(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>(package private) <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#getNativeDocumentScrollingElement-com.google.gwt.dom.client.Document-">getNativeDocumentScrollingElement</a></span>(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#getNativeDocumentScrollingElement-com.google.gwt.dom.client.Document-">getNativeDocumentScrollingElement</a></span>(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#isOrHasChild-com.google.gwt.dom.client.Node-com.google.gwt.dom.client.Node-">isOrHasChild</a></span>(<a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a>&nbsp;parent,
-            <a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a>&nbsp;child)</code>&nbsp;</td>
+            <a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a>&nbsp;child)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html#setInnerText-com.google.gwt.dom.client.Element-java.lang.String-">setInnerText</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
-            java.lang.String&nbsp;text)</code>&nbsp;</td>
+            java.lang.String&nbsp;text)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -292,6 +330,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <li class="blockList">
 <h4>DOMImplStandard</h4>
 <pre>DOMImplStandard()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -312,6 +351,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
                                    java.lang.String&nbsp;type,
                                    boolean&nbsp;canBubble,
                                    boolean&nbsp;cancelable)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#createHtmlEvent-com.google.gwt.dom.client.Document-java.lang.String-boolean-boolean-">createHtmlEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -326,6 +366,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <h4>createInputRadioElement</h4>
 <pre>public&nbsp;<a href="../../../../../com/google/gwt/dom/client/InputElement.html" title="class in com.google.gwt.dom.client">InputElement</a>&nbsp;createInputRadioElement(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc,
                                             java.lang.String&nbsp;name)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#createInputRadioElement-com.google.gwt.dom.client.Document-java.lang.String-">createInputRadioElement</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -353,6 +394,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
                                     boolean&nbsp;metaKey,
                                     int&nbsp;button,
                                     <a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;relatedTarget)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#createMouseEvent-com.google.gwt.dom.client.Document-java.lang.String-boolean-boolean-int-int-int-int-int-boolean-boolean-boolean-boolean-int-com.google.gwt.dom.client.Element-">createMouseEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -367,6 +409,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <h4>dispatchEvent</h4>
 <pre>public&nbsp;void&nbsp;dispatchEvent(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;target,
                           <a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#dispatchEvent-com.google.gwt.dom.client.Element-com.google.gwt.dom.client.NativeEvent-">dispatchEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -380,6 +423,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <li class="blockList">
 <h4>eventGetButton</h4>
 <pre>public&nbsp;int&nbsp;eventGetButton(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#eventGetButton-com.google.gwt.dom.client.NativeEvent-">eventGetButton</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -393,6 +437,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <li class="blockList">
 <h4>eventGetCharCode</h4>
 <pre>public&nbsp;int&nbsp;eventGetCharCode(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#eventGetCharCode-com.google.gwt.dom.client.NativeEvent-">eventGetCharCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -406,6 +451,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <li class="blockList">
 <h4>eventGetRelatedTarget</h4>
 <pre>public&nbsp;<a href="../../../../../com/google/gwt/dom/client/EventTarget.html" title="class in com.google.gwt.dom.client">EventTarget</a>&nbsp;eventGetRelatedTarget(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#eventGetRelatedTarget-com.google.gwt.dom.client.NativeEvent-">eventGetRelatedTarget</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -419,6 +465,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <li class="blockList">
 <h4>eventGetTarget</h4>
 <pre>public&nbsp;<a href="../../../../../com/google/gwt/dom/client/EventTarget.html" title="class in com.google.gwt.dom.client">EventTarget</a>&nbsp;eventGetTarget(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#eventGetTarget-com.google.gwt.dom.client.NativeEvent-">eventGetTarget</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -432,6 +479,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <li class="blockList">
 <h4>eventPreventDefault</h4>
 <pre>public&nbsp;void&nbsp;eventPreventDefault(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#eventPreventDefault-com.google.gwt.dom.client.NativeEvent-">eventPreventDefault</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -445,6 +493,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <li class="blockList">
 <h4>eventToString</h4>
 <pre>public&nbsp;java.lang.String&nbsp;eventToString(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#eventToString-com.google.gwt.dom.client.NativeEvent-">eventToString</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -458,6 +507,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <li class="blockList">
 <h4>getInnerText</h4>
 <pre>public&nbsp;java.lang.String&nbsp;getInnerText(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#getInnerText-com.google.gwt.dom.client.Element-">getInnerText</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -472,6 +522,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <h4>isOrHasChild</h4>
 <pre>public&nbsp;boolean&nbsp;isOrHasChild(<a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a>&nbsp;parent,
                             <a href="../../../../../com/google/gwt/dom/client/Node.html" title="class in com.google.gwt.dom.client">Node</a>&nbsp;child)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#isOrHasChild-com.google.gwt.dom.client.Node-com.google.gwt.dom.client.Node-">isOrHasChild</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -486,6 +537,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <h4>setInnerText</h4>
 <pre>public&nbsp;void&nbsp;setInnerText(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                          java.lang.String&nbsp;text)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#setInnerText-com.google.gwt.dom.client.Element-java.lang.String-">setInnerText</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -499,6 +551,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <li class="blockList">
 <h4>getDocumentScrollingElement</h4>
 <pre><a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;getDocumentScrollingElement(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#getDocumentScrollingElement-com.google.gwt.dom.client.Document-">getDocumentScrollingElement</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -512,6 +565,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <li class="blockList">
 <h4>getLegacyDocumentScrollingElement</h4>
 <pre><a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;getLegacyDocumentScrollingElement(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 <a name="getNativeDocumentScrollingElement-com.google.gwt.dom.client.Document-">
@@ -521,6 +575,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <li class="blockList">
 <h4>getNativeDocumentScrollingElement</h4>
 <pre>final&nbsp;<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;getNativeDocumentScrollingElement(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -546,7 +601,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="c
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.9.0</div>
+<div class="aboutLanguage">GWT 2.10.0</div>
 </div>
 <div class="subNav">
 <ul class="navList">

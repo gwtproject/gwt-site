@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":42,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
+var methods = {"i0":42,"i1":42,"i2":42,"i3":42,"i4":42,"i5":42,"i6":42,"i7":42,"i8":42,"i9":42,"i10":42,"i11":42,"i12":42};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -43,12 +43,12 @@ var activeTableTab = "activeTableTab";
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.9.0</div>
+<div class="aboutLanguage">GWT 2.10.0</div>
 </div>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html" title="class in com.google.gwt.dom.client"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../com/google/gwt/dom/client/DOMImplTrident.html" title="class in com.google.gwt.dom.client"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../com/google/gwt/dom/client/DOMImplWebkit.html" title="class in com.google.gwt.dom.client"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?com/google/gwt/dom/client/DOMImplStandardBase.html" target="_top">Frames</a></li>
@@ -117,13 +117,17 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../../com/google/gwt/dom/client/DOMImplIE9.html" title="class in com.google.gwt.dom.client">DOMImplIE9</a>, <a href="../../../../../com/google/gwt/dom/client/DOMImplWebkit.html" title="class in com.google.gwt.dom.client">DOMImplWebkit</a></dd>
+<dd><a href="../../../../../com/google/gwt/dom/client/DOMImplWebkit.html" title="class in com.google.gwt.dom.client">DOMImplWebkit</a></dd>
 </dl>
 <hr>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <br>
-<pre>class <span class="typeNameLabel">DOMImplStandardBase</span>
+<pre>@Deprecated
+class <span class="typeNameLabel">DOMImplStandardBase</span>
 extends <a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html" title="class in com.google.gwt.dom.client">DOMImplStandard</a></pre>
-<div class="block">StandardBase implementation of <code>DOMImpl</code>.</div>
+<div class="block">StandardBase implementation of <code>DOMImpl</code>.
+
+ <p>Deprecated, may be flattened into DOMImplWebkit, its only subclass.</p></div>
 </li>
 </ul>
 </div>
@@ -157,7 +161,9 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html" 
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#DOMImplStandardBase--">DOMImplStandardBase</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#DOMImplStandardBase--">DOMImplStandardBase</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -178,6 +184,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html" 
 <td class="colFirst"><code><a href="../../../../../com/google/gwt/dom/client/ButtonElement.html" title="class in com.google.gwt.dom.client">ButtonElement</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#createButtonElement-com.google.gwt.dom.client.Document-java.lang.String-">createButtonElement</a></span>(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc,
                    java.lang.String&nbsp;type)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">The type property on a button element is read-only in safari, so we need to
  set it using setAttribute.</div>
 </td>
@@ -190,7 +197,9 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html" 
                   boolean&nbsp;altKey,
                   boolean&nbsp;shiftKey,
                   boolean&nbsp;metaKey,
-                  int&nbsp;keyCode)</code>&nbsp;</td>
+                  int&nbsp;keyCode)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a></code></td>
@@ -214,47 +223,66 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html" 
                    boolean&nbsp;altKey,
                    boolean&nbsp;shiftKey,
                    boolean&nbsp;metaKey,
-                   int&nbsp;charCode)</code>&nbsp;</td>
+                   int&nbsp;charCode)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/google/gwt/dom/client/ScriptElement.html" title="class in com.google.gwt.dom.client">ScriptElement</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#createScriptElement-com.google.gwt.dom.client.Document-java.lang.String-">createScriptElement</a></span>(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc,
                    java.lang.String&nbsp;source)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Safari 2 does not support <a href="../../../../../com/google/gwt/dom/client/ScriptElement.html#setText-java.lang.String-"><code>ScriptElement.setText(String)</code></a>.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/google/gwt/dom/client/EventTarget.html" title="class in com.google.gwt.dom.client">EventTarget</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#eventGetCurrentTarget-com.google.gwt.dom.client.NativeEvent-">eventGetCurrentTarget</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;event)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#eventGetCurrentTarget-com.google.gwt.dom.client.NativeEvent-">eventGetCurrentTarget</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;event)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#eventGetMouseWheelVelocityY-com.google.gwt.dom.client.NativeEvent-">eventGetMouseWheelVelocityY</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#eventGetMouseWheelVelocityY-com.google.gwt.dom.client.NativeEvent-">eventGetMouseWheelVelocityY</a></span>(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#getAbsoluteLeft-com.google.gwt.dom.client.Element-">getAbsoluteLeft</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#getAbsoluteLeft-com.google.gwt.dom.client.Element-">getAbsoluteLeft</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#getAbsoluteTop-com.google.gwt.dom.client.Element-">getAbsoluteTop</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#getAbsoluteTop-com.google.gwt.dom.client.Element-">getAbsoluteTop</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#getScrollLeft-com.google.gwt.dom.client.Element-">getScrollLeft</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#getScrollLeft-com.google.gwt.dom.client.Element-">getScrollLeft</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#getTabIndex-com.google.gwt.dom.client.Element-">getTabIndex</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#getTabIndex-com.google.gwt.dom.client.Element-">getTabIndex</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#isRTL-com.google.gwt.dom.client.Element-">isRTL</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#isRTL-com.google.gwt.dom.client.Element-">isRTL</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/google/gwt/dom/client/DOMImplStandardBase.html#setScrollLeft-com.google.gwt.dom.client.Element-int-">setScrollLeft</a></span>(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
-             int&nbsp;left)</code>&nbsp;</td>
+             int&nbsp;left)</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -299,6 +327,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html" 
 <li class="blockList">
 <h4>DOMImplStandardBase</h4>
 <pre>DOMImplStandardBase()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -317,6 +346,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html" 
 <h4>createButtonElement</h4>
 <pre>public&nbsp;<a href="../../../../../com/google/gwt/dom/client/ButtonElement.html" title="class in com.google.gwt.dom.client">ButtonElement</a>&nbsp;createButtonElement(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc,
                                          java.lang.String&nbsp;type)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">The type property on a button element is read-only in safari, so we need to
  set it using setAttribute.</div>
 <dl>
@@ -338,6 +368,7 @@ extends <a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html" 
                                       boolean&nbsp;shiftKey,
                                       boolean&nbsp;metaKey,
                                       int&nbsp;keyCode)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#createKeyCodeEvent-com.google.gwt.dom.client.Document-java.lang.String-boolean-boolean-boolean-boolean-int-">createKeyCodeEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -380,6 +411,7 @@ public&nbsp;<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" 
                                        boolean&nbsp;shiftKey,
                                        boolean&nbsp;metaKey,
                                        int&nbsp;charCode)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#createKeyPressEvent-com.google.gwt.dom.client.Document-boolean-boolean-boolean-boolean-int-">createKeyPressEvent</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -394,6 +426,7 @@ public&nbsp;<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" 
 <h4>createScriptElement</h4>
 <pre>public&nbsp;<a href="../../../../../com/google/gwt/dom/client/ScriptElement.html" title="class in com.google.gwt.dom.client">ScriptElement</a>&nbsp;createScriptElement(<a href="../../../../../com/google/gwt/dom/client/Document.html" title="class in com.google.gwt.dom.client">Document</a>&nbsp;doc,
                                          java.lang.String&nbsp;source)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Safari 2 does not support <a href="../../../../../com/google/gwt/dom/client/ScriptElement.html#setText-java.lang.String-"><code>ScriptElement.setText(String)</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
@@ -408,6 +441,7 @@ public&nbsp;<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" 
 <li class="blockList">
 <h4>eventGetCurrentTarget</h4>
 <pre>public&nbsp;<a href="../../../../../com/google/gwt/dom/client/EventTarget.html" title="class in com.google.gwt.dom.client">EventTarget</a>&nbsp;eventGetCurrentTarget(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;event)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#eventGetCurrentTarget-com.google.gwt.dom.client.NativeEvent-">eventGetCurrentTarget</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -421,6 +455,7 @@ public&nbsp;<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" 
 <li class="blockList">
 <h4>eventGetMouseWheelVelocityY</h4>
 <pre>public&nbsp;int&nbsp;eventGetMouseWheelVelocityY(<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" title="class in com.google.gwt.dom.client">NativeEvent</a>&nbsp;evt)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#eventGetMouseWheelVelocityY-com.google.gwt.dom.client.NativeEvent-">eventGetMouseWheelVelocityY</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -434,6 +469,7 @@ public&nbsp;<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" 
 <li class="blockList">
 <h4>getAbsoluteLeft</h4>
 <pre>public&nbsp;int&nbsp;getAbsoluteLeft(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#getAbsoluteLeft-com.google.gwt.dom.client.Element-">getAbsoluteLeft</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -447,6 +483,7 @@ public&nbsp;<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" 
 <li class="blockList">
 <h4>getAbsoluteTop</h4>
 <pre>public&nbsp;int&nbsp;getAbsoluteTop(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#getAbsoluteTop-com.google.gwt.dom.client.Element-">getAbsoluteTop</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -460,6 +497,7 @@ public&nbsp;<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" 
 <li class="blockList">
 <h4>getScrollLeft</h4>
 <pre>public&nbsp;int&nbsp;getScrollLeft(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#getScrollLeft-com.google.gwt.dom.client.Element-">getScrollLeft</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -473,6 +511,7 @@ public&nbsp;<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" 
 <li class="blockList">
 <h4>getTabIndex</h4>
 <pre>public&nbsp;int&nbsp;getTabIndex(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#getTabIndex-com.google.gwt.dom.client.Element-">getTabIndex</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -487,6 +526,7 @@ public&nbsp;<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" 
 <h4>setScrollLeft</h4>
 <pre>public&nbsp;void&nbsp;setScrollLeft(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem,
                           int&nbsp;left)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html#setScrollLeft-com.google.gwt.dom.client.Element-int-">setScrollLeft</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../com/google/gwt/dom/client/DOMImpl.html" title="class in com.google.gwt.dom.client">DOMImpl</a></code></dd>
@@ -500,6 +540,7 @@ public&nbsp;<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" 
 <li class="blockList">
 <h4>isRTL</h4>
 <pre>protected&nbsp;boolean&nbsp;isRTL(<a href="../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</a>&nbsp;elem)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 </li>
 </ul>
 </li>
@@ -525,12 +566,12 @@ public&nbsp;<a href="../../../../../com/google/gwt/dom/client/NativeEvent.html" 
 <li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
 <li><a href="../../../../../help-doc.html">Help</a></li>
 </ul>
-<div class="aboutLanguage">GWT 2.9.0</div>
+<div class="aboutLanguage">GWT 2.10.0</div>
 </div>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../com/google/gwt/dom/client/DOMImplStandard.html" title="class in com.google.gwt.dom.client"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../com/google/gwt/dom/client/DOMImplTrident.html" title="class in com.google.gwt.dom.client"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../com/google/gwt/dom/client/DOMImplWebkit.html" title="class in com.google.gwt.dom.client"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?com/google/gwt/dom/client/DOMImplStandardBase.html" target="_top">Frames</a></li>
