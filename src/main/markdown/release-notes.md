@@ -64,7 +64,7 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
-<a id="Release_Notes_2_10_0"></a> Release Notes for 2.10.0
+## <a id="Release_Notes_2_10_0"></a> Release Notes for 2.10.0
 
 ### Highlights
 - Updated to HtmlUnit 2.55.0 and Jetty 9.4.44. With this newer HtmlUnit
