@@ -17,6 +17,6 @@ The steering committee consists of the following members (no particular order):
 * Stephen Haberman, [LinkedIn](https://www.linkedin.com/about-us)
 * Julien Dramaix, [Google](https://www.google.com/about/)
 * Konstantin Solomatov, [Jetbrains](https://www.jetbrains.com)
-* Frank Hossfeld [Hossfeld Solutions GmbH](https://www.hossfeld-solutions.de/)
+* Frank Hossfeld, [Nalu Solutions GmbH](https://www.nalu-solutions.de)
 
 Affiliations are listed for identification purposes only; steering committee members do not represent their employers or academic institutions.
