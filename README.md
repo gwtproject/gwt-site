@@ -1,6 +1,6 @@
 # GWT Documentation
 
-* GWT documentation is published under http://www.gwtproject.org/doc/latest/DevGuide.html
+* GWT documentation is published under https://www.gwtproject.org/doc/latest/DevGuide.html
 
 ## Reference
 
@@ -8,7 +8,7 @@
 
 ## Adding content
 
-* See: http://www.gwtproject.org/makinggwtbetter.html#webpage
+* See: https://www.gwtproject.org/makinggwtbetter.html#webpage
 
 ## Building
 
