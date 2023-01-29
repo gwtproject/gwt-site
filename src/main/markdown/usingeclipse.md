@@ -3,7 +3,7 @@ Using Eclipse
 
 GWT provides a set of tools that can simply be used with a
 text editor, the command line, and a browser. However, you may also use GWT with your
-favorite IDE. The GWT Plugins Project provides a plugin for Eclipse that makes development with
+favorite IDE. [The GWT Plugins Project](https://github.com/gwt-plugins/gwt-eclipse-plugin) provides a plugin for Eclipse that makes development with
 GWT even easier.
 
 *   [Download Eclipse](#eclipse)
@@ -21,7 +21,7 @@ If you do not already have Eclipse, you may download it from the [Eclipse Websit
 
 Install the GWT Plugin for Eclipse following [these instructions](https://github.com/gwt-plugins/gwt-eclipse-plugin)
 
-The best way to install is by using the Eclipse Marketplace.
+The best way to install is by using the [Eclipse Marketplace](https://marketplace.eclipse.org/content/gwt-plugin).
 
 Please be aware, that the Marketplace version currently only works with very old Eclipse versions.
 Developers have running Beta versions, which work with the latest Eclipse versions. They will be available soon.
