@@ -23,9 +23,9 @@ Install the GWT Plugin for Eclipse following [these instructions](https://github
 
 The best way to install is by using the [Eclipse Marketplace](https://marketplace.eclipse.org/content/gwt-plugin).
 
-Please be aware, that the Marketplace version currently only works with very old Eclipse versions.
-Developers have running Beta versions, which work with the latest Eclipse versions. They will be available soon.
-If you need them right now, please look here for the actual state: https://github.com/gwt-plugins/gwt-eclipse-plugin/issues/406
+<a href="https://marketplace.eclipse.org/marketplace-client-intro?mpc_install=5576850" class="drag" title="Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client"><img style="width:80px;" typeof="foaf:Image" class="img-responsive" src="https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.svg" alt="Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client" /></a>
+
+Alternatively you may download the repository [here https://github.com/gwt-plugins/gwt-eclipse-plugin/releases/v4.0.0](https://github.com/gwt-plugins/gwt-eclipse-plugin/releases/v4.0.0)
 
 After installing, you should configure the GWT settings in the Eclipse Preferences Dialog.
 
