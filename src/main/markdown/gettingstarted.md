@@ -55,7 +55,7 @@ run and use the SDK are located in the extracted directory.
 
 ## Create your first web application<a id="create"></a>
 
-GWT ships with a command line utility called [webAppCreator](http://www.gwtproject.org/doc/latest/RefCommandLineTools.html#webAppCreator) that automatically generates all the files you'll need in order to start a GWT project.  It also generates [Eclipse](http://www.eclipse.org/) project files and launch config files for easy debugging in GWT's development mode.
+GWT ships with a command line utility called [webAppCreator](https://www.gwtproject.org/doc/latest/RefCommandLineTools.html#webAppCreator) that automatically generates all the files you'll need in order to start a GWT project.  It also generates [Eclipse](http://www.eclipse.org/) project files and launch config files for easy debugging in GWT's development mode.
 
 You can create a new demo application in a new MyWebApp directory by running `webAppCreator`:
 

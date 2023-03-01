@@ -2,7 +2,7 @@ Widget Gallery
 ===
 
 The following are [widgets](#Widgets) and [panels](#Panels) available in the GWT user-interface library. You
-can view a code example of each widget in the [Showcase](http://samples.gwtproject.org/samples/Showcase/Showcase.html) sample application.
+can view a code example of each widget in the [Showcase](https://samples.gwtproject.org/samples/Showcase/Showcase.html) sample application.
 
 **Widgets:**
 

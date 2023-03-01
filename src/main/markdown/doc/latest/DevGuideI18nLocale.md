@@ -134,7 +134,7 @@ The easy way to use runtime locales is simply to add:
 
 to your [module XML](DevGuideOrganizingProjects.html#DevGuideModuleXml) file, and all locales that GWT knows about that inherit from
 your compile-time locale will be automatically included.  You can see the
-result in the [`Showcase` sample application](http://samples.gwtproject.org/samples/Showcase/Showcase.html).
+result in the [`Showcase` sample application](https://samples.gwtproject.org/samples/Showcase/Showcase.html).
 
 ### Caveats
 
@@ -144,7 +144,7 @@ result in the [`Showcase` sample application](http://samples.gwtproject.org/samp
  to be included in the selection script, so inheritance won't work properly
  in all cases.  This means you either need to specifically control the set
  of possible locales, such as in the locale selector in the [`Showcase`
-sample application](http://samples.gwtproject.org/samples/Showcase/Showcase.html), or have the server choose the locale using the
+sample application](https://samples.gwtproject.org/samples/Showcase/Showcase.html), or have the server choose the locale using the
 proper inheritance tables (`GwtLocaleFactoryImpl` will be helpful here,
 and you will need a way to get the set of locales your application was built
 with).

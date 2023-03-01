@@ -7,7 +7,7 @@ _July 2009_
 
 _(with thanks to Bruno Marchesson for his contributions to this article)_
 
-Many developers have asked how to use [GWT](http://www.gwtproject.org) and [Hibernate](https://www.hibernate.org/) together. Although you can find numerous discussions about this topic on the [GWT Developer Forum](http://groups.google.com/group/Google-Web-Toolkit), we thought it would be beneficial to sum up some of the most popular strategies, and highlight their advantages and shortcomings in the context of GWT application development.
+Many developers have asked how to use [GWT](https://www.gwtproject.org) and [Hibernate](https://www.hibernate.org/) together. Although you can find numerous discussions about this topic on the [GWT Developer Forum](http://groups.google.com/group/Google-Web-Toolkit), we thought it would be beneficial to sum up some of the most popular strategies, and highlight their advantages and shortcomings in the context of GWT application development.
 
 Before we get into integration strategies, let's get familiar with the basics.
 

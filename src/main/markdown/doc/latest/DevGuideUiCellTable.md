@@ -3,7 +3,7 @@ UiCellTable
 
 A cell table (data presentation table) provides high-performance rendering of large data sets
 in a tabular view. You can check out the
-[Cell Table example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable)
+[Cell Table example](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable)
 in the GWT Showcase to see it in action.
 
 This developer guide will walk you through some advanced features specific to CellTable, such as

@@ -9,7 +9,7 @@ To help adoption of GWT 2.8 the default for CssResource is still CSS. Once an
 application has been migrated to 2.8 it can transition over to GSS in multiple
 steps.
 
-The [GSS open source](https://code.google.com/p/closure-stylesheets/) project has an overview of GSS features and here is a [list of difference between CSS and GSS](http://www.gwtproject.org/doc/latest/DevGuideGssVsCss.html).
+The [GSS open source](https://code.google.com/p/closure-stylesheets/) project has an overview of GSS features and here is a [list of difference between CSS and GSS](https://www.gwtproject.org/doc/latest/DevGuideGssVsCss.html).
 
 This document outlines the steps one needs to take in order to move from CSS to
 GSS.

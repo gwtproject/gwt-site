@@ -86,10 +86,10 @@ Please note that the applications linked from this page are provided by third-pa
 
   <div class="project">
       <div class="screenshot">
-        <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank"><img src="images/showcase.jpg" alt="Screenshot"/></a>
+        <a href="https://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank"><img src="images/showcase.jpg" alt="Screenshot"/></a>
       </div>
       <div class="info">
-        <div class="name"><a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank">GWT Showcase</a></div>
+        <div class="name"><a href="https://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank">GWT Showcase</a></div>
         <div class="snippet">A showcase of GWT features with accompanying source code and CSS styles.</div>
         <div class="apis">
           <div class="head">GWT features used:</div>
@@ -101,10 +101,10 @@ Please note that the applications linked from this page are provided by third-pa
 
     <div class="project">
       <div class="screenshot">
-        <a href="http://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank"><img src="images/mail.jpg" alt="Screenshot"/></a>
+        <a href="https://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank"><img src="images/mail.jpg" alt="Screenshot"/></a>
       </div>
       <div class="info">
-        <div class="name"><a href="http://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank">Mail Application</a></div>
+        <div class="name"><a href="https://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank">Mail Application</a></div>
         <div class="snippet">A replica of the UI of a desktop email application.</div>
         <div class="apis">
           <div class="head">GWT features used:</div>

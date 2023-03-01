@@ -2,10 +2,10 @@ UiCellWidgets
 ===
 
 Cell widgets (data presentation widgets) are high-performance, lightweight widgets composed of Cells for displaying data.
-Examples are [lists](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList),
-[tables](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable),
-[trees](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree) and
-[browsers](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellBrowser).
+Examples are [lists](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList),
+[tables](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable),
+[trees](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree) and
+[browsers](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellBrowser).
 These widgets are designed to handle and display very large sets of data quickly.
 A cell widget renders its user interface as an HTML string, using innerHTML instead of traditional DOM manipulation.
 This design follows the flyweight pattern where data is accessed and cached only as needed, and passed to
@@ -17,9 +17,9 @@ Cells are the basic blocks of a user interface and come in a variety of [availab
 a type based on the data that the cell represents;  for example, DatePickerCell is a `Cell<Date>`
 that represents a Date and allows the user to select a new Date.  Cells must implement a render method that renders the typed value as an HTML string. In addition, cells can override onBrowserEvent to act as a flyweight that handles events that are fired on elements that were rendered by the cell.
 
-For example, in the [CellList example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) of the Showcase, every selectable data record is rendered by a single Cell instance. Notice that the data that a single cell represents can be a composition of different data fields from the data source. In this example, the cell holds data of type ContactInfo, which represents a contact, including name, address and picture.
+For example, in the [CellList example](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) of the Showcase, every selectable data record is rendered by a single Cell instance. Notice that the data that a single cell represents can be a composition of different data fields from the data source. In this example, the cell holds data of type ContactInfo, which represents a contact, including name, address and picture.
 
-In the [CellTable example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable), a different Cell is used to render each Column of a row.  The five columns in this example present data from a boolean and four strings.
+In the [CellTable example](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable), a different Cell is used to render each Column of a row.  The five columns in this example present data from a boolean and four strings.
 
 1.  [Cell Widgets](#Cell_Widgets)
     1.  [Demos and Code Examples](#demos)
@@ -45,10 +45,10 @@ NOTE: CellPanel is not a cell widget. CellPanel is an abstract base class for GW
 This document describes or points to three kinds of code examples, so you can jump in at any level.
 
 *   **Live demos** - Visit the GWT Showcase for examples of widgets
-[CellList](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList),
-[CellTable](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable),
-[CellTree](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree),
-[CellBrowser](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellBrowser), plus examples of Cells in the[Cell Sampler](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellSampler).
+[CellList](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList),
+[CellTable](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable),
+[CellTree](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree),
+[CellBrowser](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellBrowser), plus examples of Cells in the[Cell Sampler](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellSampler).
 Note: The prefix "Cw" in showcase class names stands for "ContentWidget", the parent class of each Showcase example.
 *   **Simplified examples** - The code examples displayed in-line throughout this documented are short, simplified examples, often pared-down versions of the real-world examples.
 *   **Real-world examples** - Most of the cell widgets also have source code examples (.java files) at    [cell widget code examples](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview).
@@ -62,7 +62,7 @@ list.  For instance, you can create a `CellList<String>` that uses a `Cell<Strin
 a list of Strings. For a fancier list view, you can create a custom cell, described at
 [Creating a Custom Cell](#custom-cell).
 
-**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) shows a `CellList<ContactInfo>` (on the left). Each list item is a custom
+**Demo** - [CwCellList example](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) shows a `CellList<ContactInfo>` (on the left). Each list item is a custom
 type `ContactCell<ContactInfo>`.  The right-hand widget is a normal Composite widget that
 renders the data for a selected contact.
 
@@ -118,7 +118,7 @@ You can add a SelectionModel to a CellList, as shown in the [SelectionModel exam
 A Header represents either a header or a footer in a table. A table can have a header and footer for each column.
 A Header can span multiple columns if adjacent headers are equal (==) to each other.
 
-**Demo** - [CwCellTable example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable)
+**Demo** - [CwCellTable example](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable)
 shows a `CellTable<ContactInfo>`. Each row item has 5 columns rendered
 respectively as a CheckboxCell, EditTextCell, EditTextCell, SelectionCell and TextCell.
 
@@ -201,7 +201,7 @@ You can add a SelectionModel to a CellTable, as shown in the [SelectionModel exa
 
 ### Creating a CellTree<a id="celltree"></a>
 
-CellTree renders a hierarchy of nodes, such as this [CwCellTree](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree).  A node can be either a leaf node or have children.  Thus, a CellTree can have levels of nodes that go progressively deeper.  A node is represented by a NodeInfo, which contains all of the information needed to render a single node.
+CellTree renders a hierarchy of nodes, such as this [CwCellTree](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree).  A node can be either a leaf node or have children.  Thus, a CellTree can have levels of nodes that go progressively deeper.  A node is represented by a NodeInfo, which contains all of the information needed to render a single node.
 
 Each node has a Cell of a specific type;  usually, all Cells at a given level are of the same type, but that isn't required.  The example has a top level of nodes with each cell having an image and string.  Likewise, the second and third levels of cells have their own distinct types.  In addition to a cell, a node also has a DataProvider, to provide the data to the children of the NodeInfo, and a SelectionModel, to indicate how it can be selected by the user.  
 
@@ -209,7 +209,7 @@ The TreeViewModel provides the NodeInfo for each child node.  When a node is ope
 
 A CellTree can have its own CSS styles and its own resources, such as images that the user clicks on to open or close a node.  It can also respond to browser events.  In addition, a CellTree can have built-in animation for progressively revealing or hiding children when its node opens or closes. 
 
-**Demo** - [CwCellTree example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree) shows a CellTree.  It has three levels rendered respectively as custom types CategoryCell, LetterCountCell and ContactCell (the same type from the [CellList](#celllist) demo).  The checkbox has an update method to select the ContactCell when checked.
+**Demo** - [CwCellTree example](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTree) shows a CellTree.  It has three levels rendered respectively as custom types CategoryCell, LetterCountCell and ContactCell (the same type from the [CellList](#celllist) demo).  The checkbox has an update method to select the ContactCell when checked.
 
 **Creating a CellTree:**
 
@@ -275,7 +275,7 @@ You can add a SelectionModel to a CellTree, as shown in the [SelectionModel exam
 
 CellBrowser is similar to a CellTree but displays the node levels side-by-side.  The only code difference is you use a CellBrowser constructor and use a different [CellBrowser.Resources](/javadoc/latest/com/google/gwt/user/cellview/client/CellBrowser.Resources.html) for CSS style (and images) to create side-by-side levels.
 
-**Demo** - [CwCellBrowser example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellBrowser) shows a CellBrowser.  It displays the same data in the same three levels as the above CellTree example, except that it displays the levels side-by-side.
+**Demo** - [CwCellBrowser example](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellBrowser) shows a CellBrowser.  It displays the same data in the same three levels as the above CellTree example, except that it displays the levels side-by-side.
 
 **To Create a CellBrowser**
 
@@ -294,7 +294,7 @@ CellBrowser is similar to a CellTree but displays the node levels side-by-side. 
 
 ### Available Cell Types<a id="available"></a>
 
-GWT offers a number of concrete Cell implementations that you can use immediately. See the [Cell Sampler ](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellSampler)for examples.
+GWT offers a number of concrete Cell implementations that you can use immediately. See the [Cell Sampler ](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellSampler)for examples.
 
 * Text <a id="text-cells"></a>
     * [TextCell](/javadoc/latest/com/google/gwt/cell/client/TextCell.html) - A non-editable cell that displays text
@@ -325,7 +325,7 @@ GWT offers a number of concrete Cell implementations that you can use immediatel
 If you want more control, you can subclass AbstractCell, or you can implement the Cell interface directly to define how your Cell is rendered and how it responds to events.  See
 the instructions in the [Creating Custom Cells Dev Guide](DevGuideUiCustomCells.html) for detailed information.
 
-**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList)
+**Demo** - [CwCellList example](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList)
 shows a `CellList<ContactInfo>` (on the left). Each list item is a custom
 type `ContactCell<ContactInfo>`.  The right-hand widget is a normal Composite widget that
 renders the data for a selected contact.
@@ -336,7 +336,7 @@ renders the data for a selected contact.
 
 The [SelectionModel](/javadoc/latest/com/google/gwt/view/client/SelectionModel.html) is a simple interface that views use to determine if an item is selected.  Cell widgets provide several selection models for selecting the children of a node:  DefaultSelectionModel, NoSelectionModel, SingleSelectionModel and MultiSelectionModel.  One of these is likely to fit your need.
 
-For demonstrations of selection, the [CwCellList](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) widget creates a SingleSelectionModel, whereas CwCellTable implements a MultiSelectionModel using checkboxes.
+For demonstrations of selection, the [CwCellList](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) widget creates a SingleSelectionModel, whereas CwCellTable implements a MultiSelectionModel using checkboxes.
 
 Views or application code can call setSelected() to select an item. Views call isSelected() to determine if an item is selected. Views also subscribe to the SelectionModel so they can be informed of selection changes that arrive from outside the view.  In fact, you can extend DefaultSelectionModel and override isDefaultSelected().
 
@@ -344,7 +344,7 @@ This simple approach offers a lot of flexibility. A complex implementation can h
 
 By using a subscription model, we can link selection across multiple views. If multiple views subscribe to a single SelectionModel, then selecting a row in one view will select the row in other views. This behavior is optional and can be avoided by using a single SelectionModel instance per view.
 
-**Demo** - [CwCellList example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) shows a cell widget that has a SelectionModel added to it. Clicking on an item selects it.
+**Demo** - [CwCellList example](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) shows a cell widget that has a SelectionModel added to it. Clicking on an item selects it.
 
 **To Add a Selection to a Cell Widget:**
 
@@ -687,7 +687,7 @@ Paging is the operation of loading and bringing into view a range of data that i
 
 Two procedures follow &mdash; one for adding a standard SimplePager to a cell widget, and the other for adding custom paging controls to a cell widget.
 
-**Demo** - [CwCellTable example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable) shows a SimplePager control below a table.
+**Demo** - [CwCellTable example](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable) shows a SimplePager control below a table.
 
 **Code Example** - The example below is available at  [SimplePagerExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/SimplePagerExample.java).
 
@@ -811,7 +811,7 @@ public class CellListValueUpdaterExample implements EntryPoint {
 
 Use a [FieldUpdater](/javadoc/latest/com/google/gwt/cell/client/FieldUpdater.html) in a Column to allow the user to modify the content of the Cell (as is possible with TextInputCell).  The example below shows how to update data and handle invalid data.  The FieldUpdater's update method takes three arguments: the row index of the data object,  the data object that represents the field, and the new value of the Cell. 
 
-**Demo** - [CwCellTable example](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable) lets you modify the First and Last names (these columns use [EditTextCell](#text-cells)).
+**Demo** - [CwCellTable example](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable) lets you modify the First and Last names (these columns use [EditTextCell](#text-cells)).
 
 **To Update the Database from a CellTable:**
 
