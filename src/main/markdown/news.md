@@ -116,7 +116,25 @@ We will add the news as soon as possible.
         <div class="container-text">
             The second release candidate of the gwt-core module has been released today.
         </div>
-           <a href="https://github.com/gwtproject/gwt-core/releases/tag/v1.0.0-RC2" target="_blank">
+        <a href="https://github.com/gwtproject/gwt-core/releases/tag/v1.0.0-RC2" target="_blank">
+            <div class="container-link">
+                Read more
+            </div>
+        </a>
+  </div>
+    <div class="container-news">
+        <a href="https://github.com/NaluKit/nalu/releases/tag/2.12.6" target="_blank">
+            <div class="container-headline">
+                Nalukit: nalu version 2.12.6 released
+            </div>
+        </a>
+        <div class="container-date">
+            September 12, 2023
+        </div>
+        <div class="container-text">
+            This is a bug fix release. It fixes an issue related to reloading a page in a non hash context.
+        </div>
+        <a href="https://github.com/NaluKit/nalu/releases/tag/2.12.6" target="_blank">
             <div class="container-link">
                 Read more
             </div>
