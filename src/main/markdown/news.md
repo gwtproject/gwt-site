@@ -69,7 +69,7 @@ We will add the news as soon as possible.
         </a>
     </div>
     <div class="container-news">
-        <a href="https://github.com/DominoKit/domino-rest" target="_blank">
+        <a href="https://github.com/DominoKit/domino-rest/releases/tag/1.0.1" target="_blank">
             <div class="container-headline">
                 DominoKit: domino-rest version 1.0.1 released
             </div>
@@ -78,9 +78,9 @@ We will add the news as soon as possible.
             November 28, 2023
         </div>
         <div class="container-text">
-            This release fixes some dependency issues.
+            Update emulation and super sources to be compatible with gwt and j2cl, move to java 11 and upgrade dependencies.
         </div>
-           <a href="https://github.com/DominoKit/domino-rest" target="_blank">
+           <a href="https://github.com/DominoKit/domino-rest/releases/tag/1.0.1" target="_blank">
             <div class="container-link">
                 Read more
             </div>
