@@ -83,6 +83,28 @@ functionality in the class
 `MyWebApp/src/com/mycompany/mywebapp/client/MyWebApp.java`.  The
 script also generates an Ant build script `MyWebApp/build.xml`.
 
+## Create your first web application using third party archetypes<a id="create-third-party"></a>
+
+Besides the [webAppCreator](http://www.gwtproject.org/doc/latest/RefCommandLineTools.html#webAppCreator) provided by GWT, there are several more archetypes available, that generate a GWT project to start.
+
+### gwt-maven-archetypes by Thomas Broyer<a id="create-third-party-tb"></a>
+
+This archetype creator will generate a Maven based GWT project with separate modules for client-, shared- and server-code. The server module is based on Jetty. In modern GWT development the separation of client-, shared- and server-code is the way to go.
+
+For more information visit the archetype at [gwt-maven-archetypes at GitHub](https://github.com/tbroyer/gwt-maven-archetypes) and follow the instructions.
+
+### gwt-maven-springboot-archetype by NaluKit<a id="create-third-party-nk"></a>
+
+This archetype creator will generate a Maven based GWT project with separate modules for client-, shared- and server-code similar to the one from Thomas Broyer but in opposite to the first one uses Spring Boot on the server side.
+
+For more information visit the archetype at [gwt-maven-springboot-archetype at GitHub](https://github.com/NaluKit/gwt-maven-springboot-archetype) and follow the instructions.
+
+### domino-cli by DominoKit<a id="create-third-party-nk"></a>
+
+The domino-cli provides a tool for generating applicaiton templates using the DominoKit tool stack. 
+
+For more information visit the archetype at [domino-cli at GitHub](https://github.com/DominoKit/domino-cli) and follow the instructions.
+
 ## Run locally in development mode<a id="run"></a>
 
 To run your newly created application in development mode:
