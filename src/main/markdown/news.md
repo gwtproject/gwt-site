@@ -125,7 +125,7 @@ We will add the news as soon as possible.
     <div class="container-news">
         <a href="https://github.com/NaluKit/nalu/releases/tag/2.12.6" target="_blank">
             <div class="container-headline">
-                Nalukit: nalu version 2.12.6 released
+                NaluKit: nalu version 2.12.6 released
             </div>
         </a>
         <div class="container-date">
