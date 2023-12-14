@@ -34,8 +34,9 @@ The topics in this guide span project organization, coding, debugging, testing, 
 15.  [Test with JUnit](DevGuideTesting.html) -- Describes how to use the JUnit unit testing framework and Emma code coverage tool
 16.  [Deploy](DevGuideDeploying.html) -- Describes how to deploy both client- and server-side JavaScript
 17.  [Optimize](DevGuideOptimizing.html) -- Describes how to improve the performance of your application
-18.  [Reference](RefGuide.html) -- Provides javadoc for GWT and related libraries and technical details for GWT widgets
-19.  [FAQ](FAQ.html) -- Frequently asked questions
-20.  [Glossary](DevGuideGlossary.html) -- GWT terminology
+18.  [IE9 Support - Tips and Tricks](DevGuideIE9.html) <sup class="version-sup">2.3</sup> - Support for Internet Explorer 9
+19.  [Reference](RefGuide.html) -- Provides javadoc for GWT and related libraries and technical details for GWT widgets
+20.  [FAQ](FAQ.html) -- Frequently asked questions
+21.  [Glossary](DevGuideGlossary.html) -- GWT terminology
 
 

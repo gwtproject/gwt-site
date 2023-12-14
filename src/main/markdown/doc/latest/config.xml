@@ -18,7 +18,7 @@
   		<entry name="DevGuideCodingBasicsJSNI" displayName="Coding Basics JSNI" description="Coding Basics JSNI"></entry>
   		<entry name="DevGuideCodingBasicsJSON" displayName="Coding Basics JSON" description="Coding Basics JSON"></entry>
   		<entry name="DevGuideCodingBasicsOverlay" displayName="Coding Basics Overlay" description="Coding Basics Overlay"></entry>
-  		<entry name="DevGuideCodingBasicsXML" displayName="Coding Basics XML" description="Coding Basics XML"></entry>
+			<entry name="DevGuideCodingBasicsXML" displayName="Coding Basics XML" description="Coding Basics XML"></entry>
   		<entry name="DevGuideCompileReport" displayName="Compile Report" description="Compile Report"></entry>
   		<entry name="DevGuideCompilingAndDebugging" displayName="Compiling And Debugging" description="Compiling And Debugging"></entry>
   		<entry name="DevGuideDeploying" displayName="Deploying" description="Deploying"></entry>
@@ -30,7 +30,8 @@
   		<entry name="DevGuideI18nLocale" displayName="I18n Locale" description="I18n Locale"></entry>
   		<entry name="DevGuideI18nMessages" displayName="I18n Messages" description="I18n Messages"></entry>
   		<entry name="DevGuideI18nPluralForms" displayName="I18n Plural Forms" description="I18n Plural Forms"></entry>
-  		<entry name="DevGuideLightweightMetrics" displayName="Lightweight Metrics" description="Lightweight Metrics"></entry>
+			<entry name="DevGuideIE9" displayName="Internet Explorer 9" description="Internet Explorer 9"></entry>
+			<entry name="DevGuideLightweightMetrics" displayName="Lightweight Metrics" description="Lightweight Metrics"></entry>
   		<entry name="DevGuideLogging" displayName="Logging" description="Logging"></entry>
   		<entry name="DevGuideMvpActivitiesAndPlaces" displayName="MVP Activities And Places" description="MVP Activities And Places"></entry>
   		<entry name="DevGuideOptimizing" displayName="Optimizing" description="Optimizing"></entry>
