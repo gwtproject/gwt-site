@@ -3,6 +3,7 @@
       - [SDK Learn More](learnmore-sdk.html 'Learn more about the GWT SDK')
       - [Configure Eclipse](usingeclipse.html)
       - [Configure IntelliJ](usingintellij.html)
+  - [News](news.html)
   - [Tutorials](doc/latest/tutorial/index.html)
       - [Overview](doc/latest/tutorial/index.html)
       - [Build a GWT App.](# 'Create, build and run a GWT application')
