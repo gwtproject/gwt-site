@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<folder href="latest/DevGuide.html">
+  <toc>
+  	<entries>
+			<entry name="add-lib" displayName="Add Library Request" description="Add Library Request"></entry>
+			<entry name="application" displayName="Application Frameworks" description="Application Frameworks"></entry>
+			<entry name="archetype" displayName="Archetype Creator" description="Archetype Creator"></entry>
+			<entry name="eco-news" displayName="Eco System News" description="Eco System News"></entry>
+			<entry name="eco-system" displayName="Eco System" description="The GWT Eco System"></entry>
+			<entry name="ui" displayName="UI Frameworks" description="UI Frameworks"></entry>
+  	</entries>
+  </toc>
+</folder>

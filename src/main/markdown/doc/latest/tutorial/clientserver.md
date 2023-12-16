@@ -36,6 +36,10 @@ To try this out, see the tutorial, [Making Cross-Site Requests](Xsite.html).
 
 Note: There is a variety of public sources of JSON-formatted data you can practice with, including [Google Data APIs](https://developers.google.com/gdata/) and [Yahoo! Web Services](http://developer.yahoo.com/).
 
+### Using Third-Party-Libraries
+
+Besides the client server communication provided by GWT, there are more options to communicate with the server. Take a look [here](/eco/com-and-more.html).
+
 ## Making Asynchronous Calls
 
 Whether you use GWT RPC or get JSON data via HTTP, all the calls you make from the HTML page to the server are asychronous.

@@ -83,6 +83,9 @@ functionality in the class
 `MyWebApp/src/com/mycompany/mywebapp/client/MyWebApp.java`.  The
 script also generates an Ant build script `MyWebApp/build.xml`.
 
+Besides the **webAppCreator**, there are several more archetype creator available. Take a look [here](eco/archetype.html)
+for more inforamtions
+
 ## Run locally in development mode<a id="run"></a>
 
 To run your newly created application in development mode:

@@ -41,11 +41,13 @@
                     <li class="logo"><a href="/">GWT homepage</a></li>
                     <li><a href="overview.html"><i class="icon_overview"></i>Overview</a></li>
                     <li class="sep"><a href="gettingstarted.html"><i class="icon_getstarted"></i>Get started</a></li>
+                    <li class="sep"><a href="news.html"><i class="icon_news"></i>News</a></li>
                     <li><a href="doc/latest/tutorial/index.html" class="active"><i class="icon_tutorials"></i>Tutorials</a></li>
                     <li><a href="doc/latest/DevGuide.html"><i class="icon_doc"></i>Docs</a></li>
                     <li><a href="examples.html"><i class="icon_ressources"></i>Resources</a></li>
                     <li><a href="makinggwtbetter.html"><i class="icon_makeGWTBetter"></i>Make GWT Better</a></li>
                     <li class="sep"><a href="terms.html"><i class="icon_terms"></i>Terms</a></li>
+                    <li class="sep"><a href="eco/eco-system.html"><i class="icon_eco_system"></i>Eco System</a></li>
                     <li class="btn"><a href="download.html"><i class="icon_download"></i>Download</a></li>
                     <li class="btn"><a href="http://www.gwtproject.org/javadoc/latest/"><i class="icon_jd"></i>Java Doc</a></li>
                 </ul>

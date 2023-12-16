@@ -1,28 +1,33 @@
 # GWT Eco System
 
+Today, the GWT eco system is not only that, what comes with the framework. Usually, projects use a lot of third party 
+libraries to improve there development experience, add features or prefer a different approach to do things. But, before
+we start a little history of GWT, the current state and a foresight:
+
 ## History
 
 First and foremost, GWT is a Java to JavaScript transpiler. The basic idea is to use a type-safe and object oriented
-Language to create applications which can ran natively in the browser. During development, developers use a
-bullet-proofed
-tooling. In production the transpiler creates highly optimized JavaScript.
+language to create applications which can ran natively in the browser. During development, developers benefit from the 
+existing Java tool chain, powerful IDEs and awesome refactoring abilities. In production the transpiler creates highly
+optimized and obfuscated JavaScript.
 
-In 2006, as GWT emerges, things were different than today. JavaScript really depends on the browser and Java were in an
-early state
-of evolution. That's one of the reasons why we have permutations and generators in GWT. Also there no third-party-libs.
-So everything
-had to be deployed with the framework. GWT 2 add a lot of new modules: editor, uibinder, etc. we all use today.
+In 2006, as GWT emerges, things were different. JavaScript depends on the browser and Java were in an
+early state of evolution. That's one of the reasons why we have permutations and generators in GWT. Also there no
+third-party-libs. Everything had to be provided by the framework. With GWT 2,  a lot of new modules like: editor, uibinder, etc. 
+were added to the framework.
 
 Today, things are different. Java has evolved. New language feature, annotation processors, etc. are state of the art
-and
-Browsers no longer have such gaps in there JavaScript engines. Third party libraries cover a lot of the things the
-modules does
-and they add new features to GWT. Also, Google transfers the lead the GWT project to an Open Source community.
+and the gaps of the JavaScript engines in the browser are no longer a pain point. Third party libraries add a lot of 
+things that GWT does not cover or offer an alternative implementation of existing implementations.
 
-Looking at the next generation transpiler from Google (J2CL) there are no longer permutations, generators or modules. It
-is only a transpiler. In 2018 the community starts to migrate the GWT modules. These modules no longer use generators
-(instead they use annotation processors) and instead of JSNI (JavaScript Native Interface) JsInterop. On the long term,
-that will enable application to switch to the new transpiler.
+Also, Google transfers the lead of the GWT project to an Open Source community.
+
+Looking at the next generation transpiler from Google (J2CL) there are no longer permutations, generators or modules 
+available. Today, It is only a transpiler. In preparation of using this new transpiler and keeping in mind the huge
+amount of legacy applications the community starts to migrate the GWT modules in 2019. These migrated modules no longer 
+use generators (instead they are using annotation processors) and JSNI (JavaScript Native Interface). Now, they are
+using JsInterop. On the long term, using this new modules, will enable applications to switch to the new transpiler
+very smoothly.
 
 ### List of Modules
 
@@ -232,26 +237,26 @@ that will enable application to switch to the new transpiler.
     </tbody>
 </table>
 
-When ever possible use these modules. There are only a few API changes, so migration might be easy by changing the package.
-For example the old editor package is **com.google.gwt.editor** and the new one from the editor module will be
-**org.gwtproject.editor**.
+When ever possible use these modules. There are only a few API changes, so migration might be easy by just changing the 
+name of the package for those classes. For example, classes of the old editor package located in **com.google.gwt.editor**
+are located inside **org.gwtproject.editor**.
 
 ## Releases
 
 GWT 2.10.0 removes the permutation for IE8, IE9 and IE10 and was the first release that had a new **groupId**. Besides 
-the old groupId **com.google.gwt** it could also be loaded with the new one: **org.gwtproject**. Starting from 2.11.0 
-GWT will only be available under **org.gwtproject**. 
+the old groupId **com.google.gwt**, GWT can also be loaded with the new groubId: **org.gwtproject**. Starting from 2.11.0 
+GWT will only be available under the groupId of **org.gwtproject**. 
 
 GWT 2.11.0 will be the first release that requires Java 11!
 
-Currently we have started the work on GWT 2.12.0. This release will focus on implementing new Java 11 - 17 Language features.
+Currently we have started the work on GWT 2.12.0. This release will focus on implementing new Java Language features.
 
 ## Third Party Libraries
 
 Besides the GWT framework many third party libraries occurred. These libraries add new features to GWT or offer different
-approaches to do things in GWT. It might be worth to take look: 
+approaches to do something in GWT. It might be worth to take look: 
 
-* [Archetype Creation](tpl/archetype.html)
-* [Client-Server Communication](tpl/communication.html)
-* [Application frameworks](tpl/application.html)
-* [Widget Libraries](tpl/widget.html)
+* [Archetype Creation](archetype.html)
+* [Client-Server Communication, Validation & more](com-and-more.html)
+* [Application frameworks](application.html)
+* [Widget Libraries](ui.html)

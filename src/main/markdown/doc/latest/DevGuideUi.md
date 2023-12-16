@@ -16,3 +16,5 @@ In traditional JavaScript programming, dynamic user interface creation is done b
 9.  [Working with CSS](DevGuideUiCss.html) -- Style widgets with cascading style sheets
 10.  [Declarative UI with UiBinder](DevGuideUiBinder.html) -- Build widget and DOM structures from XML markup
 11.  [Bundling Image Resources](DevGuideUiImageBundles.html) -- Optimize image loading by reducing the number of HTTP requests for images
+
+Note: The GWT Eco System provides also UI implementations. To learn more, take a look [here](/eco/ui.html). 

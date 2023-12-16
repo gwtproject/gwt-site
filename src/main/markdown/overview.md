@@ -21,6 +21,17 @@ The [Plugin for Eclipse](https://developers.google.com/eclipse/index) provides I
 
 *   [Get Started](usingeclipse.html)
 
+## What's outside the toolbox?
+
+The [GWT SDK](learnmore-sdk.html) contains everything you need to develop client-side applications. But, that's not all. There is a vital [Eco System](/eco/eco-system.html) outside, which provide alternative implementations or adds new features to the GWT SDK. These third party libraries work well with the GWT SDK and extend the possibilities what could be done with GWT.
+
+We have grouped this information into four categories:
+
+* [Archetype creator](eco/archetype.html): more archetypes (Maven multi module projects, using Spring Boot as a server, etc.)
+* [Communication & More](eco/com-and-more.html): REST-client generator, validation, etc.
+* [Application Frameworks](eco/application.md): alternative history management, etc.
+* [UI Frameworks](eco/ui.heml): Ready to use widget libs, map tools, charts, etc.
+
 ## Developing with GWT
 
 ### <i class="icon_write"></i> Write
