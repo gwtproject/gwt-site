@@ -1,119 +1,154 @@
 Getting Started
 ===
 
+Starting with 2.11.0 of the GWT SDK the webAppCreator is deprecated and will be removed in a future version. Instead, 
+we will use the [gwt-maven-archetypes](https://github.com/tbroyer/gwt-maven-archetypes) by Thomas Broyer to create a new
+GWT project. Using the **artifactId: modular-webapp** the plugin generates a Maven project with separate modules for
+
+* client
+* server
+* shared.
+
+Separation of code is the way to go in modern web development. 
+
+## TOC
+
 *  [Prerequisites](#prereqs)
-*  [Download and Install GWT](#download)
 *  [Create your first web application](#create)
-*  [Run locally in development mode](#run)
+*  [Run locally in super dev mode](#run)
 *  [Make a few changes](#change)
+*  [Debugging the browser](#bebug)
 *  [Compile and run in production mode](#compile)
 *  [Set up an IDE](#setup)
 
 ## Prerequisites<a id="prereqs"></a>
 
-1.  You will need the Java SDK version 1.8 or later. If necessary, download and
-    install the Java SE Development Kit (JDK) <a
-    href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" 
-    rel="nofollow">from Oracle</a> or <a href="https://adoptopenjdk.net/" 
-    rel="nofollow">from Adopt OpenJDK</a> for your platform.
-2.  Apache Ant is also necessary to run command line arguments in this sample. If
-    you don't already have it, install <a href="http://ant.apache.org/" rel="nofollow">Apache Ant</a>.
+1.  You will need the Java SDK version 11 or later. If necessary, download and
+    install the Java SE Development Kit (JDK) <a href="https://adoptium.net/de/temurin/releases/" 
+    rel="nofollow">from Eclipse Temurin</a> for your platform. Install the JDK by following the 
+    installation instructions. 
+2.  Apache Maven is also necessary to run the gwt-maven-archetype. command line arguments in this sample. If
+    you don't already have it, install <a href="https://maven.apache.org/download.cgi" rel="nofollow">Apache Maven</a>.
 
-If you have problems running Ant on the Mac, try setting the
-$JDK_HOME environment variable with export JDK_HOME="/Library/Java/Home"
-
-## Download and Install the GWT SDK<a id="download"></a>
-
-<table class="download">
-  <tbody><tr>
-    <td>
-      <img src="images/sdk-sm.png" style="float: left; width: 80px; height:
-      80px;" />
-    </td>
-    <td>
-      <p>
-        <a href='download.html'>Download</a> and unzip the GWT SDK. This contains the core
-        libraries, compiler, and development server that you need to write web
-        applications.
-      </p>
-      <p>
-        See <a href="doc/latest/FAQ_GettingStarted.html">FAQ</a>
-        for system and browser requirements.
-      </p>
-    </td>
-  </tr>
-</tbody></table>
-
-On Windows, extract the files from the compressed folder `gwt-2.10.0.zip`.  On Mac or Linux, you can unpack the package with a command like:
-
-```
-unzip gwt-2.10.0.zip
-```
-
-The GWT SDK doesn't have an installer application.  All the files you  need to
-run and use the SDK are located in the extracted directory.
+If you have problems running the gwt-maven-archetype from the command line, try setting the
+$JDK_HOME environment variable with export JDK_HOME="[pathToJDK]" and $MAVEN_HOME environment variable with export MAVEN_HOME="[pathToMaven]"
+and add both to the path. 
 
 ## Create your first web application<a id="create"></a>
 
-GWT ships with a command line utility called [webAppCreator](http://www.gwtproject.org/doc/latest/RefCommandLineTools.html#webAppCreator) that automatically generates all the files you'll need in order to start a GWT project.  It also generates [Eclipse](http://www.eclipse.org/) project files and launch config files for easy debugging in GWT's development mode.
-
-You can create a new demo application in a new MyWebApp directory by running `webAppCreator`:
-
-*   **Windows**
+First, open a terminal and choose the directory you like to generate the sources into.
+Now, you generate a new application project by using the following command: 
 
 ```
-cd gwt-2.10.0
-
-webAppCreator -out MyWebApp com.mycompany.mywebapp.MyWebApp
+mvn archetype:generate \
+   -DarchetypeGroupId=net.ltgt.gwt.archetypes \
+   -DarchetypeVersion=LATEST \
+   -DarchetypeArtifactId=modular-webapp
 ```
 
-*   **Mac or Linux** - you may need to make the script executable:
+Choose the folder, where you would like to generate the new applicaiton project. Run the archetype. 
+
+The archetype will request values for:
+
+* **groupId**: com.mycompany.mywebapp
+* **artifactId**: mywebapp
+* **version**: HEAD-SNAPSHOT
+* **package**: com.mycompany.mywebapp
+* **module-short-name**: mywebap
+
+After entering the parameter above, the terminal shows something like that:
 
 ```
-cd gwt-2.10.0
-
-chmod u+x webAppCreator
-
-./webAppCreator -out MyWebApp com.mycompany.mywebapp.MyWebApp
+[INFO] Using property: module = App
+Define value for property 'groupId': com.mycompany.mywebapp
+Define value for property 'artifactId': mywebapp
+Define value for property 'version' 1.0-SNAPSHOT: : HEAD-SNAPSHOT     
+Define value for property 'package' com.mycompany.mywebapp: : com.mycompany.mywebapp
+Define value for property 'module-short-name' app: : MyWebApp
+Confirm properties configuration:
+module: App
+groupId: com.mycompany.mywebapp
+artifactId: mywebapp
+version: HEAD-SNAPSHOT
+package: com.mycompany.mywebapp
+module-short-name: mywebapp
+ Y: :         
 ```
 
-The `webAppCreator` script will generate a number of files in
-`MyWebApp/`, including some basic "Hello, world"
-functionality in the class
-`MyWebApp/src/com/mycompany/mywebapp/client/MyWebApp.java`.  The
-script also generates an Ant build script `MyWebApp/build.xml`.
+Enter **Y** to continue.
 
-## Run locally in development mode<a id="run"></a>
-
-To run your newly created application in development mode:
+The new project will now be generated and you see something like that:
 
 ```
-cd MyWebApp/
-
-ant devmode
+[INFO] ----------------------------------------------------------------------------
+[INFO] Using following parameters for creating project from Archetype: modular-webapp:LATEST
+[INFO] ----------------------------------------------------------------------------
+[INFO] Parameter: groupId, Value: com.mycompany.mywebapp
+[INFO] Parameter: artifactId, Value: mywebapp
+[INFO] Parameter: version, Value: HEAD-SNAPSHOT
+[INFO] Parameter: package, Value: com.mycompany.mywebapp
+[INFO] Parameter: packageInPathFormat, Value: com/mycompany/mywebapp
+[INFO] Parameter: package, Value: com.mycompany.mywebapp
+[INFO] Parameter: module-short-name, Value: MyWebApp
+[INFO] Parameter: module, Value: App
+[INFO] Parameter: groupId, Value: com.mycompany.mywebapp
+[INFO] Parameter: artifactId, Value: mywebapp
+[INFO] Parameter: version, Value: HEAD-SNAPSHOT
+[INFO] Parent element not overwritten in /Users/gwt-user/Desktop/mywebapp/mywebapp-client/pom.xml
+[INFO] Parent element not overwritten in /Users/gwt-user/Desktop/mywebapp/mywebapp-shared/pom.xml
+[INFO] Parent element not overwritten in /Users/gwt-user/Desktop/mywebapp/mywebapp-server/pom.xml
+[INFO] Project created from Archetype in dir: /Users/gwt-user/Desktop/mywebapp
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:09 min
+[INFO] Finished at: 2023-12-17T17:38:02+01:00
+[INFO] ------------------------------------------------------------------------
 ```
 
-This command starts GWT's development mode server, a local server used for development and debugging, as follows:
+Switch to the generated directory by entering `cd mywebapp`.
 
-<div class="screenshot"><a href="images/myapplication-devmode.png"><img src="images/myapplication-devmode.png" alt="Screenshot" width="35%"/></a></div>
+A listing of the directory (**Windows**: dir, **Mac and Linux**: ls -la), we will see something like this: 
 
-Launch the local server in a browser by either 1) clicking "Launch Default Browser"
-or 2) clicking "Copy to Clipboard" (to copy its URL), then pasting into Firefox, Internet Explorer,
-Chrome, or Safari.
+```
+drwxr-xr-x@  6 gwt-user  staff   192 Dec 17 17:38 .
+drwx------@ 50 gwt-user  staff  1600 Dec 17 17:38 ..
+drwxr-xr-x@  4 gwt-user  staff   128 Dec 17 17:38 mywebapp-client
+drwxr-xr-x@  4 gwt-user  staff   128 Dec 17 17:38 mywebapp-server
+drwxr-xr-x@  4 gwt-user  staff   128 Dec 17 17:38 mywebapp-shared
+-rw-r--r--@  1 gwt-user  staff  7423 Dec 17 17:38 pom.xml
+```
 
-The starter application will load in Super Dev Mode as follows:
+## Run locally in super dev mode<a id="run"></a>
 
-<div class="screenshot"><a href="images/myapplication-browser.png"><img src="images/myapplication-browser.png" alt="Screenshot" width="35%"/></a></div>
+To start the code server, run the following command:
+
+```
+mvn gwt:codeserver -pl *-client -am
+```
+
+and entering the following command in another terminal window to start the server:
+
+```
+mvn jetty:run -pl *-server -am -Denv=dev
+```
+
+Now, switch to your preferred browser (we suggest using: Chrome, FireFox or Opera) and enter:
+
+```
+http://lcoalhost:8080
+```
+
+Now, the application is running in super dev mode. You will see something like this in the browser:
+
+<div class="screenshot"><a href="images/mywebapp.png"><img src="images/mywebapp.png" alt="Screenshot" width="42%"/></a></div>
 
 ## Make a few changes<a id="change"></a>
 
-The source code for the starter application is in the
-`MyWebApp/src/` subdirectory, where MyWebApp is the name you gave to
-the project above. You'll see two packages,
-`com.mycompany.mywebapp.client` and
-`com.mycompany.mywebapp.server`. Inside the client package is code that will eventually be compiled to JavaScript and run as client code in the browser. The java files in the server package will be run as Java bytecode on a server, in the case of this Quick Start on the App Engine servers.
+Let's change the label of the button. Because this is something on the client side, we need to locate the source code in the client module of the project. 
+The source code is located in the `mywebapp-client/src/main/java/com/mycompany/mywebapp` subdirectory. The source code is located in the `App.java` class.
 
-Look inside `com/mycompany/mywebapp/client/MyWebApp.java`. Line 41 constructs the "Send" button.
+Look inside `App.java`. Line 42 constructs the "Send" button.
 
 ```
 final Button sendButton = new Button("Send");
@@ -127,33 +162,44 @@ final Button sendButton = new Button("Send to Server");
 
 Now, save the file and simply click "Refresh" in your browser to see your change. The button should now say "Send to Server" instead of "Send":
 
+## Debugging the browser<a id="bebug"></a>
+
+In super dev mode, you can easily debug your client code in the browser. While running your application, open the dev tools 
+in your browser. Select the `Sources`-tab and press `ctrl-P` (Windows) or `cmd-P` (macOS). A popup opens. Enter `App.java` and press return.
+
+<div class="screenshot"><a href="images/sdm-debugger.png"><img src="images/sdm-debugger.png" alt="Screenshot" width="42%"/></a></div>
+
+Now, the source code of the `App.java` class is displayed in the debugger. Add a breakpoint by clicking of Line number 94. Now press the send button.
+The execution will stop at line 94 in the debugger. The stacktrace is visible, teh content of the variable, etc. 
+
+<div class="screenshot"><a href="images/sdm-debugger-breakpoint.png"><img src="images/sdm-debugger-breakpoint.png" alt="Screenshot" width="42%"/></a></div>
+
 ## Compile and run in production mode<a id="compile"></a>
 
-To run the application as JavaScript in what GWT calls "production mode", compile the application by executing:
+To run the application as JavaScript in what GWT calls "production mode", create the application by executing:
 
 ```
-ant build
+mvn clean package
 ```
 
-The "build" Ant target invokes the GWT compiler which generates a number of
-JavaScript and HTML files from the MyWebApp Java source code in the
-`MyWebApp/war/` subdirectory.  To see the application, open the file
-`MyWebApp/war/MyWebApp.html` in your web browser.  The application
-should look identical to the development mode above.
+The Maven "package" goal invokes the GWT compiler which generates a number of JavaScript and HTML files from the
+MyWebApp Java source code in the `target/` subdirectory.  There you will find a `mywebapp-server-HEAD-SNAPSHOT.war`.
+You can deploy this war file to every servlet engine and run it. Once running, enter `mywebapp-server-HEAD-SNAPSHOT/index.html`
+in your web browser.  The application should look identical to the super dev mode above. you can change the name of the war using
+Maven ' buildname`.
 
 Congratulations! You've created your first web application using GWT.
 Since you've compiled the project, you're now running pure JavaScript and
-HTML that works in IE, Chrome, Firefox, Safari, and Opera. You could now deploy
-your application to production by serving the HTML and JavaScript files in your
-`MyWebApp/war/` directory from your web servers.
+HTML that works in Edge, Chrome, Firefox, Safari, and Opera. You could now deploy
+your application to production by serving the HTML and JavaScript files from your servlet engine.
 
 ## Set up an IDE<a id="setup"></a>
 
 Now that you've created your first app, you probably want to do something a
 bit more interesting. But first, if you normally work with an IDE you'll want to
-set up Eclipse to use the GWT SDK:
+set up IntelliJ to use the GWT SDK:
 
-[Set up Eclipse](usingeclipse.html)
+[Set up IntelliJ](using-intellij.html)
 
-If you are going to stick with the command line, check out Speed Tracer     and then
+If you are going to stick with the command line, check out Speed Tracer and then
 head over to [Build a Sample GWT App](doc/latest/tutorial/gettingstarted.html).
