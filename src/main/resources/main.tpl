@@ -47,7 +47,7 @@
                     <li><a href="makinggwtbetter.html"><i class="icon_makeGWTBetter"></i>Make GWT Better</a></li>
                     <li class="sep"><a href="terms.html"><i class="icon_terms"></i>Terms</a></li>
                     <li class="btn"><a href="download.html"><i class="icon_download"></i>Download</a></li>
-                    <li class="btn"><a href="http://www.gwtproject.org/javadoc/latest/"><i class="icon_jd"></i>Java Doc</a></li>
+                    <li class="btn"><a href="https://www.gwtproject.org/javadoc/latest/"><i class="icon_jd"></i>Java Doc</a></li>
                 </ul>
                 <div id="social">
                     <a href="https://gitter.im/gwtproject/gwt" target="_blank" title="Access our Gitter community">
