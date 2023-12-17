@@ -29,7 +29,7 @@ You may choose to not use the development mode server and uninstall the browser 
 
 Google adheres to the US Safe Harbor privacy principles. For more information about the Safe Harbor framework or our registration, see the [Department of Commerce's website](http://www.export.gov/safeharbor/).
 
-Further information about GWT is available [here](http://www.gwtproject.org).
+Further information about GWT is available [here](https://www.gwtproject.org).
 
 For more information about our privacy practices, go to the [full privacy policy](http://www.google.com/privacypolicy.html). If you have additional questions, please [contact us any time](http://www.google.com/support/bin/request.py?form_type=user&stage=fm&user_type=user&contact_type=privacy&hl=en). Or write to us at:
 

@@ -390,7 +390,7 @@ prefered supertype of any JS type, including primitives.
 
 ### Deprecations
 
-- Old CssResource syntax is now deprecated. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
+- Old CssResource syntax is now deprecated. For more information on GSS migration, please refer to [this document](https://www.gwtproject.org/articles/gss_migration.html)
 
 ### Compiler changes
 
@@ -413,7 +413,7 @@ prefered supertype of any JS type, including primitives.
 - Improved logging and stack traces for superdev mode.
 
 #### GSS support
-- GSS is no longer experimental but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
+- GSS is no longer experimental but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](https://www.gwtproject.org/articles/gss_migration.html)
 - "For loop support" added
 - a new function concat() is now available to concatenate variable and string literal.
 - @gen-webkit-keyframes annotation: generate automaticaly @-webkit-keyframes block

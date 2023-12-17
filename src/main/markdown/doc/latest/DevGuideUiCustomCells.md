@@ -23,7 +23,7 @@ The core method that all Cells must implement is the
 [Cell#render(Context, C value, SafeHtmlBuilder)](/javadoc/latest/com/google/gwt/cell/client/Cell.html#render-com.google.gwt.cell.client.Cell.Context-C-com.google.gwt.safehtml.shared.SafeHtmlBuilder-)
 method, which renders the parameterized `value` into the `SafeHtmlBuilder`.  In some cases, you will only need to render
 simple HTML, such as a single `div` with some content.  In other cases, you might need to render a complex HTML structure, such as the one
-in the [CellList](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) example, which contains an image and two lines of
+in the [CellList](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellList) example, which contains an image and two lines of
 text. The basic principles are the same in either case.
 
 **Code Example**
