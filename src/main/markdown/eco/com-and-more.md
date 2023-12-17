@@ -18,7 +18,7 @@ from both client side -browser- using GWT and on the server. The lib works with 
 serialization and deserialization is based on domino-jackson and service definition is based on JaxRs annotations, while 
 code generation uses annotation processing APT.
 
-For more information see: [domino-rest at GitHub](https://github.com/DominoKit/domino-rest)
+For more information see: [domino-rest at GitHub](https://dominokit.com/solutions/domino-rest/v1) and [domino-jackson at GitHub](https://dominokit.com/solutions/domino-jackson/v1)
 
 ## Validation<a id="validation"></a>
 
@@ -54,4 +54,4 @@ contact the contributor of the project!
 
 ## Missing Something?
 
-If you are missing something, following the instructions located [here](add-lib.html).
+If you are missing a library or a framework from the list, please follow the instructions [here](add-lib.html) to add it.

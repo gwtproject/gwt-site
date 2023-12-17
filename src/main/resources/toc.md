@@ -150,7 +150,7 @@
   - [Eco System](eco/eco-system.html)  
       - [Eco System](eco/eco-system.html)
       - [News](eco/eco-news.html)
-      - [Archetype Creator](eco/archetype.html)
       - [Communication & More](eco/com-and-more.html)
+      - [Application Creator](eco/archetype.html)
       - [Application Frameworks](eco/application.html)
       - [UI Frameworks](eco/ui.html)

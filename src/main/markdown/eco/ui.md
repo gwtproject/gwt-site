@@ -12,7 +12,7 @@ you have the power to refactor and keep your app maintainable all the time, but 
 with the mature set of all tool chain java can provide, this include extremely powerful IDEs and mature build tools 
 like maven and gradle, use domino-ui and bring your java team to the frontend world.
 
-For more information about domino-ui, see: [domino-ui at GitHub](https://github.com/DominoKit/domino-mvp)
+For more information about domino-ui, see: [domino-ui at GitHub](https://dominokit.com/solutions/domino-ui/v2)
 
 ## elemento<a id="elemento"></a>
 
@@ -25,14 +25,14 @@ Elemento simplifies working with GWT Elemental2. In a nutshell Elemento brings t
   - Elemental2 1.1.0 (elemental2-core, elemental2-dom and elemental2-webstorage)
   - GWT project (org.gwtproject.event:gwt-event and org.gwtproject.safehtml:gwt-safehtml)
  
-For more information about domino-ui, see: [elemento at GitHub](https://github.com/hal/elemento)
+For more information about elemento, see: [elemento at GitHub](https://github.com/hal/elemento)
 
 ## gwt-ol<a id="gwt-ol"></a>
 
 With gwt-ol you can write fast mapping applications for web and mobile in pure Java. Technically speaking, it is a GWT
 wrapper for OpenLayers 3+ using the JSInterop-Features of the GWT-SDK.
 
-For more information about domino-ui, see: [gwt-ol at GitHub](https://github.com/TDesjardins/gwt-ol)
+For more information about gwt-ol, see: [gwt-ol at GitHub](https://github.com/TDesjardins/gwt-ol)
 
 ## Support
 
@@ -41,4 +41,4 @@ contact the contributor of the project!
 
 ## Missing Something?
 
-If you are missing something, following the instructions located [here](add-lib.html).
+If you are missing a library or a framework from the list, please follow the instructions [here](add-lib.html) to add it.

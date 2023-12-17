@@ -52,6 +52,24 @@ News of the GWT eco system will be found [here](eco/eco-news.html).
     <div class="container-news">
         <a href="https://matrix.to/#/#gwtproject_gwt:gitter.im" target="_blank">
             <div class="container-headline">
+                New information available!
+            </div>
+        </a>
+        <div class="container-date">
+            December 18, 2023
+        </div>
+        <div class="container-text">
+            We added information of the GWT Eco System. The GWT Eco System is an essential part of the GWT. It provides many frameworks that speed up GWT development or add new features. This page will give someone interested in GWT a better overview. 
+        </div>
+           <a href="eco/eco-system.html" target="_blank">
+            <div class="container-link">
+                Read more 
+            </div>
+        </a>
+    </div>
+   <div class="container-news">
+        <a href="https://matrix.to/#/#gwtproject_gwt:gitter.im" target="_blank">
+            <div class="container-headline">
                 GWT: we are looking for reviewers!
             </div>
         </a>

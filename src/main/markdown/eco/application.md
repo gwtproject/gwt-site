@@ -4,7 +4,7 @@ One of the main tasks, when writing a GWT application is separating the code and
 [MVP Activities and Places](/doc/latest/DevGuideMvpActivitiesAndPlaces.html) modules to do that. Over the
 time other implementations evolved. 
 
-## domino-mvp and domino-historie<a id="domino-mvp-historyt"></a>
+## domino-mvp and domino-history<a id="domino-mvp-history"></a>
 
 Domino-mvp is a small, simple and a very lightweight framework for building both simple and complex applications using
 GWT, it introduce the concept of routing using both tokens and events, also allows the developers to write a modular 
@@ -12,9 +12,9 @@ application and shared components with any other domino application.
 
 For more information about domino-mvp, see: [domino-mvp at GitHub](https://github.com/DominoKit/domino-mvp)
 
-Domino-historie is a wrapper for the browser history state API.
+Domino-history is a wrapper for the browser history state API.
 
-For more information about domino-history, see: [domino-history at GitHub](https://github.com/DominoKit/domino-history)
+For more information about domino-history, see: [domino-history at GitHub](https://dominokit.com/solutions/domino-history/v1)
 
 ## Nalu<a id="nalu"></a>
 
@@ -22,7 +22,7 @@ Nalu is a tiny framework that helps you to create GWT based applications quite e
 routing and navigation, Nalu supports the browser's back-, forward-, and reload-button by default and without any
 need to implement anything.
 
-For more information about domino-history, see: [Nalu at GitHub](https://github.com/NaluKit/nalu)
+For more information about Nalu, see: [Nalu at GitHub](https://github.com/NaluKit/nalu)
 
 ## Support
 
@@ -31,4 +31,4 @@ contact the contributor of the project!
 
 ## Missing Something?
 
-If you are missing something, following the instructions located [here](add-lib.html).
+If you are missing a library or a framework from the list, please follow the instructions [here](add-lib.html) to add it.

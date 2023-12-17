@@ -1,15 +1,15 @@
-# Archetypes Creator
+# Creating GWT applications
 
-The GWT framework comes with an archetype creator known as **webAppCreator**. This **webAppCreator** creates 
+The GWT framework comes with an application creator known as **webAppCreator**. This **webAppCreator** creates 
 a simple Maven project with some test code. It is ready use, will launch and while running, do a RPC server call. All 
 classes are located in one Maven project.
 
-Besides the **webAppCreator** there are more archetypes creator. Depending on your needs, this archetype creator might be 
+Besides the **webAppCreator** there are more application creator. Depending on your needs, this archetype creator might be 
 a better choice for your needs.
 
-## Creators
+## Application Creators
 
-Here are a list of archetype creator. As far as we known, all of this projects are under active development.
+Here are a list of application creator. As far as we known, all of this projects are under active development.
 
 ### gwt-maven-archetypes<a id="create-third-party-tb"></a>
 
@@ -43,4 +43,4 @@ contact the contributor of the project!
 
 ## Missing Something?
 
-If you are missing an archetype creator, following the instructions located [here](add-lib.html).
+If you are missing a library or a archetype creator from the list, please follow the instructions [here](add-lib.html) to add it.
