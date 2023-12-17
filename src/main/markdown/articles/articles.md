@@ -60,7 +60,7 @@ JSON services across the web.
 
 **Externally hosted articles:**
 
-*   [Modern GWT, first steps(https://dev.to/ibaca/modern-gwt-first-steps-509k) - _contributed by Ignacio Baca Moreno-Torres - November 2018
+*   [Modern GWT, first steps](https://dev.to/ibaca/modern-gwt-first-steps-509k) - contributed by Ignacio Baca Moreno-Torres - November 2018
 
 **Modern GWT, first steps** is a great introduction to GWT. It creates a GWT project using the gwt-maven-archetypes and walks through a project to explain the essentials as well as some of the advanced concepts of GWT 2. Level - Beginner and Intermediate. 
 
