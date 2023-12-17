@@ -170,7 +170,7 @@ in your browser. Select the `Sources`-tab and press `ctrl-P` (Windows) or `cmd-P
 <div class="screenshot"><a href="images/sdm-debugger.png"><img src="images/sdm-debugger.png" alt="Screenshot" width="42%"/></a></div>
 
 Now, the source code of the `App.java` class is displayed in the debugger. Add a breakpoint by clicking of Line number 94. Now press the send button.
-The execution will stop at line 94 in the debugger. The stacktrace is visible, teh content of the variable, etc. 
+The execution will stop at line 94 in the debugger. The stacktrace is visible, the content of the variable, etc. 
 
 <div class="screenshot"><a href="images/sdm-debugger-breakpoint.png"><img src="images/sdm-debugger-breakpoint.png" alt="Screenshot" width="42%"/></a></div>
 
