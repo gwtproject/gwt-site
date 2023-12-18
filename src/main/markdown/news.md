@@ -3,7 +3,7 @@ GWT News
 
 This news page is the official source for update from the GWT team or GWT related projects. Anything important will be posted here. This page will give you an impression about things happening in the GWT community. 
 
-In case you have a news worth for showing here, please open an issue: [add news](https://github.com/gwtproject/gwt-site/issues).
+In case you have a news worth for showing here, [open an issue on our tracker](https://github.com/gwtproject/gwt-site/issues/new/choose).
 We will add the news as soon as possible.
 
 <style>
