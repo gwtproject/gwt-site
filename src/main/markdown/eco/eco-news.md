@@ -1,8 +1,8 @@
 GWT News
 ===
 
-This news page is the source for updates from GWT related projects. Maintainers have to create an
-[issue](https://github.com/gwtproject/gwt-site/issues) to add a news on this page.
+This news page is the source for updates from GWT related projects. Maintainers have to [open an issue
+on our tracker](https://github.com/gwtproject/gwt-site/issues/new/choose) to add or update a news on this page.
 
 Updates about the official GWT team will be found [here](news.html).
 

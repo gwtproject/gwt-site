@@ -5,8 +5,8 @@ We will add or update information on request.
 ## Request for adding Libraries to the Eco System site
 
 The GWT eco system is a living system. New libs will be created, other will be end of life. Also we know, that there are
-much more libraries outside. If you think, one library not listed here is worth to be mentioned, open an issue
-[here](https://github.com/gwtproject/gwt-site). This will trigger a process to get mentioned in the eco system content.
+much more libraries outside. If you think, one library not listed here is worth to be mentioned, [open an issue
+on our tracker](https://github.com/gwtproject/gwt-site/issues/new/choose). This will trigger a process to get mentioned in the eco system content.
 
 We will expect:
 
@@ -19,7 +19,8 @@ We will expect:
 
 ## Request for updating Library-Information
 
-To update information of an already added library, open an issue [here](https://github.com/gwtproject/gwt-site) 
+To update information of an already added library, [open an issue
+on our tracker](https://github.com/gwtproject/gwt-site/issues/new/choose) 
 containing the desired changes.
 
 Changes can only be requested from contributor of the library.
