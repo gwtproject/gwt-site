@@ -77,7 +77,7 @@ module-short-name: mywebapp
 
 Enter **Y** to continue.
 
-The new project will now be generated and you see something like that:
+Now, the new project will be generated and you see something like that:
 
 ```
 [INFO] ----------------------------------------------------------------------------
@@ -108,7 +108,7 @@ The new project will now be generated and you see something like that:
 
 Switch to the generated directory by entering `cd mywebapp`.
 
-A listing of the directory (**Windows**: dir, **Mac and Linux**: ls -la), we will see something like this: 
+Listing of the directory (**Windows**: dir, **Mac and Linux**: ls -la), shows: 
 
 ```
 drwxr-xr-x@  6 gwt-user  staff   192 Dec 17 17:38 .
@@ -139,14 +139,14 @@ Now, switch to your preferred browser (we suggest using: Chrome, FireFox or Oper
 http://lcoalhost:8080
 ```
 
-Now, the application is running in super dev mode. You will see something like this in the browser:
+Yet, the application is running in super dev mode. You see something like this in the browser:
 
 <div class="screenshot"><a href="images/mywebapp.png"><img src="images/mywebapp.png" alt="Screenshot" width="42%"/></a></div>
 
 ## Make a few changes<a id="change"></a>
 
-Let's change the label of the button. Because this is something on the client side, we need to locate the source code in the client module of the project. 
-The source code is located in the `mywebapp-client/src/main/java/com/mycompany/mywebapp` subdirectory. The source code is located in the `App.java` class.
+Let's change the label of the button. Because this is something on the client side, we need to locate the source code in the client module. 
+The source code is located in the `mywebapp-client/src/main/java/com/mycompany/mywebapp` subdirectory and the source in the `App.java` class.
 
 Look inside `App.java`. Line 42 constructs the "Send" button.
 
@@ -160,7 +160,7 @@ Change the text from "Send" to "Send to Server".
 final Button sendButton = new Button("Send to Server");
 ```
 
-Now, save the file and simply click "Refresh" in your browser to see your change. The button should now say "Send to Server" instead of "Send":
+Save the file and simply click "Refresh" in your browser to see your change. The button should now say "Send to Server" instead of "Send":
 
 ## Debugging the browser<a id="bebug"></a>
 
@@ -169,8 +169,8 @@ in your browser. Select the `Sources`-tab and press `ctrl-P` (Windows) or `cmd-P
 
 <div class="screenshot"><a href="images/sdm-debugger.png"><img src="images/sdm-debugger.png" alt="Screenshot" width="42%"/></a></div>
 
-Now, the source code of the `App.java` class is displayed in the debugger. Add a breakpoint by clicking of Line number 94. Now press the send button.
-The execution will stop at line 94 in the debugger. The stacktrace is visible, the content of the variable, etc. 
+The source code of the `App.java` class is displayed in the debugger. Add a breakpoint by clicking of Line number 94. Press the send button.
+The execution will stop at line 94. The stacktrace is visible, the content of the variable, etc. 
 
 <div class="screenshot"><a href="images/sdm-debugger-breakpoint.png"><img src="images/sdm-debugger-breakpoint.png" alt="Screenshot" width="42%"/></a></div>
 
@@ -185,8 +185,8 @@ mvn clean package
 The Maven "package" goal invokes the GWT compiler which generates a number of JavaScript and HTML files from the
 MyWebApp Java source code in the `target/` subdirectory.  There you will find a `mywebapp-server-HEAD-SNAPSHOT.war`.
 You can deploy this war file to every servlet engine and run it. Once running, enter `mywebapp-server-HEAD-SNAPSHOT/index.html`
-in your web browser.  The application should look identical to the super dev mode above. you can change the name of the war using
-Maven ' buildname`.
+in your web browser.  The application should look identical to the super dev mode above. You can change the name of the war using
+Maven 'buildname`.
 
 Congratulations! You've created your first web application using GWT.
 Since you've compiled the project, you're now running pure JavaScript and
