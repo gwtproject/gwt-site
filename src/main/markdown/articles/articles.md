@@ -81,5 +81,5 @@ Simple Example for Accessing JavaScript Frameworks from Java GWT with Elemental2
 
 GWT Boot Awesome Library List (Gwit a LiLi) - Collection of JavaScript Libraries with JsInterop Interfaces and Others.
 
-If you believe that any resource, article or example should be added, updated or removed from the list, open an issue
-[here](https://github.com/gwtproject/gwt-site).
+If you believe that any resource, article or example should be added, updated or removed from the list, [open an issue
+on our tracker](https://github.com/gwtproject/gwt-site/issues/new/choose).
