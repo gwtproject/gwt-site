@@ -1,7 +1,7 @@
 IE9
 ===
 
-**Starting with version 2.10.0, GWT no longer support IE9!**
+**This document is deprecated: Starting with version 2.10.0, GWT no longer supports IE9!**
 
 ## Things to keep in mind<a id="Overview"></a>
 
