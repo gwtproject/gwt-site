@@ -5,10 +5,13 @@ We are planing some exciting features and changes for the upcoming releases of t
 
 ## Release 2.12.0
 
-*   Deprecating classic `DevMode`
+* Deprecating classic `DevMode`
 
 
-*   Catching up on Java language features up to 21 
+* Catching up on Java language features up to 21 
+
+
+* Explore @JsEnum support in GWT
 
 
 ## Release 2.13.0
