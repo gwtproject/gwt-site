@@ -4,23 +4,18 @@ We will add or update information on request.
 
 ## Request for adding Libraries to the Eco System site
 
-The GWT eco system is a living system. New libs will be created, other will be end of life. Also we know, that there are
-much more libraries outside. If you think, one library not listed here is worth to be mentioned, [open an issue
+The GWT eco system is a living system. New dependency will be created, other will be end of life. Also we know, that there are
+much more dependency outside. If you think, one dependency not listed here is worth to be mentioned, [open an issue
 on our tracker](https://github.com/gwtproject/gwt-site/issues/new/choose). This will trigger a process to get mentioned in the eco system content.
 
 We will expect:
 
-* The Issue must be created by a contributor of the library
-* The Library must be under active development
-* The Library must be well documented
-* The Library must be deployed to Maven central
-* The Library must be an Open Source project
-* The Library requires a Apache 2 Licence
+* The dependency must be maintained
+* The dependency must be well documented
+* The dependency must be deployed to Maven central
+* The dependency must be an Open Source project
 
 ## Request for updating Library-Information
 
-To update information of an already added library, [open an issue
-on our tracker](https://github.com/gwtproject/gwt-site/issues/new/choose) 
-containing the desired changes.
-
-Changes can only be requested from contributor of the library.
+To update information of an already added dependency, [open an issue
+on our tracker](https://github.com/gwtproject/gwt-site/issues/new/choose) containing the desired changes.
