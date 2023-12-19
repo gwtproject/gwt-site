@@ -40,7 +40,7 @@ and Java.
 
 For more information, see: [malio at GitHub](https://github.com/NaluKit/malio)
 
-### gwt-bean-validators<a id="wt-bean-validators"></a>
+### gwt-bean-validators<a id="gwt-bean-validators"></a>
 
 Implementation of Bean Validation (JSR-303/JSR-349/JSR-380) for GWT as replacement of deprecated GWT internal validation
 implementation.
