@@ -49,7 +49,7 @@ For more information, see: [gwt-bean-validators at GitLab](https://gitlab.com/Ma
 
 ## Support
 
-The GWT project team does not support this projects. In case you have questions or would like to open an issue, please
+The GWT project team does not support these projects. In case you have questions or would like to open an issue, please
 contact the contributor of the project!
 
 ## Missing Something?
