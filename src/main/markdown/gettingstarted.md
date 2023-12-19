@@ -193,6 +193,10 @@ Since you've compiled the project, you're now running pure JavaScript and
 HTML that works in Edge, Chrome, Firefox, Safari, and Opera. You could now deploy
 your application to production by serving the HTML and JavaScript files from your servlet engine.
 
+In case you prefer a Spring Boot server, check the 
+[gwt-maven-springboot-archetype](https://github.com/NaluKit/gwt-maven-springboot-archetype) plugin. It creates a
+project in a similar way, but uses Spring Boot instead of Jetty on the server side.
+
 ## Set up an IDE<a id="setup"></a>
 
 Now that you've created your first app, you probably want to do something a
