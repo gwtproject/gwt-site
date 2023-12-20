@@ -1,21 +1,8 @@
 Roadmap
 ===
 
-We are planing some exciting features and changes for the upcoming releases of the GWT SDK. As usual, when planing something, there can be changes. Things mentioned here are plans and there is no guarantee that the release will contain it.
+GWT's roadmap is planned on Github using [Github Milestones](https://github.com/gwtproject/gwt/milestones). Milestones will cover the next two releases and because priorities can change please check milestones directly on Github for all the details.
 
-## Release 2.12.0
-
-* Deprecating classic `DevMode`
-
-
-* Catching up on Java language features up to 21 
-
-
-* Explore @JsEnum support in GWT
-
-
-## Release 2.13.0
-
-* Removing classic  `DevMode`
+As a high level goal next releases of GWT focus on bringing Java language features as well as JRE emulation up to Java 21. Additionally GWT explores support of some J2CL exclusive JsInterop features in GWT compiler.
 
 
