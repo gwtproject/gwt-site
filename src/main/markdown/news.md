@@ -51,78 +51,6 @@ We will add the news as soon as possible.
 </style>
 <div class="container-list-news">
     <div class="container-news">
-        <a href="https://github.com/DominoKit/domino-jackson/releases/tag/1.0.4" target="_blank">
-            <div class="container-headline">
-                DominoKit: domino-jackson 1.0.4 released
-            </div>
-        </a>
-        <div class="container-date">
-            December 10, 2023
-        </div>
-        <div class="container-text">
-            The releases introduced a better way to do super sources that is compatible with GWT and J2CL, upgraded dependencies, moved to java 11 and introduces custom (de)serializers support.
-        </div>
-           <a href="https://github.com/DominoKit/domino-jackson/releases/tag/1.0.4" target="_blank">
-            <div class="container-link">
-                Read more 
-            </div>
-        </a>
-    </div>
-    <div class="container-news">
-        <a href="https://github.com/DominoKit/domino-rest" target="_blank">
-            <div class="container-headline">
-                DominoKit: domino-rest 1.0.2 released
-            </div>
-        </a>
-        <div class="container-date">
-            December 10, 2023
-        </div>
-        <div class="container-text">
-            The releases introduced a better way to do super sources that is compatible with GWT and J2CL, upgraded dependencies, moved to java 11 and fixes some minor issues.
-        </div>
-           <a href="https://github.com/DominoKit/domino-rest" target="_blank">
-            <div class="container-link">
-                Read more 
-            </div>
-        </a>
-    </div>
-    <div class="container-news">
-        <a href="https://github.com/DominoKit/domino-ui/releases/tag/1.0.6" target="_blank">
-            <div class="container-headline">
-                DominoKit: domino-ui 1.0.6 released
-            </div>
-        </a>
-        <div class="container-date">
-            December 10, 2023
-        </div>
-        <div class="container-text">
-            Adds a new method to the LocalListScrollingDataSource. Check the release notes for more information.
-        </div>
-           <a href="https://github.com/DominoKit/domino-ui/releases/tag/1.0.6" target="_blank">
-            <div class="container-link">
-                Read more 
-            </div>
-        </a>
-    </div>
-   <div class="container-news">
-        <a href="https://github.com/DominoKit/domino-ui/releases/tag/2.0.0-RC5" target="_blank">
-            <div class="container-headline">
-                DominoKit: domino-ui 2.0.0-RC5 released
-            </div>
-        </a>
-        <div class="container-date">
-            December 10, 2023
-        </div>
-        <div class="container-text">
-            Adds a lot of enhancements and features. The release also contains a lot of bug fixes. To get a full list of enhancements, features and bug fixes, check the release notes.
-        </div>
-           <a href="https://github.com/DominoKit/domino-ui/releases/tag/2.0.0-RC5" target="_blank">
-            <div class="container-link">
-                Read more 
-            </div>
-        </a>
-    </div>
-    <div class="container-news">
         <a href="https://matrix.to/#/#gwtproject_gwt:gitter.im" target="_blank">
             <div class="container-headline">
                 GWT: we are looking for reviewers!
@@ -137,24 +65,6 @@ We will add the news as soon as possible.
            <a href="https://matrix.to/#/#gwtproject_gwt:gitter.im" target="_blank">
             <div class="container-link">
                 Let me help 
-            </div>
-        </a>
-    </div>
-    <div class="container-news">
-        <a href="https://github.com/DominoKit/domino-rest/releases/tag/1.0.1" target="_blank">
-            <div class="container-headline">
-                DominoKit: domino-rest version 1.0.1 released
-            </div>
-        </a>
-        <div class="container-date">
-            November 28, 2023
-        </div>
-        <div class="container-text">
-            Update emulation and super sources to be compatible with gwt and j2cl, move to java 11 and upgrade dependencies.
-        </div>
-           <a href="https://github.com/DominoKit/domino-rest/releases/tag/1.0.1" target="_blank">
-            <div class="container-link">
-                Read more
             </div>
         </a>
     </div>
@@ -189,24 +99,6 @@ We will add the news as soon as possible.
             The second release candidate of the gwt-core module has been released today.
         </div>
         <a href="https://github.com/gwtproject/gwt-core/releases/tag/v1.0.0-RC2" target="_blank">
-            <div class="container-link">
-                Read more
-            </div>
-        </a>
-  </div>
-    <div class="container-news">
-        <a href="https://github.com/NaluKit/nalu/releases/tag/2.12.6" target="_blank">
-            <div class="container-headline">
-                NaluKit: nalu version 2.12.6 released
-            </div>
-        </a>
-        <div class="container-date">
-            September 12, 2023
-        </div>
-        <div class="container-text">
-            This is a bug fix release. It fixes an issue related to reloading a page in a non hash context.
-        </div>
-        <a href="https://github.com/NaluKit/nalu/releases/tag/2.12.6" target="_blank">
             <div class="container-link">
                 Read more
             </div>
