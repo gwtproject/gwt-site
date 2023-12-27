@@ -1,15 +1,15 @@
 Getting Started
 ===
 
-Starting with 2.11.0 of the GWT SDK the webAppCreator is deprecated and will be removed in a future version. Instead, 
-we will use the [gwt-maven-archetypes](https://github.com/tbroyer/gwt-maven-archetypes) by Thomas Broyer to create a new
-GWT project. Using the **artifactId: modular-webapp** the plugin generates a Maven project with separate modules for
+Starting with 2.11.0 of the GWT SDK the [webAppCreator](gettingstarted-outdated.html) is deprecated. Instead, we will use 
+the [gwt-maven-archetypes](https://github.com/tbroyer/gwt-maven-archetypes) by Thomas Broyer to create a new GWT project. Using the **artifactId: modular-webapp** 
+the plugin generates a Maven project with separate modules for
 
 * client
 * server
 * shared.
 
-Separation of code is the way to go in modern web development. 
+**Separation of code is the way to go in modern web development.** 
 
 ## TOC
 
@@ -23,11 +23,11 @@ Separation of code is the way to go in modern web development.
 
 ## Prerequisites<a id="prereqs"></a>
 
-1.  You will need the Java SDK version 11 or later. If necessary, download and
+1.  GWT 2.11.0 still supports Java 8 (running and building). We suggest to use at least Java 11 or 17. If necessary, download and
     install the Java SE Development Kit (JDK) <a href="https://adoptium.net/de/temurin/releases/" 
     rel="nofollow">from Eclipse Temurin</a> for your platform. Install the JDK by following the 
     installation instructions. 
-2.  Apache Maven is also necessary to run the gwt-maven-archetype. command line arguments in this sample. If
+2.  Apache Maven is also necessary to run the gwt-maven-archetype. In this sample the Maven CLI is used. If
     you don't already have it, install <a href="https://maven.apache.org/download.cgi" rel="nofollow">Apache Maven</a>.
 
 If you have problems running the gwt-maven-archetype from the command line, try setting the
