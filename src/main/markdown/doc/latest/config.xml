@@ -3,77 +3,77 @@
 
 <folder href="DevGuide.html">
 	<toc>
-		<entries>
-			<entry name="DevGuide" displayName="Overview" description="Overview of the GWT docs"></entry>
-			<entry name="DevGuideA11y" displayName="Accessibility" description="Accessibility"></entry>
-			<entry name="DevGuideClientBundle" displayName="ClientBundle" description="ClientBundle"></entry>
-			<entry name="DevGuideCodeSplitting" displayName="Code Splitting" description="Code Splitting"></entry>
-			<entry name="DevGuideCodingBasics" displayName="Coding Basics" description="Coding Basics"></entry>
-			<entry name="DevGuideCodingBasicsClient" displayName="Coding Basics Client" description="Coding Basics Client"></entry>
-			<entry name="DevGuideCodingBasicsCompatibility" displayName="Coding Basics Compatibility" description="Coding Basics Compatibility"></entry>
-			<entry name="DevGuideCodingBasicsDeferred" displayName="Coding Basics Deferred" description="Coding Basics Deferred"></entry>
-			<entry name="DevGuideCodingBasicsDelayed" displayName="Coding Basics Delayed" description="Coding Basics Delayed"></entry>
-			<entry name="DevGuideCodingBasicsFormatting" displayName="Coding Basics Formatting" description="Coding Basics Formatting"></entry>
-			<entry name="DevGuideCodingBasicsHistory" displayName="Coding Basics History" description="Coding Basics History"></entry>
-			<entry name="DevGuideCodingBasicsJSNI" displayName="Coding Basics JSNI" description="Coding Basics JSNI"></entry>
-			<entry name="DevGuideCodingBasicsJSON" displayName="Coding Basics JSON" description="Coding Basics JSON"></entry>
-			<entry name="DevGuideCodingBasicsOverlay" displayName="Coding Basics Overlay" description="Coding Basics Overlay"></entry>
-			<entry name="DevGuideCodingBasicsXML" displayName="Coding Basics XML" description="Coding Basics XML"></entry>
-			<entry name="DevGuideCompileReport" displayName="Compile Report" description="Compile Report"></entry>
-			<entry name="DevGuideCompilingAndDebugging" displayName="Compiling And Debugging" description="Compiling And Debugging"></entry>
-			<entry name="DevGuideDeploying" displayName="Deploying" description="Deploying"></entry>
-			<entry name="DevGuideGlossary" displayName="Glossary" description="Glossary"></entry>
-			<entry name="DevGuideHtml5" displayName="Html5" description="Html5"></entry>
-			<entry name="DevGuideHtml5Storage" displayName="Html5 Storage" description="Html5 Storage"></entry>
-			<entry name="DevGuideI18n" displayName="I18n" description="Internationalization"></entry>
-			<entry name="DevGuideI18nConstants" displayName="I18n Constants" description="I18n Constants"></entry>
-			<entry name="DevGuideI18nLocale" displayName="I18n Locale" description="I18n Locale"></entry>
-			<entry name="DevGuideI18nMessages" displayName="I18n Messages" description="I18n Messages"></entry>
-			<entry name="DevGuideI18nPluralForms" displayName="I18n Plural Forms" description="I18n Plural Forms"></entry>
-			<entry name="DevGuideIE9" displayName="Internet Explorer 9" description="Internet Explorer 9"></entry>
-			<entry name="DevGuideLightweightMetrics" displayName="Lightweight Metrics" description="Lightweight Metrics"></entry>
-			<entry name="DevGuideLogging" displayName="Logging" description="Logging"></entry>
-			<entry name="DevGuideMvpActivitiesAndPlaces" displayName="MVP Activities And Places" description="MVP Activities And Places"></entry>
-			<entry name="DevGuideOptimizing" displayName="Optimizing" description="Optimizing"></entry>
-			<entry name="DevGuideOrganizingProjects" displayName="Organizing Projects" description="Organizing Projects"></entry>
-			<entry name="DevGuideRequestFactory" displayName="Request Factory" description="Request Factory"></entry>
-			<entry name="DevGuideSecurity" displayName="Security" description="Security"></entry>
-			<entry name="DevGuideSecurityRpcXsrf" displayName="Security Rpc Xsrf" description="Security Rpc Xsrf"></entry>
-			<entry name="DevGuideSecuritySafeHtml" displayName="Security SafeHtml" description="Security SafeHtml"></entry>
-			<entry name="DevGuideServerCommunication" displayName="Server Communication" description="Server Communication"></entry>
-			<entry name="DevGuideTesting" displayName="Testing" description="Testing"></entry>
-			<entry name="DevGuideTestingCoverage" displayName="Testing Coverage" description="Testing Coverage"></entry>
-			<entry name="DevGuideTestingHtmlUnit" displayName="Testing Html Unit" description="Testing Html Unit"></entry>
-			<entry name="DevGuideTestingRemoteTesting" displayName="Testing Remote Testing" description="Testing Remote Testing"></entry>
-			<entry name="DevGuideUi" displayName="UI" description="UI"></entry>
-			<entry name="DevGuideUiBinder" displayName="UI Binder" description="UI Binder"></entry>
-			<entry name="DevGuideUiBinderI18n" displayName="UI Binder I18n" description="UI Binder I18n"></entry>
-			<entry name="DevGuideUiBrowser" displayName="UI Browser" description="UI Browser"></entry>
-			<entry name="DevGuideUiCellTable" displayName="UI CellTable" description="UI CellTable"></entry>
-			<entry name="DevGuideUiCellWidgets" displayName="UI Cell Widgets" description="UI Cell Widgets"></entry>
-			<entry name="DevGuideUiCss" displayName="UI Css" description="UI Css"></entry>
-			<entry name="DevGuideUiCustomCells" displayName="UI Custom Cells" description="UI Custom Cells"></entry>
-			<entry name="DevGuideUiCustomWidgets" displayName="UI Custom Widgets" description="UI Custom Widgets"></entry>
-			<entry name="DevGuideUiDom" displayName="UI DOM" description="UI DOM"></entry>
-			<entry name="DevGuideUiEditors" displayName="UI Editors" description="UI Editors"></entry>
-			<entry name="DevGuideUiHandlers" displayName="UI Handlers" description="UI Handlers"></entry>
-			<entry name="DevGuideUiImageBundles" displayName="UI Image Bundles" description="UI Image Bundles"></entry>
-			<entry name="DevGuideUiPanels" displayName="UI Panels" description="UI Panels"></entry>
-			<entry name="DevGuideUiWidgets" displayName="UI Widgets" description="UI Widgets"></entry>
-			<entry name="DevGuideValidation" displayName="Validation" description="Validation"></entry>
-			<entry name="FAQ_Client" displayName="FAQ Client" description="FAQ Client"></entry>
-			<entry name="FAQ_DebuggingAndCompiling" displayName="FAQ Debugging And Compiling" description="FAQ Debugging And Compiling"></entry>
-			<entry name="FAQ_GettingStarted" displayName="FAQ Getting Started" description="FAQ Getting Started"></entry>
-			<entry name="FAQ_Server" displayName="FAQ Server" description="FAQ Server"></entry>
-			<entry name="FAQ_Troubleshooting" displayName="FAQ Troubleshooting" description="FAQ Troubleshooting"></entry>
-			<entry name="FAQ_UI" displayName="FAQ UI" description="FAQ UI"></entry>
-			<entry name="FAQ" displayName="FAQ" description="FAQ"></entry>
-			<entry name="RefCommandLineTools" displayName="Ref Command Line Tools" description="Ref Command Line Tools"></entry>
-			<entry name="RefGuide" displayName="Ref Guide" description="Ref Guide"></entry>
-			<entry name="RefGWTClassAPI" displayName="Ref GWT Class API" description="Ref GWT Class API"></entry>
-			<entry name="RefJreEmulation" displayName="Ref Jre Emulation" description="Ref Jre Emulation"></entry>
-			<entry name="RefWidgetGallery" displayName="Ref Widget Gallery" description="Ref Widget Gallery"></entry>
-			<entry name="ReleaseNotes" displayName="Release Notes" description="Release Notes"></entry>
-		</entries>
-	</toc>
+  	<entries>
+  		<entry name="DevGuide" displayName="Overview" description="Overview of the GWT docs"></entry>
+  		<entry name="DevGuideA11y" displayName="Accessibility" description="Accessibility"></entry>
+  		<entry name="DevGuideClientBundle" displayName="ClientBundle" description="ClientBundle"></entry>
+  		<entry name="DevGuideCodeSplitting" displayName="Code Splitting" description="Code Splitting"></entry>
+  		<entry name="DevGuideCodingBasics" displayName="Coding Basics" description="Coding Basics"></entry>
+  		<entry name="DevGuideCodingBasicsClient" displayName="Coding Basics Client" description="Coding Basics Client"></entry>
+  		<entry name="DevGuideCodingBasicsCompatibility" displayName="Coding Basics Compatibility" description="Coding Basics Compatibility"></entry>
+  		<entry name="DevGuideCodingBasicsDeferred" displayName="Coding Basics Deferred" description="Coding Basics Deferred"></entry>
+  		<entry name="DevGuideCodingBasicsDelayed" displayName="Coding Basics Delayed" description="Coding Basics Delayed"></entry>
+  		<entry name="DevGuideCodingBasicsFormatting" displayName="Coding Basics Formatting" description="Coding Basics Formatting"></entry>
+  		<entry name="DevGuideCodingBasicsHistory" displayName="Coding Basics History" description="Coding Basics History"></entry>
+  		<entry name="DevGuideCodingBasicsJSNI" displayName="Coding Basics JSNI" description="Coding Basics JSNI"></entry>
+  		<entry name="DevGuideCodingBasicsJSON" displayName="Coding Basics JSON" description="Coding Basics JSON"></entry>
+  		<entry name="DevGuideCodingBasicsOverlay" displayName="Coding Basics Overlay" description="Coding Basics Overlay"></entry>
+  		<entry name="DevGuideCodingBasicsXML" displayName="Coding Basics XML" description="Coding Basics XML"></entry>
+  		<entry name="DevGuideCompileReport" displayName="Compile Report" description="Compile Report"></entry>
+  		<entry name="DevGuideCompilingAndDebugging" displayName="Compiling And Debugging" description="Compiling And Debugging"></entry>
+  		<entry name="DevGuideDeploying" displayName="Deploying" description="Deploying"></entry>
+  		<entry name="DevGuideGlossary" displayName="Glossary" description="Glossary"></entry>
+  		<entry name="DevGuideHtml5" displayName="Html5" description="Html5"></entry>
+  		<entry name="DevGuideHtml5Storage" displayName="Html5 Storage" description="Html5 Storage"></entry>
+  		<entry name="DevGuideI18n" displayName="I18n" description="Internationalization"></entry>
+  		<entry name="DevGuideI18nConstants" displayName="I18n Constants" description="I18n Constants"></entry>
+  		<entry name="DevGuideI18nLocale" displayName="I18n Locale" description="I18n Locale"></entry>
+  		<entry name="DevGuideI18nMessages" displayName="I18n Messages" description="I18n Messages"></entry>
+  		<entry name="DevGuideI18nPluralForms" displayName="I18n Plural Forms" description="I18n Plural Forms"></entry>
+  		<entry name="DevGuideIE9" displayName="Internet Explorer 9" description="Internet Explorer 9"></entry>
+  		<entry name="DevGuideLightweightMetrics" displayName="Lightweight Metrics" description="Lightweight Metrics"></entry>
+  		<entry name="DevGuideLogging" displayName="Logging" description="Logging"></entry>
+  		<entry name="DevGuideMvpActivitiesAndPlaces" displayName="MVP Activities And Places" description="MVP Activities And Places"></entry>
+  		<entry name="DevGuideOptimizing" displayName="Optimizing" description="Optimizing"></entry>
+  		<entry name="DevGuideOrganizingProjects" displayName="Organizing Projects" description="Organizing Projects"></entry>
+  		<entry name="DevGuideRequestFactory" displayName="Request Factory" description="Request Factory"></entry>
+  		<entry name="DevGuideSecurity" displayName="Security" description="Security"></entry>
+  		<entry name="DevGuideSecurityRpcXsrf" displayName="Security Rpc Xsrf" description="Security Rpc Xsrf"></entry>
+  		<entry name="DevGuideSecuritySafeHtml" displayName="Security SafeHtml" description="Security SafeHtml"></entry>
+  		<entry name="DevGuideServerCommunication" displayName="Server Communication" description="Server Communication"></entry>
+  		<entry name="DevGuideTesting" displayName="Testing" description="Testing"></entry>
+  		<entry name="DevGuideTestingCoverage" displayName="Testing Coverage" description="Testing Coverage"></entry>
+  		<entry name="DevGuideTestingHtmlUnit" displayName="Testing Html Unit" description="Testing Html Unit"></entry>
+  		<entry name="DevGuideTestingRemoteTesting" displayName="Testing Remote Testing" description="Testing Remote Testing"></entry>
+  		<entry name="DevGuideUi" displayName="UI" description="UI"></entry>
+  		<entry name="DevGuideUiBinder" displayName="UI Binder" description="UI Binder"></entry>
+  		<entry name="DevGuideUiBinderI18n" displayName="UI Binder I18n" description="UI Binder I18n"></entry>
+  		<entry name="DevGuideUiBrowser" displayName="UI Browser" description="UI Browser"></entry>
+  		<entry name="DevGuideUiCellTable" displayName="UI CellTable" description="UI CellTable"></entry>
+  		<entry name="DevGuideUiCellWidgets" displayName="UI Cell Widgets" description="UI Cell Widgets"></entry>
+  		<entry name="DevGuideUiCss" displayName="UI Css" description="UI Css"></entry>
+  		<entry name="DevGuideUiCustomCells" displayName="UI Custom Cells" description="UI Custom Cells"></entry>
+  		<entry name="DevGuideUiCustomWidgets" displayName="UI Custom Widgets" description="UI Custom Widgets"></entry>
+  		<entry name="DevGuideUiDom" displayName="UI DOM" description="UI DOM"></entry>
+  		<entry name="DevGuideUiEditors" displayName="UI Editors" description="UI Editors"></entry>
+  		<entry name="DevGuideUiHandlers" displayName="UI Handlers" description="UI Handlers"></entry>
+  		<entry name="DevGuideUiImageBundles" displayName="UI Image Bundles" description="UI Image Bundles"></entry>
+  		<entry name="DevGuideUiPanels" displayName="UI Panels" description="UI Panels"></entry>
+  		<entry name="DevGuideUiWidgets" displayName="UI Widgets" description="UI Widgets"></entry>
+  		<entry name="DevGuideValidation" displayName="Validation" description="Validation"></entry>
+  		<entry name="FAQ_Client" displayName="FAQ Client" description="FAQ Client"></entry>
+  		<entry name="FAQ_DebuggingAndCompiling" displayName="FAQ Debugging And Compiling" description="FAQ Debugging And Compiling"></entry>
+  		<entry name="FAQ_GettingStarted" displayName="FAQ Getting Started" description="FAQ Getting Started"></entry>
+  		<entry name="FAQ_Server" displayName="FAQ Server" description="FAQ Server"></entry>
+  		<entry name="FAQ_Troubleshooting" displayName="FAQ Troubleshooting" description="FAQ Troubleshooting"></entry>
+  		<entry name="FAQ_UI" displayName="FAQ UI" description="FAQ UI"></entry>
+  		<entry name="FAQ" displayName="FAQ" description="FAQ"></entry>
+  		<entry name="RefCommandLineTools" displayName="Ref Command Line Tools" description="Ref Command Line Tools"></entry>
+  		<entry name="RefGuide" displayName="Ref Guide" description="Ref Guide"></entry>
+  		<entry name="RefGWTClassAPI" displayName="Ref GWT Class API" description="Ref GWT Class API"></entry>
+  		<entry name="RefJreEmulation" displayName="Ref Jre Emulation" description="Ref Jre Emulation"></entry>
+  		<entry name="RefWidgetGallery" displayName="Ref Widget Gallery" description="Ref Widget Gallery"></entry>
+  		<entry name="ReleaseNotes" displayName="Release Notes" description="Release Notes"></entry>
+  	</entries>
+  </toc>
 </folder>
