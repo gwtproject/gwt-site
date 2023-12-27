@@ -4,7 +4,7 @@ Using IntelliJ
 GWT provides a set of tools that can simply be used with a
 text editor, the command line, and a browser. However, you may also use GWT with your
 favorite IDE. The Idea IntelliJ Ultimate Edition provides a GWT plugin, but the free Idea IntelliJ Community Edition 
-is all you need. IntelliJ provides an awesome Maven support. That is all, thatis  really necessary.
+is all you need. IntelliJ provides awesome Maven support, enabling the IDE to read the project classpath, and easily create run configurations for compiling and running a GWT project.
 
 *   [Download IntelliJ](#intellij)
 *   [Import a Web Application](#importing)
