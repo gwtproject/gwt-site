@@ -1,7 +1,7 @@
 Getting Started
 ===
 
-Note: Starting with GWT 2.11.0 the webAppCreator is deprecated. New instructions located [here](gettingstarted.hmtl). 
+Note: Starting with GWT 2.11.0 the webAppCreator is deprecated, please see the [new instructions](gettingstarted.html). 
 
 
 *  [Prerequisites](#prereqs)
