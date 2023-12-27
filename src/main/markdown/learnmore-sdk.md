@@ -111,8 +111,8 @@ GWT is free, and all of the [code](https://gwt.googlesource.com/) is available u
 
 ## Ready to get started?
 
-<a href="gettingstarted.html">
+<a href="*arted.html">
   <img src="images/arrow-md.png" style="float: left; margin:10px 10px 0px 0px; border-style:none; width: 80px; height: 80px" />
 </a>
 
-[Download the SDK](gettingstarted.html) and get a simple web application up and running.
+[Download the SDK](gettingstarted-v2.html) and get a simple web application up and running.
