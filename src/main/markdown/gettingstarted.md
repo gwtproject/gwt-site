@@ -201,9 +201,10 @@ project in a similar way, but uses Spring Boot instead of Jetty on the server si
 
 Now that you've created your first app, you probably want to do something a
 bit more interesting. But first, if you normally work with an IDE you'll want to
-set up IntelliJ to use the GWT SDK:
+set up your IDE to use the GWT SDK:
 
-[Set up IntelliJ](using-intellij.html)
+[Set up Eclipse](usingeclipse.html)
 
-If you are going to stick with the command line, check out Speed Tracer and then
-head over to [Build a Sample GWT App](doc/latest/tutorial/gettingstarted.html).
+[Set up IntelliJ](usingintellij.html)
+
+Now, with your sample project set up, head over to [Build a Sample GWT App](doc/latest/tutorial/gettingstarted.html).

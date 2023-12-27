@@ -12,7 +12,7 @@ is all you need. IntelliJ provides an awesome Maven support. That is all, thatis
 
 ## Download IntelliJ<a id="intellij"></a>
 
-If you do not already have IntelliJ, you may download it from the [IntgelliJ Website](https://www.jetbrains.com/idea/download/). 
+If you do not already have IntelliJ, you may download it from the [IntelliJ Website](https://www.jetbrains.com/idea/download/). 
 
 ## Import a Web Application<a id="importing"></a>
 
@@ -23,29 +23,31 @@ A dialog opens:
 
 <div class="screenshot"><a href="images/import-into-intellij.png"><img src="images/import-into-intellij.png" alt="Screenshot" width="42%"/></a></div>
 
-Press `crate`. The import process starts and after a few seconds, the project window appears:
+Press `Create`. The import process starts and after a few seconds, the project window appears:
 
 <div class="screenshot"><a href="images/intellij-project.png"><img src="images/intellij-project.png" alt="Screenshot" width="42%"/></a></div>
 
 ## Run locally in Super Dev Mode<a id="running"></a>
 
-To improve the development experience, you can set up to run configurations, one for the code server and another for the server.
+To improve the development experience, you can set up two run configurations, one for the code server and another for the server.
 
 ### Code Server Run Configuration
 
-Press `edit configuration`, a popup appears. Now press `+` and select `Maven`.  
+Press `Edit configuration`, a popup appears. Now press `+` and select `Maven`.  
 
-Enter `gwt:codeserver -pl mywebapp-client -am` in the field under run:
+Enter `gwt:codeserver -pl mywebapp-client -am` in the field under `Run`:
 
 <div class="screenshot"><a href="images/intellij-run-code-server.png"><img src="images/intellij-run-code-server.png" alt="Screenshot" width="42%"/></a></div>
 
-Now, you have a run configuration, that starts the code server.
+Now you have a run configuration, that starts the code server.
 
-Note: you have to use the module name instead of '*'.
+Note: When running the code server from the command line, you need to run `gwt:codeserver -pl *-client -am`. 
+This will not work inside a running configuration. Here you have to use the module name instead of '*'. Inside a run 
+configuration, the command line looks like that: `gwt:codeserver -pl mywebapp-client -am`.
 
 ### Server Run Configuration
 
-Press `edit configuration`, a popup appears. Now press `+` and select `Maven`.
+Press `Edit configuration`, a popup appears. Now press `+` and select `Maven`.
 
 Enter `mvn jetty:run -pl *-server -am -Denv=dev` in the field under run:
 
