@@ -54,4 +54,4 @@ contact the contributor of the project!
 
 ## Missing Something?
 
-If you are missing a library or a framework from the list, please follow the instructions [here](add-lib.html) to add it.
+If you are missing a dependency or a framework from the list, please follow the instructions [here](add-lib.html) to add it.

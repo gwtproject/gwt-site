@@ -2,7 +2,7 @@
 
 We will add or update information on request. 
 
-## Request for adding Libraries to the Eco System site
+## Request for adding Dependencies to the Eco System site
 
 The GWT eco system is a living system. New dependency will be created, other will be end of life. Also we know, that there are
 much more dependency outside. If you think, one dependency not listed here is worth to be mentioned, [open an issue

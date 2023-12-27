@@ -29,7 +29,7 @@ you are planing to use Spring Boot on the server side, this is a prefect archety
 For more information visit the archetype at [gwt-maven-springboot-archetype at GitHub](https://github.com/NaluKit/gwt-maven-springboot-archetype) 
 and follow the instructions.
 
-### domino-cli<a id="create-third-partydocli"></a>
+### domino-cli<a id="create-third-party-do-cli"></a>
 
 The domino-cli provides a tool for generating application templates using the DominoKit tool stack.
 
@@ -43,4 +43,4 @@ contact the contributor of the project!
 
 ## Missing Something?
 
-If you are missing a library or a archetype creator from the list, please follow the instructions [here](add-lib.html) to add it.
+If you are missing a dependency or a archetype creator from the list, please follow the instructions [here](add-lib.html) to add it.
