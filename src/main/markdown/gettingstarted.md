@@ -162,7 +162,7 @@ final Button sendButton = new Button("Send to Server");
 
 Save the file and simply click "Refresh" in your browser to see your change. The button should now say "Send to Server" instead of "Send":
 
-## Debugging the browser<a id="bebug"></a>
+## Debugging the browser<a id="debug"></a>
 
 In super dev mode, you can easily debug your client code in the browser. While running your application, open the dev tools 
 in your browser. Select the `Sources`-tab and press `ctrl-P` (Windows) or `cmd-P` (macOS). A popup opens. Enter `App.java` and press return.
