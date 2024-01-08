@@ -159,7 +159,3 @@ Updates about the official GWT team will be found [here](news.html).
         </a>
   </div>
 </div>
-
-
-
-
