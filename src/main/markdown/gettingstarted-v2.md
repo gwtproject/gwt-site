@@ -36,7 +36,7 @@ and add both to the path.
 
 ## Create your first web application<a id="create"></a>
 
-First, open a terminal and choose the directory you like to generate the project into. Generate a new project using: 
+Open a terminal and choose the directory you like to generate the project into. Generate a new project using: 
 
 ```
 mvn archetype:generate \
@@ -44,8 +44,6 @@ mvn archetype:generate \
    -DarchetypeVersion=LATEST \
    -DarchetypeArtifactId=modular-webapp
 ```
-
-Choose the folder, where you would like to generate the new application project. Run the archetype. 
 
 The archetype will request values for:
 
@@ -76,7 +74,7 @@ module-short-name: mywebapp
 
 Enter **Y** to continue.
 
-Now, the new project will be generated and you see something like that:
+Now, the new project will be generated and you see the following messages:
 
 ```
 [INFO] ----------------------------------------------------------------------------
