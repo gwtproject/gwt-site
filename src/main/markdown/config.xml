@@ -24,6 +24,7 @@
 			<entry name="presentations" displayName="Presentations" description="Different Presentations on GWT"></entry>
 			<entry name="privacy" displayName="Privacy" description="Privacy"></entry>
 			<entry name="release-notes" displayName="Release Notes" description="Release Notes"></entry>
+			<entry name="roadmap" displayName="Roadmap" description="Roadmap"></entry>
 			<entry name="resources" displayName="Resources" description="Resources"></entry>
 			<entry name="steering" displayName="Steering Committee" description="The GWT Steering Committee"></entry>
 			<entry name="terms" displayName="Terms" description="Terms"></entry>
