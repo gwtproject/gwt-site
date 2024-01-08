@@ -16,6 +16,9 @@ familiar with MVP, you may want to read these articles first:
 *   [Large scale application development and MVP, Part I](../../articles/mvp-architecture.html)
 *   [Large scale application development and MVP, Part II](../../articles/mvp-architecture-2.html)
 
+Note:</br>
+Besides MVP Activities and Places, there are other third party implementations for managing browser history. Take a look [here](/eco/application.html). 
+
 **Definitions**
 
 An _activity_ simply represents something the user is doing.

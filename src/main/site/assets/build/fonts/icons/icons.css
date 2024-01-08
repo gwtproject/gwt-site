@@ -48,8 +48,16 @@
 	content: "\e607";
 }
 
+.icon_eco_system:before {
+	content: "\e605";
+}
+
 .icon_makeGWTBetter:before {
 	content: "\e608";
+}
+
+.icon_news:before {
+	content: "\e60a";
 }
 
 .icon_optimise:before {
