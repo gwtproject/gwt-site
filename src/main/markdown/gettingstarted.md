@@ -16,11 +16,11 @@ Note: Starting with GWT 2.11.0 the webAppCreator is deprecated, please see the [
 
 1.  You will need the Java SDK version 1.8 or later. If necessary, download and
     install the Java SE Development Kit (JDK) <a
-    href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" 
+    href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" 
     rel="nofollow">from Oracle</a> or <a href="https://adoptopenjdk.net/" 
     rel="nofollow">from Adopt OpenJDK</a> for your platform.
 2.  Apache Ant is also necessary to run command line arguments in this sample. If
-    you don't already have it, install <a href="http://ant.apache.org/" rel="nofollow">Apache Ant</a>.
+    you don't already have it, install <a href="https://ant.apache.org/" rel="nofollow">Apache Ant</a>.
 
 If you have problems running Ant on the Mac, try setting the
 $JDK_HOME environment variable with export JDK_HOME="/Library/Java/Home"
@@ -58,7 +58,7 @@ run and use the SDK are located in the extracted directory.
 
 ## Create your first web application<a id="create"></a>
 
-GWT ships with a command line utility called [webAppCreator](http://www.gwtproject.org/doc/latest/RefCommandLineTools.html#webAppCreator) that automatically generates all the files you'll need in order to start a GWT project.  It also generates [Eclipse](http://www.eclipse.org/) project files and launch config files for easy debugging in GWT's development mode.
+GWT ships with a command line utility called [webAppCreator](https://www.gwtproject.org/doc/latest/RefCommandLineTools.html#webAppCreator) that automatically generates all the files you'll need in order to start a GWT project.  It also generates [Eclipse](https://www.eclipse.org/) project files and launch config files for easy debugging in GWT's development mode.
 
 You can create a new demo application in a new MyWebApp directory by running `webAppCreator`:
 
