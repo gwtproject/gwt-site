@@ -1,5 +1,7 @@
 The GWT Release Notes
 =====================
+* [2.11.0](#Release_Notes_2_11_0) January 9, 2024
+* [2.10.1](#Release_Notes_2_10_1) January 9, 2024
 * [2.10.0](#Release_Notes_2_10_0) June 9, 2022
 * [2.9.0](#Release_Notes_2_9_0) May 13, 2020
 * [2.8.2](#Release_Notes_2_8_2) Oct 19, 2017
@@ -64,6 +66,61 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
+## <a id="Release_Notes_2_11_0"></a> Release Notes for 2.11.0
+### Highlights:
+- Transitioned to GitHub pull requests for new contributions, with nightly
+builds running on GitHub Actions.
+- Added release artifacts for `jakarta.servlet` packages for both RequestFactory
+and GWT-RPC.
+- Tested support for running on Java 21. This is likely to be the final minor
+release series to support running on Java 8.
+- Disabled JPA/JDO "enhanced classes" serializable by default for GWT-RPC, and
+added a warning when it is in use.
+- Updated JRE emulation to support Java 11 for Collections, streams, and more.
+
+### Bug fixes:
+- Make custom field serializers ready for Java 17
+- Correctly write Long.toBinaryString as an unsigned value
+- Fix gzip encoding of responses in the CodeServer
+- Avoid EmptyStackException in SOYC
+- Fix error reporting for System.getProperty magic method nodes
+- Fix ClassNotFoundException when running JettyLauncher with Java 9+
+- Avoid StackOverflowError in TypeUtils#resolveGenerics
+- Avoid document.write in Chrome with iframe linker
+- Avoid document write in single script linker loading
+- Support intersection types in ternary expressions and var declarations
+- Fix for namespace="<window>" names that clash with variable names
+
+### JRE Emulation:
+- Added new Optional methods: or(), stream(), ifPresentOrElse(), empty(), and
+orElseThrow()
+- Added List/Set/Map of() methods
+- Added Predicate not() method
+- Added Collectors methods: flatMapping(), filtering(), toUnmodifiableList(), 
+toUnmodifiableSet(), and toUnmodifiableMap()
+- Added Stream methods: dropWhile, takeWhile, and iterate(seed, hasNext, next)
+- Added Enumeration.asIterator()
+
+### Deprecations:
+- Using DevMode as an application server is deprecated, and may be removed or 
+changed in a future release. Please migrate local development workflows to using
+a general purpose server, or a custom ServletContainerLauncher.
+- The webAppCreator tool is deprecated, please refer to https://www.gwtproject.org/gettingstarted.html.
+
+### Miscellaneous:
+- Update chrome/firefox globals to latest
+- Updated Javadoc to run on Java 9+, support search
+- Removed unused scripts from old build wiring
+
+For more detail, see the [commit log](https://github.com/gwtproject/gwt/compare/2.10.0...2.11.0).
+
+## <a id="Release_Notes_2_10_1"></a> Release Notes for 2.10.1
+
+### Highlights
+- Backported a fix from 2.11 to disable JPA/JDO "enhanced classes" serializable
+by default for GWT-RPC, and added a warning when it is in use. For more
+information, see https://github.com/gwtproject/gwt/issues/9709.
+
 ## <a id="Release_Notes_2_10_0"></a> Release Notes for 2.10.0
 
 ### Highlights
