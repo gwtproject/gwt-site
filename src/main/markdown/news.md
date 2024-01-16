@@ -53,6 +53,51 @@ We will add the news as soon as possible.
     <div class="container-news">
         <a href="https://matrix.to/#/#gwtproject_gwt:gitter.im" target="_blank">
             <div class="container-headline">
+                GWT: 2.11.0 released!
+            </div>
+        </a>
+        <div class="container-date">
+            January 9, 2023
+        </div>
+        <div class="container-text">
+            This release fixes a security issue. If you use GWT-RPC and JPA/JDO annotations in your project, we strongly suggest updating at least to 2.10.1 as soon as possible. To ensure that vulnerable projects are aware of any problem, compile warnings will be emitted if a problem is detected, and the server will default to not allowing any vulnerable RemoteService instances.<br><br>See <a href="https://github.com/gwtproject/gwt/issues/9709" target="_blank">https://github.com/gwtproject/gwt/issues/9709</a> for information on the issue, how we're responding to it, and how any additional follow-up might look.
+            <br><br>
+            Other highlights:
+            <br>
+            <ul style="color:black; margin-left:40px;">
+                <li>Transitioned to GitHub pull requests for new contributions, with nightly builds running on GitHub Actions.</li>
+                <li>Added release artifacts for jakarta.servlet packages for both RequestFactory and GWT-RPC.</li>
+                <li>Tested support for running on Java 21. This is likely to be the final minor release series to support running on Java 8.</li>
+                <li>Updated JRE emulation to support Java 11 for Collections, streams, and more.</li>
+            </ul>
+            See <a href="https://github.com/gwtproject/gwt/releases/tag/2.11.0" target="_blank">https://github.com/gwtproject/gwt/releases/tag/2.11.0</a> or <a href="https://www.gwtproject.org/release-notes.html#Release_Notes_2_11_0" target="_blank">https://www.gwtproject.org/release-notes.html#Release_Notes_2_11_0</a> for complete release notes.
+        </div>
+        <div class="container-text">
+            This is our third release under the new groupId, be sure when you update to change away from "com.google.gwt", as it will not get more updates.
+        </div>
+       <div class="container-text">
+            This release wouldn't have been possible without help from so many contributors, including developers, testers, and sponsors. A short list of the teams and individuals that directly brought us this release: Juan Pablo Gardella, Rocco De Angelis, Frank Hossfeld, Manfred Tremmel, Jim Douglas, Zbynek Konecny, Piotr Lewandowski, Axel Uhl, Thomas Broyer, Filipe Sousa, Sandra Parsick, Jens Nehlmeier, Schubec GmbH, Tom Sawyer Software, Insurance Insight Inc.<br><br>Join us on the <a href="https://github.com/gwtproject/gwt/issues" target="_blank">issue tracker</a> or at our <a href="https://opencollective.com/gwt-project" target="_blank">OpenCollective page</a> to help make future releases possible.
+        </div>
+    </div>
+    <div class="container-news">
+        <a href="https://matrix.to/#/#gwtproject_gwt:gitter.im" target="_blank">
+            <div class="container-headline">
+                GWT: 2.10.1 released!
+            </div>
+        </a>
+        <div class="container-date">
+            January 9, 2023
+        </div>
+        <div class="container-text">
+            This release fixes a security issue. If you use GWT-RPC and JPA/JDO annotations in your project, we strongly suggest updating at least to 2.10.1 as soon as possible. To ensure that vulnerable projects are aware of any problem, compile warnings will be emitted if a problem is detected, and the server will default to not allowing any vulnerable RemoteService instances.<br><br>See <a href="https://github.com/gwtproject/gwt/issues/9709" target="_blank">https://github.com/gwtproject/gwt/issues/9709</a> for information on the issue, how we're responding to it, and how any additional follow-up might look.
+        </div>
+        <div class="container-text">
+            This is our second release under the new groupId, be sure when you update to change away from "com.google.gwt", as it will not get more updates.
+        </div>
+    </div>
+    <div class="container-news">
+        <a href="https://matrix.to/#/#gwtproject_gwt:gitter.im" target="_blank">
+            <div class="container-headline">
                 GWT: we are looking for reviewers!
             </div>
         </a>
