@@ -133,7 +133,7 @@ mvn jetty:run -pl *-server -am -Denv=dev
 Now, switch to your preferred browser (we suggest using: Chrome, FireFox or Opera) and enter:
 
 ```
-http://lcoalhost:8080
+http://localhost:8080
 ```
 
 Yet, the application is running in super dev mode. You see something like this in the browser:
