@@ -20,6 +20,7 @@
 			<entry name="learnmore-sdk" displayName="SDK Learn More" description="Learn more about the GWT SDK"></entry>
 			<entry name="lifeofanissue" displayName="Life of an Issue" description="Learn about GWT and the issue tracker"></entry>
 			<entry name="makinggwtbetter" displayName="Making GWT Better" description="Learn how to contribute to GWT"></entry>
+			<entry name="news" displayName="News" description="News"></entry>
 			<entry name="overview" displayName="Overview" description="Overview"></entry>
 			<entry name="presentations" displayName="Presentations" description="Different Presentations on GWT"></entry>
 			<entry name="privacy" displayName="Privacy" description="Privacy"></entry>

@@ -52,6 +52,10 @@
 	content: "\e608";
 }
 
+.icon_news:before {
+	content: "\e60b";
+}
+
 .icon_optimise:before {
 	content: "\e609";
 }
@@ -60,7 +64,7 @@
 	content: "\e60a";
 }
 
-.icon_ressources:before {
+.icon_resources:before {
 	content: "\e60b";
 }
 
