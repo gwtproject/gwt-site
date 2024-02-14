@@ -27,26 +27,26 @@ For most cases, you probably want to use the default decimal format:
 
 ```
 NumberFormat fmt = NumberFormat.getDecimalFormat();
-    double value = 12345.6789;
-    String formatted = fmt.format(value);
-    // Prints 1,2345.6789 in the default locale
-    GWT.log("Formatted string is" + formatted, null);
+double value = 12345.6789;
+String formatted = fmt.format(value);
+// Prints 1,2345.6789 in the default locale
+GWT.log("Formatted string is" + formatted, null);
 ```
 
 The class can also be used to convert a numeric string back into a double:
 
 ```
 double value = NumberFormat.getDecimalFormat().parse("12345.6789");
-    GWT.log("Parsed value is" + value, null);
+GWT.log("Parsed value is" + value, null);
 ```
 
 The `NumberFormat` class also provides defaults for scientific notation:
 
 ```
 double value = 12345.6789;
-    String formatted = NumberFormat.getScientificFormat().format(value);
-    // prints 1.2345E4 in the default locale
-    GWT.log("Formatted string is" + formatted, null);
+String formatted = NumberFormat.getScientificFormat().format(value);
+// prints 1.2345E4 in the default locale
+GWT.log("Formatted string is" + formatted, null);
 ```
 
 Note that you can also specify your own pattern for formatting numbers. In the example below, we want to show 6 digits of precision on the right hand side of the decimal and
@@ -54,9 +54,9 @@ format the left hand side with zeroes up to the hundred thousands place:
 
 ```
 double value = 12345.6789;
-    String formatted = NumberFormat.getFormat("000000.000000").format(value);
-    // prints 012345.678900 in the default locale
-    GWT.log("Formatted string is" + formatted, null);
+String formatted = NumberFormat.getFormat("000000.000000").format(value);
+// prints 012345.678900 in the default locale
+GWT.log("Formatted string is" + formatted, null);
 ```
 
 Here are the most commonly used pattern symbols for decimal formats:
@@ -86,23 +86,23 @@ For the `DateTimeFormat` class, there are a large number of default formats defi
 ```
 Date today = new Date();
 
-    // prints Tue Dec 18 12:01:26 GMT-500 2007 in the default locale.
-    GWT.log(today.toString(), null);
+// prints Tue Dec 18 12:01:26 GMT-500 2007 in the default locale.
+GWT.log(today.toString(), null);
 
-    // prints 12/18/07 in the default locale
-    GWT.log(DateTimeFormat.getShortDateFormat().format(today), null);
+// prints 12/18/07 in the default locale
+GWT.log(DateTimeFormat.getShortDateFormat().format(today), null);
 
-    // prints December 18, 2007 in the default locale
-    GWT.log(DateTimeFormat.getLongDateFormat().format(today), null);
+// prints December 18, 2007 in the default locale
+GWT.log(DateTimeFormat.getLongDateFormat().format(today), null);
 
-    // prints 12:01 PM in the default locale
-    GWT.log(DateTimeFormat.getShortTimeFormat().format(today), null);
+// prints 12:01 PM in the default locale
+GWT.log(DateTimeFormat.getShortTimeFormat().format(today), null);
 
-    // prints 12:01:26 PM GMT-05:00 in the default locale
-    GWT.log(DateTimeFormat.getLongTimeFormat().format(today), null);
+// prints 12:01:26 PM GMT-05:00 in the default locale
+GWT.log(DateTimeFormat.getLongTimeFormat().format(today), null);
 
-    // prints Dec 18, 2007 12:01:26 PM in the default locale
-    GWT.log(DateTimeFormat.getMediumDateTimeFormat().format(today), null);
+// prints Dec 18, 2007 12:01:26 PM in the default locale
+GWT.log(DateTimeFormat.getMediumDateTimeFormat().format(today), null);
 ```
 
 Like the `NumberFormat` class, you can also use this class to parse a date from a `String` into a `Date` representation. You also have the option of using

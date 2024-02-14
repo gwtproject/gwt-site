@@ -23,7 +23,7 @@ Add the following `computeFactorial()` method to MyApp.java and the dummy `testF
 
 ```
 int computeFactorial(int number) {
-  if (number &le; 1) {
+  if (number <= 1) {
     return 1;
   }
   return number * computeFactorial(number - 1);
@@ -31,7 +31,6 @@ int computeFactorial(int number) {
 ```
 
 ```
-
 public void testFactorial() {
 }
 ```
@@ -93,36 +92,35 @@ Since GWT requires a patched version of EMMA, use the [EMMA jar from GWT's downl
 2.  Step ii - Instrument the class files using Emma &mdash; this produces a coverage.em file
 3.  Step iii - Run the test code after putting the modified emma.jar in the classpath
 
-(The yellow text is the output of the tool. For convenience, we copied the patched EMMA jar as emma.jar in the current directory.)
+(For convenience, we copied the patched EMMA jar as emma.jar in the current directory.)
 
 ```
-
 # step i: generate the class files
-<strong>ant devmode</strong>
+ant devmode
 
 # step ii: use emma to instrument the class files, creates a coverage.em file
-<strong>java -cp emma.jar emma instr -m overwrite -cp war/WEB-INF/classes/com/example/myapp/client </strong>
+java -cp emma.jar emma instr -m overwrite -cp war/WEB-INF/classes/com/example/myapp/client
 
-<span style="background: #FD5;">EMMA: processing instrumentation path ...
+EMMA: processing instrumentation path ...
 EMMA: instrumentation path processed in 231 ms
 EMMA: [5 class(es) instrumented, 0 resource(s) copied]
-EMMA: metadata merged into [PARENT_DIR/samples/com/example/myapp/coverage.em] {in 17 ms}</span>
+EMMA: metadata merged into [PARENT_DIR/samples/com/example/myapp/coverage.em] {in 17 ms}
 
 # step iii: run the test code after putting the modified emma.jar in the classpath; generates a coverage.ec file
-<strong>ant test.dev</strong>
+ant test.dev
 
-<span style="background: #FD5;">EMMA: collecting runtime coverage data ...
+EMMA: collecting runtime coverage data ...
 ..
 Time: 12.968
 OK (2 tests)
-EMMA: runtime coverage data merged into [PARENT_DIR/samples/com/example/myapp/coverage.ec] {in 22 ms}</span>
+EMMA: runtime coverage data merged into [PARENT_DIR/samples/com/example/myapp/coverage.ec] {in 22 ms}
 
 # step iv: generate the coverage report HTML file
-<strong>java -cp emma.jar emma report -r html -in coverage.em,coverage.ec </strong>
+java -cp emma.jar emma report -r html -in coverage.em,coverage.ec
 
-<span style="background: #FD5;">EMMA: processing input files ...
+EMMA: processing input files ...
 EMMA: 2 file(s) read and merged in 13 ms
-EMMA: writing [html] report to [PARENT_DIR/samples/com/example/myapp/coverage/index.html] ...</span>
+EMMA: writing [html] report to [PARENT_DIR/samples/com/example/myapp/coverage/index.html] ...
 ```
 
 Follow [Step 4](#improving) of the EclEmma section to improve coverage. As you add more tests, you can see your coverage increasing.
