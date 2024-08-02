@@ -375,8 +375,7 @@ Make sure to test that a new widget is accessible! There are three basic steps i
 
 *   **DOM**
 
-      Since ARIA attributes are being added directly to the DOM, an easy way to check that the attributes are in the right location is to use a DOM inspector like
-      [Firebug](http://getfirebug.com/) or the [Chrome developer tools](https://developers.google.com/chrome-developer-tools/).
+      Since ARIA attributes are being added directly to the DOM, an easy way to check that the attributes are in the right location is to use your browser's dev tools's DOM inspector.
 
 *   **Events**
 

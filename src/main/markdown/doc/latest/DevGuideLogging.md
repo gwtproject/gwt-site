@@ -140,8 +140,7 @@ Most of the default Handlers are very straightforward
 
 *   `SystemLogHandler` - Logs to stdout.  These messages can only be seen in Development Mode &mdash; look for them in the DevMode window
 *   `DevelopmentModeLogHandler` - Logs by calling method GWT.log. These messages can only be seen in Development mode &mdash; look for them in the DevMode window
-*   `ConsoleLogHandler` - Logs to the javascript console, which is used by Firebug Lite (for IE), Safari and Chrome(?)
-*   `FirebugLogHandler` - Logs to Firebug
+*   `ConsoleLogHandler` - Logs to each browser's own built-in Dev Tools console
 *   `PopupLogHandler` - Logs to the popup which appears in the upper left hand corner
 *   `SimpleRemoteLogHandler` - Discussed below, in the Remote Logging section
 
@@ -226,7 +225,6 @@ HTMLFormatter
   TextFormatter
   SystemLogHandler
   ConsoleLogHandler
-  FirebugLogHandler
   DevelopmentModeLogHandler
   HasWidgetsLogHandler (and LoggingPopup to use with it)
 ```
