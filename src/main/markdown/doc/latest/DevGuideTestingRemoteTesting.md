@@ -127,8 +127,6 @@ Plugin. On our test systems, we use the following settings:
     *   Type &#x27;about:config&#x27; in the browser bar 
     *   Find browser.sessionstore.resume_from_crash and set it to false
     *   Find browser.sessionstore.enabled and set it to false (if it exists)
-*   Install [Firebug](http://getfirebug.com/) (useful for debugging)
-*   Install the [GWT Developer Plugin](/missing-plugin/)
 *   Whitelist the hosts that will launch the development mode code server. Since Selenium copies the profile for each test, you must do this now.  If you do not, you will have to allow the remote connection for every test!
     *   Restart Firefox 
     *   Tools -> Addons
