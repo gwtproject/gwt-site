@@ -537,7 +537,7 @@ better debugging. For example, null pointers are detected sooner.
 - JSNI references no longer require fully qualified class names when this
 wouldn't be necessary in Java. (For example, imports work.)
 
-- We've started implementing [JS Interop annotations](http://goo.gl/nGeiq7),
+- We've started implementing JS Interop annotations,
 which will make it much easier to use GWT with JavaScript libraries.
 The specification is not final and there are bugs, so production GWT apps and
 libraries should continue to use JSNI for now. If you wish to experiment,
