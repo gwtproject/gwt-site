@@ -91,67 +91,74 @@ An error is returned because the message template in the properties file expects
 In addition to the formatting supported by [MessageFormat](http://java.sun.com/j2se/1.5.0/docs/api/java/text/MessageFormat.html),
 GWT supports a number of extensions.
 
-`{name,text}`
-:    A "static argument", which is simply `text`, except that it appears
-     in translation output as if it were a placeholder named `name`.
-     `text` is always terminated by the next "}".  This is
-     useful to keep non-translated code out of what the translator sees, for example
-     HTML markup:
+<dl>
+<dt> <code>{name,text}</code> </dt>
+<dd>    
+A "static argument", which is simply <code>text</code>, except that it appears
+in translation output as if it were a placeholder named <code>name</code>.
+<code>text</code> is always terminated by the next "}".  This is
+useful to keep non-translated code out of what the translator sees, for example
+HTML markup:
 
-    ```
-    @DefaultMessage("Welcome back, {startBold,<b>}{0}{endBold,</b>}")
-    ```
-
-`{0,list}` or `{0,list,format...}`
-:   Format a `List` or array using locale-specific punctuation.  For
+```
+@DefaultMessage("Welcome back, {startBold,<b>}{0}{endBold,</b>}")
+```
+</dd>
+<dt><code>{0,list}</code> or <code>{0,list,format...}</code></dt>
+<dd>
+Format a <code>List</code> or array using locale-specific punctuation.  For
     example, in English, lists would be formatted like this:
 
-:   | # of Items | Sample Output |
-    | :--------: | ------------- |
-    | 0          | _(empty string)_ |
-    | 1          | a |
-    | 2          | a and b |
-    | 3          | a, b, and c |
+| # of Items | Sample Output |
+| :--------: | ------------- |
+| 0          | _(empty string)_ |
+| 1          | a |
+| 2          | a and b |
+| 3          | a, b, and c |
 
-:   Note that only the locale-default separator and the logical conjuctive form is
-    supported -- there is currently no way to produce a list like "a; b; or c".
-:   See the [plurals documentation](DevGuideI18nPluralForms.html#Lists) for how this interacts with plural support.
-    The format following the `list` tag, if any, describes how each list
-    element is formatted.  Ie, `{0,list}` means every element is formatted
-    as if by `{0}`, `{0,list,number,#,##}` as if by
-    `[0,number,#,##}`, etc.
+Note that only the locale-default separator and the logical conjuctive form is
+supported -- there is currently no way to produce a list like "a; b; or c".
+See the [plurals documentation](DevGuideI18nPluralForms.html#Lists) for how this interacts with plural support.
+The format following the <code>list</code> tag, if any, describes how each list
+element is formatted.  Ie, <code>{0,list}</code> means every element is formatted
+as if by `{0}`, <code>{0,list,number,#,##}</code> as if by
+<code>[0,number,#,##}</code>, etc.
+</dd>
+<dt><code>{0,localdatetime,skeleton}</code></dt>
+<dd> 
+Format a date/time in a locale-specific format using the supplied skeleton
+pattern.  The order of the pattern characters doesn't matter, and spaces or other separators don't
+matter.  The localized pattern will contain the same fields (but may change
+<code>MMM</code> into <code>LLL</code> for example) and the same count of each.
+If one of the predefined formats are not sufficient, you will be much
+better off using a skeleton pattern so you will include the items you want
+but still get a localized format.
+For example, if you used <code>{0,date,MM/dd/yy}</code> to format a date, you
+get exactly that pattern in every locale, which is going to cause confusion for
+those users who expect <code>dd/MM/yy</code>.  Instead, you can use
+<code>{0,localdatetime,MMddyy}</code> and you will get properly localized patterns
+for each locale.
+</dd>
+<dt><code>{0,localdatetime,predef:PREDEF_NAME}</code></dt>
+<dd>
+Use a locale-specific predefined format -- see [DateTimeFormat.PredefinedFormat](/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html)"
+    for possible values, example: <code>{0,localdatetime,predef:DATE_SHORT}</code>.
+</dd>
+<dt>extra formatter arguments</dt>
+<dd>   Some formatters accept additional arguments.  These are added to the main format specification, separated by a colon -- for example:
+    <code>{0,list,number:curcode=USD,currency}</code> says to use the default currency format for list elements, but use USD (US Dollars) for the currency code.  You
+    can also supply a dynamic argument, such as <code>{0,localdatetime:tz=$tz,predef:DATE_FULL}</code>, which says the timezone to
+    use is supplied by a parameter <code>TimeZone tz</code> supplied to the method.
+    Where supported, multiple arguments can be supplied like <code>{0,format:arg1=val:arg2=val}</code>.
 
-`{0,localdatetime,skeleton}`
-:   Format a date/time in a locale-specific format using the supplied skeleton
-    pattern.  The order of the pattern characters doesn't matter, and spaces or other separators don't
-    matter.  The localized pattern will contain the same fields (but may change
-    `MMM` into `LLL` for example) and the same count of each.
-:   If one of the predefined formats are not sufficient, you will be much
-    better off using a skeleton pattern so you will include the items you want
-    but still get a localized format.
-:   For example, if you used `{0,date,MM/dd/yy}` to format a date, you
-    get exactly that pattern in every locale, which is going to cause confusion for
-    those users who expect `dd/MM/yy`.  Instead, you can use
-    `{0,localdatetime,MMddyy}` and you will get properly localized patterns
-    for each locale.
+Currently supported arguments:
 
-`{0,localdatetime,predef:PREDEF_NAME}`
-:   Use a locale-specific predefined format -- see [DateTimeFormat.PredefinedFormat](/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html)"
-    for possible values, example: `{0,localdatetime,predef:DATE_SHORT}`.
-
-extra formatter arguments
-:   Some formatters accept additional arguments.  These are added to the main format specification, separated by a colon -- for example:
-    `{0,list,number:curcode=USD,currency}` says to use the default currency format for list elements, but use USD (US Dollars) for the currency code.  You
-    can also supply a dynamic argument, such as `{0,localdatetime:tz=$tz,predef:DATE_FULL}`, which says the timezone to
-    use is supplied by a parameter `TimeZone tz` supplied to the method.
-    Where supported, multiple arguments can be supplied like `{0,format:arg1=val:arg2=val}`.
-
-:   Currently supported arguments:
-
-:   | Format                       | Argument Name | Argument Type | Description |
-    | ---------------------------- | ------------- | ------------- | ----------- |
-    | number                       | curcode       | `String`      | Currency code to use for currency formatting |
-    | date, time, or localdatetime | tz            | `TimeZone`    | Time zone to use for date/time formatting |
+| Format                       | Argument Name | Argument Type | Description |
+ | ---------------------------- | ------------- | ------------- | ----------- |
+  | number                       | curcode       | `String`      | Currency code to use for currency formatting |
+ | date, time, or localdatetime | tz            | `TimeZone`    | Time zone to use for date/time formatting |
+</dd>
+</dl>
 
 ## Using Annotations<a id="MessagesAnnotations"></a>
 
