@@ -37,7 +37,7 @@ Here is a short list of some of the benefits and uses of local storage:
 
 ## Details You Should Know About HTML5 Storage<a id="Overview"></a>
 
-To use HTML5 storage features, you  need to know about lifespan (persistence) of local and session storage, about their scope--which windows and tabs can access the storage, and which tabs and windows can listen for storage events.
+To use HTML5 storage features, you  need to know about lifespan (persistence) of local and session storage, about their scope &mdash; which windows and tabs can access the storage, and which tabs and windows can listen for storage events.
 
 ### LocalStorage and SessionStorage
 
@@ -100,7 +100,7 @@ If the storage feature is supported, you get the storage object and then write d
 
 ### Checking for Browser Support<a id='BrowserSupport'></a>
 
-GWT provides a simple way to determine whether the browser supports HTML5 storage--a built-in check when you get the storage object. You use Storage.getLocalStorageIfSupported() or Storage.getSessionStorageIfSupported(), depending on which type of storage you want to use. The storage object is returned if the feature is supported, or, if not, null is returned.
+GWT provides a simple way to determine whether the browser supports HTML5 storage &mdash; a built-in check when you get the storage object. You use Storage.getLocalStorageIfSupported() or Storage.getSessionStorageIfSupported(), depending on which type of storage you want to use. The storage object is returned if the feature is supported, or, if not, null is returned.
 
 ```
 import com.google.gwt.storage.client.Storage;

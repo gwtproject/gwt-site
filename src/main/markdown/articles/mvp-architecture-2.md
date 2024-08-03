@@ -752,7 +752,7 @@ public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
  }
 ```
 
-## Code Splitting -- Only the relevant parts please <a id="code_splitting"></a>
+## Code Splitting &mdash; Only the relevant parts please <a id="code_splitting"></a>
 
 Up to this point we've discussed how code maintainability and testing are
 benefits of an MVP-based application. One other benefit that may go overlooked

@@ -52,7 +52,7 @@ Let's assume you have [added](DevGuideI18nLocale.html#LocaleModule) the `en`,
 `fr` and `ar` locales to your module.  Now you need translations
 for each of these locales (except `en`, which will be picked up from the
 annotations).  _Note: I am using English in these "translations" for
- clarity -- you would actually want to use real translations._
+ clarity &mdash; you would actually want to use real translations._
 
 `MyMessages_fr.properties`
 
@@ -150,7 +150,7 @@ alert(peopleHere(names, names.length > 0 ? names[0] : null,
     names.length > 1 ? names[1] : null));
 ```
 
-Note that you can pass in an array for a `@PluralCount` parameter --
+Note that you can pass in an array for a `@PluralCount` parameter &mdash;
 its length is used for the count (`java.util.List` implementations work
 similarly).  The `@Offset` annotation indicates that the supplied offset
 should be applied before looking up the correct plural rule.  However, note

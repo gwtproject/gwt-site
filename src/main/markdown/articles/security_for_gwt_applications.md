@@ -36,13 +36,13 @@ build a basic image gallery application by writing some JavaScript code that ins
 immediately loads the image as if it had been present in the original page; if you delete (or
 hide) an `<img>` tag, the browser removes it from the display.
 
-Essentially, the SOP lets JavaScript code do anything that the original HTML page could have done -- it just prevents that JavaScript from sending data to a different server, or from reading or writing data belonging to a different server.
+Essentially, the SOP lets JavaScript code do anything that the original HTML page could have done &mdash; it just prevents that JavaScript from sending data to a different server, or from reading or writing data belonging to a different server.
 
 ### Leaking Data <a id="leaking"></a>
 
 The text above said, "prevents JavaScript from sending data to a different server." Unfortunately, that's not strictly true. In fact it is possible to send data to a different server, although it might be more accurate to say "leak."
 
-JavaScript is free to add new resources -- such as `<img>` tags -- to the current page. You
+JavaScript is free to add new resources &mdash; such as `<img>` tags &mdash; to the current page. You
 probably know that you can cause an image hosted on foo.com to appear inline in a page served up by bar.com. Indeed, some people get upset if you do this to their images, since it uses their bandwidth to serve an image to your web visitor. But, it's a feature of HTML, and since HTML can do it, so can JavaScript.
 
 Normally you would view this as a read-only operation: the browser requests an image, and the server sends the data. The browser didn't upload anything, so no data can be lost, right? Almost, but not quite. The browser _did_ upload something: namely, the URL of the image. Images use standard URLs, and any URL can have query parameters encoded in it. A legitimate use case for this might be a page hit counter image, where a CGI on the server selects an appropriate image based on a query parameter and streams the data to the user in response. Here is a reasonable (though hypothetical) URL that could return a hit-count image showing the number '42':
@@ -52,7 +52,7 @@ http://site.domain.tld/pagehits?count=42
 ```
 
 In the static HTML world, this is perfectly reasonable. After all, the server is not going to
-send the client to a web site that will leak the server's or user's data -- at least, not on
+send the client to a web site that will leak the server's or user's data &mdash; at least, not on
 purpose. Because this technique is legal in HTML, it's also legal in JavaScript, but there is an
 unintended consequence. If some evil JavaScript code gets injected into a good web page, it can
 construct `<img>` tags and add them to the page.
@@ -142,7 +142,7 @@ Probably the most common way that web sites manage sessions is via browser cooki
 
 The problem with this approach is that session cookies don't expire when the user leaves the site (they expire either when the browser closes or after some period of time). Since the browsers will include cookies with any request to your server regardless of context, if your users are logged in, it's possible for other sites to trigger an action on your server. This is frequently referred to as "Cross-Site Request Forging" or XSRF (or sometimes CSRF).
 
-The sites most vulnerable to XSRF attacks, perhaps ironically, are those that have already embraced the service-oriented model. Traditional non-AJAX web applications are HTML-heavy and require multi-page UI operations by their very nature. The Same-Origin Policy prevents an XSRF attacker from _reading_ the results of its request, making it impossible for an XSRF attacker to navigate a multi-page process. The simple technique of requiring the user to click a confirmation button -- when properly implemented -- is enough to foil an XSRF attack.
+The sites most vulnerable to XSRF attacks, perhaps ironically, are those that have already embraced the service-oriented model. Traditional non-AJAX web applications are HTML-heavy and require multi-page UI operations by their very nature. The Same-Origin Policy prevents an XSRF attacker from _reading_ the results of its request, making it impossible for an XSRF attacker to navigate a multi-page process. The simple technique of requiring the user to click a confirmation button &mdash; when properly implemented &mdash; is enough to foil an XSRF attack.
 
 Unfortunately, eliminating those sorts of extra steps is one of the key goals of the AJAX programming model. AJAX lets an application's UI logic run in the browser, which in turn lets communications with the server become narrowly defined operations. For instance, you might develop corporate HR application where the server exposes a URL that lets browser clients email a user's list of employee data to someone else. Such services are operation-oriented, meaning that a single HTTP request is all it takes to do something.
 
@@ -150,7 +150,7 @@ Since a single request triggers the operation, the XSRF attacker doesn't need to
 
 ### JSON and XSRF <a id="json-xsrf"></a>
 
-So far we've seen the one-two punch from XSS and XSRF. Sadly, there's _still_ more. These days, JSON (JavaScript Object Notation) is the new hotness -- and indeed, it's very hot. It's a clever, even elegant, technique. It also performs well, since it uses low-level (meaning: fast) browser support to handle parsing. It's also easy to program to, since the result is a JavaScript object, meaning you get object serialization almost for free. Unfortunately, with this powerful technique comes very substantial risks to your code; if you choose to use JSON with your GWT application, it's important to understand those risks.
+So far we've seen the one-two punch from XSS and XSRF. Sadly, there's _still_ more. These days, JSON (JavaScript Object Notation) is the new hotness &mdash; and indeed, it's very hot. It's a clever, even elegant, technique. It also performs well, since it uses low-level (meaning: fast) browser support to handle parsing. It's also easy to program to, since the result is a JavaScript object, meaning you get object serialization almost for free. Unfortunately, with this powerful technique comes very substantial risks to your code; if you choose to use JSON with your GWT application, it's important to understand those risks.
 
 At this point, you'll need to understand JSON; check out the [json.org](http://json.org) site if you aren't familiar with it yet. A cousin of JSON is "JSON with Padding" or JSONP, so you'll also want to be familiar with that. Here's the earliest discussion of JSONP that we could find: [Remote JSON - JSONP](http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/).
 
@@ -172,7 +172,7 @@ As bad as XSS and XSRF are, JSON gives them room to breathe, so to speak, which 
 
         ` var result = { 'data': ['foo', 'bar'] };`
 
-*   A string containing a JSON object passed as the parameter to a function call -- that is, the JSONP model.
+*   A string containing a JSON object passed as the parameter to a function call &mdash; that is, the JSONP model.
 
         Example:
 
@@ -180,16 +180,16 @@ As bad as XSS and XSRF are, JSON gives them room to breathe, so to speak, which 
 
 The last two examples are most useful when returned from a server as the response to a `<script>`tag inclusion. This could use a little explanation. Earlier text described how JavaScript is permitted to dynamically add `<img>`tags pointing to images on remote sites. The same is true of `<script>`tags: JavaScript code can dynamically insert new `<script>` tags that cause more JavaScript code to load.
 
-This makes dynamic `<script>` insertion a very useful technique, especially for mashups. Mashups frequently need to fetch data from different sites, but the Same-Origin Policy prevents them from doing so directly with an XMLHTTPRequest call. However, currently-running JavaScript code is trusted to load new JavaScript code from different sites -- and who says that code can't actually be data?
+This makes dynamic `<script>` insertion a very useful technique, especially for mashups. Mashups frequently need to fetch data from different sites, but the Same-Origin Policy prevents them from doing so directly with an XMLHTTPRequest call. However, currently-running JavaScript code is trusted to load new JavaScript code from different sites &mdash; and who says that code can't actually be data?
 
-This concept might seem suspicious at first since it seems like a violation of the Same-Origin restriction, but it really isn't. Code is either trusted or it's not. Loading more code is more dangerous than loading data, so since your current code is already trusted to load more code, why should it not be trusted to load data as well? Meanwhile, `<script>` tags can only be inserted by trusted code in the first place, and the entire meaning of trust is that... you trust it to know what it's doing. It's true that XSS can abuse trust, but ultimately XSS can only originate from buggy server code. Same-Origin is based on trusting the server -- bugs and all.
+This concept might seem suspicious at first since it seems like a violation of the Same-Origin restriction, but it really isn't. Code is either trusted or it's not. Loading more code is more dangerous than loading data, so since your current code is already trusted to load more code, why should it not be trusted to load data as well? Meanwhile, `<script>` tags can only be inserted by trusted code in the first place, and the entire meaning of trust is that... you trust it to know what it's doing. It's true that XSS can abuse trust, but ultimately XSS can only originate from buggy server code. Same-Origin is based on trusting the server &mdash; bugs and all.
 
 So what does this mean? How is writing a server-side service that exposes data via these methods vulnerable? Well, other people have explained this a lot better than we can cover it here. Here are some good treatments:
 
 *   [JSON is not as safe as people think it is](http://incompleteness.me/blog/2007/03/05/json-is-not-as-safe-as-people-think-it-is/)
 *   [Safe JSON](http://robubu.com/?p=24)
 
-Go ahead and read those -- and be sure to follow the links! Once you've digested it all, you'll probably see that you should tread carefully with JSON -- whether you're using GWT or another tool.
+Go ahead and read those &mdash; and be sure to follow the links! Once you've digested it all, you'll probably see that you should tread carefully with JSON &mdash; whether you're using GWT or another tool.
 
 ## Part 2: How GWT Developers Can Fight Back <a id="fight"></a>
 
@@ -197,7 +197,7 @@ But this is an article for GWT developers, right? So how are GWT developers affe
 
 ### XSS and GWT <a id="xss"></a>
 
-  Also see [SafeHtml](../doc/latest/DevGuideSecuritySafeHtml.html) -- Provides coding guidelines with examples showing how to protect your application from XSS vulnerabilities due to untrusted data
+  Also see [SafeHtml](../doc/latest/DevGuideSecuritySafeHtml.html) &mdash; Provides coding guidelines with examples showing how to protect your application from XSS vulnerabilities due to untrusted data
 
 XSS can be avoided if you rigorously follow good JavaScript programming practices. Since GWT helps you follow good JavaScript practices in general, it can help you with XSS. However, GWT developers are not immune, and there simply is no magic bullet.
 
@@ -243,7 +243,7 @@ Here's an example. Consider this basic JavaScript page:
 
 The page contains a placeholder `<div>` named 'mydiv', and a JavaScript function that simply sets innerHTML on that div. The idea is that you would call that function from other code on your page whenever you wanted to update the content being displayed. However, suppose an attacker contrives to get a user to pass in this HTML as the 'newContent' variable: `<div onmousemove="alert('Hi!');">Some text</div>`
 
-Whenever the user mouses over 'mydiv', an alert will appear. If that's not frightening enough, there are other techniques -- only slightly more complicated -- that can execute code immediately without even needing to wait for user input. This is why setting innerHTML can be dangerous; you've got to be sure that the strings you use are trusted.
+Whenever the user mouses over 'mydiv', an alert will appear. If that's not frightening enough, there are other techniques &mdash; only slightly more complicated &mdash; that can execute code immediately without even needing to wait for user input. This is why setting innerHTML can be dangerous; you've got to be sure that the strings you use are trusted.
 
 It's also important to realize that a string is not necessarily trusted just because it comes from your server! Suppose your application contains a report, which has "edit" and "view" modes in your user interface. For performance reasons, you might generate the custom-printed report in plain-old HTML on your server. Your GWT application would display it by using a `RequestCallback` to fetch the HTML and assign the result to a table cell's innerHTML property. You might assume that that string is trusted since your server generated it, but that could be a bad assumption. If the user is able to enter arbitrary input in "edit" mode, an attacker could use any of a variety of attacks to get the user to store some unsafe HTML in a record. When the user views the record again, that record's HTML would be evil.
 
@@ -253,7 +253,7 @@ Unless you do an extremely thorough analysis of both the client and server, you 
 
 This is a very similar scenario to setting innerHTML, although with arguably worse implications. Suppose that you have the same example as the one just described, except that instead of returning HTML content, the server sends the report data to the browser as a JSON string. You would normally pass that string to GWT's JSONParser class. For performance reasons, though, that string calls eval(). It's important to be sure that the code you are passing doesn't contain evil code.
 
-An attacker could again use one of several attacks to cause the user to save carefully-constructed JavaScript code into one of your data records. That code could contain evil side effects that take effect immediately when the JSON object is parsed. This is just as severe as innerHTML but is actually easier to do since the attacker doesn't need to play tricks with HTML in the evil string -- he can just use plain JavaScript code.
+An attacker could again use one of several attacks to cause the user to save carefully-constructed JavaScript code into one of your data records. That code could contain evil side effects that take effect immediately when the JSON object is parsed. This is just as severe as innerHTML but is actually easier to do since the attacker doesn't need to play tricks with HTML in the evil string &mdash; he can just use plain JavaScript code.
 
 As with innerHTML, it's not always correct to assume that a JSON string is safe simply because it came from your server. At the very least, it is important to think carefully before you use any JSON service, whether it's yours or a third party's.
 
@@ -272,11 +272,11 @@ As a GWT user, you can help reduce XSS vulnerabilities in your code by following
 *   Carefully inspect any strings you pass to eval or assign to innerHTML via a JSNI method
 *   Take care in your native JSNI methods to not do anything that would expose you to attacks
 
-The GWT team is considering adding support for standard string inspection to the GWT library. You would use this to validate any untrusted string to determine if it contains unsafe data (such as a `<script>` tag.) The idea is that you'd use this method to help you inspect any strings you need to pass to innerHTML or eval. However, this functionality is only being considered right now, so for the time being it's still important to do your own inspections. Be sure to follow the guidelines above -- and be sure to be paranoid!
+The GWT team is considering adding support for standard string inspection to the GWT library. You would use this to validate any untrusted string to determine if it contains unsafe data (such as a `<script>` tag.) The idea is that you'd use this method to help you inspect any strings you need to pass to innerHTML or eval. However, this functionality is only being considered right now, so for the time being it's still important to do your own inspections. Be sure to follow the guidelines above &mdash; and be sure to be paranoid!
 
 ### XSRF and GWT <a id="xsrf"></a>
 
-  Also see [GWT RPC XSRF protection](../doc/latest/DevGuideSecurityRpcXsrf.html) -- Explains how to protect GWT RPCs against XSRF attacks using RPC tokens introduced in GWT 2.3.
+  Also see [GWT RPC XSRF protection](../doc/latest/DevGuideSecurityRpcXsrf.html) &mdash; Explains how to protect GWT RPCs against XSRF attacks using RPC tokens introduced in GWT 2.3.
 
 You can take steps to make your GWT application less vulnerable to XSRF attacks. The same techniques that you might use to protect other AJAX code will also work to protect your GWT application.
 
@@ -338,7 +338,7 @@ You should also use the XSRF cookie-duplication countermeasure if you're exposin
 
 The reason is that the comment-wrapping technique works by totally disabling support for `<script>` tags. Since that is at the heart of JSONP, it disables that technique. If you are building a web service that you want to be used by other sites for in-browser mashups, then this technique would prevent that.
 
-Conversely, be very careful if you're building mashups with someone else's site! If your application is a "JSON consumer" fetching data from a different domain via dynamic `<script>` tags, you are exposed to any vulnerabilities they may have. If their site is compromised, your application could be as well. Unfortunately, with the current state of the art, there isn't much you can do about this. After all -- by using a `<script>` tag, you're trusting their site. You just have to be sure that your trust is well-placed.
+Conversely, be very careful if you're building mashups with someone else's site! If your application is a "JSON consumer" fetching data from a different domain via dynamic `<script>` tags, you are exposed to any vulnerabilities they may have. If their site is compromised, your application could be as well. Unfortunately, with the current state of the art, there isn't much you can do about this. After all &mdash; by using a `<script>` tag, you're trusting their site. You just have to be sure that your trust is well-placed.
 
 In other words, if you have critical private information on your own server, you should probably avoid in-browser JSONP-style mashups with another site. Instead, you might consider building your server to act as a relay or proxy to the other site. With that technique, the browser only communicates with your site, which allows you to use more rigorous protections. It may also provide you with an additional opportunity to inspect strings for evil code.
 

@@ -41,7 +41,7 @@ Let's examine everything that happens here if the user isn't logged in:
 1.  Your app is requested and your GWT host page (YourModule.html) is downloaded
 2.  <var>module</var>.nocache.js is requested by the page and is downloaded
 3.  <var>MD5</var>.cache.html is selected based on the browser and is downloaded
-4.  Your module loads and makes a GWT-RPC call to check if the user is logged in -- since they're not, they are redirected to the login page
+4.  Your module loads and makes a GWT-RPC call to check if the user is logged in &mdash; since they're not, they are redirected to the login page
 
 That's up to **four** server requests (depending on what is cached)
 just to send your user to the login page. And step 3 consists of

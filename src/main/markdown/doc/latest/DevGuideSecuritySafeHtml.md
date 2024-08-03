@@ -62,7 +62,7 @@ and comprehensively applied to should be free of the class of XSS
 vulnerabilities due to attacker-controlled strings being evaluated as HTML in
 the browser.
 2.  The code should be structured such that it is easily reviewable for absence
-of this class of XSS -- for each use of a potentially XSS-prone method such as
+of this class of XSS &mdash; for each use of a potentially XSS-prone method such as
 `Element.setInnerHTML` it should be "obvious" that this use can't
 result in an XSS vulnerability.
 

@@ -1850,7 +1850,7 @@ directly from Safari, Firefox, Internet Explorer, and Chrome.
 allows you to chunk your GWT code into multiple fragments for faster
 startup. Imagine having to download a whole movie before being able to
 watch it. Well, that's what you have to do with most Ajax apps these
-days -- download the whole thing before using it. With code splitting,
+days &mdash; download the whole thing before using it. With code splitting,
 you can arrange to load just the minimum script needed to get the
 application running and the user interacting, while the rest of the
 app is downloaded as needed.
@@ -1867,7 +1867,7 @@ in 1.4 to provide automatic spriting of images. ClientBundle
 generalizes this technique, bringing the power of combining and
 optimizing resources into one download to things like text files, CSS,
 and XML. This means fewer network round trips, which in turn can
-decrease application latency -- especially on mobile applications.
+decrease application latency &mdash; especially on mobile applications.
 *   Using HtmlUnit for running test cases based on [GWTTestCase](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html):
 Prior to 2.0, `GWTTestCase` relied on SWT and native code
 versions of actual browsers to run unit tests. As a result, running
@@ -2515,8 +2515,8 @@ This is the Release Candidate for GWT 1.3, the first completely
 open source version of GWT. This version has no new functionality, but
 we did make a lot of changes to get the source code and build scripts
 into presentable shape to prepare for ongoing open source development.
-Although the changes were relatively harmless -- formatting, sorting,
-more documentation, and a new build system -- there's always a small
+Although the changes were relatively harmless &mdash; formatting, sorting,
+more documentation, and a new build system &mdash; there's always a small
 chance of problems, so we plan to call this a Release Candidate until
 we've convinced ourselves it's reliable.
 

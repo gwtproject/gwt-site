@@ -117,7 +117,7 @@ Format a <code>List</code> or array using locale-specific punctuation.  For
 | 3          | a, b, and c |
 
 Note that only the locale-default separator and the logical conjuctive form is
-supported -- there is currently no way to produce a list like "a; b; or c".
+supported &mdash; there is currently no way to produce a list like "a; b; or c".
 See the [plurals documentation](DevGuideI18nPluralForms.html#Lists) for how this interacts with plural support.
 The format following the <code>list</code> tag, if any, describes how each list
 element is formatted.  Ie, <code>{0,list}</code> means every element is formatted
@@ -141,11 +141,11 @@ for each locale.
 </dd>
 <dt><code>{0,localdatetime,predef:PREDEF_NAME}</code></dt>
 <dd>
-Use a locale-specific predefined format -- see [DateTimeFormat.PredefinedFormat](/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html)"
+Use a locale-specific predefined format &mdash; see [DateTimeFormat.PredefinedFormat](/javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.PredefinedFormat.html)"
     for possible values, example: <code>{0,localdatetime,predef:DATE_SHORT}</code>.
 </dd>
 <dt>extra formatter arguments</dt>
-<dd>   Some formatters accept additional arguments.  These are added to the main format specification, separated by a colon -- for example:
+<dd>   Some formatters accept additional arguments.  These are added to the main format specification, separated by a colon &mdash; for example:
     <code>{0,list,number:curcode=USD,currency}</code> says to use the default currency format for list elements, but use USD (US Dollars) for the currency code.  You
     can also supply a dynamic argument, such as <code>{0,localdatetime:tz=$tz,predef:DATE_FULL}</code>, which says the timezone to
     use is supplied by a parameter <code>TimeZone tz</code> supplied to the method.
