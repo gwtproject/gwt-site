@@ -43,8 +43,8 @@ You build and run LogExample the same way you would build and run any of the oth
 
 [![Logging Example web page](images/LoggingExample.png)](images/LoggingExample.png)
 
-LogExample is configured using [`LogExample.gwt.xml`](https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/LogExample.gwt.xml).
-The entry point for the app is [`LogExample.java`](https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java) &mdash; it simply creates and adds the various demo modules to the page.  Each of these modules illustrates a different set of logging concepts; this tutorial will walk you through them.
+LogExample is configured using [`LogExample.gwt.xml`](https://github.com/gwtproject/gwt/blob/main/samples/logexample/src/com/google/gwt/sample/logexample/LogExample.gwt.xml).
+The entry point for the app is [`LogExample.java`](https://github.com/gwtproject/gwt/blob/main/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java) &mdash; it simply creates and adds the various demo modules to the page.  Each of these modules illustrates a different set of logging concepts; this tutorial will walk you through them.
 
 ## Loggers, Handlers and the Root Logger<a id="Loggers_Handlers_and_the_Root_Logger"></a>
 
@@ -52,21 +52,21 @@ Loggers are organized in a tree structure, with the Root Logger at the root of t
 
 When you log a message to a logger, if the Level of the message is high enough, it will pass the message on to its parent, which will pass it on to its parent, and so on, until the Root Logger is reached.  Along the way, any given logger (including the Root Logger) will also pass the message to any of its Handlers, and if the Level of the message is high enough, those handlers will output the message in some way (to a popup, to stderr, etc.). For a much more detailed explanation of this, see [http://java.sun.com/j2se/1.4.2/docs/guide/util/logging/overview.html](http://java.sun.com/j2se/1.4.2/docs/guide/util/logging/overview.html).
 
-If you open [`LogExample.java`](https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java) you can see that we've created 3 loggers:
+If you open [`LogExample.java`](https://github.com/gwtproject/gwt/blob/main/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java) you can see that we've created 3 loggers:
 
 ```
-// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java">LogExample.java</a>
+// <a href="https://github.com/gwtproject/gwt/blob/main/samples/logexample/src/com/google/gwt/sample/logexample/client/LogExample.java">LogExample.java</a>
 
   private static Logger childLogger = Logger.getLogger("ParentLogger.Child");
   private static Logger parentLogger = Logger.getLogger("ParentLogger");
   private static Logger rootLogger = Logger.getLogger("");
 ```
 
-We've passed these 3 loggers into [`LoggerController`](https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/LoggerController.java), which in turn, creates an instance of
-[`OneLoggerController`](https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/OneLoggerController.java) for each of them.  In `OneLoggerController.java` you can see example code for changing the Level of the logger, logging to the logger, and logging an exception to the logger.
+We've passed these 3 loggers into [`LoggerController`](https://github.com/gwtproject/gwt/blob/main/samples/logexample/src/com/google/gwt/sample/logexample/client/LoggerController.java), which in turn, creates an instance of
+[`OneLoggerController`](https://github.com/gwtproject/gwt/blob/main/samples/logexample/src/com/google/gwt/sample/logexample/client/OneLoggerController.java) for each of them.  In `OneLoggerController.java` you can see example code for changing the Level of the logger, logging to the logger, and logging an exception to the logger.
 
 ```
-// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/OneLoggerController.java">OneLoggerController</a>
+// <a href="https://github.com/gwtproject/gwt/blob/main/samples/logexample/src/com/google/gwt/sample/logexample/client/OneLoggerController.java">OneLoggerController</a>
 
   // Change the level of the logger
   @UiHandler("levelTextBox")
@@ -125,7 +125,7 @@ GWT logging comes with a set of Handlers already defined and (by default) attach
 Here's an example of how a checkbox adds or removes a handler:
 
 ```
-// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/HandlerController.java">HandlerController.java</a>
+// <a href="https://github.com/gwtproject/gwt/blob/main/samples/logexample/src/com/google/gwt/sample/logexample/client/HandlerController.java">HandlerController.java</a>
 
     public void onValueChange(ValueChangeEvent<Boolean> event) {
       if (checkbox.getValue()) {
@@ -158,7 +158,7 @@ Once we have one of these widgets, we simply pass it into the constructor
 of a `HasWidgetsLogHandler` and add that Handler to a logger.
 
 ```
-// <a href="https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/client/ui/VerticalPanel.java">VerticalPanel.java</a>
+// <a href="https://github.com/gwtproject/gwt/blob/main/user/src/com/google/gwt/user/client/ui/VerticalPanel.java">VerticalPanel.java</a>
 
     VerticalPanel customLogArea;
 
@@ -175,14 +175,14 @@ Although GWT emulates java.util.logging, it is important to understand the diffe
 
 To make this clear, the client-side GWT code has a Root Logger (and logger hierarchy) that is separate from the server-side code;  all of the handlers discussed above are only applicable to client-side code.  If code shared by the client and server makes logging calls, then which Root Logger (and logger hierarchy) it logs to will depend on whether it is being executed on the client or server side.  You should not add or manipulate Handlers in shared code, since this will not work as expected.
 
-In [`ServerLoggingArea.java`](https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/ServerLoggingArea.java), you can experiment with these concepts.  The buttons in that section will trigger logging calls on the server, as well as logging calls in [`SharedClass.java`](https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/shared/SharedClass.java) from both the client and server side.  Note the slight differences in formatting between client-side and server-side logging, as well as the different handlers each is logged to (in the tutorial, server-side logging will simply log to stderr, while client-side logging will log to all of the Handlers discussed above).
+In [`ServerLoggingArea.java`](https://github.com/gwtproject/gwt/blob/main/samples/logexample/src/com/google/gwt/sample/logexample/client/ServerLoggingArea.java), you can experiment with these concepts.  The buttons in that section will trigger logging calls on the server, as well as logging calls in [`SharedClass.java`](https://github.com/gwtproject/gwt/blob/main/samples/logexample/src/com/google/gwt/sample/logexample/shared/SharedClass.java) from both the client and server side.  Note the slight differences in formatting between client-side and server-side logging, as well as the different handlers each is logged to (in the tutorial, server-side logging will simply log to stderr, while client-side logging will log to all of the Handlers discussed above).
 
 ## Remote Logging<a id="Remote_Logging"></a>
 
 In order for events that are logged by client-side code to be stored on the server side, you need to use a `RemoteLogHandler`.  This handler will send log messages to the server, where they will be logged using the server-side logging mechanism. GWT currently contains a `SimpleRemoteLogHandler` which will do this in the simplest possible way (using GWT-RPC) and no intelligent batching, exponential backoffs in case of failure, and so forth.  This logger is disabled by default, but you can enable it in the .gwt.xml file (see the section on Handlers above for more details on configuring the default Handlers).
 
 ```
-# <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/LogExample.gwt.xml">LogExample.gwt.xml</a>
+# <a href="https://github.com/gwtproject/gwt/blob/main/samples/logexample/src/com/google/gwt/sample/logexample/LogExample.gwt.xml">LogExample.gwt.xml</a>
 
   <set-property name="gwt.logging.simpleRemoteHandler" value="ENABLED" />
 ```
@@ -204,7 +204,7 @@ Code that normally compiles out will still be present in Development mode.  You 
 
 ```
 
-// <a href="https://gwt.googlesource.com/gwt/+/master/samples/logexample/src/com/google/gwt/sample/logexample/client/CustomLogArea.java">VerticalPanel.java</a>
+// <a href="https://github.com/gwtproject/gwt/blob/main/samples/logexample/src/com/google/gwt/sample/logexample/client/CustomLogArea.java">VerticalPanel.java</a>
 
     // Although this code will compile out without this check in web mode, the guard will ensure
     // that the handler does not show up in development mode.

@@ -249,7 +249,7 @@ the GWT build; style issues that can't be caught by the build system should be
 addressed during code review.
 
 To make it easier to format your GWT code correctly, use the
-[GWT style formatter](https://gwt.googlesource.com/gwt/+/master/eclipse/settings/code-style/gwt-format.xml)
+[GWT style formatter](https://github.com/gwtproject/gwt/blob/main/eclipse/settings/code-style/gwt-format.xml)
 for Eclipse (Preferences | Java > Code Style > Formatter | Import...).
 
 In general, the GWT style is based on [the
@@ -579,4 +579,4 @@ Since our .gitignore files don't contain IDE or OS specific .gitignore entries y
 
 [This](https://help.github.com/articles/ignoring-files) is how you setup a global .gitignore.
 
-[Here](https://github.com/github/gitignore/tree/master/Global) you find a list of IDE specific global .gitignore files.
+[Here](https://github.com/github/gitignore/tree/main/Global) you find a list of IDE specific global .gitignore files.
