@@ -43,7 +43,7 @@ When implementing a render method, you should follow these steps:
       [AbstractCell](/javadoc/latest/com/google/gwt/cell/client/AbstractCell.html),
       parameterized with the type of value you want to render.
 
-        **WARNING:** Implement the Cell interface directly at your own risk. The Cell interface may change in subtle but breaking ways as we
+      <br/>**WARNING:** Implement the Cell interface directly at your own risk. The Cell interface may change in subtle but breaking ways as we
         continuously seek to improve performance. We provide AbstractCell so we can modify the Cell interface without breaking your code.
 
 2.  Within the render method, always check if the value is `null`. Even if you do not include null values in your data, Cell widgets
@@ -59,7 +59,7 @@ When implementing a render method, you should follow these steps:
 
 You can download this example at [CellExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cell/CellExample.java).
 
-```
+```java
 /**
  * Example of creating a custom {@link Cell}.
  */
@@ -189,7 +189,7 @@ The process for adding event support is as follows:
     to indicate that the value of the cell has been modified. For example, you might call the `update()` method if the user types a new value in a text
     box, or if the user clicks on a button.
 
-```
+```java
 /**
  * Example of creating a custom {@link Cell} that responds to events.
  */

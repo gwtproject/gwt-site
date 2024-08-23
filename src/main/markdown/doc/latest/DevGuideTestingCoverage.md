@@ -13,7 +13,7 @@ We offer two ways of measuring code coverage: (i) using the EclEmma plugin in Ec
 
 As a running example, let us say we create a project with the provided `webAppCreator` and `junitCreator` tools as:
 
-```
+```shell
 ./webAppCreator -out myapp  
                      -junit ../../../../gwt-tools/lib/junit/junit-3.8.1.jar 
                      com.example.myapp.MyApp
@@ -21,7 +21,7 @@ As a running example, let us say we create a project with the provided `webAppCr
 
 Add the following `computeFactorial()` method to MyApp.java and the dummy `testFactorial()` method to MyAppTest.java
 
-```
+```java
 int computeFactorial(int number) {
   if (number &le; 1) {
     return 1;
@@ -30,8 +30,7 @@ int computeFactorial(int number) {
 }
 ```
 
-```
-
+```java
 public void testFactorial() {
 }
 ```
@@ -66,7 +65,7 @@ This result is expected because, by default, the MyAppTest.java file does not ex
 
 Augment the MyAppTest.java by creating the testFactorial method:
 
-```
+```java
 public void testFactorial() {
   assertEquals(1, new MyApp().computeFactorial(0));
 }
@@ -74,7 +73,7 @@ public void testFactorial() {
 
 On running coverage, now we see that out of 13 instructions in the method `computeFactorial` (the figure below shows the total instructions in the `computeFactorial` method), 5 instructions are covered. (Note that these instructions are bytecode instructions.) Let us add another statement to testFactorial() for testing the factorial computation for numbers greater than `0` such that the method becomes:
 
-```
+```java
 public void testFactorial() {
   assertEquals(1, new MyApp().computeFactorial(0));
   assertEquals(2, new MyApp().computeFactorial(2));
@@ -93,34 +92,54 @@ Since GWT requires a patched version of EMMA, use the [EMMA jar from GWT's downl
 2.  Step ii - Instrument the class files using Emma &mdash; this produces a coverage.em file
 3.  Step iii - Run the test code after putting the modified emma.jar in the classpath
 
-(The yellow text is the output of the tool. For convenience, we copied the patched EMMA jar as emma.jar in the current directory.)
+(For convenience, we copied the patched EMMA jar as emma.jar in the current directory.)
 
+Step i: generate the class files
+
+```shell
+ant devmode
+````
+
+Step ii: use emma to instrument the class files, creates a coverage.em file
+
+```shell
+java -cp emma.jar emma instr -m overwrite -cp war/WEB-INF/classes/com/example/myapp/client
 ```
 
-# step i: generate the class files
-<strong>ant devmode</strong>
+Expected output:
 
-# step ii: use emma to instrument the class files, creates a coverage.em file
-<strong>java -cp emma.jar emma instr -m overwrite -cp war/WEB-INF/classes/com/example/myapp/client </strong>
-
-<span style="background: #FD5;">EMMA: processing instrumentation path ...
+```text
 EMMA: instrumentation path processed in 231 ms
 EMMA: [5 class(es) instrumented, 0 resource(s) copied]
 EMMA: metadata merged into [PARENT_DIR/samples/com/example/myapp/coverage.em] {in 17 ms}</span>
+```
 
-# step iii: run the test code after putting the modified emma.jar in the classpath; generates a coverage.ec file
-<strong>ant test.dev</strong>
+step iii: run the test code after putting the modified emma.jar in the classpath; generates a coverage.ec file
 
-<span style="background: #FD5;">EMMA: collecting runtime coverage data ...
+```shell
+ant test.dev
+```
+
+Expected output
+
+```text
+EMMA: collecting runtime coverage data ...
 ..
 Time: 12.968
 OK (2 tests)
 EMMA: runtime coverage data merged into [PARENT_DIR/samples/com/example/myapp/coverage.ec] {in 22 ms}</span>
+```
 
-# step iv: generate the coverage report HTML file
-<strong>java -cp emma.jar emma report -r html -in coverage.em,coverage.ec </strong>
+Step iv: generate the coverage report HTML file
 
-<span style="background: #FD5;">EMMA: processing input files ...
+```shell
+java -cp emma.jar emma report -r html -in coverage.em,coverage.ec </strong>
+```
+
+Expected output:
+
+```text
+EMMA: processing input files ...
 EMMA: 2 file(s) read and merged in 13 ms
 EMMA: writing [html] report to [PARENT_DIR/samples/com/example/myapp/coverage/index.html] ...</span>
 ```

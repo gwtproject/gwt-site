@@ -93,13 +93,13 @@ interpret parameters as HTML unless strictly necessary.
 
 For example, it is not uncommon to see GWT application code such as:
 
-```
+```java
 HTML widget = new HTML("Some text in the widget");
 ```
 
 or
 
-```
+```java
 widget.setHTML(someText);
 ```
 
@@ -162,7 +162,7 @@ the [`HasHTML`](/javadoc/latest/com/google/gwt/user/client/ui/HasHTML.html) (or 
 implement the [`HasSafeHtml`](/javadoc/latest/com/google/gwt/safehtml/client/HasSafeHtml.html) (or [`HasDirectionalSafeHtml`](/javadoc/latest/com/google/gwt/user/client/ui/HasDirectionalSafeHtml.html), respectively)
 interface.  These interfaces define:
 
-```
+```java
 public void setHTML(SafeHtml html);
 public void setHTML(SafeHtml html, Direction dir);
 ```
@@ -173,7 +173,7 @@ as safe alternatives to `setHTML(String)` and
 For example, the [`HTML`](/javadoc/latest/com/google/gwt/user/client/ui/HTML.html) widget has been
 augmented with the following constructors and methods:
 
-```
+```java
 public class HTML extends Label 
     implements HasDirectionalHtml, HasDirectionalSafeHtml {
   // ...
@@ -228,7 +228,7 @@ appropriately escaped.
 
 Consider this usage example:
 
-```
+```java
 public void showItems(List<String> items) {
   SafeHtmlBuilder builder = new SafeHtmlBuilder();
   for (String item : items) {
@@ -254,7 +254,7 @@ following use would be illegal because the argument of the first
 tag; the string ends in the context of the value of the `href`
 attribute of that tag:
 
-```
+```java
 builder.appendHtmlConstant("<a href='").appendEscaped(url).appendHtmlConstant("'>")
 ```
 
@@ -284,7 +284,7 @@ To facilitate the creation of SafeHtml instances containing more complex HTML
 markup, the `safehtml` package provides a compile-time bound template
 mechanism which can be used as in this example:
 
-```
+```java
 public class MyWidget ... {
 // ...
   public interface MyTemplates extends SafeHtmlTemplates {
@@ -335,7 +335,7 @@ closed in quotes (e.g., `<tag attribute="{0}">` would be allowed,
 inside a tag or inside an attribute. For example, the following is not a valid
 template:
 
-```
+```java
 <span><{0} class="xyz" {1}="..."/></span>
 ```
 
@@ -428,7 +428,7 @@ strings:
 tag; the string ends in the context of the value of the `href`
 attribute of that tag:
 
-```
+```java
 SafeHtml safeHtml = SafeHtmlUtils.fromSafeConstant("<a href='");
 ```
 
@@ -463,7 +463,7 @@ third-party controlled and potentially malicious HTML markup. Instead, such
 strings can be wrapped as a `SafeHtml` by passing them through
 `SimpleHtmlSanitizer`, for example:
 
-```
+```java
 SafeHtml snippetHtml = SimpleHtmlSanitizer.sanitizeHtml(snippet);
 ```
 
@@ -478,13 +478,13 @@ part of a sub-string in the above set will be escaped.
 
 For example, the string:
 
-```
+```text
 foo < bar &amp; that is <em>good</em>, <span style="foo: bar">...
 ```
 
 will be sanitized into:
 
-```
+```text
 foo &amp;lt; bar &amp;amp; that is <em>good</em>, &amp;lt;span style=&amp;quot;foo: bar&amp;quot;&amp;gt;...
 ```
 
@@ -531,7 +531,7 @@ close as possible to such a use.  For example, a `SafeHtml` value
 should be unwrapped immediately before it is assigned to `innerHTML`,
 and no earlier:
 
-```
+```java
 element.setInnerHTML(safeHtml.asString());
 ```
 
@@ -539,7 +539,7 @@ Widgets that are composed of other widgets should _not_ unwrap
 `SafeHtml` values when initializing sub-widgets, and instead
 pass the `SafeHtml` to the sub-widget. For example, write:
 
-```
+```java
 public class MyPanel extends HorizontalPanel {
   InlineHTML messageWidget;
   SafeHtml currentMessage;
@@ -557,7 +557,7 @@ public class MyPanel extends HorizontalPanel {
 
 instead of:
 
-```
+```java
 public class MyPanel extends HorizontalPanel {
   InlineHTML messageWidget;
   String currentMessage;

@@ -20,7 +20,7 @@ service in the onModuleLoad() method of your EntryPoint class to check
 if the user is logged in. This initiates a GWT-RPC request as soon as
 the GWT module loads.
 
-```
+```java
 public void onModuleLoad() {
   // loginService is a GWT-RPC service that checks if the user is logged in
   loginService.checkLoggedIn(new AsyncCallback<Boolean> {
@@ -70,7 +70,7 @@ for custom authentication schemes and the ability to vary the content of
 the host page based on the user. Here's an example of a simple host page
 written as a servlet:
 
-```
+```java
 public class GwtHostingServlet extends HttpServlet {
 
  @Override
@@ -99,7 +99,7 @@ The following example uses the App Engine
 user is logged in. Even if you're not using App Engine, you can imagine
 how the code would look slightly different in your servlet environment.
 
-```
+```java
 // In GwtHostingServlet's doGet() method...
 PrintWriter writer = resp.getWriter();
 writer.append("<html><head>");
@@ -133,7 +133,7 @@ GWT module, then immediately making another request to get this data. A
 more efficient way is to write the initial data as a Javascript variable
 into the host page itself.
 
-```
+```java
 // In GwtHostingServlet's doGet() method...
 writer.append("<html><head>");
 writer.append("<script type=\"text/javascript\" src=\"sample/sample.nocache.js\"></script>");
@@ -157,7 +157,7 @@ writer.append("</head><body>Hello, world!</body></html>");
 
 Now your GWT code can access the data using JSNI, like so:
 
-```
+```java
 public native String getEmail() /*-{
   return $wnd.info['email'];
 }-*/;
@@ -166,7 +166,7 @@ public native String getEmail() /*-{
 Alternatively, you can take advantage of GWT's
 [Dictionary](/javadoc/latest/com/google/gwt/i18n/client/Dictionary.html) class:
 
-```
+```java
 public void onModuleLoad() {
   // Looks for a JS variable called "info" in the global scope
   Dictionary info = Dictionary.getDictionary("info");
@@ -182,7 +182,7 @@ worthwhile to consider using a templating language like JSP to make your
 code more readable. Here's our example as a JSP page instead of a
 servlet:
 
-```
+```jsp
 <!-- gwt-hosting.jsp -->
 <html>
  <head>
@@ -212,7 +212,7 @@ servlet:
 
 You can make this JSP page your welcome file by specifying it in your web.xml file:
 
-```
+```xml
 <welcome-file-list>
   <welcome-file>gwt-hosting.jsp</welcome-file>
 </welcome-file-list>

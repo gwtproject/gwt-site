@@ -49,7 +49,7 @@ $JDK_HOME environment variable with export JDK_HOME="/Library/Java/Home"
 
 On Windows, extract the files from the compressed folder `gwt-2.10.0.zip`.  On Mac or Linux, you can unpack the package with a command like:
 
-```
+```shell
 unzip gwt-2.10.0.zip
 ```
 
@@ -64,7 +64,7 @@ You can create a new demo application in a new MyWebApp directory by running `we
 
 *   **Windows**
 
-```
+```shell
 cd gwt-2.10.0
 
 webAppCreator -out MyWebApp com.mycompany.mywebapp.MyWebApp
@@ -72,7 +72,7 @@ webAppCreator -out MyWebApp com.mycompany.mywebapp.MyWebApp
 
 *   **Mac or Linux** - you may need to make the script executable:
 
-```
+```shell
 cd gwt-2.10.0
 
 chmod u+x webAppCreator
@@ -90,7 +90,7 @@ script also generates an Ant build script `MyWebApp/build.xml`.
 
 To run your newly created application in development mode:
 
-```
+```shell
 cd MyWebApp/
 
 ant devmode
@@ -118,13 +118,13 @@ the project above. You'll see two packages,
 
 Look inside `com/mycompany/mywebapp/client/MyWebApp.java`. Line 41 constructs the "Send" button.
 
-```
+```java
 final Button sendButton = new Button("Send");
 ```
 
 Change the text from "Send" to "Send to Server".
 
-```
+```java
 final Button sendButton = new Button("Send to Server");
 ```
 
@@ -134,7 +134,7 @@ Now, save the file and simply click "Refresh" in your browser to see your change
 
 To run the application as JavaScript in what GWT calls "production mode", compile the application by executing:
 
-```
+```shell
 ant build
 ```
 

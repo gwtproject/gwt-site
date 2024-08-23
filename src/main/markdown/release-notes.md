@@ -242,7 +242,7 @@ by `window.onerror`. This may potentially be a breaking change if there were
 misbehaving scripts on the page. To disable this functionality, set the property
 `gwt.uncaughtexceptionhandler.windowonerror` to `IGNORE`:
 
-```
+```xml
     <set-property name="gwt.uncaughtexceptionhandler.windowonerror" value="IGNORE"/>
 ```
 
@@ -391,7 +391,7 @@ prefered supertype of any JS type, including primitives.
 - Allow `@JsOverlay` on effectively final methods.
 - Split JsInterop annotations into their own JAR when deploying to Maven:
 
-```
+```xml
 <dependency>
   <groupId>com.google.jsinterop</groupId>
   <artifactId>jsinterop-annotations</artifactId>
@@ -1748,7 +1748,7 @@ Design](http://code.google.com/p/google-web-toolkit/wiki/LayoutDesign) on the wi
 and [TabLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/TabLayoutPanel.html).
 *   UiBinder now directly supports `LayoutPanel`. For example:
 
-```
+```xml
 <g:LayoutPanel>
   <g:layer left='1em' width='20px'><g:Label>left-width</g:Label></g:Layer>
   <g:layer right='1em' width='20px'><g:Label>right-width</g:Label></g:Layer>

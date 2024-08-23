@@ -21,7 +21,7 @@ application.
 
 For example, by specifying the following annotations on your class:
 
-```
+```java
 public class Person implements Serializable {
   @NotNull
   @Size(min = 4, message = "Name must be at least 4 characters long.")
@@ -60,7 +60,7 @@ GWT validation is done by annotating beans, getters, and properties with constra
 [JSR-303 specification](http://jcp.org/en/jsr/detail?id=303) for more information on how to define and use
 constraints.
 
-```
+```java
 public class Person {
   @Size(min = 4)
   private String name;
@@ -76,7 +76,7 @@ Luckily, you do not need to implement the validator yourself because GWT can gen
 a validator simply define an interface which extends `Validator` and contains a `@GwtValidation` annotation.
 This annotation requires you to list all classes that will be validated on the client side.
 
-```
+```java
 public final class SampleValidatorFactory extends AbstractGwtValidatorFactory {
 
   /**
@@ -97,7 +97,7 @@ public final class SampleValidatorFactory extends AbstractGwtValidatorFactory {
 Lastly, we must tell GWT to use deferred binding to generate our validator object, adding the following snippet
 to your `module.gwt.xml`.
 
-```
+```xml
 <inherits name="org.hibernate.validator.HibernateValidator" />
 <replace-with
   class="com.google.gwt.sample.validation.client.SampleValidatorFactory">
@@ -110,7 +110,7 @@ to your `module.gwt.xml`.
 Use the standard validation bootstrap with the default factory to get the generated `Validator` for your objects.
 You may use this validator to validate an entire bean object or just specific properties of a bean.
 
-```
+```java
 Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 Set<ConstraintViolation<Person>> violations = validator.validate(person);
 ```
@@ -123,7 +123,7 @@ on certain subsets of constraints.
 All constraints are automatically a part of the `Default` group unless you specify otherwise. Creating a new group
 is as simple as making an empty interface:
 
-```
+```java
 /** Validates a minimal set of constraints */
 public interface Minimal { }
 ```
@@ -131,7 +131,7 @@ public interface Minimal { }
 If you are using any validation groups other than `Default` in client code, it is important that you list them in
 the "groups" parameter of the `@GwtValidation` annotation.
 
-```
+```java
 @GwtValidation(value = Person.class, groups = {Default.class, Minimal.class})
 public interface GwtValidator extends Validator {
 }
@@ -139,7 +139,7 @@ public interface GwtValidator extends Validator {
 
 After that, you can specify this group in the "groups" parameter of any constraint:
 
-```
+```java
 public class Address {
   @NotEmpty(groups = Minimal.class)
   @Size(max=50)
@@ -157,7 +157,7 @@ public class Address {
 From here you can validate an `Address` object using the `Default` group, which contains three constraints
 (`@Size` on "street", `@NotEmpty` on "city", and `@NotEmpty` on "zipCode"):
 
-```
+```java
 Address address = new Address();
 validator.validate(address);
 ```
@@ -165,7 +165,7 @@ validator.validate(address);
 Or validate using the `Minimal` group, which contains `@NotEmpty` on "street" and `@NotEmpty` on
 "zipCode":
 
-```
+```java
 validator.validate(address, Minimal.class);
 ```
 
@@ -175,7 +175,7 @@ Validation groups can be used to specify what constraints to run on the client a
 server-side constraints which do not work with GWT&mdash;just be sure to omit any server-side-only groups from your validator
 factory's `@GwtValidation` annotation to avoid compilation issues.
 
-```
+```java
 @ServerConstraint(groups = ServerGroup.class)
 public class Person {
   @NotNull(groups = ClientGroup.class)

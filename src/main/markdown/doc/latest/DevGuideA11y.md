@@ -93,7 +93,7 @@ The following is an example taken from the <a href="/javadoc/latest/com/google/g
 Adding the `button` role indicates to an assistive technology that the widget will behave like a
 button.
 
-```
+```java
 protected CustomButton() {
     ...
     // Add a11y role "button"
@@ -128,7 +128,7 @@ Once a specific ARIA role has been associated with a widget, it is important to 
 
 In the CustomButton widget, the `aria-pressed` and `aria-disabled` ARIA state is initialized as follows:
 
-```
+```java
 protected CustomButton() {
     ...
     // Add a11y state "aria-pressed" and "aria-disabled"
@@ -144,7 +144,7 @@ The [CustomButton](/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.ht
 the case with the CustomButton subclass [ToggleButton](/javadoc/latest/com/google/gwt/user/client/ui/ToggleButton.html). Event handlers attached
 to the underlying DOM element update the button faces when the button is pressed. We need to toggle the ARIA state `aria-pressed` as shown below.
 
-```
+```java
 void toggleDown() {
     // Update a11y state "aria-pressed"
     Roles.getButtonRole().setAriaPressedState(getElement(), PressedValue.of(true));
@@ -188,7 +188,7 @@ setting the `tabindex` ARIA attribute. The code below shows how to add the headi
 order of the page.  You might want to do this if you want to allow further interaction with the heading (e.g. for some type of
 clickable heading).
 
-```
+```java
 // Set tab index for a heading element
   Roles.getHeadingRole().setTabindexExtraAttribute(heading.getElement(), 0);
 ```
@@ -223,7 +223,7 @@ widgets.
 
 First, we set roles on the Tree's root element and its focusable element:
 
-```
+```java
 // Called from Tree(...) constructor
   private void init(TreeImages images, boolean useLeafImages) {
 
@@ -255,7 +255,7 @@ First, we set roles on the Tree's root element and its focusable element:
 
 Whenever an item selection changes, the value of the `aria-activedescendant` property is set on the focusable element, and the ARIA states and properties of the currently-selected item are set:
 
-```
+```java
 // Called after a new item has been selected
   private void updateAriaAttributes() {
 
@@ -315,7 +315,7 @@ how to implement this technique for an auto-complete widget:
 
 The ARIA role `region` is added when instantiating the relevant DOM nodes in the AutoCompleteWidget constructor:
 
-```
+```java
 public AutoCompleteWidget() {
     ...
     // Create a hidden div where we store the current item text for a
@@ -330,7 +330,7 @@ public AutoCompleteWidget() {
 
 Here, we have created a hidden div element that holds the content to be spoken. We've declared it to have `role = 'region'` and `live = 'assertive'`; the latter setting specifies that updates to this content have the highest priority. Next, we set up the needed associations so that the set of suggestions returned as the user types into the AutoCompleteWidget's text box are put in hidden div:
 
-```
+```java
 // This method is called via a keyboard event handler
     private void showSuggestions(Collection suggestions) {
       if (suggestions.size() > 0) {

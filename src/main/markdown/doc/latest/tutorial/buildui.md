@@ -53,7 +53,7 @@ the HTML `<label>` element, used in HTML forms. Instead it maps to
 a `<div>` element that contains arbitrary text that is not interpreted as HTML. As a `<div>`
 element, it is a block-level element rather than an inline element.
 
-```
+```html
 <div class="gwt-Label">Last update : Oct 1, 2008 1:31:48 PM</div>
 
 ```
@@ -103,7 +103,7 @@ The Root panel works by wrapping the `<body>` or other element in the HTML host 
 wraps the `<body>` element. However, you can wrap any element if you give it an id and
 then, when you call the Root panel, pass the id as a parameter. You'll see how this works in the next two sections when you do it for StockWatcher.
 
-```
+```java
 RootPanel.get()             // Default. Wraps the HTML body element.
 RootPanel.get("stockList")  // Wraps any HTML element with an id of "stockList"
 ```
@@ -125,7 +125,7 @@ As shown in the following code, do the following:
 5.  Delete the unneeded elements from the starter project application.
 6.  Save the file StockWatcher.html.
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -170,7 +170,8 @@ You can follow this section of the tutorial step-by-step, or you can cut and pas
     * Open **StockWatcher/src/com/google/gwt/sample/stockwatcher/client/StockWatcher.java**.
     * In StockWatcher.java, replace _all_ the
 existing code for the [starter application](create.html#starter) (from the imports down to the handler) with the following code.
-    
+
+        ```java
         package com.google.gwt.sample.stockwatcher.client;
         
         public class StockWatcher implements EntryPoint {
@@ -192,7 +193,7 @@ existing code for the [starter application](create.html#starter) (from the impor
             // TODO Move cursor focus to the input box.
           }
         }
-
+        ```
     * Along the left edge, Eclipse flags the variable definitions with a red "x" because their types are undefined.
 
     **Tip:** One way you can leverage Eclipse is to use its "suggest" feature to add the
@@ -203,38 +204,39 @@ required import declarations, as follows.
 
 3.  Resolve all the other errors by declaring the import declarations in the same way. If you
 are not using Eclipse, cut and paste from the highlighted code below.
-    
-        package com.google.gwt.sample.stockwatcher.client;
-    
-        import com.google.gwt.core.client.EntryPoint;
-        import com.google.gwt.user.client.ui.Button;
-        import com.google.gwt.user.client.ui.FlexTable;
-        import com.google.gwt.user.client.ui.HorizontalPanel;
-        import com.google.gwt.user.client.ui.Label;
-        import com.google.gwt.user.client.ui.TextBox;
-        import com.google.gwt.user.client.ui.VerticalPanel;
-    
-        public class StockWatcher implements EntryPoint {
-    
-        private VerticalPanel mainPanel = new VerticalPanel();
-        private FlexTable stocksFlexTable = new FlexTable();
-        private HorizontalPanel addPanel = new HorizontalPanel();
-        private TextBox newSymbolTextBox = new TextBox();
-        private Button addStockButton = new Button("Add");
-        private Label lastUpdatedLabel = new Label();
-    
-        /**
-         * Entry point method.
-         */
-        public void onModuleLoad() {
-            // TODO Create table for stock data.
-            // TODO Assemble Add Stock panel.
-            // TODO Assemble Main panel.
-            // TODO Associate the Main panel with the HTML host page.
-            // TODO Move cursor focus to the input box.
-          }
-        }
 
+    ```java       
+    package com.google.gwt.sample.stockwatcher.client;
+    
+    import com.google.gwt.core.client.EntryPoint;
+    import com.google.gwt.user.client.ui.Button;
+    import com.google.gwt.user.client.ui.FlexTable;
+    import com.google.gwt.user.client.ui.HorizontalPanel;
+    import com.google.gwt.user.client.ui.Label;
+    import com.google.gwt.user.client.ui.TextBox;
+    import com.google.gwt.user.client.ui.VerticalPanel;
+    
+    public class StockWatcher implements EntryPoint {
+    
+      private VerticalPanel mainPanel = new VerticalPanel();
+      private FlexTable stocksFlexTable = new FlexTable();
+      private HorizontalPanel addPanel = new HorizontalPanel();
+      private TextBox newSymbolTextBox = new TextBox();
+      private Button addStockButton = new Button("Add");
+      private Label lastUpdatedLabel = new Label();
+    
+      /**
+       * Entry point method.
+       */
+      public void onModuleLoad() {
+        // TODO Create table for stock data.
+        // TODO Assemble Add Stock panel.
+        // TODO Assemble Main panel.
+        // TODO Associate the Main panel with the HTML host page.
+        // TODO Move cursor focus to the input box.
+      }
+    }
+    ````
 ###  Create a table for stock data
 
 Implement the table that will hold the stock data. Set up the header row of the table. To do this, use the setText method to create labels in the heading of each column: Symbol, Price, Change, Remove.
@@ -243,43 +245,45 @@ Implement the table that will hold the stock data. Set up the header row of the 
 
     In the onModuleLoad method, replace the TODO comment with the highlighted code.
 
-        package com.google.gwt.sample.stockwatcher.client;
-        
-        import com.google.gwt.core.client.EntryPoint;
-        import com.google.gwt.user.client.ui.Button;
-        import com.google.gwt.user.client.ui.FlexTable;
-        import com.google.gwt.user.client.ui.HorizontalPanel;
-        import com.google.gwt.user.client.ui.Label;
-        import com.google.gwt.user.client.ui.TextBox;
-        import com.google.gwt.user.client.ui.VerticalPanel;
-        
-        public class StockWatcher implements EntryPoint {
-        
-          private VerticalPanel mainPanel = new VerticalPanel();
-          private FlexTable stocksFlexTable = new FlexTable();
-          private HorizontalPanel addPanel = new HorizontalPanel();
-          private TextBox newSymbolTextBox = new TextBox();
-          private Button addStockButton = new Button("Add");
-          private Label lastUpdatedLabel = new Label();
-        
-          /**
-           * Entry point method.
-           */
-          public void onModuleLoad() {
-            // Create table for stock data.
-            stocksFlexTable.setText(0, 0, "Symbol");
-            stocksFlexTable.setText(0, 1, "Price");
-            stocksFlexTable.setText(0, 2, "Change");
-            stocksFlexTable.setText(0, 3, "Remove");
-        
-            // TODO Assemble Add Stock panel.
-            // TODO Assemble Main panel.
-            // TODO Associate the Main panel with the HTML host page.
-            // TODO Move cursor focus to the input box.
-        
-          }
-        
-        }
+    ```java
+    package com.google.gwt.sample.stockwatcher.client;
+    
+    import com.google.gwt.core.client.EntryPoint;
+    import com.google.gwt.user.client.ui.Button;
+    import com.google.gwt.user.client.ui.FlexTable;
+    import com.google.gwt.user.client.ui.HorizontalPanel;
+    import com.google.gwt.user.client.ui.Label;
+    import com.google.gwt.user.client.ui.TextBox;
+    import com.google.gwt.user.client.ui.VerticalPanel;
+    
+    public class StockWatcher implements EntryPoint {
+    
+      private VerticalPanel mainPanel = new VerticalPanel();
+      private FlexTable stocksFlexTable = new FlexTable();
+      private HorizontalPanel addPanel = new HorizontalPanel();
+      private TextBox newSymbolTextBox = new TextBox();
+      private Button addStockButton = new Button("Add");
+      private Label lastUpdatedLabel = new Label();
+    
+      /**
+       * Entry point method.
+       */
+      public void onModuleLoad() {
+        // Create table for stock data.
+        stocksFlexTable.setText(0, 0, "Symbol");
+        stocksFlexTable.setText(0, 1, "Price");
+        stocksFlexTable.setText(0, 2, "Change");
+        stocksFlexTable.setText(0, 3, "Remove");
+
+        // TODO Assemble Add Stock panel.
+        // TODO Assemble Main panel.
+        // TODO Associate the Main panel with the HTML host page.
+        // TODO Move cursor focus to the input box.
+    
+      }
+    
+    }
+    ```
 
 You can see that adding to a table can be accomplished with a call to
 the setText method. The first parameter indicates the row, the second
@@ -294,50 +298,52 @@ To lay out the  widgets, you'll assemble two panels, the Add Stock panel and the
     
     In the onModuleLoad method, replace the TODO comment with the highlighted code.
 
-        package com.google.gwt.sample.stockwatcher.client;
+    ```java
+    package com.google.gwt.sample.stockwatcher.client;
+    
+    import com.google.gwt.core.client.EntryPoint;
+    import com.google.gwt.user.client.ui.Button;
+    import com.google.gwt.user.client.ui.FlexTable;
+    import com.google.gwt.user.client.ui.HorizontalPanel;
+    import com.google.gwt.user.client.ui.Label;
+    import com.google.gwt.user.client.ui.TextBox;
+    import com.google.gwt.user.client.ui.VerticalPanel;
+    
+    public class StockWatcher implements EntryPoint {
         
-        import com.google.gwt.core.client.EntryPoint;
-        import com.google.gwt.user.client.ui.Button;
-        import com.google.gwt.user.client.ui.FlexTable;
-        import com.google.gwt.user.client.ui.HorizontalPanel;
-        import com.google.gwt.user.client.ui.Label;
-        import com.google.gwt.user.client.ui.TextBox;
-        import com.google.gwt.user.client.ui.VerticalPanel;
+      private VerticalPanel mainPanel = new VerticalPanel();
+      private FlexTable stocksFlexTable = new FlexTable();
+      private HorizontalPanel addPanel = new HorizontalPanel();
+      private TextBox newSymbolTextBox = new TextBox();
+      private Button addStockButton = new Button("Add");
+      private Label lastUpdatedLabel = new Label();
+    
+      /**
+       * Entry point method.
+       */
+      public void onModuleLoad() {
+        // Create table for stock data.
+        stocksFlexTable.setText(0, 0, "Symbol");
+        stocksFlexTable.setText(0, 1, "Price");
+        stocksFlexTable.setText(0, 2, "Change");
+        stocksFlexTable.setText(0, 3, "Remove");
+    
+        // Assemble Add Stock panel.
+        addPanel.add(newSymbolTextBox);
+        addPanel.add(addStockButton);
+    
+        // Assemble Main panel.
+        mainPanel.add(stocksFlexTable);
+        mainPanel.add(addPanel);
+        mainPanel.add(lastUpdatedLabel);
         
-        public class StockWatcher implements EntryPoint {
-            
-          private VerticalPanel mainPanel = new VerticalPanel();
-          private FlexTable stocksFlexTable = new FlexTable();
-          private HorizontalPanel addPanel = new HorizontalPanel();
-          private TextBox newSymbolTextBox = new TextBox();
-          private Button addStockButton = new Button("Add");
-          private Label lastUpdatedLabel = new Label();
+        // TODO Associate the Main panel with the HTML host page.
+        // TODO Move cursor focus to the input box.
         
-          /**
-           * Entry point method.
-           */
-          public void onModuleLoad() {
-            // Create table for stock data.
-            stocksFlexTable.setText(0, 0, "Symbol");
-            stocksFlexTable.setText(0, 1, "Price");
-            stocksFlexTable.setText(0, 2, "Change");
-            stocksFlexTable.setText(0, 3, "Remove");
-            
-            // Assemble Add Stock panel.
-            addPanel.add(newSymbolTextBox);
-            addPanel.add(addStockButton);
-            
-            // Assemble Main panel.
-            mainPanel.add(stocksFlexTable);
-            mainPanel.add(addPanel);
-            mainPanel.add(lastUpdatedLabel);
-            
-            // TODO Associate the Main panel with the HTML host page.
-            // TODO Move cursor focus to the input box.
-            
-          }
-            
-        }
+      }
+        
+    }
+    ```
 
 ###  Associate the Main panel with the Root panel
 
@@ -347,6 +353,7 @@ In order for any GWT widget or panel to be embedded in the HTML host page, it mu
     *   In the onModuleLoad method, replace the TODO comment with the highlighted
 code.
 
+        ```java
         package com.google.gwt.sample.stockwatcher.client;
 
         import com.google.gwt.core.client.EntryPoint;
@@ -393,12 +400,12 @@ code.
           }
 
         }
-
+        ```
     *  Eclipse flags RootPanel and suggests the correct import declaration.
 
 2.  Include the import declaration.
 
-```
+```java
 import com.google.gwt.user.client.ui.RootPanel;
 ```
 
@@ -408,7 +415,7 @@ Finally, move the cursor focus to the input box so, when StockWatcher loads, the
 
 In the onModuleLoad method, replace the TODO comment with the highlighted code.
 
-```
+```java
 package com.google.gwt.sample.stockwatcher.client;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -464,7 +471,7 @@ public class StockWatcher implements EntryPoint {
 
 Here's what you've done to this point.
 
-```
+```java
 package com.google.gwt.sample.stockwatcher.client;
 
 import com.google.gwt.core.client.EntryPoint;

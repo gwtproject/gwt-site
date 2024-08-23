@@ -28,7 +28,7 @@ Deploying a GWT application on a servlet container is also an easy process. Sinc
 
 Referring to the DynaTable sample, deploying your project would involve copying the GWT compiler output to the following path on your servlet container:
 
-```
+```text
 webapps/dynatable/DynaTable.html
 webapps/dynatable/DynaTable.css
 webapps/dynatable/dynatable/dynatable.nocache.js
@@ -70,13 +70,13 @@ Deploying your application on [Google App Engine](https://developers.google.com/
 
 If you used the `webAppCreator` to create your project, you can simply compile your application with:
 
-```
+```shell
 ant build
 ```
 
 and then deploy your application from the war output directory by invoking the appcfg utility with the update option:
 
-```
+```shell
 <appengine_home_dir>/appcfg.sh update war
 ```
 

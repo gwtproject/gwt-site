@@ -25,7 +25,7 @@ getElement() method to get the underlying element from the DOM.
 
 The following example shows how to set a style attribute to change a widget's background color.
 
-```
+```java
 private HTML htmlWidget;
 
 // Other code to instantiate the widget...
@@ -46,7 +46,7 @@ instead.
 The following example shows how to combine a JSNI method with Java code to manipulate the DOM. First, we have a JSNI routine that will retrieve all the child elements that are
 Anchor tags. The element objects are assigned a unique ID for easy access from Java:
 
-```
+```java
 /**
  * Find all child elements that are anchor tags,
  * assign a unique id to them, and return a list of
@@ -66,7 +66,7 @@ private native void putElementLinkIDsInList(Element elt, ArrayList<String> list)
 And what could you possibly do with a DOM element once you have found it? This code iterates through all the anchor tags returned from the above method and then rewrites where
 it points to:
 
-```
+```java
 /**
  * Find all anchor tags and if any point outside the site, 
  * redirect them to a "blocked" page.
@@ -109,7 +109,7 @@ native DOM Event.
 
 This example shows how to use the DOM methods to catch a keyboard event for particular elements and handle them before the [event](DevGuideUiHandlers.html) gets dispatched:
 
-```
+```java
 private ArrayList<Element> keyboardEventReceivers = new ArrayList<Element>();
 
 /**

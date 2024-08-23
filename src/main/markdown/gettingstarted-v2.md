@@ -38,7 +38,7 @@ and add both to the path.
 
 Open a terminal and choose the directory you like to generate the project into. Generate a new project using: 
 
-```
+```shell
 mvn archetype:generate \
    -DarchetypeGroupId=net.ltgt.gwt.archetypes \
    -DarchetypeVersion=LATEST \
@@ -55,7 +55,7 @@ The archetype will request values for:
 
 After entering the parameter above, the terminal shows something like that:
 
-```
+```text
 [INFO] Using property: module = App
 Define value for property 'groupId': com.mycompany.mywebapp
 Define value for property 'artifactId': mywebapp
@@ -76,7 +76,7 @@ Enter **Y** to continue.
 
 Now, the new project will be generated and you see the following messages:
 
-```
+```text
 [INFO] ----------------------------------------------------------------------------
 [INFO] Using following parameters for creating project from Archetype: modular-webapp:LATEST
 [INFO] ----------------------------------------------------------------------------
@@ -107,7 +107,7 @@ Switch to the generated directory by entering `cd mywebapp`.
 
 Listing of the directory (**Windows**: dir, **Mac and Linux**: ls -la), shows: 
 
-```
+```text
 drwxr-xr-x@  6 gwt-user  staff   192 Dec 17 17:38 .
 drwx------@ 50 gwt-user  staff  1600 Dec 17 17:38 ..
 drwxr-xr-x@  4 gwt-user  staff   128 Dec 17 17:38 mywebapp-client
@@ -120,19 +120,19 @@ drwxr-xr-x@  4 gwt-user  staff   128 Dec 17 17:38 mywebapp-shared
 
 To start the code server, run the following command:
 
-```
+```shell
 mvn gwt:codeserver -pl *-client -am
 ```
 
 and entering the following command in another terminal window to start the server:
 
-```
+```shell
 mvn jetty:run -pl *-server -am -Denv=dev
 ```
 
 Now, switch to your preferred browser (we suggest using: Chrome, FireFox or Opera) and enter:
 
-```
+```text
 http://localhost:8080
 ```
 
@@ -147,13 +147,13 @@ The source code is located in the `mywebapp-client/src/main/java/com/mycompany/m
 
 Look inside `App.java`. Line 42 constructs the "Send" button.
 
-```
+```java
 final Button sendButton = new Button("Send");
 ```
 
 Change the text from "Send" to "Send to Server".
 
-```
+```java
 final Button sendButton = new Button("Send to Server");
 ```
 
@@ -175,7 +175,7 @@ The execution will stop at line 94. The stacktrace is visible, the content of th
 
 To run the application as JavaScript in what GWT calls "production mode", create the application by executing:
 
-```
+```shell
 mvn clean package
 ```
 

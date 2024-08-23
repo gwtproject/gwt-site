@@ -11,7 +11,7 @@ application.
 In order to use the `NumberFormat` or `DateTimeFormat` classes, you should update your [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml.html) with
 the following _inherits_ line:
 
-```
+```xml
 <inherits name="com.google.gwt.i18n.I18N"/>
 ```
 
@@ -25,7 +25,7 @@ See the [internationalization topic](DevGuideI18n.html) for more information abo
 When using the `NumberFormat` class, you do not instantiate it directly. Instead, you retrieve an instance by calling one of its static `get...Format()` methods.
 For most cases, you probably want to use the default decimal format:
 
-```
+```java
 NumberFormat fmt = NumberFormat.getDecimalFormat();
     double value = 12345.6789;
     String formatted = fmt.format(value);
@@ -35,14 +35,14 @@ NumberFormat fmt = NumberFormat.getDecimalFormat();
 
 The class can also be used to convert a numeric string back into a double:
 
-```
+```java
 double value = NumberFormat.getDecimalFormat().parse("12345.6789");
     GWT.log("Parsed value is" + value, null);
 ```
 
 The `NumberFormat` class also provides defaults for scientific notation:
 
-```
+```java
 double value = 12345.6789;
     String formatted = NumberFormat.getScientificFormat().format(value);
     // prints 1.2345E4 in the default locale
@@ -52,7 +52,7 @@ double value = 12345.6789;
 Note that you can also specify your own pattern for formatting numbers. In the example below, we want to show 6 digits of precision on the right hand side of the decimal and
 format the left hand side with zeroes up to the hundred thousands place:
 
-```
+```java
 double value = 12345.6789;
     String formatted = NumberFormat.getFormat("000000.000000").format(value);
     // prints 012345.678900 in the default locale
@@ -83,7 +83,7 @@ replace the functionality of the `DateFormat` and `TimeFormat` classes from the 
 
 For the `DateTimeFormat` class, there are a large number of default formats defined.
 
-```
+```java
 Date today = new Date();
 
     // prints Tue Dec 18 12:01:26 GMT-500 2007 in the default locale.
