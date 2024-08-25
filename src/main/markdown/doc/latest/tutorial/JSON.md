@@ -22,7 +22,7 @@ JSON is a universal, language-independent format for data. In this way, it's sim
 
 When you encode the stock data for StockWatcher in JSON format, it will look something like this (but the whitespace will be stripped out).
 
-```
+```json
 [
   {
     "symbol": "ABC",
@@ -48,7 +48,7 @@ When you encode the stock data for StockWatcher in JSON format, it will look som
 
 In the original StockWatcher implementation, you created a StockPrice class and used the refreshWatchList method to generate random stock data and then call the updateTable method to populate StockWatcher's flex table.
 
-```
+```java
   /**
    * Generate random stock prices.
    */
@@ -85,7 +85,7 @@ To serve up hypothetical stock quotes in JSON format, you'll create a servlet. T
     *  Eclipse will create a package for the server-side code and a stub for the JsonStockData class.
 3.  Replace the stub with the following code.
 
-```
+```java
 package com.google.gwt.sample.stockwatcher.server;
 
 import java.io.IOException;
@@ -158,7 +158,7 @@ Because you've mapped the StockPriceService to "stockPrices" and the module rena
 1.  Edit the web application deployment descriptor (StockWatcher/war/WEB-INF/web.xml).
     *  Since the greetServlet is no longer needed, its definition can be removed.
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE web-app
     PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
@@ -206,7 +206,7 @@ Two techniques you'll use are JSNI (JavaScript Native Interface) and GWT overlay
 
 This is the JSON data coming back from the server.
 
-```
+```json
 [
   {
     "symbol": "ABC",
@@ -218,7 +218,7 @@ This is the JSON data coming back from the server.
 
 First, you'll use [JsonUtils.safeEval()](/javadoc/latest/com/google/gwt/core/client/JsonUtils.html) to convert the JSON string into JavaScript objects. Then, you'll be able to write methods to access those objects.
 
-```
+```java
   // JSNI methods to get stock data.
   public final native String getSymbol() /*-{ return this.symbol; }-*/;
   public final native double getPrice() /*-{ return this.price; }-*/;
@@ -265,7 +265,7 @@ The new StockData class will be an overlay type which overlays the existing Java
 
 
 
-```
+```java
 package com.google.gwt.sample.stockwatcher.client;
 
 import com.google.gwt.core.client.JavaScriptObject;
@@ -334,14 +334,14 @@ Rather than hardcoding the URL for the JSON server, add a constant to the StockW
 1.  Add a constant to the StockWatcher class that specifies the URL of the JSON data.
     *  **Note:** Earlier you specified a path to /stockPrices in the module XML file.
 
-```
+```java
 private static final String JSON_URL = GWT.getModuleBaseURL() + "stockPrices?q=";
 ```
 
 *  Eclipse flags GWT.
 2.  Include the import declarations.
 
-```
+```java
 import com.google.gwt.core.client.GWT;
 ```
 
@@ -349,7 +349,7 @@ import com.google.gwt.core.client.GWT;
     *  Replace the existing refreshWatchList method with the following code.
     *
 
-```
+```java
 private void refreshWatchList() {
   if (stocks.size() == 0) {
     return;
@@ -376,7 +376,7 @@ private void refreshWatchList() {
    *  Eclipse flags Iterator and URL.
 4.  Include the import declarations.
 
-```
+```java
 import com.google.gwt.http.client.URL;
 import java.util.Iterator;
 ```
@@ -390,14 +390,14 @@ The HTTP types are contained within separate GWT modules that StockWatcher needs
 1.  To inherit other GWT modules, edit the module XML file.
     *  In StockWatcher.gwt.xml, add `<inherits>` tags and specify the HTTP module.
 
-```
+```xml
 <!-- Other module inherits -->
 <inherits name="com.google.gwt.http.HTTP" />
 ```
 2.
     *  Open StockWatcher.java and include the following import declarations. Declare the imports for the following Java types.
 
-```
+```java
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.http.client.RequestCallback;
@@ -420,7 +420,7 @@ The RequestCallback interface is analogous to the AsyncCallback interface in GWT
 1.  Make the HTTP request and parse the JSON response.
     *  In the refreshWatchList method, replace the TODO comments with the following code  .
 
-    ```
+    ```java
     // Send request to server and catch any errors.
     RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
     
@@ -444,14 +444,14 @@ The RequestCallback interface is analogous to the AsyncCallback interface in GWT
     }
     ```
 
-      *  This is where we use `JsonUtils.safeEval()` to convert the JSON string into JavaScript objects.
+    *  This is where we use `JsonUtils.safeEval()` to convert the JSON string into JavaScript objects.
 
 2.  You receive two compile errors which you will resolve in a minute.
 
 #### Modify the updateTable method
 
 To fix the compile errors, modify the updateTable method.
-
+<ul>
     <li>Change: StockPrice[] prices
  To: JsArray<StockData> prices</li>
     <li>Change: prices.length
@@ -463,21 +463,21 @@ To fix the compile errors, modify the updateTable method.
 1.
     *  Replace the existing update updateTable(StockPrice[]) method with the following code.
 
-```
+```java
 updateTable(JsArray<StockData> prices)
 ```
 
 *  Eclipse flags JsArray.
 2.  Declare the import.
 
-```
+```java
 import com.google.gwt.core.client.JsArray;
 ```
 
 4.  Make a corresponding change in the updateTable(StockPrice price) method.
     *  Change the reference to the StockPrice class to StockData class.
 
-```
+```java
 private void updateTable(StockData price) {
   // Make sure the stock is still in the stock table.
   if (!stocks.contains(price.getSymbol())) {
@@ -513,7 +513,7 @@ If something breaks along the way (for example, if the server is offline, or the
 3.  If the error is corrected, hide the Label widget.
     *  In the updateTable(JsArray<StockData> prices) method, clear any error messages.
 
-```
+```java
 private void updateTable(JsArray<StockData> prices) {
   for (int i=0; i < prices.length(); i++) {
     updateTable(prices.get(i));
@@ -535,7 +535,7 @@ In order to display the error, you will need a new UI component; you'll implemen
 1.  Define a style for the error message so that it will attract the user's attention.
     *  In StockWatcher.css, create a style rule that applies to any element with a class attribute of errorMessage.
 
-```
+```css
 .negativeChange {
   color: red;
 }
@@ -548,7 +548,7 @@ In order to display the error, you will need a new UI component; you'll implemen
 2.  To hold the text of the error message, add a Label widget.
     *  In StockWatcher.java, add the following instance field.
 
-```
+```java
 private ArrayList<String> stocks = new ArrayList<String>();
 private Label errorMsgLabel = new Label();
 ```

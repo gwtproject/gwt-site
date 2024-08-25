@@ -102,7 +102,7 @@ If the storage feature is supported, you get the storage object and then write d
 
 GWT provides a simple way to determine whether the browser supports HTML5 storage &mdash; a built-in check when you get the storage object. You use Storage.getLocalStorageIfSupported() or Storage.getSessionStorageIfSupported(), depending on which type of storage you want to use. The storage object is returned if the feature is supported, or, if not, null is returned.
 
-```
+```java
 import com.google.gwt.storage.client.Storage;
   private Storage stockStore = null;
   stockStore = Storage.getLocalStorageIfSupported();
@@ -114,7 +114,7 @@ If the browser supports HTML5 storage, the Storage.getLocalStorageIfSupported me
 
 Getting the storage object and checking for browser support of HTML5 storage are done at the same time, so the code snippet for doing this should look familiar:
 
-```
+```java
 import com.google.gwt.storage.client.Storage;
   private Storage stockStore = null;
   stockStore = Storage.getLocalStorageIfSupported();
@@ -126,7 +126,7 @@ Data is stored as key-value string pairs, so you need to use the key to get the 
 
 The following snippet shows an iteration through the contents of storage, with each item in storage then being written to a separate row in a FlexTable. For simplicity, this assumes all of storage is used only for that FlexTable.
 
-```
+```java
 import com.google.gwt.storage.client.Storage;
 
 private FlexTable stocksFlexTable = new FlexTable();
@@ -148,7 +148,7 @@ If you want to quickly check whether a specific key or a specific value is prese
 
 In the following snippet, we use a StorageMap to see if a certain value is already in the storage, and if it is not yet stored, we write the data to storage.
 
-```
+```java
 stockStore = Storage.getLocalStorageIfSupported();
 if (stockStore != null) {
   stockMap = new StorageMap(stockStore);
@@ -166,7 +166,7 @@ Judicious use of naming conventions can help with processing storage data. For e
 
 In the following snippet, which is part of an Add button click handler, a text value is read from a textbox and saved, with the key name concatenated from a prefix and the current number of items in the storage.
 
-```
+```java
 import com.google.gwt.storage.client.Storage;
 
 final String symbol = newSymbolTextBox.getText().toUpperCase().trim();
@@ -193,7 +193,7 @@ To clear the storage used by your web app, invoke the `clear()` method, like thi
 
 The following sample snippet provides an example of one way to integrate this method with a UI, in this case a FlexTable that displays items from the storage. The user clears the UI and the storage by clicking on a Clear All button. In the button-click handler we just use the count of items in the storage to iterate through and remove rows from the UI, and when that is done, we delete all the storage data. (To keep things simple, we used the storage only for populating the FlexTable.)
 
-```
+```java
 import com.google.gwt.storage.client.Storage;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -237,7 +237,7 @@ The storage event handlers get a storage event object that contains various usef
 
 The following snippet shows a sample event handler registered with a storage, where the changes from the incoming events are displayed in a UI label.
 
-```
+```java
 import com.google.gwt.storage.client.Storage;
 import com.google.gwt.storage.client.StorageEvent;
 private Storage stockstore = null;

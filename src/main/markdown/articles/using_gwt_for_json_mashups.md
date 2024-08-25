@@ -27,14 +27,14 @@ Once you have a service that can produce JSON data, there are generally three di
 
 *   The server can output a string containing raw JSON data that the browser fetches with an `XMLHTTPRequest` and manually passes to the eval function.
 
-              Example server-generated string: `{'data': ['foo', 'bar', 'baz']}`
+    Example server-generated string: `{'data': ['foo', 'bar', 'baz']}`
 *   The server can output a string containing JavaScript code that assigns a JSON object to a
 variable; the browser would fetch this using a `<script>` tag and then extract the parsed object by referring to the variable by name.
 
-              Example server-generated string: `var result = {'data': ['foo', 'bar', 'baz']};`
+      Example server-generated string: `var result = {'data': ['foo', 'bar', 'baz']};`
 *   The server can output a string containing JavaScript code that passes a JSON object to a function specified in the request URL; the browser would fetch this using a `<script>` tag, which will automatically invoke the function as if it were an event callback, as soon as the JavaScript is parsed.
 
-              Example server-generated string: `handle_result({'data': ['foo', 'bar', 'baz']});`
+      Example server-generated string: `handle_result({'data': ['foo', 'bar', 'baz']});`
 
 The term JSON technically refers only to the data representation syntax (which is where the "Object Notation" part of its name comes from) and so JSON is a strict subset of JavaScript. Because of this, those last two methods aren't technically JSON &mdash; they're JavaScript code that deals with data in JSON format. They are still close cousins to JSON, though, and frequently "JSON" is used as a blanket term for all such cases. The third method in particular is frequently called "JSON with Padding" (JSONP); the earliest description of this technique that I'm aware of is here: [Remote JSON - JSONP](http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/).
 
@@ -82,7 +82,7 @@ At this point, I needed a Google Data feed to test with. I decided to fetch the 
 
 If you want to see a full example of the Google Data output, check out this URL: `http://www.google.com/base/feeds/snippets`. You'll quickly see that there's a lot of data, even for just a single result. To help you visualize the general structure of the feed, here's a much smaller custom-built sample result that contains only the data relevant to this story:
 
-```
+```javascript
 {
   'feed': {
     'entry': [
@@ -98,7 +98,7 @@ The core structure is fairly simple, as you can see; most of the length of the r
 
 To keep my development simple, I used that minimized example for testing so I wouldn't be overwhelmed by the full Google Data feed. Of course, that meant I needed a web server to serve up my custom version of the JSON data. Normally I would have just served it from the built-in Tomcat instance included in GWT's hosted mode. However, that would have meant that my JSON data and my GWT application would be served from the same site. Since my ultimate goal was to load the real JSON data from a different site, I needed a second, separate local server from which to fetch my JSON data &mdash; otherwise, it wouldn't be an accurate simulation. Since a full web server instance would have been lots of work to set up, I created a tiny custom server with this Python program:
 
-```
+```python
 import BaseHTTPServer, SimpleHTTPServer, cgi
 class MyHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
   def do_GET(self):
@@ -119,7 +119,7 @@ This program returns the contents of the json.js file for each and every request
 
 With the server under control, here's the GWT code for my browser application:
 
-```
+```java
 public class Hax0r implements EntryPoint {
   protected HashMap scriptTags = new HashMap();
   protected HashMap callbacks = new HashMap();
@@ -186,7 +186,7 @@ At this point, you may be wondering how multiple windows entered the discussion.
 
 There are several ways to fix the code: Ultimately, I just needed to make sure that the `<script>` tag and the JSONP callbacks are added to the same iframe in which the GWT application code resides. Here's how I fixed it:
 
-```
+```java
 public native static void setup(Hax0r h, String callback) /*-{
     window[callback] = function(someData) {
       h.@com.google.gwt.hax0r.client.Hax0r::handle(Lcom/google/gwt/core/client/JavaScriptObject;)(someData);

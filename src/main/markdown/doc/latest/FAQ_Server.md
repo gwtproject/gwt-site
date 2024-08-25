@@ -42,7 +42,7 @@ application, the `<`module`>`.nocache.js file would be bootstrapped by having th
 the `<`module`>`.nocache.js file. This is the standard bootstrap process to load a GWT application. The `<`script`>` tag that needs to be
 included in the main host HTML page is shown below:
 
-```
+```html
 <script language="JavaScript" src="http://mydomain.com/<module>.nocache.js"></script>
 ```
 
@@ -63,7 +63,7 @@ To enable the cross-site linking simply add the following to your
 `<module>.gwt.xml` and include a reference to your `<module>.nocache.js` in your
 index.html as you normally would.
 
-```
+```xml
 <add-linker name="xsiframe"/>
 ```
 
@@ -120,7 +120,7 @@ You should definitely use `RequestBuilder` instead.
 
 If you are attempting to use the RequestBuilder class and are having problems, first check your module XML file to make sure that the HTTP module is inherited, as follows:
 
-```
+```xml
 <inherits name="com.google.gwt.http.HTTP"/>
 ```
 

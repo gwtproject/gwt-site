@@ -12,7 +12,7 @@ i18n Plural Forms
 Most languages alter the form of a word being counted based on the count.
 For example, in English:
 
-```
+```text
 You have 1 tree.
 You have 2 trees.
 ```
@@ -31,7 +31,7 @@ something at runtime, using the [`Messages`](DevGuideI18nMessages.html) interfac
 
 First, an example `Messages` interface:
 
-```
+```java
 @DefaultLocale("en") // not required since this is the default
 public interface MyMessages extends Messages {
   @DefaultMessage("There are {0,number} items in your cart.")
@@ -56,7 +56,7 @@ annotations).  _Note: I am using English in these "translations" for
 
 `MyMessages_fr.properties`
 
-```
+```properties
 cartItems=There are {0,number} items in your cart.
 cartItems[one]=There is {0,number} item in your cart.
 ```
@@ -67,7 +67,7 @@ for English.
 
 `MyMessages_ar.properties`
 
-```
+```properties
 cartItems=There are {0,number} items in your cart.
 cartItems[none]=There are no items in your cart.
 cartItems[one]=There is one item in your cart.
@@ -99,7 +99,7 @@ something like `"You have no messages"` rather than `"You have 0
 messages"`.  You can specify that using a plural form `"=N"`, such
 as:
 
-```
+```java
 public interface MyMessages extends Messages {
   @DefaultMessage("There are {0,number} items in your cart.")
   @AlternateMessage({
@@ -112,7 +112,7 @@ public interface MyMessages extends Messages {
 
 and the properties file entry would look like:
 
-```
+```properties
 cartItems[\=0]=Your cart is empty.
 ```
 
@@ -130,7 +130,7 @@ code subtracting that and choosing different messages based on the number of
 people, but it is much easier and likely to get better translations by keeping
 all the different messages together.  You can do it like this:
 
-```
+```java
 public interface MyMessages extends Messages {
   @DefaultMessage("{1}, {2} and {0} others are here.")
   @AlternateMessage({
@@ -168,7 +168,7 @@ from the placeholders, where you could simply call `peopleHere(names)`.
 This is slightly off-topic for plurals, but it is related.  GWT supports
 formatting lists, using the locale-appropriate separators.  For example:
 
-```
+```java
 public interface MyMessages extends Messages {
   @DefaultMessage("Orders {0,list,number} are ready for pickup.")
   @AlternateMessage({

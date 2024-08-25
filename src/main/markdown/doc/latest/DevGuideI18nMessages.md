@@ -20,13 +20,13 @@ parameters matching those specified in the format string.
 
 Here is an example Messages property value:
 
-```
+```properties
 permissionDenied = Error {0}: User {1} Permission denied.
 ```
 
 The following code implements an alert dialog by substituting values into the message:
 
-```
+```java
 public interface ErrorMessages extends Messages {
    String permissionDenied(int errorCode, String username);
  }
@@ -72,7 +72,7 @@ arguments supplied by the calling code against the message template defined in
 a properties file. For example, attempting to use the following interface and
 .properties files results in a compile-time error:
 
-```
+```java
 public interface ErrorMessages extends Messages {
   String permissionDenied(int errorCode, String username);
 }
@@ -80,7 +80,7 @@ public interface ErrorMessages extends Messages {
 
 
 
-```
+```properties
 permissionDenied = Error {0}: User {1} does not have permission to access {2}
 ```
 
@@ -100,7 +100,7 @@ in translation output as if it were a placeholder named <code>name</code>.
 useful to keep non-translated code out of what the translator sees, for example
 HTML markup:
 
-```
+```java
 @DefaultMessage("Welcome back, {startBold,<b>}{0}{endBold,</b>}")
 ```
 </dd>
@@ -216,7 +216,7 @@ The `Messages` interface also supports the use of plural forms.  In
 English, you want to adjust the word being counted based on whether the count
 is 1 or not.  For example:
 
-```
+```text
 You have one tree.
 You have 2 trees.
 ```
@@ -224,7 +224,7 @@ You have 2 trees.
 Other languages may have far more complex plural forms.  Fortunately,
 GWT allows you to easily handle this problem as follows:
 
-```
+```java
 public interface MyMessages extends Messages {
   @DefaultMessage("You have {0} trees.")
   @AlternateMessage({"one", "You have one tree."})
@@ -246,7 +246,7 @@ referenced in the message (`"{0} gave you her credits"`), or you might
 want to support abbreviated and full versions of a message based on user
 preference.
 
-```
+```java
 public enum Gender {
   MALE,
   FEMALE,
@@ -279,7 +279,7 @@ To avoid XSS vulnerabilities due to the use of messages in HTML contexts,
 you can declare methods in your Messages interfaces with a return type of
 `SafeHtml`:
 
-```
+```java
 public interface ErrorMessages extends Messages {
    @DefaultMessage("A <strong>{0} error</strong> has occurred: {1}.")
    SafeHtml errorHtml(String error, SafeHtml details);
@@ -310,7 +310,7 @@ of an HTML tag.  For example, the following is not a valid SafeHml message
 format, because the `{0}` parameter appears inside a tag's
 attribute:
 
-```
+```properties
 errorHtmlWithClass = A <span class="{0}">{1} error</span> has occurred.
 ```
 
