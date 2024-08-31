@@ -497,16 +497,16 @@ If something breaks along the way (for example, if the server is offline, or the
 1.  Clear the compiler error by creating a stub method in the StockWatcher class.
     *  Set the text for the error message and make the Label widget visible.
 
-```
-  /**
-   * If can't get JSON, display error message.
-   * @param error
-   */
-  private void displayError(String error) {
-    errorMsgLabel.setText("Error: " + error);
-    errorMsgLabel.setVisible(true);
-  }
-```
+    ```java
+    /**
+     * If can't get JSON, display error message.
+     * @param error
+     */
+    private void displayError(String error) {
+      errorMsgLabel.setText("Error: " + error);
+      errorMsgLabel.setVisible(true);
+    }
+    ```
 
 2.  Eclipse flags errorMsgLabel.
       *  Ignore the compile errors for a moment; you'll implement a Label widget to display the error text in the next step.
@@ -557,7 +557,7 @@ private Label errorMsgLabel = new Label();
     *  In the onModuleLoad method, add a secondary class attribute to errorMsgLabel and do not display it when StockWatcher loads.
     *  Add the error message to the Main panel above the stocksFlexTable.
 
-```
+    ```java
     // Assemble Add Stock panel.
     addPanel.add(newSymbolTextBox);
     addPanel.add(addButton);
@@ -571,7 +571,7 @@ private Label errorMsgLabel = new Label();
     mainPanel.add(stocksFlexTable);
     mainPanel.add(addPanel);
     mainPanel.add(lastUpdatedLabel);
-```
+    ```
 
 ### Test the HTTP request and error handling
 
@@ -579,13 +579,10 @@ private Label errorMsgLabel = new Label();
 2.  Enter several stock codes.
         <div class="client">StockWatcher should display Price and Change data for each stock. Rather than being generated from within the program the stock data is coming from you local server in JSON format.
 3.  Test the HTTP error messages by calling an invalid URL.
-    *  In StockWatcher,java, edit the URL.
-    *
-Change: `private static final String JSON_URL = GWT.getModuleBaseURL()
-      + "stockPrices?q=";`
+    * In StockWatcher,java, edit the URL.
+    * Change: `private static final String JSON_URL = GWT.getModuleBaseURL() + "stockPrices?q=";`
 
-          To: `private static final String JSON_URL = GWT.getModuleBaseURL()
-      + "BADURL?q=";`
+      To: `private static final String JSON_URL = GWT.getModuleBaseURL() + "BADURL?q=";`
 4.  Refresh StockWatcher in development mode.
 5.  Enter a stock code.
     *  StockWatcher displays a red error message. Valid stock code data stops being refreshed.

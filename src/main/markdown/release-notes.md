@@ -1219,12 +1219,12 @@ r10730 for more details.
 *   The following dependencies have been updated to the following
 versions:
 
-    *   Eclipse JDT 3.4.2_r894
-    *   Guava 10.0.1
-    *   HTMLUnit 2.9
-    *   Apache HTTP Client 4.1.2 (for HTMLUnit)
-    *   Apache Commons Lang 2.6 (for HTMLUnit)
-    *   NekoHTML 1.9.15 (for HTMLUnit)
+  *   Eclipse JDT 3.4.2_r894
+  *   Guava 10.0.1
+  *   HTMLUnit 2.9
+  *   Apache HTTP Client 4.1.2 (for HTMLUnit)
+  *   Apache Commons Lang 2.6 (for HTMLUnit)
+  *   NekoHTML 1.9.15 (for HTMLUnit)
 *   json-1.5.jar is now bundled as a part of gwt-dev.jar.
 streamhtmlparser (rebased) has been removed from gwt-dev.jar and has
 been bundled as part of gwt-user.jar and gwt-servlet.jar.
