@@ -507,15 +507,22 @@ Note that there is a problem using JUnit tests with ant &mdash; a [workaround](#
 
 ### Submitting Patches<a id="submittingpatches"></a>
 
-Please do submit code. Here's what you need to do:
+Please do submit code. Contributions to all [GWT subprojects](https://github.com/orgs/gwtproject/repositories) are welcome.Here's what you need to do:
 
-1.  Decide which code you want to submit. A submission should be a set of changes that addresses one issue in the [GWT issue tracker](https://github.com/gwtproject/gwt/issues?q=is%3Aissue). Please don't mix more than one logical change per submittal, because it makes the history hard to follow. If you want to make a change that doesn't have a corresponding issue in the issue tracker, please create one.
+1.  Decide which code you want to submit. A submission should be a set of changes that addresses one issue in the repository's issue tracker. For the [GWT SDK](https://github.com/gwtproject/gwt/) you can check the list of [its open issues](https://github.com/gwtproject/gwt/issues). Please don't mix more than one logical change per submittal, because it makes the history hard to follow. If you want to make a change that doesn't have a corresponding issue in the issue tracker, please create one.
 2.  Also, coordinate with team members that are listed on the issue in question. This ensures that work isn't being duplicated and communicating your plan early also generally leads to better patches.
-3.  Make a fork of the [GWT repository](https://github.com/gwtproject/gwt)
+3.  Make a fork of the appropriate repository.
 4.  Implement your changes, make sure that your code adheres to the [GWT source code style](#codestyle).
 5.  Ensure that there are unit tests for your code.
 6.  Push your changes to the forked repository.
 7.  Create a pull request, follow the suggestions in the pull request template.
+
+### Code Review
+
+Code review is an essential part of the development process.
+Anyone is welcome to submit a code review for any [open pull request](https://github.com/search?q=org%3Agwtproject+is%3Apr+is%3Aopen&type=pullrequests). 
+Together with the final review done by GWT maintainers,
+code reviews by the community have a positive impact on the code quality.
 
 ### GWT Committers<a id="committers"></a>
 
