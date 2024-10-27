@@ -81,7 +81,7 @@ You most commonly use [RootLayoutPanel](/javadoc/latest/com/google/gwt/user/clie
 the following snippet, which causes a [DockLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/DockLayoutPanel.html) to fill the browser's
 client area:
 
-```
+```java
 DockLayoutPanel appPanel = new DockLayoutPanel(Unit.EM);
 RootLayoutPanel.get().add(appPanel);
 ```
@@ -93,7 +93,7 @@ which other layouts are built. Its closest analog is [AbsolutePanel](/javadoc/la
 significantly more general in that it allows its children to be positioned
 using arbitrary constraints, as in the following example:
 
-```
+```java
 Widget child0, child1, child2;
 LayoutPanel p = new LayoutPanel();
 p.add(child0); p.add(child1); p.add(child2);
@@ -114,7 +114,7 @@ except that it uses the layout system to achieve this structure without using
 tables, and in a predictable manner. You would often use to build
 application-level structure, as in the following example:
 
-```
+```java
 DockLayoutPanel p = new DockLayoutPanel(Unit.EM);
 p.addNorth(new HTML("header"), 2);
 p.addSouth(new HTML("footer"), 2);
@@ -136,7 +136,7 @@ extends it), except that it automatically creates a user-draggable splitter
 between each pair of child widgets. It also supports only the use of pixel
 units. Use this instead of [HorizontalSplitPanel](/javadoc/latest/com/google/gwt/user/client/ui/HorizontalSplitPanel.html) and [VerticalSplitPanel](/javadoc/latest/com/google/gwt/user/client/ui/VerticalSplitPanel.html).
 
-```
+```java
 SplitLayoutPanel p = new SplitLayoutPanel();
 p.addWest(new HTML("navigation"), 128);
 p.addNorth(new HTML("list"), 384);
@@ -152,7 +152,7 @@ well in standards mode). It displays one child widget at a time, each of which i
 associated with a single "header" widget. Clicking on a header widget shows its
 associated child widget.
 
-```
+```java
 StackLayoutPanel p = new StackLayoutPanel(Unit.EM);
 p.add(new HTML("this content"), new HTML("this"), 4);
 p.add(new HTML("that content"), new HTML("that"), 4);
@@ -171,7 +171,7 @@ As with the existing [TabPanel](/javadoc/latest/com/google/gwt/user/client/ui/Ta
 tabs. Each tab is associated with another child widget, which is shown when a
 user clicks on the tab.
 
-```
+```java
 TabLayoutPanel p = new TabLayoutPanel(1.5, Unit.EM);
 p.add(new HTML("this content"), "this");
 p.add(new HTML("that content"), "that");
@@ -337,7 +337,7 @@ exists natively in CSS. This uses the properties `left`, `top`, `width`,
 properties, it is less well-known that they can be combined in various ways to
 form a simple constraint system. Take the following CSS example:
 
-```
+```css
 .parent {
   position: relative; /* to establish positioning context */
 }
@@ -364,7 +364,7 @@ in terms of [UiBinder](DevGuideUiBinder.html) templates.
 The following sample shows a simple application-style layout with a header, a
 navigation area on the left edge, and a scrollable content area.
 
-```
+```xml
 <g:DockLayoutPanel unit='EM'>
   <g:north size='4'>
     <g:Label>Header</g:Label>
@@ -386,7 +386,7 @@ You must place this structure in a container that implements [ProvidesResize](/j
 which is most commonly [RootLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/RootLayoutPanel.html). The following code demonstrates how
 to do this:
 
-```
+```java
 interface Binder extends UiBinder<Widget, BasicApp> { }
 private static final Binder binder = GWT.create(Binder.class);
 
@@ -401,7 +401,7 @@ public void onModuleLoad() {
 supports pixel units. The basic application structure above can be given a
 splitter between the navigation and content areas like so:
 
-```
+```xml
 <g:DockLayoutPanel unit='EM'>
   <g:north size='4'>
     <g:Label>Header</g:Label>
@@ -434,7 +434,7 @@ example, we start with a child widget positioned at the top, but with no height
 so that it is effectively hidden. Calling [LayoutPanel.forceLayout()](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#forceLayout--) "fixes"
 the initial constraints.
 
-```
+```java
 panel.setWidgetTopHeight(child, 0, PX, 0, PX);
 panel.forceLayout();
 ```
@@ -442,7 +442,7 @@ panel.forceLayout();
 Now we give the widget a height of 2em and explicitly call
 LayoutPanel.animate(int) to cause it to resize over 500 ms.
 
-```
+```java
 panel.setWidgetTopHeight(child, 0, PX, 2, EM);
 panel.animate(500);
 ```
@@ -456,7 +456,7 @@ be called whenever the widget's size changes. If you are wrapping such a widget
 in a [Composite](/javadoc/latest/com/google/gwt/user/client/ui/Composite.html), you'll need to use [ResizeComposite](/javadoc/latest/com/google/gwt/user/client/ui/ResizeComposite.html) instead to ensure that
 this call is propagated correctly, like so:
 
-```
+```java
 class MyWidget extends ResizeComposite {
   private LayoutPanel p = new LayoutPanel();
 
@@ -478,7 +478,7 @@ is doing so).
 To work around this, you need to use
 [LayoutPanel.setWidgetVisible(Widget,boolean)](/javadoc/latest/com/google/gwt/user/client/ui/LayoutPanel.html#setWidgetVisible-com.google.gwt.user.client.ui.Widget-boolean-):
 
-```
+```java
 LayoutPanel panel = ...;
 Widget child;
 panel.add(child);
@@ -495,7 +495,7 @@ There are, however, instances where you need to use a layout panel within a
 normal widget (e.g., [FlowPanel](/javadoc/latest/com/google/gwt/user/client/ui/FlowPanel.html) or [RootPanel](/javadoc/latest/com/google/gwt/user/client/ui/RootPanel.html)). In these cases, you will need
 to set the panel's size explicitly, as in the following example:
 
-```
+```java
 LayoutPanel panel = new LayoutPanel();
 RootPanel.get("someId").add(panel);
 panel.setSize("20em", "10em");
@@ -510,7 +510,7 @@ This also applies to layout panels used in [PopupPanel](/javadoc/latest/com/goog
 [DialogBox](/javadoc/latest/com/google/gwt/user/client/ui/DialogBox.html). The following example shows the use of a [SplitLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html) in a
 [DialogBox](/javadoc/latest/com/google/gwt/user/client/ui/DialogBox.html):
 
-```
+```java
 SplitLayoutPanel split = new SplitLayoutPanel();
 split.addWest(new HTML("west"), 128);
 split.add(new HTML("center"));
@@ -531,7 +531,7 @@ following example shows this with a
 [RichTextArea](/javadoc/latest/com/google/gwt/user/client/ui/RichTextArea.html),
 which is implemented using an `<iframe>` element.
 
-```
+```java
 <g:DockLayoutPanel unit='EM'>
   <g:north size='2'>
     <g:HTML>Header</g:HTML>
@@ -546,4 +546,3 @@ which is implemented using an `<iframe>` element.
   </g:center>
 </g:DockLayoutPanel>
 ```
-

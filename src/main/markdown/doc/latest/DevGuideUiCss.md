@@ -16,7 +16,7 @@ applies just to that one component. By default, the class name for each componen
 
 In order to give all buttons a larger font, you could put the following rule in your application's CSS file:
 
-```
+```css
 .gwt-Button { font-size: 150%; }
 ```
 
@@ -28,20 +28,20 @@ Another way to use style sheets is to refer to a single widget. For that, you wo
 By default, neither the browser nor GWT creates default `id` attributes for widgets. You must explicitly create an `id` for the elements you want to refer to in
 this manner, and you must insure that each "id" value is unique. A common way to do this is to set them on static elements in your [HTML host page](DevGuideOrganizingProjects.html#DevGuideHostPage)
 
-```
+```html
 <div id="my-button-id"/>
 ```
 
 To set the id for a GWT widget, retrieve its DOM Element and then set the `id` attribute as follows:
 
-```
+```java
 Button b = new Button();
   DOM.setElementAttribute(b.getElement(), "id", "my-button-id")
 ```
 
 This would allow you to reference a specific widget in a style sheet as follows:
 
-```
+```css
 #my-button-id { font-size: 100%; }
 ```
 
@@ -49,7 +49,7 @@ This would allow you to reference a specific widget in a style sheet as follows:
 
 Some widgets have multiple styles associated with them. [MenuBar](/javadoc/latest/com/google/gwt/user/client/ui/MenuBar.html), for example, has the following styles:
 
-```
+```css
 .gwt-MenuBar { 
        /* properties applying to the menu bar itself */ 
    }
@@ -84,7 +84,7 @@ Modern GWT applications typically use a combination of `CssResource` and UiBinde
 Typically, style sheets are placed in a package that is part of your module's [public path](DevGuideOrganizingProjects.html#DevGuideModules). All you need to do to reference
 them is simply include a `<link>` to the style sheet in your [host page](DevGuideOrganizingProjects.html#DevGuideHostPage), such as:
 
-```
+```html
 <link rel="stylesheet" href="mystyles.css" type="text/css"/>
 ```
 
@@ -113,7 +113,7 @@ time on application development and less time on styling your application.
 By default, new GWT applications use the standard theme, but you can select any one of the themes mentioned above. Open your module XML file (gwt.xml) and uncomment the line
 that inherits the theme of your choice.
 
-```
+```xml
 <!-- Inherit the default GWT style sheet. You can change       -->
 <!-- the theme of your GWT application by uncommenting          -->
 <!-- any one of the following lines.                           -->
@@ -125,7 +125,7 @@ that inherits the theme of your choice.
 GWT visual themes also come in RTL (right-to-left) versions if you are designing a website for a language that is written right-to-left, such as Arabic. You can include the RTL
 version by adding RTL to the end of the module name:
 
-```
+```xml
 <inherits name="com.google.gwt.user.theme.dark.DarkRTL"/>
 ```
 
@@ -135,7 +135,7 @@ If you are program a bandwidth sensitive application, such as a phone applicatio
 favorite theme (about 27k). Alternatively, you can create your own stripped down version of the style sheet that only defines the styles applicable to your application. To do
 this, first include the public resources associated with one of the themes by adding the following line to your `gwt.xml` file:
 
-```
+```xml
 <inherits name='com.google.gwt.user.theme.standard.StandardResources'/>
 ```
 

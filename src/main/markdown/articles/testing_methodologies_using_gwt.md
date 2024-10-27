@@ -19,7 +19,7 @@ Testing a GWT application might seem a little daunting at first, since GWT appli
 
 Since a GWT application is almost entirely written in the Java programming language, you can test a good part of it using standard JUnit TestCases. However, GWT also includes a special `TestCase` subclass, the `GWTTestCase` class, which can test code that requires JavaScript at runtime. While ultimately all of your client-side Java code will be cross-compiled to JavaScript, only some of it uses code directly implemented as JavaScript. For example, the following code is from the GWT `HTMLTable` class:
 
-```
+```java
 public void setStylePrimaryName(int row, int column, String styleName) {
   UIObject.setStylePrimaryName(getCellElement(bodyElem, row, column), styleName);
 }
@@ -35,7 +35,7 @@ This code sample demonstrates a method written in Java (`setStylePrimaryName`) w
 
 To test components that rely on JavaScript code natively, GWT provides a subclass of JUnit's `TestCase` called `GWTTestCase`. This base class allows you to implement your JUnit test case as you normally would; in fact, GWTTestCases look almost identical to the standard JUnit TestCase:
 
-```
+```java
 public class MeetingSummaryLabelTest extends GWTTestCase {
   public String getModuleName() {
     return "com.danielwellman.booking.Booking";
@@ -88,7 +88,7 @@ The key to testing presenters is that they will be plain old Java code and can b
 
 Let's try to tackle a small slice of this functionality: the user enters a meeting capacity that cannot be scheduled. First, the view will notify the presenter that the user changed the value of the capacity text field. The presenter will then ask the RoomScheduler service if it can accept a new meeting with the specified capacity. Finally, the presenter will tell the view to disable the save button. Let's write a test for this scenario:
 
-```
+```java
 import static org.easymock.EasyMock.*;
 
 public class PresenterTest extends TestCase {
@@ -121,7 +121,7 @@ This test is an interaction-based test which uses EasyMock to provide test doubl
 
 This code requires that we specify an interface for our view:
 
-```
+```java
 public interface MeetingView {
   void disableSaveButton();
 }
@@ -129,7 +129,7 @@ public interface MeetingView {
 
 ... and for our service:
 
-```
+```java
 public interface RoomScheduler {
   boolean canAcceptCapacityFor(Meeting meeting);
 }
@@ -137,7 +137,7 @@ public interface RoomScheduler {
 
 The code that passes this test is fairly simple:
 
-```
+```java
 public class Presenter {
   private Meeting meeting;
   private MeetingView meetingView;
@@ -174,7 +174,7 @@ This is a very simple implementation, but it's far from the completed design. Ou
 
 Note the argument to `requiredCapacityChanged` is of the type `HasText`. This turns out to be an interface that is part of the GWT libraries:
 
-```
+```java
 package com.google.gwt.user.client.ui;
 
 public interface HasText {
@@ -196,7 +196,7 @@ public interface HasText {
 
 This simple interface is used by many GWT components and allows manipulation of a widget's text contents, including the TextBox in our example. This interface is extremely useful for testing because we don't need to pass in a real TextBox. Thus we avoid instantiating a text input in the DOM, requiring our test to extend GWTTestCase to run in a real browser. In this example, I've made a very simple fake implementation which wraps a String:
 
-```
+```java
 public class FakeTextContainer implements HasText {
   private String text;
 
@@ -217,7 +217,7 @@ public class FakeTextContainer implements HasText {
 
 Finally, let's take a look at our view implementation:
 
-```
+```java
 public class MeetingViewWidget extends Composite implements MeetingView {
   private Button saveButton = new Button("Save");
   private TextBox capacityText = new TextBox();
@@ -255,7 +255,7 @@ public class MeetingViewWidget extends Composite implements MeetingView {
 
 And lastly, the Meeting class code, for completeness:
 
-```
+```java
 public class Meeting {
   private Integer capacity;
 

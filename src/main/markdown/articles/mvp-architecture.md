@@ -132,7 +132,7 @@ general flow, as shown in the following code, is:
 [presenters](#presenter) and supplying a [view](#view)
 that the presenter will drive.
 
-```
+```java
 public class Contacts implements EntryPoint {
 
   public void onModuleLoad() {
@@ -164,8 +164,7 @@ something meaningful, the [presenter](#presenter) is going to need to:
 In the case of our ContactsPresenter, we define the Display interface
 as such:
 
-```
-
+```java
 public class ContactsPresenter implements Presenter {
   ...
   public interface Display extends HasValue<List<String>> {
@@ -199,7 +198,7 @@ made without updating the view code.
 To show you how this works, let's look at the code that is executed upon
 receiving the list of Contacts from the server:
 
-```
+```java
 public class ContactsPresenter implements Presenter {
   ...
   private void fetchContactDetails() {
@@ -225,8 +224,7 @@ public class ContactsPresenter implements Presenter {
 
 To listen for UI events we have the following:
 
-```
-
+```java
 public class ContactsPresenter implements Presenter {
   ...
   public void bind() {
@@ -259,7 +257,7 @@ public class ContactsPresenter implements Presenter {
 To respond to UI events, such as the user deleting a list of selected
 contacts, we have the following:
 
-```
+```java
 public class ContactsPresenter implements Presenter {
   ...
   private void deleteSelectedContacts() {
@@ -347,7 +345,7 @@ and pass in the [Event.Type](/javadoc/latest/com/google/web/bindery/event/shared
 as well as the handler that should be called when the event is fired. The code below
 shows how the AppController registers to receive EditContactEvents.
 
-```
+```java
 public class AppController implements ValueChangeHandler {
   ...
   eventBus.addHandler(EditContactEvent.TYPE,
@@ -377,8 +375,7 @@ we'll notify the rest of the app by calling the EventBus.fireEvent()
 method with a EditContactEvent() class that is initialized with the id of the
 contacts to be edited.
 
-```
-
+```java
 public class ContactsPresenter {
   ...
   display.getList().addClickHandler(new ClickHandler() {
@@ -406,7 +403,7 @@ which is the case after the RPC has returned.
 Below is an example of the event that is fired upon successfully updating a
 contact.
 
-```
+```java
 public class EditContactPresenter {
   ...
   private void doSave() {
@@ -450,8 +447,7 @@ and declare its own [onValueChange()](/javadoc/latest/com/google/gwt/event/logic
 method. The interface and parameter are of type String because the History
 events are simply the tokens that are pushed onto the stack.
 
-```
-
+```java
 public class AppController implements ValueChangeHandler<String> {
   ...
   public void onValueChange(ValueChangeEvent<String> event) {
@@ -464,7 +460,7 @@ public class AppController implements ValueChangeHandler<String> {
 Next we'll need to register to receive History events, much like we
 registered for events coming off of the EventBus.
 
-```
+```java
 public class AppController implements ValueChangeHandler<String> {
   ...
   private void bind() {
@@ -482,8 +478,7 @@ user bookmarked a specific state within your app) and route the user to the
 appropriate view. The AppController's go() method, which is called after
 everything has been wired up, is where we'll add this logic.
 
-```
-
+```java
 public class AppController implements ValueChangeHandler<String> {
   ...
   public void go(final HasWidgets container) {
@@ -504,7 +499,7 @@ meaningful within the onValueChange() method that is called whenever the user
 clicks the "Back" or "Forward" button. Using the getValue() of the event, we'll
 decide which view to show next.
 
-```
+```java
 public class AppController implements ValueChangeHandler<String> {
   ...
   public void onValueChange(ValueChangeEvent<String> event) {
@@ -549,8 +544,7 @@ Below is an example of how you can hook up the ContactsPresenter to the "Add
 Contact" button, fire the associated event upon receiving the click, and
 transition to the "Add Contact" view as a result.
 
-```
-
+```java
 public class ContactsPresenter implements Presenter {
   ...
   public void bind() {
@@ -563,7 +557,7 @@ public class ContactsPresenter implements Presenter {
 }
 ```
 
-```
+```java
 public class AppController implements ValueChangeHandler<String> {
   ...
   private void bind() {
@@ -618,8 +612,7 @@ Each example is set up to test adding a list of ContactDetails, sorting those
 ContactDetails, and then verifying that the sorted list is correct. Taking a
 look at the ExampleJRETest, we have the following code.
 
-```
-
+```java
 public class ExampleJRETest extends TestCase {
   private ContactsPresenter contactsPresenter;
   private ContactsServiceAsync mockRpcService;
@@ -654,7 +647,7 @@ our tests on GWTTestCase.
 
 We then created the same test using GWTTestCase.
 
-```
+```java
 public class ExampleGWTTest extends GWTTestCase {
   private ContactsPresenter contactsPresenter;
   private ContactsServiceAsync rpcService;

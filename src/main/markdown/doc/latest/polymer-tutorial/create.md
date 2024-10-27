@@ -26,10 +26,12 @@ For the **TodoList** project, we'll need to run `webAppCreator` with the followi
 
       GWT webAppCreator will generate the project structure and the build script (maven pom.xml).
 
-        $ /full_path_to_gwt_sdk/webAppCreator \
-            -templates maven,sample \
-            -out TodoListApp \
-            org.gwtproject.tutorial.TodoList
+      ```shell
+      $ /full_path_to_gwt_sdk/webAppCreator \
+          -templates maven,sample \
+          -out TodoListApp \
+          org.gwtproject.tutorial.TodoList
+      ```
 
       _**Tip**: If you include the GWT SDK folder in your PATH environment variable, you won't have to specify the full path._
 
@@ -39,9 +41,11 @@ For the **TodoList** project, we'll need to run `webAppCreator` with the followi
 
      To check that the project was created correctly start the new app in SuperDevMode.
 
-        $ cd TodoListApp
-        $ mvn war:exploded
-        $ mvn gwt:devmode
+     ```shell
+     $ cd TodoListApp
+     $ mvn war:exploded
+     $ mvn gwt:devmode
+     ```
 
       _**Tip**: Since the created project is built with Maven, you can import it in Eclipse, IDEA, etc._
 
@@ -58,58 +62,68 @@ With the base project set up, we'll now add the necessary external dependencies.
 
 1. Add the vaadin `gwt-polymer-elements` dependency to your project by editing the `pom.xml` file.
 
-        <dependency>
-         <groupId>com.vaadin.polymer</groupId>
-         <artifactId>vaadin-gwt-polymer-elements</artifactId>
-         <version>${gwtPolymerVersion}</version>
-         <scope>provided</scope>
-        </dependency>
+    ```xml
+    <dependency>
+     <groupId>com.vaadin.polymer</groupId>
+     <artifactId>vaadin-gwt-polymer-elements</artifactId>
+     <version>${gwtPolymerVersion}</version>
+     <scope>provided</scope>
+    </dependency>
+    ```
 
      _**Note**: Replace the `${gwtPolymerVersion}` placeholder with the current version (as of this writing 1.0.2.0-alpha3) or add the corresponding property in your pom.xml_
 
 2. Update the gwt-maven-plugin configuration to support the experimental `JsInterop` feature.
 
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>gwt-maven-plugin</artifactId>
-          ...
-          <configuration>
-            <jsInteropMode>JS</jsInteropMode>
-            ...
-          </configuration>
-        </plugin>
-
+    ```xml
+    <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>gwt-maven-plugin</artifactId>
+      ...
+      <configuration>
+        <jsInteropMode>JS</jsInteropMode>
+        ...
+      </configuration>
+    </plugin>
+    ```
+   
       _**Note**: JsInterop is an experimental flag in GWT-2.7.0 and you need to enable it explicitly. In future versions of GWT it will be enabled by default._
 
 3. Update `TodoList.gwt.xml` module file so that we can use the new gwt library.
 
-        <module rename-to="todolist">
-          ...
-          <inherits name="com.vaadin.polymer.Elements"/>
-          ...
-        </module>
+    ```xml
+    <module rename-to="todolist">
+      ...
+      <inherits name="com.vaadin.polymer.Elements"/>
+      ...
+    </module>
+   ```
 
 4. Update `TodoList.html`
     * Configure the `<meta>` viewport to handle mobile layouting.
     * Import the polyfill `<script>` for non web-component capable browsers.
     * Remove the content inside the <body> tag.
 
-            <!doctype html>
-            <html>
-            <head>
-             <meta name="viewport"
-               content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-             <script src="todolist/bower_components/webcomponentsjs/webcomponents.js"></script>
-             <script type="text/javascript" src="todolist/todolist.nocache.js"></script>
-            </head>
-            <body>
-            </body>
-            </html>
+        ```html
+        <!doctype html>
+        <html>
+        <head>
+         <meta name="viewport"
+           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+         <script src="todolist/bower_components/webcomponentsjs/webcomponents.js"></script>
+         <script type="text/javascript" src="todolist/todolist.nocache.js"></script>
+        </head>
+        <body>
+        </body>
+        </html>
+        ```
 
 5. Remove `greetServlet` and its mapping in `WEB-INF/web-xml`
-
-        <web-app>
-        </web-app>
+    
+    ```xml
+    <web-app>
+    </web-app>
+    ```
 
 6. Remove all unnecessary files.
 
@@ -121,20 +135,22 @@ With the base project set up, we'll now add the necessary external dependencies.
 
     Replace the content of `TodoList.java` with
 
-        package org.gwtproject.tutorial.client;
+    ```java   
+    package org.gwtproject.tutorial.client;
 
-        import com.google.gwt.core.client.EntryPoint;
-        import com.google.gwt.user.client.ui.RootPanel;
-        import com.vaadin.polymer.paper.widget.PaperButton;
+    import com.google.gwt.core.client.EntryPoint;
+    import com.google.gwt.user.client.ui.RootPanel;
+    import com.vaadin.polymer.paper.widget.PaperButton;
 
-        public class TodoList implements EntryPoint {
-          public void onModuleLoad() {
-            // Use Widget API to Create a <paper-button>
-            PaperButton button = new PaperButton("Press me!");
-            button.setRaised(true);
-            RootPanel.get().add(button);
-          }
-        }
+    public class TodoList implements EntryPoint {
+      public void onModuleLoad() {
+        // Use Widget API to Create a <paper-button>
+        PaperButton button = new PaperButton("Press me!");
+        button.setRaised(true);
+        RootPanel.get().add(button);
+      }
+    }
+    ```
 
     _**Note**: The example above shows how to add a  `PaperButton` element using the Widgets API._
 

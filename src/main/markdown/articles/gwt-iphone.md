@@ -126,7 +126,7 @@ allows you to implement a "deferred Iterator". This will avoid blocking
 the UI event loop while you create UI elements from a list of data
 objects:
 
-```
+```java
 final List objects = ....;
   DeferredCommand.addCommand(new IncrementalCommand() {
     Iterator i = objects.iterator();

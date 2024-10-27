@@ -42,7 +42,7 @@ the first element in your html file; and add `< meta http-equiv="X-UA-Compatible
 content="IE=9">` to `<head>` to future proof your app. Avoid using 'edge' unless
 you are sure what you are doing.
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>

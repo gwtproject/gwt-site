@@ -23,7 +23,7 @@ the future.
 
 To create a timer, create a new instance of the Timer class and then override the run() method entry point.
 
-```
+```java
 Timer timer = new Timer() {
       public void run() {
         Window.alert ("Timer expired!");
@@ -47,7 +47,7 @@ One typical use for a timer is to timeout a long running command. There are a fe
 
 Below is a an example of using a timeout with a [Remote Procedure Call](DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls) (RPC).
 
-```
+```java
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -120,7 +120,7 @@ In order to keep a user interface up to date, you sometimes want to perform an u
 some sort of animation on the screen. In this case, use the Timer class
 [scheduleRepeating()](/javadoc/latest/com/google/gwt/user/client/Timer.html#scheduleRepeating-int-) method:
 
-```
+```java
 public class Foo {
 
   // A timer to update the elapsed time count
@@ -166,7 +166,7 @@ The logic that you pass to `Scheduler` will run at some point in the future, aft
 interface a chance to process some user events or initialize other code. To use the `Scheduler` class in its simplest form, you create a subclass of the [Command](/javadoc/latest/com/google/gwt/user/client/Command.html) class, overriding the execute() method and pass
 it to [Scheduler.scheduleDeferred](/javadoc/latest/com/google/gwt/core/client/Scheduler.html#scheduleDeferred-com.google.gwt.core.client.Scheduler.ScheduledCommand-)
 
-```
+```java
 TextBox dataEntry;
 
   // Set the focus on the widget after setup completes.
@@ -196,7 +196,7 @@ class that helps perform long running calculations. It works by repeatedly calli
 
 The following example is an outline of how to use the IncrementalCommand class to do some computation in a way that allows the browser's user interface to be responsive:
 
-```
+```java
 public class IncrementalCommandTest implements EntryPoint {
 
   // Number of times doWork() is called

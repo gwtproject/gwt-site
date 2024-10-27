@@ -33,7 +33,7 @@ FAQ - Troubleshooting
 
 After upgrading to GWT 1.5, you might see this exception:
 
-```
+```text
 [ERROR] Uncaught exception escaped
 java.lang.AssertionError: Element may only be set once
 ```
@@ -60,7 +60,7 @@ the protected [AbsolutePanel(Element)](/javadoc/latest/com/google/gwt/user/clien
 Although you have successfully compiled the project class files in an IDE, when invoking the GWT compiler for the first time on a new project using one of the APIs provided
 with the GWT Google API, you come across an error similar to the following:
 
-```
+```text
 $ ./gearsTest-compile
 Analyzing source in module 'com.example.gearsTest'
    [ERROR] Errors in '/Users/zundel/Documents/workspace2/galgwt-issue3/src/com/example/client/gearsTest.java'
@@ -79,7 +79,7 @@ This can be resolved by updating the module XML file (.gwt.xml) in either of two
 
 For using the Gears package in GWT Google API, the appropriate line is:
 
-```
+```xml
 <inherits name='com.google.gwt.gears.Gears'>
 ```
 
@@ -91,7 +91,7 @@ Window).
 You might run into the problem in the first place because the [ImageBundle](DevGuideUiImageBundles.html) feature triggers the GWT compiler to
 connect to an X11 Graphics Environment Window at compile time. If you don't have a DISPLAY environment variable set, it will issue the following error message:
 
-```
+```text
 java.lang.InternalError: Can't connect to X11 window server using ':0.0' as the value of the DISPLAY variable.
 ```
 
@@ -103,7 +103,7 @@ in their underlying implementations, the GWT compiler will search for the DISPLA
 
 To avoid this error message, run the GWT compiler with the headless AWT option.
 
-```
+```text
 -Djava.awt.headless=true
 ```
 
@@ -121,7 +121,7 @@ If you use a custom build process, you can also set the AWT headless option ther
 
 When compiling a project in GWT 1.5 or later, you may encounter problems with running out of memory.
 
-```
+```text
 Compiling permutations
    Analyzing permutation #1
       [ERROR] An internal compiler exception occurred
@@ -156,7 +156,7 @@ To provide a virtual display:
 *   Install Xvfb.  
 *   Start the Xvfb server and set the environment variable DISPLAY to use it.
 
-```
+```shell
 export DISPLAY=:2
 ```
 *   Run Xvfb without access control on display :2  
@@ -164,7 +164,7 @@ export DISPLAY=:2
 This command will only start Xvfb if it is not already started.
 Any GWT compiles and tests should set DISPLAY=:2 to use the virtual frame buffer.
 
-```
+```shell
 ps -ef | grep Xvfb | grep -v grep >> /dev/null || Xvfb :2 -ac &
 ```
 
@@ -174,7 +174,7 @@ ps -ef | grep Xvfb | grep -v grep >> /dev/null || Xvfb :2 -ac &
 
 When testing a new RPC interface in development mode, receive a "resource not found" error.
 
-```
+```text
 The development shell servlet received a request for 'rpcs/myService' in module 'com.example.RPCExample' 
    Resource not found: rpcs/myService
 ```
@@ -191,7 +191,7 @@ The servlet engine could not find the server-side definition of your RPC method.
 *   Is the server code path listed in the module XML file (_myApp_.gwt.xml)?
 *
 
-```
+```xml
 <!-- Example servlet loaded into development mode web server       -->
 <servlet path="/myService" class="com.example.server.MyServiceImpl" />
 ```
@@ -210,7 +210,7 @@ The servlet engine could not find the server-side definition of your RPC method.
 
 If you are using GWT RPC and upgrading from GWT 1.4 to GWT 1.5, you may see a stack trace similar to the following:
 
-```
+```text
 javax.servlet.ServletException: Content-Type must be 'text/plain' with 'charset=utf-8' (or unspecified charset)
         at com.google.gwt.user.server.rpc.RemoteServiceServlet.readPayloadAsUtf8(RemoteServiceServlet.java: 119)
         at com.google.gwt.user.server.rpc.RemoteServiceServlet.doPost(RemoteServiceServlet.java: 178)
@@ -259,7 +259,7 @@ Check the /Library/InputManagers folder. If there is a file named GearsEnabler.b
 
 When launching the GWT compiler or development mode, you may see the following exception.
 
-```
+```text
 Exception in thread "main" java.lang.ExceptionInInitializerError
 Caused by: java.lang.RuntimeException: Installation problem detected, please reinstall GWT
     at com.google.gwt.util.tools.Utility.computeInstallationPath(Utility.java:322)
@@ -295,7 +295,7 @@ Make sure you have:
 
 When running in development mode, receive the error: Unable to find type 'com.foo.client.MyApp'.
 
-```
+```text
 Starting HTTP on port 8888
 Finding entry point classes
   Unable to find type 'com.google.gwt.sample.stockwatcher.client.StockWatcher'
@@ -337,7 +337,7 @@ If you take a peek at your `C:\Windows\System32\drivers\etc\hosts` file, you wil
 
 If you created your application using the [Google Plugin for Eclipse](https://developers.google.com/eclipse), you may have encountered the following stack trace:
 
-```
+```text
 WARNING: Nested in java.lang.ExceptionInInitializerError:
 java.security.AccessControlException: access denied
 (java.lang.RuntimePermission modifyThreadGroup)
@@ -406,7 +406,7 @@ files as UTF-8. Thus your source files are not properly encoded in UTF-8.
 *   Check any associated Java properties files (or other files where you've stored translations) to see if they are saved in UTF-8 format.
 *   Check the HTML host page. If your web page content contains localized data, encode it as UTF-8 by adding the following tag to the `<`head`>` element.
 
-```
+```html
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />`
 ```
 

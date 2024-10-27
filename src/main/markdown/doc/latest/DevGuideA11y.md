@@ -93,7 +93,7 @@ The following is an example taken from the <a href="/javadoc/latest/com/google/g
 Adding the `button` role indicates to an assistive technology that the widget will behave like a
 button.
 
-```
+```java
 protected CustomButton() {
     ...
     // Add a11y role "button"
@@ -128,7 +128,7 @@ Once a specific ARIA role has been associated with a widget, it is important to 
 
 In the CustomButton widget, the `aria-pressed` and `aria-disabled` ARIA state is initialized as follows:
 
-```
+```java
 protected CustomButton() {
     ...
     // Add a11y state "aria-pressed" and "aria-disabled"
@@ -144,7 +144,7 @@ The [CustomButton](/javadoc/latest/com/google/gwt/user/client/ui/CustomButton.ht
 the case with the CustomButton subclass [ToggleButton](/javadoc/latest/com/google/gwt/user/client/ui/ToggleButton.html). Event handlers attached
 to the underlying DOM element update the button faces when the button is pressed. We need to toggle the ARIA state `aria-pressed` as shown below.
 
-```
+```java
 void toggleDown() {
     // Update a11y state "aria-pressed"
     Roles.getButtonRole().setAriaPressedState(getElement(), PressedValue.of(true));
@@ -188,7 +188,7 @@ setting the `tabindex` ARIA attribute. The code below shows how to add the headi
 order of the page.  You might want to do this if you want to allow further interaction with the heading (e.g. for some type of
 clickable heading).
 
-```
+```java
 // Set tab index for a heading element
   Roles.getHeadingRole().setTabindexExtraAttribute(heading.getElement(), 0);
 ```
@@ -216,14 +216,14 @@ to indicate a change in item selection. For example, GWT's Tree widget contains 
 has a naturally focusable hidden element which receives keyboard events. Whenever the user hits the arrow keys, this
 element handles the event and causes the appropriate TreeItem to be highlighted.
 
-While this technique works for sighted users, it plays havoc with screen readers. Since the TreeItems themselves never get natural focus when selected, there is no way for the screen reader to know that the item selection has changed. One possible way to remedy this would be to have each TreeItem be naturally focusable. Unfortunately, TreeItems can contain more than just text -- they can contain other widgets, which themselves can be focusable. Here, delegating focus properly would be fairly complex -- each TreeItem would have to handle all of the key events for its child widget, and decide whether or not to delegate key events to its child (for user interaction with the child widget), or to handle the key events itself (for Tree navigation). Keep in mind that hooking up keyboard event handlers for each item would become unwieldy, as Trees may become very large. One can avoid doing this by relying on the natural event bubbling of key events, and having an element at the root of the Tree widget be responsible for receiving events.
+While this technique works for sighted users, it plays havoc with screen readers. Since the TreeItems themselves never get natural focus when selected, there is no way for the screen reader to know that the item selection has changed. One possible way to remedy this would be to have each TreeItem be naturally focusable. Unfortunately, TreeItems can contain more than just text &mdash; they can contain other widgets, which themselves can be focusable. Here, delegating focus properly would be fairly complex &mdash; each TreeItem would have to handle all of the key events for its child widget, and decide whether or not to delegate key events to its child (for user interaction with the child widget), or to handle the key events itself (for Tree navigation). Keep in mind that hooking up keyboard event handlers for each item would become unwieldy, as Trees may become very large. One can avoid doing this by relying on the natural event bubbling of key events, and having an element at the root of the Tree widget be responsible for receiving events.
 
 Another way to remedy the situation is to use the ARIA `aria-activedescendant` property. This property is set on an element that is naturally focusable, and its value is the HTML id of the currently-selected item. Whenever the item changes, the `aria-activedescendant` value should be updated to the id of the newly-selected item. The screen reader will notice the change in the value and read the element corresponding to the id. Below is an example of how this technique is used on the GWT Tree and TreeItem
 widgets.
 
 First, we set roles on the Tree's root element and its focusable element:
 
-```
+```java
 // Called from Tree(...) constructor
   private void init(TreeImages images, boolean useLeafImages) {
 
@@ -255,7 +255,7 @@ First, we set roles on the Tree's root element and its focusable element:
 
 Whenever an item selection changes, the value of the `aria-activedescendant` property is set on the focusable element, and the ARIA states and properties of the currently-selected item are set:
 
-```
+```java
 // Called after a new item has been selected
   private void updateAriaAttributes() {
 
@@ -315,7 +315,7 @@ how to implement this technique for an auto-complete widget:
 
 The ARIA role `region` is added when instantiating the relevant DOM nodes in the AutoCompleteWidget constructor:
 
-```
+```java
 public AutoCompleteWidget() {
     ...
     // Create a hidden div where we store the current item text for a
@@ -330,7 +330,7 @@ public AutoCompleteWidget() {
 
 Here, we have created a hidden div element that holds the content to be spoken. We've declared it to have `role = 'region'` and `live = 'assertive'`; the latter setting specifies that updates to this content have the highest priority. Next, we set up the needed associations so that the set of suggestions returned as the user types into the AutoCompleteWidget's text box are put in hidden div:
 
-```
+```java
 // This method is called via a keyboard event handler
     private void showSuggestions(Collection suggestions) {
       if (suggestions.size() > 0) {

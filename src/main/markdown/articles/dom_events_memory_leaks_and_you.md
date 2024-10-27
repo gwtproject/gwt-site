@@ -9,7 +9,7 @@ You may ask yourself, "Why do I have to use bitfields to sink DOM events?", and 
 
 If you're creating a widget from scratch (using DOM elements directly, as opposed to simply creating a composite widget), the setup for event handling generally looks something like this:
 
-```
+```java
 class MyWidget extends Widget {
   public MyWidget() {
     setElement(DOM.createDiv());
@@ -35,7 +35,7 @@ The upshot of all this is that in some browsers, any reference cycle that involv
 
 Imagine the following (raw JavaScript) example:
 
-```
+```javascript
 function makeWidget() {
   var widget = {};
   widget.someVariable = "foo";
@@ -48,7 +48,7 @@ function makeWidget() {
 
 Now, I'm not suggesting that you'd really build a JavaScript library quite this way, but it serves to illustrate the point. The reference cycle created here is:
 
-```
+```text
 widget -> elem(native) -> closure -> widget
 
 ```
@@ -68,7 +68,7 @@ How do we enforce this? Each widget has a single "root" element. Whenever the wi
 
 Which brings is back to that odd bitfield used in the sinkEvents() method. If you look at the implementation of [DOM.sinkEvents()](/javadoc/latest/com/google/gwt/user/client/DOM.html#sinkEvents-com.google.gwt.user.client.Element-int-), you'll see that it does something like this:
 
-```
+```javascript
 elem.onclick = (bits & 0x00001) ? $wnd.__dispatchEvent : null;
 
 ```

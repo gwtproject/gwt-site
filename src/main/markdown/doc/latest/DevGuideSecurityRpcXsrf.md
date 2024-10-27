@@ -39,7 +39,7 @@ Client-side code will obtain XSRF tokens by calling
 [`XsrfTokenService.getNewXsrfToken()`](/javadoc/latest/com/google/gwt/user/client/rpc/XsrfTokenService.html) server-side implementation
 configured in `web.xml`:
 
-```
+```xml
 <servlet>
   <servlet-name>xsrf</servlet-name>
   <servlet-class>
@@ -57,7 +57,7 @@ cookie must be passed to the `XsrfTokenServiceServlet` as well as
 all XSRF-protected RPC service servlets. This is done via context parameter in
 `web.xml`:
 
-```
+```xml
 <context-param>
   <param-name>gwt.xsrf.session_cookie_name</param-name>
   <param-value>JSESSIONID</param-value>
@@ -72,7 +72,7 @@ session cookie to each servlet individually.
 
 All server-side implementations of RPC services must extend [`XsrfProtectedServiceServlet`](/javadoc/latest/com/google/gwt/user/server/rpc/XsrfProtectedServiceServlet.html):
 
-```
+```java
 package com.example.foo.server;
 
 import com.google.gwt.user.server.rpc.XsrfProtectedServiceServlet; 
@@ -98,7 +98,7 @@ Client-side RPC interfaces can be marked as XSRF protected using one of the foll
 *   by extending [`XsrfProtectedService`](/javadoc/latest/com/google/gwt/user/client/rpc/XsrfProtectedService.html), in which case all methods calls will
   require `XsrfToken`:
 
-```
+```java
 package com.example.foo.client;
 
   import com.google.gwt.user.client.rpc.XsrfProtectedService;
@@ -112,7 +112,7 @@ package com.example.foo.client;
 [`@NoXsrfProtect`](/javadoc/latest/com/google/gwt/user/server/rpc/NoXsrfProtect.html) annotation can be used to disable XSRF
 protection on a method or service to disable XSRF protection:
 
-```
+```java
 package com.example.foo.client;
 
   import com.google.gwt.user.client.rpc.RemoteService;
@@ -138,7 +138,7 @@ To make a call to an XSRF protected service client must obtain a valid
 `XsrfToken` and set it on the service endpoint by casting the 
 service's asynchronous interface to [`HasRpcToken`](/javadoc/latest/com/google/gwt/user/client/rpc/HasRpcToken.html) and calling `setRpcToken()` method:
 
-```
+```java
 XsrfTokenServiceAsync xsrf = (XsrfTokenServiceAsync)GWT.create(XsrfTokenService.class);
 ((ServiceDefTarget)xsrf).setServiceEntryPoint(GWT.getModuleBaseURL() + "xsrf");
 xsrf.getNewXsrfToken(new AsyncCallback<XsrfToken>() {

@@ -24,7 +24,7 @@ To start things out, let's take a look at the code that constructs our main
 ContactList view. Previously we programmatically setup the UI within the
 ContactsView constructor:
 
-```
+```java
 public class ContactsView extends Composite implements ContactsPresenter.Display {
   ...
   public ContactsView() {
@@ -70,11 +70,9 @@ The first step towards a UiBinder-way of doing things is to move this code
 into a Contacts.ui.xml file and perform the associated transformations. As
 mentioned in previous chapters, constructing UiBinder-based UIs allows you to
 do so in a declarative way that resembles HTML more than straight Java code.
-To that extent, the result is the following:
+To that extent, the result is the file `ContactsView.ui.xml` with the following content:
 
-```
-ContactsView.ui.xml
-
+```xml
 <ui:UiBinder
   xmlns:ui="urn:ui:com.google.gwt.uibinder"
   xmlns:g="urn:import:com.google.gwt.user.client.ui">
@@ -108,7 +106,7 @@ amount of margin so that things aren't placed too close together.
 The ContactsView constructor and members are then reduced to the
 following:
 
-```
+```java
 public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
   ...
   @UiTemplate("ContactsView.ui.xml")
@@ -145,7 +143,7 @@ Presenter interface that allows our ContactsView to callback into the presenter
 when it receives a click, select or other event. The Presenter interface defines
 the following:
 
-```
+```java
 public interface Presenter<T> {
     void onAddButtonClicked();
     void onDeleteButtonClicked();
@@ -161,7 +159,7 @@ up is to have our ContactsPresenter implement the Presenter interface, and then
 register itself with the underlying view. To register itself, we'll need our
 ContactsView to expose a setPresenter() method:
 
-```
+```java
 private Presenter<T> presenter;
   public void setPresenter(Presenter<T> presenter) {
     this.presenter = presenter;
@@ -171,7 +169,7 @@ private Presenter<T> presenter;
 Now we can take a look at how we'll wire up the UI interactions within the
 ContactsView via the UiHandler annotation:
 
-```
+```java
 public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
   ...
   @UiHandler("addButton")
@@ -214,7 +212,7 @@ methods that should be called when a Widget has a "ui:field" attribute set to
 "addButton", "deleteButton", and "contactsTable". On the ContactsPresenter side
 of the fence we end up with the following:
 
-```
+```java
 public class ContactsPresenter implements Presenter {
   ...
   public void onAddButtonClicked() {
@@ -254,8 +252,8 @@ the model to our views. In the case of our ContactsView, the presenter takes a
 list of DTOs (Data Transfer Objects) and constructs a list of Strings that it
 then passes to the view.
 
-```
-public ContactsPresenter implements Presenter {
+```java
+public class ContactsPresenter implements Presenter {
   ...
   public void onSuccess(ArrayList<ContactDetails> result) {
     contactDetails = result;
@@ -286,7 +284,7 @@ homogeneous within column borders. Doing so allows us to define a
 ColumnDefinition abstract class that houses the any type-specific code (this is
 the third party mentioned above).
 
-```
+```java
 public abstract class ColumnDefinition<T> {
     public abstract Widget render(T t);
 
@@ -305,7 +303,7 @@ render() implementations and isClickable()/isSelectable() overrides, you can
 start see how we would define our layout. Let's take a look at how we would
 make this work with our Contacts sample.
 
-```
+```java
 public class ContactsViewColumnDefinitions<ContactDetails> {
     List<ColumnDefinition<ContactDetails>> columnDefinitions =
       new ArrayList<ColumnDefinition<ContactDetails>>();
@@ -345,7 +343,7 @@ platform-specific ContactsViewColumnDefinitions class that is loaded (or
 injected using GIN) on a per-permutation basis. Regardless of the technique,
 we'll need to update our views such that we can set their ColumnDefinition(s).
 
-```
+```java
 public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
     ...
     private List<ColumnDefinition<T>> columnDefinitions;
@@ -362,7 +360,7 @@ ContactsView<T>. This is so that we can pass in a mocked ContactsView instance
 when testing our ContactsPresenter. Now in our AppController, when we create the
 ContactsView, we can initialize it with the necessary ColumnDefinition(s).
 
-```
+```java
 public class AppController implements Presenter, ValueChangeHandler<String> {
     ...
     public void onValueChange(ValueChangeEvent<String> event) {
@@ -393,7 +391,7 @@ labor. Mainly in the way we pass model data to the view. As mentioned above we
 were previously dumbing down the model into a list of Strings. With our
 ColumnDefinition(s) we can pass the model untouched.
 
-```
+```java
 public class ContactsPresenter implements Presenter,
     ...
     private void fetchContactDetails() {
@@ -412,7 +410,7 @@ public class ContactsPresenter implements Presenter,
 
 And our ContactsViewImpl has the following setRowData() implementation:
 
-```
+```java
 public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
     ...
     public void setRowData(List<T> rowData) {
@@ -437,7 +435,7 @@ doesn't stop there. Remember the isClickable() and isSelectable() methods? Well,
 let's take a look at how they work in conjunction with ClickEvents that are
 received within the view.
 
-```
+```java
 public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
     ...
     @UiHandler("contactsTable")
@@ -502,7 +500,7 @@ getSelectedRows() with a SelectionModel that the presenter holds on to. The
 SelectionModel is nothing more than a wrapper around a list of model
 objects.
 
-```
+```java
 public class SelectionModel<T> {
     List<T> selectedItems = new ArrayList<T>();
 
@@ -527,7 +525,7 @@ public class SelectionModel<T> {
 The ContactsPresenter holds on to an instance of this class and updates it
 accordingly, based on calls to onItemSelected().
 
-```
+```java
 public class ContactsPresenter implements Presenter,
     ...
     public void onItemSelected(ContactDetails contactDetails) {
@@ -546,7 +544,7 @@ public class ContactsPresenter implements Presenter,
 When it needs to grab the list of selected items, for example when the user
 clicks the "Delete" button, it has them right at its disposal.
 
-```
+```java
 public class ContactsPresenter implements Presenter,
     ...
 
@@ -604,7 +602,7 @@ The changes are encompassed within our ContactsView.ui.xml file, as well as
 our setRowData() and onTableClicked() methods. First we'll need to update our
 ContactsView.ui.xml file to use a HTML widget rather than a FlexTable widget.
 
-```
+```xml
 <ui:UiBinder>
   ...
   <g:DecoratorPanel>
@@ -622,7 +620,7 @@ ContactsView.ui.xml file to use a HTML widget rather than a FlexTable widget.
 We'll also need to change the widget that we reference within our
 ContactsViewImpl class.
 
-```
+```java
 public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
   ...
   @UiField HTML contactsTable;
@@ -631,7 +629,7 @@ public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
 
 Next we'll make the necessary changes to our setRowData() method.
 
-```
+```java
 public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
   ...
   public void setRowData(List<T> rowData) {
@@ -675,7 +673,7 @@ as your tables start to grow.
 
 Now let's take a look at the code used to sink events on the table.
 
-```
+```java
 public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
   ...
   @UiHandler("contactsTable")
@@ -716,7 +714,7 @@ The other tweak we need to make is to update our shouldFireClickEvent() and
 shouldFireSelectEvent() to take as a parameter a TableCellElement rather than
 a HTMLTable.Cell. The implementation remains the same, as you can see below.
 
-```
+```java
 public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
   ...
   private boolean shouldFireClickEvent(TableCellElement cell) {
@@ -752,7 +750,7 @@ public class ContactsViewImpl<T> extends Composite implements ContactsView<T> {
  }
 ```
 
-## Code Splitting -- Only the relevant parts please <a id="code_splitting"></a>
+## Code Splitting &mdash; Only the relevant parts please <a id="code_splitting"></a>
 
 Up to this point we've discussed how code maintainability and testing are
 benefits of an MVP-based application. One other benefit that may go overlooked
@@ -774,7 +772,7 @@ the user even logs in? Not really. It would be nice if we could simply grab the
 login code, and leave the rest for when we actually need it (e.g. after the user
 has logged in). Well we can, and here's how.
 
-```
+```java
 public void onValueChange(ValueChangeEvent<String> event) {
     String token = event.getValue();
 

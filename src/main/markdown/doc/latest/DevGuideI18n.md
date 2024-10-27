@@ -299,16 +299,20 @@ translating tags into localized values. These files may be placed into the same 
 
 **Tip:** Use the [i18nCreator](RefCommandLineTools.html#i18nCreator) script to get started.
 
-    $ i18nCreator -eclipse Foo com.example.foo.client.FooConstants
-      Created file src/com/example/foo/client/FooConstants.properties
-      Created file FooConstants-i18n.launch
-      Created file FooConstants-i18n
+```text
+$ i18nCreator -eclipse Foo com.example.foo.client.FooConstants
+  Created file src/com/example/foo/client/FooConstants.properties
+  Created file FooConstants-i18n.launch
+  Created file FooConstants-i18n
+```
 
 Both [Constants](/javadoc/latest/com/google/gwt/i18n/client/Constants.html) and [Messages](/javadoc/latest/com/google/gwt/i18n/client/Messages.html) use traditional Java properties files, with one notable difference: properties files used with GWT should be encoded as UTF-8 and may contain Unicode characters directly, avoiding the need for `native2ascii`. See the
 API documentation for the above interfaces for examples and formatting details.
 
 In order to use internationalized characters, make sure that your host HTML page is served as UTF-8, the easiest way is to include a meta tag in the page's head:
 
-    <meta charset="utf-8" />
+```html
+ <meta charset="utf-8" />
+```
 
 You must also ensure that all relevant source and `.properties` files are set to be in the UTF-8 charset in your IDE.

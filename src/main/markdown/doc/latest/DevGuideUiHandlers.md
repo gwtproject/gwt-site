@@ -8,7 +8,7 @@ publishes click events. The associated handler interface is [ClickHandler](/java
 
 The following example demonstrates how to add a custom ClickHandler subclass to an instance of a Button:
 
-```
+```java
 public void anonClickHandlerExample() {
   Button b = new Button("Click Me");
   b.addClickHandler(new ClickHandler() {
@@ -24,7 +24,7 @@ of creating separate instances of the ClickHandler object for each widget that n
 themselves as the source of an event when they invoke a handler method, allowing a single handler to distinguish between multiple event publishers with an event object's
 getSource() method. This makes better use of memory but requires slightly more code, as shown in the following example:
 
-```
+```java
 public class HandlerExample extends Composite implements ClickHandler {
   private FlowPanel fp = new FlowPanel();
   private Button b1 = new Button("Button 1");

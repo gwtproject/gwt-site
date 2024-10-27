@@ -35,7 +35,7 @@ The GWT Editor framework allows data stored in an object graph to be mapped onto
 
 Import the `com.google.gwt.editor.Editor` module in your `gwt.xml` file.
 
-```
+```java
 // Regular POJO, no special types needed
 public class Person {
   Address getAddress();
@@ -116,7 +116,7 @@ The basic `Editor` type is simply a parameterized marker interface that indicate
 
 *   An instance field with at least package visibility whose name exactly is the property that will be edited or `propertyNameEditor`.  For example:
 
-```
+```java
 class MyEditor implements Editor<Foo> {
   // Edits the Foo.getBar() property
   BarEditor bar;
@@ -126,7 +126,7 @@ class MyEditor implements Editor<Foo> {
 ```
 *   A no-arg method with at least package visibility whose name exactly is the property that will be edited or `propertyNameEditor`.  This allows the use of interfaces for defining the Editor hierarchy. For example:
 
-```
+```java
 interface FooEditor extends Editor<Foo> {
   // Edits the Foo.getBar() property
   BarEditor bar();
@@ -136,7 +136,7 @@ interface FooEditor extends Editor<Foo> {
 ```
 *   The `@Path` annotation may be used on the field or accessor method to specify a dotted property path or to bypass the implicit naming convention.  For example:
 
-```
+```java
 class PersonEditor implements Editor<Person> {
   // Corresponds to person.getManager().getName()
   @Path("manager.name");
@@ -231,7 +231,7 @@ The GWT Editor framework provides the following top-level drivers:
 
 The `IsEditor` interface is intended to be used when a view type is reusing an Editor behavior provided by an external type.  For instance, a `LabelDecorator` type would implement `IsEditor` because it re-uses its Label's existing Editor behavior:
 
-```
+```java
 class LabelDecorator extends Composite implements IsEditor<LeafValueEditor<String>> {
   private final Label wrapped = new Label();
  
@@ -260,7 +260,7 @@ Similarly a `WorkgroupMembershipEditor` might implement `IsEditor<ListEditor<Per
 
 **A:** An Editor doesn't have to edit all of the properties of its peer domain object. If you had a `BagOfState` type with many properties, it might make sense to write several Editor types that edit conceptually-related subsets of the properties:
 
-```
+```java
 class BagOfStateBiographicalEditor implements Editor<BagOfState> {
   AddressEditor address;
   Label name; 
@@ -274,8 +274,7 @@ class BagOfStateUserPreferencesEditor implements Editor<BagOfState> {
 
 Whether or not these editors are displayed all at the same time or sequentially is a user experience issue.  The Editor framework allows multiple Editors to edit the same object:
 
-```
-
+```java
 class HasBagOfStateEditor implements Editor<HasBagOfState> {
  @Editor.Path("state")
  BagOfStateBiographicalEditor bio;

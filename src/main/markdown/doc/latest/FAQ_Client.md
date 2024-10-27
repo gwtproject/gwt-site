@@ -45,7 +45,7 @@ compiler so do not have any effect in production mode unless you explicitly enab
 
 You can get this to work by assigning the method via JSNI to an external, globally visible JavaScript name that can be referenced by your hand-crafted JavaScript code. For example,
 
-```
+```java
 package mypackage;
 public MyUtilityClass
 {
@@ -67,7 +67,7 @@ obfuscate/compress/rename the names of Java methods when it translates them to J
 
 Occasionally you might want to use this idiom for a GWT class method:
 
-```
+```java
 public static native String myMethod(String arg) /*-{
     eval("var myVar = 'arg is ' + arg;");
     return myVar;
@@ -80,7 +80,7 @@ embedded references to `arg` to also use the new varname.
 
 The fix is to tweak the `eval()` statement so that the variable names are visible to the GWT compiler:
 
-```
+```java
 public static native String myMethod(String arg) /*-{
     eval("var myVar = 'arg is " + arg + "';");
     return myVar;
@@ -94,7 +94,7 @@ JavaScript variables are stored.
 
 The code below illustrates this point:
 
-```
+```java
 public native void doSomething() /*-{
     this.@com.company.app.client.MyClass::doSomethingElse(Ljava/lang/String;)("immediate");
     someObj.onclick = function() {
@@ -115,7 +115,7 @@ points to some different object (which may not have a `doSomethingElse` method) 
 `this`, and creating the function closure over that. The snippet below shows the correct way to have the bridge call to `doSomethingElse` run when `someObj`
 is clicked.
 
-```
+```java
 public native void doSomething() /*-{
     var foo = this;
     this.@com.company.app.client.MyClass::doSomethingElse(Ljava/lang/String;)("immediate");
@@ -133,7 +133,7 @@ scope.
 It is quite common for a JavaScript api to return a value asynchronously through a callback function. You can refer to Java functions as first-class objects with [JSNI](DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface) syntax. Assuming a JavaScript function `externalJsFunction` that takes a data value and a callback
 function, here is an example of how to code this:
 
-```
+```java
 package p;
 
 class C {
@@ -147,7 +147,7 @@ class C {
 Depending on the nature of the callback, it's sometimes helpful to use an anonymous JavaScript function to create a wrapper callback when you invoke the API method. When the
 callback is invoked, wrapper will forward the parameter values to the Java method:
 
-```
+```java
 package p;
 
 class D {

@@ -16,9 +16,8 @@ package com.google.gwt.site.markdown.toc;
 import com.google.gwt.site.markdown.fs.MDNode;
 import com.google.gwt.site.markdown.fs.MDParent;
 
+import java.util.Arrays;
 import java.util.List;
-
-import org.parboiled.common.StringUtils;
 
 public class TocFromMdCreator implements TocCreator {
 
@@ -49,17 +48,17 @@ public class TocFromMdCreator implements TocCreator {
     }
     
     // Use 4 spaces to indent <li>'s, so as we have room for indenting <ul>'s
-    String margin = StringUtils.repeat(' ', 4 * node.getDepth());
+    String margin = spaces(4 * node.getDepth());
 
     if (node.isFolder()) {
       MDParent mdParent = node.asFolder();
 
       if (node.getDepth() != 0) {
-        buffer.append(margin + "<li class='folder'>");
+        buffer.append(margin).append("<li class='folder'>");
         buffer.append("<a href='#'>");
         buffer.append(node.getDisplayName());
         buffer.append("</a>\n");
-        buffer.append(margin + "  <ul>\n");
+        buffer.append(margin).append("  <ul>\n");
       }
 
       List<MDNode> children = mdParent.getChildren();
@@ -68,8 +67,8 @@ public class TocFromMdCreator implements TocCreator {
       }
 
       if (node.getDepth() != 0) {
-        buffer.append(margin + "  </ul>\n");
-        buffer.append(margin + "</li>\n");
+        buffer.append(margin).append("  </ul>\n");
+        buffer.append(margin).append("</li>\n");
       }
     } else {
       StringBuffer relativeUrl = new StringBuffer();
@@ -85,11 +84,19 @@ public class TocFromMdCreator implements TocCreator {
 
       relativeUrl.append(node.getRelativePath());
 
-      buffer.append(margin + "<li class='file'>");
+      buffer.append(margin).append("<li class='file'>");
       // TODO escape HTML
-      buffer.append("<a href='" + relativeUrl.toString() + "' ahref='" + absoluteUrl.toString()
-          + "' title='" + node.getDescription() + "'>" + node.getDisplayName() + "</a>");
+      buffer.append("<a href='").append(relativeUrl)
+          .append("' ahref='").append(absoluteUrl)
+          .append("' title='").append(node.getDescription()).append("'>")
+          .append(node.getDisplayName()).append("</a>");
       buffer.append("</li>\n");
     }
+  }
+
+  private String spaces(int count) {
+    final byte[] spaceBytes = new byte[count];
+    Arrays.fill(spaceBytes, (byte) ' ');
+    return new String(spaceBytes);
   }
 }

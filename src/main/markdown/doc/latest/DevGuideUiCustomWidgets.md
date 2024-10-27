@@ -27,7 +27,7 @@ would inherit from its Panel superclass.
 The following code snippet shows how to create a composite widget composed of a [TextBox](/javadoc/latest/com/google/gwt/user/client/ui/TextBox.html) widget and a
 [CheckBox](/javadoc/latest/com/google/gwt/user/client/ui/CheckBox.html) widget laid out in a [VerticalPanel](/javadoc/latest/com/google/gwt/user/client/ui/VerticalPanel.html).
 
-```
+```java
 package com.google.gwt.examples;
 
 import com.google.gwt.core.client.EntryPoint;

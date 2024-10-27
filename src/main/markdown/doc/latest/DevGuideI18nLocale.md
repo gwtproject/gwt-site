@@ -40,7 +40,7 @@ In any real-world application, you will define at least one locale in addition t
 client property using the `<extend-property>` element in your [module XML](DevGuideOrganizingProjects.html#DevGuideModuleXml). For
 example, the following module adds multiple locale values:
 
-```
+```xml
 <module>
   <inherits name="com.google.gwt.user.User"/>
   <inherits name="com.google.gwt.i18n.I18N"/>
@@ -75,7 +75,7 @@ are probably better off choosing some real language as a default, such as
 `en`.  You can set what value is used for the default by including
 the following in your [module XML](DevGuideOrganizingProjects.html#DevGuideModuleXml):
 
-```
+```xml
 <extend-property name="locale" values="en,es,de,fr,it" /> <!-- 1. full list of supported locales --> 
 <set-property name="locale" value="en,es,de,fr,it" />     <!-- 2. remove the 'default' locale permutation -->
 <set-property-fallback name="locale" value="en" />        <!-- 3. set the fallback locale, in replacement for the default 'default' locale -->
@@ -87,13 +87,13 @@ The locale client property can be specified using either a meta tag or as part o
 precedence. To specify the `locale` client property using a meta tag in the [host page](DevGuideOrganizingProjects.html#DevGuideHostPage), embed a meta tag for
 `gwt:property` as follows:
 
-```
+```html
 <meta name="gwt:property" content="locale=x_Y">
 ```
 
 For example, the following host HTML page sets the locale to "ja_JP":
 
-```
+```html
 <html>
   <head>
     <meta name="gwt:property" content="locale=ja_JP">
@@ -107,7 +107,7 @@ For example, the following host HTML page sets the locale to "ja_JP":
 
 To specify the `locale` client property using a query string, specify a value for the name `locale`. For example,
 
-```
+```text
 http://www.example.org/myapp.html?locale=fr_CA
 ```
 
@@ -128,7 +128,7 @@ a country-specific locale such as Argentinian Spanish (`es_AR`).
 
 The easy way to use runtime locales is simply to add:
 
-```
+```xml
 <inherits name="com.google.gwt.i18n.CldrLocales"/>
 ```
 
@@ -170,7 +170,7 @@ class.  For example:
 
 *   To check if the current locale is a Right-to-Left locale:
 
-```
+```java
 if (LocaleInfo.getCurrentLocale().isRTL()) {
   ...
 }
@@ -178,7 +178,7 @@ if (LocaleInfo.getCurrentLocale().isRTL()) {
 
 *   To get a list of supported locales, such as for a locale selector:
 
-```
+```java
 for (String localeName : LocaleInfo.getAvailableLocaleNames()) {
   String displayName = LocaleInfo.getLocaleNativeDisplayName(localeName);
   ...
@@ -204,13 +204,13 @@ object).
     provides easy access to GWT's locale infrastructure for a generator.
     *   Get a GwtLocaleFactory instance:
 
-```
+```java
 GwtLocaleFactory factory = LocaleUtils.getLocaleFactory();
 ```
 
 *   Get all locales for this compile, including runtime locales:
 
-```
+```java
 Set<GwtLocale> locales = localeUtils.getAllLocales();
 ```
 
