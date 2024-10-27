@@ -14,7 +14,7 @@ To begin writing a GWT module, subclass the [EntryPoint](/javadoc/latest/com/goo
 
 **Tip:** GWT applicationCreator creates a starter application for you with a sample EntryPoint subclass defined.
 
-```
+```java
 package com.example.foo.client;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -55,7 +55,7 @@ program that looks like this when run in development mode:
 
 ![img](images/HelloWorld.png)
 
-```
+```java
 package com.google.gwt.sample.hello.client;
 
 import com.google.gwt.core.client.EntryPoint;

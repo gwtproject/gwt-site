@@ -22,7 +22,7 @@ include a GWT application via a `SCRIPT` tag. This HTML page is referred to as a
 application written with GWT from scratch might not include any visible HTML body content at all. The example below shows how to embed a GWT application that will use the entire
 browser window.
 
-```
+```html
 <html>
   <head>
   
@@ -58,7 +58,7 @@ But GWT was designed to make it easy to add GWT functionality to existing web ap
 widgets into specific places in an HTML page. To accomplish this, use the `id` attribute in your HTML tags to specify a unique identifier that your GWT code will use to
 attach widgets to that HTML element. For example:
 
-```
+```html
 <body>
     <!-- ... other sample HTML omitted   -->
     <table align=center>
@@ -73,7 +73,7 @@ attach widgets to that HTML element. For example:
 Notice that the `td` tags include an `id` attribute associated with them. This attribute is accessible through the `DOM` class. You can easily attach
 widgets using the method `RootPanel.get()`. For example:
 
-```
+```java
 final Button button = new Button("Click me");
     final Label label = new Label();
 
@@ -216,7 +216,7 @@ Modules are defined in XML files with a file extension of _.gwt.xml_. Module XML
 If you are using the [standard project structure](DevGuideOrganizingProjects.html#DevGuideDirectoriesPackageConventions), your module XML can be as simple as the following
 example:
 
-```
+```xml
 <module rename-to="dynatable">
     <inherits name="com.google.gwt.user.User" />
     <entry-point class="com.google.gwt.sample.dynatable.client.DynaTable" />
@@ -230,13 +230,13 @@ Module XML files are found on the Java classpath. Modules are always referred to
 
 For example, if the module XML file has a file name of...
 
-```
+```text
 ~/src/com/example/cal/Calendar.gwt.xml
 ```
 
 ...then the logical name of the module is:
 
-```
+```text
 com.example.cal.Calendar
 ```
 
@@ -250,7 +250,7 @@ long, fully-qualified name. Renaming a module has two primary use cases:
 
 `com.foo.WorkingModule.gwt.xml`:
 
-```
+```xml
 <module rename-to="com.foo.MyModule">
   <inherits name="com.foo.MyModule" />
   <set-property name="user.agent" value="ie6" />
@@ -269,7 +269,7 @@ code that you want to reuse in other GWT projects. An example of this is the Goo
 find the `Gears.gwt.xml` file for the module which doesn't define an entry point. However, any GWT project that would like to use Gears for GWT will have to inherit the
 Gears.gwt.xml module. For example, a module named "Foo" might want to use GALGWT, so in `Foo.gwt.xml` an `<inherits>` entry would be needed:
 
-```
+```xml
 <module>
 ...
     <inherits name='com.google.gwt.gears.Gears' />
@@ -303,7 +303,7 @@ For example, suppose you want implement the UUID class provided by the JRE under
 `com/example/myproject/MyProject.gwt.xml`. Place the source for the UUID class into `com/example/myproject/jre/java/util/UUID.java`. Then add a line to
 `MyProject.gwt.xml`:
 
-```
+```xml
 <super-source path="jre" />
 ```
 
@@ -411,7 +411,7 @@ Several different predicates can be combined into an expression. Surround your `
 
 As an example module XML file that makes use of deferred binding rules, here is a module XML file from the GWT source code, Focus.gwt.xml:
 
-```
+```xml
 <module>
   <inherits name="com.google.gwt.core.Core" />
   <inherits name="com.google.gwt.user.UserAgent" />
@@ -476,7 +476,7 @@ starting point for styling your application, but you are not required to use any
 
 To inherit a module, edit your project's module XML file and specify the logical name of the module you want to inherit in the `<inherits>` tag.
 
-```
+```xml
 <inherits name="com.google.gwt.junit.JUnit"/>
 ```
 
@@ -493,7 +493,7 @@ is intended to be used as a reusable component because your module will not have
 Script inclusion is a convenient way to automatically associate external JavaScript files with your module. Use the following syntax to cause an external JavaScript file to be
 loaded into the [host page](DevGuideOrganizingProjects.html#DevGuideHostPage) before your module entry point is called.
 
-```
+```html
 <script src="_js-url_"/>
 ```
 
@@ -508,7 +508,7 @@ The script is loaded into the namespace of the [host page](DevGuideOrganizingPro
 Stylesheet inclusion is a convenient way to automatically associate external CSS files with your module. Use the following syntax to cause a CSS file to be automatically
 attached to the [host page](DevGuideOrganizingProjects.html#DevGuideHostPage).
 
-```
+```html
 <stylesheet src="_css-url_"/>
 ```
 
@@ -553,7 +553,7 @@ The default value of `defaultexcludes` is `true`. By default, the patterns liste
 
 Consider the following HTML page that loads a GWT module:
 
-```
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <body onload='alert("w00t!")'>

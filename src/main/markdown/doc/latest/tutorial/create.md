@@ -47,10 +47,12 @@ For the StockWatcher project, you will run webAppCreator with the following para
     *  At the command line, run webAppCreator.
     *  Enter the command below on a **single** line. (The example is shown on multiple lines only to improve readability.)
     *  Replace the junit.jar path name (highlighted in the example below) with the fully-qualified path name of junit.jar on your system.
-
+        
+       ```shell
         webAppCreator -out StockWatcher
                       -junit "C:\eclipse\plugins\org.junit_3.8.2.v200706111738\junit.jar"
                       com.google.gwt.sample.stockwatcher.StockWatcher
+       ```
 
     **Note:** The _-junit_ argument is optional.  If you do not have junit installed on your system or do not wish to use junit in your application, you can leave it out.
 
@@ -58,7 +60,7 @@ For the StockWatcher project, you will run webAppCreator with the following para
 
 2.  GWT webAppCreator generates the project subdirectories and files you need to get started.
 
-```
+```text
 Created directory StockWatcher/src
 Created directory StockWatcher/war
 Created directory StockWatcher/war/WEB-INF
@@ -160,7 +162,7 @@ webAppCreator creates an ant build file with a target for running the applicatio
 1.  From the command line, change to the StockWatcher directory
 2.  Execute:
 
-```
+```shell
 ant devmode
 ```
 
@@ -199,7 +201,7 @@ Open the module XML file, StockWatcher/src/com/google/gwt/sample/stockwatcher/St
 
 It contains the definition of the GWT module, the collection of resources that comprise a GWT application or a shared package. By default, StockWatcher inherits the core GWT functionality required for every project. Optionally, you can specify other GWT modules to inherit from.
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <module rename-to='stockwatcher'>
   <!-- Inherit the core Web Toolkit stuff.                        -->

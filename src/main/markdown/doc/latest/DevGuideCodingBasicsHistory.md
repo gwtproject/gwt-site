@@ -33,7 +33,7 @@ location bar, after the "#"), and this fragment is passed back to the applicatio
 
 For example, a history token named "page1" would be added to a URL as follows:
 
-```
+```text
 http://www.example.com/com.example.gwt.HistoryExample/HistoryExample.html#page1
 ```
 
@@ -44,7 +44,7 @@ the user uses the back button, a call will be made to any object that was added 
 
 To use GWT History support, you must first embed an iframe into your [host HTML page](DevGuideOrganizingProjects.html#DevGuideHostPage).
 
-```
+```html
 <iframe src="javascript:''"
           id="__gwt_historyFrame"
           style="position:absolute;width:0;height:0;border:0"></iframe>
@@ -57,7 +57,7 @@ Then, in your GWT application, perform the following steps:
 
 The following short example shows how to add a history event each time the user selects a new tab in a [TabPanel](/javadoc/latest/com/google/gwt/user/client/ui/TabPanel.html).
 
-```
+```java
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.logical.shared.SelectionEvent;
 import com.google.gwt.event.logical.shared.SelectionHandler;
@@ -142,7 +142,7 @@ implementing the history callback. When returning to a page using a token, some 
 In the above case, navigating back to a page would be possible, but there isn't enough information in the history token to restore the user's previous answers. A better
 encoding for the token would be a syntax such as:
 
-```
+```text
 page=<pagename>;session=<sessionname>
 ```
 

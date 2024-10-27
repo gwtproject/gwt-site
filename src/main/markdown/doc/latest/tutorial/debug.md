@@ -31,7 +31,7 @@ Looking at the values in the Price and Change fields, you can see that, for some
 
 The values for the Change field are loaded by the updateTable(StockPrice) method.
 
-```
+```java
   /**
    * Update a single row in the stock table.
    *
@@ -98,7 +98,7 @@ Now step into the code to see where and how the changePercentText is being calcu
 
 1.  Step into the getChangePercent method to see how it's calculating the value of changePercentText.
 
-```
+```java
 public double getChangePercent() {
   return 10.0 * this.change / this.price;
 }
@@ -111,7 +111,7 @@ Looking at the getChangePercent method, you can see the problem: it's multiplyin
 1.  Fix the error in calculating the percentage of the price change.
     *  In StockPrice.java, edit the getChangePercent method.
 
-```
+```java
 public double getChangePercent() {
   return 100.0 * this.change / this.price;
 }

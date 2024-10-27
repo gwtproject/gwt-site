@@ -74,7 +74,7 @@ interface you created above.
 
 To begin developing a new service interface, create a [client-side](DevGuideCodingBasics.html#DevGuideClientSide) Java interface that extends the [RemoteService](/javadoc/latest/com/google/gwt/user/client/rpc/RemoteService.html) tag interface.
 
-```
+```java
 package com.example.foo.client;
 
 import com.google.gwt.user.client.rpc.RemoteService;
@@ -86,7 +86,7 @@ public interface MyService extends RemoteService {
 
 This synchronous interface is the definitive version of your service's specification. Any implementation of this service on the [server-side](DevGuideServerCommunication.html#DevGuideServerSide) must extend [RemoteServiceServlet](/javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html) and implement this service interface.
 
-```
+```java
 package com.example.foo.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
@@ -111,7 +111,7 @@ below.
 Before you can actually attempt to make a remote call from the client, you must create another client interface, an asynchronous one, based on your original service interface.
 Continuing with the example above, create a new interface in the client subpackage:
 
-```
+```java
 package com.example.foo.client;
 
 interface MyServiceAsync {
@@ -156,7 +156,7 @@ For example, suppose you have a module `com.example.foo.Foo`, and you define an 
 `@RemoteServiceRelativePath("myService")`. You then implement a servlet for the interface you created for `com.example.foo.client.MyService` with the class
 `com.example.foo.server.MyServiceImpl` which extends `RemoteServiceServlet`. Finally, you add the following lines to your `web.xml`:
 
-```
+```xml
 <!-- Example servlet loaded into servlet container -->
 <servlet>
   <servlet-name>myServiceImpl</servlet-name>
@@ -214,7 +214,7 @@ The process of making an RPC from the client always involves the same steps:
 
 Suppose you want to call a method on a service interface defined as follows:
 
-```
+```java
 // The RemoteServiceRelativePath annotation automatically calls setServiceEntryPoint()
 @RemoteServiceRelativePath("email")
 public interface MyEmailService extends RemoteService {
@@ -224,7 +224,7 @@ public interface MyEmailService extends RemoteService {
 
 Its corresponding asynchronous interface will look like this:
 
-```
+```java
 public interface MyEmailServiceAsync {
   void emptyMyInbox(String username, String password,
       AsyncCallback<Void> callback);
@@ -233,7 +233,7 @@ public interface MyEmailServiceAsync {
 
 The client-side call will look like this:
 
-```
+```java
 public void menuCommandEmptyInbox() {
   // (1) Create the client proxy. Note that although you are creating the
   // service interface proper, you cast the result to the asynchronous
@@ -264,7 +264,7 @@ public void menuCommandEmptyInbox() {
 It is safe to cache the instantiated service proxy to avoid creating it for subsequent calls. For example, you can instantiate the service proxy in the module's
 `onModuleLoad()` method and save the resulting instance as a class member.
 
-```
+```java
 public class Foo implements EntryPoint {
       private MyEmailServiceAsync myEmailService = (MyEmailServiceAsync) GWT.create(MyEmailService.class);
 
@@ -400,7 +400,7 @@ Custom field serializers should extend the
 CustomFieldSerializer<T>`](/javadoc/latest/com/google/gwt/user/client/rpc/CustomFieldSerializer.html) class, with the class that is being
 serialized as the type parameter. For example:
 
-```
+```java
 public final class HashMap_CustomFieldSerializer extends CustomFieldSerializer<HashMap>
 
 ```
@@ -441,7 +441,7 @@ Server custom field serializers should extend the
 ServerCustomFieldSerializer<T>`](/javadoc/latest/com/google/gwt/user/server/rpc/ServerCustomFieldSerializer.html) class, with the class that is being
 serialized as the type parameter. For example:
 
-```
+```java
 public final class HashMap_ServerCustomFieldSerializer extends ServerCustomFieldSerializer<HashMap>
 
 ```
@@ -592,7 +592,7 @@ The idea is to have Apache proxy requests to the servlet to the other server suc
 
 The following Apache configuration sets up such a rule using a Proxy:
 
-```
+```text
 ProxyPass        /MyApp/myapp/myService  http://servlet.example.com:8080/MyApp/myapp/myService
 ProxyPassReverse /MyApp/myapp/myService  http://servlet.example.com:8080/MyApp/myapp/myService
 ```
@@ -606,7 +606,7 @@ URL`, which is good). If you get something different hitting the second URL, you
 *   If you get a 403 permission error, check the Apache configuration files for `<Proxy>` tags to see if the permissions are wrong. You may need to add a section
 like this:
 
-```
+```apacheconf
 <Proxy \*>
      Order deny,allow
      Allow from all
@@ -651,7 +651,7 @@ websites. In particular, SOP makes it difficult (although not impossible) to sen
 To use the [HTTP types](/javadoc/latest/com/google/gwt/http/client/package-summary.html) in your application,
 you'll need to first inherit the GWT HTTP module by adding the following `<inherits>` tag to your [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml):
 
-```
+```xml
 <inherits name="com.google.gwt.http.HTTP" />
 ```
 
@@ -670,7 +670,7 @@ the call, and [cancel it](/javadoc/latest/com/google/gwt/http/client/Request.htm
 
 Here's a brief example of making an HTTP request to a server:
 
-```
+```java
 import com.google.gwt.http.client.*;
 ...
 
@@ -737,7 +737,7 @@ the following implementation of an asynchronous call adapted from the Dynamic Ta
 application. It uses a slightly different syntax to define the required interface for the [AsyncCallback](/javadoc/latest/com/google/gwt/user/client/rpc/AsyncCallback.html) object that is the last
 parameter to the `getPeople` RPC call:
 
-```
+```java
 // This code is called before the RPC starts
  //
   if (startRow == lastStartRow) {

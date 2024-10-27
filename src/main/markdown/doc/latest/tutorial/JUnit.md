@@ -62,7 +62,7 @@ Currently it contains a single, simple test: the method testSimple.
 
 1.  Open the StockWatcherTest.java file.
 
-```
+```java
 package com.google.gwt.sample.stockwatcher.client;
 
 import com.google.gwt.junit.client.GWTTestCase;
@@ -132,7 +132,7 @@ with the path to junit on your system.
 3.  The test runs as Java bytecode in a JVM.
     *  The simpleTest executes without error.
 
-```
+```text
 [junit] Running com.google.gwt.sample.stockwatcher.client.StockWatcherTest
 [junit] Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 15.851 sec
 ```
@@ -142,7 +142,7 @@ with the path to junit on your system.
 5.  The test runs as compiled JavaScript.
     *  The simpleTest executes without error.
 
-```
+```text
 [junit] Running com.google.gwt.sample.stockwatcher.client.StockWatcherTest
 [junit] Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 37.042 sec
 ```
@@ -203,7 +203,7 @@ However, to learn the process of setting up JUnit tests in GWT, in this tutorial
 1.  Write a JUnit test to verify that the constructor of the StockPrice class is correctly setting the new object's instance fields.
     *  To the StockWatcherTest class, add the testStockPriceCtor method as shown below.
 
-```
+```java
 /**
  * Verify that the instance fields in the StockPrice class are set correctly.
  */
@@ -225,7 +225,7 @@ public void testStockPriceCtor() {
 2.  Rerun StockWatcherTest in development mode.
     *  Both tests should pass.
 
-```
+```text
 [junit] Running com.google.gwt.sample.stockwatcher.client.StockWatcherTest
 [junit] Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 16.601 sec
 ```
@@ -237,7 +237,7 @@ To see what happens when a unit test fails, you'll reintroduce the arithmetic bu
 1.  Introduce a bug into StockWatcher.
     *  In StockPrice.java, make the change highlighted below.
 
-```
+```java
 public double getChangePercent() {
   return 10.0 * this.change / this.price;
 }
@@ -250,7 +250,7 @@ public double getChangePercent() {
     *  ...and provides a full-stack trace for the exception that resulted&mdash;an AssertionFailedError.
 (Output if run from the command line.)
 
-```
+```text
 Testsuite: com.google.gwt.sample.stockwatcher.client.StockWatcherTest
 Tests run: 2, Failures: 1, Errors: 0, Time elapsed: 16.443 sec
 
@@ -273,7 +273,7 @@ tests and `reports/htmlunit.prod/` directory for production mode tests.
 4.  Rerun the tests.
     *  Both the JUnit tests should complete successfully again.
 
-```
+```text
 [junit] Running com.google.gwt.sample.stockwatcher.client.StockWatcherTest
 [junit] Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 16.114 sec
 ```

@@ -31,7 +31,7 @@ Here's how to turn the feature on.
 
 **Original**
 
-```
+```xml
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
   <div>Hello, world.</div>
 </ui:UiBinder>
@@ -39,7 +39,7 @@ Here's how to turn the feature on.
 
 **Tagged**
 
-```
+```xml
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
     ui:generateFormat='com.google.gwt.i18n.server.PropertyCatalogFactory'
     ui:generateKeys="com.google.gwt.i18n.server.keygen.MD5KeyGenerator"
@@ -92,7 +92,7 @@ the gwt compiler to tell it to generate its "extra" auxiliary files.
 A properties file will be generated for each template, containing
 an entry for each message tagged for localization, something like:
 
-```
+```properties
 # Generated from my.app.HelloWorldMyBinderImplGenMessages
 # for locale default
 
@@ -160,13 +160,13 @@ A message element in a context where HTML is appropriate can hold HTML markup.
 
 **Original**
 
-```
+```html
 We <b>strongly</b> urge you to reconsider.
 ```
 
 *Tagged*
 
-```
+```xml
 <ui:msg>We <b>strongly</b> urge you to reconsider.</ui:msg>
 ```
 
@@ -180,7 +180,7 @@ to keep your translators from breaking your app.
 
 **Original**
 
-```
+```html
 <!-- Uh oh, don't want translator to mess up brand CSS or the trademark span -->
 
 <div><span class="brand">Colgate</span>, with MFP!<span class="tm">TM</span></div>
@@ -188,7 +188,7 @@ to keep your translators from breaking your app.
 
 **Tagged**
 
-```
+```xml
 <div>
   <ui:msg description="blurb"><span class="brand" ui:ph="brandedSpan">Colgate</span>,
   with MFP!<ui:ph name="trademark"><span class="tm">TM</span></ui:ph></ui:msg>
@@ -197,7 +197,7 @@ to keep your translators from breaking your app.
 
 **Generated**
 
-```
+```properties
 # Description: blurb
 # 0=arg0 (Example: <span class='brand'>), 1=arg1 (Example: </span>), 2=arg2 (Example: <span class='tm'>TM</span>)
 6E8B421C6A7C1FEAE23FAA9D43C90D5E={0}Colgate{1}, with MFP\!{2}
@@ -222,14 +222,14 @@ automatically protected from translation for you.
 
 **Original**
 
-```
+```html
 <!-- Java code will make calls like getClosingDate().setInnerText(closingDate()) -->
 (closed <span ui:field="closingDate" /> through <span ui:field="reopeningDate"/>)
 ```
 
 **Tagged**
 
-```
+```xml
 <ui:msg description='closed for business message'>
   (closed <span ui:field='closingDate' /> through <span ui:field='reopeningDate'/>)
 </ui:msg>
@@ -237,7 +237,7 @@ automatically protected from translation for you.
 
 **Generated**
 
-```
+```properties
 # Description: closed for business message
 # 0=arg0 (Example: <span id=''>), 1=arg1 (Example: </span>), 2=arg2 (Example: <span id=''>), 3=arg3 (Example: </span>)
 E30D43242E1AD2AC2EFA1AEEEFDFCC33=(closed {0}{1} through {2}{3})
@@ -256,7 +256,7 @@ If that's a concern, you need to put the named spans inside
 
 **Tagged**
 
-```
+```xml
 <ui:msg>
   (closed <ui:ph name='closingDate' example="7/12/2008"><span ui:field="closingDate"/></ui:ph>
   through <ui:ph name='reopeningDate' example="7/12/2008"><span ui:field="reopeningDate"/></ui:ph>)
@@ -265,7 +265,7 @@ If that's a concern, you need to put the named spans inside
 
 **Generated**
 
-```
+```properties
 # 0=arg0 (Example: 7/12/2008), 1=arg1 (Example: 7/12/2008)
 53B9CF65553DFAA091435791E5C731E7=(closed {0} through {1})
 
@@ -281,7 +281,7 @@ elements, you may find yourself placing widgets inside your messages. No problem
 
 **Original**
 
-```
+```xml
 <g:HTMLPanel>
   Meeting starts at
     <my:TimePicker ui:field="startPicker"/>
@@ -292,7 +292,7 @@ elements, you may find yourself placing widgets inside your messages. No problem
 
 **Tagged**
 
-```
+```xml
 <g:HTMLPanel>
   <ui:msg>Meeting starts at
     <my:TimePicker ui:field="startPicker"/>
@@ -304,7 +304,7 @@ elements, you may find yourself placing widgets inside your messages. No problem
 
 
 
-```
+```properties
 # 0=arg0 (Example: <span>), 1=arg1 (Example: </span>), 2=arg2 (Example: <span>), 3=arg3 (Example: </span>)
 23CBEA252C9901BF84D757FAD4968289=Meeting starts at {0}{1} and ends at {2}{3}.
 
@@ -327,7 +327,7 @@ or [HasHTML](/javadoc/latest/com/google/gwt/user/client/ui/HasHTML.html).)
 
 **Original**
 
-```
+```xml
 <g:HTMLPanel>
   To do the thing, <g:Hyperlink targetHistoryToken="/doThe#thing">click here</g:Hyperlink>
   and massage vigorously.
@@ -336,7 +336,7 @@ or [HasHTML](/javadoc/latest/com/google/gwt/user/client/ui/HasHTML.html).)
 
 **Tagged**
 
-```
+```xml
 <g:HTMLPanel>
   <ui:msg>
     To do the thing, <g:Hyperlink targetHistoryToken="/doThe#thing">click here</g:Hyperlink>
@@ -347,7 +347,7 @@ or [HasHTML](/javadoc/latest/com/google/gwt/user/client/ui/HasHTML.html).)
 
 **Generated**
 
-```
+```properties
 # 0=arg0 (Example: <span>), 1=arg1 (Example: </span>)
 8EFBF967A3FEFE78C41C8A298562A094=To do the thing, {0}click here{1} and massage vigorously.
 
@@ -362,13 +362,13 @@ examples.
 
 **Original**
 
-```
+```html
 <th title="Gross recipts">Gross</th>
 ```
 
 **Tagged**
 
-```
+```xml
 <th title="Gross receipts">
   <ui:attribute ui:name='title' ui:description='Tooltip text for gross column'/>
   <ui:msg description='name of gross column'>Gross</ui:msg>
@@ -381,7 +381,7 @@ Be careful of words that mean different things in different contexts.
 
 **Original**
 
-```
+```xml
 Favorite Color:
   <ui:RadioButton name="color">Red</ui:RadioButton>
   <ui:RadioButton name="color">Orange</ui:RadioButton>
@@ -393,7 +393,7 @@ Favorite Fruit:
 
 **Tagged**
 
-```
+```xml
 Favorite Color:
   <ui:RadioButton name="color"><ui:msg>Red</ui:msg></ui:RadioButton>
   <ui:RadioButton name="color"><ui:msg meaning="the color"/>Orange</ui:msg></ui:RadioButton>
@@ -405,7 +405,7 @@ Favorite Fruit:
 
 **Generated**
 
-```
+```properties
 # Meaning: the color
 4404BE8C34552617D633271BBC1FAB07=Orange
 

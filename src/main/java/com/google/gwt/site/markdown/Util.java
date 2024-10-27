@@ -19,13 +19,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class Util {
   public static String getStringFromFile(File file) throws IOException {
     FileInputStream fileInputStream = null;
     try {
       fileInputStream = new FileInputStream(file);
-      return IOUtils.toString(fileInputStream, "UTF-8");
+      return IOUtils.toString(fileInputStream, StandardCharsets.UTF_8);
     } finally {
       IOUtils.closeQuietly(fileInputStream);
     }
@@ -35,7 +36,7 @@ public class Util {
     FileOutputStream fileOutputStream = null;
     try {
       fileOutputStream = new FileOutputStream(file);
-      IOUtils.write(content, fileOutputStream);
+      IOUtils.write(content, fileOutputStream, StandardCharsets.UTF_8);
     } finally {
       IOUtils.closeQuietly(fileOutputStream);
     }

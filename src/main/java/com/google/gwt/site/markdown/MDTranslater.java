@@ -17,23 +17,21 @@ import com.google.gwt.site.markdown.fs.MDNode;
 import com.google.gwt.site.markdown.fs.MDParent;
 import com.google.gwt.site.markdown.toc.TocCreator;
 
-import org.apache.commons.io.FileUtils;
-import org.pegdown.Extensions;
-import org.pegdown.PegDownProcessor;
+import org.commonmark.Extension;
+import org.commonmark.ext.gfm.tables.TablesExtension;
+import org.commonmark.node.*;
+import org.commonmark.parser.Parser;
+import org.commonmark.renderer.html.HtmlRenderer;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 public class MDTranslater {
-  private static final int PEG_DOWN_FLAGS = Extensions.SMARTYPANTS | Extensions.AUTOLINKS |
-      Extensions.FENCED_CODE_BLOCKS | Extensions.TABLES | Extensions.DEFINITIONS;
   private static final String SEPARATOR = File.separator;
 
-  private PegDownProcessor pegDownProcessor = new PegDownProcessor(PEG_DOWN_FLAGS, Long
-      .MAX_VALUE);
 
   private final TocCreator tocCreator;
 
@@ -63,7 +61,7 @@ public class MDTranslater {
 
     } else {
       String markDown = getNodeContent(node.getPath());
-      String htmlMarkDown = pegDownProcessor.markdownToHtml(markDown);
+      String htmlMarkDown = markDownToHtml(markDown);
 
       String toc = tocCreator.createTocForNode(root, node);
 
@@ -84,6 +82,15 @@ public class MDTranslater {
       writer.writeHTML(node, html);
     }
 
+  }
+
+  protected static String markDownToHtml(String markDown) {
+    Set<Extension> extensions = Collections.singleton(TablesExtension.create());
+    Parser parser = Parser.builder()
+        .extensions(extensions).build();
+    Node document = parser.parse(markDown);
+    HtmlRenderer renderer = HtmlRenderer.builder().extensions(extensions).build();
+    return renderer.render(document);
   }
 
   private String getEditUrl(String path) {

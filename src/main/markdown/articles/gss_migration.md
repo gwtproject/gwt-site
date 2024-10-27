@@ -25,7 +25,7 @@ Enabling GSS will tell the GWT compiler to use GSS for all CssResource
 interfaces. This flag can either be “false” (default) or “true”.
 
 
-```
+```xml
 <set-configuration-property name="CssResource.enableGss" value="true" />
 ```
 
@@ -35,7 +35,7 @@ If GSS is enabled and the GWT compiler finds a .css file, it will first convert
 this file to gss and then feed it into GSS on the fly.
 
 
-```
+```xml
 <set-configuration-property name="CssResource.conversionMode" value="strict" />
 ```
 
@@ -60,7 +60,7 @@ All of Google’s application have been using GSS instead of CSS since mid 2015.
 <strong>This would be invalid:</strong>
 
 
-```
+```java
 // Invalid use since css and gss are mixed one method
 @Source({"def.css", "converted.gss"})
 MyCssResource css();
@@ -80,7 +80,7 @@ MyCssResource css();
 turn off auto conversion:
 
 
-```
+```xml
 <set-configuration-property name="CssResource.conversionMode" value="off" />
 ```
 
@@ -98,7 +98,7 @@ turn off auto conversion:
   6. Turn off auto conversion for app:
 
 
-```
+```xml
 <set-configuration-property name="CssResource.conversionMode" value="off" />
 ```
 
@@ -110,7 +110,7 @@ Since UiBinder has no notion of a file extension we extended UiBinder to allow
 for an extra attribute on the style tag. To use GSS in UiBinder you have to add <strong>gss=”true”</strong>.
 
 
-```
+```xml
 <ui:style gss="true" >
   /* In here you can now use GSS */
 </ui:style>
@@ -121,7 +121,7 @@ Note: Like on CssResource css and gss can not be mixed here. If you importing a
 inside of the style element:
 
 
-```
+```xml
 <ui:style gss="true" src="foo.gss">
   /* Need to use GSS here now! */
 </ui:style>
@@ -136,7 +136,7 @@ You can also control the default for CSS / GSS in all UiBinder fields by
 setting a configuration property:
 
 
-```
+```xml
 <set-configuration-property name="CssResource.gssDefaultInUiBinder" value="true" />
 ```
 
@@ -156,8 +156,8 @@ at all.
 You can run the tool like this:
 
 
-```
-$ java -cp gwt-user.jar com.google.gwt.resources.converter.Css2Gss
+```shell
+java -cp gwt-user.jar com.google.gwt.resources.converter.Css2Gss
 fileToConvert.css
 ```
 
@@ -179,8 +179,8 @@ In order to get around this limitation the converter allows you to specify a
 list of css files to be parsed for building up scope:
 
 
-```
-$ java -cp gwt-user.jar com.google.gwt.resources.converter.Css2Gss -scope
+```shell
+java -cp gwt-user.jar com.google.gwt.resources.converter.Css2Gss -scope
 foo.css,bar.css fileToConvert.css
 ```
 

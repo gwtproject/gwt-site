@@ -8,7 +8,7 @@ The JSON format is based on the syntax and data types of the JavaScript language
 into arrays and objects. JSON objects are simply unordered sets of name/value pairs, where the name is always a string and the value is any other valid JSON type (even another
 object). Here's an example of encoding product data in JSON:
 
-```
+```json
 {
   "product": {
     "name": "Widget",
@@ -32,7 +32,7 @@ See [json.org/example.html](http://www.json.org/example.html) for more JSON exam
 
 You can parse JSON Strings and convert them to a [JavaScriptObject](/javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html) using [JsonUtils](https://www.gwtproject.org/javadoc/latest/com/google/gwt/core/client/JsonUtils.html).
 
-```
+```java
 /*
  * Takes in a JSON String and evals it.
  * @param JSON String that you trust

@@ -9,7 +9,7 @@ _Updated January 2009_
 
 What's the fun of a web application if you're stuck on your own server? It's much more fun to get out and meet new code, which is where web mashups come in. Mashups let you build powerful applications surprisingly quickly, if you have the right tools. Recently I've been working on a mashup project using the GWT. One of the goals of my project was to let applications written using GWT integrate with other web applications that expose data in JavaScript Object Notation (JSON) format.
 
-Sounds straightforward, right? Well, it was--almost--read on to learn why! This article is a case study of how to incorporate mashup-style JSON data into a GWT application. This will be relevant to you if you're a GWT user, but even general Ajax developers may find it interesting.
+Sounds straightforward, right? Well, it was &mdash; almost &mdash; read on to learn why! This article is a case study of how to incorporate mashup-style JSON data into a GWT application. This will be relevant to you if you're a GWT user, but even general Ajax developers may find it interesting.
 
 ### A note on security
 
@@ -27,24 +27,24 @@ Once you have a service that can produce JSON data, there are generally three di
 
 *   The server can output a string containing raw JSON data that the browser fetches with an `XMLHTTPRequest` and manually passes to the eval function.
 
-              Example server-generated string: `{'data': ['foo', 'bar', 'baz']}`
+    Example server-generated string: `{'data': ['foo', 'bar', 'baz']}`
 *   The server can output a string containing JavaScript code that assigns a JSON object to a
 variable; the browser would fetch this using a `<script>` tag and then extract the parsed object by referring to the variable by name.
 
-              Example server-generated string: `var result = {'data': ['foo', 'bar', 'baz']};`
+      Example server-generated string: `var result = {'data': ['foo', 'bar', 'baz']};`
 *   The server can output a string containing JavaScript code that passes a JSON object to a function specified in the request URL; the browser would fetch this using a `<script>` tag, which will automatically invoke the function as if it were an event callback, as soon as the JavaScript is parsed.
 
-              Example server-generated string: `handle_result({'data': ['foo', 'bar', 'baz']});`
+      Example server-generated string: `handle_result({'data': ['foo', 'bar', 'baz']});`
 
-The term JSON technically refers only to the data representation syntax (which is where the "Object Notation" part of its name comes from) and so JSON is a strict subset of JavaScript. Because of this, those last two methods aren't technically JSON--they're JavaScript code that deals with data in JSON format. They are still close cousins to JSON, though, and frequently "JSON" is used as a blanket term for all such cases. The third method in particular is frequently called "JSON with Padding" (JSONP); the earliest description of this technique that I'm aware of is here: [Remote JSON - JSONP](http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/).
+The term JSON technically refers only to the data representation syntax (which is where the "Object Notation" part of its name comes from) and so JSON is a strict subset of JavaScript. Because of this, those last two methods aren't technically JSON &mdash; they're JavaScript code that deals with data in JSON format. They are still close cousins to JSON, though, and frequently "JSON" is used as a blanket term for all such cases. The third method in particular is frequently called "JSON with Padding" (JSONP); the earliest description of this technique that I'm aware of is here: [Remote JSON - JSONP](http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/).
 
-The primary difference between these techniques is how they are fetched. Since the first case--that is, pure JSON--contains no executable component, it's generally only useful with XMLHTTPRequests. Because that function is subject to Same-Origin restrictions, that means that pure-JSON can only be used as a data transmission technique between a browser application and its HTTP server.
+The primary difference between these techniques is how they are fetched. Since the first case &mdash; that is, pure JSON &mdash; contains no executable component, it's generally only useful with XMLHTTPRequests. Because that function is subject to Same-Origin restrictions, that means that pure-JSON can only be used as a data transmission technique between a browser application and its HTTP server.
 
-The latter two techniques, however, fetch the strings using dynamic `<script>` tag insertions. Since that technique is not limited by Same-Origin restrictions, it can be used cross-domain. Coupled with services that expose their data in JavaScript syntax, this allows browsers to make requests for data from several different servers. This is the technique that makes mashups possible. (More specifically--mashups that run entirely inside the browser. You can also create mashups using server-side proxies if you don't want to use JSONP and don't mind maintaining your own server.)
+The latter two techniques, however, fetch the strings using dynamic `<script>` tag insertions. Since that technique is not limited by Same-Origin restrictions, it can be used cross-domain. Coupled with services that expose their data in JavaScript syntax, this allows browsers to make requests for data from several different servers. This is the technique that makes mashups possible. (More specifically &mdash; mashups that run entirely inside the browser. You can also create mashups using server-side proxies if you don't want to use JSONP and don't mind maintaining your own server.)
 
 ## High-level design
 
-Now that we have the JSON basics in hand, what about my project? The task I was working on involved mashing up data from another service--specifically, Google Base. This means that I needed to use the [Google Data API](http://code.google.com/apis/gdata/index.html) for fetching information. Google's GData servers provide XML, JSON, and JSONP-style interfaces, to allow developers maximum flexibility in building applications. For my project, I wanted to build an in-browser mashup, which means I needed to use the [Google Data API's  JSONP-style interface](https://developers.google.com/gdata/docs/json).
+Now that we have the JSON basics in hand, what about my project? The task I was working on involved mashing up data from another service &mdash; specifically, Google Base. This means that I needed to use the [Google Data API](http://code.google.com/apis/gdata/index.html) for fetching information. Google's GData servers provide XML, JSON, and JSONP-style interfaces, to allow developers maximum flexibility in building applications. For my project, I wanted to build an in-browser mashup, which means I needed to use the [Google Data API's  JSONP-style interface](https://developers.google.com/gdata/docs/json).
 
 Since GWT applications are written in Java, there is a compilation phase that compiles the Java source to JavaScript. The compiler also optimizes the generated code, and one of the optimizations it performs is code obfuscation, which makes the output smaller and thus faster to load. A downside of this, though, is that the function names in the output JavaScript code are unpredictable. This makes it difficult to specify a callback function name to a JSONP service.
 
@@ -66,7 +66,7 @@ This strategy has the following "moving parts":
 
 Ultimately, there should also be a cleanup phase which removes the callback handles to avoid cluttering the JavaScript namespace, but that's easy enough to add later. To get started, I proceeded with the other design elements above.
 
-Hopefully you've followed along so far, but if not--never fear, I've included source code below!
+Hopefully you've followed along so far, but if not &mdash; never fear, I've included source code below!
 
 ## First implementation
 
@@ -78,11 +78,11 @@ Specifically, here are the key requirements I had:
 *   Must handle bookkeeping of `<script>` tags (to be able to clean them up later and prevent memory leaks)
 *   Must provide a method to generate and reserve a callback function name
 
-At this point, I needed a Google Data feed to test with. I decided to fetch the Google Base "snippets" URL, which is a GData feed in JSON mode. The base URL for this feed is `http://www.google.com/base/feeds/snippets`. To request JSON data as output, you add some GET parameters to the URL: `?alt=json-in-script&callback=foo`. The last value--foo--is the name of a callback function (that is, the JSONP hook). The Google Data feed's output will wrap the JavaScript object with a call to that function.
+At this point, I needed a Google Data feed to test with. I decided to fetch the Google Base "snippets" URL, which is a GData feed in JSON mode. The base URL for this feed is `http://www.google.com/base/feeds/snippets`. To request JSON data as output, you add some GET parameters to the URL: `?alt=json-in-script&callback=foo`. The last value &mdash; foo &mdash; is the name of a callback function (that is, the JSONP hook). The Google Data feed's output will wrap the JavaScript object with a call to that function.
 
 If you want to see a full example of the Google Data output, check out this URL: `http://www.google.com/base/feeds/snippets`. You'll quickly see that there's a lot of data, even for just a single result. To help you visualize the general structure of the feed, here's a much smaller custom-built sample result that contains only the data relevant to this story:
 
-```
+```javascript
 {
   'feed': {
     'entry': [
@@ -96,9 +96,9 @@ If you want to see a full example of the Google Data output, check out this URL:
 
 The core structure is fairly simple, as you can see; most of the length of the real Google Data feed comes from the various data fields.
 
-To keep my development simple, I used that minimized example for testing so I wouldn't be overwhelmed by the full Google Data feed. Of course, that meant I needed a web server to serve up my custom version of the JSON data. Normally I would have just served it from the built-in Tomcat instance included in GWT's hosted mode. However, that would have meant that my JSON data and my GWT application would be served from the same site. Since my ultimate goal was to load the real JSON data from a different site, I needed a second, separate local server from which to fetch my JSON data--otherwise, it wouldn't be an accurate simulation. Since a full web server instance would have been lots of work to set up, I created a tiny custom server with this Python program:
+To keep my development simple, I used that minimized example for testing so I wouldn't be overwhelmed by the full Google Data feed. Of course, that meant I needed a web server to serve up my custom version of the JSON data. Normally I would have just served it from the built-in Tomcat instance included in GWT's hosted mode. However, that would have meant that my JSON data and my GWT application would be served from the same site. Since my ultimate goal was to load the real JSON data from a different site, I needed a second, separate local server from which to fetch my JSON data &mdash; otherwise, it wouldn't be an accurate simulation. Since a full web server instance would have been lots of work to set up, I created a tiny custom server with this Python program:
 
-```
+```python
 import BaseHTTPServer, SimpleHTTPServer, cgi
 class MyHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
   def do_GET(self):
@@ -119,7 +119,7 @@ This program returns the contents of the json.js file for each and every request
 
 With the server under control, here's the GWT code for my browser application:
 
-```
+```java
 public class Hax0r implements EntryPoint {
   protected HashMap scriptTags = new HashMap();
   protected HashMap callbacks = new HashMap();
@@ -172,11 +172,11 @@ This code could use a little explanation. Here are some comments that highlight 
 *   Because GWT loads the application's actual code in a child iframe, the global variable `$wnd` is set to point to the `window` handle where the application actually lives. That is, it is set to the `window` handle on the parent frame, rather than the child iframe.
 *   The `addScript()` method handles all the DOM munging required to dynamically insert a `<script>` tag into the page. It also tracks the resulting DOM Element handles via unique IDs, so that they can be cleaned up later (though this proof of concept code doesn't actually do any cleanup).
 *   The `handle()` method is the actual function that gets called by the JSON response from the server. It contains a loop which just prints out the titles of all the results fetched by the JSON request. Note that this method uses the existing [GWT JSON parsing and manipulation libraries](/javadoc/latest/com/google/gwt/json/client/package-summary.html). The specific sequence of calls is pretty brittle since there is no error checking, but the goal is only to fetch some data to prove the technique worked.
-*   Finally, the `onModuleLoad()` method--which is the main entry point to a GWT application--simply calls the various other methods to exercise the moving parts.
+*   Finally, the `onModuleLoad()` method &mdash; which is the main entry point to a GWT application &mdash; simply calls the various other methods to exercise the moving parts.
 
 ## One last little thing
 
-By the way, don't bother trying to run the code above; it doesn't work. It may look correct to you--it certainly did to me, at first--but it's got a bug in it. The problem is that GWT's JSON library does various checks on the data, including some "instanceof" tests to determine whether parts of the data are objects or arrays. It turns out that all those "instanceof" tests don't work with the code above, causing the application above to fail.
+By the way, don't bother trying to run the code above; it doesn't work. It may look correct to you &mdash; it certainly did to me, at first &mdash; but it's got a bug in it. The problem is that GWT's JSON library does various checks on the data, including some "instanceof" tests to determine whether parts of the data are objects or arrays. It turns out that all those "instanceof" tests don't work with the code above, causing the application above to fail.
 
 I spent quite a while debugging this, until I finally asked Scott Blum, a GWT Engineer. Scott merely asked a question: "Was the array created in the same window in which you're testing it?"
 
@@ -186,7 +186,7 @@ At this point, you may be wondering how multiple windows entered the discussion.
 
 There are several ways to fix the code: Ultimately, I just needed to make sure that the `<script>` tag and the JSONP callbacks are added to the same iframe in which the GWT application code resides. Here's how I fixed it:
 
-```
+```java
 public native static void setup(Hax0r h, String callback) /*-{
     window[callback] = function(someData) {
       h.@com.google.gwt.hax0r.client.Hax0r::handle(Lcom/google/gwt/core/client/JavaScriptObject;)(someData);
@@ -206,7 +206,7 @@ The new version is a rewrite in JSNI of the prior version, coded to use the curr
 
 ## Conclusion
 
-With the change I just described, my proof of concept code works perfectly. Feel free to take this code and try it out--it really works!
+With the change I just described, my proof of concept code works perfectly. Feel free to take this code and try it out &mdash; it really works!
 
 During this project, I learned two things, which I hope I've passed on to you. First of course, is the basic techniques for how to build a mashup using GWT. It's easy to see how you could take the technique I've implemented above and use it to build an application that fetches JSONP data from two (or more!) different sites. Once you can do that, you can do some very interesting things. Mashups are pretty popular these days, and I hope I've given you the know-how, and the excitement, to try building your own.
 

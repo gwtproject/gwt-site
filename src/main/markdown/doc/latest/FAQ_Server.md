@@ -42,7 +42,7 @@ application, the `<`module`>`.nocache.js file would be bootstrapped by having th
 the `<`module`>`.nocache.js file. This is the standard bootstrap process to load a GWT application. The `<`script`>` tag that needs to be
 included in the main host HTML page is shown below:
 
-```
+```html
 <script language="JavaScript" src="http://mydomain.com/<module>.nocache.js"></script>
 ```
 
@@ -63,7 +63,7 @@ To enable the cross-site linking simply add the following to your
 `<module>.gwt.xml` and include a reference to your `<module>.nocache.js` in your
 index.html as you normally would.
 
-```
+```xml
 <add-linker name="xsiframe"/>
 ```
 
@@ -71,7 +71,7 @@ For more details on the GWT bootstrap process, see "What's with all the cache/no
 
 ### SOP, GWT, and XMLHTTPRequest Calls<a id="SOP,_GWT,_and_XMLHTTPRequest_Calls"></a>
 
-The second area where the SOP is most likely to affect GWT users is the use of XMLHTTPRequest -- the heart of AJAX. The SOP limits the XMLHTTPRequest browser call to URLs on
+The second area where the SOP is most likely to affect GWT users is the use of XMLHTTPRequest &mdash; the heart of AJAX. The SOP limits the XMLHTTPRequest browser call to URLs on
 the same server from which the host page was loaded. This means that it is impossible to make any kind of AJAX-style request to a different site than the one from which the page
 was loaded. For example, you might want to have your GWT application served up from `http://pages.mydomain.com/` but have it make requests for data to
 `http://data.mydomain.com/`, or even a different port on the same server, such as `http://pages.mydomain.com:8888/`. Unfortunately, both these scenarios are
@@ -120,7 +120,7 @@ You should definitely use `RequestBuilder` instead.
 
 If you are attempting to use the RequestBuilder class and are having problems, first check your module XML file to make sure that the HTTP module is inherited, as follows:
 
-```
+```xml
 <inherits name="com.google.gwt.http.HTTP"/>
 ```
 

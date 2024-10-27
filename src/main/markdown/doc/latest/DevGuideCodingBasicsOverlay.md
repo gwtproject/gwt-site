@@ -18,7 +18,7 @@ of this technique, including the ability to use your Java IDE's code completion 
 Overlay types are easiest to understand with examples. Suppose we want to access an array of JSON objects representing a set of "customer" entities. The JavaScript structure
 might look like this:
 
-```
+```javascript
 var jsonData = [
   { "FirstName" : "Jimmy", "LastName" : "Webber" },
   { "FirstName" : "Alan",  "LastName" : "Dayal" },
@@ -30,7 +30,7 @@ var jsonData = [
 To superimpose a Java type onto the above structure, you start by subclassing `JavaScriptObject`, a marker type that GWT uses to denote JavaScript objects. Let's go
 ahead and add some getters, too.
 
-```
+```java
 // An overlay type
 class Customer extends JavaScriptObject {
 
@@ -55,7 +55,7 @@ interact with it exactly as it exists in JavaScript. In this example, we can dir
 So, how do you actually get a JavaScript object on which to overlay a Java type? You can't construct it by writing `new Customer()` because the whole point is to
 _overlay_ a Java type onto an _already existing_ JavaScript object. Thus, we have to get such an object from the wild using JSNI:
 
-```
+```java
 class MyModuleEntryPoint implements EntryPoint {
   public void onModuleLoad() {
     Customer c = getFirstCustomer();
@@ -93,7 +93,7 @@ Below we'll revisit this to show you just how much this regimen pays off.
 
 Starting with GWT 2.0, it is permissible for JavaScriptObject subtypes to implement interfaces.  Every method defined in an interface may map to at most one method declared in a JavaScriptObject subtype.  Practically speaking, this means that only one JavaScriptObject type may implement any given interface, but any number of non-JavaScriptObject types may also implement that interface.
 
-```
+```java
 interface Person {
   String getName();
 }
@@ -141,7 +141,7 @@ In the above example, the `Person.getName()` will be mapped to `PersonJso.getNam
 We glossed over something in the example above. The method `getFirstCustomer()` is pretty unrealistic. You're certainly going to want to be able to access the entire
 array of customers. Thus, we need an overlay type representing the JavaScript array itself. Fortunately, that's easy:
 
-```
+```java
 // w00t! Generics work just fine with overlay types
 class JsArray<E extends JavaScriptObject> extends JavaScriptObject {
   protected JsArray() { }
@@ -152,7 +152,7 @@ class JsArray<E extends JavaScriptObject> extends JavaScriptObject {
 
 Now we can write more interesting code:
 
-```
+```java
 class MyModuleEntryPoint implements EntryPoint {
   public void onModuleLoad() {
     JsArray<Customer> cs = getCustomers();
@@ -171,7 +171,7 @@ class MyModuleEntryPoint implements EntryPoint {
 This is nice clean code, especially considering the flexibility of the plumbing it's built upon. As hinted at earlier, the compiler can do pretty fancy stuff to make this quite
 efficient. Take a look at the unobfuscated compiled output for the `onModuleLoad()` method:
 
-```
+```javascript
 function $onModuleLoad(){
   var cs, i, n;
   cs = $wnd.jsonData;
@@ -189,7 +189,7 @@ here.
 
 Of course, we can't resist showing you the corresponding obfuscated code:
 
-```
+```javascript
 function B(){var a,b,c;a=$wnd.jsonData;for(b=0,c=a.length;b<c;++b){
   $wnd.alert(l+(a[b].FirstName+m+a[b].LastName))}}
 ```

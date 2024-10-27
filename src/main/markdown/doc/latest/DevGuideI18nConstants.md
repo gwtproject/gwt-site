@@ -15,7 +15,7 @@ one of those strings to the user and they will be translated appropriately for a
 Begin by creating a default properties file called `MyConstants.properties` in your GWT project. You can place the file anywhere in your module's source path, but the
 `.properties` file and corresponding interface must be in the same package. It's fine to place the file in the same package as your module's entry point class.
 
-```
+```properties
 helloWorld = hello, world
 goodbyeWorld = goodbye, world
 ```
@@ -24,7 +24,7 @@ You can also create a localized translation for each supported locale in separat
 case `MyConstants`, with the appropriate suffix that indicates the [locale setting](DevGuideI18nLocale.html#LocaleSpecifying). In this case, we localize
 for Spanish using the filename `MyConstants_es.properties`:
 
-```
+```properties
 helloWorld = hola, mundo
 goodbyeWorld = adiós, mundo
 ```
@@ -32,7 +32,7 @@ goodbyeWorld = adiós, mundo
 Now define an interface that abstracts those strings by extending the built-in `Constants` interface. Create a new Java interface in the same package where the
 `.properties` files were created. The method names must match the tag names uses in the `.properties` files:
 
-```
+```java
 public interface MyConstants extends Constants {
   String helloWorld();
   String goodbyeWorld();
@@ -45,7 +45,7 @@ maintain the `.properties` files. It also works for `ConstantsWithLookup` and `M
 Note that `MyConstants` is declared as an interface, so you cannot instantiate it directly with `new`. To use the internationalized constants, you create a Java
 instance of `MyConstants` using the [GWT.create(Class)](/javadoc/latest/com/google/gwt/core/client/GWT.html#create-java.lang.Class-) facility:
 
-```
+```java
 public void useMyConstants() {
   MyConstants myConstants = GWT.create(MyConstants.class);
   Window.alert(myConstants.helloWorld());
@@ -103,7 +103,7 @@ points to remember:
   file for that method will be a comma-separated set of keys, and then those
   keys have their own entries with their associated value.  Example:
 
-```
+```properties
   Map<String,String> colorMap();
 
   colors=header, body, footer
@@ -112,6 +112,6 @@ points to remember:
   footer=blue
   
 ```
-<p/>
+
 produces a map `{ header=>red, body=>white, footer=>blue
 }`

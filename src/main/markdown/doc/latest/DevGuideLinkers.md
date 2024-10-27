@@ -28,10 +28,12 @@ Linkers are divided into three categories:
 
 To use a `Linker`, simply add `<add-linker name="linker_name" />` to your `Module.gwt.xml` file:
 
-    <module>
-      <inherits name="com.google.gwt.core.Core" />
-      <add-linker name="sso" />
-    </module>
+```xml
+<module>
+  <inherits name="com.google.gwt.core.Core" />
+  <add-linker name="sso" />
+</module>
+```
 
 Or you can also inherit another module which adds the linker for you.
 

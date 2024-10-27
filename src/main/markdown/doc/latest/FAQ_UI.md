@@ -24,7 +24,7 @@ When you are working with complex layouts, it is sometimes difficult to understa
 As an example, suppose you were trying to create a layout with two buttons, one on the left side of the browser, and the other on the right side of the browser. Here's some
 code that attempts to do that:
 
-```
+```java
 VerticalPanel vertPanel = new VerticalPanel();
 
     DockPanel dockPanel = new DockPanel();
@@ -48,7 +48,7 @@ The first technique is to use a DOM inspection tool, such as [Firebug](http://ww
 
 Another technique you can use is to modify your GWT code to turn on borders on your panels (or other widgets.)
 
-```
+```java
 VerticalPanel vertPanel = new VerticalPanel();
 
     DockPanel dockPanel = new DockPanel();
@@ -68,7 +68,7 @@ VerticalPanel vertPanel = new VerticalPanel();
 You can also use the associated CSS stylesheet to change the border properties. In this case, the stylesheet changes the colors of the borders to make them easier to tell
 apart:
 
-```
+```css
 .dockPanel {
     border-color: orange;
 }
@@ -84,7 +84,7 @@ Now you can see clearly where the outlines of each panel are:
 In this case, the outermost panel needs to be 100% width as well, so we
 change the code, hit _Refresh_ in the browser window:
 
-```
+```java
 vertPanel.setWidth("100%");
 ```
 
@@ -92,7 +92,7 @@ vertPanel.setWidth("100%");
 
 This is closer to what we want, but it still isn't right. Now we need to change the cell alignment in the [DockPanel](/javadoc/latest/com/google/gwt/user/client/ui/DockPanel.html) instance:
 
-```
+```java
 Button rightButton = new Button("rightButton");
     dockPanel.add(rightButton, DockPanel.EAST);
     dockPanel.setCellHorizontalAlignment(rightButton, HasHorizontalAlignment.ALIGN_RIGHT);
@@ -121,7 +121,7 @@ these values. These methods set the widget's CSS height and/or and width propert
 In standards mode, if an element (such as a `<`div`>`) is inside a table cell `<`td`>`, you cannot set the `<`div`>`
 height and width attributes as percentages. They are ignored. For example, the styles in the `<`div`>` element below is ignored in standards mode:
 
-```
+```html
 <td>
       <div style="height:100%;width:100%;>test</div>
     </td>
@@ -194,7 +194,7 @@ they are sitting in the browser cache by the time the animation is actually invo
 the [Image.prefetch()](/javadoc/latest/com/google/gwt/user/client/ui/Image.html#prefetch-java.lang.String-)
 method.
 
-```
+```java
 Image.prefetch("images/corner-bl.png");
     Image.prefetch("images/corner-br.png");
     Image.prefetch("images/corner-tl.png");
@@ -216,7 +216,7 @@ slowly. One example of this might be having a list of widgets in a table.
 
 One contributor to poor performance can be the overhead of managing many click handler instances. Consider a common way of handling click events:
 
-```
+```java
 Button newButton = new Button(titleText);
   newButton.addClickHandler(new ClickHandler() {
     public void onClick(ClickEvent event) {
@@ -228,7 +228,7 @@ Button newButton = new Button(titleText);
 Each widget has its own click handler instance created by adding an anonymous inner class when the widget is created. This construct is convenient and causes no performance
 issues for most cases, but when creating many widgets that need event handling, consider creating a single click handler and sharing it between multiple widgets:
 
-```
+```java
 class MyApp implements EntryPoint, ClickHandler {
 
    /* Be careful with saving UI components in datastructures like this:

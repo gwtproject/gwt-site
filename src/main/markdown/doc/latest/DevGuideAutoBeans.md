@@ -33,53 +33,56 @@ AutoBeans can be used in *both client and server code* to improve code re-use.  
 
 In your module.xml file, add
 
-    <inherits name="com.google.web.bindery.autobean.AutoBean"/>
-
+```xml
+<inherits name="com.google.web.bindery.autobean.AutoBean"/>
+```
 then in your sources:
 
-    // Declare any bean-like interface with matching getters and setters, no base type is necessary
-    interface Person {
-      Address getAddress();
-      String getName();
-      void setName(String name);
-      void setAddress(Address a);
-    }
-    
-    interface Address {
-      // Other properties, as above
-    }
-    
-    // Declare the factory type
-    interface MyFactory extends AutoBeanFactory {
-      AutoBean<Address> address();
-      AutoBean<Person> person();
-    }
-    
-    class DoSomething() {
-      // Instantiate the factory
-      MyFactory factory = GWT.create(MyFactory.class);
-      // In non-GWT code, use AutoBeanFactorySource.create(MyFactory.class);
-    
-      Person makePerson() {
-        // Construct the AutoBean
-        AutoBean<Person> person = factory.person();
-    
-        // Return the Person interface shim
-        return person.as();
-      }
-    
-      String serializeToJson(Person person) {
-        // Retrieve the AutoBean controller
-        AutoBean<Person> bean = AutoBeanUtils.getAutoBean(person);
-    
-        return AutoBeanCodex.encode(bean).getPayload();
-      }
-    
-      Person deserializeFromJson(String json) {
-        AutoBean<Person> bean = AutoBeanCodex.decode(factory, Person.class, json);
-        return bean.as();
-      }
-    }
+```java
+// Declare any bean-like interface with matching getters and setters, no base type is necessary
+interface Person {
+  Address getAddress();
+  String getName();
+  void setName(String name);
+  void setAddress(Address a);
+}
+
+interface Address {
+  // Other properties, as above
+}
+
+// Declare the factory type
+interface MyFactory extends AutoBeanFactory {
+  AutoBean<Address> address();
+  AutoBean<Person> person();
+}
+
+class DoSomething() {
+  // Instantiate the factory
+  MyFactory factory = GWT.create(MyFactory.class);
+  // In non-GWT code, use AutoBeanFactorySource.create(MyFactory.class);
+
+  Person makePerson() {
+    // Construct the AutoBean
+    AutoBean<Person> person = factory.person();
+
+    // Return the Person interface shim
+    return person.as();
+  }
+
+  String serializeToJson(Person person) {
+    // Retrieve the AutoBean controller
+    AutoBean<Person> bean = AutoBeanUtils.getAutoBean(person);
+
+    return AutoBeanCodex.encode(bean).getPayload();
+  }
+
+  Person deserializeFromJson(String json) {
+    AutoBean<Person> bean = AutoBeanCodex.decode(factory, Person.class, json);
+    return bean.as();
+  }
+}
+```
 
 ## Property types<a id='properties'></a>
 
@@ -143,13 +146,15 @@ Instead of requiring a call to `GWT.create()` for every instance of an AutoBean,
 
 Methods in an AutoBeanFactory interface must return `AutoBean<Foo>`, where `Foo` is any interface type compatible with AutoBeans.  The methods may optionally declare a single parameter of type `Foo` which allows construction of an AutoBean around an existing object.
 
-    interface MyFactory extends AutoBeanFactory {
-      // Factory method for a simple AutoBean
-      AutoBean<Person> person();
-    
-      // Factory method for a non-simple type or to wrap an existing instance
-      AutoBean<Person> person(Person toWrap);
-    }
+```java
+interface MyFactory extends AutoBeanFactory {
+  // Factory method for a simple AutoBean
+  AutoBean<Person> person();
+
+  // Factory method for a non-simple type or to wrap an existing instance
+  AutoBean<Person> person(Person toWrap);
+}
+```
 
 #### create()
 
@@ -207,56 +212,64 @@ Creates a shallow copy of the properties in the AutoBean.  Modifying the structu
 
 The AutoBean framework can be used as a JSON interoperability layer to provide a Java typesystem wrapper around an existing JSON api or to create JSON payloads to interact with a remote service.  This is accomplished by designing the Java APIs according to the JSON schema.  The `@PropertyName` annotation can be applied to  getters and setters where the Java naming convention does not align with the JSON schema.
 
-Generally speaking, the serialized form of an object emitted by AutoBeanCodex mirrors the interface declaration.  For instance, the example Person interface described in the quickstart section of this document might be serialized as:
+Generally speaking, the serialized form of an object emitted by AutoBeanCodex mirrors the interface declaration.  For instance, the example Person interface described in the quickstart section of this document might be serialized follows (whitespace added for clarity):
 
-    // Whitespace added for clarity
-    { "name" : "John Doe", "address" : { "street" : "1234 Maple St", "city" : "Nowhere" } }`
+```json
+{ "name" : "John Doe", "address" : { "street" : "1234 Maple St", "city" : "Nowhere" } }
+```
 
 List and Set properties are encoded as JSON lists. For example, a `List<Person>` would be encoded as:
 
-    [ { "name" : "John Doe" } , { "name" : "Jim Smith" } ]
-
+```json
+[ { "name" : "John Doe" } , { "name" : "Jim Smith" } ]
+```
 Maps are serialized in two forms based on whether or not the key type is a value or reference type.  Value maps are encoded as a typical JSON object.  For example, a `Map<Integer, Foo>` would be encoded as
 
-    { "1" : { "property" : "value"}, "55" : { "property" : "value" } }
-
+```json
+{ "1" : { "property" : "value"}, "55" : { "property" : "value" } }
+```
 A map that uses a reference object as a key will instead be encoded as a list of two lists. This allows object-identity maps that contain keys with identical serialized froms to be deserialized correctly. For example, a `Map<Person, Address>` would be encoded as: 
 
-    [ 
-      [ { "name" : "John Doe" } , { "name" : "Jim Smith" } ],
-      [ { "street" : "1234 Maple Ave" }, { "street" : "5678 Fair Oaks Lane" } ]
-    ]
-
+```json
+[ 
+  [ { "name" : "John Doe" } , { "name" : "Jim Smith" } ],
+  [ { "street" : "1234 Maple Ave" }, { "street" : "5678 Fair Oaks Lane" } ]
+]
+```
 Java enum values are written out as the string name of the enum value.  This can be overridden by applying the `PropertyName` annotation to the enum field declaration.  The use of names instead of ordinal values will allow the payloads to be robust against endpoint schema skew.
 
 ## Categories<a id='categories'></a>
 
 Pure bean interfaces only go so far to producing a useful system.  For example, the `EntityProxy` type used by RequestFactory is an AutoBean interface, save for the addition of the `stableId()` method.  An AutoBeanFactory can produce non-wrapper (aka "simple") instances of a non-simple interface if an implementation of any non-property interface is provided by a category.
 
-    interface Person {
-      String getName();
-      void setName(String name);
-      boolean marry(Person spouse);
-    }
-    
-    @Category(PersonCategory.class)
-    interface MyFactory {
-      // Would be illegal without a category providing an implementation of marry(AutoBean<Person> person, Person spouse)
-      AutoBean<Person> person();
-    }
-    
-    class PersonCategory {
-      public static boolean marry(AutoBean<Person> instance, Person spouse) {
-        return new Marriage(instance.as(), spouse).accepted();
-      }
-    }
+```java
+interface Person {
+  String getName();
+  void setName(String name);
+  boolean marry(Person spouse);
+}
 
+@Category(PersonCategory.class)
+interface MyFactory {
+  // Would be illegal without a category providing an implementation of marry(AutoBean<Person> person, Person spouse)
+  AutoBean<Person> person();
+}
+
+class PersonCategory {
+  public static boolean marry(AutoBean<Person> instance, Person spouse) {
+    return new Marriage(instance.as(), spouse).accepted();
+  }
+}
+```
 For any non-property method, the category must declare a public, static method which has an additional 0-th parameter which accepts the AutoBean backing the instance.  Another example from RequestFactory demonstrating the implementation of the `stableId()` method:
 
-    class EntityProxyCategory {
-      EntityProxyId<?> stableId(AutoBean<EntityProxy> instance) {
-        return (EntityProxyId<?>) instance.getTag("stableId");
-    }
+```java
+class EntityProxyCategory {
+  EntityProxyId<?> stableId(AutoBean<EntityProxy> instance) {
+    return (EntityProxyId<?>) instance.getTag("stableId");
+  }
+}
+```
 
 The `@Category` annotation may specify more than one category type.  The first method in the first category whose name matches the non-property method that is type-assignable will be selected.  The parameterization of the 0-th parameter AutoBean is examined when making this decision.
 
@@ -264,9 +277,11 @@ The `@Category` annotation may specify more than one category type.  The first m
 
 A category implementation may additionally declare an interceptor method to examine and possible replace the return values of all non-void methods in the target interface:
 
-    public static <T> T __intercept(AutoBean<?> bean, T returnValue) {
-      // Do stuff
-      return maybeAlteredReturnValue;
-    }
+```java
+public static <T> T __intercept(AutoBean<?> bean, T returnValue) {
+  // Do stuff
+  return maybeAlteredReturnValue;
+}
+```
 
 RequestFactory uses this to make `EntityProxy` objects returned from an editable object editable.
