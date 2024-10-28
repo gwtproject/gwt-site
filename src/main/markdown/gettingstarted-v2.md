@@ -23,7 +23,7 @@ the plugin generates a Maven project with separate modules for
 
 ## Prerequisites<a id="prereqs"></a>
 
-1.  GWT 2.11.0 still supports Java 8 (running and building). We suggest to use at least Java 11 or 17. If necessary, download and
+1.  GWT 2.12.0 still supports Java 8 (running and building). We suggest to use at least Java 11 or 17. If necessary, download and
     install the Java SE Development Kit (JDK) <a href="https://adoptium.net/de/temurin/releases/" 
     rel="nofollow">from Eclipse Temurin</a> for your platform. Install the JDK by following the 
     installation instructions. 
