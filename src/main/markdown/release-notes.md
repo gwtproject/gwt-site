@@ -99,7 +99,7 @@ The GWT Release Notes
 - The `mousewheel` event has been deprecated in browsers, its usage in GWT has been replaced with the `wheel` event. This should be transparent to applications.
 - The `com.google.gwt.dev.GetJreEmulation` main class has been deprecated, and is planned to be removed in a future release.
 - The `com.google.gwt.dev.RunWebApp` main class has been deprecated, and is planned to be removed in a future release.
-- The `SppedTracer` classes have been deprecated, and are planned to be removed/replaced in a future release.
+- The `SpeedTracer` classes have been deprecated, and are planned to be removed/replaced in a future release.
 - The deprecated `-XfragmentMerge` flag no longer has any effect, to be removed in a future release.
 - The following deprecated, unused flags have been removed:
     - `-XdisableUpdateCheck`/`-XcheckForUpdates`
