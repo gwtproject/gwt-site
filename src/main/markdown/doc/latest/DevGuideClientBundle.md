@@ -571,7 +571,7 @@ background-position: left 4px top 10px;
 ImageResource logo();
 ```
 
-*   [Current auto-RTL test cases](https://gwt.googlesource.com/gwt/+/master/user/test/com/google/gwt/resources/rg)
+*   [Current auto-RTL test cases](https://github.com/gwtproject/gwt/blob/main/user/test/com/google/gwt/resources/rg)
 
 #### Selector obfuscation<a id="Selector_obfuscation"></a>
 

@@ -51,7 +51,7 @@ This document describes or points to three kinds of code examples, so you can ju
 [CellBrowser](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellBrowser), plus examples of Cells in the[Cell Sampler](http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellSampler).
 Note: The prefix "Cw" in showcase class names stands for "ContentWidget", the parent class of each Showcase example.
 *   **Simplified examples** - The code examples displayed in-line throughout this documented are short, simplified examples, often pared-down versions of the real-world examples.
-*   **Real-world examples** - Most of the cell widgets also have source code examples (.java files) at    [cell widget code examples](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview).
+*   **Real-world examples** - Most of the cell widgets also have source code examples (.java files) at    [cell widget code examples](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview).
 
 These files are referenced, where appropriate, in the sections below.
 
@@ -75,7 +75,7 @@ renders the data for a selected contact.
 
 The data inserted in the last step is updated by the data provider ([ListDataProvider](/javadoc/latest/com/google/gwt/view/client/ListDataProvider.html) or [AsyncDataProvider](/javadoc/latest/com/google/gwt/view/client/AsyncDataProvider.html)).  If you need to allow the user to modify the content of a cell and update the database, use ValueUpdater instead of setRowData in the last step, as described in [Updating a Database From a CellList](#updating-from-celllist).
 
-**Code Example** - The example below is available at [CellListExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java)
+**Code Example** - The example below is available at [CellListExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java)
 
 The following code is a very simple example that creates a CellList widget containing a single TextCell and sets data from the data source.  The list shows names.
 
@@ -135,7 +135,7 @@ The data inserted in the last step is updated by the data provider ([ListDataPro
 **More Information** - Read the [Cell Table Developer Guide](DevGuideUiCellTable.html) for more
 information about CellTable-specific features, such as column sorting.
 
-**Code Example** - The example below is a pared-down version of [CellTableExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTableExample.java)
+**Code Example** - The example below is a pared-down version of [CellTableExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellTableExample.java)
 
 ```
 /**
@@ -220,9 +220,9 @@ A CellTree can have its own CSS styles and its own resources, such as images tha
 2.  Create an instance of your TreeViewModel class.
 3.  Create a [CellTree](/javadoc/latest/com/google/gwt/user/cellview/client/CellTree.html), passing in the TreeViewModel instance.
 
-**Code Example #1** - The example below is a simplified example of CellTree, and is available at  [CellTreeExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample.java).
+**Code Example #1** - The example below is a simplified example of CellTree, and is available at  [CellTreeExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample.java).
 
-**Code Example #2** - For a real-world example of CellTree, see [CellTreeExample2.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample2.java).
+**Code Example #2** - For a real-world example of CellTree, see [CellTreeExample2.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample2.java).
 
 ```
 /**
@@ -286,9 +286,9 @@ CellBrowser is similar to a CellTree but displays the node levels side-by-side. 
     CellBrowser browser = new CellBrowser(model, "Item 1");
 ```
 
-**Code Example #1** - For a simple example of CellBrowser, see [CellBrowerExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample.java). 
+**Code Example #1** - For a simple example of CellBrowser, see [CellBrowerExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample.java). 
 
-**Code Example #2** - For a real-world example of CellBrowser, see [CellBrowserExample2.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample2.java).
+**Code Example #2** - For a real-world example of CellBrowser, see [CellBrowserExample2.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample2.java).
 
 ## Cells<a id="Cells"></a>
 
@@ -354,7 +354,7 @@ By using a subscription model, we can link selection across multiple views. If m
 4.  Create a [SelectionChangeEvent.Handler](/javadoc/latest/com/google/gwt/view/client/SelectionChangeEvent.Handler.html) implementing onSelectionChange.
 5.  Add this handler to the SelectionModel using [addSelectionChangeHandler](/javadoc/latest/com/google/gwt/view/client/SelectionModel.html#addSelectionChangeHandler-com.google.gwt.view.client.SelectionChangeEvent.Handler-).
 
-**Code Example** - The example of SelectionModel below is available at [CellListExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java).
+**Code Example** - The example of SelectionModel below is available at [CellListExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java).
 
 ```
 /**
@@ -405,7 +405,7 @@ Every DTO (Data Transfer Object) must have a key associated with it in order to 
 
 Keys allow us to associate ViewData, such as selection state and validation information, with a DTO.  If you select some items in a table or list, then when the list refreshes with new data, you can maintain the same selection.
 
-**Code Example** - The example of KeyProvider below is available at [KeyProviderExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/view/KeyProviderExample.java).
+**Code Example** - The example of KeyProvider below is available at [KeyProviderExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/view/KeyProviderExample.java).
 
 ```
 /**
@@ -689,7 +689,7 @@ Two procedures follow &mdash; one for adding a standard SimplePager to a cell wi
 
 **Demo** - [CwCellTable example](https://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCellTable) shows a SimplePager control below a table.
 
-**Code Example** - The example below is available at  [SimplePagerExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/SimplePagerExample.java).
+**Code Example** - The example below is available at  [SimplePagerExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/SimplePagerExample.java).
 
 **To Add SimplePager to a Cell Widget:**
 
@@ -755,7 +755,7 @@ When the user makes the change to the data, the Cell receives an event in its [o
 
 **Demo** - _(none)_
 
-**Code Example** - The example below is available at [CellListValueUpdaterExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellListValueUpdaterExample.java).
+**Code Example** - The example below is available at [CellListValueUpdaterExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellListValueUpdaterExample.java).
 
 **To Update the Database from a CellList:**
 
@@ -818,7 +818,7 @@ Use a [FieldUpdater](/javadoc/latest/com/google/gwt/cell/client/FieldUpdater.htm
 1.  Create a class that implements [FieldUpdater](/javadoc/latest/com/google/gwt/cell/client/FieldUpdater.html) to accept a new data value and send it to your database.
 2.  Set the FieldUpdater in the Column by calling  [column.setFieldUpdater(fieldUpdater)](/javadoc/latest/com/google/gwt/user/cellview/client/Column.html#setFieldUpdater-com.google.gwt.cell.client.FieldUpdater-).
 
-**Code Example** - An example is available at [CellTableFieldUpdaterExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cellview/CellTableFieldUpdaterExample.java).
+**Code Example** - An example is available at [CellTableFieldUpdaterExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellTableFieldUpdaterExample.java).
 
 ```
 /**

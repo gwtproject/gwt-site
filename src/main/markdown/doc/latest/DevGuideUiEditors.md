@@ -204,7 +204,7 @@ The GWT distribution provides the following Editor adapter classes that provide 
 *   `ListEditor` keeps a `List<T>` in sync with a list of sub-Editors.
     *   The `ListEditor` is created with a user-provided `EditorSource` which vends sub-Editors (usually Widget subtypes).
     *   Changes made to the structure of the `List` returned by `ListEditor.getList()` will be reflected in calls made to the `EditorSource`.
-    *   [Sample code](https://gwt.googlesource.com/gwt/+/master/samples/dynatablerf/#dynatablerf/src/main/java/com/google/gwt/sample/dynatablerf/client/widgets/FavoritesWidget.java).
+    *   [Sample code](https://github.com/gwtproject/gwt/blob/main/samples/dynatablerf/src/main/java/com/google/gwt/sample/dynatablerf/client/widgets/FavoritesWidget.java).
 *   `OptionalFieldEditor` can be used with nullable or resettable bean properties.
 *   `SimpleEditor` can be used as a headless property Editor
 *   `TakesValueEditor` adapts a `TakesValue<T>` to a `LeafValueEditor<T>`

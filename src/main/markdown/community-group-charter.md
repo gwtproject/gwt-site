@@ -1,4 +1,4 @@
-<h2>Welcome to the GWT Discussion Group!</h2>
+# Welcome to the GWT Discussion Group!
 
 The GWT (GWT) allows developers to use the Java programming language to build no-compromise AJAX applications. This is the official discussion forum for GWT.
 

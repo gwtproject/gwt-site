@@ -159,8 +159,8 @@ or specifying `locale=` as a query string. In this case, you could write your ow
 
 A property provider is specified in the [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml) as a JavaScript fragment that will return the value for the
 named property at runtime. In this case, you would want to define the locale property using a property provider. To see examples of `<property-provider>` definitions
-in action, see the files [I18N.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/i18n/I18N.gwt.xml) and
-[UserAgent.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/UserAgent.gwt.xml) in the GWT source code.
+in action, see the files [I18N.gwt.xml](https://github.com/gwtproject/gwt/blob/main/user/src/com/google/gwt/i18n/I18N.gwt.xml) and
+[UserAgent.gwt.xml](https://github.com/gwtproject/gwt/blob/main/user/src/com/google/gwt/user/UserAgent.gwt.xml) in the GWT source code.
 
 ## Programmatic Access to Locale Information<a id="LocaleInfo"></a>
 

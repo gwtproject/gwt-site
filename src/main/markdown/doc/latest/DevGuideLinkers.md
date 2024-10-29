@@ -1,4 +1,4 @@
-## Linkers<a id="DevGuideLinkers-intro"></a>
+# Linkers<a id="DevGuideLinkers-intro"></a>
 
 The Linker subsystem takes care of writing the GWT compiler's output. It's responsible for each output file's name, location, and content.
 
