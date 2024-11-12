@@ -75,11 +75,11 @@ needed to compile your GWT app (most likely gwt-user.jar).
 * The main method is in com.google.gwt.dev.codeserver.CodeServer
 
 If you run CodeServer without any arguments, it will print out its
-command line arguments. For 2.11.0, here is the output:
+command line arguments. For 2.12.1, here is the output:
 
 ```text
-Google Web Toolkit 2.11.0
-CodeServer [-[no]allowMissingSrc] [-[no]compileTest] [-compileTestRecompiles count] [-[no]failOnError] [-[no]precompile] [-port port] [-src dir] [-workDir dir] [-launcherDir] [-bindAddress host-name-or-address] [-style (DETAILED|OBFUSCATED|PRETTY)] [-setProperty name=value,value...] [-[no]incremental] [-sourceLevel [auto, 1.8, 9, 10, 11]] [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-[no]generateJsInteropExports] [-includeJsInteropExports/excludeJsInteropExports regex] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-X[no]closureFormattedOutput] [module]
+Google Web Toolkit 2.12.1
+CodeServer [-[no]allowMissingSrc] [-[no]compileTest] [-compileTestRecompiles count] [-[no]failOnError] [-[no]precompile] [-port port] [-src dir] [-workDir dir] [-launcherDir] [-bindAddress host-name-or-address] [-style (DETAILED|OBFUSCATED|PRETTY)] [-setProperty name=value,value...] [-[no]incremental] [-sourceLevel [auto, 1.8, 9, 10, 11, 17]] [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-[no]generateJsInteropExports] [-includeJsInteropExports/excludeJsInteropExports regex] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-X[no]closureFormattedOutput] [module]
 
 where
   -[no]allowMissingSrc                              Allows -src flags to reference missing directories. (defaults to OFF)

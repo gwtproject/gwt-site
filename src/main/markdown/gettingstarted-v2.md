@@ -23,10 +23,9 @@ the plugin generates a Maven project with separate modules for
 
 ## Prerequisites<a id="prereqs"></a>
 
-1.  GWT 2.11.0 still supports Java 8 (running and building). We suggest to use at least Java 11 or 17. If necessary, download and
-    install the Java SE Development Kit (JDK) <a href="https://adoptium.net/de/temurin/releases/" 
-    rel="nofollow">from Eclipse Temurin</a> for your platform. Install the JDK by following the 
-    installation instructions. 
+1.  GWT 2.12.1 runs on Java 11+. If necessary, download and install the Java SE Development Kit (JDK)
+    <a href="https://adoptium.net/de/temurin/releases/" rel="nofollow">from Eclipse Temurin</a> for
+    your platform. Install the JDK by following the installation instructions.
 2.  Apache Maven is also necessary to run the gwt-maven-archetype. In this sample the Maven CLI is used. If
     you don't already have it, install <a href="https://maven.apache.org/download.cgi" rel="nofollow">Apache Maven</a>.
 
