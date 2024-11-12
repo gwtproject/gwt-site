@@ -1,5 +1,6 @@
 The GWT Release Notes
 =====================
+* [2.12.1](#Release_Notes_2_12_1) November 12, 2024
 * [2.12.0](#Release_Notes_2_12_0) October 29, 2024
 * [2.11.0](#Release_Notes_2_11_0) January 9, 2024
 * [2.10.1](#Release_Notes_2_10_1) January 9, 2024
@@ -67,6 +68,13 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
+## <a id="Release_Notes_2_12_1"></a> Release Notes for 2.12.1
+### Bug fixes:
+- Correct handling for SwitchStatements without a containing Block
+- Ignore all annotations in all scopes if source is missing
+
+For more detail, see the [commit log](https://github.com/gwtproject/gwt/compare/2.12.0...2.12.1).
+
 ## <a id="Release_Notes_2_12_0"></a> Release Notes for 2.12.0
 ### Highlights:
 - Added support for Java 12-17 language features, including text blocks, instanceof pattern matching, records, and switch expressions.
