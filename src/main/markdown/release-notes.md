@@ -70,8 +70,9 @@ The GWT Release Notes
 <a id="Release_Notes_Current"></a>
 ## <a id="Release_Notes_2_12_1"></a> Release Notes for 2.12.1
 ### Bug fixes:
-- Correct handling for SwitchStatements without a containing Block
-- Ignore all annotations in all scopes if source is missing
+- Switch statements can correctly compile without being contained in braces
+- Ignore all annotations in all scopes if source is missing; this means you no longer need to add an
+  additional dependency on sources for annotation-only dependencies
 
 For more detail, see the [commit log](https://github.com/gwtproject/gwt/compare/2.12.0...2.12.1).
 
