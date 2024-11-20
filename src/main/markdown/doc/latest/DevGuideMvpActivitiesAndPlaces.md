@@ -220,7 +220,7 @@ Specify the implementation class in .gwt.xml:
 
 You can use `<when-property-is>` to specify different
 implementations based on user.agent, locale, or other properties you
-define. The [mobilewebapp](https://gwt.googlesource.com/gwt/+/master/samples/mobilewebapp/)
+define. The [mobilewebapp](https://github.com/gwtproject/gwt/blob/main/samples/mobilewebapp/)
 sample application defines a "formfactor" property used to 
 select a different view implementations for mobile, tablet, and desktop devices.
 
