@@ -1,3 +1,5 @@
+# CSS Styling
+
 Like most web applications, GWT applications use cascading style sheets (CSS) for visual styling.
 
 *   [Styling Existing Widgets](#widgets)

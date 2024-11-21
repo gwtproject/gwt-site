@@ -60,50 +60,63 @@ entity can be persisted to a data store such as a relational database or the
 Google App Engine Datastore. In persistence frameworks like JDO and JPA,
 entities are annotated with @Entity. RequestFactory does not require the use of
 any particular framework or annotations on your domain classes.  Here's part of
-an entity definition from the [Expenses
-sample application](https://gwt.googlesource.com/gwt/+/master/samples/expenses) found in the GWT distribution.
+an entity definition from the [Mobile
+web application](https://github.com/gwtproject/gwt/blob/main/samples/mobilewebapp) found in the GWT distribution.
 
 ```java
-package com.google.gwt.sample.expenses.server.domain;
+package com.google.gwt.sample.mobilewebapp.server.domain;
 
 /**
- * The Employee domain object.
+ * A task used in the task list. 
  */
 @Entity
-public class Employee {
-
-  @Size(min = 3, max = 30)
-  private String userName;
-
-  private String department;
-
-  @NotNull
-  private String displayName;
-
-  private String password;
-
-  @JoinColumn
-  private Long supervisorKey;
+public class Task {
 
   @Id
-  @Column(name = "id")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  Long id;
 
-  @Version
-  @Column(name = "version")
-  private Integer version;
+  private Date dueDate;
 
-  @Transient
-  private Employee supervisor;
+  @NotNull(message = "You must specify a name")
+  @Size(min = 3, message = "Name must be at least 3 characters long")
+  private String name;
 
-  public String getDepartment() {
-    return department;
+  private String notes;
+
+  /**
+   * The unique ID of the user who owns this task.
+   */
+  @Index
+  private String userId;
+
+  /**
+   * Get the due date of the Task.
+   */
+  public Date getDueDate() {
+    return dueDate;
   }
 
-  public String getDisplayName() {
-    return this.displayName;
+  /**
+   * Get the unique ID of the Task.
+   */
+  public Long getId() {
+    return id;
   }
+
+  /**
+   * Get the name of the Task.
+   */
+  public String getName() {
+    return name;
+  }
+
+  /**
+   * Get the notes associated with the task.
+   */
+  public String getNotes() {
+    return notes;
+  }
+
   ...
 }
 ```
@@ -684,7 +697,7 @@ any method invocation will result in changes being sent to the server.
 
 Changes to related entities can be persisted in a single request.
 For example, this code from the 
-[DynatableRF sample app](https://gwt.googlesource.com/gwt/+/master/samples/dynatablerf) in GWT trunk creates a new Person and Address at the same time:
+[DynatableRF sample app](https://github.com/gwtproject/gwt/tree/main/samples/dynatablerf) in GWT trunk creates a new Person and Address at the same time:
 
 ```java
 PersonRequest context = requestFactory.personRequest();

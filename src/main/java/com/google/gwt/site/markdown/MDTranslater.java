@@ -100,7 +100,7 @@ public class MDTranslater {
     }
 
     int index = path.indexOf(SEPARATOR + "src" + SEPARATOR);
-    return "<a class=\"icon_editGithub\" href=\"https://github.com/gwtproject/gwt-site/edit/master/"
+    return "<a class=\"icon_editGithub\" href=\"https://github.com/gwtproject/gwt-site/edit/main/"
            + path.substring(index + 1).replace(SEPARATOR, "/") + "\"></a>";
   }
 

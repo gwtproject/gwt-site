@@ -1,4 +1,4 @@
-# Building the UI with GWT Widgets.
+# Building the UI with GWT Widgets.
 
 
 In this chapter we'll build a modern looking UI for the **TodoList** application using the [Material Design](https://material.google.com) specifications. We'll be working with the Vaadin gwt-polymer-elements library, a wrapper for the Polymer Paper Elements collection.
@@ -278,7 +278,7 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
 
     <img class='polymer-tutorial-screenshot' src='images/todo-list-05.png'>
 
-## Styling the App
+## Styling the App
 
 ### Styling with `CssResource`
 When using Polymer widgets you can use GWT [GSS](https://www.gwtproject.org/doc/latest/DevGuideGssVsCss.html) parser as usual, and add styles to widgets or elements using the `{}` operator.

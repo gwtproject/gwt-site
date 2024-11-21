@@ -57,7 +57,7 @@ When implementing a render method, you should follow these steps:
     tries to enforce this.
 4.  Render the HTML that represents the Cell into the SafeHtmlBuilder.
 
-You can download this example at [CellExample.java](https://gwt.googlesource.com/gwt/+/master/user/javadoc/com/google/gwt/examples/cell/CellExample.java).
+You can download this example at [CellExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cell/CellExample.java).
 
 ```java
 /**

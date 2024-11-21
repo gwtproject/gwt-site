@@ -1,4 +1,4 @@
-# Building the UI
+# Building the UI
 
 In this chapter we'll build a modern looking UI for the **TodoList** application using the [Material Design](https://material.google.com) specifications. We'll be working with the Vaadin gwt-polymer-elements library, a wrapper for the Polymer Paper Elements collection.
 
@@ -317,7 +317,7 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
 
     <img class='polymer-tutorial-screenshot' src='images/todo-list-05.png'>
 
-## Styling the App
+## Styling the App
 
 Web Components use [Shadow DOM styling](http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-201/) rules for providing scoped styling of the element. Additionally Polymer provides [Shady DOM](https://www.polymer-project.org/1.0/articles/shadydom.html) to deal with browsers not implementing native shadow. Hence Polymer monitors and parses each `<style>` block rewriting rules on the fly.
 

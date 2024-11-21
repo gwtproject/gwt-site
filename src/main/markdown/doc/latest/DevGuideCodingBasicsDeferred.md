@@ -57,9 +57,9 @@ rules are pulled into the module build through `<inherits>` elements.
 For example, the following configuration invokes deferred binding for the [PopupPanel](/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html) widget:
 
 *   Top level `<module>.gwt.xml` _**inherits**_
-[com.google.gwt.user.User](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml)
-*   [com/google/gwt/user/User.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml) _**inherits**_ [com.google.gwt.user.Popup](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/Popup.gwt.xml)
-*   [com/google/gwt/user/Popup.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/Popup.gwt.xml) _**contains**_ `<replace-with>` elements to define deferred binding rules for the [PopupPanel](/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html) class.
+[com.google.gwt.user.User](https://github.com/gwtproject/gwt/blob/main/user/src/com/google/gwt/user/User.gwt.xml)
+*   [com/google/gwt/user/User.gwt.xml](https://github.com/gwtproject/gwt/blob/main/user/src/com/google/gwt/user/User.gwt.xml) _**inherits**_ [com.google.gwt.user.Popup](https://github.com/gwtproject/gwt/blob/main/user/src/com/google/gwt/user/Popup.gwt.xml)
+*   [com/google/gwt/user/Popup.gwt.xml](https://github.com/gwtproject/gwt/blob/main/user/src/com/google/gwt/user/Popup.gwt.xml) _**contains**_ `<replace-with>` elements to define deferred binding rules for the [PopupPanel](/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html) class.
 
 Inside the [PopupPanel](/javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html) module XML file, there
 happens to be some rules defined for deferred binding. In this case, we're using a replacement rule.
@@ -151,9 +151,9 @@ client will download based on its browser environment.
 The following is an example of how a deferred binding generator is specified to the compiler in the [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml)
 hierarchy for the `RemoteService` class - used for GWT-RPC:
 
-*   Top level `<module>.gwt.xml` _**inherits**_ [com.google.gwt.user.User](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml)
-*   [com/google/gwt/user/User.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/User.gwt.xml) _**inherits**_ [com.googl.gwt.user.RemoteService](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/RemoteService.gwt.xml)
-*   [com/google/gwt/user/RemoteService.gwt.xml](https://gwt.googlesource.com/gwt/+/master/user/src/com/google/gwt/user/RemoteService.gwt.xml) _**contains**_ `<generates-with>` elements to define deferred binding rules for the `RemoteService` class.
+*   Top level `<module>.gwt.xml` _**inherits**_ [com.google.gwt.user.User](https://github.com/gwtproject/gwt/blob/main/user/src/com/google/gwt/user/User.gwt.xml)
+*   [com/google/gwt/user/User.gwt.xml](https://github.com/gwtproject/gwt/blob/main/user/src/com/google/gwt/user/User.gwt.xml) _**inherits**_ [com.googl.gwt.user.RemoteService](https://github.com/gwtproject/gwt/blob/main/user/src/com/google/gwt/user/RemoteService.gwt.xml)
+*   [com/google/gwt/user/RemoteService.gwt.xml](https://github.com/gwtproject/gwt/blob/main/user/src/com/google/gwt/user/RemoteService.gwt.xml) _**contains**_ `<generates-with>` elements to define deferred binding rules for the `RemoteService` class.
 
 ## Generator Configuration in Module XML<a id="generator"></a>
 

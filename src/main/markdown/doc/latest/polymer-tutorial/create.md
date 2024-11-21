@@ -1,4 +1,4 @@
-# Creating the *TodoList* Project
+# Creating the *TodoList* Project
 
 In this section, we'll create the **TodoList** project from scratch using GWT's [webAppCreator](https://www.gwtproject.org/doc/latest/RefCommandLineTools.html#webAppCreator), a command-line utility.
 
