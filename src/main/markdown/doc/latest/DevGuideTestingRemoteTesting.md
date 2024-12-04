@@ -27,15 +27,14 @@ To use any of these run styles, you need to pass the `-runStyle` argument to the
 (see [Passing Arguments to the Test Infrastructure](DevGuideTesting.html#passingTestArguments)).  The format looks like this
 (see specific examples below):
 
-```
+```shell
 -runStyle <NameStartingWithCaps>:arguments
 ```
 
 If you are running a test from Eclipse, you would add something like the following to the VM arguments (Note that the run style name
 starts with a capital letter):
 
-```
-
+```text
 -Dgwt.args="-runStyle Selenium:myhost:4444/*firefox"
 ```
 
@@ -55,7 +54,7 @@ system the first time you run the test, or ahead of time if possible.</font>
 Tests run in development mode by default. You can run a test in production mode by adding `-prod` to the GWT arguments. When
 running tests in production mode, you do not need to have the GWT Developer Plugin installed on the remote system.
 
-```
+```shell
 -Dgwt.args="<strong>-prod</strong> -runStyle Selenium:myhost:4444/*firefox"
 ```
 
@@ -64,7 +63,7 @@ running tests in production mode, you do not need to have the GWT Developer Plug
 When running tests in production mode, GWT compiles the tests for all browsers, which can take a while. If you know which browsers your test
 will run in, you can limit the browser permutations (and reduce compile time), using the `-userAgents` argument:
 
-```
+```shell
 -Dgwt.args="-prod <strong>-userAgents ie6,gecko1_8</strong> -runStyle Selenium:myhost:4444/*firefox"
 ```
 
@@ -88,7 +87,7 @@ Selenium does not always open Internet Explorer successfully on newer versions o
 GWT can execute tests against a remote system running the [Selenium Remote Control](http://seleniumhq.org/projects/remote-control/).
 You do this using the following command:
 
-```
+```shell
 -Dgwt.args="-runStyle Selenium:myhost:4444/*firefox,myotherhost:4444/*firefox"
 ```
 
@@ -105,8 +104,7 @@ want to create your own Firefox profile that includes the GWT Developer Plugin.
 
 To do this, run Firefox from the command line and pass in the -ProfileManager argument to open the Profile Manager:
 
-```
-
+```shell
 firefox.exe -ProfileManager
 ```
 
@@ -136,7 +134,7 @@ Plugin. On our test systems, we use the following settings:
 
 When starting the selenium server, pass in the following argument to use your firefox profile as a template:
 
-```
+```text
 --firefoxProfileTemplate /path/to/profile
 ```
 
@@ -148,20 +146,18 @@ The RemoteWeb run style allows you to run tests against systems running the Brow
 
 First, you need to start the BrowserManagerServer on the remote test system using the following java command.  Note that gwt-user.jar and gwt-dev.jar are on the classpath.
 
-```
-
+```shell
 java -cp gwt-user.jar;gwt-dev.jar com.google.gwt.junit.remote.BrowserManagerServer ie8 "C:\Program Files\Internet Explorer\IEXPLORE.EXE"
 ```
 
 BrowserManagerServer takes commands in pairs. In the above example, we are associating the name "ie8" with the executable iexplore.exe.
 
-```
+```text
 <browser name> <path/to/browser>
 ```
 
 To run a test against IE8, you would use the following argument:
 
-```
-
+```text
 -runStyle RemoteWeb:rmi://myhost/ie8
 ```

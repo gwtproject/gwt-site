@@ -15,8 +15,6 @@ package com.google.gwt.site.markdown;
 
 import java.io.File;
 
-import org.pegdown.PegDownProcessor;
-
 import com.google.gwt.site.markdown.fs.FileSystemTraverser;
 import com.google.gwt.site.markdown.fs.MDParent;
 import com.google.gwt.site.markdown.toc.TocCreator;
@@ -107,7 +105,7 @@ public class MDHelper {
 
     // read template TOC if parameter is provided
     if (templateTocFile != null) {
-      templateToc = new PegDownProcessor().markdownToHtml(readFile(templateTocFile));
+      templateToc = MDTranslater.markDownToHtml(readFile(templateTocFile));
     }
 
     created = true;

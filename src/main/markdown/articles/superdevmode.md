@@ -22,13 +22,17 @@ module.xml file:
 
 *   GWT 2.5.1
 
-        <add-linker name="xsiframe"/>
-        <set-configuration-property name="devModeRedirectEnabled" value="true"/>
-        <set-property name="compiler.useSourceMaps" value="true"/>
+    ```xml
+    <add-linker name="xsiframe"/>
+    <set-configuration-property name="devModeRedirectEnabled" value="true"/>
+    <set-property name="compiler.useSourceMaps" value="true"/>
+    ``` 
 
 *   GWT 2.6.1
 
-        <add-linker name="xsiframe"/>
+    ```xml
+    <add-linker name="xsiframe"/>
+    ```
 
 *   GWT 2.7 and above
 
@@ -71,10 +75,11 @@ needed to compile your GWT app (most likely gwt-user.jar).
 * The main method is in com.google.gwt.dev.codeserver.CodeServer
 
 If you run CodeServer without any arguments, it will print out its
-command line arguments. For 2.11.0, here is the output:
-```
-Google Web Toolkit 2.11.0
-CodeServer [-[no]allowMissingSrc] [-[no]compileTest] [-compileTestRecompiles count] [-[no]failOnError] [-[no]precompile] [-port port] [-src dir] [-workDir dir] [-launcherDir] [-bindAddress host-name-or-address] [-style (DETAILED|OBFUSCATED|PRETTY)] [-setProperty name=value,value...] [-[no]incremental] [-sourceLevel [auto, 1.8, 9, 10, 11]] [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-[no]generateJsInteropExports] [-includeJsInteropExports/excludeJsInteropExports regex] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-X[no]closureFormattedOutput] [module]
+command line arguments. For 2.12.1, here is the output:
+
+```text
+Google Web Toolkit 2.12.1
+CodeServer [-[no]allowMissingSrc] [-[no]compileTest] [-compileTestRecompiles count] [-[no]failOnError] [-[no]precompile] [-port port] [-src dir] [-workDir dir] [-launcherDir] [-bindAddress host-name-or-address] [-style (DETAILED|OBFUSCATED|PRETTY)] [-setProperty name=value,value...] [-[no]incremental] [-sourceLevel [auto, 1.8, 9, 10, 11, 17]] [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-[no]generateJsInteropExports] [-includeJsInteropExports/excludeJsInteropExports regex] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-X[no]closureFormattedOutput] [module]
 
 where
   -[no]allowMissingSrc                              Allows -src flags to reference missing directories. (defaults to OFF)
@@ -104,9 +109,10 @@ At a minimum, you need to give it the name of the GWT module to compile.
 
 After the server starts up, it prints its URL:
 
-    The code server is ready.
-    Next, visit: http://localhost:9876/
-
+```text
+The code server is ready.
+Next, visit: http://localhost:9876/
+```
 Load this URL in a browser. It provides two bookmarklets that you can drag and drop
 to the browser's bookmarklet bar.
 
@@ -131,15 +137,19 @@ to the code server.
 The code server runs the GWT compiler in draft mode (with most optimizations turned
 off) and makes the compiler's output available at a URL that looks something like this:
 
-    http://localhost:9876/hello/hello.nocache.js
+```text
+http://localhost:9876/hello/hello.nocache.js
+```
 
  and then sets a special value in
 [session storage](https://developer.mozilla.org/en/DOM/Storage) and reloads the page.
 
 Here's what the session storage variable looks like:
 
-    > window.sessionStorage["__gwtDevModeHook:hello"]
-      "http://localhost:9876/hello/hello.nocache.js"
+```javascript
+window.sessionStorage["__gwtDevModeHook:hello"]
+// returns  "http://localhost:9876/hello/hello.nocache.js"
+```
 
 After reloading the page, the original hello.nocache.js script will look for this special key
 (with the same module name) in session storage and automatically redirect to the
@@ -169,7 +179,9 @@ a source file.)
 When using Super Dev Mode, the browser's debugger will download Java files
 from the code server. Here's an example URL that a browser debugger might use to download a file:
 
-    http://localhost:9876/sourcemaps/hello/com/google/gwt/core/client/GWT.java
+```text
+http://localhost:9876/sourcemaps/hello/com/google/gwt/core/client/GWT.java
+```
 
 ## Differences <a id="Differences"></a>
 

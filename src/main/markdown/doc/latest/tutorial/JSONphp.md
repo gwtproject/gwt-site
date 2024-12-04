@@ -8,7 +8,7 @@ If you have a web server (Apache, IIS, etc.) installed locally and PHP installed
     *  From the Eclipse menu bar, select File > New > File.
     *  In the New File window, enter the file name `stockPrices.php`
 
-```
+```php
 <?php
 
   header('Content-Type: text/javascript');
@@ -54,7 +54,7 @@ If you have a web server (Apache, IIS, etc.) installed locally and PHP installed
        *  In a web browser, navigate to `http://localhost/StockWatcher/stockPrices.php?q=ABC+DEF`
        *  StockPrice data is returned in JSON format
 
-```
+```json
 [{"symbol":"ABC","price":40.485578668179,"change":-0.53944918844604},
     {"symbol":"DEF","price":1.3606576154209,"change":0.0051755221198266}]
 ```

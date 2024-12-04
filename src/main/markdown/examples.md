@@ -85,37 +85,36 @@ Please note that the applications linked from this page are provided by third-pa
   <div class="example">
 
   <div class="project">
-      <div class="screenshot">
-        <a href="https://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank"><img src="images/showcase.jpg" alt="Screenshot"/></a>
-      </div>
-      <div class="info">
-        <div class="name"><a href="https://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank">GWT Showcase</a></div>
-        <div class="snippet">A showcase of GWT features with accompanying source code and CSS styles.</div>
-        <div class="apis">
-          <div class="head">GWT features used:</div>
-          <div class="item"><a href="doc/latest/DevGuideUiWidgets.html">UI widgets</a></div>
-          <div class="item"><a href="doc/latest/DevGuideI18n.html">Internationalization</a></div>
-        </div>
-      </div>
-    </div>  
-
-    <div class="project">
-      <div class="screenshot">
-        <a href="https://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank"><img src="images/mail.jpg" alt="Screenshot"/></a>
-      </div>
-      <div class="info">
-        <div class="name"><a href="https://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank">Mail Application</a></div>
-        <div class="snippet">A replica of the UI of a desktop email application.</div>
-        <div class="apis">
-          <div class="head">GWT features used:</div>
-          <div class="item"><a href="doc/latest/DevGuideUiWidgets.html">UI widgets</a></div>
-          <div class="item"><a href="doc/latest/DevGuideCodingBasics.html#DevGuideHistory">History management</a></div>
-        </div>
+    <div class="screenshot">
+      <a href="https://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank"><img src="images/showcase.jpg" alt="Screenshot"/></a>
+    </div>
+    <div class="info">
+      <div class="name"><a href="https://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank">GWT Showcase</a></div>
+      <div class="snippet">A showcase of GWT features with accompanying source code and CSS styles.</div>
+      <div class="apis">
+        <div class="head">GWT features used:</div>
+        <div class="item"><a href="doc/latest/DevGuideUiWidgets.html">UI widgets</a></div>
+        <div class="item"><a href="doc/latest/DevGuideI18n.html">Internationalization</a></div>
       </div>
     </div>
+  </div>
 
-    <br>
-    The source for these examples as well as others can be found in your GWT distribution under the `samples/` directory. If you haven't downloaded GWT yet, you can download it <a href="download.html">here</a>.
+  <div class="project">
+    <div class="screenshot">
+      <a href="https://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank"><img src="images/mail.jpg" alt="Screenshot"/></a>
+    </div>
+    <div class="info">
+      <div class="name"><a href="https://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank">Mail Application</a></div>
+      <div class="snippet">A replica of the UI of a desktop email application.</div>
+      <div class="apis">
+        <div class="head">GWT features used:</div>
+        <div class="item"><a href="doc/latest/DevGuideUiWidgets.html">UI widgets</a></div>
+        <div class="item"><a href="doc/latest/DevGuideCodingBasics.html#DevGuideHistory">History management</a></div>
+      </div>
+    </div>
+  </div>
+
+  The source for these examples as well as others can be found in your GWT distribution under the `samples/` directory. If you haven't downloaded GWT yet, you can download it <a href="download.html">here</a>.
 
   </div>
 </div>

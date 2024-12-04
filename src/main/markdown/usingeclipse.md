@@ -82,13 +82,13 @@ Look inside the
 
 file in the client package. Line 40 constructs the send button.
 
-```
+```java
 final Button sendButton = new Button("Send");
 ```
 
 Change the text from "Send" to "Send to Server".
 
-```
+```java
 final Button sendButton = new Button("Send to Server");
 ```
 

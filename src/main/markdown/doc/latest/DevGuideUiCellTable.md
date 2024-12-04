@@ -31,7 +31,7 @@ that is designed to perform local sorting of a java.util.List.
 
 **Code Example** - The example below adds column sorting support to a CellTable backed by a ListDataProvider.
 
-```
+```java
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
@@ -133,7 +133,7 @@ which triggers a RangeChangeEvent to the AsyncDataProvider.
 
 **Code Example** - The example below adds column sorting support to a CellTable backed by an AsyncDataProvider.
 
-```
+```java
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
@@ -263,7 +263,7 @@ recipes for achieving various effects.
 
 **Code Example** - The example below creates a CellTable with fixed-width columns that expand to fill the available space.
 
-```
+```java
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
@@ -337,7 +337,7 @@ table width to "auto" and assign an absolute width to every column.
 set the width of a column, the column will not be visible. Columns default to
 a width of 0.
 
-```
+```java
 table.setWidth("auto", true);
     table.setColumnWidth(col0, 100.0, Unit.PX);
     table.setColumnWidth(col1, 150.0, Unit.PX);
@@ -355,7 +355,7 @@ Column in percentages.
 percentages, the percentages should add up to 100%. Failure to do so may result
 in unintended layout issues.
 
-```
+```java
 table.setWidth("100%", true);
     table.setColumnWidth(col0, 10.0, Unit.PCT);
     table.setColumnWidth(col1, 25.0, Unit.PCT);
@@ -380,7 +380,7 @@ columns in pixels.
 add up to 100%. If they do not, then columns specified in pixels will also resize
 with the table in an unpredictable way.
 
-```
+```java
 table.setWidth("100%", true);
     table.setColumnWidth(checkboxCol, 10.0, Unit.PX);
     table.setColumnWidth(nameCol, 35.0, Unit.PCT);

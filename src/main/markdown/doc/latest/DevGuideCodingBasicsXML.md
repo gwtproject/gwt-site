@@ -12,7 +12,7 @@ data and is encoded as plain text, making it both flexible and easy to work with
 
 The XML types provided by GWT can be found in the [com.google.gwt.xml.client](/javadoc/latest/com/google/gwt/xml/client/package-summary.html) package. In order to use these in your application, you'll need to add the following `<inherits>` tag to your [module XML file](DevGuideOrganizingProjects.html#DevGuideModuleXml):
 
-```
+```xml
 <inherits name="com.google.gwt.xml.XML" />
 ```
 
@@ -20,7 +20,7 @@ The XML types provided by GWT can be found in the [com.google.gwt.xml.client](/j
 
 To demonstrate how to parse XML with GWT, we'll use the following XML document that contains an email message:
 
-```
+```xml
 <?xml version="1.0" ?>
 <message>
   <header>
@@ -36,7 +36,7 @@ To demonstrate how to parse XML with GWT, we'll use the following XML document t
 Suppose that you're writing an email application and need to extract the name of the sender, the subject line, and the message body from the XML. Here is sample code that will
 do just that (we'll explain the code in just a bit):
 
-```
+```java
 private void parseMessage(String messageXml) {
   try {
     // parse the XML document into a DOM

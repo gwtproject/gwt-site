@@ -155,7 +155,7 @@ the [ClickHandler](/javadoc/latest/com/google/gwt/event/dom/client/ClickHandler.
 results in a debug message displaying on the log window whenever the user
 clicks the button.
 
-```
+```java
 import com.google.gwt.core.client.GWT;
 
    ...
@@ -178,7 +178,7 @@ application. They are optimized out in production mode. For example, consider
 the following change to the onClick() method intended to intentionally trigger
 an exception:
 
-```
+```java
 public void onClick(Widget sender) {
         GWT.log("User pressed a button.", null);
         Object nullObject = null;
@@ -223,7 +223,7 @@ development mode. To run development mode, you start a Java VM using the main
 class `com.google.gwt.dev.DevMode`. If you look inside a generated
 ant `build.xml`, you'll find something like this:
 
-```
+```xml
 <target name="devmode" depends="javac" description="Run development mode">
   <java failonerror="true" fork="true" classname="com.google.gwt.dev.DevMode">
     <classpath>
@@ -241,7 +241,7 @@ ant `build.xml`, you'll find something like this:
 
 This is similar to running the following command on the command line:
 
-```
+```shell
 java -Xmx256M -cp "src;war/WEB-INF/classes;\gwt-2.0.0\gwt-user.jar;\gwt-2.0.0\gwt-dev.jar"
   com.google.gwt.dev.DevMode -startupUrl Hello.html com.google.gwt.sample.hello.Hello
 ```
@@ -311,11 +311,11 @@ you may need to replace the `.gwt.rpc` file if your application uses GWT RPC and
 
 There are many options you can pass to the development mode process to control how you want to start up the development mode browser. These options can differ slightly from version to version, but will generally include the options shown in the command-line help text below:
 
-```
+```text
 $ java -cp gwt-dev.jar com.google.gwt.dev.DevMode
 Missing required argument 'module[s]'
-Google Web Toolkit 2.11.0
-DevMode [-[no]startServer] [-port port-number | "auto"] [-logdir directory] [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-gen dir] [-bindAddress host-name-or-address] [-codeServerPort port-number | "auto"] [-[no]superDevMode] [-server servletContainerLauncher[:args]] [-startupUrl url] [-war dir] [-deploy dir] [-extra dir] [-modulePathPrefix ] [-workDir dir] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-sourceLevel [auto, 1.8, 9, 10, 11]] [-[no]generateJsInteropExports] [-includeJsInteropExports/excludeJsInteropExports regex] [-[no]incremental] [-style (DETAILED|OBFUSCATED|PRETTY)] [-[no]failOnError] [-setProperty name=value,value...] module[s] 
+Google Web Toolkit 2.12.1
+DevMode [-[no]startServer] [-port port-number | "auto"] [-logdir directory] [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-gen dir] [-bindAddress host-name-or-address] [-codeServerPort port-number | "auto"] [-[no]superDevMode] [-server servletContainerLauncher[:args]] [-startupUrl url] [-war dir] [-deploy dir] [-extra dir] [-modulePathPrefix ] [-workDir dir] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-sourceLevel [auto, 1.8, 9, 10, 11, 17]] [-[no]generateJsInteropExports] [-includeJsInteropExports/excludeJsInteropExports regex] [-[no]incremental] [-style (DETAILED|OBFUSCATED|PRETTY)] [-[no]failOnError] [-setProperty name=value,value...] module[s]
 
 where
   -[no]startServer                                  Starts a servlet container serving the directory specified by the -war flag. (defaults to ON)
@@ -414,7 +414,7 @@ You can run the compiler with the name of the module you want to compile in one 
 Once compilation completes successfully, directories will be created containing the JavaScript implementation of your project. The compiler will create one directory for each
 module it compiles.
 
-```
+```text
 C:\gwt-2.6.1\samples\Hello>ant
 Buildfile: build.xml
 
@@ -438,7 +438,7 @@ Total time: 22 seconds
 
 After running the GWT compiler your war directory should look something like this:
 
-```
+```text
 C:\gwt-2.6.1\samples\Hello>\bin\find war
 war
 war\hello
@@ -479,7 +479,7 @@ The [host HTML page](DevGuideOrganizingProjects.html#DevGuideHostPage) is the fi
 
 You could also load the script from anywhere else in a website, but the default start page is typically the entry point that developers use to load their GWT applications. The host page from the Hello starter sample application mentioned above is shown below.
 
-```
+```html
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -522,7 +522,7 @@ You may have noticed that the bootstrap script filename contains a `.nocache.js`
 
 The fact that the application filenames will always change if your codebase changes means that your clients can safely cache these resources and don't need to refetch the GWT application files each time they visit your site. The resource that should never be completely cached (an If-Modified-Since fetch is sufficient and saves bandwidth) is the bootstrap script, since it contains the logic necessary to lookup the correct application file. If you were to configure these rules on an Apache HTTP server, you might get something like this in your `.htaccess` config file, using both mod_expires and mod_headers:
 
-```
+```xml
 <Files *.nocache.*>
   ExpiresActive on
   ExpiresDefault "now"
@@ -539,10 +539,11 @@ The fact that the application filenames will always change if your codebase chan
 
 There are many options you can pass to the GWT compiler process to control how you want to compile your GWT application and where you want the output to be generated. These options can differ slightly from version to version, but will generally include the options shown in the command-line help text below:
 
-```
+```text
 > java -cp gwt-dev.jar com.google.gwt.dev.Compiler
-Google Web Toolkit 2.11.0
-Compiler [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-workDir dir] [-X[no]closureFormattedOutput] [-[no]compileReport] [-X[no]checkCasts] [-X[no]classMetadata] [-[no]draftCompile] [-[no]checkAssertions] [-XfragmentCount numFragments] [-XfragmentMerge numFragments] [-gen dir] [-[no]generateJsInteropExports] [-includeJsInteropExports/excludeJsInteropExports regex] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-Xnamespace (NONE|PACKAGE)] [-optimize level] [-[no]saveSource] [-setProperty name=value,value...] [-style (DETAILED|OBFUSCATED|PRETTY)] [-[no]failOnError] [-[no]validateOnly] [-sourceLevel [auto, 1.8, 9, 10, 11]] [-localWorkers count] [-[no]incremental] [-war dir] [-deploy dir] [-extra dir] [-saveSourceOutput dir] module[s] 
+Missing required argument 'module[s]'
+Google Web Toolkit 2.12.1
+Compiler [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-workDir dir] [-X[no]closureFormattedOutput] [-[no]compileReport] [-X[no]checkCasts] [-X[no]classMetadata] [-[no]draftCompile] [-[no]checkAssertions] [-XfragmentCount numFragments] [-gen dir] [-[no]generateJsInteropExports] [-includeJsInteropExports/excludeJsInteropExports regex] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-Xnamespace (NONE|PACKAGE)] [-optimize level] [-[no]saveSource] [-setProperty name=value,value...] [-style (DETAILED|OBFUSCATED|PRETTY)] [-[no]failOnError] [-[no]validateOnly] [-sourceLevel [auto, 1.8, 9, 10, 11, 17]] [-localWorkers count] [-[no]incremental] [-war dir] [-deploy dir] [-extra dir] [-saveSourceOutput dir] module[s]
 
 where
   -logLevel                                         The level of logging detail: ERROR, WARN, INFO, TRACE, DEBUG, SPAM or ALL (defaults to INFO)
@@ -554,7 +555,6 @@ where
   -[no]draftCompile                                 Compile quickly with minimal optimizations. (defaults to OFF)
   -[no]checkAssertions                              Include assert statements in compiled output. (defaults to OFF)
   -XfragmentCount                                   EXPERIMENTAL: Limits of number of fragments using a code splitter that merges split points.
-  -XfragmentMerge                                   DEPRECATED (use -XfragmentCount instead): Enables Fragment merging code splitter.
   -gen                                              Debugging: causes normally-transient generated types to be saved in the specified directory
   -[no]generateJsInteropExports                     Generate exports for JsInterop purposes. If no -includeJsInteropExport/-excludeJsInteropExport provided, generates all exports. (defaults to OFF)
   -includeJsInteropExports/excludeJsInteropExports  Include/exclude members and classes while generating JsInterop exports. Flag could be set multiple times to expand the pattern. (The flag has only effect if exporting is enabled via -generateJsInteropExports)
