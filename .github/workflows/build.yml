@@ -17,7 +17,7 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
       - name: Build with Maven
-        run: mvn  -e --batch-mode --no-transfer-progress verify -Pgrunt
+        run: mvn -e --batch-mode --no-transfer-progress verify -Pgrunt
 
       - name: Upload artifact for testing/deployment
         uses: actions/upload-artifact@v3
