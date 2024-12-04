@@ -92,7 +92,7 @@ The web server will then wrap the JSON response in a call to that function.
 This technique is called JSON with Padding (JSONP).
 When the browser finishes downloading the new contents of the `<script>` tag, the callback function executes.
 
-```
+```javascript
 callback125([{"symbol":"DDD","price":10.610339195026,"change":0.053085447454327}]);
 ```
 
@@ -126,7 +126,7 @@ If you have access to a web server, then you can use the following PHP script to
 1.  Create a text file and name it `stockPrices.php`
     *
 
-```
+```php
 <?php
 
   header('Content-Type: text/javascript');
@@ -187,7 +187,7 @@ Also notice that the script supports the callback query string parameter.
 1.  Create a Python script and save it as `quoteServer.py`
     *
 
-```
+```python
 #!/usr/bin/env python2.4
 #
 # Copyright 2007 Google Inc. All Rights Reserved.
@@ -269,19 +269,19 @@ The RequestBuilder code is replaced by a call to JsonpRequestBuilder.
     *
     *  Change:
 
-```
+```java
 private static final String JSON_URL = GWT.getModuleBaseURL() + "stockPrices?q=";
 ```
 
 *  If your stock data is being served from a different port (the Python script), change JSON_URL to:
 
-```
+```java
 private static final String JSON_URL = "http://localhost:8000/?q=";
 ```
 
 *  If your stock data is being served from a different domain (the PHP script), specify the domain and full path to the stockPrices.php script:
 
-```
+```java
 private static final String JSON_URL = "http://_www.myStockServerDomain.com_/stockPrices.php?q=";
 ```
 
@@ -293,70 +293,68 @@ private static final String JSON_URL = "http://_www.myStockServerDomain.com_/sto
 
 ### Update the refreshWatchList method
 
-1.
-    *  Update the refreshWatchList method.
-    *
+1. Update the refreshWatchList method.
 
-```
-  /**
-   * Generate random stock prices.
-   */
-  private void refreshWatchList() {
-    if (stocks.size() == 0) {
-      return;
-    }
-
-    String url = JSON_URL;
-
-    // Append watch list stock symbols to query URL.
-    Iterator<String> iter = stocks.iterator();
-    while (iter.hasNext()) {
-      url += iter.next();
-      if (iter.hasNext()) {
-        url += "+";
+    ```java
+    /**
+     * Generate random stock prices.
+     */
+    private void refreshWatchList() {
+      if (stocks.size() == 0) {
+        return;
       }
-    }
-
-    url = URL.encode(url);
-
-    JsonpRequestBuilder builder = new JsonpRequestBuilder();
-    builder.requestObject(url, new AsyncCallback<JsArray<StockData>>() {
-      public void onFailure(Throwable caught) {
-        displayError("Couldn't retrieve JSON");
+    
+      String url = JSON_URL;
+  
+      // Append watch list stock symbols to query URL.
+      Iterator<String> iter = stocks.iterator();
+      while (iter.hasNext()) {
+        url += iter.next();
+        if (iter.hasNext()) {
+          url += "+";
+        }
       }
-      public void onSuccess(JsArray<StockData> data) {
-        // TODO handle JSON response
-      }
-    });
-  }
-```
-
-2.  If you haven't already, delete the RequestBuilder code.
-    *  The RequestBuilder code is replaced by a call to JsonpRequestBuilder. So you no longer need the following code in the refreshWatchList method:
-
-```
-    // Send request to server and catch any errors.
-    RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
-
-    try {
-      Request request = builder.sendRequest(null, new RequestCallback() {
-        public void onError(Request request, Throwable exception) {
+  
+      url = URL.encode(url);
+  
+      JsonpRequestBuilder builder = new JsonpRequestBuilder();
+      builder.requestObject(url, new AsyncCallback<JsArray<StockData>>() {
+        public void onFailure(Throwable caught) {
           displayError("Couldn't retrieve JSON");
         }
-
-        public void onResponseReceived(Request request, Response response) {
-          if (200 == response.getStatusCode()) {
-            updateTable(JsonUtils.safeEval(response.getText()));
-          } else {
-            displayError("Couldn't retrieve JSON (" + response.getStatusText()
-                + ")");
-          }
+        public void onSuccess(JsArray<StockData> data) {
+          // TODO handle JSON response
         }
       });
-    } catch (RequestException e) {
-      displayError("Couldn't retrieve JSON");
     }
-```
+    ```
+
+   2.  If you haven't already, delete the RequestBuilder code.
+       *  The RequestBuilder code is replaced by a call to JsonpRequestBuilder. So you no longer need the following code in the refreshWatchList method:
+
+           ```java
+           // Send request to server and catch any errors.
+           RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
+    
+           try {
+             Request request = builder.sendRequest(null, new RequestCallback() {
+               public void onError(Request request, Throwable exception) {
+                 displayError("Couldn't retrieve JSON");
+               }
+           
+               public void onResponseReceived(Request request, Response response) {
+                 if (200 == response.getStatusCode()) {
+                   updateTable(JsonUtils.safeEval(response.getText()));
+                 } else {
+                   displayError("Couldn't retrieve JSON (" + response.getStatusText()
+                       + ")");
+                 }
+               }
+             });
+           } catch (RequestException e) {
+             displayError("Couldn't retrieve JSON");
+           }
+           ```
 
 #### Implement the onSuccess method
 
@@ -366,7 +364,7 @@ If a response does not come back from the server, you display a message. You can
 
 1.  To the onSuccess method, replace the TODO comments with the following code.
 
-```
+```java
 if (data == null) {
   displayError("Couldn't retrieve JSON");
   return;

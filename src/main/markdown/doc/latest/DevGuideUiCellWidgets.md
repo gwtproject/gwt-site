@@ -79,7 +79,7 @@ The data inserted in the last step is updated by the data provider ([ListDataPro
 
 The following code is a very simple example that creates a CellList widget containing a single TextCell and sets data from the data source.  The list shows names.
 
-```
+```java
 /**
  * Example of {@link CellList}. This example shows a list of the days of the week.
  */
@@ -137,7 +137,7 @@ information about CellTable-specific features, such as column sorting.
 
 **Code Example** - The example below is a pared-down version of [CellTableExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellTableExample.java)
 
-```
+```java
 /**
  * Example of {@link CellTable} of contacts having a name and address.
  */
@@ -224,7 +224,7 @@ A CellTree can have its own CSS styles and its own resources, such as images tha
 
 **Code Example #2** - For a real-world example of CellTree, see [CellTreeExample2.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellTreeExample2.java).
 
-```
+```java
 /**
  * Example of {@link CellTree}.  Shows a Tree consisting of strings.
  */
@@ -281,7 +281,7 @@ CellBrowser is similar to a CellTree but displays the node levels side-by-side. 
 
 *   Follow the above procedure for CellTree, but change the CellTree constructor to CellBrowser, as follows:
 
-```
+```java
 // Create the browser using the model.
     CellBrowser browser = new CellBrowser(model, "Item 1");
 ```
@@ -356,7 +356,7 @@ By using a subscription model, we can link selection across multiple views. If m
 
 **Code Example** - The example of SelectionModel below is available at [CellListExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellListExample.java).
 
-```
+```java
 /**
  * Example of {@link CellList}. This example shows a list of the days of the week.
  */
@@ -407,7 +407,7 @@ Keys allow us to associate ViewData, such as selection state and validation info
 
 **Code Example** - The example of KeyProvider below is available at [KeyProviderExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/view/KeyProviderExample.java).
 
-```
+```java
 /**
   * Example of using a {@link ProvidesKey}.
   */
@@ -511,7 +511,7 @@ of the views.
 
 **Code Example** - The example below updates the view through a ListDataProvider.
 
-```
+```java
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
@@ -568,7 +568,7 @@ and/or updateRowData() to push the data to the widgets.
 
 **Code Example** - The example below updates the view through a AsyncDataProvider.
 
-```
+```java
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
@@ -633,7 +633,7 @@ you are writing a presenter class for your cell widget.
 
 **Code Example** - The example below handlers RangeChangeEvents from the view and pushes new data based on the new range.
 
-```
+```java
 /**
  * Example of using a {@link RangeChangeEvent.Handler} to push data into a
  * {@link CellList} when the range changes.
@@ -697,7 +697,7 @@ Two procedures follow &mdash; one for adding a standard SimplePager to a cell wi
 2.  Assign the SimplePager to the cell widget you want to control using [setDisplay(HasRows)](/javadoc/latest/com/google/gwt/user/cellview/client/SimplePager.html#setDisplay-com.google.gwt.view.client.HasRows-).
 3.  Add the SimplePager instance to the panel.
 
-```
+```java
 /**
  * Example of {@link SimplePager}.
  */
@@ -764,8 +764,7 @@ When the user makes the change to the data, the Cell receives an event in its [o
 
 **Code Example - ValueUpdater**
 
-```
-
+```java
 /**
  * Example of using a {@link ValueUpdater} with a {@link CellList}.
  */
@@ -820,7 +819,7 @@ Use a [FieldUpdater](/javadoc/latest/com/google/gwt/cell/client/FieldUpdater.htm
 
 **Code Example** - An example is available at [CellTableFieldUpdaterExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellTableFieldUpdaterExample.java).
 
-```
+```java
 /**
  * Example of using a {@link FieldUpdater} with a {@link CellTable}.
  */

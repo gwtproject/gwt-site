@@ -63,7 +63,7 @@ any particular framework or annotations on your domain classes.  Here's part of
 an entity definition from the [Mobile
 web application](https://github.com/gwtproject/gwt/blob/main/samples/mobilewebapp) found in the GWT distribution.
 
-```
+```java
 package com.google.gwt.sample.mobilewebapp.server.domain;
 
 /**
@@ -132,7 +132,7 @@ Furthermore, the EntityProxy interface enables RequestFactory to compute and
 send only changes ("deltas") to the server. Here's the EntityProxy
 corresponding to the Employee shown above.
 
-```
+```java
 @ProxyFor(Employee.class)
 public interface EmployeeProxy extends EntityProxy {
 
@@ -179,7 +179,7 @@ on the server.
 
 A value proxy can be used to represent any type. Unlike an EntityProxy, a ValueProxy is not required to expose an ID and version. ValueProxy  is often used to represent  embedded object types within entities. For example, a Person entity in a contact management application might represent Address as an embedded type so it will be persisted as a serialized object within the person entity.
 
-```
+```java
 @Entity
 public class Person {
   @Id
@@ -194,7 +194,7 @@ public class Person {
 
 The Address type is just a POJO with no persistence annotations:
 
-```
+```java
 public class Address {
   private String street1;
   private String street2;
@@ -207,7 +207,7 @@ public class Address {
 
 In the client, Address is represented as a ValueProxy and referenced by the containing EntityProxy:
 
-```
+```java
 public interface AddressProxy extends ValueProxy {
   public String getStreet1();
   public String getStreet2();
@@ -237,7 +237,7 @@ You define one RequestFactory interface for your application, and it
 consists of methods that return service stubs. Here's an example from
 the Expenses sample app:
 
-```
+```java
 public interface ExpensesRequestFactory extends RequestFactory {
 
   EmployeeRequest employeeRequest();
@@ -251,7 +251,7 @@ public interface ExpensesRequestFactory extends RequestFactory {
 
 The EmployeeRequest service stub looks like this:
 
-```
+```java
 @Service(Employee.class)
 public interface EmployeeRequest extends RequestContext {
 
@@ -285,7 +285,7 @@ com.google.web.bindery.requestfactory.shared.Request. This allows the methods on
 the interface to be invoked asynchronously with Request.fire() similar
 to passing an AsyncCallback object to each service method in GWT-RPC.
 
-```
+```java
 requestFactory.employeeRequest().findEmployee(employeeId).fire(
     new Receiver<EmployeeProxy>() {
       @Override
@@ -465,7 +465,7 @@ are implemented as static methods in a service class, like
 Employee.findAllEmployees() in the example below. Here is more of the Employee
 entity in the Expenses sample project:
 
-```
+```java
 // The Employee domain object
 @Entity public class Employee {
 
@@ -528,7 +528,7 @@ entity in the Expenses sample project:
 What if you don't want to implement persistence code in  an entity itself? To implement the
 required entity locator methods, create an entity locator class that extends `Locator<T,I>`
 
-```
+```java
 public class EmployeeLocator extends Locator<Employee, Long> {
   @Override
   public Employee create(Class<? extends Employee> clazz)
@@ -541,7 +541,7 @@ public class EmployeeLocator extends Locator<Employee, Long> {
 
 Then associate it with the entity in the @ProxyFor annotation:
 
-```
+```java
 @ProxyFor(value = Employee.class, locator = EmployeeLocator.class)
   public interface EmployeeProxy extends EntityProxy {
     ...
@@ -555,7 +555,7 @@ Many persistence frameworks also  make it possible to utilize a generic DAO clas
 
 To use a ServiceLocator, simply implement the ServiceLocator interface. It may be as simple as this:
 
-```
+```java
 public class MyServiceLocator implements ServiceLocator {
   @Override
   public Object getInstance(Class<?> clazz) {
@@ -572,7 +572,7 @@ public class MyServiceLocator implements ServiceLocator {
 
 Then annotate the service interface with the name of the service and locator class:
 
-```
+```java
 @Service(value = EmployeeDao.class, locator = MyServiceLocator.class)
 interface EmployeeRequestContext extends RequestContext
 ```
@@ -585,7 +585,7 @@ Note: RequestFactory caches ServiceLocator and service instances, so make sure b
 
 In order to use RequestFactory, add the following line to your .gwt.xml:
 
-```
+```java
 <inherits name='com.google.web.bindery.requestfactory.RequestFactory' />
 ```
 
@@ -597,7 +597,7 @@ Add the following jars to your `WEB-INF/lib` directory:
 
 Map RequestFactoryServlet in web.xml:
 
-```
+```xml
 <servlet>
     <servlet-name>requestFactoryServlet</servlet-name>
     <servlet-class>com.google.web.bindery.requestfactory.server.RequestFactoryServlet</servlet-class>
@@ -620,7 +620,7 @@ created your entities, EntityProxy types, and RequestFactory with its
 service interfaces, you bring it to life with GWT.create() and
 initialize it with your application's EventBus:
 
-```
+```java
 final EventBus eventBus = new SimpleEventBus();
 requestFactory = GWT.create(ExpensesRequestFactory.class);
 requestFactory.initialize(eventBus);
@@ -635,7 +635,7 @@ persist it using a method defined in the entity's service interface.
 Using the example code above to create a new Employee object and persist
 it to the database, we would write:
 
-```
+```java
 EmployeeRequest request = requestFactory.employeeRequest();
 EmployeeProxy newEmployee = request.create(EmployeeProxy.class);
 newEmployee.setDisplayName(...);
@@ -661,7 +661,7 @@ using() method as shown above. Alternatively, if using a ServiceLocator, the per
 
 Now let's add the code to save the newly created employee to the server:
 
-```
+```java
 createReq.fire(new Receiver<Void>()
 {
   @Override
@@ -679,7 +679,7 @@ those received from the server, must be enabled for changes by calling
 the RequestFactory's edit() method. Any EntityProxies returned from the
 getters of an editable proxy are also editable.
 
-```
+```java
 EmployeeProxy editableEmployee = request.edit(returnedEmployee);
 editableEmployee.setDepartment(newDepartment);
 ...
@@ -699,7 +699,7 @@ Changes to related entities can be persisted in a single request.
 For example, this code from the 
 [DynatableRF sample app](https://github.com/gwtproject/gwt/tree/main/samples/dynatablerf) in GWT trunk creates a new Person and Address at the same time:
 
-```
+```java
 PersonRequest context = requestFactory.personRequest();
 AddressProxy address = context.create(AddressProxy.class);
 PersonProxy person = context.create(PersonProxy.class);
@@ -719,13 +719,13 @@ When querying the server, RequestFactory does not automatically
 populate relations in the object graph. To do this, use the with()
 method on a request and specify the related property name as a String:
 
-```
+```java
 Request<Person> findReq = requestFactory.personRequest().find(personId).with("address");
 ```
 
 It is also necessary to use the with() method to retrieve any properties with types extending ValueProxy. The with() method takes multiple String arguments, so you can specify multiple property names at once. To specify nested properties, use dot notation. Putting it all together, you might have
 
-```
+```java
 Request<Person> findReq = find(personId).with("phone","address.city","address.zip")
 ```
 

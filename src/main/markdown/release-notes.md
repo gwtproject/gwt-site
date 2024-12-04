@@ -302,7 +302,7 @@ by `window.onerror`. This may potentially be a breaking change if there were
 misbehaving scripts on the page. To disable this functionality, set the property
 `gwt.uncaughtexceptionhandler.windowonerror` to `IGNORE`:
 
-```
+```xml
     <set-property name="gwt.uncaughtexceptionhandler.windowonerror" value="IGNORE"/>
 ```
 
@@ -451,7 +451,7 @@ prefered supertype of any JS type, including primitives.
 - Allow `@JsOverlay` on effectively final methods.
 - Split JsInterop annotations into their own JAR when deploying to Maven:
 
-```
+```xml
 <dependency>
   <groupId>com.google.jsinterop</groupId>
   <artifactId>jsinterop-annotations</artifactId>
@@ -1279,12 +1279,12 @@ r10730 for more details.
 *   The following dependencies have been updated to the following
 versions:
 
-    *   Eclipse JDT 3.4.2_r894
-    *   Guava 10.0.1
-    *   HTMLUnit 2.9
-    *   Apache HTTP Client 4.1.2 (for HTMLUnit)
-    *   Apache Commons Lang 2.6 (for HTMLUnit)
-    *   NekoHTML 1.9.15 (for HTMLUnit)
+  *   Eclipse JDT 3.4.2_r894
+  *   Guava 10.0.1
+  *   HTMLUnit 2.9
+  *   Apache HTTP Client 4.1.2 (for HTMLUnit)
+  *   Apache Commons Lang 2.6 (for HTMLUnit)
+  *   NekoHTML 1.9.15 (for HTMLUnit)
 *   json-1.5.jar is now bundled as a part of gwt-dev.jar.
 streamhtmlparser (rebased) has been removed from gwt-dev.jar and has
 been bundled as part of gwt-user.jar and gwt-servlet.jar.
@@ -1808,7 +1808,7 @@ Design](http://code.google.com/p/google-web-toolkit/wiki/LayoutDesign) on the wi
 and [TabLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/TabLayoutPanel.html).
 *   UiBinder now directly supports `LayoutPanel`. For example:
 
-```
+```xml
 <g:LayoutPanel>
   <g:layer left='1em' width='20px'><g:Label>left-width</g:Label></g:Layer>
   <g:layer right='1em' width='20px'><g:Label>right-width</g:Label></g:Layer>
@@ -1910,7 +1910,7 @@ directly from Safari, Firefox, Internet Explorer, and Chrome.
 allows you to chunk your GWT code into multiple fragments for faster
 startup. Imagine having to download a whole movie before being able to
 watch it. Well, that's what you have to do with most Ajax apps these
-days -- download the whole thing before using it. With code splitting,
+days &mdash; download the whole thing before using it. With code splitting,
 you can arrange to load just the minimum script needed to get the
 application running and the user interacting, while the rest of the
 app is downloaded as needed.
@@ -1927,7 +1927,7 @@ in 1.4 to provide automatic spriting of images. ClientBundle
 generalizes this technique, bringing the power of combining and
 optimizing resources into one download to things like text files, CSS,
 and XML. This means fewer network round trips, which in turn can
-decrease application latency -- especially on mobile applications.
+decrease application latency &mdash; especially on mobile applications.
 *   Using HtmlUnit for running test cases based on [GWTTestCase](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html):
 Prior to 2.0, `GWTTestCase` relied on SWT and native code
 versions of actual browsers to run unit tests. As a result, running
@@ -2575,8 +2575,8 @@ This is the Release Candidate for GWT 1.3, the first completely
 open source version of GWT. This version has no new functionality, but
 we did make a lot of changes to get the source code and build scripts
 into presentable shape to prepare for ongoing open source development.
-Although the changes were relatively harmless -- formatting, sorting,
-more documentation, and a new build system -- there's always a small
+Although the changes were relatively harmless &mdash; formatting, sorting,
+more documentation, and a new build system &mdash; there's always a small
 chance of problems, so we plan to call this a Release Candidate until
 we've convinced ourselves it's reliable.
 

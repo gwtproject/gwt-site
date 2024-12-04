@@ -48,7 +48,7 @@ JavaScript method from Java will result in the callee receiving the arguments in
 
 Here is a simple example of how to code a JSNI method that puts up a JavaScript alert dialog:
 
-```
+```java
 public static native void alert(String msg) /*-{
   $wnd.alert(msg);
 }-*/;
@@ -60,7 +60,7 @@ initialized to correctly refer to the host page's window and document.
 
 Here is another example with a problem:
 
-```
+```java
 public static native int badExample() /*-{
   return "Not A Number";
 }-*/;
@@ -80,7 +80,7 @@ as valid JavaScript. But when you run the example code in [development mode](Dev
 it returns an exception. Click on the line in the log window to display the exception in the message
 area below:
 
-```
+```text
 com.google.gwt.dev.shell.HostedModeException: invokeNativeInteger(@com.example.client.GWTObjectNotifyTest::badExample()): JS value of type string, expected int
     at com.google.gwt.dev.shell.JsValueGlue.getIntRange(JsValueGlue.java:343)
     at com.google.gwt.dev.shell.JsValueGlue.get(JsValueGlue.java:179)
@@ -115,7 +115,7 @@ typing, you must use a special syntax.
 Calling Java methods from JavaScript is somewhat similar to calling Java methods from C code in [JNI](http://download.oracle.com/javase/1.5.0/docs/guide/jni/index.html). In particular, JSNI borrows the JNI mangled method signature approach to distinguish among overloaded methods. JavaScript calls into Java methods are of
 the following form:
 
-```
+```text
 [instance-expr.]@class-name::method-name(param-signature)(arguments)
 ```
 
@@ -130,7 +130,7 @@ Calling Java constructors from JavaScript is identical to the above use case, ex
 
 Given the following Java classes:
 
-```
+```java
 package pkg;
 class TopLevel {
   public TopLevel() { ... }
@@ -158,7 +158,7 @@ class is, it only needs a reference to an instance of its immediately-enclosing 
 
 Static and instance fields can be accessed from handwritten JavaScript. Field references are of the form
 
-```
+```text
 [instance-expr.]@class-name::field-name
 ```
 
@@ -166,7 +166,7 @@ Static and instance fields can be accessed from handwritten JavaScript. Field re
 
 Here's an example of accessing static and instance fields from JSNI.
 
-```
+```java
 public class JSNIExample {
 
   String myInstanceField;
@@ -215,7 +215,7 @@ JavaScript directly.
 A way to make this kind of relationship work is to assign the method via JSNI to an external, globally visible JavaScript name that can be referenced by your hand-crafted
 JavaScript code.
 
-```
+```java
 package mypackage;
 
 public MyUtilityClass
@@ -237,7 +237,7 @@ object called `computeLoanInterest`.
 If you want to export an instance method, and correctly use it from JS, then you need to do something like:
 ## Sharing objects between Java source and JavaScript<a id="sharing"></a>
 
-```
+```java
 package mypackage;
 
 public class Account {
@@ -257,7 +257,7 @@ public class Account {
 
 Then you can call it in JS using
 
-```
+```javascript
 $wnd.add(5);
 ```
 

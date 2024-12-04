@@ -853,7 +853,6 @@ Build 1.4.10 - May 29, 2007 - [Release notes](release-notes.html#Release_Notes_1
     <tr class="even">
       <td>Mac OS X 10.4</td>
       <td>[gwt-mac-1.4.10.tar.gz](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/google-web-toolkit/gwt-mac-1.4.10.tar.gz)</td>
-
       <td>22 MB</td>
       <td>8fdaef4ab8b13cfad25063e8987877d9</td>
     </tr>
@@ -861,7 +860,6 @@ Build 1.4.10 - May 29, 2007 - [Release notes](release-notes.html#Release_Notes_1
       <td>Linux (i386 GTK2)*</td>
       <td>[gwt-linux-1.4.10.tar.bz2](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/google-web-toolkit/gwt-linux-1.4.10.tar.bz2)</td>
       <td>32 MB</td>
-
       <td>8672a81eb0f82091ab0ea01e3f92c2c3</td>
     </tr>
   </tbody></table>

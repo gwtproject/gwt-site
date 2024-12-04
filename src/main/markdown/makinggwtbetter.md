@@ -266,7 +266,7 @@ statements should follow, each block separated by a blank line. Next is
 the class or interface declaration. In the Javadoc comments, describe
 what the class or interface does.
 
-```
+```java
 /*
  * Copyright 2006 Google Inc.
  * 
@@ -323,7 +323,7 @@ All methods should be sorted alphabetically. Sorting is optional
 but recommended for fields. For example, the following class excerpt is
 correctly sorted:
 
-```
+```java
 public abstract class Foo {
   // Type declarations.
   public class FooBaz {
@@ -411,14 +411,14 @@ We use 4-space indents after line wraps, including function calls
 and assignments. For example, this is correct (4 spaces after the
 newline):
 
-```
+```java
 Instrument i =
     new Instrument();
 ```
 
 and this is not correct (2 spaces after the newline):
 
-```
+```java
 Instrument i =
   new Instrument();
 ```
@@ -493,7 +493,7 @@ Tests for Java classes should be placed in a parallel source tree
 under `test` and the test class name should be suffixed with
 `Test`. For example:
 
-```
+```text
 src/com/google/gwt/core/client/EntryPoint.java
 test/com/google/gwt/core/client/EntryPointTest.java
 ```

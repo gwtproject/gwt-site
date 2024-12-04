@@ -51,7 +51,7 @@ In this tutorial, you are going to take the functionality in the refreshWatchLis
 
 The current client-side implementation:
 
-```
+```java
   /**
    * Generate random stock prices.
    */
@@ -70,7 +70,6 @@ The current client-side implementation:
 
     updateTable(prices);
   }
-
 ```
 
 To create the service, you will:
@@ -93,7 +92,7 @@ In GWT, an RPC service is defined by an interface that extends the GWT [RemoteSe
     *  Eclipse creates stub code for the StockPriceService interface.
 3.  Replace the stub with following code.
 
-```
+```java
 package com.google.gwt.sample.stockwatcher.client;
 
 import com.google.gwt.user.client.rpc.RemoteService;
@@ -135,6 +134,7 @@ The service implementation runs on the server as Java bytecode; it's not transla
     *  Eclipse creates the package `com.google.gwt.sample.stockwatcher.server`
     *  Eclipse creates a stub StockPriceServiceImpl class.
 
+        ```java
         package com.google.gwt.sample.stockwatcher.server;
 
         import com.google.gwt.sample.stockwatcher.client.StockPrice;
@@ -148,71 +148,76 @@ The service implementation runs on the server as Java bytecode; it's not transla
             return null;
           }
         }
+        ```
 
 ### Write the server-side implementation
 
 Replace the client-side implementation that returns random stock prices.
 
 1.  Create instance variables to initialize the price and change data.
-
-        private static final double MAX_PRICE = 100.0; // $100.00
-        private static final double MAX_PRICE_CHANGE = 0.02; // +/- 2%
+    ```java
+    private static final double MAX_PRICE = 100.0; // $100.00
+    private static final double MAX_PRICE_CHANGE = 0.02; // +/- 2%
+    ```
 
 2.  Replace the TODO with the following code. Return prices rather than null.
+    ```java
+    public StockPrice[] getPrices(String[] symbols) {
+      Random rnd = new Random();
 
-        public StockPrice[] getPrices(String[] symbols) {
-          Random rnd = new Random();
+      StockPrice[] prices = new StockPrice[symbols.length];
+      for (int i=0; i<symbols.length; i++) {
+        double price = rnd.nextDouble() * MAX_PRICE;
+        double change = price * MAX_PRICE_CHANGE * (rnd.nextDouble() * 2f - 1f);
 
-          StockPrice[] prices = new StockPrice[symbols.length];
-          for (int i=0; i<symbols.length; i++) {
-            double price = rnd.nextDouble() * MAX_PRICE;
-            double change = price * MAX_PRICE_CHANGE * (rnd.nextDouble() * 2f - 1f);
+        prices[i] = new StockPrice(symbols[i], price, change);
+      }
 
-            prices[i] = new StockPrice(symbols[i], price, change);
-          }
-
-          return prices;
-        }
+      return prices;
+    }
+    ```
 
     Eclipse flags Random and suggests you include the import declaration.
 
 3.  Include the import declaration from `java.util`, not from `com.google.gwt.user.client`.
-
-        import java.util.Random;
+    ```java
+    import java.util.Random;
+    ```
 
 **Implementation Note:**
      Remember the service implementation runs on the server as Java bytecode, so you can use any Java class or library without worrying about whether it's translatable to JavaScript. In this case, you can use the Random class from the Java runtime library (java.util.Random) instead of the emulated GWT version (com.google.gwt.user.client.Random).
 
 4.  This listing shows the completed StockPriceServiceImpl class.
+    ```java
+    package com.google.gwt.sample.stockwatcher.server;
 
-        package com.google.gwt.sample.stockwatcher.server;
+    import com.google.gwt.sample.stockwatcher.client.StockPrice;
+    import com.google.gwt.sample.stockwatcher.client.StockPriceService;
+    import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-        import com.google.gwt.sample.stockwatcher.client.StockPrice;
-        import com.google.gwt.sample.stockwatcher.client.StockPriceService;
-        import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+    import java.util.Random;
 
-        import java.util.Random;
+    public class StockPriceServiceImpl extends RemoteServiceServlet implements StockPriceService {
 
-        public class StockPriceServiceImpl extends RemoteServiceServlet implements StockPriceService {
+      private static final double MAX_PRICE = 100.0; // $100.00
+      private static final double MAX_PRICE_CHANGE = 0.02; // +/- 2%
 
-          private static final double MAX_PRICE = 100.0; // $100.00
-          private static final double MAX_PRICE_CHANGE = 0.02; // +/- 2%
+      public StockPrice[] getPrices(String[] symbols) {
+        Random rnd = new Random();
 
-          public StockPrice[] getPrices(String[] symbols) {
-            Random rnd = new Random();
+        StockPrice[] prices = new StockPrice[symbols.length];
+        for (int i=0; i<symbols.length; i++) {
+          double price = rnd.nextDouble() * MAX_PRICE;
+          double change = price * MAX_PRICE_CHANGE * (rnd.nextDouble() * 2f - 1f);
 
-            StockPrice[] prices = new StockPrice[symbols.length];
-            for (int i=0; i<symbols.length; i++) {
-              double price = rnd.nextDouble() * MAX_PRICE;
-              double change = price * MAX_PRICE_CHANGE * (rnd.nextDouble() * 2f - 1f);
-
-              prices[i] = new StockPrice(symbols[i], price, change);
-            }
-
-            return prices;
-          }
-
+          prices[i] = new StockPrice(symbols[i], price, change);
         }
+
+        return prices;
+      }
+
+    }
+    ```
 
 ### Include the server-side code in the GWT module
 
@@ -233,7 +238,8 @@ Because you've mapped the StockPriceService to "stockPrices" and the module rena
 
 1.  Edit the web application deployment descriptor (StockWatcher/war/WEB-INF/web.xml).
     *  Since the greetServlet is no longer needed, its definition can be removed.
-        
+
+        ```xml
         <?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE web-app
         PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
@@ -258,6 +264,7 @@ Because you've mapped the StockPriceService to "stockPrices" and the module rena
           </servlet-mapping>
         
         </web-app>
+        ```
 
 ##  Invoking the service from the client <a id="invoke"></a>
 
@@ -274,7 +281,7 @@ To add an AsyncCallback parameter to all of our service methods, you must define
 1.  In the client subpackage, create an interface and name it StockPriceServiceAsync.
 2.  Replace the stub with following code.
 
-```
+```java
 package com.google.gwt.sample.stockwatcher.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -303,8 +310,10 @@ The AsyncCallback object contains two methods, one of which is called depending 
     
     In the StockWatcher class, create an instance of the service proxy class by calling GWT.create(Class).
 
-        private ArrayList<String> stocks = new ArrayList<String>();
-        private StockPriceServiceAsync stockPriceSvc = GWT.create(StockPriceService.class);
+    ```java
+    private ArrayList<String> stocks = new ArrayList<String>();
+    private StockPriceServiceAsync stockPriceSvc = GWT.create(StockPriceService.class);
+    ```
 
     Eclipse flags GWT.
     
@@ -312,35 +321,37 @@ The AsyncCallback object contains two methods, one of which is called depending 
     
     Replace the existing refreshWatchList method with the following code.
 
-        private void refreshWatchList() {
-          // Initialize the service proxy.
-          if (stockPriceSvc == null) {
-            stockPriceSvc = GWT.create(StockPriceService.class);
-          }
+    ```java
+    private void refreshWatchList() {
+      // Initialize the service proxy.
+      if (stockPriceSvc == null) {
+        stockPriceSvc = GWT.create(StockPriceService.class);
+      }
 
-          // Set up the callback object.
-          AsyncCallback<StockPrice[]> callback = new AsyncCallback<StockPrice[]>() {
-            public void onFailure(Throwable caught) {
-              // TODO: Do something with errors.
-            }
-
-            public void onSuccess(StockPrice[] result) {
-              updateTable(result);
-            }
-          };
-
-          // Make the call to the stock price service.
-          stockPriceSvc.getPrices(stocks.toArray(new String[0]), callback);
+      // Set up the callback object.
+      AsyncCallback<StockPrice[]> callback = new AsyncCallback<StockPrice[]>() {
+        public void onFailure(Throwable caught) {
+          // TODO: Do something with errors.
         }
 
+        public void onSuccess(StockPrice[] result) {
+          updateTable(result);
+        }
+      };
+
+      // Make the call to the stock price service.
+      stockPriceSvc.getPrices(stocks.toArray(new String[0]), callback);
+    }
+    ```
+    
     Eclipse flags AsyncCallback.
     
 3. Include the import declarations.
 
-```
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.rpc.AsyncCallback;
-```
+    ```java
+    import com.google.gwt.core.client.GWT;
+    import com.google.gwt.user.client.rpc.AsyncCallback;
+    ```
 
 ### Test the Remote Procedure Call
 
@@ -349,7 +360,7 @@ At this point, you've created a service and pointed to it in the module XML file
 1.  Launch StockWatcher in development mode using the Eclipse debugger.
 2.  Examine the error log in the Development Shell window.
 
-```
+```text
 [ERROR] Type 'com.google.gwt.sample.stockwatcher.client.StockPrice' was not serializable
      and has no concrete serializable subtypes
     
@@ -386,7 +397,7 @@ Based on the requirements for serialization, what do you need to do to make the 
 Because all its instance fields are primitive types, all you need to do in this
 case is implement the Serializable or IsSerializable interface.
 
-```
+```java
 package com.google.gwt.sample.stockwatcher.client;
 import java.io.Serializable;
 
@@ -439,27 +450,27 @@ To learn how to handle errors in RPC, you will throw an error when the user adds
     *  Eclipse creates a stub DelistedException class.
 7.  Replace the stub with the following code.
 
-```
-package com.google.gwt.sample.stockwatcher.client;
-
-import java.io.Serializable;
-
-public class DelistedException extends Exception implements Serializable {
-
-  private String symbol;
-
-  public DelistedException() {
-  }
-
-  public DelistedException(String symbol) {
-    this.symbol = symbol;
-  }
-
-  public String getSymbol() {
-    return this.symbol;
-  }
-}
-```
+    ```java
+    package com.google.gwt.sample.stockwatcher.client;
+    
+    import java.io.Serializable;
+    
+    public class DelistedException extends Exception implements Serializable {
+    
+      private String symbol;
+    
+      public DelistedException() {
+      }
+    
+      public DelistedException(String symbol) {
+        this.symbol = symbol;
+      }
+    
+      public String getSymbol() {
+        return this.symbol;
+      }
+    }
+    ```
 
 ##### Update the stock price service interface: StockPriceService
 
@@ -467,7 +478,7 @@ public class DelistedException extends Exception implements Serializable {
     
     In StockPriceService.java, make the changes highlighted below.
 
-```
+```java
 package com.google.gwt.sample.stockwatcher.client;
 
 import com.google.gwt.user.client.rpc.RemoteService;
@@ -491,7 +502,7 @@ You need to make two changes to the service implementation (StockPriceServiceImp
     *  For the sake of this example, keep it simple and only throw the exception when the stock symbol ERR is added to the watch list.
 3.  This listing shows the completed StockPriceServiceImpl class.
 
-```
+```java
 import com.google.gwt.sample.stockwatcher.client.DelistedException;
     
 ...
@@ -524,31 +535,35 @@ In order to display the error, you will need a new UI component. First think a m
 
 So, to display any messages about failing to retrieve stock data, you'll implement a Label widget.
 
-1.  Define a style for the error message so that it will attract the user's attention.
-    
-    Serializing StockPrice
+1.  Define a style for the error message so that it will attract the user's attention. 
 
+    Serializing StockPrice
 rule that applies to any element with a class attribute of errorMessage.
 
-        .negativeChange {
-          color: red;
-        }
-
-        .errorMessage {
-          color: red;
-        }
+    ```css
+    .negativeChange {
+      color: red;
+    }
+    
+    .errorMessage {
+      color: red;
+    }
+    ```
 
 2.  To hold the text of the error message, add a Label widget.
 
     In StockWatcher.java, add the following instance field.
 
-        private StockPriceServiceAsync stockPriceSvc = GWT.create(StockPriceService.class);
-        private Label errorMsgLabel = new Label();
+    ```java
+    private StockPriceServiceAsync stockPriceSvc = GWT.create(StockPriceService.class);
+    private Label errorMsgLabel = new Label();
+    ```
 
 3.  Initialize the errorMsgLabel when StockWatcher launches.
     *  In the onModuleLoad method, add a secondary class attribute to errorMsgLabel and do not display it when StockWatcher loads.
     *  Add the error message to the Main panel above the stocksFlexTable.
 
+        ```java
         // Assemble Add Stock panel.
         addPanel.add(newSymbolTextBox);
         addPanel.add(addButton);
@@ -562,6 +577,7 @@ rule that applies to any element with a class attribute of errorMessage.
         mainPanel.add(stocksFlexTable);
         mainPanel.add(addPanel);
         mainPanel.add(lastUpdatedLabel);
+        ```
 
 #### Handling the error
 
@@ -572,6 +588,7 @@ You will also want to hide the error message if the error is corrected (for exam
 1.  Specify the action to take if the callback fails.
     *  In StockWatcher.java, in the refreshWatchList method, fill in the onFailure method as follows.
 
+        ```java
         public void onFailure(Throwable caught) {
           // If the stock code is in the list of delisted codes, display an error message.
           String details = caught.getMessage();
@@ -582,10 +599,12 @@ You will also want to hide the error message if the error is corrected (for exam
           errorMsgLabel.setText("Error: " + details);
           errorMsgLabel.setVisible(true);
         }
+        ```
 
 2.  If the error is corrected, hide the error message widget.
     *  In the updateTable(StockPrice[] prices) method, clear any errors.
 
+        ```java
         private void updateTable(StockPrice[] prices) {
           for (int i=0; i < prices.length; i++) {
             updateTable(prices[i]);
@@ -598,6 +617,7 @@ You will also want to hide the error message if the error is corrected (for exam
           // Clear any errors.
           errorMsgLabel.setVisible(false);
         }
+        ```
 
 ### Test Exception Handling in RPC
 

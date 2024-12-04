@@ -46,7 +46,7 @@ but this Group is intended for discussion of everything under the Sun
 in the world of GWT. That means we also welcome announcements and
 discussion of products, libraries, publications, and other interesting
 GWT-related news. We even welcome (polite!) discussion of
-articles and ideas critical of GWT -- after all, we can't improve if we
+articles and ideas critical of GWT &mdash; after all, we can't improve if we
 don't listen. There are no restrictions on the subject matter,
 and we don't exclude commercial products from our discussion, if users
 are interested in talking about them. </p>
@@ -60,7 +60,7 @@ and permanently banned from the list.
 
     The primary language for this group is English, however if you have trouble communicating your ideas or the issues you're facing in English, feel free to post in your native language. The members of this community come from all corners of the globe, so it's very likely that a fellow member speaks your language and will be able to get back to you with some helpful information. That said, please do try to post in English first to get help. You can also include a translate version of the post content in your own native language if you feel that you weren't able to communicate your problem in English. If that fails, feel free to post in your native language.</b></b>
 
-As you can see our rules are simple, and the most important rule is friendliness. Remember: disrespect and rudeness &mdash; under **any** circumstances -- is not welcome in our community. We don't have a formal policy on dealing with troublemakers, and we hope we never need to come up with one. That said, though, we do pledge to do our best to be fair, and we will always try to warn someone before banning him or her.
+As you can see our rules are simple, and the most important rule is friendliness. Remember: disrespect and rudeness &mdash; under **any** circumstances &mdash; is not welcome in our community. We don't have a formal policy on dealing with troublemakers, and we hope we never need to come up with one. That said, though, we do pledge to do our best to be fair, and we will always try to warn someone before banning him or her.
 
 ## Contacting the Moderators
 

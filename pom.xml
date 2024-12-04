@@ -131,11 +131,18 @@
     </dependency>
 
     <dependency>
-      <groupId>org.pegdown</groupId>
-      <artifactId>pegdown</artifactId>
-      <version>1.4.2</version>
+      <groupId>org.commonmark</groupId>
+      <artifactId>commonmark</artifactId>
+      <!-- last version supporting Java 8 -->
+      <version>0.21.0</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.commonmark</groupId>
+      <artifactId>commonmark-ext-gfm-tables</artifactId>
+      <!-- last version supporting Java 8 -->
+      <version>0.21.0</version>
+    </dependency>
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
