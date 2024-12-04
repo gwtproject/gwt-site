@@ -38,14 +38,13 @@ The resources in a deployed GWT application can be roughly categorized into reso
 
 To use [ClientBundle](/javadoc/latest/index.html?com/google/gwt/resources/client/ClientBundle.html), add an `inherits` tag to your `gwt.xml` file:
 
-```
+```xml
 <inherits name="com.google.gwt.resources.Resources" />
 ```
 
 If you write this interface:
 
-```
-
+```java
 public interface MyResources extends ClientBundle {
   public static final MyResources INSTANCE =  GWT.create(MyResources.class);
 
@@ -75,7 +74,7 @@ You can then say:
 
 Suppose you defined a resource:
 
-```
+```java
 @Source("default.txt")
 public TextResource defaultText();
 ```
@@ -124,7 +123,7 @@ These resource types are valid return types for methods defined in a ClientBundl
 
 A [DataResource](/javadoc/latest/index.html?com/google/gwt/resources/client/DataResource.html) is the simplest of the resource types, offering a URL by which the contents of a file can be retrieved at runtime.  The main optimization offered is to automatically rename files based on their contents in order to make the resulting URL strongly-cacheable by the browser.  Very small files may be converted into `data:` URLs on those browsers that support them.
 
-```
+```java
 interface Resources extends ClientBundle {
   Resources INSTANCE = GWT.create(Resources.class);
 
@@ -142,7 +141,7 @@ Resources that are not appropriate for being inlined into the compiled JavaScrip
 
 The related resource types [TextResource](/javadoc/latest/index.html?com/google/gwt/resources/client/TextResource.html) and [ExternalTextResource](/javadoc/latest/index.html?com/google/gwt/resources/client/ExternalTextResource.html) provide access to static text content.  The main difference between these two types is that the former interns the text into the compiled JavaScript, while the latter bundles related text resources into a single file, which is accessed asynchronously.
 
-```
+```java
 interface Resources extends ClientBundle {
   Resources INSTANCE = GWT.create(Resources.class);
 
@@ -189,7 +188,7 @@ This section describes how [ImageResource](/javadoc/latest/index.html?com/google
 For each accessor method, add an @Source annotation with the path of the new image you want to add to your program.
 The ClientBundle generator combines all of the images defined in your interface into a single, optimized image.
 
-```
+```java
 interface Resources extends ClientBundle {
   @Source("logo.png")
   ImageResource logo();
@@ -204,7 +203,7 @@ interface Resources extends ClientBundle {
 
 For example, the code:
 
-```
+```java
 Resources resources = GWT.create(Resources.class);
 Image img = new Image(resources.logo());
 ```
@@ -237,7 +236,7 @@ Only minimal changes are required to convert existing code to use `ImageResource
 
 The [GwtCreateResource](/javadoc/latest/index.html?com/google/gwt/resources/client/GwtCreateResource.html) is a bridge type between `ClientBundle` and any other (resource) type that is default-instantiable. The instance of the `GwtCreateResource` acts as a factory for some other type.
 
-```
+```java
 interface Resources extends ClientBundle {
   Resources INSTANCE = GWT.create(Resources.class);
 
@@ -251,7 +250,7 @@ ReturnType obj = Resources.INSTANCE.factory().create();
 
 While the above is equivalent to
 
-```
+```java
 ReturnType obj = GWT.<ReturnType> create(SomeClass.class);
 ```
 
@@ -332,7 +331,7 @@ See also the [CssResourceCookbook](#CssResourceCookbook) and [StyleInjector](/ja
 
 #### Constants<a id="Constants"></a>
 
-```
+```css
 @def small 1px;
 @def black #000;
 border: small solid black;
@@ -344,7 +343,7 @@ border: small solid black;
 *   Any legal property value or expression may be used with `@def`
 *   `@def` rules that define a single numeric value may be accessed in a manner similar to obfuscated class names by defining an accessor method on the CssResource type that returns a primitive numeric value.
 
-```
+```java
 interface MyResources extends CssResource {
   int small();
 }
@@ -354,7 +353,7 @@ interface MyResources extends CssResource {
 
 *   @def` rules can be accessed as a String as well.  You can retrieve the two definitions above with:
 
-```
+```java
 interface MyResources extends CssResource {
   String small();
   String black();
@@ -365,12 +364,14 @@ interface MyResources extends CssResource {
 *   Calling `black()` returns "#000"
 *   The Generator will not allow you to declare an `@def` rule with the same name as a class, unless you annotate method to retrieve the class with the `@ClassName` annotation.
 
-```
+```css
 @def myIdent 10px;
 .myIdent {
   ...
 }
+```
 
+```java
 interface MyResources extends CssResource {
   String myIdent();
 
@@ -384,7 +385,7 @@ interface MyResources extends CssResource {
 
 #### Runtime substitution<a id="Runtime_substitution"></a>
 
-```
+```css
 @eval userBackground com.module.UserPreferences.getUserBackground();
 div {
   background: userBackground;
@@ -398,8 +399,7 @@ div {
 
 #### Value function<a id="Value_function"></a>
 
-```
-
+```css
 .myDiv {
   offset-left: value('imageResource.getWidth', 'px');
 }
@@ -408,7 +408,7 @@ div {
 *   The `value()` function takes a sequence of dot-separated identifiers and an optional suffix.  The identifiers are interpreted as zero-arg method invocations, using the interface passed to GWT.create() as the root namespace.  By only allowing zero-arg methods, there's no need to attempt to perform type checking in the Generator.  The only validation necessary is to ensure that the sequence of methods exists.  There may be arbitrarily many identifiers in the chain.
 *   The `value()` function may be combined with `@def`
 
-```
+```css
 @def SPRITE_WIDTH value('imageResource.getWidth', 'px')
 
 .selector {
@@ -420,7 +420,7 @@ div {
 
 Some user agents make use of property values that do not conform to the CSS grammar. The `literal()` function exists to allow these non-standard property values to be used.
 
-```
+```css
 div-with-literal {
   top: literal("expression(document.compatMode==\"CSS1Compat\" ? documentElement.scrollTop : document.body.scrollTop \\ 2)");
 }
@@ -430,7 +430,7 @@ Note that it is necessary to escape the backslash (`\`) and double-quote (`"`) c
 
 #### Conditional CSS<a id="Conditional_CSS"></a>
 
-```
+```css
 /* Runtime evaluation in a static context */
 @if (com.module.Foo.staticBooleanFunction()) {
   ... css rules ...
@@ -463,7 +463,7 @@ Note that it is necessary to escape the backslash (`\`) and double-quote (`"`) c
 
 #### Image Sprites<a id="Image_Sprites"></a>
 
-```
+```css
 
 @sprite .mySpriteClass {gwt-image: "imageAccessor"; other: property;} => generates =>
 
@@ -476,7 +476,7 @@ Note that it is necessary to escape the backslash (`\`) and double-quote (`"`) c
   }
 ```
 
-```
+```java
 interface MyCssResource extends CssResource {
   String mySpriteClass();
 }
@@ -502,7 +502,7 @@ class MyResources extends ClientBundle {
 
 #### References to Data Resources<a id="References_to_Data_Resources"></a>
 
-```
+```css
 /* @url <constant name> <DataResource method name> */
 @url myCursorUrl fancyCursorResource;
 
@@ -511,7 +511,7 @@ class MyResources extends ClientBundle {
 }
 ```
 
-```
+```java
 interface MyResources extends ClientBundle {
   @Source("myCursor.cur")
   DataResource fancyCursorResource();
@@ -537,7 +537,7 @@ interface MyResources extends ClientBundle {
     *   When the cursor property has an `resize` value, it will be flipped: `ne-resize` becomes `nw-resize`
 *   Sections of CSS can be exempted from automatic flipping by enclosing it in a `@noflip` block:
 
-```
+```css
 @noflip {
   .selector {
     left: 10;
@@ -548,36 +548,36 @@ interface MyResources extends ClientBundle {
 *   A `background` property value that uses pixel-based offsets, such as `background-position: 4px 10px;` will not be transformed automatically.
     *   The four-valued CSS3 `background-position` property will be automatically flipped by the RTL support
 
-```
-background-position: left 4px top 10px;
-```
+         ```css
+         background-position: left 4px top 10px;
+         ```
 
     *   For CSS2 browsers, it will be necessary to use an `@sprite` rule:
 
-```
-@sprite .bgImage {
+    ```css
+    @sprite .bgImage {
         gwt-image: 'background-image';
         position: absolute;
         left: 4px;
         top: 10px;
     }
-```
+    ```
 
 *   `ImageResources` can be automatically flipped in RTL contexts via the use of the `@ImageOptions` annotation:
 
-```
+```java
 @Source("icon128.png")
 @ImageOptions(flipRtl = true)
 ImageResource logo();
 ```
 
-*   [Current auto-RTL test cases](https://gwt.googlesource.com/gwt/+/master/user/test/com/google/gwt/resources/rg)
+*   [Current auto-RTL test cases](https://github.com/gwtproject/gwt/blob/main/user/test/com/google/gwt/resources/rg)
 
 #### Selector obfuscation<a id="Selector_obfuscation"></a>
 
-```
-
 java:
+
+```java
     class Resources {
       MyCSSResource myCSSResource();
     }
@@ -587,8 +587,11 @@ java:
       String hookClass();
     }
     myWidget.addStyleName(resource.mySpriteClass());
+```
 
 css:
+
+```css
     @sprite mySpriteClass mySpriteImage;
     .someOtherClass {
       /* ... */
@@ -609,7 +612,7 @@ css:
 
 Basic minification of the CSS input results in the minimum number of bytes required to retain the original structure of the input.  In general, this means that comments, unnecessary whitespace, and empty rules are removed.
 
-```
+```css
 .div {
   /* This is the default background color */
   background: blue;
@@ -619,8 +622,7 @@ Basic minification of the CSS input results in the minimum number of bytes requi
 
 would be transformed into
 
-```
-
+```css
 .div{background:blue;}
 ```
 
@@ -628,15 +630,14 @@ would be transformed into
 
 Rules with identical selectors can be merged together.
 
-```
+```css
 .div {prop: value;}
 .div {foo: bar;}
 ```
 
 becomes
 
-```
-
+```css
 .div {prop:value;foo:bar;}
 ```
 
@@ -644,7 +645,7 @@ However, it is necessary that the original semantic ordering of the properties w
 
 Thus
 
-```
+```css
 .a {background: green;}
 .b {border: thin solid blue;}
 .a {border-top: thin solid red;}
@@ -654,7 +655,7 @@ cannot be merged because an element whose CSS class matches both `.a` and `.b` w
 
 When working with `@if` statements, it is preferable to work with the form that operates on deferred-binding properties because the CSS compiler can evaluate these rules statically, before the merge optimizations.  Consider the following:
 
-```
+```css
 .a {
   background: red;
 }
@@ -676,14 +677,14 @@ In the safari permutation, the rule becomes `.a{background:red;\-webkit-border-r
 
 Rules with identical properties can be merged together.
 
-```
+```css
 .a {background: blue;}
 .b {background: blue;}
 ```
 
 can be transformed into
 
-```
+```css
 .a,.b{background:blue;}
 ```
 
@@ -701,7 +702,7 @@ Promotion of rules follows the previously-established rule of not promoting a ru
 
 In the normal case, any class selectors that do not match String accessor functions is an error.  This behavior can be disabled by adding a `@NotStrict` annotation to the CSS accessor method.  Enabling `@NotStrict` behavior is only recommended for applications that are transitioning from external CSS files to `CssResource`.
 
-```
+```java
 interface MyCssResource extends CssResource {
   String foo();
 }
@@ -713,7 +714,7 @@ interface Resources {
 }
 ```
 
-```
+```css
 /* This is ok */
 .foo {}
 
@@ -725,7 +726,7 @@ interface Resources {
 
 Scoping of obfuscated class names is defined by the return type of the `CssResource` accessor method in the resource bundle.  Each distinct return type will return a wholly separate collection of values for String accessor methods.
 
-```
+```java
 interface A extends CssResource {
   String foo();
 }
@@ -757,7 +758,7 @@ It will be true that a().foo() != b().foo() != c().foo() != d().foo().  However,
 
 In the case of "stateful" CSS classes like `focused` or `enabled`, it is convenient to allow for certain String accessor functions to return the same value, regardless of the `CssResource` type returned from the accessor method.
 
-```
+```java
 @Shared
 interface FocusCss extends CssResource {
   String focused();
@@ -792,7 +793,7 @@ The short version is that if distinct CSS types need to share obfuscated class n
 
 The Java type system can be somewhat ambiguous when it comes to multiple inheritance of interfaces that define methods with identical signatures, although there exist a number of cases where it is necessary to refer to multiple, unrelated `CssResource` types.  Consider the case of a Tree that contains Checkboxes.
 
-```
+```java
 @ImportedWithPrefix("tree")
 interface TreeCss extends CssResource {
   String widget();
@@ -813,7 +814,7 @@ interface Resources extends ClientBundle {
 }
 ```
 
-```
+```css
 /* Now we can write a descendant selector using the prefixes defined on the CssResource types */
 .tree-widget .checkbox-widget {
   color: red;
@@ -832,7 +833,7 @@ The case of shared scopes could be handled solely with importing scopes, however
 
 This is a use-case that is currently impossible to style correctly in GWT.
 
-```
+```java
 // Assume this interface is provided by the UI library
 interface StackPanelCss extends CssResource {
   String widget();
@@ -862,7 +863,7 @@ interface Resources {
 
 The file `stackPanel.css` defines the basic structure of any given stackPanel:
 
-```
+```css
 .widget .title {}
 .widget .content {}
 /* Other stuff to make a StackPanel work */
@@ -870,7 +871,7 @@ The file `stackPanel.css` defines the basic structure of any given stackPanel:
 
 The `outer()` method can continue to use the base `stackPanel.css` file, because the accessor methods defined in `StackPanelCss` are mapped into the default (no-prefix) namespace.  The inner StackPanel's style members are also available, but in the `inner` prefix.  Here's what `outer.css` might contain:
 
-```
+```css
 .widget {color: red;}
 
 .inner-widget {
@@ -883,7 +884,7 @@ External and legacy scopes<a id="External_and_legacy_scopes"></a>
 
 In many cases, newly-developed CSS will need to be combined with external or legacy CSS. The `@external` at-rule can be used to suppress selector obfuscation while still allowing programmatic access to the selector name.
 
-```
+```java
 interface MyCssResource extends CssResource {
   String obfuscated();
   String legacySelectorA();
@@ -895,7 +896,7 @@ interface Resource extends ClientBundle {
 }
 ```
 
-```
+```css
 @external legacySelectorA, legacySelectorB;
 .obfuscated .legacySelectorA { .... }
 .obfuscated .legacySelectorB { .... }
@@ -907,7 +908,7 @@ In the above example, the `.obfuscated` class selector will be obfuscated, and t
 
 A utility is included in the GWT distribution which will analyze a `CssResource`-compatible CSS file and create a corresponding Java interface for accessing the classnames used in the file.
 
-```
+```shell
 java -cp gwt-dev.jar:gwt-user.jar com.google.gwt.resources.css.InterfaceGenerator \
   -standalone -typeName some.package.MyCssResource -css input.css
 ```
@@ -920,7 +921,7 @@ This section contains examples showing how to use [CssResource](#CssResource).
 
 ### Browser-specific css<a id="Browser-specific_css"></a>
 
-```
+```css
 .foo {
   background: green;
 }
@@ -946,7 +947,7 @@ This section contains examples showing how to use [CssResource](#CssResource).
 
 `CssResource` will use method names as CSS class names to obfuscate at runtime.
 
-```
+```java
 interface MyCss extends CssResource {
   String className();
 }
@@ -959,7 +960,7 @@ interface MyResources extends ClientBundle {
 
 All instances of a selector with `.className` will be replaced with an obfuscated symbol when the CSS is compiled.  To use the obfuscated name:
 
-```
+```java
 MyResources resources = GWT.create(MyResources.class);
 Label l = new Label("Some text");
 l.addStyleName(resources.css().className());
@@ -967,7 +968,7 @@ l.addStyleName(resources.css().className());
 
 If you have class names in your css file that are not legal Java identifiers, you can use the `@ClassName` annotation on the accessor method:
 
-```
+```java
 interface MyCss extends CssResource {
   @ClassName("some-other-name")
   String someOtherName();
@@ -979,7 +980,7 @@ interface MyCss extends CssResource {
 
 `CssResource` reuses the `ImageResource` bundling techniques and applies them to CSS background images.  This is generally known as "spriting" and a special `@sprite` rule is used in `CssResource`.
 
-```
+```java
 interface MyResources extends ClientBundle {
   @Source("image.png")
   ImageResource image();
@@ -991,7 +992,7 @@ interface MyResources extends ClientBundle {
 
 In `my.css`, sprites are defined using the `@sprite` keyword, followed by an arbitrary CSS selector, and the rule block must include a `gwt-image` property.  The `gwt-image` property should name the `ImageResource` accessor function.
 
-```
+```java
 @sprite .myImage {
   gwt-image: 'image';
 }
@@ -1003,7 +1004,7 @@ The elements that match the given selection will display the named image and hav
 
 If the `ImageResource` is decorated with an `@ImageOptions` annotation, the source image can be tiled along the X- or Y-axis.  This allows you to use 1-pixel wide (or tall) images to define borders, while still taking advantage of the image bundling optimizations afforded by `ImageResource`.
 
-```
+```java
 interface MyResources extends ClientBundle {
   @ImageOptions(repeatStyle = RepeatStyle.Horizontal)
   @Source("image.png")
@@ -1017,7 +1018,7 @@ The elements that match the `@sprite`'s selector will only have their height or 
 
 In order to make the content area of a 9-box have the correct size, the height and widths of the border images must be taken into account.  Instead of hard-coding the image widths into your CSS file, you can use the `value()` CSS function to insert the height or width from the associated `ImageResource`.
 
-```
+```java
 public interface Resources extends ClientBundle {
     Resources INSTANCE = GWT.create(Resources.class);
 
@@ -1054,7 +1055,7 @@ public interface Resources extends ClientBundle {
   }
 ```
 
-```
+```css
 .contentArea {
   padding: value('topBorder.getHeight', 'px') value('rightBorder.getWidth', 'px')
       value('bottomBorder.getHeight', 'px') value('leftBorder.getWidth', 'px');
@@ -1121,7 +1122,7 @@ public interface Resources extends ClientBundle {
 }
 ```
 
-```
+```html
 <div class="contentArea">
 
 <div class="contentAreaTopLeftBorder"></div>

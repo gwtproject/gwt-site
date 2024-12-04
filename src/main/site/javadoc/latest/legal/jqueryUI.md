@@ -1,7 +1,8 @@
 ## jQuery UI v1.13.2
 
 ### jQuery UI License
-```
+
+```text
 Copyright jQuery Foundation and other contributors, https://jquery.org/
 
 This software consists of voluntary contributions made by many

@@ -3,9 +3,9 @@ Versions
 
 GWT is licensed under the [Apache 2.0 open source license](terms.html) (since version 1.3).
 
-### Version 2.11.0
+### Version 2.12.1
 
-Build 2.11.0 - January 9, 2022 - [Release notes](release-notes.html#Release_Notes_2_11_0)
+Build 2.12.1 - November 12, 2024 - [Release notes](release-notes.html#Release_Notes_2_12_1)
 
   <table class="downloads" style="width:500px">
     <tbody>
@@ -17,14 +17,58 @@ Build 2.11.0 - January 9, 2022 - [Release notes](release-notes.html#Release_Note
       </tr>
       <tr>
         <td>Windows, Mac OS X, and Linux</td>
-        <td>[gwt-2.11.0.zip](https://github.com/gwtproject/gwt/releases/download/2.10.1/gwt-2.11.0.zip)</td>
+        <td>[gwt-2.12.1.zip](https://github.com/gwtproject/gwt/releases/download/2.12.1/gwt-2.12.1.zip)</td>
+        <td>848b99e0b5dd8d64c678c2f2174a07e18</td>
+        <td>109 MB</td>
+      </tr>
+    </tbody>
+  </table>
+
+### Version 2.12.0
+
+Build 2.12.0 - October 29, 2024 - [Release notes](release-notes.html#Release_Notes_2_12_0)
+
+  <table class="downloads" style="width:500px">
+    <tbody>
+      <tr>
+        <th>Platform</th>
+        <th>Package</th>
+        <th>Size</th>
+        <th>SHA1 Sum</th>
+      </tr>
+      <tr>
+        <td>Windows, Mac OS X, and Linux</td>
+        <td>[gwt-2.12.0.zip](https://github.com/gwtproject/gwt/releases/download/2.12.0/gwt-2.12.0.zip)</td>
+        <td>82310d7e612b21c052e05514e82a56196687bc36</td>
+        <td>109 MB</td>
+      </tr>
+    </tbody>
+  </table>
+
+### Version 2.11.0
+
+Build 2.11.0 - January 9, 2024 - [Release notes](release-notes.html#Release_Notes_2_11_0)
+
+  <table class="downloads" style="width:500px">
+    <tbody>
+      <tr>
+        <th>Platform</th>
+        <th>Package</th>
+        <th>Size</th>
+        <th>SHA1 Sum</th>
+      </tr>
+      <tr>
+        <td>Windows, Mac OS X, and Linux</td>
+        <td>[gwt-2.11.0.zip](https://github.com/gwtproject/gwt/releases/download/2.11.0/gwt-2.11.0.zip)</td>
         <td>bef6a0748f06fd69eb365b02f6303d29170778a9</td>
         <td>106 MB</td>
       </tr>
     </tbody>
   </table>
 
-Build 2.10.1 - January 9, 2022 - [Release notes](release-notes.html#Release_Notes_2_10_1)
+### Version 2.10.1
+
+Build 2.10.1 - January 9, 2024 - [Release notes](release-notes.html#Release_Notes_2_10_1)
 
   <table class="downloads" style="width:500px">
     <tbody>
@@ -809,7 +853,6 @@ Build 1.4.10 - May 29, 2007 - [Release notes](release-notes.html#Release_Notes_1
     <tr class="even">
       <td>Mac OS X 10.4</td>
       <td>[gwt-mac-1.4.10.tar.gz](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/google-web-toolkit/gwt-mac-1.4.10.tar.gz)</td>
-
       <td>22 MB</td>
       <td>8fdaef4ab8b13cfad25063e8987877d9</td>
     </tr>
@@ -817,7 +860,6 @@ Build 1.4.10 - May 29, 2007 - [Release notes](release-notes.html#Release_Notes_1
       <td>Linux (i386 GTK2)*</td>
       <td>[gwt-linux-1.4.10.tar.bz2](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/google-web-toolkit/gwt-linux-1.4.10.tar.bz2)</td>
       <td>32 MB</td>
-
       <td>8672a81eb0f82091ab0ea01e3f92c2c3</td>
     </tr>
   </tbody></table>

@@ -40,7 +40,7 @@ for execution to proceed.
 
 For example, here is the initial, unsplit Hello sample that comes with GWT:
 
-```
+```java
 public class Hello implements EntryPoint {
   public void onModuleLoad() {
     Button b = new Button("Click me", new ClickHandler() {
@@ -57,7 +57,7 @@ public class Hello implements EntryPoint {
 Suppose you wanted to split out the `Window.alert` call into
 a separate code download.  The following code accomplishes this:
 
-```
+```java
 public class Hello implements EntryPoint {
   public void onModuleLoad() {
     Button b = new Button("Click me", new ClickHandler() {
@@ -261,7 +261,7 @@ specify a list of those names in your module file.
 To give a name to a `runAsync` call, add a class literal as
 the first argument to the call to `runAsync`, like this:
 
-```
+```java
 GWT.runAsync(SomeClass.class, new RunAsyncCallback() {
     // ... callback class's body ...
   }
@@ -275,7 +275,7 @@ appears in.
 Once you have named your calls, you can specify an initial load sequence
 with lines like the following:
 
-```
+```xml
 <extend-configuration-property name="compiler.splitpoint.initial.sequence"
     value="com.yourcompany.yourprogram.SomeClass"/>
 ```
@@ -290,7 +290,7 @@ continue extending the initial load sequence by adding more lines to
 the configuration property.  For example, here is module code to
 specify an initial load sequence of three split points.
 
-```
+```xml
 <extend-configuration-property name="compiler.splitpoint.initial.sequence"
     value="com.yourcompany.yourprogram.SomeClass"/>
   <extend-configuration-property name="compiler.splitpoint.initial.sequence"
@@ -343,7 +343,7 @@ be within a `runAsync`.
 
 The overall pattern looks as follows.
 
-```
+```java
 public class Module {
   // public APIs
   public doSomething() { /* ... */ }
@@ -415,7 +415,7 @@ You might have a split point just before showing information about
 that contact.  A prefetchable way to wrap that code would be as
 follows:
 
-```
+```java
 public void showContact(final String contactId) {
   GWT.runAsync(new RunAsyncCallback() {
       public void onFailure(Throwable caught) {

@@ -69,7 +69,7 @@ implemented by most Widgets as well as Composite. It is useful for views
 to extend IsWidget if they do in fact provide a Widget. Here is a simple
 view from our sample app.
 
-```
+```java
 public interface GoodbyeView extends IsWidget {
     void setName(String goodbyeName);
 }
@@ -78,7 +78,7 @@ public interface GoodbyeView extends IsWidget {
 The corresponding view implementation extends Composite, which keeps
 dependencies on a particular Widget from leaking out.
 
-```
+```java
 public class GoodbyeViewImpl extends Composite implements GoodbyeView {
     SimplePanel viewPanel = new SimplePanel();
     Element nameSpan = DOM.createSpan();
@@ -98,7 +98,7 @@ public class GoodbyeViewImpl extends Composite implements GoodbyeView {
 Here is a slightly more complicated view that additionally
 defines an interface for its corresponding presenter (activity).
 
-```
+```java
 public interface HelloView extends IsWidget {
     void setName(String helloName);
     void setPresenter(Presenter presenter);
@@ -119,7 +119,7 @@ The HelloView implementation uses
 [UiBinder](DevGuideUiBinder.html)
 and a template.
 
-```
+```java
 public class HelloViewImpl extends Composite implements HelloView {
     private static HelloViewImplUiBinder uiBinder = GWT
             .create(HelloViewImplUiBinder.class);
@@ -159,7 +159,7 @@ public class HelloViewImpl extends Composite implements HelloView {
 Note the use of @UiHandler that delegates to the presenter.
 Here is the corresponding template:
 
-```
+```html
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
              xmlns:g="urn:import:com.google.gwt.user.client.ui">
@@ -189,7 +189,7 @@ to obtain references to objects needed throughout your application like
 the event bus. Our example uses a ClientFactory to provide an EventBus,
 GWT PlaceController, and view implementations.
 
-```
+```java
 public interface ClientFactory {
     EventBus getEventBus();
     PlaceController getPlaceController();
@@ -205,13 +205,13 @@ MobileClientFactory to provide different view implementations than the
 default DesktopClientFactory. To do this, instantiate your ClientFactory
 with GWT.create in onModuleLoad(), like this:
 
-```
+```java
 ClientFactory clientFactory = GWT.create(ClientFactory.class);
 ```
 
 Specify the implementation class in .gwt.xml:
 
-```
+```xml
 <!-- Use ClientFactoryImpl by default -->
     <replace-with class="com.hellomvp.client.ClientFactoryImpl">
     <when-type-is class="com.hellomvp.client.ClientFactory"/>
@@ -220,13 +220,13 @@ Specify the implementation class in .gwt.xml:
 
 You can use `<when-property-is>` to specify different
 implementations based on user.agent, locale, or other properties you
-define. The [mobilewebapp](https://gwt.googlesource.com/gwt/+/master/samples/mobilewebapp/)
+define. The [mobilewebapp](https://github.com/gwtproject/gwt/blob/main/samples/mobilewebapp/)
 sample application defines a "formfactor" property used to 
 select a different view implementations for mobile, tablet, and desktop devices.
 
 Here is a default implementation of ClientFactory for the sample app:
 
-```
+```java
 public class ClientFactoryImpl implements ClientFactory {
     private final EventBus eventBus = new SimpleEventBus();
     private final PlaceController placeController = new PlaceController(eventBus);
@@ -248,7 +248,7 @@ convenience, you can extend AbstractActivity, which provides default
 (null) implementations of all required methods. Here is a HelloActivity,
 which simply says hello to a named user:
 
-```
+```java
 public class HelloActivity extends AbstractActivity implements HelloView.Presenter {
     // Used to obtain views, eventBus, placeController
     // Alternatively, could be injected via GIN
@@ -336,7 +336,7 @@ Place's state to a URL token. By default, the URL consists of the
 Place's simple class name (like "HelloPlace") followed by a colon (:)
 and the token returned by the PlaceTokenizer.
 
-```
+```java
 public class HelloPlace extends Place {
     private String helloName;
 
@@ -376,7 +376,7 @@ You create an interface that extends PlaceHistoryMapper and uses the
 annotation @WithTokenizers to list each of your tokenizer classes. Here
 is the PlaceHistoryMapper in our sample:
 
-```
+```java
 @WithTokenizers({HelloPlace.Tokenizer.class, GoodbyePlace.Tokenizer.class})
 public interface AppPlaceHistoryMapper extends PlaceHistoryMapper
 {
@@ -403,7 +403,7 @@ likely have lots of code like "if (place instanceof SomePlace) return
 new SomeActivity(place)". Here is the ActivityMapper for our
 sample app:
 
-```
+```java
 public class AppActivityMapper implements ActivityMapper {
     private ClientFactory clientFactory;
 
@@ -430,7 +430,7 @@ it to activities as needed.
 
 Here's how all the pieces come together in onModuleLoad():
 
-```
+```java
 public class HelloMVP implements EntryPoint {
     private Place defaultPlace = new HelloPlace("World!");
     private SimplePanel appWidget = new SimplePanel();

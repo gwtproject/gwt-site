@@ -17,9 +17,9 @@ less memory, and even makes them easier to tweak during edit/debug cycles since 
 **Tip:** If you find a need to implement a browser specific dependency, you can use a [JSNI](DevGuideCodingBasics.html#DevGuideJavaScriptNativeInterface)
 method to retrieve the browser' UserAgent string.
 
-```
+```java
 public static native String getUserAgent() /*-{
      return navigator.userAgent.toLowerCase();
-  }-*/
+  }-*/;
 ```
 

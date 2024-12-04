@@ -56,7 +56,7 @@ The webAppCreator that GWT includes can generate a starter test case for you, pl
 For example, to create a starter application along with test cases in the directory `fooApp`, where module name is
 `com.example.foo.Foo`:
 
-```
+```text
 ~/Foo> webAppCreator -out fooApp
         -junit /opt/eclipse/plugins/org.junit_3.8.1/junit.jar
         com.example.foo.Foo
@@ -120,7 +120,7 @@ need to create a new [module XML file](DevGuideOrganizingProjects.html#DevGuideM
 can just use the one you have already created to develop your GWT module. But if you did not
 already have a module, you might create one like this:
 
-```
+```xml
 <module>
   <!-- Module com.example.foo.Foo -->
 
@@ -150,7 +150,7 @@ Suppose you had created a widget under the `foo` package,
 `UpperCasingLabel`, which ensures that the text it shows is all upper
 case. Here is how you might test it.
 
-```
+```java
 package com.example.foo.client;
 import com.google.gwt.junit.client.GWTTestCase;
 
@@ -222,14 +222,13 @@ usual on a specified GWT module, but instead of running the test immediately, it
 
 For example, if you want to run a test in a single browser, you would use the following arguments:
 
-```
+```shell
 -runStyle Manual:1
 ```
 
 GWT will then show a console message like the following:
 
-```
-
+```text
 Please navigate your browser to this URL:
 http://172.29.212.75:58339/com.google.gwt.user.User.JUnit/junit.html?gwt.codesvr=172.29.212.75:42899
 ```
@@ -273,7 +272,7 @@ event handler validates the event and then calls `finishTest()`.
 
 #### Example
 
-```
+```java
 public void testTimer() {
   // Setup an asynchronous event handler.
   Timer timer = new Timer() {
@@ -321,7 +320,7 @@ share a module are run back to back.
 Creating a suite is simple if you have already defined individual JUnit [TestCases](http://junit.sourceforge.net/junit3.8.1/javadoc/junit/framework/TestCase.html) or [GWTTestCases](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html).
 Here is an example:
 
-```
+```java
 public class MapsTestSuite extends GWTTestSuite {
   public static Test suite() {
     TestSuite suite = new TestSuite("Test for a Maps Application");
@@ -335,7 +334,7 @@ public class MapsTestSuite extends GWTTestSuite {
 
 The three test cases `MapTest`, `EventTest`, and `CopyTest` can now all run in the same instance of JUnitShell.
 
-```
+```shell
 java -Xmx256M -cp "./src:./test:./bin:./junit.jar:/gwt/gwt-user.jar:/gwt/gwt-dev.jar:/gwt/gwt-maps.jar" junit.textui.TestRunner com.example.MapsTestSuite
 ```
 
@@ -352,7 +351,7 @@ test method in a test case.
 
 The following example shows how to defensively cleanup the DOM before the next test run using [gwtSetUp()](/javadoc/latest/com/google/gwt/junit/client/GWTTestCase.html#gwtSetUp--). It skips over `<iframe>` and `<script>` tags so that the GWT test infrastructure is not accidentally removed.
 
-```
+```java
 import com.google.gwt.junit.client.GWTTestCase;
   import com.google.gwt.user.client.DOM;
   import com.google.gwt.user.client.Element;

@@ -60,7 +60,7 @@ With the GWT SDK, you write your AJAX front-end in the Java programming language
 
 #### Write AJAX apps in the Java language, then compile to optimized JavaScript
 
-Unlike JavaScript minifiers that work only at a textual level, the GWT compiler performs comprehensive static analysis and optimizations across your entire GWT codebase, often producing JavaScript that loads and executes faster than equivalent handwritten JavaScript. For example, the GWT compiler safely eliminates dead code -- aggressively pruning unused classes, methods, fields, and even method parameters -- to ensure that your compiled script is the smallest it can possibly be. Another example: the GWT compiler selectively inlines methods, eliminating the performance overhead of method calls.  
+Unlike JavaScript minifiers that work only at a textual level, the GWT compiler performs comprehensive static analysis and optimizations across your entire GWT codebase, often producing JavaScript that loads and executes faster than equivalent handwritten JavaScript. For example, the GWT compiler safely eliminates dead code &mdash; aggressively pruning unused classes, methods, fields, and even method parameters &mdash; to ensure that your compiled script is the smallest it can possibly be. Another example: the GWT compiler selectively inlines methods, eliminating the performance overhead of method calls.  
 
 ## Other interesting things
 

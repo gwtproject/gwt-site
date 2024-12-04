@@ -23,7 +23,7 @@ The Lightweight Metrics system is composed of sets of events that you're interes
 
 For example, when loading a GWT application, the steps involved in the process consist of bootstrapping the application, loading external references, and starting up the GWT module. Each of these steps further break down into dowloading the bootstrap script, selecting the right permutation of your application to load, fetching the permutation, and so on. This is illustrated in the [Lightweight Metrics design doc](http://code.google.com/p/google-web-toolkit/wiki/LightweightMetricsDesign) (see GWT Startup Process diagram). Each of the smaller steps, like selecting the correct permutation of the application to load, can be represented as events you would like to measure in the overall application load time. The events themselves are standard JSON objects that contain the following information:
 
-```
+```javascript
 { 
   moduleName : <Module name>,
   subSystem : <Subsystem name>,
@@ -37,7 +37,7 @@ The `moduleName` is the name of your [GWT module](DevGuideOrganizingProjects.htm
 
 In the GWT Startup Process, the event for selecting a permutation might look something like:
 
-```
+```javascript
 { 
   moduleName : 'Showcase',
   subSystem : 'startup',
@@ -53,7 +53,7 @@ The global collector function, named `__gwtStatsEvent()`, is called whenever you
 
 Here's an example of what the `__gwtStatsEvent()` function might look like if you wanted to log all the events you have timed in your GWT application:
 
-```
+```html
 <head>
   <title>Hello</title>
 
@@ -110,7 +110,7 @@ The GWT bootstrap sequence and the GWT RPC mechanism are already instrumented. Y
 
 You can use the Lightweight Metrics system to measure important events that are specific to your own application. For example, suppose you have a potentially expensive method call somewhere in your entry point `onModuleLoad()` called `createWidget()`. Create the following method that calls the global stats collector function to measure the time it takes for `createWidget()` to execute:
 
-```
+```java
 public class StatsEventLogger {
   public static native void logEvent(String moduleName, String subSystem,
       String eventGroup, double millis, String type) /*-{
@@ -127,7 +127,7 @@ public class StatsEventLogger {
 
 Next, add calls before and after the code you want to profile in the createWidget() method, as shown below:
 
-```
+```java
 public FlexTable createWidget() {
   FlexTable listings = new FlexTable();
   double startTime = Duration.currentTimeMillis();

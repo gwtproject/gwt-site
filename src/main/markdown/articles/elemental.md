@@ -33,7 +33,7 @@ Elemental uses Java interfaces to hide most of the generated overlay types it us
 can be obtained by the `Window` or `Document` interfaces. Here is a simple example to play a sound using
 the Web Audio API.
 
-```
+```java
 package com.myapp;
 import elemental.client.*;
 import elemental.dom.*;
