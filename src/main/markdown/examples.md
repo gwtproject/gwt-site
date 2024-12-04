@@ -86,10 +86,10 @@ Please note that the applications linked from this page are provided by third-pa
 
   <div class="project">
       <div class="screenshot">
-        <a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank"><img src="images/showcase.jpg" alt="Screenshot"/></a>
+        <a href="https://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank"><img src="images/showcase.jpg" alt="Screenshot"/></a>
       </div>
       <div class="info">
-        <div class="name"><a href="http://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank">GWT Showcase</a></div>
+        <div class="name"><a href="https://samples.gwtproject.org/samples/Showcase/Showcase.html" target="_blank">GWT Showcase</a></div>
         <div class="snippet">A showcase of GWT features with accompanying source code and CSS styles.</div>
         <div class="apis">
           <div class="head">GWT features used:</div>
@@ -101,10 +101,10 @@ Please note that the applications linked from this page are provided by third-pa
 
     <div class="project">
       <div class="screenshot">
-        <a href="http://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank"><img src="images/mail.jpg" alt="Screenshot"/></a>
+        <a href="https://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank"><img src="images/mail.jpg" alt="Screenshot"/></a>
       </div>
       <div class="info">
-        <div class="name"><a href="http://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank">Mail Application</a></div>
+        <div class="name"><a href="https://samples.gwtproject.org/samples/Mail/Mail.html" target="_blank">Mail Application</a></div>
         <div class="snippet">A replica of the UI of a desktop email application.</div>
         <div class="apis">
           <div class="head">GWT features used:</div>
@@ -162,16 +162,6 @@ GWT is being used by tens of thousands of projects around the world. Take a look
     <div class="snippet">ruxit is a cloud-based application performance management solution that offers unified monitoring of
 user experience, servers, applications, infrastructure and networks &ndash; all with simple auto-configuration. The entire product UI
 was built using GWT. Use the free trial to see it in action.</div>
-  </div>
-</div>
-
-<div class="project">
-  <div class="screenshot">
-    <a href="http://www.sigmah.org" target="_blank"><img src="images/sigmah-dashboard-gwtThumbNail.jpg" alt="Sigmah"/></a>
-  </div>
-  <div class="info">
-    <div class="name"><a href="http://www.sigmah.org" target="_blank">Sigmah</a></div>
-    <div class="snippet">Sigmah is open source software for the shared management of international aid projects. &ndash; The software is simple, flexible and intuitive and allows each organisation to organize its own work methods, and thereby improve the quality of its programmers. &ndash; Sigmah is a big web application built using GWT, and providing a full-web <strong>offline mode</strong> working in production environment with Mozilla Firefox.</div>
   </div>
 </div>
 

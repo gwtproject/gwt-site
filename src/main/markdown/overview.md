@@ -3,7 +3,7 @@ Overview
 
 GWT is a development toolkit for building and optimizing complex browser-based applications. Its goal is to enable productive development of high-performance web applications without the developer having to be an expert in browser quirks, XMLHttpRequest, and JavaScript. It's open source, completely free, and used by thousands of developers around the world.
 
-[What's New in GWT 2.10.0](release-notes.html#Release_Notes_2_10_0)
+[What's New in GWT 2.12.1](release-notes.html#Release_Notes_2_12_1)
 
 ## What's inside the toolbox?
 
@@ -11,7 +11,7 @@ GWT is a development toolkit for building and optimizing complex browser-based a
 
 The [GWT SDK](learnmore-sdk.html) contains the Java API libraries, compiler, and development server. It lets you write client-side applications in Java and deploy them as JavaScript.
 
-*   [Get Started](gettingstarted.html)
+*   [Get Started](gettingstarted-v2.html)
 *   [Tutorials](doc/latest/tutorial/index.html)
 *   [Developer Guide](doc/latest/DevGuide.html)
 
@@ -49,4 +49,4 @@ When you're ready to deploy, GWT compiles your Java source code into optimized, 
 
 ## Ready to get started?
 
-[Download the SDK](gettingstarted.html) and get a simple web application up and running. From there, work through the fundamentals of GWT development with the in-depth [tutorials](doc/latest/tutorial/index.html).
+[Download the SDK](gettingstarted-v2.html) and get a simple web application up and running. From there, work through the fundamentals of GWT development with the in-depth [tutorials](doc/latest/tutorial/index.html).

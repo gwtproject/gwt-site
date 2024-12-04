@@ -1,5 +1,9 @@
 The GWT Release Notes
 =====================
+* [2.12.1](#Release_Notes_2_12_1) November 12, 2024
+* [2.12.0](#Release_Notes_2_12_0) October 29, 2024
+* [2.11.0](#Release_Notes_2_11_0) January 9, 2024
+* [2.10.1](#Release_Notes_2_10_1) January 9, 2024
 * [2.10.0](#Release_Notes_2_10_0) June 9, 2022
 * [2.9.0](#Release_Notes_2_9_0) May 13, 2020
 * [2.8.2](#Release_Notes_2_8_2) Oct 19, 2017
@@ -64,6 +68,119 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
+## <a id="Release_Notes_2_12_1"></a> Release Notes for 2.12.1
+### Bug fixes:
+- Switch statements can correctly compile without being contained in braces
+- Ignore all annotations in all scopes if source is missing; this means you no longer need to add an
+  additional dependency on sources for annotation-only dependencies
+
+For more detail, see the [commit log](https://github.com/gwtproject/gwt/compare/2.12.0...2.12.1).
+
+## <a id="Release_Notes_2_12_0"></a> Release Notes for 2.12.0
+### Highlights:
+- Added support for Java 12-17 language features, including text blocks, instanceof pattern matching, records, and switch expressions.
+- Minimum Java version 11 is required to run any dev tools, though the server code should continue to function with Java 8 for this release. Later versions may no longer support Java 8.
+- Added support for sourcemaps to include the contents of the sources files.
+- Enabled sourcemaps by default in all browsers
+- Fix CSP issues in linkers and dev mode, provide CSP workarounds for GWT-RPC payloads
+
+### Bug fixes:
+- Remove first character for delegating args to CodeServer
+- Fix error initializeEnumMap() is exceeding the 65535 bytes limit
+- Relax naming rules to allow valid java bean properties as jsproperties
+- Allow SDM's web server to reuse a socket without waiting
+- Each mapped stream must be closed after its contents have been placed downstream
+- Fix native JsMethods with varargs called from Java varargs methods
+
+
+### JRE Emulation:
+- Add Java 10 Collections APIs
+- Add Java 9 BigInteger constructors
+- Normalizer emulation
+- String method emulation for Java 11, align Character.isWhitespace with Java 11
+- Implement java.lang.Math.nextAfter, nextUp, nextDown
+- Added missing IOException to Reader.read(...) methods
+- Support ElementType MODULE and RECORD_COMPONENT on annotations
+
+
+### Deprecations and Removals:
+- The `unload` event has been deprecated in browsers, deprecated calls that require it, and rewrite calls that shouldn't need it. Deprecated methods have notes describing how to replace them with more modern strategies.
+- The `mousewheel` event has been deprecated in browsers, its usage in GWT has been replaced with the `wheel` event. This should be transparent to applications.
+- The `com.google.gwt.dev.GetJreEmulation` main class has been deprecated, and is planned to be removed in a future release.
+- The `com.google.gwt.dev.RunWebApp` main class has been deprecated, and is planned to be removed in a future release.
+- The `SpeedTracer` classes have been deprecated, and are planned to be removed/replaced in a future release.
+- The deprecated `-XfragmentMerge` flag no longer has any effect, to be removed in a future release.
+- The following deprecated, unused flags have been removed:
+    - `-XdisableUpdateCheck`/`-XcheckForUpdates`
+    - `-incrementalCompileWarnings`
+    - `-Xlibraries`
+    - `-XoutLibrary`, `-Xlibrary`
+    - `-Xlink`
+    - `-missingDepsFile`
+    - `-overlappingSourceWarnings`
+    - `XstrictResources`, `enforceStrictResources`
+- The following deprecated, noop `main()` classes in gwt-user have been removed
+    - `com.google.gwt.user.tools.ApplicationCreator`
+    - `com.google.gwt.user.tools.ProjectCreator`
+- The `com.google.web.bindery.requestfactory.server.RequestFactoryJarExtractor` class is no longer included in any release jars.
+
+For more detail, see the [commit log](https://github.com/gwtproject/gwt/compare/2.11.0...2.12.0).
+
+## <a id="Release_Notes_2_11_0"></a> Release Notes for 2.11.0
+### Highlights:
+- Transitioned to GitHub pull requests for new contributions, with nightly
+builds running on GitHub Actions.
+- Added release artifacts for `jakarta.servlet` packages for both RequestFactory
+and GWT-RPC.
+- Tested support for running on Java 21. This is likely to be the final minor
+release series to support running on Java 8.
+- Disabled JPA/JDO "enhanced classes" serializable by default for GWT-RPC, and
+added a warning when it is in use.
+- Updated JRE emulation to support Java 11 for Collections, streams, and more.
+
+### Bug fixes:
+- Make custom field serializers ready for Java 17
+- Correctly write Long.toBinaryString as an unsigned value
+- Fix gzip encoding of responses in the CodeServer
+- Avoid EmptyStackException in SOYC
+- Fix error reporting for System.getProperty magic method nodes
+- Fix ClassNotFoundException when running JettyLauncher with Java 9+
+- Avoid StackOverflowError in TypeUtils#resolveGenerics
+- Avoid document.write in Chrome with iframe linker
+- Avoid document write in single script linker loading
+- Support intersection types in ternary expressions and var declarations
+- Fix for namespace="<window>" names that clash with variable names
+
+### JRE Emulation:
+- Added new Optional methods: or(), stream(), ifPresentOrElse(), empty(), and
+orElseThrow()
+- Added List/Set/Map of() methods
+- Added Predicate not() method
+- Added Collectors methods: flatMapping(), filtering(), toUnmodifiableList(), 
+toUnmodifiableSet(), and toUnmodifiableMap()
+- Added Stream methods: dropWhile, takeWhile, and iterate(seed, hasNext, next)
+- Added Enumeration.asIterator()
+
+### Deprecations:
+- Using DevMode as an application server is deprecated, and may be removed or 
+changed in a future release. Please migrate local development workflows to using
+a general purpose server, or a custom ServletContainerLauncher.
+- The webAppCreator tool is deprecated, please refer to https://www.gwtproject.org/gettingstarted.html.
+
+### Miscellaneous:
+- Update chrome/firefox globals to latest
+- Updated Javadoc to run on Java 9+, support search
+- Removed unused scripts from old build wiring
+
+For more detail, see the [commit log](https://github.com/gwtproject/gwt/compare/2.10.0...2.11.0).
+
+## <a id="Release_Notes_2_10_1"></a> Release Notes for 2.10.1
+
+### Highlights
+- Backported a fix from 2.11 to disable JPA/JDO "enhanced classes" serializable
+by default for GWT-RPC, and added a warning when it is in use. For more
+information, see https://github.com/gwtproject/gwt/issues/9709.
+
 ## <a id="Release_Notes_2_10_0"></a> Release Notes for 2.10.0
 
 ### Highlights
@@ -390,7 +507,7 @@ prefered supertype of any JS type, including primitives.
 
 ### Deprecations
 
-- Old CssResource syntax is now deprecated. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
+- Old CssResource syntax is now deprecated. For more information on GSS migration, please refer to [this document](https://www.gwtproject.org/articles/gss_migration.html)
 
 ### Compiler changes
 
@@ -413,7 +530,7 @@ prefered supertype of any JS type, including primitives.
 - Improved logging and stack traces for superdev mode.
 
 #### GSS support
-- GSS is no longer experimental but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](http://www.gwtproject.org/articles/gss_migration.html)
+- GSS is no longer experimental but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](https://www.gwtproject.org/articles/gss_migration.html)
 - "For loop support" added
 - a new function concat() is now available to concatenate variable and string literal.
 - @gen-webkit-keyframes annotation: generate automaticaly @-webkit-keyframes block

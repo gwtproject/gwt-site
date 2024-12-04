@@ -37,7 +37,7 @@ You may also optionally do the following:
 
 ### Build a Sample GWT Application
 
-1.   [Build a Sample GWT Application](gettingstarted.html)
+1.   [Build a Sample GWT Application](gettingstarted-v2.html)
    * Get started with GWT by developing the StockWatcher application from scratch. You'll learn to create a GWT project, build the UI with GWT wigdets and panels, code the client-side functionality in the Java language, debug in development mode, apply CSS styles, compile the Java into JavaScript, and run the application in production mode.
 
 ### Client-Server Communication

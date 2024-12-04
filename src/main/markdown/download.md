@@ -42,12 +42,12 @@ Download
     <b style="color: #444;">Note</b> - This download contains the standalone GWT SDK and tools only. If you're using Eclipse, we suggest that you download and install the GWT Eclipse Plugin instead.
   </p>
   <div class='moreinfo'>
-    <a class='download-button' href="https://github.com/gwtproject/gwt/releases/download/2.10.0/gwt-2.10.0.zip">Download GWT SDK</a> <br />
+    <a class='download-button' href="https://github.com/gwtproject/gwt/releases/download/2.12.1/gwt-2.12.1.zip">Download GWT SDK</a> <br />
     <p style='font-size: 85%;'>
       <a href="versions.html">[Old versions]</a>
     </p>
     <p style='font-size: 90%;'>
-      Next: Go to <a href="gettingstarted.html">Getting Started with the GWT SDK</a>
+      Next: Go to <a href="gettingstarted-v2.html">Getting Started with the GWT SDK</a>
     </p>
   </div>
 </div>
@@ -66,7 +66,7 @@ Download
   <div class='moreinfo'>
     <a class='download-button' href="http://gwt-plugins.github.io/documentation/gwt-eclipse-plugin/Download.html">Download Plugin &amp; SDKs</a>
     <p style='font-size: 90%;'>
-      Next: Go to <a href="usingeclipse.html">Set up Eclipse</a>, then <a href="doc/latest/tutorial/gettingstarted.html">Build a Sample App</a>
+      Next: Go to <a href="usingeclipse.html">Set up Eclipse</a>, then <a href="doc/latest/tutorial/gettingstarted-v2.html">Build a Sample App</a>
     </p>
   </div>
 </div>

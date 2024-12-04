@@ -45,11 +45,11 @@ GWT (pronounced 'gwit') is the official open source project for GWT releases 2.7
     </tr>
     <tr>
       <td>
-        <a href="gettingstarted.html">
+        <a href="gettingstarted-v2.html">
           <img src="images/learnmore.gif" style="float: left; margin-left: 50px; border: 0;" height="48" width="48" />
         </a>
         <div style="margin-left: 112px; margin-bottom: 10px;">
-          <div style="font-size: 120%; font-weight: bold;"><a href="gettingstarted.html">Get Started</a></div>
+          <div style="font-size: 120%; font-weight: bold;"><a href="gettingstarted-v2.html">Get Started</a></div>
           <div style="padding-top: 5px; line-height: 125%;">
             Walk through the first steps needed to get a web application up and running. From there, work through the fundamentals of GWT development with an in-depth tutorial.<br /><br />
           </div>

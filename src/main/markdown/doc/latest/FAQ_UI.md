@@ -109,7 +109,7 @@ such as [DockLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/DockLayo
 [SplitLayoutPanel](/javadoc/latest/com/google/gwt/user/client/ui/SplitLayoutPanel.html) automatically resize to the size of the window when 
 the browser resizes.
 
-The [Mail sample application](http://samples.gwtproject.org/samples/Mail/Mail.html) demonstrates SplitLayoutPanel in action.
+The [Mail sample application](https://samples.gwtproject.org/samples/Mail/Mail.html) demonstrates SplitLayoutPanel in action.
 
 See the Developer's Guide on [Layout Panels](DevGuideUiPanels.html#LayoutPanels) for more details and code snippets.
 

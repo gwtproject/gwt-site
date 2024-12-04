@@ -1,6 +1,6 @@
-# Creating the *TodoList* Project
+# Creating the *TodoList* Project
 
-In this section, we'll create the **TodoList** project from scratch using GWT's [webAppCreator](http://www.gwtproject.org/doc/latest/RefCommandLineTools.html#webAppCreator), a command-line utility.
+In this section, we'll create the **TodoList** project from scratch using GWT's [webAppCreator](https://www.gwtproject.org/doc/latest/RefCommandLineTools.html#webAppCreator), a command-line utility.
 
 Before we start, make sure to download the most recent [GWT distribution](../../../download.html) and install [Maven](https://maven.apache.org/).
 
@@ -33,7 +33,7 @@ For the **TodoList** project, we'll need to run `webAppCreator` with the followi
 
       _**Tip**: If you include the GWT SDK folder in your PATH environment variable, you won't have to specify the full path._
 
-      You may have to modify the `pom.xml` before you can run the application. Add `<type>pom</type>` to the gwt dependency, otherwise you will encounter an error. See the "Creating a `Maven` project" section in the [webAppCreator documentation](http://www.gwtproject.org/doc/latest/RefCommandLineTools.html#webAppCreator) for more information.
+      You may have to modify the `pom.xml` before you can run the application. Add `<type>pom</type>` to the gwt dependency, otherwise you will encounter an error. See the "Creating a `Maven` project" section in the [webAppCreator documentation](https://www.gwtproject.org/doc/latest/RefCommandLineTools.html#webAppCreator) for more information.
 
 2. Run the application in [SuperDevMode](articles/superdevmode.html).
 

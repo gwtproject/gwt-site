@@ -25,7 +25,7 @@ usual process.
 
 Definitions
 -----------
-* [GWT](http://www.gwtproject.org/) - The product itself. GWT is a development toolkit for building
+* [GWT](https://www.gwtproject.org/) - The product itself. GWT is a development toolkit for building
 and optimizing complex browser-based applications. Its goal is to enable productive development of
 high-performance web applications without the developer having to be an expert in browser quirks,
 XMLHttpRequest and JavaScript.

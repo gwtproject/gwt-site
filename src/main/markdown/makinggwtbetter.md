@@ -235,9 +235,6 @@ great patches from the community. Before you fire up your favorite IDE
 and begin hammering away at that new feature, though, please take the
 time to read this section and understand the process. While it seems
 rigorous, we want to keep a high standard of quality in the code base.
-Also, please be aware that we code contributors must sign a <a
-  href="#committers">Contributor License Agreement</a> before we can
-accept any code.
 
 ### Code Style<a id="codestyle"></a>
 
@@ -249,7 +246,7 @@ the GWT build; style issues that can't be caught by the build system should be
 addressed during code review.
 
 To make it easier to format your GWT code correctly, use the
-[GWT style formatter](https://gwt.googlesource.com/gwt/+/master/eclipse/settings/code-style/gwt-format.xml)
+[GWT style formatter](https://github.com/gwtproject/gwt/blob/main/eclipse/settings/code-style/gwt-format.xml)
 for Eclipse (Preferences | Java > Code Style > Formatter | Import...).
 
 In general, the GWT style is based on [the
@@ -510,46 +507,26 @@ Note that there is a problem using JUnit tests with ant &mdash; a [workaround](#
 
 ### Submitting Patches<a id="submittingpatches"></a>
 
-Please do submit code. Here's what you need to do:
+Please do submit code. Contributions to all [GWT subprojects](https://github.com/orgs/gwtproject/repositories) are welcome.Here's what you need to do:
 
-1.  Decide which code you want to submit. A submission should be a set of changes that addresses one issue in the [GWT issue tracker](https://github.com/gwtproject/gwt/issues?q=is%3Aissue). Please don't mix more than one logical change per submittal, because it makes the history hard to follow. If you want to make a change that doesn't have a corresponding issue in the issue tracker, please create one.
+1.  Decide which code you want to submit. A submission should be a set of changes that addresses one issue in the repository's issue tracker. For the [GWT SDK](https://github.com/gwtproject/gwt/) you can check the list of [its open issues](https://github.com/gwtproject/gwt/issues). Please don't mix more than one logical change per submittal, because it makes the history hard to follow. If you want to make a change that doesn't have a corresponding issue in the issue tracker, please create one.
 2.  Also, coordinate with team members that are listed on the issue in question. This ensures that work isn't being duplicated and communicating your plan early also generally leads to better patches.
-3.  Ensure that your code adheres to the [GWT source code style](#codestyle).
-4.  Ensure that there are unit tests for your code.
-5.  Sign in to [GWT's Gerrit service](https://gwt-review.googlesource.com) and sign the [Contributor License Agreement](https://gwt-review.googlesource.com/#/settings/agreements).
-6.  Push your changes to Gerrit for review. The first time you will need to do some [initial setup](#gerritsetup). Follow Gerrit's documentation to create a change and upload it for review.
-7.  After setting up gerrit on your system, you can push your changes for review using:
-      `git push origin HEAD:refs/for/master`
+3.  Make a fork of the appropriate repository.
+4.  Implement your changes, make sure that your code adheres to the [GWT source code style](#codestyle).
+5.  Ensure that there are unit tests for your code.
+6.  Push your changes to the forked repository.
+7.  Create a pull request, follow the suggestions in the pull request template.
 
-### Gerrit setup<a id="gerritsetup"></a>
+### Code Review
 
-Finally, to actually create an issue is slightly more involved, but most of the steps only need to be done once:
-
-1. Setup your HTTP Password: 
-   Go to Settings in Gerrit. Under Settings you will find "HTTP Password" and click "Obtain Password"
-   and follow the steps to get your HTTP Password and/or to setup your .netrc file.
-2. Setup your Gerrit commit-msg hook (optional, but recommended): 
-   Gerrit provides a commit hook at `https://gwt-review.googlesource.com/tools/hooks/commit-msg` 
-   to automatically add Change-Id lines to your commits.  
-   Download this and add it to your checkout's .git/hooks directory: 
-   `curl -o .git/hooks/commit-msg https://gwt-review.googlesource.com/tools/hooks/commit-msg && chmod +x .git/hooks/commit-msg`
-3. Make a change and commit it locally using git (e.g., edit a file foo and then run `git commit -m "my first change" foofile`).
-   Push the commit to Gerrit for review: `git push origin HEAD:refs/for/master`.
-
-If you have any problems you might want to consult the gerrit documentation on [Uploading Changes](https://gerrit-review.googlesource.com/Documentation/user-upload.html) 
+Code review is an essential part of the development process.
+Anyone is welcome to submit a code review for any [open pull request](https://github.com/search?q=org%3Agwtproject+is%3Apr+is%3Aopen&type=pullrequests). 
+Together with the final review done by GWT maintainers,
+code reviews by the community have a positive impact on the code quality.
 
 ### GWT Committers<a id="committers"></a>
 
 The current members of the GWT engineering team are the only committers at present. In the great tradition of eating one's own dogfood, we will be requiring each new GWT engineering team member to earn the right to become a committer by following the procedures in this document, writing consistently great code, and demonstrating repeatedly that he or she truly gets the zen of GWT.
-
-### Contributor License Agreements<a id="clas"></a>
-
-Before we can accept a patch from you, you must sign a Contributor License Agreement (CLA). The CLA protects you and us.
-
-*   If you are an individual writing original source code and you're sure you own the intellectual property, then you'll need to sign an [individual CLA](http://code.google.com/legal/individual-cla-v1.0.html).
-*   If you work for a company that wants to allow you to contribute your work to GWT, then you'll need to sign a [corporate CLA](http://code.google.com/legal/corporate-cla-v1.0.html).
-
-You can sign either CLA through [GWT's Gerrit service](https://gwt-review.googlesource.com/#/settings/agreements).
 
 ### Contributing to webpage and Documentation<a id="webpage"></a>
 
@@ -557,8 +534,8 @@ This webpage and the documentation hosted on it are completely written in markdo
 
 Here is how it works:
 
-All the code is stored on github and can be directly edited on the web by pressing the
-"Edit me on Github" button. This is the easiest way to make a change, but if you are
+All the code is stored on GitHub and can be directly edited on the web by pressing the
+"Edit me on GitHub" button. This is the easiest way to make a change, but if you are
 planing to make bigger changes to the website and want to test these locally first,
 you can clone the repository:
 
@@ -579,4 +556,4 @@ Since our .gitignore files don't contain IDE or OS specific .gitignore entries y
 
 [This](https://help.github.com/articles/ignoring-files) is how you setup a global .gitignore.
 
-[Here](https://github.com/github/gitignore/tree/master/Global) you find a list of IDE specific global .gitignore files.
+[Here](https://github.com/github/gitignore/tree/main/Global) you find a list of IDE specific global .gitignore files.

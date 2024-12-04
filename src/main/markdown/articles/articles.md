@@ -59,13 +59,27 @@ JSON services across the web.
 
 **Externally hosted articles:**
 
-*   [GWT Tutorial](http://www.codetab.org/gwt-tutorial/) - _contributed by Maithilish - July 2013_
+*   [Modern GWT, first steps](https://dev.to/ibaca/modern-gwt-first-steps-509k) - contributed by Ignacio Baca Moreno-Torres - November 2018
 
-**GWT Tutorial** is a step-by-step guide to a complete GWT project. It walks through a project to explain the essentials as well as some of the advanced concepts of GWT 2. Level - Beginner and Intermediate. 
+**Modern GWT, first steps** is a great introduction to GWT. It creates a GWT project using the gwt-maven-archetypes and walks through a project to explain the essentials as well as some of the advanced concepts of GWT 2. Level - Beginner and Intermediate. 
 
-*   [Exporting Libraries Developed in GWT to JavaScript](https://code.google.com/p/gwtchismes/wiki/Tutorial_ExportingGwtLibrariesToJavascript_en) - _Contributed by Manuel Carrasco Moñino_
+*   [Dynamite Duo: GWT Boot and Spring Boot](https://medium.com/geekculture/dynamite-duo-gwt-boot-and-spring-boot-e5a966782344) - Contributed by Dr. Lofi Dewanto
 
-This article describes how you can export GWT defined methods to the outside JavaScript world, allowing your GWT application to provide an API for external consumption. It covers both a manual technique which uses only the GWT core library, as well as an even easier technique which uses of the [GWT-Exporter library](https://code.google.com/p/gwt-exporter).
+Learn how to create a high-quality web application using Java on both the server and client side, utilizing web browsers.
 
-If you believe that any resource should be added or removed from the list above, please [let us
-know](mailto:Google-Web-Toolkit+owner@googlegroups.com).
+**Externally hosted examples:**
+
+* [webcomponents-gwt-simple-examples](https://github.com/lofidewanto/webcomponents-gwt-simple-examples) - Contributed by Dr. Lofi Dewanto - March 2021
+
+This repository provides a number of examples related to GWT 2 and J2CL.
+
+* [jsinterop-simple-jsframework-example](https://github.com/lofidewanto/jsinterop-simple-jsframework-example) - Contributed by Dr. Lofi Dewanto - August 2021
+
+Simple Example for Accessing JavaScript Frameworks from Java GWT with Elemental2 and very early version of Akasha.
+
+* [gwt-boot-awesome-lili](https://github.com/gwtboot/gwt-boot-awesome-lili) - Contributed by Dr. Lofi Dewanto - January 2023
+
+GWT Boot Awesome Library List (Gwit a LiLi) - Collection of JavaScript Libraries with JsInterop Interfaces and Others.
+
+If you believe that any resource, article or example should be added, updated or removed from the list, [open an issue
+on our tracker](https://github.com/gwtproject/gwt-site/issues/new/choose).

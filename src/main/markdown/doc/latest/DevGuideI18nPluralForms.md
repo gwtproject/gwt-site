@@ -121,7 +121,7 @@ value in a properties file.
 
 See the next item for another use of Exact Values.
 
-## Offsets<a id="Offsets"><a>
+## Offsets<a id="Offsets"></a>
 
 In some cases, you may want to alter the count before applying the plural
 rules to it.  For example, if you are saying `"Bob, Joe, and 3 others ate

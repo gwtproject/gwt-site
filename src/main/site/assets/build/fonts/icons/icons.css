@@ -64,6 +64,10 @@
 	content: "\e60b";
 }
 
+.icon_roadmap:before {
+	content: "\e60b";
+}
+
 .icon_run:before {
 	content: "\e60c";
 }

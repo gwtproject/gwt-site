@@ -24,7 +24,7 @@ Here's the Life of an Issue, in a nutshell:
 1.  An issue is filed.
 2.  A GWT contributor periodically reviews and triages issues. The GWT contributor attempts to verify the issue and assigns a status based on the results.
 3.  Once an issue has been verified, it may be marked Accepted, in which case the GWT team plans to fix it, or PatchesWelcome, which means that the GWT team likely won't be able to get to it, but would be happy to review patches from the community. To submit a patch, follow [these guidelines](makinggwtbetter.html#submittingpatches).
-4.  Once an issue has been fixed, it'll be closed and assigned to a milestone, indicating whether the fix is available in the current numbered release or, more commonly, in the Git master branch for the next release.
+4.  Once an issue has been fixed, it'll be closed and assigned to a milestone, indicating whether the fix is available in the current numbered release or, more commonly, in the Git main branch for the next release.
 
 The following tables provide detail on all issue status types.
 
