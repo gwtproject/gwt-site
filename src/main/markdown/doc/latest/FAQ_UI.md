@@ -44,7 +44,7 @@ And here is how the screen ends up:
 What went wrong? We set the Dock Panel to fill up 100% of the space, and then each button to the left or right of the screen. At this point, it can be helpful to probe and see
 what the boundaries of your widgets are, because they may not be where you think.
 
-The first technique is to use a DOM inspection tool, such as [Firebug](http://www.getfirebug.com) for the [Firefox](http://www.mozilla.com) browser. As you hover over elements in the DOM they will highlight in the browser window.
+The first technique is to use your browser's dev tools. As you hover over elements in the DOM they will highlight in the browser window.
 
 Another technique you can use is to modify your GWT code to turn on borders on your panels (or other widgets.)
 
