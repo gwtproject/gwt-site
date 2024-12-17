@@ -8,6 +8,8 @@ JsInterop is one of the core features of GWT 2.8. As the name suggests, JsIntero
 
 JsInterop can be used to expose a Java type to be used externally from a JavaScript script (aka a non-native type). This can be achieved by annotating the type with `@JsType`. This annotation exposes all the public non-static fields and methods, and tells the GWT compiler that the type is to be exported to a JavaScript type. Annotating a class with `@JsType` is equivalent to annotating all its public non-static methods with `@JsMethod`, its constructor with `@JsConstructor` (only one `@JsConstructor` is allowed to exist, more details can be found [in the javadoc](https://javadoc.io/doc/com.google.jsinterop/jsinterop-annotations/latest/index.html)), and all its public non-static fields with `@JsProperty`, so no need to add them explicitly.
 
+Please see also `-generateJsInteropExports` compiler and development mode option.
+
 Additionally, `@JsType` can be fine-tuned using the following properties:
 
  * name: customizes the name of the type. The default is to keep the Java type name.
