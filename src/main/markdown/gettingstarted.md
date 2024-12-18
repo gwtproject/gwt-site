@@ -159,4 +159,4 @@ set up Eclipse to use the GWT SDK:
 [Set up Eclipse](usingeclipse.html)
 
 If you are going to stick with the command line, check out Speed Tracer     and then
-head over to [Build a Sample GWT App](doc/latest/tutorial/gettingstarted-v2.html).
+head over to [Build a Sample GWT App](doc/latest/tutorial/gettingstarted.html).

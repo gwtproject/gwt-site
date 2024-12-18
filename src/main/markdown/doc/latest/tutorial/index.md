@@ -31,13 +31,13 @@ You may also optionally do the following:
 1.   Install the Google App Engine SDK.
     *  Google App Engine allows you to run Java web applications, including GWT applications, on Google's infrastructure.  The App Engine SDK can be downloaded with the Google Plugin for Eclipse.  Alternatively, download the [App Engine SDK](https://developers.google.com/appengine/downloads) for Java separately.
 
-2.   [Create and run your first web application](../../../gettingstarted.html#create) - A few, simple steps to familiarize you with the command line commands.
+2.   [Create and run your first web application](../../../gettingstarted-v2.html#create) - A few, simple steps to familiarize you with the command line commands.
 
 ## GWT Tutorials <a id="gwt_tutorials"></a>
 
 ### Build a Sample GWT Application
 
-1.   [Build a Sample GWT Application](gettingstarted-v2.html)
+1.   [Build a Sample GWT Application](../../../gettingstarted-v2.html)
    * Get started with GWT by developing the StockWatcher application from scratch. You'll learn to create a GWT project, build the UI with GWT wigdets and panels, code the client-side functionality in the Java language, debug in development mode, apply CSS styles, compile the Java into JavaScript, and run the application in production mode.
 
 ### Client-Server Communication
