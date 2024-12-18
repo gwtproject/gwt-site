@@ -1,7 +1,7 @@
 Getting Started
 ===
 
-Starting with 2.11.0 of the GWT SDK the [webAppCreator](gettingstarted-outdated.html) is deprecated. Instead, we will use 
+Starting with 2.11.0 of the GWT SDK the [webAppCreator](gettingstarted.html) is deprecated. Instead, we will use
 the [gwt-maven-archetypes](https://github.com/tbroyer/gwt-maven-archetypes) by Thomas Broyer to create a new GWT project. Using the **artifactId: modular-webapp** 
 the plugin generates a Maven project with separate modules for
 

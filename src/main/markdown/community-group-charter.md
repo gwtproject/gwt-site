@@ -11,7 +11,7 @@ GWT is open source, and is licensed according to the terms of the [Apache 2.0 Li
 Here are some important GWT resources:
 
 *   [The GWT Home Page](https://www.gwtproject.org "The GWT Home Page")
-*   The GWT Developer Documentation, including the [Overview](docs/latest/DevGuide.html "Overview"), the [Tutorials](doc/latest/tutorial/index.html "Tutorials"), and the [API Reference](doc/latest/RefGWTClassAPI.html "API Reference")
+*   The GWT Developer Documentation, including the [Overview](doc/latest/DevGuide.html "Overview"), the [Tutorials](doc/latest/tutorial/index.html "Tutorials"), and the [API Reference](doc/latest/RefGWTClassAPI.html "API Reference")
 *   [The Discussion Group Archives](http://groups.google.com/group/Google-Web-Toolkit/topics "Discussion Group Archives")
 *   [The GWT Issue Tracker](https://github.com/gwtproject/gwt/issues?q=is%3Aissue "The GWT Issue Tracker") 
 

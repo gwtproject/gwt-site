@@ -66,7 +66,7 @@ Download
   <div class='moreinfo'>
     <a class='download-button' href="http://gwt-plugins.github.io/documentation/gwt-eclipse-plugin/Download.html">Download Plugin &amp; SDKs</a>
     <p style='font-size: 90%;'>
-      Next: Go to <a href="usingeclipse.html">Set up Eclipse</a>, then <a href="doc/latest/tutorial/gettingstarted-v2.html">Build a Sample App</a>
+      Next: Go to <a href="usingeclipse.html">Set up Eclipse</a>, then <a href="gettingstarted-v2.html">Build a Sample App</a>
     </p>
   </div>
 </div>

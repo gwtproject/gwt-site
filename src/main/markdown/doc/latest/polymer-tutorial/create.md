@@ -37,7 +37,7 @@ For the **TodoList** project, we'll need to run `webAppCreator` with the followi
 
       You may have to modify the `pom.xml` before you can run the application. Add `<type>pom</type>` to the gwt dependency, otherwise you will encounter an error. See the "Creating a `Maven` project" section in the [webAppCreator documentation](https://www.gwtproject.org/doc/latest/RefCommandLineTools.html#webAppCreator) for more information.
 
-2. Run the application in [SuperDevMode](articles/superdevmode.html).
+2. Run the application in [SuperDevMode](../../../articles/superdevmode.html).
 
      To check that the project was created correctly start the new app in SuperDevMode.
 

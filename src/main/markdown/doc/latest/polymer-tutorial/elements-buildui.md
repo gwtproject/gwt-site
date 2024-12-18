@@ -6,7 +6,7 @@ In this chapter we'll build a modern looking UI for the **TodoList** application
 
 1.  Create the **main screen** of the application.
 
-    We will create a [UiBinder](DevGuideUiBinder.html) screen composed of a java file  (`Main.java`) and its visual descriptor (`Main.ui.xml`).
+    We will create a [UiBinder](../DevGuideUiBinder.html) screen composed of a java file  (`Main.java`) and its visual descriptor (`Main.ui.xml`).
 
     You can generate these files either by copying the following snippets, or by using the Eclipse GWT plugin.
 
