@@ -1147,8 +1147,7 @@ on the server ([7527](https://code.google.com/p/google-web-toolkit/issues/detail
 ## <a id="Release_Notes_2_5_0"></a> Release Notes for 2.5.0
 
 This release includes some minor bug fixes found in the release
-candidate. See [What's New in
-GWT 2.5](doc/latest/ReleaseNotes.html) plus the release notes for [2.5.0
+candidate. See the release notes for [2.5.0
 (RC1)](#Release_Notes_2_5_0_RC1) and [2.5.0 (RC2)](#Release_Notes_2_5_0_RC2) for the
 full list of features and bugs fixes included in the GWT 2.5.0 release.
 
@@ -1163,8 +1162,7 @@ recompile your app, and redeploy.
 
 ## <a id="Release_Notes_2_5_0_RC2"></a> Release Notes for 2.5.0 (RC2)
 
-This is release candidate 2 of GWT 2.5. See the [What's new in GWT 2.5](doc/latest/ReleaseNotes.html) page as
-well as release notes below for the full list of features and bugfixes
+This is release candidate 2 of GWT 2.5. See the release notes below for the full list of features and bugfixes
 in this release.
 
 ### Changes since RC1
@@ -1180,8 +1178,7 @@ tracker](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AFixedIn2_
 
 ## <a id="Release_Notes_2_5_0_RC1"></a> Release Notes for 2.5.0 (RC1)
 
-This is release candidate 1 of GWT 2.5. See the [What's new in GWT 2.5](doc/latest/ReleaseNotes.html) page as
-well as release notes below for the full list of features and bugfixes
+This is release candidate 1 of GWT 2.5. See the release notes below for the full list of features and bugfixes
 in this release.
 
 ### Major Enhancements
@@ -1473,8 +1470,6 @@ such as the Canvas/Audio/Video tags, an updated CellTable widget that
 now supports sortable columns and fixed column widths, and a more
 lenient SafeHtml template parser.
 
-Also see [What's New in GWT 2.2?](doc/2.2/ReleaseNotes.html)
-
 ### General Enhancements
 
 *   Touchstart, touchmove, touchend, touchcancel have been
@@ -1528,10 +1523,8 @@ in this release.
 ## <a id="Release_Notes_2_1_0"></a> Release Notes for 2.1.0
 
 This release includes some minor bug fixes found in the release
-candidate. See [What's New in
-GWT 2.1](doc/2.1/ReleaseNotes.html) plus the release notes for [2.1.0
-(RC1)](#Release_Notes_2_1_0_RC1) for the full list of features and bugs fixes included in the GWT
-2.1.0 release.
+candidate. See the release notes for [2.1.0 (RC1)](#Release_Notes_2_1_0_RC1) for the full
+list of features and bugs fixes included in the GWT 2.1.0 release.
 
 * * *
 
@@ -1787,8 +1780,8 @@ the complete list of bug fixes and enhancements](https://github.com/gwtproject/g
 ## <a id="Release_Notes_2_0_0"></a> Release Notes for 2.0.0
 
 This release includes some minor bug fixes found in the release
-candidate. See [What's New
-in GWT 2.0](doc/2.0/ReleaseNotes_2_0.html) plus the release notes for [2.0.0 (RC1)](#Release_Notes_2_0_0_rc1) and [2.0.0-rc2](#Release_Notes_2_0_0_rc2) for the full list of
+candidate. See the release notes for [2.0.0 (RC1)](#Release_Notes_2_0_0_rc1) and
+[2.0.0-rc2](#Release_Notes_2_0_0_rc2) for the full list of
 features and bugs fixes included in the GWT 2.0.0 release.
 
 * * *
@@ -2004,8 +1997,6 @@ potentially breaking change for libraries that use deferred binding to
 specialize code based on user agent (see the next section for technical
 details).
 
-Also see [What's New in 1.7?](doc/1.7/ReleaseNotes_1_7.html)
-
 ### Potentially breaking changes and fixes
 
 *   This release includes explicit support for IE8, which has some
@@ -2055,8 +2046,6 @@ introduced in 1.6.2 are resolved.
 * * *
 
 ## <a id="Release_Notes_1_6_2"></a> Release Notes for 1.6.2 (RC)
-
-Please see [What's new in GWT 1.6?](doc/1.6/ReleaseNotes_1_6.html) (online)
 
 * * *
 
@@ -2204,9 +2193,7 @@ the complete list of bug fixes and enhancements](https://github.com/gwtproject/g
 
 ## <a id="Release_Notes_1_5_0"></a> Release Notes for 1.5.0 (RC)
 
-This release candidate is, in a word, huge. Rather than including all
-the details here, please see [What's
-New in GWT 1.5?](http://code.google.com/p/google-web-toolkit-doc-1-5/wiki/ReleaseNotes_1_5_ImportantNotes) for full details. The main thing you'll want to know
+This release candidate is, in a word, huge. The main thing you'll want to know
 is that GWT 1.5 supports the Java 5 language features (generics,
 enumerated types, annotations, etc.). But check out the full notes,
 because there's a lot of great stuff!
@@ -2235,24 +2222,24 @@ the [release notes for 1.4.10](#Release_Notes_1_4_10) first.
 
 ### New Features
 
-*   [DOM.eventGetCurrentEvent()](doc/html/com.google.gwt.user.client.DOM#eventGetCurrentEvent\(\))
+*   [DOM.eventGetCurrentEvent()](javadoc/latest/com/google/gwt/user/client/DOM.html#eventGetCurrentEvent\(\))
 now provides global access to the current Event object. ([#1309](https://code.google.com/p/google-web-toolkit/issues/detail?id=1309))
 *   [PopupPanel.setPopupPositionAndShow(PopupCallback
-callback)](doc/html/com.google.gwt.user.client.ui.PopupPanel#setPopupPositionAndShow\(com.google.gwt.user.client.ui.PopupPanel.PositionCallback\)) now provides now provides a simpler and bulletproof way to
+callback)](javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html#setPopupPositionAndShow\(com.google.gwt.user.client.ui.PopupPanel.PositionCallback\)) now provides now provides a simpler and bulletproof way to
 control the layout of popups. ([#1120](https://code.google.com/p/google-web-toolkit/issues/detail?id=1120),
 [#1243](https://code.google.com/p/google-web-toolkit/issues/detail?id=1243))
-*   The [SuggestionHandler](doc/html/com.google.gwt.user.client.ui.SuggestionHandler)
+*   The [SuggestionHandler](javadoc/latest/com/google/gwt/user/client/ui/SuggestionHandler.html)
 interface can be used to respond to the user selecting a suggstion in
-the [SuggestBox](doc/html/com.google.gwt.user.client.ui.SuggestBox).
+the [SuggestBox](javadoc/latest/com/google/gwt/user/client/ui/SuggestBox.html).
 ([#1086](https://code.google.com/p/google-web-toolkit/issues/detail?id=1086))
-*   [Collection.toArray(Object[])](doc/html/java.util.Collection)
+*   [Collection.toArray(Object[])](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html)
 is now implemented. ([#695](https://code.google.com/p/google-web-toolkit/issues/detail?id=695))
 *   If you have it installed, [Google
 Gears](http://gears.google.com/) is now accessible in hosted mode (Windows only). ([#1252](https://code.google.com/p/google-web-toolkit/issues/detail?id=1252))
 
 ### General Changes
 
-*   Startup is now faster and more reliable. In particular, [onModuleLoad()](doc/html/com.google.gwt.core.client.EntryPoint#onModuleLoad\(\))
+*   Startup is now faster and more reliable. In particular, [onModuleLoad()](javadoc/latest/com/google/gwt/core/client/EntryPoint.html#onModuleLoad\(\))
 is now called as soon as the DOM is ready, which will generally be
 before the page's body.onload() event is fired. This allows your
 application to startup before certain resources (such as images) are
@@ -2261,36 +2248,36 @@ fully loaded.
 [#1281](https://code.google.com/p/google-web-toolkit/issues/detail?id=1281),
 [#1358](https://code.google.com/p/google-web-toolkit/issues/detail?id=1358))
 *   An important discussion of HTTP headers, caching, and HTTPS
-has been added to the [ImageBundle](doc/html/com.google.gwt.user.client.ui.ImageBundle)
+has been added to the [ImageBundle](javadoc/latest/com/google/gwt/user/client/ui/ImageBundle.html)
 documentation. ([#1172](https://code.google.com/p/google-web-toolkit/issues/detail?id=1172))
-*   [PopupPanel.center()](doc/html/com.google.gwt.user.client.ui.PopupPanel#center\(\))
+*   [PopupPanel.center()](javadoc/latest/com/google/gwt/user/client/ui/PopupPanel.html#center\(\))
 now causes the popup to be shown as well as centered. ([#1120](https://code.google.com/p/google-web-toolkit/issues/detail?id=1120))
-*   [RichTextArea](doc/html/com.google.gwt.user.client.ui.RichTextArea)
+*   [RichTextArea](javadoc/latest/com/google/gwt/user/client/ui/RichTextArea.html)
 underwent number of bugfixes and should be stable now. ([#1130](https://code.google.com/p/google-web-toolkit/issues/detail?id=1130),
 [#1214](https://code.google.com/p/google-web-toolkit/issues/detail?id=1214),
 [#1276](https://code.google.com/p/google-web-toolkit/issues/detail?id=1276))
-*   New [RPC](doc/html/com.google.gwt.doc.DeveloperGuide.RemoteProcedureCalls)
+*   New [RPC](doc/latest/DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls)
 warnings
 
     *   Warn if a non-checked exception is used in the throws clause
 of a RemoteService method.
     *   Warn if no concrete, serializable subclasses can be found
 for a given type declared in a RemoteService interface.
-*   [RPC](doc/html/com.google.gwt.doc.DeveloperGuide.RemoteProcedureCalls)
+*   [RPC](doc/latest/DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls)
 now generates a serialization policy file during compilation. The
 serialization policy file contains a whitelist of allowed types which
 may be serialized. Its name is a strong hash name followed by `.gwt.rpc`.
 This file must be deployed to your web server as a public resource,
-accessible from a [RemoteServiceServlet](doc/html/com.google.gwt.user.server.rpc.RemoteServiceServlet)
+accessible from a [RemoteServiceServlet](javadoc/latest/com/google/gwt/user/server/rpc/RemoteServiceServlet.html)
 via `ServletContext.getResource()`. If it is not deployed
 properly, RPC will run in 1.3.3 compatibility mode and refuse to
-serialize types implementing [Serializable](doc/html/java.io.Serializable).
+serialize types implementing [Serializable](https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html).
 ([#1297](https://code.google.com/p/google-web-toolkit/issues/detail?id=1297))
 *   [Panel.adopt(Widget,
-Element)](doc/html/com.google.gwt.user.client.ui.Panel#adopt\(com.google.gwt.user.client.ui.Widget,%20com.google.gwt.user.client.Element\)) and [Panel.disown(Widget)](doc/html/com.google.gwt.user.client.ui.Panel#disown\(com.google.gwt.user.client.ui.Widget\))
+Element)](javadoc/latest/com/google/gwt/user/client/ui/Panel.html#adopt\(com.google.gwt.user.client.ui.Widget,%20com.google.gwt.user.client.Element\)) and [Panel.disown(Widget)](javadoc/latest/com/google/gwt/user/client/ui/Panel.html#disown\(com.google.gwt.user.client.ui.Widget\))
 have been deprecated. If you have subclassed Panel, please carefully
-review the new documentation for [Panel.add(Widget)](doc/html/com.google.gwt.user.client.ui.Panel#add\(com.google.gwt.user.client.ui.Widget\))
-and [Panel.remove(Widget)](doc/html/com.google.gwt.user.client.ui.Panel#remove\(com.google.gwt.user.client.ui.Widget\))
+review the new documentation for [Panel.add(Widget)](javadoc/latest/com/google/gwt/user/client/ui/Panel.html#add\(com.google.gwt.user.client.ui.Widget\))
+and [Panel.remove(Widget)](javadoc/latest/com/google/gwt/user/client/ui/Panel.html#remove\(com.google.gwt.user.client.ui.Widget\))
 for details on the correct way to add and remove Widgets from Panels.
 ([#1121](https://code.google.com/p/google-web-toolkit/issues/detail?id=1121))
 *   The benchmark viewer application is now faster, prettier, and
@@ -2298,7 +2285,7 @@ a bit more user friendly.
 
 ### Retractions from 1.4.10
 
-*   Breaking changes to the semantics of [UIObject.setStyleName()](doc/html/com.google.gwt.user.client.ui.UIObject#setStyleName\(java.lang.String\))
+*   Breaking changes to the semantics of [UIObject.setStyleName()](javadoc/latest/com/google/gwt/user/client/ui/UIObject.html#setStyleName\(java.lang.String\))
 have been backed out. All changes relative to 1.3.3 should now be
 backwards-compatible. ([#1079](https://code.google.com/p/google-web-toolkit/issues/detail?id=1079))
 *   The linux distribution of 1.4.10 bundled Mozilla 1.7.13
@@ -2357,8 +2344,8 @@ of String might work. This type of code is less likely to work now and
 will likely become more strict in the future. Bottom line: don't do
 this. Make sure collections only contain the declared item type (or
 subtypes thereof).
-*   **[Serializable](doc/html/java.io.Serializable)
-equivalent to [IsSerializable](doc/html/com.google.gwt.user.client.rpc.IsSerializable)**
+*   **[Serializable](https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html)
+equivalent to [IsSerializable](javadoc/latest/com/google/gwt/user/client/rpc/IsSerializable.html)**
 
     Although GWT's RPC mechanism doesn't purport to honor the semantics of
 Java serialization, by popular demand, Serializable and IsSerializable
@@ -2367,7 +2354,7 @@ server-side interoperability and remove much of the need for DTOs.
 *   **Warn about missing gwt.typeArgs**
  Every Collection
 or Map type should have an associated [gwt.typeArgs
-javadoc annotation](doc/html/com.google.gwt.doc.DeveloperGuide.RemoteProcedureCalls.SerializableTypes). In the past, a missing @gwt.typeArgs would
+javadoc annotation](doc/latest/DevGuideServerCommunication.html#DevGuideSerializableTypes). In the past, a missing @gwt.typeArgs would
 generally have no noticeable effect, because a bug in the RPC system
 would generate code for all available serializable types, even if they
 weren't used in your service interface. Now that this bug has been
@@ -2405,7 +2392,7 @@ files via a module `<script>` tag required a nested JavaScript
 expression &mdash; called a _script-ready function_ &mdash; that
 would determine when the script had been successfully loaded. Script
 load order is now handled automatically and these expressions are
-ignored. A warning will be issued in hosted mode. For reference, see [here](doc/html/com.google.gwt.doc.DeveloperGuide.Fundamentals.Modules.AutomaticResourceInjection).
+ignored. A warning will be issued in hosted mode. For reference, see [here](doc/latest/DevGuideOrganizingProjects.html#DevGuideAutomaticResourceInclusion).
 
 #### Additional Hosted Mode Checks Related to JSNI
 
@@ -2414,7 +2401,7 @@ hosted mode would silently coerce a JavaScript value of an incorrect
 type into the declared Java type. Unfortunately, this would allow code
 to work in hosted mode that could fail in unexpected ways in web mode.
 Hosted mode will now throw a HostedModeException if you try to pass an
-incompatible type. See [here](doc/html/com.google.gwt.doc.DeveloperGuide.JavaScriptNativeInterface.Marshaling)
+incompatible type. See [here](doc/latest/DevGuideCodingBasicsJSNI.html#important)
 for more details.
 
 ### Breaking API Changes
@@ -2424,26 +2411,26 @@ existing code. Any such changes that affect you should only take a few
 minutes to rectify.
 
 ####
-[JavaScriptObject](doc/html/com.google.gwt.core.client.JavaScriptObject)
+[JavaScriptObject](javadoc/latest/com/google/gwt/core/client/JavaScriptObject.html)
 
 *   Although subclassing JavaScriptObject is not supported, some
 people do so anyway at their own risk :) Please note that the existing
 (int) constructor has been removed in favor of a protected no-arg
-constructor. Read the source code for [Element](doc/html/com.google.gwt.user.client.Element) for an
+constructor. Read the source code for [Element](javadoc/latest/com/google/gwt/user/client/Element.html) for an
 example of how JavaScriptObject must be subclassed now (that is, if
 subclassing were supported...which, of course, it isn't).
 
 ####
-[DeferredCommand](doc/html/com.google.gwt.user.client.DeferredCommand)
+[DeferredCommand](javadoc/latest/com/google/gwt/user/client/DeferredCommand.html)
 
 *   The add() method is deprecated in favor of addCommand() in
-order to support the new [IncrementalCommand](doc/html/com.google.gwt.user.client.IncrementalCommand)
+order to support the new [IncrementalCommand](javadoc/latest/com/google/gwt/user/client/IncrementalCommand.html)
 interface. Had we simply added a new method overload, existing code
 that passed in a null literal would have failed to compile.
 *   The new addPause() method should be used instead of add(null).
 
 ####
-[UIObject](doc/html/com.google.gwt.user.client.ui.UIObject)
+[UIObject](javadoc/latest/com/google/gwt/user/client/ui/UIObject.html)
 
 *   The intended use and behavior of style names has been
 formalized in UIObject (and therefore in all widgets). All style names
@@ -2472,7 +2459,7 @@ sequence removes an HTTP round-trip, making startup latency about
 33% faster.
     *   The above optimizations combined with [ImageBundle](#ImageBundle),
 make it possible for GWT-based applications to load surprisingly
-quickly. To see for yourself, check out startup time of the [Mail](samples/Mail/www/com.google.gwt.sample.mail.Mail/Mail)
+quickly. To see for yourself, check out startup time of the [Mail](https://samples.gwtproject.org/samples/Mail/Mail.html)
 sample.
 *   **Deployment Enhancements**
 
@@ -2491,25 +2478,25 @@ you don't fully trust is a [big
 security risk](http://groups.google.com/group/Google-Web-Toolkit/web/security-for-gwt-applications).
 *   **Widget and Library Enhancements**
 
-    *   [RichTextArea](doc/html/com.google.gwt.user.client.ui.RichTextArea)
+    *   [RichTextArea](javadoc/latest/com/google/gwt/user/client/ui/RichTextArea.html)
 allows "drop in" functionality for rich text editing.
-    *   [SuggestBox](doc/html/com.google.gwt.user.client.ui.SuggestBox)
+    *   [SuggestBox](javadoc/latest/com/google/gwt/user/client/ui/SuggestBox.html)
 makes it easy to add auto-complete functionality.
-    *   Splitters! [HorizontalSplitPanel](doc/html/com.google.gwt.user.client.ui.HorizontalSplitPanel)
-and [VerticalSplitPanel](doc/html/com.google.gwt.user.client.ui.VerticalSplitPanel)
+    *   Splitters! [HorizontalSplitPanel](javadoc/latest/com/google/gwt/user/client/ui/HorizontalSplitPanel.html)
+and [VerticalSplitPanel](javadoc/latest/com/google/gwt/user/client/ui/VerticalSplitPanel.html)
 enable you to resize portions of the user interface.
-    *   [PushButton](doc/html/com.google.gwt.user.client.ui.PushButton)
-and [ToggleButton](doc/html/com.google.gwt.user.client.ui.ToggleButton)
+    *   [PushButton](javadoc/latest/com/google/gwt/user/client/ui/PushButton.html)
+and [ToggleButton](javadoc/latest/com/google/gwt/user/client/ui/ToggleButton.html)
 are easy-to-customize button widgets that can enhance the
 look-and-feel of your UI.
-    *   [DisclosurePanel](doc/html/com.google.gwt.user.client.ui.DisclosurePanel)
+    *   [DisclosurePanel](javadoc/latest/com/google/gwt/user/client/ui/DisclosurePanel.html)
 is a simple, nice-looking panel that lets users easily hide and show
 portions of your application UI.
-    *   [DateTimeFormat](doc/html/com.google.gwt.i18n.client.DateTimeFormat)
-and [NumberFormat](doc/html/com.google.gwt.i18n.client.NumberFormat)
+    *   [DateTimeFormat](javadoc/latest/com/google/gwt/i18n/client/DateTimeFormat.html)
+and [NumberFormat](javadoc/latest/com/google/gwt/i18n/client/NumberFormat.html)
 make it easy to format and parse dates, times, and numbers for users
 all over the world.
-    *   [IncrementalCommand](doc/html/com.google.gwt.user.client.IncrementalCommand)
+    *   [IncrementalCommand](javadoc/latest/com/google/gwt/user/client/IncrementalCommand.html)
 helps you implement long-running tasks in your client code without
 triggering "slow script" warnings.
     *   A new [benchmarking
@@ -2522,7 +2509,7 @@ is now included in the JRE emulation library and is synonymous with
 IsSerializable for the purpose of GWT RPC.
     *   [Mouse
 wheel events](https://code.google.com/p/google-web-toolkit/issues/detail?id=844) are now available on a variety of widgets.
-*   **[ImageBundle](doc/html/com.google.gwt.user.client.ui.ImageBundle)**
+*   **[ImageBundle](javadoc/latest/com/google/gwt/user/client/ui/ImageBundle.html)**
 
     *   ImageBundle is the single biggest
 have-to-see-it-to-believe-it feature in this release. Image bundles
@@ -2543,8 +2530,7 @@ The dimensions of each clipped image are computed at compile time
 while the bundled image file is being created. Voila! The result is
 a fast, non-ugly user startup experience that requires no extra work
 on the part of the GWT developer to keep up-to-date.
-    *   See the [doc
-section](doc/html/com.google.gwt.doc.DeveloperGuide.UserInterface.ImageBundles) for more details.
+    *   See the [doc section](doc/latest/DevGuideUiImageBundles.html) for more details.
 
 See the GWT issue tracker for [the
 complete list of enhancements](https://github.com/gwtproject/gwt/issues?q=is%3Aissue+label%3AMilestone-1_4_RC) in this release.
@@ -2718,31 +2704,30 @@ function pointers
 
 ### New Features
 
-*   **[FileUpload widget](doc/html/com.google.gwt.user.client.ui.FileUpload)**
+*   **[FileUpload widget](javadoc/latest/com/google/gwt/user/client/ui/FileUpload.html)**
 The much-requested file upload widget
-*   **[FormPanel widget](doc/html/com.google.gwt.user.client.ui.FormPanel)**
+*   **[FormPanel widget](javadoc/latest/com/google/gwt/user/client/ui/FormPanel.html)**
 Easily submit traditional HTML forms from GWT apps
-*   **[RPC optimizations](doc/html/com.google.gwt.doc.DeveloperGuide.RemoteProcedureCalls)**
+*   **[RPC optimizations](doc/latest/DevGuideServerCommunication.html#DevGuideRemoteProcedureCalls)**
 Client and server performance improvements and
 a more compact wire format
-*   **[Automatic Resource Injection](doc/html/com.google.gwt.doc.DeveloperGuide.Fundamentals.Modules.AutomaticResourceInjection)**
+*   **[Automatic Resource Injection](doc/latest/DevGuideOrganizingProjects.html#DevGuideAutomaticResourceInclusion)**
 Modules can contain references to
 external JavaScript and CSS files, causing them to be automatically
 loaded when the module itself is loaded
-*   **[Internationalization](doc/html/com.google.gwt.doc.DeveloperGuide.Internationalization)**
+*   **[Internationalization](doc/latest/DevGuideI18n.html)**
 Easily
 localize strings and formatted messages
-*   **[XML classes](doc/html/com.google.gwt.xml.client)**
+*   **[XML classes](javadoc/latest/com/google/gwt/xml/client)**
 An XML library based on the W3C DOM
-*   **[JSON classes](doc/html/com.google.gwt.json.client)**
+*   **[JSON classes](javadoc/latest/com/google/gwt/json/client)**
 JSON has moved into `gwt-user.jar`, and
 it's much faster than the sample that shipped with 1.0.21
-*   **[JUnit
-enhancements](doc/html/com.google.gwt.doc.DeveloperGuide.JUnitIntegration)**
+*   **[JUnit enhancements](doc/latest/DevGuideTesting.html)**
 Unit tests are much, much faster than in
 1.0.21, easier to configure, and you can now test asynchronous things
 like RPCs and timers
-*   **[Javadoc](doc/javadoc/index)**
+*   **[Javadoc](javadoc/latest)**
 Now
 included for your convenience, with sample code fragments
 *   **`gwt-servlet.jar`**
