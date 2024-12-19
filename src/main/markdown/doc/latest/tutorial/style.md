@@ -604,6 +604,7 @@ In GWT, depending on the HTML element, you can set some attributes in the Java c
 
           // Add styles to elements in the stock list table.
           stocksFlexTable.setCellPadding(6);
+       }
        ```
 
 2.  Save your changes and then press Refresh in the browser running development mode to see them.
@@ -612,7 +613,7 @@ In GWT, depending on the HTML element, you can set some attributes in the Java c
 
 Your application's HTML host page can include whatever additional static HTML elements you require. For example, in StockWatcher, you'll add the Google Code logo. To include images, put them in the project's public directory. The GWT compiler will copy all the necessary files to the output directory for deployment.
 
-![Google Code logo](images/GoogleCode.png)
+![GWT Project logo](gettingstarted/images/gwt.png)
 
 To include static images in the application.
 
@@ -623,10 +624,10 @@ To include static images in the application.
        StockWatcher/war/images
        ```
 
-2.  From this page, copy the image of the logo and paste it into the images directory.
+2.  From this page, copy the image of the GWT logo and paste it into the `images/` directory.
 
        ```text
-       StockWatcher/war/images/GoogleCode.png
+       StockWatcher/war/images/gwt.png
        ```
 
 3.  In StockWatcher.html, insert an img tag pointing to the logo file.
@@ -641,7 +642,7 @@ To include static images in the application.
         <script src="stockwatcher/stockwatcher.nocache.js"></script>
       </head>
       <body>
-        <img src="images/GoogleCode.png" />
+        <img src="images/gwt.png" />
         <h1>StockWatcher</h1>
         <div id="stockList"></div>
       </body>
