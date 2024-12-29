@@ -28,13 +28,13 @@ The following code implements an alert dialog by substituting values into the me
 
 ```java
 public interface ErrorMessages extends Messages {
-   String permissionDenied(int errorCode, String username);
- }
- ErrorMessages msgs = GWT.create(ErrorMessages.class)
+  String permissionDenied(int errorCode, String username);
+}
+ErrorMessages msgs = GWT.create(ErrorMessages.class)
 
- void permissionDenied(int errorVal, String loginId) {
-   Window.alert(msgs.permissionDenied(errorVal, loginId));
- }
+void permissionDenied(int errorVal, String loginId) {
+  Window.alert(msgs.permissionDenied(errorVal, loginId));
+}
 ```
 
 **Caution:** Be advised that the rules for using quotes may be a bit confusing. Refer to the [MessageFormat](http://java.sun.com/j2se/1.5.0/docs/api/java/text/MessageFormat.html) javadoc for more details.
