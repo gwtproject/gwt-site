@@ -5,7 +5,7 @@ gwt-site.iml
 npm-debug.log
 node/
 node_modules/
-src/main/site/assets/build/css/
-src/main/site/assets/build/img/
-src/main/site/assets/build/js/global.js
-src/main/site/assets/build/js/global.min.js
+content/src/main/site/assets/build/css/
+content/src/main/site/assets/build/img/
+content/src/main/site/assets/build/js/global.js
+content/src/main/site/assets/build/js/global.min.js
