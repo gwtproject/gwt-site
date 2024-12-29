@@ -23,7 +23,7 @@ Add the following `computeFactorial()` method to MyApp.java and the dummy `testF
 
 ```java
 int computeFactorial(int number) {
-  if (number &le; 1) {
+  if (number <= 1) {
     return 1;
   }
   return number * computeFactorial(number - 1);
@@ -141,7 +141,7 @@ Expected output:
 ```text
 EMMA: processing input files ...
 EMMA: 2 file(s) read and merged in 13 ms
-EMMA: writing [html] report to [PARENT_DIR/samples/com/example/myapp/coverage/index.html] ...</span>
+EMMA: writing [html] report to [PARENT_DIR/samples/com/example/myapp/coverage/index.html] ...
 ```
 
 Follow [Step 4](#improving) of the EclEmma section to improve coverage. As you add more tests, you can see your coverage increasing.

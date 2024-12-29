@@ -25,13 +25,13 @@ To create a timer, create a new instance of the Timer class and then override th
 
 ```java
 Timer timer = new Timer() {
-      public void run() {
-        Window.alert ("Timer expired!");
-      }
-    };
+  public void run() {
+    Window.alert("Timer expired!");
+  }
+};
 
-    // Execute the timer to expire 2 seconds in the future
-    timer.schedule(2000);
+// Execute the timer to expire 2 seconds in the future
+timer.schedule(2000);
 ```
 
 Notice that the timer will not have a chance to execute the run() method until after control returns to the JavaScript event loop.
@@ -169,14 +169,14 @@ it to [Scheduler.scheduleDeferred](/javadoc/latest/com/google/gwt/core/client/Sc
 ```java
 TextBox dataEntry;
 
-  // Set the focus on the widget after setup completes.
-  Scheduler.get().scheduleDeferred(new Command() {
-    public void execute () {
-      dataEntry.setFocus();
-    }
-  });
+// Set the focus on the widget after setup completes.
+Scheduler.get().scheduleDeferred(new Command() {
+  public void execute () {
+    dataEntry.setFocus();
+  }
+});
 
-  dataEntry = new TextBox();
+dataEntry = new TextBox();
 ```
 
 ## Avoiding Slow Script Warnings: the IncrementalCommand class<a id="incremental"></a>
