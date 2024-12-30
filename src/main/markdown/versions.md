@@ -18,7 +18,7 @@ Build 2.12.1 - November 12, 2024 - [Release notes](release-notes.html#Release_No
       <tr>
         <td>Windows, Mac OS X, and Linux</td>
         <td><a href="https://github.com/gwtproject/gwt/releases/download/2.12.1/gwt-2.12.1.zip">gwt-2.12.1.zip</a></td>
-        <td>109 MB</td>        
+        <td>109 MB</td>
         <td>edd1bd40bac0b69af4e493ccad0b3b6167803166</td>
       </tr>
     </tbody>
