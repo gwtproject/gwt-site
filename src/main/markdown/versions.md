@@ -735,7 +735,6 @@ Build 1.4.62 - March 17, 2008 - [Release notes](release-notes.html#Release_Notes
       <td>665402fbdbf04b7d0461b31477c04b4edb604d56</td>
     </tr>
   </tbody></table>
-  Using GWT 1.4 on Mac OS X 10.5 (Leopard)
 
 Build 1.4.61 - November 29, 2007 - [Release notes](release-notes.html#Release_Notes_1_4_61)
 
