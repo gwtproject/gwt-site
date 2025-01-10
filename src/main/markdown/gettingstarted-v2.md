@@ -44,6 +44,16 @@ mvn archetype:generate \
    -DarchetypeArtifactId=modular-webapp
 ```
 
+If you are using a Java version earlier than 17, consider using a previous Maven archetype. The recent upgrade of Jetty to version 12 
+requires Java 17 or newer.
+
+```shell
+mvn archetype:generate \
+   -DarchetypeGroupId=net.ltgt.gwt.archetypes \
+   -DarchetypeVersion=2024.11.13 \
+   -DarchetypeArtifactId=modular-webapp
+```
+
 The archetype will request values for:
 
 * **groupId**: com.mycompany.mywebapp
