@@ -91,16 +91,20 @@
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
-            <id>unpack-dependencies</id>
+            <id>unpack</id>
             <phase>prepare-package</phase>
             <goals>
-              <goal>unpack-dependencies</goal>
+              <goal>unpack</goal>
             </goals>
             <configuration>
-              <includeGroupIds>org.gwtproject</includeGroupIds>
-              <includeArtifactIds>gwt-dev</includeArtifactIds>
-              <includeClassifiers>javadoc</includeClassifiers>
-              <excludeTransitive>true</excludeTransitive>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.gwtproject</groupId>
+                  <artifactId>gwt-dev</artifactId>
+                  <version>2.12.1</version>
+                  <classifier>javadoc</classifier>
+                </artifactItem>
+              </artifactItems>
               <outputDirectory>${project.build.directory}/generated-site/javadoc/latest</outputDirectory>
             </configuration>
           </execution>
@@ -165,12 +169,6 @@
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
       <version>2.7</version>
-    </dependency>
-    <dependency>
-      <groupId>org.gwtproject</groupId>
-      <artifactId>gwt-dev</artifactId>
-      <version>2.12.1</version>
-      <classifier>javadoc</classifier>
     </dependency>
   </dependencies>
 
