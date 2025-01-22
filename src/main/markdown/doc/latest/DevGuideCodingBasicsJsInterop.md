@@ -24,22 +24,25 @@ package com.gwt.example;
 @JsType
 public class MyClass {
 
-    public String name;
+  public String name;
 
-    public MyClass(String name) {
-        this.name = name;
-    }
+  public MyClass(String name) {
+    this.name = name;
+  }
 
-    public void sayHello() {
-        return "Hello" + this.name;
-    }
+  public String sayHello() {
+    return "Hello " + this.name;
+  }
 }
 ```
 
 From the JS script, the object can be used as a JS object:
 
 ```javascript
-//the package name serves as a JS namespace
+// Note that exporting of Java Objects to JavaScript to be accessed by their
+// namespace (e.g. this sample) requires -generateJsInteropExports flag.
+
+// the package name serves as a JS namespace
 var aClass = new com.gwt.example.MyClass('World');
 
 console.log(aClass.sayHello());
