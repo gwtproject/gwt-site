@@ -20,7 +20,7 @@ jobs:
         run: mvn -e --batch-mode --no-transfer-progress verify -Pgrunt
 
       - name: Upload artifact for testing/deployment
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: gwt-site
           path: 'target/generated-site/'
