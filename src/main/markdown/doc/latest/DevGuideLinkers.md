@@ -3,12 +3,12 @@
 The Linker subsystem takes care of writing the GWT compiler's output. It's responsible for each output file's name, location, and content.
 
 Inside the compiler, each output file is represented by an
-[Artifact](https://www.gwtproject.org/javadoc/latest/com/google/gwt/core/ext/linker/Artifact.html).
+[Artifact](/javadoc/latest/com/google/gwt/core/ext/linker/Artifact.html).
 
 You usually do not need to care about them, unless you have specific requirements.
 
 Linkers create several kinds of files (see
-[EmittedArtifact.Visibility](https://www.gwtproject.org/javadoc/latest/com/google/gwt/core/ext/linker/EmittedArtifact.Visibility.html)):
+[EmittedArtifact.Visibility](/javadoc/latest/com/google/gwt/core/ext/linker/EmittedArtifact.Visibility.html)):
 
 - **Public files** are those intended to be downloaded by web browsers.
 This includes JavaScript and other resource files.
@@ -64,7 +64,7 @@ In case you have specific needs not covered by the existing linkers, you can cre
 
 First, implement your linker. It must be a class extending the [Linker](/javadoc/latest/com/google/gwt/core/ext/Linker.html)
 abstract class (check its documentation), or
-[AbstractLinker](https://www.gwtproject.org/javadoc/latest/com/google/gwt/core/ext/linker/AbstractLinker.html).
+[AbstractLinker](/javadoc/latest/com/google/gwt/core/ext/linker/AbstractLinker.html).
 
 Using the `@LinkerOrder` annotation, you can specify whether it is a pre-, post- or primary linker.
 You must also annotate it with the `@Shardable` annotation.
