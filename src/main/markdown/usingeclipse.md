@@ -25,7 +25,10 @@ The best way to install is by using the [Eclipse Marketplace](https://marketplac
 
 <a href="https://marketplace.eclipse.org/marketplace-client-intro?mpc_install=5576850" class="drag" title="Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client"><img style="width:80px;" typeof="foaf:Image" class="img-responsive" src="https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.svg" alt="Drag to your running Eclipse* workspace. *Requires Eclipse Marketplace Client" /></a>
 
-Alternatively you may download the repository [here https://github.com/gwt-plugins/gwt-eclipse-plugin/releases/v4.0.0](https://github.com/gwt-plugins/gwt-eclipse-plugin/releases/v4.0.0)
+Alternatively you may download the latest repository [here https://github.com/gwt-plugins/gwt-eclipse-plugin/releases](https://github.com/gwt-plugins/gwt-eclipse-plugin/releases)
+
+Or you could use this update site [https://plugins.gwtproject.org/eclipse/site/latest](https://plugins.gwtproject.org/eclipse/site/latest) to install the GWT Eclipse Plugin as well as the
+GWT SDK Plugins.
 
 After installing, you should configure the GWT settings in the Eclipse Preferences Dialog.
 
