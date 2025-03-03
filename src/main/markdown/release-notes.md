@@ -1,5 +1,6 @@
 The GWT Release Notes
 =====================
+* [2.12.2](#Release_Notes_2_12_2) March 3, 2025
 * [2.12.1](#Release_Notes_2_12_1) November 12, 2024
 * [2.12.0](#Release_Notes_2_12_0) October 29, 2024
 * [2.11.0](#Release_Notes_2_11_0) January 9, 2024
@@ -68,6 +69,13 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
+## <a id="Release_Notes_2_12_2"></a> Release Notes for 2.12.2
+### Bug fixes:
+- Fixed a regression in Window.onClosing() that prevented the event from being fired in some cases
+- Support JDT's implicit yield in switch statements
+
+For more detail, see the [commit log](https://github.com/gwtproject/gwt/compare/2.12.1...2.12.2).
+
 ## <a id="Release_Notes_2_12_1"></a> Release Notes for 2.12.1
 ### Bug fixes:
 - Switch statements can correctly compile without being contained in braces
