@@ -38,7 +38,7 @@ Note: There is a variety of public sources of JSON-formatted data you can practi
 
 ## Making Asynchronous Calls
 
-Whether you use GWT RPC or get JSON data via HTTP, all the calls you make from the HTML page to the server are asychronous.
+Whether you use GWT RPC or get JSON data via HTTP, all the calls you make from the HTML page to the server are asynchronous.
 This means they do not block while waiting for the call to return.
 The code following the call executes immediately.
 When the call completes, the callback method you specified when you made the call will execute.

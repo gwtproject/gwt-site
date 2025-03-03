@@ -7,7 +7,7 @@ FAQ - UI
     3.  [Why doesn't setting a widget's height as a percentage work?](#Why_doesn)
     4.  [Does GWT support standards mode?](#Does_GWT_support_standards_mode?) 
 2.  [Event Handling and Performance](#Event_Handling_and_Performance)
-    1.  [How do I display a big list of items in a table with good performance?](#How_do_I_display_a_big_list_of_items_in_a_table_with_good_perfor)
+    1.  [How do I display a big list of items in a table with good performance?](#How_do_I_display_a_big_list_of_items_in_a_table_with_good_perform)
     2.  [What can I do to make images and borders appear to load more quickly the first time they are used?](#What_can_I_do_to_make_images_and_borders_appear_to_load_more_qui)
     3.  [Why do I see poor performance when using a one pixel tall background image?](#Why_do_I_see_poor_performance_when_using_a_one_pixel_tall_backgr)
     4.  [As the application grows, event handlers seem to fire more slowly](#As_the_application_grows,_event_handlers_seem_to_fire_more_slowl)
@@ -141,7 +141,7 @@ versions of GWT, and it is recommended that you update your GWT-enabled pages to
 
 ## Event Handling and Performance<a id="Event_Handling_and_Performance"></a>
 
-### How do I display a big list of items in a table with good performance?<a id="How_do_I_display_a_big_list_of_items_in_a_table_with_good_perfor"></a>
+### How do I display a big list of items in a table with good performance?<a id="How_do_I_display_a_big_list_of_items_in_a_table_with_good_perform"></a>
 
 Here are a few pointers for addressing the need to display lots of data through a table widget efficiently.
 

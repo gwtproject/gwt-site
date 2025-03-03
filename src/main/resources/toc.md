@@ -42,7 +42,7 @@
           - [JRE Compatibility](doc/latest/DevGuideCodingBasicsCompatibility.html)
           - [Ajax Communication](doc/latest/DevGuideServerCommunication.html 'Communicate with a server')
           - [History Mechanism](doc/latest/DevGuideCodingBasicsHistory.html)
-          - [Formatting](doc/latest/DevGuideCodingBasicsFormatting.html 'Number and Date Formating')
+          - [Formatting](doc/latest/DevGuideCodingBasicsFormatting.html 'Number and Date Formatting')
           - [Delayed Logic](doc/latest/DevGuideCodingBasicsDelayed.html)
           - [Working with JSON](doc/latest/DevGuideCodingBasicsJSON.html)
           - [Working with XML](doc/latest/DevGuideCodingBasicsXML.html)

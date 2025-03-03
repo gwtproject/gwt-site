@@ -314,7 +314,7 @@ the path prefix up to and including `jre`. As a result, `com/google/myproject/gw
 The GWT project uses this technique internally for the JRE emulation
 classes provided with GWT. One caveat specific to overriding JRE classes in
 this way is that they will never actually be used in development mode. In
-development mode, the native JRE classes always supercede classes compiled
+development mode, the native JRE classes always supersede classes compiled
 from source.
 
 The `<super-source>` element supports [pattern-based

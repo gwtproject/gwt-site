@@ -363,7 +363,7 @@ examples.
 **Original**
 
 ```html
-<th title="Gross recipts">Gross</th>
+<th title="Gross receipts">Gross</th>
 ```
 
 **Tagged**

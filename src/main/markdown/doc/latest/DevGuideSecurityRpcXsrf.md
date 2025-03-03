@@ -124,7 +124,7 @@ package com.example.foo.client;
   }
 ```
 
-Method level annotations override RPC interface level annoatations. If no
+Method level annotations override RPC interface level annotations. If no
   annotations are present and the RPC interface contains a method that returns
   [`RpcToken`](/javadoc/latest/com/google/gwt/user/client/rpc/RpcToken.html) or its implementation, then XSRF token validation is
   performed on all methods of that interface except for the method returning

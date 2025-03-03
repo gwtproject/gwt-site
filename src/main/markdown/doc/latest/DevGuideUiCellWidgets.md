@@ -286,7 +286,7 @@ CellBrowser is similar to a CellTree but displays the node levels side-by-side. 
     CellBrowser browser = new CellBrowser(model, "Item 1");
 ```
 
-**Code Example #1** - For a simple example of CellBrowser, see [CellBrowerExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample.java). 
+**Code Example #1** - For a simple example of CellBrowser, see [CellBrowserExample.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample.java). 
 
 **Code Example #2** - For a real-world example of CellBrowser, see [CellBrowserExample2.java](https://github.com/gwtproject/gwt/blob/main/user/javadoc/com/google/gwt/examples/cellview/CellBrowserExample2.java).
 
