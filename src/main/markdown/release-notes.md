@@ -2525,7 +2525,7 @@ make it trivially easy to combine dozens of images into a single
 "image strip", collapsing what would have been dozens of HTTP
 requests into one: a single, permanently-cacheable image file.
     *   Image bundles manage everything for you automatically, from
-computing clipping rectangles to making transparent ONGs work in
+computing clipping rectangles to making transparent PNG images work in
 IE6. You can even choose to get the clipped image as an Image widget
 or as pure HTML for inclusion in a larger HTML template.
     *   In addition to enabling a blazing-fast startup, image
