@@ -159,7 +159,7 @@ the count is 0, `"Nobody is here"` is chosen; if the count is 3,
 `"{1}, {2}, and one other are here"` is chosen because 2 is subtracted
 from the count before looking up the plural form to use.
 
-BTW, we know it is somewhat klunky to have to pass in the names this way.
+BTW, we know it is somewhat clunky to have to pass in the names this way.
 In the future, we will add a way of referencing elements in the list/array
 from the placeholders, where you could simply call `peopleHere(names)`.
 

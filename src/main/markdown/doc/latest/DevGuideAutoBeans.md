@@ -228,7 +228,7 @@ Maps are serialized in two forms based on whether or not the key type is a value
 ```json
 { "1" : { "property" : "value"}, "55" : { "property" : "value" } }
 ```
-A map that uses a reference object as a key will instead be encoded as a list of two lists. This allows object-identity maps that contain keys with identical serialized froms to be deserialized correctly. For example, a `Map<Person, Address>` would be encoded as: 
+A map that uses a reference object as a key will instead be encoded as a list of two lists. This allows object-identity maps that contain keys with identical serialized forms to be deserialized correctly. For example, a `Map<Person, Address>` would be encoded as: 
 
 ```json
 [ 

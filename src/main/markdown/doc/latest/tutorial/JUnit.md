@@ -147,7 +147,7 @@ with the path to junit on your system.
 [junit] Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 37.042 sec
 ```
 
-### In Eclipse (using the Google Pluging for Eclipse)
+### In Eclipse (using the Google Plugin for Eclipse)
 
 The Google Plugin for Eclipse makes it easy to run tests in Eclipse.
 

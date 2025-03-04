@@ -28,7 +28,7 @@ public class MarkupWriter {
     this.rootFile = rootFile;
   }
 
-  public void writeHTML(MDNode node, String html) throws TranslaterException {
+  public void writeHTML(MDNode node, String html) throws TranslatorException {
 
     if (node.isFolder()) {
       throw new IllegalArgumentException();
@@ -62,16 +62,16 @@ public class MarkupWriter {
     try {
       Util.writeStringToFile(fileToWrite, html);
     } catch (IOException e) {
-      throw new TranslaterException("can not write markup to file: '" + fileToWrite + "'", e);
+      throw new TranslatorException("can not write markup to file: '" + fileToWrite + "'", e);
 
     }
   }
 
-  private void ensureDirectory(File dir) throws TranslaterException {
+  private void ensureDirectory(File dir) throws TranslatorException {
     if (!dir.exists()) {
       boolean created = dir.mkdir();
       if (!created) {
-        throw new TranslaterException("can not create directory: '" + dir + "'");
+        throw new TranslatorException("can not create directory: '" + dir + "'");
       }
     }
   }

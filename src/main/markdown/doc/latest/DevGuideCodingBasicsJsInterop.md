@@ -149,7 +149,7 @@ fn(40); // will return 42!
 ## Adding additional utility methods to a native type
 
 The JsInterop contract specifies that a native type may contain only native methods except the ones annotated with `@JsOverlay`. 
-`@JsOverlay` allows adding a method to a native type (annotated with `@JsType(isNative=true)`) or on a default method of a `@JsFunction` annotated interface . The `@JsOverlay` contract specifies that the methods annotated should be final and should not override any existing native method. The annotated methods will not be accessble from JavaScript and can be used from Java only. `@JsOverlay` can be useful for adding utilities methods that may not be offered by the native type. For example:
+`@JsOverlay` allows adding a method to a native type (annotated with `@JsType(isNative=true)`) or on a default method of a `@JsFunction` annotated interface . The `@JsOverlay` contract specifies that the methods annotated should be final and should not override any existing native method. The annotated methods will not be accessible from JavaScript and can be used from Java only. `@JsOverlay` can be useful for adding utilities methods that may not be offered by the native type. For example:
 
 ```java
 @JsType(isNative = true)

@@ -15,7 +15,7 @@ package com.google.gwt.site.markdown;
 
 public class MarkDown {
 
-  public static void main(String[] args) throws MDHelperException, TranslaterException {
+  public static void main(String[] args) throws MDHelperException, TranslatorException {
 
     if (args.length < 3) {
       System.out.println("Usage MarkDown <sourceDir> <outputDir> <templateFile> [templateTOC]");
@@ -45,7 +45,7 @@ public class MarkDown {
     } catch (MDHelperException e) {
       e.printStackTrace();
       throw e;
-    } catch (TranslaterException e) {
+    } catch (TranslatorException e) {
       e.printStackTrace();
       throw e;
     }

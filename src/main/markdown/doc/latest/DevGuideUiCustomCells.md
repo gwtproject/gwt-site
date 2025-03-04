@@ -180,7 +180,7 @@ The process for adding event support is as follows:
 2.  Override the
     [Cell#onBrowserEvent()](/javadoc/latest/com/google/gwt/cell/client/Cell.html#onBrowserEvent-com.google.gwt.cell.client.Cell.Context-com.google.gwt.dom.client.Element-C-com.google.gwt.dom.client.NativeEvent-com.google.gwt.cell.client.ValueUpdater-) method to handle the event. For some events, you may want to look at the event target before deciding how to handle the event.
     In the example below, we only respond to click events that actually occur on the rendered div.
-3.  As described in the example comments below, the `onEnterKeyDown()` method is a special case convience method in AbstractCell that helps to provide
+3.  As described in the example comments below, the `onEnterKeyDown()` method is a special case convenience method in AbstractCell that helps to provide
     a unified user experience, such that all Cells that respond to events can be activated by selecting the Cell with the keyboard and pressing enter.  Otherwise,
     users would not be able to interact with the Cell without using the mouse. The convention followed by GWT cells is to toggle editing when the enter key is
     pressed, but you are free to define the behavior for your app. Your cell's getConsumedEvents() method must include "keydown" in order for AbstractCell to call

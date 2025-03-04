@@ -84,7 +84,7 @@ aren't forced to pay the widget tax just to have templates.
 </ui:UiBinder>
 ```
 
-Now suppose you need to programatically read and write the text in the
+Now suppose you need to programmatically read and write the text in the
 span (the one with the `ui:field='nameSpan'` attribute) above. You'd
 probably like to write actual Java code to do things like that, so
 UiBinder templates have an associated owner class that allows

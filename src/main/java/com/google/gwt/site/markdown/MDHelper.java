@@ -105,7 +105,7 @@ public class MDHelper {
 
     // read template TOC if parameter is provided
     if (templateTocFile != null) {
-      templateToc = MDTranslater.markDownToHtml(readFile(templateTocFile));
+      templateToc = MDTranslator.markDownToHtml(readFile(templateTocFile));
     }
 
     created = true;
@@ -121,7 +121,7 @@ public class MDHelper {
      }
   }
 
-  public void translate() throws TranslaterException {
+  public void translate() throws TranslatorException {
 
     if (!created) {
       throw new IllegalStateException();
@@ -132,7 +132,7 @@ public class MDHelper {
 
     TocCreator tocCreator = templateToc != null ? new TocFromTemplateCreator(templateToc) : new TocFromMdCreator();
 
-    new MDTranslater(tocCreator, new MarkupWriter(outputDirectoryFile), template)
+    new MDTranslator(tocCreator, new MarkupWriter(outputDirectoryFile), template)
        .render(mdRoot);
   }
 
