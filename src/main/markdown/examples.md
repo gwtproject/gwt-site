@@ -125,35 +125,6 @@ GWT is being used by tens of thousands of projects around the world. Take a look
 
 <div class="project">
   <div class="screenshot">
-    <a href="http://www.google.com/inbox" target="_blank"><img src="images/inbox.png" alt="Google Inbox"/></a>
-  </div>
-  <div class="info">
-    <div class="name"><a href="http://www.google.com/inbox" target="_blank">Google Inbox</a></div>
-    <div class="snippet">Google Inbox is a fresh start that goes beyond email to help you get back to what matters.
-	Inbox is using a new approach to
-	<a href="https://www.youtube.com/watch?feature=player_embedded&v=KdCs85jqcH0#t=747">delivering multiplatform native applications</a>
-	using common code base. GWT is used to deliver the Web version.
-	<p>Google is using GWT in number of other public services, including:
-		<a href="https://docs.google.com/spreadsheets" target="_blank">Spreadsheets</a>,
-		<a href="https://groups.google.com/forum/" target="_blank">Groups</a>,
-		<a href="https://adwords.google.com " target="_blank">AdWords</a>,
-		<a href="https://www.google.com/webmasters/tools/home" target="_blank">Webmaster Tools</a>,
-		<a href="https://www.google.com/moderator/" target="_blank">Moderator</a>,
-		<a href="https://www.blogger.com/" target="_blank">Blogger&nbsp;Admin</a>,
-		<a href="https://www.google.com/wallet/" target="_blank">Wallet</a>,
-		<a href="https://www.google.com/fonts/" target="_blank">WebFonts</a>,
-		<a href="https://www.google.com/script/" target="_blank">Apps&nbsp;Script</a>,
-		<a href="https://www.google.com/producer/" target="_blank">Currents&nbsp;Producer</a>,
-		<a href="https://www.google.com/flights/" target="_blank">Flights</a>,
-		<a href="https://www.google.com/fusiontables/DataSource?dsrcid=2049253" target="_blank">Fusion&nbsp;Tables</a>,
-		<a href="https://www.google.com/hotels/" target="_blank">Hotel&nbsp;Finder</a>.
-	</p>
- </div>
-  </div>
-</div>
-
-<div class="project">
-  <div class="screenshot">
     <a href="https://ruxit.com" target="_blank"><img src="images/ruxit.png" alt="ruxit"/></a>
   </div>
   <div class="info">
