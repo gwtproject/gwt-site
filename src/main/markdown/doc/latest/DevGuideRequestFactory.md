@@ -364,7 +364,7 @@ as _transportable types_.  Each client-side transportable type is mapped to a se
 
 In determining whether or not a client-side method defined in a proxy or
 context type is a valid mapping for a domain method, the client types are
-converted to ther domain equivalent and regular Java type assignability rules
+converted to their domain equivalent and regular Java type assignability rules
 are considered.
 
 A proxy type will be available on the client if it is:
@@ -399,7 +399,7 @@ formally implement the RequestContext interface. The name and argument list for
 each method is the same on client and server, with the following mapping
 rules:
 
-*   Client side methods that return `Reques<T>`return only T on the server. For example, a method
+*   Client side methods that return `Request<T>`return only T on the server. For example, a method
 that returns `Request<String>` in the client interface simply returns String on the server.
 *   EntityProxy types become the domain entity type on the server, so a method that returns
 `Request<List<EmployeeProxy>>` will just return `List<Employee>` on the server.

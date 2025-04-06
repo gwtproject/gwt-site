@@ -13,7 +13,7 @@
  */
 package com.google.gwt.site.markdown.fs;
 
-import com.google.gwt.site.markdown.TranslaterException;
+import com.google.gwt.site.markdown.TranslatorException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -89,7 +89,7 @@ public class FileSystemTraverser {
     }
   }
 
-  public MDParent traverse(File file) throws TranslaterException {
+  public MDParent traverse(File file) throws TranslatorException {
     MDParent mdParent = traverse(null, file, 0, "");
     removeEmptyDirs(mdParent);
 
@@ -98,7 +98,7 @@ public class FileSystemTraverser {
     return mdParent;
   }
 
-  private void readConfig(MDParent current) throws TranslaterException {
+  private void readConfig(MDParent current) throws TranslatorException {
 
     if (current.getConfigFile() != null) {
       FolderConfig config = parseConfig(current.getConfigFile());
@@ -178,7 +178,7 @@ public class FileSystemTraverser {
   }
 
   private MDParent traverse(MDParent parent, File file, int depth, String path)
-      throws TranslaterException {
+      throws TranslatorException {
 
     if (ignoreFile(file)) {
       return null;
@@ -221,7 +221,7 @@ public class FileSystemTraverser {
 
   }
 
-  private FolderConfig parseConfig(File file) throws TranslaterException {
+  private FolderConfig parseConfig(File file) throws TranslatorException {
     DocumentBuilder builder;
     List<String> excludeList = new LinkedList<String>();
 
@@ -236,7 +236,7 @@ public class FileSystemTraverser {
       Element documentElement = document.getDocumentElement();
 
       if (!"folder".equalsIgnoreCase(documentElement.getTagName())) {
-        throw new TranslaterException(
+        throw new TranslatorException(
             "the file '" + file.getAbsolutePath() + "' does not contain a folder tag");
       }
 
@@ -277,11 +277,11 @@ public class FileSystemTraverser {
       }
 
     } catch (ParserConfigurationException e) {
-      throw new TranslaterException("can not construct xml parser", e);
+      throw new TranslatorException("can not construct xml parser", e);
     } catch (SAXException e) {
-      throw new TranslaterException("error while parsing xml", e);
+      throw new TranslatorException("error while parsing xml", e);
     } catch (IOException e) {
-      throw new TranslaterException("can not read file", e);
+      throw new TranslatorException("can not read file", e);
     }
 
     return new FolderConfig(href, excludeList, folderEntries);

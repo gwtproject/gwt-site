@@ -359,7 +359,7 @@ ones.
 
 - Support "`*`" (any) and "`?`" (unknown) types as a JsType native name. The
 "Unknown" type can be referred over Object if the type is unknown, while "any" is
-prefered supertype of any JS type, including primitives.
+preferred supertype of any JS type, including primitives.
 
 ### Bug fixes
 - Fix loading bug in waitForBodyLoaded.js
@@ -372,7 +372,7 @@ prefered supertype of any JS type, including primitives.
 - Clear persistent unit cache when relevant options change.
 - Rescue JSOs crossing JsInterop borders.
 - Rescue types represented as natives when supertypes cross JS boundaries.
-- Prevent errorneous floating point expression optimization.
+- Prevent erroneous floating point expression optimization.
 - Fix the implementation of Stream.anyMatch/allMatch/noneMatch to support streams with null elements.
 - Do not ignore return values of streams.
 - Fix ICE due to intersection types appearing as erasure casts.
@@ -403,7 +403,7 @@ prefered supertype of any JS type, including primitives.
 
 ### Bug fixes
 - Fix erroneous constant propagation in JsProperty field.
-- Fix missing bridges for default methods and functionnal expressions.
+- Fix missing bridges for default methods and functional expressions.
 - Fix ArrayDeque's bug when expanding capacity.
 - Fix missing declaration/initialization of JsOverlay fields.
 - Fix missing error reporting in SDM that leads to NPE. 
@@ -541,7 +541,7 @@ prefered supertype of any JS type, including primitives.
 - GSS is no longer experimental but it's not enabled by default for easier and smoother migration to GWT 2.8. The `CssResource.enableGss` configuration property turns on GSS support. For more information on GSS migration, please refer to [this document](https://www.gwtproject.org/articles/gss_migration.html)
 - "For loop support" added
 - a new function concat() is now available to concatenate variable and string literal.
-- @gen-webkit-keyframes annotation: generate automaticaly @-webkit-keyframes block
+- @gen-webkit-keyframes annotation: generate automatically @-webkit-keyframes block
 
 #### Dev Mode
 - Dev Mode is now deprecated
@@ -1685,7 +1685,7 @@ manipulation ([#4586](https://code.google.com/p/google-web-toolkit/issues/detail
 *   NumberFormat error formatting more than 6 decimal places ([#4598](https://code.google.com/p/google-web-toolkit/issues/detail?id=4598))
 *   DateBox can generate an untrapped exception if a non-default
 format is used ([#4633](https://code.google.com/p/google-web-toolkit/issues/detail?id=4633))
-*   PopupPanel.removeFromParent() dosen't remove glass panel ([#4720](https://code.google.com/p/google-web-toolkit/issues/detail?id=4720))
+*   PopupPanel.removeFromParent() doesn't remove glass panel ([#4720](https://code.google.com/p/google-web-toolkit/issues/detail?id=4720))
 *   ClassNotFoundException from web.xml for configured listeners
 during devmode servlet validation ([#4760](https://code.google.com/p/google-web-toolkit/issues/detail?id=4760))
 *   Converting ImageBundle to ResourceBundle causes a regression
@@ -2525,7 +2525,7 @@ make it trivially easy to combine dozens of images into a single
 "image strip", collapsing what would have been dozens of HTTP
 requests into one: a single, permanently-cacheable image file.
     *   Image bundles manage everything for you automatically, from
-computing clipping rectangles to making transparent PNGs work in
+computing clipping rectangles to making transparent PNG images work in
 IE6. You can even choose to get the clipped image as an Image widget
 or as pure HTML for inclusion in a larger HTML template.
     *   In addition to enabling a blazing-fast startup, image
@@ -2896,7 +2896,7 @@ quotes
 *   Selection issue when removing widgets from TabPanel.
 *   JSONParser always assumes root type is JSONObject
 *   ClassSourceFileComposer should not handle Class objects.
-*   Modules cannot supercede files from inherited modules
+*   Modules cannot supersede files from inherited modules
 *   Simple &amp; ComplexPanel shouldn't implement getChildCount(),
 getChild(), etc.
 *   Negative byte values passed into JavaScript become positive

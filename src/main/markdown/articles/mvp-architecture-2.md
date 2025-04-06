@@ -330,7 +330,7 @@ public class ContactsViewColumnDefinitions<ContactDetails> {
       });
     }
 
-    public List<ColumnDefinition<ContactDetails>> getColumnDefnitions() {
+    public List<ColumnDefinition<ContactDetails>> getColumnDefinitions() {
       return columnDefinitions;
     }
   }

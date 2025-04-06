@@ -5,9 +5,9 @@ import junit.framework.TestCase;
 /**
  * Test class for MDTranslate
  */
-public class MDTranslaterTest extends TestCase {
+public class MDTranslatorTest extends TestCase {
 
-  private void assertAdjustUrl(MDTranslater md, String relativePath, String tag, String attr,
+  private void assertAdjustUrl(MDTranslator md, String relativePath, String tag, String attr,
       String url, String match) {
     String ini = "<foo>\n </foo>";
     String end = "<bar>\n </bar>";
@@ -19,7 +19,7 @@ public class MDTranslaterTest extends TestCase {
   }
 
   public void testAdjustRelativePath() throws Exception {
-    MDTranslater mdt = new MDTranslater(null, null, null);
+    MDTranslator mdt = new MDTranslator(null, null, null);
 
     // empty url
     assertAdjustUrl(mdt, "../", "a", "href", "", "../");

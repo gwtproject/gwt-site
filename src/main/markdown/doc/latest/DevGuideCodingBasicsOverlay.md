@@ -183,7 +183,7 @@ function $onModuleLoad(){
 
 This is pretty darn optimized. Even the overhead of the `getFullName()` method went away. In fact, _all_ of the Java method calls went away. When we say that "GWT
 gives you affordable abstractions," this is the kind of thing we're talking about. Not only does inlined code run significantly faster, we no longer had to include the function
-definitions themselves, thus shrinking the script a litte, too. (To be fair, though, inlining can also easily increase script size, so we're careful to strike a balance between
+definitions themselves, thus shrinking the script a little, too. (To be fair, though, inlining can also easily increase script size, so we're careful to strike a balance between
 size and speed.) It's pretty fun to look back at the original Java source above and try to reason about the sequence of optimizations the compiler had to perform to end up
 here.
 

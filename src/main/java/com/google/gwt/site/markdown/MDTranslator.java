@@ -29,7 +29,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-public class MDTranslater {
+public class MDTranslator {
   private static final String SEPARATOR = File.separator;
 
 
@@ -39,17 +39,17 @@ public class MDTranslater {
 
   private final String template;
 
-  public MDTranslater(TocCreator tocCreator, MarkupWriter writer, String template) {
+  public MDTranslator(TocCreator tocCreator, MarkupWriter writer, String template) {
     this.tocCreator = tocCreator;
     this.writer = writer;
     this.template = template;
   }
 
-  public void render(MDParent root) throws TranslaterException {
+  public void render(MDParent root) throws TranslatorException {
     renderTree(root, root);
   }
 
-  private void renderTree(MDNode node, MDParent root) throws TranslaterException {
+  private void renderTree(MDNode node, MDParent root) throws TranslatorException {
 
     if (node.isFolder()) {
       MDParent mdParent = node.asFolder();
@@ -125,11 +125,11 @@ public class MDTranslater {
         "$1='" + relativePath + "$3'");
   }
 
-  private String getNodeContent(String path) throws TranslaterException {
+  private String getNodeContent(String path) throws TranslatorException {
     try {
       return Util.getStringFromFile(new File(path));
     } catch (IOException e1) {
-      throw new TranslaterException("can not load content from file: '" + path + "'", e1);
+      throw new TranslatorException("can not load content from file: '" + path + "'", e1);
     }
 
   }
