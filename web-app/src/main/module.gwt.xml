@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Could not determine the version of your GWT SDK; using the module DTD from GWT 1.6.4. You may want to change this. -->
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit//EN" "http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd">
+<module rename-to="gwtproject">
+    <inherits name="com.google.gwt.user.User" />
+    <inherits name="elemental2.dom.Dom"/>
+    <source path="client" />
+    <entry-point class="com.google.gwt.site.webapp.client.GWTProjectEntryPoint" />
+    <add-linker name="xsiframe"/>
+    <set-property name="compiler.useSourceMaps" value="true"/>
+    <!-- change to localhost for development -->
+    <set-configuration-property name="includeSourceMapUrl"
+            value="https://www.gwtproject.org/src/__HASH___sourceMap__FRAGMENT__.json"/>
+
+    <set-configuration-property name="installCode" value="false"/>
+    <!-- remove after fix to issue 8630 lands -->
+    <set-configuration-property name="installScriptJs" value="com/google/gwt/core/ext/linker/impl/installScriptDirect.js"/>
+</module>
