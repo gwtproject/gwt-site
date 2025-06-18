@@ -62,7 +62,7 @@
                 <directory>${basedir}/src/test/java</directory>
             </testResource>
         </testResources>
-
+        <finalName>compiled-js</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -133,65 +133,4 @@
             </plugin>
         </plugins>
     </build>
-    <profiles>
-        <profile>
-            <!--
-            Generates a full working site for testing, by unpacking the
-            markdown along with this project's own output.
-            -->
-            <id>full-site</id>
-            <dependencies>
-                <dependency>
-                    <groupId>com.google.gwt.site</groupId>
-                    <artifactId>gwt-site</artifactId>
-                    <version>${project.version}</version>
-                    <type>zip</type>
-                    <classifier>generated-site</classifier>
-                 </dependency>
-            </dependencies>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-dependency-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>unpack-dependencies</id>
-                                <phase>prepare-package</phase>
-                                <goals>
-                                    <goal>unpack-dependencies</goal>
-                                </goals>
-                                <configuration>
-                                    <includeGroupIds>com.google.gwt.site</includeGroupIds>
-                                    <includeArtifactIds>gwt-site</includeArtifactIds>
-                                    <excludeTransitive>true</excludeTransitive>
-                                    <outputDirectory>${project.build.directory}/www/</outputDirectory>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <artifactId>maven-resources-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <!-- Along with the dependency:unpack-dependencies, this generates a complete site to test with -->
-                                <id>copy-www-resources</id>
-                                <phase>prepare-package</phase>
-                                <goals>
-                                    <goal>copy-resources</goal>
-                                </goals>
-                                <configuration>
-                                    <outputDirectory>${project.build.directory}/www/</outputDirectory>
-                                    <resources>
-                                        <resource>
-                                            <directory>${project.build.directory}/${project.build.finalName}/</directory>
-                                        </resource>
-                                    </resources>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>

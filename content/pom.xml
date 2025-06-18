@@ -113,6 +113,19 @@
               <outputDirectory>${project.build.directory}/generated-site/javadoc/latest</outputDirectory>
             </configuration>
           </execution>
+          <execution>
+            <id>unpack-dependencies</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <includeGroupIds>org.gwtproject.site</includeGroupIds>
+              <includeArtifactIds>gwt-site-webapp</includeArtifactIds>
+              <excludeTransitive>true</excludeTransitive>
+              <outputDirectory>${project.build.directory}/generated-site/</outputDirectory>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -175,8 +188,14 @@
       <artifactId>commons-io</artifactId>
       <version>2.7</version>
     </dependency>
+    <dependency>
+      <groupId>org.gwtproject.site</groupId>
+      <artifactId>gwt-site-webapp</artifactId>
+      <version>${project.version}</version>
+      <type>war</type>
+     <!-- <classifier>compiled-js</classifier> -->
+    </dependency>
   </dependencies>
-
   <profiles>
     <profile>
       <id>grunt</id>
