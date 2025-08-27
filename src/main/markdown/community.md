@@ -10,11 +10,11 @@ We've established a set of discussion groups/mailing lists to help you find answ
 *   **General discussion** - If you are new to GWT and have general questions about the product that aren't addressed in the overview documentation, this group is for you.
     *   [Group Charter](community-group-charter.html) (audience, rules, moderators)
     *   Go to the group: [google-web-toolkit](http://groups.google.com/group/google-web-toolkit)
-    *   Subscribe via email: [google-web-toolkit-subscribe@googlegroups.com](mailto:google-web-toolkit-subscribe@googlegroups.com)  
+    *   Subscribe via email: [google-web-toolkit-subscribe@googlegroups.com](mailto:google-web-toolkit-subscribe@googlegroups.com)
 *   **GWT Contributors** - If interested in contributing to the [GWT open source project](makinggwtbetter.html) this is your group. For more general questions not concerned with source code contribution, please use the general discussion forum.
     *   Go to the group: [google-web-toolkit-contributors](http://groups.google.com/group/google-web-toolkit-contributors)
     *   Subscribe via email: [google-web-toolkit-contributors-subscribe@googlegroups.com](mailto:google-web-toolkit-contributors-subscribe@googlegroups.com)
-*   **GWT Steering** - This is the place where the GWT Steering Committee talks in the open about the future of the project (roadmap, communication, etc.) and bureaucratic stuff. Your feedback is (more than) welcome, so do not hesitate to send it to the GWT Contributors group. 
+*   **GWT Steering** - This is the place where the GWT Steering Committee talks in the open about the future of the project (roadmap, communication, etc.) and bureaucratic stuff. Your feedback is (more than) welcome, so do not hesitate to send it to the GWT Contributors group.
     *   Go to the group: [gwt-steering](http://groups.google.com/group/gwt-steering)
     *   Subscribe via email: [gwt-steering-subscribe@googlegroups.com](mailto:gwt-steering-subscribe@googlegroups.com)
 *   **Speed Tracer** - If you are interested in hearing about new features, or in contributing to Speed Tracer.
@@ -49,4 +49,4 @@ To see how other developers used GWT to build real-world applications, be sure t
 
 You can also find a wide variety of open source [projects related to GWT](https://github.com/search?q=GWT) hosted on Github.
 
-Please note that the applications linked from this page are provided by third parties and are not endorsed by Google.
+Please note that the applications linked from this page are provided by third parties and are not endorsed by the GWT project.
