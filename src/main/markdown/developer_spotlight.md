@@ -47,7 +47,7 @@
      font-weight: bold;
    }
    </style>
-   
+
 Developer Spotlight
 ===
 
@@ -76,7 +76,7 @@ Watch developers talk about their web applications and how they used GWT to buil
       </ul>
     </td>
   </tr>
- 
+
   <tr class="video">
     <td class="screenshot">
       <img src="images/dev_gal_scenechronize.jpg"/>
@@ -124,4 +124,4 @@ Watch developers talk about their web applications and how they used GWT to buil
 
 You can also find a wide variety of open source [projects related to GWT](https://github.com/search?q=GWT) hosted on Github.
 
-Please note that the applications linked from this page are provided by third-parties and are not endorsed by the GWT project or Google.
+Please note that the applications linked from this page are provided by third-parties and are not endorsed by the GWT project.
