@@ -12,8 +12,8 @@ This design follows the flyweight pattern where data is accessed and cached only
 flyweight Cell objects. A cell widget can accept data from any type of data source.  The data model handles
 asynchronous updates as well as push updates. When you change the data, the view is automatically updated.
 
-Cells are the basic blocks of a user interface and come in a variety of [available cell types]
-(#available).  They render views of data, interpret browser events and can be selected.  A Cell has
+Cells are the basic blocks of a user interface and come in a variety of [available cell types](#available).
+They render views of data, interpret browser events and can be selected.  A Cell has
 a type based on the data that the cell represents;  for example, DatePickerCell is a `Cell<Date>`
 that represents a Date and allows the user to select a new Date.  Cells must implement a render method that renders the typed value as an HTML string. In addition, cells can override onBrowserEvent to act as a flyweight that handles events that are fired on elements that were rendered by the cell.
 
