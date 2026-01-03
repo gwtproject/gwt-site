@@ -88,7 +88,6 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd><strong>Methods:</strong> close(), mark(int), markSupported(), read(), read(char[]), read(char[], int, int), ready(), reset(), skip(long)</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html">Serializable</a></dt>
-  <dd><strong>Methods:</strong> $isInstance(HasSerializableTypeMarker)</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/StringReader.html">StringReader</a></dt>
   <dd><strong>Constructors:</strong> StringReader(String)</dd>
@@ -128,7 +127,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html">Boolean</a></dt>
   <dd><strong>Fields:</strong> FALSE, TRUE, TYPE</dd>
   <dd><strong>Constructors:</strong> Boolean(boolean), Boolean(String)</dd>
-  <dd><strong>Methods:</strong> compare(boolean, boolean), hashCode(boolean), logicalAnd(boolean, boolean), logicalOr(boolean, boolean), logicalXor(boolean, boolean), parseBoolean(String), toString(boolean), valueOf(boolean), valueOf(String), booleanValue(), compareTo(Boolean), equals(Object), hashCode(), toString(), $create(boolean), $create(String), $isInstance(Object)</dd>
+  <dd><strong>Methods:</strong> compare(boolean, boolean), hashCode(boolean), logicalAnd(boolean, boolean), logicalOr(boolean, boolean), logicalXor(boolean, boolean), parseBoolean(String), toString(boolean), valueOf(boolean), valueOf(String), booleanValue(), compareTo(Boolean), equals(Object), hashCode(), toString()</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Byte.html">Byte</a></dt>
   <dd><strong>Fields:</strong> MIN_VALUE, MAX_VALUE, SIZE, BYTES, TYPE</dd>
@@ -136,7 +135,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd><strong>Methods:</strong> compare(byte, byte), decode(String), hashCode(byte), parseByte(String), parseByte(String, int), toString(byte), valueOf(byte), valueOf(String), valueOf(String, int), byteValue(), compareTo(Byte), doubleValue(), equals(Object), floatValue(), hashCode(), intValue(), longValue(), shortValue(), toString()</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/CharSequence.html">CharSequence</a></dt>
-  <dd><strong>Methods:</strong> charAt(int), length(), subSequence(int, int), toString(), chars(), codePoints(), isEmpty(), compare(CharSequence, CharSequence), $isInstance(HasCharSequenceTypeMarker)</dd>
+  <dd><strong>Methods:</strong> charAt(int), length(), subSequence(int, int), toString(), chars(), codePoints(), isEmpty(), compare(CharSequence, CharSequence)</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html">Character</a></dt>
   <dd><strong>Fields:</strong> TYPE, MIN_RADIX, MAX_RADIX, MIN_VALUE, MAX_VALUE, MIN_SURROGATE, MAX_SURROGATE, MIN_LOW_SURROGATE, MAX_LOW_SURROGATE, MIN_HIGH_SURROGATE, MAX_HIGH_SURROGATE, MIN_SUPPLEMENTARY_CODE_POINT, MIN_CODE_POINT, MAX_CODE_POINT, SIZE, BYTES</dd>
@@ -153,15 +152,14 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd><strong>Constructors:</strong> CloneNotSupportedException(), CloneNotSupportedException(String)</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Cloneable.html">Cloneable</a></dt>
-  <dd><strong>Methods:</strong> $isInstance(HasCloneableTypeMarker)</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Comparable.html">Comparable</a></dt>
-  <dd><strong>Methods:</strong> compareTo(T), $isInstance(HasComparableTypeMarker)</dd>
+  <dd><strong>Methods:</strong> compareTo(T)</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Double.html">Double</a></dt>
   <dd><strong>Fields:</strong> MAX_VALUE, MIN_VALUE, MIN_NORMAL, MAX_EXPONENT, MIN_EXPONENT, NaN, NEGATIVE_INFINITY, POSITIVE_INFINITY, SIZE, BYTES, TYPE</dd>
   <dd><strong>Constructors:</strong> Double(double), Double(String)</dd>
-  <dd><strong>Methods:</strong> compare(double, double), doubleToLongBits(double), hashCode(double), isFinite(double), isInfinite(double), isNaN(double), longBitsToDouble(long), max(double, double), min(double, double), parseDouble(String), sum(double, double), toString(double), valueOf(double), valueOf(String), byteValue(), compareTo(Double), doubleValue(), equals(Object), floatValue(), hashCode(), intValue(), isInfinite(), isNaN(), longValue(), shortValue(), toString(), $create(double), $create(String), $isInstance(Object)</dd>
+  <dd><strong>Methods:</strong> compare(double, double), doubleToLongBits(double), hashCode(double), isFinite(double), isInfinite(double), isNaN(double), longBitsToDouble(long), max(double, double), min(double, double), parseDouble(String), sum(double, double), toString(double), valueOf(double), valueOf(String), byteValue(), compareTo(Double), doubleValue(), equals(Object), floatValue(), hashCode(), intValue(), isInfinite(), isNaN(), longValue(), shortValue(), toString()</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Enum.html">Enum</a></dt>
   <dd><strong>Constructors:</strong> Enum(String, int)</dd>
@@ -218,7 +216,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Number.html">Number</a></dt>
   <dd><strong>Constructors:</strong> Number()</dd>
-  <dd><strong>Methods:</strong> __decodeAndValidateInt(String, int, int), __decodeNumberString(String), __parseAndValidateDouble(String), __parseAndValidateInt(String, int, int, int), __parseAndValidateLong(String, int), byteValue(), doubleValue(), floatValue(), intValue(), longValue(), shortValue()</dd>
+  <dd><strong>Methods:</strong> byteValue(), doubleValue(), floatValue(), intValue(), longValue(), shortValue()</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NumberFormatException.html">NumberFormatException</a></dt>
   <dd><strong>Constructors:</strong> NumberFormatException(), NumberFormatException(String)</dd>
@@ -256,7 +254,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a></dt>
   <dd><strong>Fields:</strong> CASE_INSENSITIVE_ORDER</dd>
   <dd><strong>Constructors:</strong> String(), String(byte[]), String(byte[], int, int), String(byte[], int, int, String), String(byte[], int, int, Charset), String(byte[], String), String(byte[], Charset), String(char[]), String(char[], int, int), String(int[], int, int), String(String), String(StringBuffer), String(StringBuilder)</dd>
-  <dd><strong>Methods:</strong> copyValueOf(char[]), copyValueOf(char[], int, int), join(CharSequence, CharSequence[]), join(CharSequence, Iterable), valueOf(boolean), valueOf(char), valueOf(char[], int, int), valueOf(char[]), valueOf(double), valueOf(float), valueOf(int), valueOf(long), valueOf(Object), charAt(int), codePointAt(int), codePointBefore(int), codePointCount(int, int), compareTo(String), compareToIgnoreCase(String), concat(String), contains(CharSequence), contentEquals(CharSequence), contentEquals(StringBuffer), endsWith(String), equals(Object), equalsIgnoreCase(String), getBytes(), getBytes(String), getBytes(Charset), getChars(int, int, char[], int), hashCode(), indexOf(int), indexOf(int, int), indexOf(String), indexOf(String, int), intern(), lastIndexOf(int), lastIndexOf(int, int), lastIndexOf(String), lastIndexOf(String, int), length(), matches(String), offsetByCodePoints(int, int), regionMatches(boolean, int, String, int, int), regionMatches(int, String, int, int), replace(char, char), replace(CharSequence, CharSequence), replaceAll(String, String), replaceFirst(String, String), split(String), split(String, int), startsWith(String), startsWith(String, int), subSequence(int, int), substring(int), substring(int, int), toCharArray(), toLowerCase(), toLowerCase(Locale), toUpperCase(), toUpperCase(Locale), toString(), trim(), strip(), stripLeading(), stripTrailing(), isBlank(), lines(), repeat(int), transform(Function), indent(int), stripIndent(), translateEscapes(), $create(), $create(byte[]), $create(byte[], int, int), $create(byte[], int, int, String), $create(byte[], int, int, Charset), $create(byte[], String), $create(byte[], Charset), $create(char[]), $create(char[], int, int), $create(int[], int, int), $create(String), $create(StringBuffer), $create(StringBuilder), $isInstance(Object)</dd>
+  <dd><strong>Methods:</strong> copyValueOf(char[]), copyValueOf(char[], int, int), join(CharSequence, CharSequence[]), join(CharSequence, Iterable), valueOf(boolean), valueOf(char), valueOf(char[], int, int), valueOf(char[]), valueOf(double), valueOf(float), valueOf(int), valueOf(long), valueOf(Object), charAt(int), codePointAt(int), codePointBefore(int), codePointCount(int, int), compareTo(String), compareToIgnoreCase(String), concat(String), contains(CharSequence), contentEquals(CharSequence), contentEquals(StringBuffer), endsWith(String), equals(Object), equalsIgnoreCase(String), getBytes(), getBytes(String), getBytes(Charset), getChars(int, int, char[], int), hashCode(), indexOf(int), indexOf(int, int), indexOf(String), indexOf(String, int), intern(), lastIndexOf(int), lastIndexOf(int, int), lastIndexOf(String), lastIndexOf(String, int), length(), matches(String), offsetByCodePoints(int, int), regionMatches(boolean, int, String, int, int), regionMatches(int, String, int, int), replace(char, char), replace(CharSequence, CharSequence), replaceAll(String, String), replaceFirst(String, String), split(String), split(String, int), startsWith(String), startsWith(String, int), subSequence(int, int), substring(int), substring(int, int), toCharArray(), toLowerCase(), toLowerCase(Locale), toUpperCase(), toUpperCase(Locale), toString(), trim(), strip(), stripLeading(), stripTrailing(), isBlank(), lines(), repeat(int), transform(Function), indent(int), stripIndent(), translateEscapes()</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuffer.html">StringBuffer</a></dt>
   <dd><strong>Constructors:</strong> StringBuffer(), StringBuffer(CharSequence), StringBuffer(int), StringBuffer(String)</dd>
@@ -287,7 +285,6 @@ Note that in some cases, only a subset of methods is supported for a given type.
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Void.html">Void</a></dt>
   <dd><strong>Fields:</strong> TYPE</dd>
-  <dd><strong>Methods:</strong> $create()</dd>
 </dl>
 <h2 id="Package_java_lang_annotation">Package java.lang.annotation</h2>
 <dl>
@@ -527,7 +524,7 @@ Note that in some cases, only a subset of methods is supported for a given type.
   <dd><strong>Methods:</strong> add(E), addFirst(E), addLast(E), clear(), clone(), descendingIterator(), element(), getFirst(), getLast(), listIterator(int), offer(E), offerFirst(E), offerLast(E), peek(), peekFirst(), peekLast(), poll(), pollFirst(), pollLast(), pop(), push(E), remove(), removeFirst(), removeFirstOccurrence(Object), removeLast(), removeLastOccurrence(Object), size()</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">List</a></dt>
-  <dd><strong>Methods:</strong> of(), of(E), of(E, E), of(E, E, E), of(E, E, E, E), of(E, E, E, E, E), of(E, E, E, E, E, E), of(E, E, E, E, E, E, E), of(E, E, E, E, E, E, E, E), of(E, E, E, E, E, E, E, E, E), of(E, E, E, E, E, E, E, E, E, E), __ofInternal(E[]), of(E[]), add(int, E), addAll(int, Collection), get(int), indexOf(Object), lastIndexOf(Object), listIterator(), listIterator(int), remove(int), replaceAll(UnaryOperator), set(int, E), sort(Comparator), spliterator(), subList(int, int), copyOf(Collection)</dd>
+  <dd><strong>Methods:</strong> of(), of(E), of(E, E), of(E, E, E), of(E, E, E, E), of(E, E, E, E, E), of(E, E, E, E, E, E), of(E, E, E, E, E, E, E), of(E, E, E, E, E, E, E, E), of(E, E, E, E, E, E, E, E, E), of(E, E, E, E, E, E, E, E, E, E), of(E[]), add(int, E), addAll(int, Collection), get(int), indexOf(Object), lastIndexOf(Object), listIterator(), listIterator(int), remove(int), replaceAll(UnaryOperator), set(int, E), sort(Comparator), spliterator(), subList(int, int), copyOf(Collection)</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ListIterator.html">ListIterator</a></dt>
   <dd><strong>Methods:</strong> add(E), hasPrevious(), nextIndex(), previous(), previousIndex(), remove(), set(E)</dd>
