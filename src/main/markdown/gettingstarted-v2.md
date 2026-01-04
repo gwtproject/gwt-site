@@ -17,7 +17,7 @@ the plugin generates a Maven project with separate modules for
 *  [Create your first web application](#create)
 *  [Run locally in super dev mode](#run)
 *  [Make a few changes](#change)
-*  [Debugging the browser](#bebug)
+*  [Debugging the browser](#debug)
 *  [Compile and run in production mode](#compile)
 *  [Set up an IDE](#setup)
 
