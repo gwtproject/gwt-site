@@ -1,5 +1,6 @@
 The GWT Release Notes
 =====================
+* [2.13.0](#Release_Notes_2_13_0) March 3, 2025
 * [2.12.2](#Release_Notes_2_12_2) March 3, 2025
 * [2.12.1](#Release_Notes_2_12_1) November 12, 2024
 * [2.12.0](#Release_Notes_2_12_0) October 29, 2024
@@ -69,6 +70,45 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
+## <a id="Release_Notes_2_13_0"></a> Release Notes for 2.13.0
+### Bug fixes:
+- Fix Window.onClosing() not work in GWT 2.12
+- Unset config properties: System.getProperty should return default value or null
+- Exceptions thrown when building GWT's AST should include context
+- Fix NPE when compiling records with static fields
+- Fix compilation errors for switch statements
+- Fix emulation of `String#lastIndexOf` with negative index
+- Fix group references in `String#matches` emulation
+
+### Highlights
+- Change default server to `StaticResourceServer`, allow selecting custom server implementations from service loader
+- Allow profiling of the compiler using Java Flight Recorder
+- Update hash algorithms used e.g. for generating names of cached JS files
+- Add presentation ARIA role to widgets that use tables for layout
+- Removed checks for Internet Explorer
+- Allow inlining of `JsUtils.uncheckedCast`
+
+### JRE Emulation
+- `clone()` implemented for `TreeMap` and `TreeSet`
+- allowed using annotations without available source, removed explicit emulation of annotations
+- added emulation of `CharSequence#isEmpty()`
+- added emulation of several stream APIs such as `Stream#toList` or `Stream#mapMulti`
+- added emulation of several static methods in `Objects` such as `requireNonNullElse` or `checkIndex`, see [PR #10107](https://github.com/gwtproject/gwt/pull/10107) for details
+- added emulation of `Collection#toArrray(IntFunction)`
+- simplify emulation of `String` methods `startsWith`, `endsWith`, `includes`
+- simplify emulation of `Math` implement `Math#IEEERemainder`,  see [PR #10176](https://github.com/gwtproject/gwt/pull/10176) for details
+- emulate logging for `Level.FINE` and higher using `console.debug`
+- improved `Long#rotateLeft` and `Integer#rotateLeft` performance
+- added `BigInteger#TWO` emulation
+
+### Deprecations and Removals:
+- `SpeedTracer` replaced by JFR
+- `com.google.gwt.dev.util.Util` deprecated for removal
+- `com.google.gwt.util.tools.Utility` deprecated for removal
+- `RunStyleSelenium` deprecated for removal
+- removed previously deprecated `RecompileListener`, `ApplicationCreator` and others, see [PR #1029](https://github.com/gwtproject/gwt/issues/10029) for details
+- removed command line arguments `-dumpSignatures`, `numFragments`, `-out`
+
 ## <a id="Release_Notes_2_12_2"></a> Release Notes for 2.12.2
 ### Bug fixes:
 - Fixed a regression in Window.onClosing() that prevented the event from being fired in some cases
