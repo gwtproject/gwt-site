@@ -91,13 +91,13 @@ The GWT Release Notes
 ### JRE Emulation
 - `clone()` implemented for `TreeMap` and `TreeSet`
 - allowed using annotations without available source, removed explicit emulation of annotations
-- added emulation of `CharSequence#isEmpty()`
 - added emulation of several stream APIs such as `Stream#toList` or `Stream#mapMulti`
+- added emulation of `CharSequence#isEmpty()`
 - added emulation of several static methods in `Objects` such as `requireNonNullElse` or `checkIndex`, see [PR #10107](https://github.com/gwtproject/gwt/pull/10107) for details
 - added emulation of `Collection#toArrray(IntFunction)`
 - simplify emulation of `String` methods `startsWith`, `endsWith`, `includes`
-- simplify emulation of `Math` implement `Math#IEEERemainder`,  see [PR #10176](https://github.com/gwtproject/gwt/pull/10176) for details
-- emulate logging for `Level.FINE` and higher using `console.debug`
+- simplify emulation of `Math`, implement `Math` methods `IEEERemainder`, `getExponent` and others, see [PR #10176](https://github.com/gwtproject/gwt/pull/10176) for details
+- emulate logging for `Level.FINE` and lower using `console.debug`
 - improved `Long#rotateLeft` and `Integer#rotateLeft` performance
 - added `BigInteger#TWO` emulation
 

@@ -326,7 +326,7 @@ where
   -bindAddress                                      Specifies the bind address for the code server and web server (defaults to 127.0.0.1)
   -codeServerPort                                   Specifies the TCP port for the code server (defaults to 9997 for classic Dev Mode or 9876 for Super Dev Mode)
   -[no]superDevMode                                 Runs Super Dev Mode instead of classic Development Mode. (defaults to ON)
-  -server                                           Specify a different embedded web server to run (must implement ServletContainerLauncher)
+  -server                                           Specify a different embedded web server to run (must implement ServletContainerLauncher). May be specified by fully qualified class name, or if provided by a ServiceLoader, by the service name.
   -startupUrl                                       Automatically launches the specified URL
   -war                                              The directory into which deployable output files will be written (defaults to 'war')
   -deploy                                           The directory into which deployable but not servable output files will be written (defaults to 'WEB-INF/deploy' under the -war directory/jar, and may be the same as the -extra directory/jar)

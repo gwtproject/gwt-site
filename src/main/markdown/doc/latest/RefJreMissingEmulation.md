@@ -2,7 +2,7 @@ Missing parts of JRE Emulation
 ===
 
 This page lists methods, fields and inner classes that are
-missing from [the GWT emulation of JRE](RefJreMissingEmulation.html).
+missing from [the GWT emulation of JRE](RefJreEmulation.html).
 Here you can also find links to GitHub issues that either track
 progress on implementing the missing emulation or explain why it's
 not likely to be implemented.
@@ -77,7 +77,7 @@ Top-level classes that are not emulated are not listed here.
   <dd><strong><a href="https://github.com/gwtproject/gwt/issues/10216"><span class="issueStatus" aria-label="Won't be implemented">❌</span>#10216 (Raw bits)</a>:</strong> doubleToRawLongBits(double)</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.html">Enum</a></dt>
-  <dd><strong><a href="https://github.com/gwtproject/gwt/issues/9630"><span class="issueStatus" aria-label="Won't be implemented">❌</span>#9630 (Reflection)</a>:</strong> clone()</dd>
+  <dd><strong><a href="https://github.com/gwtproject/gwt/issues/5067"><span class="issueStatus" aria-label="Evaluating feasibility">🤔</span>#5067 (Cloning objects)</a>:</strong> clone()</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Enum.EnumDesc.html">Enum.EnumDesc</a></dt>
   <dd><strong><a href="https://github.com/gwtproject/gwt/issues/9630"><span class="issueStatus" aria-label="Won't be implemented">❌</span>#9630 (Reflection)</a>:</strong> Inner class missing</dd>
@@ -99,7 +99,7 @@ Top-level classes that are not emulated are not listed here.
   <dd><strong><a href="https://github.com/gwtproject/gwt/issues/9909"><span class="issueStatus" aria-label="Planned to be implemented, patches or reviews welcome">⏳</span>#9909</a>:</strong> multiplyHigh(long, long), fma(double, double, double), fma(float, float, float)</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html">Object</a></dt>
-  <dd><strong><a href="https://github.com/gwtproject/gwt/issues/9630"><span class="issueStatus" aria-label="Won't be implemented">❌</span>#9630 (Reflection)</a>:</strong> clone()</dd>
+  <dd><strong><a href="https://github.com/gwtproject/gwt/issues/5067"><span class="issueStatus" aria-label="Evaluating feasibility">🤔</span>#5067 (Cloning objects)</a>:</strong> clone()</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Short.html">Short</a></dt>
   <dd><strong><a href="https://github.com/gwtproject/gwt/issues/9643"><span class="issueStatus" aria-label="Planned to be implemented, patches or reviews welcome">⏳</span>#9643 (Unsigned emulation)</a>:</strong> toUnsignedLong(short), toUnsignedInt(short), compareUnsigned(short, short)</dd>
@@ -186,10 +186,10 @@ Top-level classes that are not emulated are not listed here.
 <h2 id="Package_java_util">Package java.util</h2>
 <dl>
   <dt><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/AbstractMap.html">AbstractMap</a></dt>
-  <dd><strong><a href="https://github.com/gwtproject/gwt/issues/9630"><span class="issueStatus" aria-label="Won't be implemented">❌</span>#9630 (Reflection)</a>:</strong> clone()</dd>
+  <dd><strong><a href="https://github.com/gwtproject/gwt/issues/5067"><span class="issueStatus" aria-label="Evaluating feasibility">🤔</span>#5067 (Cloning objects)</a>:</strong> clone()</dd>
 
   <dt><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html">Arrays</a></dt>
-  <dd><strong><a href="https://github.com/gwtproject/gwt/issues/10221"><span class="issueStatus" aria-label="Planned to be implemented, patches or reviews welcome">⏳</span>#10221 (Miscellaneous Java 17 omissions)</a>:</strong> compareUnsigned(short[], short[]), compareUnsigned(byte[], int, int, byte[], int, int), compareUnsigned(byte[], byte[]), compareUnsigned(long[], long[]), compareUnsigned(int[], int, int, int[], int, int), compareUnsigned(long[], int, int, long[], int, int), compareUnsigned(short[], int, int, short[], int, int), compareUnsigned(int[], int[])</dd>
+  <dd><strong><a href="https://github.com/gwtproject/gwt/issues/10246"><span class="issueStatus" aria-label="Planned to be implemented, patches or reviews welcome">⏳</span>#10246</a>:</strong> compareUnsigned(short[], short[]), compareUnsigned(byte[], int, int, byte[], int, int), compareUnsigned(byte[], byte[]), compareUnsigned(long[], long[]), compareUnsigned(int[], int, int, int[], int, int), compareUnsigned(long[], int, int, long[], int, int), compareUnsigned(short[], int, int, short[], int, int), compareUnsigned(int[], int[])</dd>
   <dd><strong><a href="https://github.com/gwtproject/gwt/issues/10215"><span class="issueStatus" aria-label="Planned to be implemented, patches or reviews welcome">⏳</span>#10215</a>:</strong> equals(double[], int, int, double[], int, int), equals(boolean[], int, int, boolean[], int, int), equals(Object[], int, int, Object[], int, int, Comparator), equals(Object[], Object[], Comparator), equals(Object[], int, int, Object[], int, int), equals(float[], int, int, float[], int, int), equals(int[], int, int, int[], int, int), equals(long[], int, int, long[], int, int), equals(byte[], int, int, byte[], int, int), equals(char[], int, int, char[], int, int), equals(short[], int, int, short[], int, int), compare(boolean[], int, int, boolean[], int, int), compare(byte[], byte[]), compare(byte[], int, int, byte[], int, int), compare(boolean[], boolean[]), compare(Object[], int, int, Object[], int, int, Comparator), compare(double[], int, int, double[], int, int), compare(Comparable[], Comparable[]), compare(Comparable[], int, int, Comparable[], int, int), compare(int[], int, int, int[], int, int), compare(Object[], Object[], Comparator), compare(int[], int[]), compare(long[], long[]), compare(long[], int, int, long[], int, int), compare(float[], float[]), compare(float[], int, int, float[], int, int), compare(double[], double[]), compare(char[], int, int, char[], int, int), compare(char[], char[]), compare(short[], int, int, short[], int, int), compare(short[], short[]), mismatch(short[], int, int, short[], int, int), mismatch(int[], int[]), mismatch(boolean[], int, int, boolean[], int, int), mismatch(long[], int, int, long[], int, int), mismatch(long[], long[]), mismatch(int[], int, int, int[], int, int), mismatch(byte[], int, int, byte[], int, int), mismatch(boolean[], boolean[]), mismatch(byte[], byte[]), mismatch(char[], char[]), mismatch(char[], int, int, char[], int, int), mismatch(short[], short[]), mismatch(Object[], Object[]), mismatch(Object[], int, int, Object[], int, int), mismatch(Object[], Object[], Comparator), mismatch(Object[], int, int, Object[], int, int, Comparator), mismatch(float[], float[]), mismatch(float[], int, int, float[], int, int), mismatch(double[], double[]), mismatch(double[], int, int, double[], int, int)</dd>
   <dd><strong><a href="https://github.com/gwtproject/gwt/issues/9630"><span class="issueStatus" aria-label="Won't be implemented">❌</span>#9630 (Reflection)</a>:</strong> copyOf(Object[], int, Class), copyOfRange(Object[], int, int, Class)</dd>
 
