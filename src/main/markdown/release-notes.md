@@ -1,5 +1,6 @@
 The GWT Release Notes
 =====================
+* [2.13.0](#Release_Notes_2_13_0) Feb 11, 2026
 * [2.12.2](#Release_Notes_2_12_2) March 3, 2025
 * [2.12.1](#Release_Notes_2_12_1) November 12, 2024
 * [2.12.0](#Release_Notes_2_12_0) October 29, 2024
@@ -69,6 +70,99 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
+## <a id="Release_Notes_2_13_0"></a> Release Notes for 2.13.0
+### Highlights:
+* Removed more old polyfills and IE-specific workarounds
+* Samples updated to use Maven, usually as multi-module projects
+* 2.13 is likely to be the last release where the compiler and dev tools run on Java 11
+* DevMode server defaults to only serving static files - projects that wish to use the old Jetty 9 launcher may specify `-server com.google.gwt.dev.shell.JettyLauncher`, but this is due to be removed. Projects should either split their server/client classpath, or switch to a ServletContainerLauncher that runs another server (https://github.com/niloc132/gwt-devmode-server-sample is an example project that can provide this)
+* Support `-strict` in test arguments, to more easily find compile issues in GWT libraries
+* JFR events added to replace SpeedTracer, support observability into compiler steps, permutation and fragment counts, and output size. Additionally, the `gwt.jjs.dumpAst` system property has been tweaked to support filtering, and generate more readable output
+* jaxb and xml-apis are now optional when using GWT's javax.validation support, set the `gwt.validation.ignoreXml` system property to avoid needing these
+* Improved JRE emulation tracking, listing not only supported APIs, but also document unsupported APIs with links to issues
+
+### Breaking Changes:
+* String.split emulation changed to support Java 8 semantics with empty entries
+* Collectors.toMap throws exception when assigning a null value to a key, reflecting Java semantics (though not Javadoc)
+* AccessControlException JRE emulation removed
+
+### Bug fixes:
+* Correct handling for SwitchStatements without a containing Block
+* Ignore all annotations in all scopes if source is missing 
+* Fix Window.onClosing() not work in GWT 2.12
+* update gson to latest
+* Allow lambdas in this()/super() to close over outer types
+* Exceptions thrown when building GWT's AST should include context
+* Unset config properties: `System.getProperty` should return default value or null  (previously reverted)
+* Fix NPE when compiling records with static fields
+* Improving accessability - added aria presentation role for layout tables
+* Switch exprs must be transformed rather than wrapped in statements
+* make GWT epub friendly
+* Disabling draft mode shouldn't force namespace=package
+* Allow JsUtils.uncheckedCast to be inlined away
+* Fix console log uses debug
+* Faster implementation of long and int rotation
+* Update Jetty to 9.4.58.v20250814
+
+### JRE Emulation enhancements:
+
+* Added Java 9+ emulation to
+  * java.io.ByteArrayOutputStream
+  * java.io.OutputStream
+  * java.io.Writer
+  * java.lang.Integer
+  * java.lang.Long
+  * java.lang.Math
+  * java.lang.Number
+  * java.lang.StrictMath
+  * java.lang.String
+  * java.math.BigInteger
+  * java.util.BitSet
+  * java.util.Collection
+  * java.util.Map
+  * java.util.Objects
+  * java.util.stream.Collectors
+  * java.util.stream.DoubleStream
+  * java.util.stream.IntStream
+  * java.util.stream.LongStream
+  * java.util.stream.Stream
+* Cloneable added to
+  * java.util.TreeMap
+  * java.util.TreeSet
+
+### Deprecations and Removals:
+* The following classes have been deprecated for removal:
+  * com.google.gwt.dev.util.log.dashboard.DashboardNotifierFactory - these have all been replaced by the new Java FlightRecorder functionality
+  * com.google.gwt.dev.util.log.dashboard.NoOpDashboardNotifier
+  * com.google.gwt.dev.util.log.dashboard.DashboardNotifier
+  * com.google.gwt.junit.RunStyleSelenium - this doesn't appear to have been usable for many years, will be replaced with Selenium WebDriver support
+  * com.google.gwt.dev.util.arg.ArgHandlerEnableGeneratorResultCaching
+  * com.google.gwt.dev.util.arg.OptionEnableGeneratorResultCaching
+  * com.google.gwt.dev.util.InstalledHelpInfo - replaced by `GwtprojectOrgHelpInfo` to link to documentation at https://gwtproject.org
+  * com.google.gwt.dev.util.Util
+  * com.google.gwt.util.tools.Utility
+  * com.google.gwt.core.ext.debug.JsoEval
+  * com.google.gwt.dev.util.PerfCounter
+  * com.google.gwt.dev.util.PerfLogger
+* The following deprecated classes in gwt-dev have been removed:
+  * com.google.gwt.dev.util.log.speedtracer.CompilerTypeEvent
+  * com.google.gwt.dev.util.log.speedtracer.DevModeEventType
+  * com.google.gwt.dev.util.log.speedtracer.SpeedTracerEventType
+  * com.google.gwt.dev.GetJreEmulation
+  * com.google.gwt.dev.SignatureDumper
+  * com.google.gwt.dev.RunWebApp
+  * com.google.gwt.dev.shell.log.ServletContextTreeLogger
+  * com.google.gwt.dev.shell.WorkDirs
+  * com.google.web.bindery.requestfactory.server.RequestFactoryJarExtractor
+  * com.google.gwt.dev.ApplicationCreator
+  * com.google.gwt.dev.util.arg.ArgHandlerDumpSignatures
+  * com.google.gwt.dev.util.arg.ArgHandlerOutDir
+  * com.google.gwt.dev.util.arg.ArgHandlerFragmentMerge
+  * com.google.gwt.util.PreventSpuriousRebuilds
+  * com.google.gwt.dev.codeserver.RecompileListener
+
+For more detail, see the [commit log](https://github.com/gwtproject/gwt/compare/2.12.0...2.13.0).
+
 ## <a id="Release_Notes_2_12_2"></a> Release Notes for 2.12.2
 ### Bug fixes:
 - Fixed a regression in Window.onClosing() that prevented the event from being fired in some cases

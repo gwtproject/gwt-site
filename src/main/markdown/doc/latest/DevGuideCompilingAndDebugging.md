@@ -314,7 +314,7 @@ There are many options you can pass to the development mode process to control h
 ```text
 $ java -cp gwt-dev.jar com.google.gwt.dev.DevMode
 Missing required argument 'module[s]'
-Google Web Toolkit 2.12.2
+Google Web Toolkit 2.13.0
 DevMode [-[no]startServer] [-port port-number | "auto"] [-logdir directory] [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-gen dir] [-bindAddress host-name-or-address] [-codeServerPort port-number | "auto"] [-[no]superDevMode] [-server servletContainerLauncher[:args]] [-startupUrl url] [-war dir] [-deploy dir] [-extra dir] [-modulePathPrefix ] [-workDir dir] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-sourceLevel [auto, 1.8, 9, 10, 11, 17]] [-[no]generateJsInteropExports] [-includeJsInteropExports/excludeJsInteropExports regex] [-[no]incremental] [-style (DETAILED|OBFUSCATED|PRETTY)] [-[no]failOnError] [-setProperty name=value,value...] module[s]
 
 where
@@ -326,7 +326,7 @@ where
   -bindAddress                                      Specifies the bind address for the code server and web server (defaults to 127.0.0.1)
   -codeServerPort                                   Specifies the TCP port for the code server (defaults to 9997 for classic Dev Mode or 9876 for Super Dev Mode)
   -[no]superDevMode                                 Runs Super Dev Mode instead of classic Development Mode. (defaults to ON)
-  -server                                           Specify a different embedded web server to run (must implement ServletContainerLauncher)
+  -server                                           Specify a different embedded web server to run (must implement ServletContainerLauncher). May be specified by fully qualified class name, or if provided by a ServiceLoader, by the service name.
   -startupUrl                                       Automatically launches the specified URL
   -war                                              The directory into which deployable output files will be written (defaults to 'war')
   -deploy                                           The directory into which deployable but not servable output files will be written (defaults to 'WEB-INF/deploy' under the -war directory/jar, and may be the same as the -extra directory/jar)
@@ -542,7 +542,7 @@ There are many options you can pass to the GWT compiler process to control how y
 ```text
 > java -cp gwt-dev.jar com.google.gwt.dev.Compiler
 Missing required argument 'module[s]'
-Google Web Toolkit 2.12.2
+Google Web Toolkit 2.13.0
 Compiler [-logLevel (ERROR|WARN|INFO|TRACE|DEBUG|SPAM|ALL)] [-workDir dir] [-X[no]closureFormattedOutput] [-[no]compileReport] [-X[no]checkCasts] [-X[no]classMetadata] [-[no]draftCompile] [-[no]checkAssertions] [-XfragmentCount numFragments] [-gen dir] [-[no]generateJsInteropExports] [-includeJsInteropExports/excludeJsInteropExports regex] [-XmethodNameDisplayMode (NONE|ONLY_METHOD_NAME|ABBREVIATED|FULL)] [-Xnamespace (NONE|PACKAGE)] [-optimize level] [-[no]saveSource] [-setProperty name=value,value...] [-style (DETAILED|OBFUSCATED|PRETTY)] [-[no]failOnError] [-[no]validateOnly] [-sourceLevel [auto, 1.8, 9, 10, 11, 17]] [-localWorkers count] [-[no]incremental] [-war dir] [-deploy dir] [-extra dir] [-saveSourceOutput dir] module[s]
 
 where
