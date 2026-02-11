@@ -19,10 +19,11 @@ and production mode (previously called "web mode") and explains how and when to 
     6.  [Using an IDE with Development Mode](#using_an_ide_with_dev_mode)
     7.  [An Example Launch](#an_example_launch)
     8.  [Language differences between production mode and development mode](#What_are_the_language_differences_between_production_mode_and_development_mo)
-    9.  [Using EJBs in development mode](#using_EJBs_in_development_mode)
-    10.  [Using my own server in development mode instead of GWT's built-in Jetty instance](#use_my_own_server_in_development_mode_instead_of_GWT)
-    11.  [Development Mode Options](#What_options_can_be_passed_to_development_mode)
-    12.  [Super Dev Mode](#SuperDevMode)
+    9.  [Customizing the development experience](#customizing_the_development_experience)
+    10. [Using EJBs in development mode](#using_EJBs_in_development_mode)
+    11. [Using my own server in development mode instead of GWT's built-in Jetty instance](#use_my_own_server_in_development_mode_instead_of_GWT)
+    12.  [Development Mode Options](#What_options_can_be_passed_to_development_mode)
+    13.  [Super Dev Mode](#SuperDevMode)
 *   [Running in Production Mode](#DevGuideProdMode)
 *   [Understanding the GWT Compiler](#DevGuideJavaToJavaScriptCompiler)
     1.  [Key application files](#key_application_files)
@@ -270,13 +271,14 @@ A [full list of known language-related "gotchas"](DevGuideCodingBasicsCompatibil
 
 GWT provides several ways to customize the development experience to suit your application's needs:
  * The simplest and most flexible option is to use CodeServer instead of DevMode, allowing you to run your own application server, and only rely on GWT to 
-compile your Java to JS as needed. Start your web server as you normally would without GWT, and provide CodeServer a path where it should write compiled JS
+compile your Java to JS as needed. Start your web server as you normally would without GWT, and provide `CodeServer` a path where it should write compiled JS
 with `-launcherDir` (or `-war`). See [SuperDevMode docs](../../articles/superdevmode.html) for more details.
- * It is also possible to pass `-noserver` to DevMode, which still keeps the GUI of DevMode, but with no extra server started. The command line argument to
+ * It is also possible to pass `-noserver` to `DevMode`, which still keeps the GUI of `DevMode`, but with no extra server started. The command line argument to
 configure the path to write compiled JS is also `-war`.
- * Finally, you can supply a custom server implementation to DevMode. The class must extend `ServletContainerLauncher`, and may be registered for a
-ServiceLoader to pick it up with that same name. If it is the only service loaded instance, it will be used automatically - otherwise, it may be specified
-by name as a parameter for `-server`. See the `ServletContainerLauncher` API for more details.
+ * Finally, you can supply a custom server implementation to `DevMode`. The class must extend `ServletContainerLauncher`, and may be registered for a
+`ServiceLoader` to pick it up with that same name. If it is the only service-loaded type, it will be used automatically - otherwise, it may be specified
+by name as a parameter for `-server`. See the [`ServletContainerLauncher` javadoc](/javadoc/latest/com/google/gwt/core/ext/ServletContainerLauncher.html)
+for more details.
 
 #### Using EJBs in development mode<a id="using_EJBs_in_development_mode"></a>
 
