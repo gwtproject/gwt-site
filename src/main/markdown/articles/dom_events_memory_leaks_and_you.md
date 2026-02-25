@@ -1,6 +1,9 @@
 DOM Memory Leaks
 ===
 
+Note: With the death of IE, this information is obsolete, though it goes to explain the event handling mechanism in
+GWT's `Widget` class.
+
 _Joel Webber, GWT Team_
 
 _Updated January 2009_
