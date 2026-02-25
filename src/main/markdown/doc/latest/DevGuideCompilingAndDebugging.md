@@ -19,10 +19,11 @@ and production mode (previously called "web mode") and explains how and when to 
     6.  [Using an IDE with Development Mode](#using_an_ide_with_dev_mode)
     7.  [An Example Launch](#an_example_launch)
     8.  [Language differences between production mode and development mode](#What_are_the_language_differences_between_production_mode_and_development_mo)
-    9.  [Using EJBs in development mode](#using_EJBs_in_development_mode)
-    10.  [Using my own server in development mode instead of GWT's built-in Jetty instance](#use_my_own_server_in_development_mode_instead_of_GWT)
-    11.  [Development Mode Options](#What_options_can_be_passed_to_development_mode)
-    12.  [Super Dev Mode](#SuperDevMode)
+    9.  [Customizing the development experience](#customizing_the_development_experience)
+    10. [Using EJBs in development mode](#using_EJBs_in_development_mode)
+    11. [Using my own server in development mode instead of GWT's built-in Jetty instance](#use_my_own_server_in_development_mode_instead_of_GWT)
+    12.  [Development Mode Options](#What_options_can_be_passed_to_development_mode)
+    13.  [Super Dev Mode](#SuperDevMode)
 *   [Running in Production Mode](#DevGuideProdMode)
 *   [Understanding the GWT Compiler](#DevGuideJavaToJavaScriptCompiler)
     1.  [Key application files](#key_application_files)
@@ -265,24 +266,37 @@ subtle bugs to appear in production mode that don't appear in development mode. 
 
 A [full list of known language-related "gotchas"](DevGuideCodingBasicsCompatibility.html) is available in the GWT documentation.
 
-### Using EJBs in development mode<a id="using_EJBs_in_development_mode"></a>
 
-GWT provides the `-noserver` option to the development mode shell script for this sort of thing.
+### Customizing the development experience<a id="customizing_the_development_experience"></a>
 
-The `-noserver` option instructs development mode to not start the embedded Jetty instance. In its place, you would run the J2EE container of your choice and simply use that
-in place of the embedded Jetty instance.
+GWT provides several ways to customize the development experience to suit your application's needs:
+ * The simplest and most flexible option is to use CodeServer instead of DevMode, allowing you to run your own application server, and only rely on GWT to 
+compile your Java to JS as needed. Start your web server as you normally would without GWT, and provide [`CodeServer`](../../articles/superdevmode.html#Starting)
+a path where it should write compiled JS with `-launcherDir` (or `-war`). See [SuperDevMode docs](../../articles/superdevmode.html) for more details.
+ * It is also possible to pass `-noserver` to `DevMode`, which still keeps the GUI of `DevMode`, but with no extra server started. The command line argument to
+configure the path to write compiled JS is also `-war`.
+ * Finally, you can supply a custom server implementation to `DevMode`. The class must extend `ServletContainerLauncher`, and may be registered for a
+`ServiceLoader`. If it is the only service-loaded type, it will be used automatically - otherwise, it may be specified
+by name as a parameter for `-server`. See the [`ServletContainerLauncher` javadoc](/javadoc/latest/com/google/gwt/core/ext/ServletContainerLauncher.html)
+for more details.
 
-### Using my own server in development mode instead of GWT's built-in Jetty instance<a id="use_my_own_server_in_development_mode_instead_of_GWT"></a>
+#### Using EJBs in development mode<a id="using_EJBs_in_development_mode"></a>
 
-If you do not need to use, or prefer not to use, the Jetty instance embedded in GWT's development mode to serve up your servlets for debugging, you can use the `-noserver`
-flag to prevent Jetty from starting, while still taking advantage of development mode for debugging your GWT client code.
+GWT provides either the CodeServer or the DevMode `-noserver` option for this use case.
+
+#### Using my own server in development mode instead of GWT's built-in Jetty instance<a id="use_my_own_server_in_development_mode_instead_of_GWT"></a>
+
+If you do not need to use, or prefer not to use, the Jetty instance embedded in GWT's development mode to serve up your servlets for debugging, you can use the CodeServer
+instead of DevMode, while still taking advantage of development mode for debugging your GWT client code. See the next section for using CodeServer rather than DevMode.
+
+If you still want the GUI of development mode, you can use the `-noserver` option to development mode to disable the embedded Jetty server and instead use your own external server.
 
 If you need the `-noserver` option, it is likely because your server-side code that handles your XMLHTTPRequest data requests requires something more, or just something
 different than Jetty. Here are some example cases where you might need to use `-noserver`:
 
 *   You need an EJB container, which the embedded Jetty server does not support.
 *   You have an extensive Servlet configuration (with custom web.xml and possibly server.xml files) that is too inconvenient to use with the embedded Jetty.
-*   You are not using J2EE on the server at all (for example, you might be using JSON with Python).
+*   You are not using J2EE on the server at all (for example, you might be using Python/Go/Vertx/etc).
 
 When using the `-noserver` flag, your external server is used by the GWT Development Mode browser to serve up both your dynamic content, and all static content (such as the
 GWT application's host page, other HTML files, images, CSS, and so on.) This allows you to structure your project files in whatever way is most convenient to your application and
@@ -300,7 +314,7 @@ Here is a step-by-step description of how to use `-noserver`:
 3.  Edit your development mode execution script (such as your Eclipse run configuration or the ant development build target generated by the GWT webAppCreator) and add or update the following options:
     *   Add the `-noserver` command line argument.
     *   Change the URL at the end of the argument list to match the URL you recorded in step #1.
-4.  Compile your application once using the ant build target.  Ideally, you can use GWT's -war option to generate output files directly into your
+4.  Compile your application once using the ant build target.  Ideally, you can use GWT's `-war` option to generate output files directly into your
 external server's static content folder.  Otherwise, you'll need to copy the GWT output folder from `war/<moduleName>` to your external server's
 static content.
 
