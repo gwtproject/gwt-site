@@ -271,8 +271,8 @@ A [full list of known language-related "gotchas"](DevGuideCodingBasicsCompatibil
 
 GWT provides several ways to customize the development experience to suit your application's needs:
  * The simplest and most flexible option is to use CodeServer instead of DevMode, allowing you to run your own application server, and only rely on GWT to 
-compile your Java to JS as needed. Start your web server as you normally would without GWT, and provide `CodeServer` a path where it should write compiled JS
-with `-launcherDir` (or `-war`). See [SuperDevMode docs](../../articles/superdevmode.html) for more details.
+compile your Java to JS as needed. Start your web server as you normally would without GWT, and provide [`CodeServer`](../../articles/superdevmode.html#Starting)
+a path where it should write compiled JS with `-launcherDir` (or `-war`). See [SuperDevMode docs](../../articles/superdevmode.html) for more details.
  * It is also possible to pass `-noserver` to `DevMode`, which still keeps the GUI of `DevMode`, but with no extra server started. The command line argument to
 configure the path to write compiled JS is also `-war`.
  * Finally, you can supply a custom server implementation to `DevMode`. The class must extend `ServletContainerLauncher`, and may be registered for a
