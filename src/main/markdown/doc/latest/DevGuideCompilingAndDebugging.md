@@ -276,7 +276,7 @@ with `-launcherDir` (or `-war`). See [SuperDevMode docs](../../articles/superdev
  * It is also possible to pass `-noserver` to `DevMode`, which still keeps the GUI of `DevMode`, but with no extra server started. The command line argument to
 configure the path to write compiled JS is also `-war`.
  * Finally, you can supply a custom server implementation to `DevMode`. The class must extend `ServletContainerLauncher`, and may be registered for a
-`ServiceLoader` to pick it up with that same name. If it is the only service-loaded type, it will be used automatically - otherwise, it may be specified
+`ServiceLoader`. If it is the only service-loaded type, it will be used automatically - otherwise, it may be specified
 by name as a parameter for `-server`. See the [`ServletContainerLauncher` javadoc](/javadoc/latest/com/google/gwt/core/ext/ServletContainerLauncher.html)
 for more details.
 
