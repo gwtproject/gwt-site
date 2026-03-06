@@ -75,7 +75,7 @@ The GWT Release Notes
 * Removed more old polyfills and IE-specific workarounds
 * Samples updated to use Maven, usually as multi-module projects
 * 2.13 is likely to be the last release where the compiler and dev tools run on Java 11
-* DevMode server defaults to only serving static files - projects that wish to use the old Jetty 9 launcher may specify `-server com.google.gwt.dev.shell.JettyLauncher`, but this is due to be removed. Projects should either split their server/client classpath, or switch to a ServletContainerLauncher that runs another server (https://github.com/niloc132/gwt-devmode-server-sample is an example project that can provide this)
+* DevMode server defaults to only serving static files - projects that wish to use the old Jetty 9 launcher may specify `-server com.google.gwt.dev.shell.jetty.JettyLauncher`, but this is due to be removed. Projects should either split their server/client classpath, or switch to a ServletContainerLauncher that runs another server (https://github.com/niloc132/gwt-devmode-server-sample is an example project that can provide this)
 * Support `-strict` in test arguments, to more easily find compile issues in GWT libraries
 * JFR events added to replace SpeedTracer, support observability into compiler steps, permutation and fragment counts, and output size. Additionally, the `gwt.jjs.dumpAst` system property has been tweaked to support filtering, and generate more readable output
 * jaxb and xml-apis are now optional when using GWT's javax.validation support, set the `gwt.validation.ignoreXml` system property to avoid needing these
