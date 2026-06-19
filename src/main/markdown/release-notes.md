@@ -1,5 +1,6 @@
 The GWT Release Notes
 =====================
+* [2.13.1](#Release_Notes_2_13_1) June 19, 2026
 * [2.13.0](#Release_Notes_2_13_0) Feb 11, 2026
 * [2.12.2](#Release_Notes_2_12_2) March 3, 2025
 * [2.12.1](#Release_Notes_2_12_1) November 12, 2024
@@ -70,6 +71,16 @@ The GWT Release Notes
 * * *
 
 <a id="Release_Notes_Current"></a>
+## <a id="Release_Notes_2_13_1"></a> Release Notes for 2.13.1
+### Bug fixes:
+* Permit failure to delete files on Windows, and close finished logs. This is a regression, caused by trying to use Guava to replace some bespoke utility classes.
+* Simplify RTA iframe loading in Firefox. This addresses a change in behavior in Firefox, although in most cases applications compiled with older versions of GWT should have a workaround automatically applied by Firefox.
+* Use `Objects.equals` to compare record fields for null support. As the current implementation of records was producing an incorrect `equals` method and this was a low risk fix, this was backported.
+* Include GWT version, commit in JFR output. This ensures that we have a baseline for compiled size improvements going forward.
+
+For more detail, see the [commit log](https://github.com/gwtproject/gwt/compare/2.13.0...2.13.1).
+
+
 ## <a id="Release_Notes_2_13_0"></a> Release Notes for 2.13.0
 ### Highlights:
 * Removed more old polyfills and IE-specific workarounds
