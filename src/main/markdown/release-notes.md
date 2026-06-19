@@ -75,7 +75,7 @@ The GWT Release Notes
 ### Bug fixes:
 * Permit failure to delete files on Windows, and close finished logs. This is a regression, caused by trying to use Guava to replace some bespoke utility classes.
 * Simplify RTA iframe loading in Firefox. This addresses a change in behavior in Firefox, although in most cases applications compiled with older versions of GWT should have a workaround automatically applied by Firefox.
-* Use Objects.equals to compare record fields for null support. As records are a new feature but implemented incorrectly, andthis was a low risk fix, this was backported.
+* Use `Objects.equals` to compare record fields for null support. As the current implementation of records was producing an incorrect `equals` method and this was a low risk fix, this was backported.
 * Include GWT version, commit in JFR output. This ensures that we have a baseline for compiled size improvements going forward.
 
 For more detail, see the [commit log](https://github.com/gwtproject/gwt/compare/2.13.0...2.13.1).
