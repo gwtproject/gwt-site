@@ -1,6 +1,6 @@
 The GWT Release Notes
 =====================
-* [2.13.1](#Release_Notes_2_13_1) June 17, 2026
+* [2.13.1](#Release_Notes_2_13_1) June 19, 2026
 * [2.13.0](#Release_Notes_2_13_0) Feb 11, 2026
 * [2.12.2](#Release_Notes_2_12_2) March 3, 2025
 * [2.12.1](#Release_Notes_2_12_1) November 12, 2024

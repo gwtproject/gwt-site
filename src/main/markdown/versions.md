@@ -5,7 +5,7 @@ GWT is licensed under the [Apache 2.0 open source license](terms.html) (since ve
 
 ### Version 2.13.1
 
-Build 2.13.1 - June 17, 2026 - [Release notes](release-notes.html#Release_Notes_2_13_1)
+Build 2.13.1 - June 19, 2026 - [Release notes](release-notes.html#Release_Notes_2_13_1)
 
   <table class="downloads" style="width:500px">
     <tbody>
